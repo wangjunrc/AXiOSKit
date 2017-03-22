@@ -1,0 +1,31 @@
+//
+//  AXTabBarC.m
+//  AXTools
+//
+//  Created by Mole Developer on 16/10/14.
+//  Copyright © 2016年 MoleDeveloper. All rights reserved.
+//
+
+#import "AXTabBarC.h"
+
+@interface AXTabBarC ()
+
+@end
+
+@implementation AXTabBarC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupTitle];
+}
+#pragma mark - 主题字体颜色等
+-(void)setupTitle{
+    NSDictionary *noDic= @{NSForegroundColorAttributeName : [UIColor grayColor]};
+    NSDictionary *seDic= @{NSForegroundColorAttributeName : MainBGColor};
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:noDic forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:seDic forState:UIControlStateSelected];
+}
+
+
+@end

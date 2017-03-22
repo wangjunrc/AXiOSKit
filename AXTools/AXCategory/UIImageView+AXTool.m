@@ -1,0 +1,52 @@
+//
+//  UIImageView+AXTool.m
+//  Financing118
+//
+//  Created by Mole Developer on 15/10/28.
+//  Copyright © 2015年 MoleDeveloper. All rights reserved.
+//
+
+#import "UIImageView+AXTool.h"
+
+@implementation UIImageView (AXTool)
+- (void)ax_rotateWithOneCircleDuration:(NSTimeInterval)duration
+{
+    //创建旋转对象
+    CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    //旋转角度
+    rotationAnimation.toValue = @(M_PI * 2);
+    //旋转一圈持续时间
+    rotationAnimation.duration = duration;
+    //旋转次数(最大float)
+    rotationAnimation.repeatCount =FLT_MAX;
+    //完成不移除对象
+    rotationAnimation.removedOnCompletion = NO;
+    //动画结束时,保持结束时状态
+    rotationAnimation.fillMode = kCAFillModeForwards;
+    //为事件绑定key
+    [self.layer addAnimation:rotationAnimation forKey:@"rotate"];
+}
+
+//停止旋转,移除动画
+- (void)ax_stopRotate
+{
+    [self.layer removeAnimationForKey:@"rotate"];
+}
+- (void)ax_reverseRotateWithOneCircleDuration:(NSTimeInterval)duration
+{
+    //创建旋转对象
+    CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    //旋转角度
+    rotationAnimation.toValue = @(-M_PI * 2);
+    //旋转一圈持续时间
+    rotationAnimation.duration = duration;
+    //旋转次数
+    rotationAnimation.repeatCount =FLT_MAX;
+    //完成不移除对象
+    rotationAnimation.removedOnCompletion = NO;
+    //动画结束时,保持结束时状态
+    rotationAnimation.fillMode = kCAFillModeForwards;
+    //为事件绑定key
+    [self.layer addAnimation:rotationAnimation forKey:@"rotate"];
+}
+@end
