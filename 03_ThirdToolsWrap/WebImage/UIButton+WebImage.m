@@ -14,12 +14,7 @@
  * 按钮的普通转态背景图
  */
 -(void)setWebImageUrl:(NSString *)suffix{
-    if (suffix.length==0) {
-        [self setBackgroundImage:HHeadImage forState:UIControlStateNormal];
-        return;
-    }
-    NSURL *url = URLPhoth(suffix);
-    [self sd_setBackgroundImageWithURL:url forState:UIControlStateNormal placeholderImage:HHeadImage];
+    
 }
 
 @end

@@ -14,12 +14,7 @@
  * 按钮的普通转态背景图
  */
 -(void)setWebImageUrl:(NSString *)suffix{
-    if (suffix.length==0) {
-        self.image = HHeadImage;
-        return;
-    }
-    NSURL *url = URLPhoth(suffix);
-    [self sd_setImageWithURL:url placeholderImage:HHeadImage];
+    
 }
 
 @end

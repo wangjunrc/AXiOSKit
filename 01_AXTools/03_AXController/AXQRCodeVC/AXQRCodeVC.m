@@ -3,16 +3,21 @@
 //  AXTools
 //
 //  Created by Mole Developer on 16/6/12.
-//  Copyright © 2016年 MoleDeveloper. All rights reserved.
+//  Copyright © 2016年 mole. All rights reserved.
 //
 
 #import "AXQRCodeVC.h"
 #import <AVFoundation/AVFoundation.h>
+typedef void(^QRCodeBlock)(NSString *code);
 
 @interface AXQRCodeVC ()<AVCaptureMetadataOutputObjectsDelegate>
 @property (nonatomic, strong)AVCaptureSession * session;//输入输出的中间桥梁
 @property(nonatomic,assign) BOOL isOpenCamera;
 @property(nonatomic,assign) BOOL isShowResult;
+/**
+ * 
+ */
+@property(nonatomic,copy) QRCodeBlock qRCodeBlock;
 @end
 
 @implementation AXQRCodeVC
@@ -42,7 +47,7 @@
 
 
 - (void)dealloc{
-    axLong_Dealloc;
+    axLong_Dealloc ;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
 }
@@ -72,14 +77,19 @@
         AVMetadataMachineReadableCodeObject * metadataObject = metadataObjects.firstObject;
         NSString *stringValue = metadataObject.stringValue;
         
-        [self dismissViewControllerAnimated:YES completion:nil];
+       
+        
+//        [self dismissViewControllerAnimated:YES completion:nil];
         [self.navigationController popViewControllerAnimated:YES];
-        if (self.backBlock) {
-            self.backBlock(stringValue);
+        if (self.qRCodeBlock) {
+            self.qRCodeBlock(stringValue);
         }
     }
 }
 
+-(void)successQRCode:(void(^)(NSString *code))code{
+    self.qRCodeBlock = code;
+}
 
 - (AVCaptureSession *)session{
     if (!_session) {

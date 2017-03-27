@@ -11,7 +11,7 @@
 NSString *const axCellID = @"TableViewacellID";
 NSString *const axCellHeadID = @"TableViewCellheadID";
 NSString *const axCellFootID = @"TableViewCellfootID";
-
+NSString *const axUserInfoKey = @"axUserInfoKey";
 #include <stdio.h>
 @implementation AXConstant
 

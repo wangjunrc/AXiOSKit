@@ -18,4 +18,10 @@
  */
 - (void)ax_buttonEventsWithTime:(CGFloat)countDownTime block:(void(^)(UIButton *button))block;
 
+-(void)ax_beginCountDown:(CGFloat)countDownTime;
+
+-(void)ax_stopCountDown;
+
+-(void)ax_timeStop;
+
 @end
