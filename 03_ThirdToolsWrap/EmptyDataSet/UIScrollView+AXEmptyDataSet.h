@@ -25,6 +25,6 @@
  @param title 占位文字
  @param reloadBlock 刷新回调
  */
--(void)ax_emptyDataWithImageName:(NSString *)imageName titlte:(NSString *)title       reloadBlock:(void(^)())reloadBlock;
+-(void)ax_emptyDataWithImageName:(NSString *)imageName titlte:(NSString *)title reloadBlock:(void(^)())reloadBlock;
 
 @end

@@ -9,24 +9,9 @@
 #ifndef AXToolsHeader_h
 #define AXToolsHeader_h
 
-/*
- 
- 分类重写set get 方法说明
- 
- OBJC_ASSOCIATION_ASSIGN;            //assign策略
- OBJC_ASSOCIATION_COPY_NONATOMIC;    //copy策略
- OBJC_ASSOCIATION_RETAIN_NONATOMIC;  // retain策略
- 
- OBJC_ASSOCIATION_RETAIN;
- OBJC_ASSOCIATION_COPY;
- */
-/*
- * id object 给哪个对象的属性赋值
- const void *key 属性对应的key
- id value  设置属性值为value
- objc_AssociationPolicy policy  使用的策略，是一个枚举值，和copy，retain，assign是一样的，手机开发一般都选择NONATOMIC
- objc_setAssociatedObject(id object, const void *key, id value, objc_AssociationPolicy policy);
- */
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 
 
 /* 01_AXTools */
@@ -45,13 +30,16 @@
 #import "AXWebVC.h"
 #import "AXWKWebVC.h"
 #import "AXObject.h"
+#import "QRCodeViewController.h"
+#import "WKWebViewController.h"
+#import "AXTableViewController.h"
 
 #import "UIButton+WebImage.h"
 #import "UIImageView+WebImage.h"
 #import "AXConstant.h"
 #import "AXMacros.h"
 #import "AXFullLayout.h"
-
+#import "AXViewModel.h"
 
 #import "UIView+AXFrame.h"
 #import "CALayer+AXFrame.h"
@@ -92,6 +80,8 @@
 #import "NSDictionary+AXCatch.h"
 #import "NSMutableDictionary+AXCatch.h"
 #import "UIButton+AXCountDown.h"
+#import "UIViewController+AXiPadAlert.h"
+#import "UIViewController+BackButtonHandler.h"
 
 /* 02_ThirdTools */
 #pragma mark - 02_ThirdTools

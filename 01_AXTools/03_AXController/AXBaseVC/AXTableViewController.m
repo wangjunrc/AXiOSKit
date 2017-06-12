@@ -20,4 +20,9 @@
     return nav;
 }
 
+-(void)dealloc{
+    
+    axLong_Dealloc;
+}
+
 @end

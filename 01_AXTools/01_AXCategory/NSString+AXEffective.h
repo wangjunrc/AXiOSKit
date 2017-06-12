@@ -89,4 +89,14 @@
  */
 -(BOOL)ax_isNegativeFloat;
 
+/**
+ * 是否为空格
+ */
+-(BOOL)ax_isEqualToBlankSpace;
+
+/**
+ * 输入的字是否为数字,包含删除键
+ */
+-(BOOL)ax_isNumberOfChange;
+
 @end

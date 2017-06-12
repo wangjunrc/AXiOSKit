@@ -24,6 +24,28 @@
 
 }
 
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
++(void)iPad:(void(^)())iPad iPhone:(void(^)())iPhone{
+
+    if( IS_IPAD ){
+        if (iPad) {
+            iPad();
+        }
+
+    }else{
+        if (iPhone) {
+            iPhone();
+        }
+        
+    }
+    
+}
+
+
+
+
+
+
 +(void)ax_configure{
     [self setupAppearance];
     [self setupIQKeyboardManager];

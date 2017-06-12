@@ -10,15 +10,32 @@
 
 @implementation UIBarButtonItem (AXTool)
 
-+ (UIBarButtonItem *)ax_itemWithImage:(UIImage *)image target:(id)target action:(SEL)action{
++ (instancetype)ax_itemWithImage:(UIImage *)image target:(id)target action:(SEL)action{
     UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
     [btn setImage:image forState:UIControlStateNormal];
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
 
+/**
+ 初始化 圆角图片UIBarButtonItem
+ 
+ @param image image
+ @param target target
+ @param action action
+ @return UIBarButtonItem
+ */
++ (instancetype)ax_itemRoundWithImage:(UIImage *)image target:(id)target action:(SEL)action{
+    
+    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [btn setImage:image forState:UIControlStateNormal];
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    btn.layer.cornerRadius = 20;
+    btn.layer.masksToBounds = YES;
+    return [[UIBarButtonItem alloc] initWithCustomView:btn];
+}
 
-+ (UIBarButtonItem *)ax_itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage{
++ (instancetype)ax_itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage{
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     //绑定事件
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
@@ -34,7 +51,7 @@
 
 
 /**封装Button作为一个item,并监听事件*/
-+ (UIBarButtonItem *)ax_itemWithTarget:(id)target action:(SEL)action imageName:(NSString *)imageName title:(NSString *)title{
++ (instancetype)ax_itemWithTarget:(id)target action:(SEL)action imageName:(NSString *)imageName title:(NSString *)title{
 
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     //绑定事件
@@ -53,7 +70,7 @@
 
 
 /**封装Button作为一个item,并监听事件*/
-+ (UIBarButtonItem *)ax_itemWithImage:(UIImage *)image title:(NSString *)title Target:(id)target action:(SEL)action{
++ (instancetype)ax_itemWithImage:(UIImage *)image title:(NSString *)title Target:(id)target action:(SEL)action{
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     //绑定事件
@@ -73,7 +90,7 @@
 }
 
 
-+ (UIBarButtonItem *)ax_itemRightWithTarget:(id)target action:(SEL)action imageName:(NSString *)imageName title:(NSString *)title{
++ (instancetype)ax_itemRightWithTarget:(id)target action:(SEL)action imageName:(NSString *)imageName title:(NSString *)title{
 
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     //绑定事件
@@ -94,7 +111,7 @@
 
 }
 
-+ (UIBarButtonItem *)ax_itemRightWithTitle:(NSString *)title normalImage:(NSString *)normalImage  selectImage:(NSString *)selectImage target:(id)target action:(SEL)action {
++ (instancetype)ax_itemRightWithTitle:(NSString *)title normalImage:(NSString *)normalImage  selectImage:(NSString *)selectImage target:(id)target action:(SEL)action {
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     //绑定事件
@@ -118,10 +135,8 @@
 }
 
 
-
-
 /**封装Button封装一个item,并监听事件*/
-+ (UIBarButtonItem *)ax_itemWithNormalImage:(NSString *)normal disabledImage:(NSString *)disabled title:(NSString *)title  target:(id)target action:(SEL)action{
++ (instancetype)ax_itemWithNormalImage:(NSString *)normal disabledImage:(NSString *)disabled title:(NSString *)title  target:(id)target action:(SEL)action{
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     //绑定事件
@@ -145,6 +160,33 @@
 }
 
 
+/**
+ 初始化未渲染图标的 UIBarButtonItem
 
+ @param image image
+ @param target target
+ @param action action
+ @return UIBarButtonItem
+ */
++(instancetype)ax_itemOriginalImage:(NSString *)image target:(id)target action:(SEL)action{
+    
+    return [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:image]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:target action:action];
+}
+
+
+/**
+ 初始化 指定UIButton未自定义内容
+
+ @param btn UIButton
+ @param target target
+ @param action action
+ @return UIBarButtonItem
+ */
++(instancetype )ax_itemByButton:(UIButton *)btn target:(id)target action:(SEL)action{
+  
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+   return  [[UIBarButtonItem alloc]initWithCustomView:btn];
+}
 
 @end

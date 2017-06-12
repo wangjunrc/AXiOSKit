@@ -32,7 +32,7 @@ typedef void(^ReloadBlock)();
 -(void)ax_emptyDataSetWithReloadBlock:(void(^)())reloadBlock{
     
     if (self.emptyDataImageName.length==0) {
-        self.emptyDataImageName = @"AXTools.bundle/emptyDataSeNormal";
+        self.emptyDataImageName = @"AXTools.bundle/ax_emptyData";
     }
     if (self.emptyDataPlaceString.length==0) {
         self.emptyDataPlaceString = @"亲,该页面暂无数据";
@@ -51,7 +51,7 @@ typedef void(^ReloadBlock)();
  @param title 占位文字
  @param reloadBlock 刷新回调
  */
--(void)ax_emptyDataWithImageName:(NSString *)imageName titlte:(NSString *)title       reloadBlock:(void(^)())reloadBlock{
+-(void)ax_emptyDataWithImageName:(NSString *)imageName titlte:(NSString *)title reloadBlock:(void(^)())reloadBlock{
     self.emptyDataImageName = imageName;
     self.emptyDataPlaceString = title;
     [self ax_emptyDataSetWithReloadBlock:reloadBlock];

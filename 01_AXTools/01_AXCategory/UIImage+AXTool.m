@@ -266,4 +266,17 @@
 }
 
 
+/**
+ 初始化 UIImage 去掉系统默认对图片的渲染(默认渲染成蓝色)，恢复图片原来的颜色
+
+ @param name name
+ @return UIImage
+ */
++(instancetype)ax_imageOriginalByName:(NSString *)name{
+    
+  return [[UIImage imageNamed:name]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+}
+
+
 @end

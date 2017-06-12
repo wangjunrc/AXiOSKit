@@ -26,7 +26,7 @@
 //                block(loc);
 //           }
 //           
-//       } failure:^(id error) {
+//       } failure:^(NSError *error) {
 //           NSString *loc = [NSString getAppVersion];
 //           block(loc);
 //       }];

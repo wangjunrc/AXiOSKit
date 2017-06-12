@@ -173,4 +173,14 @@
  */
 -(NSString *)ax_urlStringtAppending:(NSString *)str;
 
+
+
+
+/**
+ 生成唯一的字符串UUID
+
+ @return 字符串
+ */
++(NSString *)ax_uuid;
+
 @end

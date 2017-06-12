@@ -44,7 +44,7 @@
                 if(!isHaveDian)//text中还没有小数点
                 {
                     isHaveDian=YES;
-                    return YES;
+                    return isHaveDian;
                 }else
                 {
                     [textField.text stringByReplacingCharactersInRange:range withString:@""];

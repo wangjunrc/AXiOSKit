@@ -10,12 +10,34 @@
 
 @interface UIViewController (AXAlert)
 
+
+#pragma mark - sheet
+
+
 /**
  *选择照片(相册或者拍照)含有编辑的样式
  @param edit  是否编辑
  @param block originalImage原图  editedImage编辑后图片
  */
 -(void)ax_showCameraWithEditing:(BOOL)edit block:(void(^)(UIImage *originalImage,UIImage *editedImage))block;
+
+/**
+ * Sheet  没有取消回调
+ */
+-(void)ax_showSheetByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain;
+
+/**
+ * Sheet 有取消回调
+ */
+-(void)ax_showSheetByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain  cancel:(void(^)( ))cancel;
+
+/**
+ * Sheet 退出登录
+ */
+-(void)ax_showSheeLogout:(void(^)())certain;
+
+
+#pragma mark - Alert
 
 
 /**
@@ -42,28 +64,11 @@
  */
 -(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message certain:(void(^)())certain cancel:(void(^)())cancel;
 
-/**
- * Sheet  没有取消回调
- */
--(void)ax_showSheetByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain;
-
-/**
- * Sheet 有取消回调
- */
--(void)ax_showSheetByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain  cancel:(void(^)( ))cancel;
-
-
-/**
- * Sheet 退出登录
- */
--(void)ax_showSheeExitLogin:(void(^)())certain;
 
 /**
  * Alert含有输入文本框
  */
 -(void)ax_showAlertTFByTitle:(NSString *)title message:(NSString *)message certain:(void(^)( NSString *text))certain cancel:(void(^)())cancel;
-
-
 
 /**
  * Alert含有输入文本框
@@ -74,4 +79,5 @@
  * 流量网络下载,提示
  */
 -(void)ax_showNetDownloadGo:(void(^)())certain cancel:(void(^)())cancel;
+
 @end

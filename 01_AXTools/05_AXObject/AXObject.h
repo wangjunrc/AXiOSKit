@@ -14,4 +14,7 @@
 
 +(void)ax_configure;
 
++(void)iPad:(void(^)())bebug iPhone:(void(^)())release;
+
+
 @end

@@ -9,8 +9,8 @@
 #import "UIImageView+AXTool.h"
 
 @implementation UIImageView (AXTool)
-- (void)ax_rotateWithOneCircleDuration:(NSTimeInterval)duration
-{
+
+- (void)ax_rotateWithOneCircleDuration:(NSTimeInterval)duration{
     //创建旋转对象
     CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     //旋转角度
@@ -28,12 +28,11 @@
 }
 
 //停止旋转,移除动画
-- (void)ax_stopRotate
-{
+- (void)ax_stopRotate{
     [self.layer removeAnimationForKey:@"rotate"];
 }
-- (void)ax_reverseRotateWithOneCircleDuration:(NSTimeInterval)duration
-{
+
+- (void)ax_reverseRotateWithOneCircleDuration:(NSTimeInterval)duration{
     //创建旋转对象
     CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     //旋转角度
@@ -49,4 +48,11 @@
     //为事件绑定key
     [self.layer addAnimation:rotationAnimation forKey:@"rotate"];
 }
+
++(instancetype)ax_imageWithFrame:(CGRect )frame imageName:(NSString *)image{
+    UIImageView *imageView = [[self alloc]initWithFrame:frame];
+    imageView.image=[UIImage imageNamed:image];
+    return imageView;
+}
+
 @end

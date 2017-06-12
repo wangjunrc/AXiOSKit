@@ -332,7 +332,7 @@
 
 
 /**
- * 获得文件内所以内容
+ * 获得文件内所有内容
  */
 -(NSArray *)ax_getContentsOfDirectory{
     
@@ -489,7 +489,19 @@
     return [NSString stringWithFormat:@"%@%@",head,temp];
 }
 
-
+/**
+ 生成唯一的字符串UUID
+ 
+ @return 字符串,大写
+ */
++(NSString *)ax_uuid{
+    CFUUIDRef uuidRef = CFUUIDCreate(NULL);
+    CFStringRef uuidStrRef= CFUUIDCreateString(NULL, uuidRef);
+    CFRelease(uuidRef);
+    NSString *uuidStr = (__bridge NSString *)uuidStrRef;
+    CFRelease(uuidStrRef);
+    return uuidStr;
+}
 
 @end
 

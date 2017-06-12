@@ -12,6 +12,8 @@ extern NSString *const axCellID;
 extern NSString *const axCellHeadID;
 extern NSString *const axCellFootID;
 extern NSString *const axUserInfoKey;
+extern NSString *const axSectionHeadID;
+extern NSString *const axSectionFootID;
 
 typedef void(^AXNoParameterBlock)();
 typedef void(^AXBackBlock)(id string);

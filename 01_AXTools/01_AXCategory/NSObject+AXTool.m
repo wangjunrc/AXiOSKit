@@ -87,9 +87,9 @@
     for (NSString *str in myArray) {
         for (NSString *key in othrDict) {
             if ([str isEqualToString:key]) {
-                id otherValue = othrDict[key];
-                id myValue =objc_getAssociatedObject(self, (__bridge const void *)(str));
-                myValue = [otherValue copy];
+//                id otherValue = othrDict[key];
+//                id myValue =objc_getAssociatedObject(self, (__bridge const void *)(str));
+//                myValue = [otherValue copy];
             }
         }
     }

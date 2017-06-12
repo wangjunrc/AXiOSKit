@@ -8,20 +8,10 @@
 
 #import <UIKit/UIKit.h>
 @interface UIButton (AXTool)
+
 /**
  * 按钮事件封装成block
  */
 -(void)ax_addTargetBlock:(void(^)(UIButton *button))block;
-- (void)ax_buttonWithTime:(CGFloat)countDownTime;
-/**
- * 循环时间 事件,初始化时调用,不需要主动调用
- */
-- (void)ax_buttonEventsWithTime:(CGFloat)countDownTime block:(void(^)(UIButton *button))block;
-
--(void)ax_beginCountDown:(CGFloat)countDownTime;
-
--(void)ax_stopCountDown;
-
--(void)ax_timeStop;
 
 @end

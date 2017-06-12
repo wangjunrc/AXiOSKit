@@ -19,4 +19,13 @@
  */
 - (void)ax_shakeByLeftAndRight;
 
+
+/**
+ 设置渐变色
+ 
+ @param startColor 开始颜色
+ @param endColor 结束颜色
+ */
+- (void)ax_gradientByStartColor:(UIColor*)startColor endColor:(UIColor*)endColor;
+
 @end

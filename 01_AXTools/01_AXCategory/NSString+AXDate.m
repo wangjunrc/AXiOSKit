@@ -99,14 +99,11 @@
 }
 
 /**
- * 时间戳转换成时间格式(超过10未的自动截取前10位)
+ * 时间戳转换成时间格式(时间戳为13位精确毫秒)
  */
 -(NSString *)ax_timeStampToStringFormat:(NSString *)format{
     NSString *time = self;
-    if (time.length>10) {
-        time = [time substringToIndex:10];
-    }
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970: time.doubleValue];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970: time.doubleValue/1000];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:format];
     return [dateFormat stringFromDate:date];

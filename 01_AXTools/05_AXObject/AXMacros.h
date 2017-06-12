@@ -17,6 +17,12 @@
 #endif
 
 #ifdef DEBUG
+#define AXLog2(...) printf("%s\n\n", [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+#else
+#define AXLog2(...)
+#endif
+
+#ifdef DEBUG
 #define FILEString [[NSString stringWithFormat:@"%s", __FILE__].lastPathComponent UTF8String]
 #define MyLog(...) printf("%s [%s 第%d行]: %s\n\n",[[NSDate ax_nowDateToStringFormatter:@"yyyy-MM-dd HH:mm:ss.SSS"]UTF8String], FILEString  ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
 #else
@@ -24,12 +30,15 @@
 #endif
 
 
+#define  AXLogFunc AXLog(@"%s",__func__);
+
 #define ax_kMainColor [UIColor ax_colorRed:58 green:164 blue:249]
 
 #define ax_kLong_Dealloc  AXLog(@"dealloc %@",self.class)
 
 // 弱引用
 #define axSelfWeak __weak typeof(self) selfWeak = self;
+
 /**
  * ax_kWeakObj(block 外面使用)
  */
@@ -168,3 +177,8 @@ return _instance; \
  * 默认头像
  */
 #define HHeadImage  [UIImage imageNamed:@"tx_default"]
+
+/**
+ * AppStoreID
+ */
+#define H_AppStoreID @"997625918"

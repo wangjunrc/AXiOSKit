@@ -34,8 +34,8 @@
  */
 
 - (BOOL)ax_isURL{
-    //    return [self macth:@"(((f|ht){1}(tp|tps)://)[-a-zA-Z0-9@:%_\\+.~#?&//=]+)"];
-    return [self ax_macth:@"[a-zA-z]+://[^s]*"];
+        return [self ax_macth:@"(((f|ht){1}(tp|tps)://)[-a-zA-Z0-9@:%_\\+.~#?&//=]+)"];
+//    return [self ax_macth:@"[a-zA-z]+://[^s]*"];
 }
 /**
  * 匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)
@@ -154,11 +154,7 @@
 //    return [self ax_macth:@"/^[0-9]+([.]{1}[0-9]+){0,1}$/"];
     
      return [self ax_macth:@"^[0-9]+(.[0-9]{2})?$"];
-    
-    
-    
 }
-
 
 
 /**
@@ -166,6 +162,37 @@
  */
 -(BOOL)ax_isNegativeFloat{
     return [self ax_macth:@"^-([1-9]d*.d*|0.d*[1-9]d*)$"];
+}
+
+
+/**
+ * 是否为空格
+ */
+-(BOOL)ax_isEqualToBlankSpace{
+    
+    NSString *tem = [[self componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]componentsJoinedByString:@""];
+    return [self isEqualToString:tem];
+}
+
+/**
+ * 输入的字是否为数字,包含删除键
+ */
+-(BOOL)ax_isNumberOfChange{
+    
+    NSString*number = self;
+    BOOL res = YES;
+    NSCharacterSet* tmpSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    int i = 0;
+    while (i < number.length) {
+        NSString * string = [number substringWithRange:NSMakeRange(i, 1)];
+        NSRange range = [string rangeOfCharacterFromSet:tmpSet];
+        if (range.length == 0) {
+            res = NO;
+            break;
+        }
+        i++;
+    }
+    return res;
 }
 
 /**
