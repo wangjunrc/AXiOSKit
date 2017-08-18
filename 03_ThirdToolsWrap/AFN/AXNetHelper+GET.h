@@ -13,6 +13,6 @@
 /**
  * GET请求
  */
-+ (void)GETWithUrl:(NSString *)url parameters:(NSDictionary *)parameters success:(void(^)(id json))success failure:(void(^)(NSError *error))failure;
++ (void)GETWithUrl:(NSString *)url parameters:(NSDictionary *)parameters success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure;
 
 @end

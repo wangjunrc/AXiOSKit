@@ -6,15 +6,16 @@
 //  Copyright © 2016年 MoleDeveloper. All rights reserved.
 //
 
-#import "MyTextView.h"
-@interface MyTextView()
+#import "AXTextView.h"
+#import "AXToolsHeader.h"
+@interface AXTextView()
 
 
 @property (nonatomic,weak) UILabel *placeholderLabel; //这里先拿出这个label以方便我们后面的使用
 
 @end
 
-@implementation MyTextView
+@implementation AXTextView
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if (self) {
@@ -37,57 +38,7 @@
     }
     return self;
 }
-//-(void)awakeFromNib{
-//    [super awakeFromNib];
-//    self.backgroundColor= [UIColor clearColor];
-//    
-//    UILabel *placeholderLabel = [[UILabel alloc]init];//添加一个占位label
-//    
-//    placeholderLabel.backgroundColor= [UIColor clearColor];
-//    
-//    placeholderLabel.numberOfLines=0; //设置可以输入多行文字时可以自动换行
-//    
-//    [self addSubview:placeholderLabel];
-//    
-//    self.placeholderLabel= placeholderLabel; //赋值保存
-//    
-//    self.myPlaceholderColor= [UIColor lightGrayColor]; //设置占位文字默认颜色
-//    
-//    self.font= [UIFont systemFontOfSize:15]; //设置默认的字体
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:self]; //通知:监听文字的改变
-//}
-//
-//
-//- (instancetype)initWithFrame:(CGRect)frame {
-//    
-//    self = [super initWithFrame:frame];
-//    
-//    if(self) {
-//        
-//        self.backgroundColor= [UIColor clearColor];
-//        
-//        UILabel *placeholderLabel = [[UILabel alloc]init];//添加一个占位label
-//        
-//        placeholderLabel.backgroundColor= [UIColor clearColor];
-//        
-//        placeholderLabel.numberOfLines=0; //设置可以输入多行文字时可以自动换行
-//        
-//        [self addSubview:placeholderLabel];
-//        
-//        self.placeholderLabel= placeholderLabel; //赋值保存
-//        
-//        self.myPlaceholderColor= [UIColor lightGrayColor]; //设置占位文字默认颜色
-//        
-//        self.font= [UIFont systemFontOfSize:15]; //设置默认的字体
-//        
-//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:self]; //通知:监听文字的改变
-//        
-//    }
-//    
-//    return self;
-//    
-//}
+
 
 - (void)textDidChange {
     
@@ -171,7 +122,5 @@
     [[NSNotificationCenter defaultCenter]removeObserver:UITextViewTextDidChangeNotification];
     
 }
-
-
 
 @end

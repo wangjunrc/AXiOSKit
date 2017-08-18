@@ -21,7 +21,16 @@
 - (void)pushViewControllerAndRemoveParent:(UIViewController *)viewController animated:(BOOL)animated;
 
 /**
- * push vc后移除当前控制器,让当前控制器上一个作为viewController的父导航控制器
+ * push vc后移除指定父nav控制器,
  */
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeParent:(UIViewController *)parent;
+
+/**
+ 初始化
+ 
+ @param vcClass rootCalass
+ @return 当前控制器
+ */
++(instancetype)ax_navRootViewControllerClass:(Class)vcClass;
+
 @end

@@ -12,15 +12,11 @@
 /**
  * 正则表达式
  */
--(BOOL)ax_macth:(NSString *)pattern{
+-(BOOL)ax_macth:(NSString *)matches{
     
-//    NSRegularExpression *regular = [[NSRegularExpression alloc]initWithPattern:pattern options:0 error:nil];
-//    NSArray *array = [regular matchesInString:self options:0 range:NSMakeRange(0, self.length)];
-//    return array.count>0;
+    NSPredicate *pre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",matches];
     
-    
-    NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",pattern];
-    return [phoneTest evaluateWithObject:self];
+    return [pre evaluateWithObject:self];
 }
 /**
  * 是否邮箱
@@ -35,7 +31,7 @@
 
 - (BOOL)ax_isURL{
         return [self ax_macth:@"(((f|ht){1}(tp|tps)://)[-a-zA-Z0-9@:%_\\+.~#?&//=]+)"];
-//    return [self ax_macth:@"[a-zA-z]+://[^s]*"];
+//    return [self ax_macth:@"http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=]*)?"];
 }
 /**
  * 匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)
@@ -107,11 +103,19 @@
     return [self ax_macth:@"^[0-9]*$"];
 }
 /**
- * 正数
+ * 正数( 正数 小数 包含0)
  */
 -(BOOL)ax_isPositive{
     return [self ax_macth:@"^[0-9]+([.]{1}[0-9]+){0,1}$"];
 }
+
+/**
+ * 钱 等于0 最多2位的小数 及正数(这个现在无法排除0)
+ */
+-(BOOL)ax_isMoney{
+     return [self ax_macth:@"^[0-9]+([.][0-9]{0,2}){0,1}$"];
+}
+
 /**
  * 整数
  */
@@ -155,6 +159,8 @@
     
      return [self ax_macth:@"^[0-9]+(.[0-9]{2})?$"];
 }
+
+
 
 
 /**

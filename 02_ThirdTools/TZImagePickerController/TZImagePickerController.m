@@ -243,7 +243,7 @@
         _HUDLable = [[UILabel alloc] init];
         _HUDLable.frame = CGRectMake(0,40, 120, 50);
         _HUDLable.textAlignment = NSTextAlignmentCenter;
-        _HUDLable.text = @"正在处理...";
+        _HUDLable.text = (@"正在处理...");
         _HUDLable.font = [UIFont systemFontOfSize:15];
         _HUDLable.textColor = [UIColor whiteColor];
         
@@ -344,7 +344,7 @@
         UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(3, 0, 50, 44)];
         [backButton setImage:[UIImage imageNamedFromMyBundle:@"navi_back.png"] forState:UIControlStateNormal];
         backButton.imageEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 0);
-        [backButton setTitle:@"返回" forState:UIControlStateNormal];
+        [backButton setTitle:(@"返回") forState:UIControlStateNormal];
         backButton.titleLabel.font = [UIFont systemFontOfSize:15];
         [backButton addTarget:self action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];

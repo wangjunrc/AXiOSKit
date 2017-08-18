@@ -15,4 +15,9 @@
  */
 -(NSString *)ax_toJson;
 
+/**
+ * 0-9 a-z A-Z 集合
+ */
++(NSArray *)ax_numbernAndAlphabet;
+
 @end

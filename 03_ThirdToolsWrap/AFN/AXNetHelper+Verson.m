@@ -7,7 +7,7 @@
 //
 
 #import "AXNetHelper+Version.h"
-
+#import "AXToolsHeader.h"
 @implementation AXNetHelper (Version)
 +(void )appStoreVersionAppid:(NSString *)appid success:(void(^)(NSString *appVersion))successBlock failure:(void(^)())failureBlock{
     
@@ -26,7 +26,7 @@
         }
         
         
-    } failure:^(NSError *error) {
+    } failure:^(NSString *errorString) {
         if (failureBlock) {
             failureBlock();
         }
@@ -50,7 +50,7 @@
         
         NSString *loc = [NSString ax_getAppVersion];
         NSString *ser = appVersion;
-        MyLog(@"工程版本:loc--> %@   苹果服务器版本-->%@",loc,ser);
+        AXLog(@"工程版本:loc--> %@   苹果服务器版本-->%@",loc,ser);
         successBlock([loc compare:ser options:NSNumericSearch]);
     
     } failure:^{

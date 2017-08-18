@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyTextView : UITextView
+@interface AXTextView : UITextView
 /**
  * 占位文字
  */

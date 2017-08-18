@@ -87,4 +87,11 @@
  */
 +(instancetype)ax_imageOriginalByName:(NSString *)name;
 
+/**
+ 矩形图片-->正方形图片 以图片中心为中心，以最小边为边长，裁剪正方形图片
+ 
+ @return 剪切图片
+ */
+-(UIImage *)ax_imageRectangleToSquare;
+
 @end

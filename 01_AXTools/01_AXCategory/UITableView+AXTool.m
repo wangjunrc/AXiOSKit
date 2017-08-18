@@ -14,4 +14,8 @@
     [self registerNib:[UINib nibWithNibName:nib bundle:nil] forCellReuseIdentifier:identifier];
 }
 
+-(void)ax_footerViewZero{
+    self.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+}
+
 @end

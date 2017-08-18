@@ -8,7 +8,7 @@
 
 #import "QRCodeViewController.h"
 #import <AVFoundation/AVFoundation.h>
-
+#import "AXToolsHeader.h"
 @interface QRCodeViewController () <UITabBarDelegate,AVCaptureMetadataOutputObjectsDelegate>
 
 // 显示扫描后的结果
@@ -63,7 +63,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"二维码/条码";
+    self.title = AXLocalizedString(@"二维码/条码");
     self.view.backgroundColor = [UIColor blackColor];
     self.customTabBar.selectedItem = self.customTabBar.items[0];
     self.customTabBar.delegate = self;
@@ -214,6 +214,8 @@
         //判断回传的数据类型
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode] && [metadataObj isKindOfClass:[AVMetadataMachineReadableCodeObject class]]) {
             
+            AXLog(@"扫描结果: %@",metadataObjects);
+            
             
             // 扫描结果
             NSString *result = [metadataObjects.lastObject stringValue];
@@ -221,14 +223,15 @@
             // 停止扫描
             [self stopScan];
             
-            if (_completionBlock) {
-                [self.beepPlayer play];
-                _completionBlock(result);
-            }
+             [self.beepPlayer play];
             
+            if (self.completionBlock) {
+                self.completionBlock(result);
+            }
             if (self.delegate && [self.delegate respondsToSelector:@selector(reader:didScanResult:)]) {
                 [self.delegate reader:self didScanResult:result];
             }
+           
             return;
         }
     }

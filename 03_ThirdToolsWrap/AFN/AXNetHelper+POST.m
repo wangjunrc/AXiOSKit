@@ -7,13 +7,19 @@
 //
 
 #import "AXNetHelper+POST.h"
-
+#import "AXToolsHeader.h"
 @implementation AXNetHelper (POST)
-
 /**
  * post请求
  */
-+ (void)POSTWithUrl:(NSString *)url showHUD:(BOOL )showHud parameters:(NSDictionary *)parameters  success:(void(^)(id json))success failure:(void(^)(NSError *error))failure{
++ (void)POSTWithUrl:(NSString *)url parameters:(NSDictionary *)parameters success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
+    
+    [self POSTWithUrl:url showHUD:NO parameters:parameters success:success failure:failure];
+}
+/**
+ * post请求
+ */
++ (void)POSTWithUrl:(NSString *)url showHUD:(BOOL )showHud parameters:(NSDictionary *)parameters  success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
     
     MBProgressHUD *hud = nil;
     if (showHud) {
@@ -32,12 +38,15 @@
         
     } failure:^(NSURLSessionDataTask * task, NSError * error) {
         
+//        NSHTTPURLResponse *httpRe = (NSHTTPURLResponse*)task.response;
+//        AXLog(@"statusCode:%ld  %@",httpRe.statusCode,error);
+        
         if (showHud) {
             [hud hideAnimated:YES];
-            [MBProgressHUD showError:AXNetErrorTitle];
+            [MBProgressHUD showError:error.localizedDescription];
         }
         if (failure) {
-            failure(error);
+            failure(error.localizedDescription);
         }
     }];
   

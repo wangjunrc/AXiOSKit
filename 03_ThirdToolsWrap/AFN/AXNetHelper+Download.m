@@ -7,7 +7,7 @@
 //
 
 #import "AXNetHelper+Download.h"
-
+#import "AXToolsHeader.h"
 @implementation AXNetHelper (Download)
 
 + (void )postDownURL:(NSString *)url showStatus:(BOOL )showStatus downPath:(NSString *)downPath progress:(void (^)(float aProgress))progress success:(void(^)(NSString *filePath))success failure:(void(^)(NSInteger statusCode))failure{

@@ -7,7 +7,7 @@
 //
 
 #import "AXPlayVC.h"
-
+#import "AXToolsHeader.h"
 @import MediaPlayer;
 @import AVFoundation;
 @interface AXPlayVC ()<AVPlayerViewControllerDelegate>
@@ -42,7 +42,7 @@
     
     
     
-    MyLog(@"path-->%@--mp4--> %@",path,[self.playPaths ax_getFileNameListName:@"mp4"]);
+    AXLog(@"path-->%@--mp4--> %@",path,[self.playPaths ax_getFileNameListName:@"mp4"]);
     
     if (path==nil) {
         return;

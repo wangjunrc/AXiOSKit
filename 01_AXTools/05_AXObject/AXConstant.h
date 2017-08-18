@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "AXToolsHeader.h"
 extern NSString *const axCellID;
 extern NSString *const axCellHeadID;
 extern NSString *const axCellFootID;
@@ -15,9 +15,7 @@ extern NSString *const axUserInfoKey;
 extern NSString *const axSectionHeadID;
 extern NSString *const axSectionFootID;
 
-typedef void(^AXNoParameterBlock)();
-typedef void(^AXBackBlock)(id string);
-typedef void(^AXBackBlockDict)(NSDictionary *dict);
+
 
 @interface AXConstant : NSObject
 /**
@@ -96,6 +94,11 @@ int ax_getRandomZeroToValue(int to);
  */
 int ax_getRandomFromTo(int from ,int to);
 
+
+/**
+ * 打开通用设置
+ */
+BOOL ax_OpenPrefsRoot();
 
 @end
 

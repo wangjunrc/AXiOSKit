@@ -9,6 +9,7 @@
 #import "AXWebVC.h"
 #import "NJKWebViewProgressView.h"
 #import "NJKWebViewProgress.h"
+#import "AXToolsHeader.h"
 @interface AXWebVC ()<UIWebViewDelegate,NJKWebViewProgressDelegate>
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 
@@ -89,7 +90,7 @@
 }
 -(UIButton *)setupBackBtn{
     UIButton *button = [[UIButton alloc]init];
-    NSString*title = @"取消";
+    NSString*title = AXLocalizedString(@"取消");
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];

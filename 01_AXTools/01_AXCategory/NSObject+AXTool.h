@@ -29,8 +29,9 @@
 
 
 /**
- * 用自己的方法替换系统的方法
+ * 更换方法
  */
-+ (void)ax_swizzlingWithOriginalSelector:(SEL)originalSelector swizzledSelector:(SEL)swizzledSelector;
++ (void)ax_replaceMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL;
+
 
 @end

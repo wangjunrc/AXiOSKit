@@ -9,6 +9,19 @@
 #import "UIViewController+AXTool.h"
 #import "UIViewController+AXAlert.h"
 
+@interface UIViewController ()
+
+
+/**
+ * <#注释#>
+ */
+@property (nonatomic, strong)UIViewController  *ax_popVC;
+
+
+@end
+
+
+
 @implementation UIViewController (AXTool)
 
 /**
@@ -73,30 +86,109 @@
     return nil;
 }
 
+/**
+ * 是否有navigationController
+ */
+-(void)ax_haveNavigationController:(void(^)(UINavigationController *nav))have noHave:(void(^)())noHave{
+
+    if (self.navigationController) {
+        
+        if (have) {
+            have(self.navigationController);
+        }
+    }else {
+        if (noHave) {
+            noHave();
+        }
+    }
+    
+    
+    
+}
+
+
+
+/**
+ 是否有 navigationController
+
+ @param haveNav 被push和present自带nav
+ @param presentNav 被present自带
+ @param noHave 没有
+ */
+-(void)ax_havNav:(void(^)(UINavigationController *nav))haveNav isPresentNav:(void(^)(UINavigationController *nav))presentNav noHave:(void(^)())noHave{
+    
+    if (!self.navigationController) {//有导航
+        if (noHave) {
+            noHave();
+        }
+        
+    }else {
+        
+        if (haveNav) {
+            haveNav(self.navigationController);
+        }
+        
+        if ([self.navigationController.viewControllers.firstObject isEqual:self]){
+            //被present 自带导航
+            if (presentNav) {
+                presentNav(self.navigationController);
+            }
+        }
+        
+    }
+
+}
+
+
+/**
+ 设置tabBarItem 属性,区分图片
+ 
+ @param title title
+ @param imageName imageName
+ @param selectImageName selectImageName
+ */
+-(void)ax_setTabBarWithTitle:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectImageName{
+    
+    self.tabBarItem.title = title;
+    
+    self.tabBarItem.image = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    if (selectImageName) {
+        self.tabBarItem.selectedImage = [[UIImage imageNamed:selectImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }else{
+        self.tabBarItem.selectedImage = [UIImage imageNamed:imageName] ;
+    }
+    
+    
+}
+
+/**
+ 设置tabBarItem 属性 不区分图片色,使用tabBar颜色渲染
+ 
+ @param title title
+ @param imageName imageName
+ @param selectImageName selectImageName
+ */
+-(void)ax_tabBarWithTitle:(NSString *)title imageName:(NSString *)imageName{
+    
+    self.tabBarItem.title = title;
+    self.tabBarItem.image = [UIImage imageNamed:imageName];
+    
+}
+
+
+
+#pragma mark - set and get
+
 - (void)setPageIndex:(NSInteger)pageIndex{
-    objc_setAssociatedObject(self, @selector(pageIndex),@(pageIndex), OBJC_ASSOCIATION_COPY_NONATOMIC);
+    ax_runtimePropertyAssSet(pageIndex);
 }
 
 - (NSInteger)pageIndex{
-    return [objc_getAssociatedObject(self,@selector(pageIndex))integerValue];
+    return [ax_runtimePropertyAssGet(pageIndex)integerValue];
 
 }
 
-
-
-/**
- * backBlock set
- */
-- (void)setBackBlock:(AXBackBlock)backBlock{
-    objc_setAssociatedObject(self, @selector(backBlock),backBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-/**
- * backBlock get
- */
-- (AXBackBlock)backBlock{
-    return objc_getAssociatedObject(self,@selector(backBlock));
-    
-}
 
 /**
  * 回调
@@ -106,23 +198,17 @@
 }
 
 /**
- * BackBlockDict set and  get
+ * backBlock set
  */
-- (void)setAx_backBlockDict:(AXBackBlockDict)ax_backBlockDict{
-    objc_setAssociatedObject(self, @selector(ax_backBlockDict),ax_backBlockDict, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setBackBlock:(AXParameterBlock)backBlock{
+    objc_setAssociatedObject(self, @selector(backBlock),backBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
-
-- (AXBackBlockDict)ax_backBlockDict{
-    return objc_getAssociatedObject(self,@selector(ax_backBlockDict));
-}
-
 /**
- * 回调一个字典
+ * backBlock get
  */
--(void)ax_backDictBlock:(void(^)(NSDictionary *dict))backBlock{
-    self.ax_backBlockDict = backBlock;
+- (AXParameterBlock)backBlock{
+    return objc_getAssociatedObject(self,@selector(backBlock));
 }
-
 
 - (void)setAx_popVC:(UIViewController *)ax_popVC{
    

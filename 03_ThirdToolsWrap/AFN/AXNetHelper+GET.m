@@ -12,7 +12,7 @@
 /**
  *GET请求
  */
-+ (void)GETWithUrl:(NSString *)url parameters:(NSDictionary *)paramas success:(void(^)(id json))success failure:(void(^)(NSError *error))failure{
++ (void)GETWithUrl:(NSString *)url parameters:(NSDictionary *)paramas success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
     
     [[self createSessionManager] GET:url parameters:paramas progress:nil success:^(NSURLSessionDataTask * task, id responseObject) {
         
@@ -23,7 +23,7 @@
     } failure:^(NSURLSessionDataTask * task, NSError * error) {
         
         if (failure) {
-            failure(error);
+            failure(error.localizedDescription);
         }
     }];
 }

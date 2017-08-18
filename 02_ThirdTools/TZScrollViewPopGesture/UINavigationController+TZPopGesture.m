@@ -67,7 +67,7 @@
     CGPoint location = [gestureRecognizer locationInView:self.view];
     CGPoint offSet = [gestureRecognizer translationInView:gestureRecognizer.view];
     BOOL ret = (0 < offSet.x && location.x <= 40);
-    // MyLog(@"%@ %@",NSStringFromCGPoint(location),NSStringFromCGPoint(offSet));
+    // AXLog(@"%@ %@",NSStringFromCGPoint(location),NSStringFromCGPoint(offSet));
     return ret;
 }
 

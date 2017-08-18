@@ -331,7 +331,7 @@
 #pragma mark - Private Method
 
 - (void)dealloc {
-    // MyLog(@"dealloc");
+    // AXLog(@"dealloc");
 }
 
 - (void)refreshNaviBarAndBottomBarState {

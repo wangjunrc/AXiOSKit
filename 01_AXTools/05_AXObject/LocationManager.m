@@ -39,7 +39,7 @@ typedef void(^LocationBlock)(CLLocation *location);
     self.locationManager = [[CLLocationManager alloc]init];//创建对象
 
     if (![CLLocationManager locationServicesEnabled]) { //判断是否开启定位功能
-//        MyLog(@"未开启定位");
+//        AXLog(@"未开启定位");
         if (self.location2D) {
             self.location2D(CLLocationCoordinate2DMake(-1, -1));
         }
@@ -49,7 +49,7 @@ typedef void(^LocationBlock)(CLLocation *location);
 
     
     if ([CLLocationManager authorizationStatus]<3) {
-//        MyLog(@"请求开启定位");
+//        AXLog(@"请求开启定位");
 //        self.noAuthorizationStatus = YES;
         [self.locationManager requestWhenInUseAuthorization];//请求开启定位服务
 //         self.locationName(CLLocationCoordinate2DMake(-1, -1));
@@ -91,7 +91,7 @@ typedef void(^LocationBlock)(CLLocation *location);
 //        NSString *cityName = placemark.locality;//城市名称
 ////        NSString * country = placemark.country;
 ////        NSString * name= placemark.name;
-//        MyLog(@"定位城市:%@",cityName);
+//        AXLog(@"定位城市:%@",cityName);
 //        //        self.locationName = cityName;
 //       
 //        self.locationName(cityName,location.coordinate);
@@ -116,7 +116,7 @@ typedef void(^LocationBlock)(CLLocation *location);
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
 
     
-//    MyLog(@"定位失败:");
+//    AXLog(@"定位失败:");
     if (self.location2D) {
          self.location2D(CLLocationCoordinate2DMake(-1, -1));
     }

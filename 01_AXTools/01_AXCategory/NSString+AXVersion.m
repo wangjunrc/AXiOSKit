@@ -7,7 +7,7 @@
 //
 
 #import "NSString+AXVersion.h"
-
+#import "AXToolsHeader.h"
 @implementation NSString (AXVersion)
 
 
@@ -26,7 +26,7 @@
 //                block(loc);
 //           }
 //           
-//       } failure:^(NSError *error) {
+//       } failure:^(NSString *errorString) {
 //           NSString *loc = [NSString getAppVersion];
 //           block(loc);
 //       }];

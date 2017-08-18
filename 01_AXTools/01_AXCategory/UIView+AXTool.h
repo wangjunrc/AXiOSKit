@@ -19,13 +19,37 @@
  */
 - (void)ax_shakeByLeftAndRight;
 
+/**
+ 渐变色
+ 
+ @param colorArray UIColor 数组
+ */
+-(void)ax_gradientColors:(NSArray <UIColor*>*)colorArray;
+
 
 /**
- 设置渐变色
+边框方向
+
+- AXBorderDirectionTop: 顶部
+- AXBorderDirectionLeft: 左边
+- AXBorderDirectionBottom: 底部
+- AXBorderDirectionRight: 右边
+*/
+typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
+    AXBorderDirectionTop = 0,
+    AXBorderDirectionLeft,
+    AXBorderDirectionBottom,
+    AXBorderDirectionRight
+};
+
+/**
+ 为UIView的某个方向添加边框
  
- @param startColor 开始颜色
- @param endColor 结束颜色
+ @param direction 边框方向
+ @param color 边框颜色
+ @param width 边框宽度
  */
-- (void)ax_gradientByStartColor:(UIColor*)startColor endColor:(UIColor*)endColor;
+- (void)ax_addBorder:(AXBorderDirectionType)direction color:(UIColor *)color width:(CGFloat)width;
+
 
 @end

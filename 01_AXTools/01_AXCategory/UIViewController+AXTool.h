@@ -37,10 +37,6 @@
 @property (nonatomic, assign) NSInteger pageIndex;
 
 /**
- *
- */
-@property (nonatomic, copy) AXBackBlock  backBlock;
-/**
  * 回调方法
  */
 -(void)ax_backObjBlock:(void(^)(id obj))backBlock;
@@ -48,16 +44,37 @@
 /**
  *
  */
-@property (nonatomic, copy) AXBackBlockDict  ax_backBlockDict;
+@property (nonatomic, copy) AXParameterBlock  backBlock;
+
+
 
 /**
- * 回调一个字典
+ 是否有 navigationController
+ 
+ @param haveNav 被push和present自带nav
+ @param presentNav 被present自带
+ @param noHave 没有
  */
--(void)ax_backDictBlock:(void(^)(NSDictionary *dict))backBlock;
+-(void)ax_havNav:(void(^)(UINavigationController *nav))haveNav isPresentNav:(void(^)(UINavigationController *nav))presentNav noHave:(void(^)())noHave;
+
 
 /**
- * <#注释#>
+ 设置tabBarItem 属性
+ 
+ @param title title
+ @param imageName imageName
+ @param selectImageName selectImageName
  */
-@property (nonatomic, strong)UIViewController  *ax_popVC;
+-(void)ax_setTabBarWithTitle:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectImageName;
+
+/**
+ 设置tabBarItem 属性 不区分图片色,使用tabBar颜色
+ 
+ @param title title
+ @param imageName imageName
+ @param selectImageName selectImageName
+ */
+-(void)ax_tabBarWithTitle:(NSString *)title imageName:(NSString *)imageName;
+
 
 @end

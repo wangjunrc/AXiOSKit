@@ -12,19 +12,19 @@
 +(void)addAlias:(NSString *)userId{
     // @"xiaole"
 //    [UMessage setAlias:userId type:kUMessageAliasTypeWeiXin response:^(id  _Nonnull responseObject, NSError * _Nonnull error) {
-//        MyLog(@"WrapUM_addAlias:%@---%@",responseObject,error);
+//        AXLog(@"WrapUM_addAlias:%@---%@",responseObject,error);
 //    }];
 //    
 //    
 //    [UMessage addTag:userId response:^(id  _Nonnull responseObject, NSInteger remain, NSError * _Nonnull error) {
-//        MyLog(@"WrapUM_addAlias:%@---%@",responseObject,error);
+//        AXLog(@"WrapUM_addAlias:%@---%@",responseObject,error);
 //    }];
 }
 
 +(void)removeAlias:(NSString *)userId{
     
 //    [UMessage removeAlias:userId type:@"xiaole" response:^(id  _Nonnull responseObject, NSError * _Nonnull error) {
-//        MyLog(@"WrapUM_removeAlias%@",responseObject);
+//        AXLog(@"WrapUM_removeAlias%@",responseObject);
 //    }];
 }
 

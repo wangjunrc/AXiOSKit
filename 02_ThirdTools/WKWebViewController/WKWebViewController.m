@@ -55,36 +55,44 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     [self.view addSubview:self.wkWebView];
     
     //添加进度条
-    [self.navigationController.view addSubview:self.progressView];
+    [self.view addSubview:self.progressView];
     
-   
-    [self setupBack];
+    //添加右边刷新按钮
+    UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadLoadClicked)];
+    self.navigationItem.rightBarButtonItem = roadLoad;
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-//    [self.wkWebView.configuration.userContentController removeScriptMessageHandlerForName:@"WXPay"];
-    [self.wkWebView setNavigationDelegate:nil];
-    [self.wkWebView setUIDelegate:nil];
-}
-
-- (void)loadWebURLSring:(NSString *)string{
-    self.URLString = string;
-    self.loadType = loadWebURLString;
-}
-
-- (void)loadWebHTMLSring:(NSString *)string{
-    self.URLString = string;
-    self.loadType = loadWebHTMLString;
-}
-
-- (void)POSTWebURLSring:(NSString *)string postData:(NSString *)postData{
-    self.URLString = string;
-    self.postData = postData;
-    self.loadType = POSTWebURLString;
-}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
+    if (_isNavHidden == YES) {
+        self.navigationController.navigationBarHidden = YES;
+        //创建一个高20的假状态栏
+        UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 20)];
+        //设置成绿色
+        statusBarView.backgroundColor=[UIColor whiteColor];
+        // 添加到 navigationBar 上
+        [self.view addSubview:statusBarView];
+    }else{
+        self.navigationController.navigationBarHidden = NO;
+    }
+}
 
+
+- (void)roadLoadClicked{
+    [self.wkWebView reload];
+}
+
+-(void)customBackItemClicked{
+    if (self.wkWebView.goBack) {
+        [self.wkWebView goBack];
+    }else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+-(void)closeItemClicked{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 #pragma mark ================ 加载方式 ================
 
@@ -117,9 +125,6 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     //获得html内容
     NSString *html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     //加载js
-    if (html.length==0) {
-        html = [NSString stringWithFormat:@"<font size=\"30\">%@</font>",url];
-    }
     [self.wkWebView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];
 }
 
@@ -133,6 +138,69 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 }
 
 
+- (void)loadWebURLSring:(NSString *)string{
+    self.URLString = string;
+    self.loadType = loadWebURLString;
+}
+
+- (void)loadWebHTMLSring:(NSString *)string{
+    self.URLString = string;
+    self.loadType = loadWebHTMLString;
+}
+
+- (void)POSTWebURLSring:(NSString *)string postData:(NSString *)postData{
+    self.URLString = string;
+    self.postData = postData;
+    self.loadType = POSTWebURLString;
+}
+
+//#pragma mark   ============== URL pay 开始支付 ==============
+//
+//- (void)payWithUrlOrder:(NSString*)urlOrder
+//{
+//    if (urlOrder.length > 0) {
+//        __weak XFWkwebView* wself = self;
+//        [[AlipaySDK defaultService] payUrlOrder:urlOrder fromScheme:@"giftcardios" callback:^(NSDictionary* result) {
+//            // 处理支付结果
+//            NSLog(@"===============%@", result);
+//            // isProcessUrlPay 代表 支付宝已经处理该URL
+//            if ([result[@"isProcessUrlPay"] boolValue]) {
+//                // returnUrl 代表 第三方App需要跳转的成功页URL
+//                NSString* urlStr = result[@"returnUrl"];
+//                [wself loadWithUrlStr:urlStr];
+//            }
+//        }];
+//    }
+//}
+//
+//- (void)WXPayWithParam:(NSDictionary *)WXparam{
+//
+//}
+////url支付成功回调地址
+//- (void)loadWithUrlStr:(NSString*)urlStr
+//{
+//    if (urlStr.length > 0) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            NSURLRequest *webRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr] cachePolicy:NSURLRequestReturnCacheDataElseLoad
+//                                                    timeoutInterval:15];
+//            [self.wkWebView loadRequest:webRequest];
+//        });
+//    }
+//}
+
+#pragma mark ================ 自定义返回/关闭按钮 ================
+
+-(void)updateNavigationItems{
+    if (self.wkWebView.canGoBack) {
+        UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        spaceButtonItem.width = -6.5;
+
+        [self.navigationItem setLeftBarButtonItems:@[spaceButtonItem,self.customBackBarItem,self.closeButtonItem] animated:NO];
+    }else{
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+        [self.navigationItem setLeftBarButtonItems:@[self.customBackBarItem]];
+    }
+}
 //请求链接处理
 -(void)pushCurrentSnapshotViewWithRequest:(NSURLRequest*)request{
     //    NSLog(@"push with request %@",request);
@@ -168,7 +236,6 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     }
     // 获取加载网页的标题
     self.title = self.wkWebView.title;
-    
     
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [self updateNavigationItems];
@@ -218,22 +285,6 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 //    }
     
     
-    NSURL *URL = navigationAction.request.URL;
-    NSString *scheme = [URL scheme];
-    if ([scheme isEqualToString:@"tel"]) {
-        NSString *resourceSpecifier = [URL resourceSpecifier];
-        
-        NSString *callPhone = [NSString stringWithFormat:@"telprompt://%@", resourceSpecifier];
-        /// 防止iOS 10及其之后，拨打电话系统弹出框延迟出现
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:callPhone]];
-        });
-         decisionHandler(WKNavigationActionPolicyAllow);
-        return;
-    }
-   
-    
-    
     switch (navigationAction.navigationType) {
         case WKNavigationTypeLinkActivated: {
             [self pushCurrentSnapshotViewWithRequest:navigationAction.request];
@@ -266,12 +317,11 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 
 // 内容加载失败时候调用
 -(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
-//    NSLog(@"页面加载超时");
+    NSLog(@"页面加载超时");
 }
 
 //跳转失败的时候调用
--(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{
-}
+-(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{}
 
 //进度条
 -(void)webViewWebContentProcessDidTerminate:(WKWebView *)webView{}
@@ -346,39 +396,9 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     //服务器固定格式写法 window.webkit.messageHandlers.名字.postMessage(内容);
     //客户端写法 message.name isEqualToString:@"名字"]
     if ([message.name isEqualToString:@"WXPay"]) {
-//        NSLog(@"%@", message.body);
+        NSLog(@"%@", message.body);
         //调用微信支付方法
 //        [self WXPayWithParam:message.body];
-    }
-}
-
-- (void)roadLoadClicked{
-    [self.wkWebView reload];
-}
-
--(void)customBackItemClicked{
-    if (self.wkWebView.canGoBack) {
-        [self.wkWebView goBack];
-    }else{
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-}
--(void)closeItemClicked{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-    
-#pragma mark ================ 自定义返回/关闭按钮 ================
-    
--(void)updateNavigationItems{
-    if (self.wkWebView.canGoBack) {
-        UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-        spaceButtonItem.width = -6.5;
-        
-        [self.navigationItem setLeftBarButtonItems:@[spaceButtonItem,self.customBackBarItem,self.closeButtonItem] animated:NO];
-    }else{
-        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-        //        [self.navigationItem setLeftBarButtonItems:@[self.customBackBarItem]];
-        self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
     }
 }
 
@@ -399,15 +419,11 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
         //自定义配置,一般用于 js调用oc方法(OC拦截URL中的数据做自定义操作)
         WKUserContentController * UserContentController = [[WKUserContentController alloc]init];
         // 添加消息处理，注意：self指代的对象需要遵守WKScriptMessageHandler协议，结束时需要移除
-//        [UserContentController addScriptMessageHandler:self name:@"WXPay"];
+        [UserContentController addScriptMessageHandler:self name:@"WXPay"];
         // 是否支持记忆读取
         Configuration.suppressesIncrementalRendering = YES;
         // 允许用户更改网页的设置
         Configuration.userContentController = UserContentController;
-        
-        //播放背景音乐
-//        Configuration.mediaPlaybackRequiresUserAction = YES;
-        
         _wkWebView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:Configuration];
         _wkWebView.backgroundColor = [UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1.0];
         // 设置代理
@@ -444,53 +460,6 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     return _customBackBarItem;
 }
 
--(void)setupBack{
-    
-    if (!self.navigationController) {
-        
-        UIButton *button = [self setupBackBtn];
-        [self.wkWebView.scrollView addSubview:button];
-        
-    }else if ([self.navigationController.viewControllers.firstObject isEqual: self]){
-        
-        UIButton *button = [self setupBackBtn];
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button];
-    }
-    
-    if (self.navigationController) {
-        //添加右边刷新按钮
-        UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadLoadClicked)];
-        self.navigationItem.rightBarButtonItem = roadLoad;
-    }
-}
-
--(UIButton *)setupBackBtn{
-    UIButton *button = [[UIButton alloc]init];
-    NSString*title = @"取消";
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:20];
-    CGSize temp = [title ax_sizeWithaFont:button.titleLabel.font];
-    button.frame = CGRectMake(20, 20, temp.width, temp.height);
-    [button addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];
-    
-    return button;
-    
-}
-
-
--(void)buttonEvents:(UIButton *)button{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-    return UIInterfaceOrientationPortrait;
-}
-
 - (UIProgressView *)progressView{
     if (!_progressView) {
         _progressView = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
@@ -520,7 +489,11 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     return _snapShotsArray;
 }
 
-
+-(void)viewWillDisappear:(BOOL)animated{
+    [self.wkWebView.configuration.userContentController removeScriptMessageHandlerForName:@"WXPay"];
+    [self.wkWebView setNavigationDelegate:nil];
+    [self.wkWebView setUIDelegate:nil];
+}
 
 //注意，观察的移除
 -(void)dealloc{

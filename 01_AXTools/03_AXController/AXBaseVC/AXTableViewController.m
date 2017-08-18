@@ -7,7 +7,7 @@
 //
 
 #import "AXTableViewController.h"
-
+#import "AXToolsHeader.h"
 @interface AXTableViewController ()
 
 @end
@@ -19,10 +19,16 @@
     AXNaviC *nav = [[AXNaviC alloc]initWithRootViewController:myVC];
     return nav;
 }
-
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    [self.tableView ax_footerViewZero];;
+    self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    
+    
+}
 -(void)dealloc{
     
-    axLong_Dealloc;
+    axLong_dealloc;
 }
 
 @end

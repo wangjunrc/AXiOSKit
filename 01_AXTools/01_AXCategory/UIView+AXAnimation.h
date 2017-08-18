@@ -37,6 +37,15 @@
 
 -(void)toSmall;
 
+/**
+ 仿苹果图标 开始左右不停颤抖
+ */
+- (void)ax_startTrembleAnimate;
+
+/**
+ 仿苹果图标 停止左右不停颤抖
+ */
+- (void)ax_stopTrembleAnimate;
 
 
 /*============网上资料============*/

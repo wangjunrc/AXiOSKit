@@ -76,6 +76,29 @@
     [self.layer addAnimation:scaleAnimation forKey:nil];
 }
 
+
+
+#define RADIANS(degrees) (((degrees) * M_PI) / 180.0)
+
+/**
+ 仿苹果图标 开始左右不停颤抖
+ */
+- (void)ax_startTrembleAnimate {
+    self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, RADIANS(-5));
+    
+    [UIView animateWithDuration:0.25 delay:0.0 options:(UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse) animations:^ {
+        self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, RADIANS(5));
+    } completion:nil];
+}
+/**
+ 仿苹果图标 停止左右不停颤抖
+ */
+- (void)ax_stopTrembleAnimate {
+    [UIView animateWithDuration:0.25 delay:0.0 options:(UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveLinear) animations:^ {
+        self.transform = CGAffineTransformIdentity;
+    } completion:nil];
+}
+
 /*============网上资料============*/
 #pragma mark - 网上 资料
 

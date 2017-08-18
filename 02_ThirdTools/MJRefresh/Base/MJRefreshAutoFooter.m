@@ -48,7 +48,7 @@
 {
     [super prepare];
     // 默认底部控件100%出现时才会自动刷新
-#warning **Mywarning** 原值为1.0,自己修改为3.0
+#warning **AXwarning** 原值为1.0,自己修改为3.0
     // 默认底部控件100%出现时才会自动刷新
     self.triggerAutomaticallyRefreshPercent = 3.0;
     

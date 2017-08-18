@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "AXToolsHeader.h"
 @interface NSString (AXTool)
 
 /**

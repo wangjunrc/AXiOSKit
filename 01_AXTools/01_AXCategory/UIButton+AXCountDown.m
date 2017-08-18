@@ -7,7 +7,7 @@
 //
 
 #import "UIButton+AXCountDown.h"
-
+#import "UIButton+AXTool.h"
 @interface UIButton ()
 
 
@@ -24,7 +24,7 @@ static NSInteger _countDownSecond;
 
 
 /**
- 短信倒计时事件,不需要主动调用开始
+ 短信倒计时事件,需要主动调用开始
  
  @param second 时长
  @param condition 条件

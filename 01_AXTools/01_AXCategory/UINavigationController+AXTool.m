@@ -28,32 +28,41 @@
  * push vc后移除当前控制器,让当前控制器上一个作为viewController的父导航控制器
  */
 - (void)pushViewControllerAndRemoveParent:(UIViewController *)viewController animated:(BOOL)animated{
+    
     [self pushViewController:viewController animated:animated];
     
-    NSMutableArray *temp =[self.viewControllers mutableCopy];
+    if (self.viewControllers.count>2) {
+        
+        NSMutableArray *temp =[self.viewControllers mutableCopy];
+        [temp removeObjectAtIndex:temp.count-2];
+        self.viewControllers =temp;
+    }
     
-//    [temp removeObject:temp.lastObject];
-    [temp removeObjectAtIndex:temp.count-2];
-    self.viewControllers =temp;
 
 }
+
 /**
- * push vc后移除当前控制器,让当前控制器上一个作为viewController的父导航控制器
+ * push vc后移除指定父nav控制器,
  */
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeParent:(UIViewController *)parent{
     
     [self pushViewController:viewController animated:animated];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    if ([self.viewControllers containsObject:parent]) {
         NSMutableArray *temp =[self.viewControllers mutableCopy];
-        if ([temp containsObject:parent]) {
-            [temp removeObject:parent];
-            self.viewControllers =temp;
-        }
-        
-    });
-  
-   
+        [temp removeObject:parent];
+        self.viewControllers =temp;
+    }
+}
+
+/**
+ 初始化
+ 
+ @param vcClass rootCalass
+ @return 当前控制器
+ */
++(instancetype)ax_navRootViewControllerClass:(Class)vcClass{
+    
+    return [[self alloc]initWithRootViewController:[[vcClass alloc]init]];
     
 }
 

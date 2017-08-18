@@ -55,4 +55,26 @@
     return imageView;
 }
 
+
+/**
+ 画水银图片
+
+ @param markImage 水印图片
+ @param rect 位置
+ */
+-(void)ax_watermarkWith:(UIImage *)markImage inRect:(CGRect)rect{
+    
+   UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
+ 
+    //原图
+    [self.image drawInRect:self.bounds];
+    //水印图
+    [markImage drawInRect:rect];
+    
+    UIImage *newPic = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.image = newPic;
+}
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "AXTabBarC.h"
-
+#import "AXToolsHeader.h"
 @interface AXTabBarC ()
 
 @end
@@ -21,7 +21,7 @@
 #pragma mark - 主题字体颜色等
 -(void)setupTitle{
     NSDictionary *noDic= @{NSForegroundColorAttributeName : [UIColor grayColor]};
-    NSDictionary *seDic= @{NSForegroundColorAttributeName : MainBGColor};
+    NSDictionary *seDic= @{NSForegroundColorAttributeName : [UIColor lightGrayColor]};
     
     [[UITabBarItem appearance] setTitleTextAttributes:noDic forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:seDic forState:UIControlStateSelected];

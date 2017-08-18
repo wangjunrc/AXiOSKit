@@ -1,0 +1,18 @@
+
+JDFTooltipView *tooltip1 = [[JDFTooltipView alloc] initWithTargetView:sender hostView:sender.superview tooltipText:@"在投资期限内，每个月返还相同额度的利息，到期后返还最后一期利息和所有本金" arrowDirection:JDFTooltipViewArrowDirectionDown width:300.0f];
+//提示语字体
+tooltip1.font = [UIFont systemFontOfSize:12];
+//提示语颜色
+tooltip1.textColour = [UIColor redColor];
+//点击提示view本身是否使view消失
+tooltip1.dismissOnTouch = YES;
+//是否有阴影
+tooltip1.shadowEnabled = YES;
+//阴影颜色
+tooltip1.shadowColour = [UIColor redColor];
+
+//3.展示
+[tooltip1 show];
+
+//4.隐藏
+//    [tooltip1 hideAnimated:YES];

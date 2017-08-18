@@ -28,16 +28,17 @@
 #pragma mark - 上传多个文件
 
 /**
- 上传多个文件
+ 上传多个文件,含有hud
  
- @param url           url
- @param params        参数
- @param formDataArray 文件参数
- @param success       成功回调
- @param progress      进度回调
- @param failure       失败回调
+ @param url url
+ @param showHud hud
+ @param parameters 参数
+ @param formDataArray 文件内容
+ @param progress 进度回调
+ @param success 成功回调
+ @param failure 失败回调
  */
-+ (void)POSTUpLoadWithURL:(NSString *)url showHud:(BOOL )showHud parameters:(NSDictionary *)parameters formDataArray:(NSArray<AXFormData *> *)formDataArray progress:(void (^)(NSProgress *aProgress))progress success:(void (^)(id json))success failure:(void (^)(NSError *error))failure{
++ (void)POSTUpLoadWithURL:(NSString *)url showHud:(BOOL )showHud parameters:(NSDictionary *)parameters formDataArray:(NSArray<AXFormData *> *)formDataArray progress:(void (^)(NSProgress *aProgress))progress success:(void (^)(id json))success failure:(void (^)(NSString *errorString))failure{
    
     
     MBProgressHUD *hud = nil;
@@ -70,12 +71,12 @@
         
         if (showHud) {
             [hud hideAnimated:YES];
-            [MBProgressHUD showError:AXNetErrorTitle];
+            [MBProgressHUD showError:error.localizedDescription];
         }
         
-        
         if (failure) {
-            failure(error);
+            NSLog(@"%@",error);
+            failure(error.localizedDescription);
         }
     }];
 }
@@ -85,7 +86,7 @@
 /**
  * 上传单个Jpeg图片
  */
-+ (void)uploadJpegWithURL:(NSString *)url showHud:(BOOL )showHud parameters:(NSDictionary *)parameters image:(UIImage* )image success:(void(^)(id json))success failure:(void(^)(NSError *error))failure{
++ (void)uploadJpegWithURL:(NSString *)url showHud:(BOOL )showHud parameters:(NSDictionary *)parameters image:(UIImage* )image success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
     
     NSData *imageData = UIImageJPEGRepresentation(image, 1);
     
@@ -96,4 +97,31 @@
     
     [self POSTUpLoadWithURL:url showHud:showHud parameters:parameters formDataArray:@[formData] progress:nil success:success failure:failure];
 }
+
+/**
+ 上传多个文件,
+ 
+ @param url url
+ @param parameters 参数
+ @param formDataArray 文件内容
+ @param progress 进度回调
+ @param success 成功回调
+ @param failure 失败回调
+ */
++ (void)POSTUpLoadWithURL:(NSString *)url parameters:(NSDictionary *)parameters formDataArray:(NSArray<AXFormData *> *)formDataArray progress:(void (^)(NSProgress *aProgress ))progress success:(void (^)(id json))success failure:(void (^)(NSString *errorString))failure{
+    
+    [self POSTUpLoadWithURL:url showHud:NO parameters:parameters formDataArray:formDataArray progress:progress success:success failure:failure];
+
+}
+
+
+/**
+ * 上传单个Jpeg图片
+ */
++ (void)uploadJpegWithURL:(NSString *)url parameters:(NSDictionary *)parameters image:(UIImage* )image success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
+
+    [self uploadJpegWithURL:url showHud:NO parameters:parameters image:image success:success failure:failure];
+    
+}
+
 @end

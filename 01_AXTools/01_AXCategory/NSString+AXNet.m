@@ -7,7 +7,7 @@
 //
 
 #import "NSString+AXNet.h"
-
+#import "AXToolsHeader.h"
 @implementation NSString (AXNet)
 /**
  * 构建通用网关的请求 url，参数为键值对形式，不分顺序。不需要包含时间戳、签名等参数 ，系统会自动增加。

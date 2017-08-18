@@ -7,7 +7,7 @@
 //
 
 #import "AXNaviC.h"
-
+#import "AXToolsHeader.h"
 @interface AXNaviC ()
 
 @end
@@ -16,18 +16,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationBar.barStyle = UIBarStyleDefault;//状态栏颜色
-    self.navigationBar.translucent = NO;//半透明--- view坐标为0,0, NO view坐标为0,64
-    [self.navigationBar setShadowImage:[UIImage new]];//取消导航白线
+    
+    //状态栏颜色
+    self.navigationBar.barStyle = UIBarStyleDefault;
+    //半透明--- view坐标为0,0, NO view坐标为0,64
+    self.navigationBar.translucent = NO;
+    //取消导航白线
+    [self.navigationBar setShadowImage:[UIImage new]];
+    
+    //  R255 G127 B0
+//    self.navigationBar.barTintColor = [UIColor colorWithRed:255 green:127 blue:0 alpha:1];
+//
+//    // UINavigationBar itme 图片文字渲染颜色
+//    self.navigationBar.tintColor=[UIColor blackColor];
+//    
+//    //title 颜色
+//    NSDictionary *dic = @{ NSForegroundColorAttributeName :[UIColor blackColor] };
+//    self.navigationBar.titleTextAttributes = dic;
+    
+   
 }
+
 //- (UIStatusBarStyle)preferredStatusBarStyle{//没有导航栏的vc重写此方法,改变状态栏颜色
-//    return UIStatusBarStyleDefault;
+//    return UIStatusBarStyleLightContent;
 //}
 
--(void)dealloc{
-    
-    axLong_Dealloc;
-}
 -(BOOL)shouldAutorotate{
     return NO;
 }
@@ -39,4 +52,10 @@
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
     return UIInterfaceOrientationPortrait;
 }
+
+-(void)dealloc{
+    
+    axLong_dealloc;
+}
+
 @end

@@ -19,4 +19,38 @@
     return  jsonStr;
 }
 
+
+/**
+ * 0-9 a-z A-Z 集合
+ */
++(NSArray *)ax_numbernAndAlphabet{
+    
+    NSMutableArray *temp = [NSMutableArray array];
+    
+    //0-9
+    for(int index=48; index<=57; index++) {
+        unichar ch =index;
+        NSString *str =[NSString stringWithUTF8String:(char *)&ch];
+        [temp addObject:str];
+    }
+    
+    
+    //小写字母
+    for(int index=97; index<=122; index++) {
+        unichar ch =index;
+        NSString *str =[NSString stringWithUTF8String:(char *)&ch];
+        [temp addObject:str];
+    }
+    
+    //大写字母
+    for(int index=65; index<=90; index++) {
+        unichar ch =index;
+        NSString *str =[NSString stringWithUTF8String:(char *)&ch];
+        [temp addObject:str];
+    }
+    
+    return temp.copy;
+    
+}
+
 @end

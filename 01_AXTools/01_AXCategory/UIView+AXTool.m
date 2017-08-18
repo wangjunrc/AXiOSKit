@@ -66,33 +66,63 @@
     [viewLayer addAnimation:animation forKey:nil];
 }
 
+/**
+ 渐变色
+
+ @param colorArray UIColor 数组
+ */
+-(void)ax_gradientColors:(NSArray <UIColor*>*)colorArray{
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.bounds;
+    
+    NSMutableArray *array = [NSMutableArray array];
+    for (UIColor *color in colorArray) {
+        [array addObject:(id)color.CGColor];
+
+    }
+    gradient.colors = array.copy;
+    [self.layer insertSublayer:gradient atIndex:0];
+}
+
 
 /**
- 设置渐变色
-
- @param startColor 开始颜色
- @param endColor 结束颜色
+ 为UIView的某个方向添加边框
+ 
+ @param direction 边框方向
+ @param color 边框颜色
+ @param width 边框宽度
  */
-- (void)ax_gradientByStartColor:(UIColor*)startColor endColor:(UIColor*)endColor{
+- (void)ax_addBorder:(AXBorderDirectionType)direction color:(UIColor *)color width:(CGFloat)width{
     
-    //初始化CAGradientlayer对象，使它的大小为UIView的大小
-    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame = self.bounds;
-    
-    //将CAGradientlayer对象添加在我们要设置背景色的视图的layer层
-    [self.layer addSublayer:gradientLayer];
-    
-    //设置渐变区域的起始和终止位置（范围为0-1）
-    gradientLayer.startPoint = CGPointMake(0, 0);
-    gradientLayer.endPoint = CGPointMake(0, 1);
-    
-    //设置颜色数组
-    gradientLayer.colors = @[(__bridge id)startColor.CGColor,
-                             (__bridge id)endColor.CGColor];
-    
-    //设置颜色分割点（范围：0-1）
-    gradientLayer.locations = @[@(0.5f), @(1.0f)];
-    
+    CALayer *border = [CALayer layer];
+    border.backgroundColor = color.CGColor;
+    switch (direction) {
+        case AXBorderDirectionTop:
+        {
+            border.frame = CGRectMake(0.0f, 0.0f, self.bounds.size.width, width);
+        }
+            break;
+        case AXBorderDirectionLeft:
+        {
+            border.frame = CGRectMake(0.0f, 0.0f, width, self.bounds.size.height);
+        }
+            break;
+        case AXBorderDirectionBottom:
+        {
+            border.frame = CGRectMake(0.0f, self.bounds.size.height - width, self.bounds.size.width, width);
+        }
+            break;
+        case AXBorderDirectionRight:
+        {
+            border.frame = CGRectMake(self.bounds.size.width - width, 0, width, self.bounds.size.height);
+        }
+            break;
+            
+        default:
+            break;
+    }
+    [self.layer addSublayer:border];
 }
 
 @end

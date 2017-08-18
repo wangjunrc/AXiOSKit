@@ -8,7 +8,7 @@
 
 #import "UIViewController+AXAlert.h"
 #import <objc/runtime.h>
-
+#import "UIViewController+AXTool.h"
 typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 
 @interface UIViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
@@ -149,13 +149,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     [self ax_showSheeLogoutByPadView:nil certain:certain];
     
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"退出后不会删除任何历史数据,下次登录依然可以使用本账号" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:AXLocalizedString(@"退出后不会删除任何历史数据,下次登录依然可以使用本账号") preferredStyle:UIAlertControllerStyleActionSheet];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
     }]];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"退出登录") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         if (certain) {
             certain(index);
         }
@@ -182,7 +182,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"知道了") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (certain) {
             certain();
         }
@@ -199,13 +199,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction:[UIAlertAction actionWithTitle:certainTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(certainTitle )style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (certain) {
             certain();
         }
     }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         if (cancel) {
             cancel();
         }
@@ -219,7 +219,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  */
 -(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message certain:(void(^)())certain cancel:(void(^)())cancel{
     
-    [self ax_showAlertByTitle:title message:message certainTitle:@"确定" certain:certain cancel:cancel];
+    [self ax_showAlertByTitle:title message:message certainTitle:AXLocalizedString(@"确定") certain:certain cancel:cancel];
     
 //    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
 //    
@@ -242,16 +242,16 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  */
 -(void)ax_showNetDownloadGo:(void(^)())go cancel:(void(^)())cancel{
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"当前网络为数据流量" message:@"是否取消下载" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:AXLocalizedString(@"当前网络为数据流量") message:AXLocalizedString(@"是否取消下载") preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"继续下载" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"继续下载") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         if (go) {
             go();
         }
     }]];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消下载" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消下载") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (cancel) {
             cancel();
         }
@@ -278,13 +278,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     }];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"确定") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (certain) {
             certain(weaktextF.text);
         }
     }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         if (cancel) {
             cancel();
         }
@@ -313,13 +313,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     }];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"确定") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         if (certain) {
             certain(weaktextF);
         }
     }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
         if (cancel) {
             cancel();
         }

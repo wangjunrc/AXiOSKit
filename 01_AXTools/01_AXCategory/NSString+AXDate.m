@@ -7,7 +7,7 @@
 //
 
 #import "NSString+AXDate.h"
-
+#import "NSString+AXTool.h"
 @implementation NSString (AXDate)
 /**
  时间字符串,转换成指定格式的时间字符串
@@ -18,7 +18,22 @@
  */
 -(NSString *)ax_toChangeTpyeCurrentFormat:(NSString *)currentformat toFormatter:(NSString *)toformatter{
     
-    NSDate *localeDate =  [self ax_toDateCurrentFormat:currentformat];
+    NSString *time = self;
+    
+    if (time.length>currentformat.length) {
+        
+       time = [time substringToIndex:currentformat.length];
+        
+    }else if (time.length<currentformat.length){
+        
+        NSUInteger more = currentformat.length-time.length;
+        
+        for (int index=0; index<more; index++) {
+             time = [NSString stringWithFormat:@"%@0",time];
+        }
+    }
+    
+    NSDate *localeDate =  [time ax_toDateCurrentFormat:currentformat];
     
     return [localeDate ax_toStringWithFormatter:toformatter];
     

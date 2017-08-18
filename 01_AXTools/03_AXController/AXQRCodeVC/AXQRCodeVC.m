@@ -8,6 +8,7 @@
 
 #import "AXQRCodeVC.h"
 #import <AVFoundation/AVFoundation.h>
+#import "AXToolsHeader.h"
 typedef void(^QRCodeBlock)(NSString *code);
 
 @interface AXQRCodeVC ()<AVCaptureMetadataOutputObjectsDelegate>
@@ -24,7 +25,7 @@ typedef void(^QRCodeBlock)(NSString *code);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"扫一扫";
+    self.title = AXLocalizedString(@"扫一扫");
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
         self.isOpenCamera = YES;
         [self.session startRunning];
@@ -47,7 +48,7 @@ typedef void(^QRCodeBlock)(NSString *code);
 
 
 - (void)dealloc{
-    axLong_Dealloc ;
+    axLong_dealloc ;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
 }

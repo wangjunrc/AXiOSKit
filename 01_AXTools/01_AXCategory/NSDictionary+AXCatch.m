@@ -7,7 +7,7 @@
 //
 
 #import "NSDictionary+AXCatch.h"
-
+#import "AXToolsHeader.h"
 @implementation NSDictionary (AXCatch)
 + (void)load {
     static dispatch_once_t onceToken;

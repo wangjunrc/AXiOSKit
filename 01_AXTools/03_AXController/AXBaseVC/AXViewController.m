@@ -7,7 +7,7 @@
 //
 
 #import "AXViewController.h"
-
+#import "AXToolsHeader.h"
 @interface AXViewController ()
 
 @end
@@ -37,7 +37,7 @@
 //}
 -(void)dealloc{
     
-    axLong_Dealloc;
+    axLong_dealloc;
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "AXToolsHeader.h"
 @interface AXViewModel : NSObject
 
 +(void)setupCell:(id )cell model:(id)model;

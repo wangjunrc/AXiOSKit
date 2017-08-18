@@ -8,7 +8,7 @@
 
 #import "UIViewController+AXiPadAlert.h"
 #import <objc/runtime.h>
-
+#import "AXToolsHeader.h"
 typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 
 @interface UIViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
@@ -39,9 +39,9 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:nil]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"拍照") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){ //支持拍照
             UIImagePickerController *picker = [[UIImagePickerController alloc]init];
             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -51,7 +51,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
         }
     }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"从相册中选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"从相册中选择") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){//图片列表方式
             
@@ -78,17 +78,27 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  * UIImagePickerControllerDelegate
  */
 -(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    [picker dismissViewControllerAnimated:YES completion:nil];
     
-    //原图
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //原图
+        UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+        
+        //编辑后的图片
+        UIImage* editedImage = info[UIImagePickerControllerEditedImage];
+        
+        if (self.cameraEditBlock) {
+            self.cameraEditBlock(originalImage,editedImage);
+        }
+    });
     
-    //编辑后的图片
-    UIImage* editedImage = info[UIImagePickerControllerEditedImage];
     
-    if (self.cameraEditBlock) {
-        self.cameraEditBlock(originalImage,editedImage);
-    }
+    [picker dismissViewControllerAnimated:YES completion:^{
+       
+       
+        
+    }];
+    
+    
 }
 
 #pragma mark - Sheet
@@ -108,7 +118,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         if (cancel) {
             cancel();
         }
@@ -140,13 +150,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 -(void)ax_showSheeLogoutByPadView:(UIView *)iPadView certain:(void(^)())certain{
     
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"退出后不会删除任何历史数据,下次登录依然可以使用本账号" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:AXLocalizedString(@"退出后不会删除任何历史数据,下次登录依然可以使用本账号") preferredStyle:UIAlertControllerStyleActionSheet];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
     }]];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"退出登录") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         if (certain) {
             certain(index);
         }

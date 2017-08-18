@@ -50,9 +50,14 @@
 -(BOOL)ax_isNumber;
 
 /**
- * 正数(包含0 正数 小数)
+ * 正数(正数 小数 包含0 )
  */
 -(BOOL)ax_isPositive;
+
+/**
+ * 钱 等于 0 最多2位的小数 及正数
+ */
+-(BOOL)ax_isMoney;
 
 /**
  * 整数
@@ -80,7 +85,7 @@
 -(BOOL)ax_isPositiveFloat;
 
 /**
- * 正浮点数2位有效数字
+ * 正浮点数2位有效数字 必须2位
  */
 -(BOOL)ax_isPositive2Float;
 

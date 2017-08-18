@@ -7,7 +7,7 @@
 //
 
 #import "UIImage+AXTool.h"
-
+#import "AXMacros.h"
 @implementation UIImage (AXTool)
 
 /**
@@ -85,7 +85,7 @@
     //3.2.画圆
     
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(imageWidth*0.5,imageHeight*0.5) radius:radius startAngle:0 endAngle:M_PI * 2 clockwise:YES];
-    
+
     //3.3.设置圆线宽
     bezierPath.lineWidth = borderWidth;
     
@@ -277,6 +277,32 @@
   return [[UIImage imageNamed:name]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 
 }
+
+
+/**
+ 矩形图片-->正方形图片 以图片中心为中心，以最小边为边长，裁剪正方形图片
+
+ @return 剪切图片
+ */
+-(UIImage *)ax_imageRectangleToSquare{
+    
+    UIImage *image = self;
+    CGImageRef sourceImageRef = [image CGImage];//将UIImage转换成CGImageRef
+    
+    CGFloat _imageWidth = image.size.width * image.scale;
+    CGFloat _imageHeight = image.size.height * image.scale;
+    CGFloat _width = _imageWidth > _imageHeight ? _imageHeight : _imageWidth;
+    CGFloat _offsetX = (_imageWidth - _width) / 2;
+    CGFloat _offsetY = (_imageHeight - _width) / 2;
+    
+    CGRect rect = CGRectMake(_offsetX, _offsetY, _width, _width);
+    CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, rect);//按照给定的矩形区域进行剪裁
+    UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
+    
+    return newImage;
+}
+
+
 
 
 @end

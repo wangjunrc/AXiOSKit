@@ -10,6 +10,14 @@
 
 @interface AXWKWebVC : UIViewController
 
-@property(nonatomic,copy) NSString *url;
+/**
+ 正常网页
+ */
+@property(nonatomic,copy) NSString *webURLSring;
+
+/**
+ * 本地网页,网页不存在时,直接显示内容
+ */
+@property(nonatomic,copy) NSString *webHTMLSring;
 
 @end

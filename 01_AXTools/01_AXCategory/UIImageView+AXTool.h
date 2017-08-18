@@ -29,4 +29,12 @@
  */
 +(instancetype)ax_imageWithFrame:(CGRect )frame imageName:(NSString *)image;
 
+/**
+ 画水银图片
+ 
+ @param markImage 水印图片
+ @param rect 位置
+ */
+-(void)ax_watermarkWith:(UIImage *)markImage inRect:(CGRect)rect;
+
 @end

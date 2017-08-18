@@ -6,8 +6,7 @@
 //  Copyright © 2016年 MoleDeveloper. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+#import "AXBaseAlertVC.h"
 @interface AXDateVC : AXBaseAlertVC
 
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;

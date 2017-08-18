@@ -7,6 +7,7 @@
 //
 
 #import "NSString+AXCrypto.h"
+#import "NSData+AXTool.h"
 #import <CommonCrypto/CommonCrypto.h>
 @implementation NSString (AXCrypto)
 

@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
-
 extern NSString *const AXNetLoadTitle;
-extern NSString *const AXNetErrorTitle;
-extern NSString *const AXNetFailureText;
+//extern NSString *const AXNetErrorTitle;
+//extern NSString *const AXNetFailureText;
 
 extern NSString *const NetWorkStatusNotification;
 extern NSString *const NetWorkStatusUnknownKey;
@@ -27,11 +26,6 @@ extern NSString *const gifMimeType;
 extern NSString *const pngMimeType;
 extern NSString *const icoMimeType;
 
-typedef NS_ENUM(NSUInteger,MyDirectory) {
-    MyDirectoryDocument = 1, //  对应 NSDocumentDirectory
-    MyDirectoryLibrary,      // 对应 NSLibraryDirectory
-    MyDirectoryTemporary,   // 对应 NSTemporaryDirectory
-};
 
 /**
  * 请求对象

@@ -46,7 +46,7 @@
         if ([self.representedAssetIdentifier isEqualToString:[[TZImageManager manager] getAssetIdentifier:model.asset]]) {
             self.imageView.image = photo;
         } else {
-            // MyLog(@"this cell is showing other asset");
+            // AXLog(@"this cell is showing other asset");
             [[PHImageManager defaultManager] cancelImageRequest:self.imageRequestID];
         }
         if (!isDegraded) {
@@ -55,7 +55,7 @@
     }];
     if (imageRequestID && self.imageRequestID && imageRequestID != self.imageRequestID) {
         [[PHImageManager defaultManager] cancelImageRequest:self.imageRequestID];
-        // MyLog(@"cancelImageRequest %d",self.imageRequestID);
+        // AXLog(@"cancelImageRequest %d",self.imageRequestID);
     }
     self.imageRequestID = imageRequestID;
     self.selectPhotoButton.selected = model.isSelected;

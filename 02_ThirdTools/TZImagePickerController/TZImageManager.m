@@ -564,7 +564,7 @@ static CGFloat TZScreenScale;
                 if (success && completion) {
                     completion(nil);
                 } else if (error) {
-                    MyLog(@"保存照片出错:%@",error.localizedDescription);
+                    NSLog(@"保存照片出错:%@",error.localizedDescription);
                     if (completion) {
                         completion(error);
                     }
@@ -577,7 +577,7 @@ static CGFloat TZScreenScale;
         [self.assetLibrary writeImageToSavedPhotosAlbum:image.CGImage orientation:[self orientationFromImage:image] completionBlock:^(NSURL *assetURL, NSError *error) {
 #pragma clang diagnostic pop
             if (error) {
-                MyLog(@"保存图片失败:%@",error.localizedDescription);
+                NSLog(@"保存图片失败:%@",error.localizedDescription);
                 if (completion) {
                     completion(error);
                 }
@@ -624,9 +624,9 @@ static CGFloat TZScreenScale;
         options.deliveryMode = PHVideoRequestOptionsDeliveryModeAutomatic;
         options.networkAccessAllowed = YES;
         [[PHImageManager defaultManager] requestAVAssetForVideo:asset options:options resultHandler:^(AVAsset* avasset, AVAudioMix* audioMix, NSDictionary* info){
-            // MyLog(@"Info:\n%@",info);
+            // AXLog(@"Info:\n%@",info);
             AVURLAsset *videoAsset = (AVURLAsset*)avasset;
-            // MyLog(@"AVAsset URL: %@",myAsset.URL);
+            // AXLog(@"AVAsset URL: %@",myAsset.URL);
             [self startExportVideoWithVideoAsset:videoAsset completion:completion];
         }];
 #pragma clang diagnostic push
@@ -653,7 +653,7 @@ static CGFloat TZScreenScale;
         NSDateFormatter *formater = [[NSDateFormatter alloc] init];
         [formater setDateFormat:@"yyyy-MM-dd-HH:mm:ss"];
         NSString *outputPath = [NSHomeDirectory() stringByAppendingFormat:@"/tmp/output-%@.mp4", [formater stringFromDate:[NSDate date]]];
-        MyLog(@"video outputPath = %@",outputPath);
+        NSLog(@"video outputPath = %@",outputPath);
         session.outputURL = [NSURL fileURLWithPath:outputPath];
         
         // Optimize for network use.
@@ -663,7 +663,7 @@ static CGFloat TZScreenScale;
         if ([supportedTypeArray containsObject:AVFileTypeMPEG4]) {
             session.outputFileType = AVFileTypeMPEG4;
         } else if (supportedTypeArray.count == 0) {
-            MyLog(@"No supported file types 视频类型暂不支持导出");
+            NSLog(@"No supported file types 视频类型暂不支持导出");
             return;
         } else {
             session.outputFileType = [supportedTypeArray objectAtIndex:0];
@@ -677,13 +677,13 @@ static CGFloat TZScreenScale;
         [session exportAsynchronouslyWithCompletionHandler:^(void) {
             switch (session.status) {
                 case AVAssetExportSessionStatusUnknown:
-                    MyLog(@"AVAssetExportSessionStatusUnknown"); break;
+                    NSLog(@"AVAssetExportSessionStatusUnknown"); break;
                 case AVAssetExportSessionStatusWaiting:
-                    MyLog(@"AVAssetExportSessionStatusWaiting"); break;
+                    NSLog(@"AVAssetExportSessionStatusWaiting"); break;
                 case AVAssetExportSessionStatusExporting:
-                    MyLog(@"AVAssetExportSessionStatusExporting"); break;
+                    NSLog(@"AVAssetExportSessionStatusExporting"); break;
                 case AVAssetExportSessionStatusCompleted: {
-                    MyLog(@"AVAssetExportSessionStatusCompleted");
+                    NSLog(@"AVAssetExportSessionStatusCompleted");
                     dispatch_async(dispatch_get_main_queue(), ^{
                         if (completion) {
                             completion(outputPath);
@@ -691,7 +691,7 @@ static CGFloat TZScreenScale;
                     });
                 }  break;
                 case AVAssetExportSessionStatusFailed:
-                    MyLog(@"AVAssetExportSessionStatusFailed"); break;
+                    NSLog(@"AVAssetExportSessionStatusFailed"); break;
                 default: break;
             }
         }];
