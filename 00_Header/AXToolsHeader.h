@@ -13,13 +13,29 @@
 
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 
+/*
+ 
+ 分类重写set get 方法说明
+ 
+ OBJC_ASSOCIATION_ASSIGN;            //assign策略
+ OBJC_ASSOCIATION_COPY_NONATOMIC;    //copy策略
+ OBJC_ASSOCIATION_RETAIN_NONATOMIC;  // retain策略
+ 
+ OBJC_ASSOCIATION_RETAIN;
+ OBJC_ASSOCIATION_COPY;
+ */
+/*
+ * id object 给哪个对象的属性赋值
+ const void *key 属性对应的key
+ id value  设置属性值为value
+ objc_AssociationPolicy policy  使用的策略，是一个枚举值，和copy，retain，assign是一样的，手机开发一般都选择NONATOMIC
+ objc_setAssociatedObject(id object, const void *key, id value, objc_AssociationPolicy policy);
+ */
 
 /* 01_AXTools */
 #pragma mark - 01_AXTools
 
 #import "IBObjectHeader.h"
-#import "MyViewHeader.h"
-#import "DataBase.h"
 #import "AXNetHelperHeader.h"
 #import "AXConstant.h"
 #import "AXViewController.h"
@@ -33,9 +49,8 @@
 #import "QRCodeViewController.h"
 #import "WKWebViewController.h"
 #import "AXTableViewController.h"
+#import "AXSafariVC.h"
 
-#import "UIButton+WebImage.h"
-#import "UIImageView+WebImage.h"
 #import "AXConstant.h"
 #import "AXMacros.h"
 #import "AXFullLayout.h"
@@ -82,12 +97,15 @@
 #import "UIButton+AXCountDown.h"
 #import "UIViewController+AXiPadAlert.h"
 #import "UIViewController+BackButtonHandler.h"
+#import "NSUserDefaults+AXTool.h"
+
 
 /* 02_ThirdTools */
 #pragma mark - 02_ThirdTools
 
+#import "Masonry.h"
 #import "MBProgressHUD+MJ.h"
-#include "MBProgressHUD.h"
+#import "MBProgressHUD.h"
 #import "UIImageView+WebCache.h"
 #import "MJExtension.h"
 #import "UIButton+WebCache.h"
@@ -96,15 +114,16 @@
 #import "UINavigationController+TZPopGesture.h"
 /**多选照片*/
 #import "TZImagePickerController.h"
-#import "Masonry.h"
-
-
+#import "JDFSequentialTooltipManager.h"
+#import "UITextView+WZB.h"
+#import "UIImage+GIF.h"
 
 /* 03_ThirdToolsWrap */
 #pragma mark - 03_ThirdToolsWrap
 
 #import "UIScrollView+AXRefresh.h"
 
+#import "AXNetHelperHeader.h"
 /* 04_ThirdSDK */
 #pragma mark - 04_ThirdSDK
 
