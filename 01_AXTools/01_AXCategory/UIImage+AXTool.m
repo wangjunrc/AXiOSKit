@@ -7,26 +7,83 @@
 //
 
 #import "UIImage+AXTool.h"
-#import "AXMacros.h"
+
 @implementation UIImage (AXTool)
 
 /**
- *将图片变成指定尺寸
- *@param image 需要重绘的图片
- *@param size 指定大小
- *@return 返回新的图片
+ 将图片变成指定尺寸
+ image 需要重绘的图片
+ size 指定大小
+ 返回新的图片
  */
-+ (UIImage *)ax_imageScaleToSize:(UIImage *)image size:(CGSize)size{
+- (UIImage *)ax_imageScaleToSize:(CGSize)size{
     UIGraphicsBeginImageContext(size);
-    [image drawInRect:CGRectMake(0,0,size.width, size.height)];
+    [self drawInRect:CGRectMake(0,0,size.width, size.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return newImage;
 }
 
 
-/**剪切成圆形*/
-+ (UIImage *)ax_imageCircleImageWithImage:(UIImage *)image AndBorderWidth:(CGFloat)borderWidth AndBorderColor:(UIColor *)borderColor{
+/**
+ 将图片剪切成 指定半径 圆形
+
+ @param radius 半径
+ @param borderWidth 边框的宽度
+ @param borderColor 边框的颜色
+ @return 返回新的图片
+ */
+-(UIImage *)ax_imageCircleWithRadius:(CGFloat)radius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor{
+    
+    UIImage *image = self;
+    //1.1.(计算画布尺寸,图片宽高+2倍线宽)
+    CGFloat imageWidth = radius*2 + 2*borderWidth;
+    CGFloat imageHeight = radius*2 + 2*borderWidth;
+    
+    //2.获取上下文
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(imageWidth, imageHeight), NO, 1.0);
+    
+    //3.1.圆半径,以宽.高一半,最小的为半径
+//    CGFloat radius = diameter*0.5;
+    //3.2.画圆
+    
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(imageWidth*0.5,imageHeight*0.5) radius:radius startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+    
+    //3.3.设置圆线宽
+    bezierPath.lineWidth = borderWidth;
+    
+    //3.4.设置边界颜色
+    if (borderColor) {
+        [borderColor setStroke];
+        [bezierPath stroke];
+    }
+    //3.5.填充背景
+    [[UIColor whiteColor] setFill];
+    [bezierPath fill];
+    
+    //3.6.剪切
+    [bezierPath addClip];
+    
+    //4.1.画图片
+    [image drawInRect:CGRectMake(borderWidth, borderWidth,radius*2,radius*2)];
+    
+    //5.得到新图片
+    UIImage *tempImage = UIGraphicsGetImageFromCurrentImageContext();
+    //6关闭上下文
+    UIGraphicsEndImageContext();
+    //7.返回新图片
+    return tempImage;
+}
+
+/**
+ *将图片剪切成圆形
+ *@param image 需要剪切的图片
+ *@param borderWidth 边框的宽度
+ *@param borderColor 边框的颜色
+ *@return 返回新的图片
+ */
+-(UIImage *)ax_imageCircleWithBorderWidth:(CGFloat)borderWidth AndBorderColor:(UIColor *)borderColor{
+    UIImage *image = self;
     //1.1.(计算画布尺寸,图片宽高+2倍线宽)
     CGFloat imageWidth = image.size.width + 2*borderWidth;
     CGFloat imageHeight = image.size.height + 2*borderWidth;
@@ -44,8 +101,10 @@
     bezierPath.lineWidth = borderWidth;
     
     //3.4.设置边界颜色
-    [borderColor setStroke];
-    [bezierPath stroke];
+    if (borderColor) {
+        [borderColor setStroke];
+        [bezierPath stroke];
+    }
     //3.5.填充背景
     [[UIColor whiteColor] setFill];
     [bezierPath fill];

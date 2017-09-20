@@ -11,11 +11,21 @@
 @interface UIImage (AXTool)
 /**
  将图片变成指定尺寸
-  image 需要重绘的图片
-  size 指定大小
-  返回新的图片
+ image 需要重绘的图片
+ size 指定大小
+ 返回新的图片
  */
-+ (UIImage *)ax_imageScaleToSize:(UIImage *)image size:(CGSize)size;
+- (UIImage *)ax_imageScaleToSize:(CGSize)size;
+
+/**
+ 将图片剪切成 指定半径 圆形
+ 
+ @param radius 半径
+ @param borderWidth 边框的宽度
+ @param borderColor 边框的颜色
+ @return 返回新的图片
+ */
+-(UIImage *)ax_imageCircleWithRadius:(CGFloat)radius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 
 /**
  *将图片剪切成圆形
@@ -24,8 +34,7 @@
  *@param borderColor 边框的颜色
  *@return 返回新的图片
  */
-
-+(UIImage *)ax_imageCircleImageWithImage:(UIImage *)image AndBorderWidth:(CGFloat)borderWidth AndBorderColor:(UIColor *)borderColor;
+-(UIImage *)ax_imageCircleWithBorderWidth:(CGFloat)borderWidth AndBorderColor:(UIColor *)borderColor;
 
 /**
  *将图片剪切成圆形
