@@ -20,7 +20,7 @@
     
     [self sd_setImageWithURL:url placeholderImage:placeholderImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
-        CGFloat radius = MIN(self.frame.size.width, self.frame.size.height);
+         CGFloat radius = MIN(self.frame.size.width*0.5, self.frame.size.height*0.5);
         image = [image ax_imageCircleWithRadius:radius borderWidth:0 borderColor:nil];
       
         self.image = image;
