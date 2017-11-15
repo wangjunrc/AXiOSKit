@@ -1,19 +1,19 @@
 //
-//  AXNetHelper+Tool.m
+//  AXNetManager+Tool.m
 //  BigApple
 //
 //  Created by Mole Developer on 2016/11/1.
 //  Copyright © 2016年 MoleDeveloper. All rights reserved.
 //
 
-#import "AXNetHelper+Version.h"
-#import "AXToolsHeader.h"
-@implementation AXNetHelper (Version)
+#import "AXNetManager+Version.h"
+
+@implementation AXNetManager (Version)
 +(void )appStoreVersionAppid:(NSString *)appid success:(void(^)(NSString *appVersion))successBlock failure:(void(^)())failureBlock{
     
     NSString *url = [[NSString alloc] initWithFormat:@"http://itunes.apple.com/lookup?id=%@",appid];
     
-    [AXNetHelper POSTWithUrl:url showHUD:NO parameters:nil success:^(id json) {
+    [AXNetManager POSTWithUrl:url showHUD:NO parameters:nil success:^(id json) {
         
         if (successBlock) {
             

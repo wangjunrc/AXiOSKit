@@ -1,14 +1,14 @@
 //
-//  AXNetHelper+Download.m
+//  AXNetManager+Download.m
 //  BigApple
 //
 //  Created by Mole Developer on 2016/11/22.
 //  Copyright © 2016年 MoleDeveloper. All rights reserved.
 //
 
-#import "AXNetHelper+Download.h"
-#import "AXToolsHeader.h"
-@implementation AXNetHelper (Download)
+#import "AXNetManager+Download.h"
+
+@implementation AXNetManager (Download)
 
 + (void )postDownURL:(NSString *)url showStatus:(BOOL )showStatus downPath:(NSString *)downPath progress:(void (^)(float aProgress))progress success:(void(^)(NSString *filePath))success failure:(void(^)(NSInteger statusCode))failure{
 
