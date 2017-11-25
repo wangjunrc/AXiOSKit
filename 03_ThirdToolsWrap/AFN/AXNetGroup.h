@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+<<<<<<< HEAD
 /**
  * 参数 封装对象
  */
+=======
+>>>>>>> 655b48996deb59798bf9bc6956a24f7ed81fe4ec
 @interface AXNetGroup : NSObject
 /**
  * url
@@ -24,9 +27,13 @@
 
 @end
 
+<<<<<<< HEAD
 /**
  * 返回结果,封装对象
  */
+=======
+
+>>>>>>> 655b48996deb59798bf9bc6956a24f7ed81fe4ec
 @interface AXNetGroupResult : NSObject
 /**
  * url
