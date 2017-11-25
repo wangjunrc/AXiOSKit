@@ -1,14 +1,14 @@
 //
-//  AXNetHelper+Tool.h
+//  AXNetManager+Tool.h
 //  BigApple
 //
 //  Created by Mole Developer on 2016/11/1.
 //  Copyright © 2016年 MoleDeveloper. All rights reserved.
 //
 
-#import "AXNetHelper.h"
+#import "AXNetManager.h"
 
-@interface AXNetHelper (Version)
+@interface AXNetManager (Version)
 /**
  * 请求AppStore,得到app的版本信息
  */

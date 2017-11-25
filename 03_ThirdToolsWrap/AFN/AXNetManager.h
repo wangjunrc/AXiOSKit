@@ -1,5 +1,5 @@
 //
-//  AXNetHelper.h
+//  AXNetManager.h
 //  Xile
 //
 //  Created by Mole Developer on 2016/10/19.
@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
+
 extern NSString *const AXNetLoadTitle;
 //extern NSString *const AXNetErrorTitle;
 //extern NSString *const AXNetFailureText;
@@ -35,14 +36,14 @@ static NSURLSessionDataTask *_dataTask;
 /**
  * 下载保存路径,iOS只有3个位置
  */
-@interface AXNetHelper : NSObject
+@interface AXNetManager : NSObject
 
 /**
  创建请求对象
 
  @return 请求对象
  */
-+(AFHTTPSessionManager *)createSessionManager;
++(AFHTTPSessionManager *)shareManager;
 
 /**
  处理AFN 返回结果,进行判断 json xml等类型
@@ -63,17 +64,4 @@ static NSURLSessionDataTask *_dataTask;
 +(void)setupNetWorkStatus:(void(^)(AFNetworkReachabilityStatus status))block;
 
 @end
-
-
-//#pragma mark - @interface NetOne
-///**
-// * 单例 确保用一个请求
-// */
-//@interface NetOnly : AFHTTPSessionManager
-//
-//+(instancetype )shareInstace;
-//
-//@end
-
-
 

@@ -1,18 +1,11 @@
 //
-//  AXNetHelper.m
+//  AXNetManager.m
 //  Xile
 //
 //  Created by Mole Developer on 2016/10/19.
 //  Copyright © 2016年 MoleDeveloper. All rights reserved.
 //
 
-
-
-
-
-#import "AXNetHelper.h"
-
-#import "AXToolsHeader.h"
 NSString *const AXNetLoadTitle = @"Loading...";
 //NSString *const AXNetErrorTitle = @"网络连接错误";
 //NSString *const AXNetFailureText = @"网络连接错误";
@@ -31,7 +24,11 @@ NSString *const gifMimeType = @"image/gif";
 NSString *const pngMimeType = @"image/png";
 NSString *const icoMimeType = @"image/png";
 
-@implementation AXNetHelper
+
+
+#import "AXNetManager.h"
+
+@implementation AXNetManager
 
 
 //static NSURLSessionDataTask *_dataTask;
@@ -41,12 +38,12 @@ NSString *const icoMimeType = @"image/png";
  
  @return 请求对象
  */
-+(AFHTTPSessionManager *)createSessionManager{
++(AFHTTPSessionManager *)shareManager{
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.requestSerializer.timeoutInterval = 20;
-    
+   
 //    //https请求使用
 //    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"https" ofType:@"cer"];
 //    NSData * certData =[NSData dataWithContentsOfFile:cerPath];
