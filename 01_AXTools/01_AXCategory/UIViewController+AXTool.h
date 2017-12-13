@@ -41,10 +41,12 @@
  */
 -(void)ax_backObjBlock:(void(^)(id obj))backBlock;
 
+
+typedef void(^BackBlock)(id obj);
 /**
  *
  */
-@property (nonatomic, copy) void(^backBlock)(id obj);
+@property (nonatomic, copy) BackBlock backBlock;
 
 
 
@@ -55,7 +57,7 @@
  @param presentNav 被present自带
  @param noHave 没有
  */
--(void)ax_havNav:(void(^)(UINavigationController *nav))haveNav isPresentNav:(void(^)(UINavigationController *nav))presentNav noHave:(void(^)())noHave;
+-(void)ax_havNav:(void(^)(UINavigationController *nav))haveNav isPresentNav:(void(^)(UINavigationController *nav))presentNav noHave:(void(^)(void))noHave;
 
 
 /**
@@ -69,10 +71,9 @@
 
 /**
  设置tabBarItem 属性 不区分图片色,使用tabBar颜色
- 
+
  @param title title
- @param imageName imageName
- @param selectImageName selectImageName
+ @param imageName imageName descriptionimageName
  */
 -(void)ax_tabBarWithTitle:(NSString *)title imageName:(NSString *)imageName;
 

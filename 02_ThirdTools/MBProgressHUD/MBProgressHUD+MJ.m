@@ -64,7 +64,7 @@
     [self show:title icon:@"" view:nil];
 }
 
-+ (void)showSuccess:(NSString *)success completed:(void(^)())completed{
++ (void)showSuccess:(NSString *)success completed:(void(^)(void))completed{
     
     [self showSuccess:success toView:nil];
     

@@ -17,7 +17,7 @@
  @param condition 条件
  @param events 事件
  */
-- (void)ax_messageWithSecond:(NSInteger)second condition:(BOOL (^)())condition action:(void(^)(UIButton *button))action;
+- (void)ax_messageWithSecond:(NSInteger)second condition:(BOOL (^)(void))condition action:(void(^)(UIButton *button))action;
 
 
 /**

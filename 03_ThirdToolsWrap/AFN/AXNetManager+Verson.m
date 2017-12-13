@@ -10,7 +10,7 @@
 #import "AXNetManager+Base.h"
 #import "NSString+AXTool.h"
 @implementation AXNetManager (Version)
-+(void )appStoreVersionAppid:(NSString *)appid success:(void(^)(NSString *appVersion))successBlock failure:(void(^)())failureBlock{
++(void )appStoreVersionAppid:(NSString *)appid success:(void(^)(NSString *appVersion))successBlock failure:(void(^)(void))failureBlock{
     
     NSString *url = [[NSString alloc] initWithFormat:@"http://itunes.apple.com/lookup?id=%@",appid];
     
@@ -40,7 +40,7 @@
  0   工程版本 == 服务器版本
  1   工程版本 > 服务器版本
  */
-+(void)projectVersionCompareAppStoreVersionWithAppid:(NSString *)appid success:(void(^)(NSInteger comp))successBlock failure:(void(^)())failureBlock{
++(void)projectVersionCompareAppStoreVersionWithAppid:(NSString *)appid success:(void(^)(NSInteger comp))successBlock failure:(void(^)(void))failureBlock{
     
     [self appStoreVersionAppid:appid success:^(NSString *appVersion) {
         
@@ -62,7 +62,7 @@
 }
 
 
-+(void)versionToMyServerVersionByAppid:(NSString *)appid success:(void(^)(BOOL comp))block failure:(void(^)())failureBlock{
++(void)versionToMyServerVersionByAppid:(NSString *)appid success:(void(^)(BOOL comp))block failure:(void(^)(void))failureBlock{
     
     [self appStoreVersionAppid:appid success:^(NSString *appVersion) {
         NSString *loc = [NSString ax_getAppVersion];

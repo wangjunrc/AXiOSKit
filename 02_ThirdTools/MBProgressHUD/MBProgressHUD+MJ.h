@@ -35,7 +35,7 @@
 /**
  * 显示成功,含有回调
  */
-+ (void)showSuccess:(NSString *)success completed:(void(^)())completed;
++ (void)showSuccess:(NSString *)success completed:(void(^)(void))completed;
 /**
  * 显示文字,不需要图片
  */

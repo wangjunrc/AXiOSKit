@@ -47,7 +47,7 @@
  @param certain 选中按钮回调
  @param cancel 取消回调
  */
--(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain cancel:(void(^)( ))cancel;
+-(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain cancel:(void(^)(void))cancel;
 
 /**
  Sheet 退出登录
@@ -55,7 +55,7 @@
  @param iPadView 兼容iPad需要传入view
  @param certain 确定回调
  */
--(void)ax_showSheeLogoutByPadView:(UIView *)iPadView certain:(void(^)())certain;
+-(void)ax_showSheeLogoutByPadView:(UIView *)iPadView certain:(void(^)(void))certain;
 
 
 @end

@@ -89,7 +89,7 @@
 /**
  * 是否有navigationController
  */
--(void)ax_haveNavigationController:(void(^)(UINavigationController *nav))have noHave:(void(^)())noHave{
+-(void)ax_haveNavigationController:(void(^)(UINavigationController *nav))have noHave:(void(^)(void))noHave{
 
     if (self.navigationController) {
         
@@ -115,7 +115,7 @@
  @param presentNav 被present自带
  @param noHave 没有
  */
--(void)ax_havNav:(void(^)(UINavigationController *nav))haveNav isPresentNav:(void(^)(UINavigationController *nav))presentNav noHave:(void(^)())noHave{
+-(void)ax_havNav:(void(^)(UINavigationController *nav))haveNav isPresentNav:(void(^)(UINavigationController *nav))presentNav noHave:(void(^)(void))noHave{
     
     if (!self.navigationController) {//有导航
         if (noHave) {
@@ -200,13 +200,13 @@
 /**
  * backBlock set
  */
-- (void)setBackBlock:(AXParameterBlock)backBlock{
+- (void)setBackBlock:(BackBlock)backBlock{
     objc_setAssociatedObject(self, @selector(backBlock),backBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 /**
  * backBlock get
  */
-- (AXParameterBlock)backBlock{
+- (BackBlock)backBlock{
     return objc_getAssociatedObject(self,@selector(backBlock));
 }
 

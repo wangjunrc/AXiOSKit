@@ -12,13 +12,13 @@
 /**
  * 请求AppStore,得到app的版本信息
  */
-+(void )appStoreVersionAppid:(NSString *)appid success:(void(^)(NSString *appVersion))successBlock failure:(void(^)())failureBlock;
++(void )appStoreVersionAppid:(NSString *)appid success:(void(^)(NSString *appVersion))successBlock failure:(void(^)(void))failureBlock;
 
 /**
  * 工程版本号与AppStore版本号对比 0>相同 1,2,3>顺序的版本不同,失败,表示网络请求错误
  */
 
-//+(void)versionToServerVersionByAppid:(NSString *)appid success:(void(^)(NSInteger comp))block failure:(void(^)())failureBlock;
+//+(void)versionToServerVersionByAppid:(NSString *)appid success:(void(^)(NSInteger comp))block failure:(void(^)(void))failureBlock;
 
 /**
  * 工程版本号与AppStore版本号对比 
@@ -26,7 +26,7 @@
  0   工程版本 == 服务器版本
  1   工程版本 > 服务器版本
  */
-+(void)projectVersionCompareAppStoreVersionWithAppid:(NSString *)appid success:(void(^)(NSInteger comp))successBlock failure:(void(^)())failureBlock;
++(void)projectVersionCompareAppStoreVersionWithAppid:(NSString *)appid success:(void(^)(NSInteger comp))successBlock failure:(void(^)(void))failureBlock;
 
 
 @end

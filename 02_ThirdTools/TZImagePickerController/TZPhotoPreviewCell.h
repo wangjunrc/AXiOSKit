@@ -12,7 +12,7 @@
 @interface TZPhotoPreviewCell : UICollectionViewCell
 
 @property (nonatomic, strong) TZAssetModel *model;
-@property (nonatomic, copy) void (^singleTapGestureBlock)();
+@property (nonatomic, copy) void (^singleTapGestureBlock)(void);
 
 - (void)recoverSubviews;
 

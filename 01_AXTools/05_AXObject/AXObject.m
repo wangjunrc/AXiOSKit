@@ -10,7 +10,7 @@
 
 @implementation AXObject
 
-+(void)debug:(void(^)())bebug release:(void(^)())release{
++(void)debug:(void(^)(void))bebug release:(void(^)(void))release{
     
 #ifdef DEBUG
     if (bebug) {
@@ -25,7 +25,7 @@
 }
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-+(void)iPad:(void(^)())iPad iPhone:(void(^)())iPhone{
++(void)iPad:(void(^)(void))iPad iPhone:(void(^)(void))iPhone{
 
     if( IS_IPAD ){
         if (iPad) {

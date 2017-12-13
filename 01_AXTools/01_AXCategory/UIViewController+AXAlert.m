@@ -112,7 +112,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Sheet 有取消回调
  */
--(void)ax_showSheetByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain cancel:(void(^)( ))cancel{
+-(void)ax_showSheetByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain cancel:(void(^)(void))cancel{
     
     [self ax_showSheetByiPadView:nil title:title message:message actionArray:actionArray certain:certain cancel:cancel];
     
@@ -145,7 +145,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Sheet 退出登录
  */
--(void)ax_showSheeLogout:(void(^)())certain{
+-(void)ax_showSheeLogout:(void(^)(void))certain{
     [self ax_showSheeLogoutByPadView:nil certain:certain];
     
     
@@ -157,7 +157,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"退出登录") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         if (certain) {
-            certain(index);
+            certain();
         }
     }]];
     
@@ -178,7 +178,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * 有确定和回调
  */
--(void)ax_showAlertByTitle:(NSString *)title certain:(void(^)())certain{
+-(void)ax_showAlertByTitle:(NSString *)title certain:(void(^)(void))certain{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     
@@ -195,7 +195,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * 有确定,取消 ,确定按钮文字
  */
--(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message certainTitle:(NSString *)certainTitle certain:(void(^)())certain cancel:(void(^)())cancel{
+-(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message certainTitle:(NSString *)certainTitle certain:(void(^)(void))certain cancel:(void(^)(void))cancel{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
@@ -217,7 +217,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * 有确定,取消
  */
--(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message certain:(void(^)())certain cancel:(void(^)())cancel{
+-(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message certain:(void(^)(void))certain cancel:(void(^)(void))cancel{
     
     [self ax_showAlertByTitle:title message:message certainTitle:AXLocalizedString(@"确定") certain:certain cancel:cancel];
     
@@ -240,7 +240,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * 流量网络下载,提示
  */
--(void)ax_showNetDownloadGo:(void(^)())go cancel:(void(^)())cancel{
+-(void)ax_showNetDownloadGo:(void(^)(void))go cancel:(void(^)(void))cancel{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:AXLocalizedString(@"当前网络为数据流量") message:AXLocalizedString(@"是否取消下载") preferredStyle:UIAlertControllerStyleAlert];
     
@@ -264,7 +264,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Alert含有输入文本框
  */
--(void)ax_showAlertTFByTitle:(NSString *)title message:(NSString *)message certain:(void(^)( NSString *text))certain cancel:(void(^)())cancel{
+-(void)ax_showAlertTFByTitle:(NSString *)title message:(NSString *)message certain:(void(^)( NSString *text))certain cancel:(void(^)(void))cancel{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
@@ -297,7 +297,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Alert含有输入文本框
  */
--(void)ax_showAlertTF:(UITextField *)textF Title:(NSString *)title message:(NSString *)message certain:(void(^)( UITextField *textF))certain cancel:(void(^)())cancel{
+-(void)ax_showAlertTF:(UITextField *)textF Title:(NSString *)title message:(NSString *)message certain:(void(^)( UITextField *textF))certain cancel:(void(^)(void))cancel{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     

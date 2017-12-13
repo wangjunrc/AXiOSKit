@@ -96,7 +96,7 @@ int ax_getRandomFromTo(int from ,int to);
 /**
  * 打开通用设置
  */
-BOOL ax_OpenPrefsRoot();
+BOOL ax_OpenPrefsRoot(void);
 
 @end
 

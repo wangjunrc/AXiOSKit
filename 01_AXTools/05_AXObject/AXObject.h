@@ -11,11 +11,11 @@
 
 @interface AXObject : NSObject
 
-+(void)debug:(void(^)())bebug release:(void(^)())release;
++(void)debug:(void(^)(void))bebug release:(void(^)(void))release;
 
 +(void)ax_configure;
 
-+(void)iPad:(void(^)())bebug iPhone:(void(^)())release;
++(void)iPad:(void(^)(void))bebug iPhone:(void(^)(void))release;
 
 
 @end

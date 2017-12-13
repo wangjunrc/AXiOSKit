@@ -11,10 +11,6 @@
 #import "AXMacros_log.h"
 #import "AXMacros_instance.h"
 
-typedef void(^AXNoParameterBlock)();
-
-typedef void(^AXParameterBlock)(id obj);
-
 // 弱引用
 #define axSelfWeak __weak typeof(self) selfWeak = self;
 
