@@ -15,8 +15,6 @@ extern NSString *const axUserInfoKey;
 extern NSString *const axSectionHeadID;
 extern NSString *const axSectionFootID;
 
-
-
 @interface AXConstant : NSObject
 /**
  是否能打开url

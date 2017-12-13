@@ -7,6 +7,8 @@
 //
 
 #import "UIImageView+AXCircle.h"
+#import "UIImageView+WebCache.h"
+#import "UIImage+AXTool.h"
 
 @implementation UIImageView (AXCircle)
 

@@ -6,6 +6,10 @@
 //  Copyright © 2016年 MoleDeveloper. All rights reserved.
 //
 
+#import "AXNetManager.h"
+#import "AXToolsHeader.h"
+
+
 NSString *const AXNetLoadTitle = @"Loading...";
 //NSString *const AXNetErrorTitle = @"网络连接错误";
 //NSString *const AXNetFailureText = @"网络连接错误";
@@ -23,10 +27,6 @@ NSString *const jpegMimeType = @"image/jpeg";
 NSString *const gifMimeType = @"image/gif";
 NSString *const pngMimeType = @"image/png";
 NSString *const icoMimeType = @"image/png";
-
-
-
-#import "AXNetManager.h"
 
 @implementation AXNetManager
 

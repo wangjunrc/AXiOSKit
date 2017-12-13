@@ -10,6 +10,6 @@
 
 @interface LameHelper : NSObject
 
-+(BOOL )toMp3WithSourcePath:(NSString *)sourcePath mp3Path:(NSString *)mp3Path;
+//+(BOOL )toMp3WithSourcePath:(NSString *)sourcePath mp3Path:(NSString *)mp3Path;
 
 @end

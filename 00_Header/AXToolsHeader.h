@@ -36,7 +36,7 @@
 #pragma mark - 01_AXTools
 
 #import "IBObjectHeader.h"
-#import "AXNetHelperHeader.h"
+#import "AXNetManager.h"
 #import "AXConstant.h"
 #import "AXViewController.h"
 #import "AXBaseAlertVC.h"
@@ -123,7 +123,7 @@
 
 #import "UIScrollView+AXRefresh.h"
 
-#import "AXNetHelperHeader.h"
+#import "AXNetManager.h"
 /* 04_ThirdSDK */
 #pragma mark - 04_ThirdSDK
 

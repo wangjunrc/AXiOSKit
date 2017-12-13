@@ -218,4 +218,30 @@
     return objc_getAssociatedObject(self,@selector(ax_popVC));
 }
 
+
+-(void)ax_popoverWithContentSize:(CGSize )contentSize sourceView:(UIView  *)sourceView orItem:(UIBarButtonItem  *)item{
+    
+    self.modalPresentationStyle = UIModalPresentationPopover;
+    self.popoverPresentationController.delegate = self;
+    self.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
+    self.preferredContentSize = contentSize;
+    
+    if (sourceView) {
+        
+        self.popoverPresentationController.sourceView = sourceView;
+        self.popoverPresentationController.sourceRect = sourceView.bounds;
+        
+    }else if (item)  {
+        
+        self.popoverPresentationController.barButtonItem = item;
+    }else{
+        NSAssert(0, @"必须有sourceView或者item");
+    }
+}
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller{
+    
+    return UIModalPresentationNone;
+}
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "AXNetManager+Download.h"
-
+#import "AXMacros.h"
 @implementation AXNetManager (Download)
 
 + (void )postDownURL:(NSString *)url showStatus:(BOOL )showStatus downPath:(NSString *)downPath progress:(void (^)(float aProgress))progress success:(void(^)(NSString *filePath))success failure:(void(^)(NSInteger statusCode))failure{

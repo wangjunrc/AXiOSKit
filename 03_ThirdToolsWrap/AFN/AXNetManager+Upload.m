@@ -7,8 +7,9 @@
 //
 
 #import "AXNetManager+Upload.h"
-
-
+#import "MBProgressHUD.h"
+#import "MBProgressHUD+MJ.h"
+#import "AXMacros_log.h"
 #pragma mark - NetFormData
 @implementation  AXFormData
 

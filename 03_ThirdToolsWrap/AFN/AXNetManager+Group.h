@@ -11,10 +11,6 @@
 
 @interface AXNetManager (Group)
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 655b48996deb59798bf9bc6956a24f7ed81fe4ec
 + (void)postGroup:(NSArray<AXNetGroup *> *)group complete:(void(^)(NSArray<AXNetGroupResult *> *results))complete isLog:(BOOL )log;
 
 @end

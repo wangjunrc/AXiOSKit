@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AXConstant.h"
-
-@interface UIViewController (AXTool)
+#import "AXMacros.h"
+@interface UIViewController (AXTool)<UIPopoverPresentationControllerDelegate>
 
 /**
  * 保存图片到系统相册
@@ -44,7 +44,7 @@
 /**
  *
  */
-@property (nonatomic, copy) AXParameterBlock  backBlock;
+@property (nonatomic, copy) void(^backBlock)(id obj);
 
 
 
@@ -76,5 +76,13 @@
  */
 -(void)ax_tabBarWithTitle:(NSString *)title imageName:(NSString *)imageName;
 
+/**
+ iOS8.0开始推荐使用UIPopoverPresentationController，用于替代UIPopoverController iPhone和iPad 都可以使用
+ 
+ @param contentSize CGSize
+ @param sourceView UIView
+ @param item UIBarButtonItem
+ */
+-(void)ax_popoverWithContentSize:(CGSize )contentSize sourceView:(UIView  *)sourceView orItem:(UIBarButtonItem  *)item;
 
 @end

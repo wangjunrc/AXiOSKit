@@ -7,7 +7,8 @@
 //
 
 #import "AXNetManager+Version.h"
-
+#import "AXNetManager+Base.h"
+#import "NSString+AXTool.h"
 @implementation AXNetManager (Version)
 +(void )appStoreVersionAppid:(NSString *)appid success:(void(^)(NSString *appVersion))successBlock failure:(void(^)())failureBlock{
     

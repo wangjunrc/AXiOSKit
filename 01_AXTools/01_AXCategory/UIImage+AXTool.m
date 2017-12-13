@@ -7,7 +7,7 @@
 //
 
 #import "UIImage+AXTool.h"
-
+#import "AXToolsHeader.h"
 @implementation UIImage (AXTool)
 
 /**

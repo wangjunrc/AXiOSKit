@@ -7,7 +7,7 @@
 //
 
 #import "AXNetManager+Base.h"
-
+#import "AXToolsHeader.h"
 @implementation AXNetManager (Base)
 /**
  * post请求
@@ -20,14 +20,11 @@
  * post请求
  */
 + (void)POSTWithUrl:(NSString *)url showHUD:(BOOL )showHud parameters:(NSDictionary *)parameters  success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
-<<<<<<< HEAD
+
     
     AXLog(@"url:%@ -- parameters:%@",url,parameters);
-=======
+
     AXLog(@"%@ -- %@",url,parameters);
->>>>>>> 655b48996deb59798bf9bc6956a24f7ed81fe4ec
-    
-    
     [self cancelAFN];
     
     MBProgressHUD *hud = nil;
