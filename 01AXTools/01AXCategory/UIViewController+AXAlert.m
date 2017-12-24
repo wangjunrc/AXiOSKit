@@ -17,8 +17,6 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 
 @end
 
-
-
 @implementation UIViewController (AXAlert)
 
 #pragma mark - Sheet
@@ -31,58 +29,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  */
 -(void)ax_showCameraWithEditing:(BOOL)edit block:(void(^)(UIImage *originalImage,UIImage *editedImage))block{
     [self  ax_showCameraWithEditing:edit showiPadView:nil block:block];
-//    self.cameraEditBlock = block;
-//    
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-//    
-//    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-//    
-//    [alert addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){ //支持拍照
-//            UIImagePickerController *picker = [[UIImagePickerController alloc]init];
-//            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//            picker.allowsEditing = edit;
-//            picker.delegate = self;
-//            [self presentViewController:picker animated:YES completion:nil];
-//        }
-//    }]];
-//    
-//    [alert addAction:[UIAlertAction actionWithTitle:@"从相册中选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        
-//        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){//图片列表方式
-//            
-//            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-//            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-//            picker.delegate = self;
-//            //设置选择后的图片可被编辑
-//            picker.allowsEditing = edit;
-//            
-//            [self presentViewController:picker animated:YES completion:nil];
-//        }
-//    }]];
-//    
-//    
-//    [self presentViewController:alert animated:YES completion:nil];
-
 }
-/**
- * UIImagePickerControllerDelegate
- */
-//-(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-//    
-//    [picker dismissViewControllerAnimated:YES completion:nil];
-//    
-//    //原图
-//    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-//    
-//    //编辑后的图片
-//    UIImage* editedImage = info[UIImagePickerControllerEditedImage];
-//
-//    if (self.cameraEditBlock) {
-//        self.cameraEditBlock(originalImage,editedImage);
-//    }
-//}
-
 
 /**
  * Sheet  没有取消回调
@@ -90,22 +37,6 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 -(void)ax_showSheetByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain{
     
     [self ax_showSheetByiPadView:nil title:title message:message actionArray:actionArray certain:certain];
-    
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
-//    
-//    
-//    for (NSInteger index=0; index<actionArray.count; index++) {
-//        
-//        NSString *title = actionArray[index];
-//        
-//        [alert addAction:[UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//            if (certain) {
-//                certain(index);
-//            }
-//        }]];
-//    }
-//    
-//    [self presentViewController:alert animated:YES completion:nil];
     
 }
 
@@ -115,55 +46,14 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 -(void)ax_showSheetByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain cancel:(void(^)(void))cancel{
     
     [self ax_showSheetByiPadView:nil title:title message:message actionArray:actionArray certain:certain cancel:cancel];
-    
-    
-//    UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
-//    
-//    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-//        if (cancel) {
-//            cancel();
-//        }
-//    }]];
-//    
-//    
-//    for (NSInteger index=0; index<actionArray.count; index++) {
-//        
-//        NSString *title = actionArray[index];
-//        
-//        [alert addAction:[UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//            if (certain) {
-//                certain(index);
-//            }
-//        }]];
-//    }
-//    
-//    [self presentViewController:alert animated:YES completion:nil];
-    
 }
-
 
 /**
  * Sheet 退出登录
  */
 -(void)ax_showSheeLogout:(void(^)(void))certain{
     [self ax_showSheeLogoutByPadView:nil certain:certain];
-    
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:AXLocalizedString(@"退出后不会删除任何历史数据,下次登录依然可以使用本账号") preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-    }]];
-    
-    
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"退出登录") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-        if (certain) {
-            certain();
-        }
-    }]];
-    
-    [self presentViewController:alert animated:YES completion:nil];
 }
-
 
 #pragma mark - Alert
 
@@ -220,21 +110,6 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 -(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message certain:(void(^)(void))certain cancel:(void(^)(void))cancel{
     
     [self ax_showAlertByTitle:title message:message certainTitle:AXLocalizedString(@"确定") certain:certain cancel:cancel];
-    
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-//    
-//    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        if (certain) {
-//            certain();
-//        }
-//    }]];
-//    
-//    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-//        if (cancel) {
-//            cancel();
-//        }
-//    }]];
-//    [self presentViewController:alert animated:YES completion:nil];
 }
 
 /**
