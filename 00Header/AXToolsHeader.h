@@ -19,7 +19,7 @@
  
  OBJC_ASSOCIATION_ASSIGN;            //assign策略
  OBJC_ASSOCIATION_COPY_NONATOMIC;    //copy策略
- OBJC_ASSOCIATION_RETAIN_NONATOMIC;  // retain策略
+ OBJC_ASSOCIATION_RETAIN_NONATOMIC;  // retain strong 策略
  
  OBJC_ASSOCIATION_RETAIN;
  OBJC_ASSOCIATION_COPY;
@@ -98,7 +98,7 @@
 #import "UIViewController+AXiPadAlert.h"
 #import "UIViewController+BackButtonHandler.h"
 #import "NSUserDefaults+AXTool.h"
-
+#import "NSNumber+AXTool.h"
 
 /* 02_ThirdTools */
 #pragma mark - 02_ThirdTools
