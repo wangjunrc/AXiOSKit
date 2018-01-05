@@ -62,10 +62,10 @@ NSString *const icoMimeType = @"image/png";
  *  取消当前请求
  */
 + (void)cancelAFN{
-    if (_dataTask) {
-        [_dataTask cancel];
-        _dataTask = nil;
-    }
+//    if (_dataTask) {
+//        [_dataTask cancel];
+//        _dataTask = nil;
+//    }
 }
 
 

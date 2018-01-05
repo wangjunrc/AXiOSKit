@@ -25,7 +25,7 @@
     AXLog(@"url:%@ -- parameters:%@",url,parameters);
 
     AXLog(@"%@ -- %@",url,parameters);
-    [self cancelAFN];
+//    [self cancelAFN];
     
     MBProgressHUD *hud = nil;
     if (showHud) {
@@ -68,7 +68,7 @@
  */
 + (void)getURL:(NSString *)url parameter:(NSDictionary *)parameter success:(void(^)(id json))success failure:(void(^)(NSInteger state))failure isLog:(BOOL )log{
     
-    [self cancelAFN];
+//    [self cancelAFN];
     
     if (log) {
         AXLog(@"%@ /n %@",url,parameter);
@@ -101,14 +101,14 @@
  post请求
  
  @param url url
- @param parameters 参数
+ @param parameter 参数
  @param success 成功
  @param failure 失败
  @param log 是否打印参数,返回值
  */
 + (void)postURL:(NSString *)url parameter:(NSDictionary *)parameter success:(void(^)(id json))success failure:(void(^)(NSInteger state))failure isLog:(BOOL )log{
     
-    [self cancelAFN];
+//    [self cancelAFN];
     
     if (log) {
         AXLog(@"%@ /n %@",url,parameter);
