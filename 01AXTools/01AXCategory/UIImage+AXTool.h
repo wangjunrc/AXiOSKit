@@ -64,6 +64,8 @@
  * 矩形颜色图片
  */
 +(UIImage *)ax_imageRectangleWithSize:(CGSize )aSzize color:(UIColor *)aColor;
+
++(UIImage *)ax_imageWithColor:(UIColor *)color ;
 /**
  * 圆形颜色图片
  */
@@ -104,3 +106,4 @@
 -(UIImage *)ax_imageRectangleToSquare;
 
 @end
+

@@ -12,7 +12,7 @@
 
 /**
  将数字 整数部分转为每隔3位整数由","分隔,小数部分不变的 千分位 字符串
- 
+ 使用NumberFarmatt
  @return string
  */
 - (NSString *)ax_numberToThousands;

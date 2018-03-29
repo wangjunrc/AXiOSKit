@@ -7,7 +7,7 @@
 //
 
 #import "UIImage+AXTool.h"
-#import "AXToolsHeader.h"
+#import "AXMacros.h"
 @implementation UIImage (AXTool)
 
 /**
@@ -27,7 +27,7 @@
 
 /**
  将图片剪切成 指定半径 圆形
-
+ 
  @param radius 半径
  @param borderWidth 边框的宽度
  @param borderColor 边框的颜色
@@ -44,9 +44,8 @@
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(imageWidth, imageHeight), NO, 1.0);
     
     //3.1.圆半径,以宽.高一半,最小的为半径
-//    CGFloat radius = diameter*0.5;
+    //    CGFloat radius = diameter*0.5;
     //3.2.画圆
-    
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(imageWidth*0.5,imageHeight*0.5) radius:radius startAngle:0 endAngle:M_PI * 2 clockwise:YES];
     
     //3.3.设置圆线宽
@@ -144,7 +143,7 @@
     //3.2.画圆
     
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(imageWidth*0.5,imageHeight*0.5) radius:radius startAngle:0 endAngle:M_PI * 2 clockwise:YES];
-
+    
     //3.3.设置圆线宽
     bezierPath.lineWidth = borderWidth;
     
@@ -167,7 +166,7 @@
     UIGraphicsEndImageContext();
     //7.返回新图片
     return tempImage;
-
+    
 }
 
 
@@ -176,7 +175,7 @@
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(80, 80), NO, 4);
     UIBezierPath *path =[UIBezierPath bezierPath];
     //    NSArray *a = [NSArray arrayWithObject:path];
-   
+    
     //2.直接绘制路线
     [path moveToPoint:CGPointMake(0, 60)];
     [path addLineToPoint:CGPointMake(0, 75)];
@@ -207,7 +206,7 @@
  *  画颜色线, ______ 形状线图片
  */
 +(UIImage *)ax_imageStraightLineWithColor:(UIColor *)aColor{
-
+    
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(80, 80), NO, 4);
     UIBezierPath *path =[UIBezierPath bezierPath];
     //2.直接绘制路线
@@ -229,7 +228,7 @@
  * 圆背景,和颜色
  */
 +(UIImage *)ax_imageWithCircleColor:(UIColor *)aColor Size:(CGSize )aSzize Width:(CGFloat )aWidht{
-
+    
     UIGraphicsBeginImageContextWithOptions(aSzize, NO,0);
     UIBezierPath *path =[UIBezierPath bezierPathWithOvalInRect:CGRectMake(aWidht, aWidht, aSzize.width-2*aWidht,aSzize.height-2*aWidht)];
     path.lineWidth = aWidht;
@@ -249,7 +248,7 @@
     
     UIGraphicsBeginImageContextWithOptions(aSzize, NO,0);
     
-     UIBezierPath *path=[UIBezierPath bezierPathWithRect:CGRectMake(0, 0, aSzize.width, aSzize.height)];
+    UIBezierPath *path=[UIBezierPath bezierPathWithRect:CGRectMake(0, 0, aSzize.width, aSzize.height)];
     
     [[UIColor whiteColor] setStroke];
     [aColor setFill];
@@ -260,12 +259,27 @@
     return tempImg;
 }
 
+
++(UIImage *)ax_imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
 /**
  * 圆形颜色图片
  */
 +(UIImage *)ax_imageWithRadius:(CGFloat )radius color:(UIColor *)aColor{
     UIGraphicsBeginImageContextWithOptions( CGSizeMake(radius*2, radius*2), NO,0);
-     UIBezierPath *path=[UIBezierPath bezierPathWithArcCenter:CGPointMake(radius, radius) radius:radius startAngle:0 endAngle:M_PI*2 clockwise:YES];
+    UIBezierPath *path=[UIBezierPath bezierPathWithArcCenter:CGPointMake(radius, radius) radius:radius startAngle:0 endAngle:M_PI*2 clockwise:YES];
     [[UIColor whiteColor] setStroke];
     [aColor setFill];
     [path stroke];
@@ -327,20 +341,20 @@
 
 /**
  初始化 UIImage 去掉系统默认对图片的渲染(默认渲染成蓝色)，恢复图片原来的颜色
-
+ 
  @param name name
  @return UIImage
  */
 +(instancetype)ax_imageOriginalByName:(NSString *)name{
     
-  return [[UIImage imageNamed:name]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-
+    return [[UIImage imageNamed:name]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
 }
 
 
 /**
  矩形图片-->正方形图片 以图片中心为中心，以最小边为边长，裁剪正方形图片
-
+ 
  @return 剪切图片
  */
 -(UIImage *)ax_imageRectangleToSquare{
@@ -365,3 +379,4 @@
 
 
 @end
+

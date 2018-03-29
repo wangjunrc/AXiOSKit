@@ -32,9 +32,8 @@
  objc_setAssociatedObject(id object, const void *key, id value, objc_AssociationPolicy policy);
  */
 
-/* 01_AXTools */
-#pragma mark - 01_AXTools
-
+/* 01AXTools */
+#pragma mark - 01AXTools
 #import "IBObjectHeader.h"
 #import "AXNetManager.h"
 #import "AXConstant.h"
@@ -50,12 +49,10 @@
 #import "WKWebViewController.h"
 #import "AXTableViewController.h"
 #import "AXSafariVC.h"
-
 #import "AXConstant.h"
 #import "AXMacros.h"
 #import "AXFullLayout.h"
 #import "AXViewModel.h"
-
 #import "UIView+AXFrame.h"
 #import "CALayer+AXFrame.h"
 #import "UIButton+AXTool.h"
@@ -100,12 +97,22 @@
 #import "NSUserDefaults+AXTool.h"
 #import "NSNumber+AXTool.h"
 
-/* 02_ThirdTools */
-#pragma mark - 02_ThirdTools
-
-#import "Masonry.h"
-#import "MBProgressHUD+MJ.h"
+/* 02ThirdTools */
+#pragma mark - 02ThirdTools
+#import "MBProgressHUD+AX.h"
 #import "MBProgressHUD.h"
+
+/* 03ThirdToolsWrap */
+#pragma mark - 03ThirdToolsWrap
+#import "UIScrollView+AXRefresh.h"
+#import "AXNetManager.h"
+
+/* 04ThirdSDK */
+#pragma mark - 04ThirdSDK
+
+/* 05Pod */
+#pragma mark - 05Pod
+#import "Masonry.h"
 #import "UIImageView+WebCache.h"
 #import "MJExtension.h"
 #import "UIButton+WebCache.h"
@@ -114,20 +121,9 @@
 #import "UINavigationController+TZPopGesture.h"
 /**多选照片*/
 #import "TZImagePickerController.h"
-#import "JDFSequentialTooltipManager.h"
+/*气泡提示*/
+//#import "JDFSequentialTooltipManager.h"
 #import "UITextView+WZB.h"
 #import "UIImage+GIF.h"
-
-/* 03_ThirdToolsWrap */
-#pragma mark - 03_ThirdToolsWrap
-
-#import "UIScrollView+AXRefresh.h"
-
-#import "AXNetManager.h"
-/* 04_ThirdSDK */
-#pragma mark - 04_ThirdSDK
-
-
-
 
 #endif /* AXToolsHeader_h */
