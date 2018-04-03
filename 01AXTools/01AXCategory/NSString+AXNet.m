@@ -59,7 +59,10 @@
         NSString * _value = parameters[_key];
         
         signStr = [NSString stringWithFormat:@"%@%@=%@", signStr, _key, _value];
-        baseUrl = [NSString stringWithFormat:@"%@%@=%@", baseUrl, _key, [_value.description stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]; // 将value编码
+        
+        baseUrl = [NSString stringWithFormat:@"%@%@=%@", baseUrl, _key,  [_value.description stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
+        
+//        baseUrl = [NSString stringWithFormat:@"%@%@=%@", baseUrl, _key, [_value.description stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]; // 将value编码
 
         if (i < ([parameters count] - 1)) {
             signStr = [signStr stringByAppendingString:@"&"];

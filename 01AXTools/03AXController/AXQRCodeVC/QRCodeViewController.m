@@ -193,7 +193,7 @@
  *
  *  @param captureOutput   输出对象
  *  @param metadataObjects 信息
- *  @param connection
+ *  @param connection 结果
  */
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {

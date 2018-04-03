@@ -49,19 +49,7 @@ return _instance; \
 /*===单例模式,.m文件 end ===*/
 
 
-//vc中定义一个同名的view替代原来的
-#define AX_REDEFINE_CONTROLLER_VIEW_IMPL(aViewClass)\
-@dynamic view;\
-- (void)loadView{\
-[super loadView];\
-self.view = [[aViewClass alloc]init];\
-}\
-- (void)setView:(aViewClass *)view{\
-[super setView:view];\
-}\
-- (aViewClass *)view{\
-return (aViewClass *)[super view];\
-}\
+
 
 #endif /* AXMacros_instance_h */
 

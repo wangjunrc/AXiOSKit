@@ -172,11 +172,11 @@ typedef void(^ReloadBlock)(void);
 //- (void)emptyDataSetDidTapView:(UIScrollView *)scrollView{ // Do something}
 
 //点击button 响应
-- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView{
-    if (self.reloadBlock) {
-        self.reloadBlock();
-    }
-}
+//- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView{
+//    if (self.reloadBlock) {
+//        self.reloadBlock();
+//    }
+//}
 
 
 

@@ -9,10 +9,6 @@
 #ifndef AXToolsHeader_h
 #define AXToolsHeader_h
 
-#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-
-#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-
 /*
  
  分类重写set get 方法说明
@@ -121,8 +117,10 @@
 #import "UIImageView+WebCache.h"
 #import "IQKeyboardManager.h"
 #import "UINavigationController+TZPopGesture.h"
+
 /**多选照片*/
 #import "TZImagePickerController.h"
+
 /*气泡提示*/
 //#import "JDFSequentialTooltipManager.h"
 #import "UITextView+WZB.h"

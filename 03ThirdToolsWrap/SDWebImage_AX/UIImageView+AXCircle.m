@@ -15,7 +15,7 @@
  url路径 设置 image 圆形图片
  
  @param url url
- @param state 状态
+ @param placeholderImage 占位图片
  */
 -(void)ax_setImageCircleWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholderImage {
     

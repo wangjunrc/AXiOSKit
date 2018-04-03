@@ -26,7 +26,15 @@ BOOL ax_CanOpenURL(NSString  *str){
  * 打开URL
  */
 BOOL ax_OpenURL(NSString  *str){
+
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wdeprecated-declarations"
+
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+#pragma clang diagnostic pop
+    
+    
 }
 
 /**
@@ -37,8 +45,11 @@ BOOL ax_OpenURL(NSString  *str){
  @return 是否成功
  */
 BOOL ax_CallTelprompt(NSString  *phone){
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wdeprecated-declarations"
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@",phone]];
     return [[UIApplication sharedApplication] openURL:url];
+    #pragma clang diagnostic pop
 }
 
 /**
@@ -49,9 +60,11 @@ BOOL ax_CallTelprompt(NSString  *phone){
  @return 是否成功
  */
 BOOL ax_CallTel(NSString  *phone){
-    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wdeprecated-declarations"
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phone]];
     return [[UIApplication sharedApplication] openURL:url];
+    #pragma clang diagnostic pop
 }
 
 static void ax_uncaughtExceptionHandler(NSException*exception) {
@@ -67,7 +80,7 @@ static void ax_uncaughtExceptionHandler(NSException*exception) {
 /**
  xcode 奔溃日志
  */
-void ax_LogXcodeCache(){
+void ax_LogXcodeCache(void){
     
     NSSetUncaughtExceptionHandler(&ax_uncaughtExceptionHandler);
 }
@@ -125,7 +138,10 @@ int ax_getRandomFromTo(int from ,int to){
  * 打开通用设置
  */
 BOOL ax_OpenPrefsRoot(){
-    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=General"]];;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wdeprecated-declarations"
+    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=General"]];
+    #pragma clang diagnostic pop
 }
 
 /*

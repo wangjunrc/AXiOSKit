@@ -28,7 +28,7 @@ static NSInteger _countDownSecond;
  
  @param second 时长
  @param condition 条件
- @param events 事件
+ @param action 事件
  */
 - (void)ax_messageWithSecond:(NSInteger)second condition:(BOOL (^)(void))condition action:(void(^)(UIButton *button))action{
     

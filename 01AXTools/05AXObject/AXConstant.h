@@ -55,7 +55,7 @@ BOOL ax_CallTel(NSString  *phone);
 /**
  xcode 奔溃日志
  */
-void ax_LogXcodeCache();
+void ax_LogXcodeCache(void);
 
 /**
  * 创建nib

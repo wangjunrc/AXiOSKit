@@ -147,12 +147,13 @@ typedef enum{
         return;
         
     }
-        
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wdeprecated-declarations"
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [[UIApplication sharedApplication] openURL:URL];
         decisionHandler(WKNavigationActionPolicyCancel);
     });
-
+#pragma clang diagnostic pop
 }
 
 
@@ -502,12 +503,16 @@ typedef enum{
 - (UIProgressView *)progressView{
     if (!_progressView) {
         _progressView = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
-        
+    
+        __block CGRect tempFrame = CGRectZero;
         [self ax_havNav:^(UINavigationController *nav) {
-            _progressView.frame = CGRectMake(0, 64, self.view.bounds.size.width, 3);
+           tempFrame = CGRectMake(0, 64, self.view.bounds.size.width, 3);
         } isPresentNav:nil noHave:^{
-            _progressView.frame = CGRectMake(0, 20, self.view.bounds.size.width, 3);
+            tempFrame = CGRectMake(0, 20, self.view.bounds.size.width, 3);
         }];
+        
+        _progressView.frame = tempFrame;
+        
         // 设置进度条的色彩
         [_progressView setTrackTintColor:[UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1.0]];
         _progressView.progressTintColor = [UIColor greenColor];

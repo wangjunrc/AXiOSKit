@@ -28,11 +28,11 @@
 -(UIImage *)ax_imageCircleWithRadius:(CGFloat)radius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 
 /**
- *将图片剪切成圆形
- *@param image 需要剪切的图片
- *@param borderWidth 边框的宽度
- *@param borderColor 边框的颜色
- *@return 返回新的图片
+ 将图片剪切成圆形
+
+ @param borderWidth 边框的宽度
+ @param borderColor 边框的颜色
+ @return 返回新的图片
  */
 -(UIImage *)ax_imageCircleWithBorderWidth:(CGFloat)borderWidth AndBorderColor:(UIColor *)borderColor;
 

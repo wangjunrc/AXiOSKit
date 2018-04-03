@@ -24,7 +24,7 @@
  get请求
  
  @param url url
- @param parameters 参数
+ @param parameter 参数
  @param success 成功
  @param failure 失败
  @param log 是否打印参数,返回值
@@ -35,7 +35,7 @@
  post请求
  
  @param url url
- @param parameters 参数
+ @param parameter 参数
  @param success 成功
  @param failure 失败
  @param log 是否打印参数,返回值
