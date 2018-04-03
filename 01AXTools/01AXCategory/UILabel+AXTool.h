@@ -10,5 +10,9 @@
 
 @interface UILabel (AXTool)
 
+/**
+ * 是否可以长按显示复制
+ */
+@property (nonatomic,assign) BOOL isCopyable;
 
 @end
