@@ -1,0 +1,79 @@
+/* 
+  AXMyLocalizedString.strings
+  AXiOSToolsDemo
+
+  Created by liuweixing on 2018/4/3.
+  Copyright © 2018年 liuweixing. All rights reserved.
+*/
+"ax.copy" = "复制";
+"ax.paste" = "粘贴";
+"ax.i.know" = "知道了"
+"ax.back" = "返回"
+"ax.close" = "关闭"
+"ax.done" = "完成";
+"ax.confirm" = "确定";
+"ax.cancel" = "取消";
+
+"ax.say.something" = "说点什么吧......";
+"ax.personal.profile" = "个人简介";
+"ax.submit" = "提交";
+"ax.feedback" = "意见反馈";
+"ax.selectImage" = "选择图片";
+"ax.get.verification.code" = "获取验证码";
+"ax.resend" = "重发";
+"ax.login.failed" = "登录失败";
+"ax.click.ogin" = "点击登录";
+"ax.register" = "注册";
+"ax.reset.password" = "重置密码";
+"ax.input.email.phone" = "请输入邮箱或手机号，方便我们联系您";
+"ax.loading" = "正在加载...";
+"ax.message" = "消息";
+"ax.nick.name" = "昵称";
+"ax.name" = "姓名";
+"ax.change.password" = "修改密码";
+"ax.home.page" = "首页";
+"ax.input.new.password" = "请输入新密码";
+"ax.input.verification.code" = "请输入验证码";
+
+
+"ax.score" = "去评分";
+"ax.welcome.page" = "欢迎页";
+"ax.features" = "功能介绍";
+"ax.more.groups" = "更多组";
+"ax.replace.cover" = "替换封面";
+"ax.TakePhoto"  = "拍照";
+"ax.FromPhotoAlbum"  = "从相册选择";
+"ax.contains.empty"="输入含有空值";
+"ax.phone.error"="手机号为空或格式不正确，请确认";
+"ax.verification.sent"="验证码已发送";
+"ax.user.registered"="用户已注册";
+"ax.register.failure"="注册失败";
+"ax.network.anomaly"="网络异常";
+
+"ax.load.failure"="加载失败";
+"ax.deleting"="删除中";
+"ax.delete.failure"="删除失败";
+"ax.delete.success"="删除成功";
+"ax.modify.success"="修改成功";
+
+"ax.whether.login"="是否登录 ?";
+"ax.login"="登录";
+"ax.login.success"="登录成功";
+"ax.login.failure"="登录失败";
+"ax.logOut"="退出登录";
+"ax.logOut.message"="退出后不会删除任何历史数据,下次登录依然可以使用本账号";
+"ax.cannot.send.mes" = "该设备不能发送短信";
+
+"ax.input.name" = "请输入名称";
+"ax.input.original.password" = "请输入原密码";
+"ax.input.new.password" =  "请输入新密码";
+"ax.re-enter.new.password" = "请再次输入新密码";
+"ax.input.month"="请输入月份";
+"ax.input.year"="请输入年份";
+"ax.input.first.name" = "请输入姓";
+"ax.input.last.name" = "请输入名";
+"ax.input.phone" = "请输入手机号";
+"ax.input.email" = "请输入电子邮箱";
+"ax.input.password" = "请输入密码";
+"ax.check" = "验证中...";
+

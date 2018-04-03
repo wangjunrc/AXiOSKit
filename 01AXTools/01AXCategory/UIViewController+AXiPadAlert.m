@@ -39,9 +39,9 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:nil]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"拍照") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.TakePhoto") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){ //支持拍照
             UIImagePickerController *picker = [[UIImagePickerController alloc]init];
             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -51,7 +51,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
         }
     }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"从相册中选择") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.FromPhotoAlbum") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){//图片列表方式
             
@@ -118,7 +118,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         if (cancel) {
             cancel();
         }
@@ -150,13 +150,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 -(void)ax_showSheeLogoutByPadView:(UIView *)iPadView certain:(void(^)(void))certain{
     
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:AXLocalizedString(@"退出后不会删除任何历史数据,下次登录依然可以使用本账号") preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:AXMyLocalizedString(@"ax.logOut.message") preferredStyle:UIAlertControllerStyleActionSheet];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
     }]];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"退出登录") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.logOut") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         if (certain) {
             certain();
         }

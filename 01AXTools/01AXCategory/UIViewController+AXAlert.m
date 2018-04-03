@@ -72,7 +72,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"知道了") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.i.know") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (certain) {
             certain();
         }
@@ -89,13 +89,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(certainTitle )style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(certainTitle )style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (certain) {
             certain();
         }
     }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         if (cancel) {
             cancel();
         }
@@ -109,7 +109,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  */
 -(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message certain:(void(^)(void))certain cancel:(void(^)(void))cancel{
     
-    [self ax_showAlertByTitle:title message:message certainTitle:AXLocalizedString(@"确定") certain:certain cancel:cancel];
+    [self ax_showAlertByTitle:title message:message certainTitle:AXMyLocalizedString(@"ax.confirm") certain:certain cancel:cancel];
 }
 
 /**
@@ -117,16 +117,16 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  */
 -(void)ax_showNetDownloadGo:(void(^)(void))go cancel:(void(^)(void))cancel{
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:AXLocalizedString(@"当前网络为数据流量") message:AXLocalizedString(@"是否取消下载") preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:AXMyLocalizedString(@"当前网络为数据流量") message:AXMyLocalizedString(@"是否取消下载") preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"继续下载") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"继续下载") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         if (go) {
             go();
         }
     }]];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消下载") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"取消下载") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (cancel) {
             cancel();
         }
@@ -153,13 +153,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     }];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"确定") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.confirm") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (certain) {
             certain(weaktextF.text);
         }
     }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         if (cancel) {
             cancel();
         }
@@ -188,13 +188,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     }];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"确定") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.confirm") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         if (certain) {
             certain(weaktextF);
         }
     }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXLocalizedString(@"取消") style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
         if (cancel) {
             cancel();
         }

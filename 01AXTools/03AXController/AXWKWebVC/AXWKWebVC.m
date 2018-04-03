@@ -448,7 +448,7 @@ typedef enum{
                 if (title.length>0) {
                     self.title = title;
                 }else{
-                    self.title = AXLocalizedString(@"网页");
+                    self.title = AXMyLocalizedString(@"网页");
                 }
             }
         }
@@ -526,7 +526,7 @@ typedef enum{
         UIImage* backItemHlImage = [[UIImage imageNamed:@"backItemImage-hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         
         UIButton* backButton = [[UIButton alloc] init];
-        [backButton setTitle:AXLocalizedString(@"返回") forState:UIControlStateNormal];
+        [backButton setTitle:AXMyLocalizedString(@"ax.back") forState:UIControlStateNormal];
         [backButton setTitleColor:self.navigationController.navigationBar.tintColor forState:UIControlStateNormal];
         [backButton setTitleColor:[self.navigationController.navigationBar.tintColor colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
         [backButton.titleLabel setFont:[UIFont systemFontOfSize:17]];
@@ -544,7 +544,7 @@ typedef enum{
 - (UIButton *)cancelButton{
     if (!_cancelButton) {
         _cancelButton = [[UIButton alloc]init];
-        NSString*title = AXLocalizedString(@"取消");
+        NSString*title = AXMyLocalizedString(@"ax.cancel");
         [_cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_cancelButton setTitle:title forState:UIControlStateNormal];
         [_cancelButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
@@ -558,7 +558,7 @@ typedef enum{
 
 -(UIBarButtonItem*)closeItem{
     if (!_closeItem) {
-        _closeItem = [[UIBarButtonItem alloc] initWithTitle:AXLocalizedString(@"关闭") style:UIBarButtonItemStylePlain target:self action:@selector(closeItemAction:)];
+        _closeItem = [[UIBarButtonItem alloc] initWithTitle:AXMyLocalizedString(@"ax.close") style:UIBarButtonItemStylePlain target:self action:@selector(closeItemAction:)];
     }
     return _closeItem;
 }

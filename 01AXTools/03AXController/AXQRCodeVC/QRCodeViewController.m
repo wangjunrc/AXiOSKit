@@ -63,7 +63,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = AXLocalizedString(@"二维码/条码");
+    self.title = AXMyLocalizedString(@"二维码/条码");
     self.view.backgroundColor = [UIColor blackColor];
     self.customTabBar.selectedItem = self.customTabBar.items[0];
     self.customTabBar.delegate = self;

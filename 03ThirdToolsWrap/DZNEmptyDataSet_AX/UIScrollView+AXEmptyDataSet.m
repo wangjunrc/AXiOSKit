@@ -121,7 +121,7 @@ typedef void(^ReloadBlock)(void);
 - (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
     if (self.reloadBlock) {
         NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0f],NSForegroundColorAttributeName:[UIColor whiteColor]};
-        return [[NSAttributedString alloc] initWithString:AXLocalizedString(@"点击刷新") attributes:attributes];
+        return [[NSAttributedString alloc] initWithString:AXMyLocalizedString(@"点击刷新") attributes:attributes];
     }else{
         return nil;
         

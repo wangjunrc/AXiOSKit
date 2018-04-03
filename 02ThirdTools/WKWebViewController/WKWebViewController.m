@@ -273,7 +273,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 //                
 //                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mobileUrl]];
 //            }];
-//            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+//            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"ax.cancel" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
 //                return ;
 //            }];
 //            
@@ -332,7 +332,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 -(void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:@"ax.confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         completionHandler();
     }]];
     
@@ -342,10 +342,10 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 // js 信息的交流
 -(void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:@"ax.confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         completionHandler(YES);
     }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:@"ax.cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         completionHandler(NO);
     }]];
     [self presentViewController:alert animated:YES completion:NULL];
@@ -358,7 +358,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.textColor = [UIColor redColor];
     }];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:@"ax.confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         completionHandler([[alert.textFields lastObject] text]);
     }]];
     

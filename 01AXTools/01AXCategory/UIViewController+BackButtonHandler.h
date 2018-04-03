@@ -6,7 +6,7 @@
  
  - (BOOL)navigationShouldPopOnBackButton
  {
- UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"是否退出" message:@"退出提示" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+ UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"是否退出" message:@"退出提示" delegate:self cancelButtonTitle:@"ax.cancel" otherButtonTitles:@"ax.confirm", nil];
  [view show];
  return NO;
  }
