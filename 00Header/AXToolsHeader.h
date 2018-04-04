@@ -109,6 +109,18 @@
 //#import "JDFSequentialTooltipManager.h"
 #import "UITextView+WZB.h"
 
+/**
+ * 返回按钮拦截事件 <UINavigationControllerBackButtonHandlerProtocol>
+ 
+ - (BOOL)shouldHoldBackButtonEvent{
+    return  YES;
+ }
+ - (BOOL)canPopViewController{
+    return NO;
+ }
+ */
+//#import "UINavigationController+QMUI.h"
+
 /* 03ThirdToolsWrap */
 #pragma mark - 03ThirdToolsWrap
 #import "UIScrollView+AXRefresh.h"

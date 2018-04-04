@@ -33,6 +33,9 @@ pod 'SDCycleScrollView', '~> 1.75'
 # Facebook kvo 自己封装下
 pod 'KVOController', '~> 1.2'
 
+# QMUI 使用里面的 返回按钮拦截事件 <UINavigationControllerBackButtonHandlerProtocol>
+pod 'QMUIKit'
+
 #    让UIScrollView的滑动和系统侧滑手势并存，例如：在查看地图界面同时支持地图的滑动和侧滑返回。注：和FDFullscreenPopGesture库不冲突
 pod 'TZScrollViewPopGesture', '~> 1.0'
 
