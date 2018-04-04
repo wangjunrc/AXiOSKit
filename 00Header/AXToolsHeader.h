@@ -120,6 +120,7 @@
  }
  */
 //#import "UINavigationController+QMUI.h"
+#import "QMUIKit.h"
 
 /* 03ThirdToolsWrap */
 #pragma mark - 03ThirdToolsWrap
