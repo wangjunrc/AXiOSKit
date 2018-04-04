@@ -2,8 +2,8 @@
 //  UIScrollView+AXRefresh.m
 //  Xile
 //
-//  Created by Mole Developer on 2017/3/22.
-//  Copyright © 2017年 MoleDeveloper. All rights reserved.
+//  Created by liuweixing on 2017/3/22.
+//  Copyright © 2017年 liuweixing. All rights reserved.
 //
 
 #import "UIScrollView+AXRefresh.h"

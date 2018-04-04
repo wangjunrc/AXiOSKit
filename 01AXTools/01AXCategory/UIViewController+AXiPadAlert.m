@@ -3,7 +3,7 @@
 //  BigApple
 //
 //  Created by liuweixing on 2017/4/15.
-//  Copyright © 2017年 MoleDeveloper. All rights reserved.
+//  Copyright © 2017年 liuweixing. All rights reserved.
 //
 
 #import "UIViewController+AXiPadAlert.h"

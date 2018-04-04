@@ -1,9 +1,9 @@
 //
 //  NSString+AXEffective.m
-//  Financing118
+//  
 //
-//  Created by Mole Developer on 16/2/18.
-//  Copyright © 2016年 mole. All rights reserved.
+//  Created by liuweixing on 16/2/18.
+//  Copyright © 2016年 liuweixing All rights reserved.
 //
 
 #import "NSString+AXEffective.h"

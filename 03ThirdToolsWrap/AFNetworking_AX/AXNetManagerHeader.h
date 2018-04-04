@@ -2,8 +2,8 @@
 //  AXNetManagerHeader.h
 //  BigApple
 //
-//  Created by Mole Developer on 2016/11/22.
-//  Copyright © 2016年 MoleDeveloper. All rights reserved.
+//  Created by liuweixing on 2016/11/22.
+//  Copyright © 2016年 liuweixing. All rights reserved.
 //
 
 #ifndef AXNetManagerHeader_h

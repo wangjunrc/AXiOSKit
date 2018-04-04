@@ -2,8 +2,8 @@
 //  NSDictionary+AXCatch.m
 //  ZBP2P
 //
-//  Created by Mole Developer on 2017/2/23.
-//  Copyright © 2017年 mole. All rights reserved.
+//  Created by liuweixing on 2017/2/23.
+//  Copyright © 2017年 liuweixing All rights reserved.
 //
 
 #import "NSDictionary+AXCatch.h"

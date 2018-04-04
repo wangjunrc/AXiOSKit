@@ -2,8 +2,8 @@
 //  UICollectionView+AXTool.m
 //  AXTools
 //
-//  Created by Mole Developer on 2016/10/19.
-//  Copyright © 2016年 mole. All rights reserved.
+//  Created by liuweixing on 2016/10/19.
+//  Copyright © 2016年 liuweixing All rights reserved.
 //
 
 #import "UICollectionView+AXTool.h"

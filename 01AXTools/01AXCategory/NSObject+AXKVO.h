@@ -2,8 +2,8 @@
 //  NSObject+AXKVO.h
 //  AXTools
 //
-//  Created by Mole Developer on 2016/10/17.
-//  Copyright © 2016年 mole. All rights reserved.
+//  Created by liuweixing on 2016/10/17.
+//  Copyright © 2016年 liuweixing All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

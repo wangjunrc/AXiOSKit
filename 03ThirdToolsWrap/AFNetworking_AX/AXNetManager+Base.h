@@ -2,8 +2,8 @@
 //  AXNetManager+Base.h
 //  BigApple
 //
-//  Created by Mole Developer on 2017/6/9.
-//  Copyright © 2017年 MoleDeveloper. All rights reserved.
+//  Created by liuweixing on 2017/6/9.
+//  Copyright © 2017年 liuweixing. All rights reserved.
 //
 
 #import "AXNetManager.h"

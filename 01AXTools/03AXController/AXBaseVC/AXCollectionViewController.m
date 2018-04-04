@@ -2,8 +2,8 @@
 //  AXCollectionViewController.m
 //  AXTools
 //
-//  Created by Mole Developer on 16/5/26.
-//  Copyright © 2016年 MoleDeveloper. All rights reserved.
+//  Created by liuweixing on 16/5/26.
+//  Copyright © 2016年 liuweixing. All rights reserved.
 //
 
 #import "AXCollectionViewController.h"

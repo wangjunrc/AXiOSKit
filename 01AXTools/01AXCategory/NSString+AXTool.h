@@ -2,8 +2,8 @@
 //  NSString+AXTool.h
 //  44
 //
-//  Created by Mole Developer on 15/8/25.
-//  Copyright (c) 2015年 MoleDeveloper. All rights reserved.
+//  Created by liuweixing on 15/8/25.
+//  Copyright (c) 2015年 liuweixing. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

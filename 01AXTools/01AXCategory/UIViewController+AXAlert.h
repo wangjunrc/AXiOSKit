@@ -2,8 +2,8 @@
 //  UIViewController+AXAlert.h
 //  AXTools
 //
-//  Created by Mole Developer on 16/9/19.
-//  Copyright © 2016年 mole. All rights reserved.
+//  Created by liuweixing on 16/9/19.
+//  Copyright © 2016年 liuweixing All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

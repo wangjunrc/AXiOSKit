@@ -2,8 +2,8 @@
 //  UIScrollView+AXEmptyDataSet.m
 //  ZBP2P
 //
-//  Created by Mole Developer on 2017/2/20.
-//  Copyright © 2017年 mole. All rights reserved.
+//  Created by liuweixing on 2017/2/20.
+//  Copyright © 2017年 liuweixing All rights reserved.
 //
 
 #import "UIScrollView+AXEmptyDataSet.h"

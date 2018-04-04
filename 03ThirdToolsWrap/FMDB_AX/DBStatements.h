@@ -2,8 +2,8 @@
 ////  DBStatements.h
 ////  FMDB
 ////
-////  Created by Mole Developer on 16/4/7.
-////  Copyright © 2016年 MoleDeveloper. All rights reserved.
+////  Created by liuweixing on 16/4/7.
+////  Copyright © 2016年 liuweixing. All rights reserved.
 ////
 //
 //#import <Foundation/Foundation.h>

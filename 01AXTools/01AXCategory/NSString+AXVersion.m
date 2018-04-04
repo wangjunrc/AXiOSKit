@@ -2,8 +2,8 @@
 //  NSString+AXVersion.m
 //  AXTools
 //
-//  Created by Mole Developer on 16/7/13.
-//  Copyright © 2016年 mole. All rights reserved.
+//  Created by liuweixing on 16/7/13.
+//  Copyright © 2016年 liuweixing All rights reserved.
 //
 
 #import "NSString+AXVersion.h"

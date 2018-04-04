@@ -1,9 +1,9 @@
 //
 //  NSArray+AXTool.m
-//  Financing118
+//  
 //
-//  Created by Mole Developer on 15/11/18.
-//  Copyright © 2015年 MoleDeveloper. All rights reserved.
+//  Created by liuweixing on 15/11/18.
+//  Copyright © 2015年 liuweixing. All rights reserved.
 //
 
 #import "NSArray+AXTool.h"

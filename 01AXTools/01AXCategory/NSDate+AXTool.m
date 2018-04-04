@@ -2,8 +2,8 @@
 //  NSDate+AXTool.m
 //  AXTools
 //
-//  Created by Mole Developer on 16/3/29.
-//  Copyright © 2016年 mole. All rights reserved.
+//  Created by liuweixing on 16/3/29.
+//  Copyright © 2016年 liuweixing All rights reserved.
 //
 
 #import "NSDate+AXTool.h"

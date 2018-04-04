@@ -2,8 +2,8 @@
 //  AXVeriCodeView.m
 //  BigApple
 //
-//  Created by Mole Developer on 2017/8/3.
-//  Copyright © 2017年 MoleDeveloper. All rights reserved.
+//  Created by liuweixing on 2017/8/3.
+//  Copyright © 2017年 liuweixing. All rights reserved.
 //
 
 #import "AXVeriCodeView.h"

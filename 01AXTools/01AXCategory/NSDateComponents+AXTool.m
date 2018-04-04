@@ -2,8 +2,8 @@
 //  NSDateComponents+AXTool.m
 //  ZBP2P
 //
-//  Created by Mole Developer on 2017/1/5.
-//  Copyright © 2017年 mole. All rights reserved.
+//  Created by liuweixing on 2017/1/5.
+//  Copyright © 2017年 liuweixing All rights reserved.
 //
 
 #import "NSDateComponents+AXTool.h"

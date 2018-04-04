@@ -2,8 +2,8 @@
 //  UITableView+AXTool.m
 //  AXTools
 //
-//  Created by Mole Developer on 16/8/23.
-//  Copyright © 2016年 mole. All rights reserved.
+//  Created by liuweixing on 16/8/23.
+//  Copyright © 2016年 liuweixing All rights reserved.
 //
 
 #import "UITableView+AXTool.h"

@@ -2,8 +2,8 @@
 //  NSString+AXDate.h
 //  ZBP2P
 //
-//  Created by Mole Developer on 2016/12/26.
-//  Copyright © 2016年 mole. All rights reserved.
+//  Created by liuweixing on 2016/12/26.
+//  Copyright © 2016年 liuweixing All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

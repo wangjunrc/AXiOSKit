@@ -1,9 +1,9 @@
 //
 //  UIButton+AXTool.h
-//  Financing118
+//  
 //
-//  Created by Mole Developer on 15/10/28.
-//  Copyright © 2015年 MoleDeveloper. All rights reserved.
+//  Created by liuweixing on 15/10/28.
+//  Copyright © 2015年 liuweixing. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
