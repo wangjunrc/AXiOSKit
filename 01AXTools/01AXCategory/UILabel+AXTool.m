@@ -53,16 +53,16 @@
 }
 
 - (BOOL)canBecomeFirstResponder {
-    return [objc_getAssociatedObject(self, @selector(isCopyable)) boolValue];
+    return [objc_getAssociatedObject(self, @selector(axCopyable)) boolValue];
 }
 
-- (void)setIsCopyable:(BOOL)number {
-    objc_setAssociatedObject(self, @selector(isCopyable), [NSNumber numberWithBool:number], OBJC_ASSOCIATION_ASSIGN);
+- (void)setAxCopyable:(BOOL)number {
+    objc_setAssociatedObject(self, @selector(axCopyable), [NSNumber numberWithBool:number], OBJC_ASSOCIATION_ASSIGN);
     [self attachTapHandler];
 }
 
-- (BOOL)isCopyable {
-    return [objc_getAssociatedObject(self, @selector(isCopyable)) boolValue];
+- (BOOL)axCopyable {
+    return [objc_getAssociatedObject(self, @selector(axCopyable)) boolValue];
 }
 
 @end

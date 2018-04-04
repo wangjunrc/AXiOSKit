@@ -7,9 +7,9 @@
 */
 "ax.copy" = "复制";
 "ax.paste" = "粘贴";
-"ax.i.know" = "知道了"
-"ax.back" = "返回"
-"ax.close" = "关闭"
+"ax.i.know" = "知道了";
+"ax.back" = "返回";
+"ax.close" = "关闭";
 "ax.done" = "完成";
 "ax.confirm" = "确定";
 "ax.cancel" = "取消";

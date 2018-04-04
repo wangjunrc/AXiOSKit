@@ -7,9 +7,9 @@
 */
 "ax.copy" = "Copy";
 "ax.paste" = "Paste";
-"ax.i.know" = "I know the"
-"ax.back" = "Back"
-"ax.close" = "Close"
+"ax.i.know" = "I know the";
+"ax.back" = "Back";
+"ax.close" = "Close";
 "ax.done" = "Done";
 "ax.confirm" = "Confirm";
 "ax.cancel" = "Cancel";
