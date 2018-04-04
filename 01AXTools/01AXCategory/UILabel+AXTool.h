@@ -13,6 +13,6 @@
 /**
  * 是否可以长按显示复制
  */
-@property (nonatomic,assign,getter=isAxCopyable) BOOL axCopyable;
+@property (nonatomic,assign) BOOL axCopyable;
 
 @end
