@@ -109,17 +109,7 @@
 //#import "JDFSequentialTooltipManager.h"
 #import "UITextView+WZB.h"
 
-/**
- * 返回按钮拦截事件 <UINavigationControllerBackButtonHandlerProtocol>
- 
- - (BOOL)shouldHoldBackButtonEvent{
-    return  YES;
- }
- - (BOOL)canPopViewController{
-    return NO;
- }
- */
-//#import "UINavigationController+QMUI.h"
+/**腾讯邮箱Team UI控件*/
 #import "QMUIKit.h"
 
 /* 03ThirdToolsWrap */
