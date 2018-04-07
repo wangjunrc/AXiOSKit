@@ -10,6 +10,7 @@ pod 'SDWebImage', '~> 4.2.2'
 pod 'Masonry', '~> 1.1.0'
 
 #    键盘动画
+# UIViewController + UITableView 的使用方式的支持都有问题。 UITableView + UISearchController 会偏移 使用约束=NO解决
 pod 'IQKeyboardManager', '~> 5.0.6'
 
 #  tableview 上下刷新
@@ -33,7 +34,7 @@ pod 'SDCycleScrollView', '~> 1.75'
 # Facebook kvo 自己封装下
 pod 'KVOController', '~> 1.2'
 
-# 腾讯邮箱Team UI控件
+# 腾讯邮箱Team UI控件 和 TZScrollViewPopGesture 会产生返回拦截拦截功能冲突
 pod 'QMUIKit', '~> 2.5'
 
 #    让UIScrollView的滑动和系统侧滑手势并存，例如：在查看地图界面同时支持地图的滑动和侧滑返回。注：和FDFullscreenPopGesture库不冲突

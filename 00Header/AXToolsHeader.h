@@ -102,7 +102,7 @@
 #import "UIButton+WebCache.h"
 #import "UIImage+GIF.h"
 #import "MJExtension.h"
-#import "UINavigationController+TZPopGesture.h"
+//#import "UINavigationController+TZPopGesture.h"
 /**多选照片*/
 #import "TZImagePickerController.h"
 /*气泡提示*/
