@@ -2,8 +2,8 @@
 //  UIScrollView+AXRefresh.h
 //  Xile
 //
-//  Created by liuweixing on 2017/3/22.
-//  Copyright © 2017年 liuweixing. All rights reserved.
+//  Created by Mole Developer on 2017/3/22.
+//  Copyright © 2017年 MoleDeveloper. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -12,26 +12,36 @@
 /**
  * 初始化刷新
  */
--(void)ax_setupRefreshHeader:(void(^)(void))header foot:(void(^)(void))foot;
+-(void)ax_setRefreshHeader:(void(^)(void))header foot:(void(^)(void))foot;
+
 /**
  * 头开始刷新
  */
--(void)ax_setupHeaderBeginRefreshing;
+-(void)ax_setHeaderBeginRefreshing;
+
 /**
  * 尾始刷新
  */
--(void)ax_setupFootBeginRefreshing;
+-(void)ax_setFootBeginRefreshing;
+
+/**
+ * 设置尾部无更多内容
+ */
+-(void)ax_setFootNoMore;
+
 /**
  * 结束刷新
  */
--(void)ax_setupEndRefresh;
+-(void)ax_setEndRefresh;
 
 /**
  * 取消头
  */
--(void)ax_setupHeaderNULL;
+-(void)ax_setHeaderNULL;
+
 /**
  * 取消尾
  */
--(void)ax_setupFootNULL;
+-(void)ax_setFootNULL;
+
 @end
