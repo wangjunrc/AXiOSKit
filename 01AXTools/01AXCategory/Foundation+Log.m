@@ -37,14 +37,11 @@
     NSString *output;
     @try {
         NSData *data = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:nil];
-        output=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        output=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding].description;
         output = [output stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
-        // 解析url,部分情况会crash,可以适当取消此功能
     }
     @catch (NSException *exception) {
-        
         output = self.description;
-        
     } @finally {
         
     }
@@ -84,14 +81,10 @@
 - (NSString *)descriptionWithLocale:(nullable id)locale{
     NSString *output;
     @try {
-        
         NSData *data = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:nil];
-        output=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        
+        output=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding].description;
         output = [output stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"];
-        // 解析url,部分情况会crash,可以适当取消此功能
-    }
-    @catch (NSException *exception) {
+    }@catch (NSException *exception) {
         output = self.description;
     } @finally {
         
