@@ -1,5 +1,5 @@
 //
-//  NSDictionary++AXSafe.h
+//  NSDictionary+AXSafe.h
 //  AXiOSTools
 //
 //  Created by liuweixing on 2017/2/23.

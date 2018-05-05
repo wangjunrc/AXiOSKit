@@ -1,5 +1,5 @@
 //
-//  NSMutableDictionary++AXSafe.m
+//  NSMutableDictionary+AXSafe.m
 //  AXiOSTools
 //
 //  Created by liuweixing on 2017/2/22.

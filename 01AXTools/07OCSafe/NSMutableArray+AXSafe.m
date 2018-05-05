@@ -1,5 +1,5 @@
 //
-//  NSMutableArray++AXSafe.m
+//  NSMutableArray+AXSafe.m
 //  AXiOSTools
 //
 //  Created by liuweixing on 2017/2/22.
