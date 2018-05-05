@@ -1,15 +1,15 @@
 //
-//  NSArray+AXCatch.m
-//  ZBP2P
+//  NSArray++AXSafe.m
+//  AXiOSTools
 //
 //  Created by liuweixing on 2017/2/22.
 //  Copyright © 2017年 liuweixing All rights reserved.
 //
 
-#import "NSArray+AXCatch.h"
+#import "NSArray+AXSafe.h"
 #import <objc/runtime.h>  
 
-@implementation NSArray (AXCatch)
+@implementation NSArray (AXSafe)
 
 + (void)load{
     [super load];
