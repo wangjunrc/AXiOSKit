@@ -1,6 +1,6 @@
 //
 //  IBUIView.h
-//  AXTools
+//  AXiOSTools
 //
 //  Created by liuweixing on 16/8/5.
 //  Copyright © 2016年 liuweixing. All rights reserved.

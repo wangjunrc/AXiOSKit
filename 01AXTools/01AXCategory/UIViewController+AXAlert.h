@@ -1,6 +1,6 @@
 //
 //  UIViewController+AXAlert.h
-//  AXTools
+//  AXiOSTools
 //
 //  Created by liuweixing on 16/9/19.
 //  Copyright © 2016年 liuweixing All rights reserved.

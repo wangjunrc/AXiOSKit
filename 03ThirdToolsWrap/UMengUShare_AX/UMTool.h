@@ -1,6 +1,6 @@
 //
 //  UMTool.h
-//  AXTools
+//  AXiOSTools
 //
 //  Created by liuweixing on 2016/10/19.
 //  Copyright © 2016年 liuweixing. All rights reserved.

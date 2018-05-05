@@ -1,6 +1,6 @@
 //
 //  NSString+AXDate.h
-//  ZBP2P
+//  AXiOSTools
 //
 //  Created by liuweixing on 2016/12/26.
 //  Copyright © 2016年 liuweixing All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  MyViewController.h
-//  AXTools
+//  AXiOSTools
 //
 //  Created by liuweixing on 16/5/26.
 //  Copyright © 2016年 liuweixing. All rights reserved.
