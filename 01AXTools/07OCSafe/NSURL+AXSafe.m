@@ -17,10 +17,11 @@
  */
 + (void)load{
     
+    //  与  [url_str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];  有冲突目前不使用
     //-initWithString
-    Method originalinit = class_getInstanceMethod(self, @selector(initWithString:));
-    Method swizzledinit = class_getInstanceMethod(self, @selector(safe_initWithString:));
-    method_exchangeImplementations(originalinit, swizzledinit);
+//    Method originalinit = class_getInstanceMethod(self, @selector(initWithString:));
+//    Method swizzledinit = class_getInstanceMethod(self, @selector(safe_initWithString:));
+//    method_exchangeImplementations(originalinit, swizzledinit);
 
   
     //+URLWithString
@@ -30,27 +31,27 @@
 
 }
 
--(instancetype)safe_initWithString:(NSString *)aString{
-    
-    NSString *str = aString;
-    
-    NSString *temp  = nil;
-    if ( [str hasPrefix:@"https://"]) {
-        NSString *lastStr = [str componentsSeparatedByString:@"https://"].lastObject;
-        lastStr = [lastStr stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
-        temp = [@"https://" stringByAppendingString:lastStr];
-    }else if  ( [str hasPrefix:@"http://"]) {
-        
-        NSString *lastStr = [str componentsSeparatedByString:@"http://"].lastObject;
-        lastStr = [lastStr stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
-        temp = [@"http://" stringByAppendingString:lastStr];
-        
-    }else{
-        temp = str;
-    }
-    return [[NSURL alloc]initWithString:temp];
-    
-}
+//-(instancetype)safe_initWithString:(NSString *)aString{
+//
+//    NSString *str = aString;
+//
+//    NSString *temp  = nil;
+//    if ( [str hasPrefix:@"https://"]) {
+//        NSString *lastStr = [str componentsSeparatedByString:@"https://"].lastObject;
+//        lastStr = [lastStr stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
+//        temp = [@"https://" stringByAppendingString:lastStr];
+//    }else if  ( [str hasPrefix:@"http://"]) {
+//
+//        NSString *lastStr = [str componentsSeparatedByString:@"http://"].lastObject;
+//        lastStr = [lastStr stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
+//        temp = [@"http://" stringByAppendingString:lastStr];
+//
+//    }else{
+//        temp = str;
+//    }
+//    return [[NSURL alloc]initWithString:temp];
+//
+//}
 
 + (instancetype)safe_URLWithString:(NSString *)aString{
     
