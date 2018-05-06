@@ -53,25 +53,29 @@
 //
 //}
 
-+ (instancetype)safe_URLWithString:(NSString *)aString{
++ (instancetype)safe_URLWithString:(NSString *)urlStr{
     
-    NSString *str = aString;
+    NSString *search = @"//";
     
-    NSString *temp  = nil;
-    if ( [str hasPrefix:@"https://"]) {
-        NSString *lastStr = [str componentsSeparatedByString:@"https://"].lastObject;
-        lastStr = [lastStr stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
-        temp = [@"https://" stringByAppendingString:lastStr];
-    }else if  ( [str hasPrefix:@"http://"]) {
+    NSInteger strCount = urlStr.length - [[urlStr stringByReplacingOccurrencesOfString:search withString:@""] length];
+    
+    NSInteger have = strCount/search.length;
+    
+    if (have>1) {
         
-        NSString *lastStr = [str componentsSeparatedByString:@"http://"].lastObject;
-        lastStr = [lastStr stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
-        temp = [@"http://" stringByAppendingString:lastStr];
+        NSRange range = [urlStr rangeOfString:@"//"];
         
-    }else{
-        temp = str;
+        NSRange rangeHost = NSMakeRange(0, range.location+range.length);
+        NSString *host = [urlStr substringWithRange:rangeHost];
+        
+        NSRange rangePath = NSMakeRange(range.location+range.length, urlStr.length-range.location-range.length);
+        NSString *path = [urlStr substringWithRange:rangePath];
+        
+        path = [path stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
+        urlStr = [host stringByAppendingString:path];
     }
-    return [NSURL safe_URLWithString:temp];
+    
+    return [NSURL safe_URLWithString:urlStr];
     
 }
 
