@@ -72,8 +72,19 @@
  */
 #define axUserDefaultsSynchronize [[NSUserDefaults standardUserDefaults] synchronize]
 
-
+/**
+ self.tableView.tableFooterView
+ */
 #define axTableFooterViewZero self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+
+
+/**
+ view 中 加载xib自定义view
+ */
+#define ax_load_xib_view \
+self = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass(self.class) owner:nil options:nil].lastObject;\
+self.frame = frame;\
+
 
 /**
  * 消除 过期警告 top
