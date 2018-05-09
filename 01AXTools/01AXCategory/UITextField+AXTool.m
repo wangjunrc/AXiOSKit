@@ -8,6 +8,15 @@
 
 #import "UITextField+AXTool.h"
 
+#import <objc/runtime.h>
+#import "AXMacros_runTime.h"
+
+@interface UITextField ()
+
+@property(nonatomic,copy)void(^textFieldTargetBlock)(UITextField *textField) ;
+
+@end
+
 @implementation UITextField (AXTool)
 
 -(BOOL)getTF2FloatRange:(NSRange)range string:(NSString *)string{
@@ -79,4 +88,36 @@
         return YES;
     }
 }
+
+
+- (void)setTextFieldTargetBlock:(void (^)(UITextField *))textFieldTargetBlock{
+    ax_runtimePropertyObjSet(textFieldTargetBlock);
+    
+}
+
+
+- (void (^)(UITextField *))textFieldTargetBlock{
+   return ax_runtimePropertyObjGet(textFieldTargetBlock);
+}
+
+
+
+
+/**
+ UITextField 文字变化事件
+ 
+ @param block block description
+ */
+-(void)ax_addTargetTextChangedBlock:(void(^)(UITextField *textField))block{
+    
+    [self addTarget:self action:@selector(textChnageAction:) forControlEvents:UIControlEventEditingChanged];
+    self.textFieldTargetBlock = block;
+}
+
+-(void)textChnageAction:(UITextField *)textField{
+    if (self.textFieldTargetBlock){
+        self.textFieldTargetBlock(textField);
+    }
+}
+
 @end
