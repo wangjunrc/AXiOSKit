@@ -16,10 +16,6 @@
 -(BOOL)getTF2FloatRange:(NSRange)range string:(NSString *)string;
 
 /**
- * 按钮事件封装成block
- */
-
-/**
  UITextField 文字变化事件 block
 
  @param block block description

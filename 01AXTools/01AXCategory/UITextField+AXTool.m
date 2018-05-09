@@ -90,19 +90,6 @@
 }
 
 
-- (void)setTextFieldTargetBlock:(void (^)(UITextField *))textFieldTargetBlock{
-    ax_runtimePropertyObjSet(textFieldTargetBlock);
-    
-}
-
-
-- (void (^)(UITextField *))textFieldTargetBlock{
-   return ax_runtimePropertyObjGet(textFieldTargetBlock);
-}
-
-
-
-
 /**
  UITextField 文字变化事件
  
@@ -112,6 +99,16 @@
     
     [self addTarget:self action:@selector(textChnageAction:) forControlEvents:UIControlEventEditingChanged];
     self.textFieldTargetBlock = block;
+}
+
+- (void)setTextFieldTargetBlock:(void (^)(UITextField *))textFieldTargetBlock{
+    ax_runtimePropertyObjSet(textFieldTargetBlock);
+    
+}
+
+
+- (void (^)(UITextField *))textFieldTargetBlock{
+    return ax_runtimePropertyObjGet(textFieldTargetBlock);
 }
 
 -(void)textChnageAction:(UITextField *)textField{
