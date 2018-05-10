@@ -71,7 +71,7 @@
         
         if (hud) {
             [hud hideAnimated:YES];
-            [MBProgressHUD showError:error.localizedDescription];
+            [MBProgressHUD ax_showError:error.localizedDescription];
         }
         
         if (failure) {

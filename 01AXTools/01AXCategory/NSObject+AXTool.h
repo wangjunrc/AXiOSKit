@@ -33,5 +33,9 @@
  */
 + (void)ax_replaceMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL;
 
+/**
+ 封装 alloc]init]
+ */
++(instancetype)ax_init;
 
 @end

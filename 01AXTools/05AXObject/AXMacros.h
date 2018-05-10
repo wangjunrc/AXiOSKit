@@ -86,6 +86,10 @@ self = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass(self.class) owner:ni
 self.frame = frame;\
 
 
+#define AX_showHUD_Message(String)  MBProgressHUD *hud = [MBProgressHUD ax_showMessage:String];
+
+#define AX_hideHUD  [hud hideAnimated:YES];
+
 /**
  * 消除 过期警告 top
  */

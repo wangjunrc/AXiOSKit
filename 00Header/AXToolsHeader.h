@@ -83,10 +83,6 @@
 #import "UISwitch+AXTool.h"
 #import "NSDateComponents+AXTool.h"
 #import "UIScrollView+AXEmptyDataSet.h"
-#import "NSArray+AXSafe.h"
-#import "NSMutableArray+AXSafe.h"
-#import "NSDictionary+AXSafe.h"
-#import "NSMutableDictionary+AXSafe.h"
 #import "UIButton+AXCountDown.h"
 #import "UIViewController+AXiPadAlert.h"
 #import "UIViewController+BackButtonHandler.h"
@@ -118,6 +114,7 @@
 #import "AXNetManager.h"
 #import "NSObject+FBKVOControllerAX.h"
 #import "MBProgressHUD+AX.h"
+#import "NSObject+AXCacheImage.h"
 
 /* 04ThirdSDK */
 #pragma mark - 04ThirdSDK

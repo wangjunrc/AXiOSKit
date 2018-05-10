@@ -96,6 +96,9 @@
     
 }
 
+/**
+ * 更换方法
+ */
 + (void)ax_replaceMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL{
     
     Class class = [self class];
@@ -113,8 +116,12 @@
     }
 }
 
-
-
+/**
+ 封装 alloc]init]
+ */
++(instancetype)ax_init{
+    return [[self alloc]init];
+}
 
 
 @end
