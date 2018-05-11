@@ -85,10 +85,28 @@
 self = [[NSBundle mainBundle]loadNibNamed:NSStringFromClass(self.class) owner:nil options:nil].lastObject;\
 self.frame = frame;\
 
-
+/**
+ showHUD
+ */
 #define AX_showHUD_Message(String)  MBProgressHUD *hud = [MBProgressHUD ax_showMessage:String];
-
+/**
+ hideHUD 
+ */
 #define AX_hideHUD  [hud hideAnimated:YES];
+
+
+/**
+ tableViewCell 自适应高度DataSource
+ */
+#define AX_tableViewCell_height_Automatic \
+-(CGFloat )tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{\
+    return UITableViewAutomaticDimension;\
+}\
+-(CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{\
+    return UITableViewAutomaticDimension;\
+}\
+
+
 
 /**
  * 消除 过期警告 top

@@ -7,13 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AXToolsHeader.h"
-extern NSString *const axCellID;
-extern NSString *const axCellHeadID;
-extern NSString *const axCellFootID;
-extern NSString *const axUserInfoKey;
-extern NSString *const axSectionHeadID;
-extern NSString *const axSectionFootID;
+#import <UIKit/UIKit.h>
+
+FOUNDATION_EXPORT NSString *const axCellID0;
+FOUNDATION_EXPORT NSString *const axCellID1;
+FOUNDATION_EXPORT NSString *const axCellID2;
+FOUNDATION_EXPORT NSString *const axCellID;
+FOUNDATION_EXPORT NSString *const axCellHeadID;
+FOUNDATION_EXPORT NSString *const axCellFootID;
+FOUNDATION_EXPORT NSString *const axUserInfoKey;
+FOUNDATION_EXPORT NSString *const axSectionHeadID;
+FOUNDATION_EXPORT NSString *const axSectionFootID;
 
 @interface AXConstant : NSObject
 /**

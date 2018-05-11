@@ -85,7 +85,6 @@
 #import "UIScrollView+AXEmptyDataSet.h"
 #import "UIButton+AXCountDown.h"
 #import "UIViewController+AXiPadAlert.h"
-#import "UIViewController+BackButtonHandler.h"
 #import "NSUserDefaults+AXTool.h"
 #import "NSNumber+AXTool.h"
 

@@ -8,6 +8,9 @@
 
 #import "AXConstant.h"
 #import "AXToolsHeader.h"
+NSString *const axCellID0 = @"TableViewacellID0";
+NSString *const axCellID1 = @"TableViewacellID1";
+NSString *const axCellID2 = @"TableViewacellID2";
 NSString *const axCellID = @"TableViewacellID";
 NSString *const axCellHeadID = @"TableViewCellheadID";
 NSString *const axCellFootID = @"TableViewCellfootID";

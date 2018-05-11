@@ -1,3 +1,6 @@
+#消除CocoaPods所有警告,也可以指定
+inhibit_all_warnings!
+
 def pod_use
 
 #    网络请求
