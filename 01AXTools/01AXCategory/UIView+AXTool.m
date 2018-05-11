@@ -125,4 +125,24 @@
     [self.layer addSublayer:border];
 }
 
+
+/**
+ 阴影
+ 当前veiw.layer.cornerRadius 后会和layer.shadowRadius 冲突
+
+ @param shadowColor UIColor
+ */
+-(void)ax_shadowWith:(UIColor *)shadowColor{
+    
+    CALayer *subLayer=[CALayer layer];
+    subLayer.frame = self.frame;
+    subLayer.cornerRadius = 5;
+    subLayer.backgroundColor = shadowColor.CGColor;
+    subLayer.shadowColor = shadowColor.CGColor;//shadowColor阴影颜色
+    subLayer.shadowOffset = CGSizeMake(0,1);//默认值 0,-3
+    subLayer.shadowOpacity = 0.8;//阴影透明度，默认0
+    subLayer.shadowRadius = 5;//阴影半径，默认3
+    [self.superview.layer insertSublayer:subLayer below:self.layer];
+}
+
 @end

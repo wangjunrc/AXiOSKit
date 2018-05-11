@@ -51,5 +51,14 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
  */
 - (void)ax_addBorder:(AXBorderDirectionType)direction color:(UIColor *)color width:(CGFloat)width;
 
+/**
+ 阴影
+ 当前veiw.layer.cornerRadius 后会和layer.shadowRadius 冲突
+ 
+ @param shadowColor UIColor
+ */
+-(void)ax_shadowWith:(UIColor *)shadowColor;
+
+
 
 @end
