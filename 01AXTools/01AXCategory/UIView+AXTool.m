@@ -7,7 +7,15 @@
 //
 
 #import "UIView+AXTool.h"
+#import "AXMacros_runTime.h"
 
+typedef void(^DidViewBlock)(UIView *view);
+
+@interface UIView ()
+
+@property(nonatomic,copy)DidViewBlock didViewBlock;
+
+@end
 @implementation UIView (AXTool)
 
 /**
@@ -143,6 +151,32 @@
     subLayer.shadowOpacity = 0.8;//阴影透明度，默认0
     subLayer.shadowRadius = 5;//阴影半径，默认3
     [self.superview.layer insertSublayer:subLayer below:self.layer];
+}
+
+
+
+
+- (void)setDidViewBlock:(DidViewBlock)didViewBlock{
+    ax_runtimePropertyObjSet(didViewBlock);
+}
+
+- (DidViewBlock)didViewBlock{
+    return ax_runtimePropertyObjGet(didViewBlock);
+}
+/**
+ * view 添加手势 成为点击事件
+ */
+-(void)ax_viewAddTargetBlock:(void(^)(UIView *view))block{
+    
+    self.didViewBlock = block;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
+    [self addGestureRecognizer:tap];
+    
+}
+- (void)tapGestureAction:(UIGestureRecognizer *)sender{
+    if (self.didViewBlock) {
+        self.didViewBlock(self);
+    }
 }
 
 @end

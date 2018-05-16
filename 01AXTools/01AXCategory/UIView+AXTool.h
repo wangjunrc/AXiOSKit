@@ -60,5 +60,9 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
 -(void)ax_shadowWith:(UIColor *)shadowColor;
 
 
+/**
+ * view 添加手势 成为点击事件
+ */
+-(void)ax_viewAddTargetBlock:(void(^)(UIView *view))block;
 
 @end

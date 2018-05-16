@@ -99,7 +99,28 @@
 /**
  * 更换方法
  */
-+ (void)ax_replaceMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL{
++ (void)ax_replaceInstanceMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL{
+    
+    Class class = [self class];
+    Method originalMethod = class_getClassMethod(class, originalSEL);
+    Method swizzledMethod = class_getClassMethod(class, newSEL);
+    BOOL didAddMethod = class_addMethod(class,originalSEL,
+                                        method_getImplementation(swizzledMethod),
+                                        method_getTypeEncoding(swizzledMethod));
+    if (didAddMethod) {
+        class_replaceMethod(class,newSEL,
+                            method_getImplementation(originalMethod),
+                            method_getTypeEncoding(originalMethod));
+    } else {
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
+}
+
+
+/**
+ * 更换 类 方法
+ */
++ (void)ax_replaceClassMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL{
     
     Class class = [self class];
     Method originalMethod = class_getInstanceMethod(class, originalSEL);
@@ -115,6 +136,8 @@
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
+
+
 
 /**
  封装 alloc]init]

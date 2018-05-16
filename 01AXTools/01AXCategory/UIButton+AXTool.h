@@ -22,8 +22,6 @@ typedef NS_ENUM(NSInteger, ImagePosition) {
  */
 -(void)ax_addTargetBlock:(void(^)(UIButton *button))block;
 
-
-
 /**
  修改button 文字图片位置
 

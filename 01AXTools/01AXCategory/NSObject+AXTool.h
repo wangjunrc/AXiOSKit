@@ -29,9 +29,14 @@
 
 
 /**
- * 更换方法
+ *  替换 实例 方法 Instance
  */
-+ (void)ax_replaceMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL;
++ (void)ax_replaceInstanceMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL;
+
+/**
+ * 更换 类 方法
+ */
++ (void)ax_replaceClassMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL;
 
 /**
  封装 alloc]init]
