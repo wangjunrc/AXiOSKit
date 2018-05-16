@@ -9,22 +9,56 @@
 #import "UIDevice+AXTool.h"
 #import <sys/utsname.h>
 @implementation UIDevice (AXTool)
-/**
 
-如下：各系列机型竖屏时的 宽*高
 
-portrait   width * height
++(NSArray *)ax_DeviceSize{
+    
+    NSArray *array = @[
+                       @{
+                           @"type":@(AXiPhone_4_0),
+                           @"width":@(320),
+                           @"height":@(568)
+                           },
+                       @{
+                           @"type":@(AXiPhone_4_7),
+                           @"width":@(375),
+                           @"height":@(667)
+                           },
+                       @{
+                           @"type":@(AXiPhone_5_5),
+                           @"width":@(414),
+                           @"height":@(736)
+                           },
+                       @{
+                           @"type":@(AXiPhone_5_8),
+                           @"width":@(375),
+                           @"height":@(812)
+                           },
+                       @{
+                           @"type":@(AXiPad_7_9),
+                           @"width":@(768),
+                           @"height":@(1024)
+                           },
+                       @{
+                           //768x1024
+                           @"type":@(AXiPad_9_7),
+                           @"width":@(768),
+                           @"height":@(1024)
+                           },
+                       @{
+                           //1024x1366
+                           @"type":@(AXiPad_12_9),
+                           @"width":@(1024),
+                           @"height":@(1366)
+                           },
+                       
+                       ];
+    
+    return array;
+}
 
-iPhone4:     320*480
 
-iPhone5:     320*568
-
-iPhone6:     375*667
-
-iPhone6Plus: 414*736
-
-*/
-+ (iPhoneModel)ax_getiPhoneSize{
++ (AXDeviceSize)ax_getiPhoneSize{
     
     CGRect rect = [[UIScreen mainScreen] bounds];
     
@@ -36,40 +70,34 @@ iPhone6Plus: 414*736
     
     /** 未知 */
     if (orientation == UIInterfaceOrientationUnknown) {
-        return UnKnown;
+        return AXUnKnown;
     }
+    
+    NSArray *arry = [self ax_DeviceSize];
+    
     /** 竖屏方向 */
     if (orientation == UIInterfaceOrientationPortrait) {
-        
-        if (width ==  320.0f) {
-            if (height == 480.0f) {
-                return iPhone4;
-            } else {
-                return iPhone5;
+       
+        for (NSDictionary *dict in arry) {
+            
+            if (width == [dict[@"width"]integerValue] && height == [dict[@"height"]integerValue]) {
+                return [dict[@"type"]integerValue];
             }
-        } else if (width == 375.0f) {
-            return iPhone6;
-        } else if (width == 414.0f) {
-            return iPhone6Plus;
         }
+        
         
         /** 横屏方向 */
     }else if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {//landscape
-        if (height == 320.0) {
-            
-            if (width == 480.0f) {
-                return iPhone4;
-            } else {
-                return iPhone5;
+        
+        for (NSDictionary *dict in arry) {
+            if (height == [dict[@"width"]integerValue] && width == [dict[@"height"]integerValue]) {
+                return [dict[@"type"]integerValue];
             }
-        } else if (height == 375.0f) {
-            return iPhone6;
-        } else if (height == 414.0f) {
-            return iPhone6Plus;
         }
+        
     }
     /** 其他情况 */
-    return UnKnown;
+    return AXUnKnown;
 }
 
 
