@@ -1,6 +1,6 @@
 //
 //  NSString+AXDate.h
-//  AXiOSTools
+//  ZBP2P
 //
 //  Created by liuweixing on 2016/12/26.
 //  Copyright © 2016年 liuweixing All rights reserved.
@@ -43,12 +43,18 @@
 -(NSDate *)ax_toDateCurrentFormat:(NSString *)format;
 
 /**
- * 时间戳转换成时间格式(时间戳为13位精确毫秒)
+ * 时间戳转换成时间格式(时间戳为10精确秒 或者 13位精确毫秒,自动补齐)
  */
 -(NSString *)ax_timeStampToStringFormat:(NSString *)format;
 
 /**
- * 10时间戳转换成本地时间(超过10未的自动截取前10位)
+ * 时间戳转换成时间格式(时间戳为10精确秒 或者 13位精确毫秒,自动补齐)
+ yyyy-MM-dd HH:mm:ss 格式
+ */
+-(NSString *)ax_timeStampToStringDefault;
+
+/**
+ * 时间戳转换成本地时区 Date (精确到秒,10位)
  */
 -(NSDate *)ax_timestampToDate;
 /**
@@ -59,4 +65,5 @@
  * 判断时间字符串与当前时间年月日是否相同
  */
 -(NSString *)ax_differToNowDate;
+
 @end
