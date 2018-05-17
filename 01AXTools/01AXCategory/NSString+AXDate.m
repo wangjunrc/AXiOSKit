@@ -1,6 +1,6 @@
 //
 //  NSString+AXDate.m
-//  AXiOSTools
+//  ZBP2P
 //
 //  Created by liuweixing on 2016/12/26.
 //  Copyright © 2016年 liuweixing All rights reserved.
@@ -114,18 +114,41 @@
 }
 
 /**
- * 时间戳转换成时间格式(时间戳为13位精确毫秒)
+ * 时间戳转换成时间格式(时间戳为10精确秒 或者 13位精确毫秒,自动补齐)
  */
 -(NSString *)ax_timeStampToStringFormat:(NSString *)format{
+    
     NSString *time = self;
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970: time.doubleValue/1000];
+    
+    if (time.length>13) {
+        
+       time = [time substringFromIndex:12];
+        
+    }else if (time.length<13){
+        
+        NSInteger count = 13-time.length;
+        
+        for (NSInteger index=0; index<count; index++) {
+            
+             time = [time stringByAppendingString:@"0"];
+        }
+    }
+    NSDate *date= [NSDate dateWithTimeIntervalSince1970: time.doubleValue/1000];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:format];
     return [dateFormat stringFromDate:date];
 }
 
 /**
- * 10时间戳转换成本地时间(超过10未的自动截取前10位)
+ * 时间戳转换成时间格式(时间戳为10精确秒 或者 13位精确毫秒,自动补齐)
+ yyyy-MM-dd HH:mm:ss 格式
+ */
+-(NSString *)ax_timeStampToStringDefault{
+    
+    return [self ax_timeStampToStringFormat:@"yyyy-MM-dd HH:mm:ss"];
+}
+/**
+ * 时间戳转换成本地时区 Date (精确到秒,10位)
  */
 -(NSDate *)ax_timestampToDate{
     NSString *time = self;
