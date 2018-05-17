@@ -1,4 +1,4 @@
-#消除CocoaPods所有警告,也可以指定
+#消除CocoaPods所有警告,也可以指定,另外的命令
 inhibit_all_warnings!
 
 def pod_use
@@ -8,6 +8,12 @@ pod 'AFNetworking', '~> 3.1.0'
 
 #    图片加载
 pod 'SDWebImage', '~> 4.2.2'
+
+# 加载图片的模糊效果
+pod 'PINRemoteImage'
+
+# 由Flipboard开源的iOS平台上播放GIF动画
+pod 'FLAnimatedImage'
 
 #    约束
 pod 'Masonry', '~> 1.1.0'
@@ -25,7 +31,21 @@ pod 'NullSafe', '~> 1.2'
 #    json 解析
 pod 'MJExtension', '~> 3.0.7'
 
-#    hud
+
+#主要用来将 JSON 数据模型化为 Model 对象
+#pod 'Mantle'
+
+#SQLite
+#pod 'FMDBr'
+
+#Mantle 和 FMDB 的转换工具
+#pod 'MTLFMDBAdapter'
+
+#支持 iOS SQLite 数据库迁移
+#pod 'FMDBMigrationManager'
+
+
+#    提示框
 pod 'MBProgressHUD', '~> 1.0.0'
 
 #    tableview 空集合
@@ -67,6 +87,96 @@ pod 'FreeStreamer', '~> 3.7.3'
 #气泡提示
 #pod 'JDFTooltips', '~> 1.1'
 
+#基于GPU的图片或视频的处理框架
+#pod 'GPUImage'
+
+#是一个基于GCD的轻量级服务器框架，用于内嵌到OSX或者iOS系统的应用中提供HTTP1.1的服务。
+#pod 'GCDWebServer'
+
+#facebook出品的paper，动画效果
+#pod 'pop'
+
+#是一个开源的第三方框架，可以将用户的崩溃日志以邮件发给你或者以发给我们提供的服务器
+#pod 'KSCrash'
+
+#腾讯Buglg可以做到时时发送崩溃报告
+#pod 'Buglg'
+
+#是一组庞大、功能丰富的 iOS 组件。
+#pod 'YYKit'
+
+# 存放用户账号密码组件
+#pod 'UICKeyChainStore'
+
+# 监测网络状态
+#pod 'Reachability'
+
+#友好化时间
+#pod 'DateTools'
+
+#一款简单的 iOS 照片浏览控件
+#pod 'MWPhotoBrowser'
+
+#一个选择器组件, 支持从用户的相片库选择多张照片和视频
+#pod 'CTAssetsPickerController'
+
+#无需使用图片文件的 iOS 弹出式菜单
+#pod 'QBPopupMenu'
+
+#一个能够让你方便地将提醒用户评分的功能加入 App 的工具
+#pod 'UAAppReviewManager'
+
+#对 NSUserDefaults 进行了封装, 方便的进行本地化存储操作
+#pod 'GVUserDefaults'
+
+# 对用户当前地理位置进行正向地址编码和反向地址编码
+#pod 'FCCurrentLocationGeocoder'
+
+#页面滚动时隐藏工具栏
+#pod 'AFSwipeToHide'
+
+# 添加带动画效果的未读消息数提醒
+#pod 'JSBadgeView'
+
+# 添加未读消息数显示提醒 和JSBadgeView 效果类似
+#pod 'RKNotificationHub'
+
+# 可在应用中显示视图的尺寸
+#pod 'MMPlaceHolder'
+
+# 创建弹出卡片视图
+#pod 'CNPPopupController'
+
+# 加入沙漏等多种动画加载效果
+#pod 'FeSpinner'
+
+# 方便创建用户引导视图 画圈圈,引导用户点击
+#pod 'JMHoledView'
+
+# 快速给应用添加上滑动视图
+#pod 'SwipeView'
+
+# 对视图进行模糊操作
+#pod 'FXBlurView'
+
+# 中国省市地理位置选择器
+#pod 'AreaPicker'
+
+# 富文字
+#pod 'DTCoreText'
+
+# 导航栏,可以每个VC不一样配置
+#pod 'RTRootNavigationController'
+
+# 五角星 显示
+#pod 'HCSStarRatingView'
+
+# 分段
+#pod 'FSScrollContentViewLib'
+
+
+
+# 以下是第三方服务
 
 # U-Share SDK UI模块（分享面板，建议添加）
 pod ‘UMengUShare/UI’
