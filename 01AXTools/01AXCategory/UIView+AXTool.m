@@ -167,7 +167,7 @@ typedef void(^DidViewBlock)(UIView *view);
  * view 添加手势 成为点击事件
  */
 -(void)ax_viewAddTargetBlock:(void(^)(UIView *view))block{
-    
+    self.userInteractionEnabled = YES;
     self.didViewBlock = block;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
     [self addGestureRecognizer:tap];
