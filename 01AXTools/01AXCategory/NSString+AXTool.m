@@ -503,5 +503,22 @@
     return uuidStr;
 }
 
+
+/**
+ 11位手机号码,中间4位省略
+
+ @return 号码
+ */
+-(NSString *)ax_phoneNumSecret{
+    
+    if (self.length==11) {
+        NSString *numberString = [self stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
+        
+        return numberString;
+    }else{
+        return self;
+    }
+}
+
 @end
 
