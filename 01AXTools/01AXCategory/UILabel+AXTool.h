@@ -15,4 +15,9 @@
  */
 @property (nonatomic,assign) BOOL axCopyable;
 
+/**
+ 设置 电话 含有下划线,并可以点击打电话
+ */
+-(void)ax_setPhoneCall;
+
 @end
