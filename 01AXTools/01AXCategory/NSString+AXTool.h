@@ -183,4 +183,11 @@
  */
 +(NSString *)ax_uuid;
 
+/**
+ 11位手机号码,中间4位省略
+
+ @return 号码
+ */
+-(NSString *)ax_phoneNumSecret;
+
 @end
