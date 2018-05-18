@@ -9,6 +9,8 @@
 #import "UILabel+AXTool.h"
 #import <objc/runtime.h>
 #import "AXMacros.h"
+#import "NSString+AXEffective.h"
+
 @implementation UILabel (AXTool)
 
 -(BOOL)canPerformAction:(SEL)action withSender:(id)sender {
@@ -63,6 +65,50 @@
 
 - (BOOL)axCopyable {
     return [objc_getAssociatedObject(self, @selector(axCopyable)) boolValue];
+}
+
+
+/**
+ 设置 电话 含有下划线,并可以点击打电话
+ */
+-(void)ax_setPhoneCall{
+    
+    NSString *labelStr = self.text;
+    UILabel *label = self;
+    
+    //获取字符串中的电话号码
+    NSString *regulaStr = @"\\d{3,4}[- ]?\\d{7,8}";
+    NSRange stringRange = NSMakeRange(0, labelStr.length);
+    //正则匹配
+    NSError *error;
+    NSRegularExpression *regexps = [NSRegularExpression regularExpressionWithPattern:regulaStr options:0 error:&error];
+    if (!error && regexps != nil) {
+        [regexps enumerateMatchesInString:labelStr options:0 range:stringRange usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+            
+            //可能为电话号码的字符串及其所在位置
+            NSRange phoneRange = result.range;
+            
+            //设置文本中的电话号码显示为蓝色
+            NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:labelStr];
+            NSDictionary *dcit = @{
+                                   //添加下划线
+                                   NSUnderlineStyleAttributeName:@(NSUnderlineStyleSingle),
+                                   
+                                   // 文字颜色
+                                   NSForegroundColorAttributeName:[UIColor blueColor],
+                                   
+                                   //下划线颜色
+                                   NSUnderlineColorAttributeName:[UIColor blueColor]
+                                   };
+            [str addAttributes:dcit range:phoneRange];
+            label.attributedText = str;
+            NSString *phoneStr = [labelStr substringWithRange:phoneRange];
+            [self ax_addTargetBlock:^(UIView *aView) {
+                ax_CallTel(phoneStr);
+            }];
+            
+        }];
+    }
 }
 
 @end
