@@ -20,4 +20,7 @@
  */
 -(void)ax_setPhoneCall;
 
+
+- (void)setTextWithLinkAttribute:(NSString *)text;
+
 @end
