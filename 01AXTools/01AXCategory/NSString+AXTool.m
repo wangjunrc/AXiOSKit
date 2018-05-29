@@ -137,7 +137,7 @@
 
 +(NSString *)ax_getAppVersion{
     NSDictionary *info = [self ax_getAppInfo];
-    return info[@"CFBundleShortVersionString"];
+    return [info[@"CFBundleShortVersionString"]description];
 }
 
 /**

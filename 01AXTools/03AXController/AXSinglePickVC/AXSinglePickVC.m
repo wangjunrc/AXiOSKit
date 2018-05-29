@@ -91,8 +91,8 @@ typedef void(^Selectblock)(NSInteger index);
 
 
 -(void)didSelected:(NSArray <NSString *>*)dataArray block:(void(^)(NSInteger index))block{
+    self.dataArray = dataArray;
     self.selectblock  = block;
-    
 }
 
 

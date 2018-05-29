@@ -61,7 +61,7 @@
 #import "UIView+AXTool.h"
 #import "NSDate+AXTool.h"
 #import "NSObject+AXTool.h"
-#import "NSString+AXVersion.h"
+#import "NSObject+AXVersion.h"
 #import "UIColor+AXTool.h"
 #import "UIViewController+AXTool.h"
 #import "NSURL+AXTool.h"
