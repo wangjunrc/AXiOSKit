@@ -107,6 +107,10 @@ self.frame = frame;\
 }\
 
 
+/**
+ * 让代码奔溃
+ */
+// NSAssert(0, @"必须有sourceView或者item");
 
 /**
  * 消除 过期警告 top
@@ -136,35 +140,6 @@ return (aViewClass *)[super view];\
 }\
 
 
-#define AX_IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-#define AX_IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-#define AX_IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
 
-#define AX_SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
-#define AX_SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
-#define AX_SCREEN_MAX_LENGTH (MAX(AX_SCREEN_WIDTH, AX_SCREEN_HEIGHT))
-#define AX_SCREEN_MIN_LENGTH (MIN(AX_SCREEN_WIDTH, AX_SCREEN_HEIGHT))
-
-#define AX_IS_IPHONE_4_OR_LESS (AX_IS_IPHONE && AX_SCREEN_MAX_LENGTH < 568.0)
-/**
- 小尺寸 系列 及以后
- */
-#define AX_IS_IPHONE_4_0_Later (AX_IS_IPHONE && AX_SCREEN_MAX_LENGTH >= 568.0)
-
-/**
- 正常 系列 及以后
- */
-#define AX_IS_IPHONE_4_7_Later (AX_IS_IPHONE && AX_SCREEN_MAX_LENGTH >= 667.0)
-
-/**
- p 系列 及以后
- */
-#define AX_IS_IPHONE_5_5_Later (AX_IS_IPHONE && AX_SCREEN_MAX_LENGTH >= 736.0)
-
-
-/**
- x 系列 及以后
- */
-#define AX_IS_IPHONE_5_8_Later (AX_IS_IPHONE && AX_SCREEN_MAX_LENGTH >= 812.0)
 
 

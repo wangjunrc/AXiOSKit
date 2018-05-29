@@ -174,7 +174,14 @@ pod 'FreeStreamer', '~> 3.7.3'
 # 分段
 #pod 'FSScrollContentViewLib'
 
+# 时间选择器
+#PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
+#PGDatePicker *datePicker = datePickManager.datePicker;
+#datePicker.datePickerMode = PGDatePickerModeDateHourMinuteSecond;
+#datePicker.delegate = self;
+#[self presentViewController:datePickManager animated:false completion:nil];
 
+pod 'PGDatePicker'
 
 # 以下是第三方服务
 

@@ -38,13 +38,32 @@ typedef void(^DateBloack)(NSDate *date);
 
 #pragma mark - set and get
 
+/**
+ 时间选择器 默认显示 UIDatePickerModeDate 年月日
+ 
+ @param showDate 当前显示时间
+ @param block 回调
+ */
+-(void)didSelectDate:(NSDate *)showDate block:(void(^)(NSDate *date))block{
+    
+    [self didSelectPickerMode:UIDatePickerModeDate showDate:showDate block:block];
+}
 
--(void)didSelectDate:(NSDate *)currentDate  block:(void(^)(NSDate *date))block{
-    if (currentDate) {
-        if (currentDate) {
-            self.datePicker.date = currentDate;
-        }
-    }   self.dateBloack = block;
+/**
+ 时间选择器
+ 
+ @param datePickerMode 时间类型
+ @param showDate 当前显示时间
+ @param block 回调
+ */
+-(void)didSelectPickerMode:(UIDatePickerMode )datePickerMode showDate:(NSDate *)showDate block:(void(^)(NSDate *date))block{
+    
+    if (showDate) {
+        self.datePicker.date = showDate;
+    }
+    self.datePicker.datePickerMode = datePickerMode;
+    self.dateBloack = block;
+    
 }
 
 @end

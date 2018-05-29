@@ -20,6 +20,12 @@ typedef void(^Selectblock)(NSInteger index);
 
 @property (nonatomic, strong) NSArray  *dataArray;
 
+/**
+ * <#注释#>
+ */
+@property(nonatomic,assign)NSInteger showRow;
+
+
 @end
 
 @implementation AXSinglePickVC
@@ -37,14 +43,8 @@ typedef void(^Selectblock)(NSInteger index);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.pickerView selectRow:0 inComponent:0 animated:YES];
+    
 }
-
-
-
-
-
-
 
 #pragma mark - UIPicker Delegate
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -52,10 +52,12 @@ typedef void(^Selectblock)(NSInteger index);
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    
     return self.dataArray.count;
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
        return self.dataArray[row];
     
 }
@@ -66,6 +68,7 @@ typedef void(^Selectblock)(NSInteger index);
 //        [pickerView reloadComponent:1];
 //    }
 }
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -76,11 +79,12 @@ typedef void(^Selectblock)(NSInteger index);
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
 - (IBAction)enterBtnEvents:(UIButton *)sender {
     if (self.selectblock) {
-        NSInteger comp0 = [self.pickerView selectedRowInComponent:0];
         
-        self.selectblock(comp0);
+        NSInteger selectComp = [self.pickerView selectedRowInComponent:0];
+        self.selectblock(selectComp);
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 
@@ -88,14 +92,25 @@ typedef void(^Selectblock)(NSInteger index);
 
 
 
+/**
+ 单选
 
-
--(void)didSelected:(NSArray <NSString *>*)dataArray block:(void(^)(NSInteger index))block{
+ @param dataArray 内容
+ @param row 当前row
+ @param block 回调
+ */
+-(void)didSelected:(NSArray <NSString *>*)dataArray showRow:(NSInteger )row block:(void(^)(NSInteger index))block{
+    
     self.dataArray = dataArray;
     self.selectblock  = block;
+    self.showRow = row;
+    [self.pickerView reloadComponent:0];
+    
+    if (row<self.dataArray.count) {
+        [self.pickerView selectRow:row inComponent:0 animated:YES];
+    }
+    
 }
-
-
 
 
 @end

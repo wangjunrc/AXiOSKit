@@ -11,6 +11,24 @@
 
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 
--(void)didSelectDate:(NSDate *)currentDate  block:(void(^)(NSDate *date))block;
+
+/**
+  时间选择器
+
+ @param datePickerMode 时间类型
+ @param showDate 当前显示时间
+ @param block 回调
+ */
+-(void)didSelectPickerMode:(UIDatePickerMode )datePickerMode showDate:(NSDate *)showDate block:(void(^)(NSDate *date))block;
+
+
+/**
+ 时间选择器 默认显示 UIDatePickerModeDate 年月日
+
+ @param showDate 当前显示时间
+ @param block 回调
+ */
+-(void)didSelectDate:(NSDate *)showDate block:(void(^)(NSDate *date))block;
+
 
 @end

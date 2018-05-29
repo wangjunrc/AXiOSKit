@@ -33,7 +33,7 @@
         }
     }
     
-    NSDate *localeDate =  [time ax_toDateCurrentFormat:currentformat];
+    NSDate *localeDate =  [time ax_toDateWithFormat:currentformat];
     
     return [localeDate ax_toStringWithFormatter:toformatter];
     
@@ -79,38 +79,27 @@
     return dateStr;
 }
 
-
 /**
- 时间字符串转换成时间,格式必须与需要转化的格式一致
+ 时间字符串转换成本地时区时间,格式必须与需要转化的格式一致
  
  @param format 当前字符串时间样式
  @return 返回时间
  */
--(NSDate *)ax_toDateCurrentFormat:(NSString *)format{
+-(NSDate *)ax_toDateWithFormat:(NSString *)format{
+    
+    NSString *timeStr = self;
+    
+    if (timeStr.length != format.length) {
+         NSAssert(0, @"时间字符串转换成本地时区时间,格式与需要转化的格式不一致");
+    }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = format;
+    dateFormatter.timeZone = [NSTimeZone localTimeZone];
     
-    [dateFormatter setDateFormat:format];
-    
-    NSDate *destDate= [dateFormatter dateFromString:self];
-    
-    //转换时区
-    NSTimeZone *zone = [NSTimeZone localTimeZone];
-    NSInteger interval = [zone secondsFromGMTForDate: destDate];
-    NSDate *localeDate = [destDate  dateByAddingTimeInterval: interval];
-    
+    NSDate *localeDate = [dateFormatter dateFromString:timeStr];
     
     return localeDate;
-    
-}
-/**
- * 时间字符串转换成时间
- */
--(NSDate *)ax_toDateFormat:(NSString *)format{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:format];
-    dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"];
-    return [dateFormatter dateFromString:self];
 }
 
 /**
