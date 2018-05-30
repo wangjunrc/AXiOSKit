@@ -112,7 +112,7 @@
     }
 }
 
-- (void)setTextWithLinkAttribute:(NSString *)text {
+- (void)ax_setTextWithLinkAttribute:(NSString *)text {
     self.userInteractionEnabled = YES;
     
     self.attributedText = [self subStr:text];

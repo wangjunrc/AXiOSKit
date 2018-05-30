@@ -132,4 +132,94 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
 
 
 
+/**
+ UIControlStateNormal 状态文字
+
+ @param title title
+ */
+-(void)ax_setTitleStateNormal:(nullable NSString *)title{
+    
+    [self setTitle:title forState:UIControlStateNormal];
+    
+}
+
+/**
+ UIControlStateDisabled 状态文字
+ 
+ @param title title
+ */
+-(void)ax_setTitleStateDisabled:(nullable NSString *)title{
+    
+    [self setTitle:title forState:UIControlStateDisabled];
+    
+}
+
+
+/**
+ UIControlStateSelected 状态文字
+ 
+ @param title title
+ */
+-(void)ax_setTitleStateSelected:(nullable NSString *)title{
+    
+    [self setTitle:title forState:UIControlStateSelected];
+    
+}
+
+/**
+ UIControlStateHighlighted 状态文字
+ 
+ @param title title
+ */
+-(void)ax_setTitleStateHighlighted:(nullable NSString *)title{
+    
+    [self setTitle:title forState:UIControlStateHighlighted];
+    
+}
+
+
+/**
+ UIControlStateNormal 文字颜色
+ 
+ @param color color
+ */
+-(void)ax_setTitleColorStateNormal:(nullable UIColor *)color{
+    
+    [self setTitleColor:color forState:UIControlStateNormal];
+    
+}
+
+/**
+ UIControlStateHighlighted 文字颜色
+ 
+ @param color color
+ */
+-(void)ax_setTitleColorStateHighlighted:(nullable UIColor *)color{
+    
+    [self setTitleColor:color forState:UIControlStateHighlighted];
+    
+}
+
+/**
+ UIControlStateDisabled 文字颜色
+ 
+ @param color color
+ */
+-(void)ax_setTitleColorStateDisabled:(nullable UIColor *)color{
+    
+    [self setTitleColor:color forState:UIControlStateDisabled];
+    
+}
+
+/**
+ UIControlStateSelected 文字颜色
+ 
+ @param color color
+ */
+-(void)ax_setTitleColorStateSelected:(nullable UIColor *)color{
+    
+    [self setTitleColor:color forState:UIControlStateSelected];
+    
+}
+
 @end

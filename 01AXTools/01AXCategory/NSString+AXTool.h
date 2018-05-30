@@ -173,9 +173,6 @@
  */
 -(NSString *)ax_urlStringtAppending:(NSString *)str;
 
-
-
-
 /**
  生成唯一的字符串UUID
 
@@ -189,5 +186,12 @@
  @return 号码
  */
 -(NSString *)ax_phoneNumSecret;
+
+/**
+ 拼接成 tel:// 格式
+ 
+ @return return value description
+ */
+-(NSURL *)ax_toTelURL;
 
 @end

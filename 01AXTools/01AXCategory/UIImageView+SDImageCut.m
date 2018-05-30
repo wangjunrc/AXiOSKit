@@ -39,7 +39,7 @@ static char imageURLKey;
 //
 //}
 
-- (void)sd_setCutImageWithURL:(NSURL *_Nullable)url placeholderImage:(UIImage *_Nullable)placeholder  completed:(nullable SDExternalCompletionBlock)completedBlock{
+- (void)ax_setCutImageWithURL:(NSURL *_Nullable)url placeholderImage:(UIImage *_Nullable)placeholder  completed:(nullable SDExternalCompletionBlock)completedBlock{
     
     [self sd_setImageWithURL:url imagCut:^UIImage *(UIImage *doImage) {
         return [self imageWithRoundCorner:doImage cornerRadius:10 size:self.frame.size ];

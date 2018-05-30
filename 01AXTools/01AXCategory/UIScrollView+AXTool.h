@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MJRefresh.h"
+
 @interface UIScrollView (AXTool)
-
-
 
 @end

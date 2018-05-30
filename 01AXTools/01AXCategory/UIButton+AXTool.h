@@ -20,11 +20,11 @@ typedef NS_ENUM(NSInteger, ImagePosition) {
 /**
  * 按钮事件封装成block
  */
--(void)ax_addTargetBlock:(void(^)(UIButton *button))block;
+-(void)ax_addTargetBlock:(void(^_Nullable)(UIButton * _Nullable button))block;
 
 /**
  修改button 文字图片位置
-
+ 
  @param postion 枚举
  @param spacing 间隙
  */
@@ -35,5 +35,61 @@ typedef NS_ENUM(NSInteger, ImagePosition) {
  扩大按钮响应热区时，负值为扩大，正值为缩小。 完全支持自动布局，只需要将方法写在自动布局方法下面即可
  */
 @property(nonatomic, assign) UIEdgeInsets hitTestEdgeInsets;
+
+/**
+ UIControlStateNormal 状态文字
+ 
+ @param title title
+ */
+-(void)ax_setTitleStateNormal:(nullable NSString *)title;
+
+/**
+ UIControlStateDisabled 状态文字
+ 
+ @param title title
+ */
+-(void)ax_setTitleStateDisabled:(nullable NSString *)title;
+
+/**
+ UIControlStateSelected 状态文字
+ 
+ @param title title
+ */
+-(void)ax_setTitleStateSelected:(nullable NSString *)title;
+
+/**
+ UIControlStateHighlighted 状态文字
+ 
+ @param title title
+ */
+-(void)ax_setTitleStateHighlighted:(nullable NSString *)title;
+
+/**
+ UIControlStateNormal 文字颜色
+ 
+ @param color color
+ */
+-(void)ax_setTitleColorStateNormal:(nullable UIColor *)color;
+
+/**
+ UIControlStateHighlighted 文字颜色
+ 
+ @param color color
+ */
+-(void)ax_setTitleColorStateHighlighted:(nullable UIColor *)color;
+
+/**
+ UIControlStateDisabled 文字颜色
+ 
+ @param color color
+ */
+-(void)ax_setTitleColorStateDisabled:(nullable UIColor *)color;
+
+/**
+ UIControlStateSelected 文字颜色
+ 
+ @param color color
+ */
+-(void)ax_setTitleColorStateSelected:(nullable UIColor *)color;
 
 @end

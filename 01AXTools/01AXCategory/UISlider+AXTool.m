@@ -9,37 +9,35 @@
 #import "UISlider+AXTool.h"
 #import <objc/runtime.h>
 
-typedef void(^ButtonBlock)(UISlider *button);
-
-
+typedef void(^SliderBlock)(UISlider *button);
 
 @interface UISlider ()
 
-@property(nonatomic,copy)ButtonBlock buttonBlock;
+@property(nonatomic,copy)SliderBlock sliderBlock;
 
 @end
 @implementation UISlider (AXTool)
 
 -(void)ax_addTargetBlock:(void (^)(UISlider *))block{
     [self addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventValueChanged];
-    self.buttonBlock = block;
+    self.sliderBlock = block;
 }
--(void)buttonEvents:(UISlider *)button{
-    if (self.buttonBlock) {
-        self.buttonBlock(button);
+-(void)buttonEvents:(UISlider *)sender{
+    if (self.sliderBlock) {
+        self.sliderBlock(sender);
     }
 }
 
 /**
  * cameraBlock set方法
  */
-- (void)setButtonBlock:(ButtonBlock)buttonBlock{
-    objc_setAssociatedObject(self, @selector(buttonBlock),buttonBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setSliderBlock:(SliderBlock)sliderBlock{
+    objc_setAssociatedObject(self, @selector(sliderBlock),sliderBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 /**
  * cameraBlock get方法
  */
-- (ButtonBlock)buttonBlock{
-    return objc_getAssociatedObject(self, @selector(buttonBlock));
+- (SliderBlock)sliderBlock{
+    return objc_getAssociatedObject(self, @selector(sliderBlock));
 }
 @end
