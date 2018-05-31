@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIView+AXIBInspectable.h"
 
 @interface UIView (AXTool)
 /**
@@ -24,7 +25,7 @@
  
  @param colorArray UIColor 数组
  */
--(void)ax_gradientColors:(NSArray <UIColor*>*)colorArray;
+-(void)ax_gradientColors:(NSArray <UIColor*>*_Nullable)colorArray;
 
 
 /**
@@ -49,7 +50,7 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
  @param color 边框颜色
  @param width 边框宽度
  */
-- (void)ax_addBorder:(AXBorderDirectionType)direction color:(UIColor *)color width:(CGFloat)width;
+- (void)ax_addBorder:(AXBorderDirectionType)direction color:(UIColor *_Nullable)color width:(CGFloat)width;
 
 /**
  阴影
@@ -57,12 +58,23 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
  
  @param shadowColor UIColor
  */
--(void)ax_shadowWith:(UIColor *)shadowColor;
+-(void)ax_shadowWith:(UIColor *_Nullable)shadowColor;
 
 
 /**
  * view 添加手势 成为点击事件
  */
--(void)ax_viewAddTargetBlock:(void(^)(id aView))block;
+-(void)ax_viewAddTargetBlock:(void(^_Nullable)(id _Nullable aView))block;
+
+
+/**
+ 找出绑定 ax_tag 的对象
+
+ @param tag ax_tag
+ @return view
+ */
+- (nullable __kindof UIView *)ax_viewWithTag:(NSString *_Nullable)tag;
+
+
 
 @end

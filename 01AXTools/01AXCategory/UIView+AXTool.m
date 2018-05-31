@@ -11,7 +11,7 @@
 
 typedef void(^DidViewBlock)(UIView *view);
 
-@interface UIView ()
+@interface UIView ()<UIGestureRecognizerDelegate>
 
 @property(nonatomic,copy)DidViewBlock didViewBlock;
 
@@ -154,15 +154,6 @@ typedef void(^DidViewBlock)(UIView *view);
 }
 
 
-
-
-- (void)setDidViewBlock:(DidViewBlock)didViewBlock{
-    ax_runtimePropertyObjSet(didViewBlock);
-}
-
-- (DidViewBlock)didViewBlock{
-    return ax_runtimePropertyObjGet(didViewBlock);
-}
 /**
  * view 添加手势 成为点击事件
  */
@@ -171,6 +162,7 @@ typedef void(^DidViewBlock)(UIView *view);
     self.didViewBlock = block;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
     [self addGestureRecognizer:tap];
+     tap.delegate = self;
     
 }
 - (void)tapGestureAction:(UIGestureRecognizer *)sender{
@@ -178,5 +170,72 @@ typedef void(^DidViewBlock)(UIView *view);
         self.didViewBlock(self);
     }
 }
+
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    
+    if ([touch.view isDescendantOfView:self]) {
+        return YES;
+    }
+    return NO;
+}
+
+/**
+ 找出绑定 ax_tag 的对象
+ 
+ @param tag ax_tag
+ @return view
+ */
+- (nullable __kindof UIView *)ax_viewWithTag:(NSString *)tag{
+    
+    
+    UIView *aView = nil;
+    
+    for (UIView *subView in self.subviews) {
+        
+        if([subView.axTag isEqualToString:tag]){
+            aView = subView;
+            break;
+        }else{
+           aView = [subView ax_viewWithTag:tag];
+            if (aView) {
+                 break;
+            }
+        }
+    }
+    
+    return aView;
+    
+}
+
+
+//-(UIView *)ax_viewTagWith:(UIView *)axview tag:(NSString *)tag{
+//
+//     UIView *aView = nil;
+//
+//    for (UIView *subView in axview.subviews) {
+//
+//        aView = subView;
+//
+//        while(![subView.axTag isEqualToString:tag]){
+//
+//           aView =  [self ax_viewTagWith:subView tag:tag];
+//        }
+//    }
+//
+//     return aView;
+//}
+
+#pragma mark - set and get
+
+- (void)setDidViewBlock:(DidViewBlock)didViewBlock{
+    ax_runtimePropertyObjSet(didViewBlock);
+}
+
+- (DidViewBlock)didViewBlock{
+    return ax_runtimePropertyObjGet(didViewBlock);
+}
+
+
 
 @end
