@@ -34,20 +34,12 @@
 /**
  * AFN 中的 pageIndex
  */
-@property (nonatomic, assign) NSInteger pageIndex;
+@property(nonatomic, assign)NSInteger pageIndex;
 
 /**
  * 回调方法
  */
 -(void)ax_backObjBlock:(void(^)(id obj))backBlock;
-
-
-typedef void(^BackBlock)(id obj);
-/**
- *
- */
-@property (nonatomic, copy) BackBlock backBlock;
-
 
 
 /**

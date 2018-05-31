@@ -10,8 +10,6 @@
 
 @interface NSUserDefaults (AXTool)
 
-
-
 /**
  删除所有的 NSUserDefaults
  */

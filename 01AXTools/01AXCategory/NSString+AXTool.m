@@ -520,5 +520,17 @@
     }
 }
 
+
+
+/**
+ 拼接成 tel:// 格式
+
+ @return return value description
+ */
+-(NSURL *)ax_toTelURL{
+    
+    return [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",self]];
+}
+
 @end
 

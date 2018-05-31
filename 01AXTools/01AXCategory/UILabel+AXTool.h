@@ -21,6 +21,6 @@
 -(void)ax_setPhoneCall;
 
 
-- (void)setTextWithLinkAttribute:(NSString *)text;
+- (void)ax_setTextWithLinkAttribute:(NSString *)text;
 
 @end

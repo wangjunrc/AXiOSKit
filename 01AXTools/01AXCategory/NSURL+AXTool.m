@@ -9,6 +9,7 @@
 #import "NSURL+AXTool.h"
 
 @implementation NSURL (AXTool)
+
 +(NSURL *)ax_URLByPhone:(NSString *)phone{
     return [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phone]];
 }

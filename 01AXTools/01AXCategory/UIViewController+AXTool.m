@@ -9,8 +9,16 @@
 #import "UIViewController+AXTool.h"
 #import "UIViewController+AXAlert.h"
 
+
+typedef void(^BackBlock)(id obj);
+
 @interface UIViewController ()
 
+
+/**
+ *
+ */
+@property (nonatomic, copy)BackBlock backBlock;
 
 /**
  * <#注释#>
