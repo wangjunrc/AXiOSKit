@@ -43,7 +43,7 @@
         }
         
     } failure:^(NSURLSessionDataTask * task, NSError * error) {
-        AXLog(@"task.state>> %ld",task.state);
+        AXLog(@"task.state>> %ld",(long)task.state);
         
         if (hud) {
             [hud hideAnimated:YES];
@@ -61,7 +61,7 @@
  get请求
  
  @param url url
- @param parameters 参数
+ @param parameter 参数
  @param success 成功
  @param failure 失败
  @param log 是否打印参数,返回值
@@ -89,7 +89,7 @@
         
         if (failure) {
             if (log) {
-                AXLog(@"failure> %ld /n %@",task.state,error.localizedDescription);
+                AXLog(@"failure> %ld /n %@",(long)task.state,error.localizedDescription);
             }
             failure(task.state);
         }
@@ -101,7 +101,7 @@
  post请求
  
  @param url url
- @param parameters 参数
+ @param parameter 参数
  @param success 成功
  @param failure 失败
  @param log 是否打印参数,返回值
@@ -129,7 +129,7 @@
         
         if (failure) {
             if (log) {
-                AXLog(@"failure> %ld /n %@",task.state,error.localizedDescription);
+                AXLog(@"failure> %ld /n %@",(long)task.state,error.localizedDescription);
             }
             failure(task.state);
         }

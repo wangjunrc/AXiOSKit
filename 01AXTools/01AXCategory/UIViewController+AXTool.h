@@ -32,17 +32,6 @@
 +(UIViewController *)ax_currentViewController;
 
 /**
- * AFN 中的 pageIndex
- */
-@property(nonatomic, assign)NSInteger pageIndex;
-
-/**
- * 回调方法
- */
--(void)ax_backObjBlock:(void(^)(id obj))backBlock;
-
-
-/**
  是否有 navigationController
  
  @param haveNav 被push和present自带nav

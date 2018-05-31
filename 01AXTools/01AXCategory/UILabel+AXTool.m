@@ -146,9 +146,7 @@
     NSMutableArray *rangeArr=[[NSMutableArray alloc]init];
     
     
-    for (NSTextCheckingResult *match in arrayOfAllMatches)
-        
-    {
+    for (NSTextCheckingResult *match in arrayOfAllMatches) {
         
         NSString* substringForMatch;
         
@@ -167,13 +165,7 @@
         
     }
     
-    UIFont *font = [UIFont systemFontOfSize:20];
-    
-//    NSMutableAttributedString *attributedText =[[NSMutableAttributedString alloc]initWithString:subStr attributes:@{NSFontAttributeName :font}];
-    
-    
     NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc]initWithString:subStr];
-  
     
     
     for(NSValue *value in rangeArr)
@@ -183,11 +175,6 @@
         NSInteger index=[rangeArr indexOfObject:value];
         
         NSRange range=[value rangeValue];
-        
-//        [attributedText addAttribute:NSLinkAttributeName value:[NSURL URLWithString:[arr objectAtIndex:index]] range:range];
-        
-//        [attributedText addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:range];
-//         [attributedText addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:range];
         
         
         NSDictionary *dcit = @{

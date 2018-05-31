@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
  /** 点 不是像素 */
-typedef  enum{
-   
+typedef NS_ENUM(NSInteger, AXDeviceSize) {
+    
     AXUnKnown=0,
     
     /*Phone 5
@@ -54,7 +54,7 @@ typedef  enum{
      iPad Mini 2
      iPad Mini 3
      iPad Mini 4
-    
+     
      768x1024
      */
     AXiPad_7_9,
@@ -80,7 +80,7 @@ typedef  enum{
      1024x1366
      */
     AXiPad_12_9,
-}AXDeviceSize;
+};
 
 @interface UIDevice (AXTool)
 

@@ -9,34 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
+typedef void(^AX_backBlock)(id obj);
+
 @interface NSObject (AXTool)
-/**
- *  得到一个类所有属性
- */
-+ (NSArray *)ax_getProperties;
+
+@property (nonatomic, copy)AX_backBlock ax_backBlock;
 
 /**
- *  获得实例对象的属性及属性值
- *
- *  @return 字典
+ * AFN 中的 pageIndex
  */
-- (NSDictionary *)ax_getProperties_aps;
-
-/**
- * 把另外对象的属性值,赋值给自己
- */
--(void)ax_getValueFromObj:(NSObject *)otherObj;
-
-
-/**
- *  替换 实例 方法 Instance
- */
-+ (void)ax_replaceInstanceMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL;
-
-/**
- * 更换 类 方法
- */
-+ (void)ax_replaceClassMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL;
+@property(nonatomic, assign)NSInteger ax_pageIndex;
 
 /**
  封装 alloc]init]

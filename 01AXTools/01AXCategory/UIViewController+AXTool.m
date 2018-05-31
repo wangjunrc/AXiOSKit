@@ -10,15 +10,8 @@
 #import "UIViewController+AXAlert.h"
 
 
-typedef void(^BackBlock)(id obj);
-
 @interface UIViewController ()
 
-
-/**
- *
- */
-@property (nonatomic, copy)BackBlock backBlock;
 
 /**
  * <#注释#>
@@ -175,7 +168,6 @@ typedef void(^BackBlock)(id obj);
  
  @param title title
  @param imageName imageName
- @param selectImageName selectImageName
  */
 -(void)ax_tabBarWithTitle:(NSString *)title imageName:(NSString *)imageName{
     
@@ -188,35 +180,6 @@ typedef void(^BackBlock)(id obj);
 
 #pragma mark - set and get
 
-- (void)setPageIndex:(NSInteger)pageIndex{
-    ax_runtimePropertyAssSet(pageIndex);
-}
-
-- (NSInteger)pageIndex{
-    return [ax_runtimePropertyAssGet(pageIndex)integerValue];
-
-}
-
-
-/**
- * 回调
- */
--(void)ax_backObjBlock:(void(^)(id obj))backBlock{
-    self.backBlock = backBlock;
-}
-
-/**
- * backBlock set
- */
-- (void)setBackBlock:(BackBlock)backBlock{
-    objc_setAssociatedObject(self, @selector(backBlock),backBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-/**
- * backBlock get
- */
-- (BackBlock)backBlock{
-    return objc_getAssociatedObject(self,@selector(backBlock));
-}
 
 - (void)setAx_popVC:(UIViewController *)ax_popVC{
    
