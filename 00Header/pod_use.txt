@@ -3,34 +3,44 @@ inhibit_all_warnings!
 
 def pod_use
 
+# *********必备*********
 #    网络请求
-pod 'AFNetworking', '~> 3.1.0'
+pod 'AFNetworking'
 
 #    图片加载
-pod 'SDWebImage', '~> 4.2.2'
-
-# 加载图片的模糊效果
-pod 'PINRemoteImage'
-
-# 由Flipboard开源的iOS平台上播放GIF动画
-pod 'FLAnimatedImage'
+pod 'SDWebImage'
 
 #    约束
-pod 'Masonry', '~> 1.1.0'
+pod 'Masonry'
 
 #    键盘动画
 # UIViewController + UITableView 的使用方式的支持都有问题。 UITableView + UISearchController 会偏移 使用约束=NO解决
-pod 'IQKeyboardManager', '~> 5.0.6'
+pod 'IQKeyboardManager'
 
 #  tableview 上下刷新
-pod 'MJRefresh', '~> 3.1.15'
+pod 'MJRefresh'
 
 #    服务器返回json空,安全解析
-pod 'NullSafe', '~> 1.2'
+pod 'NullSafe'
 
 #    json 解析
-pod 'MJExtension', '~> 3.0.7'
+pod 'MJExtension'
 
+# Facebook kvo 自己封装下
+pod 'KVOController'
+
+#    tableview 空集合
+pod 'DZNEmptyDataSet'
+
+#是一组庞大、功能丰富的 iOS 组件。
+#    pod 'YYKit'
+pod 'YYText'
+pod 'YYImage'
+
+# 提示框
+pod 'MBProgressHUD'
+
+# *********可选*********
 
 #主要用来将 JSON 数据模型化为 Model 对象
 #pod 'Mantle'
@@ -44,48 +54,44 @@ pod 'MJExtension', '~> 3.0.7'
 #支持 iOS SQLite 数据库迁移
 #pod 'FMDBMigrationManager'
 
+# 加载图片的模糊效果
+#pod 'PINRemoteImage'
 
-#    提示框
-pod 'MBProgressHUD', '~> 1.0.0'
-
-#    tableview 空集合
-pod 'DZNEmptyDataSet', '~> 1.8'
+# 由Flipboard开源的iOS平台上播放GIF动画
+#pod 'FLAnimatedImage'
 
 #    图片无限轮播器
-pod 'SDCycleScrollView', '~> 1.75'
-
-# Facebook kvo 自己封装下
-pod 'KVOController', '~> 1.2'
+#pod 'SDCycleScrollView'
 
 # 腾讯邮箱Team UI控件 和 TZScrollViewPopGesture 会产生返回拦截拦截功能冲突
-pod 'QMUIKit', '~> 2.5'
+#pod 'QMUIKit'
 
 #    让UIScrollView的滑动和系统侧滑手势并存，例如：在查看地图界面同时支持地图的滑动和侧滑返回。注：和FDFullscreenPopGesture库不冲突
-pod 'TZScrollViewPopGesture', '~> 1.0'
+pod 'TZScrollViewPopGesture'
 
 #    相册多选
-pod 'TZImagePickerController', '~> 2.0'
+pod 'TZImagePickerController'
 
 #    UIWebView 加载进度条
-pod 'NJKWebViewProgress', '~> 0.2'
+pod 'NJKWebViewProgress'
 
 #    zip解压
-pod 'SSZipArchive', '~> 1.3'
+pod 'SSZipArchive'
 
 #    微信SQLit 存储
-pod 'WCDB', '~> 1.0.6'
+pod 'WCDB'
 
 #    音频在线播放,含有缓存
-pod 'FreeStreamer', '~> 3.7.3'
+pod 'FreeStreamer'
 
 # coreData 封装
-# pod 'MagicalRecord', '~> 2.3'
+# pod 'MagicalRecord'
 
 #GIF图片加载
-#pod 'FLAnimatedImage', '~> 1.0'
+#pod 'FLAnimatedImage'
 
 #气泡提示
-#pod 'JDFTooltips', '~> 1.1'
+#pod 'JDFTooltips'
 
 #基于GPU的图片或视频的处理框架
 #pod 'GPUImage'
@@ -101,9 +107,6 @@ pod 'FreeStreamer', '~> 3.7.3'
 
 #腾讯Buglg可以做到时时发送崩溃报告
 #pod 'Buglg'
-
-#是一组庞大、功能丰富的 iOS 组件。
-#pod 'YYKit'
 
 # 存放用户账号密码组件
 #pod 'UICKeyChainStore'
@@ -181,10 +184,10 @@ pod 'FreeStreamer', '~> 3.7.3'
 #datePicker.delegate = self;
 #[self presentViewController:datePickManager animated:false completion:nil];
 
-pod 'PGDatePicker'
+#pod 'PGDatePicker'
 
-# 以下是第三方服务
 
+# *********以下是第三方服务*********
 # U-Share SDK UI模块（分享面板，建议添加）
 pod ‘UMengUShare/UI’
 

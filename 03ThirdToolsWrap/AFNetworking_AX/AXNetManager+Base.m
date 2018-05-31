@@ -8,6 +8,7 @@
 
 #import "AXNetManager+Base.h"
 #import "AXMacros.h"
+#import "MBProgressHUD+AX.h"
 @implementation AXNetManager (Base)
 /**
  * post请求
@@ -28,7 +29,7 @@
     
     MBProgressHUD *hud = nil;
     if (showHud) {
-        hud = [MBProgressHUD showMessage:AXNetLoadTitle];
+        hud = [MBProgressHUD ax_showMessage:AXNetLoadTitle];
     }
     
     _dataTask = [[self shareManager] POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * task, id  responseObject) {
@@ -46,7 +47,7 @@
         
         if (hud) {
             [hud hideAnimated:YES];
-            [MBProgressHUD showError:error.localizedDescription];
+            [MBProgressHUD ax_showError:error.localizedDescription];
         }
         if (failure) {
             failure(error.localizedDescription);

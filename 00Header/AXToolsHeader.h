@@ -99,7 +99,7 @@
 #import "MJExtension.h"
 //#import "UINavigationController+TZPopGesture.h"
 /**多选照片*/
-#import "TZImagePickerController.h"
+//#import "TZImagePickerController.h"
 /*气泡提示*/
 //#import "JDFSequentialTooltipManager.h"
 #import "UITextView+WZB.h"

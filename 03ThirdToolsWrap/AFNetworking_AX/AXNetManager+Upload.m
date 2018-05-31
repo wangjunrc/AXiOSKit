@@ -43,7 +43,7 @@
      AXLog(@"%@ -- %@",url,parameters);
     MBProgressHUD *hud = nil;
     if (showHud) {
-//        hud = [MBProgressHUD showMessage:AXNetLoadTitle];
+//        hud = [MBProgressHUD ax_showMessage:AXNetLoadTitle];
     }
     
     [[self shareManager] POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  formData) {
