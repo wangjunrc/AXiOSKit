@@ -87,6 +87,9 @@
 #import "UIViewController+AXiPadAlert.h"
 #import "NSUserDefaults+AXTool.h"
 #import "NSNumber+AXTool.h"
+#import "AXWeakProxy.h"
+
+
 
 /* 02ThirdTools */
 #pragma mark - 02ThirdTools
@@ -97,15 +100,9 @@
 #import "UIButton+WebCache.h"
 #import "UIImage+GIF.h"
 #import "MJExtension.h"
-//#import "UINavigationController+TZPopGesture.h"
-/**多选照片*/
-//#import "TZImagePickerController.h"
-/*气泡提示*/
-//#import "JDFSequentialTooltipManager.h"
 #import "UITextView+WZB.h"
 
-/**腾讯邮箱Team UI控件*/
-//#import "QMUIKit.h"
+
 
 /* 03ThirdToolsWrap */
 #pragma mark - 03ThirdToolsWrap
@@ -114,6 +111,8 @@
 #import "NSObject+FBKVOControllerAX.h"
 #import "MBProgressHUD+AX.h"
 #import "NSObject+AXCacheImage.h"
+
+
 
 /* 04ThirdSDK */
 #pragma mark - 04ThirdSDK
