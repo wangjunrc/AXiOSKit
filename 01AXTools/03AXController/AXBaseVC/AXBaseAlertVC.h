@@ -21,4 +21,6 @@
  */
 @property (nonatomic,assign)BOOL axTouchesBeganDismiss;
 
+@property (nonatomic,assign)UIAlertControllerStyle alertControllerStyle;
+
 @end

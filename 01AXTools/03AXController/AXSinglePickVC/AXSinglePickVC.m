@@ -8,15 +8,15 @@
 
 #import "AXSinglePickVC.h"
 
-typedef void(^Selectblock)(NSInteger index);
 
 @interface AXSinglePickVC ()<UIPickerViewDelegate,UIPickerViewDataSource>
+
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (strong, nonatomic) IBOutlet UIButton *cancelBtn;
-/**
- * <#注释#>
- */
-@property(nonatomic,copy)Selectblock selectblock;
+
+@property(nonatomic,copy)void(^confirmBlock)(NSInteger index);
+
+@property(nonatomic,copy)void(^cancelBlock)(void);
 
 @property (nonatomic, strong) NSArray  *dataArray;
 
@@ -25,24 +25,15 @@ typedef void(^Selectblock)(NSInteger index);
  */
 @property(nonatomic,assign)NSInteger showRow;
 
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @end
 
 @implementation AXSinglePickVC
 
-
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        
-        self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        self.view.backgroundColor = [UIColor clearColor];
-    }
-    return self;
-}
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.axContentView = self.contentView;
     
 }
 
@@ -70,39 +61,49 @@ typedef void(^Selectblock)(NSInteger index);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    if (self.cancelBlock) {
+        self.cancelBlock();
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 - (IBAction)caccelBtnEvents:(UIButton *)sender {
     
+    if (self.cancelBlock) {
+        self.cancelBlock();
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
 - (IBAction)enterBtnEvents:(UIButton *)sender {
-    if (self.selectblock) {
+    if (self.confirmBlock) {
         
         NSInteger selectComp = [self.pickerView selectedRowInComponent:0];
-        self.selectblock(selectComp);
+        self.confirmBlock(selectComp);
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 
 
-
 /**
  单选
-
+ 
  @param dataArray 内容
- @param row 当前row
- @param block 回调
+ @param row 当前显示的row
+ @param confirm 确定
+ @param cancel 取消
  */
--(void)didSelected:(NSArray <NSString *>*)dataArray showRow:(NSInteger )row block:(void(^)(NSInteger index))block{
+-(void)didSelected:(NSArray <NSString *>*)dataArray showRow:(NSInteger )row confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
     
     self.dataArray = dataArray;
-    self.selectblock  = block;
+    
+    self.confirmBlock  = confirm;
+    self.cancelBlock = cancel;
+    
     self.showRow = row;
     [self.pickerView reloadComponent:0];
     
@@ -111,6 +112,5 @@ typedef void(^Selectblock)(NSInteger index);
     }
     
 }
-
 
 @end

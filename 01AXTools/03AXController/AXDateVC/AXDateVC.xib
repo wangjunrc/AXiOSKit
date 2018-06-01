@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AXDateVC">
             <connections>
+                <outlet property="contentView" destination="tuL-Ma-dyv" id="b8B-Gi-tFy"/>
                 <outlet property="datePicker" destination="LId-Jo-ryL" id="Ku3-GV-FeG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,63 +21,75 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LId-Jo-ryL">
-                    <rect key="frame" x="0.0" y="562" width="375" height="250"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="250" id="XmC-Dx-DK1"/>
-                    </constraints>
-                    <date key="date" timeIntervalSinceReferenceDate="483520476.33538198">
-                        <!--2016-04-28 07:14:36 +0000-->
-                    </date>
-                </datePicker>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7t-md-JLk">
-                    <rect key="frame" x="0.0" y="512" width="375" height="50"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tuL-Ma-dyv">
+                    <rect key="frame" x="0.0" y="512" width="375" height="300"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25X-ys-cRY">
-                            <rect key="frame" x="10" y="0.0" width="50" height="50"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7t-md-JLk">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25X-ys-cRY">
+                                    <rect key="frame" x="10" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="69a-04-oJQ"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="esT-xB-WYY"/>
+                                        <constraint firstAttribute="height" constant="50" id="kXR-Yo-Kei"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="取消"/>
+                                    <connections>
+                                        <action selector="cancelBtnEvents:" destination="-1" eventType="touchUpInside" id="KPe-5a-2Wc"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzW-pK-IZ2">
+                                    <rect key="frame" x="315" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="9p1-HB-zIf"/>
+                                        <constraint firstAttribute="width" constant="50" id="a5T-VV-Ygp"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="wyg-UX-GYc"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="确定"/>
+                                    <connections>
+                                        <action selector="centerButtonEvents:" destination="-1" eventType="touchUpInside" id="LIc-lc-JS5"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="50" id="69a-04-oJQ"/>
+                                <constraint firstAttribute="trailing" secondItem="wzW-pK-IZ2" secondAttribute="trailing" constant="10" id="Duc-nS-rOb"/>
+                                <constraint firstAttribute="height" constant="50" id="Pxy-IG-V8p"/>
+                                <constraint firstItem="25X-ys-cRY" firstAttribute="centerY" secondItem="y7t-md-JLk" secondAttribute="centerY" id="TH5-fI-D2Q"/>
+                                <constraint firstItem="25X-ys-cRY" firstAttribute="leading" secondItem="y7t-md-JLk" secondAttribute="leading" constant="10" id="sxI-ep-KbA"/>
+                                <constraint firstItem="wzW-pK-IZ2" firstAttribute="centerY" secondItem="y7t-md-JLk" secondAttribute="centerY" id="ufo-7d-QH9"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="取消"/>
-                            <connections>
-                                <action selector="cancelBtnEvents:" destination="-1" eventType="touchUpInside" id="KPe-5a-2Wc"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzW-pK-IZ2">
-                            <rect key="frame" x="315" y="0.0" width="50" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="50" id="a5T-VV-Ygp"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="确定"/>
-                            <connections>
-                                <action selector="centerButtonEvents:" destination="-1" eventType="touchUpInside" id="LIc-lc-JS5"/>
-                            </connections>
-                        </button>
+                        </view>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LId-Jo-ryL">
+                            <rect key="frame" x="0.0" y="50" width="375" height="250"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <date key="date" timeIntervalSinceReferenceDate="483520476.33538198">
+                                <!--2016-04-28 07:14:36 +0000-->
+                            </date>
+                        </datePicker>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="25X-ys-cRY" secondAttribute="bottom" id="DIJ-gB-f4v"/>
-                        <constraint firstItem="25X-ys-cRY" firstAttribute="leading" secondItem="y7t-md-JLk" secondAttribute="leading" constant="10" id="Qbi-Yg-Rzz"/>
-                        <constraint firstAttribute="trailing" secondItem="wzW-pK-IZ2" secondAttribute="trailing" constant="10" id="UhS-TW-y2v"/>
-                        <constraint firstItem="wzW-pK-IZ2" firstAttribute="top" secondItem="y7t-md-JLk" secondAttribute="top" id="fvz-UR-8rU"/>
-                        <constraint firstAttribute="bottom" secondItem="wzW-pK-IZ2" secondAttribute="bottom" id="lQ7-Ur-VDw"/>
-                        <constraint firstItem="25X-ys-cRY" firstAttribute="top" secondItem="y7t-md-JLk" secondAttribute="top" id="rE7-k6-02v"/>
-                        <constraint firstAttribute="height" constant="50" id="vrz-Db-pnY"/>
+                        <constraint firstItem="y7t-md-JLk" firstAttribute="top" secondItem="tuL-Ma-dyv" secondAttribute="top" id="54D-5Y-EqC"/>
+                        <constraint firstItem="LId-Jo-ryL" firstAttribute="top" secondItem="y7t-md-JLk" secondAttribute="bottom" id="8Pa-3d-Xgh"/>
+                        <constraint firstAttribute="bottom" secondItem="LId-Jo-ryL" secondAttribute="bottom" id="Ckg-gy-HU4"/>
+                        <constraint firstAttribute="trailing" secondItem="y7t-md-JLk" secondAttribute="trailing" id="GLr-eh-IKz"/>
+                        <constraint firstAttribute="height" constant="300" id="RNx-3q-aHx"/>
+                        <constraint firstItem="y7t-md-JLk" firstAttribute="leading" secondItem="tuL-Ma-dyv" secondAttribute="leading" id="a1G-Ru-NBv"/>
+                        <constraint firstAttribute="trailing" secondItem="LId-Jo-ryL" secondAttribute="trailing" id="bLC-uC-02U"/>
+                        <constraint firstItem="LId-Jo-ryL" firstAttribute="leading" secondItem="tuL-Ma-dyv" secondAttribute="leading" id="pTW-Ud-JCe"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
-                <constraint firstItem="LId-Jo-ryL" firstAttribute="top" secondItem="y7t-md-JLk" secondAttribute="bottom" id="3fM-wD-8pL"/>
-                <constraint firstItem="y7t-md-JLk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="F6g-Ai-3Vi"/>
-                <constraint firstAttribute="trailing" secondItem="y7t-md-JLk" secondAttribute="trailing" id="Hdp-YC-L4V"/>
-                <constraint firstItem="LId-Jo-ryL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LzX-if-OXk"/>
-                <constraint firstAttribute="bottom" secondItem="LId-Jo-ryL" secondAttribute="bottom" id="ujy-RF-u40"/>
-                <constraint firstAttribute="trailing" secondItem="LId-Jo-ryL" secondAttribute="trailing" id="ySK-VN-Mzd"/>
+                <constraint firstAttribute="bottom" secondItem="tuL-Ma-dyv" secondAttribute="bottom" id="Tkx-23-nVU"/>
+                <constraint firstAttribute="trailing" secondItem="tuL-Ma-dyv" secondAttribute="trailing" id="gyc-Ny-1x4"/>
+                <constraint firstItem="tuL-Ma-dyv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="t2O-1D-BrN"/>
             </constraints>
         </view>
     </objects>

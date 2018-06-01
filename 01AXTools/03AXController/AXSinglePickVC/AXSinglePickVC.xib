@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AXSinglePickVC">
             <connections>
                 <outlet property="cancelBtn" destination="GBh-dl-XXK" id="vHF-aK-WAA"/>
+                <outlet property="contentView" destination="LxY-sx-OTc" id="fP7-LO-E0A"/>
                 <outlet property="pickerView" destination="nz7-dE-RVo" id="QvZ-Qi-qaS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -40,6 +41,7 @@
                                     <constraints>
                                         <constraint firstAttribute="width" constant="50" id="0qL-jU-c2q"/>
                                     </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <state key="normal" title="取消">
                                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
@@ -52,6 +54,7 @@
                                     <constraints>
                                         <constraint firstAttribute="width" constant="50" id="O87-XY-xu5"/>
                                     </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <state key="normal" title="确定"/>
                                     <connections>
                                         <action selector="enterBtnEvents:" destination="-1" eventType="touchUpInside" id="ATi-Vu-udY"/>
@@ -75,7 +78,6 @@
                         <constraint firstAttribute="trailing" secondItem="nz7-dE-RVo" secondAttribute="trailing" id="4xe-2J-r99"/>
                         <constraint firstAttribute="bottom" secondItem="nz7-dE-RVo" secondAttribute="bottom" id="CYZ-qa-xqy"/>
                         <constraint firstItem="Ech-7P-eeJ" firstAttribute="leading" secondItem="LxY-sx-OTc" secondAttribute="leading" id="aNO-sV-svR"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="bca-lA-bCG"/>
                         <constraint firstAttribute="height" constant="300" id="drF-3y-sEf"/>
                         <constraint firstItem="Ech-7P-eeJ" firstAttribute="top" secondItem="LxY-sx-OTc" secondAttribute="top" id="el4-pr-SGx"/>
                         <constraint firstAttribute="trailing" secondItem="Ech-7P-eeJ" secondAttribute="trailing" id="gfB-7a-FTh"/>

@@ -22,4 +22,7 @@
  */
 -(void)ax_addTargetTextChangedBlock:(void(^)(UITextField *textField))block;
 
+
+-(void)ax_addTargetTextDidBeginBlock:(void(^)(UITextField *textField))block;
+
 @end

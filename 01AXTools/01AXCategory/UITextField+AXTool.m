@@ -10,10 +10,13 @@
 
 #import <objc/runtime.h>
 #import "AXMacros_runTime.h"
+#import "NSObject+AXKVO.h"
 
-@interface UITextField ()
+@interface UITextField ()<UITextFieldDelegate>
 
 @property(nonatomic,copy)void(^textFieldTargetBlock)(UITextField *textField) ;
+
+@property(nonatomic,copy)void(^didBeginBlock)(UITextField *textField) ;
 
 @end
 
@@ -105,6 +108,45 @@
     self.textFieldTargetBlock = block;
 }
 
+-(void)textChnageAction:(UITextField *)textField{
+    if (self.textFieldTargetBlock){
+        self.textFieldTargetBlock(textField);
+    }
+}
+
+
+
+/**
+ UITextField 开始编辑 事件
+
+ @param block 回调
+ */
+-(void)ax_addTargetTextDidBeginBlock:(void(^)(UITextField *textField))block{
+    
+    self.didBeginBlock = block;
+    
+//    [self ax_addNotificationForName:UITextFieldTextDidBeginEditingNotification block:^(NSNotification * _Nonnull notification) {
+//
+//        if (self.didBeginBlock){
+//            self.didBeginBlock(self);
+//        }
+//    }];
+    
+    self.delegate = self;
+    
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    
+    if (self.didBeginBlock){
+        self.didBeginBlock(self);
+    }
+    return YES;
+}
+
+
+#pragma mark - set and get
+
 - (void)setTextFieldTargetBlock:(void (^)(UITextField *))textFieldTargetBlock{
     ax_runtimePropertyObjSet(textFieldTargetBlock);
     
@@ -115,10 +157,11 @@
     return ax_runtimePropertyObjGet(textFieldTargetBlock);
 }
 
--(void)textChnageAction:(UITextField *)textField{
-    if (self.textFieldTargetBlock){
-        self.textFieldTargetBlock(textField);
-    }
-}
 
+- (void)setDidBeginBlock:(void (^)(UITextField *))didBeginBlock{
+    ax_runtimePropertyObjSet(didBeginBlock);
+}
+- (void (^)(UITextField *))didBeginBlock{
+    return ax_runtimePropertyObjGet(didBeginBlock);
+}
 @end

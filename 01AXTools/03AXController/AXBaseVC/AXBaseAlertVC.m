@@ -7,6 +7,7 @@
 //
 
 #import "AXBaseAlertVC.h"
+#import "UIView+AXFrame.h"
 
 @interface AXBaseAlertVC ()<UIViewControllerTransitioningDelegate,UIViewControllerAnimatedTransitioning>
 
@@ -15,37 +16,6 @@
 @end
 
 @implementation AXBaseAlertVC
-
-//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-//        self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-//        self.view.backgroundColor = [UIColor clearColor];
-//    }
-//    return self;
-//}
-//
-//- (void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//    [self.presentingViewController.view addSubview:self.bgView];
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated{
-//    [super viewWillDisappear:animated];
-//    [self.bgView removeFromSuperview];
-//}
-//
-//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
-//
-//- (UIView *)bgView{
-//    if (!_bgView) {
-//        _bgView = [[UIView alloc]initWithFrame:self.presentingViewController.view.bounds];
-//        _bgView.backgroundColor = [UIColor blackColor];
-//        _bgView.alpha = 0.5;
-//    }
-//    return _bgView;
-//}
 
 - (instancetype)init{
     self = [super init];
@@ -92,10 +62,10 @@
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
     
+    
     AXBaseAlertVC *toVC = (AXBaseAlertVC *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    
     
     if (!toVC || !fromVC) {
         return;
@@ -112,21 +82,40 @@
         
         toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
         
-        CGAffineTransform oldTransform = toVC.axContentView.transform;
-        toVC.axContentView.transform = CGAffineTransformScale(oldTransform, 0.3, 0.3);
-        toVC.axContentView.center = containerView.center;
+        if (self.alertControllerStyle==UIAlertControllerStyleActionSheet) {
+            
+            CGAffineTransform oldTransform = toVC.axContentView.transform;
+            toVC.axContentView.transform = CGAffineTransformScale(oldTransform, 0.3, 0.3);
+            toVC.axContentView.center = containerView.center;
+            
+            [UIView animateWithDuration:duration animations:^{
+                
+                toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+                toVC.axContentView.transform = oldTransform;
+                
+            } completion:^(BOOL finished) {
+                
+                [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+            }];
+            
+        }else{
+            
+            toVC.axContentView.y = toVC.view.height;
+            
+            [UIView animateWithDuration:duration animations:^{
+                
+                toVC.axContentView.y = 10;
+                
+            } completion:^(BOOL finished) {
+                
+                [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+            }];
+        }
         
-        [UIView animateWithDuration:duration animations:^{
-            
-            toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-            toVC.axContentView.transform = oldTransform;
-            
-        } completion:^(BOOL finished) {
-            
-            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-        }];
+        
     }
     else if (fromVC.isBeingDismissed) {
+        
         [UIView animateWithDuration:duration animations:^{
             fromVC.view.alpha = 0.0;
             
