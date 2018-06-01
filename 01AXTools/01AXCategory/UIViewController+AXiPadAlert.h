@@ -33,9 +33,9 @@
  @param title title
  @param message message
  @param actionArray 其他按钮文字数组
- @param certain 选中按钮回调
+ @param confirm 选中按钮回调
  */
--(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain;
+-(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm;
 
 /**
  Sheet 有取消回调
@@ -44,18 +44,18 @@
  @param title title
  @param message message
  @param actionArray 其他按钮文字数组
- @param certain 选中按钮回调
+ @param confirm 选中按钮回调
  @param cancel 取消回调
  */
--(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain cancel:(void(^)(void))cancel;
+-(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel;
 
 /**
  Sheet 退出登录
 
  @param iPadView 兼容iPad需要传入view
- @param certain 确定回调
+ @param confirm 确定回调
  */
--(void)ax_showSheeLogoutByPadView:(UIView *)iPadView certain:(void(^)(void))certain;
+-(void)ax_showSheeLogoutByPadView:(UIView *)iPadView confirm:(void(^)(void))confirm;
 
 
 @end

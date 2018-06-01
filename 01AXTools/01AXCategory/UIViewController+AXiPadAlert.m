@@ -106,15 +106,15 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Sheet  没有取消回调
  */
--(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain{
-    [self ax_showSheetByiPadView:iPadView title:title message:message actionArray:actionArray certain:certain cancel:nil];
+-(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm{
+    [self ax_showSheetByiPadView:iPadView title:title message:message actionArray:actionArray confirm:confirm cancel:nil];
 
 }
 
 /**
  * Sheet 有取消回调
  */
--(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray certain:(void(^)(NSInteger index))certain cancel:(void(^)(void))cancel{
+-(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
     
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
     
@@ -130,8 +130,8 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
         NSString *title = actionArray[index];
         
         [alert addAction:[UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            if (certain) {
-                certain(index);
+            if (confirm) {
+                confirm(index);
             }
         }]];
     }
@@ -147,7 +147,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Sheet 退出登录 兼容iPad需要传入view
  */
--(void)ax_showSheeLogoutByPadView:(UIView *)iPadView certain:(void(^)(void))certain{
+-(void)ax_showSheeLogoutByPadView:(UIView *)iPadView confirm:(void(^)(void))confirm{
     
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:AXMyLocalizedString(@"ax.logOut.message") preferredStyle:UIAlertControllerStyleActionSheet];
@@ -157,8 +157,8 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     
     [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.logOut") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-        if (certain) {
-            certain();
+        if (confirm) {
+            confirm();
         }
     }]];
     

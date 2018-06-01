@@ -199,7 +199,7 @@ typedef enum{
 
     AXLog(@"runJavaScriptAlertPanelWithMessage %@",message);
     
-    [self ax_showAlertByTitle:message certain:^{
+    [self ax_showAlertByTitle:message confirm:^{
         completionHandler();
     }];
 }
@@ -211,7 +211,7 @@ typedef enum{
 
     AXLog(@"runJavaScriptConfirmPanelWithMessage %@",message);
     
-    [self ax_showAlertByTitle:message message:nil certain:^{
+    [self ax_showAlertByTitle:message message:nil confirm:^{
          completionHandler(YES);
     } cancel:^{
          completionHandler(NO);
@@ -227,7 +227,7 @@ typedef enum{
      AXLog(@"runJavaScriptTextInputPanelWithPrompt %@ %@",prompt,defaultText);
     
     
-    [self ax_showAlertTFByTitle:prompt message:defaultText certain:^(NSString *text) {
+    [self ax_showAlertTFByTitle:prompt message:defaultText confirm:^(NSString *text) {
         
          completionHandler(text);
         
@@ -409,7 +409,7 @@ typedef enum{
 //加载失败,返回
 -(void)fun_loadErrorback{
     
-    [self ax_showAlertByTitle:@"服务器异常,无法打开" certain:^{
+    [self ax_showAlertByTitle:@"服务器异常,无法打开" confirm:^{
         
         if (self.navigationController) {
             [self.navigationController popViewControllerAnimated:YES];
