@@ -23,6 +23,15 @@
     return [[self alloc]init];
 }
 
+/**
+ 传值
+ 使用协议必须实现,不好用,使用属性,重写set无值,所以用方法
+ 
+ @param value 值
+ */
+-(void)ax_setValue:(id)value{
+    
+}
 
 #pragma mark - set and get
 
@@ -43,5 +52,15 @@
 - (AX_backBlock)ax_backBlock{
     return ax_runtimePropertyObjGet(ax_backBlock);
 }
+
+- (void)setAx_byValue:(id)ax_byValue{
+    ax_runtimePropertyObjSet(ax_byValue);
+}
+
+- (id)ax_byValue{
+    return ax_runtimePropertyObjGet(ax_byValue);
+}
+
+
 
 @end
