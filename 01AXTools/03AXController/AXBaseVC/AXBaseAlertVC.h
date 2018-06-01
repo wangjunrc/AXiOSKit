@@ -1,5 +1,5 @@
 //
-//  MyBaseAlertVC.h
+//  AXBaseAlertVC.h
 //  AXiOSTools
 //
 //  Created by liuweixing on 16/10/12.
@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AXViewController.h"
+
+@interface AXBaseAlertVC : AXViewController
+
 /**
- * 自定义 类型alert类型的VC,避免Present出现阴影,自定义一个bgView,增加效果~~
+ 自定义,需要显示的view 子控制器进行赋值
  */
-@interface AXBaseAlertVC : UIViewController
+@property (nonatomic,strong)UIView *axContentView;
+
+/**
+ 是否touchesBegan,dismiss
+ */
+@property (nonatomic,assign)BOOL axTouchesBeganDismiss;
 
 @end

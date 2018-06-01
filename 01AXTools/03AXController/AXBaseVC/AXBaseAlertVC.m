@@ -1,5 +1,5 @@
 //
-//  MyBaseAlertVC.m
+//  AXBaseAlertVC.m
 //  AXiOSTools
 //
 //  Created by liuweixing on 16/10/12.
@@ -8,41 +8,132 @@
 
 #import "AXBaseAlertVC.h"
 
-@interface AXBaseAlertVC ()
+@interface AXBaseAlertVC ()<UIViewControllerTransitioningDelegate,UIViewControllerAnimatedTransitioning>
 
-@property (strong, nonatomic) UIView *bgView;
+//@property (strong, nonatomic) UIView *bgView;
+
 @end
 
 @implementation AXBaseAlertVC
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        self.view.backgroundColor = [UIColor clearColor];
+
+//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+//        self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//        self.view.backgroundColor = [UIColor clearColor];
+//    }
+//    return self;
+//}
+//
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    [self.presentingViewController.view addSubview:self.bgView];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//    [self.bgView removeFromSuperview];
+//}
+//
+//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//}
+//
+//- (UIView *)bgView{
+//    if (!_bgView) {
+//        _bgView = [[UIView alloc]initWithFrame:self.presentingViewController.view.bounds];
+//        _bgView.backgroundColor = [UIColor blackColor];
+//        _bgView.alpha = 0.5;
+//    }
+//    return _bgView;
+//}
+
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.modalPresentationStyle = UIModalPresentationCustom;
+        self.transitioningDelegate = self;
     }
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.presentingViewController.view addSubview:self.bgView];
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    self.axTouchesBeganDismiss = YES;
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [self.bgView removeFromSuperview];
-}
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if (self.axTouchesBeganDismiss) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
 }
 
-- (UIView *)bgView{
-    if (!_bgView) {
-        _bgView = [[UIView alloc]initWithFrame:self.presentingViewController.view.bounds];
-        _bgView.backgroundColor = [UIColor blackColor];
-        _bgView.alpha = 0.5;
+#pragma mark - 专场动画 UIViewControllerTransitioningDelegate
+
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+    return self;
+    
+}
+
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+    return self;
+}
+
+
+#pragma mark - 专场动画 UIViewControllerAnimatedTransitioning
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
+    return 0.3;
+}
+
+
+- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
+    
+    AXBaseAlertVC *toVC = (AXBaseAlertVC *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    
+    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    
+    
+    if (!toVC || !fromVC) {
+        return;
     }
-    return _bgView;
+    
+    UIView *containerView = [transitionContext containerView];
+    NSTimeInterval duration = [self transitionDuration:transitionContext];
+    
+    if (toVC.isBeingPresented) {
+        
+        [containerView addSubview:toVC.view];
+        
+        toVC.view.frame = containerView.bounds;
+        
+        toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
+        
+        CGAffineTransform oldTransform = toVC.axContentView.transform;
+        toVC.axContentView.transform = CGAffineTransformScale(oldTransform, 0.3, 0.3);
+        toVC.axContentView.center = containerView.center;
+        
+        [UIView animateWithDuration:duration animations:^{
+            
+            toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+            toVC.axContentView.transform = oldTransform;
+            
+        } completion:^(BOOL finished) {
+            
+            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        }];
+    }
+    else if (fromVC.isBeingDismissed) {
+        [UIView animateWithDuration:duration animations:^{
+            fromVC.view.alpha = 0.0;
+            
+        } completion:^(BOOL finished) {
+            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        }];
+    }
 }
 
 @end
