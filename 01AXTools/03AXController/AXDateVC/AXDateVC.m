@@ -20,19 +20,18 @@
 
 @implementation AXDateVC
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        
-        self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        self.view.backgroundColor = [UIColor clearColor];
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.alertAnimationType = AXAlertAnimationTypeUpward;
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.axContentView = self.contentView;
-    
+    self.axContentView = self.contentView;
+    self.alertAnimationType = AXAlertAnimationTypeUpward;
     self.datePicker.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.datePicker.datePickerMode = UIDatePickerModeDate;
 }

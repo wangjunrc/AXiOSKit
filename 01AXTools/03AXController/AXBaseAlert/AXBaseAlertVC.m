@@ -8,20 +8,31 @@
 
 #import "AXBaseAlertVC.h"
 #import "UIView+AXFrame.h"
+#import "AXAlertCenterAnimation.h"
+#import "AXAlertUpwardAnimation.h"
 
 @interface AXBaseAlertVC ()<UIViewControllerTransitioningDelegate,UIViewControllerAnimatedTransitioning>
 
-//@property (strong, nonatomic) UIView *bgView;
 
 @end
 
 @implementation AXBaseAlertVC
+// 以前方法
+//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+//
+//        self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//        self.view.backgroundColor = [UIColor clearColor];
+//    }
+//    return self;
+//}
 
 - (instancetype)init{
     self = [super init];
     if (self) {
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.transitioningDelegate = self;
+        self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
     }
     return self;
 }
@@ -29,7 +40,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
     self.axTouchesBeganDismiss = YES;
 }
 
@@ -45,12 +55,36 @@
 #pragma mark - 专场动画 UIViewControllerTransitioningDelegate
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
-    return self;
+    
+    switch (self.alertAnimationType) {
+        case AXAlertAnimationTypeCenter:
+            return [[AXAlertCenterAnimation alloc] init];
+            break;
+            
+        case AXAlertAnimationTypeUpward:
+            return [[AXAlertUpwardAnimation alloc] init];
+            break;
+            
+        default:
+            break;
+    }
     
 }
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-    return self;
+    
+    switch (self.alertAnimationType) {
+        case AXAlertAnimationTypeCenter:
+            return [[AXAlertCenterAnimation alloc] init];
+            break;
+            
+        case AXAlertAnimationTypeUpward:
+            return [[AXAlertUpwardAnimation alloc] init];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 
@@ -82,35 +116,21 @@
         
         toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
         
-        if (self.alertControllerStyle==UIAlertControllerStyleActionSheet) {
+        
+        CGAffineTransform oldTransform = toVC.axContentView.transform;
+        toVC.axContentView.transform = CGAffineTransformScale(oldTransform, 0.3, 0.3);
+        toVC.axContentView.center = containerView.center;
+        
+        [UIView animateWithDuration:duration animations:^{
             
-            CGAffineTransform oldTransform = toVC.axContentView.transform;
-            toVC.axContentView.transform = CGAffineTransformScale(oldTransform, 0.3, 0.3);
-            toVC.axContentView.center = containerView.center;
+            toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+            toVC.axContentView.transform = oldTransform;
             
-            [UIView animateWithDuration:duration animations:^{
-                
-                toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-                toVC.axContentView.transform = oldTransform;
-                
-            } completion:^(BOOL finished) {
-                
-                [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-            }];
+        } completion:^(BOOL finished) {
             
-        }else{
-            
-            toVC.axContentView.y = toVC.view.height;
-            
-            [UIView animateWithDuration:duration animations:^{
-                
-                toVC.axContentView.y = 10;
-                
-            } completion:^(BOOL finished) {
-                
-                [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-            }];
-        }
+            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        }];
+        
         
         
     }

@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "AXViewController.h"
 
+typedef NS_ENUM(NSUInteger, AXAlertAnimationType)
+{
+    AXAlertAnimationTypeCenter = 0,   // 从中间放大弹出
+    AXAlertAnimationTypeUpward            // 从下往上
+};
+
 @interface AXBaseAlertVC : AXViewController
 
 /**
@@ -21,6 +27,6 @@
  */
 @property (nonatomic,assign)BOOL axTouchesBeganDismiss;
 
-@property (nonatomic,assign)UIAlertControllerStyle alertControllerStyle;
+@property (nonatomic,assign)AXAlertAnimationType alertAnimationType;
 
 @end

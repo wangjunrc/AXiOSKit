@@ -30,11 +30,18 @@
 @end
 
 @implementation AXSinglePickVC
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.alertAnimationType = AXAlertAnimationTypeUpward;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.axContentView = self.contentView;
     
+    self.axContentView = self.contentView;
 }
 
 #pragma mark - UIPicker Delegate
@@ -49,15 +56,15 @@
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
-       return self.dataArray[row];
+    return self.dataArray[row];
     
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-//    if (component == 0) {
-//        //        [pickerView selectedRowInComponent:1];
-//        [pickerView reloadComponent:1];
-//    }
+    //    if (component == 0) {
+    //        //        [pickerView selectedRowInComponent:1];
+    //        [pickerView reloadComponent:1];
+    //    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -85,7 +92,7 @@
         self.confirmBlock(selectComp);
     }
     [self dismissViewControllerAnimated:YES completion:nil];
-
+    
 }
 
 
