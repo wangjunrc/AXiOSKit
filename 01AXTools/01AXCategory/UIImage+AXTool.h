@@ -105,5 +105,15 @@
  */
 -(UIImage *)ax_imageRectangleToSquare;
 
+
+/**
+ 微信分享图片,必须小于32kb,且是正方形
+ 
+ @param imageUrl url
+ @return image
+ */
++ (UIImage *)ax_ImageWeChatShareZipWithUrl:(NSString *)imageUrl;
+
+
 @end
 

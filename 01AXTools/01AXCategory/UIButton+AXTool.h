@@ -1,6 +1,6 @@
 //
 //  UIButton+AXTool.h
-//  
+//
 //
 //  Created by liuweixing on 15/10/28.
 //  Copyright © 2015年 liuweixing. All rights reserved.
@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, ImagePosition) {
  @param postion 枚举
  @param spacing 间隙
  */
-- (void)setImagePosition:(ImagePosition)postion spacing:(CGFloat)spacing;
+- (void)ax_setImagePosition:(ImagePosition)postion spacing:(CGFloat)spacing;
 
 
 /**
@@ -91,5 +91,33 @@ typedef NS_ENUM(NSInteger, ImagePosition) {
  @param color color
  */
 -(void)ax_setTitleColorStateSelected:(nullable UIColor *)color;
+
+
+/**
+ ax_setImageStateNormal image
+ 
+ @param image image
+ */
+-(void)ax_setImageStateNormal:(nullable NSString *)image;
+/**
+ UIControlStateHighlighted image
+ 
+ @param image image
+ */
+-(void)ax_setImageColorStateHighlighted:(nullable NSString *)image;
+
+/**
+ UIControlStateDisabled image
+ 
+ @param image image
+ */
+-(void)ax_setImageStateDisabled:(nullable NSString *)image;
+
+/**
+ UIControlStateSelected image
+ 
+ @param image image
+ */
+-(void)ax_setImageColorStateSelected:(nullable NSString *)image;
 
 @end

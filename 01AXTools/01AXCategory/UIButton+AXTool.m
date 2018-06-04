@@ -1,6 +1,6 @@
 //
 //  UIButton+AXTool.m
-//  
+//
 //
 //  Created by liuweixing on 15/10/28.
 //  Copyright © 2015年 liuweixing. All rights reserved.
@@ -47,7 +47,7 @@ typedef void(^ButtonBlock)(UIButton *button);
 
 static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
 
-- (void)setImagePosition:(ImagePosition)postion spacing:(CGFloat)spacing
+- (void)ax_setImagePosition:(ImagePosition)postion spacing:(CGFloat)spacing
 {
     [self setTitle:self.currentTitle forState:UIControlStateNormal];
     [self setImage:self.currentImage forState:UIControlStateNormal];
@@ -86,12 +86,14 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
             break;
             
         case ImagePositionTop:
+            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             self.imageEdgeInsets = UIEdgeInsetsMake(-imageOffsetY, imageOffsetX, imageOffsetY, -imageOffsetX);
             self.titleEdgeInsets = UIEdgeInsetsMake(labelOffsetY, -labelOffsetX, -labelOffsetY, labelOffsetX);
             self.contentEdgeInsets = UIEdgeInsetsMake(imageOffsetY, -changedWidth / 2, changedHeight - imageOffsetY, -changedWidth / 2);
             break;
             
         case ImagePositionBottom:
+            self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             self.imageEdgeInsets = UIEdgeInsetsMake(imageOffsetY, imageOffsetX, -imageOffsetY, -imageOffsetX);
             self.titleEdgeInsets = UIEdgeInsetsMake(-labelOffsetY, -labelOffsetX, labelOffsetY, labelOffsetX);
             self.contentEdgeInsets = UIEdgeInsetsMake(changedHeight - imageOffsetY, -changedWidth / 2, imageOffsetY, -changedWidth / 2);
@@ -134,7 +136,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
 
 /**
  UIControlStateNormal 状态文字
-
+ 
  @param title title
  */
 -(void)ax_setTitleStateNormal:(nullable NSString *)title{
@@ -221,5 +223,50 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
     [self setTitleColor:color forState:UIControlStateSelected];
     
 }
+
+
+/**
+ ax_setImageStateNormal image
+ 
+ @param image image
+ */
+-(void)ax_setImageStateNormal:(NSString *)image{
+    
+    [self setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
+    
+}
+
+/**
+ UIControlStateHighlighted image
+ 
+ @param image image
+ */
+-(void)ax_setImageColorStateHighlighted:(NSString *)image{
+    
+    [self setImage:[UIImage imageNamed:image] forState:UIControlStateHighlighted];
+    
+}
+
+/**
+ UIControlStateDisabled image
+ 
+ @param image image
+ */
+-(void)ax_setImageStateDisabled:(NSString *)image{
+    
+    [self setImage:[UIImage imageNamed:image] forState:UIControlStateDisabled];
+    
+}
+
+/**
+ UIControlStateSelected image
+ 
+ @param image image
+ */
+-(void)ax_setImageColorStateSelected:(NSString *)image{
+    
+    [self setImage:[UIImage imageNamed:image] forState:UIControlStateSelected];
+}
+
 
 @end

@@ -9,6 +9,8 @@
 #import "UIViewController+AXAlert.h"
 #import <objc/runtime.h>
 #import "UIViewController+AXTool.h"
+#import "UIViewController+AXiPadAlert.h"
+
 typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 
 @interface UIViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
@@ -71,6 +73,21 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 -(void)ax_showAlertByTitle:(NSString *)title confirm:(void(^)(void))confirm{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.i.know") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (confirm) {
+            confirm();
+        }
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+/**
+ * 有确定和回调
+ */
+-(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message confirm:(void(^)(void))confirm{
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
     [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.i.know") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (confirm) {

@@ -54,6 +54,11 @@
 -(void)ax_showAlertByTitle:(NSString *)title confirm:(void(^)(void))confirm;
 
 /**
+ * 有确定和回调
+ */
+-(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message confirm:(void(^)(void))confirm;
+
+/**
  * 有确定,取消 ,确定按钮文字
  */
 -(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message confirmTitle:(NSString *)confirmTitle confirm:(void(^)(void))confirm cancel:(void(^)(void))cancel;
