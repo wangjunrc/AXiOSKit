@@ -89,7 +89,7 @@
 #import "NSUserDefaults+AXTool.h"
 #import "NSNumber+AXTool.h"
 #import "AXWeakProxy.h"
-
+#import "UIControl+AXTool.h"
 
 
 /* 02ThirdTools */
