@@ -8,6 +8,9 @@
 
 #import "AXWKWebVC.h"
 #import "AXToolsHeader.h"
+#import "WebViewJavascriptBridge.h"
+#import "WKWebViewJavascriptBridge.h"
+
 @import WebKit;
 
 typedef enum{
@@ -46,7 +49,12 @@ typedef enum{
 /**
  * 关闭按钮 当打开新web时, 显示
  */
-@property (nonatomic)UIBarButtonItem* closeItem;
+@property (nonatomic,strong)UIBarButtonItem* closeItem;
+
+//@property (nonatomic,strong)WebViewJavascriptBridge *bridge;
+
+@property (nonatomic, strong)WKWebViewJavascriptBridge  *bridge;
+
 
 @end
 
@@ -79,7 +87,106 @@ typedef enum{
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
     }];
+    
+    [self init_WebViewJavascriptBridge];
 }
+
+
+/**
+ WebViewJavascriptBridge js 交互
+ */
+-(void)init_WebViewJavascriptBridge{
+    
+    // 开启日志，方便调试
+    [WKWebViewJavascriptBridge enableLogging];
+    // 给哪个webview建立JS与OjbC的沟通桥梁
+    self.bridge = [WKWebViewJavascriptBridge bridgeForWebView:self.webView];
+    // 设置代理，如果不需要实现，可以不设置
+    // 如果控制器里需要监听WKWebView 的`navigationDelegate`方法，就需要添加下面这行。
+    [self.bridge setWebViewDelegate:self];
+
+    
+    // JS主动调用OjbC的方法 function_name
+    // 这是JS会调用getUserIdFromObjC方法，这是OC注册给JS调用的
+    // JS需要回调，当然JS也可以传参数过来。data就是JS所传的参数，不一定需要传
+    // OC端通过responseCallback回调JS端，JS就可以得到所需要的数据
+      [self.bridge registerHandler:@"function_name" handler:^(id data, WVJBResponseCallback responseCallback) {
+          //data  js 传来的参数
+          NSLog(@"js call getUserIdFromObjC, data from js is %@", data);
+          
+          if (responseCallback) {
+              // 反馈给JS ,js 不需要反馈 就不需要写
+              responseCallback(@{@"userId": @"123456"});
+          }
+      }];
+    
+    // oc调用JS方法 function_name
+    //直接调用JS端注册的HandleName
+    [self.bridge callHandler:@"function_name"data:@{} responseCallback:^(id responseData) {
+        
+        NSLog(@"from js: %@", responseData);
+    }];
+    
+    
+    
+    // 在JS中如果调用了bridge.send()，那么将触发OC端_bridge初始化方法中的回调。
+    
+    // 在JS中调用了bridge.callHandler('testJavascriptHandler')，它将触发OC端注册的同名方法
+    
+    /**
+     在JS端：
+     
+     
+     
+     <script type="text/javascript">
+     
+     
+     //这是必须要写的，用来初始化一些设置
+     function setupWebViewJavascriptBridge(callback) {
+     if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+     if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+     window.WVJBCallbacks = [callback];
+     var WVJBIframe = document.createElement('iframe');
+     WVJBIframe.style.display = 'none';
+     WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+     document.documentElement.appendChild(WVJBIframe);
+     setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+     }
+     
+     // xcode中的 oc代码
+     //这也是固定的， OC 调JS ， 需要给OC调用的函数必须写在这个函数里面
+     
+     bridge.registerHandler('testJSFunction', function(data, responseCallback) {
+        alert('JS方法被调用:'+data);
+     responseCallback('js执行过了');
+     })
+     
+     
+     
+     // h5 页面中的js代码  调oc 代码
+     //这个 shareClick 就是 原生那边 注入的函数 ， 通过这个方法来调用原生 和传值
+     //parmas 是JS 给OC的数据 ， response 是 OC函数被调用之后 再 告诉JS 我被调用了
+     //比如微信分享，给Dic给原生 ， 原生分享成功后再把结果回调给JS 进行处理
+     function shareClick() {
+     
+     var params = {'title':'测试分享的标题','content':'测试分享的内容','url':'http://www.baidu.com'};
+     WebViewJavascriptBridge.callHandler('shareClick',params,function(response) {
+     
+     console.log(response);
+     
+     
+     });
+     }
+     
+     
+     
+     </script>
+     
+     */
+    
+}
+
+
 
 
 /**

@@ -29,6 +29,10 @@ pod 'MJExtension'
 # Facebook kvo 自己封装下
 pod 'KVOController'
 
+# UIWebView WKWebView 与JS 交互
+pod 'WebViewJavascriptBridge'
+
+
 #    tableview 空集合
 pod 'DZNEmptyDataSet'
 
