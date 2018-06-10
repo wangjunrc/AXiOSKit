@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, ImagePosition) {
-    ImagePositionLeft = 0,  // 图片在左，文字在右，默认
-    ImagePositionRight,     // 图片在右，文字在左
-    ImagePositionTop,       // 图片在上，文字在下
-    ImagePositionBottom,    // 图片在下，文字在上
+typedef NS_ENUM(NSInteger, AXButtonImagePosition) {
+    AXButtonImagePositionLeft = 0,  // 图片在左，文字在右，默认
+    AXButtonImagePositionRight,     // 图片在右，文字在左
+    AXButtonImagePositionTop,       // 图片在上，文字在下
+    AXButtonImagePositionBottom,    // 图片在下，文字在上
 };
 
 @interface UIButton (AXTool)
@@ -23,12 +23,12 @@ typedef NS_ENUM(NSInteger, ImagePosition) {
 -(void)ax_addTargetBlock:(void(^_Nullable)(UIButton * _Nullable button))block;
 
 /**
- 修改button 文字图片位置
+ 修改button 图片位置
  
  @param postion 枚举
  @param spacing 间隙
  */
-- (void)ax_setImagePosition:(ImagePosition)postion spacing:(CGFloat)spacing;
+- (void)ax_setImagePosition:(AXButtonImagePosition)postion spacing:(CGFloat)spacing;
 
 
 /**
