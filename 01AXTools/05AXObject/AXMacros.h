@@ -11,6 +11,17 @@
 #import "AXMacros_log.h"
 #import "AXMacros_instance.h"
 
+/**
+ 转态栏高度 和 nav 高度 普通 64 ,x 88
+ */
+#define AX_View_Top_Height  [UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.bounds.size.height
+
+
+/**
+ 转态栏高度
+ */
+#define AX_View_Status_Height [UIApplication sharedApplication].statusBarFrame.size.height
+
 
 #define AX_IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 

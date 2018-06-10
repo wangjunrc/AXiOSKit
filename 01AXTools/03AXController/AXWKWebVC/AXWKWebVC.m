@@ -9,14 +9,16 @@
 #import "AXWKWebVC.h"
 #import "AXToolsHeader.h"
 @import WebKit;
+
 typedef enum{
     loadWebURLString = 0,
     loadWebHTMLString,
     POSTWebURLString,
 }wkWebLoadType;
+
 @interface AXWKWebVC ()<WKNavigationDelegate,WKUIDelegate>
 
-@property (nonatomic, strong) WKWebView *wkWebView;
+@property (nonatomic, strong) WKWebView *webView;
 
 //网页加载的类型
 @property(nonatomic,assign) wkWebLoadType loadType;
@@ -52,21 +54,53 @@ typedef enum{
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    [self func_setView];
-    [self func_navItme];
+    [self init_setView];
+    [self init_navItme];
     //加载web页面
     [self func_webViewloadURLType];
+    
 }
+
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.progressView setProgress:0.0f animated:NO];
 }
 
-- (void)viewWillLayoutSubviews{
-    [super viewWillLayoutSubviews];
+#pragma mark -  init
+/**
+ * view
+ */
+-(void)init_setView{
     
-    [self func_setMas];
+    [self.view addSubview:self.webView];
+    [self.view addSubview:self.progressView];
+    
+    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
+    }];
+}
+
+
+/**
+ * UINavigationController itme
+ */
+-(void)init_navItme{
+    
+    [self ax_havNav:^(UINavigationController *nav) {
+        
+        UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadWeAction)];
+        self.navigationItem.rightBarButtonItem = roadLoad;
+        
+    } isPresentNav:^(UINavigationController *nav) {
+        
+        self.navigationItem.leftBarButtonItem = self.cancelItem;
+        
+    } noHave:^{
+        
+        [self.webView.scrollView addSubview:self.cancelButton];
+    }];
+    
 }
 
 
@@ -92,7 +126,7 @@ typedef enum{
  */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation { // 类似
 
-    AXLog(@"页面加载完成之后调用 title: %@",webView.title);
+    AXLog(@"页面加载完成之后调用 webView.title: %@",webView.title);
     
     //更新左边itme
     [self func_canGoBackItems];
@@ -245,58 +279,13 @@ typedef enum{
 }
 
 #pragma mark - func
-/**
- * view
- */
--(void)func_setView{
-    
-    [self.view addSubview:self.wkWebView];
-    
-    [self ax_havNav:^(UINavigationController *nav) {
-        [nav.view addSubview:self.progressView];
-    } isPresentNav:nil noHave:^{
-        [self.view addSubview:self.progressView];
-    }];
-}
-
-/**
- * 约束
- */
--(void)func_setMas{
-    
-    [self.wkWebView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
-    }];
-}
-
-/**
- * UINavigationController itme
- */
--(void)func_navItme{
-    
-    [self ax_havNav:^(UINavigationController *nav) {
-        
-        UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadWeAction)];
-        self.navigationItem.rightBarButtonItem = roadLoad;
-        
-    } isPresentNav:^(UINavigationController *nav) {
-        
-        self.navigationItem.leftBarButtonItem = self.cancelItem;
-        
-    } noHave:^{
-        
-        [self.wkWebView.scrollView addSubview:self.cancelButton];
-    }];
-    
-}
-
 
 /**
  * 页面加载完成 更新LeftBarButtonItems
  */
 -(void)func_canGoBackItems{
     
-    if (self.wkWebView.canGoBack) {
+    if (self.webView.canGoBack) {
         
         UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         spaceButtonItem.width = -6.5;
@@ -332,13 +321,52 @@ typedef enum{
     }
 }
 
+
+/**
+ kvo 进度值
+ */
+- (void)func_webViewKVO{
+    
+    [self.webView ax_addFBKVOKeyPath:@"estimatedProgress" block:^(NSString * _Nullable pathKey, id  _Nullable oldValue, id  _Nullable newValue) {
+        
+        [self.progressView setAlpha:1.0f];
+        BOOL animated = self.webView.estimatedProgress > self.progressView.progress;
+        [self.progressView setProgress:self.webView.estimatedProgress animated:animated];
+        
+        if(self.webView.estimatedProgress >= 1.0f) {
+            [UIView animateWithDuration:0.3f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
+                [self.progressView setAlpha:0.0f];
+            } completion:^(BOOL finished) {
+                [self.progressView setProgress:0.0f animated:NO];
+            }];
+        }
+        
+    }];
+    
+    [self.webView ax_addFBKVOKeyPath:@"title" block:^(NSString * _Nullable pathKey, id  _Nullable oldValue, NSString  *_Nullable newValue) {
+        
+        NSString *title = newValue;
+        
+        if (self.title.length==0) {
+            
+            if (title.length>0) {
+                self.title = title;
+            }else{
+                self.title = AXMyLocalizedString(@"网页");
+            }
+        }
+    }];
+}
+
+
 - (void)func_webViewloadURLType{
+    
     switch (self.loadType) {
         case loadWebURLString:{
             //创建一个NSURLRequest 的对象
             NSURLRequest * Request_zsj = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
             //加载网页
-            [self.wkWebView loadRequest:Request_zsj];
+            [self.webView loadRequest:Request_zsj];
             break;
         }
         case loadWebHTMLString:{
@@ -366,7 +394,7 @@ typedef enum{
         html = [NSString stringWithFormat:@"<font size=\"30\">%@</font>",url];
     }
     
-    [self.wkWebView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];
+    [self.webView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];
 }
 
 
@@ -376,8 +404,8 @@ typedef enum{
  * 取消item 事件
  */
 -(void)backItemAction:(UIBarButtonItem *)item{
-    if (self.wkWebView.canGoBack) {
-        [self.wkWebView goBack];
+    if (self.webView.canGoBack) {
+        [self.webView goBack];
     }else{
         [self.navigationController popViewControllerAnimated:YES];
     }
@@ -394,7 +422,7 @@ typedef enum{
  * 重新加载
  */
 - (void)roadWeAction{
-    [self.wkWebView reload];
+    [self.webView reload];
 }
 
 
@@ -403,7 +431,7 @@ typedef enum{
 }
 
 -(void)rightBarButtonItemEvents:(UIBarButtonItem *)item{
-    [self.wkWebView reload];
+    [self.webView reload];
 }
 
 //加载失败,返回
@@ -425,15 +453,15 @@ typedef enum{
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     
     
-    if (object == self.wkWebView ) {
+    if (object == self.webView ) {
         
         if ([keyPath isEqualToString:@"estimatedProgress"]) {
             
             [self.progressView setAlpha:1.0f];
-            BOOL animated = self.wkWebView.estimatedProgress > self.progressView.progress;
-            [self.progressView setProgress:self.wkWebView.estimatedProgress animated:animated];
+            BOOL animated = self.webView.estimatedProgress > self.progressView.progress;
+            [self.progressView setProgress:self.webView.estimatedProgress animated:animated];
             
-            if(self.wkWebView.estimatedProgress >= 1.0f) {
+            if(self.webView.estimatedProgress >= 1.0f) {
                 [UIView animateWithDuration:0.3f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
                     [self.progressView setAlpha:0.0f];
                 } completion:^(BOOL finished) {
@@ -477,8 +505,8 @@ typedef enum{
 }
 
 
--(WKWebView *)wkWebView{
-    if (!_wkWebView) {
+-(WKWebView *)webView{
+    if (!_webView) {
         
         WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
         config.allowsInlineMediaPlayback = YES;
@@ -486,17 +514,17 @@ typedef enum{
 //            config.mediaPlaybackRequiresUserAction = YES;
 //        config.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAudio;
         
-        _wkWebView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
+        _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
 //        [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.webURLSring]]];
-        _wkWebView.navigationDelegate = self;
-        _wkWebView.UIDelegate = self;
-        [_wkWebView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
-         [_wkWebView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
+        _webView.navigationDelegate = self;
+        _webView.UIDelegate = self;
+//        [_wkWebView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+//         [_wkWebView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
         
-        _wkWebView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _webView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         
     }
-    return _wkWebView;
+    return _webView;
 }
 
 
@@ -505,10 +533,14 @@ typedef enum{
         _progressView = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
     
         __block CGRect tempFrame = CGRectZero;
+        
         [self ax_havNav:^(UINavigationController *nav) {
-           tempFrame = CGRectMake(0, 64, self.view.bounds.size.width, 3);
+            
+           tempFrame = CGRectMake(0, AX_View_Top_Height, self.view.bounds.size.width, 3);
+            
         } isPresentNav:nil noHave:^{
-            tempFrame = CGRectMake(0, 20, self.view.bounds.size.width, 3);
+            
+            tempFrame = CGRectMake(0, AX_View_Status_Height, self.view.bounds.size.width, 3);
         }];
         
         _progressView.frame = tempFrame;
@@ -574,8 +606,8 @@ typedef enum{
 #pragma mark - dealloc
 -(void)dealloc{
     axLong_dealloc;
-    [self.wkWebView removeObserver:self forKeyPath:@"estimatedProgress"];
-    [self.wkWebView removeObserver:self forKeyPath:@"title"];
+//    [self.wkWebView removeObserver:self forKeyPath:@"estimatedProgress"];
+//    [self.wkWebView removeObserver:self forKeyPath:@"title"];
 }
 
 //- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
