@@ -1,6 +1,6 @@
 //
 //  AXConstant.h
-//  AXiOSTools
+//  ZBP2P
 //
 //  Created by liuweixing on 2016/12/1.
 //  Copyright © 2016年 liuweixing All rights reserved.
@@ -8,16 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-FOUNDATION_EXPORT NSString *const axCellID0;
-FOUNDATION_EXPORT NSString *const axCellID1;
-FOUNDATION_EXPORT NSString *const axCellID2;
-FOUNDATION_EXPORT NSString *const axCellID;
-FOUNDATION_EXPORT NSString *const axCellHeadID;
-FOUNDATION_EXPORT NSString *const axCellFootID;
-FOUNDATION_EXPORT NSString *const axUserInfoKey;
-FOUNDATION_EXPORT NSString *const axSectionHeadID;
-FOUNDATION_EXPORT NSString *const axSectionFootID;
+extern NSString *const axCellID;
+extern NSString *const axCellHeadID;
+extern NSString *const axCellFootID;
+extern NSString *const axUserInfoKey;
+extern NSString *const axSectionHeadID;
+extern NSString *const axSectionFootID;
 
 @interface AXConstant : NSObject
 /**
@@ -70,6 +66,14 @@ UINib * ax_Nib(NSString  *name);
  * AppStore链接,填写自己的iD
  */
 NSString * ax_AppStoreURL(NSString  *appId);
+
+/**
+ AppStore 评分 url
+ 
+ @param AppStoreID AppStoreID
+ @return url String
+ */
+NSString * ax_AppStoreScoreURL(NSString  *AppStoreID);
 
 /**
  * int --> NSString

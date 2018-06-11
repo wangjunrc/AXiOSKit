@@ -52,7 +52,7 @@
 
 /**
  设置tabBarItem 属性 不区分图片色,使用tabBar颜色
-
+ 
  @param title title
  @param imageName imageName descriptionimageName
  */
@@ -66,5 +66,20 @@
  @param item UIBarButtonItem
  */
 -(void)ax_popoverWithContentSize:(CGSize )contentSize sourceView:(UIView  *)sourceView orItem:(UIBarButtonItem  *)item;
+
+
+/**
+ AppleStore 更新
+ 
+ @param AppleStoreID AppleStoreID
+ */
+-(void)ax_AppStoreUpdateWithAppleStoreID:(NSString *)AppleStoreID;
+
+/**
+ 跳转 App Store 评价页面
+ 
+ @param AppleStoreID AppleStoreID
+ */
+-(void)ax_AppStoreScoreWithAppleStoreID:(NSString *)AppleStoreID;
 
 @end

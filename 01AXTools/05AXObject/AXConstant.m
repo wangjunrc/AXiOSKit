@@ -1,16 +1,13 @@
 //
 //  AXConstant.m
-//  AXiOSTools
+//  ZBP2P
 //
 //  Created by liuweixing on 2016/12/1.
 //  Copyright © 2016年 liuweixing All rights reserved.
 //
 
 #import "AXConstant.h"
-#import "AXToolsHeader.h"
-NSString *const axCellID0 = @"TableViewacellID0";
-NSString *const axCellID1 = @"TableViewacellID1";
-NSString *const axCellID2 = @"TableViewacellID2";
+#import "AXMacros_log.h"
 NSString *const axCellID = @"TableViewacellID";
 NSString *const axCellHeadID = @"TableViewCellheadID";
 NSString *const axCellFootID = @"TableViewCellfootID";
@@ -29,11 +26,11 @@ BOOL ax_CanOpenURL(NSString  *str){
  * 打开URL
  */
 BOOL ax_OpenURL(NSString  *str){
-
+    
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
-
+    
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 #pragma clang diagnostic pop
     
@@ -52,7 +49,7 @@ BOOL ax_CallTelprompt(NSString  *phone){
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@",phone]];
     return [[UIApplication sharedApplication] openURL:url];
-    #pragma clang diagnostic pop
+#pragma clang diagnostic pop
 }
 
 /**
@@ -67,17 +64,17 @@ BOOL ax_CallTel(NSString  *phone){
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phone]];
     return [[UIApplication sharedApplication] openURL:url];
-    #pragma clang diagnostic pop
+#pragma clang diagnostic pop
 }
 
 static void ax_uncaughtExceptionHandler(NSException*exception) {
     
-    AXLog(@"↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  xcode运行崩溃  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓");
-    
-    AXLog(@"xcode运行崩溃--> %@\n%@", exception, exception.callStackSymbols);
-//    AXLog(@"xcode运行崩溃--> %@", exception);
-    
-    AXLog(@"↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑  xcode运行崩溃  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑");
+    //    AXLog(@"↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  xcode运行崩溃  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓");
+    //
+    //    AXLog(@"xcode运行崩溃--> %@\n%@", exception, exception.callStackSymbols);
+    ////    AXLog(@"xcode运行崩溃--> %@", exception);
+    //
+    //    AXLog(@"↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑  xcode运行崩溃  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑");
     
 }
 /**
@@ -98,6 +95,19 @@ UINib * ax_Nib(NSString  *name){
 NSString * ax_AppStoreURL(NSString  *appId){
     return [NSString stringWithFormat:@"https://itunes.apple.com/cn/app/id%@?mt=8",appId];
 }
+
+
+/**
+ AppStore 评分 url
+ 
+ @param AppStoreID AppStoreID
+ @return url String
+ */
+NSString * ax_AppStoreScoreURL(NSString  *AppStoreID){
+    return [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@?action=write-review",AppStoreID];
+}
+
+
 
 
 /**
@@ -144,53 +154,53 @@ BOOL ax_OpenPrefsRoot(){
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=General"]];
-    #pragma clang diagnostic pop
+#pragma clang diagnostic pop
 }
 
 /*
-// 以下是设置其他界面
-prefs:root=General&path=About
-prefs:root=General&path=ACCESSIBILITY
-prefs:root=AIRPLANE_MODE
-prefs:root=General&path=AUTOLOCK
-prefs:root=General&path=USAGE/CELLULAR_USAGE
-prefs:root=Brightness
-prefs:root=Bluetooth
-prefs:root=General&path=DATE_AND_TIME
-prefs:root=FACETIME
-prefs:root=General
-prefs:root=General&path=Keyboard
-prefs:root=CASTLE
-prefs:root=CASTLE&path=STORAGE_AND_BACKUP
-prefs:root=General&path=INTERNATIONAL
-prefs:root=LOCATION_SERVICES
-prefs:root=ACCOUNT_SETTINGS
-prefs:root=MUSIC
-prefs:root=MUSIC&path=EQ
-prefs:root=MUSIC&path=VolumeLimit
-prefs:root=General&path=Network
-prefs:root=NIKE_PLUS_IPOD
-prefs:root=NOTES
-prefs:root=NOTIFICATIONS_ID
-prefs:root=Phone
-prefs:root=Photos
-prefs:root=General&path=ManagedConfigurationList
-prefs:root=General&path=Reset
-prefs:root=Sounds&path=Ringtone
-prefs:root=Safari
-prefs:root=General&path=Assistant
-prefs:root=Sounds
-prefs:root=General&path=SOFTWARE_UPDATE_LINK
-prefs:root=STORE
-prefs:root=TWITTER
-prefs:root=FACEBOOK
-prefs:root=General&path=USAGE prefs:root=VIDEO
-prefs:root=General&path=Network/VPN
-prefs:root=Wallpaper
-prefs:root=WIFI
-prefs:root=INTERNET_TETHERING
-prefs:root=Phone&path=Blocked
-prefs:root=DO_NOT_DISTURB
+ // 以下是设置其他界面
+ prefs:root=General&path=About
+ prefs:root=General&path=ACCESSIBILITY
+ prefs:root=AIRPLANE_MODE
+ prefs:root=General&path=AUTOLOCK
+ prefs:root=General&path=USAGE/CELLULAR_USAGE
+ prefs:root=Brightness
+ prefs:root=Bluetooth
+ prefs:root=General&path=DATE_AND_TIME
+ prefs:root=FACETIME
+ prefs:root=General
+ prefs:root=General&path=Keyboard
+ prefs:root=CASTLE
+ prefs:root=CASTLE&path=STORAGE_AND_BACKUP
+ prefs:root=General&path=INTERNATIONAL
+ prefs:root=LOCATION_SERVICES
+ prefs:root=ACCOUNT_SETTINGS
+ prefs:root=MUSIC
+ prefs:root=MUSIC&path=EQ
+ prefs:root=MUSIC&path=VolumeLimit
+ prefs:root=General&path=Network
+ prefs:root=NIKE_PLUS_IPOD
+ prefs:root=NOTES
+ prefs:root=NOTIFICATIONS_ID
+ prefs:root=Phone
+ prefs:root=Photos
+ prefs:root=General&path=ManagedConfigurationList
+ prefs:root=General&path=Reset
+ prefs:root=Sounds&path=Ringtone
+ prefs:root=Safari
+ prefs:root=General&path=Assistant
+ prefs:root=Sounds
+ prefs:root=General&path=SOFTWARE_UPDATE_LINK
+ prefs:root=STORE
+ prefs:root=TWITTER
+ prefs:root=FACEBOOK
+ prefs:root=General&path=USAGE prefs:root=VIDEO
+ prefs:root=General&path=Network/VPN
+ prefs:root=Wallpaper
+ prefs:root=WIFI
+ prefs:root=INTERNET_TETHERING
+ prefs:root=Phone&path=Blocked
+ prefs:root=DO_NOT_DISTURB
  */
 @end
 

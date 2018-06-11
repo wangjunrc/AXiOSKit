@@ -91,7 +91,7 @@
  * 是否有navigationController
  */
 -(void)ax_haveNavigationController:(void(^)(UINavigationController *nav))have noHave:(void(^)(void))noHave{
-
+    
     if (self.navigationController) {
         
         if (have) {
@@ -111,7 +111,7 @@
 
 /**
  是否有 navigationController
-
+ 
  @param haveNav 被push和present自带nav
  @param presentNav 被present自带
  @param noHave 没有
@@ -137,7 +137,7 @@
         }
         
     }
-
+    
 }
 
 
@@ -182,7 +182,7 @@
 
 
 - (void)setAx_popVC:(UIViewController *)ax_popVC{
-   
+    
     objc_setAssociatedObject(self, @selector(ax_popVC),ax_popVC, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 - (UIViewController *)ax_popVC{
@@ -214,5 +214,54 @@
     
     return UIModalPresentationNone;
 }
+
+
+
+/**
+ AppleStore 更新
+ 
+ @param AppleStoreID AppleStoreID
+ */
+-(void)ax_AppStoreUpdateWithAppleStoreID:(NSString *)AppleStoreID{
+    
+    
+    [self ax_versionProjectCompareAppStoreWithAppid:AppleStoreID comparisonResult:^(NSString *projectVersion, NSString *appStoreVersion, NSComparisonResult comparisonResult) {
+        
+        if (comparisonResult == NSOrderedAscending) {
+            
+            NSString *title = [NSString stringWithFormat:@"发现新版本: %@",appStoreVersion];
+            [self ax_showAlertByTitle:title message:@"是否更新?" confirm:^{
+                
+                ax_OpenURL(ax_AppStoreURL(AppleStoreID));
+                
+            } cancel:^{
+                
+            }];
+        }
+        
+    }];
+}
+
+
+
+/**
+ 跳转 App Store 评价页面
+ 
+ @param AppleStoreID AppleStoreID
+ */
+-(void)ax_AppStoreScoreWithAppleStoreID:(NSString *)AppleStoreID{
+    
+    
+    [self ax_showAlertByTitle:@"我们需要您的鼓励" message:@"是否去鼓励?" confirm:^{
+        
+        ax_OpenURL(ax_AppStoreScoreURL(AppleStoreID));
+        
+    } cancel:^{
+        
+    }];
+}
+
+
+
 
 @end
