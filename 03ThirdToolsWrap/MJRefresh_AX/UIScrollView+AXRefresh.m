@@ -33,6 +33,19 @@
 }
 
 /**
+ 控制 Footer hidden ,一般 有数据 YES 没有数据 NO
+ 
+ @param hidden hidden description
+ */
+-(void)ax_setRefreshFooterHidden:(BOOL)hidden{
+    
+    if (self.mj_footer) {
+        self.mj_footer.hidden = hidden;
+    }
+    
+}
+
+/**
  * 头开始刷新
  */
 -(void)ax_setHeaderBeginRefreshing{
