@@ -19,13 +19,13 @@
  @param appid appid description
  @param block 得到app的版本信息
  */
--(void )ax_appStoreVersionAppid:(NSString *)appid success:(void(^)(NSString *appVersion))block{
+-(void )ax_requestAppStoreVersionAppid:(NSString *)appid success:(void(^)(NSString *appVersion))block{
     
     if (block) {
         
         
         NSString *urlStr = [NSString stringWithFormat:@"http://itunes.apple.com/lookup?id=%@",appid];
-
+        
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
         
         request.HTTPMethod = @"POST";
@@ -36,7 +36,7 @@
             
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingMutableLeaves) error:nil];
             
-             AXLog(@"appid dict>> %@",dict);
+            AXLog(@"appid dict>> %@",dict);
             
             if ([dict[@"resultCount"] boolValue]) {
                 
@@ -63,7 +63,7 @@
     
     if (block) {
         
-        [self ax_appStoreVersionAppid:appid success:^(NSString *appVersion) {
+        [self ax_requestAppStoreVersionAppid:appid success:^(NSString *appVersion) {
             
             NSString *loc = [NSString ax_getAppVersion];
             NSString *ser = appVersion;
@@ -72,6 +72,8 @@
                 block(0);
                 return ;
             }
+            
+            
             
             NSArray *locArray = [loc componentsSeparatedByString:@"."];
             NSArray *serArray = [ser componentsSeparatedByString:@"."];
@@ -117,6 +119,30 @@
         }
     }
     
+}
+
+
+
+/**
+ 工程版本号 与App Store中版本号比较
+ 
+ @param appid appid
+ @param resultBlock 回调
+ */
+-(void)ax_versionProjectCompareAppStoreWithAppid:(NSString *)appid comparisonResult:(void(^)(NSString *projectVersion , NSString *appStoreVersion,NSComparisonResult comparisonResult))resultBlock {
+    
+    if (resultBlock) {
+        
+        [self ax_requestAppStoreVersionAppid:appid success:^(NSString *appVersion) {
+            
+            NSString *projectVersion = [NSString ax_getAppVersion];
+            NSString *appStoreVersion = appVersion;
+            
+            resultBlock(projectVersion,appStoreVersion,[projectVersion compare:appStoreVersion]);
+            
+        }];
+        
+    }
 }
 
 

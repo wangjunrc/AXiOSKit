@@ -1,7 +1,7 @@
 
 #import <Foundation/Foundation.h>
 
-//#define USER_TYPE_ONE
+#define USER_TYPE_ONE
 
 #define descriptionWithLocale_TYPE_JSON \
 - (NSString *)descriptionWithLocale:(nullable id)locale{\
