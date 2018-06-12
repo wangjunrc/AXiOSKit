@@ -208,23 +208,63 @@ typedef void(^DidViewBlock)(UIView *view);
     
 }
 
+/**
+ 截屏 不含有转态栏  保存至相册 
+ */
+-(void )ax_saveScreenShotsToPhotoAlbum{
+    
+    CGSize size = [[UIApplication sharedApplication] keyWindow].rootViewController.view.frame.size;
+      UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
 
-//-(UIView *)ax_viewTagWith:(UIView *)axview tag:(NSString *)tag{
-//
-//     UIView *aView = nil;
-//
-//    for (UIView *subView in axview.subviews) {
-//
-//        aView = subView;
-//
-//        while(![subView.axTag isEqualToString:tag]){
-//
-//           aView =  [self ax_viewTagWith:subView tag:tag];
-//        }
-//    }
-//
-//     return aView;
-//}
+    [[UIApplication sharedApplication].keyWindow.layer renderInContext:context];
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIImageWriteToSavedPhotosAlbum(theImage, self, nil, nil);
+}
+
+/**
+ 当前view layer  重绘图片
+
+ @return UIImage
+ */
+-(UIImage *)ax_drawRectToImage{
+    
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.layer renderInContext:context];
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return theImage;
+}
+
+
+
+/**
+  当前view layer  重绘图片,并保存到相册中
+ */
+-(void )ax_saveToPhotoAlbum{
+   
+    UIImage *theImage = [self ax_drawRectToImage];
+    
+    UIImageWriteToSavedPhotosAlbum(theImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+    
+}
+
+//回调方法
+- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo{
+    
+    NSString *msg = nil ;
+    if(error != NULL){
+        msg = @"保存图片失败" ;
+    }else{
+        msg = @"保存图片成功" ;
+    }
+    
+}
+
+
 
 #pragma mark - set and get
 

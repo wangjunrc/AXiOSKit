@@ -57,7 +57,7 @@
 
 
 /**
- 画水银图片
+ 画水印图片
 
  @param markImage 水印图片
  @param rect 位置

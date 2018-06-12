@@ -29,13 +29,13 @@
 
 
 /**
-边框方向
-
-- AXBorderDirectionTop: 顶部
-- AXBorderDirectionLeft: 左边
-- AXBorderDirectionBottom: 底部
-- AXBorderDirectionRight: 右边
-*/
+ 边框方向
+ 
+ - AXBorderDirectionTop: 顶部
+ - AXBorderDirectionLeft: 左边
+ - AXBorderDirectionBottom: 底部
+ - AXBorderDirectionRight: 右边
+ */
 typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
     AXBorderDirectionTop = 0,
     AXBorderDirectionLeft,
@@ -69,12 +69,27 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
 
 /**
  找出绑定 ax_tag 的对象
-
+ 
  @param tag ax_tag
  @return view
  */
 - (nullable __kindof UIView *)ax_viewWithTag:(NSString *_Nullable)tag;
 
+/**
+ 截屏 不含有转态栏  保存至相册
+ */
+-(void )ax_saveScreenShotsToPhotoAlbum;
 
+/**
+ 当前view layer  重绘图片
+ 
+ @return UIImage
+ */
+-(UIImage * _Nonnull )ax_drawRectToImage;
+
+/**
+ 当前view layer  重绘图片,并保存到相册中
+ */
+-(void )ax_saveToPhotoAlbum;
 
 @end

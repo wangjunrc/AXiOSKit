@@ -17,7 +17,8 @@
  返回新的图片
  */
 - (UIImage *)ax_imageScaleToSize:(CGSize)size{
-    UIGraphicsBeginImageContext(size);
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
     [self drawInRect:CGRectMake(0,0,size.width, size.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -262,7 +263,7 @@
 
 +(UIImage *)ax_imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGContextSetFillColorWithColor(context, [color CGColor]);
@@ -430,7 +431,7 @@
         CGFloat ratio = (CGFloat)maxLength / data.length;
         CGSize size = CGSizeMake((NSUInteger)(resultImage.size.width * sqrtf(ratio)), (NSUInteger)(resultImage.size.height * sqrtf(ratio)));
         // Use NSUInteger to preventwhite blank
-        UIGraphicsBeginImageContext(size);
+       UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
         [resultImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
         resultImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
@@ -442,6 +443,26 @@
 }
 
 
+/**
+ * 保存图片到系统相册
+ */
+- (void)ax_saveImageToPhotos{
+    UIImage *image = self;
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+    //因为需要知道该操作的完成情况，即保存成功与否，所以此处需要一个回调方法image:didFinishSavingWithError:contextInfo:
+}
+
+//回调方法
+- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo{
+    
+    NSString *msg = nil ;
+    if(error != NULL){
+        msg = @"保存图片失败" ;
+    }else{
+        msg = @"保存图片成功" ;
+    }
+    
+}
 
 @end
 
