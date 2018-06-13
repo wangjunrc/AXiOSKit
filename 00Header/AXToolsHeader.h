@@ -30,25 +30,8 @@
 
 /* 01AXTools */
 #pragma mark - 01AXTools
-#import "IBObjectHeader.h"
-#import "AXNetManager.h"
-#import "AXConstant.h"
-#import "AXViewController.h"
-#import "AXBaseAlertVC.h"
-#import "AXQRCodeVC.h"
-#import "AXSinglePickVC.h"
-#import "AXPlayVC.h"
-#import "AXWebVC.h"
-#import "AXWKWebVC.h"
-#import "AXObject.h"
-#import "QRCodeViewController.h"
-#import "WKWebViewController.h"
-#import "AXTableViewController.h"
-#import "AXSafariVC.h"
-#import "AXConstant.h"
-#import "AXMacros.h"
-#import "AXFullLayout.h"
-#import "AXViewModel.h"
+
+/* 00Header 01AXCategory*/
 #import "UIView+AXFrame.h"
 #import "CALayer+AXFrame.h"
 #import "UIButton+AXTool.h"
@@ -90,6 +73,41 @@
 #import "NSNumber+AXTool.h"
 #import "AXWeakProxy.h"
 #import "UIControl+AXTool.h"
+#import "NSObject+AXGCDTimer.h"
+
+/* 00Header 02IBView*/
+#import "IBObjectHeader.h"
+#import "AXCountdownTimer.h"
+#import "AXConstant.h"
+
+/* 00Header 03AXController*/
+#import "AXViewController.h"
+#import "AXBaseAlertVC.h"
+#import "AXQRCodeVC.h"
+#import "AXSinglePickVC.h"
+#import "AXPlayVC.h"
+#import "AXWebVC.h"
+#import "AXWKWebVC.h"
+#import "AXFullLayout.h"
+
+/* 00Header 04AXView*/
+#import "AXTextView.h"
+#import "AXVeriCodeView.h"
+
+/* 00Header 05AXObject */
+#import "AXObject.h"
+#import "QRCodeViewController.h"
+#import "WKWebViewController.h"
+#import "AXTableViewController.h"
+#import "AXSafariVC.h"
+#import "AXConstant.h"
+#import "AXMacros.h"
+#import "AXViewModel.h"
+
+/* 00Header 06AXResources*/
+
+/* 00Header 07AXProxy*/
+#import "AXWeakProxy.h"
 
 
 /* 02ThirdTools */
@@ -104,7 +122,6 @@
 #import "UITextView+WZB.h"
 
 
-
 /* 03ThirdToolsWrap */
 #pragma mark - 03ThirdToolsWrap
 #import "UIScrollView+AXRefresh.h"
@@ -112,6 +129,7 @@
 #import "NSObject+FBKVOControllerAX.h"
 #import "MBProgressHUD+AX.h"
 #import "NSObject+AXCacheImage.h"
+#import "AXNetManager.h"
 
 
 
