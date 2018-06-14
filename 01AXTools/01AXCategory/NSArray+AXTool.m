@@ -11,16 +11,6 @@
 @implementation NSArray (AXTool)
 
 /**
-  NSArray转换json字串
- */
--(NSString *)ax_toJson{
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:nil];
-    NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    return  jsonStr;
-}
-
-
-/**
  * 0-9 a-z A-Z 集合
  */
 +(NSArray *)ax_numbernAndAlphabet{
@@ -52,5 +42,27 @@
     return temp.copy;
     
 }
+
+/**
+ 倒数 内容
+
+ @param count 个数
+ @return 内容
+ */
+-(NSArray *)ax_lastObjetCount:(NSInteger )count{
+    
+    if (count>self.count) {
+        count = self.count;
+    }
+    
+    NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(self.count-count, count)];
+    
+    NSArray *temp = [self objectsAtIndexes:set];
+    //倒序
+    temp = [[temp reverseObjectEnumerator] allObjects];
+    return temp;
+}
+
+
 
 @end

@@ -259,15 +259,6 @@
     return [UIImage imageWithCIImage:transformedImage];
 }
 
-
-/**
- *  NSString json解析
- */
--(id)ax_toJSON{
-   NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
-   return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-}
-
 /**
  * 拼接 tel://
  */

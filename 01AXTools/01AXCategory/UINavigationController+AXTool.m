@@ -24,35 +24,71 @@
     }
 }
 
+
+
 /**
- * push vc后移除当前控制器,让当前控制器上一个作为viewController的父导航控制器
+ * push vc后移除指定父 VC
  */
-- (void)pushViewControllerAndRemoveParent:(UIViewController *)viewController animated:(BOOL)animated{
+- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeParent:(UIViewController *)parent{
     
     [self pushViewController:viewController animated:animated];
     
-    if (self.viewControllers.count>2) {
-        
-        NSMutableArray *temp =[self.viewControllers mutableCopy];
-        [temp removeObjectAtIndex:temp.count-2];
-        self.viewControllers =temp;
-    }
-    
-
-}
-
-/**
- * push vc后移除指定父nav控制器,
- */
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeParent:(UIViewController *)parent{
-    
-    [self pushViewController:viewController animated:animated];
     if ([self.viewControllers containsObject:parent]) {
+        
         NSMutableArray *temp =[self.viewControllers mutableCopy];
         [temp removeObject:parent];
         self.viewControllers =temp;
     }
+  
 }
+
+
+/**
+ push vc后 移除 指定的vc 数组
+ 
+ @param viewController vc
+ @param animated animated
+ @param vcArray vcArray
+ */
+- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeViewControllers:(NSArray *)vcArray{
+    
+    [self pushViewController:viewController animated:animated];
+   
+    NSMutableArray *temp =[self.viewControllers mutableCopy];
+    [temp removeObjectsInArray:vcArray];
+    self.viewControllers =temp;
+}
+
+
+- (void)ax_removeViewControllers:(NSArray *)vcArray{
+    
+   NSMutableArray *temp =[self.viewControllers mutableCopy];
+    [temp removeObjectsInArray:vcArray];
+    self.viewControllers =temp;
+    
+}
+
+
+/**
+ * push vc后移除指定父nav控制器,
+ */
+
+/**
+ pushViewController 添加 complete
+
+ @param viewController vc
+ @param animated 动画
+ @param complete 完成回调
+ */
+- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated complete:(void(^)(void))complete{
+    
+    
+    [self pushViewController:viewController animated:animated];
+    
+}
+
+
+
 
 /**
  初始化

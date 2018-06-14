@@ -16,14 +16,19 @@
 -(void)ax_popToViewControllerClass:(NSString *)classStr;
 
 /**
- * push vc后移除当前控制器,让当前控制器作为viewController的父导航控制器
- */
-- (void)pushViewControllerAndRemoveParent:(UIViewController *)viewController animated:(BOOL)animated;
-
-/**
  * push vc后移除指定父nav控制器,
  */
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeParent:(UIViewController *)parent;
+- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeParent:(UIViewController *)parent;
+
+
+/**
+  push vc后 移除 指定的vc 数组
+
+ @param viewController vc
+ @param animated animated
+ @param vcArray vcArray
+ */
+- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeViewControllers:(NSArray *)vcArray;
 
 /**
  初始化

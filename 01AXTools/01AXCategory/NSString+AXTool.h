@@ -109,11 +109,6 @@
 -(UIImage *)ax_stringToQRCodeWithWH:(CGFloat )wh;
 
 /**
- *  NSString json解析
- */
--(id)ax_toJSON;
-
-/**
  * 拼接 tel://
  */
 -(NSString *)ax_byPhone;

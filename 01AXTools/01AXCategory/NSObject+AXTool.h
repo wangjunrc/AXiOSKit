@@ -15,6 +15,11 @@ typedef void(^AX_backBlock)(id obj);
 @interface NSObject (AXTool)
 
 /**
+ NSObject转换json字串
+ */
+-(NSString *)ax_toJson;
+
+/**
  封装 alloc]init]
  */
 +(instancetype)ax_init;

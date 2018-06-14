@@ -10,9 +10,5 @@
 
 @interface NSDictionary (AXTool)
 
-/**
- NSDictionary转换json字串
- */
--(NSString *)ax_toJson;
 
 @end

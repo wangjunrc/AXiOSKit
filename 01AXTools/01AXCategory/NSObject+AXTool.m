@@ -17,6 +17,26 @@
 @implementation NSObject (AXTool)
 
 /**
+ NSObject转换json字串
+ */
+-(NSString *)ax_toJson{
+    
+    if ([self isKindOfClass:[NSString class]]) {
+        
+        return (NSString *)self;
+        
+    } else if ([self isKindOfClass:[NSData class]]) {
+        
+        return [[NSString alloc] initWithData:(NSData *)self encoding:NSUTF8StringEncoding];
+    }
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    return  jsonStr;
+}
+
+
+/**
  封装 alloc]init]
  */
 +(instancetype)ax_init{
