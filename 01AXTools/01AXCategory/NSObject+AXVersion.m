@@ -136,7 +136,7 @@
             NSString *projectVersion = [NSString ax_getAppVersion];
             NSString *appStoreVersion = appVersion;
             
-            resultBlock(projectVersion,appStoreVersion,[projectVersion compare:appStoreVersion]);
+            resultBlock(projectVersion,appStoreVersion,[projectVersion compare:appStoreVersion options:NSNumericSearch]);
             
         }];
         

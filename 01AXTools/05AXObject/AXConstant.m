@@ -157,6 +157,13 @@ BOOL ax_OpenPrefsRoot(){
 #pragma clang diagnostic pop
 }
 
+/**
+ * str to URL
+ */
+NSURL *ax_URLStr(NSString  *str){
+    return [NSURL URLWithString:str];
+}
+
 /*
  // 以下是设置其他界面
  prefs:root=General&path=About

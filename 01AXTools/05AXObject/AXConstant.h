@@ -106,6 +106,11 @@ int ax_getRandomFromTo(int from ,int to);
  */
 BOOL ax_OpenPrefsRoot(void);
 
+/**
+ * str to URL
+ */
+NSURL *ax_URLStr(NSString  *str);
+
 @end
 
 
