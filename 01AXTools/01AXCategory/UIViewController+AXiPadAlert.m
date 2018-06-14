@@ -107,6 +107,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  * Sheet  没有取消回调
  */
 -(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm{
+    
     [self ax_showSheetByiPadView:iPadView title:title message:message actionArray:actionArray confirm:confirm cancel:nil];
 
 }
@@ -171,6 +172,47 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
 }
 
+
+
+/**
+ * 数组 Alert 有取消回调
+ */
+-(void)ax_showAlertByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
+    
+    
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    
+    [alert addAction:[UIAlertAction actionWithTitle:AXMyLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+        if (cancel) {
+            cancel();
+        }
+        
+    }]];
+    
+    
+    for (NSInteger index=0; index<actionArray.count; index++) {
+        
+        NSString *title = actionArray[index];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            if (confirm) {
+                confirm(index);
+            }
+            
+        }]];
+    }
+    
+    if (iPadView != nil) {
+        alert.popoverPresentationController.sourceView = iPadView;
+        alert.popoverPresentationController.sourceRect = iPadView.bounds;
+    }
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
 
 #pragma mark分类重写 set get 方法
 /**

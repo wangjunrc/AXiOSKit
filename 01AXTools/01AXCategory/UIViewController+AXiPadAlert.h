@@ -57,5 +57,8 @@
  */
 -(void)ax_showSheeLogoutByPadView:(UIView *)iPadView confirm:(void(^)(void))confirm;
 
-
+/**
+ * 数组 Alert 有取消回调
+ */
+-(void)ax_showAlertByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel;
 @end

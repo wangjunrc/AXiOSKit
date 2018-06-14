@@ -85,4 +85,8 @@
  */
 -(void)ax_showNetDownloadGo:(void(^)(void))confirm cancel:(void(^)(void))cancel;
 
+/**
+ * 数组 Alert 有取消回调
+ */
+-(void)ax_showAlertArrayByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel;
 @end

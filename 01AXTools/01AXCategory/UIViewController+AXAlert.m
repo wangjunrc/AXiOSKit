@@ -60,6 +60,16 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 #pragma mark - Alert
 
 /**
+ * 数组 Alert 有取消回调
+ */
+-(void)ax_showAlertArrayByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
+    
+    [self ax_showAlertByiPadView:nil title:title message:message actionArray:actionArray confirm:confirm cancel:cancel];
+    
+}
+
+
+/**
  * 只有确定,没有回调
  */
 -(void)ax_showAlertByTitle:(NSString *)title{
