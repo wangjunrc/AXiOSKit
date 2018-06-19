@@ -53,15 +53,45 @@
     
 }
 
+
+
+/**
+ 获得 类 私有属性
+
+ @return 数组
+ */
++(NSArray *)ax_getPrivateProperty{
+    
+    unsigned int outCount = 0;
+    Ivar *ivars = class_copyIvarList(self.class, &outCount);
+    
+    NSMutableArray *temp = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i < outCount; ++i) {
+        // 遍历取出该类成员变量
+        Ivar ivar = *(ivars + i);
+        
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        dict[@"name"] = @(ivar_getName(ivar)).description;
+        dict[@"type"] = @(ivar_getTypeEncoding(ivar)).description;
+        [temp addObject:dict];
+        
+    }
+    // 根据内存管理原则释放指针
+    free(ivars);
+    
+    return temp.copy;
+}
+
 #pragma mark - set and get
 
 
 - (void)setAx_pageIndex:(NSInteger)ax_pageIndex{
-     ax_runtimePropertyAssSet(ax_pageIndex);
+    ax_runtimePropertyAssSet(ax_pageIndex);
 }
 
 - (NSInteger)ax_pageIndex{
-     return [ax_runtimePropertyAssGet(ax_pageIndex)integerValue];
+    return [ax_runtimePropertyAssGet(ax_pageIndex)integerValue];
 }
 
 

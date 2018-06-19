@@ -88,6 +88,9 @@ pod 'WCDB'
 #    音频在线播放,含有缓存
 pod 'FreeStreamer'
 
+#    aop 拦截 替换 类 实例 方法
+pod 'Aspects'
+
 # coreData 封装
 # pod 'MagicalRecord'
 

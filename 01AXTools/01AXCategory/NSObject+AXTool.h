@@ -43,4 +43,11 @@ typedef void(^AX_backBlock)(id obj);
  */
 -(void)ax_setValue:(id)value;
 
+/**
+ 获得 类 私有属性
+ 
+ @return 数组
+ */
++(NSArray *)ax_getPrivateProperty;
+
 @end

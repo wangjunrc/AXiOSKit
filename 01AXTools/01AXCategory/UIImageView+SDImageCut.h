@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SDWebImageManager.h"
+
+
 @interface UIImageView (SDImageCut)
 
 //- (void)sd_setRoundImageWithURL:(NSURL *_Nullable)url cornerRadius:(CGFloat)cornerRadius placeholderImage:(UIImage *_Nullable)placeholder  completed:(nullable SDExternalCompletionBlock)completedBlock  ;
