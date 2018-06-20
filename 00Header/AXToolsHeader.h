@@ -75,6 +75,7 @@
 #import "UIControl+AXTool.h"
 #import "NSObject+AXGCDTimer.h"
 #import "NSArray+AXTool.h"
+#import "UITextView+AXTool.h"
 
 /* 00Header 02IBView*/
 #import "IBObjectHeader.h"
