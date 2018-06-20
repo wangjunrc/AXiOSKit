@@ -16,6 +16,6 @@
  @param aText 文字
  @param aColor 颜色
  */
--(void)ax_setPlaceholder:(NSString *)aText color:(UIColor *)aColor;
+- (void)ax_setPlaceholder:(NSString *)aText color:(UIColor *)aColor;
 
 @end

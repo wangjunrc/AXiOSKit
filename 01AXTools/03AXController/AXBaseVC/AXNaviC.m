@@ -41,7 +41,7 @@
 //    return UIStatusBarStyleLightContent;
 //}
 
--(BOOL)shouldAutorotate{
+- (BOOL)shouldAutorotate{
     return NO;
 }
 
@@ -53,7 +53,7 @@
     return UIInterfaceOrientationPortrait;
 }
 
--(void)dealloc{
+- (void)dealloc{
     
     axLong_dealloc;
 }

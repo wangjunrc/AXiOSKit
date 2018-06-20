@@ -12,21 +12,21 @@
 /**
  * NSData 进行 Base64
  */
--(NSString *)ax_toBase64{
+- (NSString *)ax_toBase64{
     return  [self base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
 }
 
 /**
  *  NSData json解析
  */
--(id)ax_formJSON{
+- (id)ax_formJSON{
     return [NSJSONSerialization JSONObjectWithData:self options:NSJSONReadingMutableContainers error:nil];
 }
 
 
 
 //二进制转化为十六进制
--(NSString *)ax_dataToHexString{
+- (NSString *)ax_dataToHexString{
     NSData *data = self;
     if (data == nil) {
         return nil;

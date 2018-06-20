@@ -12,17 +12,17 @@
 typedef void(^ButtonBlock)(UIButton *button);
 
 @interface UIButton ()
-@property(nonatomic,copy)ButtonBlock buttonBlock;
+@property (nonatomic, copy)ButtonBlock buttonBlock;
 @end
 
 @implementation UIButton (AXTool)
 
 #pragma mark - 点击事件
--(void)ax_addTargetBlock:(void (^)(UIButton *))block{
+- (void)ax_addTargetBlock:(void (^)(UIButton *))block{
     [self addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];
     self.buttonBlock = block;
 }
--(void)buttonEvents:(UIButton *)button{
+- (void)buttonEvents:(UIButton *)button{
     if (self.buttonBlock) {
         self.buttonBlock(button);
     }
@@ -104,13 +104,13 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
     }
 }
 
--(void)setHitTestEdgeInsets:(UIEdgeInsets)hitTestEdgeInsets
+- (void)setHitTestEdgeInsets:(UIEdgeInsets)hitTestEdgeInsets
 {
     NSValue *value = [NSValue value:&hitTestEdgeInsets withObjCType:@encode(UIEdgeInsets)];
     objc_setAssociatedObject(self, &KEY_HIT_TEST_EDGE_INSETS, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(UIEdgeInsets)hitTestEdgeInsets
+- (UIEdgeInsets)hitTestEdgeInsets
 {
     NSValue *value = objc_getAssociatedObject(self, &KEY_HIT_TEST_EDGE_INSETS);
     if(value) {
@@ -139,7 +139,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
  
  @param title title
  */
--(void)ax_setTitleStateNormal:(nullable NSString *)title{
+- (void)ax_setTitleStateNormal:(nullable NSString *)title{
     
     [self setTitle:title forState:UIControlStateNormal];
     
@@ -150,7 +150,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
  
  @param title title
  */
--(void)ax_setTitleStateDisabled:(nullable NSString *)title{
+- (void)ax_setTitleStateDisabled:(nullable NSString *)title{
     
     [self setTitle:title forState:UIControlStateDisabled];
     
@@ -162,7 +162,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
  
  @param title title
  */
--(void)ax_setTitleStateSelected:(nullable NSString *)title{
+- (void)ax_setTitleStateSelected:(nullable NSString *)title{
     
     [self setTitle:title forState:UIControlStateSelected];
     
@@ -173,7 +173,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
  
  @param title title
  */
--(void)ax_setTitleStateHighlighted:(nullable NSString *)title{
+- (void)ax_setTitleStateHighlighted:(nullable NSString *)title{
     
     [self setTitle:title forState:UIControlStateHighlighted];
     
@@ -185,7 +185,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
  
  @param color color
  */
--(void)ax_setTitleColorStateNormal:(nullable UIColor *)color{
+- (void)ax_setTitleColorStateNormal:(nullable UIColor *)color{
     
     [self setTitleColor:color forState:UIControlStateNormal];
     
@@ -196,7 +196,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
  
  @param color color
  */
--(void)ax_setTitleColorStateHighlighted:(nullable UIColor *)color{
+- (void)ax_setTitleColorStateHighlighted:(nullable UIColor *)color{
     
     [self setTitleColor:color forState:UIControlStateHighlighted];
     
@@ -207,7 +207,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
  
  @param color color
  */
--(void)ax_setTitleColorStateDisabled:(nullable UIColor *)color{
+- (void)ax_setTitleColorStateDisabled:(nullable UIColor *)color{
     
     [self setTitleColor:color forState:UIControlStateDisabled];
     
@@ -218,7 +218,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
  
  @param color color
  */
--(void)ax_setTitleColorStateSelected:(nullable UIColor *)color{
+- (void)ax_setTitleColorStateSelected:(nullable UIColor *)color{
     
     [self setTitleColor:color forState:UIControlStateSelected];
     
@@ -230,7 +230,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
  
  @param image image
  */
--(void)ax_setImageStateNormal:(NSString *)image{
+- (void)ax_setImageStateNormal:(NSString *)image{
     
     [self setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     
@@ -241,7 +241,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
  
  @param image image
  */
--(void)ax_setImageColorStateHighlighted:(NSString *)image{
+- (void)ax_setImageColorStateHighlighted:(NSString *)image{
     
     [self setImage:[UIImage imageNamed:image] forState:UIControlStateHighlighted];
     
@@ -252,7 +252,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
  
  @param image image
  */
--(void)ax_setImageStateDisabled:(NSString *)image{
+- (void)ax_setImageStateDisabled:(NSString *)image{
     
     [self setImage:[UIImage imageNamed:image] forState:UIControlStateDisabled];
     
@@ -263,7 +263,7 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
  
  @param image image
  */
--(void)ax_setImageColorStateSelected:(NSString *)image{
+- (void)ax_setImageColorStateSelected:(NSString *)image{
     
     [self setImage:[UIImage imageNamed:image] forState:UIControlStateSelected];
 }

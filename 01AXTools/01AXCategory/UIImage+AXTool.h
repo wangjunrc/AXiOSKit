@@ -25,7 +25,7 @@
  @param borderColor 边框的颜色
  @return 返回新的图片
  */
--(UIImage *)ax_imageCircleWithRadius:(CGFloat)radius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+- (UIImage *)ax_imageCircleWithRadius:(CGFloat)radius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 
 /**
  将图片剪切成圆形
@@ -34,7 +34,7 @@
  @param borderColor 边框的颜色
  @return 返回新的图片
  */
--(UIImage *)ax_imageCircleWithBorderWidth:(CGFloat)borderWidth AndBorderColor:(UIColor *)borderColor;
+- (UIImage *)ax_imageCircleWithBorderWidth:(CGFloat)borderWidth AndBorderColor:(UIColor *)borderColor;
 
 /**
  *将图片剪切成圆形
@@ -43,7 +43,7 @@
  *@return 返回新的图片
  */
 
--(UIImage *)ax_circleImageWithBorderWidth:(CGFloat)borderWidth AndBorderColor:(UIColor *)borderColor;
+- (UIImage *)ax_circleImageWithBorderWidth:(CGFloat)borderWidth AndBorderColor:(UIColor *)borderColor;
 
 /**
  *  画颜色色线, |______| 形状线图片
@@ -96,14 +96,14 @@
  @param name name
  @return UIImage
  */
-+(instancetype)ax_imageOriginalByName:(NSString *)name;
++ (instancetype)ax_imageOriginalByName:(NSString *)name;
 
 /**
  矩形图片-->正方形图片 以图片中心为中心，以最小边为边长，裁剪正方形图片
  
  @return 剪切图片
  */
--(UIImage *)ax_imageRectangleToSquare;
+- (UIImage *)ax_imageRectangleToSquare;
 
 
 /**

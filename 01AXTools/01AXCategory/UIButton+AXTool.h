@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, AXButtonImagePosition) {
 /**
  * 按钮事件封装成block
  */
--(void)ax_addTargetBlock:(void(^_Nullable)(UIButton * _Nullable button))block;
+- (void)ax_addTargetBlock:(void(^_Nullable)(UIButton * _Nullable button))block;
 
 /**
  修改button 图片位置
@@ -34,63 +34,63 @@ typedef NS_ENUM(NSInteger, AXButtonImagePosition) {
 /**
  扩大按钮响应热区时，负值为扩大，正值为缩小。 完全支持自动布局，只需要将方法写在自动布局方法下面即可
  */
-@property(nonatomic, assign) UIEdgeInsets hitTestEdgeInsets;
+@property (nonatomic, assign) UIEdgeInsets hitTestEdgeInsets;
 
 /**
  UIControlStateNormal 状态文字
  
  @param title title
  */
--(void)ax_setTitleStateNormal:(nullable NSString *)title;
+- (void)ax_setTitleStateNormal:(nullable NSString *)title;
 
 /**
  UIControlStateDisabled 状态文字
  
  @param title title
  */
--(void)ax_setTitleStateDisabled:(nullable NSString *)title;
+- (void)ax_setTitleStateDisabled:(nullable NSString *)title;
 
 /**
  UIControlStateSelected 状态文字
  
  @param title title
  */
--(void)ax_setTitleStateSelected:(nullable NSString *)title;
+- (void)ax_setTitleStateSelected:(nullable NSString *)title;
 
 /**
  UIControlStateHighlighted 状态文字
  
  @param title title
  */
--(void)ax_setTitleStateHighlighted:(nullable NSString *)title;
+- (void)ax_setTitleStateHighlighted:(nullable NSString *)title;
 
 /**
  UIControlStateNormal 文字颜色
  
  @param color color
  */
--(void)ax_setTitleColorStateNormal:(nullable UIColor *)color;
+- (void)ax_setTitleColorStateNormal:(nullable UIColor *)color;
 
 /**
  UIControlStateHighlighted 文字颜色
  
  @param color color
  */
--(void)ax_setTitleColorStateHighlighted:(nullable UIColor *)color;
+- (void)ax_setTitleColorStateHighlighted:(nullable UIColor *)color;
 
 /**
  UIControlStateDisabled 文字颜色
  
  @param color color
  */
--(void)ax_setTitleColorStateDisabled:(nullable UIColor *)color;
+- (void)ax_setTitleColorStateDisabled:(nullable UIColor *)color;
 
 /**
  UIControlStateSelected 文字颜色
  
  @param color color
  */
--(void)ax_setTitleColorStateSelected:(nullable UIColor *)color;
+- (void)ax_setTitleColorStateSelected:(nullable UIColor *)color;
 
 
 /**
@@ -98,26 +98,26 @@ typedef NS_ENUM(NSInteger, AXButtonImagePosition) {
  
  @param image image
  */
--(void)ax_setImageStateNormal:(nullable NSString *)image;
+- (void)ax_setImageStateNormal:(nullable NSString *)image;
 /**
  UIControlStateHighlighted image
  
  @param image image
  */
--(void)ax_setImageColorStateHighlighted:(nullable NSString *)image;
+- (void)ax_setImageColorStateHighlighted:(nullable NSString *)image;
 
 /**
  UIControlStateDisabled image
  
  @param image image
  */
--(void)ax_setImageStateDisabled:(nullable NSString *)image;
+- (void)ax_setImageStateDisabled:(nullable NSString *)image;
 
 /**
  UIControlStateSelected image
  
  @param image image
  */
--(void)ax_setImageColorStateSelected:(nullable NSString *)image;
+- (void)ax_setImageColorStateSelected:(nullable NSString *)image;
 
 @end

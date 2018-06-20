@@ -13,20 +13,20 @@
 typedef void(^ControlBlock)(UIControl *aControl);
 
 @interface UIControl ()
-@property(nonatomic,copy)ControlBlock controlBlock;
+@property (nonatomic, copy)ControlBlock controlBlock;
 @end
 @implementation UIControl (AXTool)
 
 /**
  * UIControl addTarget 封装成block
  */
--(void)ax_addTargetEvents:(UIControlEvents)controlEvents block:(void(^_Nullable)(UIControl * _Nullable aControl))block{
+- (void)ax_addTargetEvents:(UIControlEvents)controlEvents block:(void(^_Nullable)(UIControl * _Nullable aControl))block{
     [self addTarget:self action:@selector(controlAction:) forControlEvents:controlEvents];
     self.controlBlock = block;
 }
 
 #pragma mark - action
--(void)controlAction:(UIControl *)sender{
+- (void)controlAction:(UIControl *)sender{
     if (self.controlBlock) {
         self.controlBlock(sender);
     }

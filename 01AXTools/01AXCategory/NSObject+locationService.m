@@ -12,13 +12,13 @@
 
 @interface NSObject()<CLLocationManagerDelegate>
 
-@property(nonatomic, strong)CLLocationManager *locationManager;
+@property (nonatomic, strong)CLLocationManager *locationManager;
 
 @end
 
 @implementation NSObject (locationService)
 
--(void)locationService{
+- (void)locationService{
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
 }
@@ -42,11 +42,11 @@
     }
 }
 
--(void)setLocationManager:(CLLocationManager *)locationManager{
+- (void)setLocationManager:(CLLocationManager *)locationManager{
     objc_setAssociatedObject(self, @selector(locationManager),locationManager, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(CLLocationManager *)locationManager{
+- (CLLocationManager *)locationManager{
     return objc_getAssociatedObject(self,@selector(locationManager));
 }
 

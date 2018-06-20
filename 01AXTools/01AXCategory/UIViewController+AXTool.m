@@ -16,7 +16,7 @@
 /**
  * <#注释#>
  */
-@property (nonatomic, strong)UIViewController  *ax_popVC;
+@property (nonatomic, strong) UIViewController *ax_popVC;
 
 
 @end
@@ -47,7 +47,7 @@
 /**
  * 导航栏 push 到vc
  */
--(void)ax_navigationControllerPush:(Class)aClass block:(void(^)(id vc))blockVC{
+- (void)ax_navigationControllerPush:(Class)aClass block:(void(^)(id vc))blockVC{
     id vc = [[aClass alloc]init];
     if (blockVC) {
         blockVC((id)vc);
@@ -59,7 +59,7 @@
 /**
  * 当前控制器是否在显示,也可以直接使用
  */
--(BOOL)ax_isViewShow{
+- (BOOL)ax_isViewShow{
     return (self.isViewLoaded && self.view.window);
 }
 
@@ -90,7 +90,7 @@
 /**
  * 是否有navigationController
  */
--(void)ax_haveNavigationController:(void(^)(UINavigationController *nav))have noHave:(void(^)(void))noHave{
+- (void)ax_haveNavigationController:(void(^)(UINavigationController *nav))have noHave:(void(^)(void))noHave{
     
     if (self.navigationController) {
         
@@ -116,7 +116,7 @@
  @param presentNav 被present自带
  @param noHave 没有
  */
--(void)ax_havNav:(void(^)(UINavigationController *nav))haveNav isPresentNav:(void(^)(UINavigationController *nav))presentNav noHave:(void(^)(void))noHave{
+- (void)ax_havNav:(void(^)(UINavigationController *nav))haveNav isPresentNav:(void(^)(UINavigationController *nav))presentNav noHave:(void(^)(void))noHave{
     
     if (!self.navigationController) {//有导航
         if (noHave) {
@@ -148,7 +148,7 @@
  @param imageName imageName
  @param selectImageName selectImageName
  */
--(void)ax_setTabBarWithTitle:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectImageName{
+- (void)ax_setTabBarWithTitle:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectImageName{
     
     self.tabBarItem.title = title;
     
@@ -169,7 +169,7 @@
  @param title title
  @param imageName imageName
  */
--(void)ax_tabBarWithTitle:(NSString *)title imageName:(NSString *)imageName{
+- (void)ax_tabBarWithTitle:(NSString *)title imageName:(NSString *)imageName{
     
     self.tabBarItem.title = title;
     self.tabBarItem.image = [UIImage imageNamed:imageName];
@@ -190,7 +190,7 @@
 }
 
 
--(void)ax_popoverWithContentSize:(CGSize )contentSize sourceView:(UIView  *)sourceView orItem:(UIBarButtonItem  *)item{
+- (void)ax_popoverWithContentSize:(CGSize )contentSize sourceView:(UIView *)sourceView orItem:(UIBarButtonItem *)item{
     
     self.modalPresentationStyle = UIModalPresentationPopover;
     self.popoverPresentationController.delegate = self;
@@ -222,7 +222,7 @@
  
  @param AppleStoreID AppleStoreID
  */
--(void)ax_AppStoreUpdateWithAppleStoreID:(NSString *)AppleStoreID{
+- (void)ax_AppStoreUpdateWithAppleStoreID:(NSString *)AppleStoreID{
     
     
     [self ax_versionProjectCompareAppStoreWithAppid:AppleStoreID comparisonResult:^(NSString *projectVersion, NSString *appStoreVersion, NSComparisonResult comparisonResult) {
@@ -249,7 +249,7 @@
  
  @param AppleStoreID AppleStoreID
  */
--(void)ax_AppStoreScoreWithAppleStoreID:(NSString *)AppleStoreID{
+- (void)ax_AppStoreScoreWithAppleStoreID:(NSString *)AppleStoreID{
     
     
     [self ax_showAlertByTitle:@"我们需要您的鼓励" message:@"是否去鼓励?" confirm:^{

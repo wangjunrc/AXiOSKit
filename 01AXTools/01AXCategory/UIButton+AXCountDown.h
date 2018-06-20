@@ -23,11 +23,11 @@
 /**
  *  开始倒计时,需要主动调用比如AFN中,需要根据请求是否成功来进行开始计时
  */
--(void)ax_beginCountDown;
+- (void)ax_beginCountDown;
 
 /**
  * 停止倒计时,正常情况下,不需要主动调用
  */
--(void)ax_stopCountDown;
+- (void)ax_stopCountDown;
 
 @end

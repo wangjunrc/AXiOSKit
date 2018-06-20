@@ -103,7 +103,7 @@
 /**
  * 初始化设备
  */
--(void)setupSessionView{
+- (void)setupSessionView{
     // 1.判断是否能够将输入添加到会话中
     if (![self.session canAddInput:self.deviceInput]) {
         return;

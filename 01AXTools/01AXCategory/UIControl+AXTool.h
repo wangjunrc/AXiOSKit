@@ -13,6 +13,6 @@
 /**
  * UIControl addTarget 封装成block
  */
--(void)ax_addTargetEvents:(UIControlEvents)controlEvents block:(void(^_Nullable)(UIControl * _Nullable aControl))block;
+- (void)ax_addTargetEvents:(UIControlEvents)controlEvents block:(void(^_Nullable)(UIControl * _Nullable aControl))block;
 
 @end

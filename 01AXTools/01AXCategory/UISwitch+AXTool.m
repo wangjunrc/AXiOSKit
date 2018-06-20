@@ -14,7 +14,7 @@ typedef void(^ASwitchBlock)(UISwitch *aSwitch);
 
 @interface UISwitch ()
 
-@property(nonatomic,copy)ASwitchBlock aSwitchBlock;
+@property (nonatomic, copy)ASwitchBlock aSwitchBlock;
 
 @end
 
@@ -23,13 +23,13 @@ typedef void(^ASwitchBlock)(UISwitch *aSwitch);
 /**
  * 按钮事件封装成block
  */
--(void)ax_addTargetBlock:(void(^)(UISwitch *aSwitch))block{
+- (void)ax_addTargetBlock:(void(^)(UISwitch *aSwitch))block{
 
 [self addTarget:self action:@selector(aSwitchEvents:) forControlEvents:UIControlEventValueChanged];
     self.aSwitchBlock = block;
 }
 
--(void)aSwitchEvents:(UISwitch *)aSwitch{
+- (void)aSwitchEvents:(UISwitch *)aSwitch{
     if (self.aSwitchBlock) {
         self.aSwitchBlock(aSwitch);
     }

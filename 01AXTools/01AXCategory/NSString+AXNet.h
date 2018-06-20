@@ -18,6 +18,6 @@
  *                  参数
  * @return  生成后的网关
  */
--(NSString *)buildUrlWihtKey:(NSString *)key parameters:(NSMutableDictionary  *)parameters;
+- (NSString *)buildUrlWihtKey:(NSString *)key parameters:(NSMutableDictionary *)parameters;
 
 @end

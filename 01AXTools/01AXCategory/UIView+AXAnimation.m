@@ -23,7 +23,7 @@
 /**
  * X轴旋转,顺时针方向
  */
--(void)rotateX{
+- (void)rotateX{
     CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.x"];
     rotationAnimation.toValue = DEF_circle;
     rotationAnimation.duration = DEF_duration;
@@ -34,7 +34,7 @@
 /**
  * Y轴旋转,顺时针方向
  */
--(void)rotateY{
+- (void)rotateY{
     CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
     rotationAnimation.toValue = DEF_circle;
     rotationAnimation.duration = DEF_duration;
@@ -45,7 +45,7 @@
 /**
  * Z轴旋转
  */
--(void)rotateZ{
+- (void)rotateZ{
     CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     rotationAnimation.toValue = DEF_circle;
     rotationAnimation.duration = DEF_duration;
@@ -56,7 +56,7 @@
 /**
  * 放大
  */
--(void)toBig{
+- (void)toBig{
     CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     scaleAnimation.toValue = [NSNumber numberWithFloat:2];
     scaleAnimation.duration = DEF_duration;
@@ -68,7 +68,7 @@
 /**
  * 缩小
  */
--(void)toSmall{
+- (void)toSmall{
     CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     scaleAnimation.toValue = [NSNumber numberWithFloat:0.22];
     scaleAnimation.duration = DEF_duration;
@@ -108,7 +108,7 @@
 
 #pragma mark - Custom Animation
 
--(void)showAnimationType:(NSString *)type withSubType:(NSString *)subType duration:(CFTimeInterval)duration timingFunction:(NSString *)timingFunction{
+- (void)showAnimationType:(NSString *)type withSubType:(NSString *)subType duration:(CFTimeInterval)duration timingFunction:(NSString *)timingFunction{
     /** CATransition
      *
      *  @see http://www.dreamingwish.com/dream-2012/the-concept-of-coreanimation-programming-guide.html
@@ -251,7 +251,7 @@
 #pragma mark - Preset Animation
 
 
--(void)animationRevealFromBottom
+- (void)animationRevealFromBottom
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -263,7 +263,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationRevealFromTop
+- (void)animationRevealFromTop
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -275,7 +275,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationRevealFromLeft
+- (void)animationRevealFromLeft
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -287,7 +287,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationRevealFromRight
+- (void)animationRevealFromRight
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -300,7 +300,7 @@
 }
 
 
--(void)animationEaseIn
+- (void)animationEaseIn
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -311,7 +311,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationEaseOut
+- (void)animationEaseOut
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -338,7 +338,7 @@
  *  @method commitAnimations        动画结束
  */
 
--(void)animationFlipFromLeft
+- (void)animationFlipFromLeft
 {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -347,7 +347,7 @@
     [UIView commitAnimations];
 }
 
--(void)animationFlipFromRigh
+- (void)animationFlipFromRigh
 {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -357,7 +357,7 @@
 }
 
 
--(void)animationCurlUp
+- (void)animationCurlUp
 {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
@@ -366,7 +366,7 @@
     [UIView commitAnimations];
 }
 
--(void)animationCurlDown
+- (void)animationCurlDown
 {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
@@ -375,7 +375,7 @@
     [UIView commitAnimations];
 }
 
--(void)animationPushUp
+- (void)animationPushUp
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -387,7 +387,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationPushDown
+- (void)animationPushDown
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -399,7 +399,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationPushLeft
+- (void)animationPushLeft
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -411,7 +411,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationPushRight
+- (void)animationPushRight
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -424,7 +424,7 @@
 }
 
 // presentModalViewController
--(void)animationMoveUp
+- (void)animationMoveUp
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35];
@@ -437,7 +437,7 @@
 }
 
 // dissModalViewController
--(void)animationMoveDown
+- (void)animationMoveDown
 {
     CATransition *transition = [CATransition animation];
     transition.duration = 0.35;
@@ -447,7 +447,7 @@
     [self.layer addAnimation:transition forKey:nil];
 }
 
--(void)animationMoveLeft
+- (void)animationMoveLeft
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -459,7 +459,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationMoveRight
+- (void)animationMoveRight
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -471,7 +471,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationRotateAndScaleEffects
+- (void)animationRotateAndScaleEffects
 {
     [UIView animateWithDuration:0.35f animations:^
      {
@@ -578,7 +578,7 @@
  *                              removedOnCompletion 设置为NO;
  */
 
--(void)animationRotateAndScaleDownUp
+- (void)animationRotateAndScaleDownUp
 {
     CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     rotationAnimation.toValue = [NSNumber numberWithFloat:(2 * M_PI) * 2];
@@ -602,7 +602,7 @@
 
 #pragma mark - Private API
 
--(void)animationFlipFromTop
+- (void)animationFlipFromTop
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -614,7 +614,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationFlipFromBottom
+- (void)animationFlipFromBottom
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -626,7 +626,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationCubeFromLeft
+- (void)animationCubeFromLeft
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -638,7 +638,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationCubeFromRight
+- (void)animationCubeFromRight
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -650,7 +650,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationCubeFromTop
+- (void)animationCubeFromTop
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -662,7 +662,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationCubeFromBottom
+- (void)animationCubeFromBottom
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -674,7 +674,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationSuckEffect
+- (void)animationSuckEffect
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -685,7 +685,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationRippleEffect
+- (void)animationRippleEffect
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -696,7 +696,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationCameraOpen
+- (void)animationCameraOpen
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];
@@ -708,7 +708,7 @@
     [self.layer addAnimation:animation forKey:nil];
 }
 
--(void)animationCameraClose
+- (void)animationCameraClose
 {
     CATransition *animation = [CATransition animation];
     [animation setDuration:0.35f];

@@ -19,7 +19,7 @@
 /**
  NSObject转换json字串
  */
--(NSString *)ax_toJson{
+- (NSString *)ax_toJson{
     
     if ([self isKindOfClass:[NSString class]]) {
         
@@ -39,7 +39,7 @@
 /**
  封装 alloc]init]
  */
-+(instancetype)ax_init{
++ (instancetype)ax_init{
     return [[self alloc]init];
 }
 
@@ -49,7 +49,7 @@
  
  @param value 值
  */
--(void)ax_setValue:(id)value{
+- (void)ax_setValue:(id)value{
     
 }
 
@@ -60,7 +60,7 @@
 
  @return 数组
  */
-+(NSArray *)ax_getPrivateProperty{
++ (NSArray *)ax_getPrivateProperty{
     
     unsigned int outCount = 0;
     Ivar *ivars = class_copyIvarList(self.class, &outCount);

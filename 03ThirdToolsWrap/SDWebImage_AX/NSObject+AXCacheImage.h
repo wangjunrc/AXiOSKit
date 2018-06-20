@@ -16,7 +16,7 @@
  @param url url
  @param completed 回调
  */
--(void)ax_cacheImage:(NSString *)url completed:(void(^)(BOOL isInCache))completed;
+- (void)ax_cacheImage:(NSString *)url completed:(void(^)(BOOL isInCache))completed;
 
 
 @end

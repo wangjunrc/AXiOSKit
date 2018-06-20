@@ -20,13 +20,13 @@ typedef NS_ENUM(NSUInteger, AXAlertAnimationType)
 /**
  自定义,需要显示的view 子控制器进行赋值
  */
-@property (nonatomic,strong)UIView *axContentView;
+@property (nonatomic, strong) UIView *axContentView;
 
 /**
  是否touchesBegan,dismiss
  */
-@property (nonatomic,assign)BOOL axTouchesBeganDismiss;
+@property (nonatomic, assign)BOOL axTouchesBeganDismiss;
 
-@property (nonatomic,assign)AXAlertAnimationType alertAnimationType;
+@property (nonatomic, assign)AXAlertAnimationType alertAnimationType;
 
 @end

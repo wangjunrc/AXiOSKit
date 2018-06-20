@@ -23,12 +23,12 @@
 //    }
 //    return self;
 //}
--(void)invalidateLayout{
+- (void)invalidateLayout{
     [super invalidateLayout];
     [self setupLayout];
 }
 
--(void)setupLayout{
+- (void)setupLayout{
 //    CGFloat space = 20;
 //    self.sectionInset = UIEdgeInsetsMake(0,space,0,space);//分区间的内边距
 //    //minimumLineSpacing = 0;这个是水平的间距 minimumInteritemSpacing

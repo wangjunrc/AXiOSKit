@@ -11,8 +11,8 @@
 
 @interface LocationManager : NSObject
 
-//-(void)Location2D:(void(^)(CLLocationCoordinate2D coordinate2D))location2D;
+//- (void)Location2D:(void(^)(CLLocationCoordinate2D coordinate2D))location2D;
 
--(void)location:(void(^)(CLLocation *location))location;
+- (void)location:(void(^)(CLLocation *location))location;
 
 @end

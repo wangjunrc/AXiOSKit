@@ -75,6 +75,6 @@
 /**
  UITableView footerViewZero
  */
--(void)ax_footerViewZero;
+- (void)ax_footerViewZero;
 
 @end

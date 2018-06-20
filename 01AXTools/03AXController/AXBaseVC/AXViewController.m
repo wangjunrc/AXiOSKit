@@ -27,7 +27,7 @@
         self.navigationItem.leftBarButtonItem =[[ UIBarButtonItem  alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(setButtonEvests:)];
     }
 }
--(void)setButtonEvests:(UIBarButtonItem *)button{
+- (void)setButtonEvests:(UIBarButtonItem *)button{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -35,7 +35,7 @@
 //    [super loadView];
 //    self.view.bounds = [UIScreen mainScreen].bounds;
 //}
--(void)dealloc{
+- (void)dealloc{
     
     axLong_dealloc;
 }

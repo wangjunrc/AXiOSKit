@@ -46,22 +46,22 @@
 /**
  *  右边距
  */
-@property(nonatomic) CGFloat right;
+@property (nonatomic, assign) CGFloat right;
 
 /**
  *  左边距
  */
-@property(nonatomic) CGFloat left;
+@property (nonatomic, assign, assign) CGFloat left;
 
 /**
  *  上边距
  */
-@property(nonatomic) CGFloat top;
+@property (nonatomic) CGFloat top;
 
 /**
  *  下边距
  */
-@property(nonatomic) CGFloat bottom;
+@property (nonatomic, assign) CGFloat bottom;
 
 /**
  * 移除所有子视图

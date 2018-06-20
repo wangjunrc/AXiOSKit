@@ -13,8 +13,8 @@
 /**
  <#Description#>
  */
-@property(nonatomic,strong)AXBaseAlertVC *alertVC;
+@property (nonatomic, strong)AXBaseAlertVC *alertVC;
 
--(instancetype)initWithVC:(AXBaseAlertVC *)alertVC;
+- (instancetype)initWithVC:(AXBaseAlertVC *)alertVC;
 
 @end

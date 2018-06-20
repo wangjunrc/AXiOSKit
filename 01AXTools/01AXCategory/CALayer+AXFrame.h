@@ -46,21 +46,21 @@
 /**
  *  右边距
  */
-@property(nonatomic) CGFloat right;
+@property (nonatomic, assign) CGFloat right;
 
 /**
  *  左边距
  */
-@property(nonatomic) CGFloat left;
+@property (nonatomic, assign) CGFloat left;
 
 /**
  *  上边距
  */
-@property(nonatomic) CGFloat top;
+@property (nonatomic, assign) CGFloat top;
 
 /**
  *  下边距
  */
-@property(nonatomic) CGFloat bottom;
+@property (nonatomic, assign) CGFloat bottom;
 
 @end

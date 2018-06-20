@@ -13,16 +13,16 @@ typedef void(^SliderBlock)(UISlider *button);
 
 @interface UISlider ()
 
-@property(nonatomic,copy)SliderBlock sliderBlock;
+@property (nonatomic, copy)SliderBlock sliderBlock;
 
 @end
 @implementation UISlider (AXTool)
 
--(void)ax_addTargetBlock:(void (^)(UISlider *))block{
+- (void)ax_addTargetBlock:(void (^)(UISlider *))block{
     [self addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventValueChanged];
     self.sliderBlock = block;
 }
--(void)buttonEvents:(UISlider *)sender{
+- (void)buttonEvents:(UISlider *)sender{
     if (self.sliderBlock) {
         self.sliderBlock(sender);
     }

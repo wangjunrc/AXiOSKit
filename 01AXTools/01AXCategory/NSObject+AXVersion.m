@@ -19,7 +19,7 @@
  @param appid appid description
  @param block 得到app的版本信息
  */
--(void )ax_requestAppStoreVersionAppid:(NSString *)appid success:(void(^)(NSString *appVersion))block{
+- (void )ax_requestAppStoreVersionAppid:(NSString *)appid success:(void(^)(NSString *appVersion))block{
     
     if (block) {
         
@@ -57,7 +57,7 @@
  @param appid appid
  @param block 0>相同 1,2,3>顺序的版本不同
  */
--(void)ax_versionToServerVersionByAppid:(NSString *)appid success:(void(^)(NSInteger comp))block {
+- (void)ax_versionToServerVersionByAppid:(NSString *)appid success:(void(^)(NSInteger comp))block {
     
     if (block) {
         
@@ -93,7 +93,7 @@
  @param different 不一样回调
  @param same 一样回调
  */
--(void)ax_versionDifferent:(void(^)(NSString *appVersion, NSString *saveVersion))different same:(void(^)(NSString *appVersion, NSString *saveVersion))same{
+- (void)ax_versionDifferent:(void(^)(NSString *appVersion, NSString *saveVersion))different same:(void(^)(NSString *appVersion, NSString *saveVersion))same{
     
     NSString *appVersion = [NSString ax_getAppVersion];
     
@@ -127,7 +127,7 @@
  @param appid appid
  @param resultBlock 回调
  */
--(void)ax_versionProjectCompareAppStoreWithAppid:(NSString *)appid comparisonResult:(void(^)(NSString *projectVersion , NSString *appStoreVersion,NSComparisonResult comparisonResult))resultBlock {
+- (void)ax_versionProjectCompareAppStoreWithAppid:(NSString *)appid comparisonResult:(void(^)(NSString *projectVersion , NSString *appStoreVersion,NSComparisonResult comparisonResult))resultBlock {
     
     if (resultBlock) {
         

@@ -14,5 +14,5 @@
 /**
  * <#注释#>
  */
-@property(nonatomic,assign)BOOL showDisItem;
+@property (nonatomic, assign)BOOL showDisItem;
 @end

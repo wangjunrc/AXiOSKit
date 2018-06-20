@@ -13,7 +13,7 @@
 /**
  * 返回父指定控制器
  */
--(void)ax_popToViewControllerClass:(NSString *)classStr{
+- (void)ax_popToViewControllerClass:(NSString *)classStr{
     
     for (UIViewController *temp in self.viewControllers) {
         
@@ -96,7 +96,7 @@
  @param vcClass rootCalass
  @return 当前控制器
  */
-+(instancetype)ax_navRootViewControllerClass:(Class)vcClass{
++ (instancetype)ax_navRootViewControllerClass:(Class)vcClass{
     
     return [[self alloc]initWithRootViewController:[[vcClass alloc]init]];
     

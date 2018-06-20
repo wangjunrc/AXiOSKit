@@ -12,7 +12,7 @@
 @interface WKWebViewController : UIViewController
 
 /** 是否显示Nav */
-@property (nonatomic,assign) BOOL isNavHidden;
+@property (nonatomic, assign) BOOL isNavHidden;
 
 /**
  加载纯外部链接网页

@@ -12,43 +12,43 @@
 /**
  * 初始化刷新
  */
--(void)ax_setRefreshHeader:(void(^)(void))header foot:(void(^)(void))foot;
+- (void)ax_setRefreshHeader:(void(^)(void))header foot:(void(^)(void))foot;
 
 /**
  控制 Footer hidden ,一般 有数据 YES 没有数据 NO
  
  @param hidden hidden description
  */
--(void)ax_setRefreshFooterHidden:(BOOL)hidden;
+- (void)ax_setRefreshFooterHidden:(BOOL)hidden;
 
 /**
  * 头开始刷新
  */
--(void)ax_setHeaderBeginRefreshing;
+- (void)ax_setHeaderBeginRefreshing;
 
 /**
  * 尾始刷新
  */
--(void)ax_setFootBeginRefreshing;
+- (void)ax_setFootBeginRefreshing;
 
 /**
  * 设置尾部无更多内容
  */
--(void)ax_setFootNoMore;
+- (void)ax_setFootNoMore;
 
 /**
  * 结束刷新
  */
--(void)ax_setEndRefresh;
+- (void)ax_setEndRefresh;
 
 /**
  * 取消头
  */
--(void)ax_setHeaderNULL;
+- (void)ax_setHeaderNULL;
 
 /**
  * 取消尾
  */
--(void)ax_setFootNULL;
+- (void)ax_setFootNULL;
 
 @end

@@ -18,14 +18,14 @@ NSString *const axUserInfoKey = @"axUserInfoKey";
 #include <stdio.h>
 @implementation AXConstant
 
-BOOL ax_CanOpenURL(NSString  *str){
+BOOL ax_CanOpenURL(NSString *str){
     return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:str]];
 }
 
 /**
  * 打开URL
  */
-BOOL ax_OpenURL(NSString  *str){
+BOOL ax_OpenURL(NSString *str){
     
     
 #pragma clang diagnostic push
@@ -44,7 +44,7 @@ BOOL ax_OpenURL(NSString  *str){
  
  @return 是否成功
  */
-BOOL ax_CallTelprompt(NSString  *phone){
+BOOL ax_CallTelprompt(NSString *phone){
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@",phone]];
@@ -59,7 +59,7 @@ BOOL ax_CallTelprompt(NSString  *phone){
  
  @return 是否成功
  */
-BOOL ax_CallTel(NSString  *phone){
+BOOL ax_CallTel(NSString *phone){
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phone]];
@@ -85,14 +85,14 @@ void ax_LogXcodeCache(void){
     NSSetUncaughtExceptionHandler(&ax_uncaughtExceptionHandler);
 }
 
-UINib * ax_Nib(NSString  *name){
+UINib * ax_Nib(NSString *name){
     return  [UINib nibWithNibName:name bundle:nil];
 }
 
 /**
  * AppStore链接,填写自己的iD
  */
-NSString * ax_AppStoreURL(NSString  *appId){
+NSString * ax_AppStoreURL(NSString *appId){
     return [NSString stringWithFormat:@"https://itunes.apple.com/cn/app/id%@?mt=8",appId];
 }
 
@@ -103,7 +103,7 @@ NSString * ax_AppStoreURL(NSString  *appId){
  @param AppStoreID AppStoreID
  @return url String
  */
-NSString * ax_AppStoreScoreURL(NSString  *AppStoreID){
+NSString * ax_AppStoreScoreURL(NSString *AppStoreID){
     return [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@?action=write-review",AppStoreID];
 }
 
@@ -160,7 +160,7 @@ BOOL ax_OpenPrefsRoot(){
 /**
  * str to URL
  */
-NSURL *ax_URLStr(NSString  *str){
+NSURL *ax_URLStr(NSString *str){
     return [NSURL URLWithString:str];
 }
 

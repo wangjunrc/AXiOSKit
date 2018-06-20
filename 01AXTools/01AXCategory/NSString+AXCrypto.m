@@ -14,7 +14,7 @@
 /**
  MD5加密_普通算法
  */
--(NSString *)ax_MD5{
+- (NSString *)ax_MD5{
     const char *cStr = [self UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     CC_MD5( cStr, (int)strlen(cStr), result );
@@ -29,7 +29,7 @@
 /**
  * DES 加密
  */
--(NSString *)ax_encryptDESWithKey:(NSString *)key
+- (NSString *)ax_encryptDESWithKey:(NSString *)key
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
     NSUInteger bufferSize = 1024 * 900;
@@ -66,7 +66,7 @@
 /**
  * DES  解密
  */
--(NSString*)ax_decryptDESWithKey:(NSString *)key{
+- (NSString*)ax_decryptDESWithKey:(NSString *)key{
     NSData* cipherData = [self ax_toBase64];
     NSUInteger bufferSize = 1024 * 100;
     unsigned char buffer[bufferSize];
@@ -95,7 +95,7 @@
 /**
  * 利用 GTMBase64 解碼 Base64 字串
  */
--(NSData *)ax_toBase64{
+- (NSData *)ax_toBase64{
     NSInteger len = [self length] / 2;    // Target length
     unsigned char *buf = malloc(len);
     unsigned char *whole_byte = buf;
@@ -104,7 +104,7 @@
     for (i=0; i < [self length] / 2; i++) {
         byte_chars[0] = [self characterAtIndex:i*2];
         byte_chars[1] = [self characterAtIndex:i*2+1];
-        *whole_byte = strtol(byte_chars, NULL, 16);
+       *whole_byte = strtol(byte_chars, NULL, 16);
         whole_byte++;
     }
     
@@ -117,7 +117,7 @@
 /**
  * DES 加密 Base64
  */
--(NSString *)ax_encryptDESBase64WithKey:(NSString *)key{
+- (NSString *)ax_encryptDESBase64WithKey:(NSString *)key{
     NSData *textData = [self dataUsingEncoding:NSUTF8StringEncoding];
     NSUInteger dataLength = [textData length];
     NSUInteger  bufferSize = 1024;
@@ -143,7 +143,7 @@
 /**
  * DES  解密 Base64
  */
--(NSString*)ax_decryptDESBase64WithKey:(NSString *)key{
+- (NSString*)ax_decryptDESBase64WithKey:(NSString *)key{
     NSData *cipherdata =  [[NSData alloc]initWithBase64EncodedString:self options:0];
     NSUInteger  bufferSize = 1024;
     unsigned char buffer[bufferSize];
@@ -167,7 +167,7 @@
 /**
  * hmacSha1 加密
  */
--(NSString *)ax_hmacSha1:(NSString*)key{
+- (NSString *)ax_hmacSha1:(NSString*)key{
     NSString *text = self;
     const char *cKey = [key cStringUsingEncoding:NSUTF8StringEncoding];
     
@@ -186,7 +186,7 @@
 /**
  * 对publickey和privatekey进行加密
  */
--(NSString *)ax_hmacSha1:(NSString*)public_key :(NSString*)private_key{
+- (NSString *)ax_hmacSha1:(NSString*)public_key :(NSString*)private_key{
     
     NSData* secretData = [private_key dataUsingEncoding:NSUTF8StringEncoding];
     NSData* stringData = [public_key dataUsingEncoding:NSUTF8StringEncoding];
@@ -207,7 +207,7 @@
 /*
  *加密 3DES
  */
--(NSString *)ax_encrypt3DESWithKey:(NSString *)key{
+- (NSString *)ax_encrypt3DESWithKey:(NSString *)key{
     NSString *src  =self;
     const void *vplainText;
     size_t plainTextBufferSize;
@@ -243,7 +243,7 @@
 /*
  * 解密 3DES
  */
--(NSString *)ax_decrypt3DESWithKey:(NSString *)key{
+- (NSString *)ax_decrypt3DESWithKey:(NSString *)key{
     const void *vplainText;
     size_t plainTextBufferSize;
     NSData *EncryptData =  [self hexStrToNSData];
@@ -279,7 +279,7 @@
 
 
 //十六进制字符串转化为二进制
--(NSData *)hexStrToNSData{
+- (NSData *)hexStrToNSData{
     NSString *hexStr = self;
     NSMutableData* data = [NSMutableData data];
     for (int i = 0; i+2 <= hexStr.length; i+=2) {

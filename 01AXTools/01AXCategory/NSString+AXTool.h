@@ -28,33 +28,33 @@
 /**
  * 获得home后部分的路径,
  */
--(NSString *)ax_getDidHomePath;
+- (NSString *)ax_getDidHomePath;
 
 /**
  * 拼接home路径,得到全路径
  */
--(NSString *)ax_addHomePath;
+- (NSString *)ax_addHomePath;
 
 /**
  * 文字:计算单行文字size(系统重名)
  */
--(CGSize )ax_sizeWithaFont:(UIFont *)font;
+- (CGSize )ax_sizeWithaFont:(UIFont *)font;
 
 /**
  * 文字:计算多行文字size(系统重名)
  */
--(CGSize )ax_sizeWithaFont:(UIFont *)font lineNumber:(NSInteger )number;
+- (CGSize )ax_sizeWithaFont:(UIFont *)font lineNumber:(NSInteger )number;
 
 /**
  * 文字:根据指定宽度,得到高度
  
  */
--(CGFloat )ax_heightWithaFont:(UIFont *)font width:(CGFloat )width;
+- (CGFloat )ax_heightWithaFont:(UIFont *)font width:(CGFloat )width;
 
 /**
  * 文字:根据指定宽度,得到size
  */
--(CGSize )ax_sizeWithaFont:(UIFont *)font width:(CGFloat )width;
+- (CGSize )ax_sizeWithaFont:(UIFont *)font width:(CGFloat )width;
 
 
 /**
@@ -106,12 +106,12 @@
 /**
  * string 生成二维码
  */
--(UIImage *)ax_stringToQRCodeWithWH:(CGFloat )wh;
+- (UIImage *)ax_stringToQRCodeWithWH:(CGFloat )wh;
 
 /**
  * 拼接 tel://
  */
--(NSString *)ax_byPhone;
+- (NSString *)ax_byPhone;
 
 /**
  * 是否含有Emoji表情
@@ -121,37 +121,37 @@
 /**
  * 转换为UTF8,与UTF8String有区别
  */
--(NSString *)ax_toUTF8;
+- (NSString *)ax_toUTF8;
 
 /**
  * 获得文件内,指定文件,只有文件名
  */
--(NSMutableArray *)ax_getFileNameListName:(NSString *)name;
+- (NSMutableArray *)ax_getFileNameListName:(NSString *)name;
 
 /**
  * 获得文件内,指定文件,全路径
  */
--(NSMutableArray *)ax_getFileNameListFullpath:(NSString *)name;
+- (NSMutableArray *)ax_getFileNameListFullpath:(NSString *)name;
 
 /**
  * 获得文件内所以内容
  */
--(NSArray *)ax_getContentsOfDirectory;
+- (NSArray *)ax_getContentsOfDirectory;
 
 /**
  * 显示万元单位
  */
--(NSString *)ax_keepWanYuan;
+- (NSString *)ax_keepWanYuan;
 
 /**
  * 显示万元单位 ,有前缀
  */
--(NSString *)ax_keepWanYuanWithPrefix:(NSString *)prefix;
+- (NSString *)ax_keepWanYuanWithPrefix:(NSString *)prefix;
 
 /**
  * 头部拼接一个字串
  */
--(NSString *)ax_addHeadPrefix:(NSString *)prefix;
+- (NSString *)ax_addHeadPrefix:(NSString *)prefix;
 
 
 /**
@@ -161,12 +161,12 @@
  @param endLength 尾 需要保留的长度
  @return 返回结果
  */
--(NSString *)ax_substringHeadLength:(NSInteger )headLength endLength:(NSInteger )endLength;
+- (NSString *)ax_substringHeadLength:(NSInteger )headLength endLength:(NSInteger )endLength;
 
 /**
  * url 拼接,用别的办法,不然就出现 http:// 变成  http:/ 或者? 不识别
  */
--(NSString *)ax_urlStringtAppending:(NSString *)str;
+- (NSString *)ax_urlStringtAppending:(NSString *)str;
 
 /**
  生成唯一的字符串UUID
@@ -180,13 +180,13 @@
 
  @return 号码
  */
--(NSString *)ax_phoneNumSecret;
+- (NSString *)ax_phoneNumSecret;
 
 /**
  拼接成 tel:// 格式
  
  @return return value description
  */
--(NSURL *)ax_toTelURL;
+- (NSURL *)ax_toTelURL;
 
 @end

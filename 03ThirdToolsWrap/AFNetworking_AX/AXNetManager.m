@@ -95,7 +95,7 @@ NSString *const icoMimeType = @"image/png";
     
     if (block) {
         //1获取网络监控管理者
-        AFNetworkReachabilityManager  *manager = [AFNetworkReachabilityManager sharedManager];
+        AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
         [manager startMonitoring];
         
         //2.设置网络状态发生变化时的代码

@@ -49,7 +49,7 @@
     [self.layer addAnimation:rotationAnimation forKey:@"rotate"];
 }
 
-+(instancetype)ax_imageWithFrame:(CGRect )frame imageName:(NSString *)image{
++ (instancetype)ax_imageWithFrame:(CGRect )frame imageName:(NSString *)image{
     UIImageView *imageView = [[self alloc]initWithFrame:frame];
     imageView.image=[UIImage imageNamed:image];
     return imageView;
@@ -62,7 +62,7 @@
  @param markImage 水印图片
  @param rect 位置
  */
--(void)ax_watermarkWith:(UIImage *)markImage inRect:(CGRect)rect{
+- (void)ax_watermarkWith:(UIImage *)markImage inRect:(CGRect)rect{
     
    UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, 0.0);
  

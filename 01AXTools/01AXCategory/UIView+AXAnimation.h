@@ -13,29 +13,29 @@
 /**
  * X轴旋转,顺时针方向
  */
--(void)rotateX;
+- (void)rotateX;
 
 /**
  * Y轴旋转,顺时针方向
  */
--(void)rotateY;
+- (void)rotateY;
 
 /**
  * Z轴旋转,顺时针方向
  */
--(void)rotateZ;
+- (void)rotateZ;
 
 /**
  * 放大
  */
 
--(void)toBig;
+- (void)toBig;
 
 /**
  * 缩小
  */
 
--(void)toSmall;
+- (void)toSmall;
 
 /**
  仿苹果图标 开始左右不停颤抖

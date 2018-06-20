@@ -13,12 +13,12 @@
 /**
  * 是否可以长按显示复制
  */
-@property (nonatomic,assign) BOOL axCopyable;
+@property (nonatomic, assign) BOOL axCopyable;
 
 /**
  设置 电话 含有下划线,并可以点击打电话
  */
--(void)ax_setPhoneCall;
+- (void)ax_setPhoneCall;
 
 
 - (void)ax_setTextWithLinkAttribute:(NSString *)text;

@@ -32,7 +32,7 @@
  */
 @property (nonatomic, copy) NSString *mimeType;
 
-+(instancetype )formDataWithData:(NSData *)data name:(NSString *)name filename:(NSString *)filename mimeType:(NSString *)mimeType;
++ (instancetype )formDataWithData:(NSData *)data name:(NSString *)name filename:(NSString *)filename mimeType:(NSString *)mimeType;
 
 @end
 

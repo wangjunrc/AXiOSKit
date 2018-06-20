@@ -25,21 +25,21 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 
 @property (nonatomic, strong) WKWebView *wkWebView;
 //设置加载进度条
-@property (nonatomic,strong) UIProgressView *progressView;
+@property (nonatomic, strong) UIProgressView *progressView;
 //仅当第一次的时候加载本地JS
-@property(nonatomic,assign) BOOL needLoadJSPOST;
+@property (nonatomic, assign) BOOL needLoadJSPOST;
 //网页加载的类型
-@property(nonatomic,assign) wkWebLoadType loadType;
+@property (nonatomic, assign) wkWebLoadType loadType;
 //保存的网址链接
 @property (nonatomic, copy) NSString *URLString;
 //保存POST请求体
 @property (nonatomic, copy) NSString *postData;
 //保存请求链接
-@property (nonatomic)NSMutableArray* snapShotsArray;
+@property (nonatomic) NSMutableArray* snapShotsArray;
 //返回按钮
-@property (nonatomic)UIBarButtonItem* customBackBarItem;
+@property (nonatomic) UIBarButtonItem* customBackBarItem;
 //关闭按钮
-@property (nonatomic)UIBarButtonItem* closeButtonItem;
+@property (nonatomic) UIBarButtonItem* closeButtonItem;
 
 @end
 
@@ -83,14 +83,14 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     [self.wkWebView reload];
 }
 
--(void)customBackItemClicked{
+- (void)customBackItemClicked{
     if (self.wkWebView.goBack) {
         [self.wkWebView goBack];
     }else{
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
--(void)closeItemClicked{
+- (void)closeItemClicked{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -190,7 +190,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 
 #pragma mark ================ 自定义返回/关闭按钮 ================
 
--(void)updateNavigationItems{
+- (void)updateNavigationItems{
     if (self.wkWebView.canGoBack) {
         UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         spaceButtonItem.width = -6.5;
@@ -202,7 +202,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     }
 }
 //请求链接处理
--(void)pushCurrentSnapshotViewWithRequest:(NSURLRequest*)request{
+- (void)pushCurrentSnapshotViewWithRequest:(NSURLRequest*)request{
     //    NSLog(@"push with request %@",request);
     NSURLRequest* lastRequest = (NSURLRequest*)[[self.snapShotsArray lastObject] objectForKey:@"request"];
     
@@ -223,7 +223,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 #pragma mark ================ WKNavigationDelegate ================
 
 //这个是网页加载完成，导航的变化
--(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     /*
      主意：这个方法是当网页的内容全部显示（网页内的所有图片必须都正常显示）的时候调用（不是出现的时候就调用），，否则不显示，或则部分显示时这个方法就不调用。
      */
@@ -242,16 +242,16 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 }
 
 //开始加载
--(void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
     //开始加载的时候，让加载进度条显示
     self.progressView.hidden = NO;
 }
 
 //内容返回时调用
--(void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{}
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{}
 
 //服务器请求跳转的时候调用
--(void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation{}
+- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation{}
 
 //服务器开始请求的时候调用
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
@@ -316,20 +316,20 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 }
 
 // 内容加载失败时候调用
--(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
     NSLog(@"页面加载超时");
 }
 
 //跳转失败的时候调用
--(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{}
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{}
 
 //进度条
--(void)webViewWebContentProcessDidTerminate:(WKWebView *)webView{}
+- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView{}
 
 #pragma mark ================ WKUIDelegate ================
 
 // 获取js 里面的提示
--(void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"ax.confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -340,7 +340,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 }
 
 // js 信息的交流
--(void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler{
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"ax.confirm" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         completionHandler(YES);
@@ -352,7 +352,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 }
 
 // 交互。可输入的文本。
--(void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler{
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"textinput" message:@"JS调用输入框" preferredStyle:UIAlertControllerStyleAlert];
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
@@ -440,7 +440,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     return _wkWebView;
 }
 
--(UIBarButtonItem*)customBackBarItem{
+- (UIBarButtonItem*)customBackBarItem{
     if (!_customBackBarItem) {
         UIImage* backItemImage = [[UIImage imageNamed:@"backItemImage"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         UIImage* backItemHlImage = [[UIImage imageNamed:@"backItemImage-hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -475,28 +475,28 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     return _progressView;
 }
 
--(UIBarButtonItem*)closeButtonItem{
+- (UIBarButtonItem*)closeButtonItem{
     if (!_closeButtonItem) {
         _closeButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(closeItemClicked)];
     }
     return _closeButtonItem;
 }
 
--(NSMutableArray*)snapShotsArray{
+- (NSMutableArray*)snapShotsArray{
     if (!_snapShotsArray) {
         _snapShotsArray = [NSMutableArray array];
     }
     return _snapShotsArray;
 }
 
--(void)viewWillDisappear:(BOOL)animated{
+- (void)viewWillDisappear:(BOOL)animated{
     [self.wkWebView.configuration.userContentController removeScriptMessageHandlerForName:@"WXPay"];
     [self.wkWebView setNavigationDelegate:nil];
     [self.wkWebView setUIDelegate:nil];
 }
 
 //注意，观察的移除
--(void)dealloc{
+- (void)dealloc{
     [self.wkWebView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
 }
 

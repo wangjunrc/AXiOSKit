@@ -16,6 +16,6 @@
  @param url url
  @param placeholderImage 占位图片
  */
--(void)ax_setImageCircleWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholderImage;
+- (void)ax_setImageCircleWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholderImage;
 
 @end

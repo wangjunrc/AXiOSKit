@@ -14,7 +14,7 @@
 /**
  * 0-9 a-z A-Z 集合
  */
-+(NSArray *)ax_numbernAndAlphabet;
++ (NSArray *)ax_numbernAndAlphabet;
 
 /**
  倒数 内容
@@ -22,6 +22,6 @@
  @param count 个数
  @return 内容
  */
--(NSArray *)ax_lastObjetCount:(NSInteger )count;
+- (NSArray *)ax_lastObjetCount:(NSInteger )count;
 
 @end

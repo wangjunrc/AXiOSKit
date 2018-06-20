@@ -25,7 +25,7 @@
 //}
 
 
--(void)invalidateLayout{
+- (void)invalidateLayout{
     [super invalidateLayout];
     //    self.sectionInset = UIEdgeInsetsMake(10,10,10,10);
     

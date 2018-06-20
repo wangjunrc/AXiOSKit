@@ -62,13 +62,13 @@ static NSInteger _countDownSecond;
 
 
 
--(void)ax_stopCountDown{
+- (void)ax_stopCountDown{
     self.enabled = YES;
     _countDownSecond = _allSecond;
 }
 
 static NSTimer *_timer = nil;
--(void)ax_beginCountDown{
+- (void)ax_beginCountDown{
     
     if (_countDownSecond<=0) {
         return;

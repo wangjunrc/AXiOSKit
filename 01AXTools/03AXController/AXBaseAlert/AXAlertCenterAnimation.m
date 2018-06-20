@@ -10,7 +10,7 @@
 
 @implementation AXAlertCenterAnimation
 
--(instancetype)initWithVC:(AXBaseAlertVC *)alertVC{
+- (instancetype)initWithVC:(AXBaseAlertVC *)alertVC{
     if (self = [super init]) {
         self.alertVC = alertVC;
     }

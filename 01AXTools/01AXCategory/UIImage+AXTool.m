@@ -34,7 +34,7 @@
  @param borderColor 边框的颜色
  @return 返回新的图片
  */
--(UIImage *)ax_imageCircleWithRadius:(CGFloat)radius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor{
+- (UIImage *)ax_imageCircleWithRadius:(CGFloat)radius borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor{
     
     UIImage *image = self;
     //1.1.(计算画布尺寸,图片宽高+2倍线宽)
@@ -82,7 +82,7 @@
  @param borderColor 边框的颜色
  @return 返回新的图片
  */
--(UIImage *)ax_imageCircleWithBorderWidth:(CGFloat)borderWidth AndBorderColor:(UIColor *)borderColor{
+- (UIImage *)ax_imageCircleWithBorderWidth:(CGFloat)borderWidth AndBorderColor:(UIColor *)borderColor{
     UIImage *image = self;
     //1.1.(计算画布尺寸,图片宽高+2倍线宽)
     CGFloat imageWidth = image.size.width + 2*borderWidth;
@@ -130,7 +130,7 @@
  *@return 返回新的图片
  */
 
--(UIImage *)ax_circleImageWithBorderWidth:(CGFloat)borderWidth AndBorderColor:(UIColor *)borderColor{
+- (UIImage *)ax_circleImageWithBorderWidth:(CGFloat)borderWidth AndBorderColor:(UIColor *)borderColor{
     UIImage *image = self;
     //1.1.(计算画布尺寸,图片宽高+2倍线宽)
     CGFloat imageWidth = image.size.width + 2*borderWidth;
@@ -346,7 +346,7 @@
  @param name name
  @return UIImage
  */
-+(instancetype)ax_imageOriginalByName:(NSString *)name{
++ (instancetype)ax_imageOriginalByName:(NSString *)name{
     
     return [[UIImage imageNamed:name]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
@@ -358,7 +358,7 @@
  
  @return 剪切图片
  */
--(UIImage *)ax_imageRectangleToSquare{
+- (UIImage *)ax_imageRectangleToSquare{
     
     UIImage *image = self;
     CGImageRef sourceImageRef = [image CGImage];//将UIImage转换成CGImageRef

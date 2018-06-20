@@ -20,44 +20,44 @@ typedef void(^AlipayBlock)(void);
 /**
  支付宝支付 key
  */
-@property(nonatomic,copy)NSString *partner;
+@property (nonatomic, copy) NSString *partner;
 
 /**
  卖方key
  */
-@property(nonatomic,copy)NSString *seller;
+@property (nonatomic, copy) NSString *seller;
 
 /**
  私钥
  */
-@property(nonatomic,copy)NSString *privateKey;
+@property (nonatomic, copy) NSString *privateKey;
 
 
 /**
  通知回调url
  */
-@property(nonatomic,copy)NSString *notifyURL;
+@property (nonatomic, copy) NSString *notifyURL;
 
 /**
  appScheme 支付宝跳转 本app
  */
-@property(nonatomic,copy)NSString *appScheme;
+@property (nonatomic, copy) NSString *appScheme;
 
 /**
  订单号
  */
-@property(nonatomic,copy)NSString *tradeNO;
+@property (nonatomic, copy) NSString *tradeNO;
 
 /**
  产品说明
  */
-@property(nonatomic,copy)NSString *productName;
+@property (nonatomic, copy) NSString *productName;
 
 
 /**
  价格
  */
-@property(nonatomic,copy)NSNumber *price;
+@property (nonatomic, copy) NSNumber *price;
 
 @end
 

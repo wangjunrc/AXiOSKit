@@ -12,7 +12,7 @@
 /**
  * 单例模式,  .h文件
  */
-#define axShared_H(name)  +(instancetype )shared##name;
+#define axShared_H(name)  + (instancetype )shared##name;
 
 /**
  * 单例模式,  .m文件

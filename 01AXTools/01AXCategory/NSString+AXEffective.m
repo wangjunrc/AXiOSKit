@@ -12,7 +12,7 @@
 /**
  * 正则表达式
  */
--(BOOL)ax_macth:(NSString *)matches{
+- (BOOL)ax_macth:(NSString *)matches{
     
     NSPredicate *pre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",matches];
     
@@ -36,20 +36,20 @@
 /**
  * 匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)
  */
--(BOOL)ax_isAccount{
+- (BOOL)ax_isAccount{
     return [self ax_macth:@"^[a-zA-Z][a-zA-Z0-9_]{4,15}$"];
 }
 /**
  * 匹配国内电话号码 形式如 0511-4405222
  */
--(BOOL)ax_isTelephone{
+- (BOOL)ax_isTelephone{
     return [self ax_macth:@"d{3}-d{8}|d{4}-d{7}"];
 }
 
 /**
  * 中国三大电信运营商手机号
  */
--(BOOL)ax_isChinaPhoneNumber{
+- (BOOL)ax_isChinaPhoneNumber{
     
     NSString *mobile = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
     
@@ -84,19 +84,19 @@
 /**
  * 匹配身份证 中国的身份证为15位或18位 含有X
  */
--(BOOL)ax_isIdentityCard{
+- (BOOL)ax_isIdentityCard{
     return [self ax_macth:@"d{15}|d{18}"]||[self ax_macth:@"^([0-9]){7,18}(x|X)?$"];
 }
 /**
  * 英文或者数字
  */
--(BOOL)ax_isAlphabetOrNumber{
+- (BOOL)ax_isAlphabetOrNumber{
     return [self ax_macth:@"^[A-Za-z0-9]+$"];
 }
 /**
  * 只能是数字
  */
--(BOOL)ax_isNumber{
+- (BOOL)ax_isNumber{
     if (self.length==0) {
         return NO;
     }
@@ -105,45 +105,45 @@
 /**
  * 正数( 正数 小数 包含0)
  */
--(BOOL)ax_isPositive{
+- (BOOL)ax_isPositive{
     return [self ax_macth:@"^[0-9]+([.]{1}[0-9]+){0,1}$"];
 }
 
 /**
  * 钱 等于0 最多2位的小数 及正数(这个现在无法排除0)
  */
--(BOOL)ax_isMoney{
+- (BOOL)ax_isMoney{
      return [self ax_macth:@"^[0-9]+([.][0-9]{0,2}){0,1}$"];
 }
 
 /**
  * 整数
  */
--(BOOL)ax_isInt{
+- (BOOL)ax_isInt{
     return [self ax_macth:@"^[1-9]d*$"];
 }
 /**
  * 正整数包含0
  */
--(BOOL)ax_isPositiveInt{
+- (BOOL)ax_isPositiveInt{
     return [self ax_macth:@"^[1-9]\\d*|0$"];
 }
 /**
  * 负整数
  */
--(BOOL)ax_isNegativeInt{
+- (BOOL)ax_isNegativeInt{
     return [self ax_macth:@"^((-\\d+)|(0+))$"];
 }
 /**
  * 浮点数
  */
--(BOOL)ax_isFloat{
+- (BOOL)ax_isFloat{
     return [self ax_macth:@"^-?([1-9]d*.d*|0.d*[1-9]d*|0?.0+|0)$"];
 }
 /**
  * 正浮点数
  */
--(BOOL)ax_isPositiveFloat{
+- (BOOL)ax_isPositiveFloat{
     return [self ax_macth:@"^[1-9]d*.d*|0.d*[1-9]d*$"];
     
 }
@@ -151,7 +151,7 @@
 /**
  * 正浮点数2位有效数字
  */
--(BOOL)ax_isPositive2Float{
+- (BOOL)ax_isPositive2Float{
     //    return [self ax_macth:@"^[1-9]d*.d*|0.d*[1-9]d*$"];
     
     //    return [self ax_macth:@"^[0-9]+(\\.[0-9]{1,2})?$"];
@@ -166,7 +166,7 @@
 /**
  * 负浮点数
  */
--(BOOL)ax_isNegativeFloat{
+- (BOOL)ax_isNegativeFloat{
     return [self ax_macth:@"^-([1-9]d*.d*|0.d*[1-9]d*)$"];
 }
 
@@ -174,7 +174,7 @@
 /**
  * 是否为空格
  */
--(BOOL)ax_isEqualToBlankSpace{
+- (BOOL)ax_isEqualToBlankSpace{
     
     NSString *tem = [[self componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]componentsJoinedByString:@""];
     return [self isEqualToString:tem];
@@ -183,7 +183,7 @@
 /**
  * 输入的字是否为数字,包含删除键
  */
--(BOOL)ax_isNumberOfChange{
+- (BOOL)ax_isNumberOfChange{
     
     NSString*number = self;
     BOOL res = YES;

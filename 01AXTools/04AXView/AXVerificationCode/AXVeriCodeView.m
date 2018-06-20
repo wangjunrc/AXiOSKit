@@ -27,7 +27,7 @@ typedef void(^ShowCodeBlock)(NSString *code);
 /**
  * 默认的字符串集合
  */
-@property (nonatomic, strong)NSArray  *defaultCodeArray;
+@property (nonatomic, strong) NSArray *defaultCodeArray;
 
 @end
 
@@ -52,7 +52,7 @@ typedef void(^ShowCodeBlock)(NSString *code);
 /**
  * 刷新
  */
--(void)refreshCode{
+- (void)refreshCode{
     [self tapGesture];
 }
 
@@ -155,7 +155,7 @@ typedef void(^ShowCodeBlock)(NSString *code);
 
 
 
--(void)didShowCode:(void(^)(NSString *code))did{
+- (void)didShowCode:(void(^)(NSString *code))did{
     self.showCodeBlock = did;
 }
 
@@ -164,7 +164,7 @@ typedef void(^ShowCodeBlock)(NSString *code);
 /**
  * 0-9 a-z A-Z 集合
  */
--(NSArray *)numbernAndAlphabet{
+- (NSArray *)numbernAndAlphabet{
     
     NSMutableArray *temp = [NSMutableArray array];
     

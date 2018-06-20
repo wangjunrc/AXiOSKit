@@ -11,8 +11,6 @@
 @implementation NSString (AXNet)
 /**
  * 构建通用网关的请求 url，参数为键值对形式，不分顺序。不需要包含时间戳、签名等参数 ，系统会自动增加。
- *
- * @param urlBase
  *                  地址
  * @param key
  *                  加密的key
@@ -20,7 +18,7 @@
  *                  参数
  * @return  生成后的网关
  */
--(NSString *)buildUrlWihtKey:(NSString *)key parameters:(NSMutableDictionary  *)parameters{
+- (NSString *)buildUrlWihtKey:(NSString *)key parameters:(NSMutableDictionary *)parameters{
     NSString *baseUrl = self;
     if ([[parameters allKeys] containsObject:@"_s"] || [[parameters allKeys] containsObject:@"_t"]){
         NSLog(@"在使用 ShoveGeneralRestGateway buildUrl 方法构建通用 REST 接口 Url 时，不能使用 _s, _t 此保留字作为参数名。");

@@ -13,7 +13,7 @@
 /**
  * 返回父指定控制器
  */
--(void)ax_popToViewControllerClass:(NSString *)classStr;
+- (void)ax_popToViewControllerClass:(NSString *)classStr;
 
 /**
  * push vc后移除指定父nav控制器,
@@ -36,6 +36,6 @@
  @param vcClass rootCalass
  @return 当前控制器
  */
-+(instancetype)ax_navRootViewControllerClass:(Class)vcClass;
++ (instancetype)ax_navRootViewControllerClass:(Class)vcClass;
 
 @end

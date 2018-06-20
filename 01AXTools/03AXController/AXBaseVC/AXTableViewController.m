@@ -26,7 +26,7 @@
     
     
 }
--(void)dealloc{
+- (void)dealloc{
     
     axLong_dealloc;
 }

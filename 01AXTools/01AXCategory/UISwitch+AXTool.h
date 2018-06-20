@@ -12,5 +12,5 @@
 /**
  * 按钮事件封装成block
  */
--(void)ax_addTargetBlock:(void(^)(UISwitch *aSwitch))block;
+- (void)ax_addTargetBlock:(void(^)(UISwitch *aSwitch))block;
 @end

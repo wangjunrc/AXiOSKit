@@ -17,12 +17,12 @@ typedef void(^AX_backBlock)(id obj);
 /**
  NSObject转换json字串
  */
--(NSString *)ax_toJson;
+- (NSString *)ax_toJson;
 
 /**
  封装 alloc]init]
  */
-+(instancetype)ax_init;
++ (instancetype)ax_init;
 
 /**
  回调block
@@ -33,7 +33,7 @@ typedef void(^AX_backBlock)(id obj);
 /**
  * pageIndex
  */
-@property(nonatomic, assign)NSInteger ax_pageIndex;
+@property (nonatomic, assign) NSInteger ax_pageIndex;
 
 /**
  传值
@@ -41,13 +41,13 @@ typedef void(^AX_backBlock)(id obj);
  
  @param value 值
  */
--(void)ax_setValue:(id)value;
+- (void)ax_setValue:(id)value;
 
 /**
  获得 类 私有属性
  
  @return 数组
  */
-+(NSArray *)ax_getPrivateProperty;
++ (NSArray *)ax_getPrivateProperty;
 
 @end

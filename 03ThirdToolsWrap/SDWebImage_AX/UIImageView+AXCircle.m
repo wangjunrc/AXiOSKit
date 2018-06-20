@@ -17,7 +17,7 @@
  @param url url
  @param placeholderImage 占位图片
  */
--(void)ax_setImageCircleWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholderImage {
+- (void)ax_setImageCircleWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholderImage {
     
     CGFloat radius = MIN(self.frame.size.width*0.5, self.frame.size.height*0.5);
     

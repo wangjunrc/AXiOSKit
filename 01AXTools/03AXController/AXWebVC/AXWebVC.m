@@ -35,7 +35,7 @@
 //    
 //    
 //}
-//-(void)setupProgress{
+//- (void)setupProgress{
 //    self.progressProxy = [[NJKWebViewProgress alloc] init];
 //    self.webView.delegate = self.progressProxy;
 //    self.progressProxy.webViewProxyDelegate = self;
@@ -59,12 +59,12 @@
 //    [self.navigationController.navigationBar addSubview:self.progressView];
 //}
 //
-//-(void)viewWillDisappear:(BOOL)animated{
+//- (void)viewWillDisappear:(BOOL)animated{
 //    [super viewWillDisappear:animated];
 //    [self.progressView removeFromSuperview];
 //}
 //
-//-(void)setupBack{
+//- (void)setupBack{
 //    
 //    if (!self.navigationController) {
 //        
@@ -85,7 +85,7 @@
 //- (void)roadLoadClicked{
 //    [self.webView reload];
 //}
-//-(UIButton *)setupBackBtn{
+//- (UIButton *)setupBackBtn{
 //    UIButton *button = [[UIButton alloc]init];
 //    NSString*title = AXMyLocalizedString(@"ax.cancel");
 //    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -101,17 +101,17 @@
 //}
 //
 //#pragma mark - NJKWebViewProgressDelegate
-//-(void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress{
+//- (void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress{
 //    [self.progressView setProgress:progress animated:YES];
 //    
 //}
 //
 //
 //
-//-(void)leftBarButtonItemEvnets:(UIBarButtonItem *)item{
+//- (void)leftBarButtonItemEvnets:(UIBarButtonItem *)item{
 //    [self dismissViewControllerAnimated:YES completion:nil];
 //}
-//-(void)buttonEvents:(UIButton *)button{
+//- (void)buttonEvents:(UIButton *)button{
 //    [self dismissViewControllerAnimated:YES completion:nil];
 //}
 //

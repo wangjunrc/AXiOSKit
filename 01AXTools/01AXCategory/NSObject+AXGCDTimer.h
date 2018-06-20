@@ -14,13 +14,13 @@
  GCD timer 不会强引用 ,不自动开始,调用 Resume
  必须全局属性一下
  
- @property(nonatomic,strong)dispatch_source_t timer2;
+ @property (nonatomic, strong)dispatch_source_t timer2;
  用 strong 不要用 assign
  @param aInterval 间隔
  @param block 回调
  @return 对象
  */
--(dispatch_source_t )ax_gcdLoopTimer:(NSTimeInterval)aInterval block:(void(^)(void))block;
+- (dispatch_source_t )ax_gcdLoopTimer:(NSTimeInterval)aInterval block:(void(^)(void))block;
 
 
 /**
@@ -28,7 +28,7 @@
  
  @param gcdTimer dispatch_source_t
  */
--(void)ax_gcdLoopTimerResume:(dispatch_source_t )gcdTimer;
+- (void)ax_gcdLoopTimerResume:(dispatch_source_t )gcdTimer;
 
 
 /**
@@ -36,7 +36,7 @@
  
  @param gcdTimer dispatch_source_t
  */
--(void)ax_gcdLoopTimerCancel:(dispatch_source_t )gcdTimer;
+- (void)ax_gcdLoopTimerCancel:(dispatch_source_t )gcdTimer;
 
 
 @end

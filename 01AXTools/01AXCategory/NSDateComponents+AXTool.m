@@ -13,7 +13,7 @@
 /**
  * 当前系统时间 日历格式
  */
-+(instancetype )ax_currentDateComponents{
++ (instancetype )ax_currentDateComponents{
 
     NSDate *date = [[NSDate alloc]init];
     NSInteger interval = [[NSTimeZone defaultTimeZone] secondsFromGMTForDate: date];

@@ -11,7 +11,7 @@
 @implementation NSObject (AXGCDTimer)
 
 
--(dispatch_source_t )ax_gcdLoopTimer:(NSTimeInterval)aInterval block:(void(^)(void))block{
+- (dispatch_source_t )ax_gcdLoopTimer:(NSTimeInterval)aInterval block:(void(^)(void))block{
     
     NSTimeInterval period = aInterval; //设置时间间隔
     
@@ -38,12 +38,12 @@
 }
 
 
--(void)ax_gcdLoopTimerResume:(dispatch_source_t )gcdTimer{
+- (void)ax_gcdLoopTimerResume:(dispatch_source_t )gcdTimer{
     
     dispatch_resume(gcdTimer);
 }
 
--(void)ax_gcdLoopTimerCancel:(dispatch_source_t )gcdTimer{
+- (void)ax_gcdLoopTimerCancel:(dispatch_source_t )gcdTimer{
     
     dispatch_source_cancel(gcdTimer); // 异步取消调度源
     gcdTimer = nil; // 将 dispatch_source_t 置为nil

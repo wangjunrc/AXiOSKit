@@ -19,12 +19,12 @@
 /**
  * 导航栏 push 到vc
  */
--(void)ax_navigationControllerPush:(Class)aClass block:(void(^)(id vc))blockVC;
+- (void)ax_navigationControllerPush:(Class)aClass block:(void(^)(id vc))blockVC;
 
 /**
  * 当前控制器是否在显示,也可以直接使用
  */
--(BOOL)ax_isViewShow;
+- (BOOL)ax_isViewShow;
 
 /**
  * 当前控制器
@@ -38,7 +38,7 @@
  @param presentNav 被present自带
  @param noHave 没有
  */
--(void)ax_havNav:(void(^)(UINavigationController *nav))haveNav isPresentNav:(void(^)(UINavigationController *nav))presentNav noHave:(void(^)(void))noHave;
+- (void)ax_havNav:(void(^)(UINavigationController *nav))haveNav isPresentNav:(void(^)(UINavigationController *nav))presentNav noHave:(void(^)(void))noHave;
 
 
 /**
@@ -48,7 +48,7 @@
  @param imageName imageName
  @param selectImageName selectImageName
  */
--(void)ax_setTabBarWithTitle:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectImageName;
+- (void)ax_setTabBarWithTitle:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectImageName;
 
 /**
  设置tabBarItem 属性 不区分图片色,使用tabBar颜色
@@ -56,7 +56,7 @@
  @param title title
  @param imageName imageName descriptionimageName
  */
--(void)ax_tabBarWithTitle:(NSString *)title imageName:(NSString *)imageName;
+- (void)ax_tabBarWithTitle:(NSString *)title imageName:(NSString *)imageName;
 
 /**
  iOS8.0开始推荐使用UIPopoverPresentationController，用于替代UIPopoverController iPhone和iPad 都可以使用
@@ -65,7 +65,7 @@
  @param sourceView UIView
  @param item UIBarButtonItem
  */
--(void)ax_popoverWithContentSize:(CGSize )contentSize sourceView:(UIView  *)sourceView orItem:(UIBarButtonItem  *)item;
+- (void)ax_popoverWithContentSize:(CGSize )contentSize sourceView:(UIView *)sourceView orItem:(UIBarButtonItem *)item;
 
 
 /**
@@ -73,13 +73,13 @@
  
  @param AppleStoreID AppleStoreID
  */
--(void)ax_AppStoreUpdateWithAppleStoreID:(NSString *)AppleStoreID;
+- (void)ax_AppStoreUpdateWithAppleStoreID:(NSString *)AppleStoreID;
 
 /**
  跳转 App Store 评价页面
  
  @param AppleStoreID AppleStoreID
  */
--(void)ax_AppStoreScoreWithAppleStoreID:(NSString *)AppleStoreID;
+- (void)ax_AppStoreScoreWithAppleStoreID:(NSString *)AppleStoreID;
 
 @end

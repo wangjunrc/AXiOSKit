@@ -193,6 +193,41 @@ pod 'Aspects'
 
 #pod 'PGDatePicker'
 
+# 提供了一个可在 iPhone 和 iPad 上使用的具有 UINavigationController 弹出效果的 STPopupController 类, 并能在 Storyboard 上很好的工。
+#pod 'STPopupController'
+
+
+#通过几条线段实现的非常Q萌的动画按钮效果。
+#VBFPopFlatButton
+
+#电影院位置排座位
+#ZSeatSelector
+
+#自动识别网址、号码、邮箱、@、#话题#和表情的label。 可以自定义自己的表情识别正则，和对应的表情图像。(默认是识别微信的表情符号)
+#MLLabel
+
+#AppleMusic式pop up，弹出是页面，可以上下拉动
+#LNPopupController
+
+# 连线进度
+KYAnimatedPageControl
+
+#带粘性的扇形菜单
+KYGooeyMenu
+
+#Bootstrap 3.0扁平化风格按钮，自带图标，一句代码直接调用
+# LLBootstrapButton
+
+#OS-Slide-Menu - 能够类似Facebook和Path那样弹出左右边栏侧滑菜单,还支持手势。多种可以自定义的属性 (非常不错)。
+
+#侧滑菜单
+#ECSlidingViewController
+
+#侧滑菜单,有左右菜单，有pop功能，支持手势侧滑
+#JASidePanels
+
+#一个弹性侧滑菜单,弹性动画原理借鉴该项目中阻尼函数实现
+#LLSlideMenu
 
 # *********以下是第三方服务*********
 # U-Share SDK UI模块（分享面板，建议添加）

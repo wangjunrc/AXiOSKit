@@ -23,7 +23,7 @@ extern NSString *const axSectionFootID;
  
  @return 是否打开
  */
-BOOL ax_CanOpenURL(NSString  *str);
+BOOL ax_CanOpenURL(NSString *str);
 
 /**
  打开url
@@ -32,7 +32,7 @@ BOOL ax_CanOpenURL(NSString  *str);
  
  @return 打开是否成功
  */
-BOOL ax_OpenURL(NSString  *str);
+BOOL ax_OpenURL(NSString *str);
 
 /**
  拨打电话,弹出alert界面
@@ -41,7 +41,7 @@ BOOL ax_OpenURL(NSString  *str);
  
  @return 是否成功
  */
-BOOL ax_CallTelprompt(NSString  *phone);
+BOOL ax_CallTelprompt(NSString *phone);
 
 /**
  拨打电话,直接拨打
@@ -50,7 +50,7 @@ BOOL ax_CallTelprompt(NSString  *phone);
  
  @return 是否成功
  */
-BOOL ax_CallTel(NSString  *phone);
+BOOL ax_CallTel(NSString *phone);
 
 /**
  xcode 奔溃日志
@@ -60,12 +60,12 @@ void ax_LogXcodeCache(void);
 /**
  * 创建nib
  */
-UINib * ax_Nib(NSString  *name);
+UINib * ax_Nib(NSString *name);
 
 /**
  * AppStore链接,填写自己的iD
  */
-NSString * ax_AppStoreURL(NSString  *appId);
+NSString * ax_AppStoreURL(NSString *appId);
 
 /**
  AppStore 评分 url
@@ -73,7 +73,7 @@ NSString * ax_AppStoreURL(NSString  *appId);
  @param AppStoreID AppStoreID
  @return url String
  */
-NSString * ax_AppStoreScoreURL(NSString  *AppStoreID);
+NSString * ax_AppStoreScoreURL(NSString *AppStoreID);
 
 /**
  * int --> NSString
@@ -109,7 +109,7 @@ BOOL ax_OpenPrefsRoot(void);
 /**
  * str to URL
  */
-NSURL *ax_URLStr(NSString  *str);
+NSURL *ax_URLStr(NSString *str);
 
 @end
 

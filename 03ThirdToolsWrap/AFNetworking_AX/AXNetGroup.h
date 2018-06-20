@@ -20,7 +20,7 @@
 /**
  * 参数
  */
-@property (nonatomic, strong)NSMutableDictionary  *parameter;
+@property (nonatomic, strong) NSMutableDictionary *parameter;
 
 @end
 

@@ -13,7 +13,7 @@ typedef void(^DidViewBlock)(UIView *view);
 
 @interface UIView ()<UIGestureRecognizerDelegate>
 
-@property(nonatomic,copy)DidViewBlock didViewBlock;
+@property (nonatomic, copy)DidViewBlock didViewBlock;
 
 @end
 @implementation UIView (AXTool)
@@ -21,7 +21,7 @@ typedef void(^DidViewBlock)(UIView *view);
 /**
  * 指定 角 进行圆角
  */
--(void)ax_roundingCorners:(UIRectCorner)corners cornerRadius:(CGFloat )cornerRadius{
+- (void)ax_roundingCorners:(UIRectCorner)corners cornerRadius:(CGFloat )cornerRadius{
     
     
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corners cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
@@ -79,7 +79,7 @@ typedef void(^DidViewBlock)(UIView *view);
 
  @param colorArray UIColor 数组
  */
--(void)ax_gradientColors:(NSArray <UIColor*>*)colorArray{
+- (void)ax_gradientColors:(NSArray <UIColor*>*)colorArray{
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.bounds;
@@ -140,7 +140,7 @@ typedef void(^DidViewBlock)(UIView *view);
 
  @param shadowColor UIColor
  */
--(void)ax_shadowWith:(UIColor *)shadowColor{
+- (void)ax_shadowWith:(UIColor *)shadowColor{
     
     CALayer *subLayer=[CALayer layer];
     subLayer.frame = self.frame;
@@ -157,7 +157,7 @@ typedef void(^DidViewBlock)(UIView *view);
 /**
  * view 添加手势 成为点击事件
  */
--(void)ax_viewAddTargetBlock:(void(^)(id aView))block{
+- (void)ax_viewAddTargetBlock:(void(^)(id aView))block{
     self.userInteractionEnabled = YES;
     self.didViewBlock = block;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
@@ -211,7 +211,7 @@ typedef void(^DidViewBlock)(UIView *view);
 /**
  截屏 不含有转态栏  保存至相册 
  */
--(void )ax_saveScreenShotsToPhotoAlbum{
+- (void )ax_saveScreenShotsToPhotoAlbum{
     
     CGSize size = [[UIApplication sharedApplication] keyWindow].rootViewController.view.frame.size;
       UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
@@ -228,7 +228,7 @@ typedef void(^DidViewBlock)(UIView *view);
 
  @return UIImage
  */
--(UIImage *)ax_drawRectToImage{
+- (UIImage *)ax_drawRectToImage{
     
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -244,7 +244,7 @@ typedef void(^DidViewBlock)(UIView *view);
 /**
   当前view layer  重绘图片,并保存到相册中
  */
--(void )ax_saveToPhotoAlbum{
+- (void )ax_saveToPhotoAlbum{
    
     UIImage *theImage = [self ax_drawRectToImage];
     

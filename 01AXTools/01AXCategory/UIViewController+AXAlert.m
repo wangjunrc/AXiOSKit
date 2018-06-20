@@ -15,7 +15,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 
 @interface UIViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
 
-@property(nonatomic,strong)CameraEditBlock cameraEditBlock;
+@property (nonatomic, strong)CameraEditBlock cameraEditBlock;
 
 @end
 
@@ -29,14 +29,14 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  *@param edit  是否编辑
  *@param block originalImage原图  editedImage编辑后图片
  */
--(void)ax_showCameraWithEditing:(BOOL)edit block:(void(^)(UIImage *originalImage,UIImage *editedImage))block{
+- (void)ax_showCameraWithEditing:(BOOL)edit block:(void(^)(UIImage *originalImage,UIImage *editedImage))block{
     [self  ax_showCameraWithEditing:edit showiPadView:nil block:block];
 }
 
 /**
  * Sheet  没有取消回调
  */
--(void)ax_showSheetByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm{
+- (void)ax_showSheetByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm{
     
     [self ax_showSheetByiPadView:nil title:title message:message actionArray:actionArray confirm:confirm];
     
@@ -45,7 +45,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Sheet 有取消回调
  */
--(void)ax_showSheetByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
+- (void)ax_showSheetByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
     
     [self ax_showSheetByiPadView:nil title:title message:message actionArray:actionArray confirm:confirm cancel:cancel];
 }
@@ -53,7 +53,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Sheet 退出登录
  */
--(void)ax_showSheeLogout:(void(^)(void))confirm{
+- (void)ax_showSheeLogout:(void(^)(void))confirm{
     [self ax_showSheeLogoutByPadView:nil confirm:confirm];
 }
 
@@ -62,7 +62,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * 数组 Alert 有取消回调
  */
--(void)ax_showAlertArrayByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
+- (void)ax_showAlertArrayByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
     
     [self ax_showAlertByiPadView:nil title:title message:message actionArray:actionArray confirm:confirm cancel:cancel];
     
@@ -72,7 +72,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * 只有确定,没有回调
  */
--(void)ax_showAlertByTitle:(NSString *)title{
+- (void)ax_showAlertByTitle:(NSString *)title{
     [self ax_showAlertByTitle:title confirm:nil];
 }
 
@@ -80,7 +80,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * 有确定和回调
  */
--(void)ax_showAlertByTitle:(NSString *)title confirm:(void(^)(void))confirm{
+- (void)ax_showAlertByTitle:(NSString *)title confirm:(void(^)(void))confirm{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     
@@ -95,7 +95,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * 有确定和回调
  */
--(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message confirm:(void(^)(void))confirm{
+- (void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message confirm:(void(^)(void))confirm{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
@@ -112,7 +112,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * 有确定,取消 ,确定按钮文字
  */
--(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message confirmTitle:(NSString *)confirmTitle confirm:(void(^)(void))confirm cancel:(void(^)(void))cancel{
+- (void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message confirmTitle:(NSString *)confirmTitle confirm:(void(^)(void))confirm cancel:(void(^)(void))cancel{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
@@ -134,7 +134,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * 有确定,取消
  */
--(void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message confirm:(void(^)(void))confirm cancel:(void(^)(void))cancel{
+- (void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message confirm:(void(^)(void))confirm cancel:(void(^)(void))cancel{
     
     [self ax_showAlertByTitle:title message:message confirmTitle:AXMyLocalizedString(@"ax.confirm") confirm:confirm cancel:cancel];
 }
@@ -142,7 +142,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * 流量网络下载,提示
  */
--(void)ax_showNetDownloadGo:(void(^)(void))go cancel:(void(^)(void))cancel{
+- (void)ax_showNetDownloadGo:(void(^)(void))go cancel:(void(^)(void))cancel{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:AXMyLocalizedString(@"当前网络为数据流量") message:AXMyLocalizedString(@"是否取消下载") preferredStyle:UIAlertControllerStyleAlert];
     
@@ -166,7 +166,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Alert含有输入文本框
  */
--(void)ax_showAlertTFByTitle:(NSString *)title message:(NSString *)message confirm:(void(^)( NSString *text))confirm cancel:(void(^)(void))cancel{
+- (void)ax_showAlertTFByTitle:(NSString *)title message:(NSString *)message confirm:(void(^)( NSString *text))confirm cancel:(void(^)(void))cancel{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
@@ -199,7 +199,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Alert含有输入文本框
  */
--(void)ax_showAlertTF:(UITextField *)textF Title:(NSString *)title message:(NSString *)message confirm:(void(^)( UITextField *textF))confirm cancel:(void(^)(void))cancel{
+- (void)ax_showAlertTF:(UITextField *)textF Title:(NSString *)title message:(NSString *)message confirm:(void(^)( UITextField *textF))confirm cancel:(void(^)(void))cancel{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     

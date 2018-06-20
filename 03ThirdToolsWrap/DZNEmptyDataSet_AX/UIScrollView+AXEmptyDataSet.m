@@ -11,7 +11,7 @@
 
 typedef void(^ReloadBlock)(void);
 @interface UIScrollView()
-@property(nonatomic,strong)ReloadBlock reloadBlock;
+@property (nonatomic, strong)ReloadBlock reloadBlock;
 /**
  * 占位图片名称
  */
@@ -31,7 +31,7 @@ typedef void(^ReloadBlock)(void);
  
  @param reloadBlock 刷新回调
  */
--(void)ax_emptyDataSetWithReloadBlock:(void(^)(void))reloadBlock{
+- (void)ax_emptyDataSetWithReloadBlock:(void(^)(void))reloadBlock{
     
     if (self.emptyDataImageName.length==0) {
         self.emptyDataImageName = @"AXTools.bundle/ax_emptyData";
@@ -53,7 +53,7 @@ typedef void(^ReloadBlock)(void);
  @param title 占位文字
  @param reloadBlock 刷新回调
  */
--(void)ax_emptyDataWithImageName:(NSString *)imageName titlte:(NSString *)title reloadBlock:(void(^)(void))reloadBlock{
+- (void)ax_emptyDataWithImageName:(NSString *)imageName titlte:(NSString *)title reloadBlock:(void(^)(void))reloadBlock{
     self.emptyDataImageName = imageName;
     self.emptyDataPlaceString = title;
     [self ax_emptyDataSetWithReloadBlock:reloadBlock];
@@ -129,7 +129,7 @@ typedef void(^ReloadBlock)(void);
 }
 
 //刷新按钮背景图片,能显示按钮文字
--(UIImage *)buttonBackgroundImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state{
+- (UIImage *)buttonBackgroundImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state{
     
     return  [UIImage ax_imageRectangleWithSize:CGSizeMake(100, 40) color:[UIColor lightGrayColor]];
 }

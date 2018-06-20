@@ -14,7 +14,7 @@
 
 @implementation UILabel (AXTool)
 
--(BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
     return (action == @selector(copyText:));
 }
 
@@ -72,7 +72,7 @@
 /**
  设置 电话 含有下划线,并可以点击打电话
  */
--(void)ax_setPhoneCall{
+- (void)ax_setPhoneCall{
     
     NSString *labelStr = self.text;
     UILabel *label = self;
@@ -120,7 +120,7 @@
 }
 
 
--(NSMutableAttributedString*)subStr:(NSString *)string
+- (NSMutableAttributedString*)subStr:(NSString *)string
 
 {
     

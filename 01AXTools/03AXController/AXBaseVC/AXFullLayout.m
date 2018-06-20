@@ -10,12 +10,12 @@
 #import "AXMacros.h"
 @implementation AXFullLayout
 
--(void)invalidateLayout{
+- (void)invalidateLayout{
     [super invalidateLayout];
     [self setupLayout];
 }
 
--(void)setupLayout{
+- (void)setupLayout{
     
     self.sectionInset = UIEdgeInsetsMake(0,0,0,0);//分区间的内边距
     //minimumLineSpacing = 0;这个是水平的间距 minimumInteritemSpacing

@@ -16,7 +16,7 @@
  
  @param reloadBlock 刷新回调
  */
--(void)ax_emptyDataSetWithReloadBlock:(void(^)(void))reloadBlock;
+- (void)ax_emptyDataSetWithReloadBlock:(void(^)(void))reloadBlock;
 
 /**
  设置空集合view
@@ -25,6 +25,6 @@
  @param title 占位文字
  @param reloadBlock 刷新回调
  */
--(void)ax_emptyDataWithImageName:(NSString *)imageName titlte:(NSString *)title reloadBlock:(void(^)(void))reloadBlock;
+- (void)ax_emptyDataWithImageName:(NSString *)imageName titlte:(NSString *)title reloadBlock:(void(^)(void))reloadBlock;
 
 @end

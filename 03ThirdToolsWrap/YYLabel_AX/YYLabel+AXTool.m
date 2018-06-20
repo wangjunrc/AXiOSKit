@@ -10,13 +10,13 @@
 
 @implementation YYLabel (AXTool)
 
--(void)ax_sethighlightText:(NSString *)text{
+- (void)ax_sethighlightText:(NSString *)text{
     
     self.attributedText = [self regionAt_manager:text];
 }
 
 
--(NSMutableAttributedString *)regionAt_manager:(NSString *)str{
+- (NSMutableAttributedString *)regionAt_manager:(NSString *)str{
     
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc]initWithString:str];
     //    [text yy_setFont:[UIFont systemFontOfSize:12.0f] range:text.yy_rangeOfAll];
@@ -158,7 +158,7 @@
 
 
 
--(NSMutableAttributedString *)emotionAct{
+- (NSMutableAttributedString *)emotionAct{
     
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc]initWithString:@"星期天很高兴:smile::cry::hehe:有一个星期天:smile::cry::hehe:"];
     [text setYy_color:[UIColor blackColor]];
@@ -192,7 +192,7 @@
 
 
 // 正则@某某某
--(NSRegularExpression *)regexAt
+- (NSRegularExpression *)regexAt
 {
     static NSRegularExpression *regex;
     static dispatch_once_t onceToken;

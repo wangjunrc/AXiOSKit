@@ -42,7 +42,7 @@ dispatch_group_t _group;
                 
                 [self postURL:model.url parameter:model.parameter success:^(id json) {
                     
-                   AXNetGroupResult  *result = results[index];
+                   AXNetGroupResult *result = results[index];
                     result.success = YES;
                     result.json = json;
                     
@@ -50,7 +50,7 @@ dispatch_group_t _group;
                     
                 } failure:^(NSInteger state) {
                     
-                    AXNetGroupResult  *result = results[index];
+                    AXNetGroupResult *result = results[index];
                     result.success = NO;
                     result.state = state;
                     

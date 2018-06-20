@@ -15,7 +15,7 @@
 /**
  * <#注释#>
  */
-@property (nonatomic, strong) NSMutableArray  *fileArray;
+@property (nonatomic, strong) NSMutableArray *fileArray;
 /**
  *
  */
@@ -31,7 +31,7 @@
     [self setupMovePath:self.playUrl];
 }
 
--(void)setupMovePath:(NSString *)path{
+- (void)setupMovePath:(NSString *)path{
 //    MPMoviePlayerController
 //    MPMoviePlayerViewController
     self.delegate = self;

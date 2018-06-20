@@ -59,7 +59,7 @@
  @param action action
  @return UIBarButtonItem
  */
-+(instancetype)ax_itemOriginalImage:(NSString *)image target:(id)target action:(SEL)action;
++ (instancetype)ax_itemOriginalImage:(NSString *)image target:(id)target action:(SEL)action;
 
 /**
  初始化 指定UIButton未自定义内容
@@ -69,6 +69,6 @@
  @param action action
  @return UIBarButtonItem
  */
-+(instancetype )ax_itemByButton:(UIButton *)btn target:(id)target action:(SEL)action;
++ (instancetype )ax_itemByButton:(UIButton *)btn target:(id)target action:(SEL)action;
 
 @end

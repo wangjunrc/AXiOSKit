@@ -13,7 +13,7 @@
 /**
  * 指定 角 进行圆角
  */
--(void)ax_roundingCorners:(UIRectCorner)corners cornerRadius:(CGFloat )cornerRadius;
+- (void)ax_roundingCorners:(UIRectCorner)corners cornerRadius:(CGFloat )cornerRadius;
 
 /**
  * 左右颤动一下
@@ -25,7 +25,7 @@
  
  @param colorArray UIColor 数组
  */
--(void)ax_gradientColors:(NSArray <UIColor*>*_Nullable)colorArray;
+- (void)ax_gradientColors:(NSArray <UIColor*>*_Nullable)colorArray;
 
 
 /**
@@ -58,13 +58,13 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
  
  @param shadowColor UIColor
  */
--(void)ax_shadowWith:(UIColor *_Nullable)shadowColor;
+- (void)ax_shadowWith:(UIColor *_Nullable)shadowColor;
 
 
 /**
  * view 添加手势 成为点击事件
  */
--(void)ax_viewAddTargetBlock:(void(^_Nullable)(id _Nullable aView))block;
+- (void)ax_viewAddTargetBlock:(void(^_Nullable)(id _Nullable aView))block;
 
 
 /**
@@ -78,18 +78,18 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
 /**
  截屏 不含有转态栏  保存至相册
  */
--(void )ax_saveScreenShotsToPhotoAlbum;
+- (void )ax_saveScreenShotsToPhotoAlbum;
 
 /**
  当前view layer  重绘图片
  
  @return UIImage
  */
--(UIImage * _Nonnull )ax_drawRectToImage;
+- (UIImage * _Nonnull )ax_drawRectToImage;
 
 /**
  当前view layer  重绘图片,并保存到相册中
  */
--(void )ax_saveToPhotoAlbum;
+- (void )ax_saveToPhotoAlbum;
 
 @end

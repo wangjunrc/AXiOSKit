@@ -24,7 +24,7 @@
 /**
  * 把另外对象的属性值,赋值给自己
  */
--(void)ax_getValueFromObj:(NSObject *)otherObj;
+- (void)ax_getValueFromObj:(NSObject *)otherObj;
 
 
 /**

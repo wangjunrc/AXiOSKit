@@ -16,7 +16,7 @@
  @param toformatter 需要转换的格式
  @return 时间字符串
  */
--(NSString *)ax_toChangeTpyeCurrentFormat:(NSString *)currentformat toFormatter:(NSString *)toformatter{
+- (NSString *)ax_toChangeTpyeCurrentFormat:(NSString *)currentformat toFormatter:(NSString *)toformatter{
     
     NSString *time = self;
     
@@ -42,7 +42,7 @@
 /**
  * 时间字符串拼接成显示状态,0-> xxxx年x月x日 1-> xxxx-x- x
  */
--(NSString *)ax_dateStringWithState:(NSInteger )state{
+- (NSString *)ax_dateStringWithState:(NSInteger )state{
     NSString *str = [self substringToIndex:14];
     
     NSString *yearStr = [str substringToIndex:4];
@@ -85,7 +85,7 @@
  @param format 当前字符串时间样式
  @return 返回时间
  */
--(NSDate *)ax_toDateWithFormat:(NSString *)format{
+- (NSDate *)ax_toDateWithFormat:(NSString *)format{
     
     NSString *timeStr = self;
     
@@ -105,7 +105,7 @@
 /**
  * 时间戳转换成时间格式(时间戳为10精确秒 或者 13位精确毫秒,自动补齐)
  */
--(NSString *)ax_timeStampToStringFormat:(NSString *)format{
+- (NSString *)ax_timeStampToStringFormat:(NSString *)format{
     
     NSString *time = self;
     
@@ -132,14 +132,14 @@
  * 时间戳转换成时间格式(时间戳为10精确秒 或者 13位精确毫秒,自动补齐)
  yyyy-MM-dd HH:mm:ss 格式
  */
--(NSString *)ax_timeStampToStringDefault{
+- (NSString *)ax_timeStampToStringDefault{
     
     return [self ax_timeStampToStringFormat:@"yyyy-MM-dd HH:mm:ss"];
 }
 /**
  * 时间戳转换成本地时区 Date (精确到秒,10位)
  */
--(NSDate *)ax_timestampToDate{
+- (NSDate *)ax_timestampToDate{
     NSString *time = self;
     if (time.length>10) {
         time = [time substringToIndex:10];
@@ -154,7 +154,7 @@
 /**
  * 判断时间字符串与当前时间年月日是否相同
  */
--(NSString *)ax_differToNowDate{
+- (NSString *)ax_differToNowDate{
     NSString *selfTime = self;
     //    if (selfTime.length<19) {
     //        NSInteger chaju = 19-selfTime.length;

@@ -14,16 +14,16 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (strong, nonatomic) IBOutlet UIButton *cancelBtn;
 
-@property(nonatomic,copy)void(^confirmBlock)(NSInteger index);
+@property (nonatomic, copy) void(^confirmBlock)(NSInteger index);
 
-@property(nonatomic,copy)void(^cancelBlock)(void);
+@property (nonatomic, copy) void(^cancelBlock)(void);
 
-@property (nonatomic, strong) NSArray  *dataArray;
+@property (nonatomic, copy) NSArray *dataArray;
 
 /**
  * <#注释#>
  */
-@property(nonatomic,assign)NSInteger showRow;
+@property (nonatomic, assign) NSInteger showRow;
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
@@ -54,7 +54,7 @@
     return self.dataArray.count;
 }
 
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
     return self.dataArray[row];
     
@@ -104,7 +104,7 @@
  @param confirm 确定
  @param cancel 取消
  */
--(void)didSelected:(NSArray <NSString *>*)dataArray showRow:(NSInteger )row confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
+- (void)didSelected:(NSArray <NSString *>*)dataArray showRow:(NSInteger )row confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
     
     self.dataArray = dataArray;
     

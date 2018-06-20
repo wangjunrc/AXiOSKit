@@ -24,7 +24,7 @@ typedef enum{
 @property (nonatomic, strong) WKWebView *webView;
 
 //网页加载的类型
-@property(nonatomic,assign) wkWebLoadType loadType;
+@property (nonatomic, assign) wkWebLoadType loadType;
 
 //保存的网址链接
 @property (nonatomic, copy) NSString *URLString;
@@ -34,26 +34,26 @@ typedef enum{
 /**
  * 
  */
-@property (nonatomic, strong)UIButton  *cancelButton;
+@property (nonatomic, strong) UIButton *cancelButton;
 
 /**
  * 取消item
  */
-@property (nonatomic, strong)UIBarButtonItem  *cancelItem;
+@property (nonatomic, strong) UIBarButtonItem *cancelItem;
 
 /**
  * 返回按钮 当打开新web时, 显示
  */
-@property (nonatomic)UIBarButtonItem *backItem;
+@property (nonatomic) UIBarButtonItem *backItem;
 
 /**
  * 关闭按钮 当打开新web时, 显示
  */
-@property (nonatomic,strong)UIBarButtonItem* closeItem;
+@property (nonatomic, strong) UIBarButtonItem* closeItem;
 
-//@property (nonatomic,strong)WebViewJavascriptBridge *bridge;
+//@property (nonatomic, strong)WebViewJavascriptBridge *bridge;
 
-@property (nonatomic, strong)WKWebViewJavascriptBridge  *bridge;
+@property (nonatomic, strong)WKWebViewJavascriptBridge *bridge;
 
 
 @end
@@ -79,7 +79,7 @@ typedef enum{
 /**
  * view
  */
--(void)init_setView{
+- (void)init_setView{
     
     [self.view addSubview:self.webView];
     [self.view addSubview:self.progressView];
@@ -95,7 +95,7 @@ typedef enum{
 /**
  WebViewJavascriptBridge js 交互
  */
--(void)init_WebViewJavascriptBridge{
+- (void)init_WebViewJavascriptBridge{
     
     // 开启日志，方便调试
     [WKWebViewJavascriptBridge enableLogging];
@@ -192,7 +192,7 @@ typedef enum{
 /**
  * UINavigationController itme
  */
--(void)init_navItme{
+- (void)init_navItme{
     
     [self ax_havNav:^(UINavigationController *nav) {
         
@@ -390,7 +390,7 @@ typedef enum{
 /**
  * 页面加载完成 更新LeftBarButtonItems
  */
--(void)func_canGoBackItems{
+- (void)func_canGoBackItems{
     
     if (self.webView.canGoBack) {
         
@@ -450,7 +450,7 @@ typedef enum{
         
     }];
     
-    [self.webView ax_addFBKVOKeyPath:@"title" block:^(NSString * _Nullable pathKey, id  _Nullable oldValue, NSString  *_Nullable newValue) {
+    [self.webView ax_addFBKVOKeyPath:@"title" block:^(NSString * _Nullable pathKey, id  _Nullable oldValue, NSString *_Nullable newValue) {
         
         NSString *title = newValue;
         
@@ -510,7 +510,7 @@ typedef enum{
 /**
  * 取消item 事件
  */
--(void)backItemAction:(UIBarButtonItem *)item{
+- (void)backItemAction:(UIBarButtonItem *)item{
     if (self.webView.canGoBack) {
         [self.webView goBack];
     }else{
@@ -521,7 +521,7 @@ typedef enum{
 /**
  * 关闭item 事件
  */
--(void)closeItemAction:(UIBarButtonItem *)item{
+- (void)closeItemAction:(UIBarButtonItem *)item{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -533,16 +533,16 @@ typedef enum{
 }
 
 
--(void)cancelButtonAction:(UIButton *)button{
+- (void)cancelButtonAction:(UIButton *)button{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)rightBarButtonItemEvents:(UIBarButtonItem *)item{
+- (void)rightBarButtonItemEvents:(UIBarButtonItem *)item{
     [self.webView reload];
 }
 
 //加载失败,返回
--(void)fun_loadErrorback{
+- (void)fun_loadErrorback{
     
     [self ax_showAlertByTitle:@"服务器异常,无法打开" confirm:^{
         
@@ -595,7 +595,7 @@ typedef enum{
 
 
 #pragma mark - set and get
--(void)setWebURLSring:(NSString *)webURLSring{
+- (void)setWebURLSring:(NSString *)webURLSring{
     
     _webURLSring = webURLSring;
     
@@ -612,7 +612,7 @@ typedef enum{
 }
 
 
--(WKWebView *)webView{
+- (WKWebView *)webView{
     if (!_webView) {
         
         WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
@@ -659,7 +659,7 @@ typedef enum{
     return _progressView;
 }
 
--(UIBarButtonItem*)backItem{
+- (UIBarButtonItem*)backItem{
     if (!_backItem) {
         UIImage* backItemImage = [[UIImage imageNamed:@"backItemImage"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         UIImage* backItemHlImage = [[UIImage imageNamed:@"backItemImage-hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -695,14 +695,14 @@ typedef enum{
     return _cancelButton;
 }
 
--(UIBarButtonItem*)closeItem{
+- (UIBarButtonItem*)closeItem{
     if (!_closeItem) {
         _closeItem = [[UIBarButtonItem alloc] initWithTitle:AXMyLocalizedString(@"ax.close") style:UIBarButtonItemStylePlain target:self action:@selector(closeItemAction:)];
     }
     return _closeItem;
 }
 
--(UIBarButtonItem *)cancelItem{
+- (UIBarButtonItem *)cancelItem{
     if (!_cancelItem) {
         _cancelItem = [[UIBarButtonItem alloc]initWithCustomView:self.cancelButton];
     }
@@ -711,7 +711,7 @@ typedef enum{
 
 
 #pragma mark - dealloc
--(void)dealloc{
+- (void)dealloc{
     axLong_dealloc;
 //    [self.wkWebView removeObserver:self forKeyPath:@"estimatedProgress"];
 //    [self.wkWebView removeObserver:self forKeyPath:@"title"];

@@ -43,20 +43,20 @@
 /**
  * 获得home后部分的路径,
  */
--(NSString *)ax_getDidHomePath{
+- (NSString *)ax_getDidHomePath{
     NSString *temp = [NSString stringWithFormat:@"%@/",NSHomeDirectory()];
     return  [self componentsSeparatedByString:temp].lastObject;
 }
 /**
  * 拼接home路径,得到全路径
  */
--(NSString *)ax_addHomePath{
+- (NSString *)ax_addHomePath{
     NSString *home = NSHomeDirectory();
     return [home stringByAppendingPathComponent:self];
 }
 
 
--(CGSize )ax_sizeWithLabel:(UILabel *)label{
+- (CGSize )ax_sizeWithLabel:(UILabel *)label{
 
     NSDictionary *attributes = @{NSFontAttributeName:label.font};
     CGSize size=[label.text boundingRectWithSize:CGSizeMake(MAXFLOAT,MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
@@ -66,7 +66,7 @@
 /**
  * 文字:计算单行文字size(系统重名)
  */
--(CGSize )ax_sizeWithaFont:(UIFont *)font{
+- (CGSize )ax_sizeWithaFont:(UIFont *)font{
 
     NSDictionary *attributes = @{NSFontAttributeName:font};
     CGSize size=[self boundingRectWithSize:CGSizeMake(MAXFLOAT,MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
@@ -76,7 +76,7 @@
 /**
  * 文字:计算多行文字size(系统重名)
  */
--(CGSize )ax_sizeWithaFont:(UIFont *)font lineNumber:(NSInteger )number{
+- (CGSize )ax_sizeWithaFont:(UIFont *)font lineNumber:(NSInteger )number{
 
     NSDictionary *attributes = @{NSFontAttributeName:font};
     CGSize size=[self boundingRectWithSize:CGSizeMake(MAXFLOAT,MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
@@ -88,7 +88,7 @@
 /**
  * 文字:根据指定宽度,得到高度
  */
--(CGFloat )ax_heightWithaFont:(UIFont *)font width:(CGFloat )width{
+- (CGFloat )ax_heightWithaFont:(UIFont *)font width:(CGFloat )width{
     
     NSDictionary *attributes = @{NSFontAttributeName:font};
     CGSize size = [self boundingRectWithSize:CGSizeMake(width,MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
@@ -98,7 +98,7 @@
 /**
  * 根据指定宽度,得到size
  */
--(CGSize )ax_sizeWithaFont:(UIFont *)font width:(CGFloat )width{
+- (CGSize )ax_sizeWithaFont:(UIFont *)font width:(CGFloat )width{
     NSDictionary *attributes = @{NSFontAttributeName:font};
     CGSize size = [self boundingRectWithSize:CGSizeMake(width,MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
     return size;
@@ -239,7 +239,7 @@
 /**
  * string 生成二维码
  */
--(UIImage *)ax_stringToQRCodeWithWH:(CGFloat )wh{
+- (UIImage *)ax_stringToQRCodeWithWH:(CGFloat )wh{
     NSString *codeStr = self;
     // 生成二维码图片
     NSData *data = [codeStr dataUsingEncoding:NSISOLatin1StringEncoding allowLossyConversion:YES];
@@ -262,7 +262,7 @@
 /**
  * 拼接 tel://
  */
--(NSString *)ax_byPhone{
+- (NSString *)ax_byPhone{
     return [NSString stringWithFormat:@"tel://%@",self];
 }
 
@@ -317,7 +317,7 @@
 /**
  * 转换为UTF8,与UTF8String有区别
  */
--(NSString *)ax_toUTF8{
+- (NSString *)ax_toUTF8{
     return  [NSString stringWithCString:self.UTF8String encoding:NSUTF8StringEncoding];
 }
 
@@ -325,7 +325,7 @@
 /**
  * 获得文件内所有内容
  */
--(NSArray *)ax_getContentsOfDirectory{
+- (NSArray *)ax_getContentsOfDirectory{
     
     NSString *dirPath = self;
     
@@ -351,7 +351,7 @@
 /**
  * 获得文件内,指定文件,只有文件名
  */
--(NSMutableArray *)ax_getFileNameListName:(NSString *)name{
+- (NSMutableArray *)ax_getFileNameListName:(NSString *)name{
     
    return  [self ax_toolFileName:name type:@"Name"];
 }
@@ -359,7 +359,7 @@
 /**
  * 获得文件内,指定文件,全路径
  */
--(NSMutableArray *)ax_getFileNameListFullpath:(NSString *)name{
+- (NSMutableArray *)ax_getFileNameListFullpath:(NSString *)name{
 
    return  [self ax_toolFileName:name type:@"Full"];
 }
@@ -367,7 +367,7 @@
 /**
  * 获得文件内,封装方法
  */
--(NSMutableArray *)ax_toolFileName:(NSString *)name  type:(NSString *)type{
+- (NSMutableArray *)ax_toolFileName:(NSString *)name  type:(NSString *)type{
     
     NSString *hostPath = self;
     
@@ -409,7 +409,7 @@
 /**
  * 显示万元单位
  */
--(NSString *)ax_keepWanYuan{
+- (NSString *)ax_keepWanYuan{
     if (self.doubleValue>10000) {
         return [NSString stringWithFormat:@"%.2lf 万元",self.doubleValue/10000];
     }else if (self.doubleValue>0){
@@ -423,7 +423,7 @@
 /**
  * 显示万元单位 ,有前缀
  */
--(NSString *)ax_keepWanYuanWithPrefix:(NSString *)prefix{
+- (NSString *)ax_keepWanYuanWithPrefix:(NSString *)prefix{
     if (self.doubleValue>10000) {
         return [NSString stringWithFormat:@"%@%.2lf 万元",prefix,self.doubleValue/10000];
     }else if (self.doubleValue>0){
@@ -437,7 +437,7 @@
 /**
  * 头部拼接一个字串
  */
--(NSString *)ax_addHeadPrefix:(NSString *)prefix{
+- (NSString *)ax_addHeadPrefix:(NSString *)prefix{
     return [NSString stringWithFormat:@"%@%@",prefix,self];
 }
 
@@ -445,7 +445,7 @@
 /**
  * 截取头尾  中间显示*号
  */
--(NSString *)ax_substringHeadLength:(NSInteger )headLength endLength:(NSInteger )endLength{
+- (NSString *)ax_substringHeadLength:(NSInteger )headLength endLength:(NSInteger )endLength{
     
     NSInteger middleLength = self.length - headLength - endLength;
     
@@ -467,7 +467,7 @@
 /**
  * url 拼接,用别的办法,不然就出现 http:// 变成  http:/ 或者? 不识别
  */
--(NSString *)ax_urlStringtAppending:(NSString *)str{
+- (NSString *)ax_urlStringtAppending:(NSString *)str{
     
 //    NSString *temp = nil;
     NSString *head = nil;
@@ -500,7 +500,7 @@
 
  @return 号码
  */
--(NSString *)ax_phoneNumSecret{
+- (NSString *)ax_phoneNumSecret{
     
     if (self.length==11) {
         NSString *numberString = [self stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
@@ -518,7 +518,7 @@
 
  @return return value description
  */
--(NSURL *)ax_toTelURL{
+- (NSURL *)ax_toTelURL{
     
     return [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",self]];
 }

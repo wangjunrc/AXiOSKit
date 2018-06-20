@@ -19,7 +19,7 @@
     [self setupTitle];
 }
 #pragma mark - 主题字体颜色等
--(void)setupTitle{
+- (void)setupTitle{
     NSDictionary *noDic= @{NSForegroundColorAttributeName : [UIColor grayColor]};
     NSDictionary *seDic= @{NSForegroundColorAttributeName : [UIColor lightGrayColor]};
     

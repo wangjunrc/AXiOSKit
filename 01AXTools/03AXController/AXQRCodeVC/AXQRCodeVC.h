@@ -10,6 +10,6 @@
 
 @interface AXQRCodeVC : UIViewController
 
--(void)successQRCode:(void(^)(NSString *code))code;
+- (void)successQRCode:(void(^)(NSString *code))code;
 
 @end

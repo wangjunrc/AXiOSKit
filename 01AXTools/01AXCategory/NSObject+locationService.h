@@ -13,6 +13,6 @@
 
 @interface NSObject (locationService)
 
--(void)locationService;
+- (void)locationService;
 
 @end

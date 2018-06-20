@@ -110,10 +110,10 @@ self.frame = frame;\
  tableViewCell 自适应高度DataSource
  */
 #define AX_tableViewCell_height_Automatic \
--(CGFloat )tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{\
+- (CGFloat )tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{\
     return UITableViewAutomaticDimension;\
 }\
--(CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{\
+- (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{\
     return UITableViewAutomaticDimension;\
 }\
 

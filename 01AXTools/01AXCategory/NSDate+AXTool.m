@@ -18,7 +18,7 @@
  yyyyMMdd
  yyyy年MM月dd日
  */
--(NSString *)ax_toStringWithFormatter:(NSString *)formatter{
+- (NSString *)ax_toStringWithFormatter:(NSString *)formatter{
 
     NSDateFormatter *dateshowFormatter = [[NSDateFormatter alloc] init];
     dateshowFormatter.dateFormat = formatter;
@@ -30,7 +30,7 @@
 /**
  * 和当前时间对比,年月日哪个不同  0年月日相同 1 年不同 2月不同 3日不同
  */
--(NSInteger)ax_differToNowDate{
+- (NSInteger)ax_differToNowDate{
 
     NSDate *nowDate = [NSDate date];
     NSTimeZone *zone = [NSTimeZone systemTimeZone];
@@ -111,7 +111,7 @@
  @param day 相距  日
  @return NSDate 获得的时间
  */
--(NSDate *)ax_dateApartToYear:(NSInteger )year month:(NSInteger )month day:(NSInteger )day{
+- (NSDate *)ax_dateApartToYear:(NSInteger )year month:(NSInteger )month day:(NSInteger )day{
     
     NSDate *todayDate  = self;
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];

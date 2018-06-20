@@ -22,11 +22,11 @@
 /**
  * 获得生成的字符串
  */
--(void)didShowCode:(void(^)(NSString *code))did;
+- (void)didShowCode:(void(^)(NSString *code))did;
 
 /**
  * 刷新字符串
  */
--(void)refreshCode;
+- (void)refreshCode;
 
 @end

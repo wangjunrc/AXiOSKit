@@ -13,14 +13,14 @@ typedef void(^LocationBlock)(CLLocation *location);
 
 @interface LocationManager ()<CLLocationManagerDelegate>
 
-@property(nonatomic,copy)Location2D  location2D;
+@property (nonatomic, copy)Location2D  location2D;
 /**
  * <#注释#>
  */
-@property(nonatomic,copy) LocationBlock locationBlock;
+@property (nonatomic, copy) LocationBlock locationBlock;
 
-@property(nonatomic,strong)CLLocationManager  *locationManager;
-@property(nonatomic,strong)CLGeocoder  *geocoder;
+@property (nonatomic, strong)CLLocationManager *locationManager;
+@property (nonatomic, strong)CLGeocoder *geocoder;
 
 @end
 
@@ -34,7 +34,7 @@ typedef void(^LocationBlock)(CLLocation *location);
     }
     return self;
 }
--(void)setupLocation{
+- (void)setupLocation{
     
     self.locationManager = [[CLLocationManager alloc]init];//创建对象
 
@@ -99,13 +99,13 @@ typedef void(^LocationBlock)(CLLocation *location);
 //    }];
     
 }
--(void)Location2D:(void(^)(CLLocationCoordinate2D coordinate2D))location2D{
+- (void)Location2D:(void(^)(CLLocationCoordinate2D coordinate2D))location2D{
     if (location2D) {
          self.location2D = location2D;
     }
 }
 
--(void)location:(void(^)(CLLocation *location))location{
+- (void)location:(void(^)(CLLocation *location))location{
     if (location) {
         self.locationBlock =location;
     }
@@ -126,7 +126,7 @@ typedef void(^LocationBlock)(CLLocation *location);
 }
 
 //始终定位代理方法
-//-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+//- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
 //    switch (status) {
 //        case kCLAuthorizationStatusNotDetermined:
 //            if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)])

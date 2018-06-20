@@ -18,12 +18,12 @@
 
  @param text 当前文字
  */
--(void)ax_sethighlightText:(NSString *)text;
+- (void)ax_sethighlightText:(NSString *)text;
 
 
--(NSMutableAttributedString *)regionAt_manager:(NSString *)str;
+- (NSMutableAttributedString *)regionAt_manager:(NSString *)str;
 
--(NSMutableAttributedString *)emotionAct;
+- (NSMutableAttributedString *)emotionAct;
 
 -(YYTextSimpleEmoticonParser *)emotionActPic;
 

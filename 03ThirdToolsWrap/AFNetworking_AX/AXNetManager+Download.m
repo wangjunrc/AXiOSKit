@@ -129,7 +129,7 @@
 
     }];
     
-//    AFNetworkReachabilityManager  *reachabilityManager = [AFNetworkReachabilityManager sharedManager];
+//    AFNetworkReachabilityManager *reachabilityManager = [AFNetworkReachabilityManager sharedManager];
 //    [reachabilityManager startMonitoring];
 //    
 //    [reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {

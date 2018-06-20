@@ -44,7 +44,7 @@
 }
 
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     if (self.axTouchesBeganDismiss) {
         [self dismissViewControllerAnimated:YES completion:nil];

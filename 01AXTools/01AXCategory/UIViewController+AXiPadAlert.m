@@ -13,7 +13,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 
 @interface UIViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
 
-@property(nonatomic,strong)CameraEditBlock cameraEditBlock;
+@property (nonatomic, strong)CameraEditBlock cameraEditBlock;
 
 @end
 
@@ -34,7 +34,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  @param iPadView iPad 需要显传入显示的view
  @param block originalImage原图  editedImage编辑后图片
  */
--(void)ax_showCameraWithEditing:(BOOL)edit showiPadView:(UIView *)iPadView block:(void(^)(UIImage *originalImage,UIImage *editedImage))block{
+- (void)ax_showCameraWithEditing:(BOOL)edit showiPadView:(UIView *)iPadView block:(void(^)(UIImage *originalImage,UIImage *editedImage))block{
     self.cameraEditBlock = block;
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -77,7 +77,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * UIImagePickerControllerDelegate
  */
--(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+- (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     dispatch_async(dispatch_get_main_queue(), ^{
         //原图
@@ -106,7 +106,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Sheet  没有取消回调
  */
--(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm{
+- (void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm{
     
     [self ax_showSheetByiPadView:iPadView title:title message:message actionArray:actionArray confirm:confirm cancel:nil];
 
@@ -115,7 +115,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Sheet 有取消回调
  */
--(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
+- (void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
     
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
     
@@ -148,7 +148,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Sheet 退出登录 兼容iPad需要传入view
  */
--(void)ax_showSheeLogoutByPadView:(UIView *)iPadView confirm:(void(^)(void))confirm{
+- (void)ax_showSheeLogoutByPadView:(UIView *)iPadView confirm:(void(^)(void))confirm{
     
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:AXMyLocalizedString(@"ax.logOut.message") preferredStyle:UIAlertControllerStyleActionSheet];
@@ -177,7 +177,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * 数组 Alert 有取消回调
  */
--(void)ax_showAlertByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
+- (void)ax_showAlertByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
     
     
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];

@@ -21,7 +21,7 @@
  @param confirm 确定
  @param cancel 取消
  */
--(void)didSelectPickerMode:(UIDatePickerMode )datePickerMode showDate:(NSDate *)showDate confirm:(void(^)(NSDate *date))confirm cancel:(void(^)(void))cancel;
+- (void)didSelectPickerMode:(UIDatePickerMode )datePickerMode showDate:(NSDate *)showDate confirm:(void(^)(NSDate *date))confirm cancel:(void(^)(void))cancel;
 
 /**
  时间选择器 默认显示 UIDatePickerModeDate 年月日
@@ -30,6 +30,6 @@
  @param confirm 确定
  @param cancel 取消
  */
--(void)didSelectDate:(NSDate *)showDate confirm:(void(^)(NSDate *date))confirm cancel:(void(^)(void))cancel;
+- (void)didSelectDate:(NSDate *)showDate confirm:(void(^)(NSDate *date))confirm cancel:(void(^)(void))cancel;
 
 @end

@@ -10,6 +10,6 @@
 
 @interface AXWebVC : UIViewController
 
-@property(nonatomic,copy) NSString *url;
+@property (nonatomic, copy) NSString *url;
 
 @end

@@ -24,7 +24,7 @@
  @param iPadView iPad 需要显传入显示的view
  @param block originalImage原图  editedImage编辑后图片
  */
--(void)ax_showCameraWithEditing:(BOOL)edit showiPadView:(UIView *)iPadView block:(void(^)(UIImage *originalImage,UIImage *editedImage))block;
+- (void)ax_showCameraWithEditing:(BOOL)edit showiPadView:(UIView *)iPadView block:(void(^)(UIImage *originalImage,UIImage *editedImage))block;
 
 /**
  Sheet  没有取消回调
@@ -35,7 +35,7 @@
  @param actionArray 其他按钮文字数组
  @param confirm 选中按钮回调
  */
--(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm;
+- (void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm;
 
 /**
  Sheet 有取消回调
@@ -47,7 +47,7 @@
  @param confirm 选中按钮回调
  @param cancel 取消回调
  */
--(void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel;
+- (void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel;
 
 /**
  Sheet 退出登录
@@ -55,10 +55,10 @@
  @param iPadView 兼容iPad需要传入view
  @param confirm 确定回调
  */
--(void)ax_showSheeLogoutByPadView:(UIView *)iPadView confirm:(void(^)(void))confirm;
+- (void)ax_showSheeLogoutByPadView:(UIView *)iPadView confirm:(void(^)(void))confirm;
 
 /**
  * 数组 Alert 有取消回调
  */
--(void)ax_showAlertByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel;
+- (void)ax_showAlertByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel;
 @end

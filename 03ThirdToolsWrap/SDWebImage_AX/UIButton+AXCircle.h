@@ -16,13 +16,13 @@
  @param url url
  @param state 状态
  */
--(void)ax_setBackgroundImageCircleWithURL:(NSURL *)url forState:(UIControlState )state placeholderImage:(UIImage *)placeholderImage;
+- (void)ax_setBackgroundImageCircleWithURL:(NSURL *)url forState:(UIControlState )state placeholderImage:(UIImage *)placeholderImage;
 /**
  url路径 设置 image 圆形图片
  
  @param url url
  @param state 状态
  */
--(void)ax_setImageCircleWithURL:(NSURL *)url forState:(UIControlState )state placeholderImage:(UIImage *)placeholderImage;
+- (void)ax_setImageCircleWithURL:(NSURL *)url forState:(UIControlState )state placeholderImage:(UIImage *)placeholderImage;
 
 @end

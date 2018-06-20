@@ -94,7 +94,7 @@
 }
 
 
--(void)ax_footerViewZero{
+- (void)ax_footerViewZero{
     self.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
 }
 

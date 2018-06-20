@@ -13,12 +13,12 @@ typedef void(^QRCodeBlock)(NSString *code);
 
 @interface AXQRCodeVC ()<AVCaptureMetadataOutputObjectsDelegate>
 @property (nonatomic, strong)AVCaptureSession * session;//输入输出的中间桥梁
-@property(nonatomic,assign) BOOL isOpenCamera;
-@property(nonatomic,assign) BOOL isShowResult;
+@property (nonatomic, assign) BOOL isOpenCamera;
+@property (nonatomic, assign) BOOL isShowResult;
 /**
  * 
  */
-@property(nonatomic,copy) QRCodeBlock qRCodeBlock;
+@property (nonatomic, copy) QRCodeBlock qRCodeBlock;
 @end
 
 @implementation AXQRCodeVC
@@ -39,7 +39,7 @@ typedef void(^QRCodeBlock)(NSString *code);
 
 
 
--(void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.isShowResult = NO;
 //    [self.navigationController setNavigationBarHidden:YES animated:NO];
@@ -52,7 +52,7 @@ typedef void(^QRCodeBlock)(NSString *code);
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
 }
--(void)activeCodeDidEnterBackground{
+- (void)activeCodeDidEnterBackground{
     if (self.isOpenCamera ) {
         [self.session stopRunning];
     }
@@ -88,7 +88,7 @@ typedef void(^QRCodeBlock)(NSString *code);
     }
 }
 
--(void)successQRCode:(void(^)(NSString *code))code{
+- (void)successQRCode:(void(^)(NSString *code))code{
     self.qRCodeBlock = code;
 }
 

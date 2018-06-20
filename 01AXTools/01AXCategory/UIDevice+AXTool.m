@@ -11,7 +11,7 @@
 @implementation UIDevice (AXTool)
 
 
-+(NSArray *)ax_DeviceSize{
++ (NSArray *)ax_DeviceSize{
     
     NSArray *array = @[
                        @{

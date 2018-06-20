@@ -17,7 +17,7 @@
  @param url url
  @param state 状态
  */
--(void)ax_setBackgroundImageCircleWithURL:(NSURL *)url forState:(UIControlState )state placeholderImage:(UIImage *)placeholderImage{
+- (void)ax_setBackgroundImageCircleWithURL:(NSURL *)url forState:(UIControlState )state placeholderImage:(UIImage *)placeholderImage{
     
     CGFloat radius = MIN(self.frame.size.width*0.5, self.frame.size.height*0.5);
     
@@ -38,7 +38,7 @@
  @param url url
  @param state 状态
  */
--(void)ax_setImageCircleWithURL:(NSURL *)url forState:(UIControlState )state placeholderImage:(UIImage *)placeholderImage {
+- (void)ax_setImageCircleWithURL:(NSURL *)url forState:(UIControlState )state placeholderImage:(UIImage *)placeholderImage {
     
     CGFloat radius = MIN(self.frame.size.width*0.5, self.frame.size.height*0.5);
     

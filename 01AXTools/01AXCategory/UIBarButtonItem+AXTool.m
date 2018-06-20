@@ -168,7 +168,7 @@
  @param action action
  @return UIBarButtonItem
  */
-+(instancetype)ax_itemOriginalImage:(NSString *)image target:(id)target action:(SEL)action{
++ (instancetype)ax_itemOriginalImage:(NSString *)image target:(id)target action:(SEL)action{
     
     return [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:image]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:target action:action];
 }
@@ -182,7 +182,7 @@
  @param action action
  @return UIBarButtonItem
  */
-+(instancetype )ax_itemByButton:(UIButton *)btn target:(id)target action:(SEL)action{
++ (instancetype )ax_itemByButton:(UIButton *)btn target:(id)target action:(SEL)action{
   
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     

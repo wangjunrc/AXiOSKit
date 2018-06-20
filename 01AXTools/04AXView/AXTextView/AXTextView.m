@@ -77,7 +77,7 @@
     
 }
 
--(void)setPlaceholderColor:(UIColor*)placeholderColor{
+- (void)setPlaceholderColor:(UIColor*)placeholderColor{
     
     _placeholderColor= placeholderColor;
     

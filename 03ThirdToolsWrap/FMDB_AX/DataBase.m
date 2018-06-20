@@ -13,11 +13,11 @@
 ///**
 // *
 // */
-//@property(nonatomic,strong)FMDatabase *fmdb;
+//@property (nonatomic, strong)FMDatabase *fmdb;
 ///**
 // *
 // */
-//@property(nonatomic,strong)FMDatabaseQueue *fmdbQueue;
+//@property (nonatomic, strong)FMDatabaseQueue *fmdbQueue;
 //
 //@end
 //
@@ -28,10 +28,10 @@
 // *
 // *  @param baseName 数据库名称
 // */
-//+(instancetype)dataBaseWithName:(NSString *)baseName{
+//+ (instancetype)dataBaseWithName:(NSString *)baseName{
 //    DataBase *dataBase = [[self alloc]init];
 //    
-//    NSString  *dbPath =  [DBStatements dataBaseWithName:baseName];
+//    NSString *dbPath =  [DBStatements dataBaseWithName:baseName];
 //    dataBase.dbPath = dbPath;
 //    AXLog(@"dbPath--> %@",dbPath);
 //    dataBase.fmdb = [FMDatabase databaseWithPath:dbPath];
@@ -53,9 +53,9 @@
 // *  @param tableName 表名
 // *  @param field     例-> {@"name":[NSString class]}  ......(图片-->NSData)
 // */
-//-(BOOL)createTable:(NSString*)tableName field:(NSDictionary *)field{
+//- (BOOL)createTable:(NSString*)tableName field:(NSDictionary *)field{
 //    [self.fmdb open];
-//    NSString  *executeUpdate =  [DBStatements createTable:tableName field:field];
+//    NSString *executeUpdate =  [DBStatements createTable:tableName field:field];
 //    BOOL create = [self.fmdb executeUpdate:executeUpdate];
 //     AXLog(@"新建表 %@",create ? @"成功" :@"失败" );
 //    return create;
@@ -67,12 +67,12 @@
 // *  @param tableName 表名
 // *  @param condition 新增数据 例-> {@"age" : @20}
 // */
-//-(BOOL)insertDataTable:(NSString *)tableName content:(NSDictionary *)content{
+//- (BOOL)insertDataTable:(NSString *)tableName content:(NSDictionary *)content{
 //
 //    [self.fmdb open];
-//    //    NSString  *executeUpdate =  [DBStatements insertDataTable:table content:condition];
+//    //    NSString *executeUpdate =  [DBStatements insertDataTable:table content:condition];
 //    
-//    NSString  *executeUpdate = [DBStatements insertDataTable:tableName content:content];
+//    NSString *executeUpdate = [DBStatements insertDataTable:tableName content:content];
 //    
 //    
 //    
@@ -88,13 +88,13 @@
 // *
 // *  @param tableName 表名
 // *  @param condition 新增数据的判断条件 例-> {@"age" : @20}
-//  *  @param condition 新增数据的内容 例-> {@"age" : @20}
+// *  @param condition 新增数据的内容 例-> {@"age" : @20}
 // */
-//-(BOOL)insertDataTable:(NSString *)tableName condition:(NSDictionary *)condition content:(NSDictionary *)content{
+//- (BOOL)insertDataTable:(NSString *)tableName condition:(NSDictionary *)condition content:(NSDictionary *)content{
 //    [self.fmdb open];
-////    NSString  *executeUpdate =  [DBStatements insertDataTable:table content:condition];
+////    NSString *executeUpdate =  [DBStatements insertDataTable:table content:condition];
 //    
-//    NSString  *executeUpdate = [DBStatements insertDataTable:tableName condition:condition content:content];
+//    NSString *executeUpdate = [DBStatements insertDataTable:tableName condition:condition content:content];
 //    
 //    
 //    BOOL insert = [self.fmdb executeUpdate:executeUpdate];
@@ -110,9 +110,9 @@
 // *  @param tableName 表名
 // *  @param condition 删除 例-> {@"age" : @20}
 // */
-//-(BOOL )removeDataTable:(NSString *)table condition:(NSDictionary *)condition{
+//- (BOOL )removeDataTable:(NSString *)table condition:(NSDictionary *)condition{
 //    [self.fmdb open];
-//    NSString  *executeUpdate =  [DBStatements removeDataTable:table content:condition];
+//    NSString *executeUpdate =  [DBStatements removeDataTable:table content:condition];
 //    BOOL delete = [self.fmdb executeUpdate:executeUpdate];
 //    return delete;
 //}
@@ -122,7 +122,7 @@
 // *
 // *  @param tableName 表名
 // */
-//-(BOOL)removeDataTable:(NSString *)tableName{
+//- (BOOL)removeDataTable:(NSString *)tableName{
 //
 //    return [self removeDataTable:tableName condition:nil];
 //}
@@ -132,10 +132,10 @@
 // *
 // *  @param tableName 表名
 // */
-//-(BOOL)deleteTable:(NSString *)tableName{
+//- (BOOL)deleteTable:(NSString *)tableName{
 //
 //    [self.fmdb open];
-//    NSString  *executeUpdate =  [DBStatements deleteTable:tableName];
+//    NSString *executeUpdate =  [DBStatements deleteTable:tableName];
 //    BOOL delete = [self.fmdb executeUpdate:executeUpdate];
 //    return delete;
 //}
@@ -148,10 +148,10 @@
 // *  @param need      修改的目标  例-> @{@"age" : @20}
 // *  @param result     回调
 // */
-//-(BOOL )updateDataTable:(NSString *)tableName condition:(NSDictionary *)condition need:(NSDictionary *)need{
+//- (BOOL )updateDataTable:(NSString *)tableName condition:(NSDictionary *)condition need:(NSDictionary *)need{
 //     [self.fmdb open];
 //    
-//    NSString  *executeUpdate =  [DBStatements updateDataTable:tableName content:condition need:need];
+//    NSString *executeUpdate =  [DBStatements updateDataTable:tableName content:condition need:need];
 //    BOOL update = [self.fmdb executeUpdate:executeUpdate];
 //    return update;
 //}
@@ -161,10 +161,10 @@
 // *
 // *  @param tableName 表名
 // */
-//-(NSInteger)selectTableCount:(NSString *)tableName{
+//- (NSInteger)selectTableCount:(NSString *)tableName{
 //    [self.fmdb open];
 //    
-//    NSString  *executeUpdate =  [DBStatements selectTableCount:tableName];
+//    NSString *executeUpdate =  [DBStatements selectTableCount:tableName];
 //    NSInteger tableCount =[self.fmdb longForQuery:executeUpdate];
 //    return tableCount;
 //}
@@ -174,7 +174,7 @@
 // *
 // *  @param table  表名
 // */
-//-( NSMutableArray *)selectAllTable:(NSString *)table{
+//- (NSMutableArray *)selectAllTable:(NSString *)table{
 //    
 //    return [self selectTable:table condition:nil need:nil];
 //}
@@ -183,9 +183,9 @@
 // *
 // *  @param table  表名
 // */
-//-( NSMutableArray *)selectAllTable:(NSString *)table number:(NSInteger )number{
+//- (NSMutableArray *)selectAllTable:(NSString *)table number:(NSInteger )number{
 //    
-//    NSString  *executeQuery =  [DBStatements selectTable:table nuber:number];
+//    NSString *executeQuery =  [DBStatements selectTable:table nuber:number];
 //    
 //    FMResultSet *resultSet = [self.fmdb executeQuery:executeQuery];
 //    
@@ -215,11 +215,11 @@
 // *
 // *  @return 字典数组
 // */
-//-(NSMutableArray *)selectTable:(NSString *)tableName condition:(NSDictionary *)condition need:(NSArray <NSString *>*)need{
+//- (NSMutableArray *)selectTable:(NSString *)tableName condition:(NSDictionary *)condition need:(NSArray <NSString *>*)need{
 //
 //    [self.fmdb open];
 //
-//     NSString  *executeQuery =  [DBStatements selectTable:tableName content:condition need:need];
+//     NSString *executeQuery =  [DBStatements selectTable:tableName content:condition need:need];
 //    
 //    FMResultSet *resultSet = [self.fmdb executeQuery:executeQuery];
 //

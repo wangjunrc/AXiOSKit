@@ -14,19 +14,19 @@
 
 @interface UITextField ()<UITextFieldDelegate>
 
-@property(nonatomic,copy)void(^textFieldTargetBlock)(UITextField *textField) ;
+@property (nonatomic, copy) void(^textFieldTargetBlock)(UITextField *textField) ;
 
-@property(nonatomic,copy)void(^didBeginBlock)(UITextField *textField) ;
+@property (nonatomic, copy) void(^didBeginBlock)(UITextField *textField) ;
 
 @end
 
 @implementation UITextField (AXTool)
 
 /**
- * -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+ * - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
  方法中调用,控制输入的字符为最多2位小数的数字 包含0
  */
--(BOOL)ax_getTF2FloatRange:(NSRange)range string:(NSString *)string{
+- (BOOL)ax_getTF2FloatRange:(NSRange)range string:(NSString *)string{
     
     UITextField *textField = self;
     
@@ -102,13 +102,13 @@
  
  @param block block description
  */
--(void)ax_addTargetTextChangedBlock:(void(^)(UITextField *textField))block{
+- (void)ax_addTargetTextChangedBlock:(void(^)(UITextField *textField))block{
     
     [self addTarget:self action:@selector(textChnageAction:) forControlEvents:UIControlEventEditingChanged];
     self.textFieldTargetBlock = block;
 }
 
--(void)textChnageAction:(UITextField *)textField{
+- (void)textChnageAction:(UITextField *)textField{
     if (self.textFieldTargetBlock){
         self.textFieldTargetBlock(textField);
     }
@@ -121,7 +121,7 @@
 
  @param block 回调
  */
--(void)ax_addTargetTextDidBeginBlock:(void(^)(UITextField *textField))block{
+- (void)ax_addTargetTextDidBeginBlock:(void(^)(UITextField *textField))block{
     
     self.didBeginBlock = block;
     
