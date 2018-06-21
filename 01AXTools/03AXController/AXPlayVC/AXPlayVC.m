@@ -15,7 +15,7 @@
 /**
  * <#注释#>
  */
-@property (nonatomic, strong) NSMutableArray *fileArray;
+@property (nonatomic, copy) NSMutableArray *fileArray;
 /**
  *
  */

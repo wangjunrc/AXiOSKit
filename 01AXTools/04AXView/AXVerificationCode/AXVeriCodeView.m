@@ -22,12 +22,12 @@ typedef void(^ShowCodeBlock)(NSString *code);
 /**
  * 显示的字符串
  */
-@property (nonatomic, strong) NSMutableString *codeString;
+@property (nonatomic, copy) NSMutableString *codeString;
 
 /**
  * 默认的字符串集合
  */
-@property (nonatomic, strong) NSArray *defaultCodeArray;
+@property (nonatomic, copy) NSArray *defaultCodeArray;
 
 @end
 
