@@ -40,6 +40,6 @@
  @param appid appid
  @param resultBlock 回调
  */
-- (void)ax_versionProjectCompareAppStoreWithAppid:(NSString *)appid comparisonResult:(void(^)(NSString *projectVersion , NSString *appStoreVersion,NSComparisonResult comparisonResult))resultBlock;
+- (void)ax_versionProjectCompareAppStoreWithAppid:(NSString *)appid comparisonResult:(void(^)(NSString *projectVersion, NSString *appStoreVersion, NSComparisonResult comparisonResult))resultBlock;
 
 @end
