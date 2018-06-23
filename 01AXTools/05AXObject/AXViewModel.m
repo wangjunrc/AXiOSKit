@@ -9,6 +9,7 @@
 #import "AXViewModel.h"
 
 @implementation AXViewModel
+
 +(void)setupCell:(id)cell model:(id)model{}
 
 +(void)setupCell:(id )cell title:(NSString *)title model:(id)model{}

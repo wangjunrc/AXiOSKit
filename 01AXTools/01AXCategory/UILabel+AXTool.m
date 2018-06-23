@@ -28,7 +28,7 @@
 - (void)handleTap:(UIGestureRecognizer *)g {
     [self becomeFirstResponder];
     
-    UIMenuItem *item = [[UIMenuItem alloc] initWithTitle:AXMyLocalizedString(@"ax.copy") action:@selector(copyText:)];
+    UIMenuItem *item = [[UIMenuItem alloc] initWithTitle:AXToolsLocalizedString(@"ax.copy") action:@selector(copyText:)];
     [[UIMenuController sharedMenuController] setMenuItems:[NSArray arrayWithObject:item]];
     [[UIMenuController sharedMenuController] setTargetRect:self.frame inView:self.superview];
     [[UIMenuController sharedMenuController] setMenuVisible:YES animated:YES];

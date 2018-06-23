@@ -42,7 +42,8 @@
 /**
  * 自定义国际化文件
  */
-#define  AXMyLocalizedString(key) NSLocalizedStringFromTable(key,@"AXMyLocalizedString", @"")
+#define  AXToolsLocalizedString(key) NSLocalizedStringFromTable(key,@"AXToolsLocalizedString", @"")
+
 
 
 #define  AXLogFunc AXLog(@"%s",__func__);
