@@ -8,9 +8,9 @@
 
 #import "NSObject+AXTool.h"
 #import "AXMacros_runTime.h"
+#import <UIKit/UIKit.h>
 
 @interface NSObject ()
-
 
 @end
 
@@ -19,7 +19,7 @@
 /**
  NSObject转换json字串
  */
-- (NSString *)ax_toJson{
+- (NSString *)ax_toJSONString{
     
     if ([self isKindOfClass:[NSString class]]) {
         
@@ -57,7 +57,7 @@
 
 /**
  获得 类 私有属性
-
+ 
  @return 数组
  */
 + (NSArray *)ax_getPrivateProperty{
@@ -82,6 +82,46 @@
     
     return temp.copy;
 }
+
+
+/**
+ 是否 DEBUG 模式
+ YES ->DEBUG
+ NO-> release
+ 
+ @return 结果
+ */
++ (BOOL)isDebug{
+    
+#ifdef DEBUG
+    
+    return YES;
+#else
+    return No;
+#endif
+    
+}
+
+/**
+ 是否 iPad
+ YES ->iPad
+ NO-> iPhone
+ @return 结果
+ */
++ (BOOL)isiPad{
+    
+    if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ){
+        
+        return YES;
+        
+    }else{
+        return NO;
+    }
+    
+}
+
+
+
 
 #pragma mark - set and get
 

@@ -7,15 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AXToolsHeader.h"
+
 
 @interface AXObject : NSObject
 
-+(void)debug:(void(^)(void))bebug release:(void(^)(void))release;
++(void)isDebug:(void(^)(void))bebug release:(void(^)(void))release;
 
-+(void)ax_configure;
-
-+(void)iPad:(void(^)(void))bebug iPhone:(void(^)(void))release;
-
++(void)iPad:(void(^)(void))iPad iPhone:(void(^)(void))iPhone;
 
 @end

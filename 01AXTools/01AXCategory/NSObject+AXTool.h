@@ -17,7 +17,7 @@ typedef void(^AX_backBlock)(id obj);
 /**
  NSObject转换json字串
  */
-- (NSString *)ax_toJson;
+- (NSString *)ax_toJSONString;
 
 /**
  封装 alloc]init]
@@ -49,5 +49,23 @@ typedef void(^AX_backBlock)(id obj);
  @return 数组
  */
 + (NSArray *)ax_getPrivateProperty;
+
+
+/**
+ 是否 DEBUG 模式
+ YES ->DEBUG
+ NO-> release
+ 
+ @return 结果
+ */
++ (BOOL)isDebug;
+
+/**
+ 是否 iPad
+ YES ->iPad
+ NO-> iPhone
+ @return 结果
+ */
++ (BOOL)isiPad;
 
 @end
