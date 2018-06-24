@@ -100,7 +100,6 @@ int ax_getRandomZeroToValue(int to);
  */
 int ax_getRandomFromTo(int from ,int to);
 
-
 /**
  * 打开通用设置
  */

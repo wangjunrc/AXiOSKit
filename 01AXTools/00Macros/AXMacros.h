@@ -10,11 +10,8 @@
 #import "AXMacros_runTime.h"
 #import "AXMacros_log.h"
 #import "AXMacros_instance.h"
+#import "AXMacros_value.h"
 
-/**
- 状态栏高度 和 nav 高度 普通 64 ,x 88
- */
-#define AX_View_Top_Height  [UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.bounds.size.height
 
 /**
  状态栏高度
@@ -117,16 +114,7 @@ self.frame = frame;\
  */
 #define AX_hideHUD  [hud hideAnimated:YES];
 
-/**
- tableViewCell 自适应高度DataSource
- */
-#define AX_tableViewCell_height_Automatic \
-- (CGFloat )tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{\
-    return UITableViewAutomaticDimension;\
-}\
-- (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{\
-    return UITableViewAutomaticDimension;\
-}\
+
 
 
 /**

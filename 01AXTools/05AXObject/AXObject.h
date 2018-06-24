@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface AXObject : NSObject
 
 +(void)isDebug:(void(^)(void))bebug release:(void(^)(void))release;
