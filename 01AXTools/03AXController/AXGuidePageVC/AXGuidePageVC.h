@@ -13,6 +13,8 @@
 
 + (instancetype )guidePageWithImage:(NSArray <NSString *>*)imageArray passBlock:(void(^)(void))passBlock;
 
+- (instancetype )initWithImage:(NSArray <NSString *>*)imageArray passBlock:(void(^)(void))passBlock;
+
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (nonatomic, strong) UIImage *passImage;

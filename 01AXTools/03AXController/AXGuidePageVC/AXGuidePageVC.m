@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+
 @property (nonatomic, strong) NSArray <NSString *>*imageArray;
 
 /**
@@ -27,24 +28,38 @@
 
 + (instancetype )guidePageWithImage:(NSArray <NSString *>*)imageArray passBlock:(void(^)(void))passBlock{
     
-    AXGuidePageVC *vc = [[AXGuidePageVC alloc]init];
-    vc.imageArray = imageArray;
-    vc.passBlock = passBlock;
-    return vc;
+    return [[self alloc]initWithImage:imageArray passBlock:passBlock];
 }
 
+- (instancetype )initWithImage:(NSArray <NSString *>*)imageArray passBlock:(void(^)(void))passBlock{
+    
+    if (self = [[AXGuidePageVC alloc]init]) {
+        
+        self.imageArray = imageArray;
+        self.passBlock = passBlock;
+    }
+    return self;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.view.backgroundColor = [UIColor whiteColor];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    AXFullLayout2 *lay = [[AXFullLayout2 alloc]init];
     
+    self.pageControl.numberOfPages = self.imageArray.count;
+    AXFullLayout2 *lay = [[AXFullLayout2 alloc]init];
     self.collectionView.collectionViewLayout = lay;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    
     [self.collectionView registerNib:ax_Nib(@"AXGuidePageCell") forCellWithReuseIdentifier:axCellID];
     
-    self.pageControl.numberOfPages = self.imageArray.count;
 }
 
 - (NSInteger )collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

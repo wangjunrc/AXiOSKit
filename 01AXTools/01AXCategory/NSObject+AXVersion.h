@@ -27,12 +27,19 @@
 - (void)ax_versionToServerVersionByAppid:(NSString *)appid success:(void(^)(NSInteger comp))block;
 
 /**
- 当前版本号,与本地保存的版本号是否一致 用来显示 引导页
+ 当前版本号,与本地保存的版本号是否一致 用来显示 引导页 要主动保存版本号
  
  @param different 不一样回调
  @param same 一样回调
  */
-- (void)ax_versionDifferent:(void(^)(NSString *appVersion, NSString *saveVersion))different same:(void(^)(NSString *appVersion, NSString *saveVersion))same;
+- (void)ax_versionDifferent:(void(^)(NSString *thisVersion, NSString *lastVersion))different same:(void(^)(NSString *thisVersion, NSString *lastVersion))same;
+
+/**
+ 主动 保存版本号
+ 
+ @param thisVersion 版本号
+ */
+- (void)ax_setSaveAppVersion:(NSString *)thisVersion;
 
 /**
  工程版本号 与App Store中版本号比较 用来升级
