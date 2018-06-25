@@ -34,17 +34,6 @@
 #define AXLog2(...)
 #endif
 
-/**
- * Localizable.strings  标准名称 国际化文件
- */
-#define  AXNSLocalizedString(key) NSLocalizedString(key,nil)
-
-/**
- * 自定义国际化文件
- */
-#define  AXMyLocalizedString(key) NSLocalizedStringFromTable(key,@"AXMyLocalizedString", @"")
-
-
 #define  AXLogFunc AXLog(@"%s",__func__);
 
 #define axLong_dealloc AXLog(@"dealloc %@",self.class)

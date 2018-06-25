@@ -25,7 +25,7 @@ typedef void(^QRCodeBlock)(NSString *code);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = AXMyLocalizedString(@"扫一扫");
+    self.title = AXToolsLocalizedString(@"扫一扫");
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
         self.isOpenCamera = YES;
         [self.session startRunning];

@@ -10,27 +10,17 @@
 #import "AXMacros_runTime.h"
 #import "AXMacros_log.h"
 #import "AXMacros_instance.h"
-
-/**
- 转态栏高度 和 nav 高度 普通 64 ,x 88
- */
-#define AX_View_Top_Height  [UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.bounds.size.height
+#import "AXMacros_value.h"
 
 
 /**
- 转态栏高度
+ 状态栏高度
  */
 #define AX_View_Status_Height [UIApplication sharedApplication].statusBarFrame.size.height
-
 
 #define AX_IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 #define AX_IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-
-/**
- * 弱引用
- */
-#define axSelfWeak __weak typeof(self) selfWeak = self;
 
 /**
  * ax_kWeakObj(block 外面使用)
@@ -43,6 +33,16 @@
 #define axStrongObj(obj) __strong typeof(obj) obj = obj##Weak;
 
 /**
+ * 弱引用 self
+ */
+#define axSelfWeak axWeakObj(self);
+
+/**
+ * 强引用 self
+ */
+#define axSelfStrong axStrongObj(self);
+
+/**
  * app代理
  */
 #define axMainAppDelegate ((AppDelegate*)([UIApplication sharedApplication].delegate))
@@ -53,10 +53,19 @@
 #define axRootViewController [UIApplication sharedApplication].keyWindow.rootViewController
 
 /**
+ * AppDelegate app根控制器 个别情况下 axRootViewController 取值不对
+ */
+#define axRootViewController_AppDelegate  ((AppDelegate*)([UIApplication sharedApplication].delegate)).window.rootViewController
+
+/**
+ keyWindow
+ */
+#define axkeyWindow [UIApplication sharedApplication].keyWindow
+
+/**
  * 当前活动窗口的控制器
  */
 #define axCurrentViewController [UIViewController ax_currentViewController]
-
 
 /**
  *  屏幕宽
@@ -106,16 +115,6 @@ self.frame = frame;\
 #define AX_hideHUD  [hud hideAnimated:YES];
 
 
-/**
- tableViewCell 自适应高度DataSource
- */
-#define AX_tableViewCell_height_Automatic \
-- (CGFloat )tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{\
-    return UITableViewAutomaticDimension;\
-}\
-- (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{\
-    return UITableViewAutomaticDimension;\
-}\
 
 
 /**

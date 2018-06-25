@@ -96,7 +96,6 @@ NSString * ax_AppStoreURL(NSString *appId){
     return [NSString stringWithFormat:@"https://itunes.apple.com/cn/app/id%@?mt=8",appId];
 }
 
-
 /**
  AppStore 评分 url
  
@@ -106,9 +105,6 @@ NSString * ax_AppStoreURL(NSString *appId){
 NSString * ax_AppStoreScoreURL(NSString *AppStoreID){
     return [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@?action=write-review",AppStoreID];
 }
-
-
-
 
 /**
  * int --> NSString

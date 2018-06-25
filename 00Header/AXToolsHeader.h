@@ -73,7 +73,6 @@
 #import "NSNumber+AXTool.h"
 #import "AXWeakProxy.h"
 #import "UIControl+AXTool.h"
-#import "NSObject+AXGCDTimer.h"
 #import "NSArray+AXTool.h"
 #import "UITextView+AXTool.h"
 
@@ -105,11 +104,17 @@
 #import "AXConstant.h"
 #import "AXMacros.h"
 #import "AXViewModel.h"
+#import "AXGCDTimer.h"
+#import "AXConfigure.h"
 
 /* 00Header 06AXResources*/
 
 /* 00Header 07AXProxy*/
 #import "AXWeakProxy.h"
+
+/* 00Header 08Manager*/
+#import "AXLocationManager.h"
+#import "AXTouchIDManager.h"
 
 
 /* 02ThirdTools */
