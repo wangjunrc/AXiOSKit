@@ -8,6 +8,7 @@
 
 #import <SafariServices/SafariServices.h>
 
+API_AVAILABLE(ios(9.0))
 @interface AXSafariVC : SFSafariViewController
 
 @end

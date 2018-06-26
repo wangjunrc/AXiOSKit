@@ -34,7 +34,11 @@
 - (void)setupMovePath:(NSString *)path{
 //    MPMoviePlayerController
 //    MPMoviePlayerViewController
-    self.delegate = self;
+    if (@available(iOS 9.0, *)) {
+        self.delegate = self;
+    } else {
+        // Fallback on earlier versions
+    }
     
     self.videoGravity = AVLayerVideoGravityResizeAspect;
     self.showsPlaybackControls = YES;

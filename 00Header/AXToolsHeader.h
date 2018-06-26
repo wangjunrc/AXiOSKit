@@ -75,6 +75,7 @@
 #import "UIControl+AXTool.h"
 #import "NSArray+AXTool.h"
 #import "UITextView+AXTool.h"
+#import "UIView+AXSnapshot.h"
 
 /* 00Header 02IBView*/
 #import "IBObjectHeader.h"
@@ -103,9 +104,9 @@
 #import "AXSafariVC.h"
 #import "AXConstant.h"
 #import "AXMacros.h"
-#import "AXViewModel.h"
 #import "AXGCDTimer.h"
 #import "AXConfigure.h"
+#import "AXSetValueProtocol.h"
 
 /* 00Header 06AXResources*/
 

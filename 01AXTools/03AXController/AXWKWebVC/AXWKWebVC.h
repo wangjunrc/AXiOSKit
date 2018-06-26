@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AXWKWebVC : UIViewController
-
 /**
  正常网页
  */

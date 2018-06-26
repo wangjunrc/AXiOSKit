@@ -7,9 +7,10 @@
 //
 
 #import "AXWKWebVC.h"
+@import WebKit;
 #import "AXToolsHeader.h"
-#import "WebViewJavascriptBridge.h"
 #import "WKWebViewJavascriptBridge.h"
+#import "PPSnapshotHandler.h"
 
 @import WebKit;
 
@@ -19,17 +20,17 @@ typedef enum{
     POSTWebURLString,
 }wkWebLoadType;
 
-@interface AXWKWebVC ()<WKNavigationDelegate,WKUIDelegate>
+@interface AXWKWebVC ()<WKNavigationDelegate,WKUIDelegate,PPSnapshotHandlerDelegate>
 
 @property (nonatomic, strong) WKWebView *webView;
+
+@property (nonatomic, strong) UIProgressView *progressView;
 
 //网页加载的类型
 @property (nonatomic, assign) wkWebLoadType loadType;
 
 //保存的网址链接
 @property (nonatomic, copy) NSString *URLString;
-
-@property (nonatomic, strong) UIProgressView *progressView;
 
 /**
  * 
@@ -51,10 +52,7 @@ typedef enum{
  */
 @property (nonatomic, strong) UIBarButtonItem* closeItem;
 
-//@property (nonatomic, strong)WebViewJavascriptBridge *bridge;
-
 @property (nonatomic, strong)WKWebViewJavascriptBridge *bridge;
-
 
 @end
 
@@ -64,12 +62,12 @@ typedef enum{
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self init_setView];
     [self init_navItme];
+    
     //加载web页面
     [self func_webViewloadURLType];
+    [self func_webViewKVO];
     
 }
-
-
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.progressView setProgress:0.0f animated:NO];
@@ -126,63 +124,6 @@ typedef enum{
         
         NSLog(@"from js: %@", responseData);
     }];
-    
-    
-    
-    // 在JS中如果调用了bridge.send()，那么将触发OC端_bridge初始化方法中的回调。
-    
-    // 在JS中调用了bridge.callHandler('testJavascriptHandler')，它将触发OC端注册的同名方法
-    
-    /**
-     在JS端：
-     
-     
-     
-     <script type="text/javascript">
-     
-     
-     //这是必须要写的，用来初始化一些设置
-     function setupWebViewJavascriptBridge(callback) {
-     if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
-     if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
-     window.WVJBCallbacks = [callback];
-     var WVJBIframe = document.createElement('iframe');
-     WVJBIframe.style.display = 'none';
-     WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
-     document.documentElement.appendChild(WVJBIframe);
-     setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
-     }
-     
-     // xcode中的 oc代码
-     //这也是固定的， OC 调JS ， 需要给OC调用的函数必须写在这个函数里面
-     
-     bridge.registerHandler('testJSFunction', function(data, responseCallback) {
-        alert('JS方法被调用:'+data);
-     responseCallback('js执行过了');
-     })
-     
-     
-     
-     // h5 页面中的js代码  调oc 代码
-     //这个 shareClick 就是 原生那边 注入的函数 ， 通过这个方法来调用原生 和传值
-     //parmas 是JS 给OC的数据 ， response 是 OC函数被调用之后 再 告诉JS 我被调用了
-     //比如微信分享，给Dic给原生 ， 原生分享成功后再把结果回调给JS 进行处理
-     function shareClick() {
-     
-     var params = {'title':'测试分享的标题','content':'测试分享的内容','url':'http://www.baidu.com'};
-     WebViewJavascriptBridge.callHandler('shareClick',params,function(response) {
-     
-     console.log(response);
-     
-     
-     });
-     }
-     
-     
-     
-     </script>
-     
-     */
     
 }
 
@@ -451,11 +392,10 @@ typedef enum{
     }];
     
     [self.webView ax_addFBKVOKeyPath:@"title" block:^(NSString * _Nullable pathKey, id  _Nullable oldValue, NSString *_Nullable newValue) {
-        
+
         NSString *title = newValue;
-        
         if (self.title.length==0) {
-            
+
             if (title.length>0) {
                 self.title = title;
             }else{
@@ -537,9 +477,11 @@ typedef enum{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
 - (void)rightBarButtonItemEvents:(UIBarButtonItem *)item{
     [self.webView reload];
 }
+
 
 //加载失败,返回
 - (void)fun_loadErrorback{
@@ -554,45 +496,6 @@ typedef enum{
         }
     }];
 }
-
-
-#pragma mark - kvo
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
-    
-    
-    if (object == self.webView ) {
-        
-        if ([keyPath isEqualToString:@"estimatedProgress"]) {
-            
-            [self.progressView setAlpha:1.0f];
-            BOOL animated = self.webView.estimatedProgress > self.progressView.progress;
-            [self.progressView setProgress:self.webView.estimatedProgress animated:animated];
-            
-            if(self.webView.estimatedProgress >= 1.0f) {
-                [UIView animateWithDuration:0.3f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
-                    [self.progressView setAlpha:0.0f];
-                } completion:^(BOOL finished) {
-                    [self.progressView setProgress:0.0f animated:NO];
-                }];
-            }
-        }else if ([keyPath isEqualToString:@"title"]){
-        //使用KVO 显示title 更快一点
-            
-            NSString *title = change[@"new"];
-            if (self.title.length==0) {
-                if (title.length>0) {
-                    self.title = title;
-                }else{
-                    self.title = AXToolsLocalizedString(@"网页");
-                }
-            }
-        }
-        
-    }else{
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
-}
-
 
 #pragma mark - set and get
 - (void)setWebURLSring:(NSString *)webURLSring{
@@ -713,8 +616,7 @@ typedef enum{
 #pragma mark - dealloc
 - (void)dealloc{
     axLong_dealloc;
-//    [self.wkWebView removeObserver:self forKeyPath:@"estimatedProgress"];
-//    [self.wkWebView removeObserver:self forKeyPath:@"title"];
+    
 }
 
 //- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
@@ -751,6 +653,62 @@ typedef NS_ENUM(NSInteger, WKNavigationType) {
  
  
  
+ 
+ 
+ // 在JS中如果调用了bridge.send()，那么将触发OC端_bridge初始化方法中的回调。
+ 
+ // 在JS中调用了bridge.callHandler('testJavascriptHandler')，它将触发OC端注册的同名方法
+ 
+ 在JS端：
+ 
+ 
+ 
+ <script type="text/javascript">
+ 
+ 
+ //这是必须要写的，用来初始化一些设置
+ function setupWebViewJavascriptBridge(callback) {
+ if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+ if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+ window.WVJBCallbacks = [callback];
+ var WVJBIframe = document.createElement('iframe');
+ WVJBIframe.style.display = 'none';
+ WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+ document.documentElement.appendChild(WVJBIframe);
+ setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+ }
+ 
+ // xcode中的 oc代码
+ //这也是固定的， OC 调JS ， 需要给OC调用的函数必须写在这个函数里面
+ 
+ bridge.registerHandler('testJSFunction', function(data, responseCallback) {
+ alert('JS方法被调用:'+data);
+ responseCallback('js执行过了');
+ })
+ 
+ 
+ 
+ // h5 页面中的js代码  调oc 代码
+ //这个 shareClick 就是 原生那边 注入的函数 ， 通过这个方法来调用原生 和传值
+ //parmas 是JS 给OC的数据 ， response 是 OC函数被调用之后 再 告诉JS 我被调用了
+ //比如微信分享，给Dic给原生 ， 原生分享成功后再把结果回调给JS 进行处理
+ function shareClick() {
+ 
+ var params = {'title':'测试分享的标题','content':'测试分享的内容','url':'http://www.baidu.com'};
+ WebViewJavascriptBridge.callHandler('shareClick',params,function(response) {
+ 
+ console.log(response);
+ 
+ 
+ });
+ }
+ 
+ 
+ 
+ </script>
+ 
  */
+
+
 
 @end
