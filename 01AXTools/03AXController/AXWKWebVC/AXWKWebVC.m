@@ -528,9 +528,6 @@ typedef enum{
 //        [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.webURLSring]]];
         _webView.navigationDelegate = self;
         _webView.UIDelegate = self;
-//        [_wkWebView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
-//         [_wkWebView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
-        
         _webView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         
     }
