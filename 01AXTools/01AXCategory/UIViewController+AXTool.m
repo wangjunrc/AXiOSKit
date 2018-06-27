@@ -108,6 +108,43 @@
 }
 
 
+/**
+ 是否有 navigationController
+ @param haveNav 有导航栏,包含被 push present
+ @param isPush 被push自带nav
+ @param presentNav 被present自带
+ @param noneNav 没有
+ */
+- (void)ax_haveNav:(void(^)(UINavigationController *nav))haveNav isPushNav:(void(^)(UINavigationController *nav))isPush isPresentNav:(void(^)(UINavigationController *nav))presentNav noneNav:(void(^)(void))noneNav {
+    
+    if (!self.navigationController) {//有导航
+        if (noneNav) {
+            noneNav();
+        }
+        
+    }else {
+        
+        if (haveNav) {
+            haveNav(self.navigationController);
+        }
+        
+        //被present
+        if ([self.navigationController.viewControllers.firstObject isEqual:self]){
+            
+            if (presentNav) {
+                presentNav(self.navigationController);
+            }
+        }else{
+            
+            if (isPush) {
+                isPush(self.navigationController);
+            }
+        }
+        
+    }
+    
+}
+
 
 /**
  是否有 navigationController
@@ -125,14 +162,15 @@
         
     }else {
         
-        if (haveNav) {
-            haveNav(self.navigationController);
-        }
-        
         if ([self.navigationController.viewControllers.firstObject isEqual:self]){
             //被present 自带导航
             if (presentNav) {
                 presentNav(self.navigationController);
+            }
+        }else{
+            
+            if (haveNav) {
+                haveNav(self.navigationController);
             }
         }
         

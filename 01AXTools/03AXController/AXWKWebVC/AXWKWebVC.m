@@ -10,17 +10,14 @@
 @import WebKit;
 #import "AXToolsHeader.h"
 #import "WKWebViewJavascriptBridge.h"
-#import "PPSnapshotHandler.h"
 
-@import WebKit;
-
-typedef enum{
+typedef NS_ENUM(NSInteger, wkWebLoadType){
     loadWebURLString = 0,
     loadWebHTMLString,
     POSTWebURLString,
-}wkWebLoadType;
+};
 
-@interface AXWKWebVC ()<WKNavigationDelegate,WKUIDelegate,PPSnapshotHandlerDelegate>
+@interface AXWKWebVC ()<WKNavigationDelegate,WKUIDelegate>
 
 @property (nonatomic, strong) WKWebView *webView;
 
@@ -33,7 +30,7 @@ typedef enum{
 @property (nonatomic, copy) NSString *URLString;
 
 /**
- * 
+ *
  */
 @property (nonatomic, strong) UIButton *cancelButton;
 
@@ -63,11 +60,11 @@ typedef enum{
     [self init_setView];
     [self init_navItme];
     
-    //加载web页面
-    [self func_webViewloadURLType];
     [self func_webViewKVO];
+    [self func_webViewloadURLType];
     
 }
+
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.progressView setProgress:0.0f animated:NO];
@@ -102,21 +99,21 @@ typedef enum{
     // 设置代理，如果不需要实现，可以不设置
     // 如果控制器里需要监听WKWebView 的`navigationDelegate`方法，就需要添加下面这行。
     [self.bridge setWebViewDelegate:self];
-
+    
     
     // JS主动调用OjbC的方法 function_name
     // 这是JS会调用getUserIdFromObjC方法，这是OC注册给JS调用的
     // JS需要回调，当然JS也可以传参数过来。data就是JS所传的参数，不一定需要传
     // OC端通过responseCallback回调JS端，JS就可以得到所需要的数据
-      [self.bridge registerHandler:@"function_name" handler:^(id data, WVJBResponseCallback responseCallback) {
-          //data  js 传来的参数
-          NSLog(@"js call getUserIdFromObjC, data from js is %@", data);
-          
-          if (responseCallback) {
-              // 反馈给JS ,js 不需要反馈 就不需要写
-              responseCallback(@{@"userId": @"123456"});
-          }
-      }];
+    [self.bridge registerHandler:@"function_name" handler:^(id data, WVJBResponseCallback responseCallback) {
+        //data  js 传来的参数
+        NSLog(@"js call getUserIdFromObjC, data from js is %@", data);
+        
+        if (responseCallback) {
+            // 反馈给JS ,js 不需要反馈 就不需要写
+            responseCallback(@{@"userId": @"123456"});
+        }
+    }];
     
     // oc调用JS方法 function_name
     //直接调用JS端注册的HandleName
@@ -128,24 +125,38 @@ typedef enum{
 }
 
 
-
-
 /**
  * UINavigationController itme
  */
 - (void)init_navItme{
     
-    [self ax_havNav:^(UINavigationController *nav) {
+//    [self ax_havNav:^(UINavigationController *nav) {
+//
+//        UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadDataWebAction)];
+//        self.navigationItem.rightBarButtonItem = roadLoad;
+//
+//    } isPresentNav:^(UINavigationController *nav) {
+//
+//        self.navigationItem.leftBarButtonItem = self.cancelItem;
+//
+//        UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadDataWebAction)];
+//        self.navigationItem.rightBarButtonItem = roadLoad;
+//
+//    } noHave:^{
+//
+//        [self.webView.scrollView addSubview:self.cancelButton];
+//    }];
+    
+    [self ax_haveNav:^(UINavigationController *nav) {
         
-        UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadWeAction)];
+        UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadDataWebAction)];
         self.navigationItem.rightBarButtonItem = roadLoad;
+        
+    } isPushNav:^(UINavigationController *nav) {
         
     } isPresentNav:^(UINavigationController *nav) {
         
-        self.navigationItem.leftBarButtonItem = self.cancelItem;
-        
-    } noHave:^{
-        
+    } noneNav:^{
         [self.webView.scrollView addSubview:self.cancelButton];
     }];
     
@@ -157,9 +168,9 @@ typedef enum{
  * 开始加载 类似UIWebView的 -webViewDidStartLoad:
  */
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
-
+    
     AXLog(@"开始加载 title: %@",webView.title);
-
+    
 }
 
 /**
@@ -173,12 +184,12 @@ typedef enum{
  * 页面加载完成之后调用
  */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation { // 类似
-
+    
     AXLog(@"页面加载完成之后调用 webView.title: %@",webView.title);
     
     //更新左边itme
     [self func_canGoBackItems];
-
+    
 }
 
 /**
@@ -186,8 +197,8 @@ typedef enum{
  */
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     AXLog(@"加载失败 %@",error);
-//    [self fun_loadErrorback];
-
+    //    [self fun_loadErrorback];
+    
 }
 
 /**
@@ -210,7 +221,7 @@ typedef enum{
  * 接收到服务器跳转请求之后调用 主服务器接受到重定向时调用
  */
 - (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation{
-   
+    
     AXLog(@"接收到服务器跳转请求之后调用 %@",navigation);
 }
 
@@ -218,14 +229,14 @@ typedef enum{
  * 服务器开始请求的时候调用 是否允许这个导航" 决定是否允许或取消一个导航
  */
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
- 
-     NSURL *URL = navigationAction.request.URL;
+    
+    NSURL *URL = navigationAction.request.URL;
     
     AXLog(@"服务器开始请求的时候调用 %@  %@ %ld",URL.scheme,URL ,(long)navigationAction.navigationType);
     
     if ([URL.scheme  isEqual: @"http"] || [URL.scheme  isEqual: @"https"] ||self.loadType !=loadWebURLString ) {
         
-         decisionHandler(WKNavigationActionPolicyAllow);
+        decisionHandler(WKNavigationActionPolicyAllow);
         return;
         
     }
@@ -243,8 +254,8 @@ typedef enum{
  * 这与用于授权验证的API，与AFN、UIWebView的授权验证API是一样的 web视图需要响应身份验证时调用
  */
 - (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition , NSURLCredential *))completionHandler {
- 
-     AXLog(@"授权验证的API");
+    
+    AXLog(@"授权验证的API");
     if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
         if ([challenge previousFailureCount] == 0) {
             NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
@@ -278,7 +289,7 @@ typedef enum{
  * js 里面的alert实现，只有确定,没有取消,如果不实现，网页的alert函数无效  显示一个JavaScript警告面板
  */
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
-
+    
     AXLog(@"runJavaScriptAlertPanelWithMessage %@",message);
     
     [self ax_showAlertByTitle:message confirm:^{
@@ -290,13 +301,13 @@ typedef enum{
  *  js 里面的alert实现 含有确定和取消，如果不实现，网页的alert函数无效  ,  显示一个JavaScript确认面板
  */
 - (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler {
-
+    
     AXLog(@"runJavaScriptConfirmPanelWithMessage %@",message);
     
     [self ax_showAlertByTitle:message message:nil confirm:^{
-         completionHandler(YES);
+        completionHandler(YES);
     } cancel:^{
-         completionHandler(NO);
+        completionHandler(NO);
     }];
     
 }
@@ -306,12 +317,12 @@ typedef enum{
  */
 - (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString *))completionHandler {
     
-     AXLog(@"runJavaScriptTextInputPanelWithPrompt %@ %@",prompt,defaultText);
+    AXLog(@"runJavaScriptTextInputPanelWithPrompt %@ %@",prompt,defaultText);
     
     
     [self ax_showAlertTFByTitle:prompt message:defaultText confirm:^(NSString *text) {
         
-         completionHandler(text);
+        completionHandler(text);
         
     } cancel:^{
         
@@ -333,38 +344,63 @@ typedef enum{
  */
 - (void)func_canGoBackItems{
     
+   
     if (self.webView.canGoBack) {
         
         UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         spaceButtonItem.width = -6.5;
         
-        [self ax_havNav:^(UINavigationController *nav) {
-            
-            self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.backItem,self.closeItem] ;
-            
+//        [self ax_havNav:^(UINavigationController *nav) {
+//
+//            self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.backItem,self.closeItem] ;
+//
+//        } isPresentNav:^(UINavigationController *nav) {
+//
+//            self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.cancelItem,self.closeItem] ;
+//
+//        } noHave:^{
+//
+//        }];
+        
+        
+        [self ax_haveNav:nil isPushNav:^(UINavigationController *nav) {
+             self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.backItem,self.closeItem] ;
         } isPresentNav:^(UINavigationController *nav) {
-            
             self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.cancelItem,self.closeItem] ;
-            
-        } noHave:^{
-            
-        }];
+        } noneNav:nil];
+        
         
     }else{
         
+        
+        self.navigationItem.leftBarButtonItems = @[] ;
+        
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
         
-        [self ax_havNav:^(UINavigationController *nav) {
-            
+//        [self ax_havNav:^(UINavigationController *nav) {
+//
+//             AXLog(@"ax_havNav %@",self.navigationItem.backBarButtonItem.title);
+//
+//            self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
+//
+//        } isPresentNav:^(UINavigationController *nav) {
+//
+//              AXLog(@"isPresentNav");
+//            self.navigationItem.leftBarButtonItem = self.cancelItem;
+//
+//        } noHave:^{
+//             AXLog(@"noHave");
+//        }];
+        
+        
+        [self ax_haveNav:nil isPushNav:^(UINavigationController *nav) {
             self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
-            
         } isPresentNav:^(UINavigationController *nav) {
-            
             self.navigationItem.leftBarButtonItem = self.cancelItem;
-            
-        } noHave:^{
-            
-        }];
+        } noneNav:nil];
+        
+        
+        
         
     }
 }
@@ -392,10 +428,10 @@ typedef enum{
     }];
     
     [self.webView ax_addFBKVOKeyPath:@"title" block:^(NSString * _Nullable pathKey, id  _Nullable oldValue, NSString *_Nullable newValue) {
-
+        
         NSString *title = newValue;
         if (self.title.length==0) {
-
+            
             if (title.length>0) {
                 self.title = title;
             }else{
@@ -468,7 +504,7 @@ typedef enum{
 /**
  * 重新加载
  */
-- (void)roadWeAction{
+- (void)roadDataWebAction{
     [self.webView reload];
 }
 
@@ -521,11 +557,11 @@ typedef enum{
         WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
         config.allowsInlineMediaPlayback = YES;
         //播放背景音乐
-//            config.mediaPlaybackRequiresUserAction = YES;
-//        config.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAudio;
+        //            config.mediaPlaybackRequiresUserAction = YES;
+        //        config.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAudio;
         
         _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
-//        [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.webURLSring]]];
+        //        [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.webURLSring]]];
         _webView.navigationDelegate = self;
         _webView.UIDelegate = self;
         _webView.backgroundColor = [UIColor groupTableViewBackgroundColor];
@@ -538,16 +574,16 @@ typedef enum{
 - (UIProgressView *)progressView{
     if (!_progressView) {
         _progressView = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
-    
+        
         __block CGRect tempFrame = CGRectZero;
         
-        [self ax_havNav:^(UINavigationController *nav) {
+        [self ax_haveNav:^(UINavigationController *nav) {
             
-           tempFrame = CGRectMake(0, AX_View_Top_Height, self.view.bounds.size.width, 3);
+            tempFrame = CGRectMake(0, AX_View_Top_Height, self.view.bounds.size.width, 3);
             
-        } isPresentNav:nil noHave:^{
+        } isPushNav:nil isPresentNav:nil noneNav:^{
             
-            tempFrame = CGRectMake(0, AX_View_Status_Height, self.view.bounds.size.width, 3);
+            tempFrame = CGRectMake(0, 0, self.view.bounds.size.width, 3);
         }];
         
         _progressView.frame = tempFrame;
@@ -629,23 +665,23 @@ typedef enum{
 
 #pragma mark - 文档
 /*
-
-typedef NS_ENUM(NSInteger, WKNavigationType) { 
-    WKNavigationTypeLinkActivated,//链接的href属性被用户激活。
-    WKNavigationTypeFormSubmitted,//一个表单提交。
-    WKNavigationTypeBackForward,//回到前面的条目列表请求。
-    WKNavigationTypeReload,//网页加载。
-    WKNavigationTypeFormResubmitted,//一个表单提交(例如通过前进,后退,或重新加载)。
-    WKNavigationTypeOther = -1,//导航是发生一些其他原因。 } NS_ENUM_AVAILABLE(10_10, 8_0);
-    
-  
- typedef NS_ENUM(NSInteger, WKUserScriptInjectionTime) { 
-    WKUserScriptInjectionTimeAtDocumentStart,//注入后的脚本创建文档元素,但在其他任何内容已经被加载。 
-    WKUserScriptInjectionTimeAtDocumentEnd//注入脚本文档完成加载后,但在任何子资源可能完成加载。 } NS_ENUM_AVAILABLE(10_10, 8_0);
+ 
+ typedef NS_ENUM(NSInteger, WKNavigationType) {
+ WKNavigationTypeLinkActivated,//链接的href属性被用户激活。
+ WKNavigationTypeFormSubmitted,//一个表单提交。
+ WKNavigationTypeBackForward,//回到前面的条目列表请求。
+ WKNavigationTypeReload,//网页加载。
+ WKNavigationTypeFormResubmitted,//一个表单提交(例如通过前进,后退,或重新加载)。
+ WKNavigationTypeOther = -1,//导航是发生一些其他原因。 } NS_ENUM_AVAILABLE(10_10, 8_0);
+ 
+ 
+ typedef NS_ENUM(NSInteger, WKUserScriptInjectionTime) {
+ WKUserScriptInjectionTimeAtDocumentStart,//注入后的脚本创建文档元素,但在其他任何内容已经被加载。
+ WKUserScriptInjectionTimeAtDocumentEnd//注入脚本文档完成加载后,但在任何子资源可能完成加载。 } NS_ENUM_AVAILABLE(10_10, 8_0);
  
  typedef NS_ENUM(NSInteger, WKNavigationActionPolicy) {
-    WKNavigationActionPolicyCancel,//取消导航
-    WKNavigationActionPolicyAllow,//允许导航继续 } NS_ENUM_AVAILABLE(10_10, 8_0);
+ WKNavigationActionPolicyCancel,//取消导航
+ WKNavigationActionPolicyAllow,//允许导航继续 } NS_ENUM_AVAILABLE(10_10, 8_0);
  
  
  

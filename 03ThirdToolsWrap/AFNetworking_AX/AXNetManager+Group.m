@@ -21,22 +21,20 @@ dispatch_group_t _group;
     
     NSMutableArray *results = [NSMutableArray arrayWithCapacity:group.count];
     
-    
-    
     for (int index=0; index<group.count; index++) {
         [results addObject:[AXNetGroupResult new]];
     }
     
     
-    dispatch_async(queue, ^{
-        
+//    dispatch_async(queue, ^{
+    
         _group = dispatch_group_create();
         
         for (int index=0; index<group.count; index++) {
             
+            dispatch_group_enter(_group);
             dispatch_group_async(_group, queue, ^{
                 
-                dispatch_group_enter(_group);
                 
                 AXNetGroup *model  = group[index];
                 
@@ -60,17 +58,14 @@ dispatch_group_t _group;
                 
             });
         }
-        
-        
-        
-        
+    
         //因上面请求中有加入dispatch_group_enter 和 dispatch_group_leave,所以真正等待上面线程执行完才执行这里面的请求
-        dispatch_group_notify(_group, queue, ^{
+        dispatch_group_notify(_group, dispatch_get_main_queue(), ^{
             if (complete) {
                 complete(results);
             }
         });
-    });
+//    });
     
     
 }

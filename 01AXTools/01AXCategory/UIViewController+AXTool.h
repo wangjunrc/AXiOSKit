@@ -38,8 +38,15 @@
  @param presentNav 被present自带
  @param noHave 没有
  */
-- (void)ax_havNav:(void(^)(UINavigationController *nav))haveNav isPresentNav:(void(^)(UINavigationController *nav))presentNav noHave:(void(^)(void))noHave;
-
+- (void)ax_havNav:(void(^)(UINavigationController *nav))haveNav isPresentNav:(void(^)(UINavigationController *nav))presentNav noHave:(void(^)(void))noHave DEPRECATED_MSG_ATTRIBUTE("请使用 - (void)ax_haveNav:(void(^)(UINavigationController *nav))haveNav isPushNav:(void(^)(UINavigationController *nav))isPush isPresentNav:(void(^)(UINavigationController *nav))presentNav noneNav:(void(^)(void))noneNav");
+/**
+ 是否有 navigationController
+ @param haveNav 有导航栏,包含被 push present
+ @param isPush 被push自带nav
+ @param presentNav 被present自带
+ @param noneNav 没有
+ */
+- (void)ax_haveNav:(void(^)(UINavigationController *nav))haveNav isPushNav:(void(^)(UINavigationController *nav))isPush isPresentNav:(void(^)(UINavigationController *nav))presentNav noneNav:(void(^)(void))noneNav;
 
 /**
  设置tabBarItem 属性

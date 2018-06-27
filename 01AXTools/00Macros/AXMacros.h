@@ -19,6 +19,17 @@
 //#import "YYWebImage.h"
 //#endif
 
+/*
+ 过期宏 三种方式都是 第一种的宏
+ 
+ __attribute__((deprecated(" ")));
+ 
+ DEPRECATED_MSG_ATTRIBUTE ()
+ 
+ DEPRECATED_ATTRIBUTE
+ 
+ */
+
 /**
  状态栏高度
  */
