@@ -32,7 +32,6 @@
     if (self) {
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.transitioningDelegate = self;
-        self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
     }
     return self;
 }
@@ -41,6 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.axTouchesBeganDismiss = YES;
+     self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
 }
 
 
