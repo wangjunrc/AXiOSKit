@@ -90,7 +90,7 @@
     NSString *timeStr = self;
     
     if (timeStr.length>0 && timeStr.length != format.length) {
-         NSAssert(0, @"时间字符串转换成本地时区时间,格式与需要转化的格式不一致");
+         NSLog(@"时间字符串转换成本地时区时间,格式与需要转化的格式不一致");
     }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
