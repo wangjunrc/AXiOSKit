@@ -160,6 +160,21 @@ NSURL *ax_URLStr(NSString *str){
     return [NSURL URLWithString:str];
 }
 
+/**
+ 是debug 环境下
+ 
+ @return 是否
+ */
+BOOL ax_isDebug(){
+    
+#ifdef DEBUG
+    return YES;
+#else
+    return NO;
+#endif
+    
+}
+
 /*
  // 以下是设置其他界面
  prefs:root=General&path=About

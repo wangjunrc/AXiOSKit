@@ -280,8 +280,6 @@
     }];
 }
 
-
-
 /**
  跳转 App Store 评价页面
  
@@ -299,7 +297,15 @@
     }];
 }
 
-
+/**
+ 封装 presentViewController
+ 
+ @param aVC vc
+ */
+- (void)ax_showVC:(UIViewController *)aVC{
+    
+    [self presentViewController:aVC animated:YES completion:nil];
+}
 
 
 @end

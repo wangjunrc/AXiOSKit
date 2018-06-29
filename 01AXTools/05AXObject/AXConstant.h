@@ -110,6 +110,14 @@ BOOL ax_OpenPrefsRoot(void);
  */
 NSURL *ax_URLStr(NSString *str);
 
+
+/**
+ 是debug 环境下
+
+ @return 是否
+ */
+BOOL ax_isDebug(void);
+
 @end
 
 

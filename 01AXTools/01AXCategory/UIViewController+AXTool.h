@@ -89,4 +89,11 @@
  */
 - (void)ax_AppStoreScoreWithAppleStoreID:(NSString *)AppleStoreID;
 
+/**
+ 封装 presentViewController
+ 
+ @param aVC vc
+ */
+- (void)ax_showVC:(UIViewController *)aVC;
+
 @end

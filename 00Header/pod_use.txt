@@ -44,8 +44,11 @@ pod 'Aspects'
 
 # ********** 待用 **********
 
+# 自定义本地通知样式,即使推送通知开关关闭,也可以使用,封装的 NSNotificationCenter
+#pod 'EBBannerView'
+
 # UITableViewCell 缓存高度 -- 目前个人使用系统自带的
-#pod 'UITableView+FDTemplateLayoutCell '
+#pod 'UITableView+FDTemplateLayoutCell'
 
 
 # UITableViewCell 左,右 侧滑 显示item
@@ -261,5 +264,30 @@ pod ‘UMengUShare/Social/ReducedQQ'
 
 # 集成新浪微博(完整版25.3M)
 # pod ‘UMengUShare/Social/Sina'
+
+# ********** facebook集合**********
+# 模拟器多开
+# FBSimulatorControl
+
+#OS移动测试框架
+#WebDriverAgent
+
+# 通知样式
+#FBNotifications
+
+# xctool是facebook给出的自动化构建的解决方案，让构建和测试更容易，更好的支持持续集成。但xctool只是对xcodebuild的一个封装，因此xctool是基于xcodebuild的。停止更新
+#xctool
+
+# 跑马灯文字
+#Shimmer
+
+# kvo
+#KVOController
+
+# 内存使用 显示
+#FBMemoryProfiler
+
+# facebook/FLAnimatedImage forked from Flipboard/FLAnimatedImage  替代品
+#FLAnimatedImage
 
 end
