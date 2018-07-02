@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface UISwitch (AXTool)
+
 /**
  * 按钮事件封装成block
  */
 - (void)ax_addTargetActionBlock:(void(^)(UISwitch *aSwitch))block;
+
 @end
