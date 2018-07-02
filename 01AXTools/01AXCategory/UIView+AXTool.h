@@ -64,7 +64,7 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
 /**
  * view 添加手势 成为点击事件
  */
-- (void)ax_viewAddTargetBlock:(void(^_Nullable)(id _Nullable aView))block;
+- (void)ax_addViewTargetActionBlock:(void(^_Nullable)(id _Nullable aView))block;
 
 
 /**

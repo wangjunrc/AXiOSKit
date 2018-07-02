@@ -22,7 +22,18 @@
  */
 - (void)ax_addTargetTextChangedBlock:(void(^)(UITextField *textField))block;
 
-
+/**
+ UITextField 开始编辑 事件
+ 
+ @param block 回调
+ */
 - (void)ax_addTargetTextDidBeginBlock:(void(^)(UITextField *textField))block;
+
+/**
+ UITextField 文字结束事件
+ 
+ @param block block description
+ */
+- (void)ax_addTargetTextEndBlock:(void(^)(UITextField *textField))block;
 
 @end

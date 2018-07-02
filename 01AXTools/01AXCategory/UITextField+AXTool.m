@@ -18,6 +18,8 @@
 
 @property (nonatomic, copy) void(^didBeginBlock)(UITextField *textField) ;
 
+@property (nonatomic, copy) void(^didEndBlock)(UITextField *textField) ;
+
 @end
 
 @implementation UITextField (AXTool)
@@ -145,7 +147,31 @@
 }
 
 
+/**
+ UITextField 文字结束事件
+ 
+ @param block block description
+ */
+- (void)ax_addTargetTextEndBlock:(void(^)(UITextField *textField))block{
+    
+    [self addTarget:self action:@selector(textEndAction:) forControlEvents:UIControlEventEditingDidEnd];
+    self.didEndBlock = block;
+}
+
+- (void)textEndAction:(UITextField *)textField{
+    if (self.didEndBlock){
+        self.didEndBlock(textField);
+    }
+}
+
 #pragma mark - set and get
+- (void)setDidEndBlock:(void (^)(UITextField *))didEndBlock{
+     ax_runtimePropertyObjSet(didEndBlock);
+}
+
+- (void (^)(UITextField *))didEndBlock{
+     return ax_runtimePropertyObjGet(didEndBlock);
+}
 
 - (void)setTextFieldTargetBlock:(void (^)(UITextField *))textFieldTargetBlock{
     ax_runtimePropertyObjSet(textFieldTargetBlock);

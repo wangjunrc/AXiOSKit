@@ -12,6 +12,6 @@
 /**
  * 按钮事件封装成block
  */
-- (void)ax_addTargetBlock:(void(^)(UISlider *slider))block;
+- (void)ax_addTargetActionBlock:(void(^)(UISlider *slider))block;
 
 @end

@@ -11,8 +11,8 @@
 @interface NSObject (FBKVOControllerAX)
 
 /**
-  Facebook kvo 封装
-
+ Facebook kvo 封装
+ 
  @param keyPath 路径
  @param block 回调,新 旧 值
  */
@@ -22,6 +22,15 @@
 
 /**
  Facebook kvo 封装
+ 
+ NSMutableArray 添加用
+ [[self mutableSetValueForKey:@""] addObject:@""]
+ 
+ 
+ NSMutableDictionary 添加用
+ [self willChangeValueForKey:@"dict"];
+ self.dict[@""] = @"";
+ [self didChangeValueForKey:@"dict"];
  
  @param keyPath 路径
  @param block 回调,新 旧 值
