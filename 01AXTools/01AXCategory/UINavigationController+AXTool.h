@@ -17,6 +17,7 @@
 
 /**
  * push vc后移除指定父nav控制器,
+ 使用RTRootNavigationController 时,改方法  卡顿
  */
 - (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeParent:(UIViewController *)parent;
 

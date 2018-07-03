@@ -56,8 +56,7 @@
 
 /**
  请求AppStore,使用 bundleId 得到app的版本信息
- 
- @param appid appid description
+
  @param block 得到app的版本信息
  */
 -(void )ax_requestAppStoreVersionSuccess:(void(^)(NSString *appVersion))block{

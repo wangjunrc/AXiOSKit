@@ -62,4 +62,19 @@
     }
     return newNumber;
 }
+
+
+/**
+ 解决 精度失真
+这个方法会舍弃多余的0
+ @return string
+ */
+- (NSString *)ax_description {
+    
+    NSString *doubleString = [NSString stringWithFormat:@"%lf", [self doubleValue]];
+    NSDecimalNumber *decNumber = [NSDecimalNumber decimalNumberWithString:doubleString];
+    NSString *resultStr = decNumber.stringValue;
+    return resultStr;
+}
+
 @end

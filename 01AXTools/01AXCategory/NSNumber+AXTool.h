@@ -17,4 +17,11 @@
  */
 - (NSString *)ax_numberToThousands;
 
+/**
+ 解决 精度失真
+ 这个方法会舍弃多余的0
+ @return string
+ */
+- (NSString *)ax_description;
+
 @end
