@@ -1,0 +1,53 @@
+
+************************************************************************
+************************************************************************
+
+import 不同类型
+#if __has_include(<YYWebImage/YYWebImage.h>)
+#import <YYWebImage/YYWebImage.h>
+#else
+#import "YYWebImage.h"
+#endif
+
+
+过期宏 三种方式都是 第一种的宏
+
+__attribute__((deprecated(" ")));
+
+DEPRECATED_MSG_ATTRIBUTE ()
+
+DEPRECATED_ATTRIBUTE
+
+
+NS_UNAVAILABLE 当我们不想要其他开发人员，用普通的 init 方法去初始化一个类，我们可以在.h 文件里这样写：
+- (instancetype)init NS_UNAVAILABLE;
+
+NS_DESIGNATED_INITIALIZER 指定的初始化方法。当一个类提供多种初始化方法时，所有的初始化方法最终都会调用这个指定的初始化方法。比较常见的有：
+- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
+
+
+
+************************************************************************
+************************************************************************
+
+
+
+1 NSSet / NSHashTable 、NSDictionary/ NSMapTable 的学习
+
+NSSet 是过滤掉重复 object 的集合类，NSHashTable 是 NSSet 的升级版容器，并且只有可变版本，允许对添加到容器中的对象是弱引用的持有关系， 当NSHashTable 中的对象销毁时，该对象也会从容器中移除。
+NSMapTable 同 NSDictionary 类似，唯一区别是多了个功能：可以设置 key 和 value 的 NSPointerFunctionsOptions 特性! NSDictionary的 key 策略固定是 copy，考虑到开销问题，一般使用简单的数字或者字符串为 key。但是如果碰到需要用 object 作为 key 的应用场景呢？NSMapTable 就可以派上用场了！可以通过 NSFunctionsPointer 来分别定义对 key 和 value 的内存管理策略，简单可以分为 strong,weak以及 copy。
+
+2 几个比较有用的宏
+
+NS_ASSUME_NONNULL_BEGIN、NS_ASSUME_NONNULL_END，如果需要每个属性或每个方法都去指定 nonnull 和 nullable，是一件非常繁琐的事。苹果为了减轻我们的工作量，专门提供了这两个宏。在这两个宏之间的代码，所有比较简单指针对象都被假定为 nonnull，因此我们只需要去指定那些 nullable 的指针。如果我们强行通过点语法将一个非空指针置空，编译器会报 warning。
+NS_UNAVAILABLE 当我们不想要其他开发人员，用普通的 init 方法去初始化一个类，我们可以在.h 文件里这样写：
+- (instancetype)init NS_UNAVAILABLE;
+编译器不但不会提示补全 init 方法，就算开发人员强制发送 init 消息，编译器会直接报错。
+NS_DESIGNATED_INITIALIZER 指定的初始化方法。当一个类提供多种初始化方法时，所有的初始化方法最终都会调用这个指定的初始化方法。比较常见的有：
+- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
+
+3 断言的使用
+NSAssert(x,y);：x 为 BOOL 值，y 为 字符串类型。当 x = YES，则不产生断言。当 x = NO，则产生断言，app 会 crash，并在控制台中打印 y 字符串内容。合理利用断言，可以保证 app 的健壮性。
+4 互斥锁的使用
+
+
