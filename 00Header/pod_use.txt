@@ -63,7 +63,7 @@ pod 'Aspects'
 #pod 'Mantle'
 
 #SQLite
-#pod 'FMDBr'
+#pod 'FMDB'
 
 #Mantle 和 FMDB 的转换工具
 #pod 'MTLFMDBAdapter'
