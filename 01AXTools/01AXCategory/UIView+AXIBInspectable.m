@@ -17,10 +17,8 @@
  *  @param axCornRadius 可视化视图传入的值
  */
 - (void)setAxCornRadius:(CGFloat)axCornRadius{
-      ax_runtimePropertyAssSet(axCornRadius);
+    ax_runtimePropertyAssSet(axCornRadius);
     self.layer.cornerRadius = axCornRadius;
-    self.layer.masksToBounds = axCornRadius > 0;
-    
 }
 
 - (CGFloat)axCornRadius{
@@ -35,13 +33,13 @@
  */
 
 - (void)setAxBordWidth:(CGFloat)axBordWidth{
-     ax_runtimePropertyAssSet(axBordWidth);
+    ax_runtimePropertyAssSet(axBordWidth);
     if (axBordWidth < 0) return;
     self.layer.borderWidth = axBordWidth;
 }
 
 - (CGFloat)axBordWidth{
-     return [ax_runtimePropertyAssGet(axBordWidth) flatness];
+    return [ax_runtimePropertyAssGet(axBordWidth) flatness];
 }
 
 /**
@@ -50,7 +48,7 @@
  *  @param axBordColor 可视化视图传入的值
  */
 - (void)setAxBordColor:(UIColor *)axBordColor{
-     ax_runtimePropertyObjGet(axBordColor);
+    ax_runtimePropertyObjGet(axBordColor);
     self.layer.borderColor = axBordColor.CGColor;
 }
 
