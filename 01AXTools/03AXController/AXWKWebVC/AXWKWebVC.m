@@ -26,9 +26,6 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 //网页加载的类型
 @property (nonatomic, assign) wkWebLoadType loadType;
 
-//保存的网址链接
-@property (nonatomic, copy) NSString *URLString;
-
 /**
  *
  */
@@ -447,13 +444,13 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     switch (self.loadType) {
         case loadWebURLString:{
             //创建一个NSURLRequest 的对象
-            NSURLRequest * Request_zsj = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+            NSURLRequest * Request_zsj = [NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
             //加载网页
             [self.webView loadRequest:Request_zsj];
             break;
         }
         case loadWebHTMLString:{
-            [self func_loadHostPathURL:self.URLString];
+            [self func_loadHostPathURL:self.urlString];
             break;
         }
         case POSTWebURLString:{
@@ -534,22 +531,20 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 }
 
 #pragma mark - set and get
-- (void)setWebURLSring:(NSString *)webURLSring{
-    
-    _webURLSring = webURLSring;
-    
-    self.URLString = webURLSring;
+
+
+
+- (void)setUrlString:(NSString *)urlString{
+    _urlString = urlString;
     self.loadType = loadWebURLString;
 }
 
 
-- (void)setWebHTMLSring:(NSString *)webHTMLSring{
-    _webHTMLSring = webHTMLSring;
-    
-    self.URLString = webHTMLSring;
+- (void)setHtmlSring:(NSString *)htmlSring{
+    _htmlSring = htmlSring;
+    self.urlString = htmlSring;
     self.loadType = loadWebHTMLString;
 }
-
 
 - (WKWebView *)webView{
     if (!_webView) {
@@ -597,8 +592,8 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 
 - (UIBarButtonItem*)backItem{
     if (!_backItem) {
-        UIImage* backItemImage = [[UIImage imageNamed:@"backItemImage"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        UIImage* backItemHlImage = [[UIImage imageNamed:@"backItemImage-hl"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        UIImage* backItemImage = [[UIImage imageNamed:@"ax_itemBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        UIImage* backItemHlImage = [[UIImage imageNamed:@"ax_itemBack_h"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         
         UIButton* backButton = [[UIButton alloc] init];
         [backButton setTitle:AXToolsLocalizedString(@"ax.back") forState:UIControlStateNormal];
