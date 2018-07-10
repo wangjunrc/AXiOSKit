@@ -42,7 +42,7 @@
 "ax.welcome.page" = "Welcome page";
 "ax.features" = "Features";
 
-"ax.re-enter.new.password" = "Please re-enter the new password";
+"ax.re.enter.new.password" = "Please re-enter the new password";
 "ax.more.groups" = "More groups";
 "ax.replace.cover" = "Replace the cover";
 "ax.TakePhoto"  = "Take Photo";

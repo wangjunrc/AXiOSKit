@@ -67,7 +67,7 @@
 "ax.input.name" = "请输入名称";
 "ax.input.original.password" = "请输入原密码";
 "ax.input.new.password" =  "请输入新密码";
-"ax.re-enter.new.password" = "请再次输入新密码";
+"ax.re.enter.new.password" = "请再次输入新密码";
 "ax.input.month"="请输入月份";
 "ax.input.year"="请输入年份";
 "ax.input.first.name" = "请输入姓";
