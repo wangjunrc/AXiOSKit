@@ -265,7 +265,6 @@ typedef void(^DidViewBlock)(UIView *view);
 }
 
 
-
 #pragma mark - set and get
 
 - (void)setDidViewBlock:(DidViewBlock)didViewBlock{
@@ -276,6 +275,13 @@ typedef void(^DidViewBlock)(UIView *view);
     return ax_runtimePropertyObjGet(didViewBlock);
 }
 
+- (void)setAxTag:(NSString *)axTag{
+    ax_runtimePropertyObjSet(axTag);
+}
+
+- (NSString *)axTag{
+    return ax_runtimePropertyObjGet(axTag);
+}
 
 
 @end

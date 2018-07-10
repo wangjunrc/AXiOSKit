@@ -10,21 +10,21 @@
 
 @interface UIView (AXIBInspectable)
 
-/** 可视化设置圆角  cornerRadius*/
+/**
+ *  设置圆角
+ *  UIView masksToBounds 不设置,方便显示子视图
+ */
 @property (nonatomic, assign) IBInspectable CGFloat axCornRadius;
 
-/** 可视化设置边框宽度 borderWidth*/
+/**
+ *  可视化设置边框宽度 borderWidth
+ */
 @property (nonatomic, assign) IBInspectable CGFloat axBordWidth;
 
-/** 可视化设置边框颜色 borderColor*/
-@property (nonatomic, strong) IBInspectable UIColor *axBordColor;
-
-
 /**
- tag 只能是数字,
- 所以定义一个string类型
+ *  可视化设置边框颜色 borderColor
  */
-@property (nonatomic, copy) IBInspectable NSString *axTag;
+@property (nonatomic, strong) IBInspectable UIColor *axBordColor;
 
 
 @end

@@ -189,4 +189,11 @@
  */
 - (NSURL *)ax_toTelURL;
 
+/**
+ 2位小数
+ 
+ @return NSString
+ */
+- (NSString *)ax_to2Decimal;
+
 @end

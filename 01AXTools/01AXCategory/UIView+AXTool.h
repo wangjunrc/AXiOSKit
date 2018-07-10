@@ -66,6 +66,11 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
  */
 - (void)ax_addViewTargetActionBlock:(void(^_Nullable)(id _Nullable aView))block;
 
+/**
+ *  tag 只能是数字,
+ *  所以定义一个string类型
+ */
+@property (nonatomic, copy) IBInspectable NSString *axTag;
 
 /**
  找出绑定 ax_tag 的对象
@@ -91,5 +96,6 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
  当前view layer  重绘图片,并保存到相册中
  */
 - (void )ax_saveToPhotoAlbum;
+
 
 @end

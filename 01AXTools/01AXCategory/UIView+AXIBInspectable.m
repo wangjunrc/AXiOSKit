@@ -13,12 +13,17 @@
 
 /**
  *  设置圆角
- *
+ *  UIView masksToBounds 不设置,方便显示子视图
  *  @param axCornRadius 可视化视图传入的值
  */
 - (void)setAxCornRadius:(CGFloat)axCornRadius{
     ax_runtimePropertyAssSet(axCornRadius);
     self.layer.cornerRadius = axCornRadius;
+    
+    if (![self isMemberOfClass:UIView.class]) {
+         self.layer.masksToBounds = axCornRadius;
+    }
+    
 }
 
 - (CGFloat)axCornRadius{
@@ -54,16 +59,6 @@
 
 - (UIColor *)axBordColor{
     return ax_runtimePropertyObjGet(axBordColor);
-}
-
-
-
-- (void)setAxTag:(NSString *)axTag{
-    ax_runtimePropertyObjSet(axTag);
-}
-
-- (NSString *)axTag{
-    return ax_runtimePropertyObjGet(axTag);
 }
 
 @end

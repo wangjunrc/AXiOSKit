@@ -523,5 +523,17 @@
     return [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",self]];
 }
 
+
+
+/**
+ 2位小数
+
+ @return NSString
+ */
+- (NSString *)ax_to2Decimal {
+    
+    return [NSString stringWithFormat: @"%.2lf", self.doubleValue];
+}
+
 @end
 
