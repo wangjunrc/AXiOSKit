@@ -41,5 +41,12 @@
     return [hexString uppercaseString];
 }
 
+/**
+ * NSData 转化 NSString
+ */
+- (NSString *)ax_toString{
+    
+    return [[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding];
+}
 
 @end

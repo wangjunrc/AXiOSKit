@@ -57,7 +57,7 @@
 
 
 - (CGSize )ax_sizeWithLabel:(UILabel *)label{
-
+    
     NSDictionary *attributes = @{NSFontAttributeName:label.font};
     CGSize size=[label.text boundingRectWithSize:CGSizeMake(MAXFLOAT,MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
     
@@ -67,7 +67,7 @@
  * 文字:计算单行文字size(系统重名)
  */
 - (CGSize )ax_sizeWithaFont:(UIFont *)font{
-
+    
     NSDictionary *attributes = @{NSFontAttributeName:font};
     CGSize size=[self boundingRectWithSize:CGSizeMake(MAXFLOAT,MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
     
@@ -77,12 +77,12 @@
  * 文字:计算多行文字size(系统重名)
  */
 - (CGSize )ax_sizeWithaFont:(UIFont *)font lineNumber:(NSInteger )number{
-
+    
     NSDictionary *attributes = @{NSFontAttributeName:font};
     CGSize size=[self boundingRectWithSize:CGSizeMake(MAXFLOAT,MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
     
     return CGSizeMake(size.width/number, size.height*number);
-
+    
 }
 
 /**
@@ -102,13 +102,13 @@
     NSDictionary *attributes = @{NSFontAttributeName:font};
     CGSize size = [self boundingRectWithSize:CGSizeMake(width,MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
     return size;
-
+    
 }
 /**
  * 随机生成指定长度的数字,字母组合的字符串
  */
 +(NSString *)ax_stringRandomlyWithCount:(NSInteger )count{
-
+    
     NSString *string = [[NSString alloc]init];
     for (int i = 0; i < count; i++) {
         int number = arc4random() % 36;
@@ -180,16 +180,16 @@
     NSDictionary *bundleInfo = [NSBundle mainBundle].infoDictionary;
     NSArray *URLTypes = bundleInfo[@"CFBundleURLTypes"];
     
-//    NSString *bundleID=bundleInfo[@"CFBundleIdentifier"];
- 
-   
+    //    NSString *bundleID=bundleInfo[@"CFBundleIdentifier"];
+    
+    
     NSString *scheme = nil;
     for (NSDictionary *dic in URLTypes) {
         if ([dic[@"CFBundleURLName"] isEqualToString:URLName]) {
             scheme = dic[@"CFBundleURLSchemes"][0];
             break;
         }
-       ;
+        ;
     }
     return scheme;
 }
@@ -273,7 +273,7 @@
     NSString *string = self;
     __block BOOL returnValue = NO;
     
-//    xF0\x9F\xA4\x97
+    //    xF0\x9F\xA4\x97
     
     [string enumerateSubstringsInRange:NSMakeRange(0, [string length])
                                options:NSStringEnumerationByComposedCharacterSequences
@@ -330,7 +330,7 @@
     NSString *dirPath = self;
     
     
-//    NSMutableArray *filenamelist = [NSMutableArray array];
+    //    NSMutableArray *filenamelist = [NSMutableArray array];
     
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:dirPath]) {
@@ -353,15 +353,15 @@
  */
 - (NSMutableArray *)ax_getFileNameListName:(NSString *)name{
     
-   return  [self ax_toolFileName:name type:@"Name"];
+    return  [self ax_toolFileName:name type:@"Name"];
 }
 
 /**
  * 获得文件内,指定文件,全路径
  */
 - (NSMutableArray *)ax_getFileNameListFullpath:(NSString *)name{
-
-   return  [self ax_toolFileName:name type:@"Full"];
+    
+    return  [self ax_toolFileName:name type:@"Full"];
 }
 
 /**
@@ -390,7 +390,7 @@
             if ([[filename pathExtension] isEqualToString:name]) {
                 if ([type isEqual:@"Full"]) {
                     [temp  addObject:fullpath];
- 
+                    
                 }
                 
                 if ([type isEqual: @"Name"]) {
@@ -403,7 +403,7 @@
     }
     
     return temp;
-
+    
 }
 
 /**
@@ -414,7 +414,7 @@
         return [NSString stringWithFormat:@"%.2lf 万元",self.doubleValue/10000];
     }else if (self.doubleValue>0){
         return [NSString stringWithFormat:@"%@ 元",self];
-    
+        
     }else{
         return  @"0 元";
     }
@@ -459,9 +459,9 @@
     for (NSInteger index=0; index<middleLength; index++) {
         [tempStr appendString:@"*"];
     }
-
+    
     return [NSString stringWithFormat:@"%@%@%@",str1,tempStr,str2];
-
+    
 }
 
 /**
@@ -469,14 +469,14 @@
  */
 - (NSString *)ax_urlStringtAppending:(NSString *)str{
     
-//    NSString *temp = nil;
+    //    NSString *temp = nil;
     NSString *head = nil;
     if ( [self hasPrefix:@"https://"]) {
         head = @"https://";
     }else if ( [self hasPrefix:@"http://"]){
         head = @"http://";
     }
-     NSString *temp = [[self componentsSeparatedByString:head].lastObject stringByAppendingPathComponent:str];
+    NSString *temp = [[self componentsSeparatedByString:head].lastObject stringByAppendingPathComponent:str];
     return [NSString stringWithFormat:@"%@%@",head,temp];
 }
 
@@ -497,7 +497,7 @@
 
 /**
  11位手机号码,中间4位省略
-
+ 
  @return 号码
  */
 - (NSString *)ax_phoneNumSecret{
@@ -515,7 +515,7 @@
 
 /**
  拼接成 tel:// 格式
-
+ 
  @return return value description
  */
 - (NSURL *)ax_toTelURL{
@@ -526,13 +526,42 @@
 
 
 /**
- 2位小数
-
+ 2位小数 解决json解析小数异常,一般因为该小数为2位,所以这里强制用.2lf
+ 如用另外方法 ax_to2Decimal2
+ 
  @return NSString
  */
 - (NSString *)ax_to2Decimal {
     
     return [NSString stringWithFormat: @"%.2lf", self.doubleValue];
+    
+    //    double conversionValue = self.doubleValue;
+    //    NSString *doubleString = [NSString stringWithFormat:@"%lf", conversionValue];
+    //    NSDecimalNumber *decNumber = [NSDecimalNumber decimalNumberWithString:doubleString];
+    //    return decNumber.stringValue;
+}
+
+/**
+ 2位小数
+ @return NSString
+ */
+- (NSString *)ax_to2Decimal2 {
+    
+    double conversionValue = self.doubleValue;
+    NSString *doubleString = [NSString stringWithFormat:@"%lf", conversionValue];
+    NSDecimalNumber *decNumber = [NSDecimalNumber decimalNumberWithString:doubleString];
+    return decNumber.stringValue;
+}
+
+
+/**
+ NSString 转化 NSData
+ 
+ @return NSData
+ */
+- (NSData *)ax_toData{
+    
+    return [self dataUsingEncoding:NSUTF8StringEncoding];
 }
 
 @end

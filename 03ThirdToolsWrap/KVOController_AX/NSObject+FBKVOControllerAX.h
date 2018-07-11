@@ -16,12 +16,10 @@
  @param keyPath 路径
  @param block 回调,新 旧 值
  */
-- (void)ax_KVOControllerKeyPath:(NSString *_Nullable)keyPath block:(void(^_Nullable)(NSString * _Nullable pathKey, id _Nullable oldValue ,id _Nullable newValue ))block;
-
-
+- (void)ax_KVOControllerKeyPath:(NSString *_Nullable)keyPath block:(void(^_Nullable)(NSString * _Nullable pathKey, id _Nullable oldValue ,id _Nullable newValue ))block DEPRECATED_MSG_ATTRIBUTE("请使用: - (void)ax_addFBKVOKeyPath:");
 
 /**
- Facebook kvo 封装
+ Facebook kvo 封装 因为强引用 keyPath 需要封装到一个对象中
  
  NSMutableArray 添加用
  [[self mutableSetValueForKey:@""] addObject:@""]

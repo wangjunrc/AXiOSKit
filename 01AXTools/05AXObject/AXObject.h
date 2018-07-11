@@ -12,6 +12,6 @@
 
 +(void)isDebug:(void(^)(void))bebug release:(void(^)(void))release;
 
-+(void)iPad:(void(^)(void))iPad iPhone:(void(^)(void))iPhone;
++  (void)iPad:(void(^)(void))iPad iPhone:(void(^)(void))iPhone;
 
 @end

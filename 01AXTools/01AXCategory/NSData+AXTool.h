@@ -24,4 +24,9 @@
  */
 - (NSString *)ax_dataToHexString;
 
+/**
+ * NSData 转化 NSString
+ */
+- (NSString *)ax_toString;
+
 @end

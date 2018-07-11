@@ -9,78 +9,59 @@
 #ifndef AXToolsHeader_h
 #define AXToolsHeader_h
 
-/*
- 
- 分类重写set get 方法说明
- 
- OBJC_ASSOCIATION_ASSIGN;            //assign策略
- OBJC_ASSOCIATION_COPY_NONATOMIC;    //copy策略
- OBJC_ASSOCIATION_RETAIN_NONATOMIC;  // retain strong 策略
- 
- OBJC_ASSOCIATION_RETAIN;
- OBJC_ASSOCIATION_COPY;
- */
-/*
- * id object 给哪个对象的属性赋值
- const void *key 属性对应的key
- id value  设置属性值为value
- objc_AssociationPolicy policy  使用的策略，是一个枚举值，和copy，retain，assign是一样的，手机开发一般都选择NONATOMIC
- objc_setAssociatedObject(id object, const void *key, id value, objc_AssociationPolicy policy);
- */
-
 /* 01AXTools */
 #pragma mark - 01AXTools
 
 /* 00Header 01AXCategory*/
-#import "UIView+AXFrame.h"
 #import "CALayer+AXFrame.h"
-#import "UIButton+AXTool.h"
-#import "UILabel+AXTool.h"
-#import "NSString+AXTool.h"
-#import "NSString+AXEffective.h"
-#import "UIImage+AXTool.h"
-#import "UIImageView+AXTool.h"
-#import "UIBarButtonItem+AXTool.h"
-#import "UIView+AXTool.h"
-#import "UIView+AXAnimation.h"
-#import "UIView+AXIBInspectable.h"
+#import "NSArray+AXTool.h"
+#import "NSData+AXTool.h"
 #import "NSDate+AXTool.h"
+#import "NSDateComponents+AXTool.h"
+#import "NSNumber+AXTool.h"
+#import "NSObject+AXKVO.h"
 #import "NSObject+AXTool.h"
 #import "NSObject+AXVersion.h"
-#import "UIColor+AXTool.h"
-#import "UIViewController+AXTool.h"
-#import "NSURL+AXTool.h"
-#import "NSData+AXTool.h"
-#import "UITableView+AXTool.h"
-#import "UIDevice+AXTool.h"
-#import "UIViewController+AXAlert.h"
-#import "NSObject+AXKVO.h"
-#import "UICollectionView+AXTool.h"
-#import "NSString+AXNet.h"
-#import "UIScrollView+AXTool.h"
 #import "NSString+AXCrypto.h"
-#import "UIButton+AXTool.h"
-#import "UISlider+AXTool.h"
-#import "UITextField+AXTool.h"
 #import "NSString+AXDate.h"
-#import "UINavigationController+AXTool.h"
-#import "UISwitch+AXTool.h"
-#import "NSDateComponents+AXTool.h"
-#import "UIScrollView+AXEmptyDataSet.h"
-#import "UIButton+AXCountDown.h"
-#import "UIViewController+AXiPadAlert.h"
+#import "NSString+AXEffective.h"
+#import "NSString+AXNet.h"
+#import "NSString+AXTool.h"
+#import "NSURL+AXTool.h"
 #import "NSUserDefaults+AXTool.h"
-#import "NSNumber+AXTool.h"
-#import "AXWeakProxy.h"
+#import "UIBarButtonItem+AXTool.h"
+#import "UIButton+AXCountDown.h"
+#import "UIButton+AXTool.h"
+#import "UICollectionView+AXTool.h"
+#import "UIColor+AXTool.h"
 #import "UIControl+AXTool.h"
-#import "NSArray+AXTool.h"
+#import "UIDevice+AXTool.h"
+#import "UIImage+AXTool.h"
+#import "UIImageView+AXTool.h"
+#import "UILabel+AXTool.h"
+#import "UINavigationController+AXTool.h"
+#import "UIScrollView+AXEmptyDataSet.h"
+#import "UIScrollView+AXTool.h"
+#import "UISlider+AXTool.h"
+#import "UISwitch+AXTool.h"
+#import "UITableView+AXTool.h"
+#import "UITextField+AXTool.h"
 #import "UITextView+AXTool.h"
+#import "UIView+AXAnimation.h"
+#import "UIView+AXFrame.h"
+#import "UIView+AXIBInspectable.h"
 #import "UIView+AXSnapshot.h"
+#import "UIView+AXTool.h"
+#import "UIViewController+AXAlert.h"
+#import "UIViewController+AXiPadAlert.h"
+#import "UIViewController+AXTool.h"
+
 
 /* 00Header 02IBView*/
 #import "IBObjectHeader.h"
 #import "AXCountdownTimer.h"
 #import "AXConstant.h"
+#import "AXOC2C.h"
 
 /* 00Header 03AXController*/
 #import "AXViewController.h"
@@ -136,7 +117,6 @@
 #import "MBProgressHUD+AX.h"
 #import "NSObject+AXCacheImage.h"
 #import "AXNetManager.h"
-
 
 
 /* 04ThirdSDK */

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "AXToolsHeader.h"
 @interface NSString (AXTool)
 
@@ -153,15 +154,21 @@
  */
 - (NSString *)ax_addHeadPrefix:(NSString *)prefix;
 
-
 /**
-  截取头尾  中间显示*号
-
+ 截取头尾  中间显示*号
+ 
  @param headLength 头 需要保留的长度
  @param endLength 尾 需要保留的长度
  @return 返回结果
  */
 - (NSString *)ax_substringHeadLength:(NSInteger )headLength endLength:(NSInteger )endLength;
+
+/**
+ 11位手机号码,中间4位省略
+ 
+ @return 号码
+ */
+- (NSString *)ax_phoneNumSecret;
 
 /**
  * url 拼接,用别的办法,不然就出现 http:// 变成  http:/ 或者? 不识别
@@ -170,17 +177,10 @@
 
 /**
  生成唯一的字符串UUID
-
+ 
  @return 字符串
  */
 +(NSString *)ax_uuid;
-
-/**
- 11位手机号码,中间4位省略
-
- @return 号码
- */
-- (NSString *)ax_phoneNumSecret;
 
 /**
  拼接成 tel:// 格式
@@ -190,10 +190,24 @@
 - (NSURL *)ax_toTelURL;
 
 /**
- 2位小数
+ 2位小数 解决json解析小数异常,一般因为该小数为2位,所以这里强制用.2lf
+ 如用另外方法 ax_to2Decimal2
  
  @return NSString
  */
-- (NSString *)ax_to2Decimal;
+- (NSString *)ax_to2Decimal ;
+
+/**
+ 2位小数
+ @return NSString
+ */
+- (NSString *)ax_to2Decimal2;
+
+/**
+ NSString 转化 NSData
+ 
+ @return NSData
+ */
+- (NSData *)ax_toData;
 
 @end
