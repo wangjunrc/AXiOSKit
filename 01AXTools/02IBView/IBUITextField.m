@@ -38,7 +38,7 @@
 - (void)setCornerRadius:(CGFloat)cornerRadius {
     _cornerRadius = cornerRadius;
     self.layer.cornerRadius = cornerRadius;
-    
+    self.layer.masksToBounds = cornerRadius;
 }
 
 @end

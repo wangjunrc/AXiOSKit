@@ -39,10 +39,7 @@
  
  */
 
-/**
- 状态栏高度
- */
-#define AX_View_Status_Height [UIApplication sharedApplication].statusBarFrame.size.height
+
 
 #define AX_IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
