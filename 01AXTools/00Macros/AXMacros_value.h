@@ -22,8 +22,30 @@
 /**
  状态栏高度 和 nav 高度 普通 64 ,x 88
  */
-#define AX_View_Top_Height  [UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.bounds.size.height
+#define AX_View_Top_Height  ([UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.bounds.size.height)
 
+/**
+ 安全区域 insets
+ */
+#define AX_ViewSafeAreInsets(view) \
+({UIEdgeInsets insets;\
+if(@available(iOS 11.0, *)) {\
+insets = view.safeAreaInsets;\
+} else {\
+    insets = UIEdgeInsetsZero;\
+} insets;\
+})\
+
+
+/**
+ 安全区域 bottom
+ */
+#define AX_ViewSafeAreBottom(view) AX_ViewSafeAreInsets(view).bottom
+
+/**
+ 安全区域 top 状态栏高度 和 nav 高度 普通 64 ,x 88
+ */
+#define AX_ViewSafeAreTop(view) AX_ViewSafeAreInsets(view).top
 
 /**
  tableViewCell 自适应高度DataSource
