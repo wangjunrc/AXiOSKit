@@ -81,6 +81,16 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     }];
     
     [self init_WebViewJavascriptBridge];
+    
+//    NSString *colorStr = [[UIColor redColor] ax_colorToHexString];
+//
+//    NSString *js = [NSString stringWithFormat:@"\
+//                    window.onload = function(){\
+//                    document.body.style.backgroundColor = '%@';\
+//                    };",colorStr];
+//
+//    [self.webView evaluateJavaScript:js completionHandler:nil];
+    
 }
 
 
@@ -127,22 +137,22 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
  */
 - (void)init_navItme{
     
-//    [self ax_havNav:^(UINavigationController *nav) {
-//
-//        UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadDataWebAction)];
-//        self.navigationItem.rightBarButtonItem = roadLoad;
-//
-//    } isPresentNav:^(UINavigationController *nav) {
-//
-//        self.navigationItem.leftBarButtonItem = self.cancelItem;
-//
-//        UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadDataWebAction)];
-//        self.navigationItem.rightBarButtonItem = roadLoad;
-//
-//    } noHave:^{
-//
-//        [self.webView.scrollView addSubview:self.cancelButton];
-//    }];
+    //    [self ax_havNav:^(UINavigationController *nav) {
+    //
+    //        UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadDataWebAction)];
+    //        self.navigationItem.rightBarButtonItem = roadLoad;
+    //
+    //    } isPresentNav:^(UINavigationController *nav) {
+    //
+    //        self.navigationItem.leftBarButtonItem = self.cancelItem;
+    //
+    //        UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadDataWebAction)];
+    //        self.navigationItem.rightBarButtonItem = roadLoad;
+    //
+    //    } noHave:^{
+    //
+    //        [self.webView.scrollView addSubview:self.cancelButton];
+    //    }];
     
     [self ax_haveNav:^(UINavigationController *nav) {
         
@@ -341,27 +351,27 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
  */
 - (void)func_canGoBackItems{
     
-   
+    
     if (self.webView.canGoBack) {
         
         UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         spaceButtonItem.width = -6.5;
         
-//        [self ax_havNav:^(UINavigationController *nav) {
-//
-//            self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.backItem,self.closeItem] ;
-//
-//        } isPresentNav:^(UINavigationController *nav) {
-//
-//            self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.cancelItem,self.closeItem] ;
-//
-//        } noHave:^{
-//
-//        }];
+        //        [self ax_havNav:^(UINavigationController *nav) {
+        //
+        //            self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.backItem,self.closeItem] ;
+        //
+        //        } isPresentNav:^(UINavigationController *nav) {
+        //
+        //            self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.cancelItem,self.closeItem] ;
+        //
+        //        } noHave:^{
+        //
+        //        }];
         
         
         [self ax_haveNav:nil isPushNav:^(UINavigationController *nav) {
-             self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.backItem,self.closeItem] ;
+            self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.backItem,self.closeItem] ;
         } isPresentNav:^(UINavigationController *nav) {
             self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.cancelItem,self.closeItem] ;
         } noneNav:nil];
@@ -374,20 +384,20 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
         
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
         
-//        [self ax_havNav:^(UINavigationController *nav) {
-//
-//             AXLog(@"ax_havNav %@",self.navigationItem.backBarButtonItem.title);
-//
-//            self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
-//
-//        } isPresentNav:^(UINavigationController *nav) {
-//
-//              AXLog(@"isPresentNav");
-//            self.navigationItem.leftBarButtonItem = self.cancelItem;
-//
-//        } noHave:^{
-//             AXLog(@"noHave");
-//        }];
+        //        [self ax_havNav:^(UINavigationController *nav) {
+        //
+        //             AXLog(@"ax_havNav %@",self.navigationItem.backBarButtonItem.title);
+        //
+        //            self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
+        //
+        //        } isPresentNav:^(UINavigationController *nav) {
+        //
+        //              AXLog(@"isPresentNav");
+        //            self.navigationItem.leftBarButtonItem = self.cancelItem;
+        //
+        //        } noHave:^{
+        //             AXLog(@"noHave");
+        //        }];
         
         
         [self ax_haveNav:nil isPushNav:^(UINavigationController *nav) {
