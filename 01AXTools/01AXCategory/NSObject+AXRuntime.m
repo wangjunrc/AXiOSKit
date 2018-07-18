@@ -101,8 +101,8 @@
 + (void)ax_replaceInstanceMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL{
     
     Class class = [self class];
-    Method originalMethod = class_getClassMethod(class, originalSEL);
-    Method swizzledMethod = class_getClassMethod(class, newSEL);
+    Method originalMethod = class_getInstanceMethod(class, originalSEL);
+    Method swizzledMethod = class_getInstanceMethod(class, newSEL);
     BOOL didAddMethod = class_addMethod(class,originalSEL,
                                         method_getImplementation(swizzledMethod),
                                         method_getTypeEncoding(swizzledMethod));
@@ -122,8 +122,8 @@
 + (void)ax_replaceClassMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL{
     
     Class class = [self class];
-    Method originalMethod = class_getInstanceMethod(class, originalSEL);
-    Method swizzledMethod = class_getInstanceMethod(class, newSEL);
+    Method originalMethod = class_getClassMethod(class, originalSEL);
+    Method swizzledMethod = class_getClassMethod(class, newSEL);
     BOOL didAddMethod = class_addMethod(class,originalSEL,
                                         method_getImplementation(swizzledMethod),
                                         method_getTypeEncoding(swizzledMethod));

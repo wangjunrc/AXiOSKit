@@ -56,8 +56,6 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self init_setView];
     [self init_navItme];
-    
-    [self func_webViewKVO];
     [self func_webViewloadURLType];
     
 }
@@ -334,6 +332,45 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     AXLog(@"网页加载内容进程终止");
 }
 
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+    
+    
+    if (object == self.webView ) {
+        
+        if ([keyPath isEqualToString:@"estimatedProgress"]) {
+            
+            [self.progressView setAlpha:1.0f];
+            BOOL animated = self.webView.estimatedProgress > self.progressView.progress;
+            [self.progressView setProgress:self.webView.estimatedProgress animated:animated];
+            
+            if(self.webView.estimatedProgress >= 1.0f) {
+                [UIView animateWithDuration:0.3f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
+                    [self.progressView setAlpha:0.0f];
+                } completion:^(BOOL finished) {
+                    [self.progressView setProgress:0.0f animated:NO];
+                }];
+            }
+        }else if ([keyPath isEqualToString:@"title"]){
+            //使用KVO 显示title 更快一点
+            
+            NSString *title = change[@"new"];
+            if (self.title.length==0) {
+                if (title.length>0) {
+                    self.title = title;
+                }else{
+                    self.title = AXToolsLocalizedString(@"网页");
+                }
+            }
+        }
+        
+    }else{
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+
 #pragma mark - func
 
 /**
@@ -403,40 +440,40 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 }
 
 
-/**
- kvo 进度值
- */
-- (void)func_webViewKVO{
-    
-    [self.webView ax_addFBKVOKeyPath:@"estimatedProgress" block:^(NSString * _Nullable pathKey, id  _Nullable oldValue, id  _Nullable newValue) {
-        
-        [self.progressView setAlpha:1.0f];
-        BOOL animated = self.webView.estimatedProgress > self.progressView.progress;
-        [self.progressView setProgress:self.webView.estimatedProgress animated:animated];
-        
-        if(self.webView.estimatedProgress >= 1.0f) {
-            [UIView animateWithDuration:0.3f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
-                [self.progressView setAlpha:0.0f];
-            } completion:^(BOOL finished) {
-                [self.progressView setProgress:0.0f animated:NO];
-            }];
-        }
-        
-    }];
-    
-    [self.webView ax_addFBKVOKeyPath:@"title" block:^(NSString * _Nullable pathKey, id  _Nullable oldValue, NSString *_Nullable newValue) {
-        
-        NSString *title = newValue;
-        if (self.title.length==0) {
-            
-            if (title.length>0) {
-                self.title = title;
-            }else{
-                self.title = AXToolsLocalizedString(@"网页");
-            }
-        }
-    }];
-}
+///**
+// kvo 进度值
+// */
+//- (void)func_webViewKVO{
+//
+//    [self.webView ax_addFBKVOKeyPath:@"estimatedProgress" block:^(NSString * _Nullable pathKey, id  _Nullable oldValue, id  _Nullable newValue) {
+//
+//        [self.progressView setAlpha:1.0f];
+//        BOOL animated = self.webView.estimatedProgress > self.progressView.progress;
+//        [self.progressView setProgress:self.webView.estimatedProgress animated:animated];
+//
+//        if(self.webView.estimatedProgress >= 1.0f) {
+//            [UIView animateWithDuration:0.3f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
+//                [self.progressView setAlpha:0.0f];
+//            } completion:^(BOOL finished) {
+//                [self.progressView setProgress:0.0f animated:NO];
+//            }];
+//        }
+//
+//    }];
+//
+//    [self.webView ax_addFBKVOKeyPath:@"title" block:^(NSString * _Nullable pathKey, id  _Nullable oldValue, NSString *_Nullable newValue) {
+//
+//        NSString *title = newValue;
+//        if (self.title.length==0) {
+//
+//            if (title.length>0) {
+//                self.title = title;
+//            }else{
+//                self.title = AXToolsLocalizedString(@"网页");
+//            }
+//        }
+//    }];
+//}
 
 
 - (void)func_webViewloadURLType{
@@ -560,6 +597,8 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
         _webView.navigationDelegate = self;
         _webView.UIDelegate = self;
         _webView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
+        [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
         
     }
     return _webView;
@@ -644,7 +683,8 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 #pragma mark - dealloc
 - (void)dealloc{
     axLong_dealloc;
-    
+    [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+    [self.webView removeObserver:self forKeyPath:@"title"];
 }
 
 //- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
