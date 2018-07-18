@@ -491,9 +491,9 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     switch (self.loadType) {
         case loadWebURLString:{
             //创建一个NSURLRequest 的对象
-            NSURLRequest * Request_zsj = [NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+            NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
             //加载网页
-            [self.webView loadRequest:Request_zsj];
+            [self.webView loadRequest:request];
             break;
         }
         case loadWebHTMLString:{
