@@ -45,4 +45,8 @@ pod 'MBProgressHUD'
 #    aop 拦截 替换 类 实例 方法
 pod 'Aspects'
 
+# UITableViewCell高度计算
+pod 'UITableView+FDTemplateLayoutCell'
+
+
 end

@@ -24,7 +24,7 @@
 
 #ifdef USER_TYPE_ONE
 
-- (NSString *)descriptionWithLocale:(id)locale{
+- (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level{
     NSMutableString *str = [NSMutableString string];
     [str appendString:@"{\n"];
     // 遍历字典的所有键值对
@@ -44,7 +44,7 @@
 
 #else
 
-//- (NSString *)descriptionWithLocale:(nullable id)locale{
+//- (NSString *)descriptionWithLocale:(nullable id)locale indent:(NSUInteger)level{
 //    NSString *output;
 //    @try {
 //        NSData *data = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:nil];
