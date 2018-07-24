@@ -32,4 +32,17 @@
  */
 -(NSArray *)ax_randomArrayWithCount:(NSInteger )count;
 
+/**
+ 升序
+ 
+ @return NSArray
+ */
+- (NSArray *)ax_sortedAscending;
+/**
+ 降序
+ 
+ @return NSArray
+ */
+- (NSArray *)ax_sortedDescending;
+
 @end

@@ -87,4 +87,31 @@
     return resultArray;
 }
 
+/**
+ 升序
+ 
+ @return NSArray
+ */
+- (NSArray *)ax_sortedAscending{
+    
+    NSArray *sortedArray = [self sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        
+        return [obj1 compare:obj2];
+    }];
+    return sortedArray;
+}
+
+/**
+ 降序
+ 
+ @return NSArray
+ */
+- (NSArray *)ax_sortedDescending{
+    
+    NSArray *sortedArray = [self sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        
+        return [obj2 compare:obj1];
+    }];
+    return sortedArray;
+}
 @end
