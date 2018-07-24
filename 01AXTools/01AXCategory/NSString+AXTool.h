@@ -210,4 +210,5 @@
  */
 - (NSData *)ax_toData;
 
++(NSString *)ax_getHHMMSSWithSeconds:(NSInteger )seconds;
 @end

@@ -24,4 +24,12 @@
  */
 - (NSArray *)ax_lastObjetCount:(NSInteger )count;
 
+/**
+ 总数组中,不重复随机一个数组
+ 
+ @param count 个数
+ @return array
+ */
+-(NSArray *)ax_randomArrayWithCount:(NSInteger )count;
+
 @end

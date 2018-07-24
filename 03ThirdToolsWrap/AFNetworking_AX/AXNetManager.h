@@ -9,23 +9,23 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 
-extern NSString *const AXNetLoadTitle;
-extern NSString *const AXNetFailureText;
+FOUNDATION_EXPORT NSString *const AXNetLoadTitle;
+FOUNDATION_EXPORT NSString *const AXNetFailureText;
 
-extern NSString *const NetWorkStatusNotification;
-extern NSString *const NetWorkStatusUnknownKey;
-extern NSString *const NetWorkStatusNotReachableKey;
-extern NSString *const NetWorkStatusWANKey;
-extern NSString *const NetWorkStatusWiFiKey;
+FOUNDATION_EXPORT NSString *const NetWorkStatusNotification;
+FOUNDATION_EXPORT NSString *const NetWorkStatusUnknownKey;
+FOUNDATION_EXPORT NSString *const NetWorkStatusNotReachableKey;
+FOUNDATION_EXPORT NSString *const NetWorkStatusWANKey;
+FOUNDATION_EXPORT NSString *const NetWorkStatusWiFiKey;
 
 /**
  * 上传文件 type
  */
-extern NSString *const jpegMimeType;
-extern NSString *const gifMimeType;
-extern NSString *const pngMimeType;
-extern NSString *const icoMimeType;
-
+FOUNDATION_EXPORT NSString *const jpegMimeType;
+FOUNDATION_EXPORT NSString *const gifMimeType;
+FOUNDATION_EXPORT NSString *const pngMimeType;
+FOUNDATION_EXPORT NSString *const icoMimeType;
+FOUNDATION_EXPORT NSString *const imagMimeType;
 
 /**
  * 请求对象

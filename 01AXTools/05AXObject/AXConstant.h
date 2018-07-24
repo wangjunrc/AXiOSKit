@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-extern NSString *const axCellID;
-extern NSString *const axCellHeadID;
-extern NSString *const axCellFootID;
-extern NSString *const axUserInfoKey;
-extern NSString *const axSectionHeadID;
-extern NSString *const axSectionFootID;
+
+FOUNDATION_EXPORT NSString *const axCellID;
+FOUNDATION_EXPORT NSString *const axCellHeadID;
+FOUNDATION_EXPORT NSString *const axCellFootID;
+FOUNDATION_EXPORT NSString *const axUserInfoKey;
+FOUNDATION_EXPORT NSString *const axSectionHeadID;
+FOUNDATION_EXPORT NSString *const axSectionFootID;
 
 @interface AXConstant : NSObject
 

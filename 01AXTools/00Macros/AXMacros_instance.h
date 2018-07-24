@@ -46,6 +46,24 @@ return _instance; \
 - (id)mutableCopyWithZone:(NSZone *)zone { \
 return _instance; \
 }
+
+
+// 默认单例名称 .h
+#define axSharedInstance_H  axShared_H(Instance)
+// 默认单例名称 .m
+#define axSharedInstance_M  axShared_M(Instance)
+
+// 置nil .h
+
+#define axSharedCancel_H  +(void )sharedCancel;
+
+// 置nil .m
+#define  axSharedCancel_M \
++ (void)sharedCancel \
+{\
+_instance = nil;\
+_onceToken = 0;\
+};\
 /*===单例模式,.m文件 end ===*/
 
 

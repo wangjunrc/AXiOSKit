@@ -63,6 +63,28 @@
     return temp;
 }
 
-
+/**
+ 总数组中,不重复随机一个数组
+ 
+ @param count 个数
+ @return array
+ */
+-(NSArray *)ax_randomArrayWithCount:(NSInteger )count{
+    
+    //随机数从这里边产生
+    NSMutableArray *startArray = self.mutableCopy;
+    
+    //随机数产生结果
+    NSMutableArray *resultArray = [NSMutableArray array];
+    //随机数个数
+    
+    for (int i=0; i<count; i++) {
+        int t=arc4random()%startArray.count;
+        resultArray[i]=startArray[t];
+        startArray[t]=[startArray lastObject]; //为更好的乱序，故交换下位置
+        [startArray removeLastObject];
+    }
+    return resultArray;
+}
 
 @end

@@ -19,12 +19,14 @@ NSString *const NetWorkStatusWANKey = @"NetWorkStatusWANKey";
 NSString *const NetWorkStatusWiFiKey = @"NetWorkStatusWiFiKey";
 
 /**
- * 上传文件 type
+ * 上传图片 type
  */
 NSString *const jpegMimeType = @"image/jpeg";
 NSString *const gifMimeType = @"image/gif";
 NSString *const pngMimeType = @"image/png";
 NSString *const icoMimeType = @"image/png";
+NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
+
 
 @implementation AXNetManager
 
