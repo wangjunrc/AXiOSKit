@@ -57,3 +57,23 @@ NSAssert(x,y);：x 为 BOOL 值，y 为 字符串类型。当 x = YES，则不�
 
 //代码触发点击事件
 sendActionsForControlEvents
+
+************************************************************************
+************************************************************************
+
+NSMutableAttributedString常见的属性：
+
+NSFontAttributeName 字体
+
+NSForegroundColorAttributeName 文字颜色
+
+NSBackgroundColorAttributeName 背景颜色
+
+NSStrikethroughStyleAttributeName 删除线（默认是0，无删除线）
+
+NSUnderlineStyleAttributeName 下划线(默认是0，无下划线)
+
+NSParagraphStyleAttributeName 设置段落／间距
+
+************************************************************************
+************************************************************************
