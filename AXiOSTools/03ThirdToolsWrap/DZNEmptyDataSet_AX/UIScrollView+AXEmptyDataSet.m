@@ -8,9 +8,12 @@
 
 #import "UIScrollView+AXEmptyDataSet.h"
 #import "AXMacros.h"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
 typedef void(^ReloadBlock)(void);
-@interface UIScrollView()
+
+@interface UIScrollView()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
+
 @property (nonatomic, strong)ReloadBlock reloadBlock;
 /**
  * 占位图片名称

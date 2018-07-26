@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
-@interface UIScrollView (AXEmptyDataSet)<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
+
+@interface UIScrollView (AXEmptyDataSet)
 
 /**
  设置空集合view
