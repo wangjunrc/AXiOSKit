@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIScrollView+EmptyDataSet.h"
-
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 @interface UIScrollView (AXEmptyDataSet)<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
 /**

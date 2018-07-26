@@ -7,9 +7,9 @@
 //
 
 #import "AXConfigure.h"
-#import "IQKeyboardManager.h"
+//#import "IQKeyboardManager.h"
 #import <UIKit/UIKit.h>
-
+#import <IQKeyboardManager/IQKeyboardManager.h>
 @implementation AXConfigure
 
 #pragma mark configure
