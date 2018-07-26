@@ -125,6 +125,20 @@
 - (NSString *)ax_toUTF8;
 
 /**
+ url Encoding 编码集
+ 
+ @return NSString
+ */
+- (NSString *)ax_toEncoding;
+
+/**
+ Encoding 编码集 转  中文
+ 
+ @return NSString
+ */
+- (NSString *)ax_toUnEncoding;
+
+/**
  * 获得文件内,指定文件,只有文件名
  */
 - (NSMutableArray *)ax_getFileNameListName:(NSString *)name;
@@ -211,4 +225,5 @@
 - (NSData *)ax_toData;
 
 +(NSString *)ax_getHHMMSSWithSeconds:(NSInteger )seconds;
+
 @end

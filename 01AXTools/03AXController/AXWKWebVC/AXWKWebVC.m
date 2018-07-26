@@ -175,7 +175,6 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     
     AXLog(@"开始加载 title: %@",webView.title);
-    
 }
 
 /**
@@ -394,19 +393,6 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
         UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         spaceButtonItem.width = -6.5;
         
-        //        [self ax_havNav:^(UINavigationController *nav) {
-        //
-        //            self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.backItem,self.closeItem] ;
-        //
-        //        } isPresentNav:^(UINavigationController *nav) {
-        //
-        //            self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.cancelItem,self.closeItem] ;
-        //
-        //        } noHave:^{
-        //
-        //        }];
-        
-        
         [self ax_haveNav:nil isPushNav:^(UINavigationController *nav) {
             self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.backItem,self.closeItem] ;
         } isPresentNav:^(UINavigationController *nav) {
@@ -418,33 +404,13 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
         
         
         self.navigationItem.leftBarButtonItems = @[] ;
-        
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-        
-        //        [self ax_havNav:^(UINavigationController *nav) {
-        //
-        //             AXLog(@"ax_havNav %@",self.navigationItem.backBarButtonItem.title);
-        //
-        //            self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
-        //
-        //        } isPresentNav:^(UINavigationController *nav) {
-        //
-        //              AXLog(@"isPresentNav");
-        //            self.navigationItem.leftBarButtonItem = self.cancelItem;
-        //
-        //        } noHave:^{
-        //             AXLog(@"noHave");
-        //        }];
-        
         
         [self ax_haveNav:nil isPushNav:^(UINavigationController *nav) {
             self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
         } isPresentNav:^(UINavigationController *nav) {
             self.navigationItem.leftBarButtonItem = self.cancelItem;
         } noneNav:nil];
-        
-        
-        
         
     }
 }

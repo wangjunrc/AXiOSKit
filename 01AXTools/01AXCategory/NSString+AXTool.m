@@ -321,6 +321,26 @@
     return  [NSString stringWithCString:self.UTF8String encoding:NSUTF8StringEncoding];
 }
 
+/**
+中文转 Encoding 编码集
+
+ @return NSString
+ */
+- (NSString *)ax_toEncoding {
+    
+    return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];;
+}
+
+/**
+ Encoding 编码集 转  中文
+ 
+ @return NSString
+ */
+- (NSString *)ax_toUnEncoding {
+    
+    return [self stringByRemovingPercentEncoding];
+}
+
 
 /**
  * 获得文件内所有内容
