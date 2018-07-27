@@ -79,6 +79,7 @@
     //随机数个数
     
     for (int i=0; i<count; i++) {
+        
         if (startArray.count==0) {
             break;
         }
