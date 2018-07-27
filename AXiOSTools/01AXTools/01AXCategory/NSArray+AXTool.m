@@ -79,6 +79,9 @@
     //随机数个数
     
     for (int i=0; i<count; i++) {
+        if (startArray.count==0) {
+            break;
+        }
         int t=arc4random()%startArray.count;
         resultArray[i]=startArray[t];
         startArray[t]=[startArray lastObject]; //为更好的乱序，故交换下位置
