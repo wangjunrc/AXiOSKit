@@ -73,7 +73,6 @@
     
     //随机数从这里边产生
     NSMutableArray *startArray = self.mutableCopy;
-    
     //随机数产生结果
     NSMutableArray *resultArray = [NSMutableArray array];
     //随机数个数
