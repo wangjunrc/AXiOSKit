@@ -21,31 +21,24 @@
 static id _instance; \
 static dispatch_once_t _onceToken; \
 \
-+ (instancetype)allocWithZone:(struct _NSZone *)zone \
-{ \
-dispatch_once(&_onceToken, ^{ \
++ (instancetype)allocWithZone:(struct _NSZone *)zone {\
+dispatch_once(&_onceToken, ^{\
 _instance = [super allocWithZone:zone]; \
 }); \
 return _instance; \
 } \
 \
-+ (instancetype)shared##name \
-{ \
-static dispatch_once_t onceToken; \
-dispatch_once(&onceToken, ^{ \
-_instance = [[self alloc] init]; \
-}); \
-return _instance; \
-} \
++ (instancetype)shared##name{\
+return [[self alloc]init];\
+}\
 \
-- (id)copyWithZone:(NSZone *)zone \
-{ \
-return _instance; \
+- (id)copyWithZone:(NSZone *)zone {\
+    return _instance; \
 }\
 \
 - (id)mutableCopyWithZone:(NSZone *)zone { \
-return _instance; \
-}
+    return _instance;\
+}\
 
 
 // 默认单例名称 .h
@@ -62,7 +55,7 @@ return _instance; \
 + (void)sharedCancel \
 {\
 _instance = nil;\
-_onceToken = 0;\
+_onceToken = 0l;\
 };\
 /*===单例模式,.m文件 end ===*/
 

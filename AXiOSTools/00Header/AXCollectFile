@@ -73,3 +73,50 @@ NSParagraphStyleAttributeName 设置段落／间距
 pod 'AXiOSTools',  :git => 'https://github.com/liuweixingGitHub/AXiOSTools.git'
 
 //************************************************************************
+
+
+//播放音频,不与其他app冲突
+
+// 1.启动代理
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient withOptions:AVAudioSessionCategoryOptionMixWithOthers|AVAudioSessionCategoryOptionDefaultToSpeaker error:nil];
+
+return YES;
+}
+// 2. 播放音频时
+
+[[AVAudioSession sharedInstance] setActive:NO withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
+
+NSString *filePath = [[NSBundle mainBundle] pathForResource:@"123" ofType:@"mp3"];
+NSURL *fileUrl = [NSURL URLWithString:filePath];
+self.musicPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:fileUrl error:nil];
+self.musicPlayer.delegate = self;
+[self.musicPlayer play];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
