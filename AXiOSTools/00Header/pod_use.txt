@@ -48,5 +48,7 @@ pod 'Aspects'
 # UITableViewCell高度计算
 pod 'UITableView+FDTemplateLayoutCell'
 
+# 安全集合
+pod 'AvoidCrash'
 
 end
