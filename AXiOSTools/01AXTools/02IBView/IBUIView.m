@@ -39,8 +39,16 @@
 - (void)setCornerRadius:(CGFloat)cornerRadius {
     _cornerRadius = cornerRadius;
     self.layer.cornerRadius = cornerRadius;
-    // view 不使用 方便子视图
-//    self.layer.masksToBounds = cornerRadius;
+}
+
+/**
+ 可视化设置边masksToBounds
+
+ @param masksToBounds 是否 masksToBounds
+ */
+- (void)setMasksToBounds:(BOOL)masksToBounds{
+    _masksToBounds = masksToBounds;
+    self.layer.masksToBounds = masksToBounds;
 }
 
 @end

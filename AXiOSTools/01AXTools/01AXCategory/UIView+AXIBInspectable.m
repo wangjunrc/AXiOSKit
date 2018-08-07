@@ -20,15 +20,15 @@
     ax_runtimePropertyAssSet(axCornRadius);
     self.layer.cornerRadius = axCornRadius;
     
-    if (![self isMemberOfClass:UIView.class]) {
-         self.layer.masksToBounds = axCornRadius;
-    }
-    
+//    if (![self isMemberOfClass:UIView.class]) {
+//         self.layer.masksToBounds = axCornRadius;
+//    }
+//
 }
 
 - (CGFloat)axCornRadius{
     
-    return [ax_runtimePropertyAssGet(axCornRadius) flatness];
+    return [ax_runtimePropertyAssGet(axCornRadius) floatValue];
 }
 
 /**
@@ -44,7 +44,7 @@
 }
 
 - (CGFloat)axBordWidth{
-    return [ax_runtimePropertyAssGet(axBordWidth) flatness];
+    return [ax_runtimePropertyAssGet(axBordWidth) floatValue];
 }
 
 /**
@@ -59,6 +59,18 @@
 
 - (UIColor *)axBordColor{
     return ax_runtimePropertyObjGet(axBordColor);
+}
+
+/**
+ 可视化设置边masksToBounds
+ */
+- (void)setAxMasksToBounds:(BOOL)axMasksToBounds{
+    ax_runtimePropertyObjGet(axMasksToBounds);
+    self.layer.masksToBounds = axMasksToBounds;
+}
+
+- (BOOL)axMasksToBounds{
+    return [ax_runtimePropertyAssGet(axMasksToBounds) boolValue];
 }
 
 @end

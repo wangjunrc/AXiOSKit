@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 分类方法,在xib中,不能实时显示,但可以正常使用
+ */
+IB_DESIGNABLE
 @interface UIView (AXIBInspectable)
 
 /**
@@ -26,5 +30,10 @@
  */
 @property (nonatomic, strong) IBInspectable UIColor *axBordColor;
 
+
+/**
+ 可视化设置边masksToBounds
+ */
+@property (nonatomic, assign) IBInspectable BOOL axMasksToBounds;
 
 @end
