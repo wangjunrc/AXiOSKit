@@ -22,6 +22,13 @@
 - (NSDictionary *)ax_getProperties_aps;
 
 /**
+ 获取私有属性
+ 
+ @return NSArray
+ */
++ (NSArray *)ax_getPrivateProperties;
+
+/**
  * 把另外对象的属性值,赋值给自己
  */
 - (void)ax_getValueFromObj:(NSObject *)otherObj;

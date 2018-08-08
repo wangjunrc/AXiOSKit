@@ -13,8 +13,6 @@
 /**
  *  得到一个类所有属性
  *
- *  @param cls 类型
- *
  *  @return 数组
  */
 + (NSArray *)ax_getProperties{
@@ -40,6 +38,38 @@
     return mArray.copy;
 }
 
+
+/**
+ 获取私有属性
+
+ @return NSArray
+ */
++ (NSArray *)ax_getPrivateProperties{
+    
+    Class class = self;
+    // 获取当前类的所有属性
+    unsigned int count;// 记录属性个数
+    
+    
+    NSMutableArray *mArray = [NSMutableArray array];
+    Ivar *ivars = class_copyIvarList(class, &count);
+    
+    for (NSInteger i = 0; i < count; ++i) { // 遍历取出该类成员变量
+        
+        Ivar var = ivars[i];
+        const char *nameC = ivar_getName(var);
+        const char *typeC = ivar_getTypeEncoding(var);
+        NSString *name = [NSString stringWithCString:nameC encoding:NSUTF8StringEncoding];
+        NSString *type = [NSString stringWithCString:typeC encoding:NSUTF8StringEncoding];
+        NSMutableDictionary *temp = [NSMutableDictionary dictionary];
+        temp[@"name"] = name;
+        temp[@"type"] = type;
+        [mArray addObject:temp];
+    }
+    free(ivars);
+    
+    return mArray.copy;
+}
 
 /**
  *  获得实例对象的属性及属性值
