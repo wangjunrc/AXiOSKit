@@ -270,7 +270,7 @@
             NSString *title = [NSString stringWithFormat:@"发现新版本: %@",appStoreVersion];
             [self ax_showAlertByTitle:title message:@"是否更新?" confirm:^{
                 
-                ax_OpenURL(ax_AppStoreURL(AppleStoreID));
+                ax_OpenURLStr(ax_AppStoreURL(AppleStoreID));
                 
             } cancel:^{
                 
@@ -290,7 +290,7 @@
     
     [self ax_showAlertByTitle:@"我们需要您的鼓励" message:@"是否去鼓励?" confirm:^{
         
-        ax_OpenURL(ax_AppStoreScoreURL(AppleStoreID));
+        ax_OpenURLStr(ax_AppStoreScoreURL(AppleStoreID));
         
     } cancel:^{
         

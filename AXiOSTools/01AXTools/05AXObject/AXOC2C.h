@@ -69,7 +69,15 @@ BOOL ax_CanOpenURL(NSString *str);
  
  @return 打开是否成功
  */
-BOOL ax_OpenURL(NSString *str);
+BOOL ax_OpenURLStr(NSString *str);
+
+/**
+ 打开URL NSString || NSURL
+
+ @param url NSString || NSURL
+ @return BOOL
+ */
+BOOL ax_OpenURL(id url);
 
 /**
  拨打电话,弹出alert界面

@@ -14,27 +14,72 @@
 /**
  是否能打开url
  
- @param str url str
+ @param url NSString || NSURL
  
  @return 是否打开
  */
-BOOL ax_CanOpenURL(NSString *str){
-    return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:str]];
+BOOL ax_CanOpenURL(id url){
+    
+    NSURL *URL = nil;
+    
+    if ([url isKindOfClass:NSString.class]) {
+        
+        URL = [NSURL URLWithString:url];
+        
+    }else  if ([url isKindOfClass:URL.class]){
+        
+        URL = (NSURL *)url;
+    }
+    
+    return [[UIApplication sharedApplication] canOpenURL:URL];
 }
 
 /**
  * 打开URL
  */
-BOOL ax_OpenURL(NSString *str){
+BOOL ax_OpenURLStr(NSString *str) {
     
+    NSURL *URL = [NSURL URLWithString:str];
     
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored"-Wdeprecated-declarations"
+    if (@available(iOS 10.0, *)) {
+        
+        [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:nil];
+        return YES;
+        
+    } else {
+        
+        return [[UIApplication sharedApplication] openURL:URL];
+    }
+}
+
+/**
+ 打开URL NSString || NSURL
+ 
+ @param url NSString || NSURL
+ @return BOOL
+ */
+BOOL ax_OpenURL(id url) {
     
-    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
-#pragma clang diagnostic pop
+    NSURL *URL = nil;
     
+    if ([url isKindOfClass:NSString.class]) {
+        
+        URL = [NSURL URLWithString:url];
+        
+    }else  if ([url isKindOfClass:NSURL.class]){
+        
+        URL = (NSURL *)url;
+    }
     
+    if (@available(iOS 10.0, *)) {
+        
+        [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:nil];
+        return YES;
+        
+    } else {
+        
+        return [[UIApplication sharedApplication] openURL:URL];
+    }
 }
 
 /**
@@ -45,11 +90,17 @@ BOOL ax_OpenURL(NSString *str){
  @return 是否成功
  */
 BOOL ax_CallTelprompt(NSString *phone){
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored"-Wdeprecated-declarations"
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@",phone]];
-    return [[UIApplication sharedApplication] openURL:url];
-#pragma clang diagnostic pop
+    
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt://%@",phone]];
+    
+    if (@available(iOS 10.0, *)) {
+        
+        [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:nil];
+        return YES;
+        
+    } else {
+        return [[UIApplication sharedApplication] openURL:URL];
+    }
 }
 
 /**
@@ -60,11 +111,17 @@ BOOL ax_CallTelprompt(NSString *phone){
  @return 是否成功
  */
 BOOL ax_CallTel(NSString *phone){
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored"-Wdeprecated-declarations"
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phone]];
-    return [[UIApplication sharedApplication] openURL:url];
-#pragma clang diagnostic pop
+    
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phone]];
+    
+    if (@available(iOS 10.0, *)) {
+        
+        [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:nil];
+        return YES;
+        
+    } else {
+        return [[UIApplication sharedApplication] openURL:URL];
+    }
 }
 
 
@@ -145,10 +202,18 @@ int ax_getRandomFromTo(int from ,int to){
  * 打开通用设置
  */
 BOOL ax_OpenPrefsRoot(){
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored"-Wdeprecated-declarations"
-    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=General"]];
-#pragma clang diagnostic pop
+    
+    NSURL *URL = [NSURL URLWithString:@"prefs:root=General"];
+    
+    if (@available(iOS 10.0, *)) {
+        
+        [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:nil];
+        return YES;
+        
+    } else {
+        
+        return [[UIApplication sharedApplication] openURL:URL];
+    }
 }
 
 /**
@@ -175,7 +240,7 @@ BOOL ax_isDebug(){
 
 /**
  创建xib
-
+ 
  @param name xib 名称
  @return UINib
  */
@@ -185,7 +250,7 @@ UINib * ax_Nib(NSString *name){
 
 /**
  UIImage
-
+ 
  @param name 图片名
  @return UIImage
  */

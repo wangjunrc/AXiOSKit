@@ -237,20 +237,45 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     NSURL *URL = navigationAction.request.URL;
     
     AXLog(@"服务器开始请求的时候调用 %@  %@ %ld",URL.scheme,URL ,(long)navigationAction.navigationType);
+//
+//    if ([URL.scheme  isEqual: @"http"] || [URL.scheme  isEqual: @"https"] ||self.loadType !=loadWebURLString ) {
+//
+//        decisionHandler(WKNavigationActionPolicyAllow);
+//        return;
+//
+//    }
     
-    if ([URL.scheme  isEqual: @"http"] || [URL.scheme  isEqual: @"https"] ||self.loadType !=loadWebURLString ) {
+    if ([URL.scheme isEqual:@"tel"]) {
         
-        decisionHandler(WKNavigationActionPolicyAllow);
-        return;
-        
-    }
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored"-Wdeprecated-declarations"
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        [[UIApplication sharedApplication] openURL:URL];
+        ax_OpenURL(URL);
         decisionHandler(WKNavigationActionPolicyCancel);
-    });
-#pragma clang diagnostic pop
+        return;
+    }
+    
+    if ([URL.scheme isEqual:@"sms"]) {
+        //短信的处理
+        ax_OpenURL(URL);
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
+    
+    if ([URL.scheme isEqual:@"mailto"]) {
+         //邮件的处理
+        ax_OpenURL(URL);
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
+    
+    if ([URL.absoluteString containsString:@"ituns.apple.com"]) {
+        //打开appstore
+        ax_OpenURL(URL);
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
+    
+    decisionHandler(WKNavigationActionPolicyAllow);
+    
+    
 }
 
 
@@ -391,25 +416,36 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     if (self.webView.canGoBack) {
         
         UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-        spaceButtonItem.width = -6.5;
+        spaceButtonItem.width = 20;
         
         [self ax_haveNav:nil isPushNav:^(UINavigationController *nav) {
-            self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.backItem,self.closeItem] ;
+            
+              self.navigationItem.leftBarButtonItems = @[self.backItem,spaceButtonItem,self.closeItem];
+            
         } isPresentNav:^(UINavigationController *nav) {
-            self.navigationItem.leftBarButtonItems = @[spaceButtonItem,self.cancelItem,self.closeItem] ;
+            
+             self.navigationItem.leftBarButtonItems = @[self.cancelItem,spaceButtonItem,self.closeItem];
+            
         } noneNav:nil];
         
-        
+        // 这行代码可以是侧滑返回webView的上一级，而不是根控制器（*只针对侧滑有效）
+        self.webView.allowsBackForwardNavigationGestures = YES;
     }else{
         
+        // 这行代码可以是侧滑返回webView的上一级，而不是根控制器（*只针对侧滑有效）
+        self.webView.allowsBackForwardNavigationGestures = NO;
         
-        self.navigationItem.leftBarButtonItems = @[] ;
+        self.navigationItem.leftBarButtonItems = nil;
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
         
         [self ax_haveNav:nil isPushNav:^(UINavigationController *nav) {
+            
             self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
+            
         } isPresentNav:^(UINavigationController *nav) {
+            
             self.navigationItem.leftBarButtonItem = self.cancelItem;
+            
         } noneNav:nil];
         
     }
