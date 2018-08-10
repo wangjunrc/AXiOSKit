@@ -30,13 +30,13 @@ typedef NS_ENUM(NSUInteger, AXAlertControllerStyle){
 /**
  alertControllerStyle 样式
  */
-@property (nonatomic, assign,readonly)AXAlertControllerStyle alertControllerStyle;
+@property (nonatomic, assign,readonly)AXAlertControllerStyle axAlertControllerStyle;
 
 /**
- 子vc重新此方法,更改 alertControllerStyle 样式
+ 子vc重写此方法,更改 alertControllerStyle 样式
 
  @return AXAlertControllerStyle
  */
-- (AXAlertControllerStyle )alertControllerStyle;
+- (AXAlertControllerStyle )axAlertControllerStyle;
 
 @end

@@ -27,7 +27,7 @@
 }
 
 
-- (AXAlertControllerStyle )alertControllerStyle{
+- (AXAlertControllerStyle )axAlertControllerStyle{
     
     return AXAlertControllerStyleActionSheet;
 }
@@ -50,7 +50,7 @@
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
     
-    switch (self.alertControllerStyle) {
+    switch (self.axAlertControllerStyle) {
         case AXAlertControllerStyleAlert:
             return [[AXAlertAlertTransitioning alloc] init];
             break;
@@ -67,7 +67,7 @@
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
     
-    switch (self.alertControllerStyle) {
+    switch (self.axAlertControllerStyle) {
         case AXAlertControllerStyleAlert:
             return [[AXAlertAlertTransitioning alloc] init];
             break;

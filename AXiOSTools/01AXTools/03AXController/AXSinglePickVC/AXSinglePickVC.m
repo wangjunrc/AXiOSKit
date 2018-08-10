@@ -29,7 +29,7 @@
 @implementation AXSinglePickVC
 
 
-- (AXAlertControllerStyle)alertControllerStyle{
+- (AXAlertControllerStyle)axAlertControllerStyle{
     
     return AXAlertControllerStyleActionSheet;
 }

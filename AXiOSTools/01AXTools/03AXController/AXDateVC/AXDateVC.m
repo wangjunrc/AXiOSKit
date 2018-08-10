@@ -21,7 +21,7 @@
 @implementation AXDateVC
 
 
-- (AXAlertControllerStyle)alertControllerStyle{
+- (AXAlertControllerStyle)axAlertControllerStyle{
     
     return AXAlertControllerStyleActionSheet;
 }
