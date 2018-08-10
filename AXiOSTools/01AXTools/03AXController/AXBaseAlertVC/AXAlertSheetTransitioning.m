@@ -1,14 +1,14 @@
 //
-//  AXAlertUpwardAnimation.m
+//  AXAlertSheetTransitioning.m
 //  AXiOSToolsDemo
 //
 //  Created by mac on 2018/6/4.
 //  Copyright © 2018年 AX. All rights reserved.
 //
 
-#import "AXAlertUpwardAnimation.h"
+#import "AXAlertSheetTransitioning.h"
 
-@implementation AXAlertUpwardAnimation
+@implementation AXAlertSheetTransitioning
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
     // 1

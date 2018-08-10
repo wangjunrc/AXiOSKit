@@ -20,9 +20,6 @@
 
 @property (nonatomic, copy) NSArray *dataArray;
 
-/**
- * <#注释#>
- */
 @property (nonatomic, assign) NSInteger showRow;
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
@@ -30,12 +27,11 @@
 @end
 
 @implementation AXSinglePickVC
-- (instancetype)init{
-    self = [super init];
-    if (self) {
-        self.alertAnimationType = AXAlertAnimationTypeUpward;
-    }
-    return self;
+
+
+- (AXAlertControllerStyle)alertControllerStyle{
+    
+    return AXAlertControllerStyleActionSheet;
 }
 
 - (void)viewDidLoad {

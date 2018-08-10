@@ -1,14 +1,14 @@
 //
-//  AXAlertCenterAnimation.m
+//  AXAlertAlertTransitioning.m
 //  AXiOSToolsDemo
 //
 //  Created by mac on 2018/6/4.
 //  Copyright © 2018年 AX. All rights reserved.
 //
 
-#import "AXAlertCenterAnimation.h"
+#import "AXAlertAlertTransitioning.h"
 
-@implementation AXAlertCenterAnimation
+@implementation AXAlertAlertTransitioning
 
 - (instancetype)initWithVC:(AXBaseAlertVC *)alertVC{
     if (self = [super init]) {

@@ -20,18 +20,15 @@
 
 @implementation AXDateVC
 
-- (instancetype)init{
-    self = [super init];
-    if (self) {
-        self.alertAnimationType = AXAlertAnimationTypeUpward;
-    }
-    return self;
+
+- (AXAlertControllerStyle)alertControllerStyle{
+    
+    return AXAlertControllerStyleActionSheet;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.axContentView = self.contentView;
-    self.alertAnimationType = AXAlertAnimationTypeUpward;
     self.datePicker.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.datePicker.datePickerMode = UIDatePickerModeDate;
 }
