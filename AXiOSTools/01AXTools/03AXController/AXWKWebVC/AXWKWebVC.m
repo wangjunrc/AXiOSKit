@@ -194,6 +194,41 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     //更新左边itme
     [self func_canGoBackItems];
     
+    
+    //    /*测试 网页由xx提供 */
+    //     NSString *js = @"\
+    //    var first=document.body.firstChild;\
+    //    var newnode = document.createElement('li');\
+    //    newnode.innerHTML = 'AAAASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS';\
+    //    newnode.style.height='200px';\
+    //    newnode.style.background='#558175';\
+    //    var wraphtml=document.body.insertBefore(newnode,first);\
+    //    document.body.children[1].style.background='#558175';\
+    //    document.body.children[1].style.margin='-200px 100px 100px 100px';\
+    //    ";
+    //    [webView evaluateJavaScript:js completionHandler:nil];
+    
+    // 获得所有图片
+    /*
+     static NSString * const jsGetImages = @"function getImages(){\
+     var objs = document.getElementsByTagName(\"img\");\
+     var imgScr = '';\
+     for(var i=0;i<objs.length;i++){\
+     imgScr = imgScr + objs[i].src + '+';\
+     };\
+     return imgScr;\
+     };";
+     [webView evaluateJavaScript:jsGetImages completionHandler:nil];
+     [webView evaluateJavaScript:@"getImages()" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+     
+     NSArray *urlArray = [NSMutableArray arrayWithArray:[result componentsSeparatedByString:@"+"]];
+     
+     
+     //urlResurlt 就是获取到得所有图片的url的拼接；mUrlArray就是所有Url的数组 NSLog(@"--%@",urlArray);
+     AXLog(@"urlArray>> %@",urlArray);
+     }];
+     
+     */
 }
 
 /**
