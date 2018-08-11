@@ -7,6 +7,7 @@
 //
 
 #import "UICollectionView+AXTool.h"
+
 @implementation UICollectionView (AXTool)
 
 @end

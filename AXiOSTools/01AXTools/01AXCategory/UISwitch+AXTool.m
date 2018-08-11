@@ -35,8 +35,6 @@ typedef void(^ASwitchBlock)(UISwitch *aSwitch);
     }
 }
 
-
-
 - (void)setASwitchBlock:(ASwitchBlock)aSwitchBlock{
     objc_setAssociatedObject(self, @selector(aSwitchBlock),aSwitchBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
