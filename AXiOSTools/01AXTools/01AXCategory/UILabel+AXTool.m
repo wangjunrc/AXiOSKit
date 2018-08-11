@@ -104,7 +104,7 @@
             [str addAttributes:dcit range:phoneRange];
             label.attributedText = str;
             NSString *phoneStr = [labelStr substringWithRange:phoneRange];
-            [self ax_addViewTargetActionBlock:^(UIView *view) {
+            [self ax_addViewActionBlock:^(UIView *view) {
                 ax_CallTel(phoneStr);
             }];
             

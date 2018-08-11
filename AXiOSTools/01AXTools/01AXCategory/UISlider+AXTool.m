@@ -18,7 +18,7 @@ typedef void(^SliderBlock)(UISlider *button);
 @end
 @implementation UISlider (AXTool)
 
-- (void)ax_addTargetActionBlock:(void (^)(UISlider *))block{
+- (void)ax_addActionBlock:(void (^)(UISlider *))block{
     [self addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventValueChanged];
     self.sliderBlock = block;
 }

@@ -386,16 +386,29 @@ static NSString *cellID = @"cellID";
 
 - (NSTimer *)autoScrollTimer{
     if (!_autoScrollTimer) {
-        _autoScrollTimer =  [NSTimer scheduledTimerWithTimeInterval:self.autoScrollTimeInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
-            
-            if (!self.isGestureScroll) {
-                [self nextPage];
-            }
-        }];
+        
+        if (@available(iOS 10.0, *)) {
+            _autoScrollTimer =  [NSTimer scheduledTimerWithTimeInterval:self.autoScrollTimeInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
+                
+                if (!self.isGestureScroll) {
+                    [self nextPage];
+                }
+            }];
+        } else {
+           
+             _autoScrollTimer =  [NSTimer scheduledTimerWithTimeInterval:self.autoScrollTimeInterval target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+        }
+        
+        
     }
     return _autoScrollTimer;
 }
 
+- (void)timerAction:(NSTimer *)aTimer{
+    if (!self.isGestureScroll) {
+        [self nextPage];
+    }
+}
 
 - (void)setAutoScrollTimeInterval:(NSTimeInterval)autoScrollTimeInterval{
     _autoScrollTimeInterval = autoScrollTimeInterval;

@@ -64,13 +64,13 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
 /**
  * view 添加手势 成为点击事件
  */
-- (void)ax_addViewTargetActionBlock:(void(^_Nullable)(id _Nullable aView))block;
+- (void)ax_addViewActionBlock:(void(^_Nullable)(id _Nullable aView))block;
 
 /**
  *  tag 只能是数字,
  *  所以定义一个string类型
  */
-@property (nonatomic, copy) IBInspectable NSString *axTag;
+@property (nonatomic, copy) IBInspectable NSString * _Nullable axTag;
 
 /**
  找出绑定 ax_tag 的对象
