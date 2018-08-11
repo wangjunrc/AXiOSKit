@@ -26,6 +26,12 @@ void ax_LogXcodeCache(void);
 BOOL ax_isDebug(void);
 
 /**
+ 是否 iPad
+ @return 是否
+ */
+BOOL ax_isiPad(void);
+
+/**
  * AppStore链接,填写自己的iD
  */
 NSString * ax_AppStoreURL(NSString *appId);
@@ -56,20 +62,20 @@ BOOL ax_OpenPrefsRoot(void);
 /**
  是否能打开url
  
- @param str url str
+ @param url url str
  
  @return 是否打开
  */
-BOOL ax_CanOpenURL(NSString *str);
+BOOL ax_CanOpenURL(id url);
 
 /**
  打开url
  
- @param str url str
+ @param url url str
  
  @return 打开是否成功
  */
-BOOL ax_OpenURLStr(NSString *str);
+BOOL ax_OpenURLStr(id url);
 
 /**
  打开URL NSString || NSURL
@@ -91,7 +97,7 @@ BOOL ax_CallTelprompt(NSString *phone);
 /**
  * URL With str
  */
-NSURL *ax_URLStr(NSString *str);
+NSURL *ax_URLWithStr(NSString *str);
 
 /**
  * int --> NSString
@@ -128,6 +134,14 @@ int ax_getRandomFromTo(int from ,int to);
  @return UINib
  */
 UINib * ax_Nib(NSString *name);
+
+/**
+ 创建xib
+ 
+ @param aClass xib 名称 xib与源文件名称一致
+ @return UINib
+ */
+UINib * ax_NibClass(Class aClass);
 
 /**
  UIImage With 图片名
