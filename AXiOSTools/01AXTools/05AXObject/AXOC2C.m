@@ -29,6 +29,8 @@ BOOL ax_CanOpenURL(id url){
     }else  if ([url isKindOfClass:URL.class]){
         
         URL = (NSURL *)url;
+    }else{
+        return NO;
     }
     
     return [[UIApplication sharedApplication] canOpenURL:URL];
@@ -37,9 +39,21 @@ BOOL ax_CanOpenURL(id url){
 /**
  * 打开URL
  */
-BOOL ax_OpenURLStr(NSString *str) {
+BOOL ax_OpenURLStr(id url) {
     
-    NSURL *URL = [NSURL URLWithString:str];
+    NSURL *URL = nil;
+    
+    if ([url isKindOfClass:NSString.class]) {
+        
+        URL = [NSURL URLWithString:url];
+        
+    }else  if ([url isKindOfClass:URL.class]){
+        
+        URL = (NSURL *)url;
+    }else{
+        return NO;
+    }
+    
     
     if (@available(iOS 10.0, *)) {
         
@@ -69,6 +83,8 @@ BOOL ax_OpenURL(id url) {
     }else  if ([url isKindOfClass:NSURL.class]){
         
         URL = (NSURL *)url;
+    }else{
+        return NO;
     }
     
     if (@available(iOS 10.0, *)) {
@@ -219,7 +235,8 @@ BOOL ax_OpenPrefsRoot(){
 /**
  * str to URL
  */
-NSURL *ax_URLStr(NSString *str){
+NSURL *ax_URLWithStr(NSString *str){
+    
     return [NSURL URLWithString:str];
 }
 
@@ -239,6 +256,20 @@ BOOL ax_isDebug(){
 }
 
 /**
+ 是否 iPad
+ @return 是否
+ */
+BOOL ax_isiPad(void){
+    
+    if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ){
+        
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
+/**
  创建xib
  
  @param name xib 名称
@@ -246,6 +277,17 @@ BOOL ax_isDebug(){
  */
 UINib * ax_Nib(NSString *name){
     return  [UINib nibWithNibName:name bundle:nil];
+}
+
+/**
+ 创建xib
+ 
+ @param aClass xib 名称
+ @return UINib
+ */
+UINib * ax_NibClass(Class aClass){
+    
+    return  [UINib nibWithNibName:NSStringFromClass(aClass) bundle:nil];
 }
 
 /**

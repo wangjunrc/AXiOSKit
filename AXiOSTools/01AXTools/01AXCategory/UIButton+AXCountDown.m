@@ -46,7 +46,7 @@ static NSInteger _countDownSecond;
     }
     
     
-    [self ax_addTargetActionBlock:^(UIButton *button) {
+    [self ax_addActionBlock:^(UIButton *button) {
         _countDownSecond = second;
         if (condition==nil) {
             action(self);
@@ -76,21 +76,46 @@ static NSTimer *_timer = nil;
     
     self.enabled = NO;
     [_timer invalidate];
-    _timer =[NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    
+    if (@available(iOS 10.0, *)) {
         
-        if (_countDownSecond <= 0) {
-            [timer invalidate];
-            self.enabled = YES;
-            return;
-        }
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            
+            if (_countDownSecond <= 0) {
+                [timer invalidate];
+                self.enabled = YES;
+                return;
+            }
+            
+            NSString *text = [NSString stringWithFormat:@"%lds后重新获取",(long) _countDownSecond];
+            self.titleLabel.text = text;//防止闪烁
+            [self setTitle:text forState:UIControlStateDisabled];
+            
+            _countDownSecond--;
+        }];
         
-        NSString *text = [NSString stringWithFormat:@"%lds后重新获取",(long) _countDownSecond];
-        self.titleLabel.text = text;//防止闪烁
-        [self setTitle:text forState:UIControlStateDisabled];
+    } else {
         
-        _countDownSecond--;
-    }];
+        _timer =  [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+        
+    }
     [_timer fire];
+}
+
+
+- (void)timerAction:(NSTimer *)aTimer{
+    
+    
+    if (_countDownSecond <= 0) {
+        [aTimer invalidate];
+        self.enabled = YES;
+        return;
+    }
+    
+    NSString *text = [NSString stringWithFormat:@"%lds后重新获取",(long) _countDownSecond];
+    self.titleLabel.text = text;//防止闪烁
+    [self setTitle:text forState:UIControlStateDisabled];
+    _countDownSecond--;
 }
 
 

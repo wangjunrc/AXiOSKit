@@ -23,7 +23,7 @@ typedef void(^ASwitchBlock)(UISwitch *aSwitch);
 /**
  * 按钮事件封装成block
  */
-- (void)ax_addTargetActionBlock:(void(^)(UISwitch *aSwitch))block{
+- (void)ax_addActionBlock:(void(^)(UISwitch *aSwitch))block{
     
     [self addTarget:self action:@selector(aSwitchEvents:) forControlEvents:UIControlEventValueChanged];
     self.aSwitchBlock = block;
@@ -34,8 +34,6 @@ typedef void(^ASwitchBlock)(UISwitch *aSwitch);
         self.aSwitchBlock(aSwitch);
     }
 }
-
-
 
 - (void)setASwitchBlock:(ASwitchBlock)aSwitchBlock{
     objc_setAssociatedObject(self, @selector(aSwitchBlock),aSwitchBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);

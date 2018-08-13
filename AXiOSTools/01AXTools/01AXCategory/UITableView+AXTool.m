@@ -21,6 +21,25 @@
     [self registerNib:[UINib nibWithNibName:nib bundle:nil] forCellReuseIdentifier:identifier];
 }
 
+/**
+ UITableView 注册 NibCell
+ 
+ @param aClass nib
+ @param identifier identifier
+ */
+- (void)ax_registerNibCellClass:(Class )aClass identifier:(NSString *_Nullable )identifier{
+    
+      [self registerNib:[UINib nibWithNibName:NSStringFromClass(aClass) bundle:nil]forCellReuseIdentifier:identifier];
+}
+/**
+ UITableView 注册 NibCell 默认使用 axCellID identifier
+ 
+ @param aClass nib名称
+ */
+- (void)ax_registerNibCellClass:(Class )aClass{
+   
+    [self registerNib:[UINib nibWithNibName:NSStringFromClass(aClass) bundle:nil] forCellReuseIdentifier:axCellID];
+}
 
 /**
  UITableView 注册 NibCell 默认使用 axCellID identifier

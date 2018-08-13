@@ -18,7 +18,7 @@ typedef void(^ButtonBlock)(UIButton *button);
 @implementation UIButton (AXTool)
 
 #pragma mark - 点击事件
-- (void)ax_addTargetActionBlock:(void (^)(UIButton *))block{
+- (void)ax_addActionBlock:(void (^)(UIButton *))block{
     [self addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];
     self.buttonBlock = block;
 }
