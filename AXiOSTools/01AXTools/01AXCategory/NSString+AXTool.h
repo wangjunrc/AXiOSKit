@@ -212,6 +212,12 @@
 - (NSString *)ax_to2Decimal ;
 
 /**
+ count位小数
+ 
+ @return NSString
+ */
+- (NSString *)ax_toCountDecimal:(NSInteger )count;
+/**
  2位小数
  @return NSString
  */
@@ -224,6 +230,12 @@
  */
 - (NSData *)ax_toData;
 
+/**
+ 时间秒 转换 时分秒 字符串
+ 
+ @param seconds 秒
+ @return str
+ */
 +(NSString *)ax_getHHMMSSWithSeconds:(NSInteger )seconds;
 
 @end

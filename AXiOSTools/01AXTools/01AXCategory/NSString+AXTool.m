@@ -554,12 +554,8 @@
 - (NSString *)ax_to2Decimal {
     
     return [NSString stringWithFormat: @"%.2lf", self.doubleValue];
-    
-    //    double conversionValue = self.doubleValue;
-    //    NSString *doubleString = [NSString stringWithFormat:@"%lf", conversionValue];
-    //    NSDecimalNumber *decNumber = [NSDecimalNumber decimalNumberWithString:doubleString];
-    //    return decNumber.stringValue;
 }
+
 
 /**
  2位小数
@@ -573,6 +569,18 @@
     return decNumber.stringValue;
 }
 
+/**
+ count位小数
+ 
+ @return NSString
+ */
+- (NSString *)ax_toCountDecimal:(NSInteger )count {
+    
+    float number = self.doubleValue;
+    NSString* format = [NSString stringWithFormat:@"%%.%ldf",(long)count];
+    NSString* resultStr = [NSString stringWithFormat:format,number];
+    return resultStr;
+}
 
 /**
  NSString 转化 NSData
@@ -584,7 +592,12 @@
     return [self dataUsingEncoding:NSUTF8StringEncoding];
 }
 
-
+/**
+ 时间秒 转换 时分秒 字符串
+ 
+ @param seconds 秒
+ @return str
+ */
 + (NSString *)ax_getHHMMSSWithSeconds:(NSInteger )seconds{
     
     //format of hour
