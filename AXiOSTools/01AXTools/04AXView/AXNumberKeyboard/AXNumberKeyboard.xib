@@ -12,9 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AXNumberKeyboard">
             <connections>
-                <outlet property="deleteBtn" destination="VJE-pP-wxO" id="R6v-pP-EId"/>
                 <outlet property="keyboardView" destination="iN0-l3-epB" id="maT-yi-5GW"/>
-                <outlet property="resignBtn" destination="cm7-f6-aHS" id="pJf-GR-BTe"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -25,6 +23,58 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlr-1R-MbX">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
                     <subviews>
+                        <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSk-PD-SJ1">
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="RMM-hu-VjQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <state key="normal" title="1">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="8eH-7u-Plr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bv2-Gy-Q2Y">
+                            <rect key="frame" x="80" y="0.0" width="80" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="u0F-Yy-v6Y"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <state key="normal" title="2">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="GVD-m1-HER"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35L-S7-iPq">
+                            <rect key="frame" x="160" y="0.0" width="80" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="ygm-Yh-oWB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <state key="normal" title="3">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="O2c-LI-7ZW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bk7-h3-zRo">
+                            <rect key="frame" x="0.0" y="54" width="80" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="URd-QB-PKG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <state key="normal" title="4">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="6b7-vg-GaC"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gg-r1-6hS">
                             <rect key="frame" x="80" y="54" width="80" height="54"/>
                             <constraints>
@@ -36,6 +86,32 @@
                             </state>
                             <connections>
                                 <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="3Vw-hU-KAK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4l-aa-at8">
+                            <rect key="frame" x="160" y="54" width="80" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="PFX-jY-dxh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <state key="normal" title="6">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="Go5-lZ-ptX"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfV-qh-8nC">
+                            <rect key="frame" x="0.0" y="108" width="80" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="yqs-pU-pwP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <state key="normal" title="7">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="4Td-Ve-bKt"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="1008" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBA-hV-N0w">
@@ -64,94 +140,17 @@
                                 <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="KpK-4x-t5q"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bv2-Gy-Q2Y">
-                            <rect key="frame" x="80" y="0.0" width="80" height="54"/>
+                        <button opaque="NO" tag="1010" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paj-4N-4ub">
+                            <rect key="frame" x="0.0" y="162" width="80" height="54"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="54" id="u0F-Yy-v6Y"/>
+                                <constraint firstAttribute="height" constant="54" id="P0G-cx-ZWk"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                            <state key="normal" title="2">
+                            <state key="normal" title=".">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="GVD-m1-HER"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="1012" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJE-pP-wxO">
-                            <rect key="frame" x="240" y="0.0" width="80" height="108"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="108" id="5sj-gA-MXp"/>
-                            </constraints>
-                            <state key="normal" image="ax_delete">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="ngE-SC-xCI"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="1007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfV-qh-8nC">
-                            <rect key="frame" x="0.0" y="108" width="80" height="54"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="54" id="yqs-pU-pwP"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                            <state key="normal" title="7">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="4Td-Ve-bKt"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="1006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4l-aa-at8">
-                            <rect key="frame" x="160" y="54" width="80" height="54"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="54" id="PFX-jY-dxh"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                            <state key="normal" title="6">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="Go5-lZ-ptX"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35L-S7-iPq">
-                            <rect key="frame" x="160" y="0.0" width="80" height="54"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="54" id="ygm-Yh-oWB"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                            <state key="normal" title="3">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="O2c-LI-7ZW"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSk-PD-SJ1">
-                            <rect key="frame" x="0.0" y="0.0" width="80" height="54"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="54" id="RMM-hu-VjQ"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                            <state key="normal" title="1">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="8eH-7u-Plr"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bk7-h3-zRo">
-                            <rect key="frame" x="0.0" y="54" width="80" height="54"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="54" id="URd-QB-PKG"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                            <state key="normal" title="4">
-                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="6b7-vg-GaC"/>
+                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="mge-kJ-7fV"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9w4-ON-qBK">
@@ -167,7 +166,7 @@
                                 <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="Ubf-aQ-gRa"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1011" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cm7-f6-aHS">
+                        <button opaque="NO" tag="1011" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cm7-f6-aHS" userLabel="键盘">
                             <rect key="frame" x="160" y="162" width="80" height="54"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="54" id="kc3-1i-Ilj"/>
@@ -179,17 +178,16 @@
                                 <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="LIe-rY-FJB"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1010" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paj-4N-4ub">
-                            <rect key="frame" x="0.0" y="162" width="80" height="54"/>
+                        <button opaque="NO" tag="1012" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJE-pP-wxO" userLabel="删除">
+                            <rect key="frame" x="240" y="0.0" width="80" height="108"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="54" id="P0G-cx-ZWk"/>
+                                <constraint firstAttribute="height" constant="108" id="5sj-gA-MXp"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                            <state key="normal" title=".">
+                            <state key="normal" image="ax_delete">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="mge-kJ-7fV"/>
+                                <action selector="keyboardViewAction:" destination="-1" eventType="touchUpInside" id="ngE-SC-xCI"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="1013" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aq-YY-A3r">

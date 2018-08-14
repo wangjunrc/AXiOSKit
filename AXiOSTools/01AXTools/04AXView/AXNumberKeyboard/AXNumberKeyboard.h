@@ -12,7 +12,7 @@
 #define SYS_DEVICE_HEIGHT   ([[UIScreen mainScreen] bounds].size.height)                //屏幕长度
 
 typedef NS_ENUM(NSUInteger, AXNumberKeyboardType) {
-    AXNumberKeyboardTypeInteger,        // 整数键盘
+    AXNumberKeyboardTypeInteger,    // 整数键盘
     AXNumberKeyboardTypeFloat,      // 浮点数键盘
     AXNumberKeyboardTypeIDCard,     // 身份证键盘
 };

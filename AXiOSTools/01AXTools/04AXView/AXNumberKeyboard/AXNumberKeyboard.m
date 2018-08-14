@@ -12,10 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UIView *keyboardView;
 
-@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
-
-@property (weak, nonatomic) IBOutlet UIButton *resignBtn;
-
 @end
 
 @implementation AXNumberKeyboard
