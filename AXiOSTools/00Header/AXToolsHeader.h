@@ -55,7 +55,7 @@
 #import "UIViewController+AXAlert.h"
 #import "UIViewController+AXiPadAlert.h"
 #import "UIViewController+AXTool.h"
-
+#import "UITextField+AXAction.h"
 
 /* 00Header 02IBView*/
 #import "IBObjectHeader.h"

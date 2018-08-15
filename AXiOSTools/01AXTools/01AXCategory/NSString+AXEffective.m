@@ -116,6 +116,18 @@
      return [self ax_macth:@"^[0-9]+([.][0-9]{0,2}){0,1}$"];
 }
 
+
+/**
+ 小数点后最多位数 (这个现在无法排除0)
+
+ @param count 位数
+ @return BOOL
+ */
+- (BOOL)ax_isFloat:(NSInteger )count {
+    NSString *str = [NSString stringWithFormat:@"^[0-9]+([.][0-9]{0,%ld}){0,1}$",count];
+    return [self ax_macth:str];
+}
+
 /**
  * 整数
  */

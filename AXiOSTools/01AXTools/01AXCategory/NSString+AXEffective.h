@@ -55,6 +55,13 @@
 - (BOOL)ax_isPositive;
 
 /**
+ 小数点后最多位数 (这个现在无法排除0)
+ 
+ @param count 位数
+ @return BOOL
+ */
+- (BOOL)ax_isFloat:(NSInteger )count;
+/**
  * 钱 等于 0 最多2位的小数 及正数
  */
 - (BOOL)ax_isMoney;
