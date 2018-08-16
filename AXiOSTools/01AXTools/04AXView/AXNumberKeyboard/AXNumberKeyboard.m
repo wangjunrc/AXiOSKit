@@ -135,8 +135,6 @@
                 }
                 
             }else{
-                
-                AXLogFunc;
                 [self.textInput insertText:text];
             }
             

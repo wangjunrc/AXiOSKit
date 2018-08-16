@@ -9,6 +9,8 @@
 #import "UITextField+AXNumberKeyboard.h"
 #import <objc/runtime.h>
 #import "AXMacros_runTime.h"
+#import "UITextField+AXTool.h"
+#import "NSString+AXTool.h"
 
 @implementation UITextField (AXNumberKeyboard)
 

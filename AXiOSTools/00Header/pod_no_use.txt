@@ -6,6 +6,8 @@
 # UITableViewCell 缓存高度
 #pod 'UITableView+FDTemplateLayoutCell'
 
+# 定时器
+pod 'MSWeakTimer'
 
 # UITableViewCell 左,右 侧滑 显示item
 #pod 'MGSwipeTableCell'
