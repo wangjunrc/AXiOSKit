@@ -59,7 +59,6 @@
 
 /* 00Header 02IBView*/
 #import "IBObjectHeader.h"
-#import "AXCountdownTimer.h"
 #import "AXConstant.h"
 #import "AXOC2C.h"
 
