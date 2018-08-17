@@ -9,6 +9,9 @@
 # 定时器
 pod 'MSWeakTimer'
 
+# 加密 解密
+pod 'CocoaSecurity'
+
 # UITableViewCell 左,右 侧滑 显示item
 #pod 'MGSwipeTableCell'
 
