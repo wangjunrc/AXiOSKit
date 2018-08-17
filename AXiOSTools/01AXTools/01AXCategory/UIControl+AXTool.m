@@ -9,6 +9,7 @@
 #import "UIControl+AXTool.h"
 #import <objc/runtime.h>
 #import "AXMacros_runTime.h"
+#import "AXMacros_addProperty.h"
 
 typedef void(^ControlBlock)(UIControl *aControl);
 
@@ -36,11 +37,11 @@ typedef void(^ControlBlock)(UIControl *aControl);
 #pragma mark - set and get
 
 - (void)setControlBlock:(ControlBlock)controlBlock{
-    ax_runtimePropertyObjSet(controlBlock)
+    ax_addCopyPropertySet(controlBlock);
 }
 
 - (ControlBlock)controlBlock{
-    return ax_runtimePropertyObjGet(controlBlock)
+    return ax_addPropertyGet(controlBlock);
 }
 
 @end

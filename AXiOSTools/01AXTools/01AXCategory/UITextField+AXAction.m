@@ -9,6 +9,7 @@
 #import "UITextField+AXAction.h"
 #import <objc/runtime.h>
 #import "AXMacros_runTime.h"
+#import "AXMacros_addProperty.h"
 #import "NSObject+AXKVO.h"
 #import "NSString+AXTool.h"
 
@@ -112,12 +113,12 @@
 // 开始 set and get
 - (void)setAx_didBeginBlock:(void (^)(UITextField *))ax_didBeginBlock{
     self.delegate = self;
-    ax_runtimePropertyObjSet(ax_didBeginBlock);
+    ax_addCopyPropertySet(ax_didBeginBlock);
 }
 
 - (void (^)(UITextField *))ax_didBeginBlock{
     
-    return ax_runtimePropertyAssGet(ax_didBeginBlock);
+    return ax_addPropertyGet(ax_didBeginBlock);
 }
 
 
@@ -126,33 +127,33 @@
     
     [self addTarget:self action:@selector(textChnageAction:) forControlEvents:UIControlEventEditingChanged];
     
-    ax_runtimePropertyObjSet(ax_didEditingChangedBlock);
+    ax_addCopyPropertySet(ax_didEditingChangedBlock);
 }
 - (void (^)(UITextField *))ax_didEditingChangedBlock{
     
-    return ax_runtimePropertyObjGet(ax_didEditingChangedBlock);
+    return ax_addPropertyGet(ax_didEditingChangedBlock);
 }
 
 
 // 结束 set and get
 - (void)setAx_didEndBlock:(void (^)(UITextField *))ax_didEndBlock{
     self.delegate = self;
-    ax_runtimePropertyObjSet(ax_didEndBlock);
+    ax_addCopyPropertySet(ax_didEndBlock);
 }
 - (void (^)(UITextField *))ax_didEndBlock{
     
-    return ax_runtimePropertyObjGet(ax_didEndBlock);
+    return ax_addPropertyGet(ax_didEndBlock);
 }
 
 
 // 是否能输入当然文字 set and get
 - (void)setAx_shouldChangeBlock:(BOOL (^)(UITextField *, NSRange, NSString *))ax_shouldChangeBlock{
     self.delegate = self;
-    ax_runtimePropertyObjSet(ax_shouldChangeBlock);
+    ax_addCopyPropertySet(ax_shouldChangeBlock);
 }
 
 - (BOOL (^)(UITextField *, NSRange, NSString *))ax_shouldChangeBlock{
-    return ax_runtimePropertyObjGet(ax_shouldChangeBlock);
+    return ax_addPropertyGet(ax_shouldChangeBlock);
 }
 
 

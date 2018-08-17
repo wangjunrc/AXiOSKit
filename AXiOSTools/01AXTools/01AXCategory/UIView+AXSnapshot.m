@@ -9,6 +9,7 @@
 #import "UIView+AXSnapshot.h"
 #import <WebKit/WebKit.h>
 #import "AXMacros_runTime.h"
+#import "AXMacros_addProperty.h"
 #define DELAY_TIME_DRAW 0.1
 
 @interface UIView ()
@@ -154,17 +155,17 @@
 #pragma mark - set and get
 
 - (void)setIsCapturing:(BOOL)isCapturing{
-    ax_runtimePropertyAssSet(isCapturing);
+    ax_addAssignPropertySet(isCapturing);
 }
 - (BOOL)isCapturing{
-    return [ax_runtimePropertyAssGet(isCapturing) boolValue];
+    return ax_addPropertyGet(isCapturing);
 }
 
 - (void)setDidBlock:(void (^)(UIImage *))didBlock{
-    ax_runtimePropertyObjSet(didBlock);
+    ax_addCopyPropertySet(didBlock);
 }
 
 - (void (^)(UIImage *))didBlock{
-    return ax_runtimePropertyObjGet(didBlock);
+    return ax_addPropertyGet(didBlock);
 }
 @end

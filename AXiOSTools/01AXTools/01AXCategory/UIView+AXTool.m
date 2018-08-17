@@ -8,7 +8,8 @@
 
 #import "UIView+AXTool.h"
 #import "AXMacros_runTime.h"
-
+#import "AXMacros_addProperty.h"
+#import "AXMacros_addProperty.h"
 typedef void(^DidViewBlock)(UIView *view);
 
 @interface UIView ()<UIGestureRecognizerDelegate>
@@ -268,19 +269,19 @@ typedef void(^DidViewBlock)(UIView *view);
 #pragma mark - set and get
 
 - (void)setDidViewBlock:(DidViewBlock)didViewBlock{
-    ax_runtimePropertyObjSet(didViewBlock);
+    ax_addCopyPropertySet(didViewBlock);
 }
 
 - (DidViewBlock)didViewBlock{
-    return ax_runtimePropertyObjGet(didViewBlock);
+    return ax_addPropertyGet(didViewBlock);
 }
 
 - (void)setAxTag:(NSString *)axTag{
-    ax_runtimePropertyObjSet(axTag);
+    ax_addCopyPropertySet(axTag);
 }
 
 - (NSString *)axTag{
-    return ax_runtimePropertyObjGet(axTag);
+    return ax_addPropertyGet(axTag);
 }
 
 

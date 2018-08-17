@@ -47,6 +47,7 @@ static NSInteger _countDownSecond;
     
     
     [self ax_addActionBlock:^(UIButton *button) {
+        
         _countDownSecond = second;
         if (condition==nil) {
             action(self);
@@ -57,6 +58,7 @@ static NSInteger _countDownSecond;
             }
         }
     }];
+    
     
 }
 

@@ -8,7 +8,6 @@
 
 #ifndef AXMacros_runTime_h
 #define AXMacros_runTime_h
-#import <objc/runtime.h>
 
 /*
  

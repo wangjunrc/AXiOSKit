@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
+/**
+ 需求: 页面返回 倒计时仍在继续
+ */
 @interface UIButton (AXCountDown)
 
 /**

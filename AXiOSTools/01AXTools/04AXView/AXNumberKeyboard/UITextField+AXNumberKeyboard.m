@@ -9,6 +9,7 @@
 #import "UITextField+AXNumberKeyboard.h"
 #import <objc/runtime.h>
 #import "AXMacros_runTime.h"
+#import "AXMacros_addProperty.h"
 #import "UITextField+AXTool.h"
 #import "NSString+AXTool.h"
 
@@ -65,12 +66,12 @@
 
 - (void)setFloatCount:(NSInteger)floatCount{
     self.delegate = self;
-    ax_runtimePropertyAssSet(floatCount);
+    ax_addAssignPropertySet(floatCount);
 }
 
 - (NSInteger)floatCount{
     
-    return [ax_runtimePropertyAssGet(floatCount) integerValue];
+    return [ax_addPropertyGet(floatCount) integerValue];
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{

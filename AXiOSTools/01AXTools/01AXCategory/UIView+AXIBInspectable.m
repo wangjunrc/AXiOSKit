@@ -8,6 +8,7 @@
 
 #import "UIView+AXIBInspectable.h"
 #import "AXMacros_runTime.h"
+#import "AXMacros_addProperty.h"
 
 @implementation UIView (AXIBInspectable)
 
@@ -17,7 +18,7 @@
  *  @param axCornRadius 可视化视图传入的值
  */
 - (void)setAxCornRadius:(CGFloat)axCornRadius{
-    ax_runtimePropertyAssSet(axCornRadius);
+    ax_addAssignPropertySet(axCornRadius);
     self.layer.cornerRadius = axCornRadius;
     
 //    if (![self isMemberOfClass:UIView.class]) {
@@ -28,7 +29,7 @@
 
 - (CGFloat)axCornRadius{
     
-    return [ax_runtimePropertyAssGet(axCornRadius) floatValue];
+    return [ax_addPropertyGet(axCornRadius)floatValue];
 }
 
 /**
@@ -38,13 +39,13 @@
  */
 
 - (void)setAxBordWidth:(CGFloat)axBordWidth{
-    ax_runtimePropertyAssSet(axBordWidth);
+    ax_addAssignPropertySet(axBordWidth);
     if (axBordWidth < 0) return;
     self.layer.borderWidth = axBordWidth;
 }
 
 - (CGFloat)axBordWidth{
-    return [ax_runtimePropertyAssGet(axBordWidth) floatValue];
+    return [ax_addPropertyGet(axBordWidth) floatValue];
 }
 
 /**
@@ -53,24 +54,24 @@
  *  @param axBordColor 可视化视图传入的值
  */
 - (void)setAxBordColor:(UIColor *)axBordColor{
-    ax_runtimePropertyObjGet(axBordColor);
+    ax_addPropertyGet(axBordColor);
     self.layer.borderColor = axBordColor.CGColor;
 }
 
 - (UIColor *)axBordColor{
-    return ax_runtimePropertyObjGet(axBordColor);
+    return ax_addPropertyGet(axBordColor);
 }
 
 /**
  可视化设置边masksToBounds
  */
 - (void)setAxMasksToBounds:(BOOL)axMasksToBounds{
-    ax_runtimePropertyObjGet(axMasksToBounds);
+    ax_addPropertyGet(axMasksToBounds);
     self.layer.masksToBounds = axMasksToBounds;
 }
 
 - (BOOL)axMasksToBounds{
-    return [ax_runtimePropertyAssGet(axMasksToBounds) boolValue];
+    return ax_addPropertyGet(axMasksToBounds);
 }
 
 @end

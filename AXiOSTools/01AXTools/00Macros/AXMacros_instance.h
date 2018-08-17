@@ -6,6 +6,9 @@
 //  Copyright © 2017年 liuweixing. All rights reserved.
 //
 
+/*
+ 分类添加属性 宏,过期,请使用 AXMacros_addProperty.h 文件中
+ */
 #ifndef AXMacros_instance_h
 #define AXMacros_instance_h
 

@@ -8,6 +8,7 @@
 
 #import "NSObject+AXTool.h"
 #import "AXMacros_runTime.h"
+#import "AXMacros_addProperty.h"
 #import <UIKit/UIKit.h>
 
 @interface NSObject ()
@@ -125,28 +126,29 @@
 
 
 - (void)setAx_pageIndex:(NSInteger)ax_pageIndex{
-    ax_runtimePropertyAssSet(ax_pageIndex);
+    ax_addAssignPropertySet(ax_pageIndex);
 }
 
 - (NSInteger)ax_pageIndex{
-    return [ax_runtimePropertyAssGet(ax_pageIndex)integerValue];
+    return [ax_addPropertyGet(ax_pageIndex)integerValue];
 }
 
 
 - (void)setAx_backBlock:(AX_backBlock)ax_backBlock{
-    ax_runtimePropertyObjSet(ax_backBlock);
+    ax_addCopyPropertySet(ax_backBlock);
+    
+    
 }
-
 - (AX_backBlock)ax_backBlock{
-    return ax_runtimePropertyObjGet(ax_backBlock);
+    return ax_addPropertyGet(ax_backBlock);
 }
 
 - (void)setAx_byValue:(id)ax_byValue{
-    ax_runtimePropertyObjSet(ax_byValue);
+    ax_addCopyPropertySet(ax_byValue);
 }
 
 - (id)ax_byValue{
-    return ax_runtimePropertyObjGet(ax_byValue);
+    return ax_addPropertyGet(ax_byValue);
 }
 
 
