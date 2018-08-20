@@ -96,10 +96,12 @@ self.musicPlayer.delegate = self;
 
 
 
+//************************************************************************
+tableView 默认选中
 
+[tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 
-
-
+//************************************************************************
 
 
 

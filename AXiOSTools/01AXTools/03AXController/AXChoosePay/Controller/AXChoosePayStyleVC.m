@@ -1,0 +1,62 @@
+//
+//  AXChoosePayStyleVC.m
+//  AXiOSToolsDemo
+//
+//  Created by liuweixing on 2018/8/20.
+//  Copyright © 2018年 liuweixing. All rights reserved.
+//
+
+#import "AXChoosePayStyleVC.h"
+#import "AXChoosePayStyleCell.h"
+#import "AXToolsHeader.h"
+@interface AXChoosePayStyleVC ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+
+@end
+
+@implementation AXChoosePayStyleVC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+     self.axContentView = self.contentView;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.tableView registerNib:ax_Nib(@"AXChoosePayStyleCell") forCellReuseIdentifier:axCellID];
+    axTableFooterViewZero;
+    
+
+}
+
+- (NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataArray.count;
+}
+
+- (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 60;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    AXChoosePayStyleCell *cell = [tableView dequeueReusableCellWithIdentifier:axCellID forIndexPath:indexPath];
+    
+    AXChoosePayModel *model = self.dataArray[indexPath.row];
+    
+    cell.logoImageView.image = [UIImage imageNamed:model.imageName];
+    cell.nameLabel.text = model.name;
+    
+    if (self.selectIndex == indexPath.row) {
+        
+        [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    }
+    
+    return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+
+
+@end

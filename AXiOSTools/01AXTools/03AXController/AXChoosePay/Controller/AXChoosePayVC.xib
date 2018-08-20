@@ -11,6 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AXChoosePayVC">
             <connections>
+                <outlet property="amountLabel" destination="Lly-kj-GkM" id="Yq3-jI-chf"/>
+                <outlet property="closeBtn" destination="ofL-MT-GhE" id="NZa-vp-bhC"/>
+                <outlet property="contentView" destination="zO5-h1-EdA" id="cvW-oF-LKB"/>
+                <outlet property="orderMsgLabel" destination="oTH-bA-k4Q" id="F2p-8y-tQl"/>
+                <outlet property="payBtn" destination="RmG-mM-irL" id="Ped-HI-41E"/>
+                <outlet property="payStyleLabel" destination="9Y6-7T-IWJ" id="EuK-ug-FLN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,6 +38,9 @@
                                         <constraint firstAttribute="height" constant="20" id="Jn5-BX-xYR"/>
                                     </constraints>
                                     <state key="normal" image="ax_close"/>
+                                    <connections>
+                                        <action selector="closeBtnAction:" destination="-1" eventType="touchUpInside" id="8Ec-1a-cha"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,8 +91,15 @@
                                         <constraint firstAttribute="width" constant="10" id="o6z-ve-N6a"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Y6-7T-IWJ">
-                                    <rect key="frame" x="309" y="16.5" width="36" height="17"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08y-5H-INM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="selectPayStyleAction:" destination="-1" eventType="touchUpInside" id="Zer-bS-z1T"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Y6-7T-IWJ">
+                                    <rect key="frame" x="311" y="16" width="36" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -92,11 +108,15 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="XLE-3l-4U2" firstAttribute="leading" secondItem="9Y6-7T-IWJ" secondAttribute="trailing" constant="10" id="15N-FT-GtD"/>
+                                <constraint firstItem="08y-5H-INM" firstAttribute="top" secondItem="vFw-Qz-8oI" secondAttribute="top" id="455-tq-XEf"/>
+                                <constraint firstAttribute="trailing" secondItem="08y-5H-INM" secondAttribute="trailing" id="DZP-4L-HHU"/>
                                 <constraint firstAttribute="trailing" secondItem="XLE-3l-4U2" secondAttribute="trailing" constant="10" id="Jfy-Ij-uqh"/>
                                 <constraint firstItem="9Y6-7T-IWJ" firstAttribute="centerY" secondItem="vFw-Qz-8oI" secondAttribute="centerY" id="T9q-TS-0iX"/>
                                 <constraint firstItem="XLE-3l-4U2" firstAttribute="centerY" secondItem="vFw-Qz-8oI" secondAttribute="centerY" id="ZpZ-61-JKm"/>
                                 <constraint firstItem="Y53-3C-Q1h" firstAttribute="leading" secondItem="vFw-Qz-8oI" secondAttribute="leading" constant="10" id="h0B-aO-AkE"/>
                                 <constraint firstItem="Y53-3C-Q1h" firstAttribute="centerY" secondItem="vFw-Qz-8oI" secondAttribute="centerY" id="iSM-XI-BKp"/>
+                                <constraint firstItem="08y-5H-INM" firstAttribute="leading" secondItem="vFw-Qz-8oI" secondAttribute="leading" id="jcz-qk-dcO"/>
+                                <constraint firstAttribute="bottom" secondItem="08y-5H-INM" secondAttribute="bottom" id="o7a-oJ-rk1"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQw-RB-iWP" userLabel="确认">
@@ -114,6 +134,9 @@
                                             <real key="value" value="5"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="payBtnAction:" destination="-1" eventType="touchUpInside" id="YGq-AI-i1A"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -179,6 +202,7 @@
                 <constraint firstAttribute="bottom" secondItem="zO5-h1-EdA" secondAttribute="bottom" id="KOc-hZ-GK6"/>
                 <constraint firstAttribute="trailing" secondItem="zO5-h1-EdA" secondAttribute="trailing" id="svn-3M-hwE"/>
             </constraints>
+            <point key="canvasLocation" x="100.5" y="59.5"/>
         </view>
     </objects>
     <resources>
