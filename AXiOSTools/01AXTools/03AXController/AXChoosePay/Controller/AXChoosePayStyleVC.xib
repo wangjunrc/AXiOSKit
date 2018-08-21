@@ -38,6 +38,9 @@
                                         <constraint firstAttribute="height" constant="20" id="bF7-ck-HXa"/>
                                     </constraints>
                                     <state key="normal" title="Button" image="ax_itemBack_h"/>
+                                    <connections>
+                                        <action selector="backBtnAction:" destination="-1" eventType="touchUpInside" id="zGO-Xh-4Hx"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

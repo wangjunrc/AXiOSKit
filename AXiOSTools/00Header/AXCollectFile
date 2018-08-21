@@ -107,11 +107,22 @@ tableView 默认选中
 
 
 
+//************************************************************************
 
+wkwebView 加载本地 css 文件
 
+//获取bundlePath 路径
+NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
+//获取本地html目录 basePath
+NSString *basePath = [NSString stringWithFormat: @"%@/www", bundlePath];
+//获取本地html目录 baseUrl
+//html 路径
+NSString *indexPath = [NSString stringWithFormat: @"%@/%@.html", basePath,url];
+NSURL *fileUrl = [NSURL fileURLWithPath:indexPath];
+NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];
+[self.webView loadFileURL:[NSURL fileURLWithPath:indexPath] allowingReadAccessToURL: baseUrl];
 
-
-
+//************************************************************************
 
 
 

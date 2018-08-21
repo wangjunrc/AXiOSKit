@@ -18,7 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 
-
 @property (weak, nonatomic) IBOutlet UIButton *payBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *closeBtn;
@@ -36,16 +35,36 @@
     [super viewDidLoad];
     
     self.axContentView = self.contentView;
+    self.axTouchesBeganDismiss = NO;
+    self.orderMsgLabel.text = nil;
+    self.amountLabel.text = @"0元";
+    
+    if (self.orderMsgStr.length>0) {
+        self.orderMsgLabel.text = self.orderMsgStr;
+    }
+    
+    if (self.amountFloat>0) {
+        self.amountLabel.text = [NSString stringWithFormat:@"%.2lf元",self.amountFloat];;
+    }
+    
+    [self func_payStyleText];
 }
 
+- (void)func_payStyleText {
+    
+    AXChoosePayModel *payModel = self.dataArray[self.selectIndex];
+    self.payStyleLabel.text = payModel.name;
+}
 
 - (IBAction)payBtnAction:(id)sender {
-    
+    if (self.confirmPayBlock) {
+        self.confirmPayBlock(self.dataArray[self.selectIndex]);
+    }
     
 }
 - (IBAction)closeBtnAction:(id)sender {
     
-    
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)selectPayStyleAction:(id)sender {
@@ -54,17 +73,13 @@
     payStyleVC.dataArray = self.dataArray;
     payStyleVC.selectIndex = self.selectIndex;
     
-    //        [UIView transitionFromView:self.view toView:self.payStyleVC.view duration:1 options:UIViewAnimationOptionTransitionFlipFromTop completion:^(BOOL finished) {
-    //
-    //        }];
-    //        [UIView transitionFromView:self.payStyleVC.view toView:self.view duration:1 options:UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL finished) {
-    //
-    //        }];
-    
     
     [self ax_showVC:payStyleVC];
     
-    
+    payStyleVC.didSelectBlock = ^(NSInteger row) {
+        self.selectIndex = row;
+        [self func_payStyleText];
+    };
     
 }
 

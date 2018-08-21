@@ -15,7 +15,7 @@
 
 @property(nonatomic,copy)NSString *orderMsgStr;
 
-@property(nonatomic,copy)NSString *amountStr;
+@property(nonatomic,assign)CGFloat amountFloat;
 
 @property(nonatomic,copy)void(^confirmPayBlock)(AXChoosePayModel *payModel);
 

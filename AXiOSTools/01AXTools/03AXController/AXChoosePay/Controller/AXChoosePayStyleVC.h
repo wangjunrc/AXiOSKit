@@ -18,4 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
+
+@property(nonatomic,copy)void(^didSelectBlock)(NSInteger row);
+
+
 @end
