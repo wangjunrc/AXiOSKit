@@ -19,6 +19,10 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 
 @interface AXWKWebVC ()<WKNavigationDelegate,WKUIDelegate>
 
+
+@property (nonatomic, copy) NSString *url;
+
+
 @property (nonatomic, strong) WKWebView *webView;
 
 @property (nonatomic, strong) UIProgressView *progressView;
@@ -53,6 +57,7 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 @implementation AXWKWebVC
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self init_setView];
     [self init_navItme];
@@ -106,27 +111,39 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     [self.bridge setWebViewDelegate:self];
     
     
-    // JS主动调用OjbC的方法 function_name
-    // 这是JS会调用getUserIdFromObjC方法，这是OC注册给JS调用的
-    // JS需要回调，当然JS也可以传参数过来。data就是JS所传的参数，不一定需要传
-    // OC端通过responseCallback回调JS端，JS就可以得到所需要的数据
-    [self.bridge registerHandler:@"function_name" handler:^(id data, WVJBResponseCallback responseCallback) {
+    [self.bridge registerHandler:@"iosWeixinPay" handler:^(id data, WVJBResponseCallback responseCallback) {
+        
+        
         //data  js 传来的参数
-        NSLog(@"js call getUserIdFromObjC, data from js is %@", data);
+        NSLog(@"data>> %@", data);
         
-        if (responseCallback) {
-            // 反馈给JS ,js 不需要反馈 就不需要写
-            responseCallback(@{@"userId": @"123456"});
-        }
+//        if (responseCallback) {
+//            // 反馈给JS ,js 不需要反馈 就不需要写
+//            responseCallback(@{@"userId": @"123456"});
+//        }
     }];
     
-    // oc调用JS方法 function_name
-    //直接调用JS端注册的HandleName
-    [self.bridge callHandler:@"function_name"data:@{} responseCallback:^(id responseData) {
-        
-        NSLog(@"from js: %@", responseData);
-    }];
     
+    
+    // 时机调用回调
+//    [self.bridge callHandler:@"payCallBack" data:@"123"];
+    
+    
+//    [self.bridge callHandler:@"function_name"data:@{} responseCallback:^(id responseData) {
+//
+//        NSLog(@"from js: %@", responseData);
+//    }];
+    
+    
+    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    btn.backgroundColor = [UIColor orangeColor];
+    [self.webView addSubview:btn];
+    
+    [btn ax_addActionBlock:^(UIButton * _Nullable button) {
+        AXLog(@"btn>>>");
+        [self.bridge callHandler:@"payCallBack" data:@"123"];
+        
+    }];
 }
 
 
@@ -134,23 +151,6 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
  * UINavigationController itme
  */
 - (void)init_navItme{
-    
-    //    [self ax_havNav:^(UINavigationController *nav) {
-    //
-    //        UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadDataWebAction)];
-    //        self.navigationItem.rightBarButtonItem = roadLoad;
-    //
-    //    } isPresentNav:^(UINavigationController *nav) {
-    //
-    //        self.navigationItem.leftBarButtonItem = self.cancelItem;
-    //
-    //        UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadDataWebAction)];
-    //        self.navigationItem.rightBarButtonItem = roadLoad;
-    //
-    //    } noHave:^{
-    //
-    //        [self.webView.scrollView addSubview:self.cancelButton];
-    //    }];
     
     [self ax_haveNav:^(UINavigationController *nav) {
         
@@ -487,54 +487,18 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 }
 
 
-///**
-// kvo 进度值
-// */
-//- (void)func_webViewKVO{
-//
-//    [self.webView ax_addFBKVOKeyPath:@"estimatedProgress" block:^(NSString * _Nullable pathKey, id  _Nullable oldValue, id  _Nullable newValue) {
-//
-//        [self.progressView setAlpha:1.0f];
-//        BOOL animated = self.webView.estimatedProgress > self.progressView.progress;
-//        [self.progressView setProgress:self.webView.estimatedProgress animated:animated];
-//
-//        if(self.webView.estimatedProgress >= 1.0f) {
-//            [UIView animateWithDuration:0.3f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
-//                [self.progressView setAlpha:0.0f];
-//            } completion:^(BOOL finished) {
-//                [self.progressView setProgress:0.0f animated:NO];
-//            }];
-//        }
-//
-//    }];
-//
-//    [self.webView ax_addFBKVOKeyPath:@"title" block:^(NSString * _Nullable pathKey, id  _Nullable oldValue, NSString *_Nullable newValue) {
-//
-//        NSString *title = newValue;
-//        if (self.title.length==0) {
-//
-//            if (title.length>0) {
-//                self.title = title;
-//            }else{
-//                self.title = AXToolsLocalizedString(@"网页");
-//            }
-//        }
-//    }];
-//}
-
-
 - (void)func_webViewloadURLType{
     
     switch (self.loadType) {
         case loadWebURLString:{
             //创建一个NSURLRequest 的对象
-            NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+            NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
             //加载网页
             [self.webView loadRequest:request];
             break;
         }
         case loadWebHTMLString:{
-            [self func_loadHostPathURL:self.urlString];
+            [self func_loadHostPathURL:self.url];
             break;
         }
         case POSTWebURLString:{
@@ -549,16 +513,30 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 
 
 - (void)func_loadHostPathURL:(NSString *)url{
-    //获取JS所在的路径
-    NSString *path = [[NSBundle mainBundle] pathForResource:url ofType:@"html"];
-    //获得html内容
-    NSString *html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    //加载js
-    if (html.length==0) {
-        html = [NSString stringWithFormat:@"<font size=\"30\">%@</font>",url];
-    }
+//    //获取JS所在的路径
+//    NSString *path = [[NSBundle mainBundle] pathForResource:url ofType:@"html"];
+//    //获得html内容
+//    NSString *html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+//    //加载js
+//    if (html.length==0) {
+//        html = [NSString stringWithFormat:@"<font size=\"30\">%@</font>",url];
+//    }
+//
+//    [self.webView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];
     
-    [self.webView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];
+    
+    //wkwebView 加载本地 css 文件
+    
+    //获取bundlePath 路径
+    NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
+    //获取本地html目录 basePath
+    NSString *basePath = [NSString stringWithFormat: @"%@/www", bundlePath];
+    //获取本地html目录 baseUrl
+    //html 路径
+    NSString *indexPath = [NSString stringWithFormat: @"%@/%@.html", basePath,url];
+    NSURL *fileUrl = [NSURL fileURLWithPath:indexPath];
+    NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];
+    [self.webView loadFileURL:[NSURL fileURLWithPath:indexPath] allowingReadAccessToURL: baseUrl];
 }
 
 
@@ -620,15 +598,18 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 
 - (void)setUrlString:(NSString *)urlString{
     _urlString = urlString;
+    self.url = urlString;
     self.loadType = loadWebURLString;
 }
 
 
 - (void)setHtmlSring:(NSString *)htmlSring{
     _htmlSring = htmlSring;
-    self.urlString = htmlSring;
+    self.url = htmlSring;
     self.loadType = loadWebHTMLString;
 }
+
+
 
 - (WKWebView *)webView{
     if (!_webView) {

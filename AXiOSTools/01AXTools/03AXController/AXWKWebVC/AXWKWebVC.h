@@ -11,14 +11,16 @@
 @interface AXWKWebVC : UIViewController
 
 /**
- 正常网页
+  加载纯外部链接网页
  */
 @property (nonatomic, copy) NSString *urlString;
 
 
 /**
- * 本地网页,网页不存在时,直接显示内容
+ * 加载本地网页 不需要带.html 后缀
  */
 @property (nonatomic, copy) NSString *htmlSring;
+
+
 
 @end

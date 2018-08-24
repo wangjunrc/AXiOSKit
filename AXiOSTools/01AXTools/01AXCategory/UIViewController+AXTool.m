@@ -307,5 +307,15 @@
     [self presentViewController:aVC animated:YES completion:nil];
 }
 
+/**
+ 封装 pushViewController
+ 
+ @param aVC vc
+ */
+- (void)ax_pushVC:(UIViewController *)aVC {
+    
+    [self.navigationController pushViewController:aVC animated:YES];
+}
+
 
 @end
