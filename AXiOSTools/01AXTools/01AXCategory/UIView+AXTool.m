@@ -266,6 +266,39 @@ typedef void(^DidViewBlock)(UIView *view);
 }
 
 
+/**
+ layer 层 添加虚线
+
+ @param lineLength 虚线每个长
+ @param lineSpacing 虚线间隔
+ @param lineColor 虚线颜色
+ */
+- (void)ax_addDottedLineWithLineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *)lineColor {
+    
+    UIView *lineView = self;
+    
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    [shapeLayer setBounds:lineView.bounds];
+    [shapeLayer setPosition:CGPointMake(CGRectGetWidth(lineView.frame) / 2, CGRectGetHeight(lineView.frame))];
+    [shapeLayer setFillColor:[UIColor clearColor].CGColor];
+    //  设置虚线颜色为blackColor
+    [shapeLayer setStrokeColor:lineColor.CGColor];
+    //  设置虚线宽度
+    [shapeLayer setLineWidth:CGRectGetHeight(lineView.frame)];
+    [shapeLayer setLineJoin:kCALineJoinRound];
+    //  设置线宽，线间距
+    [shapeLayer setLineDashPattern:[NSArray arrayWithObjects:[NSNumber numberWithInt:lineLength], [NSNumber numberWithInt:lineSpacing], nil]];
+    //  设置路径
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path, NULL, 0, 0);
+    CGPathAddLineToPoint(path, NULL,CGRectGetWidth(lineView.frame)-20, 0);
+    [shapeLayer setPath:path];
+    CGPathRelease(path);
+    //  把绘制好的虚线添加上来
+    [lineView.layer addSublayer:shapeLayer];
+}
+
+
 #pragma mark - set and get
 
 - (void)setDidViewBlock:(DidViewBlock)didViewBlock{

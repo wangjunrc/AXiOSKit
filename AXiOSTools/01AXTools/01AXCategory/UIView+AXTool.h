@@ -97,5 +97,17 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
  */
 - (void )ax_saveToPhotoAlbum;
 
+/**
+ layer 层 添加虚线
+ 
+ @param lineLength 虚线每个长
+ @param lineSpacing 虚线间隔
+ @param lineColor 虚线颜色
+ */
+- (void)ax_addDottedLineWithLineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *)lineColor;
+
+
+
+
 
 @end
