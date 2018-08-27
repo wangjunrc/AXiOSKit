@@ -1,9 +1,9 @@
 //
 //  AliPay.h
-//  LearnDriving
+//  AXiOSToolsDemo
 //
 //  Created by mac on 17/9/20.
-//  Copyright © 2017年 chelichewai. All rights reserved.
+//  Copyright © 2017年 liuweixing. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
