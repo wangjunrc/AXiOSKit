@@ -22,6 +22,7 @@
     if (self) {
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.transitioningDelegate = self;
+        self.axTouchesBeganDismiss = YES;
     }
     return self;
 }
@@ -34,14 +35,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.axTouchesBeganDismiss = YES;
+   
     self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
 }
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    if (self.axTouchesBeganDismiss) {
+    UITouch *touch = [[event allTouches] anyObject];
+    
+    if (self.axTouchesBeganDismiss && touch.view == self.view) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
