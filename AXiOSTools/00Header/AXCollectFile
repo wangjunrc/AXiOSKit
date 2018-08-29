@@ -127,9 +127,21 @@ NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];
 
 
 
+//************************************************************************
+
+scrollView 滚动方向,x 判断左右, y判断上下
 
 
+CGPoint point =  [scrollView.panGestureRecognizer translationInView:self.view];
 
+if (point.x < 0 ) {
+// 往右滚动
+
+}
+}
+}
+
+//************************************************************************
 
 
 
