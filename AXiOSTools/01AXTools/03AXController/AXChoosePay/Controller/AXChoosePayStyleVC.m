@@ -17,6 +17,10 @@
 
 @implementation AXChoosePayStyleVC
 
+- (AXAlertControllerStyle)axAlertControllerStyle{
+    return AXAlertControllerStyleUpward;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.axContentView = self.contentView;
@@ -25,8 +29,6 @@
     self.tableView.dataSource = self;
     [self.tableView registerNib:ax_Nib(@"AXChoosePayStyleCell") forCellReuseIdentifier:axCellID];
     axTableFooterViewZero;
-    
-    
 }
 
 - (NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

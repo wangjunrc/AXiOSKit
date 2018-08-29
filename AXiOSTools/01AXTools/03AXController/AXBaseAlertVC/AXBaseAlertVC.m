@@ -7,8 +7,8 @@
 //
 
 #import "AXBaseAlertVC.h"
-#import "AXAlertAlertTransitioning.h"
-#import "AXAlertSheetTransitioning.h"
+#import "AXAlertCentreAnimation.h"
+#import "AXAlerUpwardAnimation.h"
 
 @interface AXBaseAlertVC ()<UIViewControllerTransitioningDelegate>
 
@@ -30,7 +30,7 @@
 
 - (AXAlertControllerStyle )axAlertControllerStyle{
     
-    return AXAlertControllerStyleActionSheet;
+    return AXAlertControllerStyleUpward;
 }
 
 - (void)viewDidLoad {
@@ -54,12 +54,12 @@
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
     
     switch (self.axAlertControllerStyle) {
-        case AXAlertControllerStyleAlert:
-            return [[AXAlertAlertTransitioning alloc] init];
+        case AXAlertControllerStyleCentre:
+            return [[AXAlertCentreAnimation alloc] init];
             break;
             
-        case AXAlertControllerStyleActionSheet:
-            return [[AXAlertSheetTransitioning alloc] init];
+        case AXAlertControllerStyleUpward:
+            return [[AXAlerUpwardAnimation alloc] init];
             break;
             
         default:
@@ -71,12 +71,12 @@
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
     
     switch (self.axAlertControllerStyle) {
-        case AXAlertControllerStyleAlert:
-            return [[AXAlertAlertTransitioning alloc] init];
+        case AXAlertControllerStyleCentre:
+            return [[AXAlertCentreAnimation alloc] init];
             break;
             
-        case AXAlertControllerStyleActionSheet:
-            return [[AXAlertSheetTransitioning alloc] init];
+        case AXAlertControllerStyleUpward:
+            return [[AXAlerUpwardAnimation alloc] init];
             break;
             
         default:

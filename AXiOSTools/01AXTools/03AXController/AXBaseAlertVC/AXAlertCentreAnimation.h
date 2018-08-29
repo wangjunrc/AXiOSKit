@@ -1,5 +1,5 @@
 //
-//  AXAlertAlertTransitioning.h
+//  AXAlertCentreAnimation.h
 //  AXiOSToolsDemo
 //
 //  Created by mac on 2018/6/4.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AXBaseAlertVC.h"
 
-@interface AXAlertAlertTransitioning : NSObject<UIViewControllerAnimatedTransitioning>
+@interface AXAlertCentreAnimation : NSObject<UIViewControllerAnimatedTransitioning>
 /**
  <#Description#>
  */

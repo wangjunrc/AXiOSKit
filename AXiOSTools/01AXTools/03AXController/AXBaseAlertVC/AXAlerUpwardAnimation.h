@@ -1,5 +1,5 @@
 //
-//  AXAlertSheetTransitioning.h
+//  AXAlerUpwardAnimation.h
 //  AXiOSToolsDemo
 //
 //  Created by mac on 2018/6/4.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "AXBaseAlertVC.h"
 
-@interface AXAlertSheetTransitioning : NSObject<UIViewControllerAnimatedTransitioning>
+@interface AXAlerUpwardAnimation : NSObject<UIViewControllerAnimatedTransitioning>
 
 @end

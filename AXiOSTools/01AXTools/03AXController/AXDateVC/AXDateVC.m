@@ -22,8 +22,7 @@
 
 
 - (AXAlertControllerStyle)axAlertControllerStyle{
-    
-    return AXAlertControllerStyleActionSheet;
+    return AXAlertControllerStyleUpward;
 }
 
 - (void)viewDidLoad {

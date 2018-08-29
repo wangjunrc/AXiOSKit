@@ -10,8 +10,8 @@
 #import "AXViewController.h"
 
 typedef NS_ENUM(NSUInteger, AXAlertControllerStyle){
-    AXAlertControllerStyleActionSheet = UIAlertControllerStyleActionSheet,// 从下往上
-    AXAlertControllerStyleAlert = UIAlertControllerStyleAlert   // 从中间放大弹出
+    AXAlertControllerStyleUpward = UIAlertControllerStyleActionSheet,// 从下往上
+    AXAlertControllerStyleCentre = UIAlertControllerStyleAlert   // 从中间放大弹出
 };
 
 @interface AXBaseAlertVC : AXViewController
