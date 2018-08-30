@@ -613,6 +613,41 @@
     
 }
 
+
+
+/**
+ 去除首尾空格
+
+ @return NSString
+ */
+- (NSString *)ax_removeHeadFootWhitespace {
+    
+  return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+}
+
+/**
+ 去除首尾换行
+ 
+ @return NSString
+ */
+- (NSString *)ax_removeHeadFootNewline {
+    
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    
+}
+
+/**
+ 去除首尾空格和换行
+ 
+ @return NSString
+ */
+- (NSString *)ax_removeHeadFootWhitespaceeAndNewline {
+    
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+}
+
     
 @end
 

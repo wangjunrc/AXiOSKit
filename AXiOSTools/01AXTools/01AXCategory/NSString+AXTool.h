@@ -238,4 +238,28 @@
  */
 +(NSString *)ax_getHHMMSSWithSeconds:(NSInteger )seconds;
 
+/**
+ 去除首尾空格
+ 
+ @return NSString
+ */
+- (NSString *)ax_removeHeadFootWhitespace;
+
+/**
+ 去除首尾换行
+ 
+ @return NSString
+ */
+- (NSString *)ax_removeHeadFootNewline;
+
+/**
+ 去除首尾空格和换行
+ 
+ @return NSString
+ */
+- (NSString *)ax_removeHeadFootWhitespaceeAndNewline;
+
+
+
+
 @end
