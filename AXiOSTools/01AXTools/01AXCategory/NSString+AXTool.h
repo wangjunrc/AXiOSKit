@@ -209,7 +209,7 @@
  
  @return NSString
  */
-- (NSString *)ax_to2Decimal ;
+- (NSString *)ax_to2Decimal DEPRECATED_MSG_ATTRIBUTE ("使用字典转模型,属性类型为float,可以避免此情况") ;
 
 /**
  count位小数
