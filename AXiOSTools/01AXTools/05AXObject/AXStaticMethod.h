@@ -35,7 +35,7 @@ BOOL ax_isiPad(void);
 /**
  * AppStore链接,填写自己的iD
  */
-NSString * ax_AppStoreURL(NSString *appId);
+NSString * _Nullable ax_AppStoreURL(NSString * _Nullable appId);
 
 /**
  AppStore 评分 url
@@ -43,7 +43,7 @@ NSString * ax_AppStoreURL(NSString *appId);
  @param AppStoreID AppStoreID
  @return url String
  */
-NSString * ax_AppStoreScoreURL(NSString *AppStoreID);
+NSString * _Nullable ax_AppStoreScoreURL(NSString * _Nonnull AppStoreID);
 
 /**
  拨打电话,直接拨打
@@ -52,7 +52,7 @@ NSString * ax_AppStoreScoreURL(NSString *AppStoreID);
  
  @return 是否成功
  */
-BOOL ax_CallTel(NSString *phone);
+BOOL ax_CallTel(NSString * _Nonnull phone);
 
 /**
  * 打开通用设置
@@ -66,7 +66,7 @@ BOOL ax_OpenPrefsRoot(void);
  
  @return 是否打开
  */
-BOOL ax_CanOpenURL(id url);
+BOOL ax_CanOpenURL(id _Nonnull url);
 
 /**
  打开url
@@ -75,7 +75,7 @@ BOOL ax_CanOpenURL(id url);
  
  @return 打开是否成功
  */
-BOOL ax_OpenURLStr(id url);
+BOOL ax_OpenURLStr(id  _Nonnull url);
 
 /**
  打开URL NSString || NSURL
@@ -83,7 +83,7 @@ BOOL ax_OpenURLStr(id url);
  @param url NSString || NSURL
  @return BOOL
  */
-BOOL ax_OpenURL(id url);
+BOOL ax_OpenURL(id  _Nonnull url);
 
 /**
  拨打电话,弹出alert界面
@@ -92,27 +92,27 @@ BOOL ax_OpenURL(id url);
  
  @return 是否成功
  */
-BOOL ax_CallTelprompt(NSString *phone);
+BOOL ax_CallTelprompt(NSString * _Nonnull phone);
 
 /**
  * URL With str
  */
-NSURL *ax_URLWithStr(NSString *str);
+NSURL * _Nonnull ax_URLWithStr(NSString * _Nonnull str);
 
 /**
  * int --> NSString
  */
-NSString *ax_intToString(int aInt);
+NSString * _Nonnull ax_intToString(int aInt);
 
 /**
  * double --> NSString
  */
-NSString *ax_doubleToString(double aDouble);
+NSString * _Nonnull ax_doubleToString(double aDouble);
 
 /**
  * double --> NSString
  */
-NSString *ax_floatToString(float aFloat);
+NSString * _Nonnull ax_floatToString(float aFloat);
 
 /**
  * 获取一个随机整数，范围在包括0，不包括自身
@@ -133,7 +133,7 @@ int ax_getRandomFromTo(int from ,int to);
  @param name xib 名称
  @return UINib
  */
-UINib * ax_Nib(NSString *name);
+UINib * _Nonnull ax_Nib(NSString * _Nonnull name);
 
 /**
  创建xib
@@ -141,7 +141,7 @@ UINib * ax_Nib(NSString *name);
  @param aClass xib 名称 xib与源文件名称一致
  @return UINib
  */
-UINib * ax_NibClass(Class aClass);
+UINib * _Nonnull ax_NibClass(Class  _Nonnull aClass);
 
 /**
  UIImage With 图片名
@@ -149,7 +149,7 @@ UINib * ax_NibClass(Class aClass);
  @param name 图片名
  @return UIImage
  */
-UIImage * ax_Image(NSString *name);
+UIImage * _Nonnull ax_Image(NSString * _Nonnull name);
 
 
 
@@ -162,7 +162,7 @@ UIImage * ax_Image(NSString *name);
  @param propertyName 属性名
  @param value 值
  */
-void ax_setStrongAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id value );
+void ax_setStrongAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id _Nonnull value );
 
 
 /**
@@ -172,7 +172,7 @@ void ax_setStrongAssociatedObject(id _Nonnull object, const void * _Nonnull prop
  @param propertyName 属性名
  @param value 值
  */
-void ax_setCopyAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id value );
+void ax_setCopyAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id _Nonnull value );
 /**
  Retain Strong nonatomic 属性添加值
  
@@ -180,7 +180,7 @@ void ax_setCopyAssociatedObject(id _Nonnull object, const void * _Nonnull proper
  @param propertyName 属性名
  @param value 值
  */
-void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id value );
+void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id _Nonnull value );
 
 /**
  Retain Strong Copy Assign 对象获取值
@@ -190,7 +190,7 @@ void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull prop
  @param propertyName 属性名
  @return id 值
  */
-id ax_getAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName );
+id _Nullable ax_getAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName);
 
 
 @end
