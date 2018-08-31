@@ -78,7 +78,7 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
  @param tag ax_tag
  @return view
  */
-- (nullable __kindof UIView *)ax_viewWithTag:(NSString *_Nullable)tag;
+- (nullable __kindof UIView *)ax_viewWithTag:(NSString * _Nullable )tag;
 
 /**
  截屏 不含有转态栏  保存至相册
