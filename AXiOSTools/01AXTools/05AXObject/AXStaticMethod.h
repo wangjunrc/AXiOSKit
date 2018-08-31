@@ -1,17 +1,18 @@
 //
-//  AXOC2C.h
+//  AXStaticMethod.h
 //  AXiOSToolsDemo
 //
-//  Created by mac on 2018/7/11.
+//  Created by mac on 2018/8/31.
 //  Copyright © 2018年 liuweixing. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface AXOC2C : NSObject
+@interface AXStaticMethod : NSObject
 
-#pragma mark - System Settings
+
+#pragma mark - Foundation
 
 /**
  xcode 奔溃日志
@@ -58,7 +59,6 @@ BOOL ax_CallTel(NSString *phone);
  */
 BOOL ax_OpenPrefsRoot(void);
 
-#pragma mark - Foundation
 /**
  是否能打开url
  
@@ -79,7 +79,7 @@ BOOL ax_OpenURLStr(id url);
 
 /**
  打开URL NSString || NSURL
-
+ 
  @param url NSString || NSURL
  @return BOOL
  */
@@ -150,6 +150,47 @@ UINib * ax_NibClass(Class aClass);
  @return UIImage
  */
 UIImage * ax_Image(NSString *name);
+
+
+
+#pragma mark - 添加属性
+
+/**
+ Retain Strong nonatomic 属性添加值
+ 
+ @param object 对象
+ @param propertyName 属性名
+ @param value 值
+ */
+void ax_setStrongAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id value );
+
+
+/**
+ Copy nonatomic 属性添加值
+ 
+ @param object 对象
+ @param propertyName 属性名
+ @param value 值
+ */
+void ax_setCopyAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id value );
+/**
+ Retain Strong nonatomic 属性添加值
+ 
+ @param object 对象
+ @param propertyName 属性名
+ @param value 值
+ */
+void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id value );
+
+/**
+ Retain Strong Copy Assign 对象获取值
+ Assign 需要转型
+ 
+ @param object 实例
+ @param propertyName 属性名
+ @return id 值
+ */
+id ax_getAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName );
 
 
 @end

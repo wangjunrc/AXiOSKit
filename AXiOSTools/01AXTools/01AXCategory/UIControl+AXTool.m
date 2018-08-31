@@ -37,11 +37,11 @@ typedef void(^ControlBlock)(UIControl *aControl);
 #pragma mark - set and get
 
 - (void)setControlBlock:(ControlBlock)controlBlock{
-    ax_addCopyPropertySet(controlBlock);
+    ax_setCopyPropertyAssociated(controlBlock);
 }
 
 - (ControlBlock)controlBlock{
-    return ax_addPropertyGet(controlBlock);
+    return ax_getValueAssociated(controlBlock);
 }
 
 @end

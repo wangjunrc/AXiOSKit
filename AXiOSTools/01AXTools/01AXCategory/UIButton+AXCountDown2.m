@@ -109,12 +109,12 @@
 #pragma mark - set ang get
 
 - (void)setDownObject:(AXCountDownObject *)downObject{
-    ax_addRetainPropertySet(downObject);
+    ax_setStrongPropertyAssociated(downObject);
 }
 
 - (AXCountDownObject *)downObject{
     
-    id obj =  ax_addPropertyGet(downObject);
+    id obj =  ax_getValueAssociated(downObject);
     if (nil == obj) {
         obj = [[AXCountDownObject alloc]init];
         

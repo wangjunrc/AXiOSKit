@@ -60,7 +60,7 @@
 /* 00Header 02IBView*/
 #import "IBObjectHeader.h"
 #import "AXConstant.h"
-#import "AXOC2C.h"
+#import "AXStaticMethod.h"
 
 /* 00Header 03AXController*/
 #import "AXViewController.h"

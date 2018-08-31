@@ -18,6 +18,15 @@
  
  分类重写set get 方法说明
  
+ typedef OBJC_ENUM(uintptr_t, objc_AssociationPolicy){
+ OBJC_ASSOCIATION_ASSIGN = 0,             //assign
+ OBJC_ASSOCIATION_RETAIN_NONATOMIC = 1,   //retain,nonatomic(非原子性)
+ OBJC_ASSOCIATION_COPY_NONATOMIC = 3,     //copy,nonatomic(非原子性)
+ OBJC_ASSOCIATION_RETAIN = 01401,         //retain(原子性)
+ OBJC_ASSOCIATION_COPY = 01403,           //copy(原子性)
+ };
+ 
+ 
  OBJC_ASSOCIATION_ASSIGN;            //assign策略
  OBJC_ASSOCIATION_COPY_NONATOMIC;    //copy策略
  OBJC_ASSOCIATION_RETAIN_NONATOMIC;  // retain策略
@@ -35,19 +44,23 @@
  */
 
 
+
+
 /**
  分类添加  copy  修饰符的 属性
  OBJC_ASSOCIATION_COPY_NONATOMIC
  @param value 属性名
  */
-#define ax_addCopyPropertySet(value) objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_COPY_NONATOMIC)
+#define ax_setCopyPropertyAssociated(value) objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_COPY_NONATOMIC)
+
+
 
 /**
  分类添加  strong  修饰符的 属性
  OBJC_ASSOCIATION_RETAIN_NONATOMIC
  @param value 属性名
  */
-#define ax_addRetainPropertySet(value) objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+#define ax_setStrongPropertyAssociated(value) objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_RETAIN_NONATOMIC)
 
 
 /**
@@ -55,7 +68,7 @@
  OBJC_ASSOCIATION_ASSIGN
  @param value 属性名
  */
-#define ax_addAssignPropertySet(value) objc_setAssociatedObject(self, @selector(value),@(value), OBJC_ASSOCIATION_ASSIGN)
+#define ax_setAssignPropertyAssociated(value) objc_setAssociatedObject(self, @selector(value),@(value), OBJC_ASSOCIATION_ASSIGN)
 
 
 
@@ -65,7 +78,7 @@
  
  - (AXCountDownObject *)downObject{
  
- AXCountDownObject *obj =  ax_addPropertyGet(downObject);
+ AXCountDownObject *obj =  ax_getValueAssociated(downObject);
  if (nil == obj) {
  obj = [[AXCountDownObject alloc]init];
  self.downObject = obj;
@@ -77,6 +90,6 @@
  @param value 属性名
  @return 当前属性
  */
-#define ax_addPropertyGet(value) objc_getAssociatedObject(self,@selector(value))
+#define ax_getValueAssociated(name) objc_getAssociatedObject(self,@selector(name))
 
 #endif /* AXMacros_addProperty_h */

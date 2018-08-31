@@ -177,10 +177,16 @@ self.frame = frame;\
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
 
+/* 代码放这中间*/
 /**
  * 消除 过期警告 botton
  */
 #pragma clang diagnostic pop
+
+// 将此行放在出现警告的. m 文件中。 消除所有警告
+#pragma GCC diagnostic ignored"-Wundeclared-selector"
+
+
 
 /**
  * vc中定义一个同名的view替代原来的 aViewClass 需要替代的view

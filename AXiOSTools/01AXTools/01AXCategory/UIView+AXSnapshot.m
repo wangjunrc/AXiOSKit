@@ -155,17 +155,17 @@
 #pragma mark - set and get
 
 - (void)setIsCapturing:(BOOL)isCapturing{
-    ax_addAssignPropertySet(isCapturing);
+    ax_setAssignPropertyAssociated(isCapturing);
 }
 - (BOOL)isCapturing{
-    return ax_addPropertyGet(isCapturing);
+    return ax_getValueAssociated(isCapturing);
 }
 
 - (void)setDidBlock:(void (^)(UIImage *))didBlock{
-    ax_addCopyPropertySet(didBlock);
+    ax_setCopyPropertyAssociated(didBlock);
 }
 
 - (void (^)(UIImage *))didBlock{
-    return ax_addPropertyGet(didBlock);
+    return ax_getValueAssociated(didBlock);
 }
 @end

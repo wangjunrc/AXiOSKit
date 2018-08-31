@@ -8,6 +8,8 @@
 
 #import "NSObject+AXRuntime.h"
 #import <objc/runtime.h>
+#import "AXMacros_addProperty.h"
+
 
 @implementation NSObject (AXRuntime)
 /**
@@ -165,6 +167,7 @@
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
+
 
 
 @end

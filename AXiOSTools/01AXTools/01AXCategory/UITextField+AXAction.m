@@ -113,12 +113,12 @@
 // 开始 set and get
 - (void)setAx_didBeginBlock:(void (^)(UITextField *))ax_didBeginBlock{
     self.delegate = self;
-    ax_addCopyPropertySet(ax_didBeginBlock);
+    ax_setCopyPropertyAssociated(ax_didBeginBlock);
 }
 
 - (void (^)(UITextField *))ax_didBeginBlock{
     
-    return ax_addPropertyGet(ax_didBeginBlock);
+    return ax_getValueAssociated(ax_didBeginBlock);
 }
 
 
@@ -127,33 +127,33 @@
     
     [self addTarget:self action:@selector(textChnageAction:) forControlEvents:UIControlEventEditingChanged];
     
-    ax_addCopyPropertySet(ax_didEditingChangedBlock);
+    ax_setCopyPropertyAssociated(ax_didEditingChangedBlock);
 }
 - (void (^)(UITextField *))ax_didEditingChangedBlock{
     
-    return ax_addPropertyGet(ax_didEditingChangedBlock);
+    return ax_getValueAssociated(ax_didEditingChangedBlock);
 }
 
 
 // 结束 set and get
 - (void)setAx_didEndBlock:(void (^)(UITextField *))ax_didEndBlock{
     self.delegate = self;
-    ax_addCopyPropertySet(ax_didEndBlock);
+    ax_setCopyPropertyAssociated(ax_didEndBlock);
 }
 - (void (^)(UITextField *))ax_didEndBlock{
     
-    return ax_addPropertyGet(ax_didEndBlock);
+    return ax_getValueAssociated(ax_didEndBlock);
 }
 
 
 // 是否能输入当然文字 set and get
 - (void)setAx_shouldChangeBlock:(BOOL (^)(UITextField *, NSRange, NSString *))ax_shouldChangeBlock{
     self.delegate = self;
-    ax_addCopyPropertySet(ax_shouldChangeBlock);
+    ax_setCopyPropertyAssociated(ax_shouldChangeBlock);
 }
 
 - (BOOL (^)(UITextField *, NSRange, NSString *))ax_shouldChangeBlock{
-    return ax_addPropertyGet(ax_shouldChangeBlock);
+    return ax_getValueAssociated(ax_shouldChangeBlock);
 }
 
 

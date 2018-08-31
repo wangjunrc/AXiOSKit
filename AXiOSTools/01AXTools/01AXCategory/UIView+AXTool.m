@@ -302,19 +302,19 @@ typedef void(^DidViewBlock)(UIView *view);
 #pragma mark - set and get
 
 - (void)setDidViewBlock:(DidViewBlock)didViewBlock{
-    ax_addCopyPropertySet(didViewBlock);
+    ax_setCopyPropertyAssociated(didViewBlock);
 }
 
 - (DidViewBlock)didViewBlock{
-    return ax_addPropertyGet(didViewBlock);
+    return ax_getValueAssociated(didViewBlock);
 }
 
 - (void)setAxTag:(NSString *)axTag{
-    ax_addCopyPropertySet(axTag);
+    ax_setCopyPropertyAssociated(axTag);
 }
 
 - (NSString *)axTag{
-    return ax_addPropertyGet(axTag);
+    return ax_getValueAssociated(axTag);
 }
 
 

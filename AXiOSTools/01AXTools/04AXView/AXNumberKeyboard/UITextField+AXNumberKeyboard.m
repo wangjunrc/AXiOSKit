@@ -66,12 +66,12 @@
 
 - (void)setFloatCount:(NSInteger)floatCount{
     self.delegate = self;
-    ax_addAssignPropertySet(floatCount);
+    ax_setAssignPropertyAssociated(floatCount);
 }
 
 - (NSInteger)floatCount{
     
-    return [ax_addPropertyGet(floatCount) integerValue];
+    return [ax_getValueAssociated(floatCount) integerValue];
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{

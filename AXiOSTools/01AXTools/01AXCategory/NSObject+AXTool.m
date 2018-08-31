@@ -126,31 +126,22 @@
 
 
 - (void)setAx_pageIndex:(NSInteger)ax_pageIndex{
-    ax_addAssignPropertySet(ax_pageIndex);
+    ax_setAssignPropertyAssociated(ax_pageIndex);
 }
 
 - (NSInteger)ax_pageIndex{
-    return [ax_addPropertyGet(ax_pageIndex)integerValue];
+    return [ax_getValueAssociated(ax_pageIndex)integerValue];
 }
 
 
 - (void)setAx_backBlock:(AX_backBlock)ax_backBlock{
-    ax_addCopyPropertySet(ax_backBlock);
+    ax_setCopyPropertyAssociated(ax_backBlock);
     
     
 }
 - (AX_backBlock)ax_backBlock{
-    return ax_addPropertyGet(ax_backBlock);
+    return ax_getValueAssociated(ax_backBlock);
 }
-
-- (void)setAx_byValue:(id)ax_byValue{
-    ax_addCopyPropertySet(ax_byValue);
-}
-
-- (id)ax_byValue{
-    return ax_addPropertyGet(ax_byValue);
-}
-
 
 
 @end
