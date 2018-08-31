@@ -36,11 +36,7 @@
  NS_DESIGNATED_INITIALIZER 指定的初始化方法。当一个类提供多种初始化方法时，所有的初始化方法最终都会调用这个指定的初始化方法。比较常见的有：
  - (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
  
- 
- 
  */
-
-
 
 #define AX_IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
@@ -162,30 +158,6 @@ self.frame = frame;\
  hideHUD 
  */
 #define AX_hideHUD  [hud hideAnimated:YES];
-
-
-
-
-/**
- * 让代码奔溃
- */
-// NSAssert(0, @"必须有sourceView或者item");
-
-/**
- * 消除 过期警告 top
- */
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored"-Wdeprecated-declarations"
-
-/* 代码放这中间*/
-/**
- * 消除 过期警告 botton
- */
-#pragma clang diagnostic pop
-
-// 将此行放在出现警告的. m 文件中。 消除所有警告
-#pragma GCC diagnostic ignored"-Wundeclared-selector"
-
 
 
 /**
