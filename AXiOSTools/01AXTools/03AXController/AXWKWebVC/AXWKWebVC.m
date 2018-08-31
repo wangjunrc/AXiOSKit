@@ -536,7 +536,7 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     NSString *indexPath = [NSString stringWithFormat: @"%@/%@.html", basePath,url];
     NSURL *fileUrl = [NSURL fileURLWithPath:indexPath];
     NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];
-    [self.webView loadFileURL:[NSURL fileURLWithPath:indexPath] allowingReadAccessToURL: baseUrl];
+    [self.webView loadFileURL:fileUrl allowingReadAccessToURL: baseUrl];
 }
 
 

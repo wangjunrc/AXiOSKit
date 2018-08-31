@@ -104,7 +104,7 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
  @param lineSpacing 虚线间隔
  @param lineColor 虚线颜色
  */
-- (void)ax_addDottedLineWithLineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *)lineColor;
+- (void)ax_addDottedLineWithLineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *_Nonnull )lineColor;
 
 
 

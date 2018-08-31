@@ -24,7 +24,7 @@
  @param aClass nib
  @param identifier identifier
  */
-- (void)ax_registerNibCellClass:(Class )aClass identifier:(NSString *_Nullable )identifier;
+- (void)ax_registerNibCellClass:(Class _Nonnull )aClass identifier:(NSString *_Nullable )identifier;
 
 /**
  UITableView 注册 NibCell 默认使用 axCellID identifier
@@ -38,7 +38,7 @@
  
  @param aClass nib名称
  */
-- (void)ax_registerNibCellClass:(Class )aClass;
+- (void)ax_registerNibCellClass:(Class _Nonnull )aClass;
 
 
 /**
