@@ -74,7 +74,6 @@
 #import "AXDateVC.h"
 
 /* 00Header 04AXView*/
-#import "AXTextView.h"
 #import "AXVeriCodeView.h"
 
 /* 00Header 05AXObject */
