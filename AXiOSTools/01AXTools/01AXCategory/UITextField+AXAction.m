@@ -10,6 +10,7 @@
 #import "AXMacros_addProperty.h"
 #import "UITextField+AXTool.h"
 
+
 #pragma mark - implementation AXTextFieldDelegateObj
 
 @implementation AXTextFieldDelegateObj
@@ -66,14 +67,34 @@
  */
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
+    
     if (self.ax_shouldChangeBlock) {
-        
         return self.ax_shouldChangeBlock(textField,range,string);
     }
     
     return YES;
 }
 
+- (void)setAx_didEditingChangedBlock:(void (^)(UITextField *))ax_didEditingChangedBlock{
+    _ax_didEditingChangedBlock = ax_didEditingChangedBlock;
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(TextFieldChangedAction:) name:UITextFieldTextDidChangeNotification object:self.currentTextField];
+}
+
+- (void)TextFieldChangedAction:(NSNotification *)note{
+    
+    UITextField *tf = ( UITextField *)note.object;
+    
+    if( self.ax_didEditingChangedBlock ){
+        
+        self.ax_didEditingChangedBlock(tf);
+    }
+}
+
+- (void)dealloc{
+    
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
+}
 
 
 #pragma mark function
@@ -83,9 +104,7 @@
  只能输入数字 整数
  */
 - (void)ax_canShouldChangeNumber {
-    
     self.currentTextField.keyboardType = UIKeyboardTypeNumberPad;
-    
     self.ax_shouldChangeBlock = ^BOOL(UITextField *textField, NSRange range, NSString *aString) {
         return [textField ax_getFloatCount:0 range:range string:aString];;
     };
@@ -97,14 +116,14 @@
  */
 - (void)ax_canShouldChangeFloat:(NSInteger )count {
     
-     self.currentTextField.keyboardType = UIKeyboardTypeDecimalPad;
-    
+    self.currentTextField.keyboardType = UIKeyboardTypeDecimalPad;
     self.ax_shouldChangeBlock = ^BOOL(UITextField *textField, NSRange range, NSString *aString) {
         
         return [textField ax_getFloatCount:count range:range string:aString];
         
     };
 }
+
 
 @end
 
