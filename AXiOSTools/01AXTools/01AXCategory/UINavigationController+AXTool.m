@@ -60,6 +60,24 @@
     self.viewControllers =temp;
 }
 
+/**
+ * push vc后移除指定父VC
+ */
+- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeVC:(UIViewController *)removeVC {
+    
+    
+    UIViewController *rootVC = self.viewControllers.lastObject;
+    
+    if ([self.viewControllers containsObject:removeVC]) {
+        
+        NSMutableArray *temp =[self.viewControllers mutableCopy];
+        [temp removeObject:removeVC];
+        [self setViewControllers:temp animated:NO];
+        rootVC = temp.lastObject;
+    }
+    [rootVC.navigationController pushViewController:viewController animated:animated];
+    
+}
 
 - (void)ax_removeViewControllers:(NSArray *)vcArray{
     

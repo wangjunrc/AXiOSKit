@@ -7,65 +7,44 @@
 //
 
 #import "UITextField+AXAction.h"
-#import <objc/runtime.h>
-#import "AXMacros_runTime.h"
 #import "AXMacros_addProperty.h"
-#import "NSObject+AXKVO.h"
-#import "NSString+AXTool.h"
+#import "UITextField+AXTool.h"
 
-@interface UITextField ()<UITextFieldDelegate>
+#pragma mark - implementation AXTextFieldDelegateObj
 
-@end
-
-@implementation UITextField (AXAction)
+@implementation AXTextFieldDelegateObj
 
 
-#pragma mark - function
-/**
- 只能输入数字 整数
- */
-- (void)ax_canShouldChangeNumber {
-    
-    self.keyboardType = UIKeyboardTypeNumberPad;
-    self.ax_shouldChangeBlock = ^BOOL(UITextField *textField, NSRange range, NSString *aString) {
-        
-        return [aString ax_isNumber];
-    };
-}
-
-/**
- 只能输入小数
- */
-- (void)ax_canShouldChangeFloat {
-    
-    self.delegate = self;
-    self.keyboardType = UIKeyboardTypeNumberPad;
-    
-    self.ax_shouldChangeBlock = ^BOOL(UITextField *textField, NSRange range, NSString *aString) {
-        
-        return [aString ax_isNumber];
-    };
-}
-
-#pragma mark - action
-// 编辑中 事件
-- (void)textChnageAction:(UITextField *)textField{
-    
-    if (self.ax_didEditingChangedBlock) {
-        self.ax_didEditingChangedBlock(textField);
-    }
-}
-
-
-#pragma mark - delegate
+#pragma mark delegate
 
 // 控制当前输入框是否能被编辑
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    
-    return YES;
-}
+//- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+//
+//    return YES;
+//}
+//
+////询问输入框是否可以结束编辑 ( 键盘是否可以收回)
+//- (BOOL)textFieldShouldEndEditing:( UITextField*)textField {
+//    return YES;
+//}
+//
+////控制输入框清除按钮是否有效 (yes, 有 ;no, 没有)
+//- (BOOL)textFieldShouldClear:( UITextField*)textField {
+//    return YES;
+//}
+//
+//// 控制键盘是否回收
+//
+//- (BOOL)textFieldShouldReturn:( UITextField*)textField {
+//
+//    return YES;
+//}
 
-//当输入框开始时触发 ( 获得焦点触发)
+
+
+/**
+ * 当输入框开始时触发 ( 获得焦点触发)
+ */
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     
     if (self.ax_didBeginBlock){
@@ -73,19 +52,18 @@
     }
 }
 
-//询问输入框是否可以结束编辑 ( 键盘是否可以收回)
-- (BOOL)textFieldShouldEndEditing:( UITextField*)textField {
-    return YES;
-}
-
-//当前输入框结束编辑时触发 ( 键盘收回之后触发 )
+/**
+ * 当前输入框结束编辑时触发 ( 键盘收回之后触发 )
+ */
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (self.ax_didEndBlock){
         self.ax_didEndBlock(textField);
     }
 }
 
-//当输入框文字发生变化时触发 ( 只有通过键盘输入时 , 文字改变 , 触发 )
+/**
+ 当输入框文字发生变化时触发 ( 只有通过键盘输入时 , 文字改变 , 触发 )
+ */
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
     if (self.ax_shouldChangeBlock) {
@@ -96,64 +74,64 @@
     return YES;
 }
 
-//控制输入框清除按钮是否有效 (yes, 有 ;no, 没有)
-- (BOOL)textFieldShouldClear:( UITextField*)textField {
-    return YES;
-}
 
-// 控制键盘是否回收
 
-- (BOOL)textFieldShouldReturn:( UITextField*)textField {
+#pragma mark function
+
+
+/**
+ 只能输入数字 整数
+ */
+- (void)ax_canShouldChangeNumber {
     
-    return YES;
-}
-
-#pragma mark - set and get
-
-// 开始 set and get
-- (void)setAx_didBeginBlock:(void (^)(UITextField *))ax_didBeginBlock{
-    self.delegate = self;
-    ax_setCopyPropertyAssociated(ax_didBeginBlock);
-}
-
-- (void (^)(UITextField *))ax_didBeginBlock{
+    self.currentTextField.keyboardType = UIKeyboardTypeNumberPad;
     
-    return ax_getValueAssociated(ax_didBeginBlock);
-}
-
-
-// 编辑中 set and get
-- (void)setAx_didEditingChangedBlock:(void (^)(UITextField *))ax_didEditingChangedBlock{
+    self.ax_shouldChangeBlock = ^BOOL(UITextField *textField, NSRange range, NSString *aString) {
+        return [textField ax_getFloatCount:0 range:range string:aString];;
+    };
     
-    [self addTarget:self action:@selector(textChnageAction:) forControlEvents:UIControlEventEditingChanged];
+}
+
+/**
+ 只能输入小数
+ */
+- (void)ax_canShouldChangeFloat:(NSInteger )count {
     
-    ax_setCopyPropertyAssociated(ax_didEditingChangedBlock);
-}
-- (void (^)(UITextField *))ax_didEditingChangedBlock{
+     self.currentTextField.keyboardType = UIKeyboardTypeDecimalPad;
     
-    return ax_getValueAssociated(ax_didEditingChangedBlock);
+    self.ax_shouldChangeBlock = ^BOOL(UITextField *textField, NSRange range, NSString *aString) {
+        
+        return [textField ax_getFloatCount:count range:range string:aString];
+        
+    };
 }
 
+@end
 
-// 结束 set and get
-- (void)setAx_didEndBlock:(void (^)(UITextField *))ax_didEndBlock{
-    self.delegate = self;
-    ax_setCopyPropertyAssociated(ax_didEndBlock);
+
+#pragma mark - implementation UITextField
+
+
+
+@implementation UITextField (AXAction)
+
+- (void)setAxDelegateObj:(AXTextFieldDelegateObj *)axDelegateObj{
+    ax_setStrongPropertyAssociated(axDelegateObj);
 }
-- (void (^)(UITextField *))ax_didEndBlock{
+
+- (AXTextFieldDelegateObj *)axDelegateObj{
     
-    return ax_getValueAssociated(ax_didEndBlock);
-}
-
-
-// 是否能输入当然文字 set and get
-- (void)setAx_shouldChangeBlock:(BOOL (^)(UITextField *, NSRange, NSString *))ax_shouldChangeBlock{
-    self.delegate = self;
-    ax_setCopyPropertyAssociated(ax_shouldChangeBlock);
-}
-
-- (BOOL (^)(UITextField *, NSRange, NSString *))ax_shouldChangeBlock{
-    return ax_getValueAssociated(ax_shouldChangeBlock);
+    AXTextFieldDelegateObj *obj = ax_getValueAssociated(axDelegateObj);
+    
+    if (!obj ){
+        
+        obj = [[AXTextFieldDelegateObj alloc]init];
+        obj.currentTextField = self;
+        self.delegate = obj;
+        self.axDelegateObj = obj;
+        
+    }
+    return obj;
 }
 
 

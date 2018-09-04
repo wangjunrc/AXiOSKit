@@ -97,9 +97,7 @@
  * 只能是数字
  */
 - (BOOL)ax_isNumber{
-    if (self.length==0) {
-        return NO;
-    }
+    
     return [self ax_macth:@"^[0-9]*$"];
 }
 /**

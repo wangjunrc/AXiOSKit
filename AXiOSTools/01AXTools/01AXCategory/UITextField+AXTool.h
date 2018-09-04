@@ -16,8 +16,13 @@
 - (BOOL)ax_getTF2FloatRange:(NSRange)range string:(NSString *)string;
 
 /**
- * - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
- 方法中调用,控制输入的字符为最多 count 位小数的数字 包含0
+ textField 控制输入的字符为整数  或者 小数
+ - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+ 
+ @param count 0 时,就是只能输入0~9数字 . 不可以输入 , >0 时为小数输入,第一位不为问.,开头只能为一个0
+ @param range NSRange
+ @param string string
+ @return BOOL
  */
 - (BOOL)ax_getFloatCount:(NSInteger )count range:(NSRange)range string:(NSString *)string;
 

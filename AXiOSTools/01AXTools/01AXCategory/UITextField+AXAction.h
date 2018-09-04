@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITextField (AXAction)
+@interface AXTextFieldDelegateObj : NSObject<UITextFieldDelegate>
+
+@property (nonatomic, weak) UITextField *currentTextField;
+
 
 /**
  开始编辑
@@ -27,14 +30,6 @@
 
 /**
  是否能输入当前文字
- 
- 比如:控制指定位数的小数 如下写
- self.tf.ax_shouldChangeBlock = ^BOOL(UITextField *textField, NSRange range, NSString *aString) {
- 
- NSString *text = [NSString stringWithFormat:@"%@%@",textField.text,aString];
- return [text ax_isFloat:3];
- //或者
- return [textField ax_getTF2FloatRange:range string:aString];
  */
 @property (nonatomic, copy) BOOL(^ax_shouldChangeBlock)(UITextField *textField,NSRange range, NSString *aString);
 
@@ -43,6 +38,26 @@
  只能输入数字
  */
 - (void)ax_canShouldChangeNumber;
+
+
+/**
+ 只能输入小数
+ */
+- (void)ax_canShouldChangeFloat:(NSInteger )count;
+
+
+
+@end
+
+
+@interface UITextField (AXAction)
+
+
+/**
+ UITextField  代理对象
+ 最好不要用自己做代理,有bug
+ */
+@property (nonatomic, strong) AXTextFieldDelegateObj *axDelegateObj;
 
 
 @end

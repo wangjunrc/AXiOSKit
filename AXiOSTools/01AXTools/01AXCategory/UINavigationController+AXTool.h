@@ -19,8 +19,12 @@
  * push vc后移除指定父nav控制器,
  使用RTRootNavigationController 时,改方法  卡顿
  */
-- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeParent:(UIViewController *)parent;
+- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeParent:(UIViewController *)parent DEPRECATED_MSG_ATTRIBUTE("过期,该方法有bug");
 
+/**
+ * push vc后移除指定父VC
+ */
+- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeVC:(UIViewController *)removeVC;
 
 /**
   push vc后 移除 指定的vc 数组

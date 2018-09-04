@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AXNumberKeyboard.h"
 
-@interface UITextField (AXNumberKeyboard)<UITextFieldDelegate>
-
+@interface UITextField (AXNumberKeyboard)
 
 // 键盘类型
 @property (nonatomic, assign) AXNumberKeyboardType ax_keyboardType;

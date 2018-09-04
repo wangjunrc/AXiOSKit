@@ -65,28 +65,13 @@
 
 
 - (void)setFloatCount:(NSInteger)floatCount{
-    self.delegate = self;
     ax_setAssignPropertyAssociated(floatCount);
 }
 
 - (NSInteger)floatCount{
-    
     return [ax_getValueAssociated(floatCount) integerValue];
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    
-    return [textField ax_getFloatCount:self.floatCount range:range string:string];
-    
-}
 
-- (void)textFieldDidEndEditing:(UITextField *)textField{
-    
-    if (self.floatCount>0 && textField.text.floatValue>0) {
-       
-        textField.text = [textField.text ax_toCountDecimal:self.floatCount];
-    }
-   
-}
 
 @end
