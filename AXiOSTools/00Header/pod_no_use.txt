@@ -171,6 +171,9 @@ pod 'NJKWebViewProgress'
 #pod 'STPopupController'
 
 
+KxMenu
+
+
 #通过几条线段实现的非常Q萌的动画按钮效果。
 #VBFPopFlatButton
 

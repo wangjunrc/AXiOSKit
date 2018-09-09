@@ -8,7 +8,7 @@
 
 #import "UIViewController+AXTool.h"
 #import "UIViewController+AXAlert.h"
-
+#import <Photos/Photos.h>
 
 @interface UIViewController ()
 
@@ -29,8 +29,29 @@
  * 保存图片到系统相册
  */
 - (void)ax_saveImageToPhotos:(UIImage*)image{
-    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
-    //因为需要知道该操作的完成情况，即保存成功与否，所以此处需要一个回调方法image:didFinishSavingWithError:contextInfo:
+    // 这个方法不会吊起隐私权限,所以会crash
+//    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+//    //因为需要知道该操作的完成情况，即保存成功与否，所以此处需要一个回调方法image:didFinishSavingWithError:contextInfo:
+    
+    // Asynchronously 异步执行操作
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        
+        [PHAssetChangeRequest creationRequestForAssetFromImage:image];
+        
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        
+        NSString *msg = nil ;
+        if (success) {
+            msg = @"保存图片成功" ;
+        }else{
+            msg = @"保存图片失败";
+            if (error.code == 2047) {
+                msg = @"不允许访问照片,请在iPhone中设置";
+            }
+        }
+        
+        [self ax_showAlertByTitle:msg];
+    }];
 }
 
 //回调方法
