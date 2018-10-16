@@ -7,7 +7,12 @@
 //
 
 #import "AXPhotoBrowserVC.h"
+
+#if __has_include("GKPhotoBrowser.h")
+
 #import "AXToolsHeader.h"
+
+@interface AXPhotoBrowserVC : GKPhotoBrowser
 
 @interface AXPhotoBrowserVC ()<GKPhotoBrowserDelegate>
 
@@ -19,64 +24,64 @@
 @implementation AXPhotoBrowserVC
 
 - (instancetype )initWithPhotoURLs:(NSArray *)photoURLsArray animatedFromView:(UIImageView *)view showIndex:(NSInteger )showIndex{
-    
+
     return [self func_initWithGKPhotoURLs:photoURLsArray animatedFromView:view showIndex:showIndex];
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
 }
 
 #pragma mark - GKPhotoBrowser
 
 - (instancetype )func_initWithGKPhotoURLs:(NSArray *)photoURLsArray animatedFromView:(UIImageView*)view showIndex:(NSInteger )showIndex{
-    
+
     NSMutableArray *photos = [NSMutableArray array];
-    
-    
+
+
     for (NSString *url in photoURLsArray) {
-        
+
         GKPhoto *photo = [[GKPhoto alloc]init];;
         photo.url = [NSURL URLWithString:url];
         photo.sourceImageView = view;
         [photos addObject:photo];
     }
-    
+
     AXPhotoBrowserVC *browser = [AXPhotoBrowserVC photoBrowserWithPhotos:photos currentIndex:showIndex];
-    
+
     browser.showStyle           = GKPhotoBrowserShowStyleNone;
     browser.hideStyle           = GKPhotoBrowserHideStyleZoomSlide;
     browser.isSingleTapDisabled = YES;  // 不响应默认单击事件
     browser.isStatusBarShow     = NO;  // 显示状态栏
     browser.isHideSourceView    = NO;
     browser.delegate            = self;
-    
+
     //    [browser setupCoverViews:@[self.closeBtn, self.moreBtn] layoutBlock:^(GKPhotoBrowser *photoBrowser, CGRect superFrame) {
     //
     //        [self resetCoverFrame:superFrame index:photoBrowser.currentIndex];
     //    }];
-    
+
     return browser;
-    
+
 }
 
 
 - (void)resetCoverFrame:(CGRect)frame index:(NSInteger)index{
-    
+
     self.closeBtn.frame = CGRectMake(0, 100, 50, 50);
     self.moreBtn.frame = CGRectMake(0, 100, 50, 50);
-    
+
 }
 
 - (void)closeBtnClick:(id)sender {
-    
+
     //    [self.gKBrowser dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)moreBtnClick:(id)sender {
-    
+
 }
 
 
@@ -103,3 +108,6 @@
 
 
 @end
+
+
+#endif
