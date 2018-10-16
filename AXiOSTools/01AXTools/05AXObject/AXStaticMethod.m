@@ -367,6 +367,35 @@ void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull prop
 
 
 
+/**
+ gcd 创建串行队列 queue
+
+ @param label 队列标识
+ @return dispatch_queue_t
+ */
+dispatch_queue_t ax_get_queue_SERIAL(const char *_Nullable label) {
+    
+  return  dispatch_queue_create(label,DISPATCH_QUEUE_CONCURRENT);
+    
+}
+
+/**
+ gcd 创建并行队列 queue
+ 
+ @param label 队列标识
+ @return dispatch_queue_t
+ */
+dispatch_queue_t ax_get_queue_CONCURRENT(const char *_Nullable label) {
+    
+    return  dispatch_queue_create(label,DISPATCH_QUEUE_CONCURRENT);
+    
+}
+
+
+
+
+
+
 
 /*
  // 以下是设置其他界面

@@ -193,4 +193,22 @@ void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull prop
 id _Nullable ax_getAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName);
 
 
+
+/**
+ gcd 创建串行队列 queue
+ 
+ @param label 队列标识
+ @return dispatch_queue_t
+ */
+dispatch_queue_t ax_get_queue_SERIAL(const char *_Nullable label);
+
+/**
+ gcd 创建并行队列 queue
+ 
+ @param label 队列标识
+ @return dispatch_queue_t
+ */
+dispatch_queue_t ax_get_queue_CONCURRENT(const char *_Nullable label);
+
+
 @end
