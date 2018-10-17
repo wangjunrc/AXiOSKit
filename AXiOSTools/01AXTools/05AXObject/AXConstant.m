@@ -8,14 +8,15 @@
 
 #import "AXConstant.h"
 #import "AXMacros_log.h"
+
 NSString *const axCellID = @"TableViewacellID";
 NSString *const axCellHeadID = @"TableViewCellheadID";
 NSString *const axCellFootID = @"TableViewCellfootID";
 NSString *const axSectionHeadID = @"axCellSectionHeadID";
 NSString *const axSectionFootID = @"axCellSectionFootID";
-
 NSString *const axUserInfoKey = @"axUserInfoKey";
-#include <stdio.h>
+//#include <stdio.h>
+
 @implementation AXConstant
 
 
