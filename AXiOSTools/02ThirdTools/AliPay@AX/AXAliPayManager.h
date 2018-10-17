@@ -49,15 +49,20 @@ typedef void(^AlipayBlock)(void);
 @property (nonatomic, copy) NSString *tradeNO;
 
 /**
- 产品说明
- */
-@property (nonatomic, copy) NSString *productName;
-
-
-/**
  价格
  */
 @property (nonatomic, copy) NSNumber *price;
+
+/**
+ 产品名称
+ */
+@property (nonatomic, copy) NSString *productName;
+
+/**
+ 产品说明
+ */
+@property (nonatomic, copy) NSString *productDescription;
+
 
 @end
 

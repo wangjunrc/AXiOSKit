@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#if __has_include("lame.h")
+
 @interface LameHelper : NSObject
 
-//+(BOOL )toMp3WithSourcePath:(NSString *)sourcePath mp3Path:(NSString *)mp3Path;
++(BOOL )toMp3WithSourcePath:(NSString *)sourcePath mp3Path:(NSString *)mp3Path;
 
 @end
+
+#endif

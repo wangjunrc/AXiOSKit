@@ -8,6 +8,8 @@
 
 #import "NSObject+FBKVOControllerAX.h"
 
+#if __has_include(<KVOController/KVOController.h>)
+
 #import <KVOController/KVOController.h>
 
 @implementation NSObject (FBKVOControllerAX)
@@ -46,3 +48,5 @@
 }
 
 @end
+
+#endif
