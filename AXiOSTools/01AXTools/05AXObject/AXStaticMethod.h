@@ -200,7 +200,7 @@ id _Nullable ax_getAssociatedObject(id _Nonnull object, const void * _Nonnull pr
  @param label 队列标识
  @return dispatch_queue_t
  */
-dispatch_queue_t ax_get_queue_SERIAL(const char *_Nullable label);
+dispatch_queue_t _Nullable ax_get_queue_SERIAL(const char *_Nullable label);
 
 /**
  gcd 创建并行队列 queue
@@ -208,7 +208,7 @@ dispatch_queue_t ax_get_queue_SERIAL(const char *_Nullable label);
  @param label 队列标识
  @return dispatch_queue_t
  */
-dispatch_queue_t ax_get_queue_CONCURRENT(const char *_Nullable label);
+dispatch_queue_t _Nullable ax_get_queue_CONCURRENT(const char *_Nullable label);
 
 
 @end

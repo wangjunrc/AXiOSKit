@@ -16,7 +16,7 @@ dispatch_group_t _group;
 
 + (void)postGroup:(NSArray<AXNetGroup *> *)group complete:(void(^)(NSArray<AXNetGroupResult *> *results))complete isLog:(BOOL )log{
     
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
     
     
     NSMutableArray *results = [NSMutableArray arrayWithCapacity:group.count];
