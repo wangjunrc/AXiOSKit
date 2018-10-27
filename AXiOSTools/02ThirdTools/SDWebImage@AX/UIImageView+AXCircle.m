@@ -7,9 +7,14 @@
 //
 
 #import "UIImageView+AXCircle.h"
+#if __has_include("UIImageView+WebCache.h")
 #import "UIImage+AXTool.h"
 #import "UIImageView+WebCache.h"
+#endif
+
 @implementation UIImageView (AXCircle)
+#if __has_include("UIImageView+WebCache.h")
+
 
 /**
  url路径 设置 image 圆形图片
@@ -31,5 +36,5 @@
     }];
     
 }
-
+#endif
 @end

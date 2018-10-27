@@ -7,9 +7,13 @@
 //
 
 #import "AXWKWebVC.h"
+
+#if __has_include("WKWebViewJavascriptBridge.h")
+
 @import WebKit;
 #import "AXToolsHeader.h"
 #import "WKWebViewJavascriptBridge.h"
+
 
 typedef NS_ENUM(NSInteger, wkWebLoadType){
     loadWebURLString = 0,
@@ -805,6 +809,5 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
  
  */
 
-
-
 @end
+#endif

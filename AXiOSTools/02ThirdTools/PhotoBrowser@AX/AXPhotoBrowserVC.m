@@ -10,11 +10,9 @@
 
 #if __has_include("GKPhotoBrowser.h")
 
-#import "AXToolsHeader.h"
+#import "GKPhotoBrowser.h"
 
-@interface AXPhotoBrowserVC : GKPhotoBrowser
-
-@interface AXPhotoBrowserVC ()<GKPhotoBrowserDelegate>
+@interface AXPhotoBrowserVC () <GKPhotoBrowserDelegate>
 
 @property (nonatomic, strong) UIButton *closeBtn;
 @property (nonatomic, strong) UIButton *moreBtn;

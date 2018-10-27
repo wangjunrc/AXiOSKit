@@ -7,7 +7,8 @@
 //
 
 #import "NSObject+AXCacheImage.h"
-#import <SDWebImageManager.h>
+#if __has_include("SDWebImageManager.h")
+#import "SDWebImageManager.h"
 @implementation NSObject (AXCacheImage)
 
 /**
@@ -26,3 +27,4 @@
 }
 
 @end
+#endif

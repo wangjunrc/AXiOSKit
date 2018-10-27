@@ -5,7 +5,7 @@
 //  Created by liuweixing on 2016/10/19.
 //  Copyright © 2016年 liuweixing. All rights reserved.
 //
-
+#if __has_include("AFNetworking.h")
 #import "AXNetManager.h"
 #import "AXMacros.h"
 
@@ -112,3 +112,4 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
 }
 
 @end
+#endif

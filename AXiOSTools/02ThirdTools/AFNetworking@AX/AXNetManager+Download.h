@@ -9,6 +9,7 @@
 #import "AXNetManager.h"
 @interface AXNetManager (Download)
 
+#if __has_include("AFNetworking.h")
 /**
  下载文件
 
@@ -21,5 +22,5 @@
  */
 + (void )postDownURL:(NSString *)url showStatus:(BOOL )showStatus downPath:(NSString *)downPath progress:(void (^)(float aProgress))progress success:(void(^)(NSString *filePath))success failure:(void(^)(NSInteger statusCode))failure;
 
-
+#endif
 @end

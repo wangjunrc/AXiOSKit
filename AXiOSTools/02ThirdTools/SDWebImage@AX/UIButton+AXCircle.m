@@ -7,9 +7,13 @@
 //
 
 #import "UIButton+AXCircle.h"
+
 #import "UIButton+AXTool.h"
 #import "UIImage+AXTool.h"
 @implementation UIButton (AXCircle)
+
+#if __has_include("UIButton+WebCache.h")
+
 
 /**
  url路径 设置 BackgroundImage 圆形图片
@@ -53,4 +57,7 @@
     
 }
 
+#endif
+
 @end
+

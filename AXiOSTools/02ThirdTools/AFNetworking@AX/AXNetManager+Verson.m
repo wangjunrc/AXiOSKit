@@ -7,6 +7,8 @@
 //
 
 #import "AXNetManager+Version.h"
+#if __has_include("AFNetworking.h")
+
 #import "AXNetManager+Base.h"
 #import "NSString+AXTool.h"
 
@@ -82,6 +84,6 @@
     }];
 }
 
-
-
 @end
+
+#endif

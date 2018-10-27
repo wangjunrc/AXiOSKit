@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#if __has_include("UIButton+WebCache.h")
 #import "UIButton+WebCache.h"
 @interface UIButton (AXCircle)
 
@@ -26,3 +27,5 @@
 - (void)ax_setImageCircleWithURL:(NSURL *)url forState:(UIControlState )state placeholderImage:(UIImage *)placeholderImage;
 
 @end
+
+#endif

@@ -6,12 +6,13 @@
 //  Copyright © 2018年 liuweixing. All rights reserved.
 //
 
+#if __has_include("YYLabel.h")
+
 #import "YYLabel.h"
 #import "YYText.h"
 #import "YYImage.h"
 
 @interface YYLabel (AXTool)
-
 
 /**
  YYLabel 对电话 url 显示高亮,配合 YYLabel highlightTapAction 点击事件
@@ -28,3 +29,4 @@
 -(YYTextSimpleEmoticonParser *)emotionActPic;
 
 @end
+#endif

@@ -5,6 +5,7 @@
 //  Created by liuweixing on 2017/2/20.
 //  Copyright © 2017年 liuweixing All rights reserved.
 //
+#if __has_include("UIScrollView+EmptyDataSet.h")
 
 #import "UIScrollView+AXEmptyDataSet.h"
 #import "AXMacros.h"
@@ -209,6 +210,5 @@ typedef void(^ReloadBlock)(void);
     return  objc_getAssociatedObject(self,@selector(emptyDataPlaceString));;
 }
 
-
-
 @end
+#endif

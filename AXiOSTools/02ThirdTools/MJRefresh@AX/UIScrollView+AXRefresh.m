@@ -5,7 +5,7 @@
 //  Created by Mole Developer on 2017/3/22.
 //  Copyright © 2017年 MoleDeveloper. All rights reserved.
 //
-
+#if __has_include("MJRefresh.h")
 #import "UIScrollView+AXRefresh.h"
 #import "AXRefreshHeader.h"
 #import "AXRefreshFooter.h"
@@ -96,3 +96,5 @@
 }
 
 @end
+
+#endif

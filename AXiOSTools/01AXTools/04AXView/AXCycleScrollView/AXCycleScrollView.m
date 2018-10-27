@@ -7,6 +7,7 @@
 //
 
 #import "AXCycleScrollView.h"
+#if __has_include("UIImageView+WebCache.h")
 #import "UIImageView+WebCache.h"
 
 
@@ -463,4 +464,4 @@ static NSString *cellID = @"cellID";
 
 @end
 
-
+#endif

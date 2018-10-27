@@ -7,9 +7,12 @@
 //
 
 #import "AXConfigure.h"
-//#import "IQKeyboardManager.h"
 #import <UIKit/UIKit.h>
-#import <IQKeyboardManager/IQKeyboardManager.h>
+
+#if __has_include("IQKeyboardManager.h")
+#import "IQKeyboardManager.h"
+#endif
+
 @implementation AXConfigure
 
 #pragma mark configure
@@ -25,6 +28,9 @@
  * 键盘
  */
 +(void)func_IQKeyboardManager{
+    
+#if __has_include("IQKeyboardManager.h")
+    
     //拖入工程即生效,这里只是做一下设置
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     //控制整个功能是否启用
@@ -35,6 +41,7 @@
     manager.shouldToolbarUsesTextFieldTintColor = YES;
     //控制是否显示键盘上的工具条
     manager.enableAutoToolbar = NO;
+#endif
 }
 
 

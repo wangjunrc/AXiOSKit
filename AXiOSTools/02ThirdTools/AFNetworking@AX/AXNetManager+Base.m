@@ -7,6 +7,7 @@
 //
 
 #import "AXNetManager+Base.h"
+#if __has_include("AFNetworking.h")
 #import "AXMacros.h"
 #import "MBProgressHUD+AX.h"
 @implementation AXNetManager (Base)
@@ -27,16 +28,16 @@
     
     [self cancelAFN];
     
-    MBProgressHUD *hud = nil;
-    if (showHud) {
-        hud = [MBProgressHUD ax_showMessage:AXNetLoadTitle];
-    }
+//    MBProgressHUD *hud = nil;
+//    if (showHud) {
+//        hud = [MBProgressHUD ax_showMessage:AXNetLoadTitle];
+//    }
     
     _dataTask = [[self shareManager] POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * task, id  responseObject) {
         
-        if (hud) {
-            [hud hideAnimated:YES];
-        }
+//        if (hud) {
+//            [hud hideAnimated:YES];
+//        }
         
         if (success) {
             success([self handleResponse:responseObject]);
@@ -45,10 +46,10 @@
     } failure:^(NSURLSessionDataTask * task, NSError * error) {
         AXLog(@"task.state>> %ld",(long)task.state);
         
-        if (hud) {
-            [hud hideAnimated:YES];
-            [MBProgressHUD ax_showError:error.localizedDescription];
-        }
+//        if (hud) {
+//            [hud hideAnimated:YES];
+//            [MBProgressHUD ax_showError:error.localizedDescription];
+//        }
         if (failure) {
             failure(error.localizedDescription);
         }
@@ -136,6 +137,6 @@
     }];
 }
 
-
-
 @end
+
+#endif

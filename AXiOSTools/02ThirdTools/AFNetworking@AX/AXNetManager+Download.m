@@ -11,6 +11,8 @@
 #import "AXMacros.h"
 @implementation AXNetManager (Download)
 
+#if __has_include("AFNetworking.h")
+
 + (void )postDownURL:(NSString *)url showStatus:(BOOL )showStatus downPath:(NSString *)downPath progress:(void (^)(float aProgress))progress success:(void(^)(NSString *filePath))success failure:(void(^)(NSInteger statusCode))failure{
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -164,5 +166,5 @@
 
 }
 
-
+#endif
 @end

@@ -6,9 +6,12 @@
 //  Copyright © 2018年 liuweixing. All rights reserved.
 //
 
+#if __has_include("YYLabel.h")
+
 #import "YYLabel+AXTool.h"
 
 @implementation YYLabel (AXTool)
+
 
 - (void)ax_sethighlightText:(NSString *)text{
     
@@ -252,5 +255,6 @@
     return regex;
 }
 
-
 @end
+
+#endif

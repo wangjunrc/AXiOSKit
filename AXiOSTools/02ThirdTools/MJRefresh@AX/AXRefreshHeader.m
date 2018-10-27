@@ -6,6 +6,8 @@
 //  Copyright © 2018年 MoleDeveloper. All rights reserved.
 //
 
+#if __has_include("MJRefresh.h")
+
 #import "AXRefreshHeader.h"
 
 @implementation AXRefreshHeader
@@ -38,7 +40,5 @@
 //
 //}
 
-    
-    
-
 @end
+#endif

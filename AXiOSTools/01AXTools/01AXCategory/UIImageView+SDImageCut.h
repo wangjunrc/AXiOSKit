@@ -6,6 +6,8 @@
 //  Copyright © 2018年 liuweixing. All rights reserved.
 //
 
+#if __has_include("SDWebImageManager.h")
+
 #import <UIKit/UIKit.h>
 #import "SDWebImageManager.h"
 
@@ -18,3 +20,5 @@
 
 - (void)ax_setCutImageWithURL:(NSURL *_Nullable)url placeholderImage:(UIImage *_Nullable)placeholder  completed:(nullable SDExternalCompletionBlock)completedBlock;
 @end
+
+#endif

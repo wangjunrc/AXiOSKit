@@ -7,6 +7,7 @@
 //
 
 #import "AXNetManager+Upload.h"
+#if __has_include("AFNetworking.h")
 #import "MBProgressHUD+AX.h"
 #import "AXMacros.h"
 
@@ -32,7 +33,7 @@
  上传多个文件
  
  @param url           url
- @param params        参数
+ @param parameters        参数
  @param formDataArray 文件参数
  @param success       成功回调
  @param progress      进度回调
@@ -41,10 +42,10 @@
 + (void)POSTUpLoadWithURL:(NSString *)url showHud:(BOOL )showHud parameters:(NSDictionary *)parameters formDataArray:(NSArray<AXFormData *> *)formDataArray progress:(void (^)(NSProgress *aProgress))progress success:(void (^)(id json))success failure:(void (^)(NSString *errorString))failure{
    
      AXLog(@"%@ -- %@",url,parameters);
-    MBProgressHUD *hud = nil;
-    if (showHud) {
-//        hud = [MBProgressHUD ax_showMessage:AXNetLoadTitle];
-    }
+//    MBProgressHUD *hud = nil;
+//    if (showHud) {
+////        hud = [MBProgressHUD ax_showMessage:AXNetLoadTitle];
+//    }
     
     [[self shareManager] POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  formData) {
         
@@ -97,3 +98,4 @@
     [self POSTUpLoadWithURL:url showHud:showHud parameters:parameters formDataArray:@[formData] progress:nil success:success failure:failure];
 }
 @end
+#endif

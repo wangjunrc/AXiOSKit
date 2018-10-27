@@ -12,6 +12,9 @@
 /* 01AXTools */
 #pragma mark - 01AXTools
 
+#import "AXMacros.h"
+
+
 /* 00Header 01AXCategory*/
 #import "CALayer+AXFrame.h"
 #import "NSArray+AXTool.h"
@@ -100,13 +103,28 @@
 
 /* 02ThirdTools */
 #pragma mark - 02ThirdTools
+
+#if __has_include("Masonry.h")
 #import "Masonry.h"
+#endif
+
+#if __has_include("IQKeyboardManager.h")
 #import "IQKeyboardManager.h"
+#endif
+
+#if __has_include("MBProgressHUD.h")
 #import "MBProgressHUD.h"
+#endif
+
+#if __has_include("UIImageView+WebCache.h")
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
 #import "UIImage+GIF.h"
+#endif
+
+#if __has_include("MJExtension.h")
 #import "MJExtension.h"
+#endif
 
 /* 03ThirdToolsWrap */
 #pragma mark - 03ThirdToolsWrap

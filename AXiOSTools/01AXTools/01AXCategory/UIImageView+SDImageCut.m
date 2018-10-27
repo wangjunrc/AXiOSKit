@@ -6,6 +6,8 @@
 //  Copyright © 2018年 liuweixing. All rights reserved.
 //
 
+#if __has_include("SDWebImageManager.h")
+
 #import "UIImageView+SDImageCut.h"
 #import <objc/runtime.h>
 #import "UIImageView+WebCache.h"
@@ -543,3 +545,5 @@ static char imageURLKey;
 }
 
 @end
+
+#endif
