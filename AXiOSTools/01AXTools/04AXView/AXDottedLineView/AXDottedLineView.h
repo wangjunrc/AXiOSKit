@@ -10,8 +10,8 @@
  虚线view
  */
 #import <UIKit/UIKit.h>
-IB_DESIGNABLE
 
+IB_DESIGNABLE
 @interface AXDottedLineView : UIView
 
 @property (nonatomic, assign)IBInspectable int lineLength;
@@ -19,6 +19,5 @@ IB_DESIGNABLE
 @property (nonatomic, assign)IBInspectable int lineSpacing;
 
 @property (nonatomic, strong)IBInspectable UIColor *lineColor;
-
 
 @end
