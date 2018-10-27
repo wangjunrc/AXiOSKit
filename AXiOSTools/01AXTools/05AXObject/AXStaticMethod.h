@@ -159,7 +159,7 @@ UIImage * _Nonnull ax_Image(NSString * _Nonnull name);
  Retain Strong nonatomic 属性添加值
  
  @param object 对象
- @param propertyName 属性名
+ @param propertyName 属性名 @selector() 格式
  @param value 值
  */
 void ax_setStrongAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id _Nonnull value );
@@ -169,7 +169,7 @@ void ax_setStrongAssociatedObject(id _Nonnull object, const void * _Nonnull prop
  Copy nonatomic 属性添加值
  
  @param object 对象
- @param propertyName 属性名
+ @param propertyName 属性名 @selector() 格式
  @param value 值
  */
 void ax_setCopyAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id _Nonnull value );
@@ -177,7 +177,7 @@ void ax_setCopyAssociatedObject(id _Nonnull object, const void * _Nonnull proper
  Retain Strong nonatomic 属性添加值
  
  @param object 对象
- @param propertyName 属性名
+ @param propertyName 属性名 @selector() 格式
  @param value 值
  */
 void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id _Nonnull value );
@@ -187,7 +187,7 @@ void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull prop
  Assign 需要转型
  
  @param object 实例
- @param propertyName 属性名
+ @param propertyName 属性名 @selector() 格式
  @return id 值
  */
 id _Nullable ax_getAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName);

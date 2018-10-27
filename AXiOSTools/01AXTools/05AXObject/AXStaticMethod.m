@@ -315,12 +315,12 @@ UIImage * ax_Image(NSString *name){
  Retain Strong nonatomic 属性添加值
 
  @param object 对象
- @param propertyName 属性名
+ @param propertyName 属性名 @selector() 格式
  @param value 值
  */
 void ax_setStrongAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id value ) {
     
-    objc_setAssociatedObject(object, @selector(propertyName),
+    objc_setAssociatedObject(object, propertyName,
                              value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -329,12 +329,12 @@ void ax_setStrongAssociatedObject(id _Nonnull object, const void * _Nonnull prop
 Copy nonatomic 属性添加值
  
  @param object 对象
- @param propertyName 属性名
+ @param propertyName 属性名 @selector() 格式
  @param value 值
  */
 void ax_setCopyAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id value ) {
     
-    objc_setAssociatedObject(object, @selector(propertyName),
+    objc_setAssociatedObject(object, propertyName,
                              value, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
@@ -342,12 +342,12 @@ void ax_setCopyAssociatedObject(id _Nonnull object, const void * _Nonnull proper
  Retain Strong nonatomic 属性添加值
  
  @param object 对象
- @param propertyName 属性名
+ @param propertyName 属性名 @selector() 格式
  @param value 值
  */
 void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id value ) {
     
-    objc_setAssociatedObject(object, @selector(propertyName),
+    objc_setAssociatedObject(object, propertyName,
                              value, OBJC_ASSOCIATION_ASSIGN);
 }
 
@@ -356,12 +356,12 @@ void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull prop
   Assign 需要转型
 
   @param object 实例
-  @param propertyName 属性名
+  @param propertyName 属性名 @selector() 格式
   @return id 值
   */
  id ax_getAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ) {
      
-   return objc_getAssociatedObject(object, @selector(propertyName));
+   return objc_getAssociatedObject(object, propertyName);
      
 }
 
