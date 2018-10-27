@@ -409,7 +409,11 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
         //设置网页的配置文件
         WKWebViewConfiguration * Configuration = [[WKWebViewConfiguration alloc]init];
         //允许视频播放
-        Configuration.allowsAirPlayForMediaPlayback = YES;
+        if (@available(iOS 9.0, *)) {
+            Configuration.allowsAirPlayForMediaPlayback = YES;
+        } else {
+            // Fallback on earlier versions
+        }
         // 允许在线播放
         Configuration.allowsInlineMediaPlayback = YES;
         // 允许可以与网页交互，选择视图
