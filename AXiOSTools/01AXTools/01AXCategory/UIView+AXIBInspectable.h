@@ -11,7 +11,7 @@
 /**
  分类方法,在xib中,不能实时显示,但可以正常使用 编译太慢,弃用
  */
-IB_DESIGNABLE
+//IB_DESIGNABLE
 @interface UIView (AXIBInspectable)
 
 ///**
