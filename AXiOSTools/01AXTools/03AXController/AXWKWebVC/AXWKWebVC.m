@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     POSTWebURLString,
 };
 
-@interface AXWKWebVC ()<WKNavigationDelegate,WKUIDelegate>
+@interface AXWKWebVC ()<WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIScrollViewDelegate>
 
 
 @property (nonatomic, copy) NSString *url;
@@ -194,6 +194,18 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation { // 类似
     
     AXLog(@"页面加载完成之后调用 webView.title: %@",webView.title);
+    
+    // 加载成功,传递值给js
+    
+//    NSString * jsStr  =[NSString stringWithFormat:@"sendKey('%@')",@"123"];
+//
+//    [webView  evaluateJavaScript:jsStr completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+//
+//        //此处可以打印error.
+//
+//    }];
+    
+    
     
     //更新左边itme
     [self func_canGoBackItems];
@@ -403,6 +415,22 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
  */
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView{
     AXLog(@"网页加载内容进程终止");
+}
+// js注入方法
+//WKScriptMessageHandler
+//依然是这个协议方法,获取注入方法名对象,获取js返回的状态值.
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
+    
+    AXLog(@"didReceiveScriptMessage");
+    
+    if ([message.name isEqualToString:@"popViewControllerAnimated"]) {
+        
+        AXLog(@"popViewControllerAnimated");
+        [self.navigationController popViewControllerAnimated:YES];
+        //
+        AXLog(@"JS传来的json字符串 ：  %@", message.body);
+        
+    }
 }
 
 #pragma mark - KVO
@@ -623,6 +651,11 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
         //播放背景音乐
         //            config.mediaPlaybackRequiresUserAction = YES;
         //        config.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAudio;
+        
+        WKUserContentController *userContentController = [[WKUserContentController alloc] init];;
+        // js注入方法名
+        [userContentController addScriptMessageHandler:self name:@"popViewControllerAnimated"];
+        config.userContentController = userContentController;
         
         _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
         //        [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.webURLSring]]];

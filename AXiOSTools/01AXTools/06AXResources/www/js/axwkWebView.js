@@ -3,6 +3,15 @@ function showAler() {
     iosWeixinPay();
 }
 
+
+function buttonClick() {
+//    parameter 是参数,
+    //ocTestName oc 需要js注入的名称
+    window.webkit.messageHandlers.ocTestName.postMessage('jim');
+
+}
+
+
 function setupWebViewJavascriptBridge(callback) {
     if (window.WebViewJavascriptBridge) {
         return callback(WebViewJavascriptBridge);
