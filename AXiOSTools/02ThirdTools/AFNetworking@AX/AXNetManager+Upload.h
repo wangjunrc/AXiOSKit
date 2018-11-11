@@ -7,7 +7,7 @@
 //
 
 #import "AXNetManager.h"
-
+@class UIImage;
 /**
  *  用来封装文件数据的模型 上传文件时
  */
@@ -41,7 +41,7 @@
 @interface AXNetManager (Upload)
 
 #if __has_include("AFNetworking.h")
-@class UIImage;
+    
 /**
  上传多个文件,含有hud
 

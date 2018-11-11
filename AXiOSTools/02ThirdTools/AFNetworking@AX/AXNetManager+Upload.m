@@ -10,7 +10,7 @@
 #if __has_include("AFNetworking.h")
 #import "MBProgressHUD+AX.h"
 #import "AXMacros.h"
-
+@import UIKit;
 #pragma mark - NetFormData
 @implementation  AXFormData
 
@@ -50,7 +50,7 @@
     [[self shareManager] POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  formData) {
         
         if (showHud) {
-            [hud hideAnimated:YES];
+//            [hud hideAnimated:YES];
         }
         
         for (AXFormData *file in formDataArray) {
@@ -70,10 +70,10 @@
         
     } failure:^(NSURLSessionDataTask * task, NSError * error) {
         
-        if (hud) {
-            [hud hideAnimated:YES];
-            [MBProgressHUD ax_showError:error.localizedDescription];
-        }
+//        if (hud) {
+//            [hud hideAnimated:YES];
+//            [MBProgressHUD ax_showError:error.localizedDescription];
+//        }
         
         if (failure) {
             failure(error.localizedDescription);
