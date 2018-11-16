@@ -101,6 +101,7 @@
     context.localizedFallbackTitle = @"输入密码";
     
     axSelfWeak;
+
     [context evaluatePolicy:policy localizedReason:@"请验证已有指纹" reply:^(BOOL success, NSError * _Nullable error) {
         
         axSelfStrong;

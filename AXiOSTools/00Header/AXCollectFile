@@ -95,7 +95,9 @@ NSStrikethroughStyleAttributeName 删除线（默认是0，无删除线）
 
 NSUnderlineStyleAttributeName 下划线(默认是0，无下划线)
 
-NSParagraphStyleAttributeName 设置段落／间距
+NSParagraphStyleAttributeName 设置段落／间距 vlue>> NSMutableParagraphStyle
+
+
 
 //************************************************************************
 //************************************************************************

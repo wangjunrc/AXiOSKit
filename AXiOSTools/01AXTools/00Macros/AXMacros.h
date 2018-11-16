@@ -45,6 +45,15 @@
 
 #define AX_IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 
+
+/**
+ Class   alloc]init] 初始化
+
+ @param Class Class
+ @return 当前对象
+ */
+#define ax_Obj_init(Class) [[Class alloc]init]
+
 /**
  * ax_kWeakObj(block 外面使用)
  */

@@ -98,7 +98,7 @@
     
     return YES;
 #else
-    return No;
+    return NO;
 #endif
     
 }

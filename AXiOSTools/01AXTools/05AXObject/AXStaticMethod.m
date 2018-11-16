@@ -11,8 +11,6 @@
 
 @implementation AXStaticMethod
 
-
-
 #pragma mark - Foundation
 
 /**
@@ -206,7 +204,7 @@ NSString *ax_floatToString(float aFloat){
 /**
  * 获取一个随机整数，范围在包括0，不包括自身
  */
-int ax_getRandomZeroToValue(int to){
+int ax_randomZeroToValue(int to){
     return arc4random() % to;
 }
 
@@ -214,7 +212,7 @@ int ax_getRandomZeroToValue(int to){
 /**
  * 获取一个随机整数，范围在[from,to），包括from，包括to
  */
-int ax_getRandomFromTo(int from ,int to){
+int ax_randomFromTo(int from ,int to){
     return (int)(from + (arc4random() % (to - from + 1)));
 }
 

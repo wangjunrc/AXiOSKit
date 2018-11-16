@@ -1,5 +1,5 @@
 //
-//  AXSetValueProtocol.h
+//  AXSetmodelProtocol.h
 //  AXiOSToolsDemo
 //
 //  Created by liuweixing on 2018/6/23.
@@ -8,33 +8,33 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol AXSetValueProtocol <NSObject>
+@protocol AXSetmodelProtocol <NSObject>
+
+@optional
+- (void)ax_setCellWithModel:(id)model;
+
+- (void)ax_setCellWithModel:(id)model indexPath:(NSIndexPath *)indexPath;
+
+- (void)ax_setCellWithModel:(id)model title:(NSString *)title;
+
+- (void)ax_setCellWithModel:(id)model title:(NSString *)title indexPath:(NSIndexPath *)indexPath;
+
+- (void)ax_setHeadViewWithModel:(id)model;
+
+- (void)ax_setFootViewWithModel:(id)model;
 
 
-- (void)ax_setCellWithValue:(id)value;
++(void)ax_setCell:(id )cell model:(id)model;
 
-- (void)ax_setCellWithValue:(id)value indexPath:(NSIndexPath *)indexPath;
++(void)ax_setCell:(id)cell model:(id)model indexPath:(NSIndexPath *)indexPath;
 
-- (void)ax_setCellithValue:(id)value title:(NSString *)title;
++(void)ax_setCell:(id )cell title:(NSString *)title model:(id)model;
 
-- (void)ax_setCellWithValue:(id)value title:(NSString *)title indexPath:(NSIndexPath *)indexPath;
++(void)ax_setCell:(id)cell title:(NSString *)title model:(id)model indexPath:(NSIndexPath *)indexPath;
 
-- (void)ax_setHeadViewWithValue:(id)model;
++(void)ax_setHeadView:(UIView *)view model:(id)model;
 
-- (void)ax_setFootViewWithValue:(id)model;
-
-
-+(void)ax_setCell:(id )cell value:(id)value;
-
-+(void)ax_setCell:(id)cell value:(id)value indexPath:(NSIndexPath *)indexPath;
-
-+(void)ax_setCell:(id )cell title:(NSString *)title value:(id)value;
-
-+(void)ax_setCell:(id)cell title:(NSString *)title value:(id)value indexPath:(NSIndexPath *)indexPath;
-
-+(void)ax_setHeadView:(UIView *)view value:(id)value;
-
-+(void)ax_setFootView:(UIView *)view value:(id)value;
++(void)ax_setFootView:(UIView *)view model:(id)model;
 
 
 @end

@@ -117,12 +117,12 @@ NSString * _Nonnull ax_floatToString(float aFloat);
 /**
  * 获取一个随机整数，范围在包括0，不包括自身
  */
-int ax_getRandomZeroToValue(int to);
+int ax_randomZeroToValue(int to);
 
 /**
  * 获取一个随机整数，范围在[from,t]，包括from，包括to
  */
-int ax_getRandomFromTo(int from ,int to);
+int ax_randomFromTo(int from ,int to);
 
 
 #pragma mark - UIKit
@@ -152,7 +152,6 @@ UINib * _Nonnull ax_NibClass(Class  _Nonnull aClass);
 UIImage * _Nonnull ax_Image(NSString * _Nonnull name);
 
 
-
 #pragma mark - 添加属性
 
 /**
@@ -173,6 +172,7 @@ void ax_setStrongAssociatedObject(id _Nonnull object, const void * _Nonnull prop
  @param value 值
  */
 void ax_setCopyAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id _Nonnull value );
+
 /**
  Retain Strong nonatomic 属性添加值
  
@@ -191,8 +191,6 @@ void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull prop
  @return id 值
  */
 id _Nullable ax_getAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName);
-
-
 
 /**
  gcd 创建串行队列 queue

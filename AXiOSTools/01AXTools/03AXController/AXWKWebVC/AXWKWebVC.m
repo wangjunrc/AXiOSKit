@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     POSTWebURLString,
 };
 
-@interface AXWKWebVC ()<WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIScrollViewDelegate>
+@interface AXWKWebVC ()<WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate,UINavigationControllerDelegate,UIScrollViewDelegate>
 
 
 @property (nonatomic, copy) NSString *url;

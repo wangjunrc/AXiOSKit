@@ -11,19 +11,16 @@
 @interface NSObject (FBKVOControllerAX)
 
 /**
- Facebook kvo 封装
+ Facebook kvo
+ 封装 因为强引用 分别用
+KVOControllerNonRetaining(目前使用) 和 KVOController(不知道具体区别)
  
- @param keyPath 路径
- @param block 回调,新 旧 值
- */
-- (void)ax_KVOControllerKeyPath:(NSString *_Nullable)keyPath block:(void(^_Nullable)(NSString * _Nullable pathKey, id _Nullable oldValue ,id _Nullable newValue ))block DEPRECATED_MSG_ATTRIBUTE("请使用: - (void)ax_addFBKVOKeyPath:");
-
-/**
- Facebook kvo 封装 因为强引用 keyPath 需要封装到一个对象中
  
  NSMutableArray 添加用
- [[self mutableSetValueForKey:@""] addObject:@""]
+ [[self mutableArrayValueForKey:@""]addObject:];
  
+ set 用
+ mutableSetValueForKey
  
  NSMutableDictionary 添加用
  [self willChangeValueForKey:@"dict"];
@@ -33,6 +30,14 @@
  @param keyPath 路径
  @param block 回调,新 旧 值
  */
-- (void)ax_addFBKVOKeyPath:(NSString *_Nullable)keyPath block:(void(^_Nullable)(NSString * _Nullable pathKey, id _Nullable oldValue ,id _Nullable newValue ))block;
+- (void)ax_addFBKVOKeyPath:(nullable NSString *)keyPath block:(void(^_Nullable)(NSString * _Nullable keyPath,id _Nullable oldValue ,id _Nullable newValue ))block;
+
+/**
+ Facebook kvo 封装
+ 
+ @param keyPath 路径
+ @param block 回调,新 旧 值
+ */
+- (void)ax_KVOControllerKeyPath:(nullable NSString *)keyPath block:(void(^_Nullable)(NSString * _Nonnull  pathKey, id _Nullable  oldValue , id _Nullable newValue ))block DEPRECATED_MSG_ATTRIBUTE("请使用: - (void)ax_addFBKVOKeyPath:(nullable NSString *)keyPath block:(void(^_Nullable)(NSString * _Nullable keyPath,id _Nullable oldValue ,id _Nullable newValue ))block");
 
 @end

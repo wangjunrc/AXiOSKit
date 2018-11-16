@@ -32,11 +32,11 @@
         
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         
-        dispatch_source_t gcdTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+        dispatch_source_t source_timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
         
-        dispatch_source_set_timer(gcdTimer, dispatch_walltime(NULL, 0), period * NSEC_PER_SEC, 0); //每秒执行
+        dispatch_source_set_timer(source_timer, dispatch_walltime(NULL, 0), period * NSEC_PER_SEC, 0); //每秒执行
         
-        dispatch_source_set_event_handler(gcdTimer, ^{    //在这里执行事件
+        dispatch_source_set_event_handler(source_timer, ^{    //在这里执行事件
             
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -48,7 +48,7 @@
             });
             
         });
-        self.source_timer = gcdTimer;
+        self.source_timer = source_timer;
     }
     return self;
 }
