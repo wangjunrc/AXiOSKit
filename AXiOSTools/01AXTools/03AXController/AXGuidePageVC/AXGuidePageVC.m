@@ -58,7 +58,7 @@
     self.collectionView.collectionViewLayout = lay;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    [self.collectionView registerNib:ax_Nib(@"AXGuidePageCell") forCellWithReuseIdentifier:axCellID];
+    [self.collectionView registerNib:ax_Nib(@"AXGuidePageCell") forCellWithReuseIdentifier:k_axCellID];
     
 }
 
@@ -69,7 +69,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    AXGuidePageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:axCellID forIndexPath:indexPath];
+    AXGuidePageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:k_axCellID forIndexPath:indexPath];
     
     cell.contentImageView.image = [UIImage imageNamed:self.imageArray[indexPath.item]];
     

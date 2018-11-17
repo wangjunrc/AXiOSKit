@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
-typedef void(^AX_backBlock)(id obj);
+//typedef void(^AX_backBlock)(id obj);
 
 
 @interface NSObject (AXTool)
@@ -27,13 +27,13 @@ typedef void(^AX_backBlock)(id obj);
 /**
  回调block
  */
-@property (nonatomic, copy)AX_backBlock ax_backBlock;
+//@property (nonatomic, copy)AX_backBlock ax_backBlock;
 
 
 /**
  * pageIndex
  */
-@property (nonatomic, assign) NSInteger ax_pageIndex;
+//@property (nonatomic, assign) NSInteger ax_pageIndex;
 
 /**
  传值
@@ -42,14 +42,6 @@ typedef void(^AX_backBlock)(id obj);
  @param value 值
  */
 - (void)ax_setValue:(id)value;
-
-/**
- 获得 类 私有属性
- 
- @return 数组
- */
-+ (NSArray *)ax_getPrivateProperty;
-
 
 /**
  是否 DEBUG 模式

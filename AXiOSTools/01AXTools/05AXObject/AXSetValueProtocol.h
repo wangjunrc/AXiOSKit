@@ -23,7 +23,6 @@
 
 - (void)ax_setFootViewWithModel:(id)model;
 
-
 +(void)ax_setCell:(id )cell model:(id)model;
 
 +(void)ax_setCell:(id)cell model:(id)model indexPath:(NSIndexPath *)indexPath;

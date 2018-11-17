@@ -9,11 +9,6 @@
 #ifndef AXMacros_value_h
 #define AXMacros_value_h
 
-/*
- 基本数据类型 变成string
- */
-#define assignToString(assign) @(assign).description
-
 /**
  状态栏高度
  */

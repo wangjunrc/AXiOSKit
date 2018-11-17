@@ -7,20 +7,20 @@
 //
 
 #import "AXConstant.h"
-#import "AXMacros_log.h"
+//#import "AXMacros_log.h"
 
-NSString *const axCellID = @"TableViewacellID";
-NSString *const axCellHeadID = @"TableViewCellheadID";
-NSString *const axCellFootID = @"TableViewCellfootID";
-NSString *const axSectionHeadID = @"axCellSectionHeadID";
-NSString *const axSectionFootID = @"axCellSectionFootID";
-NSString *const axUserInfoKey = @"axUserInfoKey";
+NSString *const k_axCellID = @"TableViewacellID";
+NSString *const k_axCellHeadID = @"TableViewCellheadID";
+NSString *const k_axCellFootID = @"TableViewCellfootID";
+NSString *const k_axSectionHeadID = @"axCellSectionHeadID";
+NSString *const k_axSectionFootID = @"axCellSectionFootID";
+NSString *const k_axUserInfoKey = @"axUserInfoKey";
 //#include <stdio.h>
 
-@implementation AXConstant
-
-
-@end
+//@implementation AXConstant
+//
+//
+//@end
 
 
 

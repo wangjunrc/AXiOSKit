@@ -11,8 +11,13 @@
 
 @interface AXSinglePickVC ()<UIPickerViewDelegate,UIPickerViewDataSource>
 
-@property (strong, nonatomic) IBOutlet UIPickerView *pickerView;
-@property (strong, nonatomic) IBOutlet UIButton *cancelBtn;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+
+@property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *confirmBtn;
 
 @property (nonatomic, copy) void(^confirmBlock)(NSInteger index);
 
@@ -22,7 +27,6 @@
 
 @property (nonatomic, assign) NSInteger showRow;
 
-@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @end
 
@@ -53,7 +57,6 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
     return self.dataArray[row];
-    
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
@@ -81,9 +84,9 @@
     
 }
 
-- (IBAction)enterBtnEvents:(UIButton *)sender {
+- (IBAction)confirmBtnEvents:(UIButton *)sender {
+    
     if (self.confirmBlock) {
-        
         NSInteger selectComp = [self.pickerView selectedRowInComponent:0];
         self.confirmBlock(selectComp);
     }
@@ -103,10 +106,8 @@
 - (void)didSelected:(NSArray <NSString *>*)dataArray showRow:(NSInteger )row confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
     
     self.dataArray = dataArray;
-    
     self.confirmBlock  = confirm;
     self.cancelBlock = cancel;
-    
     self.showRow = row;
     [self.pickerView reloadComponent:0];
     

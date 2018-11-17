@@ -8,6 +8,11 @@
 
 #import "AXStaticMethod.h"
 #import "AXMacros_log.h"
+#import <UIKit/UIKit.h>
+
+#if __has_include("IQKeyboardManager.h")
+#import "IQKeyboardManager.h"
+#endif
 
 @implementation AXStaticMethod
 
@@ -364,7 +369,6 @@ void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull prop
 }
 
 
-
 /**
  gcd 创建串行队列 queue
 
@@ -373,7 +377,7 @@ void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull prop
  */
 dispatch_queue_t ax_get_queue_SERIAL(const char *_Nullable label) {
     
-  return  dispatch_queue_create(label,DISPATCH_QUEUE_CONCURRENT);
+  return  dispatch_queue_create(label,DISPATCH_QUEUE_SERIAL);
     
 }
 
@@ -389,10 +393,35 @@ dispatch_queue_t ax_get_queue_CONCURRENT(const char *_Nullable label) {
     
 }
 
+/**
+ 键盘等 基础配置
+ */
+void ax_configure(void) {
+    
+    ax_IQKeyboardManager();
+    
+}
 
-
-
-
+/**
+ * 键盘
+ */
+void ax_IQKeyboardManager(void) {
+  
+#if __has_include("IQKeyboardManager.h")
+    
+    //拖入工程即生效,这里只是做一下设置
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    //控制整个功能是否启用
+    manager.enable = YES;
+    //控制整个功能是否启用
+    manager.shouldResignOnTouchOutside = YES;
+    //控制键盘上的工具条文字颜色是否用户自定义
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
+    //控制是否显示键盘上的工具条
+    manager.enableAutoToolbar = NO;
+#endif
+    
+}
 
 
 /*

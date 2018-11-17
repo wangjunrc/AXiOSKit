@@ -13,9 +13,6 @@
 #pragma mark - 01AXTools
 
 #import "AXMacros.h"
-
-
-/* 00Header 01AXCategory*/
 #import "CALayer+AXFrame.h"
 #import "NSArray+AXTool.h"
 #import "NSData+AXTool.h"
@@ -59,13 +56,8 @@
 #import "UIViewController+AXiPadAlert.h"
 #import "UIViewController+AXTool.h"
 #import "UITextField+AXAction.h"
-
-/* 00Header 02IBView*/
 #import "IBObjectHeader.h"
-#import "AXConstant.h"
 #import "AXStaticMethod.h"
-
-/* 00Header 03AXController*/
 #import "AXViewController.h"
 #import "AXBaseAlertVC.h"
 #import "AXQRCodeVC.h"
@@ -75,34 +67,28 @@
 #import "AXWKWebVC.h"
 #import "AXFullLayout.h"
 #import "AXDateVC.h"
-
-/* 00Header 04AXView*/
 #import "AXVeriCodeView.h"
-
-/* 00Header 05AXObject */
 #import "AXObject.h"
+#import "AXHelper.h"
 #import "QRCodeViewController.h"
 #import "WKWebViewController.h"
 #import "AXTableViewController.h"
 #import "AXSafariVC.h"
-#import "AXConstant.h"
 #import "AXMacros.h"
 #import "AXGCDTimer.h"
-#import "AXConfigure.h"
 #import "AXSetValueProtocol.h"
-
-/* 00Header 06AXResources*/
-
-/* 00Header 07AXProxy*/
 #import "AXWeakProxy.h"
-
-/* 00Header 08Manager*/
 #import "AXLocationManager.h"
 #import "AXTouchIDManager.h"
 
-
 /* 02ThirdTools */
 #pragma mark - 02ThirdTools
+#import "UIScrollView+AXRefresh.h"
+#import "AXNetManager.h"
+#import "NSObject+FBKVOControllerAX.h"
+#import "MBProgressHUD+AX.h"
+#import "NSObject+AXCacheImage.h"
+#import "AXNetManager.h"
 
 #if __has_include("Masonry.h")
 #import "Masonry.h"
@@ -125,18 +111,5 @@
 #if __has_include("MJExtension.h")
 #import "MJExtension.h"
 #endif
-
-/* 03ThirdToolsWrap */
-#pragma mark - 03ThirdToolsWrap
-#import "UIScrollView+AXRefresh.h"
-#import "AXNetManager.h"
-#import "NSObject+FBKVOControllerAX.h"
-#import "MBProgressHUD+AX.h"
-#import "NSObject+AXCacheImage.h"
-#import "AXNetManager.h"
-
-/* 04ThirdSDK */
-#pragma mark - 04ThirdSDK
-
 
 #endif /* AXToolsHeader_h */

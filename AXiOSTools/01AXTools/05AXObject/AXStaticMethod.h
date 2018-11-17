@@ -11,7 +11,6 @@
 
 @interface AXStaticMethod : NSObject
 
-
 #pragma mark - Foundation
 
 /**
@@ -208,5 +207,14 @@ dispatch_queue_t _Nullable ax_get_queue_SERIAL(const char *_Nullable label);
  */
 dispatch_queue_t _Nullable ax_get_queue_CONCURRENT(const char *_Nullable label);
 
+/**
+ 键盘等 基础配置
+ */
+void ax_configure(void);
+
+/**
+ * 键盘
+ */
+void ax_IQKeyboardManager(void);
 
 @end

@@ -38,7 +38,7 @@
  */
 - (void)ax_registerNibCellClass:(Class )aClass{
    
-    [self registerNib:[UINib nibWithNibName:NSStringFromClass(aClass) bundle:nil] forCellReuseIdentifier:axCellID];
+    [self registerNib:[UINib nibWithNibName:NSStringFromClass(aClass) bundle:nil] forCellReuseIdentifier:k_axCellID];
 }
 
 /**
@@ -48,7 +48,7 @@
  */
 - (void)ax_registerNibCell:(NSString *)nibName{
     
-    [self registerNib:[UINib nibWithNibName:nibName bundle:nil]forCellReuseIdentifier:axCellID];
+    [self registerNib:[UINib nibWithNibName:nibName bundle:nil]forCellReuseIdentifier:k_axCellID];
 }
 
 /**
@@ -57,7 +57,7 @@
  @param aClass Class
  */
 - (void)ax_registerClassCell:(Class )aClass{
-    [self registerClass:aClass forCellReuseIdentifier:axCellID];
+    [self registerClass:aClass forCellReuseIdentifier:k_axCellID];
     
 }
 
@@ -70,7 +70,7 @@
  */
 - (__kindof UITableViewCell *)ax_dequeueReusableCellWithIndexPath:(NSIndexPath *)indexPath{
     
-   return [self dequeueReusableCellWithIdentifier:axCellID forIndexPath:indexPath];
+   return [self dequeueReusableCellWithIdentifier:k_axCellID forIndexPath:indexPath];
 }
 
 
@@ -81,7 +81,7 @@
  @param aClass Class
  */
 - (void)ax_registerHeaderWithClass:(Class )aClass{
-    [self registerClass:aClass forHeaderFooterViewReuseIdentifier:axCellHeadID];;
+    [self registerClass:aClass forHeaderFooterViewReuseIdentifier:k_axCellHeadID];;
 }
 
 /**
@@ -90,7 +90,7 @@
  @return UITableViewHeaderFooterView
  */
 - (nullable __kindof UITableViewHeaderFooterView *)ax_dequeueReusableHeader{
-   return [self dequeueReusableHeaderFooterViewWithIdentifier:axCellHeadID];
+   return [self dequeueReusableHeaderFooterViewWithIdentifier:k_axCellHeadID];
 }
 
 /**
@@ -100,7 +100,7 @@
  @param aClass Class
  */
 - (void)ax_registerFooterWithClass:(Class )aClass{
-    [self registerClass:aClass forHeaderFooterViewReuseIdentifier:axCellFootID];;
+    [self registerClass:aClass forHeaderFooterViewReuseIdentifier:k_axCellFootID];;
 }
 
 /**
@@ -109,9 +109,8 @@
  @return UITableViewHeaderFooterView
  */
 - (nullable __kindof UITableViewHeaderFooterView *)ax_dequeueReusableFooter{
-    return [self dequeueReusableHeaderFooterViewWithIdentifier:axCellFootID];
+    return [self dequeueReusableHeaderFooterViewWithIdentifier:k_axCellFootID];
 }
-
 
 - (void)ax_footerViewZero{
     self.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];

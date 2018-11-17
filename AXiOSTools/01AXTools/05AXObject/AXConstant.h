@@ -7,18 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+//#import <UIKit/UIKit.h>
 
-FOUNDATION_EXPORT NSString *const axCellID;
-FOUNDATION_EXPORT NSString *const axCellHeadID;
-FOUNDATION_EXPORT NSString *const axCellFootID;
-FOUNDATION_EXPORT NSString *const axUserInfoKey;
-FOUNDATION_EXPORT NSString *const axSectionHeadID;
-FOUNDATION_EXPORT NSString *const axSectionFootID;
+FOUNDATION_EXPORT NSString *const k_axCellID;
+FOUNDATION_EXPORT NSString *const k_axCellHeadID;
+FOUNDATION_EXPORT NSString *const k_axCellFootID;
+FOUNDATION_EXPORT NSString *const k_axUserInfoKey;
+FOUNDATION_EXPORT NSString *const k_axSectionHeadID;
+FOUNDATION_EXPORT NSString *const k_axSectionFootID;
 
-@interface AXConstant : NSObject
-
-@end
+//@interface AXConstant : NSObject
+//
+//@end
 
 
 

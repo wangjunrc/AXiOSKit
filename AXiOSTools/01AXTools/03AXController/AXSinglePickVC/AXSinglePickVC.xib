@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AXSinglePickVC">
             <connections>
-                <outlet property="cancelBtn" destination="GBh-dl-XXK" id="vHF-aK-WAA"/>
+                <outlet property="cancelBtn" destination="GBh-dl-XXK" id="6xP-uB-2ex"/>
+                <outlet property="confirmBtn" destination="dFG-7w-ito" id="Xyn-dC-hxM"/>
                 <outlet property="contentView" destination="LxY-sx-OTc" id="fP7-LO-E0A"/>
-                <outlet property="pickerView" destination="nz7-dE-RVo" id="QvZ-Qi-qaS"/>
+                <outlet property="pickerView" destination="nz7-dE-RVo" id="m0c-Ib-8wk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -57,7 +58,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <state key="normal" title="确定"/>
                                     <connections>
-                                        <action selector="enterBtnEvents:" destination="-1" eventType="touchUpInside" id="ATi-Vu-udY"/>
+                                        <action selector="confirmBtnEvents:" destination="-1" eventType="touchUpInside" id="PoS-LJ-UqC"/>
                                     </connections>
                                 </button>
                             </subviews>

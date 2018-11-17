@@ -51,26 +51,24 @@
  OBJC_ASSOCIATION_COPY_NONATOMIC
  @param value 属性名
  */
-#define ax_setCopyPropertyAssociated(value) objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_COPY_NONATOMIC)
-
-
+#define ax_setCopyPropertyAssociated(value)\
+objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_COPY_NONATOMIC)
 
 /**
  分类添加  strong  修饰符的 属性
  OBJC_ASSOCIATION_RETAIN_NONATOMIC
  @param value 属性名
  */
-#define ax_setStrongPropertyAssociated(value) objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-
+#define ax_setStrongPropertyAssociated(value)\
+objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_RETAIN_NONATOMIC)
 
 /**
  分类添加  assign  修饰符的 属性
  OBJC_ASSOCIATION_ASSIGN
  @param value 属性名
  */
-#define ax_setAssignPropertyAssociated(value) objc_setAssociatedObject(self, @selector(value),@(value), OBJC_ASSOCIATION_ASSIGN)
-
-
+#define ax_setAssignPropertyAssociated(value)\
+objc_setAssociatedObject(self, @selector(value),@(value), OBJC_ASSOCIATION_ASSIGN)
 
 /**
  分类添加属性 get方法
@@ -90,6 +88,7 @@
  @param value 属性名
  @return 当前属性
  */
-#define ax_getValueAssociated(name) objc_getAssociatedObject(self,@selector(name))
+#define ax_getValueAssociated(name)\
+objc_getAssociatedObject(self,@selector(name))
 
 #endif /* AXMacros_addProperty_h */

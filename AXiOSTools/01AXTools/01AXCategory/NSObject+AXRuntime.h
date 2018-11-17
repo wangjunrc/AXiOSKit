@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSObject (AXRuntime)
+
 /**
  *  得到一个类所有属性
  */
@@ -32,7 +33,6 @@
  * 把另外对象的属性值,赋值给自己
  */
 - (void)ax_getValueFromObj:(NSObject *)otherObj;
-
 
 /**
  *  替换 实例 方法 Instance

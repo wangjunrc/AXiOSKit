@@ -27,7 +27,7 @@
     self.axTouchesBeganDismiss = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView registerNib:ax_Nib(@"AXChoosePayStyleCell") forCellReuseIdentifier:axCellID];
+    [self.tableView registerNib:ax_Nib(@"AXChoosePayStyleCell") forCellReuseIdentifier:k_axCellID];
     axTableFooterViewZero;
 }
 
@@ -40,7 +40,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXChoosePayStyleCell *cell = [tableView dequeueReusableCellWithIdentifier:axCellID forIndexPath:indexPath];
+    AXChoosePayStyleCell *cell = [tableView dequeueReusableCellWithIdentifier:k_axCellID forIndexPath:indexPath];
     
     AXChoosePayModel *model = self.dataArray[indexPath.row];
     
