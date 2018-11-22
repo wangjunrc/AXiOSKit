@@ -260,25 +260,32 @@
     return tempImg;
 }
 
-
-+(UIImage *)ax_imageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
-    CGContextRef context = UIGraphicsGetCurrentContext();
+/**
+ 矩形颜色图片CGSize(1.0f, 1.0f);
+ */
++(UIImage *)ax_imageWithColor:(UIColor *)aColor {
     
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
+    return [self ax_imageRectangleWithSize:CGSizeMake(1.0f, 1.0f) color:aColor];
+//    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+//    CGSize aSize = rect.size;
+//    UIGraphicsBeginImageContextWithOptions(aSize, NO, 0.0);
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//
+//    CGContextSetFillColorWithColor(context, [color CGColor]);
+//    CGContextFillRect(context, rect);
+//
+//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//
+//    return image;
     
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
 }
 
 /**
  * 圆形颜色图片
  */
 +(UIImage *)ax_imageWithRadius:(CGFloat )radius color:(UIColor *)aColor{
+    
     UIGraphicsBeginImageContextWithOptions( CGSizeMake(radius*2, radius*2), NO,0);
     UIBezierPath *path=[UIBezierPath bezierPathWithArcCenter:CGPointMake(radius, radius) radius:radius startAngle:0 endAngle:M_PI*2 clockwise:YES];
     [[UIColor whiteColor] setStroke];
@@ -288,6 +295,7 @@
     UIImage *tempImg = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return tempImg;
+    
 }
 
 /**
@@ -313,9 +321,9 @@
 }
 
 /**
- * navigationBarTopImage
+ * ax_navigationBarTopImage
  */
-+(UIImage *)navigationBarTopImage:(UIColor *)color{
++(UIImage *)ax_navigationBarTopImage:(UIColor *)color{
     
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(axScreenWidth, 64), NO,0);
     UIBezierPath *path =[UIBezierPath bezierPathWithRect:CGRectMake(0, 0, axScreenWidth, 64)];
@@ -335,7 +343,7 @@
  *
  *  @return 未渲染的图片
  */
-+ (instancetype)imageWithOriginalImageName:(NSString *)imageName{
++ (UIImage *)ax_imageWithOriginalImageName:(NSString *)imageName{
     return  [[UIImage imageNamed:imageName]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
@@ -346,7 +354,7 @@
  @param name name
  @return UIImage
  */
-+ (instancetype)ax_imageOriginalByName:(NSString *)name{
++ (UIImage *)ax_imageOriginalByName:(NSString *)name{
     
     return [[UIImage imageNamed:name]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
@@ -393,14 +401,14 @@
         image = [image ax_imageScaleToSize:CGSizeMake(hw, hw)];
     }
     if (imageData.length>32768) {
-        image = [self compressImage:image toByte:32768];
+        image = [self ax_compressImage:image toByte:32768];
     }
     return image;
     
 }
 
 
-+ (UIImage *)compressImage:(UIImage *)image toByte:(NSUInteger)maxLength {
++ (UIImage *)ax_compressImage:(UIImage *)image toByte:(NSUInteger)maxLength {
     // Compress by quality
     
     CGFloat compression = 1;

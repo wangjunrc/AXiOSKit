@@ -14,11 +14,11 @@
 @implementation NSObject (AXRuntime)
 
 /**
- *  得到一个类所有属性
- *
+ *  得到一个类所有属性名
+ * class_copyPropertyList返回的仅仅是对象类的属性(@property申明的属性)
  *  @return 数组
  */
-+ (NSArray *)ax_getProperties{
++ (NSArray *)ax_getPropertiesName {
     Class class = self;
     // 获取当前类的所有属性
     unsigned int count;// 记录属性个数
@@ -41,18 +41,16 @@
     return mArray.copy;
 }
 
-
 /**
- 获取私有属性
-
+ 得到一个类所有属性名 和 类型
+ class_copyIvarList返回类的所有属性和变量(包括在interface大括号中声明的变量)，
  @return NSArray
  */
-+ (NSArray *)ax_getPrivateProperties{
++ (NSArray *)ax_getPropertiesNameAndType {
     
     Class class = self;
     // 获取当前类的所有属性
     unsigned int count;// 记录属性个数
-    
     
     NSMutableArray *mArray = [NSMutableArray array];
     Ivar *ivars = class_copyIvarList(class, &count);
@@ -79,7 +77,7 @@
  *
  *  @return 字典
  */
-- (NSDictionary *)ax_getProperties_aps{
+- (NSDictionary *)ax_getPropertiesNameAndValue {
     id class = self;
     
     NSMutableDictionary *props = [NSMutableDictionary dictionary];
@@ -112,9 +110,9 @@
  */
 - (void)ax_getValueFromObj:(NSObject *)otherObj{
     NSObject *myObj = self;
-    NSArray *myArray = [myObj.class ax_getProperties];
+    NSArray *myArray = [myObj.class ax_getPropertiesNameAndType];
     
-    NSDictionary *othrDict = [otherObj ax_getProperties_aps];
+    NSDictionary *othrDict = [otherObj ax_getPropertiesNameAndValue];
     
     for (NSString *str in myArray) {
         for (NSString *key in othrDict) {
@@ -128,12 +126,14 @@
     
 }
 
+
 /**
- * 更换方法
+ *  替换 实例 方法 Instance
+ * 如 newSEL 方法内调用 [self newSEL] 会重新父方法 即执行originalSEL
  */
 + (void)ax_replaceInstanceMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL{
-    
-    Class class = [self class];
+   
+    Class class = self.class;
     Method originalMethod = class_getInstanceMethod(class, originalSEL);
     Method swizzledMethod = class_getInstanceMethod(class, newSEL);
     BOOL didAddMethod = class_addMethod(class,originalSEL,
@@ -148,12 +148,12 @@
     }
 }
 
-
 /**
  * 更换 类 方法
+ * 如 newSEL 方法内调用 [self newSEL] 会重新父方法 即执行originalSEL
  */
 + (void)ax_replaceClassMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL{
-    
+
     Class class = [self class];
     Method originalMethod = class_getClassMethod(class, originalSEL);
     Method swizzledMethod = class_getClassMethod(class, newSEL);

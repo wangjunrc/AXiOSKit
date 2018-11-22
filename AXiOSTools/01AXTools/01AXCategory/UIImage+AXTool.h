@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (AXTool)
+
 /**
  将图片变成指定尺寸
  image 需要重绘的图片
@@ -65,7 +66,11 @@
  */
 +(UIImage *)ax_imageRectangleWithSize:(CGSize )aSzize color:(UIColor *)aColor;
 
+/**
+ 矩形颜色图片CGSize(1.0f, 1.0f);
+ */
 +(UIImage *)ax_imageWithColor:(UIColor *)color ;
+
 /**
  * 圆形颜色图片
  */
@@ -77,9 +82,9 @@
 +(UIImage *)ax_imageByString:(NSString *)codeStr toQRCodeWithWH:(CGFloat )wh;
 
 /**
- * navigationBarTopImage
+ * ax_navigationBarTopImage
  */
-+(UIImage *)navigationBarTopImage:(UIColor *)color;
++(UIImage *)ax_navigationBarTopImage:(UIColor *)color;
 
 /**
  *  去掉系统默认对图片的渲染(默认渲染成蓝色)，恢复图片原来的颜色
@@ -88,7 +93,7 @@
  *
  *  @return 未渲染的图片
  */
-+ (instancetype)imageWithOriginalImageName:(NSString *)imageName;
++ (UIImage *)ax_imageWithOriginalImageName:(NSString *)imageName;
 
 /**
  初始化 UIImage 去掉系统默认对图片的渲染(默认渲染成蓝色)，恢复图片原来的颜色
@@ -96,7 +101,7 @@
  @param name name
  @return UIImage
  */
-+ (instancetype)ax_imageOriginalByName:(NSString *)name;
++ (UIImage *)ax_imageOriginalByName:(NSString *)name;
 
 /**
  矩形图片-->正方形图片 以图片中心为中心，以最小边为边长，裁剪正方形图片
@@ -104,7 +109,6 @@
  @return 剪切图片
  */
 - (UIImage *)ax_imageRectangleToSquare;
-
 
 /**
  微信分享图片,必须小于32kb,且是正方形

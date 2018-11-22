@@ -8,6 +8,30 @@
 
 #import <Foundation/Foundation.h>
 
+
+/**
+ FBKVOControllerAX 返回对象
+ */
+@interface AXKVOResultModel : NSObject
+
+/**监听对象*/
+@property (nonatomic, strong, nullable)id observer;
+
+/**监听对象*/
+@property (nonatomic, strong, nullable)id object;
+
+/**路径*/
+@property (nonatomic, copy  , nullable)NSString *keyPath;
+
+/**旧值*/
+@property (nonatomic, strong, nullable)id oldValue;
+
+/**新的值*/
+@property (nonatomic, strong, nullable)id aNewValue;
+
+@end
+
+
 @interface NSObject (FBKVOControllerAX)
 
 /**
@@ -31,6 +55,14 @@ KVOControllerNonRetaining(目前使用) 和 KVOController(不知道具体区别)
  @param block 回调,新 旧 值
  */
 - (void)ax_addFBKVOKeyPath:(nullable NSString *)keyPath block:(void(^_Nullable)(NSString * _Nullable keyPath,id _Nullable oldValue ,id _Nullable newValue ))block;
+
+/**
+ Facebook kvo 封装
+ 
+ @param keyPath 路径
+ @param result 回调,新 旧 值
+ */
+- (void)ax_addFBKVOKeyPath:(nullable NSString *)keyPath result:(void(^_Nullable)(AXKVOResultModel * _Nonnull resultModel))result;
 
 /**
  Facebook kvo 封装

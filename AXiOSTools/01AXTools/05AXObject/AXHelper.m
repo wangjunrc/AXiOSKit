@@ -84,7 +84,6 @@
     };
 }
 
-
 //+(void)isDebug:(void(^)(void))bebug release:(void(^)(void))release{
 //
 //#ifdef DEBUG

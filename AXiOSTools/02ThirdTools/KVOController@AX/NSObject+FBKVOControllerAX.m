@@ -12,6 +12,11 @@
 
 #import <KVOController/KVOController.h>
 
+
+@implementation AXKVOResultModel
+
+@end
+
 @implementation NSObject (FBKVOControllerAX)
 
 /**
@@ -31,7 +36,29 @@
     
 }
 
-
+/**
+ Facebook kvo 封装
+ 
+ @param keyPath 路径
+ @param result 回调,新 旧 值
+ */
+- (void)ax_addFBKVOKeyPath:(nullable NSString *)keyPath result:(void(^_Nullable)(AXKVOResultModel *resultModel))result {
+    // KVOControllerNonRetaining
+    //KVOController
+    [self.KVOControllerNonRetaining observe:self keyPath:keyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSKeyValueChangeKey,id> * _Nonnull change) {
+        
+        if (result) {
+            AXKVOResultModel *model = [[AXKVOResultModel alloc]init];
+            model.observer = observer;
+            model.object = object;
+            model.oldValue = change[@"old"];
+            model.aNewValue = change[@"new"];
+            model.keyPath = change[FBKVONotificationKeyPathKey];
+            result(model);
+        }
+    }];
+    
+}
 
 /**
  Facebook kvo 封装
