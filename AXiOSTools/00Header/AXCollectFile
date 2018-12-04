@@ -216,3 +216,23 @@ dispatch_semaphore_signal(sema);
 
 //************************************************************************
 //************************************************************************
+
+
+//类属性
+@property (class,nonatomic, copy) NSString *nameAge;
+
+static NSString *_nameAge1 = nil;
+
++(void)setNameAge:(NSString *)nameAge {
+
+_nameAge1 = nameAge;
+}
+
++ (NSString *)nameAge {
+
+return _nameAge1;
+}
+
+
+//************************************************************************
+//************************************************************************
