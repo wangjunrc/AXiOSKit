@@ -325,8 +325,8 @@
  */
 +(UIImage *)ax_navigationBarTopImage:(UIColor *)color{
     
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(axScreenWidth, 64), NO,0);
-    UIBezierPath *path =[UIBezierPath bezierPathWithRect:CGRectMake(0, 0, axScreenWidth, 64)];
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(AXScreenWidth(), 64), NO,0);
+    UIBezierPath *path =[UIBezierPath bezierPathWithRect:CGRectMake(0, 0, AXScreenWidth(), 64)];
     [color setFill];
     [path fill];
     UIImage *tempImg = UIGraphicsGetImageFromCurrentImageContext();

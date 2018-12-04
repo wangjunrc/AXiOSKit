@@ -111,7 +111,7 @@
                 
             case AFNetworkReachabilityStatusReachableViaWWAN:{ // 手机自带网络
                 
-                [axCurrentViewController ax_showNetDownloadGo:^{
+                [AXCurrentViewController() ax_showNetDownloadGo:^{
                     [task resume];
                 } cancel:^{
                     [task cancel];
@@ -144,7 +144,7 @@
 //                break;
 //                
 //            case AFNetworkReachabilityStatusReachableViaWWAN:{ // 手机自带网络
-//                [axCurrentViewController ax_showNetDownloadGo:^{
+//                [AXCurrentViewController ax_showNetDownloadGo:^{
 //                    [task resume];
 //                } cancel:^{
 //                    [task cancel];

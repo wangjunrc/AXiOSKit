@@ -57,7 +57,7 @@
 #import "UIViewController+AXTool.h"
 #import "UITextField+AXAction.h"
 #import "IBObjectHeader.h"
-#import "AXStaticMethod.h"
+#import "AXExternFunction.h"
 #import "AXViewController.h"
 #import "AXBaseAlertVC.h"
 #import "AXQRCodeVC.h"

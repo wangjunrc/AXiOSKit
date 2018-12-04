@@ -41,9 +41,9 @@
  
  */
 
-#define AX_IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-
-#define AX_IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+//#define AX_IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+//
+//#define AX_IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 
 
 /**
@@ -96,43 +96,6 @@
  * 强引用 self
  */
 #define AX_STRONG_SELF AX_STRONG_OBJ(self);
-
-/***/
-
-/**
- * app代理
- */
-#define axMainAppDelegate ((AppDelegate*)([UIApplication sharedApplication].delegate))
-
-/**
- * app根控制器
- */
-#define axRootViewController [UIApplication sharedApplication].keyWindow.rootViewController
-
-/**
- * AppDelegate app根控制器 个别情况下 axRootViewController 取值不对
- */
-#define axRootViewController_AppDelegate  ((AppDelegate*)([UIApplication sharedApplication].delegate)).window.rootViewController
-
-/**
- keyWindow
- */
-#define axkeyWindow [UIApplication sharedApplication].keyWindow
-
-/**
- * 当前活动窗口的控制器
- */
-#define axCurrentViewController [UIViewController ax_currentViewController]
-
-/**
- *  屏幕宽
- */
-#define axScreenWidth [UIScreen mainScreen].bounds.size.width
-
-/**
- * 屏幕高
- */
-#define axScreenHeight [UIScreen mainScreen].bounds.size.height
 
 /**
  * NSNotificationCenter
@@ -187,8 +150,3 @@ self.view = [[aViewClass alloc]init];\
 - (aViewClass *)view{\
 return (aViewClass *)[super view];\
 }\
-
-
-
-
-

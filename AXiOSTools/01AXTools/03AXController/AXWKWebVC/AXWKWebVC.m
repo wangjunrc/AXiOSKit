@@ -568,7 +568,11 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     NSString *indexPath = [NSString stringWithFormat: @"%@/%@.html", basePath,url];
     NSURL *fileUrl = [NSURL fileURLWithPath:indexPath];
     NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];
-    [self.webView loadFileURL:fileUrl allowingReadAccessToURL: baseUrl];
+    if (@available(iOS 9.0, *)) {
+        [self.webView loadFileURL:fileUrl allowingReadAccessToURL: baseUrl];
+    } else {
+       
+    }
 }
 
 
@@ -678,7 +682,7 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
         
         [self ax_haveNav:^(UINavigationController *nav) {
             
-            tempFrame = CGRectMake(0, AX_View_Top_Height, self.view.bounds.size.width, 3);
+            tempFrame = CGRectMake(0, AXNavigationBarHeight(self), self.view.bounds.size.width, 3);
             
         } isPushNav:nil isPresentNav:nil noneNav:^{
             

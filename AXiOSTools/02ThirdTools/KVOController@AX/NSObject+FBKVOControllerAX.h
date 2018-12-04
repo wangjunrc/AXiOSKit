@@ -15,19 +15,19 @@
 @interface AXKVOResultModel : NSObject
 
 /**监听对象*/
-@property (nonatomic, strong, nullable)id observer;
+@property (nullable, nonatomic, strong)id observer;
 
 /**监听对象*/
-@property (nonatomic, strong, nullable)id object;
+@property (nullable, nonatomic, strong)id object;
 
 /**路径*/
-@property (nonatomic, copy  , nullable)NSString *keyPath;
+@property (nullable, nonatomic, copy)NSString *keyPath;
 
 /**旧值*/
-@property (nonatomic, strong, nullable)id oldValue;
+@property (nullable, nonatomic, strong)id oldValue;
 
 /**新的值*/
-@property (nonatomic, strong, nullable)id aNewValue;
+@property (nullable, nonatomic, strong )id aNewValue;
 
 @end
 

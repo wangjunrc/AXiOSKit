@@ -6,11 +6,22 @@
 //  Copyright © 2018 liuweixing. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AXConfigureFunction : UIView
+@interface AXConfigureFunction : NSObject
+
+/**
+ 键盘等 基础配置
+ */
+void ax_configure(void);
+
+/**
+ * 键盘
+ */
+void ax_IQKeyboardManager(void);
 
 @end
 

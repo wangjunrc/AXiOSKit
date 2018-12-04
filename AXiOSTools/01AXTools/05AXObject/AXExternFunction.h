@@ -1,5 +1,5 @@
 //
-//  AXStaticMethod.h
+//  AXExternFunction.h
 //  AXiOSToolsDemo
 //
 //  Created by mac on 2018/8/31.
@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface AXStaticMethod : NSObject
+NS_ASSUME_NONNULL_BEGIN
+
+@interface AXExternFunction : NSObject
 
 #pragma mark - Foundation
 
@@ -208,13 +210,92 @@ dispatch_queue_t _Nullable ax_get_queue_SERIAL(const char *_Nullable label);
 dispatch_queue_t _Nullable ax_get_queue_CONCURRENT(const char *_Nullable label);
 
 /**
- 键盘等 基础配置
+ * Localizable.strings  标准名称 国际化文件
  */
-void ax_configure(void);
+NSString *AXNSLocalizedString(NSString *key);
 
 /**
- * 键盘
+ * AXTools 自定义国际化文件
  */
-void ax_IQKeyboardManager(void);
+NSString *AXToolsLocalizedString(NSString *key);
+
+/**
+ 状态栏高度
+ */
+CGFloat AXStatusBarHeight(void);
+
+/**
+ 状态栏高度 和 nav 高度 普通 64 ,x 88
+ */
+CGFloat AXNavigationBarHeight(UIViewController *aVC);
+
+/**
+ 安全区域 insets
+ */
+
+UIEdgeInsets AXViewSafeAreInsets(UIView *view);
+
+/**
+ 安全区域 bottom
+ */
+CGFloat AXViewSafeAreBottom(UIView *view);
+
+/**
+ 安全区域 top
+ */
+CGFloat AXViewSafeAreTop(UIView *view);
+
+/**
+ *  屏幕宽
+ */
+CGFloat AXScreenWidth(void);
+
+/**
+ * 屏幕高
+ */
+CGFloat AXScreenHeight(void);
+
+/**
+ * 当前活动窗口的控制器
+ */
+UIViewController * AXCurrentViewController(void);
+
+/**
+ * app代理
+ */
+id<UIApplicationDelegate> AXMainAppDelegate(void);
+
+/**
+ * app根控制器
+ */
+UIViewController *AXRootViewController(void);
+
+/**
+ * AppDelegate app根控制器 个别情况下 AXRootViewController 取值不对
+ */
+UIViewController *AXRootViewController_AppDelegate(void);
+
+/**
+ keyWindow
+ */
+UIWindow *AXKeyWindow(void);
+
+/**
+ 封装NSLog用printf
+
+ @param format NSLog样式 format
+ @param ... NSLog样式 ...
+ */
+void AXLog(NSString *format, ...);
+
+/**
+ 封装NSLog用printf 纯输出
+ 
+ @param format NSLog样式 format
+ @param ... NSLog样式 ...
+ */
+void AXNoMsgLog(NSString *format, ...);
 
 @end
+
+NS_ASSUME_NONNULL_END

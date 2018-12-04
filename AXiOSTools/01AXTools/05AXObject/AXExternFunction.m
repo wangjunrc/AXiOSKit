@@ -1,20 +1,17 @@
 //
-//  AXStaticMethod.m
+//  AXExternFunction.m
 //  AXiOSToolsDemo
 //
 //  Created by mac on 2018/8/31.
 //  Copyright © 2018年 liuweixing. All rights reserved.
 //
 
-#import "AXStaticMethod.h"
+#import "AXExternFunction.h"
 #import "AXMacros_log.h"
 #import <UIKit/UIKit.h>
+#import "UIViewController+AXTool.h"
 
-#if __has_include("IQKeyboardManager.h")
-#import "IQKeyboardManager.h"
-#endif
-
-@implementation AXStaticMethod
+@implementation AXExternFunction
 
 #pragma mark - Foundation
 
@@ -316,7 +313,7 @@ UIImage * ax_Image(NSString *name){
 
 /**
  Retain Strong nonatomic 属性添加值
-
+ 
  @param object 对象
  @param propertyName 属性名 @selector() 格式
  @param value 值
@@ -329,7 +326,7 @@ void ax_setStrongAssociatedObject(id _Nonnull object, const void * _Nonnull prop
 
 
 /**
-Copy nonatomic 属性添加值
+ Copy nonatomic 属性添加值
  
  @param object 对象
  @param propertyName 属性名 @selector() 格式
@@ -354,30 +351,30 @@ void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull prop
                              value, OBJC_ASSOCIATION_ASSIGN);
 }
 
- /**
-  Retain Strong Copy Assign 对象获取值
-  Assign 需要转型
-
-  @param object 实例
-  @param propertyName 属性名 @selector() 格式
-  @return id 值
-  */
- id ax_getAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ) {
-     
-   return objc_getAssociatedObject(object, propertyName);
-     
+/**
+ Retain Strong Copy Assign 对象获取值
+ Assign 需要转型
+ 
+ @param object 实例
+ @param propertyName 属性名 @selector() 格式
+ @return id 值
+ */
+id ax_getAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ) {
+    
+    return objc_getAssociatedObject(object, propertyName);
+    
 }
 
 
 /**
  gcd 创建串行队列 queue
-
+ 
  @param label 队列标识
  @return dispatch_queue_t
  */
 dispatch_queue_t ax_get_queue_SERIAL(const char *_Nullable label) {
     
-  return  dispatch_queue_create(label,DISPATCH_QUEUE_SERIAL);
+    return  dispatch_queue_create(label,DISPATCH_QUEUE_SERIAL);
     
 }
 
@@ -394,80 +391,166 @@ dispatch_queue_t ax_get_queue_CONCURRENT(const char *_Nullable label) {
 }
 
 /**
- 键盘等 基础配置
+ * Localizable.strings  标准名称 国际化文件
  */
-void ax_configure(void) {
+NSString *  AXNSLocalizedString(NSString *key) {
     
-    ax_IQKeyboardManager();
-    
+    return NSLocalizedString(key,nil);
 }
 
 /**
- * 键盘
+ * AXTools 自定义国际化文件
  */
-void ax_IQKeyboardManager(void) {
-  
-#if __has_include("IQKeyboardManager.h")
+NSString *  AXToolsLocalizedString(NSString *key) {
     
-    //拖入工程即生效,这里只是做一下设置
-    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
-    //控制整个功能是否启用
-    manager.enable = YES;
-    //控制整个功能是否启用
-    manager.shouldResignOnTouchOutside = YES;
-    //控制键盘上的工具条文字颜色是否用户自定义
-    manager.shouldToolbarUsesTextFieldTintColor = YES;
-    //控制是否显示键盘上的工具条
-    manager.enableAutoToolbar = NO;
+    return NSLocalizedStringFromTable(key,@"AXToolsLocalizedString", @"");
+}
+
+/**
+ 状态栏高度
+ */
+CGFloat AXStatusBarHeight(void) {
+    
+    return [UIApplication sharedApplication].statusBarFrame.size.height;
+}
+
+/**
+ 状态栏高度 和 nav 高度 普通 64 ,x 88
+ */
+CGFloat AXNavigationBarHeight(UIViewController *aVC) {
+    
+    return AXStatusBarHeight() + aVC.navigationController.navigationBar.bounds.size.height;
+}
+/**
+ 安全区域 insets
+ */
+UIEdgeInsets AXViewSafeAreInsets(UIView *view) {
+    UIEdgeInsets insets = UIEdgeInsetsZero;
+    if(@available(iOS 11.0, *)) {
+        insets = view.safeAreaInsets;
+    }
+    return insets;
+}
+
+/**
+ 安全区域 bottom
+ */
+CGFloat AXViewSafeAreBottom(UIView *view){
+    
+    return  AXViewSafeAreInsets(view).bottom;
+}
+
+/**
+ 安全区域 top
+ */
+CGFloat AXViewSafeAreTop(UIView *view){
+    
+    return AXViewSafeAreInsets(view).top;
+}
+
+/**
+ *  屏幕宽
+ */
+CGFloat  AXScreenWidth(void) {
+    return [UIScreen mainScreen].bounds.size.width;
+}
+
+/**
+ * 屏幕高
+ */
+CGFloat  AXScreenHeight(void) {
+    return [UIScreen mainScreen].bounds.size.height;
+}
+
+/**
+ * 当前活动窗口的控制器
+ */
+UIViewController * AXCurrentViewController(void) {
+    return [UIViewController ax_currentViewController];
+}
+
+/**
+ * app代理
+ */
+id<UIApplicationDelegate> AXMainAppDelegate(void) {
+    return ((id<UIApplicationDelegate>)([UIApplication sharedApplication].delegate));
+}
+
+/**
+ * app根控制器
+ */
+UIViewController * AXRootViewController(void) {
+    return [UIApplication sharedApplication].keyWindow.rootViewController;
+}
+
+/**
+ * AppDelegate app根控制器 个别情况下 AXRootViewController 取值不对
+ */
+UIViewController * AXRootViewController_AppDelegate(void) {
+    
+    return  ((id<UIApplicationDelegate>)([UIApplication sharedApplication].delegate)).window.rootViewController;
+}
+
+/**
+ keyWindow
+ */
+UIWindow *AXKeyWindow(void) {
+   return [UIApplication sharedApplication].keyWindow;
+}
+
+/**
+ 封装NSLog用printf
+ 
+ @param format NSLog样式 format
+ @param ... NSLog样式 ...
+ */
+void AXLog(NSString *format, ...) {
+    
+#ifdef DEBUG
+    
+    __block va_list arg_list;
+    va_start (arg_list, format);
+    //时间
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSS";
+    NSString *dateStr = [dateFormatter stringFromDate:[NSDate date]];
+    const char *dateChar = dateStr.UTF8String;
+    //.m文件名
+    const char *fileChar = [NSString stringWithFormat:@"%s", __FILE__].lastPathComponent.UTF8String;
+    //行号
+    int line =  __LINE__;
+    //log内容
+    const char *formatChar = [[NSString alloc] initWithFormat:format arguments:arg_list].UTF8String;
+    printf("%s [%s 第%d行]: %s\n\n",dateChar, fileChar ,line,formatChar);
+    va_end(arg_list);
+    
+#else
+    
 #endif
     
 }
 
-
-/*
- // 以下是设置其他界面
- prefs:root=General&path=About
- prefs:root=General&path=ACCESSIBILITY
- prefs:root=AIRPLANE_MODE
- prefs:root=General&path=AUTOLOCK
- prefs:root=General&path=USAGE/CELLULAR_USAGE
- prefs:root=Brightness
- prefs:root=Bluetooth
- prefs:root=General&path=DATE_AND_TIME
- prefs:root=FACETIME
- prefs:root=General
- prefs:root=General&path=Keyboard
- prefs:root=CASTLE
- prefs:root=CASTLE&path=STORAGE_AND_BACKUP
- prefs:root=General&path=INTERNATIONAL
- prefs:root=LOCATION_SERVICES
- prefs:root=ACCOUNT_SETTINGS
- prefs:root=MUSIC
- prefs:root=MUSIC&path=EQ
- prefs:root=MUSIC&path=VolumeLimit
- prefs:root=General&path=Network
- prefs:root=NIKE_PLUS_IPOD
- prefs:root=NOTES
- prefs:root=NOTIFICATIONS_ID
- prefs:root=Phone
- prefs:root=Photos
- prefs:root=General&path=ManagedConfigurationList
- prefs:root=General&path=Reset
- prefs:root=Sounds&path=Ringtone
- prefs:root=Safari
- prefs:root=General&path=Assistant
- prefs:root=Sounds
- prefs:root=General&path=SOFTWARE_UPDATE_LINK
- prefs:root=STORE
- prefs:root=TWITTER
- prefs:root=FACEBOOK
- prefs:root=General&path=USAGE prefs:root=VIDEO
- prefs:root=General&path=Network/VPN
- prefs:root=Wallpaper
- prefs:root=WIFI
- prefs:root=INTERNET_TETHERING
- prefs:root=Phone&path=Blocked
- prefs:root=DO_NOT_DISTURB
+/**
+ 封装NSLog用printf 纯输出
+ 
+ @param format NSLog样式 format
+ @param ... NSLog样式 ...
  */
+void AXNoMsgLog(NSString *format, ...) {
+    
+#ifdef DEBUG
+    
+    __block va_list arg_list;
+    va_start (arg_list, format);
+    //log内容
+    const char *formatChar = [[NSString alloc] initWithFormat:format arguments:arg_list].UTF8String;
+    printf("%s",formatChar);
+    va_end(arg_list);
+    
+#else
+    
+#endif
+    
+}
 
 @end

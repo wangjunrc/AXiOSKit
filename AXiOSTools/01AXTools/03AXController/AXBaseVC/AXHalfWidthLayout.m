@@ -29,7 +29,7 @@
     [super invalidateLayout];
     //    self.sectionInset = UIEdgeInsetsMake(10,10,10,10);
     
-    self.itemSize = CGSizeMake(axScreenWidth*0.5-0.5, axScreenWidth*0.5-0.5); //item尺寸
+    self.itemSize = CGSizeMake(AXScreenWidth()*0.5-0.5, AXScreenWidth()*0.5-0.5); //item尺寸
     self.minimumInteritemSpacing = 1;//列间距
     self.minimumLineSpacing = 1;//行间距
     

@@ -34,8 +34,8 @@
 //    //minimumLineSpacing = 0;这个是水平的间距 minimumInteritemSpacing
 //    self.minimumInteritemSpacing = 0;//列间距
 //    self.minimumLineSpacing = 0;//行间距
-//    self.estimatedItemSize = CGSizeMake(axScreenWidth-space*2, axScreenHeight-64-10);
-//    self.itemSize = CGSizeMake(axScreenWidth-space*2, axScreenHeight-64-10); //item尺寸
+//    self.estimatedItemSize = CGSizeMake(AXScreenWidth()-space*2, AXScreenHeight()-64-10);
+//    self.itemSize = CGSizeMake(AXScreenWidth()-space*2, AXScreenHeight()-64-10); //item尺寸
 //    self.scrollDirection =UICollectionViewScrollDirectionHorizontal;//滚动方向
 
 
@@ -43,7 +43,7 @@
     //minimumLineSpacing = 0;这个是水平的间距 minimumInteritemSpacing
     self.minimumInteritemSpacing = 0;//列间距
     self.minimumLineSpacing = 0;//行间距
-    self.itemSize = CGSizeMake(axScreenWidth, axScreenHeight-64); //item尺寸
+    self.itemSize = CGSizeMake(AXScreenWidth(), AXScreenHeight()-64); //item尺寸
     self.scrollDirection =UICollectionViewScrollDirectionHorizontal;//滚动方向
 
 }
