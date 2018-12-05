@@ -281,12 +281,12 @@ UIViewController *AXRootViewController_AppDelegate(void);
 UIWindow *AXKeyWindow(void);
 
 /**
- 封装NSLog用printf
+ 封装NSLog用printf 没有__FILE__ 和 __FILE__
 
  @param format NSLog样式 format
  @param ... NSLog样式 ...
  */
-void AXLog(NSString *format, ...);
+void AXNSLog(NSString *format, ...);
 
 /**
  封装NSLog用printf 纯输出

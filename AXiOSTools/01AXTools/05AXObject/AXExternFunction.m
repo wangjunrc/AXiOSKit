@@ -499,12 +499,12 @@ UIWindow *AXKeyWindow(void) {
 }
 
 /**
- 封装NSLog用printf
+ 封装NSLog用printf 没有__FILE__ 和 __FILE__
  
  @param format NSLog样式 format
  @param ... NSLog样式 ...
  */
-void AXLog(NSString *format, ...) {
+void AXNSLog(NSString *format, ...) {
     
 #ifdef DEBUG
     
@@ -512,16 +512,17 @@ void AXLog(NSString *format, ...) {
     va_start (arg_list, format);
     //时间
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSS";
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSSSSS";
     NSString *dateStr = [dateFormatter stringFromDate:[NSDate date]];
     const char *dateChar = dateStr.UTF8String;
     //.m文件名
-    const char *fileChar = [NSString stringWithFormat:@"%s", __FILE__].lastPathComponent.UTF8String;
+//    const char *fileChar = [NSString stringWithFormat:@"%s", __FILE__].lastPathComponent.UTF8String;
     //行号
-    int line =  __LINE__;
+//    int line =  __LINE__;
     //log内容
     const char *formatChar = [[NSString alloc] initWithFormat:format arguments:arg_list].UTF8String;
-    printf("%s [%s 第%d行]: %s\n\n",dateChar, fileChar ,line,formatChar);
+//    printf("%s [%s 第%d行]: %s\n\n",dateChar, fileChar ,line,formatChar);
+     printf("%s : %s\n\n",dateChar,formatChar);
     va_end(arg_list);
     
 #else

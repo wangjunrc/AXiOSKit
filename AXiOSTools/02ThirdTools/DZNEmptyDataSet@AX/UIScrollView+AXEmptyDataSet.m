@@ -10,6 +10,7 @@
 #import "UIScrollView+AXEmptyDataSet.h"
 #import "AXMacros.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#import "UIImage+AXTool.h"
 
 typedef void(^ReloadBlock)(void);
 

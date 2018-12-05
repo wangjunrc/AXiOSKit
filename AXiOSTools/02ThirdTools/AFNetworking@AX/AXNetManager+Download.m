@@ -9,12 +9,15 @@
 #import "AXNetManager+Download.h"
 #import "AXNetManager.h"
 #import "AXMacros.h"
+#import "AXExternFunction.h"
+#import "UIViewController+AXAlert.h"
+
 @implementation AXNetManager (Download)
 
 #if __has_include("AFNetworking.h")
 
 + (void )postDownURL:(NSString *)url showStatus:(BOOL )showStatus downPath:(NSString *)downPath progress:(void (^)(float aProgress))progress success:(void(^)(NSString *filePath))success failure:(void(^)(NSInteger statusCode))failure{
-
+    
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     
@@ -48,24 +51,24 @@
     }];
     
     
-//    //保持下载进度,,,我也不知道怎么实现的~~
-//    if (progress) {
-//        //设置下载进度回调方法：
-//        [manager setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
-//            
-//            NSHTTPURLResponse *httpResp = (NSHTTPURLResponse *)downloadTask.response;
-//            
-//            if (httpResp.statusCode==200) {
-//                
-//                float pro = (CGFloat)totalBytesWritten/(CGFloat)totalBytesExpectedToWrite;
-//                progress(pro);
-//                AXLog(@"pro--> %lf", pro);
-//            }else{
-//                
-//            }
-//            
-//        }];
-//    }
+    //    //保持下载进度,,,我也不知道怎么实现的~~
+    //    if (progress) {
+    //        //设置下载进度回调方法：
+    //        [manager setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite) {
+    //
+    //            NSHTTPURLResponse *httpResp = (NSHTTPURLResponse *)downloadTask.response;
+    //
+    //            if (httpResp.statusCode==200) {
+    //
+    //                float pro = (CGFloat)totalBytesWritten/(CGFloat)totalBytesExpectedToWrite;
+    //                progress(pro);
+    //                AXLog(@"pro--> %lf", pro);
+    //            }else{
+    //
+    //            }
+    //
+    //        }];
+    //    }
     
     
     //判断网络,是否继续下载
@@ -75,7 +78,7 @@
         [task resume];
     }
     
-
+    
 }
 
 
@@ -110,8 +113,8 @@
                 break;
                 
             case AFNetworkReachabilityStatusReachableViaWWAN:{ // 手机自带网络
-                
-                [AXCurrentViewController() ax_showNetDownloadGo:^{
+                UIViewController *currentViewController = AXCurrentViewController();
+                [currentViewController ax_showNetDownloadGo:^{
                     [task resume];
                 } cancel:^{
                     [task cancel];
@@ -128,42 +131,42 @@
             default:
                 break;
         }
-
+        
     }];
     
-//    AFNetworkReachabilityManager *reachabilityManager = [AFNetworkReachabilityManager sharedManager];
-//    [reachabilityManager startMonitoring];
-//    
-//    [reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-//        switch (status) {
-//            case AFNetworkReachabilityStatusUnknown: // 未知网络
-//                break;
-//                
-//            case AFNetworkReachabilityStatusNotReachable: // 没有网络(断网)
-//                [task cancel];
-//                break;
-//                
-//            case AFNetworkReachabilityStatusReachableViaWWAN:{ // 手机自带网络
-//                [AXCurrentViewController ax_showNetDownloadGo:^{
-//                    [task resume];
-//                } cancel:^{
-//                    [task cancel];
-//                }];
-//            }
-//                break;
-//                
-//            case AFNetworkReachabilityStatusReachableViaWiFi:{ // WIFI
-//                
-//                [task resume];
-//            }
-//                break;
-//                
-//            default:
-//                break;
-//        }
-//        
-//    }];
-
+    //    AFNetworkReachabilityManager *reachabilityManager = [AFNetworkReachabilityManager sharedManager];
+    //    [reachabilityManager startMonitoring];
+    //
+    //    [reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+    //        switch (status) {
+    //            case AFNetworkReachabilityStatusUnknown: // 未知网络
+    //                break;
+    //
+    //            case AFNetworkReachabilityStatusNotReachable: // 没有网络(断网)
+    //                [task cancel];
+    //                break;
+    //
+    //            case AFNetworkReachabilityStatusReachableViaWWAN:{ // 手机自带网络
+    //                [AXCurrentViewController ax_showNetDownloadGo:^{
+    //                    [task resume];
+    //                } cancel:^{
+    //                    [task cancel];
+    //                }];
+    //            }
+    //                break;
+    //
+    //            case AFNetworkReachabilityStatusReachableViaWiFi:{ // WIFI
+    //
+    //                [task resume];
+    //            }
+    //                break;
+    //                
+    //            default:
+    //                break;
+    //        }
+    //
+    //    }];
+    
 }
 
 #endif

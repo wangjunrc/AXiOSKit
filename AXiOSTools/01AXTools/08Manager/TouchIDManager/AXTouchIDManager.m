@@ -209,7 +209,6 @@
                     default:
                         break;
                 }
-                AXLog(@"message>> %@",message);
             }
         });
     }];

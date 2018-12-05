@@ -9,6 +9,7 @@
 #import "UIViewController+AXTool.h"
 #import "UIViewController+AXAlert.h"
 #import <Photos/Photos.h>
+#import "NSObject+AXVersion.h"
 
 @interface UIViewController ()
 
@@ -283,8 +284,8 @@
  */
 - (void)ax_AppStoreUpdateWithAppleStoreID:(NSString *)AppleStoreID{
     
-    
     [self ax_versionProjectCompareAppStoreWithAppid:AppleStoreID comparisonResult:^(NSString *projectVersion, NSString *appStoreVersion, NSComparisonResult comparisonResult) {
+    
         
         if (comparisonResult == NSOrderedAscending) {
             
@@ -297,8 +298,8 @@
                 
             }];
         }
-        
     }];
+    
 }
 
 /**
