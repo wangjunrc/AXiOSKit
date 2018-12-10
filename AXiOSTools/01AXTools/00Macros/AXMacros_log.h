@@ -26,7 +26,7 @@
 //#endif
 
 
-#define  AXLogFunc AXLog(@"%s",__func__);
+#define AXLogFunc AXLog(@"%s",__func__);
 #define axLong_viewDidLoad AXLog(@"viewDidLoad>> %@",self.class);
 #define axLong_dealloc AXLog(@"dealloc>> %@",self.class);
 

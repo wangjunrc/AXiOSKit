@@ -236,3 +236,38 @@ return _nameAge1;
 
 //************************************************************************
 //************************************************************************
+
+UIScrollView 滚动g内容高度 子视图适应
+
+UIScrollView *scrollView = [[UIScrollView alloc] init];
+scrollView.backgroundColor = [UIColor greenColor];
+[self.view addSubview:scrollView];
+
+[scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+make.top.mas_equalTo(80);
+make.left.mas_equalTo(0);
+make.right.mas_equalTo(0);
+make.height.mas_equalTo(200);
+}];
+
+
+UIView *containerView = [[UIView alloc] init];
+containerView.backgroundColor = [UIColor yellowColor];
+[scrollView addSubview:containerView];
+
+[containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+make.edges.mas_equalTo(UIEdgeInsetsZero);
+make.width.equalTo(scrollView);//这个不能省略
+}];
+
+
+UIView *view0 = [[UIView alloc] init];
+view0.backgroundColor = [UIColor redColor];
+[containerView addSubview:view0];
+
+[view0 mas_makeConstraints:^(MASConstraintMaker *make) {
+make.edges.mas_equalTo(UIEdgeInsetsZero);
+make.height.mas_equalTo(400);
+}];
+
+//************************************************************************

@@ -13,12 +13,11 @@
 /**
   加载纯外部链接网页
  */
-@property (nonatomic, copy) NSString *urlString;
-
+@property (nonatomic, copy) NSString *loadURLString;
 
 /**
  * 加载本地网页 不需要带.html 后缀
  */
-@property (nonatomic, copy) NSString *htmlSring;
+@property (nonatomic, copy) NSString *loadHTMLString;
 
 @end

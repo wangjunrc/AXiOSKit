@@ -139,15 +139,15 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 //    }];
     
     
-    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-    btn.backgroundColor = [UIColor orangeColor];
-    [self.webView addSubview:btn];
-    
-    [btn ax_addActionBlock:^(UIButton * _Nullable button) {
-        AXLog(@"btn>>>");
-        [self.bridge callHandler:@"payCallBack" data:@"123"];
-        
-    }];
+//    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+//    btn.backgroundColor = [UIColor orangeColor];
+//    [self.webView addSubview:btn];
+//    
+//    [btn ax_addActionBlock:^(UIButton * _Nullable button) {
+//        AXLog(@"btn>>>");
+//        [self.bridge callHandler:@"payCallBack" data:@"123"];
+//
+//    }];
 }
 
 
@@ -423,13 +423,8 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     
     AXLog(@"didReceiveScriptMessage");
     
-    if ([message.name isEqualToString:@"popViewControllerAnimated"]) {
-        
-        AXLog(@"popViewControllerAnimated");
-        [self.navigationController popViewControllerAnimated:YES];
-        //
-        AXLog(@"JS传来的json字符串 ：  %@", message.body);
-        
+    if ([message.name isEqualToString:@"JSUseOCFunctionName_test1"]) {
+        AXLog(@"JS传来的json字符串>>%@", message.body);
     }
 }
 
@@ -545,34 +540,52 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 
 
 - (void)func_loadHostPathURL:(NSString *)url{
-//    //获取JS所在的路径
-//    NSString *path = [[NSBundle mainBundle] pathForResource:url ofType:@"html"];
-//    //获得html内容
-//    NSString *html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-//    //加载js
-//    if (html.length==0) {
-//        html = [NSString stringWithFormat:@"<font size=\"30\">%@</font>",url];
-//    }
-//
-//    [self.webView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];
+    
+    //获取JS所在的路径
+    NSString *path = nil;
+    //获得html内容
+    NSString *html =nil;
     
     
-    //wkwebView 加载本地 css 文件
+    NSString *type = url.pathExtension;
+
+    if ([type isEqualToString:@"html"]) {
+
+        path = [[NSBundle mainBundle] pathForResource:url ofType:nil];
+        html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+        
+    }else if (type.length == 0){
     
-    //获取bundlePath 路径
-    NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
-    //获取本地html目录 basePath
-    NSString *basePath = [NSString stringWithFormat: @"%@/www", bundlePath];
-    //获取本地html目录 baseUrl
-    //html 路径
-    NSString *indexPath = [NSString stringWithFormat: @"%@/%@.html", basePath,url];
-    NSURL *fileUrl = [NSURL fileURLWithPath:indexPath];
-    NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];
-    if (@available(iOS 9.0, *)) {
-        [self.webView loadFileURL:fileUrl allowingReadAccessToURL: baseUrl];
-    } else {
-       
+        path = [[NSBundle mainBundle] pathForResource:url ofType:@"html"];
+        html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    }else{
+        html = [NSString stringWithFormat:@"<font size=\"30\">'%@'路径错误</font>",url];;
     }
+    
+    //加载js
+    if (html.length==0) {
+        html = [NSString stringWithFormat:@"<font size=\"30\">%@</font>",url];
+    }
+
+    [self.webView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];
+    
+    
+//    //wkwebView 加载本地 css 文件
+//    
+//    //获取bundlePath 路径
+//    NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
+//    //获取本地html目录 basePath
+//    NSString *basePath = [NSString stringWithFormat: @"%@/www", bundlePath];
+//    //获取本地html目录 baseUrl
+//    //html 路径
+//    NSString *indexPath = [NSString stringWithFormat: @"%@/%@.html", basePath,url];
+//    NSURL *fileUrl = [NSURL fileURLWithPath:indexPath];
+//    NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];
+//    if (@available(iOS 9.0, *)) {
+//        [self.webView loadFileURL:fileUrl allowingReadAccessToURL: baseUrl];
+//    } else {
+//       
+//    }
 }
 
 
@@ -630,21 +643,18 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 
 #pragma mark - set and get
 
-
-
-- (void)setUrlString:(NSString *)urlString{
-    _urlString = urlString;
-    self.url = urlString;
+- (void)setLoadURLString:(NSString *)loadURLString {
+    _loadURLString = loadURLString;
+    self.url = loadURLString;
     self.loadType = loadWebURLString;
 }
 
 
-- (void)setHtmlSring:(NSString *)htmlSring{
-    _htmlSring = htmlSring;
-    self.url = htmlSring;
+- (void)setLoadHTMLString:(NSString *)loadHTMLString {
+    _loadHTMLString = loadHTMLString;
+    self.url = loadHTMLString;
     self.loadType = loadWebHTMLString;
 }
-
 
 
 - (WKWebView *)webView{
@@ -657,8 +667,8 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
         //        config.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAudio;
         
         WKUserContentController *userContentController = [[WKUserContentController alloc] init];;
-        // js注入方法名
-        [userContentController addScriptMessageHandler:self name:@"popViewControllerAnimated"];
+        // js调用oc方法注入方法名
+        [userContentController addScriptMessageHandler:self name:@"JSUseOCFunctionName_test1"];
         config.userContentController = userContentController;
         
         _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];

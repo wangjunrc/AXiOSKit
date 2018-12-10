@@ -7,6 +7,7 @@ function showAler() {
 function buttonClick() {
     //    parameter 是参数,
     //ocTestName oc 需要js注入的名称
+    alert("A");
     window.webkit.messageHandlers.ocTestName.postMessage('jim');
     
 }
