@@ -46,20 +46,19 @@
  上传多个文件,含有hud
 
  @param url url
- @param showHud 是否hud
  @param parameters 参数
  @param formDataArray 文件参数
  @param progress 进度
  @param success 成功回调
  @param failure 失败回调
  */
-+ (void)POSTUpLoadWithURL:(NSString *)url showHud:(BOOL )showHud parameters:(NSDictionary *)parameters formDataArray:(NSArray<AXFormData *> *)formDataArray progress:(void (^)(NSProgress *aProgress ))progress success:(void (^)(id json))success failure:(void (^)(NSString *errorString))failure;
++ (void)POSTUpLoadWithURL:(NSString *)url parameters:(NSDictionary *)parameters formDataArray:(NSArray<AXFormData *> *)formDataArray progress:(void (^)(NSProgress *aProgress ))progress success:(void (^)(id json))success failure:(void (^)(NSString *errorString))failure;
 
 
 /**
  * 上传单个Jpeg图片
  */
-+ (void)uploadJpegWithURL:(NSString *)url showHud:(BOOL )showHud parameters:(NSDictionary *)parameters image:(UIImage* )image success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure;
++ (void)uploadJpegWithURL:(NSString *)url parameters:(NSDictionary *)parameters image:(UIImage* )image success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure;
 
 #endif
 @end

@@ -8,7 +8,7 @@
 
 #import "UIViewController+AXiPadAlert.h"
 #import <objc/runtime.h>
-#import "AXToolsHeader.h"
+#import "AXiOSTools.h"
 typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 
 @interface UIViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>

@@ -7,7 +7,7 @@
 //
 
 #import "AXPlayVC.h"
-#import "AXToolsHeader.h"
+#import "AXiOSTools.h"
 @import MediaPlayer;
 @import AVFoundation;
 @interface AXPlayVC ()<AVPlayerViewControllerDelegate>

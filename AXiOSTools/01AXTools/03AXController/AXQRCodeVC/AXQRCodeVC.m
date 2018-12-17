@@ -8,7 +8,7 @@
 
 #import "AXQRCodeVC.h"
 #import <AVFoundation/AVFoundation.h>
-#import "AXToolsHeader.h"
+#import "AXiOSTools.h"
 typedef void(^QRCodeBlock)(NSString *code);
 
 @interface AXQRCodeVC ()<AVCaptureMetadataOutputObjectsDelegate>

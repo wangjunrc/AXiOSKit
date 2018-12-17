@@ -9,7 +9,7 @@
 #import "AXWebVC.h"
 //#import "NJKWebViewProgressView.h"
 //#import "NJKWebViewProgress.h"
-#import "AXToolsHeader.h"
+#import "AXiOSTools.h"
 @interface AXWebVC ()
 //    <UIWebViewDelegate,NJKWebViewProgressDelegate>
 @property (strong, nonatomic) IBOutlet UIWebView *webView;

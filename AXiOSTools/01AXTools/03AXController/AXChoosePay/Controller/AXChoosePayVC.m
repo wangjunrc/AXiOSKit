@@ -7,7 +7,7 @@
 //
 
 #import "AXChoosePayVC.h"
-#import "AXToolsHeader.h"
+#import "AXiOSTools.h"
 #import "AXChoosePayStyleVC.h"
 
 @interface AXChoosePayVC ()

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "AXToolsHeader.h"
+#import "AXiOSTools.h"
 @interface NSString (AXTool)
 
 /**

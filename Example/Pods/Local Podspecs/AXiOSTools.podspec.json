@@ -1,0 +1,26 @@
+{
+  "name": "AXiOSTools",
+  "version": "1.0.0",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "summary": "个人开发工具",
+  "homepage": "https://github.com/AXinger/AXiOSTools",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "AXing": "liu_weixing@qq.com"
+  },
+  "social_media_url": "https://www.jianshu.com/u/332ecb51d41b",
+  "source": {
+    "git": "https://github.com/AXinger/AXiOSTools.git",
+    "tag": "1.0.0"
+  },
+  "source_files": [
+    "AXiOSTools",
+    "AXiOSTools/**/*.{h,m}"
+  ],
+  "requires_arc": true
+}

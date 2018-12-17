@@ -8,7 +8,7 @@
 
 #import "AXChoosePayStyleVC.h"
 #import "AXChoosePayStyleCell.h"
-#import "AXToolsHeader.h"
+#import "AXiOSTools.h"
 @interface AXChoosePayStyleVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

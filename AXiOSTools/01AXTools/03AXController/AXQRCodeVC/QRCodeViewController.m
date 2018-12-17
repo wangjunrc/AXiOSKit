@@ -8,7 +8,7 @@
 
 #import "QRCodeViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import "AXToolsHeader.h"
+#import "AXiOSTools.h"
 @interface QRCodeViewController () <UITabBarDelegate,AVCaptureMetadataOutputObjectsDelegate>
 
 // 显示扫描后的结果

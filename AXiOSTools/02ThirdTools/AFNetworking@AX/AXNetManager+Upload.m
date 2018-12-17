@@ -40,19 +40,11 @@
  @param progress      进度回调
  @param failure       失败回调
  */
-+ (void)POSTUpLoadWithURL:(NSString *)url showHud:(BOOL )showHud parameters:(NSDictionary *)parameters formDataArray:(NSArray<AXFormData *> *)formDataArray progress:(void (^)(NSProgress *aProgress))progress success:(void (^)(id json))success failure:(void (^)(NSString *errorString))failure{
++ (void)POSTUpLoadWithURL:(NSString *)url parameters:(NSDictionary *)parameters formDataArray:(NSArray<AXFormData *> *)formDataArray progress:(void (^)(NSProgress *aProgress))progress success:(void (^)(id json))success failure:(void (^)(NSString *errorString))failure{
    
      AXLog(@"%@ -- %@",url,parameters);
-//    MBProgressHUD *hud = nil;
-//    if (showHud) {
-////        hud = [MBProgressHUD ax_showMessage:AXNetLoadTitle];
-//    }
     
     [[self shareManager] POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  formData) {
-        
-        if (showHud) {
-//            [hud hideAnimated:YES];
-        }
         
         for (AXFormData *file in formDataArray) {
             
@@ -71,11 +63,6 @@
         
     } failure:^(NSURLSessionDataTask * task, NSError * error) {
         
-//        if (hud) {
-//            [hud hideAnimated:YES];
-//            [MBProgressHUD ax_showError:error.localizedDescription];
-//        }
-        
         if (failure) {
             failure(error.localizedDescription);
         }
@@ -87,7 +74,7 @@
 /**
  * 上传单个Jpeg图片
  */
-+ (void)uploadJpegWithURL:(NSString *)url showHud:(BOOL )showHud parameters:(NSDictionary *)parameters image:(UIImage* )image success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
++ (void)uploadJpegWithURL:(NSString *)url parameters:(NSDictionary *)parameters image:(UIImage* )image success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
     
     NSData *imageData = UIImageJPEGRepresentation(image, 1);
     
@@ -96,7 +83,7 @@
     
     AXFormData *formData = [AXFormData formDataWithData:imageData name:name filename:fileName mimeType:jpegMimeType];
     
-    [self POSTUpLoadWithURL:url showHud:showHud parameters:parameters formDataArray:@[formData] progress:nil success:success failure:failure];
+    [self POSTUpLoadWithURL:url parameters:parameters formDataArray:@[formData] progress:nil success:success failure:failure];
 }
 @end
 #endif

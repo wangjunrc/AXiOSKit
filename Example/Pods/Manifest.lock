@@ -1,0 +1,16 @@
+PODS:
+  - AXiOSTools (1.0.0)
+
+DEPENDENCIES:
+  - AXiOSTools (from `../`)
+
+EXTERNAL SOURCES:
+  AXiOSTools:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AXiOSTools: 93841d09b51bad35e620e46581cbb4c680b856b6
+
+PODFILE CHECKSUM: ed7f521d0290bcb482ea729779c7c6fb6ef98669
+
+COCOAPODS: 1.5.2

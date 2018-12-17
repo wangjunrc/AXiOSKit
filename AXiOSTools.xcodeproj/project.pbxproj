@@ -7,213 +7,223 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240F16D221C73D2B00928207 /* AXiOSToolsInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 240F16D121C73D2B00928207 /* AXiOSToolsInfo.plist */; };
+		240F18D321C7455D00928207 /* AXNetManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8756F21C22FE300D432BC /* AXNetManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		240F18D421C7455D00928207 /* AXNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8757721C22FE300D432BC /* AXNetManager.m */; };
+		240F18DB21C7455D00928207 /* AXNetManager+Upload.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8757421C22FE300D432BC /* AXNetManager+Upload.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		240F18DC21C7455D00928207 /* AXNetManager+Upload.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8756B21C22FE300D432BC /* AXNetManager+Upload.m */; };
+		240F18DD21C7455D00928207 /* AXNetManager+Version.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8757021C22FE300D432BC /* AXNetManager+Version.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		240F18DE21C7455D00928207 /* AXNetManager+Verson.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8757221C22FE300D432BC /* AXNetManager+Verson.m */; };
+		240F18DF21C7455D00928207 /* AXNetManagerHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8757521C22FE300D432BC /* AXNetManagerHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		240F18F021C74C3000928207 /* AXWKWebJSDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 240F18ED21C74C3000928207 /* AXWKWebJSDemoVC.m */; };
+		240F18F121C74C3000928207 /* AXWKWebJSDemoVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 240F18EE21C74C3000928207 /* AXWKWebJSDemoVC.h */; };
+		240F18F221C74C3000928207 /* AXWKWebJSDemoPage.html in Resources */ = {isa = PBXBuildFile; fileRef = 240F18EF21C74C3000928207 /* AXWKWebJSDemoPage.html */; };
+		24B6BF0F21C738610074976F /* AXCollectFile.md in Resources */ = {isa = PBXBuildFile; fileRef = 24B6BF0B21C738610074976F /* AXCollectFile.md */; };
+		24B6BF1021C738610074976F /* pod_no_use.md in Resources */ = {isa = PBXBuildFile; fileRef = 24B6BF0C21C738610074976F /* pod_no_use.md */; };
+		24B6BF1121C738610074976F /* pod_use.md in Resources */ = {isa = PBXBuildFile; fileRef = 24B6BF0D21C738610074976F /* pod_use.md */; };
 		24C8740821C22F0C00D432BC /* AXiOSTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C873FE21C22F0C00D432BC /* AXiOSTools.framework */; };
 		24C8740D21C22F0C00D432BC /* AXiOSToolsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8740C21C22F0C00D432BC /* AXiOSToolsTests.m */; };
 		24C8740F21C22F0C00D432BC /* AXiOSTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8740121C22F0C00D432BC /* AXiOSTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24C8757A21C22FE300D432BC /* AXCollectFile in Resources */ = {isa = PBXBuildFile; fileRef = 24C8741921C22FE100D432BC /* AXCollectFile */; };
-		24C8757B21C22FE300D432BC /* pod_no_use.txt in Resources */ = {isa = PBXBuildFile; fileRef = 24C8741A21C22FE100D432BC /* pod_no_use.txt */; };
-		24C8757C21C22FE300D432BC /* AXToolsHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8741B21C22FE100D432BC /* AXToolsHeader.h */; };
-		24C8757D21C22FE300D432BC /* pod_use.txt in Resources */ = {isa = PBXBuildFile; fileRef = 24C8741C21C22FE100D432BC /* pod_use.txt */; };
 		24C8757E21C22FE300D432BC /* AXWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8741F21C22FE100D432BC /* AXWeakProxy.m */; };
-		24C8757F21C22FE300D432BC /* AXWeakProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742021C22FE100D432BC /* AXWeakProxy.h */; };
-		24C8758021C22FE300D432BC /* UITextField+AXAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742221C22FE100D432BC /* UITextField+AXAction.h */; };
-		24C8758121C22FE300D432BC /* NSObject+AXRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742321C22FE100D432BC /* NSObject+AXRuntime.h */; };
-		24C8758221C22FE300D432BC /* UITextView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742421C22FE100D432BC /* UITextView+AXTool.h */; };
-		24C8758321C22FE300D432BC /* UIView+AXIBInspectable.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742521C22FE100D432BC /* UIView+AXIBInspectable.h */; };
+		24C8757F21C22FE300D432BC /* AXWeakProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742021C22FE100D432BC /* AXWeakProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8758021C22FE300D432BC /* UITextField+AXAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742221C22FE100D432BC /* UITextField+AXAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8758121C22FE300D432BC /* NSObject+AXRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742321C22FE100D432BC /* NSObject+AXRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8758221C22FE300D432BC /* UITextView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742421C22FE100D432BC /* UITextView+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8758321C22FE300D432BC /* UIView+AXIBInspectable.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742521C22FE100D432BC /* UIView+AXIBInspectable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8758421C22FE300D432BC /* UIView+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8742621C22FE100D432BC /* UIView+AXTool.m */; };
-		24C8758521C22FE300D432BC /* WKWebView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742721C22FE100D432BC /* WKWebView+AXTool.h */; };
+		24C8758521C22FE300D432BC /* WKWebView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742721C22FE100D432BC /* WKWebView+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8758621C22FE300D432BC /* NSUserDefaults+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8742821C22FE100D432BC /* NSUserDefaults+AXTool.m */; };
 		24C8758721C22FE300D432BC /* UIButton+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8742921C22FE100D432BC /* UIButton+AXTool.m */; };
 		24C8758821C22FE300D432BC /* NSData+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8742A21C22FE100D432BC /* NSData+AXTool.m */; };
-		24C8758921C22FE300D432BC /* NSString+AXEffective.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742B21C22FE100D432BC /* NSString+AXEffective.h */; };
-		24C8758A21C22FE300D432BC /* UIScrollView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742C21C22FE100D432BC /* UIScrollView+AXTool.h */; };
+		24C8758921C22FE300D432BC /* NSString+AXEffective.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742B21C22FE100D432BC /* NSString+AXEffective.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8758A21C22FE300D432BC /* UIScrollView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742C21C22FE100D432BC /* UIScrollView+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8758B21C22FE300D432BC /* UISwitch+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8742D21C22FE100D432BC /* UISwitch+AXTool.m */; };
-		24C8758C21C22FE300D432BC /* NSURL+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742E21C22FE100D432BC /* NSURL+AXTool.h */; };
-		24C8758D21C22FE300D432BC /* NSNumber+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742F21C22FE100D432BC /* NSNumber+AXTool.h */; };
+		24C8758C21C22FE300D432BC /* NSURL+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742E21C22FE100D432BC /* NSURL+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8758D21C22FE300D432BC /* NSNumber+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8742F21C22FE100D432BC /* NSNumber+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8758E21C22FE300D432BC /* NSObject+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8743021C22FE100D432BC /* NSObject+AXTool.m */; };
 		24C8758F21C22FE300D432BC /* CALayer+AXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8743121C22FE100D432BC /* CALayer+AXFrame.m */; };
 		24C8759021C22FE300D432BC /* NSString+AXDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8743221C22FE100D432BC /* NSString+AXDate.m */; };
 		24C8759121C22FE300D432BC /* UIDevice+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8743321C22FE100D432BC /* UIDevice+AXTool.m */; };
 		24C8759221C22FE300D432BC /* UICollectionView+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8743421C22FE100D432BC /* UICollectionView+AXTool.m */; };
-		24C8759321C22FE300D432BC /* UILabel+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8743521C22FE100D432BC /* UILabel+AXTool.h */; };
-		24C8759421C22FE300D432BC /* UIImageView+SDImageCut.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8743621C22FE100D432BC /* UIImageView+SDImageCut.h */; };
-		24C8759521C22FE300D432BC /* UIImage+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8743721C22FE100D432BC /* UIImage+AXTool.h */; };
+		24C8759321C22FE300D432BC /* UILabel+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8743521C22FE100D432BC /* UILabel+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8759421C22FE300D432BC /* UIImageView+SDImageCut.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8743621C22FE100D432BC /* UIImageView+SDImageCut.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8759521C22FE300D432BC /* UIImage+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8743721C22FE100D432BC /* UIImage+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8759621C22FE300D432BC /* UIViewController+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8743821C22FE100D432BC /* UIViewController+AXTool.m */; };
 		24C8759721C22FE300D432BC /* Foundation+AXLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8743921C22FE100D432BC /* Foundation+AXLog.m */; };
-		24C8759821C22FE300D432BC /* NSDictionary+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8743A21C22FE100D432BC /* NSDictionary+AXTool.h */; };
+		24C8759821C22FE300D432BC /* NSDictionary+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8743A21C22FE100D432BC /* NSDictionary+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8759921C22FE300D432BC /* UIButton+AXCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8743B21C22FE100D432BC /* UIButton+AXCountDown.m */; };
-		24C8759A21C22FE300D432BC /* UIImageView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8743C21C22FE100D432BC /* UIImageView+AXTool.h */; };
+		24C8759A21C22FE300D432BC /* UIImageView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8743C21C22FE100D432BC /* UIImageView+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8759B21C22FE300D432BC /* NSObject+AXVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8743D21C22FE100D432BC /* NSObject+AXVersion.m */; };
 		24C8759C21C22FE300D432BC /* UITableView+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8743E21C22FE100D432BC /* UITableView+AXTool.m */; };
-		24C8759D21C22FE300D432BC /* UITextField+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8743F21C22FE200D432BC /* UITextField+AXTool.h */; };
+		24C8759D21C22FE300D432BC /* UITextField+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8743F21C22FE200D432BC /* UITextField+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8759E21C22FE300D432BC /* UIViewController+AXNavBarConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8744021C22FE200D432BC /* UIViewController+AXNavBarConfig.m */; };
-		24C8759F21C22FE300D432BC /* NSString+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744121C22FE200D432BC /* NSString+AXTool.h */; };
-		24C875A021C22FE300D432BC /* UIView+AXFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744221C22FE200D432BC /* UIView+AXFrame.h */; };
+		24C8759F21C22FE300D432BC /* NSString+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744121C22FE200D432BC /* NSString+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875A021C22FE300D432BC /* UIView+AXFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744221C22FE200D432BC /* UIView+AXFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875A121C22FE300D432BC /* UIButton+AXCountDown2.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8744321C22FE200D432BC /* UIButton+AXCountDown2.m */; };
-		24C875A221C22FE300D432BC /* NSString+AXCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744421C22FE200D432BC /* NSString+AXCrypto.h */; };
-		24C875A321C22FE300D432BC /* NSDate+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744521C22FE200D432BC /* NSDate+AXTool.h */; };
-		24C875A421C22FE300D432BC /* NSString+AXNet.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744621C22FE200D432BC /* NSString+AXNet.h */; };
-		24C875A521C22FE300D432BC /* NSDateComponents+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744721C22FE200D432BC /* NSDateComponents+AXTool.h */; };
+		24C875A221C22FE300D432BC /* NSString+AXCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744421C22FE200D432BC /* NSString+AXCrypto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875A321C22FE300D432BC /* NSDate+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744521C22FE200D432BC /* NSDate+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875A421C22FE300D432BC /* NSString+AXNet.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744621C22FE200D432BC /* NSString+AXNet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875A521C22FE300D432BC /* NSDateComponents+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744721C22FE200D432BC /* NSDateComponents+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875A621C22FE300D432BC /* UIViewController+AXAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8744821C22FE200D432BC /* UIViewController+AXAlert.m */; };
 		24C875A721C22FE300D432BC /* UIColor+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8744921C22FE200D432BC /* UIColor+AXTool.m */; };
 		24C875A821C22FE300D432BC /* UINavigationController+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8744A21C22FE200D432BC /* UINavigationController+AXTool.m */; };
-		24C875A921C22FE300D432BC /* UISlider+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744B21C22FE200D432BC /* UISlider+AXTool.h */; };
-		24C875AA21C22FE300D432BC /* UIViewController+AXiPadAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744C21C22FE200D432BC /* UIViewController+AXiPadAlert.h */; };
+		24C875A921C22FE300D432BC /* UISlider+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744B21C22FE200D432BC /* UISlider+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875AA21C22FE300D432BC /* UIViewController+AXiPadAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744C21C22FE200D432BC /* UIViewController+AXiPadAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875AB21C22FE300D432BC /* NSObject+AXKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8744D21C22FE200D432BC /* NSObject+AXKVO.m */; };
-		24C875AC21C22FE300D432BC /* NSArray+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744E21C22FE200D432BC /* NSArray+AXTool.h */; };
-		24C875AD21C22FE300D432BC /* UIView+AXAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744F21C22FE200D432BC /* UIView+AXAnimation.h */; };
+		24C875AC21C22FE300D432BC /* NSArray+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744E21C22FE200D432BC /* NSArray+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875AD21C22FE300D432BC /* UIView+AXAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8744F21C22FE200D432BC /* UIView+AXAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875AE21C22FE300D432BC /* UIBarButtonItem+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8745021C22FE200D432BC /* UIBarButtonItem+AXTool.m */; };
 		24C875AF21C22FE300D432BC /* UIControl+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8745121C22FE200D432BC /* UIControl+AXTool.m */; };
-		24C875B021C22FE300D432BC /* UIView+AXSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8745221C22FE200D432BC /* UIView+AXSnapshot.h */; };
+		24C875B021C22FE300D432BC /* UIView+AXSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8745221C22FE200D432BC /* UIView+AXSnapshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875B121C22FE300D432BC /* NSNumber+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8745321C22FE200D432BC /* NSNumber+AXTool.m */; };
-		24C875B221C22FE300D432BC /* UISwitch+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8745421C22FE200D432BC /* UISwitch+AXTool.h */; };
+		24C875B221C22FE300D432BC /* UISwitch+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8745421C22FE200D432BC /* UISwitch+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875B321C22FE300D432BC /* NSURL+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8745521C22FE200D432BC /* NSURL+AXTool.m */; };
 		24C875B421C22FE300D432BC /* UIScrollView+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8745621C22FE200D432BC /* UIScrollView+AXTool.m */; };
 		24C875B521C22FE300D432BC /* NSString+AXEffective.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8745721C22FE200D432BC /* NSString+AXEffective.m */; };
-		24C875B621C22FE300D432BC /* UIButton+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8745821C22FE200D432BC /* UIButton+AXTool.h */; };
-		24C875B721C22FE300D432BC /* NSUserDefaults+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8745921C22FE200D432BC /* NSUserDefaults+AXTool.h */; };
-		24C875B821C22FE300D432BC /* NSData+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8745A21C22FE200D432BC /* NSData+AXTool.h */; };
+		24C875B621C22FE300D432BC /* UIButton+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8745821C22FE200D432BC /* UIButton+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875B721C22FE300D432BC /* NSUserDefaults+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8745921C22FE200D432BC /* NSUserDefaults+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875B821C22FE300D432BC /* NSData+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8745A21C22FE200D432BC /* NSData+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875B921C22FE300D432BC /* WKWebView+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8745B21C22FE200D432BC /* WKWebView+AXTool.m */; };
-		24C875BA21C22FE300D432BC /* UIView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8745C21C22FE200D432BC /* UIView+AXTool.h */; };
+		24C875BA21C22FE300D432BC /* UIView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8745C21C22FE200D432BC /* UIView+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875BB21C22FE300D432BC /* UITextView+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8745D21C22FE200D432BC /* UITextView+AXTool.m */; };
 		24C875BC21C22FE300D432BC /* UIView+AXIBInspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8745E21C22FE200D432BC /* UIView+AXIBInspectable.m */; };
 		24C875BD21C22FE300D432BC /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8745F21C22FE200D432BC /* Foundation+Log.m */; };
 		24C875BE21C22FE300D432BC /* NSObject+AXRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8746021C22FE200D432BC /* NSObject+AXRuntime.m */; };
 		24C875BF21C22FE300D432BC /* UITextField+AXAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8746121C22FE200D432BC /* UITextField+AXAction.m */; };
 		24C875C021C22FE300D432BC /* UIImageView+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8746221C22FE200D432BC /* UIImageView+AXTool.m */; };
-		24C875C121C22FE300D432BC /* NSObject+AXVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746321C22FE200D432BC /* NSObject+AXVersion.h */; };
-		24C875C221C22FE300D432BC /* UIButton+AXCountDown.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746421C22FE200D432BC /* UIButton+AXCountDown.h */; };
+		24C875C121C22FE300D432BC /* NSObject+AXVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746321C22FE200D432BC /* NSObject+AXVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875C221C22FE300D432BC /* UIButton+AXCountDown.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746421C22FE200D432BC /* UIButton+AXCountDown.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875C321C22FE300D432BC /* UIImage+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8746521C22FE200D432BC /* UIImage+AXTool.m */; };
-		24C875C421C22FE300D432BC /* UIViewController+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746621C22FE200D432BC /* UIViewController+AXTool.h */; };
+		24C875C421C22FE300D432BC /* UIViewController+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746621C22FE200D432BC /* UIViewController+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875C521C22FE300D432BC /* NSDictionary+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8746721C22FE200D432BC /* NSDictionary+AXTool.m */; };
 		24C875C621C22FE300D432BC /* UILabel+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8746821C22FE200D432BC /* UILabel+AXTool.m */; };
 		24C875C721C22FE300D432BC /* UIImageView+SDImageCut.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8746921C22FE200D432BC /* UIImageView+SDImageCut.m */; };
-		24C875C821C22FE300D432BC /* UICollectionView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746A21C22FE200D432BC /* UICollectionView+AXTool.h */; };
-		24C875C921C22FE300D432BC /* UIDevice+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746B21C22FE200D432BC /* UIDevice+AXTool.h */; };
-		24C875CA21C22FE300D432BC /* CALayer+AXFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746C21C22FE200D432BC /* CALayer+AXFrame.h */; };
-		24C875CB21C22FE300D432BC /* NSString+AXDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746D21C22FE200D432BC /* NSString+AXDate.h */; };
-		24C875CC21C22FE300D432BC /* NSObject+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746E21C22FE200D432BC /* NSObject+AXTool.h */; };
+		24C875C821C22FE300D432BC /* UICollectionView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746A21C22FE200D432BC /* UICollectionView+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875C921C22FE300D432BC /* UIDevice+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746B21C22FE200D432BC /* UIDevice+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875CA21C22FE300D432BC /* CALayer+AXFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746C21C22FE200D432BC /* CALayer+AXFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875CB21C22FE300D432BC /* NSString+AXDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746D21C22FE200D432BC /* NSString+AXDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875CC21C22FE300D432BC /* NSObject+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8746E21C22FE200D432BC /* NSObject+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875CD21C22FE300D432BC /* NSDate+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8746F21C22FE200D432BC /* NSDate+AXTool.m */; };
 		24C875CE21C22FE300D432BC /* NSString+AXNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8747021C22FE200D432BC /* NSString+AXNet.m */; };
-		24C875CF21C22FE300D432BC /* UIButton+AXCountDown2.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8747121C22FE200D432BC /* UIButton+AXCountDown2.h */; };
+		24C875CF21C22FE300D432BC /* UIButton+AXCountDown2.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8747121C22FE200D432BC /* UIButton+AXCountDown2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875D021C22FE300D432BC /* NSString+AXCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8747221C22FE200D432BC /* NSString+AXCrypto.m */; };
 		24C875D121C22FE300D432BC /* UIView+AXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8747321C22FE200D432BC /* UIView+AXFrame.m */; };
 		24C875D221C22FE300D432BC /* NSString+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8747421C22FE200D432BC /* NSString+AXTool.m */; };
-		24C875D321C22FE300D432BC /* UIViewController+AXNavBarConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8747521C22FE200D432BC /* UIViewController+AXNavBarConfig.h */; };
+		24C875D321C22FE300D432BC /* UIViewController+AXNavBarConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8747521C22FE200D432BC /* UIViewController+AXNavBarConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875D421C22FE300D432BC /* UITextField+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8747621C22FE200D432BC /* UITextField+AXTool.m */; };
-		24C875D521C22FE300D432BC /* UITableView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8747721C22FE200D432BC /* UITableView+AXTool.h */; };
+		24C875D521C22FE300D432BC /* UITableView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8747721C22FE200D432BC /* UITableView+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875D621C22FE300D432BC /* UIView+AXSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8747821C22FE200D432BC /* UIView+AXSnapshot.m */; };
-		24C875D721C22FE300D432BC /* UIControl+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8747921C22FE200D432BC /* UIControl+AXTool.h */; };
+		24C875D721C22FE300D432BC /* UIControl+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8747921C22FE200D432BC /* UIControl+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875D821C22FE300D432BC /* UIView+AXAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8747A21C22FE200D432BC /* UIView+AXAnimation.m */; };
-		24C875D921C22FE300D432BC /* UIBarButtonItem+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8747B21C22FE200D432BC /* UIBarButtonItem+AXTool.h */; };
+		24C875D921C22FE300D432BC /* UIBarButtonItem+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8747B21C22FE200D432BC /* UIBarButtonItem+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875DA21C22FE300D432BC /* NSArray+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8747C21C22FE200D432BC /* NSArray+AXTool.m */; };
-		24C875DB21C22FE300D432BC /* NSObject+AXKVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8747D21C22FE200D432BC /* NSObject+AXKVO.h */; };
+		24C875DB21C22FE300D432BC /* NSObject+AXKVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8747D21C22FE200D432BC /* NSObject+AXKVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875DC21C22FE300D432BC /* UIViewController+AXiPadAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8747E21C22FE200D432BC /* UIViewController+AXiPadAlert.m */; };
 		24C875DD21C22FE300D432BC /* UISlider+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8747F21C22FE200D432BC /* UISlider+AXTool.m */; };
-		24C875DE21C22FE300D432BC /* UIColor+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8748021C22FE200D432BC /* UIColor+AXTool.h */; };
-		24C875DF21C22FE300D432BC /* UINavigationController+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8748121C22FE200D432BC /* UINavigationController+AXTool.h */; };
-		24C875E021C22FE300D432BC /* UIViewController+AXAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8748221C22FE200D432BC /* UIViewController+AXAlert.h */; };
+		24C875DE21C22FE300D432BC /* UIColor+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8748021C22FE200D432BC /* UIColor+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875DF21C22FE300D432BC /* UINavigationController+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8748121C22FE200D432BC /* UINavigationController+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875E021C22FE300D432BC /* UIViewController+AXAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8748221C22FE200D432BC /* UIViewController+AXAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875E121C22FE300D432BC /* NSDateComponents+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8748321C22FE200D432BC /* NSDateComponents+AXTool.m */; };
-		24C875E221C22FE300D432BC /* AXCycleScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8748621C22FE200D432BC /* AXCycleScrollView.h */; };
+		24C875E221C22FE300D432BC /* AXCycleScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8748621C22FE200D432BC /* AXCycleScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875E321C22FE300D432BC /* AXCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8748721C22FE200D432BC /* AXCycleScrollView.m */; };
 		24C875E421C22FE300D432BC /* AXDottedLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8748921C22FE200D432BC /* AXDottedLineView.m */; };
-		24C875E521C22FE300D432BC /* AXDottedLineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8748B21C22FE200D432BC /* AXDottedLineView.h */; };
+		24C875E521C22FE300D432BC /* AXDottedLineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8748B21C22FE200D432BC /* AXDottedLineView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875E621C22FE300D432BC /* AXVeriCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8748D21C22FE200D432BC /* AXVeriCodeView.m */; };
-		24C875E721C22FE300D432BC /* AXVeriCodeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8748E21C22FE200D432BC /* AXVeriCodeView.h */; };
+		24C875E721C22FE300D432BC /* AXVeriCodeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8748E21C22FE200D432BC /* AXVeriCodeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875E821C22FE300D432BC /* AXNumberKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C8749021C22FE200D432BC /* AXNumberKeyboard.xib */; };
-		24C875E921C22FE300D432BC /* UITextField+AXNumberKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8749121C22FE200D432BC /* UITextField+AXNumberKeyboard.h */; };
+		24C875E921C22FE300D432BC /* UITextField+AXNumberKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8749121C22FE200D432BC /* UITextField+AXNumberKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875EA21C22FE300D432BC /* AXNumberKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8749221C22FE200D432BC /* AXNumberKeyboard.m */; };
 		24C875EB21C22FE300D432BC /* UITextField+AXNumberKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8749321C22FE200D432BC /* UITextField+AXNumberKeyboard.m */; };
-		24C875EC21C22FE300D432BC /* AXNumberKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8749421C22FE200D432BC /* AXNumberKeyboard.h */; };
-		24C875ED21C22FE300D432BC /* AXTouchIDManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8749721C22FE200D432BC /* AXTouchIDManager.h */; };
+		24C875EC21C22FE300D432BC /* AXNumberKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8749421C22FE200D432BC /* AXNumberKeyboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875ED21C22FE300D432BC /* AXTouchIDManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8749721C22FE200D432BC /* AXTouchIDManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875EE21C22FE300D432BC /* AXTouchIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8749821C22FE200D432BC /* AXTouchIDManager.m */; };
 		24C875EF21C22FE300D432BC /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8749A21C22FE200D432BC /* LocationManager.m */; };
-		24C875F021C22FE300D432BC /* AXLocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8749B21C22FE200D432BC /* AXLocationManager.h */; };
-		24C875F121C22FE300D432BC /* LocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8749C21C22FE200D432BC /* LocationManager.h */; };
+		24C875F021C22FE300D432BC /* AXLocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8749B21C22FE200D432BC /* AXLocationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875F121C22FE300D432BC /* LocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8749C21C22FE200D432BC /* LocationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875F221C22FE300D432BC /* AXLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8749D21C22FE200D432BC /* AXLocationManager.m */; };
 		24C875F321C22FE300D432BC /* IBUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8749F21C22FE200D432BC /* IBUITextField.m */; };
 		24C875F421C22FE300D432BC /* IBUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874A021C22FE200D432BC /* IBUIButton.m */; };
-		24C875F521C22FE300D432BC /* IBObjectHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874A121C22FE200D432BC /* IBObjectHeader.h */; };
-		24C875F621C22FE300D432BC /* IBUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874A221C22FE200D432BC /* IBUIView.h */; };
-		24C875F721C22FE300D432BC /* IBUIImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874A321C22FE200D432BC /* IBUIImageView.h */; };
-		24C875F821C22FE300D432BC /* IBUILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874A421C22FE200D432BC /* IBUILabel.h */; };
-		24C875F921C22FE300D432BC /* IBUITextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874A521C22FE200D432BC /* IBUITextField.h */; };
-		24C875FA21C22FE300D432BC /* IBUIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874A621C22FE200D432BC /* IBUIButton.h */; };
+		24C875F521C22FE300D432BC /* IBObjectHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874A121C22FE200D432BC /* IBObjectHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875F621C22FE300D432BC /* IBUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874A221C22FE200D432BC /* IBUIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875F721C22FE300D432BC /* IBUIImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874A321C22FE200D432BC /* IBUIImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875F821C22FE300D432BC /* IBUILabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874A421C22FE200D432BC /* IBUILabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875F921C22FE300D432BC /* IBUITextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874A521C22FE200D432BC /* IBUITextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C875FA21C22FE300D432BC /* IBUIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874A621C22FE200D432BC /* IBUIButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C875FB21C22FE300D432BC /* IBUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874A721C22FE200D432BC /* IBUILabel.m */; };
 		24C875FC21C22FE300D432BC /* IBUIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874A821C22FE200D432BC /* IBUIImageView.m */; };
 		24C875FD21C22FE300D432BC /* IBUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874A921C22FE200D432BC /* IBUIView.m */; };
 		24C875FE21C22FE300D432BC /* AXConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874AB21C22FE200D432BC /* AXConstant.m */; };
 		24C875FF21C22FE300D432BC /* AXHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874AC21C22FE200D432BC /* AXHelper.m */; };
-		24C8760021C22FE300D432BC /* AXGCDTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874AE21C22FE200D432BC /* AXGCDTimer.h */; };
+		24C8760021C22FE300D432BC /* AXGCDTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874AE21C22FE200D432BC /* AXGCDTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8760121C22FE300D432BC /* AXGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874AF21C22FE200D432BC /* AXGCDTimer.m */; };
-		24C8760221C22FE300D432BC /* AXSetValueProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B021C22FE200D432BC /* AXSetValueProtocol.h */; };
-		24C8760321C22FE300D432BC /* AXObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B121C22FE200D432BC /* AXObject.h */; };
-		24C8760421C22FE300D432BC /* AXViewModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B221C22FE200D432BC /* AXViewModelProtocol.h */; };
-		24C8760521C22FE300D432BC /* AXDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B321C22FE200D432BC /* AXDataModel.h */; };
-		24C8760621C22FE300D432BC /* AXExternFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B421C22FE200D432BC /* AXExternFunction.h */; };
+		24C8760221C22FE300D432BC /* AXSetValueProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B021C22FE200D432BC /* AXSetValueProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8760321C22FE300D432BC /* AXObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B121C22FE200D432BC /* AXObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8760421C22FE300D432BC /* AXViewModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B221C22FE200D432BC /* AXViewModelProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8760521C22FE300D432BC /* AXDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B321C22FE200D432BC /* AXDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8760621C22FE300D432BC /* AXExternFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B421C22FE200D432BC /* AXExternFunction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8760721C22FE300D432BC /* AXConfigureFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874B521C22FE200D432BC /* AXConfigureFunction.m */; };
-		24C8760821C22FE300D432BC /* AXDataModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B621C22FE200D432BC /* AXDataModelProtocol.h */; };
-		24C8760921C22FE300D432BC /* AXCountDownObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B821C22FE200D432BC /* AXCountDownObject.h */; };
+		24C8760821C22FE300D432BC /* AXDataModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B621C22FE200D432BC /* AXDataModelProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8760921C22FE300D432BC /* AXCountDownObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874B821C22FE200D432BC /* AXCountDownObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8760A21C22FE300D432BC /* AXCountDownObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874B921C22FE200D432BC /* AXCountDownObject.m */; };
-		24C8760B21C22FE300D432BC /* AXHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874BA21C22FE200D432BC /* AXHelper.h */; };
-		24C8760C21C22FE300D432BC /* AXConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874BB21C22FE200D432BC /* AXConstant.h */; };
+		24C8760B21C22FE300D432BC /* AXHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874BA21C22FE200D432BC /* AXHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8760C21C22FE300D432BC /* AXConstant.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874BB21C22FE200D432BC /* AXConstant.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8760D21C22FE300D432BC /* AXObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874BC21C22FE200D432BC /* AXObject.m */; };
 		24C8760E21C22FE300D432BC /* AXExternFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874BD21C22FE200D432BC /* AXExternFunction.m */; };
 		24C8760F21C22FE300D432BC /* AXDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874BE21C22FE200D432BC /* AXDataModel.m */; };
-		24C8761021C22FE300D432BC /* AXConfigureFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874BF21C22FE200D432BC /* AXConfigureFunction.h */; };
-		24C8761121C22FE300D432BC /* AXMacros_value.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874C121C22FE200D432BC /* AXMacros_value.h */; };
-		24C8761221C22FE300D432BC /* AXMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874C221C22FE200D432BC /* AXMacros.h */; };
-		24C8761321C22FE300D432BC /* AXMacros_addProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874C321C22FE200D432BC /* AXMacros_addProperty.h */; };
-		24C8761421C22FE300D432BC /* AXMacros_runTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874C421C22FE200D432BC /* AXMacros_runTime.h */; };
-		24C8761521C22FE300D432BC /* AXMacros_log.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874C521C22FE200D432BC /* AXMacros_log.h */; };
-		24C8761621C22FE300D432BC /* AXMacros_instance.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874C621C22FE200D432BC /* AXMacros_instance.h */; };
-		24C8761721C22FE300D432BC /* AXChoosePayVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874CA21C22FE200D432BC /* AXChoosePayVC.h */; };
+		24C8761021C22FE300D432BC /* AXConfigureFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874BF21C22FE200D432BC /* AXConfigureFunction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8761121C22FE300D432BC /* AXMacros_value.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874C121C22FE200D432BC /* AXMacros_value.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8761221C22FE300D432BC /* AXMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874C221C22FE200D432BC /* AXMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8761321C22FE300D432BC /* AXMacros_addProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874C321C22FE200D432BC /* AXMacros_addProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8761421C22FE300D432BC /* AXMacros_runTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874C421C22FE200D432BC /* AXMacros_runTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8761521C22FE300D432BC /* AXMacros_log.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874C521C22FE200D432BC /* AXMacros_log.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8761621C22FE300D432BC /* AXMacros_instance.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874C621C22FE200D432BC /* AXMacros_instance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8761721C22FE300D432BC /* AXChoosePayVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874CA21C22FE200D432BC /* AXChoosePayVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8761821C22FE300D432BC /* AXChoosePayStyleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874CB21C22FE200D432BC /* AXChoosePayStyleVC.m */; };
 		24C8761921C22FE300D432BC /* AXChoosePayVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C874CC21C22FE200D432BC /* AXChoosePayVC.xib */; };
 		24C8761A21C22FE300D432BC /* AXChoosePayStyleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C874CD21C22FE200D432BC /* AXChoosePayStyleVC.xib */; };
-		24C8761B21C22FE300D432BC /* AXChoosePayStyleVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874CE21C22FE200D432BC /* AXChoosePayStyleVC.h */; };
+		24C8761B21C22FE300D432BC /* AXChoosePayStyleVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874CE21C22FE200D432BC /* AXChoosePayStyleVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8761C21C22FE300D432BC /* AXChoosePayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874CF21C22FE200D432BC /* AXChoosePayVC.m */; };
 		24C8761D21C22FE300D432BC /* AXChoosePayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874D121C22FE200D432BC /* AXChoosePayModel.m */; };
-		24C8761E21C22FE300D432BC /* AXChoosePayModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874D221C22FE200D432BC /* AXChoosePayModel.h */; };
+		24C8761E21C22FE300D432BC /* AXChoosePayModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874D221C22FE200D432BC /* AXChoosePayModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8761F21C22FE400D432BC /* AXChoosePayStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C874D421C22FE200D432BC /* AXChoosePayStyleCell.xib */; };
-		24C8762021C22FE400D432BC /* AXChoosePayStyleCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874D521C22FE200D432BC /* AXChoosePayStyleCell.h */; };
+		24C8762021C22FE400D432BC /* AXChoosePayStyleCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874D521C22FE200D432BC /* AXChoosePayStyleCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8762121C22FE400D432BC /* AXChoosePayStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874D621C22FE200D432BC /* AXChoosePayStyleCell.m */; };
 		24C8762221C22FE400D432BC /* AXWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874D821C22FE200D432BC /* AXWebVC.m */; };
 		24C8762321C22FE400D432BC /* AXWebVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C874D921C22FE200D432BC /* AXWebVC.xib */; };
-		24C8762421C22FE400D432BC /* AXWebVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874DA21C22FE200D432BC /* AXWebVC.h */; };
-		24C8762521C22FE400D432BC /* AXFullLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874DC21C22FE200D432BC /* AXFullLayout.h */; };
-		24C8762621C22FE400D432BC /* AXTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874DD21C22FE200D432BC /* AXTableViewController.h */; };
+		24C8762421C22FE400D432BC /* AXWebVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874DA21C22FE200D432BC /* AXWebVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8762521C22FE400D432BC /* AXFullLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874DC21C22FE200D432BC /* AXFullLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8762621C22FE400D432BC /* AXTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874DD21C22FE200D432BC /* AXTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8762721C22FE400D432BC /* AXTabBarC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874DE21C22FE200D432BC /* AXTabBarC.m */; };
 		24C8762821C22FE400D432BC /* AXCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874DF21C22FE200D432BC /* AXCollectionViewController.m */; };
 		24C8762921C22FE400D432BC /* AXHalfWidthLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874E021C22FE200D432BC /* AXHalfWidthLayout.m */; };
-		24C8762A21C22FE400D432BC /* AXFullLayout2.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874E121C22FE200D432BC /* AXFullLayout2.h */; };
+		24C8762A21C22FE400D432BC /* AXFullLayout2.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874E121C22FE200D432BC /* AXFullLayout2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8762B21C22FE400D432BC /* AXNaviC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874E221C22FE200D432BC /* AXNaviC.m */; };
 		24C8762C21C22FE400D432BC /* AXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874E321C22FE200D432BC /* AXViewController.m */; };
 		24C8762D21C22FE400D432BC /* AXFullLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874E421C22FE200D432BC /* AXFullLayout.m */; };
-		24C8762E21C22FE400D432BC /* AXCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874E521C22FE200D432BC /* AXCollectionViewController.h */; };
-		24C8762F21C22FE400D432BC /* AXTabBarC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874E621C22FE200D432BC /* AXTabBarC.h */; };
+		24C8762E21C22FE400D432BC /* AXCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874E521C22FE200D432BC /* AXCollectionViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8762F21C22FE400D432BC /* AXTabBarC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874E621C22FE200D432BC /* AXTabBarC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8763021C22FE400D432BC /* AXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874E721C22FE200D432BC /* AXTableViewController.m */; };
 		24C8763121C22FE400D432BC /* AXFullLayout2.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874E821C22FE200D432BC /* AXFullLayout2.m */; };
-		24C8763221C22FE400D432BC /* AXHalfWidthLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874E921C22FE200D432BC /* AXHalfWidthLayout.h */; };
-		24C8763321C22FE400D432BC /* AXViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874EA21C22FE200D432BC /* AXViewController.h */; };
-		24C8763421C22FE400D432BC /* AXNaviC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874EB21C22FE200D432BC /* AXNaviC.h */; };
-		24C8763521C22FE400D432BC /* AXWKWebVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874ED21C22FE200D432BC /* AXWKWebVC.h */; };
+		24C8763221C22FE400D432BC /* AXHalfWidthLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874E921C22FE200D432BC /* AXHalfWidthLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8763321C22FE400D432BC /* AXViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874EA21C22FE200D432BC /* AXViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8763421C22FE400D432BC /* AXNaviC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874EB21C22FE200D432BC /* AXNaviC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8763521C22FE400D432BC /* AXWKWebVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874ED21C22FE200D432BC /* AXWKWebVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8763621C22FE400D432BC /* AXWKWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874EE21C22FE200D432BC /* AXWKWebVC.m */; };
 		24C8763721C22FE400D432BC /* AXAlertCentreAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874F021C22FE200D432BC /* AXAlertCentreAnimation.m */; };
 		24C8763821C22FE400D432BC /* AXBaseAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874F121C22FE200D432BC /* AXBaseAlertVC.m */; };
-		24C8763921C22FE400D432BC /* AXAlerUpwardAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874F221C22FE200D432BC /* AXAlerUpwardAnimation.h */; };
-		24C8763A21C22FE400D432BC /* AXAlertCentreAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874F321C22FE200D432BC /* AXAlertCentreAnimation.h */; };
-		24C8763B21C22FE400D432BC /* AXBaseAlertVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874F421C22FE200D432BC /* AXBaseAlertVC.h */; };
+		24C8763921C22FE400D432BC /* AXAlerUpwardAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874F221C22FE200D432BC /* AXAlerUpwardAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8763A21C22FE400D432BC /* AXAlertCentreAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874F321C22FE200D432BC /* AXAlertCentreAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8763B21C22FE400D432BC /* AXBaseAlertVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874F421C22FE200D432BC /* AXBaseAlertVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8763C21C22FE400D432BC /* AXAlerUpwardAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874F521C22FE200D432BC /* AXAlerUpwardAnimation.m */; };
-		24C8763D21C22FE400D432BC /* AXSinglePickVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874F721C22FE200D432BC /* AXSinglePickVC.h */; };
+		24C8763D21C22FE400D432BC /* AXSinglePickVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874F721C22FE200D432BC /* AXSinglePickVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8763E21C22FE400D432BC /* AXSinglePickVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C874F821C22FE200D432BC /* AXSinglePickVC.xib */; };
 		24C8763F21C22FE400D432BC /* AXSinglePickVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874F921C22FE200D432BC /* AXSinglePickVC.m */; };
 		24C8764021C22FE400D432BC /* AXDateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C874FB21C22FE200D432BC /* AXDateVC.m */; };
 		24C8764121C22FE400D432BC /* AXDateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C874FC21C22FE200D432BC /* AXDateVC.xib */; };
-		24C8764221C22FE400D432BC /* AXDateVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874FD21C22FE200D432BC /* AXDateVC.h */; };
+		24C8764221C22FE400D432BC /* AXDateVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C874FD21C22FE200D432BC /* AXDateVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8764321C22FE400D432BC /* QRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C874FF21C22FE200D432BC /* QRCodeViewController.xib */; };
 		24C8764421C22FE400D432BC /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8750021C22FE200D432BC /* QRCodeViewController.m */; };
-		24C8764521C22FE400D432BC /* AXQRCodeVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8750121C22FE200D432BC /* AXQRCodeVC.h */; };
+		24C8764521C22FE400D432BC /* AXQRCodeVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8750121C22FE200D432BC /* AXQRCodeVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8764621C22FE400D432BC /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24C8750321C22FE200D432BC /* Root.strings */; };
 		24C8764721C22FE400D432BC /* qrcode_border@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24C8750521C22FE200D432BC /* qrcode_border@3x.png */; };
 		24C8764821C22FE400D432BC /* qrcode_border@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24C8750621C22FE200D432BC /* qrcode_border@2x.png */; };
@@ -230,79 +240,66 @@
 		24C8765321C22FE400D432BC /* qrcode_tabbar_icon_qrcode_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24C8751121C22FE200D432BC /* qrcode_tabbar_icon_qrcode_highlighted@2x.png */; };
 		24C8765421C22FE400D432BC /* qrcode_tabbar_icon_qrcode_highlighted@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24C8751221C22FE200D432BC /* qrcode_tabbar_icon_qrcode_highlighted@3x.png */; };
 		24C8765521C22FE400D432BC /* AXQRCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C8751321C22FE200D432BC /* AXQRCodeVC.xib */; };
-		24C8765621C22FE400D432BC /* QRCodeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8751421C22FE200D432BC /* QRCodeViewController.h */; };
+		24C8765621C22FE400D432BC /* QRCodeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8751421C22FE200D432BC /* QRCodeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8765721C22FE400D432BC /* AXQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8751521C22FE200D432BC /* AXQRCodeVC.m */; };
 		24C8765821C22FE400D432BC /* AXSafariVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C8751721C22FE200D432BC /* AXSafariVC.xib */; };
-		24C8765921C22FE400D432BC /* AXSafariVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8751821C22FE200D432BC /* AXSafariVC.h */; };
+		24C8765921C22FE400D432BC /* AXSafariVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8751821C22FE200D432BC /* AXSafariVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8765A21C22FE400D432BC /* AXSafariVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8751921C22FE200D432BC /* AXSafariVC.m */; };
 		24C8765B21C22FE400D432BC /* AXPlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8751B21C22FE200D432BC /* AXPlayVC.m */; };
-		24C8765C21C22FE400D432BC /* AXPlayVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8751C21C22FE200D432BC /* AXPlayVC.h */; };
+		24C8765C21C22FE400D432BC /* AXPlayVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8751C21C22FE200D432BC /* AXPlayVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8765D21C22FE400D432BC /* AXGuidePageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C8751E21C22FE200D432BC /* AXGuidePageVC.xib */; };
 		24C8765E21C22FE400D432BC /* AXGuidePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8751F21C22FE200D432BC /* AXGuidePageVC.m */; };
 		24C8765F21C22FE400D432BC /* AXGuidePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8752021C22FE200D432BC /* AXGuidePageCell.m */; };
-		24C8766021C22FE400D432BC /* AXGuidePageVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8752121C22FE200D432BC /* AXGuidePageVC.h */; };
+		24C8766021C22FE400D432BC /* AXGuidePageVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8752121C22FE200D432BC /* AXGuidePageVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8766121C22FE400D432BC /* AXGuidePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C8752221C22FE200D432BC /* AXGuidePageCell.xib */; };
-		24C8766221C22FE400D432BC /* AXGuidePageCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8752321C22FE200D432BC /* AXGuidePageCell.h */; };
+		24C8766221C22FE400D432BC /* AXGuidePageCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8752321C22FE200D432BC /* AXGuidePageCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8766321C22FE400D432BC /* AXToolsLocalizedString.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24C8752521C22FE200D432BC /* AXToolsLocalizedString.strings */; };
 		24C8766421C22FE400D432BC /* axwkWebView.js in Resources */ = {isa = PBXBuildFile; fileRef = 24C8752A21C22FE200D432BC /* axwkWebView.js */; };
 		24C8766521C22FE400D432BC /* axwkWebView.html in Resources */ = {isa = PBXBuildFile; fileRef = 24C8752B21C22FE200D432BC /* axwkWebView.html */; };
 		24C8766621C22FE400D432BC /* AXAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C8752C21C22FE200D432BC /* AXAssets.xcassets */; };
 		24C8766721C22FE400D432BC /* AXTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 24C8752D21C22FE200D432BC /* AXTools.bundle */; };
 		24C8766821C22FE400D432BC /* MBProgressHUD+AX.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8753021C22FE300D432BC /* MBProgressHUD+AX.m */; };
-		24C8766921C22FE400D432BC /* MBProgressHUD+AX.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8753121C22FE300D432BC /* MBProgressHUD+AX.h */; };
+		24C8766921C22FE400D432BC /* MBProgressHUD+AX.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8753121C22FE300D432BC /* MBProgressHUD+AX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8766A21C22FE400D432BC /* MBProgressHUD_AX.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 24C8753221C22FE300D432BC /* MBProgressHUD_AX.bundle */; };
-		24C8766B21C22FE400D432BC /* lame.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8753621C22FE300D432BC /* lame.h */; };
-		24C8766C21C22FE400D432BC /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C8753821C22FE300D432BC /* libmp3lame.a */; };
-		24C8766D21C22FE400D432BC /* NSObject+FBKVOControllerAX.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8753A21C22FE300D432BC /* NSObject+FBKVOControllerAX.h */; };
+		24C8766D21C22FE400D432BC /* NSObject+FBKVOControllerAX.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8753A21C22FE300D432BC /* NSObject+FBKVOControllerAX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8766E21C22FE400D432BC /* NSObject+FBKVOControllerAX.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8753B21C22FE300D432BC /* NSObject+FBKVOControllerAX.m */; };
-		24C8766F21C22FE400D432BC /* MSWeakTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8753D21C22FE300D432BC /* MSWeakTimer.h */; };
+		24C8766F21C22FE400D432BC /* MSWeakTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8753D21C22FE300D432BC /* MSWeakTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8767021C22FE400D432BC /* MSWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8753E21C22FE300D432BC /* MSWeakTimer.m */; };
-		24C8767121C22FE400D432BC /* UMTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8754021C22FE300D432BC /* UMTool.h */; };
+		24C8767121C22FE400D432BC /* UMTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8754021C22FE300D432BC /* UMTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8767221C22FE400D432BC /* UMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8754121C22FE300D432BC /* UMTool.m */; };
-		24C8767321C22FE400D432BC /* LameHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8754321C22FE300D432BC /* LameHelper.h */; };
+		24C8767321C22FE400D432BC /* LameHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8754321C22FE300D432BC /* LameHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8767421C22FE400D432BC /* LameHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8754421C22FE300D432BC /* LameHelper.m */; };
 		24C8767521C22FE400D432BC /* UIScrollView+AXRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8754621C22FE300D432BC /* UIScrollView+AXRefresh.m */; };
 		24C8767621C22FE400D432BC /* AXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8754721C22FE300D432BC /* AXRefreshFooter.m */; };
 		24C8767721C22FE400D432BC /* AXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8754821C22FE300D432BC /* AXRefreshHeader.m */; };
-		24C8767821C22FE400D432BC /* UIScrollView+AXRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8754921C22FE300D432BC /* UIScrollView+AXRefresh.h */; };
-		24C8767921C22FE400D432BC /* AXRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8754A21C22FE300D432BC /* AXRefreshHeader.h */; };
-		24C8767A21C22FE400D432BC /* AXRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8754B21C22FE300D432BC /* AXRefreshFooter.h */; };
+		24C8767821C22FE400D432BC /* UIScrollView+AXRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8754921C22FE300D432BC /* UIScrollView+AXRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8767921C22FE400D432BC /* AXRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8754A21C22FE300D432BC /* AXRefreshHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8767A21C22FE400D432BC /* AXRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8754B21C22FE300D432BC /* AXRefreshFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8767B21C22FE400D432BC /* UIImageView+AXCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8754D21C22FE300D432BC /* UIImageView+AXCircle.m */; };
-		24C8767C21C22FE400D432BC /* NSObject+AXCacheImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8754E21C22FE300D432BC /* NSObject+AXCacheImage.h */; };
+		24C8767C21C22FE400D432BC /* NSObject+AXCacheImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8754E21C22FE300D432BC /* NSObject+AXCacheImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8767D21C22FE400D432BC /* UIButton+AXCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8754F21C22FE300D432BC /* UIButton+AXCircle.m */; };
-		24C8767E21C22FE400D432BC /* UIImageView+AXCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8755021C22FE300D432BC /* UIImageView+AXCircle.h */; };
-		24C8767F21C22FE400D432BC /* UIButton+AXCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8755121C22FE300D432BC /* UIButton+AXCircle.h */; };
+		24C8767E21C22FE400D432BC /* UIImageView+AXCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8755021C22FE300D432BC /* UIImageView+AXCircle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8767F21C22FE400D432BC /* UIButton+AXCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8755121C22FE300D432BC /* UIButton+AXCircle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8768021C22FE400D432BC /* NSObject+AXCacheImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8755221C22FE300D432BC /* NSObject+AXCacheImage.m */; };
-		24C8768121C22FE400D432BC /* AXPhotoBrowserVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8755421C22FE300D432BC /* AXPhotoBrowserVC.h */; };
+		24C8768121C22FE400D432BC /* AXPhotoBrowserVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8755421C22FE300D432BC /* AXPhotoBrowserVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8768221C22FE400D432BC /* AXPhotoBrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8755521C22FE300D432BC /* AXPhotoBrowserVC.m */; };
 		24C8768321C22FE400D432BC /* UIScrollView+AXEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8755721C22FE300D432BC /* UIScrollView+AXEmptyDataSet.m */; };
-		24C8768421C22FE400D432BC /* UIScrollView+AXEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8755821C22FE300D432BC /* UIScrollView+AXEmptyDataSet.h */; };
+		24C8768421C22FE400D432BC /* UIScrollView+AXEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8755821C22FE300D432BC /* UIScrollView+AXEmptyDataSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8768521C22FE400D432BC /* AXAliPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8755A21C22FE300D432BC /* AXAliPayManager.m */; };
-		24C8768621C22FE400D432BC /* AXAliPayManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8755B21C22FE300D432BC /* AXAliPayManager.h */; };
+		24C8768621C22FE400D432BC /* AXAliPayManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8755B21C22FE300D432BC /* AXAliPayManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8768721C22FE400D432BC /* YYLabel+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8755D21C22FE300D432BC /* YYLabel+AXTool.m */; };
-		24C8768821C22FE400D432BC /* YYLabel+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8755E21C22FE300D432BC /* YYLabel+AXTool.h */; };
-		24C8768921C22FE400D432BC /* DBStatements.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8756021C22FE300D432BC /* DBStatements.h */; };
+		24C8768821C22FE400D432BC /* YYLabel+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8755E21C22FE300D432BC /* YYLabel+AXTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8768921C22FE400D432BC /* DBStatements.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8756021C22FE300D432BC /* DBStatements.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8768A21C22FE400D432BC /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8756121C22FE300D432BC /* DataBase.m */; };
-		24C8768B21C22FE400D432BC /* DataBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8756221C22FE300D432BC /* DataBase.h */; };
+		24C8768B21C22FE400D432BC /* DataBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8756221C22FE300D432BC /* DataBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8768C21C22FE400D432BC /* DBStatements.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8756321C22FE300D432BC /* DBStatements.m */; };
 		24C8768D21C22FE400D432BC /* backItemImage_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24C8756521C22FE300D432BC /* backItemImage_hl@2x.png */; };
 		24C8768E21C22FE400D432BC /* backItemImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24C8756621C22FE300D432BC /* backItemImage@2x.png */; };
 		24C8768F21C22FE400D432BC /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8756721C22FE300D432BC /* WKWebViewController.m */; };
 		24C8769021C22FE400D432BC /* WKJSPOST.html in Resources */ = {isa = PBXBuildFile; fileRef = 24C8756821C22FE300D432BC /* WKJSPOST.html */; };
-		24C8769121C22FE400D432BC /* WKWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8756921C22FE300D432BC /* WKWebViewController.h */; };
-		24C8769221C22FE400D432BC /* AXNetManager+Upload.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8756B21C22FE300D432BC /* AXNetManager+Upload.m */; };
-		24C8769521C22FE400D432BC /* AXNetGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8756E21C22FE300D432BC /* AXNetGroup.h */; };
-		24C8769621C22FE400D432BC /* AXNetManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8756F21C22FE300D432BC /* AXNetManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24C8769721C22FE400D432BC /* AXNetManager+Version.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8757021C22FE300D432BC /* AXNetManager+Version.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24C8769821C22FE400D432BC /* AXNetManager+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8757121C22FE300D432BC /* AXNetManager+Base.m */; };
-		24C8769921C22FE400D432BC /* AXNetManager+Verson.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8757221C22FE300D432BC /* AXNetManager+Verson.m */; };
-		24C8769A21C22FE400D432BC /* AXNetManager+Group.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8757321C22FE300D432BC /* AXNetManager+Group.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24C8769B21C22FE400D432BC /* AXNetManager+Upload.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8757421C22FE300D432BC /* AXNetManager+Upload.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24C8769C21C22FE400D432BC /* AXNetManagerHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8757521C22FE300D432BC /* AXNetManagerHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24C8769D21C22FE400D432BC /* AXNetManager+Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8757621C22FE300D432BC /* AXNetManager+Base.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24C8769E21C22FE400D432BC /* AXNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8757721C22FE300D432BC /* AXNetManager.m */; };
+		24C8769121C22FE400D432BC /* WKWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8756921C22FE300D432BC /* WKWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24C8769521C22FE400D432BC /* AXNetGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8756E21C22FE300D432BC /* AXNetGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8769F21C22FE400D432BC /* AXNetGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8757821C22FE300D432BC /* AXNetGroup.m */; };
-		24C876A021C22FE400D432BC /* AXNetManager+Download.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8757921C22FE300D432BC /* AXNetManager+Download.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,16 +313,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		240F16D121C73D2B00928207 /* AXiOSToolsInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AXiOSToolsInfo.plist; sourceTree = "<group>"; };
+		240F18ED21C74C3000928207 /* AXWKWebJSDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWKWebJSDemoVC.m; sourceTree = "<group>"; };
+		240F18EE21C74C3000928207 /* AXWKWebJSDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWKWebJSDemoVC.h; sourceTree = "<group>"; };
+		240F18EF21C74C3000928207 /* AXWKWebJSDemoPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AXWKWebJSDemoPage.html; sourceTree = "<group>"; };
+		24B6BF0B21C738610074976F /* AXCollectFile.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = AXCollectFile.md; sourceTree = "<group>"; };
+		24B6BF0C21C738610074976F /* pod_no_use.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = pod_no_use.md; sourceTree = "<group>"; };
+		24B6BF0D21C738610074976F /* pod_use.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = pod_use.md; sourceTree = "<group>"; };
 		24C873FE21C22F0C00D432BC /* AXiOSTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AXiOSTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C8740121C22F0C00D432BC /* AXiOSTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXiOSTools.h; sourceTree = "<group>"; };
-		24C8740221C22F0C00D432BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24C8740721C22F0C00D432BC /* AXiOSToolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AXiOSToolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C8740C21C22F0C00D432BC /* AXiOSToolsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXiOSToolsTests.m; sourceTree = "<group>"; };
 		24C8740E21C22F0C00D432BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24C8741921C22FE100D432BC /* AXCollectFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AXCollectFile; sourceTree = "<group>"; };
-		24C8741A21C22FE100D432BC /* pod_no_use.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pod_no_use.txt; sourceTree = "<group>"; };
-		24C8741B21C22FE100D432BC /* AXToolsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXToolsHeader.h; sourceTree = "<group>"; };
-		24C8741C21C22FE100D432BC /* pod_use.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pod_use.txt; sourceTree = "<group>"; };
 		24C8741F21C22FE100D432BC /* AXWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWeakProxy.m; sourceTree = "<group>"; };
 		24C8742021C22FE100D432BC /* AXWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWeakProxy.h; sourceTree = "<group>"; };
 		24C8742221C22FE100D432BC /* UITextField+AXAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+AXAction.h"; sourceTree = "<group>"; };
@@ -564,8 +563,6 @@
 		24C8753021C22FE300D432BC /* MBProgressHUD+AX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+AX.m"; sourceTree = "<group>"; };
 		24C8753121C22FE300D432BC /* MBProgressHUD+AX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+AX.h"; sourceTree = "<group>"; };
 		24C8753221C22FE300D432BC /* MBProgressHUD_AX.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD_AX.bundle; sourceTree = "<group>"; };
-		24C8753621C22FE300D432BC /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
-		24C8753821C22FE300D432BC /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		24C8753A21C22FE300D432BC /* NSObject+FBKVOControllerAX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FBKVOControllerAX.h"; sourceTree = "<group>"; };
 		24C8753B21C22FE300D432BC /* NSObject+FBKVOControllerAX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FBKVOControllerAX.m"; sourceTree = "<group>"; };
 		24C8753D21C22FE300D432BC /* MSWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
@@ -604,20 +601,14 @@
 		24C8756821C22FE300D432BC /* WKJSPOST.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKJSPOST.html; sourceTree = "<group>"; };
 		24C8756921C22FE300D432BC /* WKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
 		24C8756B21C22FE300D432BC /* AXNetManager+Upload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AXNetManager+Upload.m"; sourceTree = "<group>"; };
-		24C8756C21C22FE300D432BC /* AXNetManager+Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AXNetManager+Group.m"; sourceTree = "<group>"; };
-		24C8756D21C22FE300D432BC /* AXNetManager+Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AXNetManager+Download.m"; sourceTree = "<group>"; };
 		24C8756E21C22FE300D432BC /* AXNetGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetGroup.h; sourceTree = "<group>"; };
 		24C8756F21C22FE300D432BC /* AXNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetManager.h; sourceTree = "<group>"; };
 		24C8757021C22FE300D432BC /* AXNetManager+Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AXNetManager+Version.h"; sourceTree = "<group>"; };
-		24C8757121C22FE300D432BC /* AXNetManager+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AXNetManager+Base.m"; sourceTree = "<group>"; };
 		24C8757221C22FE300D432BC /* AXNetManager+Verson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AXNetManager+Verson.m"; sourceTree = "<group>"; };
-		24C8757321C22FE300D432BC /* AXNetManager+Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AXNetManager+Group.h"; sourceTree = "<group>"; };
 		24C8757421C22FE300D432BC /* AXNetManager+Upload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AXNetManager+Upload.h"; sourceTree = "<group>"; };
 		24C8757521C22FE300D432BC /* AXNetManagerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetManagerHeader.h; sourceTree = "<group>"; };
-		24C8757621C22FE300D432BC /* AXNetManager+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AXNetManager+Base.h"; sourceTree = "<group>"; };
 		24C8757721C22FE300D432BC /* AXNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNetManager.m; sourceTree = "<group>"; };
 		24C8757821C22FE300D432BC /* AXNetGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNetGroup.m; sourceTree = "<group>"; };
-		24C8757921C22FE300D432BC /* AXNetManager+Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AXNetManager+Download.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -625,7 +616,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C8766C21C22FE400D432BC /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +630,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240F18EC21C74C3000928207 /* AXWKWebJSDemo */ = {
+			isa = PBXGroup;
+			children = (
+				240F18EF21C74C3000928207 /* AXWKWebJSDemoPage.html */,
+				240F18EE21C74C3000928207 /* AXWKWebJSDemoVC.h */,
+				240F18ED21C74C3000928207 /* AXWKWebJSDemoVC.m */,
+			);
+			path = AXWKWebJSDemo;
+			sourceTree = "<group>";
+		};
+		24B6BF0A21C738610074976F /* 00Description */ = {
+			isa = PBXGroup;
+			children = (
+				24B6BF0B21C738610074976F /* AXCollectFile.md */,
+				24B6BF0C21C738610074976F /* pod_no_use.md */,
+				24B6BF0D21C738610074976F /* pod_use.md */,
+				240F18EC21C74C3000928207 /* AXWKWebJSDemo */,
+			);
+			path = 00Description;
+			sourceTree = "<group>";
+		};
 		24C873F421C22F0C00D432BC = {
 			isa = PBXGroup;
 			children = (
@@ -661,11 +672,11 @@
 		24C8740021C22F0C00D432BC /* AXiOSTools */ = {
 			isa = PBXGroup;
 			children = (
-				24C8740121C22F0C00D432BC /* AXiOSTools.h */,
-				24C8741821C22FE100D432BC /* 00Header */,
+				24B6BF0A21C738610074976F /* 00Description */,
 				24C8741D21C22FE100D432BC /* 01AXTools */,
 				24C8752E21C22FE300D432BC /* 02ThirdTools */,
-				24C8740221C22F0C00D432BC /* Info.plist */,
+				24C8740121C22F0C00D432BC /* AXiOSTools.h */,
+				240F16D121C73D2B00928207 /* AXiOSToolsInfo.plist */,
 			);
 			path = AXiOSTools;
 			sourceTree = "<group>";
@@ -677,17 +688,6 @@
 				24C8740E21C22F0C00D432BC /* Info.plist */,
 			);
 			path = AXiOSToolsTests;
-			sourceTree = "<group>";
-		};
-		24C8741821C22FE100D432BC /* 00Header */ = {
-			isa = PBXGroup;
-			children = (
-				24C8741921C22FE100D432BC /* AXCollectFile */,
-				24C8741A21C22FE100D432BC /* pod_no_use.txt */,
-				24C8741B21C22FE100D432BC /* AXToolsHeader.h */,
-				24C8741C21C22FE100D432BC /* pod_use.txt */,
-			);
-			path = 00Header;
 			sourceTree = "<group>";
 		};
 		24C8741D21C22FE100D432BC /* 01AXTools */ = {
@@ -1219,7 +1219,6 @@
 				24C8755621C22FE300D432BC /* DZNEmptyDataSet@AX */,
 				24C8755F21C22FE300D432BC /* FMDB@AX */,
 				24C8753921C22FE300D432BC /* KVOController@AX */,
-				24C8753321C22FE300D432BC /* lame */,
 				24C8754221C22FE300D432BC /* lame@AX */,
 				24C8752F21C22FE300D432BC /* MBProgressHUD@AX */,
 				24C8754521C22FE300D432BC /* MJRefresh@AX */,
@@ -1241,39 +1240,6 @@
 				24C8753221C22FE300D432BC /* MBProgressHUD_AX.bundle */,
 			);
 			path = "MBProgressHUD@AX";
-			sourceTree = "<group>";
-		};
-		24C8753321C22FE300D432BC /* lame */ = {
-			isa = PBXGroup;
-			children = (
-				24C8753421C22FE300D432BC /* include */,
-				24C8753721C22FE300D432BC /* lib */,
-			);
-			path = lame;
-			sourceTree = "<group>";
-		};
-		24C8753421C22FE300D432BC /* include */ = {
-			isa = PBXGroup;
-			children = (
-				24C8753521C22FE300D432BC /* lame */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		24C8753521C22FE300D432BC /* lame */ = {
-			isa = PBXGroup;
-			children = (
-				24C8753621C22FE300D432BC /* lame.h */,
-			);
-			path = lame;
-			sourceTree = "<group>";
-		};
-		24C8753721C22FE300D432BC /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				24C8753821C22FE300D432BC /* libmp3lame.a */,
-			);
-			path = lib;
 			sourceTree = "<group>";
 		};
 		24C8753921C22FE300D432BC /* KVOController@AX */ = {
@@ -1400,21 +1366,15 @@
 		24C8756A21C22FE300D432BC /* AFNetworking@AX */ = {
 			isa = PBXGroup;
 			children = (
-				24C8756B21C22FE300D432BC /* AXNetManager+Upload.m */,
-				24C8756C21C22FE300D432BC /* AXNetManager+Group.m */,
-				24C8756D21C22FE300D432BC /* AXNetManager+Download.m */,
 				24C8756E21C22FE300D432BC /* AXNetGroup.h */,
-				24C8756F21C22FE300D432BC /* AXNetManager.h */,
-				24C8757021C22FE300D432BC /* AXNetManager+Version.h */,
-				24C8757121C22FE300D432BC /* AXNetManager+Base.m */,
-				24C8757221C22FE300D432BC /* AXNetManager+Verson.m */,
-				24C8757321C22FE300D432BC /* AXNetManager+Group.h */,
-				24C8757421C22FE300D432BC /* AXNetManager+Upload.h */,
-				24C8757521C22FE300D432BC /* AXNetManagerHeader.h */,
-				24C8757621C22FE300D432BC /* AXNetManager+Base.h */,
-				24C8757721C22FE300D432BC /* AXNetManager.m */,
 				24C8757821C22FE300D432BC /* AXNetGroup.m */,
-				24C8757921C22FE300D432BC /* AXNetManager+Download.h */,
+				24C8756F21C22FE300D432BC /* AXNetManager.h */,
+				24C8757721C22FE300D432BC /* AXNetManager.m */,
+				24C8757421C22FE300D432BC /* AXNetManager+Upload.h */,
+				24C8756B21C22FE300D432BC /* AXNetManager+Upload.m */,
+				24C8757021C22FE300D432BC /* AXNetManager+Version.h */,
+				24C8757221C22FE300D432BC /* AXNetManager+Verson.m */,
+				24C8757521C22FE300D432BC /* AXNetManagerHeader.h */,
 			);
 			path = "AFNetworking@AX";
 			sourceTree = "<group>";
@@ -1426,20 +1386,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C8769B21C22FE400D432BC /* AXNetManager+Upload.h in Headers */,
-				24C8769621C22FE400D432BC /* AXNetManager.h in Headers */,
-				24C8769721C22FE400D432BC /* AXNetManager+Version.h in Headers */,
-				24C8769A21C22FE400D432BC /* AXNetManager+Group.h in Headers */,
-				24C876A021C22FE400D432BC /* AXNetManager+Download.h in Headers */,
-				24C8769C21C22FE400D432BC /* AXNetManagerHeader.h in Headers */,
-				24C8769D21C22FE400D432BC /* AXNetManager+Base.h in Headers */,
 				24C875F721C22FE300D432BC /* IBUIImageView.h in Headers */,
 				24C8766F21C22FE400D432BC /* MSWeakTimer.h in Headers */,
 				24C875B621C22FE300D432BC /* UIButton+AXTool.h in Headers */,
 				24C875C121C22FE300D432BC /* NSObject+AXVersion.h in Headers */,
 				24C8763421C22FE400D432BC /* AXNaviC.h in Headers */,
 				24C875F121C22FE300D432BC /* LocationManager.h in Headers */,
-				24C8757C21C22FE300D432BC /* AXToolsHeader.h in Headers */,
 				24C8767F21C22FE400D432BC /* UIButton+AXCircle.h in Headers */,
 				24C875E721C22FE300D432BC /* AXVeriCodeView.h in Headers */,
 				24C875B021C22FE300D432BC /* UIView+AXSnapshot.h in Headers */,
@@ -1479,6 +1431,7 @@
 				24C875B721C22FE300D432BC /* NSUserDefaults+AXTool.h in Headers */,
 				24C8760B21C22FE300D432BC /* AXHelper.h in Headers */,
 				24C8763A21C22FE400D432BC /* AXAlertCentreAnimation.h in Headers */,
+				240F18F121C74C3000928207 /* AXWKWebJSDemoVC.h in Headers */,
 				24C8758121C22FE300D432BC /* NSObject+AXRuntime.h in Headers */,
 				24C8758221C22FE300D432BC /* UITextView+AXTool.h in Headers */,
 				24C8763D21C22FE400D432BC /* AXSinglePickVC.h in Headers */,
@@ -1545,7 +1498,6 @@
 				24C8767A21C22FE400D432BC /* AXRefreshFooter.h in Headers */,
 				24C875E521C22FE300D432BC /* AXDottedLineView.h in Headers */,
 				24C8766921C22FE400D432BC /* MBProgressHUD+AX.h in Headers */,
-				24C8766B21C22FE400D432BC /* lame.h in Headers */,
 				24C8763521C22FE400D432BC /* AXWKWebVC.h in Headers */,
 				24C875DE21C22FE300D432BC /* UIColor+AXTool.h in Headers */,
 				24C8761721C22FE300D432BC /* AXChoosePayVC.h in Headers */,
@@ -1560,6 +1512,10 @@
 				24C8763B21C22FE400D432BC /* AXBaseAlertVC.h in Headers */,
 				24C875A321C22FE300D432BC /* NSDate+AXTool.h in Headers */,
 				24C8759D21C22FE300D432BC /* UITextField+AXTool.h in Headers */,
+				240F18D321C7455D00928207 /* AXNetManager.h in Headers */,
+				240F18DB21C7455D00928207 /* AXNetManager+Upload.h in Headers */,
+				240F18DD21C7455D00928207 /* AXNetManager+Version.h in Headers */,
+				240F18DF21C7455D00928207 /* AXNetManagerHeader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1658,12 +1614,10 @@
 				24C8765321C22FE400D432BC /* qrcode_tabbar_icon_qrcode_highlighted@2x.png in Resources */,
 				24C8766121C22FE400D432BC /* AXGuidePageCell.xib in Resources */,
 				24C8765D21C22FE400D432BC /* AXGuidePageVC.xib in Resources */,
-				24C8757D21C22FE300D432BC /* pod_use.txt in Resources */,
 				24C8766421C22FE400D432BC /* axwkWebView.js in Resources */,
 				24C8765421C22FE400D432BC /* qrcode_tabbar_icon_qrcode_highlighted@3x.png in Resources */,
 				24C8766621C22FE400D432BC /* AXAssets.xcassets in Resources */,
 				24C8765021C22FE400D432BC /* qrcode_tabbar_icon_qrcode@2x.png in Resources */,
-				24C8757A21C22FE300D432BC /* AXCollectFile in Resources */,
 				24C8762321C22FE400D432BC /* AXWebVC.xib in Resources */,
 				24C8764D21C22FE400D432BC /* qrcode_tabbar_icon_qrcode@3x.png in Resources */,
 				24C8766321C22FE400D432BC /* AXToolsLocalizedString.strings in Resources */,
@@ -1674,13 +1628,17 @@
 				24C8766521C22FE400D432BC /* axwkWebView.html in Resources */,
 				24C8765821C22FE400D432BC /* AXSafariVC.xib in Resources */,
 				24C8768D21C22FE400D432BC /* backItemImage_hl@2x.png in Resources */,
+				24B6BF1021C738610074976F /* pod_no_use.md in Resources */,
+				240F18F221C74C3000928207 /* AXWKWebJSDemoPage.html in Resources */,
 				24C8765221C22FE400D432BC /* Root.plist in Resources */,
+				240F16D221C73D2B00928207 /* AXiOSToolsInfo.plist in Resources */,
 				24C8761921C22FE300D432BC /* AXChoosePayVC.xib in Resources */,
+				24B6BF0F21C738610074976F /* AXCollectFile.md in Resources */,
 				24C8764621C22FE400D432BC /* Root.strings in Resources */,
 				24C8764121C22FE400D432BC /* AXDateVC.xib in Resources */,
-				24C8757B21C22FE300D432BC /* pod_no_use.txt in Resources */,
 				24C8763E21C22FE400D432BC /* AXSinglePickVC.xib in Resources */,
 				24C8764E21C22FE400D432BC /* qrcode_tabbar_icon_barcode@2x.png in Resources */,
+				24B6BF1121C738610074976F /* pod_use.md in Resources */,
 				24C8764C21C22FE400D432BC /* qrcode_tabbar_icon_barcode_highlighted@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1699,6 +1657,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240F18DC21C7455D00928207 /* AXNetManager+Upload.m in Sources */,
+				240F18DE21C7455D00928207 /* AXNetManager+Verson.m in Sources */,
+				240F18D421C7455D00928207 /* AXNetManager.m in Sources */,
 				24C8762921C22FE400D432BC /* AXHalfWidthLayout.m in Sources */,
 				24C875F321C22FE300D432BC /* IBUITextField.m in Sources */,
 				24C8760721C22FE300D432BC /* AXConfigureFunction.m in Sources */,
@@ -1706,7 +1667,6 @@
 				24C8758B21C22FE300D432BC /* UISwitch+AXTool.m in Sources */,
 				24C875D021C22FE300D432BC /* NSString+AXCrypto.m in Sources */,
 				24C875C021C22FE300D432BC /* UIImageView+AXTool.m in Sources */,
-				24C8769221C22FE400D432BC /* AXNetManager+Upload.m in Sources */,
 				24C8765E21C22FE400D432BC /* AXGuidePageVC.m in Sources */,
 				24C875D621C22FE300D432BC /* UIView+AXSnapshot.m in Sources */,
 				24C875D821C22FE300D432BC /* UIView+AXAnimation.m in Sources */,
@@ -1718,7 +1678,6 @@
 				24C875FC21C22FE300D432BC /* IBUIImageView.m in Sources */,
 				24C8768721C22FE400D432BC /* YYLabel+AXTool.m in Sources */,
 				24C8758721C22FE300D432BC /* UIButton+AXTool.m in Sources */,
-				24C8769821C22FE400D432BC /* AXNetManager+Base.m in Sources */,
 				24C8759C21C22FE300D432BC /* UITableView+AXTool.m in Sources */,
 				24C8759E21C22FE300D432BC /* UIViewController+AXNavBarConfig.m in Sources */,
 				24C875D421C22FE300D432BC /* UITextField+AXTool.m in Sources */,
@@ -1765,7 +1724,6 @@
 				24C8767721C22FE400D432BC /* AXRefreshHeader.m in Sources */,
 				24C875A621C22FE300D432BC /* UIViewController+AXAlert.m in Sources */,
 				24C875E421C22FE300D432BC /* AXDottedLineView.m in Sources */,
-				24C8769E21C22FE400D432BC /* AXNetManager.m in Sources */,
 				24C875B921C22FE300D432BC /* WKWebView+AXTool.m in Sources */,
 				24C875C521C22FE300D432BC /* NSDictionary+AXTool.m in Sources */,
 				24C875AF21C22FE300D432BC /* UIControl+AXTool.m in Sources */,
@@ -1779,11 +1737,11 @@
 				24C875EB21C22FE300D432BC /* UITextField+AXNumberKeyboard.m in Sources */,
 				24C875FD21C22FE300D432BC /* IBUIView.m in Sources */,
 				24C8758821C22FE300D432BC /* NSData+AXTool.m in Sources */,
+				240F18F021C74C3000928207 /* AXWKWebJSDemoVC.m in Sources */,
 				24C875FE21C22FE300D432BC /* AXConstant.m in Sources */,
 				24C875CD21C22FE300D432BC /* NSDate+AXTool.m in Sources */,
 				24C8759621C22FE300D432BC /* UIViewController+AXTool.m in Sources */,
 				24C8768521C22FE400D432BC /* AXAliPayManager.m in Sources */,
-				24C8769921C22FE400D432BC /* AXNetManager+Verson.m in Sources */,
 				24C8767021C22FE400D432BC /* MSWeakTimer.m in Sources */,
 				24C875BE21C22FE300D432BC /* NSObject+AXRuntime.m in Sources */,
 				24C8763821C22FE400D432BC /* AXBaseAlertVC.m in Sources */,
@@ -1988,7 +1946,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AXiOSTools/Info.plist;
+				INFOPLIST_FILE = AXiOSTools/AXiOSToolsInfo.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2016,7 +1974,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AXiOSTools/Info.plist;
+				INFOPLIST_FILE = AXiOSTools/AXiOSToolsInfo.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (

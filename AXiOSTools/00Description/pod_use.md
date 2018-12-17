@@ -53,3 +53,4 @@ pod 'UITableView+FDTemplateLayoutCell'
 pod 'AvoidCrash'
 
 end
+

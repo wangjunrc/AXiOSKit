@@ -9,7 +9,7 @@
 #import "AXGuidePageVC.h"
 #import "AXFullLayout2.h"
 #import "AXGuidePageCell.h"
-#import "AXToolsHeader.h"
+#import "AXiOSTools.h"
 @interface AXGuidePageVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
