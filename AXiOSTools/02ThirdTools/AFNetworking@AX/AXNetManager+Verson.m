@@ -8,8 +8,6 @@
 
 #import "AXNetManager+Version.h"
 #if __has_include("AFNetworking.h")
-
-#import "AXNetManager+Base.h"
 #import "NSString+AXTool.h"
 
 @implementation AXNetManager (Version)
@@ -17,8 +15,8 @@
     
     NSString *url = [[NSString alloc] initWithFormat:@"http://itunes.apple.com/lookup?id=%@",appid];
     
-    [AXNetManager POSTWithUrl:url showHUD:NO parameters:nil success:^(id json) {
-        
+    [AXNetManager postURL:url parameters:nil success:^(id json) {
+    
         if (successBlock) {
             
             if ([json[@"resultCount"] boolValue]) {
@@ -29,11 +27,8 @@
             }
         }
         
+    } failure:^(NSError * error) {
         
-    } failure:^(NSString *errorString) {
-        if (failureBlock) {
-            failureBlock();
-        }
     }];
 }
 
