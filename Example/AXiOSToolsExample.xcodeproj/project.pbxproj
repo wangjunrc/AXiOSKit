@@ -328,7 +328,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample-resources.sh",
 				"${PODS_ROOT}/GKPhotoBrowser/GKPhotoBrowser/GKPhotoBrowser.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 			);
@@ -341,7 +341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		99106FF980531D4A8B275519 /* [CP] Check Pods Manifest.lock */ = {

@@ -8,6 +8,7 @@
 #if __has_include("AFNetworking.h")
 #import "AXNetManager.h"
 #import "AXMacros.h"
+#import "UIViewController+AXAlert.h"
 
 NSString *const AXNetLoadTitle = @"Loading...";
 NSString *const AXNetFailureText = @"网络连接错误";
@@ -274,7 +275,10 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
  @param success 成功
  @param failure 失败
  */
-+ (void)getURL:(NSString *)url parameters:(NSDictionary *)parameter success:(void(^)(id json))success failure:(void(^)(NSInteger state))failure{
++ (void)getURL:(NSString *)url
+    parameters:(NSDictionary *)parameter
+       success:(void(^)(id json))success
+       failure:(void(^)(NSError * error))failure{
     
     [self cancelAFN];
     
@@ -289,7 +293,7 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
     } failure:^(NSURLSessionDataTask * task, NSError * error) {
         
         if (failure) {
-            failure(task.state);
+            failure(error);
         }
     }];
 }
@@ -302,20 +306,23 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
  @param success 成功
  @param failure 失败
  */
-+ (void)postURL:(NSString *)url parameters:(NSDictionary *)parameter success:(void(^)(id json))success failure:(void(^)(NSInteger state))failure{
++ (void)postURL:(NSString *)url
+     parameters:(NSDictionary *)parameter
+        success:(void(^)(id json))success
+        failure:(void(^)(NSError * error))failure{
     
     [self cancelAFN];
     
     _dataTask = [[self shareManager] POST:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * task, id  responseObject) {
+        
         if (success) {
-            
             id json = [self handleResponse:responseObject];
             success(json);
         }
         
     } failure:^(NSURLSessionDataTask * task, NSError * error) {
         if (failure) {
-            failure(task.state);
+            failure(error);
         }
     }];
 }
@@ -355,12 +362,11 @@ dispatch_group_t _group;
                 
                 dispatch_group_leave(_group);
                 
-            } failure:^(NSInteger state) {
+            } failure:^(NSError * error) {
                 
                 AXNetGroupResult *result = results[index];
                 result.success = NO;
-                result.state = state;
-                
+//                result.state = state;
                 dispatch_group_leave(_group);
                 
             }];

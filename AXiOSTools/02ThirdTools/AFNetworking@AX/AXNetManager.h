@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AXNetGroup.h"
 #if __has_include("AFNetworking.h")
 #import "AFNetworking.h"
 #endif
@@ -73,7 +74,10 @@ static NSURLSessionDataTask *_dataTask;
  @param success 成功
  @param failure 失败
  */
-+ (void)getURL:(NSString *)url parameters:(NSDictionary *)parameter success:(void(^)(id json))success failure:(void(^)(NSInteger state))failure;
++ (void)getURL:(NSString *)url
+    parameters:(NSDictionary *)parameter
+       success:(void(^)(id json))success
+       failure:(void(^)(NSError * error))failure;
 
 /**
  post请求
@@ -83,7 +87,10 @@ static NSURLSessionDataTask *_dataTask;
  @param success 成功
  @param failure 失败
  */
-+ (void)postURL:(NSString *)url parameters:(NSDictionary *)parameter success:(void(^)(id json))success failure:(void(^)(NSInteger state))failure;
++ (void)postURL:(NSString *)url
+     parameters:(NSDictionary *)parameter
+        success:(void(^)(id json))success
+        failure:(void(^)(NSError * error))failure;
 
 /**
  下载文件

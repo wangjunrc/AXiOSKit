@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - AXiOSTools (1.0.0):
+  - AXiOSTools (0.1.1):
     - AFNetworking
     - GKPhotoBrowser
     - IQKeyboardManager
@@ -42,11 +42,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  AXiOSTools: 9271b3945fd86a6f0b69ffbfcba6e615907564b2
+  AXiOSTools: 50f89786f757008da900505d52741817a5725d1b
   GKPhotoBrowser: 757dc391c3da74546ac8eeed57f2171477f52533
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
 PODFILE CHECKSUM: a632ea7660c05f38ef587244beb24098fdedbbb2
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.5.3

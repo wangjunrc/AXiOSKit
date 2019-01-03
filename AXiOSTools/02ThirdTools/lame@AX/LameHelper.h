@@ -1,19 +1,19 @@
+////
+////  LameHelper.h
+////  BigApple
+////
+////  Created by liuweixing on 2016/11/16.
+////  Copyright © 2016年 liuweixing. All rights reserved.
+////
 //
-//  LameHelper.h
-//  BigApple
+//#import <Foundation/Foundation.h>
 //
-//  Created by liuweixing on 2016/11/16.
-//  Copyright © 2016年 liuweixing. All rights reserved.
+//#if __has_include("lame.h")
 //
-
-#import <Foundation/Foundation.h>
-
-#if __has_include("lame.h")
-
-@interface LameHelper : NSObject
-
-+(BOOL )toMp3WithSourcePath:(NSString *)sourcePath mp3Path:(NSString *)mp3Path;
-
-@end
-
-#endif
+//@interface LameHelper : NSObject
+//
+//+(BOOL )toMp3WithSourcePath:(NSString *)sourcePath mp3Path:(NSString *)mp3Path;
+//
+//@end
+//
+//#endif
