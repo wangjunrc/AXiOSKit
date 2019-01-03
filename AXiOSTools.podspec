@@ -4,25 +4,25 @@ Pod::Spec.new do |spec|
     spec.summary      = 'AXinger'
     spec.homepage     = 'http://www.baidu.com'
     spec.license      = {:type => 'MIT', :file => 'LICENSE'}
-    spec.author       = {'AXing' => 'liu_weixing@qq.com'}
+    spec.author       = {'AXinger' => 'liu_weixing@qq.com'}
     spec.social_media_url   = ''
     spec.source = {:git => 'https://github.com/AXinger/AXiOSTools.git', :tag => spec.version}
     spec.requires_arc = true
     spec.ios.deployment_target = '8.0'
     spec.resource_bundles = {
-        'AXiOSTools' => ['AXiOSTools/AXiOSTools/AXiOSTools.xcassets', 'AXiOSTools/AXiOSTools/**/*.{gif,png,json,plist,xib}']
+        'AXiOSTools' => ['AXiOSTools/AXiOSTools.xcassets', 'AXiOSTools/**/*.{gif,png,json,plist,xib}']
     }
     
     
-    spec.source_files = 'AXiOSTools/AXiOSTools/**/*.{h,m,mm,c,swift}'
+    spec.source_files = 'AXiOSTools/**/*.{h,m,mm,c,swift}'
     
-    #    spec.resource = 'AXiOSTools/AXiOSTools/**/*.{plist,xib,json}'
+    #    spec.resource = 'AXiOSTools/**/*.{plist,xib,json}'
     
     spec.exclude_files = 'AXiOSTools/info.plist'
     
     spec.requires_arc = true
     spec.ios.deployment_target = '8.0'
-    spec.public_header_files = 'AXiOSTools/AXiOSTools/**/*.h'
+    spec.public_header_files = 'AXiOSTools/**/*.h'
     
     spec.libraries = 'icucore'
     spec.frameworks = 'UIKit', 'CoreFoundation', 'QuartzCore'
