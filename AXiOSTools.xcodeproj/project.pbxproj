@@ -305,6 +305,7 @@
 		24C8769121C22FE400D432BC /* WKWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8756921C22FE300D432BC /* WKWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8769521C22FE400D432BC /* AXNetGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8756E21C22FE300D432BC /* AXNetGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24C8769F21C22FE400D432BC /* AXNetGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8757821C22FE300D432BC /* AXNetGroup.m */; };
+		4957E8F921DE623D0097D47C /* AXiOSTools.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4957E8F821DE623D0097D47C /* AXiOSTools.xcassets */; };
 		49C6117A21CD1BAD00F79D9C /* lame.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C6117721CD1BAD00F79D9C /* lame.h */; };
 		49C6117B21CD1BAD00F79D9C /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C6117921CD1BAD00F79D9C /* libmp3lame.a */; };
 /* End PBXBuildFile section */
@@ -621,6 +622,7 @@
 		24C8757521C22FE300D432BC /* AXNetManagerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetManagerHeader.h; sourceTree = "<group>"; };
 		24C8757721C22FE300D432BC /* AXNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNetManager.m; sourceTree = "<group>"; };
 		24C8757821C22FE300D432BC /* AXNetGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNetGroup.m; sourceTree = "<group>"; };
+		4957E8F821DE623D0097D47C /* AXiOSTools.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AXiOSTools.xcassets; sourceTree = "<group>"; };
 		49C6117721CD1BAD00F79D9C /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
 		49C6117921CD1BAD00F79D9C /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -702,6 +704,7 @@
 				24C8741D21C22FE100D432BC /* 01AXTools */,
 				24C8752E21C22FE300D432BC /* 02ThirdTools */,
 				24C8740121C22F0C00D432BC /* AXiOSTools.h */,
+				4957E8F821DE623D0097D47C /* AXiOSTools.xcassets */,
 				240F16D121C73D2B00928207 /* AXiOSToolsInfo.plist */,
 			);
 			path = AXiOSTools;
@@ -1675,6 +1678,7 @@
 				24C8764821C22FE400D432BC /* qrcode_border@2x.png in Resources */,
 				24C875E821C22FE300D432BC /* AXNumberKeyboard.xib in Resources */,
 				24C8761F21C22FE400D432BC /* AXChoosePayStyleCell.xib in Resources */,
+				4957E8F921DE623D0097D47C /* AXiOSTools.xcassets in Resources */,
 				24C8764A21C22FE400D432BC /* qrcode_navigationbar_background@2x.png in Resources */,
 				24C8766721C22FE400D432BC /* AXTools.bundle in Resources */,
 				24C8765321C22FE400D432BC /* qrcode_tabbar_icon_qrcode_highlighted@2x.png in Resources */,
