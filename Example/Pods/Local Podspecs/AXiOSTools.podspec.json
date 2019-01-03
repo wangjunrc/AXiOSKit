@@ -22,5 +22,19 @@
     "AXiOSTools",
     "AXiOSTools/**/*.{h,m}"
   ],
-  "requires_arc": true
+  "requires_arc": true,
+  "dependencies": {
+    "AFNetworking": [
+
+    ],
+    "SDWebImage": [
+
+    ],
+    "IQKeyboardManager": [
+
+    ],
+    "GKPhotoBrowser": [
+
+    ]
+  }
 }

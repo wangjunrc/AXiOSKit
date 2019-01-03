@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name = "AXiOSTools"
-s.version = "1.0.0"
+s.version = "0.1.1"
 s.ios.deployment_target = '8.0'
 s.summary = "个人开发工具"
 s.homepage = "https://github.com/AXinger/AXiOSTools"
@@ -13,9 +13,9 @@ s.source_files = "AXiOSTools","AXiOSTools/**/*.{h,m}"
 s.requires_arc = true
 
 ##**********第三方依赖库**********##
-#s.dependency "AFNetworking"
-#s.dependency "SDWebImage"
-#s.dependency "IQKeyboardManager"
+s.dependency "AFNetworking"
+s.dependency "SDWebImage"
+s.dependency "IQKeyboardManager"
 #s.dependency "MJRefresh"
 #s.dependency "NullSafe"
 #s.dependency "MJExtension"
@@ -24,6 +24,6 @@ s.requires_arc = true
 #s.dependency "SDCycleScrollView"
 #s.dependency "KVOController"
 #s.dependency "Masonry"
-#s.dependency "GKPhotoBrowser"
+s.dependency "GKPhotoBrowser"
 
 end
