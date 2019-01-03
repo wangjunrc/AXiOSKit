@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
     
     #    spec.resource = 'AXiOSTools/**/*.{plist,xib,json}'
     
-    spec.exclude_files = 'AXiOSTools/info.plist'
+    spec.exclude_files = 'AXiOSTools/AXiOSToolsInfo.plist'
     
     spec.requires_arc = true
     spec.ios.deployment_target = '8.0'
