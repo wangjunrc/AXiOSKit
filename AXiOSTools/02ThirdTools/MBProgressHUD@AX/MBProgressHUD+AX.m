@@ -4,7 +4,6 @@
 
 #if __has_include("MBProgressHUD.h")
 
-#import "MBProgressHUD.h"
 #import "MBProgressHUD+AX.h"
 
 #define MBPafterDelay 1.3

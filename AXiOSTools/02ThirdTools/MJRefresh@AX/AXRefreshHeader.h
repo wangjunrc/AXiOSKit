@@ -6,11 +6,11 @@
 //  Copyright © 2018年 MoleDeveloper. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-@class MJRefreshNormalHeader;
+#if __has_include("MJRefresh.h")
 
+#import "MJRefresh.h"
 //自定义 mjrefrsh head 内容
 @interface AXRefreshHeader : MJRefreshNormalHeader
 
 @end
-
+#endif

@@ -5,6 +5,10 @@
 //  Created by Mole Developer on 2017/3/22.
 //  Copyright © 2017年 MoleDeveloper. All rights reserved.
 //
+
+#if __has_include("MJRefresh.h")
+#import "MJRefresh.h"
+
 #import <UIKit/UIKit.h>
 
 @interface UIScrollView (AXRefresh)
@@ -51,3 +55,4 @@
 - (void)ax_setFootNULL;
 
 @end
+#endif

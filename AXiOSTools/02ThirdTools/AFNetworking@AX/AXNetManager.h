@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "AXNetGroup.h"
+#if __has_include("AFNetworking.h")
+#import "AFNetworking.h"
+#endif
 
 FOUNDATION_EXPORT NSString *const AXNetLoadTitle;
 FOUNDATION_EXPORT NSString *const AXNetFailureText;
@@ -36,6 +39,7 @@ static NSURLSessionDataTask *_dataTask;
  * 下载保存路径,iOS只有3个位置
  */
 @interface AXNetManager : NSObject
+#if __has_include("AFNetworking.h")
 
 /**
  创建请求对象
@@ -60,7 +64,7 @@ static NSURLSessionDataTask *_dataTask;
 /**
  监听网络转态
  */
-+(void)setupNetWorkStatus:(void(^)(NSInteger status))block;
++(void)setupNetWorkStatus:(void(^)(AFNetworkReachabilityStatus status))block;
 
 /**
  get请求
@@ -101,6 +105,8 @@ static NSURLSessionDataTask *_dataTask;
 + (void )postDownURL:(NSString *)url showStatus:(BOOL )showStatus downPath:(NSString *)downPath progress:(void (^)(float aProgress))progress success:(void(^)(NSString *filePath))success failure:(void(^)(NSInteger statusCode))failure;
 
 + (void)postGroup:(NSArray<AXNetGroup *> *)group complete:(void(^)(NSArray<AXNetGroupResult *> *results))complete;
+
+#endif
 
 @end
 

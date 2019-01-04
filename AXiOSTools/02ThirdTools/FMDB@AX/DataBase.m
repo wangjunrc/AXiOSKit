@@ -8,7 +8,7 @@
 
 #import "DataBase.h"
 #if __has_include("FMDB.h")
-#import "FMDB.h"
+
 #import "DBStatements.h"
 @interface DataBase()
 

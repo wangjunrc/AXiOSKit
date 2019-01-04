@@ -7,7 +7,7 @@
 //
 #if __has_include("MJRefresh.h")
 #import "AXRefreshFooter.h"
-#import "MJRefresh.h"
+
 @implementation AXRefreshFooter
 
 - (void)prepare {

@@ -2,7 +2,11 @@
 //
 //  MBProgressHUD+AX.h
 //
-#import <Foundation/Foundation.h>
+
+#if __has_include("MBProgressHUD.h")
+
+#import "MBProgressHUD.h"
+
 
 @interface MBProgressHUD (AX)
 
@@ -115,3 +119,6 @@
 + (void)ax_showTitle:(NSString *)title;
 
 @end
+
+
+#endif

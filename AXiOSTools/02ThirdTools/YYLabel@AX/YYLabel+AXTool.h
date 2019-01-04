@@ -8,6 +8,10 @@
 
 #if __has_include("YYLabel.h")
 
+#import "YYLabel.h"
+#import "YYText.h"
+#import "YYImage.h"
+
 @interface YYLabel (AXTool)
 
 /**
@@ -25,4 +29,4 @@
 -(YYTextSimpleEmoticonParser *)emotionActPic;
 
 @end
-
+#endif

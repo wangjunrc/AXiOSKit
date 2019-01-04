@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		240F16D221C73D2B00928207 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 240F16D121C73D2B00928207 /* Info.plist */; };
+		240F16D221C73D2B00928207 /* AXiOSToolsInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 240F16D121C73D2B00928207 /* AXiOSToolsInfo.plist */; };
 		240F18D321C7455D00928207 /* AXNetManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8756F21C22FE300D432BC /* AXNetManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		240F18D421C7455D00928207 /* AXNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C8757721C22FE300D432BC /* AXNetManager.m */; };
 		240F18DB21C7455D00928207 /* AXNetManager+Upload.h in Headers */ = {isa = PBXBuildFile; fileRef = 24C8757421C22FE300D432BC /* AXNetManager+Upload.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -321,7 +321,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		240F16D121C73D2B00928207 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		240F16D121C73D2B00928207 /* AXiOSToolsInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AXiOSToolsInfo.plist; sourceTree = "<group>"; };
 		240F18ED21C74C3000928207 /* AXWKWebJSDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWKWebJSDemoVC.m; sourceTree = "<group>"; };
 		240F18EE21C74C3000928207 /* AXWKWebJSDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWKWebJSDemoVC.h; sourceTree = "<group>"; };
 		240F18EF21C74C3000928207 /* AXWKWebJSDemoPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AXWKWebJSDemoPage.html; sourceTree = "<group>"; };
@@ -705,7 +705,7 @@
 				24C8752E21C22FE300D432BC /* 02ThirdTools */,
 				24C8740121C22F0C00D432BC /* AXiOSTools.h */,
 				4957E8F821DE623D0097D47C /* AXiOSTools.xcassets */,
-				240F16D121C73D2B00928207 /* Info.plist */,
+				240F16D121C73D2B00928207 /* AXiOSToolsInfo.plist */,
 			);
 			path = AXiOSTools;
 			sourceTree = "<group>";
@@ -1701,7 +1701,7 @@
 				24B6BF1021C738610074976F /* pod_no_use.md in Resources */,
 				240F18F221C74C3000928207 /* AXWKWebJSDemoPage.html in Resources */,
 				24C8765221C22FE400D432BC /* Root.plist in Resources */,
-				240F16D221C73D2B00928207 /* Info.plist in Resources */,
+				240F16D221C73D2B00928207 /* AXiOSToolsInfo.plist in Resources */,
 				24C8761921C22FE300D432BC /* AXChoosePayVC.xib in Resources */,
 				24B6BF0F21C738610074976F /* AXCollectFile.md in Resources */,
 				24C8764621C22FE400D432BC /* Root.strings in Resources */,

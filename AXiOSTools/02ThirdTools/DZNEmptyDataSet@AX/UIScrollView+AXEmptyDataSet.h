@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#if __has_include("UIScrollView+EmptyDataSet.h")
 @interface UIScrollView (AXEmptyDataSet)
 
 /**
@@ -27,4 +27,4 @@
 - (void)ax_emptyDataWithImageName:(NSString *)imageName titlte:(NSString *)title reloadBlock:(void(^)(void))reloadBlock;
 
 @end
-
+#endif

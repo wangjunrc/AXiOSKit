@@ -7,7 +7,7 @@
 //
 
 #import "UIViewController+AXNavBarConfig.h"
-#import "UIImage+AXTool.h"
+#import "AXiOSTools.h"
 
 @implementation UIViewController (AXNavBarConfig)
 
@@ -21,9 +21,7 @@
 -(void)ax_setNavigationBarColor:(UIColor *)aColor textColor:(UIColor *)textColor{
     
     [self ax_setNavigationBarTextColor:textColor];
-//    UIImage *bgImage = [UIImage ax_imageWithColor:aColor];
-     UIImage *bgImage = nil;
-    [self.navigationController.navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage ax_imageWithColor:aColor] forBarMetrics:UIBarMetricsDefault];
 }
 
 
@@ -56,8 +54,8 @@
  */
 -(void)ax_setNavBarGradientWithColor:(UIColor *)aColor alpha:(CGFloat )alpha{
     
-//    UIImage *bgImage = [UIImage ax_imageWithColor:[aColor colorWithAlphaComponent:alpha]];
-      UIImage *bgImage = nil;
+    UIImage *bgImage = [UIImage ax_imageWithColor:[aColor colorWithAlphaComponent:alpha]];
+    
     if ([self isKindOfClass:UINavigationController.class]) {
         
         UINavigationController *nav = (UINavigationController *)self;
