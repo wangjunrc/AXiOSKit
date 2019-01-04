@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "AXNetGroup.h"
-@class AFHTTPSessionManager;
-
 
 FOUNDATION_EXPORT NSString *const AXNetLoadTitle;
 FOUNDATION_EXPORT NSString *const AXNetFailureText;
