@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-                  分装UIKit等个人开发工具类
+                  个人开发工具类
                    DESC
 
   s.homepage     = "https://github.com/AXinger/AXiOSTools"
@@ -119,7 +119,7 @@ Pod::Spec.new do |s|
 
   # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
-  s.frameworks = "Foundation", "UIKit"
+
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
 
