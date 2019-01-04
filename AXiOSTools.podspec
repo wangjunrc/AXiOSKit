@@ -1,46 +1,32 @@
-Pod::Spec.new do |spec|
-    spec.name         = 'AXiOSTools'
-    spec.version      = '0.1.1'
-    spec.summary      = 'AXinger'
-    spec.homepage     = 'http://www.baidu.com'
-    spec.license      = {:type => 'MIT', :file => 'LICENSE'}
-    spec.author       = {'AXinger' => 'liu_weixing@qq.com'}
-    spec.social_media_url   = ''
-    spec.source = {:git => 'https://github.com/AXinger/AXiOSTools.git', :tag => spec.version}
-    spec.requires_arc = true
-    spec.ios.deployment_target = '8.0'
-    spec.resource_bundles = {
-        'AXiOSTools' => ['AXiOSTools/AXiOSTools.xcassets', 'AXiOSTools/**/*.{gif,png,json,plist,xib}']
-    }
-    
-    
-    spec.source_files = 'AXiOSTools/**/*.{h,m,mm,c,swift}'
-    
-    #    spec.resource = 'AXiOSTools/**/*.{plist,xib,json}'
-    
-    spec.exclude_files = 'AXiOSTools/AXiOSToolsInfo.plist'
-    
-    spec.requires_arc = true
-    spec.ios.deployment_target = '8.0'
-    spec.public_header_files = 'AXiOSTools/**/*.h'
-    
-    spec.libraries = 'icucore'
-    spec.frameworks = 'UIKit', 'CoreFoundation', 'QuartzCore'
-    
-    spec.pod_target_xcconfig = {
-        'ENABLE_BITCODE' => 'NO',
-        'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'}
-    
-    spec.dependency "AFNetworking"
-    spec.dependency "SDWebImage"
-    spec.dependency "IQKeyboardManager"
-    spec.dependency "MJRefresh"
-    spec.dependency "NullSafe"
-    spec.dependency "MJExtension"
-    spec.dependency "MBProgressHUD"
-    spec.dependency "DZNEmptyDataSet"
-    spec.dependency "SDCycleScrollView"
-    spec.dependency "KVOController"
-    spec.dependency "Masonry"
+Pod::Spec.new do |s|
+
+  s.name         = "AXiOSTools"
+  s.version      = "0.1.4"
+  s.summary      = "个人开发工具类"
+  s.description  = <<-DESC
+                  分装UIKit等个人开发工具类
+                   DESC
+
+  s.homepage     = "https://github.com/AXinger/AXiOSTools"
+  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.author             = { "AXinger" => "liu_weixing@qq.com" }
+  s.ios.deployment_target = "8.0"
+  s.source       = { :git => "https://github.com/AXinger/AXiOSTools.git", :tag => "#{s.version}" }
+  s.source_files  = "AXiOSTools", "AXiOSTools/**/*.{h,m}"
+  s.frameworks = "Foundation", "UIKit"
+  s.requires_arc = true
+
+  s.dependency "AFNetworking"
+  s.dependency "SDWebImage"
+  s.dependency "IQKeyboardManager"
+  s.dependency "MJRefresh"
+  s.dependency "NullSafe"
+  s.dependency "MJExtension"
+  s.dependency "MBProgressHUD"
+  s.dependency "DZNEmptyDataSet"
+  s.dependency "SDCycleScrollView"
+  s.dependency "KVOController"
+  s.dependency "Masonry"
+  s.dependency "GKPhotoBrowser"
 
 end
