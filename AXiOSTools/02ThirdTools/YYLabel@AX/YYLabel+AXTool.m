@@ -7,8 +7,10 @@
 //
 
 #if __has_include("YYLabel.h")
-
 #import "YYLabel+AXTool.h"
+#import "YYLabel.h"
+#import "YYText.h"
+#import "YYImage.h"
 
 @implementation YYLabel (AXTool)
 

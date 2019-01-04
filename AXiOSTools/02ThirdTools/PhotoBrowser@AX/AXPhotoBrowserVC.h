@@ -6,11 +6,8 @@
 //  Copyright © 2018年 liuweixing. All rights reserved.
 //
 
-#import "AXViewController.h"
-
-#if __has_include("GKPhotoBrowser.h")
-
-#import "GKPhotoBrowser.h"
+#import <UIKit/UIKit.h>
+@class GKPhotoBrowser
 
 @interface AXPhotoBrowserVC : GKPhotoBrowser
 

@@ -7,13 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#if __has_include("UIButton+WebCache.h")
-#import "UIButton+WebCache.h"
-#endif
 
 @interface UIImageView (AXCircle)
 
-#if __has_include("UIImageView+WebCache.h")
 
 /**
  url路径 设置 image 圆形图片
@@ -22,5 +18,5 @@
  @param placeholderImage 占位图片
  */
 - (void)ax_setImageCircleWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholderImage;
-#endif
+
 @end
