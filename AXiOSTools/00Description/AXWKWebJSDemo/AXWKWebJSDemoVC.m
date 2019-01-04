@@ -8,9 +8,7 @@
 
 #import "AXWKWebJSDemoVC.h"
 @import WebKit;
-#if __has_include("WKWebViewJavascriptBridge.h")
-#import "WKWebViewJavascriptBridge.h"
-#endif
+
 
 typedef NS_ENUM(NSInteger, wkWebLoadType){
     loadWebURLString = 0,
@@ -37,9 +35,7 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 //网页加载的类型
 @property (nonatomic, assign) wkWebLoadType loadType;
 
-#if __has_include("WKWebViewJavascriptBridge.h")
 @property (nonatomic, strong)WKWebViewJavascriptBridge *bridge;
-#endif
 
 
 @end
@@ -94,7 +90,6 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
  */
 - (void)init_WebViewJavascriptBridge{
     
-#if __has_include("WKWebViewJavascriptBridge.h")
     // 开启日志，方便调试
     [WKWebViewJavascriptBridge enableLogging];
     // 给哪个webview建立JS与OjbC的沟通桥梁
@@ -115,19 +110,18 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
         //            responseCallback(@{@"userId": @"OC返回给js"});
         //        }
     }];
-#endif
+    
 }
 
 
 -(void)btnAction{
     
-#if __has_include("WKWebViewJavascriptBridge.h")
     UITextField *tf = [self.view viewWithTag:100];
     [self.bridge callHandler:@"payCallBack"data: tf.text responseCallback:^(id responseData) {
         
         NSLog(@"from js: %@", responseData);
     }];
-#endif
+    
 }
 
 -(void)btnAction2 {

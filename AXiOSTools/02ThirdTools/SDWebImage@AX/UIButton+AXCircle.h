@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#if __has_include("UIButton+WebCache.h")
-#import "UIButton+WebCache.h"
+
+
 @interface UIButton (AXCircle)
 
 /**
@@ -28,4 +28,3 @@
 
 @end
 
-#endif

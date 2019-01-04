@@ -30,7 +30,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AXCycleScrollView : UIView
-#if __has_include("UIImageView+WebCache.h")
 /**
  本地图片 轮播初始化方式
  
@@ -75,9 +74,6 @@
  * 点击图片回调
  */
 -(void)didSelectItemAtIndex:(void(^)(NSInteger index))blokc;
-
-
-#endif
 
 @end
 
