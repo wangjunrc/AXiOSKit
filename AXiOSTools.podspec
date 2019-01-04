@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
 
   s.name         = "AXiOSTools"
-  s.version      = "0.1.4"
+  s.version      = "0.1.1"
   s.summary      = "个人开发工具类"
   s.description  = <<-DESC
-                  分装UIKit等个人开发工具类
+                  封装UIKit等个人开发工具类
                    DESC
 
   s.homepage     = "https://github.com/AXinger/AXiOSTools"
