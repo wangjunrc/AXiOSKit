@@ -14,11 +14,8 @@
 
 @interface UIImageView (SDImageCut)
 
-//- (void)sd_setRoundImageWithURL:(NSURL *_Nullable)url cornerRadius:(CGFloat)cornerRadius placeholderImage:(UIImage *_Nullable)placeholder  completed:(nullable SDExternalCompletionBlock)completedBlock  ;
-
-
-
 - (void)ax_setCutImageWithURL:(NSURL *_Nullable)url placeholderImage:(UIImage *_Nullable)placeholder  completed:(nullable SDExternalCompletionBlock)completedBlock;
+
 @end
 
 #endif

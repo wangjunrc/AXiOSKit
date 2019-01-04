@@ -39,14 +39,11 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     self.cameraEditBlock = block;
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-//    NSString *cancelTitle = AXToolsLocalizedString(@"ax.cancel");
-    NSString *cancelTitle = @"取消";
+    NSString *cancelTitle = AXToolsLocalizedString(@"ax.cancel");
     [alert addAction:[UIAlertAction actionWithTitle:cancelTitle style:UIAlertActionStyleCancel handler:nil]];
     
-    //    NSString *photo = AXToolsLocalizedString(@"ax.cancel");
-    NSString *photoTitle  = @"拍照";
-    
-    [alert addAction:[UIAlertAction actionWithTitle:photoTitle) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    NSString *photoTitle = AXToolsLocalizedString(@"ax.cancel");
+    [alert addAction:[UIAlertAction actionWithTitle:photoTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){ //支持拍照
             UIImagePickerController *picker = [[UIImagePickerController alloc]init];
             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -98,8 +95,8 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     
     [picker dismissViewControllerAnimated:YES completion:^{
-       
-       
+        
+        
         
     }];
     
@@ -114,7 +111,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 - (void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm{
     
     [self ax_showSheetByiPadView:iPadView title:title message:message actionArray:actionArray confirm:confirm cancel:nil];
-
+    
 }
 
 /**
