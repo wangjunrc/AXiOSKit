@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "AXiOSTools"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "个人开发工具类"
   s.description  = <<-DESC
                   分装UIKit等个人开发工具类
