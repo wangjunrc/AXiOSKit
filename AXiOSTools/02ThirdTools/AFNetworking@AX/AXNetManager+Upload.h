@@ -40,8 +40,6 @@
 
 @interface AXNetManager (Upload)
 
-#if __has_include("AFNetworking.h")
-    
 /**
  上传多个文件,含有hud
 
@@ -60,5 +58,4 @@
  */
 + (void)uploadJpegWithURL:(NSString *)url parameters:(NSDictionary *)parameters image:(UIImage* )image success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure;
 
-#endif
 @end

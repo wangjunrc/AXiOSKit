@@ -8,10 +8,10 @@
 
 #ifndef AXNetManagerHeader_h
 #define AXNetManagerHeader_h
-
-#import "AXNetManager.h"
-#import "AXNetManager+Version.h"
-#import "AXNetManager+Upload.h"
-#import "AXNetManagerGroup.h"
+//
+//#import "AXNetManager.h"
+//#import "AXNetManager+Version.h"
+//#import "AXNetManager+Upload.h"
+//#import "AXNetManagerGroup.h"
 
 #endif /* AXNetManagerHeader_h */

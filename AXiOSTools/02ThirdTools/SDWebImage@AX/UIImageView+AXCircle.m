@@ -10,6 +10,7 @@
 #if __has_include("UIImageView+WebCache.h")
 #import "UIImage+AXTool.h"
 #import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
 #endif
 
 @implementation UIImageView (AXCircle)
