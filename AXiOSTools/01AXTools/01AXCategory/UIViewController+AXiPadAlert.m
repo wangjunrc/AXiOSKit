@@ -8,7 +8,8 @@
 
 #import "UIViewController+AXiPadAlert.h"
 #import <objc/runtime.h>
-#import "AXiOSTools.h"
+#import "AXExternFunction.h"
+
 typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 
 @interface UIViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
@@ -38,10 +39,14 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     self.cameraEditBlock = block;
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+//    NSString *cancelTitle = AXToolsLocalizedString(@"ax.cancel");
+    NSString *cancelTitle = @"取消";
+    [alert addAction:[UIAlertAction actionWithTitle:cancelTitle style:UIAlertActionStyleCancel handler:nil]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:nil]];
+    //    NSString *photo = AXToolsLocalizedString(@"ax.cancel");
+    NSString *photoTitle  = @"拍照";
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.TakePhoto") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:photoTitle) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){ //支持拍照
             UIImagePickerController *picker = [[UIImagePickerController alloc]init];
             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
