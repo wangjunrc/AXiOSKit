@@ -534,7 +534,7 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
             // JS发送POST的Flag，为真的时候会调用JS的POST方法
             
             //POST使用预先加载本地JS方法的html实现，请确认WKJSPOST存在
-            [self func_loadHostPathURL:@"WKJSPOST"];
+            [self func_loadHostPathURL:@"axwkWebView.html"];
             break;
         }
     }
@@ -549,27 +549,30 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     NSString *html =nil;
     
     NSBundle *bundle = NSBundle.ax_mainBundle;
+    
     if (bundle == nil) {
         bundle = NSBundle.mainBundle;
     }
-    NSString *type = url.pathExtension;
+    NSString *pathExtension = url.pathExtension;
 
-    if ([type isEqualToString:@"html"]) {
+    if ([pathExtension isEqualToString:@"html"] || pathExtension.length == 0) {
 
-        path = [bundle pathForResource:url ofType:nil];
-        html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+        path = [bundle pathForResource:url ofType:pathExtension.length == 0 ? @"html" : nil];
         
-    }else if (type.length == 0){
-    
-        path = [bundle pathForResource:url ofType:@"html"];
+        //tool中取不到,取主工程的
+        if (path.length==0) {
+            bundle = NSBundle.mainBundle;
+            path = [bundle pathForResource:url ofType:pathExtension.length == 0 ? @"html" : nil];
+        }
+        
         html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    }else{
-        html = [NSString stringWithFormat:@"<font size=\"30\">'%@'路径错误</font>",url];;
     }
+    
+    
     
     //加载js
     if (html.length==0) {
-        html = [NSString stringWithFormat:@"<font size=\"30\">%@</font>",url];
+        html = [NSString stringWithFormat:@"<font size=\"30\">%@ 路径错误</font>",url];
     }
 
     [self.webView loadHTMLString:html baseURL:[bundle bundleURL]];
