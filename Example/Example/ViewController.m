@@ -27,9 +27,9 @@
     
 //     [NSBundle.mainBundle localizedStringForKey:(key) value:@"" table:(tbl)]
     
-//    NSBundle *imageBundle = [NSBundle axLocale_bundle];
-//    NSLog(@"NSBundle.axLocale_bundle>> %@",NSBundle.axLocale_bundle);
-//    NSLog(@"STRING>> %@",[NSBundle.axLocale_bundle localizedStringForKey:@"ax.cancel" value:@"" table:@"AXToolsLocalizedString"]);
+//    NSBundle *imageBundle = [NSBundle ax_mainBundle];
+//    NSLog(@"NSBundle.ax_mainBundle>> %@",NSBundle.ax_mainBundle);
+//    NSLog(@"STRING>> %@",[NSBundle.ax_mainBundle localizedStringForKey:@"ax.cancel" value:@"" table:@"AXToolsLocalizedString"]);
     NSLog(@"imageBundle>> %@",AXToolsLocalizedString(@"ax.cancel"));
     
 }
@@ -37,11 +37,12 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
 //    AXDateVC *vc = [[AXDateVC alloc]init];
-//     AXWKWebVC *vc = [[AXWKWebVC alloc]init];
+     AXWKWebVC *vc = [[AXWKWebVC alloc]init];
 //    vc.loadURLString = @"https://www.baidu.com/";
-//    [self.navigationController pushViewController:vc animated:YES];
-//    vc.loadHTMLString = @"axwkWebView.html";
+    [self.navigationController pushViewController:vc animated:YES];
+    vc.loadHTMLString = @"axwkWebView.html";
 //    [self ax_showVC:vc];
+//     vc.loadHTMLString = [NSBundle.ax_mainBundle pathForResource:@"axwkWebView.html" ofType:nil];
     
 //    [MBProgressHUD ax_showSuccess:@"A"];
 }

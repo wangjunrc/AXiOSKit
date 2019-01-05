@@ -20,8 +20,7 @@ Pod::Spec.new do |s|
     # s.resource = 'AXiOSTools/**/*.{xib,strings,xcassets,gif,jpg,png,json,plist,html,js}'
     # 允许定义当前 Pod 库的资源包的 名称和文件 。用 hash 的形式来声明，key 是 bundle 的名称，value 是需要包括的文件的通配 patterns。
    s.resource_bundles = {
-       'AXiOSTools_bundle_base' => ['AXiOSTools/**/*.{xcassets,gif,jpg,png,json,strings}'],
-       'AXiOSToolsWeb' => ['AXiOSTools/**/*.{html,js}'],
+       'AXiOSTools_ax_mainBundle' => ['AXiOSTools/**/*.{xcassets,gif,jpg,png,json,strings,html,js}'],
    }
     
     s.frameworks = "Foundation", "UIKit"
@@ -37,5 +36,6 @@ Pod::Spec.new do |s|
     s.dependency "KVOController"
     s.dependency "Masonry"
     s.dependency "GKPhotoBrowser"
+    s.dependency "WebViewJavascriptBridge"
     
 end

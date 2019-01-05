@@ -22,11 +22,8 @@
   "source_files": "AXiOSTools/**/*.{h,m}",
   "resources": "AXiOSTools/**/*.xib",
   "resource_bundles": {
-    "AXiOSTools_bundle_base": [
-      "AXiOSTools/**/*.{xcassets,gif,jpg,png,json,strings}"
-    ],
-    "AXiOSToolsWeb": [
-      "AXiOSTools/**/*.{html,js}"
+    "AXiOSTools_ax_mainBundle": [
+      "AXiOSTools/**/*.{xcassets,gif,jpg,png,json,strings,html,js}"
     ]
   },
   "frameworks": [
@@ -68,6 +65,9 @@
 
     ],
     "GKPhotoBrowser": [
+
+    ],
+    "WebViewJavascriptBridge": [
 
     ]
   }

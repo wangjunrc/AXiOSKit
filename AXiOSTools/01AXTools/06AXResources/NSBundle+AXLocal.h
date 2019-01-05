@@ -12,9 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSBundle (AXLocal)
 
-+ (NSBundle *)axLocale_bundle;
++ (NSBundle *)ax_mainBundle;
 
-+ (NSString *)ax_localizedStringForKey:(NSString *)key value:(NSString *)value;
 @end
 
 NS_ASSUME_NONNULL_END

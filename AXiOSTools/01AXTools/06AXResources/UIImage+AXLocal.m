@@ -16,7 +16,7 @@
         return nil;
     }
     
-    NSBundle *imageBundle = [NSBundle axLocale_bundle];
+    NSBundle *imageBundle = [NSBundle ax_mainBundle];
     UIImage *image = [UIImage imageNamed:imageName inBundle:imageBundle compatibleWithTraitCollection:nil];
     if (!image) {
         image = [UIImage imageNamed:imageName];
@@ -26,7 +26,7 @@
 
 + (UIImage *)axLocale_noCache_imageNamed:(NSString *)imageName {
     if (!imageName) return nil;
-    NSBundle *bundle =  [NSBundle axLocale_bundle];;
+    NSBundle *bundle =  [NSBundle ax_mainBundle];;
     
     NSString *prefix = imageName;
     NSInteger scale = (NSInteger)[UIScreen mainScreen].scale;

@@ -27,6 +27,7 @@ PODS:
     - NullSafe
     - SDCycleScrollView
     - SDWebImage
+    - WebViewJavascriptBridge
   - DZNEmptyDataSet (1.8.1)
   - GKPhotoBrowser (1.3.9):
     - SDWebImage
@@ -42,6 +43,7 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - WebViewJavascriptBridge (6.0.3)
 
 DEPENDENCIES:
   - AXiOSTools (from `../`)
@@ -60,6 +62,7 @@ SPEC REPOS:
     - NullSafe
     - SDCycleScrollView
     - SDWebImage
+    - WebViewJavascriptBridge
 
 EXTERNAL SOURCES:
   AXiOSTools:
@@ -67,7 +70,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  AXiOSTools: fa0a4f64fd7940f79d499d2bad68402371b7f6b3
+  AXiOSTools: 0f572cbecd745dbf74fc2d6166ca5025413dd589
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   GKPhotoBrowser: 757dc391c3da74546ac8eeed57f2171477f52533
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
@@ -79,6 +82,7 @@ SPEC CHECKSUMS:
   NullSafe: 948feba938f03abede5ed3758694a9fe5b3a65ce
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
 PODFILE CHECKSUM: 7b0c24ba221b156d667e80b23b8602bd0887b0bb
 

@@ -13,7 +13,7 @@
 @import WebKit;
 #import "AXiOSTools.h"
 #import "WKWebViewJavascriptBridge.h"
-
+#import "NSBundle+AXLocal.h"
 
 typedef NS_ENUM(NSInteger, wkWebLoadType){
     loadWebURLString = 0,
@@ -83,6 +83,8 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     [self.view addSubview:self.webView];
     [self.view addSubview:self.progressView];
     
+    self.webView.navigationDelegate = self;
+    self.webView.UIDelegate = self;
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
     }];
@@ -546,17 +548,20 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     //获得html内容
     NSString *html =nil;
     
-    
+    NSBundle *bundle = NSBundle.ax_mainBundle;
+    if (bundle == nil) {
+        bundle = NSBundle.mainBundle;
+    }
     NSString *type = url.pathExtension;
 
     if ([type isEqualToString:@"html"]) {
 
-        path = [[NSBundle mainBundle] pathForResource:url ofType:nil];
+        path = [bundle pathForResource:url ofType:nil];
         html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         
     }else if (type.length == 0){
     
-        path = [[NSBundle mainBundle] pathForResource:url ofType:@"html"];
+        path = [bundle pathForResource:url ofType:@"html"];
         html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     }else{
         html = [NSString stringWithFormat:@"<font size=\"30\">'%@'路径错误</font>",url];;
@@ -567,7 +572,7 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
         html = [NSString stringWithFormat:@"<font size=\"30\">%@</font>",url];
     }
 
-    [self.webView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];
+    [self.webView loadHTMLString:html baseURL:[bundle bundleURL]];
     
     
 //    //wkwebView 加载本地 css 文件
@@ -673,8 +678,6 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
         
         _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
         //        [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.webURLSring]]];
-        _webView.navigationDelegate = self;
-        _webView.UIDelegate = self;
         _webView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];

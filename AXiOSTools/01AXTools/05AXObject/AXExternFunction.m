@@ -403,7 +403,7 @@ NSString *  AXNSLocalizedString(NSString *key) {
  */
 NSString *  AXToolsLocalizedString(NSString *key) {
     
-   NSString *str = [NSBundle.axLocale_bundle localizedStringForKey:key value:@"" table:@"AXToolsLocalizedString"];
+   NSString *str = [NSBundle.ax_mainBundle localizedStringForKey:key value:@"" table:@"AXToolsLocalizedString"];
     if (str.length == 0) {
         str = NSLocalizedStringFromTable(key,@"AXToolsLocalizedString", @"");
     }
