@@ -87,7 +87,8 @@ FOUNDATION_EXPORT const unsigned char AXiOSToolsVersionString[];
 #import "AXWeakProxy.h"
 #import "AXLocationManager.h"
 #import "AXTouchIDManager.h"
-
+//读取本framework图片资料
+#import "UIImage+AXLocal.h"
 /* 02ThirdTools */
 #pragma mark - 02ThirdTools
 #import "UIScrollView+AXRefresh.h"

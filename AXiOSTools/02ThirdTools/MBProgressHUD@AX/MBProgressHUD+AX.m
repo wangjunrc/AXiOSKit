@@ -39,8 +39,6 @@
 + (void)ax_show:(NSString *)text icon:(NSString *)icon view:(UIView *)view{
     MBProgressHUD *hud =  [self ax_setupMBProgressHUDInView:view text:text];
     // 设置图片
-//    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"MBProgressHUD_AX.bundle/%@", icon]]];
-    
      hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"ax_%@", icon]]];
     // 再设置模式
     hud.mode = MBProgressHUDModeCustomView;

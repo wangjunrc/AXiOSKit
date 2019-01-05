@@ -39,7 +39,7 @@ typedef void(^ReloadBlock)(void);
 - (void)ax_emptyDataSetWithReloadBlock:(void(^)(void))reloadBlock{
     
     if (self.emptyDataImageName.length==0) {
-        self.emptyDataImageName = @"AXTools.bundle/ax_emptyData";
+        self.emptyDataImageName = @"ax_emptyData";
     }
     if (self.emptyDataPlaceString.length==0) {
         self.emptyDataPlaceString = @"亲,该页面暂无数据";
