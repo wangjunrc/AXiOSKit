@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSBundle *)axLocale_bundle;
 
++ (NSString *)ax_localizedStringForKey:(NSString *)key value:(NSString *)value;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -14,13 +14,21 @@
   "platforms": {
     "ios": "8.0"
   },
+  "requires_arc": true,
   "source": {
     "git": "https://github.com/AXinger/AXiOSTools.git",
     "tag": "0.1.1"
   },
   "source_files": "AXiOSTools/**/*.{h,m}",
-  "resources": "AXiOSTools/**/*.{xib,xcassets,gif,jpg,png,json,plist,html,js,}",
-  "requires_arc": true,
+  "resources": "AXiOSTools/**/*.xib",
+  "resource_bundles": {
+    "AXiOSTools_bundle_base": [
+      "AXiOSTools/**/*.{xcassets,gif,jpg,png,json,strings}"
+    ],
+    "AXiOSToolsWeb": [
+      "AXiOSTools/**/*.{html,js}"
+    ]
+  },
   "frameworks": [
     "Foundation",
     "UIKit"

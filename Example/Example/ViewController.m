@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "NSBundle+AXLocal.h"
 #import "AXiOSTools.h"
 @interface ViewController ()
 
@@ -22,14 +22,27 @@
     UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
     [self.view addSubview:iv];
     iv.backgroundColor = [UIColor redColor];
-    iv.image = [UIImage imageNamed:@"ax_emptyData"];
+    iv.image = [UIImage axLocale_imageNamed:@"ax_emptyData"];
+ 
+    
+//     [NSBundle.mainBundle localizedStringForKey:(key) value:@"" table:(tbl)]
+    
+//    NSBundle *imageBundle = [NSBundle axLocale_bundle];
+//    NSLog(@"NSBundle.axLocale_bundle>> %@",NSBundle.axLocale_bundle);
+//    NSLog(@"STRING>> %@",[NSBundle.axLocale_bundle localizedStringForKey:@"ax.cancel" value:@"" table:@"AXToolsLocalizedString"]);
+    NSLog(@"imageBundle>> %@",AXToolsLocalizedString(@"ax.cancel"));
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    AXDateVC *vc = [[AXDateVC alloc]init];
+//    AXDateVC *vc = [[AXDateVC alloc]init];
+//     AXWKWebVC *vc = [[AXWKWebVC alloc]init];
+//    vc.loadURLString = @"https://www.baidu.com/";
 //    [self.navigationController pushViewController:vc animated:YES];
 //    vc.loadHTMLString = @"axwkWebView.html";
-    [self ax_showVC:vc];
+//    [self ax_showVC:vc];
+    
+//    [MBProgressHUD ax_showSuccess:@"A"];
 }
 @end

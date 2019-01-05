@@ -10,7 +10,7 @@
 #import "AXMacros_log.h"
 #import <UIKit/UIKit.h>
 #import "UIViewController+AXTool.h"
-
+#import "NSBundle+AXLocal.h"
 @implementation AXExternFunction
 
 #pragma mark - Foundation
@@ -403,7 +403,11 @@ NSString *  AXNSLocalizedString(NSString *key) {
  */
 NSString *  AXToolsLocalizedString(NSString *key) {
     
-    return NSLocalizedStringFromTable(key,@"AXToolsLocalizedString", @"");
+   NSString *str = [NSBundle.axLocale_bundle localizedStringForKey:key value:@"" table:@"AXToolsLocalizedString"];
+    if (str.length == 0) {
+        str = NSLocalizedStringFromTable(key,@"AXToolsLocalizedString", @"");
+    }
+    return str;
 }
 
 /**
