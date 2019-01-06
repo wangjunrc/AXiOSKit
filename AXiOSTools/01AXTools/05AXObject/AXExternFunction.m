@@ -223,8 +223,9 @@ int ax_randomFromTo(int from ,int to){
  */
 BOOL ax_OpenPrefsRoot(){
     
-    NSURL *URL = [NSURL URLWithString:@"prefs:root=General"];
-    
+//    NSURL *URL = [NSURL URLWithString:@"prefs:root=General"];
+    //过期
+    NSURL *URL = nil;
     if (@available(iOS 10.0, *)) {
         
         [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:nil];
@@ -556,6 +557,13 @@ void AXNoMsgLog(NSString *format, ...) {
     
 #endif
     
+}
+
+/**
+ 打开iPhone设置界面
+ */
+void AXOpenSettings() {
+    ax_OpenURLStr(UIApplicationOpenSettingsURLString);
 }
 
 @end
