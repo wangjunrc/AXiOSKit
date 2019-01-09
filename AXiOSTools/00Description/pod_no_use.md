@@ -1,22 +1,22 @@
-# ********** 待用 **********
+#********** 待用 **********
 
-# 自定义本地通知样式,即使推送通知开关关闭,也可以使用,封装的 NSNotificationCenter
+#自定义本地通知样式,即使推送通知开关关闭,也可以使用,封装的 NSNotificationCenter
 #pod 'EBBannerView'
 
-# UITableViewCell 缓存高度
+#UITableViewCell 缓存高度
 #pod 'UITableView+FDTemplateLayoutCell'
 
-# 定时器
+#定时器
 pod 'MSWeakTimer'
 
-# 加密 解密
+#加密 解密
 pod 'CocoaSecurity'
 
-# UITableViewCell 左,右 侧滑 显示item
+#UITableViewCell 左,右 侧滑 显示item
 #pod 'MGSwipeTableCell'
 
 #是一组庞大、功能丰富的 iOS 组件。
-#    pod 'YYKit'
+#pod 'YYKit'
 #pod 'YYText'
 #pod 'YYImage'
 
@@ -32,43 +32,43 @@ pod 'CocoaSecurity'
 #支持 iOS SQLite 数据库迁移
 #pod 'FMDBMigrationManager'
 
-# 加载图片的模糊效果
+#加载图片的模糊效果
 #pod 'PINRemoteImage'
 
-# 由Flipboard开源的iOS平台上播放GIF动画 facebook/FLAnimatedImage forked from Flipboard/FLAnimatedImage  替代品
+#由Flipboard开源的iOS平台上播放GIF动画 facebook/FLAnimatedImage forked from Flipboard/FLAnimatedImage  替代品
 #pod 'FLAnimatedImage'
 
 
-#    图片无限轮播器
+#图片无限轮播器
 #pod 'SDCycleScrollView'
 
-# 腾讯邮箱Team UI控件 和 TZScrollViewPopGesture 会产生返回拦截拦截功能冲突
+#腾讯邮箱Team UI控件 和 TZScrollViewPopGesture 会产生返回拦截拦截功能冲突
 #pod 'QMUIKit'
 
-#    让UIScrollView的滑动和系统侧滑手势并存，例如：在查看地图界面同时支持地图的滑动和侧滑返回。注：和FDFullscreenPopGesture库不冲突
+#让UIScrollView的滑动和系统侧滑手势并存，例如：在查看地图界面同时支持地图的滑动和侧滑返回。注：和FDFullscreenPopGesture库不冲突
 pod 'TZScrollViewPopGesture'
 
-#    相册多选
+#相册多选
 pod 'TZImagePickerController'
 
-#    UIWebView 加载进度条
+#UIWebView 加载进度条
 pod 'NJKWebViewProgress'
 
-#    zip解压
+#zip解压
 #pod 'SSZipArchive'
 
-#    微信SQLit 存储
+#微信SQLit 存储
 #pod 'WCDB'
 
-#    音频在线播放,含有缓存
+#音频在线播放,含有缓存
 #pod 'FreeStreamer'
 
-#    图片浏览器
+#图片浏览器
 #pod 'GKPhotoBrowser'
 
 
-# coreData 封装
-# pod 'MagicalRecord'
+#coreData 封装
+#pod 'MagicalRecord'
 
 
 #气泡提示
@@ -89,10 +89,10 @@ pod 'NJKWebViewProgress'
 #腾讯Buglg可以做到时时发送崩溃报告
 #pod 'Buglg'
 
-# 存放用户账号密码组件
+#存放用户账号密码组件
 #pod 'UICKeyChainStore'
 
-# 监测网络状态
+#监测网络状态
 #pod 'Reachability'
 
 #友好化时间
@@ -113,52 +113,52 @@ pod 'NJKWebViewProgress'
 #对 NSUserDefaults 进行了封装, 方便的进行本地化存储操作
 #pod 'GVUserDefaults'
 
-# 对用户当前地理位置进行正向地址编码和反向地址编码
+#对用户当前地理位置进行正向地址编码和反向地址编码
 #pod 'FCCurrentLocationGeocoder'
 
 #页面滚动时隐藏工具栏
 #pod 'AFSwipeToHide'
 
-# 添加带动画效果的未读消息数提醒
+#添加带动画效果的未读消息数提醒
 #pod 'JSBadgeView'
 
-# 添加未读消息数显示提醒 和JSBadgeView 效果类似
+#添加未读消息数显示提醒 和JSBadgeView 效果类似
 #pod 'RKNotificationHub'
 
-# 可在应用中显示视图的尺寸
+#可在应用中显示视图的尺寸
 #pod 'MMPlaceHolder'
 
-# 创建弹出卡片视图
+#创建弹出卡片视图
 #pod 'CNPPopupController'
 
-# 加入沙漏等多种动画加载效果
+#加入沙漏等多种动画加载效果
 #pod 'FeSpinner'
 
-# 方便创建用户引导视图 画圈圈,引导用户点击
+#方便创建用户引导视图 画圈圈,引导用户点击
 #pod 'JMHoledView'
 
-# 快速给应用添加上滑动视图
+#快速给应用添加上滑动视图
 #pod 'SwipeView'
 
-# 对视图进行模糊操作
+#对视图进行模糊操作
 #pod 'FXBlurView'
 
-# 中国省市地理位置选择器
+#中国省市地理位置选择器
 #pod 'AreaPicker'
 
-# 富文字
+#富文字
 #pod 'DTCoreText'
 
-# 导航栏,可以每个VC不一样配置
+#导航栏,可以每个VC不一样配置
 #pod 'RTRootNavigationController'
 
-# 五角星 显示
+#五角星 显示
 #pod 'HCSStarRatingView'
 
-# 分段
+#分段
 #pod 'FSScrollContentViewLib'
 
-# 时间选择器
+#时间选择器
 #PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
 #PGDatePicker *datePicker = datePickManager.datePicker;
 #datePicker.datePickerMode = PGDatePickerModeDateHourMinuteSecond;
@@ -167,7 +167,7 @@ pod 'NJKWebViewProgress'
 
 #pod 'PGDatePicker'
 
-# 提供了一个可在 iPhone 和 iPad 上使用的具有 UINavigationController 弹出效果的 STPopupController 类, 并能在 Storyboard 上很好的工。
+#提供了一个可在 iPhone 和 iPad 上使用的具有 UINavigationController 弹出效果的 STPopupController 类, 并能在 Storyboard 上很好的工。
 #pod 'STPopupController'
 
 
@@ -186,14 +186,14 @@ KxMenu
 #AppleMusic式pop up，弹出是页面，可以上下拉动
 #LNPopupController
 
-# 连线进度
+#连线进度
 KYAnimatedPageControl
 
 #带粘性的扇形菜单
 KYGooeyMenu
 
 #Bootstrap 3.0扁平化风格按钮，自带图标，一句代码直接调用
-# LLBootstrapButton
+#LLBootstrapButton
 
 #OS-Slide-Menu - 能够类似Facebook和Path那样弹出左右边栏侧滑菜单,还支持手势。多种可以自定义的属性 (非常不错)。
 
@@ -206,48 +206,48 @@ KYGooeyMenu
 #一个弹性侧滑菜单,弹性动画原理借鉴该项目中阻尼函数实现
 #LLSlideMenu
 
-# *********以下是第三方服务*********
-# U-Share SDK UI模块（分享面板，建议添加）
+#*********以下是第三方服务*********
+#U-Share SDK UI模块（分享面板，建议添加）
 pod ‘UMengUShare/UI’
 
-# 集成微信(精简版0.2M)
+#集成微信(精简版0.2M)
 pod ‘UMengUShare/Social/ReducedWeChat'
 
-# 集成微信(完整版14.4M)
-#  pod ‘UMengUShare/Social/WeChat'
+#集成微信(完整版14.4M)
+#pod ‘UMengUShare/Social/WeChat'
 
-# 集成QQ/QZone/TIM(精简版0.5M)
+#集成QQ/QZone/TIM(精简版0.5M)
 pod ‘UMengUShare/Social/ReducedQQ'
 
-# 集成QQ/QZone/TIM(完整版7.6M)
-#  pod ‘UMengUShare/Social/QQ'
+#集成QQ/QZone/TIM(完整版7.6M)
+#pod ‘UMengUShare/Social/QQ'
 
-# 集成新浪微博(精简版1M)
-# pod ‘UMengUShare/Social/ReducedSina'
+#集成新浪微博(精简版1M)
+#pod ‘UMengUShare/Social/ReducedSina'
 
-# 集成新浪微博(完整版25.3M)
-# pod ‘UMengUShare/Social/Sina'
+#集成新浪微博(完整版25.3M)
+#pod ‘UMengUShare/Social/Sina'
 
-# ********** facebook集合**********
-# 模拟器多开
-# FBSimulatorControl
+#********** facebook集合**********
+#模拟器多开
+#FBSimulatorControl
 
 #OS移动测试框架
 #WebDriverAgent
 
-# 通知样式
+#通知样式
 #FBNotifications
 
-# xctool是facebook给出的自动化构建的解决方案，让构建和测试更容易，更好的支持持续集成。但xctool只是对xcodebuild的一个封装，因此xctool是基于xcodebuild的。停止更新
+#xctool是facebook给出的自动化构建的解决方案，让构建和测试更容易，更好的支持持续集成。但xctool只是对xcodebuild的一个封装，因此xctool是基于xcodebuild的。停止更新
 #xctool
 
-# 跑马灯文字
+#跑马灯文字
 #Shimmer
 
-# kvo
+#kvo
 #KVOController
 
-# 内存使用 显示
+#内存使用 显示
 #FBMemoryProfiler
 
 

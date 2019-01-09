@@ -1,8 +1,11 @@
 function showAler() {
-    alert(1);
-    iosWeixinPay();
+    alert(2);
+//    iosWeixinPay();
 }
-
+function showAler2() {
+    alert(4);
+    //    iosWeixinPay();
+}
 
 function buttonClick() {
     //    parameter 是参数,

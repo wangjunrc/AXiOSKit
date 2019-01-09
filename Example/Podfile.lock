@@ -14,8 +14,10 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
   - AXiOSTools (0.1.1):
     - AFNetworking
+    - Aspects
     - DZNEmptyDataSet
     - GKPhotoBrowser
     - IQKeyboardManager
@@ -51,6 +53,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - Aspects
     - DZNEmptyDataSet
     - GKPhotoBrowser
     - IQKeyboardManager
@@ -70,7 +73,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  AXiOSTools: 0f572cbecd745dbf74fc2d6166ca5025413dd589
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  AXiOSTools: 9de93b98f089513934c03049cb7df7ab13905e92
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   GKPhotoBrowser: 757dc391c3da74546ac8eeed57f2171477f52533
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
@@ -84,6 +88,6 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
-PODFILE CHECKSUM: 7b0c24ba221b156d667e80b23b8602bd0887b0bb
+PODFILE CHECKSUM: 786c75efa5d773554cdadb141720f669a77d5897
 
 COCOAPODS: 1.5.3

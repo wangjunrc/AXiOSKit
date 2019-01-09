@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		245BD51221E62EB600831542 /* ax_test.html in Resources */ = {isa = PBXBuildFile; fileRef = 245BD51121E62EB600831542 /* ax_test.html */; };
+		24CB556F21E5974900468BAD /* AXUIWebJSDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CB556821E5974900468BAD /* AXUIWebJSDemoVC.m */; };
+		24CB557021E5974900468BAD /* UIWebViewPage.html in Resources */ = {isa = PBXBuildFile; fileRef = 24CB556A21E5974900468BAD /* UIWebViewPage.html */; };
+		24CB557121E5974900468BAD /* AXWKWebJSDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CB556C21E5974900468BAD /* AXWKWebJSDemoVC.m */; };
+		24CB557221E5974900468BAD /* AXWKWebJSDemoPage.html in Resources */ = {isa = PBXBuildFile; fileRef = 24CB556E21E5974900468BAD /* AXWKWebJSDemoPage.html */; };
 		24F023A421E078B1003E3B78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F023A321E078B1003E3B78 /* AppDelegate.m */; };
 		24F023A721E078B1003E3B78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F023A621E078B1003E3B78 /* ViewController.m */; };
 		24F023AA21E078B1003E3B78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F023A821E078B1003E3B78 /* Main.storyboard */; };
@@ -17,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		245BD51121E62EB600831542 /* ax_test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ax_test.html; sourceTree = "<group>"; };
+		24CB556821E5974900468BAD /* AXUIWebJSDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXUIWebJSDemoVC.m; sourceTree = "<group>"; };
+		24CB556921E5974900468BAD /* AXUIWebJSDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXUIWebJSDemoVC.h; sourceTree = "<group>"; };
+		24CB556A21E5974900468BAD /* UIWebViewPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = UIWebViewPage.html; sourceTree = "<group>"; };
+		24CB556C21E5974900468BAD /* AXWKWebJSDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWKWebJSDemoVC.m; sourceTree = "<group>"; };
+		24CB556D21E5974900468BAD /* AXWKWebJSDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWKWebJSDemoVC.h; sourceTree = "<group>"; };
+		24CB556E21E5974900468BAD /* AXWKWebJSDemoPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AXWKWebJSDemoPage.html; sourceTree = "<group>"; };
 		24F0239F21E078B1003E3B78 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F023A221E078B1003E3B78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24F023A321E078B1003E3B78 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,6 +56,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24CB556721E5974900468BAD /* AXUIWebJSDemo */ = {
+			isa = PBXGroup;
+			children = (
+				24CB556821E5974900468BAD /* AXUIWebJSDemoVC.m */,
+				24CB556921E5974900468BAD /* AXUIWebJSDemoVC.h */,
+				24CB556A21E5974900468BAD /* UIWebViewPage.html */,
+			);
+			path = AXUIWebJSDemo;
+			sourceTree = "<group>";
+		};
+		24CB556B21E5974900468BAD /* AXWKWebJSDemo */ = {
+			isa = PBXGroup;
+			children = (
+				24CB556C21E5974900468BAD /* AXWKWebJSDemoVC.m */,
+				24CB556D21E5974900468BAD /* AXWKWebJSDemoVC.h */,
+				24CB556E21E5974900468BAD /* AXWKWebJSDemoPage.html */,
+			);
+			path = AXWKWebJSDemo;
+			sourceTree = "<group>";
+		};
 		24F0239621E078B1003E3B78 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +97,9 @@
 		24F023A121E078B1003E3B78 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				245BD51121E62EB600831542 /* ax_test.html */,
+				24CB556721E5974900468BAD /* AXUIWebJSDemo */,
+				24CB556B21E5974900468BAD /* AXWKWebJSDemo */,
 				24F023A221E078B1003E3B78 /* AppDelegate.h */,
 				24F023A321E078B1003E3B78 /* AppDelegate.m */,
 				24F023A521E078B1003E3B78 /* ViewController.h */,
@@ -156,8 +191,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				24F023AF21E078B2003E3B78 /* LaunchScreen.storyboard in Resources */,
+				245BD51221E62EB600831542 /* ax_test.html in Resources */,
+				24CB557021E5974900468BAD /* UIWebViewPage.html in Resources */,
 				24F023AC21E078B2003E3B78 /* Assets.xcassets in Resources */,
 				24F023AA21E078B1003E3B78 /* Main.storyboard in Resources */,
+				24CB557221E5974900468BAD /* AXWKWebJSDemoPage.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +223,7 @@
 				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXSinglePickVC/AXSinglePickVC.xib",
 				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXWebVC/AXWebVC.xib",
 				"${PODS_ROOT}/../../AXiOSTools/01AXTools/04AXView/AXNumberKeyboard/AXNumberKeyboard.xib",
+				"${PODS_ROOT}/../../AXiOSTools/AXHTML.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/AXiOSTools/AXiOSTools_ax_mainBundle.bundle",
 				"${PODS_ROOT}/GKPhotoBrowser/GKPhotoBrowser/GKPhotoBrowser.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
@@ -206,6 +245,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXSinglePickVC.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXWebVC.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXNumberKeyboard.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXHTML.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXiOSTools_ax_mainBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GKPhotoBrowser.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
@@ -241,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24CB557121E5974900468BAD /* AXWKWebJSDemoVC.m in Sources */,
+				24CB556F21E5974900468BAD /* AXUIWebJSDemoVC.m in Sources */,
 				24F023A721E078B1003E3B78 /* ViewController.m in Sources */,
 				24F023B221E078B2003E3B78 /* main.m in Sources */,
 				24F023A421E078B1003E3B78 /* AppDelegate.m in Sources */,
@@ -389,7 +431,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3VB43QB5DV;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -398,7 +442,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Example/AXiOSTools/02ThirdTools/lame/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AX.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.fx.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -410,7 +454,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3VB43QB5DV;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,7 +465,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Example/AXiOSTools/02ThirdTools/lame/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AX.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.fx.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

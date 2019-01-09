@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "NSBundle+AXLocal.h"
 #import "AXiOSTools.h"
 @interface ViewController ()
 
@@ -17,33 +16,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor orangeColor];
-    UIImageView *iv = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-    [self.view addSubview:iv];
-    iv.backgroundColor = [UIColor redColor];
-    iv.image = [UIImage axLocale_imageNamed:@"ax_emptyData"];
- 
-    
-//     [NSBundle.mainBundle localizedStringForKey:(key) value:@"" table:(tbl)]
-    
-//    NSBundle *imageBundle = [NSBundle ax_mainBundle];
-//    NSLog(@"NSBundle.ax_mainBundle>> %@",NSBundle.ax_mainBundle);
-//    NSLog(@"STRING>> %@",[NSBundle.ax_mainBundle localizedStringForKey:@"ax.cancel" value:@"" table:@"AXToolsLocalizedString"]);
-    NSLog(@"imageBundle>> %@",AXToolsLocalizedString(@"ax.cancel"));
-    
+    self.view.backgroundColor = [UIColor greenColor];
+//     NSLog(@"NSBundle.ax_mainBundle>> %@",NSBundle.ax_mainBundle);
+//     NSLog(@"NSBundle.ax_mainBundle>> %@",NSBundle.mainBundle);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-//    AXDateVC *vc = [[AXDateVC alloc]init];
-     AXWKWebVC *vc = [[AXWKWebVC alloc]init];
-//    vc.loadURLString = @"https://www.baidu.com/";
-    [self.navigationController pushViewController:vc animated:YES];
-    vc.loadHTMLString = @"axwkWebView.html";
-//    [self ax_showVC:vc];
-//     vc.loadHTMLString = [NSBundle.ax_mainBundle pathForResource:@"axwkWebView.html" ofType:nil];
+//    AXDateVC *dateVC = [AXDateVC ax_init];
+//    [self ax_showVC:dateVC];
+//
+//    return;
     
-//    [MBProgressHUD ax_showSuccess:@"A"];
+    
+    AXWKWebVC *vc = [[AXWKWebVC alloc]init];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+//    vc.loadURLString = @"https://www.baidu.com/";
+    vc.loadHTMLFilePath = [NSBundle.mainBundle pathForResource:@"AXHTML.bundle/wk_index.html" ofType:nil];
+//     vc.loadHTMLFilePath = [NSBundle.mainBundle pathForResource:@"ax_test.html" ofType:nil];
+     NSLog(@"vc.loadHTMLFilePath>> %@",vc.loadHTMLFilePath);
+//     vc.loadHTMLFilePath = [NSBundle.ax_mainBundle pathForResource:@"ax_test2.html" ofType:nil];
+//    NSLog(@"vc.loadHTMLFilePath>> %@",vc.loadHTMLFilePath);
+    
+    
 }
 @end

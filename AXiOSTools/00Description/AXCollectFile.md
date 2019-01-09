@@ -139,17 +139,25 @@ tableView 默认选中
 //************************************************************************
 
 wkwebView 加载本地 css 文件
+1.建立一个bundle文件
+2.把js,css,html文件拖入
+3.直接加载相对路径
+ NSString *filePath= [[NSBundle ax_mainBundle] pathForResource:@"HTML.bundle/wk_index.html" ofType:nil];
+NSURL *url = [NSURL fileURLWithPath:filePath];
+NSURLRequest *request = [NSURLRequest requestWithURL:url];
+[self.webView loadRequest:request];
 
-//获取bundlePath 路径
-NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
-//获取本地html目录 basePath
-NSString *basePath = [NSString stringWithFormat: @"%@/www", bundlePath];
-//获取本地html目录 baseUrl
-//html 路径
-NSString *indexPath = [NSString stringWithFormat: @"%@/%@.html", basePath,url];
-NSURL *fileUrl = [NSURL fileURLWithPath:indexPath];
-NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];
-[self.webView loadFileURL:[NSURL fileURLWithPath:indexPath] allowingReadAccessToURL: baseUrl];
+
+<!--//获取bundlePath 路径-->
+<!--NSString *bundlePath = [[NSBundle mainBundle] bundlePath];-->
+<!--//获取本地html目录 basePath-->
+<!--NSString *basePath = [NSString stringWithFormat: @"%@/www", bundlePath];-->
+<!--//获取本地html目录 baseUrl-->
+<!--//html 路径-->
+<!--NSString *indexPath = [NSString stringWithFormat: @"%@/%@.html", basePath,url];-->
+<!--NSURL *fileUrl = [NSURL fileURLWithPath:indexPath];-->
+<!--NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];-->
+<!--[self.webView loadFileURL:[NSURL fileURLWithPath:indexPath] allowingReadAccessToURL: baseUrl];-->
 
 //************************************************************************
 //************************************************************************

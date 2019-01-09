@@ -24,8 +24,11 @@
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
     //spec文件resource_bundles对应的key 
     NSString *bundlePath = [bundle pathForResource:@"AXiOSTools_ax_mainBundle" ofType:@"bundle"];
-    NSBundle *imageBundle = [NSBundle bundleWithPath:bundlePath];
-    return imageBundle;
+    NSBundle *ax_mainBundle = [NSBundle bundleWithPath:bundlePath];
+    if (ax_mainBundle == nil) {
+        ax_mainBundle = bundle;
+    }
+    return ax_mainBundle;
 }
 
 @end

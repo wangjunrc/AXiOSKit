@@ -97,6 +97,7 @@ FOUNDATION_EXPORT const unsigned char AXiOSToolsVersionString[];
 #import "MBProgressHUD+AX.h"
 #import "NSObject+AXCacheImage.h"
 #import "AXNetManager.h"
+#import "NSBundle+AXLocal.h"
 
 #if __has_include("Masonry.h")
 #import "Masonry.h"

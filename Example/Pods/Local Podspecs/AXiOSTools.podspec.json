@@ -20,10 +20,13 @@
     "tag": "0.1.1"
   },
   "source_files": "AXiOSTools/**/*.{h,m}",
-  "resources": "AXiOSTools/**/*.xib",
+  "resources": [
+    "AXiOSTools/**/*.xib",
+    "AXiOSTools/**/*.bundle"
+  ],
   "resource_bundles": {
     "AXiOSTools_ax_mainBundle": [
-      "AXiOSTools/**/*.{xcassets,gif,jpg,png,json,strings,html,js}"
+      "AXiOSTools/**/*.{xcassets,gif,json,strings}"
     ]
   },
   "frameworks": [
@@ -68,6 +71,9 @@
 
     ],
     "WebViewJavascriptBridge": [
+
+    ],
+    "Aspects": [
 
     ]
   }
