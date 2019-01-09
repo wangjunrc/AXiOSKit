@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "qrcode_scan_line.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "支付宝@2x.png",
       "scale" : "2x"
     },
     {
