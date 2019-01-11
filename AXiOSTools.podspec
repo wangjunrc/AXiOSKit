@@ -16,10 +16,11 @@ Pod::Spec.new do |s|
     s.source_files  = "AXiOSTools/**/*.{h,m}"
     # 使用 resources 来指定资源，被指定的资源只会简单的被 copy 到目标工程中（主工程）。
     #xib 文件不能再别的bundle中,不然对应的class加载不到,也可以不写,但不能写在resource_bundles中
-    # html,css,js 放在一个bundle中,放这里,且只能一层bundle,不然html文件修改,无法重现加载
+    # html,css,js 放在一个bundle中,放这里,
+    # 如果放resource_bundles,会bundle嵌套,模拟器有缓存,不好实时更新,所以这样写,这里的.bundle与AXiOSTools_ax_mainBundle同级别
 #    s.resource = 'AXiOSTools/**/*.{xib,bundle}'
      s.resources = ['AXiOSTools/**/*.xib', 'AXiOSTools/**/*.bundle']
-    # s.resource = 'AXiOSTools/**/*.{xib,strings,xcassets,gif,jpg,png,json,plist,html,js}'
+   
     # 允许定义当前 Pod 库的资源包的 名称和文件 。用 hash 的形式来声明，key 是 bundle 的名称，value 是需要包括的文件的通配 patterns。
     s.resource_bundles = {
         'AXiOSTools_ax_mainBundle' => ['AXiOSTools/**/*.{xcassets,gif,json,strings}'],

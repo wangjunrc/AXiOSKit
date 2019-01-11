@@ -1,7 +1,7 @@
 
 //************************************************************************
 //************************************************************************
-import 不同类型
+# import 不同类型
 #if __has_include(<YYWebImage/YYWebImage.h>)
 #import <YYWebImage/YYWebImage.h>
 #else
@@ -11,17 +11,9 @@ import 不同类型
 //************************************************************************
 //************************************************************************
 
-/**
-* 断言..让代码奔溃,
-*/
-// NSAssert(0, @"必须有sourceView或者item");
 
-//************************************************************************
-//************************************************************************
 
-/**
-* 消除 过期警告 top
-*/
+# 消除 过期警告 top
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
 
@@ -37,7 +29,7 @@ import 不同类型
 //************************************************************************
 //************************************************************************
 
-// 过期宏 三种方式都是 第一种的宏
+#  过期宏 三种方式都是 第一种的宏
 
 __attribute__((deprecated(" ")));
 
@@ -45,7 +37,7 @@ DEPRECATED_MSG_ATTRIBUTE ()
 
 DEPRECATED_ATTRIBUTE
 
-// 禁用宏
+#  禁用宏
 NS_UNAVAILABLE 当我们不想要其他开发人员，用普通的 init 方法去初始化一个类，我们可以在.h 文件里这样写：
 - (instancetype)init NS_UNAVAILABLE;
 
@@ -54,12 +46,12 @@ NS_DESIGNATED_INITIALIZER 指定的初始化方法。当一个类提供多种初
 //************************************************************************
 //************************************************************************
 
-1 NSSet / NSHashTable 、NSDictionary/ NSMapTable 的学习
+# 1 NSSet / NSHashTable 、NSDictionary/ NSMapTable 的学习
 
 NSSet 是过滤掉重复 object 的集合类，NSHashTable 是 NSSet 的升级版容器，并且只有可变版本，允许对添加到容器中的对象是弱引用的持有关系， 当NSHashTable 中的对象销毁时，该对象也会从容器中移除。
 NSMapTable 同 NSDictionary 类似，唯一区别是多了个功能：可以设置 key 和 value 的 NSPointerFunctionsOptions 特性! NSDictionary的 key 策略固定是 copy，考虑到开销问题，一般使用简单的数字或者字符串为 key。但是如果碰到需要用 object 作为 key 的应用场景呢？NSMapTable 就可以派上用场了！可以通过 NSFunctionsPointer 来分别定义对 key 和 value 的内存管理策略，简单可以分为 strong,weak以及 copy。
 
-2 几个比较有用的宏
+# 2 几个比较有用的宏
 
 NS_ASSUME_NONNULL_BEGIN、NS_ASSUME_NONNULL_END，如果需要每个属性或每个方法都去指定 nonnull 和 nullable，是一件非常繁琐的事。苹果为了减轻我们的工作量，专门提供了这两个宏。在这两个宏之间的代码，所有比较简单指针对象都被假定为 nonnull，因此我们只需要去指定那些 nullable 的指针。如果我们强行通过点语法将一个非空指针置空，编译器会报 warning。
 NS_UNAVAILABLE 当我们不想要其他开发人员，用普通的 init 方法去初始化一个类，我们可以在.h 文件里这样写：
@@ -68,7 +60,7 @@ NS_UNAVAILABLE 当我们不想要其他开发人员，用普通的 init 方法�
 NS_DESIGNATED_INITIALIZER 指定的初始化方法。当一个类提供多种初始化方法时，所有的初始化方法最终都会调用这个指定的初始化方法。比较常见的有：
 - (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
 
-3 断言的使用
+# 3 断言的使用
 NSAssert(x,y);：x 为 BOOL 值，y 为 字符串类型。当 x = YES，则不产生断言。当 x = NO，则产生断言，app 会 crash，并在控制台中打印 y 字符串内容。合理利用断言，可以保证 app 的健壮性。
 4 互斥锁的使用
 
@@ -76,7 +68,7 @@ NSAssert(x,y);：x 为 BOOL 值，y 为 字符串类型。当 x = YES，则不�
 //************************************************************************
 //************************************************************************
 
-//代码触发点击事件
+# 代码触发点击事件
 
 sendActionsForControlEvents
 
@@ -101,14 +93,14 @@ NSParagraphStyleAttributeName 设置段落／间距 vlue>> NSMutableParagraphSty
 
 //************************************************************************
 //************************************************************************
-//pod github资源 格式
+# pod github资源 格式
 
 pod 'AXiOSTools',  :git => 'https://github.com/liuweixingGitHub/AXiOSTools.git'
 
 //************************************************************************
 //************************************************************************
 
-//播放音频,不与其他app冲突
+# 播放音频,不与其他app冲突
 
 // 1.启动代理
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -131,14 +123,14 @@ self.musicPlayer.delegate = self;
 //************************************************************************
 //************************************************************************
 
-tableView 默认选中
+# tableView 默认选中
 
 [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 
 //************************************************************************
 //************************************************************************
 
-wkwebView 加载本地 css 文件
+# wkwebView 加载本地 css 文件
 1.建立一个bundle文件
 2.把js,css,html文件拖入
 3.直接加载相对路径
@@ -162,7 +154,7 @@ NSURLRequest *request = [NSURLRequest requestWithURL:url];
 //************************************************************************
 //************************************************************************
 
-scrollView 滚动方向,x 判断左右, y判断上下
+# scrollView 滚动方向,x 判断左右, y判断上下
 
 
 CGPoint point =  [scrollView.panGestureRecognizer translationInView:self.view];
@@ -177,7 +169,7 @@ if (point.x < 0 ) {
 //************************************************************************
 //************************************************************************
 
- 同时多个aler 顺序弹出
+# 同时多个aler 顺序弹出
 
 //创建一个队列，串行并行都可以，主要为了操作信号量
 dispatch_queue_t queue = dispatch_queue_create("com.se7en.alert", DISPATCH_QUEUE_SERIAL);
@@ -245,7 +237,7 @@ return _nameAge1;
 //************************************************************************
 //************************************************************************
 
-UIScrollView 滚动g内容高度 子视图适应
+# UIScrollView 滚动g内容高度 子视图适应
 
 UIScrollView *scrollView = [[UIScrollView alloc] init];
 scrollView.backgroundColor = [UIColor greenColor];
@@ -282,7 +274,7 @@ make.height.mas_equalTo(400);
 
 
 
-//**制作脚本**
+# 制作脚本
 1.可以.sh结尾,执行 ./文件名
 2.无后缀,直接双击
 
@@ -298,3 +290,107 @@ echo "父路径: $basepath"
 currentPath=$(pwd)
 echo "当前路径: $currentPath"
 */
+
+// NSOperation 
+# 使用子类 NSBlockOperation 子线程
+
+- (void)opDemo6{
+
+NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+
+dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+self.didBlock = ^{
+NSLog(@"正在下载全集 。。。 %@", [NSThread currentThread]);
+dispatch_semaphore_signal(sem);
+};
+dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+}];
+
+
+op1.completionBlock = ^{
+NSLog(@"op1 完成");
+};
+
+
+NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+sleep(3);
+NSLog(@"正在解压缩全集。。。 %@", [NSThread currentThread]);
+
+}];
+op2.completionBlock = ^{
+NSLog(@"op2 完成");
+};
+
+
+NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+sleep(3);
+NSLog(@"正在保存到磁盘 。。。 %@", [NSThread currentThread]);
+}];
+op3.completionBlock = ^{
+NSLog(@"op3 完成");
+};
+
+NSBlockOperation *op4 = [NSBlockOperation blockOperationWithBlock:^{
+sleep(3);
+NSLog(@"下载完成 。 %@", [NSThread currentThread]);
+}];
+op4.completionBlock = ^{
+NSLog(@"op4 完成");
+};
+
+
+// 指定操作之间的”依赖“关系，某一个操作的执行，必须等待另一个操作完成才会开始
+// 依赖关系是可以跨队列指定的
+[op2 addDependency:op1];
+[op3 addDependency:op2];
+[op4 addDependency:op3];
+// *** 添加依赖的时候，注意不要出现循环依赖
+//    [op3 addDependency:op4];
+
+[self.queue addOperation:op1];
+[self.queue addOperation:op2];
+[self.queue addOperation:op3];
+// 主队列更新UI
+[[NSOperationQueue mainQueue] addOperation:op4];
+
+}
+
+# NSOperationQueue 队列
+/** 暂停操作 */
+- (void)pause
+{
+// 1. 判断队列中是否有操作
+if (self.queue.operationCount == 0) {
+NSLog(@"没有操作");
+return;
+}
+
+// 2. 如果没有被挂起(正在执行)，才需要暂停
+// 只会挂起当前队列中还没有被调度（没有被安排到线程上工作的操作）才会被挂起
+if (!self.queue.isSuspended) {
+NSLog(@"暂停");
+[self.queue setSuspended:YES];
+} else {
+NSLog(@"已经暂停");
+}
+}
+
+/** 继续操作 */
+- (void)resume
+{
+// 1. 判断队列中是否有操作
+if (self.queue.operationCount == 0) {
+NSLog(@"没有操作");
+return;
+}
+
+// 2. 如果有被挂起的操作，才需要继续(恢复)
+if (self.queue.isSuspended) {
+NSLog(@"继续");
+[self.queue setSuspended:NO];
+} else {
+NSLog(@"正在执行");
+}
+}
+
+

@@ -1251,9 +1251,9 @@
 		24EE7B1C21E0F4F000BF9114 /* FMDB@AX */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7B1D21E0F4F000BF9114 /* DBStatements.h */,
-				24EE7B1E21E0F4F000BF9114 /* DataBase.m */,
 				24EE7B1F21E0F4F000BF9114 /* DataBase.h */,
+				24EE7B1E21E0F4F000BF9114 /* DataBase.m */,
+				24EE7B1D21E0F4F000BF9114 /* DBStatements.h */,
 				24EE7B2021E0F4F000BF9114 /* DBStatements.m */,
 			);
 			path = "FMDB@AX";
@@ -1272,15 +1272,15 @@
 		24EE7B2721E0F4F100BF9114 /* AFNetworking@AX */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7B2821E0F4F100BF9114 /* AXNetManager+Upload.m */,
 				24EE7B2921E0F4F100BF9114 /* AXNetGroup.h */,
+				24EE7B3021E0F4F100BF9114 /* AXNetGroup.m */,
 				24EE7B2A21E0F4F100BF9114 /* AXNetManager.h */,
+				24EE7B2F21E0F4F100BF9114 /* AXNetManager.m */,
+				24EE7B2D21E0F4F100BF9114 /* AXNetManager+Upload.h */,
+				24EE7B2821E0F4F100BF9114 /* AXNetManager+Upload.m */,
 				24EE7B2B21E0F4F100BF9114 /* AXNetManager+Version.h */,
 				24EE7B2C21E0F4F100BF9114 /* AXNetManager+Verson.m */,
-				24EE7B2D21E0F4F100BF9114 /* AXNetManager+Upload.h */,
 				24EE7B2E21E0F4F100BF9114 /* AXNetManagerHeader.h */,
-				24EE7B2F21E0F4F100BF9114 /* AXNetManager.m */,
-				24EE7B3021E0F4F100BF9114 /* AXNetGroup.m */,
 			);
 			path = "AFNetworking@AX";
 			sourceTree = "<group>";
