@@ -1,28 +1,38 @@
 {
   "name": "AXiOSTools",
   "version": "0.1.1",
-  "platforms": {
-    "ios": "8.0"
-  },
-  "summary": "个人开发工具",
+  "summary": "个人开发工具类",
+  "description": "封装UIKit等个人开发工具类",
   "homepage": "https://github.com/AXinger/AXiOSTools",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "AXing": "liu_weixing@qq.com"
+    "AXinger": "liu_weixing@qq.com"
   },
-  "social_media_url": "https://www.jianshu.com/u/332ecb51d41b",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
   "source": {
     "git": "https://github.com/AXinger/AXiOSTools.git",
     "tag": "0.1.1"
   },
-  "source_files": [
-    "AXiOSTools",
-    "AXiOSTools/**/*.{h,m}"
+  "source_files": "AXiOSTools/**/*.{h,m}",
+  "resources": [
+    "AXiOSTools/**/*.xib",
+    "AXiOSTools/**/*.bundle"
   ],
-  "requires_arc": true,
+  "resource_bundles": {
+    "AXiOSTools_ax_mainBundle": [
+      "AXiOSTools/**/*.{xcassets,gif,json,strings}"
+    ]
+  },
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ],
   "dependencies": {
     "AFNetworking": [
 
@@ -33,7 +43,37 @@
     "IQKeyboardManager": [
 
     ],
+    "MJRefresh": [
+
+    ],
+    "NullSafe": [
+
+    ],
+    "MJExtension": [
+
+    ],
+    "MBProgressHUD": [
+
+    ],
+    "DZNEmptyDataSet": [
+
+    ],
+    "SDCycleScrollView": [
+
+    ],
+    "KVOController": [
+
+    ],
+    "Masonry": [
+
+    ],
     "GKPhotoBrowser": [
+
+    ],
+    "WebViewJavascriptBridge": [
+
+    ],
+    "Aspects": [
 
     ]
   }

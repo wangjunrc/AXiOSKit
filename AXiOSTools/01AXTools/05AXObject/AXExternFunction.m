@@ -10,7 +10,7 @@
 #import "AXMacros_log.h"
 #import <UIKit/UIKit.h>
 #import "UIViewController+AXTool.h"
-
+#import "NSBundle+AXLocal.h"
 @implementation AXExternFunction
 
 #pragma mark - Foundation
@@ -223,8 +223,9 @@ int ax_randomFromTo(int from ,int to){
  */
 BOOL ax_OpenPrefsRoot(){
     
-    NSURL *URL = [NSURL URLWithString:@"prefs:root=General"];
-    
+//    NSURL *URL = [NSURL URLWithString:@"prefs:root=General"];
+    //过期
+    NSURL *URL = nil;
     if (@available(iOS 10.0, *)) {
         
         [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:nil];
@@ -403,7 +404,11 @@ NSString *  AXNSLocalizedString(NSString *key) {
  */
 NSString *  AXToolsLocalizedString(NSString *key) {
     
-    return NSLocalizedStringFromTable(key,@"AXToolsLocalizedString", @"");
+   NSString *str = [NSBundle.ax_mainBundle localizedStringForKey:key value:@"" table:@"AXToolsLocalizedString"];
+    if (str.length == 0) {
+        str = NSLocalizedStringFromTable(key,@"AXToolsLocalizedString", @"");
+    }
+    return str;
 }
 
 /**
@@ -552,6 +557,13 @@ void AXNoMsgLog(NSString *format, ...) {
     
 #endif
     
+}
+
+/**
+ 打开iPhone设置界面
+ */
+void AXOpenSettings() {
+    ax_OpenURLStr(UIApplicationOpenSettingsURLString);
 }
 
 @end

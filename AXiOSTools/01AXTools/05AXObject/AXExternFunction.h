@@ -296,6 +296,11 @@ void AXNSLog(NSString *format, ...);
  */
 void AXNoMsgLog(NSString *format, ...);
 
+/**
+ 打开iPhone设置界面
+ */
+void AXOpenSettings();
+
 @end
 
 NS_ASSUME_NONNULL_END

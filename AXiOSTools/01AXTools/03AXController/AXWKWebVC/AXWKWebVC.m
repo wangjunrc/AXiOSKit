@@ -13,12 +13,13 @@
 @import WebKit;
 #import "AXiOSTools.h"
 #import "WKWebViewJavascriptBridge.h"
+#import "NSBundle+AXLocal.h"
 
 
-typedef NS_ENUM(NSInteger, wkWebLoadType){
-    loadWebURLString = 0,
-    loadWebHTMLString,
-    POSTWebURLString,
+typedef NS_ENUM(NSInteger, WKWebLoadType){
+    WKWebLoadTypeURLString,
+    WKWebLoadTypeHTMLString,
+    WKWebLoadTypeHTMLFilePath,
 };
 
 @interface AXWKWebVC ()<WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate,UINavigationControllerDelegate,UIScrollViewDelegate>
@@ -32,7 +33,7 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 @property (nonatomic, strong) UIProgressView *progressView;
 
 //网页加载的类型
-@property (nonatomic, assign) wkWebLoadType loadType;
+@property (nonatomic, assign) WKWebLoadType loadType;
 
 /**
  *
@@ -83,6 +84,8 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
     [self.view addSubview:self.webView];
     [self.view addSubview:self.progressView];
     
+    self.webView.navigationDelegate = self;
+    self.webView.UIDelegate = self;
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
     }];
@@ -469,11 +472,39 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 
 #pragma mark - func
 
+- (void)func_webViewloadURLType{
+    
+    if (self.url.length == 0) {
+        NSString *htmlString = [NSString stringWithFormat:@"<font size=\"30\">%@ 路径错误</font>",self.url];
+        [self.webView loadHTMLString:htmlString baseURL:[NSBundle.mainBundle bundleURL]];
+        return;
+    }
+    
+    switch (self.loadType) {
+        case WKWebLoadTypeURLString:{
+            NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.url]];
+            [self.webView loadRequest:request];
+            break;
+        }
+            
+        case WKWebLoadTypeHTMLString:{
+            [self.webView loadHTMLString:self.loadHTMLString baseURL:[NSBundle.mainBundle bundleURL]];
+            break;
+        }
+            
+        case WKWebLoadTypeHTMLFilePath:{
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:self.url]];
+            [self.webView loadRequest:request];
+            
+            break;
+        }
+    }
+}
+
 /**
  * 页面加载完成 更新LeftBarButtonItems
  */
 - (void)func_canGoBackItems{
-    
     
     if (self.webView.canGoBack) {
         
@@ -482,11 +513,11 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
         
         [self ax_haveNav:nil isPushNav:^(UINavigationController *nav) {
             
-              self.navigationItem.leftBarButtonItems = @[self.backItem,spaceButtonItem,self.closeItem];
+            self.navigationItem.leftBarButtonItems = @[self.backItem,spaceButtonItem,self.closeItem];
             
         } isPresentNav:^(UINavigationController *nav) {
             
-             self.navigationItem.leftBarButtonItems = @[self.cancelItem,spaceButtonItem,self.closeItem];
+            self.navigationItem.leftBarButtonItems = @[self.cancelItem,spaceButtonItem,self.closeItem];
             
         } noneNav:nil];
         
@@ -514,79 +545,6 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 }
 
 
-- (void)func_webViewloadURLType{
-    
-    switch (self.loadType) {
-        case loadWebURLString:{
-            //创建一个NSURLRequest 的对象
-            NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
-            //加载网页
-            [self.webView loadRequest:request];
-            break;
-        }
-        case loadWebHTMLString:{
-            [self func_loadHostPathURL:self.url];
-            break;
-        }
-        case POSTWebURLString:{
-            // JS发送POST的Flag，为真的时候会调用JS的POST方法
-            
-            //POST使用预先加载本地JS方法的html实现，请确认WKJSPOST存在
-            [self func_loadHostPathURL:@"WKJSPOST"];
-            break;
-        }
-    }
-}
-
-
-- (void)func_loadHostPathURL:(NSString *)url{
-    
-    //获取JS所在的路径
-    NSString *path = nil;
-    //获得html内容
-    NSString *html =nil;
-    
-    
-    NSString *type = url.pathExtension;
-
-    if ([type isEqualToString:@"html"]) {
-
-        path = [[NSBundle mainBundle] pathForResource:url ofType:nil];
-        html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-        
-    }else if (type.length == 0){
-    
-        path = [[NSBundle mainBundle] pathForResource:url ofType:@"html"];
-        html = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    }else{
-        html = [NSString stringWithFormat:@"<font size=\"30\">'%@'路径错误</font>",url];;
-    }
-    
-    //加载js
-    if (html.length==0) {
-        html = [NSString stringWithFormat:@"<font size=\"30\">%@</font>",url];
-    }
-
-    [self.webView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];
-    
-    
-//    //wkwebView 加载本地 css 文件
-//    
-//    //获取bundlePath 路径
-//    NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
-//    //获取本地html目录 basePath
-//    NSString *basePath = [NSString stringWithFormat: @"%@/www", bundlePath];
-//    //获取本地html目录 baseUrl
-//    //html 路径
-//    NSString *indexPath = [NSString stringWithFormat: @"%@/%@.html", basePath,url];
-//    NSURL *fileUrl = [NSURL fileURLWithPath:indexPath];
-//    NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];
-//    if (@available(iOS 9.0, *)) {
-//        [self.webView loadFileURL:fileUrl allowingReadAccessToURL: baseUrl];
-//    } else {
-//       
-//    }
-}
 
 
 #pragma mark - action
@@ -646,16 +604,21 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
 - (void)setLoadURLString:(NSString *)loadURLString {
     _loadURLString = loadURLString;
     self.url = loadURLString;
-    self.loadType = loadWebURLString;
+    self.loadType = WKWebLoadTypeURLString;
 }
 
 
 - (void)setLoadHTMLString:(NSString *)loadHTMLString {
     _loadHTMLString = loadHTMLString;
     self.url = loadHTMLString;
-    self.loadType = loadWebHTMLString;
+     self.loadType = WKWebLoadTypeHTMLString;
 }
 
+- (void)setLoadHTMLFilePath:(NSString *)loadHTMLFilePath {
+    _loadHTMLFilePath = loadHTMLFilePath;
+    self.url = loadHTMLFilePath;
+    self.loadType = WKWebLoadTypeHTMLFilePath;
+}
 
 - (WKWebView *)webView{
     if (!_webView) {
@@ -673,8 +636,6 @@ typedef NS_ENUM(NSInteger, wkWebLoadType){
         
         _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
         //        [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.webURLSring]]];
-        _webView.navigationDelegate = self;
-        _webView.UIDelegate = self;
         _webView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];

@@ -10,14 +10,19 @@
 
 @interface AXWKWebVC : UIViewController
 
-/**
-  加载纯外部链接网页
- */
+/**加载纯外部链接网页 */
 @property (nonatomic, copy) NSString *loadURLString;
 
 /**
- * 加载本地网页 不需要带.html 后缀
+ *加载html 文字
+ * <font size="30">xx</font>
  */
 @property (nonatomic, copy) NSString *loadHTMLString;
+
+/**
+ *加载本地网页
+ *使用[NSBundle.mainBundle pathForResource:@"xx.html" ofType:nil];方式赋值
+ */
+@property (nonatomic, copy) NSString *loadHTMLFilePath;
 
 @end

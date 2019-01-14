@@ -88,11 +88,11 @@
         
         AXChoosePayModel *model = [AXChoosePayModel ax_init];
         model.name = @"支付宝";
-        model.imageName =@"支付宝";
+        model.imageName =@"ax_icon_zhifubao";
         
         AXChoosePayModel *model1 = [AXChoosePayModel ax_init];
         model1.name = @"微信";
-        model1.imageName =@"微信";
+        model1.imageName =@"ax_icon_weixin";
         
         _dataArray = @[model,model1];
     }
