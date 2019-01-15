@@ -134,7 +134,7 @@ self.musicPlayer.delegate = self;
 1.建立一个bundle文件
 2.把js,css,html文件拖入
 3.直接加载相对路径
- NSString *filePath= [[NSBundle ax_mainBundle] pathForResource:@"HTML.bundle/wk_index.html" ofType:nil];
+NSString *filePath= [[NSBundle ax_mainBundle] pathForResource:@"HTML.bundle/wk_index.html" ofType:nil];
 NSURL *url = [NSURL fileURLWithPath:filePath];
 NSURLRequest *request = [NSURLRequest requestWithURL:url];
 [self.webView loadRequest:request];
@@ -341,8 +341,7 @@ self.view.transform = CGAffineTransformMakeTranslation(0, -end.size.height);
 {
 // 1.取出键盘弹出的时间
 CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-
-// 2.执行动画
+2.执行动画
 [UIView animateWithDuration:duration animations:^{
 self.view_comment.transform = CGAffineTransformIdentity;
 }];
