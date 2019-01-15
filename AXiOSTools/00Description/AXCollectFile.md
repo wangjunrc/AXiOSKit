@@ -291,6 +291,63 @@ currentPath=$(pwd)
 echo "当前路径: $currentPath"
 */
 
+
+# UIView 始终最上面 .layer.zPosition> 0就行,
+UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 260)];
+view1.backgroundColor = [UIColor redColor];
+[self.view addSubview:view1];
+view1.layer.zPosition = 10;
+
+# 键盘弹起
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+
+
+/**
+*  键盘即将显示的时候调用
+*/
+- (void)keyboardWillShow:(NSNotification *)note{
+
+// 1.取出键盘的frame
+CGRect begin = [note.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+
+CGRect end = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+
+// 2.取出键盘弹出的时间
+CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+
+//3.输入框弹起后的Y
+CGFloat y_board = 0;
+
+//4.处理键盘（包括第三方键盘）
+if(begin.size.height > 0 && (begin.origin.y - end.origin.y > 0)){
+//处理逻辑
+
+y_board = end.origin.y - self.view_comment.frame.size.height;
+
+[UIView animateWithDuration:duration animations:^{
+
+self.view.transform = CGAffineTransformMakeTranslation(0, -end.size.height);
+
+}];
+}
+
+}
+
+/**
+*  键盘即将退出的时候调用
+*/
+- (void)keyboardWillHide:(NSNotification *)note
+{
+// 1.取出键盘弹出的时间
+CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+
+// 2.执行动画
+[UIView animateWithDuration:duration animations:^{
+self.view_comment.transform = CGAffineTransformIdentity;
+}];
+}
+=======
 // NSOperation 
 # 使用子类 NSBlockOperation 子线程
 
@@ -392,5 +449,4 @@ NSLog(@"继续");
 NSLog(@"正在执行");
 }
 }
-
 
