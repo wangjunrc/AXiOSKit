@@ -121,7 +121,7 @@ typedef void(^QRCodeBlock)(NSString *code);
         layer.videoGravity=AVLayerVideoGravityResizeAspectFill;
         layer.backgroundColor =[UIColor orangeColor].CGColor;
         
-        CGFloat layerWH = AXScreenWidth()-40;
+        CGFloat layerWH = ax_screen_width()-40;
         
         CGRect rect =  CGRectMake(20,120, layerWH, layerWH);
         layer.frame = rect;

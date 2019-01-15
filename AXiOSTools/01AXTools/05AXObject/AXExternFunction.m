@@ -11,6 +11,9 @@
 #import <UIKit/UIKit.h>
 #import "UIViewController+AXTool.h"
 #import "NSBundle+AXLocal.h"
+#include <libkern/OSAtomic.h>
+#include <stdatomic.h>
+
 @implementation AXExternFunction
 
 #pragma mark - Foundation
@@ -148,20 +151,65 @@ BOOL ax_CallTel(NSString *phone){
 /**
  xcode 奔溃日志
  */
-void ax_LogXcodeCache(void){
+void ax_registerCatch(void){
     
-    NSSetUncaughtExceptionHandler(&ax_uncaughtExceptionHandler);
+    NSSetUncaughtExceptionHandler(&ax_HandleExceptionr);
+    signal(SIGABRT, ax_SignalHandler);
+    signal(SIGILL, ax_SignalHandler);
+    signal(SIGSEGV, ax_SignalHandler);
+    signal(SIGFPE, ax_SignalHandler);
+    signal(SIGBUS, ax_SignalHandler);
+    signal(SIGPIPE, ax_SignalHandler);
 }
 
-static void ax_uncaughtExceptionHandler(NSException*exception) {
+static void ax_HandleExceptionr(NSException*exception) {
+    
     AXLog(@"↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  xcode运行崩溃  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓");
-    
     AXLog(@"xcode运行崩溃--> %@\n%@", exception, exception.callStackSymbols);
-    
     AXLog(@"↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑  xcode运行崩溃  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑");
     
+    /**把异常崩溃信息上传服务器*/
+    //    int32_t exceptionCount = OSAtomicIncrement32(0);
+    //    if (exceptionCount > 10) {
+    //        return;
+    //    }
+    //    NSString *callStack = [BSBacktraceLogger bs_backtraceOfAllThread];
+    //    NSMutableDictionary *exceptionInfo = [NSMutableDictionary dictionary];
+    //    [exceptionInfo setValue:exception forKey:@"exception"];
+    //    [exceptionInfo setValue:callStack forKey:@"callStack"];
+    //    [[SPTCrashHelper sharedHelper] performSelectorOnMainThread:@selector(handleException:) withObject:exceptionInfo waitUntilDone:YES];
+    
 }
 
+void ax_SignalHandler(int signal) {
+    
+    //    int32_t exceptionCount = OSAtomicIncrement32(&ax_HandleExceptionr);
+    //
+    //    if (exceptionCount > 10) {
+    //        return;
+    //    }
+    //
+    //    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    //    userInfo[@"UncaughtExceptionHandlerSignalKey"] = @(signal);
+    //
+    //
+    //    NSException *exception = [NSException
+    //                              exceptionWithName:@"UncaughtExceptionHandlerSignalExceptionName"
+    //                              reason:
+    //                              [NSString stringWithFormat:
+    //                               NSLocalizedString(@"Signal %d was raised.", nil),
+    //                               signal]
+    //                              userInfo:userInfo];
+    //
+    //    NSString *callStack = [BSBacktraceLogger bs_backtraceOfAllThread];
+    //
+    //    NSMutableDictionary *exceptionInfo = [NSMutableDictionary dictionary];
+    //    [exceptionInfo setValue:exception forKey:@"exception"];
+    //    [exceptionInfo setValue:callStack forKey:@"callStack"];
+    //
+    //
+    //    [[SPTCrashHelper sharedHelper] performSelectorOnMainThread:@selector(handleException:) withObject:exceptionInfo waitUntilDone:YES];
+}
 
 
 /**
@@ -223,7 +271,7 @@ int ax_randomFromTo(int from ,int to){
  */
 BOOL ax_OpenPrefsRoot(){
     
-//    NSURL *URL = [NSURL URLWithString:@"prefs:root=General"];
+    //    NSURL *URL = [NSURL URLWithString:@"prefs:root=General"];
     //过期
     NSURL *URL = nil;
     if (@available(iOS 10.0, *)) {
@@ -404,7 +452,7 @@ NSString *  AXNSLocalizedString(NSString *key) {
  */
 NSString *  AXToolsLocalizedString(NSString *key) {
     
-   NSString *str = [NSBundle.ax_mainBundle localizedStringForKey:key value:@"" table:@"AXToolsLocalizedString"];
+    NSString *str = [NSBundle.ax_mainBundle localizedStringForKey:key value:@"" table:@"AXToolsLocalizedString"];
     if (str.length == 0) {
         str = NSLocalizedStringFromTable(key,@"AXToolsLocalizedString", @"");
     }
@@ -412,86 +460,30 @@ NSString *  AXToolsLocalizedString(NSString *key) {
 }
 
 /**
- 状态栏高度
- */
-CGFloat AXStatusBarHeight(void) {
-    
-    return [UIApplication sharedApplication].statusBarFrame.size.height;
-}
-
-/**
- 状态栏高度 和 nav 高度 普通 64 ,x 88
- */
-CGFloat AXNavigationBarHeight(UIViewController *aVC) {
-    
-    return AXStatusBarHeight() + aVC.navigationController.navigationBar.bounds.size.height;
-}
-/**
- 安全区域 insets
- */
-UIEdgeInsets AXViewSafeAreInsets(UIView *view) {
-    UIEdgeInsets insets = UIEdgeInsetsZero;
-    if(@available(iOS 11.0, *)) {
-        insets = view.safeAreaInsets;
-    }
-    return insets;
-}
-
-/**
- 安全区域 bottom
- */
-CGFloat AXViewSafeAreBottom(UIView *view){
-    
-    return  AXViewSafeAreInsets(view).bottom;
-}
-
-/**
- 安全区域 top
- */
-CGFloat AXViewSafeAreTop(UIView *view){
-    
-    return AXViewSafeAreInsets(view).top;
-}
-
-/**
- *  屏幕宽
- */
-CGFloat  AXScreenWidth(void) {
-    return [UIScreen mainScreen].bounds.size.width;
-}
-
-/**
- * 屏幕高
- */
-CGFloat  AXScreenHeight(void) {
-    return [UIScreen mainScreen].bounds.size.height;
-}
-
-/**
  * 当前活动窗口的控制器
  */
-UIViewController * AXCurrentViewController(void) {
+UIViewController * ax_currentViewController(void) {
     return [UIViewController ax_currentViewController];
 }
 
 /**
  * app代理
  */
-id<UIApplicationDelegate> AXMainAppDelegate(void) {
+id<UIApplicationDelegate> ax_mainAppDelegate(void) {
     return ((id<UIApplicationDelegate>)([UIApplication sharedApplication].delegate));
 }
 
 /**
  * app根控制器
  */
-UIViewController * AXRootViewController(void) {
+UIViewController * ax_rootViewController(void) {
     return [UIApplication sharedApplication].keyWindow.rootViewController;
 }
 
 /**
  * AppDelegate app根控制器 个别情况下 AXRootViewController 取值不对
  */
-UIViewController * AXRootViewController_AppDelegate(void) {
+UIViewController * ax_rootViewController_appDelegate(void) {
     
     return  ((id<UIApplicationDelegate>)([UIApplication sharedApplication].delegate)).window.rootViewController;
 }
@@ -499,8 +491,8 @@ UIViewController * AXRootViewController_AppDelegate(void) {
 /**
  keyWindow
  */
-UIWindow *AXKeyWindow(void) {
-   return [UIApplication sharedApplication].keyWindow;
+UIWindow *ax_keyWindow(void) {
+    return [UIApplication sharedApplication].keyWindow;
 }
 
 /**
@@ -521,13 +513,13 @@ void AXNSLog(NSString *format, ...) {
     NSString *dateStr = [dateFormatter stringFromDate:[NSDate date]];
     const char *dateChar = dateStr.UTF8String;
     //.m文件名
-//    const char *fileChar = [NSString stringWithFormat:@"%s", __FILE__].lastPathComponent.UTF8String;
+    //    const char *fileChar = [NSString stringWithFormat:@"%s", __FILE__].lastPathComponent.UTF8String;
     //行号
-//    int line =  __LINE__;
+    //    int line =  __LINE__;
     //log内容
     const char *formatChar = [[NSString alloc] initWithFormat:format arguments:arg_list].UTF8String;
-//    printf("%s [%s 第%d行]: %s\n\n",dateChar, fileChar ,line,formatChar);
-     printf("%s : %s\n\n",dateChar,formatChar);
+    //    printf("%s [%s 第%d行]: %s\n\n",dateChar, fileChar ,line,formatChar);
+    printf("%s : %s\n\n",dateChar,formatChar);
     va_end(arg_list);
     
 #else
@@ -564,6 +556,28 @@ void AXNoMsgLog(NSString *format, ...) {
  */
 void AXOpenSettings() {
     ax_OpenURLStr(UIApplicationOpenSettingsURLString);
+}
+
+
+/**键盘背景色透明 alpha=0 */
+void ax_keyboard_bg_alpha_zero(void) {
+    
+    ax_keyboard_bg_alpha(0);
+}
+
+/**键盘背景色透明*/
+void ax_keyboard_bg_alpha(CGFloat alpha) {
+    
+    UIView *peripheralHostView =  UIApplication.sharedApplication.windows.lastObject.subviews.lastObject;
+    UIView *InputSetHostView;
+    if ([peripheralHostView isKindOfClass:NSClassFromString(@"UIInputSetContainerView")]) {
+        for (UIView *view in peripheralHostView.subviews) {
+            if ([view isKindOfClass:NSClassFromString(@"UIInputSetHostView")]) {
+                InputSetHostView = view;
+            }
+        }
+    }
+    InputSetHostView.subviews.firstObject.alpha = alpha;
 }
 
 @end

@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  xcode 奔溃日志
  */
-void ax_LogXcodeCache(void);
+void ax_registerCatch(void);
 
 /**
  是debug 环境下
@@ -220,69 +220,33 @@ NSString *AXNSLocalizedString(NSString *key);
 NSString *AXToolsLocalizedString(NSString *key);
 
 /**
- 状态栏高度
- */
-CGFloat AXStatusBarHeight(void);
-
-/**
- 状态栏高度 和 nav 高度 普通 64 ,x 88
- */
-CGFloat AXNavigationBarHeight(UIViewController *aVC);
-
-/**
- 安全区域 insets
- */
-
-UIEdgeInsets AXViewSafeAreInsets(UIView *view);
-
-/**
- 安全区域 bottom
- */
-CGFloat AXViewSafeAreBottom(UIView *view);
-
-/**
- 安全区域 top
- */
-CGFloat AXViewSafeAreTop(UIView *view);
-
-/**
- *  屏幕宽
- */
-CGFloat AXScreenWidth(void);
-
-/**
- * 屏幕高
- */
-CGFloat AXScreenHeight(void);
-
-/**
  * 当前活动窗口的控制器
  */
-UIViewController * AXCurrentViewController(void);
+UIViewController * ax_currentViewController(void);
 
 /**
  * app代理
  */
-id<UIApplicationDelegate> AXMainAppDelegate(void);
+id<UIApplicationDelegate> ax_mainAppDelegate(void);
 
 /**
  * app根控制器
  */
-UIViewController *AXRootViewController(void);
+UIViewController *ax_rootViewController(void);
 
 /**
  * AppDelegate app根控制器 个别情况下 AXRootViewController 取值不对
  */
-UIViewController *AXRootViewController_AppDelegate(void);
+UIViewController *ax_rootViewController_appDelegate(void);
 
 /**
  keyWindow
  */
-UIWindow *AXKeyWindow(void);
+UIWindow *ax_keyWindow(void);
 
 /**
  封装NSLog用printf 没有__FILE__ 和 __FILE__
-
+ 
  @param format NSLog样式 format
  @param ... NSLog样式 ...
  */
@@ -299,8 +263,13 @@ void AXNoMsgLog(NSString *format, ...);
 /**
  打开iPhone设置界面
  */
-void AXOpenSettings();
+void AXOpenSettings(void);
 
+/**键盘背景色透明 alpha=0 */
+void ax_keyboard_bg_alpha_zero(void);
+
+/**键盘背景色透明*/
+void ax_keyboard_bg_alpha(CGFloat alpha);
 @end
 
 NS_ASSUME_NONNULL_END

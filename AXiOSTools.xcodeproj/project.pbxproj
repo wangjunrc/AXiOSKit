@@ -110,6 +110,8 @@
 		245BD50F21E6138000831542 /* UIViewController+AXAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD4A921E6137F00831542 /* UIViewController+AXAlert.h */; };
 		245BD51021E6138000831542 /* NSDateComponents+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD4AA21E6137F00831542 /* NSDateComponents+AXTool.m */; };
 		245BD51421E6339100831542 /* ax_test2.html in Resources */ = {isa = PBXBuildFile; fileRef = 245BD51321E6339100831542 /* ax_test2.html */; };
+		249F52D621EDCBF100840340 /* AXUIAssistant.h in Headers */ = {isa = PBXBuildFile; fileRef = 249F52D421EDCBF100840340 /* AXUIAssistant.h */; };
+		249F52D721EDCBF100840340 /* AXUIAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F52D521EDCBF100840340 /* AXUIAssistant.m */; };
 		24CB557421E597DC00468BAD /* AXHTML.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 24CB557321E597DC00468BAD /* AXHTML.bundle */; };
 		24EE79CB21E0F48800BF9114 /* AXiOSTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE79C921E0F48800BF9114 /* AXiOSTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24EE7B3D21E0F4F100BF9114 /* AXWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE79D521E0F4EE00BF9114 /* AXWeakProxy.m */; };
@@ -389,6 +391,8 @@
 		245BD4A921E6137F00831542 /* UIViewController+AXAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXAlert.h"; sourceTree = "<group>"; };
 		245BD4AA21E6137F00831542 /* NSDateComponents+AXTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+AXTool.m"; sourceTree = "<group>"; };
 		245BD51321E6339100831542 /* ax_test2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ax_test2.html; sourceTree = "<group>"; };
+		249F52D421EDCBF100840340 /* AXUIAssistant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUIAssistant.h; sourceTree = "<group>"; };
+		249F52D521EDCBF100840340 /* AXUIAssistant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXUIAssistant.m; sourceTree = "<group>"; };
 		24CB557321E597DC00468BAD /* AXHTML.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AXHTML.bundle; sourceTree = "<group>"; };
 		24EE79C621E0F48800BF9114 /* AXiOSTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AXiOSTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24EE79C921E0F48800BF9114 /* AXiOSTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXiOSTools.h; sourceTree = "<group>"; };
@@ -858,6 +862,8 @@
 				24EE7A6721E0F4EF00BF9114 /* AXObject.h */,
 				24EE7A7321E0F4EF00BF9114 /* AXObject.m */,
 				24EE7A6621E0F4EF00BF9114 /* AXSetValueProtocol.h */,
+				249F52D421EDCBF100840340 /* AXUIAssistant.h */,
+				249F52D521EDCBF100840340 /* AXUIAssistant.m */,
 				24EE7A6821E0F4EF00BF9114 /* AXViewModelProtocol.h */,
 				24EE7A6D21E0F4EF00BF9114 /* CountDownObj */,
 				24EE7A6321E0F4EF00BF9114 /* GCDTimer */,
@@ -1392,6 +1398,7 @@
 				245BD4AC21E6138000831542 /* NSObject+AXRuntime.h in Headers */,
 				24EE7BB621E0F4F100BF9114 /* IBUIImageView.h in Headers */,
 				245BD4F721E6138000831542 /* UIDevice+AXTool.h in Headers */,
+				249F52D621EDCBF100840340 /* AXUIAssistant.h in Headers */,
 				24EE7BC021E0F4F100BF9114 /* AXGCDTimer.h in Headers */,
 				24EE7BB021E0F4F100BF9114 /* LocationManager.h in Headers */,
 				24EE7BD721E0F4F100BF9114 /* AXMacros_instance.h in Headers */,
@@ -1552,6 +1559,7 @@
 				24EE7C5321E0F4F100BF9114 /* DBStatements.m in Sources */,
 				24EE7C4921E0F4F100BF9114 /* AXPhotoBrowserVC.m in Sources */,
 				24EE7C4221E0F4F100BF9114 /* UIImageView+AXCircle.m in Sources */,
+				249F52D721EDCBF100840340 /* AXUIAssistant.m in Sources */,
 				24EE7C6021E0F4F100BF9114 /* AXNetManager.m in Sources */,
 				24EE7BCA21E0F4F100BF9114 /* AXCountDownObject.m in Sources */,
 				24EE7C3C21E0F4F100BF9114 /* UIScrollView+AXRefresh.m in Sources */,
@@ -1670,6 +1678,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1718,7 +1727,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1732,6 +1741,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1774,7 +1784,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

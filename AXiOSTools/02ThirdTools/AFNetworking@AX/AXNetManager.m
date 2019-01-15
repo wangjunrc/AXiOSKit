@@ -210,7 +210,7 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
                 break;
                 
             case AFNetworkReachabilityStatusReachableViaWWAN:{ // 手机自带网络
-                UIViewController *currentViewController = AXCurrentViewController();
+                UIViewController *currentViewController = ax_currentViewController();
                 [currentViewController ax_showNetDownloadGo:^{
                     [task resume];
                 } cancel:^{

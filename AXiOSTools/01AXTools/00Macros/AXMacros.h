@@ -150,3 +150,10 @@ self.view = [[aViewClass alloc]init];\
 - (aViewClass *)view{\
 return (aViewClass *)[super view];\
 }\
+
+/**GCD 信号量创建*/
+#define AX_LOCK_INIT dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+/**GCD 信号量发送*/
+#define AX_UNLOCK dispatch_semaphore_signal(sem);
+/**GCD 信号量等待*/
+#define AX_LOCK dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);

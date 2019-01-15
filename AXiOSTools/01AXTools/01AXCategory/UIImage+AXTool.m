@@ -7,7 +7,7 @@
 //
 
 #import "UIImage+AXTool.h"
-#import "AXMacros.h"
+#import "AXUIAssistant.h"
 @implementation UIImage (AXTool)
 
 /**
@@ -325,8 +325,8 @@
  */
 +(UIImage *)ax_navigationBarTopImage:(UIColor *)color{
     
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(AXScreenWidth(), 64), NO,0);
-    UIBezierPath *path =[UIBezierPath bezierPathWithRect:CGRectMake(0, 0, AXScreenWidth(), 64)];
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(ax_screen_width(), 64), NO,0);
+    UIBezierPath *path =[UIBezierPath bezierPathWithRect:CGRectMake(0, 0, ax_screen_width(), 64)];
     [color setFill];
     [path fill];
     UIImage *tempImg = UIGraphicsGetImageFromCurrentImageContext();
