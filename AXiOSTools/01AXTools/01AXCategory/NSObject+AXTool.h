@@ -20,6 +20,11 @@
 - (NSString *)ax_toJSONString;
 
 /**
+ json字串 转换 NSObject
+ */
+- (id)ax_JSONObject;
+
+/**
  封装 alloc]init]
  */
 + (instancetype)ax_init;

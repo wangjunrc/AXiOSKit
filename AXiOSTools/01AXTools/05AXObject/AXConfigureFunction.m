@@ -18,9 +18,7 @@
  键盘等 基础配置
  */
 void ax_configure(void) {
-    
     ax_IQKeyboardManager();
-    
 }
 
 /**
@@ -43,6 +41,73 @@ void ax_IQKeyboardManager(void) {
 #endif
     
 }
+
+
+/**
+ xcode 奔溃日志
+ */
+void ax_registerCatch(void){
+    
+    NSSetUncaughtExceptionHandler(&ax_HandleExceptionr);
+    signal(SIGABRT, ax_SignalHandler);
+    signal(SIGILL, ax_SignalHandler);
+    signal(SIGSEGV, ax_SignalHandler);
+    signal(SIGFPE, ax_SignalHandler);
+    signal(SIGBUS, ax_SignalHandler);
+    signal(SIGPIPE, ax_SignalHandler);
+}
+/**
+ * 这里方法只能放类里面,所以用类方法定义
+ */
+static void ax_HandleExceptionr(NSException*exception) {
+    
+    NSLog(@"\n↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  xcode运行崩溃  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓");
+    NSLog(@"xcode运行崩溃--> %@\n%@", exception, exception.callStackSymbols);
+    NSLog(@"↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑  xcode运行崩溃  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑\n");
+    
+    /**把异常崩溃信息上传服务器*/
+    //    int32_t exceptionCount = OSAtomicIncrement32(0);
+    //    if (exceptionCount > 10) {
+    //        return;
+    //    }
+    //    NSString *callStack = [BSBacktraceLogger bs_backtraceOfAllThread];
+    //    NSMutableDictionary *exceptionInfo = [NSMutableDictionary dictionary];
+    //    [exceptionInfo setValue:exception forKey:@"exception"];
+    //    [exceptionInfo setValue:callStack forKey:@"callStack"];
+    //    [[SPTCrashHelper sharedHelper] performSelectorOnMainThread:@selector(handleException:) withObject:exceptionInfo waitUntilDone:YES];
+    
+}
+
+void ax_SignalHandler(int signal) {
+    
+    //    int32_t exceptionCount = OSAtomicIncrement32(&ax_HandleExceptionr);
+    //
+    //    if (exceptionCount > 10) {
+    //        return;
+    //    }
+    //
+    //    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    //    userInfo[@"UncaughtExceptionHandlerSignalKey"] = @(signal);
+    //
+    //
+    //    NSException *exception = [NSException
+    //                              exceptionWithName:@"UncaughtExceptionHandlerSignalExceptionName"
+    //                              reason:
+    //                              [NSString stringWithFormat:
+    //                               NSLocalizedString(@"Signal %d was raised.", nil),
+    //                               signal]
+    //                              userInfo:userInfo];
+    //
+    //    NSString *callStack = [BSBacktraceLogger bs_backtraceOfAllThread];
+    //
+    //    NSMutableDictionary *exceptionInfo = [NSMutableDictionary dictionary];
+    //    [exceptionInfo setValue:exception forKey:@"exception"];
+    //    [exceptionInfo setValue:callStack forKey:@"callStack"];
+    //
+    //
+    //    [[SPTCrashHelper sharedHelper] performSelectorOnMainThread:@selector(handleException:) withObject:exceptionInfo waitUntilDone:YES];
+}
+
 
 
 /*

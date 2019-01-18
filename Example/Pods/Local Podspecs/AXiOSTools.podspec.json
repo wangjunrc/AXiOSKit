@@ -20,6 +20,8 @@
     "tag": "0.1.1"
   },
   "source_files": "AXiOSTools/**/*.{h,m}",
+  "exclude_files": "AXiOSTools/AXiOSTools/Info.plist",
+  "public_header_files": "AXiOSTools/AXiOSTools/AXiOSTools.h",
   "resources": [
     "AXiOSTools/**/*.xib",
     "AXiOSTools/**/*.bundle"

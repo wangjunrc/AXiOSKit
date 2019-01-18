@@ -27,7 +27,6 @@
         return (NSString *)self;
         
     } else if ([self isKindOfClass:[NSData class]]) {
-        
         return [[NSString alloc] initWithData:(NSData *)self encoding:NSUTF8StringEncoding];
     }
     
@@ -36,6 +35,18 @@
     return  jsonStr;
 }
 
+/**
+ json字串 转换 NSObject
+ */
+- (id)ax_JSONObject {
+    
+    if ([self isKindOfClass:[NSString class]]) {
+        return [NSJSONSerialization JSONObjectWithData:[((NSString *)self) dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+    } else if ([self isKindOfClass:[NSData class]]) {
+        return [NSJSONSerialization JSONObjectWithData:(NSData *)self options:kNilOptions error:nil];
+    }
+    return self;
+}
 
 /**
  封装 alloc]init]

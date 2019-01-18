@@ -148,3 +148,4 @@ CGFloat ax_screen_vertical_adaptive_float_with_padding(CGFloat floatValue, CGFlo
     CGFloat standardScreenHeight = 667.0f - padding;
     return floorf(floatValue / standardScreenHeight * currentScreenHeight);
 }
+

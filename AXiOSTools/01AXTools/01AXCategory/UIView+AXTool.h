@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIView+AXIBInspectable.h"
+#import "AXiOSToolsEnum.h"
 
 @interface UIView (AXTool)
 /**
@@ -26,22 +26,6 @@
  @param colorArray UIColor 数组
  */
 - (void)ax_gradientColors:(NSArray <UIColor*>*_Nullable)colorArray;
-
-
-/**
- 边框方向
- 
- - AXBorderDirectionTop: 顶部
- - AXBorderDirectionLeft: 左边
- - AXBorderDirectionBottom: 底部
- - AXBorderDirectionRight: 右边
- */
-typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
-    AXBorderDirectionTop = 0,
-    AXBorderDirectionLeft,
-    AXBorderDirectionBottom,
-    AXBorderDirectionRight
-};
 
 /**
  为UIView的某个方向添加边框
@@ -70,7 +54,7 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
  *  tag 只能是数字,
  *  所以定义一个string类型
  */
-@property (nonatomic, copy) IBInspectable NSString * _Nullable axTag;
+@property (nonatomic, copy)NSString * _Nullable axTag;
 
 /**
  找出绑定 ax_tag 的对象
@@ -106,8 +90,11 @@ typedef NS_ENUM(NSInteger, AXBorderDirectionType) {
  */
 - (void)ax_addDottedLineWithLineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *_Nonnull )lineColor;
 
-
-
-
+/**
+ 活动view响应 UIViewController
+ 
+ @return UIViewController
+ */
+- (UIViewController *)ax_viewController;
 
 @end

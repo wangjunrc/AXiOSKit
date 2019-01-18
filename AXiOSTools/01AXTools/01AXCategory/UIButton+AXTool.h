@@ -7,13 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef NS_ENUM(NSInteger, AXButtonImagePosition) {
-    AXButtonImagePositionLeft = 0,  // 图片在左，文字在右，默认
-    AXButtonImagePositionRight,     // 图片在右，文字在左
-    AXButtonImagePositionTop,       // 图片在上，文字在下
-    AXButtonImagePositionBottom,    // 图片在下，文字在上
-};
+#import "AXiOSToolsEnum.h"
 
 @interface UIButton (AXTool)
 

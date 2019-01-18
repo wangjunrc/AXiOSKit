@@ -6,19 +6,9 @@
 //  Copyright © 2018年 liuweixing. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
-@interface AXExternFunction : NSObject
-
-#pragma mark - Foundation
-
-/**
- xcode 奔溃日志
- */
-void ax_registerCatch(void);
 
 /**
  是debug 环境下
@@ -36,7 +26,7 @@ BOOL ax_isiPad(void);
 /**
  * AppStore链接,填写自己的iD
  */
-NSString * _Nullable ax_AppStoreURL(NSString * _Nullable appId);
+NSString *ax_AppStoreURL(NSString *appId);
 
 /**
  AppStore 评分 url
@@ -44,7 +34,7 @@ NSString * _Nullable ax_AppStoreURL(NSString * _Nullable appId);
  @param AppStoreID AppStoreID
  @return url String
  */
-NSString * _Nullable ax_AppStoreScoreURL(NSString * _Nonnull AppStoreID);
+NSString *ax_AppStoreScoreURL(NSString *AppStoreID);
 
 /**
  拨打电话,直接拨打
@@ -53,7 +43,7 @@ NSString * _Nullable ax_AppStoreScoreURL(NSString * _Nonnull AppStoreID);
  
  @return 是否成功
  */
-BOOL ax_CallTel(NSString * _Nonnull phone);
+BOOL ax_CallTel(NSString *phone);
 
 /**
  * 打开通用设置
@@ -67,7 +57,7 @@ BOOL ax_OpenPrefsRoot(void);
  
  @return 是否打开
  */
-BOOL ax_CanOpenURL(id _Nonnull url);
+BOOL ax_CanOpenURL(id url);
 
 /**
  打开url
@@ -93,27 +83,27 @@ BOOL ax_OpenURL(id  _Nonnull url);
  
  @return 是否成功
  */
-BOOL ax_CallTelprompt(NSString * _Nonnull phone);
+BOOL ax_CallTelprompt(NSString * phone);
 
 /**
  * URL With str
  */
-NSURL * _Nonnull ax_URLWithStr(NSString * _Nonnull str);
+NSURL * ax_URLWithStr(NSString * str);
 
 /**
  * int --> NSString
  */
-NSString * _Nonnull ax_intToString(int aInt);
+NSString * ax_intToString(int aInt);
 
 /**
  * double --> NSString
  */
-NSString * _Nonnull ax_doubleToString(double aDouble);
+NSString * ax_doubleToString(double aDouble);
 
 /**
  * double --> NSString
  */
-NSString * _Nonnull ax_floatToString(float aFloat);
+NSString * ax_floatToString(float aFloat);
 
 /**
  * 获取一个随机整数，范围在包括0，不包括自身
@@ -134,7 +124,7 @@ int ax_randomFromTo(int from ,int to);
  @param name xib 名称
  @return UINib
  */
-UINib * _Nonnull ax_Nib(NSString * _Nonnull name);
+UINib * ax_Nib(NSString * name);
 
 /**
  创建xib
@@ -142,7 +132,7 @@ UINib * _Nonnull ax_Nib(NSString * _Nonnull name);
  @param aClass xib 名称 xib与源文件名称一致
  @return UINib
  */
-UINib * _Nonnull ax_NibClass(Class  _Nonnull aClass);
+UINib * ax_NibClass(Class  _Nonnull aClass);
 
 /**
  UIImage With 图片名
@@ -150,7 +140,7 @@ UINib * _Nonnull ax_NibClass(Class  _Nonnull aClass);
  @param name 图片名
  @return UIImage
  */
-UIImage * _Nonnull ax_Image(NSString * _Nonnull name);
+UIImage * ax_Image(NSString * name);
 
 
 #pragma mark - 添加属性
@@ -162,7 +152,7 @@ UIImage * _Nonnull ax_Image(NSString * _Nonnull name);
  @param propertyName 属性名 @selector() 格式
  @param value 值
  */
-void ax_setStrongAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id _Nonnull value );
+void ax_setStrongAssociatedObject(id object, const void *propertyName ,id value );
 
 
 /**
@@ -172,7 +162,7 @@ void ax_setStrongAssociatedObject(id _Nonnull object, const void * _Nonnull prop
  @param propertyName 属性名 @selector() 格式
  @param value 值
  */
-void ax_setCopyAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id _Nonnull value );
+void ax_setCopyAssociatedObject(id object, const void *propertyName ,id value );
 
 /**
  Retain Strong nonatomic 属性添加值
@@ -181,7 +171,7 @@ void ax_setCopyAssociatedObject(id _Nonnull object, const void * _Nonnull proper
  @param propertyName 属性名 @selector() 格式
  @param value 值
  */
-void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName ,id _Nonnull value );
+void ax_setAssignAssociatedObject(id object, const void *propertyName ,id value );
 
 /**
  Retain Strong Copy Assign 对象获取值
@@ -191,7 +181,7 @@ void ax_setAssignAssociatedObject(id _Nonnull object, const void * _Nonnull prop
  @param propertyName 属性名 @selector() 格式
  @return id 值
  */
-id _Nullable ax_getAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName);
+id ax_getAssociatedObject(id object, const void *propertyName);
 
 /**
  gcd 创建串行队列 queue
@@ -199,7 +189,7 @@ id _Nullable ax_getAssociatedObject(id _Nonnull object, const void * _Nonnull pr
  @param label 队列标识
  @return dispatch_queue_t
  */
-dispatch_queue_t _Nullable ax_get_queue_SERIAL(const char *_Nullable label);
+dispatch_queue_t ax_get_queue_SERIAL(const char *label);
 
 /**
  gcd 创建并行队列 queue
@@ -207,7 +197,7 @@ dispatch_queue_t _Nullable ax_get_queue_SERIAL(const char *_Nullable label);
  @param label 队列标识
  @return dispatch_queue_t
  */
-dispatch_queue_t _Nullable ax_get_queue_CONCURRENT(const char *_Nullable label);
+dispatch_queue_t ax_get_queue_CONCURRENT(const char *label);
 
 /**
  * Localizable.strings  标准名称 国际化文件
@@ -270,6 +260,8 @@ void ax_keyboard_bg_alpha_zero(void);
 
 /**键盘背景色透明*/
 void ax_keyboard_bg_alpha(CGFloat alpha);
-@end
+
+/**键盘背景UIInputSetHostView*/
+UIView *ax_keyboard_host_view(void);
 
 NS_ASSUME_NONNULL_END

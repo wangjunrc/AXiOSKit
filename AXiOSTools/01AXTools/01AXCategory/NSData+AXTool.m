@@ -16,15 +16,6 @@
     return  [self base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
 }
 
-/**
- *  NSData json解析
- */
-- (id)ax_formJSON{
-    return [NSJSONSerialization JSONObjectWithData:self options:NSJSONReadingMutableContainers error:nil];
-}
-
-
-
 //二进制转化为十六进制
 - (NSString *)ax_dataToHexString{
     NSData *data = self;

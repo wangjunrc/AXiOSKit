@@ -30,9 +30,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1g-o2-crM">
+                                <rect key="frame" x="50" y="136" width="229" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vh-tW-2Ti">
+                                <rect key="frame" x="134" y="322" width="60" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="BB" image="Group_3">
+                                    <color key="titleColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXw-70-B19" customClass="AXButton">
+                                <rect key="frame" x="274" y="620" width="91" height="37"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button" image="Group_3">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="xXw-70-B19" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rmQ-Bo-LJL" secondAttribute="trailing" constant="8" symbolic="YES" id="3Pz-e1-i5A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xXw-70-B19" secondAttribute="trailing" constant="10" id="6dH-Ib-ULP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xXw-70-B19" secondAttribute="bottom" constant="10" id="NHi-Fy-zFd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rmQ-Bo-LJL" secondAttribute="trailing" constant="10" id="OyG-rm-Foq"/>
                             <constraint firstItem="rmQ-Bo-LJL" firstAttribute="leading" secondItem="gDg-OD-8Ra" secondAttribute="trailing" constant="10" id="UrX-Jc-vmo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rmQ-Bo-LJL" secondAttribute="bottom" constant="10" id="VnM-To-XVI"/>
@@ -42,6 +66,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="G9G-Af-Y1w"/>
+                    <connections>
+                        <outlet property="aTF" destination="h1g-o2-crM" id="18j-gk-OgV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,7 +90,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sCH-y2-fVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="774.96251874062978"/>
+            <point key="canvasLocation" x="287" y="116"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Group_3" width="37" height="37"/>
+    </resources>
 </document>

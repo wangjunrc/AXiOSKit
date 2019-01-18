@@ -653,7 +653,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         
         [self ax_haveNav:^(UINavigationController *nav) {
             
-            tempFrame = CGRectMake(0, AXNavigationBarHeight(self), self.view.bounds.size.width, 3);
+            tempFrame = CGRectMake(0,ax_navigation_bar_height(), self.view.bounds.size.width, 3);
             
         } isPushNav:nil isPresentNav:nil noneNav:^{
             

@@ -14,8 +14,6 @@
 #include <libkern/OSAtomic.h>
 #include <stdatomic.h>
 
-@implementation AXExternFunction
-
 #pragma mark - Foundation
 
 /**
@@ -146,71 +144,6 @@ BOOL ax_CallTel(NSString *phone){
         return [[UIApplication sharedApplication] openURL:URL];
     }
 }
-
-
-/**
- xcode 奔溃日志
- */
-void ax_registerCatch(void){
-    
-    NSSetUncaughtExceptionHandler(&ax_HandleExceptionr);
-    signal(SIGABRT, ax_SignalHandler);
-    signal(SIGILL, ax_SignalHandler);
-    signal(SIGSEGV, ax_SignalHandler);
-    signal(SIGFPE, ax_SignalHandler);
-    signal(SIGBUS, ax_SignalHandler);
-    signal(SIGPIPE, ax_SignalHandler);
-}
-
-static void ax_HandleExceptionr(NSException*exception) {
-    
-    AXLog(@"↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  xcode运行崩溃  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓");
-    AXLog(@"xcode运行崩溃--> %@\n%@", exception, exception.callStackSymbols);
-    AXLog(@"↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑  xcode运行崩溃  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑");
-    
-    /**把异常崩溃信息上传服务器*/
-    //    int32_t exceptionCount = OSAtomicIncrement32(0);
-    //    if (exceptionCount > 10) {
-    //        return;
-    //    }
-    //    NSString *callStack = [BSBacktraceLogger bs_backtraceOfAllThread];
-    //    NSMutableDictionary *exceptionInfo = [NSMutableDictionary dictionary];
-    //    [exceptionInfo setValue:exception forKey:@"exception"];
-    //    [exceptionInfo setValue:callStack forKey:@"callStack"];
-    //    [[SPTCrashHelper sharedHelper] performSelectorOnMainThread:@selector(handleException:) withObject:exceptionInfo waitUntilDone:YES];
-    
-}
-
-void ax_SignalHandler(int signal) {
-    
-    //    int32_t exceptionCount = OSAtomicIncrement32(&ax_HandleExceptionr);
-    //
-    //    if (exceptionCount > 10) {
-    //        return;
-    //    }
-    //
-    //    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-    //    userInfo[@"UncaughtExceptionHandlerSignalKey"] = @(signal);
-    //
-    //
-    //    NSException *exception = [NSException
-    //                              exceptionWithName:@"UncaughtExceptionHandlerSignalExceptionName"
-    //                              reason:
-    //                              [NSString stringWithFormat:
-    //                               NSLocalizedString(@"Signal %d was raised.", nil),
-    //                               signal]
-    //                              userInfo:userInfo];
-    //
-    //    NSString *callStack = [BSBacktraceLogger bs_backtraceOfAllThread];
-    //
-    //    NSMutableDictionary *exceptionInfo = [NSMutableDictionary dictionary];
-    //    [exceptionInfo setValue:exception forKey:@"exception"];
-    //    [exceptionInfo setValue:callStack forKey:@"callStack"];
-    //
-    //
-    //    [[SPTCrashHelper sharedHelper] performSelectorOnMainThread:@selector(handleException:) withObject:exceptionInfo waitUntilDone:YES];
-}
-
 
 /**
  * AppStore链接,填写自己的iD
@@ -421,7 +354,7 @@ id ax_getAssociatedObject(id _Nonnull object, const void * _Nonnull propertyName
  @param label 队列标识
  @return dispatch_queue_t
  */
-dispatch_queue_t ax_get_queue_SERIAL(const char *_Nullable label) {
+dispatch_queue_t ax_get_queue_SERIAL(const char * label) {
     
     return  dispatch_queue_create(label,DISPATCH_QUEUE_SERIAL);
     
@@ -433,7 +366,7 @@ dispatch_queue_t ax_get_queue_SERIAL(const char *_Nullable label) {
  @param label 队列标识
  @return dispatch_queue_t
  */
-dispatch_queue_t ax_get_queue_CONCURRENT(const char *_Nullable label) {
+dispatch_queue_t ax_get_queue_CONCURRENT(const char * label) {
     
     return  dispatch_queue_create(label,DISPATCH_QUEUE_CONCURRENT);
     
@@ -485,14 +418,20 @@ UIViewController * ax_rootViewController(void) {
  */
 UIViewController * ax_rootViewController_appDelegate(void) {
     
-    return  ((id<UIApplicationDelegate>)([UIApplication sharedApplication].delegate)).window.rootViewController;
+    return ax_mainAppDelegate().window.rootViewController;
 }
 
 /**
  keyWindow
  */
 UIWindow *ax_keyWindow(void) {
-    return [UIApplication sharedApplication].keyWindow;
+    
+    UIApplication *app = [UIApplication sharedApplication];
+    if ([app.delegate respondsToSelector:@selector(window)]) {
+        return app.delegate.window;
+    } else {
+        return app.keyWindow;
+    }
 }
 
 /**
@@ -567,6 +506,11 @@ void ax_keyboard_bg_alpha_zero(void) {
 
 /**键盘背景色透明*/
 void ax_keyboard_bg_alpha(CGFloat alpha) {
+    ax_keyboard_host_view().alpha = alpha;
+}
+
+/**键盘背景UIInputSetHostView*/
+UIView *ax_keyboard_host_view(void) {
     
     UIView *peripheralHostView =  UIApplication.sharedApplication.windows.lastObject.subviews.lastObject;
     UIView *InputSetHostView;
@@ -574,10 +518,9 @@ void ax_keyboard_bg_alpha(CGFloat alpha) {
         for (UIView *view in peripheralHostView.subviews) {
             if ([view isKindOfClass:NSClassFromString(@"UIInputSetHostView")]) {
                 InputSetHostView = view;
+                break;
             }
         }
     }
-    InputSetHostView.subviews.firstObject.alpha = alpha;
+    return InputSetHostView.subviews.firstObject;
 }
-
-@end

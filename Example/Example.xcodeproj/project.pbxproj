@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2412DE4221EF238E0067E670 /* SPTAutoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2412DE4121EF238E0067E670 /* SPTAutoScrollView.m */; };
+		2412DE4821EF23BB0067E670 /* SPTStyledPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2412DE4521EF23BB0067E670 /* SPTStyledPageControl.m */; };
+		2412DE4921EF23BB0067E670 /* SPTPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2412DE4621EF23BB0067E670 /* SPTPageControl.m */; };
+		244D47F321EF299600DEFB89 /* TYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 244D47EF21EF299600DEFB89 /* TYPageControl.m */; };
+		244D47F421EF299600DEFB89 /* TYCyclePagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 244D47F021EF299600DEFB89 /* TYCyclePagerView.m */; };
+		244D47F521EF299600DEFB89 /* TYCyclePagerTransformLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 244D47F121EF299600DEFB89 /* TYCyclePagerTransformLayout.m */; };
 		245BD51221E62EB600831542 /* ax_test.html in Resources */ = {isa = PBXBuildFile; fileRef = 245BD51121E62EB600831542 /* ax_test.html */; };
 		24CB556F21E5974900468BAD /* AXUIWebJSDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CB556821E5974900468BAD /* AXUIWebJSDemoVC.m */; };
 		24CB557021E5974900468BAD /* UIWebViewPage.html in Resources */ = {isa = PBXBuildFile; fileRef = 24CB556A21E5974900468BAD /* UIWebViewPage.html */; };
@@ -22,6 +28,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2412DE4021EF238E0067E670 /* SPTAutoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTAutoScrollView.h; sourceTree = "<group>"; };
+		2412DE4121EF238E0067E670 /* SPTAutoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTAutoScrollView.m; sourceTree = "<group>"; };
+		2412DE4421EF23BB0067E670 /* SPTPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTPageControl.h; sourceTree = "<group>"; };
+		2412DE4521EF23BB0067E670 /* SPTStyledPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTStyledPageControl.m; sourceTree = "<group>"; };
+		2412DE4621EF23BB0067E670 /* SPTPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTPageControl.m; sourceTree = "<group>"; };
+		2412DE4721EF23BB0067E670 /* SPTStyledPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTStyledPageControl.h; sourceTree = "<group>"; };
+		244D47ED21EF299600DEFB89 /* TYCyclePagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCyclePagerView.h; sourceTree = "<group>"; };
+		244D47EE21EF299600DEFB89 /* TYCyclePagerTransformLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCyclePagerTransformLayout.h; sourceTree = "<group>"; };
+		244D47EF21EF299600DEFB89 /* TYPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPageControl.m; sourceTree = "<group>"; };
+		244D47F021EF299600DEFB89 /* TYCyclePagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYCyclePagerView.m; sourceTree = "<group>"; };
+		244D47F121EF299600DEFB89 /* TYCyclePagerTransformLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYCyclePagerTransformLayout.m; sourceTree = "<group>"; };
+		244D47F221EF299600DEFB89 /* TYPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPageControl.h; sourceTree = "<group>"; };
 		245BD51121E62EB600831542 /* ax_test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ax_test.html; sourceTree = "<group>"; };
 		24CB556821E5974900468BAD /* AXUIWebJSDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXUIWebJSDemoVC.m; sourceTree = "<group>"; };
 		24CB556921E5974900468BAD /* AXUIWebJSDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXUIWebJSDemoVC.h; sourceTree = "<group>"; };
@@ -56,6 +74,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2412DE3F21EF238E0067E670 /* NewPagedFlowView */ = {
+			isa = PBXGroup;
+			children = (
+				2412DE4021EF238E0067E670 /* SPTAutoScrollView.h */,
+				2412DE4121EF238E0067E670 /* SPTAutoScrollView.m */,
+			);
+			path = NewPagedFlowView;
+			sourceTree = "<group>";
+		};
+		2412DE4321EF23BB0067E670 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				2412DE4421EF23BB0067E670 /* SPTPageControl.h */,
+				2412DE4521EF23BB0067E670 /* SPTStyledPageControl.m */,
+				2412DE4621EF23BB0067E670 /* SPTPageControl.m */,
+				2412DE4721EF23BB0067E670 /* SPTStyledPageControl.h */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
+		244D47EC21EF299600DEFB89 /* TYCyclePagerView */ = {
+			isa = PBXGroup;
+			children = (
+				244D47EE21EF299600DEFB89 /* TYCyclePagerTransformLayout.h */,
+				244D47F121EF299600DEFB89 /* TYCyclePagerTransformLayout.m */,
+				244D47ED21EF299600DEFB89 /* TYCyclePagerView.h */,
+				244D47F021EF299600DEFB89 /* TYCyclePagerView.m */,
+				244D47F221EF299600DEFB89 /* TYPageControl.h */,
+				244D47EF21EF299600DEFB89 /* TYPageControl.m */,
+			);
+			path = TYCyclePagerView;
+			sourceTree = "<group>";
+		};
 		24CB556721E5974900468BAD /* AXUIWebJSDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +148,9 @@
 		24F023A121E078B1003E3B78 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				244D47EC21EF299600DEFB89 /* TYCyclePagerView */,
+				2412DE4321EF23BB0067E670 /* PageControl */,
+				2412DE3F21EF238E0067E670 /* NewPagedFlowView */,
 				245BD51121E62EB600831542 /* ax_test.html */,
 				24CB556721E5974900468BAD /* AXUIWebJSDemo */,
 				24CB556B21E5974900468BAD /* AXWKWebJSDemo */,
@@ -281,8 +335,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2412DE4921EF23BB0067E670 /* SPTPageControl.m in Sources */,
+				2412DE4221EF238E0067E670 /* SPTAutoScrollView.m in Sources */,
+				244D47F521EF299600DEFB89 /* TYCyclePagerTransformLayout.m in Sources */,
+				2412DE4821EF23BB0067E670 /* SPTStyledPageControl.m in Sources */,
 				24CB557121E5974900468BAD /* AXWKWebJSDemoVC.m in Sources */,
+				244D47F321EF299600DEFB89 /* TYPageControl.m in Sources */,
 				24CB556F21E5974900468BAD /* AXUIWebJSDemoVC.m in Sources */,
+				244D47F421EF299600DEFB89 /* TYCyclePagerView.m in Sources */,
 				24F023A721E078B1003E3B78 /* ViewController.m in Sources */,
 				24F023B221E078B2003E3B78 /* main.m in Sources */,
 				24F023A421E078B1003E3B78 /* AppDelegate.m in Sources */,

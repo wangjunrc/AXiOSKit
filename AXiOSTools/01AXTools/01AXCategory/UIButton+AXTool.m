@@ -47,10 +47,9 @@ typedef void(^ButtonBlock)(UIButton *button);
 
 static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
 
-- (void)ax_setImagePosition:(AXButtonImagePosition)postion spacing:(CGFloat)spacing
-{
-    [self setTitle:self.currentTitle forState:UIControlStateNormal];
-    [self setImage:self.currentImage forState:UIControlStateNormal];
+- (void)ax_setImagePosition:(AXButtonImagePosition)postion spacing:(CGFloat)spacing{
+//    [self setTitle:self.currentTitle forState:UIControlStateNormal];
+//    [self setImage:self.currentImage forState:UIControlStateNormal];
     
     CGFloat imageWidth = self.imageView.image.size.width;
     CGFloat imageHeight = self.imageView.image.size.height;

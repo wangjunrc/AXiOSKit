@@ -23,8 +23,6 @@ typedef void(^DidViewBlock)(UIView *view);
  * 指定 角 进行圆角
  */
 - (void)ax_roundingCorners:(UIRectCorner)corners cornerRadius:(CGFloat )cornerRadius{
-    
-    
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corners cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = self.bounds;
@@ -298,6 +296,21 @@ typedef void(^DidViewBlock)(UIView *view);
     [lineView.layer addSublayer:shapeLayer];
 }
 
+
+/**
+ 活动view响应 UIViewController
+
+ @return UIViewController
+ */
+- (UIViewController *)ax_viewController {
+    for (UIView* next = self; next; next = next.superview) {
+        UIResponder *nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)nextResponder;
+        }
+    }
+    return nil;
+}
 
 #pragma mark - set and get
 

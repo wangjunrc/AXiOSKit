@@ -26,11 +26,12 @@
     return hash;
 }
 
+
 /**
  * DES 加密
  */
-- (NSString *)ax_encryptDESWithKey:(NSString *)key
-{
+- (NSString *)ax_encryptDESWithKey:(NSString *)key{
+    
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
     NSUInteger bufferSize = 1024 * 900;
     unsigned char buffer[bufferSize];
@@ -67,7 +68,9 @@
  * DES  解密
  */
 - (NSString*)ax_decryptDESWithKey:(NSString *)key{
-    NSData* cipherData = [self ax_toBase64];
+    
+    NSData* cipherData = [self __cipherData];
+    
     NSUInteger bufferSize = 1024 * 100;
     unsigned char buffer[bufferSize];
     memset(buffer, 0,bufferSize);
@@ -93,10 +96,11 @@
     return plainText;
 }
 /**
- * 利用 GTMBase64 解碼 Base64 字串
+ *  DES  解密 转data
  */
-- (NSData *)ax_toBase64{
-    NSInteger len = [self length] / 2;    // Target length
+- (NSData *)__cipherData{
+    
+    NSInteger len = [self length] / 2;
     unsigned char *buf = malloc(len);
     unsigned char *whole_byte = buf;
     char byte_chars[3] = {'\0','\0','\0'};
@@ -107,7 +111,7 @@
        *whole_byte = strtol(byte_chars, NULL, 16);
         whole_byte++;
     }
-    
+
     NSData *data = [NSData dataWithBytes:buf length:len];
     free( buf );
     return data;
@@ -186,7 +190,7 @@
 /**
  * 对publickey和privatekey进行加密
  */
-- (NSString *)ax_hmacSha1:(NSString*)public_key :(NSString*)private_key{
+- (NSString *)ax_hmacSha1:(NSString*)public_key private_key:(NSString*)private_key{
     
     NSData* secretData = [private_key dataUsingEncoding:NSUTF8StringEncoding];
     NSData* stringData = [public_key dataUsingEncoding:NSUTF8StringEncoding];
@@ -292,6 +296,27 @@
     }
     
     return data;
+}
+
+/**
+ * string加密 to Base64String
+ */
+- (NSString *)ax_stringToBase64String {
+    
+    NSString *str = self;
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *base64Str = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    return base64Str;
+}
+
+/**
+ * Base64String解密 to string
+ */
+- (NSString *)ax_base64StringToString {
+    NSString *base64Str = self;
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:base64Str options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    return string;
 }
 
 

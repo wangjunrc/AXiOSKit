@@ -36,7 +36,16 @@ pod 'CocoaSecurity'
 #pod 'PINRemoteImage'
 
 # 由Flipboard开源的iOS平台上播放GIF动画 facebook/FLAnimatedImage forked from Flipboard/FLAnimatedImage  替代品
-#pod 'FLAnimatedImage'
+pod 'FLAnimatedImage'
+pod 'SDWebImage/GIF'
+#import <FLAnimatedImageView.h>
+#import <FLAnimatedImageView+WebCache.h>
+
+FLAnimatedImageView *FLView = [[FLAnimatedImageView alloc]init];
+FLView.frame = CGRectMake(0, 64, SCREEN_WIDTH, 280);
+[FLView sd_setImageWithURL:[NSURL URLWithString:IMAGE2] placeholderImage:[UIImage imageNamed:[NSBundle zb_placeholder]]];
+[self.view addSubview:FLView];
+
 
 
 # 图片无限轮播器

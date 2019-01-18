@@ -23,6 +23,11 @@ void ax_configure(void);
  */
 void ax_IQKeyboardManager(void);
 
+/**
+ xcode 奔溃日志
+ */
+void ax_registerCatch(void);
+
 @end
 
 NS_ASSUME_NONNULL_END
