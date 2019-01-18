@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
    
     # 允许定义当前 Pod 库的资源包的 名称和文件 。用 hash 的形式来声明，key 是 bundle 的名称，value 是需要包括的文件的通配 patterns。
     s.resource_bundles = {
-        'AXiOSTools_ax_mainBundle' => ['AXiOSTools/**/*.{xcassets,gif,json,strings}'],
+        'AXiOSTools_bundle' => ['AXiOSTools/**/*.{xcassets,gif,json,strings}'],
     }
     
     s.frameworks = "Foundation", "UIKit"

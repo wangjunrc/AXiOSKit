@@ -14,7 +14,6 @@ static Class imageManagerClass = nil;
 @interface GKPhotoBrowser()<UIScrollViewDelegate>
 {
     UILabel  *_countLabel;
-    CGPoint  _startLocation;
 }
 
 @property (nonatomic, strong, readwrite) UIView *contentView;
@@ -47,11 +46,16 @@ static Class imageManagerClass = nil;
 /** 状态栏是否显示 */
 @property (nonatomic, assign) BOOL isStatusBarShowing;
 
+/** 正在滑动缩放隐藏 */
+@property (nonatomic, assign) BOOL isZoomScale;
+
 @property (nonatomic, assign) BOOL isPortraitToUp;
 
 @property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
 
 @property (nonatomic, assign) CGPoint   firstMovePoint;
+@property (nonatomic, assign) CGPoint   startLocation;
+@property (nonatomic, assign) CGRect    startFrame;
 
 @property (nonatomic, strong) id<GKWebImageProtocol> imageProtocol;
 
@@ -73,9 +77,9 @@ static Class imageManagerClass = nil;
         _photoScrollView.showsHorizontalScrollIndicator = NO;
         _photoScrollView.backgroundColor                = [UIColor clearColor];
         if (self.showStyle == GKPhotoBrowserShowStylePush) {
-            _photoScrollView.gk_gestureHandleDisabled = NO;
-        }else {
-            _photoScrollView.gk_gestureHandleDisabled = YES;
+            if (self.isPopGestureEnabled) {
+                _photoScrollView.gk_gestureHandleEnabled = YES;
+            }
         }
         
         if (@available(iOS 11.0, *)) {
@@ -136,13 +140,13 @@ static Class imageManagerClass = nil;
     
     // 设置UI
     [self setupUI];
-    
-    // 手势和监听
-    [self addGestureAndObserver];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    // 手势和监听
+    [self addGestureAndObserver];
     
     GKPhoto *photo          = [self currentPhoto];
     GKPhotoView *photoView  = [self currentPhotoView];
@@ -171,11 +175,11 @@ static Class imageManagerClass = nil;
     }
 }
 
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
     
-    if (!self.isStatusBarChanged) {
-        [self layoutSubviews];
+    if ([self.delegate respondsToSelector:@selector(photoBrowser:didDisappearAtIndex:)]) {
+        [self.delegate photoBrowser:self didDisappearAtIndex:self.currentIndex];
     }
 }
 
@@ -188,11 +192,11 @@ static Class imageManagerClass = nil;
     CGFloat height = self.view.bounds.size.height;
     BOOL isLandspace = width > height;
     
-    if (self.isAdaptiveSaveArea) {
+    if (self.isAdaptiveSafeArea) {
         if (isLandspace) {
-            width -= (kSaveTopSpace + kSaveBottomSpace);
+            width -= (kSafeTopSpace + kSafeBottomSpace);
         }else {
-            height -= (kSaveTopSpace + kSaveBottomSpace);
+            height -= (kSafeTopSpace + kSafeBottomSpace);
         }
     }
     
@@ -207,6 +211,7 @@ static Class imageManagerClass = nil;
         [self.coverViews enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [self.contentView addSubview:obj];
         }];
+        [self layoutSubviews];
     }else {
         _countLabel                 = [UILabel new];
         _countLabel.textColor       = [UIColor whiteColor];
@@ -215,7 +220,7 @@ static Class imageManagerClass = nil;
         _countLabel.bounds          = CGRectMake(0, 0, 80, 30);
         [self.contentView addSubview:_countLabel];
         
-        _countLabel.center = CGPointMake(self.contentView.bounds.size.width * 0.5, (KIsiPhoneX && !isLandspace) ? 50 : 30);
+        _countLabel.center = CGPointMake(GKScreenW * 0.5, (KIsiPhoneX && !isLandspace) ? 50 : 30);
         _countLabel.hidden = self.photos.count == 1;
         
         [self updateLabel];
@@ -246,9 +251,7 @@ static Class imageManagerClass = nil;
 - (void)setShowStyle:(GKPhotoBrowserShowStyle)showStyle {
     _showStyle = showStyle;
     
-    if (showStyle == GKPhotoBrowserShowStylePush) {
-        //        self.photoScrollView.gk_gestureHandleDisabled = NO;
-    }else {
+    if (showStyle != GKPhotoBrowserShowStylePush) {
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.modalTransitionStyle   = UIModalTransitionStyleCoverVertical;
     }
@@ -312,7 +315,21 @@ static Class imageManagerClass = nil;
     GKPhoto *photo          = [self currentPhoto];
     GKPhotoView *photoView  = [self currentPhotoView];
     
-    CGRect endRect    = photoView.imageView.frame;
+    CGRect endRect = CGRectZero;
+    if (photoView.imageView.image) {
+        endRect = photoView.imageView.frame;
+    }else {
+        if (CGRectEqualToRect(photo.sourceFrame, CGRectZero)) {
+            endRect = photoView.imageView.frame;
+        }else {
+            CGFloat w = GKScreenW;
+            CGFloat h = w * photo.sourceFrame.size.height / photo.sourceFrame.size.width;
+            CGFloat x = 0;
+            CGFloat y = (GKScreenH - h) / 2;
+            endRect = CGRectMake(x, y, w, h);
+        }
+    }
+    
     CGRect sourceRect = photo.sourceFrame;
     
     if (CGRectEqualToRect(sourceRect, CGRectZero)) {
@@ -377,7 +394,7 @@ static Class imageManagerClass = nil;
     }else {
         _countLabel.bounds = CGRectMake(0, 0, 80, 30);
 
-        _countLabel.center = CGPointMake(frame.size.width * 0.5, (KIsiPhoneX && !self.isLandspace) ? 50 : 30);
+        _countLabel.center = CGPointMake(GKScreenW * 0.5, (KIsiPhoneX && !self.isLandspace) ? 50 : 30);
     }
     
     if ([self.delegate respondsToSelector:@selector(photoBrowser:willLayoutSubViews:)]) {
@@ -624,25 +641,32 @@ static Class imageManagerClass = nil;
 }
 
 - (void)handlePanZoomScale:(UIPanGestureRecognizer *)panGesture {
-    CGPoint point       = [panGesture translationInView:self.view];
-    CGPoint location    = [panGesture locationInView:self.view];
-    CGPoint velocity    = [panGesture velocityInView:self.view];
-    
     GKPhotoView *photoView = [self photoViewForIndex:self.currentIndex];
+    CGPoint point       = [panGesture translationInView:self.view];
+    CGPoint location    = [panGesture locationInView:photoView.scrollView];
+    CGPoint velocity    = [panGesture velocityInView:self.view];
     
     switch (panGesture.state) {
         case UIGestureRecognizerStateBegan:
-            _startLocation = location;
+            self.startLocation = location;
+            self.startFrame = photoView.imageView.frame;
+            self.isZoomScale = YES;
             [self handlePanBegin];
             break;
         case UIGestureRecognizerStateChanged: {
             double percent = 1 - fabs(point.y) / self.view.frame.size.height;
-            percent  = MAX(percent, 0);
-            double s = MAX(percent, 0.5);
-
-            CGAffineTransform translation = CGAffineTransformMakeTranslation(point.x / s, point.y / s);
-            CGAffineTransform scale = CGAffineTransformMakeScale(s, s);
-            photoView.imageView.transform = CGAffineTransformConcat(translation, scale);
+            double s = MAX(percent, 0.3);
+            
+            CGFloat width = self.startFrame.size.width * s;
+            CGFloat height = self.startFrame.size.height * s;
+            
+            CGFloat rateX = (self.startLocation.x - self.startFrame.origin.x) / self.startFrame.size.width;
+            CGFloat x = location.x - width * rateX;
+            
+            CGFloat rateY = (self.startLocation.y - self.startFrame.origin.y) / self.startFrame.size.height;
+            CGFloat y = location.y - height * rateY;
+            
+            photoView.imageView.frame = CGRectMake(x, y, width, height);
 
             self.view.backgroundColor = self.bgColor ? [self.bgColor colorWithAlphaComponent:percent] : [[UIColor blackColor] colorWithAlphaComponent:percent];
         }
@@ -723,18 +747,17 @@ static Class imageManagerClass = nil;
             
             CGFloat height = MAX(screenBounds.size.width, screenBounds.size.height);
             
-            if (self.isAdaptiveSaveArea) {
-                height -= (kSaveTopSpace + kSaveBottomSpace);
+            if (self.isAdaptiveSafeArea) {
+                height -= (kSafeTopSpace + kSafeBottomSpace);
             }
             // 设置frame
             self.contentView.bounds = CGRectMake(0, 0, MIN(screenBounds.size.width, screenBounds.size.height), height);
             
             self.contentView.center = [UIApplication sharedApplication].keyWindow.center;
             
-            [self layoutSubviews];
-            
             [self.view setNeedsLayout];
             [self.view layoutIfNeeded];
+            [self layoutSubviews];
         }completion:^(BOOL finished) {
             [self showDismissAnimation];
         }];
@@ -776,11 +799,16 @@ static Class imageManagerClass = nil;
         }
     }
     
+    if (photoView.scrollView.zoomScale > 1.0f) {
+        [photoView.scrollView setZoomScale:1.0f animated:YES];
+    }
+    
+    if (photo.sourceImageView) {
+        photoView.imageView.image = photo.sourceImageView.image;
+    }
+    
     [UIView animateWithDuration:kAnimationDuration animations:^{
         photoView.imageView.frame = sourceRect;
-        if (photo.sourceImageView) {
-            photoView.imageView.image = photo.sourceImageView.image;
-        }
         self.view.backgroundColor = [UIColor clearColor];
     }completion:^(BOOL finished) {
         [self dismissAnimated:NO];
@@ -815,7 +843,11 @@ static Class imageManagerClass = nil;
     photo.sourceImageView.alpha = 1.0;
     
     [UIView animateWithDuration:kAnimationDuration animations:^{
-        photoView.imageView.transform = CGAffineTransformIdentity;
+        if (self.hideStyle == GKPhotoBrowserHideStyleZoomScale) {
+            photoView.imageView.frame = self.startFrame;
+        }else {
+            photoView.imageView.transform = CGAffineTransformIdentity;
+        }
         self.view.backgroundColor = self.bgColor ? : [UIColor blackColor];
     }completion:^(BOOL finished) {
         
@@ -918,18 +950,17 @@ static Class imageManagerClass = nil;
             self.contentView.transform = CGAffineTransformMakeRotation(M_PI * rotation);
             
             CGFloat width = MAX(screenBounds.size.width, screenBounds.size.height);
-            if (self.isAdaptiveSaveArea) {
-                width -= (kSaveTopSpace + kSaveBottomSpace);
+            if (self.isAdaptiveSafeArea) {
+                width -= (kSafeTopSpace + kSafeBottomSpace);
             }
             // 设置frame
             self.contentView.bounds = CGRectMake(0, 0, width, MIN(screenBounds.size.width, screenBounds.size.height));
             
             self.contentView.center = [UIApplication sharedApplication].keyWindow.center;
             
-            [self layoutSubviews];
-            
             [self.view setNeedsLayout];
             [self.view layoutIfNeeded];
+            [self layoutSubviews];
             
         } completion:^(BOOL finished) {
             // 记录设备方向
@@ -959,17 +990,16 @@ static Class imageManagerClass = nil;
             self.contentView.transform = currentOrientation == UIDeviceOrientationPortrait ? CGAffineTransformIdentity : CGAffineTransformMakeRotation(M_PI);
             
             CGFloat height = MAX(screenBounds.size.width, screenBounds.size.height);
-            if (self.isAdaptiveSaveArea) {
-                height -= (kSaveTopSpace + kSaveBottomSpace);
+            if (self.isAdaptiveSafeArea) {
+                height -= (kSafeTopSpace + kSafeBottomSpace);
             }
             // 设置frame
             self.contentView.bounds = CGRectMake(0, 0, MIN(screenBounds.size.width, screenBounds.size.height), height);
             self.contentView.center = [UIApplication sharedApplication].keyWindow.center;
             
-            [self layoutSubviews];
-            
             [self.view setNeedsLayout];
             [self.view layoutIfNeeded];
+            [self layoutSubviews];
             
         } completion:^(BOOL finished) {
             // 记录设备方向
@@ -985,6 +1015,9 @@ static Class imageManagerClass = nil;
     }else {
         self.isRotation     = NO;
         self.isLandspace    = NO;
+        [self.view setNeedsLayout];
+        [self.view layoutIfNeeded];
+        [self layoutSubviews];
         
         [self deviceOrientationChangedDelegate];
     }

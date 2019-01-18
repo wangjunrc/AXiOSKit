@@ -66,7 +66,6 @@
         if (@available(iOS 11.0, *)) {
             _scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
-        _scrollView.gk_gestureHandleDisabled = YES;
     }
     return _scrollView;
 }
@@ -128,18 +127,26 @@
             return;
         }
         
-        // 显示原来的图片
-        self.imageView.image          = photo.placeholderImage ? photo.placeholderImage : photo.sourceImageView.image;
+        // 优先加载缓存图片
+        UIImage *placeholderImage = [_imageProtocol imageFromMemoryForURL:photo.url];
+        // 如果没有就加载sourceImageView的image
+        if (!placeholderImage) {
+            placeholderImage = photo.sourceImageView.image;
+        }
+        // 如果还没有就加载传入的站位图
+        if (!placeholderImage) {
+            placeholderImage = photo.placeholderImage;
+        }
+        
+        self.imageView.image          = placeholderImage;
         self.imageView.contentMode    = photo.sourceImageView.contentMode;
         self.scrollView.scrollEnabled = NO;
         // 进度条
         [self addSubview:self.loadingView];
         
-        if (!photo.failed) {
-            [self.loadingView startLoading];
-        }
-        
         if (self.imageView.image) {
+            [self adjustFrame];
+        }else if (!CGRectEqualToRect(photo.sourceFrame, CGRectZero)) {
             [self adjustFrame];
         }
         
@@ -153,6 +160,10 @@
         if (photo.image.images.count > 1) {
             photo.finished = YES;
             return;
+        }
+        
+        if (!photo.failed && !cacheImage) {
+            [self.loadingView startLoading];
         }
         
         // 开始加载图片
@@ -179,6 +190,9 @@
                     [strongSelf.loadingView showFailure];
                 }else {
                     photo.finished = YES;
+                    strongSelf.scrollView.scrollEnabled = YES;
+                    [strongSelf.loadingView stopLoading];
+                    
                     if (cacheType == SDImageCacheTypeNone) {
                         [strongSelf setupPhotoWithData:data image:image];
                     }else if (cacheType == SDImageCacheTypeMemory) {
@@ -187,9 +201,6 @@
                     }else {
                         [strongSelf setupPhotoWithData:data image:image];
                     }
-                    
-                    strongSelf.scrollView.scrollEnabled = YES;
-                    [strongSelf.loadingView stopLoading];
                 }
                 [strongSelf adjustFrame];
             });
@@ -323,7 +334,16 @@
         // 初始化
         self.scrollView.minimumZoomScale = 1.0;
         self.scrollView.maximumZoomScale = maxScale;
-        self.scrollView.zoomScale        = 1.0;
+    }else if (!CGRectEqualToRect(self.photo.sourceFrame, CGRectZero)) {
+        CGFloat width = frame.size.width;
+        CGFloat height = width * self.photo.sourceFrame.size.height / self.photo.sourceFrame.size.height;
+        _imageView.bounds = CGRectMake(0, 0, width, height);
+        _imageView.center = CGPointMake(frame.size.width * 0.5, frame.size.height * 0.5);
+        self.scrollView.contentSize = self.imageView.frame.size;
+        
+        self.loadingView.bounds = self.scrollView.frame;
+        self.loadingView.center = CGPointMake(frame.size.width * 0.5, frame.size.height * 0.5);
+        [self.loadingView removeAnimation];
     }else {
         frame.origin        = CGPointZero;
         CGFloat width       = frame.size.width;
@@ -343,6 +363,9 @@
     if (self.photo.isZooming) {
         [self zoomToRect:self.photo.zoomRect animated:NO];
     }
+    
+    // 重置offset
+    self.scrollView.contentOffset = self.photo.offset;
 }
 
 - (CGPoint)centerOfScrollViewContent:(UIScrollView *)scrollView {
@@ -357,6 +380,10 @@
 }
 
 #pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    self.photo.offset = scrollView.contentOffset;
+}
+
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return self.imageView;
 }
