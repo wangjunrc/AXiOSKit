@@ -7,14 +7,12 @@
 //
 
 #import "AXWKWebVC.h"
-
 #if __has_include("WKWebViewJavascriptBridge.h")
-
 @import WebKit;
 #import "AXiOSTools.h"
 #import "WKWebViewJavascriptBridge.h"
 #import "NSBundle+AXLocal.h"
-
+#import "AXWeakProxy.h"
 
 typedef NS_ENUM(NSInteger, WKWebLoadType){
     WKWebLoadTypeURLString,
@@ -24,15 +22,15 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 
 @interface AXWKWebVC ()<WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate,UINavigationControllerDelegate,UIScrollViewDelegate>
 
+@property (nonatomic, strong) WKWebView *webView;
 
 @property (nonatomic, copy) NSString *url;
 
-
-@property (nonatomic, strong) WKWebView *webView;
-
 @property (nonatomic, strong) UIProgressView *progressView;
 
-//网页加载的类型
+/**
+ 网页加载的类型
+ */
 @property (nonatomic, assign) WKWebLoadType loadType;
 
 /**
@@ -62,12 +60,10 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 @implementation AXWKWebVC
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    [self init_setView];
-    [self init_navItme];
-    [self func_webViewloadURLType];
-    
+    [self __initView];
+    [self __initNavItme];
+    [self __webViewloadURLType];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -75,31 +71,36 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     [self.progressView setProgress:0.0f animated:NO];
 }
 
+
 #pragma mark -  init
 /**
  * view
  */
-- (void)init_setView{
+- (void)__initView{
     
     [self.view addSubview:self.webView];
     [self.view addSubview:self.progressView];
     
     self.webView.navigationDelegate = self;
     self.webView.UIDelegate = self;
+    
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
     }];
     
     [self init_WebViewJavascriptBridge];
     
-//    NSString *colorStr = [[UIColor redColor] ax_colorToHexString];
-//
-//    NSString *js = [NSString stringWithFormat:@"\
-//                    window.onload = function(){\
-//                    document.body.style.backgroundColor = '%@';\
-//                    };",colorStr];
-//
-//    [self.webView evaluateJavaScript:js completionHandler:nil];
+    // oc条用js方法
+    //    NSString *colorStr = [[UIColor redColor] ax_colorToHexString];
+    //
+    //    NSString *js = [NSString stringWithFormat:@"\
+    //                    window.onload = function(){\
+    //                    document.body.style.backgroundColor = '%@';\
+    //                    };",colorStr];
+    //
+    //    [self.webView evaluateJavaScript:js completionHandler:nil];
+    
+  
     
 }
 
@@ -117,47 +118,44 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     // 如果控制器里需要监听WKWebView 的`navigationDelegate`方法，就需要添加下面这行。
     [self.bridge setWebViewDelegate:self];
     
-    
     [self.bridge registerHandler:@"iosWeixinPay" handler:^(id data, WVJBResponseCallback responseCallback) {
-        
-        
         //data  js 传来的参数
         NSLog(@"data>> %@", data);
         
-//        if (responseCallback) {
-//            // 反馈给JS ,js 不需要反馈 就不需要写
-//            responseCallback(@{@"userId": @"123456"});
-//        }
+        //        if (responseCallback) {
+        //            // 反馈给JS ,js 不需要反馈 就不需要写
+        //            responseCallback(@{@"userId": @"123456"});
+        //        }
     }];
     
     
     
     // 时机调用回调
-//    [self.bridge callHandler:@"payCallBack" data:@"123"];
+    //    [self.bridge callHandler:@"payCallBack" data:@"123"];
     
     
-//    [self.bridge callHandler:@"function_name"data:@{} responseCallback:^(id responseData) {
-//
-//        NSLog(@"from js: %@", responseData);
-//    }];
+    //    [self.bridge callHandler:@"function_name"data:@{} responseCallback:^(id responseData) {
+    //
+    //        NSLog(@"from js: %@", responseData);
+    //    }];
     
     
-//    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-//    btn.backgroundColor = [UIColor orangeColor];
-//    [self.webView addSubview:btn];
-//    
-//    [btn ax_addActionBlock:^(UIButton * _Nullable button) {
-//        AXLog(@"btn>>>");
-//        [self.bridge callHandler:@"payCallBack" data:@"123"];
-//
-//    }];
+    //    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    //    btn.backgroundColor = [UIColor orangeColor];
+    //    [self.webView addSubview:btn];
+    //
+    //    [btn ax_addActionBlock:^(UIButton * _Nullable button) {
+    //        AXLog(@"btn>>>");
+    //        [self.bridge callHandler:@"payCallBack" data:@"123"];
+    //
+    //    }];
 }
 
 
 /**
  * UINavigationController itme
  */
-- (void)init_navItme{
+- (void)__initNavItme{
     
     [self ax_haveNav:^(UINavigationController *nav) {
         
@@ -198,56 +196,22 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     
     AXLog(@"页面加载完成之后调用 webView.title: %@",webView.title);
     
+    
     // 加载成功,传递值给js
     
-//    NSString * jsStr  =[NSString stringWithFormat:@"sendKey('%@')",@"123"];
-//
-//    [webView  evaluateJavaScript:jsStr completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-//
-//        //此处可以打印error.
-//
-//    }];
+    //    NSString * jsStr  =[NSString stringWithFormat:@"sendKey('%@')",@"123"];
+    //
+    //    [webView  evaluateJavaScript:jsStr completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+    //
+    //        //此处可以打印error.
+    //
+    //    }];
     
     
     
     //更新左边itme
     [self func_canGoBackItems];
     
-    
-    //    /*测试 网页由xx提供 */
-    //     NSString *js = @"\
-    //    var first=document.body.firstChild;\
-    //    var newnode = document.createElement('li');\
-    //    newnode.innerHTML = 'AAAASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS';\
-    //    newnode.style.height='200px';\
-    //    newnode.style.background='#558175';\
-    //    var wraphtml=document.body.insertBefore(newnode,first);\
-    //    document.body.children[1].style.background='#558175';\
-    //    document.body.children[1].style.margin='-200px 100px 100px 100px';\
-    //    ";
-    //    [webView evaluateJavaScript:js completionHandler:nil];
-    
-    // 获得所有图片
-    /*
-     static NSString * const jsGetImages = @"function getImages(){\
-     var objs = document.getElementsByTagName(\"img\");\
-     var imgScr = '';\
-     for(var i=0;i<objs.length;i++){\
-     imgScr = imgScr + objs[i].src + '+';\
-     };\
-     return imgScr;\
-     };";
-     [webView evaluateJavaScript:jsGetImages completionHandler:nil];
-     [webView evaluateJavaScript:@"getImages()" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-     
-     NSArray *urlArray = [NSMutableArray arrayWithArray:[result componentsSeparatedByString:@"+"]];
-     
-     
-     //urlResurlt 就是获取到得所有图片的url的拼接；mUrlArray就是所有Url的数组 NSLog(@"--%@",urlArray);
-     AXLog(@"urlArray>> %@",urlArray);
-     }];
-     
-     */
 }
 
 /**
@@ -256,7 +220,6 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     AXLog(@"加载失败 %@",error);
     //    [self fun_loadErrorback];
-    
 }
 
 /**
@@ -291,13 +254,6 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     NSURL *URL = navigationAction.request.URL;
     
     AXLog(@"服务器开始请求的时候调用 %@  %@ %ld",URL.scheme,URL ,(long)navigationAction.navigationType);
-//
-//    if ([URL.scheme  isEqual: @"http"] || [URL.scheme  isEqual: @"https"] ||self.loadType !=loadWebURLString ) {
-//
-//        decisionHandler(WKNavigationActionPolicyAllow);
-//        return;
-//
-//    }
     
     if ([URL.scheme isEqual:@"tel"]) {
         
@@ -314,7 +270,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     }
     
     if ([URL.scheme isEqual:@"mailto"]) {
-         //邮件的处理
+        //邮件的处理
         ax_OpenURL(URL);
         decisionHandler(WKNavigationActionPolicyCancel);
         return;
@@ -328,8 +284,6 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     }
     
     decisionHandler(WKNavigationActionPolicyAllow);
-    
-    
 }
 
 
@@ -423,7 +377,6 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 //WKScriptMessageHandler
 //依然是这个协议方法,获取注入方法名对象,获取js返回的状态值.
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
-    
     AXLog(@"didReceiveScriptMessage");
     
     if ([message.name isEqualToString:@"JSUseOCFunctionName_test1"]) {
@@ -431,24 +384,32 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     }
 }
 
+//-(void)addScriptMessageHandlerName:(NSString *)name {
+//
+////     [self.webview.co .userContentController addScriptMessageHandler:[AXWeakProxy proxyWithTarget:self] name:@"JSUseOCFunctionName_test1"];
+//}
+//
+//- (void)didReceiveScriptMessage:(NSString *)name body:(NSString *)body{
+//    
+//}
 #pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     
-    
     if (object == self.webView ) {
         
         if ([keyPath isEqualToString:@"estimatedProgress"]) {
-            
-            [self.progressView setAlpha:1.0f];
+            self.progressView.alpha = 1.0f;
             BOOL animated = self.webView.estimatedProgress > self.progressView.progress;
             [self.progressView setProgress:self.webView.estimatedProgress animated:animated];
             
             if(self.webView.estimatedProgress >= 1.0f) {
+                
                 [UIView animateWithDuration:0.3f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
-                    [self.progressView setAlpha:0.0f];
+                    self.progressView.alpha = 0.0f;
                 } completion:^(BOOL finished) {
                     [self.progressView setProgress:0.0f animated:NO];
+                    
                 }];
             }
         }else if ([keyPath isEqualToString:@"title"]){
@@ -472,7 +433,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 
 #pragma mark - func
 
-- (void)func_webViewloadURLType{
+- (void)__webViewloadURLType{
     
     if (self.url.length == 0) {
         NSString *htmlString = [NSString stringWithFormat:@"<font size=\"30\">%@ 路径错误</font>",self.url];
@@ -495,7 +456,6 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         case WKWebLoadTypeHTMLFilePath:{
             NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:self.url]];
             [self.webView loadRequest:request];
-            
             break;
         }
     }
@@ -538,14 +498,9 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         } isPresentNav:^(UINavigationController *nav) {
             
             self.navigationItem.leftBarButtonItem = self.cancelItem;
-            
         } noneNav:nil];
-        
     }
 }
-
-
-
 
 #pragma mark - action
 
@@ -571,7 +526,12 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
  * 重新加载
  */
 - (void)roadDataWebAction{
-    [self.webView reload];
+//    [self.webView reload];
+    // oc调用js方法
+    NSString *jsStr = [NSString stringWithFormat:@"showAler('%@')",@"AB"];
+    [self.webView evaluateJavaScript:jsStr completionHandler:^(id _Nullable data, NSError * _Nullable error) {
+        NSLog(@"evaluateJavaScript>> %@  %@",data,error.localizedDescription);
+    }];
 }
 
 
@@ -611,7 +571,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 - (void)setLoadHTMLString:(NSString *)loadHTMLString {
     _loadHTMLString = loadHTMLString;
     self.url = loadHTMLString;
-     self.loadType = WKWebLoadTypeHTMLString;
+    self.loadType = WKWebLoadTypeHTMLString;
 }
 
 - (void)setLoadHTMLFilePath:(NSString *)loadHTMLFilePath {
@@ -622,20 +582,19 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 
 - (WKWebView *)webView{
     if (!_webView) {
-        
         WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
         config.allowsInlineMediaPlayback = YES;
         //播放背景音乐
         //            config.mediaPlaybackRequiresUserAction = YES;
         //        config.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAudio;
         
-        WKUserContentController *userContentController = [[WKUserContentController alloc] init];;
-        // js调用oc方法注入方法名
-        [userContentController addScriptMessageHandler:self name:@"JSUseOCFunctionName_test1"];
+        WKUserContentController *userContentController = [[WKUserContentController alloc] init];
+        //        [userContentController addScriptMessageHandler:[[AXWKScriptMessageHandler alloc]initWithHandler:self] name:@"JSUseOCFunctionName_test1"];
+        /**WKUserContentController 会强引用*/
+//        [userContentController addScriptMessageHandler:[AXWeakProxy proxyWithTarget:self] name:@"JSUseOCFunctionName_test1"];
         config.userContentController = userContentController;
         
         _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
-        //        [_wkWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.webURLSring]]];
         _webView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
@@ -650,20 +609,14 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         _progressView = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
         
         __block CGRect tempFrame = CGRectZero;
-        
         [self ax_haveNav:^(UINavigationController *nav) {
-            
-            tempFrame = CGRectMake(0,ax_navigation_bar_height(), self.view.bounds.size.width, 3);
-            
+            tempFrame = CGRectMake(0,ax_navigation_and_status_height(), self.view.bounds.size.width, 3);
         } isPushNav:nil isPresentNav:nil noneNav:^{
-            
             tempFrame = CGRectMake(0, 0, self.view.bounds.size.width, 3);
         }];
-        
         _progressView.frame = tempFrame;
-        
         // 设置进度条的色彩
-        [_progressView setTrackTintColor:[UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1.0]];
+        _progressView.trackTintColor = [UIColor colorWithRed:240.0/255 green:240.0/255 blue:240.0/255 alpha:1.0];
         _progressView.progressTintColor = [UIColor greenColor];
     }
     return _progressView;
@@ -671,9 +624,8 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 
 - (UIBarButtonItem*)backItem{
     if (!_backItem) {
-        UIImage* backItemImage = [[UIImage imageNamed:@"ax_itemBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        UIImage* backItemHlImage = [[UIImage imageNamed:@"ax_itemBack_h"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        
+        UIImage* backItemImage = [[UIImage axLocale_imageNamed:@"ax_itemBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        UIImage* backItemHlImage = [[UIImage axLocale_imageNamed:@"ax_itemBack_h"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         UIButton* backButton = [[UIButton alloc] init];
         [backButton setTitle:AXToolsLocalizedString(@"ax.back") forState:UIControlStateNormal];
         [backButton setTitleColor:self.navigationController.navigationBar.tintColor forState:UIControlStateNormal];
@@ -682,7 +634,6 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         [backButton setImage:backItemImage forState:UIControlStateNormal];
         [backButton setImage:backItemHlImage forState:UIControlStateHighlighted];
         [backButton sizeToFit];
-        
         [backButton addTarget:self action:@selector(backItemAction:) forControlEvents:UIControlEventTouchUpInside];
         _backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
         
@@ -722,9 +673,13 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 
 #pragma mark - dealloc
 - (void)dealloc{
-    axLong_dealloc;
+    
+    [self.webView.configuration.userContentController  removeScriptMessageHandlerForName:@"JSUseOCFunctionName_test1"];
+    [self.webView.configuration.userContentController removeAllUserScripts];
+    self.webView.scrollView.delegate = nil;
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
     [self.webView removeObserver:self forKeyPath:@"title"];
+    axLong_dealloc;
 }
 
 //- (UIInterfaceOrientationMask)supportedInterfaceOrientations{

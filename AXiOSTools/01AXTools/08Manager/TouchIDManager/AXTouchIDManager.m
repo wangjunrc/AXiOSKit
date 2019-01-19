@@ -95,7 +95,11 @@
 
 
 /// 开启指纹扫描
-- (void)openTouchIDWithPolicy:(LAPolicy )policy success:(void(^)(void))successBlock failure:(void(^)(void))failureBlock inputPassword:(void(^)(void))inputPasswordBlock cancel:(void(^)(void))cancelBlock{
+- (void)openTouchIDWithPolicy:(LAPolicy )policy
+                      success:(void(^)(void))successBlock
+                      failure:(void(^)(void))failureBlock
+                inputPassword:(void(^)(void))inputPasswordBlock
+                       cancel:(void(^)(void))cancelBlock{
     
     LAContext *context = [[LAContext alloc] init];
     context.localizedFallbackTitle = @"输入密码";

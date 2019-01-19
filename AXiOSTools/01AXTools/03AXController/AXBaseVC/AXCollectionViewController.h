@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXNaviC.h"
+#import "AXNavigationController.h"
 @interface AXCollectionViewController : UICollectionViewController
 
-+(AXNaviC *)navigationVC;
++(AXNavigationController *)navigationVC;
 /**
  * <#注释#>
  */

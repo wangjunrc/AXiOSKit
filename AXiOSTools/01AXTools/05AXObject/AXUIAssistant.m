@@ -61,16 +61,18 @@ CGFloat ax_pixel(void) {
     return pixel;
 }
 
+/**导航栏高+状态栏高 44+20或者44+44*/
+CGFloat ax_navigation_and_status_height(void) {
+    return ax_status_bar_height() + ax_navigation_bar_height();
+}
 
 CGFloat ax_status_bar_height(void) {
     return UIApplication.sharedApplication.statusBarFrame.size.height;
 }
 
-
 CGFloat ax_navigation_bar_height(void) {
     return 44.0f;
 }
-
 
 UIEdgeInsets ax_safe_area_insets(void) {
     if ([UIView instancesRespondToSelector:@selector(safeAreaInsets)]) {

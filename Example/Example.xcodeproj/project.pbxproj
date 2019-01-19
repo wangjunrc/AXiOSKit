@@ -14,6 +14,7 @@
 		244D47F421EF299600DEFB89 /* TYCyclePagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 244D47F021EF299600DEFB89 /* TYCyclePagerView.m */; };
 		244D47F521EF299600DEFB89 /* TYCyclePagerTransformLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 244D47F121EF299600DEFB89 /* TYCyclePagerTransformLayout.m */; };
 		245BD51221E62EB600831542 /* ax_test.html in Resources */ = {isa = PBXBuildFile; fileRef = 245BD51121E62EB600831542 /* ax_test.html */; };
+		247C382221F2B4B2000F718A /* face_flash.gif in Resources */ = {isa = PBXBuildFile; fileRef = 247C382121F2B4B2000F718A /* face_flash.gif */; };
 		24CB556F21E5974900468BAD /* AXUIWebJSDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CB556821E5974900468BAD /* AXUIWebJSDemoVC.m */; };
 		24CB557021E5974900468BAD /* UIWebViewPage.html in Resources */ = {isa = PBXBuildFile; fileRef = 24CB556A21E5974900468BAD /* UIWebViewPage.html */; };
 		24CB557121E5974900468BAD /* AXWKWebJSDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CB556C21E5974900468BAD /* AXWKWebJSDemoVC.m */; };
@@ -41,6 +42,7 @@
 		244D47F121EF299600DEFB89 /* TYCyclePagerTransformLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYCyclePagerTransformLayout.m; sourceTree = "<group>"; };
 		244D47F221EF299600DEFB89 /* TYPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPageControl.h; sourceTree = "<group>"; };
 		245BD51121E62EB600831542 /* ax_test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ax_test.html; sourceTree = "<group>"; };
+		247C382121F2B4B2000F718A /* face_flash.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = face_flash.gif; sourceTree = "<group>"; };
 		24CB556821E5974900468BAD /* AXUIWebJSDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXUIWebJSDemoVC.m; sourceTree = "<group>"; };
 		24CB556921E5974900468BAD /* AXUIWebJSDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXUIWebJSDemoVC.h; sourceTree = "<group>"; };
 		24CB556A21E5974900468BAD /* UIWebViewPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = UIWebViewPage.html; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				24F023A621E078B1003E3B78 /* ViewController.m */,
 				24F023A821E078B1003E3B78 /* Main.storyboard */,
 				24F023AB21E078B2003E3B78 /* Assets.xcassets */,
+				247C382121F2B4B2000F718A /* face_flash.gif */,
 				24F023AD21E078B2003E3B78 /* LaunchScreen.storyboard */,
 				24F023B021E078B2003E3B78 /* Info.plist */,
 				24F023B121E078B2003E3B78 /* main.m */,
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24F023AF21E078B2003E3B78 /* LaunchScreen.storyboard in Resources */,
+				247C382221F2B4B2000F718A /* face_flash.gif in Resources */,
 				245BD51221E62EB600831542 /* ax_test.html in Resources */,
 				24CB557021E5974900468BAD /* UIWebViewPage.html in Resources */,
 				24F023AC21E078B2003E3B78 /* Assets.xcassets in Resources */,
@@ -278,7 +282,7 @@
 				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXWebVC/AXWebVC.xib",
 				"${PODS_ROOT}/../../AXiOSTools/01AXTools/04AXView/AXNumberKeyboard/AXNumberKeyboard.xib",
 				"${PODS_ROOT}/../../AXiOSTools/AXHTML.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/AXiOSTools/AXiOSTools_ax_mainBundle.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/AXiOSTools/AXiOSToolsResource.bundle",
 				"${PODS_ROOT}/GKPhotoBrowser/GKPhotoBrowser/GKPhotoBrowser.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
@@ -300,7 +304,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXWebVC.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXNumberKeyboard.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXHTML.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXiOSTools_ax_mainBundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXiOSToolsResource.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GKPhotoBrowser.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",

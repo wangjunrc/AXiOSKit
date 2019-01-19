@@ -10,7 +10,9 @@
 
 @interface AXWKWebVC : UIViewController
 
-/**加载纯外部链接网页 */
+/**
+ *加载纯外部链接网页
+ */
 @property (nonatomic, copy) NSString *loadURLString;
 
 /**
@@ -24,5 +26,9 @@
  *使用[NSBundle.mainBundle pathForResource:@"xx.html" ofType:nil];方式赋值
  */
 @property (nonatomic, copy) NSString *loadHTMLFilePath;
+//
+//-(void)addScriptMessageHandlerName:(NSString *)name;
+//
+//-(void)didReceiveScriptMessage:(NSString *)name body:(NSString *)body;
 
 @end

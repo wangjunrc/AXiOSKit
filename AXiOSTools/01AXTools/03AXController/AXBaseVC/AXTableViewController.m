@@ -14,9 +14,9 @@
 
 @implementation AXTableViewController
 
-+(AXNaviC *)navigationVC{
-    AXNaviC *myVC = [[self alloc]init];
-    AXNaviC *nav = [[AXNaviC alloc]initWithRootViewController:myVC];
++(AXNavigationController *)navigationVC{
+    AXNavigationController *myVC = [[self alloc]init];
+    AXNavigationController *nav = [[AXNavigationController alloc]initWithRootViewController:myVC];
     return nav;
 }
 - (void)viewDidLoad{

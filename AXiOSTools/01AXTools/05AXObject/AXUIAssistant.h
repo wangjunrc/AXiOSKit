@@ -35,7 +35,11 @@ extern CGFloat ax_screen_center_x(void);
 
 extern CGFloat ax_pixel(void);
 
-/**转态栏高 20或者44*/
+
+/**导航栏高+状态栏高 44+20或者44+44*/
+extern CGFloat ax_navigation_and_status_height(void);
+
+/**状态态栏高 20或者44*/
 extern CGFloat ax_status_bar_height(void);
 /**导航栏高 44*/
 extern CGFloat ax_navigation_bar_height(void);

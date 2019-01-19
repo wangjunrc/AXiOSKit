@@ -37,7 +37,7 @@
 }
 
 
-- (void)setNumberOfPages:(NSInteger)numberOfPages {
+- (void)setNumberOfPages:(NSUInteger)numberOfPages {
     if (numberOfPages == _numberOfPages) {
         return;
     }
@@ -53,7 +53,7 @@
 }
 
 
-- (void)setCurrentPage:(NSInteger)currentPage {
+- (void)setCurrentPage:(NSUInteger)currentPage {
     if (currentPage == _currentPage || currentPage < 0 || currentPage >= self.numberOfPages) {
         return;
     }

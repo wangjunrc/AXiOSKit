@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXNaviC.h"
+#import "AXNavigationController.h"
 
 @interface AXTableViewController : UITableViewController
 
-+(AXNaviC *)navigationVC;
++(AXNavigationController *)navigationVC;
 
 @end

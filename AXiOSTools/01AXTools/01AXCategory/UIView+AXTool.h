@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "AXiOSToolsEnum.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIView (AXTool)
 /**
  * 指定 角 进行圆角
@@ -25,7 +27,7 @@
  
  @param colorArray UIColor 数组
  */
-- (void)ax_gradientColors:(NSArray <UIColor*>*_Nullable)colorArray;
+- (void)ax_gradientColors:(NSArray <UIColor*>*)colorArray;
 
 /**
  为UIView的某个方向添加边框
@@ -34,7 +36,7 @@
  @param color 边框颜色
  @param width 边框宽度
  */
-- (void)ax_addBorder:(AXBorderDirectionType)direction color:(UIColor *_Nullable)color width:(CGFloat)width;
+- (void)ax_addBorder:(AXBorderDirectionType)direction color:(UIColor *)color width:(CGFloat)width;
 
 /**
  阴影
@@ -42,19 +44,19 @@
  
  @param shadowColor UIColor
  */
-- (void)ax_shadowWith:(UIColor *_Nullable)shadowColor;
+- (void)ax_shadowWith:(UIColor *)shadowColor;
 
 
 /**
  * view 添加手势 成为点击事件
  */
-- (void)ax_addViewActionBlock:(void(^_Nullable)(id _Nullable aView))block;
+- (void)ax_addViewActionBlock:(void(^)(id aView))block;
 
 /**
  *  tag 只能是数字,
  *  所以定义一个string类型
  */
-@property (nonatomic, copy)NSString * _Nullable axTag;
+@property (nonatomic, copy)NSString *axTag;
 
 /**
  找出绑定 ax_tag 的对象
@@ -62,7 +64,7 @@
  @param tag ax_tag
  @return view
  */
-- (nullable __kindof UIView *)ax_viewWithTag:(NSString * _Nullable )tag;
+- (nullable __kindof UIView *)ax_viewWithTag:(NSString *)tag;
 
 /**
  截屏 不含有转态栏  保存至相册
@@ -74,7 +76,7 @@
  
  @return UIImage
  */
-- (UIImage * _Nonnull )ax_drawRectToImage;
+- (UIImage * )ax_drawRectToImage;
 
 /**
  当前view layer  重绘图片,并保存到相册中
@@ -88,7 +90,7 @@
  @param lineSpacing 虚线间隔
  @param lineColor 虚线颜色
  */
-- (void)ax_addDottedLineWithLineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *_Nonnull )lineColor;
+- (void)ax_addDottedLineWithLineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *)lineColor;
 
 /**
  活动view响应 UIViewController
@@ -98,3 +100,4 @@
 - (UIViewController *)ax_viewController;
 
 @end
+NS_ASSUME_NONNULL_END

@@ -25,4 +25,12 @@
  */
 - (NSString *)ax_toString;
 
+/**
+ NSBundle 文件转data
+ 
+ @param resource 文件名,带后缀
+ @return NSData
+ */
++(NSData *)ax_dataWithMainBundleResource:(NSString *)resource;
+
 @end

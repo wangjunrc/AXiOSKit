@@ -1,5 +1,5 @@
 //
-//  AXNaviC.h
+//  AXNavigationController.h
 //  AXiOSTools
 //
 //  Created by liuweixing on 16/6/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AXNaviC : UINavigationController
+@interface AXNavigationController : UINavigationController
 
 @end

@@ -44,6 +44,9 @@
  @param inputPasswordBlock 失败后,点击输入密码
  @param cancelBlock 点击取消
  */
-- (void)openTouchIDWithSuccess:(void(^)(void))successBlock failure:(void(^)(void))failureBlock inputPassword:(void(^)(void))inputPasswordBlock cancel:(void(^)(void))cancelBlock;
+- (void)openTouchIDWithSuccess:(void(^)(void))successBlock
+                       failure:(void(^)(void))failureBlock
+                 inputPassword:(void(^)(void))inputPasswordBlock
+                        cancel:(void(^)(void))cancelBlock;
 
 @end

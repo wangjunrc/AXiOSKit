@@ -1,5 +1,5 @@
 //
-//  AXTabBarC.h
+//  AXTabBarController.h
 //  AXiOSTools
 //
 //  Created by liuweixing on 16/10/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AXTabBarC : UITabBarController
+@interface AXTabBarController : UITabBarController
 
 @end

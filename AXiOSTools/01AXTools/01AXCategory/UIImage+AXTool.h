@@ -118,6 +118,26 @@
  */
 + (UIImage *)ax_ImageWeChatShareZipWithUrl:(NSString *)imageUrl;
 
+/**
+ UIImage 转换png data
+ 
+ @return NSData
+ */
+-(NSData *)ax_toPNGData;
 
+/**
+ UIImage 转换JPEG data 1.0压缩
+ 
+ @return NSData
+ */
+-(NSData *)ax_toJPEGData;
+
+/**
+ UIImage 转换JPEG data
+ 
+ @param scale 压缩比例
+ @return NSData
+ */
+-(NSData *)ax_toJPEGDataScale:(CGFloat )scale;
 @end
 

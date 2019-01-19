@@ -1,18 +1,19 @@
 //
-//  AXTabBarC.m
+//  AXTabBarController.m
 //  AXiOSTools
 //
 //  Created by liuweixing on 16/10/14.
 //  Copyright © 2016年 liuweixing. All rights reserved.
 //
 
-#import "AXTabBarC.h"
+#import "AXTabBarController.h"
 #import "AXiOSTools.h"
-@interface AXTabBarC ()
+
+@interface AXTabBarController ()
 
 @end
 
-@implementation AXTabBarC
+@implementation AXTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -1,10 +1,18 @@
-function showAler() {
-    alert(2);
+function showAler(data) {
+    alert(data);
 //    iosWeixinPay();
 }
 function showAler2() {
     alert(4);
     //    iosWeixinPay();
+}
+
+
+
+// js调oc 原生注入方式
+function button1Click() {
+//    alert('JSUseOCFunctionName_test1');
+    window.webkit.messageHandlers.JSUseOCFunctionName_test1.postMessage('TOM');
 }
 
 function buttonClick() {

@@ -14,10 +14,10 @@
 
 @implementation AXViewController
 
-+(AXNaviC *)navigationVC{
++(AXNavigationController *)navigationVC{
     
     AXViewController *myVC = [[self alloc]init];
-    AXNaviC *nav = [[AXNaviC alloc]initWithRootViewController:myVC];
+    AXNavigationController *nav = [[AXNavigationController alloc]initWithRootViewController:myVC];
     return nav;
 }
 

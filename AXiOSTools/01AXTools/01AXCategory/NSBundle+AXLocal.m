@@ -23,7 +23,7 @@
 + (NSBundle *)ax_mainBundle {
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
     //spec文件resource_bundles对应的key 
-    NSString *bundlePath = [bundle pathForResource:@"AXiOSTools_ax_mainBundle" ofType:@"bundle"];
+    NSString *bundlePath = [bundle pathForResource:@"AXiOSToolsResource" ofType:@"bundle"];
     NSBundle *ax_mainBundle = [NSBundle bundleWithPath:bundlePath];
     if (ax_mainBundle == nil) {
         ax_mainBundle = bundle;
@@ -36,7 +36,14 @@
 @implementation NSBundle (AXLocal)
 
 + (NSBundle *)ax_mainBundle {
-    return [AXBundle ax_mainBundle];
+    return AXBundle.ax_mainBundle;
+}
+
+
++ (NSBundle *)ax_currentBundleWithName:(NSString *)name {
+    NSString *bundlePath = [NSBundle.mainBundle pathForResource:name ofType:@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    return bundle;
 }
 
 

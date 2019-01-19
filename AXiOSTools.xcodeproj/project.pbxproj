@@ -109,9 +109,11 @@
 		245BD50E21E6138000831542 /* UINavigationController+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD4A821E6137F00831542 /* UINavigationController+AXTool.h */; };
 		245BD50F21E6138000831542 /* UIViewController+AXAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD4A921E6137F00831542 /* UIViewController+AXAlert.h */; };
 		245BD51021E6138000831542 /* NSDateComponents+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD4AA21E6137F00831542 /* NSDateComponents+AXTool.m */; };
-		245BD51421E6339100831542 /* ax_test2.html in Resources */ = {isa = PBXBuildFile; fileRef = 245BD51321E6339100831542 /* ax_test2.html */; };
 		2472144121F0411F00EF9BCC /* AXButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 2472143F21F0411F00EF9BCC /* AXButton.h */; };
 		2472144221F0411F00EF9BCC /* AXButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2472144021F0411F00EF9BCC /* AXButton.m */; };
+		247C382521F31122000F718A /* AXWKScriptMessageHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 247C382321F31122000F718A /* AXWKScriptMessageHandler.h */; };
+		247C382621F31122000F718A /* AXWKScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 247C382421F31122000F718A /* AXWKScriptMessageHandler.m */; };
+		247C382821F32826000F718A /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 247C382721F32825000F718A /* libmp3lame.a */; };
 		249F52D621EDCBF100840340 /* AXUIAssistant.h in Headers */ = {isa = PBXBuildFile; fileRef = 249F52D421EDCBF100840340 /* AXUIAssistant.h */; };
 		249F52D721EDCBF100840340 /* AXUIAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F52D521EDCBF100840340 /* AXUIAssistant.m */; };
 		24CB557421E597DC00468BAD /* AXHTML.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 24CB557321E597DC00468BAD /* AXHTML.bundle */; };
@@ -189,20 +191,20 @@
 		24EE7BE721E0F4F100BF9114 /* AXJSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A9321E0F4EF00BF9114 /* AXJSContext.m */; };
 		24EE7BE821E0F4F100BF9114 /* AXFullLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A9521E0F4EF00BF9114 /* AXFullLayout.h */; };
 		24EE7BE921E0F4F100BF9114 /* AXTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A9621E0F4EF00BF9114 /* AXTableViewController.h */; };
-		24EE7BEA21E0F4F100BF9114 /* AXTabBarC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A9721E0F4EF00BF9114 /* AXTabBarC.m */; };
+		24EE7BEA21E0F4F100BF9114 /* AXTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A9721E0F4EF00BF9114 /* AXTabBarController.m */; };
 		24EE7BEB21E0F4F100BF9114 /* AXCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A9821E0F4EF00BF9114 /* AXCollectionViewController.m */; };
 		24EE7BEC21E0F4F100BF9114 /* AXHalfWidthLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A9921E0F4EF00BF9114 /* AXHalfWidthLayout.m */; };
 		24EE7BED21E0F4F100BF9114 /* AXFullLayout2.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A9A21E0F4EF00BF9114 /* AXFullLayout2.h */; };
-		24EE7BEE21E0F4F100BF9114 /* AXNaviC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A9B21E0F4EF00BF9114 /* AXNaviC.m */; };
+		24EE7BEE21E0F4F100BF9114 /* AXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A9B21E0F4EF00BF9114 /* AXNavigationController.m */; };
 		24EE7BEF21E0F4F100BF9114 /* AXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A9C21E0F4EF00BF9114 /* AXViewController.m */; };
 		24EE7BF021E0F4F100BF9114 /* AXFullLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A9D21E0F4EF00BF9114 /* AXFullLayout.m */; };
 		24EE7BF121E0F4F100BF9114 /* AXCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A9E21E0F4EF00BF9114 /* AXCollectionViewController.h */; };
-		24EE7BF221E0F4F100BF9114 /* AXTabBarC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A9F21E0F4EF00BF9114 /* AXTabBarC.h */; };
+		24EE7BF221E0F4F100BF9114 /* AXTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A9F21E0F4EF00BF9114 /* AXTabBarController.h */; };
 		24EE7BF321E0F4F100BF9114 /* AXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7AA021E0F4EF00BF9114 /* AXTableViewController.m */; };
 		24EE7BF421E0F4F100BF9114 /* AXFullLayout2.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7AA121E0F4EF00BF9114 /* AXFullLayout2.m */; };
 		24EE7BF521E0F4F100BF9114 /* AXHalfWidthLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7AA221E0F4EF00BF9114 /* AXHalfWidthLayout.h */; };
 		24EE7BF621E0F4F100BF9114 /* AXViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7AA321E0F4EF00BF9114 /* AXViewController.h */; };
-		24EE7BF721E0F4F100BF9114 /* AXNaviC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7AA421E0F4EF00BF9114 /* AXNaviC.h */; };
+		24EE7BF721E0F4F100BF9114 /* AXNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7AA421E0F4EF00BF9114 /* AXNavigationController.h */; };
 		24EE7BF821E0F4F100BF9114 /* AXWKWebVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7AA621E0F4EF00BF9114 /* AXWKWebVC.h */; };
 		24EE7BF921E0F4F100BF9114 /* AXWKWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7AA721E0F4EF00BF9114 /* AXWKWebVC.m */; };
 		24EE7BFA21E0F4F100BF9114 /* AXAlertCentreAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7AA921E0F4EF00BF9114 /* AXAlertCentreAnimation.m */; };
@@ -239,7 +241,6 @@
 		24EE7C2F21E0F4F100BF9114 /* MBProgressHUD+AX.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7AED21E0F4F000BF9114 /* MBProgressHUD+AX.m */; };
 		24EE7C3021E0F4F100BF9114 /* MBProgressHUD+AX.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7AEE21E0F4F000BF9114 /* MBProgressHUD+AX.h */; };
 		24EE7C3221E0F4F100BF9114 /* lame.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7AF321E0F4F000BF9114 /* lame.h */; };
-		24EE7C3321E0F4F100BF9114 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EE7AF521E0F4F000BF9114 /* libmp3lame.a */; };
 		24EE7C3421E0F4F100BF9114 /* NSObject+FBKVOControllerAX.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7AF721E0F4F000BF9114 /* NSObject+FBKVOControllerAX.h */; };
 		24EE7C3521E0F4F100BF9114 /* NSObject+FBKVOControllerAX.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7AF821E0F4F000BF9114 /* NSObject+FBKVOControllerAX.m */; };
 		24EE7C3621E0F4F100BF9114 /* MSWeakTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7AFA21E0F4F000BF9114 /* MSWeakTimer.h */; };
@@ -392,10 +393,12 @@
 		245BD4A821E6137F00831542 /* UINavigationController+AXTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+AXTool.h"; sourceTree = "<group>"; };
 		245BD4A921E6137F00831542 /* UIViewController+AXAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXAlert.h"; sourceTree = "<group>"; };
 		245BD4AA21E6137F00831542 /* NSDateComponents+AXTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+AXTool.m"; sourceTree = "<group>"; };
-		245BD51321E6339100831542 /* ax_test2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ax_test2.html; sourceTree = "<group>"; };
 		2472143F21F0411F00EF9BCC /* AXButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXButton.h; sourceTree = "<group>"; };
 		2472144021F0411F00EF9BCC /* AXButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXButton.m; sourceTree = "<group>"; };
 		2472144621F073D700EF9BCC /* AXiOSToolsEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXiOSToolsEnum.h; sourceTree = "<group>"; };
+		247C382321F31122000F718A /* AXWKScriptMessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXWKScriptMessageHandler.h; sourceTree = "<group>"; };
+		247C382421F31122000F718A /* AXWKScriptMessageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXWKScriptMessageHandler.m; sourceTree = "<group>"; };
+		247C382721F32825000F718A /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		249F52D421EDCBF100840340 /* AXUIAssistant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUIAssistant.h; sourceTree = "<group>"; };
 		249F52D521EDCBF100840340 /* AXUIAssistant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXUIAssistant.m; sourceTree = "<group>"; };
 		24CB557321E597DC00468BAD /* AXHTML.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AXHTML.bundle; sourceTree = "<group>"; };
@@ -475,20 +478,20 @@
 		24EE7A9321E0F4EF00BF9114 /* AXJSContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXJSContext.m; sourceTree = "<group>"; };
 		24EE7A9521E0F4EF00BF9114 /* AXFullLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXFullLayout.h; sourceTree = "<group>"; };
 		24EE7A9621E0F4EF00BF9114 /* AXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXTableViewController.h; sourceTree = "<group>"; };
-		24EE7A9721E0F4EF00BF9114 /* AXTabBarC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXTabBarC.m; sourceTree = "<group>"; };
+		24EE7A9721E0F4EF00BF9114 /* AXTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXTabBarController.m; sourceTree = "<group>"; };
 		24EE7A9821E0F4EF00BF9114 /* AXCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXCollectionViewController.m; sourceTree = "<group>"; };
 		24EE7A9921E0F4EF00BF9114 /* AXHalfWidthLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXHalfWidthLayout.m; sourceTree = "<group>"; };
 		24EE7A9A21E0F4EF00BF9114 /* AXFullLayout2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXFullLayout2.h; sourceTree = "<group>"; };
-		24EE7A9B21E0F4EF00BF9114 /* AXNaviC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNaviC.m; sourceTree = "<group>"; };
+		24EE7A9B21E0F4EF00BF9114 /* AXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNavigationController.m; sourceTree = "<group>"; };
 		24EE7A9C21E0F4EF00BF9114 /* AXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXViewController.m; sourceTree = "<group>"; };
 		24EE7A9D21E0F4EF00BF9114 /* AXFullLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXFullLayout.m; sourceTree = "<group>"; };
 		24EE7A9E21E0F4EF00BF9114 /* AXCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXCollectionViewController.h; sourceTree = "<group>"; };
-		24EE7A9F21E0F4EF00BF9114 /* AXTabBarC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXTabBarC.h; sourceTree = "<group>"; };
+		24EE7A9F21E0F4EF00BF9114 /* AXTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXTabBarController.h; sourceTree = "<group>"; };
 		24EE7AA021E0F4EF00BF9114 /* AXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXTableViewController.m; sourceTree = "<group>"; };
 		24EE7AA121E0F4EF00BF9114 /* AXFullLayout2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXFullLayout2.m; sourceTree = "<group>"; };
 		24EE7AA221E0F4EF00BF9114 /* AXHalfWidthLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXHalfWidthLayout.h; sourceTree = "<group>"; };
 		24EE7AA321E0F4EF00BF9114 /* AXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXViewController.h; sourceTree = "<group>"; };
-		24EE7AA421E0F4EF00BF9114 /* AXNaviC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNaviC.h; sourceTree = "<group>"; };
+		24EE7AA421E0F4EF00BF9114 /* AXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNavigationController.h; sourceTree = "<group>"; };
 		24EE7AA621E0F4EF00BF9114 /* AXWKWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWKWebVC.h; sourceTree = "<group>"; };
 		24EE7AA721E0F4EF00BF9114 /* AXWKWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWKWebVC.m; sourceTree = "<group>"; };
 		24EE7AA921E0F4EF00BF9114 /* AXAlertCentreAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXAlertCentreAnimation.m; sourceTree = "<group>"; };
@@ -526,7 +529,6 @@
 		24EE7AED21E0F4F000BF9114 /* MBProgressHUD+AX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+AX.m"; sourceTree = "<group>"; };
 		24EE7AEE21E0F4F000BF9114 /* MBProgressHUD+AX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+AX.h"; sourceTree = "<group>"; };
 		24EE7AF321E0F4F000BF9114 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
-		24EE7AF521E0F4F000BF9114 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		24EE7AF721E0F4F000BF9114 /* NSObject+FBKVOControllerAX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FBKVOControllerAX.h"; sourceTree = "<group>"; };
 		24EE7AF821E0F4F000BF9114 /* NSObject+FBKVOControllerAX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FBKVOControllerAX.m"; sourceTree = "<group>"; };
 		24EE7AFA21E0F4F000BF9114 /* MSWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
@@ -581,7 +583,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24EE7C3321E0F4F100BF9114 /* libmp3lame.a in Frameworks */,
+				247C382821F32826000F718A /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,7 +724,6 @@
 				24CB557321E597DC00468BAD /* AXHTML.bundle */,
 				24EE79C921E0F48800BF9114 /* AXiOSTools.h */,
 				24EE7AEA21E0F4F000BF9114 /* AXiOSTools.xcassets */,
-				245BD51321E6339100831542 /* ax_test2.html */,
 				24EE79CA21E0F48800BF9114 /* Info.plist */,
 			);
 			path = AXiOSTools;
@@ -747,8 +748,8 @@
 		24EE79D421E0F4EE00BF9114 /* 07AXProxy */ = {
 			isa = PBXGroup;
 			children = (
-				24EE79D521E0F4EE00BF9114 /* AXWeakProxy.m */,
 				24EE79D621E0F4EE00BF9114 /* AXWeakProxy.h */,
+				24EE79D521E0F4EE00BF9114 /* AXWeakProxy.m */,
 			);
 			path = 07AXProxy;
 			sourceTree = "<group>";
@@ -824,10 +825,10 @@
 		24EE7A4E21E0F4EF00BF9114 /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7A4F21E0F4EF00BF9114 /* LocationManager.m */,
 				24EE7A5021E0F4EF00BF9114 /* AXLocationManager.h */,
-				24EE7A5121E0F4EF00BF9114 /* LocationManager.h */,
 				24EE7A5221E0F4EF00BF9114 /* AXLocationManager.m */,
+				24EE7A5121E0F4EF00BF9114 /* LocationManager.h */,
+				24EE7A4F21E0F4EF00BF9114 /* LocationManager.m */,
 			);
 			path = LocationManager;
 			sourceTree = "<group>";
@@ -985,22 +986,22 @@
 		24EE7A9421E0F4EF00BF9114 /* AXBaseVC */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7A9521E0F4EF00BF9114 /* AXFullLayout.h */,
-				24EE7A9621E0F4EF00BF9114 /* AXTableViewController.h */,
-				24EE7A9721E0F4EF00BF9114 /* AXTabBarC.m */,
-				24EE7A9821E0F4EF00BF9114 /* AXCollectionViewController.m */,
-				24EE7A9921E0F4EF00BF9114 /* AXHalfWidthLayout.m */,
-				24EE7A9A21E0F4EF00BF9114 /* AXFullLayout2.h */,
-				24EE7A9B21E0F4EF00BF9114 /* AXNaviC.m */,
-				24EE7A9C21E0F4EF00BF9114 /* AXViewController.m */,
-				24EE7A9D21E0F4EF00BF9114 /* AXFullLayout.m */,
 				24EE7A9E21E0F4EF00BF9114 /* AXCollectionViewController.h */,
-				24EE7A9F21E0F4EF00BF9114 /* AXTabBarC.h */,
-				24EE7AA021E0F4EF00BF9114 /* AXTableViewController.m */,
+				24EE7A9821E0F4EF00BF9114 /* AXCollectionViewController.m */,
+				24EE7A9521E0F4EF00BF9114 /* AXFullLayout.h */,
+				24EE7A9D21E0F4EF00BF9114 /* AXFullLayout.m */,
+				24EE7A9A21E0F4EF00BF9114 /* AXFullLayout2.h */,
 				24EE7AA121E0F4EF00BF9114 /* AXFullLayout2.m */,
 				24EE7AA221E0F4EF00BF9114 /* AXHalfWidthLayout.h */,
+				24EE7A9921E0F4EF00BF9114 /* AXHalfWidthLayout.m */,
+				24EE7AA421E0F4EF00BF9114 /* AXNavigationController.h */,
+				24EE7A9B21E0F4EF00BF9114 /* AXNavigationController.m */,
+				24EE7A9F21E0F4EF00BF9114 /* AXTabBarController.h */,
+				24EE7A9721E0F4EF00BF9114 /* AXTabBarController.m */,
+				24EE7A9621E0F4EF00BF9114 /* AXTableViewController.h */,
+				24EE7AA021E0F4EF00BF9114 /* AXTableViewController.m */,
 				24EE7AA321E0F4EF00BF9114 /* AXViewController.h */,
-				24EE7AA421E0F4EF00BF9114 /* AXNaviC.h */,
+				24EE7A9C21E0F4EF00BF9114 /* AXViewController.m */,
 			);
 			path = AXBaseVC;
 			sourceTree = "<group>";
@@ -1010,6 +1011,8 @@
 			children = (
 				24EE7AA621E0F4EF00BF9114 /* AXWKWebVC.h */,
 				24EE7AA721E0F4EF00BF9114 /* AXWKWebVC.m */,
+				247C382321F31122000F718A /* AXWKScriptMessageHandler.h */,
+				247C382421F31122000F718A /* AXWKScriptMessageHandler.m */,
 			);
 			path = AXWKWebVC;
 			sourceTree = "<group>";
@@ -1017,12 +1020,12 @@
 		24EE7AA821E0F4EF00BF9114 /* AXBaseAlertVC */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7AA921E0F4EF00BF9114 /* AXAlertCentreAnimation.m */,
-				24EE7AAA21E0F4EF00BF9114 /* AXBaseAlertVC.m */,
-				24EE7AAB21E0F4EF00BF9114 /* AXAlerUpwardAnimation.h */,
 				24EE7AAC21E0F4EF00BF9114 /* AXAlertCentreAnimation.h */,
-				24EE7AAD21E0F4EF00BF9114 /* AXBaseAlertVC.h */,
+				24EE7AA921E0F4EF00BF9114 /* AXAlertCentreAnimation.m */,
+				24EE7AAB21E0F4EF00BF9114 /* AXAlerUpwardAnimation.h */,
 				24EE7AAE21E0F4EF00BF9114 /* AXAlerUpwardAnimation.m */,
+				24EE7AAD21E0F4EF00BF9114 /* AXBaseAlertVC.h */,
+				24EE7AAA21E0F4EF00BF9114 /* AXBaseAlertVC.m */,
 			);
 			path = AXBaseAlertVC;
 			sourceTree = "<group>";
@@ -1031,8 +1034,8 @@
 			isa = PBXGroup;
 			children = (
 				24EE7AB021E0F4EF00BF9114 /* AXSinglePickVC.h */,
-				24EE7AB121E0F4EF00BF9114 /* AXSinglePickVC.xib */,
 				24EE7AB221E0F4EF00BF9114 /* AXSinglePickVC.m */,
+				24EE7AB121E0F4EF00BF9114 /* AXSinglePickVC.xib */,
 			);
 			path = AXSinglePickVC;
 			sourceTree = "<group>";
@@ -1159,7 +1162,7 @@
 		24EE7AF421E0F4F000BF9114 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7AF521E0F4F000BF9114 /* libmp3lame.a */,
+				247C382721F32825000F718A /* libmp3lame.a */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -1203,12 +1206,12 @@
 		24EE7B0221E0F4F000BF9114 /* MJRefresh@AX */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7B0321E0F4F000BF9114 /* UIScrollView+AXRefresh.m */,
+				24EE7B0821E0F4F000BF9114 /* AXRefreshFooter.h */,
 				24EE7B0421E0F4F000BF9114 /* AXRefreshFooter.m */,
+				24EE7B0721E0F4F000BF9114 /* AXRefreshHeader.h */,
 				24EE7B0521E0F4F000BF9114 /* AXRefreshHeader.m */,
 				24EE7B0621E0F4F000BF9114 /* UIScrollView+AXRefresh.h */,
-				24EE7B0721E0F4F000BF9114 /* AXRefreshHeader.h */,
-				24EE7B0821E0F4F000BF9114 /* AXRefreshFooter.h */,
+				24EE7B0321E0F4F000BF9114 /* UIScrollView+AXRefresh.m */,
 			);
 			path = "MJRefresh@AX";
 			sourceTree = "<group>";
@@ -1216,12 +1219,12 @@
 		24EE7B0921E0F4F000BF9114 /* SDWebImage@AX */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7B0A21E0F4F000BF9114 /* UIImageView+AXCircle.m */,
 				24EE7B0B21E0F4F000BF9114 /* NSObject+AXCacheImage.h */,
+				24EE7B0F21E0F4F000BF9114 /* NSObject+AXCacheImage.m */,
+				24EE7B0E21E0F4F000BF9114 /* UIButton+AXCircle.h */,
 				24EE7B0C21E0F4F000BF9114 /* UIButton+AXCircle.m */,
 				24EE7B0D21E0F4F000BF9114 /* UIImageView+AXCircle.h */,
-				24EE7B0E21E0F4F000BF9114 /* UIButton+AXCircle.h */,
-				24EE7B0F21E0F4F000BF9114 /* NSObject+AXCacheImage.m */,
+				24EE7B0A21E0F4F000BF9114 /* UIImageView+AXCircle.m */,
 			);
 			path = "SDWebImage@AX";
 			sourceTree = "<group>";
@@ -1334,7 +1337,7 @@
 				24EE7C5C21E0F4F100BF9114 /* AXNetManager+Version.h in Headers */,
 				24EE7BE621E0F4F100BF9114 /* AXWebVC.h in Headers */,
 				245BD4CB21E6138000831542 /* NSString+AXTool.h in Headers */,
-				24EE7BF721E0F4F100BF9114 /* AXNaviC.h in Headers */,
+				24EE7BF721E0F4F100BF9114 /* AXNavigationController.h in Headers */,
 				24EE7C4F21E0F4F100BF9114 /* YYLabel+AXTool.h in Headers */,
 				24EE7BC521E0F4F100BF9114 /* AXDataModel.h in Headers */,
 				245BD4D021E6138000831542 /* NSString+AXNet.h in Headers */,
@@ -1359,9 +1362,10 @@
 				245BD50321E6138000831542 /* UITableView+AXTool.h in Headers */,
 				245BD4F621E6138000831542 /* UICollectionView+AXTool.h in Headers */,
 				245BD4E421E6138000831542 /* UIButton+AXTool.h in Headers */,
+				247C382521F31122000F718A /* AXWKScriptMessageHandler.h in Headers */,
 				24EE7BD421E0F4F100BF9114 /* AXMacros_addProperty.h in Headers */,
 				245BD4B421E6138000831542 /* NSString+AXEffective.h in Headers */,
-				24EE7BF221E0F4F100BF9114 /* AXTabBarC.h in Headers */,
+				24EE7BF221E0F4F100BF9114 /* AXTabBarController.h in Headers */,
 				245BD4EF21E6138000831542 /* NSObject+AXVersion.h in Headers */,
 				245BD4D921E6138000831542 /* UIView+AXAnimation.h in Headers */,
 				245BD4CE21E6138000831542 /* NSString+AXCrypto.h in Headers */,
@@ -1520,7 +1524,6 @@
 				24EE7C6921E0F4F100BF9114 /* pod_no_use.md in Resources */,
 				24EE7C6521E0F4F100BF9114 /* AXCollectFile.md in Resources */,
 				24CB557421E597DC00468BAD /* AXHTML.bundle in Resources */,
-				245BD51421E6339100831542 /* ax_test2.html in Resources */,
 				24EE7BDB21E0F4F100BF9114 /* AXChoosePayStyleVC.xib in Resources */,
 				24EE7BA721E0F4F100BF9114 /* AXNumberKeyboard.xib in Resources */,
 				24EE7C1821E0F4F100BF9114 /* AXQRCodeVC.xib in Resources */,
@@ -1562,7 +1565,7 @@
 				245BD4DA21E6138000831542 /* UIBarButtonItem+AXTool.m in Sources */,
 				245BD4D721E6138000831542 /* NSObject+AXKVO.m in Sources */,
 				245BD4B221E6138000831542 /* UIButton+AXTool.m in Sources */,
-				24EE7BEE21E0F4F100BF9114 /* AXNaviC.m in Sources */,
+				24EE7BEE21E0F4F100BF9114 /* AXNavigationController.m in Sources */,
 				24EE7BFB21E0F4F100BF9114 /* AXBaseAlertVC.m in Sources */,
 				245BD4C521E6138000831542 /* UIButton+AXCountDown.m in Sources */,
 				24EE7C5321E0F4F100BF9114 /* DBStatements.m in Sources */,
@@ -1626,6 +1629,7 @@
 				24EE7C1E21E0F4F100BF9114 /* AXPlayVC.m in Sources */,
 				245BD4EE21E6138000831542 /* UIImageView+AXTool.m in Sources */,
 				245BD4ED21E6138000831542 /* UITextField+AXAction.m in Sources */,
+				247C382621F31122000F718A /* AXWKScriptMessageHandler.m in Sources */,
 				245BD4DE21E6138000831542 /* NSNumber+AXTool.m in Sources */,
 				24EE7BD021E0F4F100BF9114 /* AXDataModel.m in Sources */,
 				24EE7C5D21E0F4F100BF9114 /* AXNetManager+Verson.m in Sources */,
@@ -1641,7 +1645,7 @@
 				24EE7BAD21E0F4F100BF9114 /* AXTouchIDManager.m in Sources */,
 				245BD50721E6138000831542 /* UIView+AXAnimation.m in Sources */,
 				2472144221F0411F00EF9BCC /* AXButton.m in Sources */,
-				24EE7BEA21E0F4F100BF9114 /* AXTabBarC.m in Sources */,
+				24EE7BEA21E0F4F100BF9114 /* AXTabBarController.m in Sources */,
 				245BD4BC21E6138000831542 /* NSString+AXDate.m in Sources */,
 				245BD50921E6138000831542 /* NSArray+AXTool.m in Sources */,
 				24EE7BB121E0F4F100BF9114 /* AXLocationManager.m in Sources */,

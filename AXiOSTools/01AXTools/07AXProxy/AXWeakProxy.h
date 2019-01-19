@@ -9,12 +9,16 @@
 // AXWeakProxy 代码
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface AXWeakProxy : NSProxy
 
-@property (nullable, nonatomic, weak, readonly) id target;
+@property (nonatomic, weak, readonly)id target;
 
-- (instancetype _Nullable )initWithTarget:(id _Nullable )target;
+- (instancetype )initWithTarget:(id )target;
 
-+ (instancetype _Nullable )proxyWithTarget:(id _Nullable )target;
++ (instancetype )proxyWithTarget:(id )target;
 
 @end
+
+NS_ASSUME_NONNULL_END

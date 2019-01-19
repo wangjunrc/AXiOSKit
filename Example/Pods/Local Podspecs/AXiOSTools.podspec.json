@@ -27,7 +27,7 @@
     "AXiOSTools/**/*.bundle"
   ],
   "resource_bundles": {
-    "AXiOSTools_ax_mainBundle": [
+    "AXiOSToolsResource": [
       "AXiOSTools/**/*.{xcassets,gif,json,strings}"
     ]
   },

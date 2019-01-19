@@ -449,3 +449,13 @@ NSLog(@"正在执行");
 }
 }
 
+
+# copy | strong
+ 集合类(NSMutable,NS) 属性用 copy
+@property(nonatomic, copy) 
+ 非集合 属性用 strong
+@property( nonatomic,  strong)   
+
+# 添加数据到粘贴板中
+UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+pasteboard.string = @"AAA";

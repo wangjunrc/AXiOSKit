@@ -1,18 +1,18 @@
 //
-//  AXNaviC.m
+//  AXNavigationController.m
 //  AXiOSTools
 //
 //  Created by liuweixing on 16/6/12.
 //  Copyright © 2016年 liuweixing. All rights reserved.
 //
 
-#import "AXNaviC.h"
+#import "AXNavigationController.h"
 #import "AXiOSTools.h"
-@interface AXNaviC ()
+@interface AXNavigationController ()
 
 @end
 
-@implementation AXNaviC
+@implementation AXNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

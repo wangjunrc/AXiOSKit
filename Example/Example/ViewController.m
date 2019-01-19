@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 #import "AXiOSTools.h"
+//#import "ABViewController.h"
 
 #import <FLAnimatedImage/FLAnimatedImageView.h>
 #import <SDWebImage/FLAnimatedImageView+WebCache.h>
+#import "UIImageView+AXCircle.h"
 
 @interface ViewController ()
 
@@ -25,11 +27,17 @@
     self.view.backgroundColor = [UIColor greenColor];
     
     
-    FLAnimatedImageView *FLView = [[FLAnimatedImageView alloc]init];
-    FLView.frame = CGRectMake(0, 100, 100, 280);
-    [FLView sd_setImageWithURL:[NSURL URLWithString:@"https://img.soogif.com/7lMNouzYDdKupikZNTDJLGHz74PdmEg2.gif"] placeholderImage:[UIImage imageNamed:@""]];
-    [self.view addSubview:FLView];
-    
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+
+//    ABViewController *VC = [ABViewController ax_init];
+//
+////    NSString *bundlePath = [NSBundle.mainBundle pathForResource:@"AXHTML.bundle/wk_index.html" ofType:nil];
+//
+//    VC.loadHTMLFilePath = [[NSBundle ax_currentBundleWithName:@"AXHTML"]pathForResource:@"index.html" ofType:nil];
+//
+//    [self.navigationController pushViewController:VC animated:YES];
 }
 
 @end

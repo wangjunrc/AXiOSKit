@@ -472,5 +472,34 @@
     
 }
 
+
+/**
+  UIImage 转换png data
+
+ @return NSData
+ */
+-(NSData *)ax_toPNGData {
+    return   UIImagePNGRepresentation(self);
+}
+
+/**
+ UIImage 转换JPEG data 1.0压缩
+ 
+ @return NSData
+ */
+-(NSData *)ax_toJPEGData {
+    return UIImageJPEGRepresentation(self, 1.0);
+}
+
+/**
+ UIImage 转换JPEG data
+
+ @param scale 压缩比例
+ @return NSData
+ */
+-(NSData *)ax_toJPEGDataScale:(CGFloat )scale {
+    return UIImageJPEGRepresentation(self, scale);
+}
+
 @end
 

@@ -38,13 +38,20 @@ pod 'CocoaSecurity'
 # 由Flipboard开源的iOS平台上播放GIF动画 facebook/FLAnimatedImage forked from Flipboard/FLAnimatedImage  替代品
 pod 'FLAnimatedImage'
 pod 'SDWebImage/GIF'
-#import <FLAnimatedImageView.h>
-#import <FLAnimatedImageView+WebCache.h>
 
-FLAnimatedImageView *FLView = [[FLAnimatedImageView alloc]init];
-FLView.frame = CGRectMake(0, 64, SCREEN_WIDTH, 280);
-[FLView sd_setImageWithURL:[NSURL URLWithString:IMAGE2] placeholderImage:[UIImage imageNamed:[NSBundle zb_placeholder]]];
-[self.view addSubview:FLView];
+#import <FLAnimatedImage/FLAnimatedImageView.h>
+#import <SDWebImage/FLAnimatedImageView+WebCache.h>
+
+FLAnimatedImageView *gifView = [[FLAnimatedImageView alloc]init];
+gifView.frame = CGRectMake(0, 100, 100, 280);
+
+NSData *animatedImageDate = [NSData dataWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"face_flash.gif" ofType:nil]];
+FLAnimatedImage *animatedImage = [FLAnimatedImage animatedImageWithGIFData:animatedImageDate];
+UIImage *placeholderImage = [[UIImage alloc]init];
+placeholderImage.sd_FLAnimatedImage = animatedImage;
+
+[gifView sd_setImageWithURL:[NSURL URLWithString:@"https://img.soogif.com/7lMNouzYDdKupikZNTDJLGHz74PdmEg2.gif"] placeholderImage:placeholderImage];
+[self.view addSubview:gifView];
 
 
 
