@@ -13,12 +13,14 @@
 #import "WKWebViewJavascriptBridge.h"
 #import "NSBundle+AXLocal.h"
 #import "AXWeakProxy.h"
+#import "AXWKScriptMessageHandler.h"
 
 typedef NS_ENUM(NSInteger, WKWebLoadType){
     WKWebLoadTypeURLString,
     WKWebLoadTypeHTMLString,
     WKWebLoadTypeHTMLFilePath,
 };
+
 
 @interface AXWKWebVC ()<WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate,UINavigationControllerDelegate,UIScrollViewDelegate>
 
@@ -54,6 +56,8 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 @property (nonatomic, strong) UIBarButtonItem* closeItem;
 
 @property (nonatomic, strong)WKWebViewJavascriptBridge *bridge;
+/**<#description#>*/
+@property (nonatomic, copy) NSMutableDictionary <NSString *,DidReceiveScriptMessageHandler>* scriptMessageDict;
 
 @end
 
@@ -81,9 +85,6 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     [self.view addSubview:self.webView];
     [self.view addSubview:self.progressView];
     
-    self.webView.navigationDelegate = self;
-    self.webView.UIDelegate = self;
-    
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
     }];
@@ -100,7 +101,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     //
     //    [self.webView evaluateJavaScript:js completionHandler:nil];
     
-  
+    
     
 }
 
@@ -377,21 +378,38 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 //WKScriptMessageHandler
 //依然是这个协议方法,获取注入方法名对象,获取js返回的状态值.
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
-    AXLog(@"didReceiveScriptMessage");
     
-    if ([message.name isEqualToString:@"JSUseOCFunctionName_test1"]) {
-        AXLog(@"JS传来的json字符串>>%@", message.body);
+   DidReceiveScriptMessageHandler handler = self.scriptMessageDict[message.name];
+    if (handler) {
+        handler(message.name,message.body);
     }
 }
 
-//-(void)addScriptMessageHandlerName:(NSString *)name {
-//
-////     [self.webview.co .userContentController addScriptMessageHandler:[AXWeakProxy proxyWithTarget:self] name:@"JSUseOCFunctionName_test1"];
-//}
-//
-//- (void)didReceiveScriptMessage:(NSString *)name body:(NSString *)body{
-//    
-//}
+
+/**
+ js 回调oc
+
+ @param name oc方法名
+ @param handler 回调
+ */
+-(void)addScriptMessageWithName:(NSString *)name handler:(DidReceiveScriptMessageHandler )handler {
+    
+    self.scriptMessageDict[name] = handler;
+    [self.webView.configuration.userContentController addScriptMessageHandler:[[AXWKScriptMessageHandler alloc]initWithHandler:self] name:name];
+}
+
+
+/**
+ oc 调用js方法
+
+ @param javaScriptString js方法名
+ @param completionHandler 回调
+ */
+- (void)evaluateJavaScript:(NSString *)javaScriptString completionHandler:(void (^)(id, NSError * error))completionHandler {
+    
+    [self.webView evaluateJavaScript:javaScriptString completionHandler:completionHandler];
+}
+
 #pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
@@ -526,14 +544,8 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
  * 重新加载
  */
 - (void)roadDataWebAction{
-//    [self.webView reload];
-    // oc调用js方法
-    NSString *jsStr = [NSString stringWithFormat:@"showAler('%@')",@"AB"];
-    [self.webView evaluateJavaScript:jsStr completionHandler:^(id _Nullable data, NSError * _Nullable error) {
-        NSLog(@"evaluateJavaScript>> %@  %@",data,error.localizedDescription);
-    }];
+    [self.webView reload];
 }
-
 
 - (void)cancelButtonAction:(UIButton *)button{
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -589,16 +601,13 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         //        config.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAudio;
         
         WKUserContentController *userContentController = [[WKUserContentController alloc] init];
-        //        [userContentController addScriptMessageHandler:[[AXWKScriptMessageHandler alloc]initWithHandler:self] name:@"JSUseOCFunctionName_test1"];
-        /**WKUserContentController 会强引用*/
-//        [userContentController addScriptMessageHandler:[AXWeakProxy proxyWithTarget:self] name:@"JSUseOCFunctionName_test1"];
         config.userContentController = userContentController;
-        
         _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
         _webView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
-        
+        _webView.navigationDelegate = self;
+        _webView.UIDelegate = self;
     }
     return _webView;
 }
@@ -670,11 +679,15 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     return _cancelItem;
 }
 
+- (NSMutableDictionary *)scriptMessageDict {
+    if (!_scriptMessageDict) {
+        _scriptMessageDict = [NSMutableDictionary dictionary];
+    }
+    return _scriptMessageDict;
+}
 
 #pragma mark - dealloc
 - (void)dealloc{
-    
-    [self.webView.configuration.userContentController  removeScriptMessageHandlerForName:@"JSUseOCFunctionName_test1"];
     [self.webView.configuration.userContentController removeAllUserScripts];
     self.webView.scrollView.delegate = nil;
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
@@ -715,6 +728,11 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
  
  
  
+ // oc调用js方法
+ NSString *jsStr = [NSString stringWithFormat:@"showAler('%@')",@"AB"];
+ [self.webView evaluateJavaScript:jsStr completionHandler:^(id _Nullable data, NSError * _Nullable error) {
+ NSLog(@"evaluateJavaScript>> %@  %@",data,error.localizedDescription);
+ }];
  
  
  

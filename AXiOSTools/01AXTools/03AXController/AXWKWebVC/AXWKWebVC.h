@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^DidReceiveScriptMessageHandler)(NSString *name,id body);
+
 @interface AXWKWebVC : UIViewController
 
 /**
@@ -26,9 +28,22 @@
  *使用[NSBundle.mainBundle pathForResource:@"xx.html" ofType:nil];方式赋值
  */
 @property (nonatomic, copy) NSString *loadHTMLFilePath;
-//
-//-(void)addScriptMessageHandlerName:(NSString *)name;
-//
-//-(void)didReceiveScriptMessage:(NSString *)name body:(NSString *)body;
+
+/**
+ js 回调oc
+ 
+ @param name oc方法名
+ @param handler 回调
+ */
+-(void)addScriptMessageWithName:(NSString *)name handler:(DidReceiveScriptMessageHandler )handler;
+
+/**
+ oc 调用js方法
+ 
+ @param javaScriptString js方法名
+ @param completionHandler 回调
+ */
+- (void)evaluateJavaScript:(NSString *)javaScriptString completionHandler:(void (^)(id, NSError * error))completionHandler;
+
 
 @end

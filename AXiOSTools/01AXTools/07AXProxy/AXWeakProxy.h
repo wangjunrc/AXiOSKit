@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak, readonly)id target;
 
-- (instancetype )initWithTarget:(id )target;
+- (instancetype  _Nonnull)initWithTarget:(id )target;
 
-+ (instancetype )proxyWithTarget:(id )target;
++ (instancetype  _Nonnull)proxyWithTarget:(id )target;
 
 @end
 

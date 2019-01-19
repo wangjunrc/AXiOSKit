@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24A0EB7F21F3628B00EA4224 /* ABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A0EB7E21F3628B00EA4224 /* ABViewController.m */; };
 		24E9ED9321F32C3A0007B4D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ED9221F32C3A0007B4D2 /* AppDelegate.m */; };
 		24E9ED9621F32C3A0007B4D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ED9521F32C3A0007B4D2 /* ViewController.m */; };
 		24E9ED9921F32C3A0007B4D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E9ED9721F32C3A0007B4D2 /* Main.storyboard */; };
 		24E9ED9B21F32C3B0007B4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E9ED9A21F32C3B0007B4D2 /* Assets.xcassets */; };
 		24E9ED9E21F32C3B0007B4D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E9ED9C21F32C3B0007B4D2 /* LaunchScreen.storyboard */; };
 		24E9EDA121F32C3B0007B4D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9EDA021F32C3B0007B4D2 /* main.m */; };
+		C2CA1C715FD42627C06A7AE9 /* libPods-AXiOSToolsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DF2745A92A32D3A0449185 /* libPods-AXiOSToolsExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24A0EB7D21F3628B00EA4224 /* ABViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABViewController.h; sourceTree = "<group>"; };
+		24A0EB7E21F3628B00EA4224 /* ABViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABViewController.m; sourceTree = "<group>"; };
 		24E9ED8E21F32C3A0007B4D2 /* AXiOSToolsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSToolsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E9ED9121F32C3A0007B4D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24E9ED9221F32C3A0007B4D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +30,9 @@
 		24E9ED9D21F32C3B0007B4D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24E9ED9F21F32C3B0007B4D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24E9EDA021F32C3B0007B4D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ACC2E472DAA3DE47194BF1D7 /* Pods-AXiOSToolsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSToolsExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample.debug.xcconfig"; sourceTree = "<group>"; };
+		D4DF2745A92A32D3A0449185 /* libPods-AXiOSToolsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AXiOSToolsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D907BF1DF4ABC8FBE87A6A68 /* Pods-AXiOSToolsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSToolsExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2CA1C715FD42627C06A7AE9 /* libPods-AXiOSToolsExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +52,8 @@
 			children = (
 				24E9ED9021F32C3A0007B4D2 /* AXiOSToolsExample */,
 				24E9ED8F21F32C3A0007B4D2 /* Products */,
+				B690EEA0C3450BB461799B57 /* Pods */,
+				3DEF43890FD98594F1C51E9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +72,8 @@
 				24E9ED9221F32C3A0007B4D2 /* AppDelegate.m */,
 				24E9ED9421F32C3A0007B4D2 /* ViewController.h */,
 				24E9ED9521F32C3A0007B4D2 /* ViewController.m */,
+				24A0EB7D21F3628B00EA4224 /* ABViewController.h */,
+				24A0EB7E21F3628B00EA4224 /* ABViewController.m */,
 				24E9ED9721F32C3A0007B4D2 /* Main.storyboard */,
 				24E9ED9A21F32C3B0007B4D2 /* Assets.xcassets */,
 				24E9ED9C21F32C3B0007B4D2 /* LaunchScreen.storyboard */,
@@ -71,6 +83,23 @@
 			path = AXiOSToolsExample;
 			sourceTree = "<group>";
 		};
+		3DEF43890FD98594F1C51E9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4DF2745A92A32D3A0449185 /* libPods-AXiOSToolsExample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B690EEA0C3450BB461799B57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ACC2E472DAA3DE47194BF1D7 /* Pods-AXiOSToolsExample.debug.xcconfig */,
+				D907BF1DF4ABC8FBE87A6A68 /* Pods-AXiOSToolsExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24E9EDA421F32C3B0007B4D2 /* Build configuration list for PBXNativeTarget "AXiOSToolsExample" */;
 			buildPhases = (
+				31E9314E0A5761D08D2F0787 /* [CP] Check Pods Manifest.lock */,
 				24E9ED8A21F32C3A0007B4D2 /* Sources */,
 				24E9ED8B21F32C3A0007B4D2 /* Frameworks */,
 				24E9ED8C21F32C3A0007B4D2 /* Resources */,
+				A16EEBC23C48CFA4A6DD6A0A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +167,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		31E9314E0A5761D08D2F0787 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AXiOSToolsExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A16EEBC23C48CFA4A6DD6A0A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample-resources.sh",
+				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXChoosePay/Controller/AXChoosePayStyleVC.xib",
+				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXChoosePay/Controller/AXChoosePayVC.xib",
+				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXChoosePay/View/AXChoosePayStyleCell.xib",
+				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXDateVC/AXDateVC.xib",
+				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXGuidePageVC/AXGuidePageCell.xib",
+				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXGuidePageVC/AXGuidePageVC.xib",
+				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXQRCodeVC/AXQRCodeVC.xib",
+				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXQRCodeVC/QRCodeViewController.xib",
+				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXSafariVC/AXSafariVC.xib",
+				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXSinglePickVC/AXSinglePickVC.xib",
+				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXWebVC/AXWebVC.xib",
+				"${PODS_ROOT}/../../AXiOSTools/01AXTools/04AXView/AXNumberKeyboard/AXNumberKeyboard.xib",
+				"${PODS_ROOT}/../../AXiOSTools/AXHTML.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/AXiOSTools/AXiOSToolsResource.bundle",
+				"${PODS_ROOT}/GKPhotoBrowser/GKPhotoBrowser/GKPhotoBrowser.bundle",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXChoosePayStyleVC.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXChoosePayVC.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXChoosePayStyleCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXDateVC.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXGuidePageCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXGuidePageVC.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXQRCodeVC.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QRCodeViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXSafariVC.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXSinglePickVC.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXWebVC.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXNumberKeyboard.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXHTML.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXiOSToolsResource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GKPhotoBrowser.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		24E9ED8A21F32C3A0007B4D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -144,6 +246,7 @@
 				24E9ED9621F32C3A0007B4D2 /* ViewController.m in Sources */,
 				24E9EDA121F32C3B0007B4D2 /* main.m in Sources */,
 				24E9ED9321F32C3A0007B4D2 /* AppDelegate.m in Sources */,
+				24A0EB7F21F3628B00EA4224 /* ABViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +386,7 @@
 		};
 		24E9EDA521F32C3B0007B4D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACC2E472DAA3DE47194BF1D7 /* Pods-AXiOSToolsExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +404,7 @@
 		};
 		24E9EDA621F32C3B0007B4D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D907BF1DF4ABC8FBE87A6A68 /* Pods-AXiOSToolsExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,5 +1,6 @@
 function showAler(data) {
     alert(data);
+    return data+'收到'
 //    iosWeixinPay();
 }
 function showAler2() {
@@ -13,6 +14,10 @@ function showAler2() {
 function button1Click() {
 //    alert('JSUseOCFunctionName_test1');
     window.webkit.messageHandlers.JSUseOCFunctionName_test1.postMessage('TOM');
+}
+function button2Click() {
+    //    alert('JSUseOCFunctionName_test1');
+    window.webkit.messageHandlers.JSUseOCFunctionName_test2.postMessage('jim');
 }
 
 function buttonClick() {
