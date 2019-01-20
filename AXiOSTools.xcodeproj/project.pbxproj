@@ -116,6 +116,8 @@
 		247C382821F32826000F718A /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 247C382721F32825000F718A /* libmp3lame.a */; };
 		249F52D621EDCBF100840340 /* AXUIAssistant.h in Headers */ = {isa = PBXBuildFile; fileRef = 249F52D421EDCBF100840340 /* AXUIAssistant.h */; };
 		249F52D721EDCBF100840340 /* AXUIAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F52D521EDCBF100840340 /* AXUIAssistant.m */; };
+		24A0EB8221F446FC00EA4224 /* AXCrashProcessManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24A0EB8021F446FC00EA4224 /* AXCrashProcessManager.h */; };
+		24A0EB8321F446FC00EA4224 /* AXCrashProcessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A0EB8121F446FC00EA4224 /* AXCrashProcessManager.m */; };
 		24CB557421E597DC00468BAD /* AXHTML.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 24CB557321E597DC00468BAD /* AXHTML.bundle */; };
 		24EE79CB21E0F48800BF9114 /* AXiOSTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE79C921E0F48800BF9114 /* AXiOSTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24EE7B3D21E0F4F100BF9114 /* AXWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE79D521E0F4EE00BF9114 /* AXWeakProxy.m */; };
@@ -401,6 +403,8 @@
 		247C382721F32825000F718A /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		249F52D421EDCBF100840340 /* AXUIAssistant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUIAssistant.h; sourceTree = "<group>"; };
 		249F52D521EDCBF100840340 /* AXUIAssistant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXUIAssistant.m; sourceTree = "<group>"; };
+		24A0EB8021F446FC00EA4224 /* AXCrashProcessManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXCrashProcessManager.h; sourceTree = "<group>"; };
+		24A0EB8121F446FC00EA4224 /* AXCrashProcessManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXCrashProcessManager.m; sourceTree = "<group>"; };
 		24CB557321E597DC00468BAD /* AXHTML.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AXHTML.bundle; sourceTree = "<group>"; };
 		24EE79C621E0F48800BF9114 /* AXiOSTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AXiOSTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24EE79C921E0F48800BF9114 /* AXiOSTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXiOSTools.h; sourceTree = "<group>"; };
@@ -873,6 +877,8 @@
 				249F52D421EDCBF100840340 /* AXUIAssistant.h */,
 				249F52D521EDCBF100840340 /* AXUIAssistant.m */,
 				24EE7A6821E0F4EF00BF9114 /* AXViewModelProtocol.h */,
+				24A0EB8021F446FC00EA4224 /* AXCrashProcessManager.h */,
+				24A0EB8121F446FC00EA4224 /* AXCrashProcessManager.m */,
 				24EE7A6D21E0F4EF00BF9114 /* CountDownObj */,
 				24EE7A6321E0F4EF00BF9114 /* GCDTimer */,
 			);
@@ -1388,6 +1394,7 @@
 				24EE7BA621E0F4F100BF9114 /* AXVeriCodeView.h in Headers */,
 				24EE7BE421E0F4F100BF9114 /* AXJSContext.h in Headers */,
 				24EE7BA121E0F4F100BF9114 /* AXCycleScrollView.h in Headers */,
+				24A0EB8221F446FC00EA4224 /* AXCrashProcessManager.h in Headers */,
 				24EE7C1C21E0F4F100BF9114 /* AXSafariVC.h in Headers */,
 				245BD4F021E6138000831542 /* UIButton+AXCountDown.h in Headers */,
 				245BD50121E6138000831542 /* UIViewController+AXNavBarConfig.h in Headers */,
@@ -1659,6 +1666,7 @@
 				24EE7BC121E0F4F100BF9114 /* AXGCDTimer.m in Sources */,
 				24EE7C1D21E0F4F100BF9114 /* AXSafariVC.m in Sources */,
 				24EE7BFF21E0F4F100BF9114 /* AXAlerUpwardAnimation.m in Sources */,
+				24A0EB8321F446FC00EA4224 /* AXCrashProcessManager.m in Sources */,
 				24EE7BBA21E0F4F100BF9114 /* IBUILabel.m in Sources */,
 				24EE7C4721E0F4F100BF9114 /* NSObject+AXCacheImage.m in Sources */,
 				24EE7BD921E0F4F100BF9114 /* AXChoosePayStyleVC.m in Sources */,
