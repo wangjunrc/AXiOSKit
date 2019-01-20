@@ -89,7 +89,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
     }];
     
-    [self init_WebViewJavascriptBridge];
+    [self __initWebViewJavascriptBridge];
     
     // oc条用js方法
     //    NSString *colorStr = [[UIColor redColor] ax_colorToHexString];
@@ -99,17 +99,13 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     //                    document.body.style.backgroundColor = '%@';\
     //                    };",colorStr];
     //
-    //    [self.webView evaluateJavaScript:js completionHandler:nil];
-    
-    
-    
 }
 
 
 /**
  WebViewJavascriptBridge js 交互
  */
-- (void)init_WebViewJavascriptBridge{
+- (void)__initWebViewJavascriptBridge{
     
     // 开启日志，方便调试
     [WKWebViewJavascriptBridge enableLogging];
@@ -170,7 +166,6 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     } noneNav:^{
         [self.webView.scrollView addSubview:self.cancelButton];
     }];
-    
 }
 
 
@@ -197,6 +192,9 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     
     AXLog(@"页面加载完成之后调用 webView.title: %@",webView.title);
     
+    //更新左边itme
+    [self func_canGoBackItems];
+    
     
     // 加载成功,传递值给js
     
@@ -207,12 +205,6 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     //        //此处可以打印error.
     //
     //    }];
-    
-    
-    
-    //更新左边itme
-    [self func_canGoBackItems];
-    
 }
 
 /**
@@ -283,7 +275,6 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         decisionHandler(WKNavigationActionPolicyCancel);
         return;
     }
-    
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 
@@ -318,9 +309,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     if (!navigationAction.targetFrame.isMainFrame) {
         [webView loadRequest:navigationAction.request];
     }
-    
     return nil;
-    
 }
 
 /**
@@ -357,15 +346,11 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     
     AXLog(@"runJavaScriptTextInputPanelWithPrompt %@ %@",prompt,defaultText);
     
-    
     [self ax_showAlertTFByTitle:prompt message:defaultText confirm:^(NSString *text) {
         
         completionHandler(text);
         
-    } cancel:^{
-        
-    }];
-    
+    } cancel:nil];
 }
 
 /**
@@ -374,34 +359,36 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView{
     AXLog(@"网页加载内容进程终止");
 }
+
 // js注入方法
 //WKScriptMessageHandler
 //依然是这个协议方法,获取注入方法名对象,获取js返回的状态值.
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     
-   DidReceiveScriptMessageHandler handler = self.scriptMessageDict[message.name];
+    DidReceiveScriptMessageHandler handler = self.scriptMessageDict[message.name];
     if (handler) {
         handler(message.name,message.body);
     }
 }
 
-
 /**
  js 回调oc
-
+ 
  @param name oc方法名
  @param handler 回调
  */
 -(void)addScriptMessageWithName:(NSString *)name handler:(DidReceiveScriptMessageHandler )handler {
     
-    self.scriptMessageDict[name] = handler;
-    [self.webView.configuration.userContentController addScriptMessageHandler:[[AXWKScriptMessageHandler alloc]initWithHandler:self] name:name];
+    if (handler) {
+        self.scriptMessageDict[name] = handler;
+    }
+    [self.webView.configuration.userContentController addScriptMessageHandler:[AXWKScriptMessageHandler scriptMessageWithHandler:self] name:name];
 }
 
 
 /**
  oc 调用js方法
-
+ 
  @param javaScriptString js方法名
  @param completionHandler 回调
  */

@@ -19,6 +19,9 @@
     return self;
 }
 
++ (instancetype )scriptMessageWithHandler:(id<WKScriptMessageHandler>)handler {
+    return [[self alloc]initWithHandler:handler];
+}
 
 //依然是这个协议方法,获取注入方法名对象,获取js返回的状态值.
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{

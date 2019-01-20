@@ -13,10 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AXWKScriptMessageHandler : NSObject<WKScriptMessageHandler>
 
-/**<#description#>*/
+/**weak handler*/
 @property (nonatomic, weak) id<WKScriptMessageHandler> handler;
 
 -(instancetype)initWithHandler:(id<WKScriptMessageHandler>)handler;
+
++ (instancetype )scriptMessageWithHandler:(id<WKScriptMessageHandler>)handler;
 
 @end
 
