@@ -1,5 +1,5 @@
 //
-//  UIImage+AXLocal.h
+//  UIImage+AXBundle.h
 //  AXiOSTools
 //
 //  Created by AXing on 2019/1/5.
@@ -10,19 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIImage (AXLocal)
+@interface UIImage (AXBundle)
 
 /**
  读取图片
  
  @param imageName 图片名称
  */
-+ (UIImage *)axLocale_imageNamed:(NSString *)imageName;
++ (UIImage *)axBundle_imageNamed:(NSString *)imageName;
 
 /**
  针对大图，不加入内存缓存的加载方式
  */
-+ (UIImage *)axLocale_noCache_imageNamed:(NSString *)imageName;
++ (UIImage *)axBundle_noCache_imageNamed:(NSString *)imageName;
 
 @end
 

@@ -41,7 +41,6 @@ Pod::Spec.new do |s|
     s.dependency "KVOController"
     s.dependency "Masonry"
     s.dependency "GKPhotoBrowser"
-    s.dependency "WebViewJavascriptBridge"
     s.dependency "Aspects"
 end
 

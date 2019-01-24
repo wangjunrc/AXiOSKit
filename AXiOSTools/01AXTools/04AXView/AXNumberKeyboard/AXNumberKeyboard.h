@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define SYS_DEVICE_WIDTH    ([[UIScreen mainScreen] bounds].size.width)                 //屏幕宽度
-#define SYS_DEVICE_HEIGHT   ([[UIScreen mainScreen] bounds].size.height)                //屏幕长度
-
 typedef NS_ENUM(NSUInteger, AXNumberKeyboardType) {
     AXNumberKeyboardTypeInteger,    // 整数键盘
     AXNumberKeyboardTypeFloat,      // 浮点数键盘
@@ -26,6 +23,9 @@ typedef NS_ENUM(NSUInteger, AXNumberKeyboardType) {
 // 每隔多少个数字空一格
 @property (nonatomic, strong) NSNumber *interval;
 
+@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *doneBtn;
 
 - (instancetype)initWithInputType:(AXNumberKeyboardType)inputType;
 

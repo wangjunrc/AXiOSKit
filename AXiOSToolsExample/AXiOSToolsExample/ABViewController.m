@@ -10,21 +10,19 @@
 
 @interface ABViewController ()
 
+@property(nonatomic,copy)FlutterMethodCallHandler handler;
+
 @end
 
 @implementation ABViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    [self addScriptMessageHandlerName:@"JSUseOCFunctionName_test1"];
-//    self.didReceiveScriptMessage = ^(NSString *name, NSString *body) {
-//        NSLog(@"name>> %@ %@",name,body);
-//    };
     
     [self addScriptMessageWithName:@"JSUseOCFunctionName_test1" handler:^(NSString *name, id body) {
          NSLog(@"name>> %@ %@",name,body);
     }];
+    
     [self addScriptMessageWithName:@"JSUseOCFunctionName_test2" handler:^(NSString *name, id body) {
         NSLog(@"name>> %@ %@",name,body);
     }];
@@ -35,22 +33,25 @@
     [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
+
+- (void)setMethodCallHandler:(FlutterMethodCallHandler _Nullable)handler {
+    self.handler = handler;
+}
+
 - (void)btnAction {
     
-    NSString *jsStr = [NSString stringWithFormat:@"showAler('%@')",@"AB"];
-    [self evaluateJavaScript:jsStr completionHandler:^(id _Nullable data, NSError * _Nullable error) {
-        NSLog(@"evaluateJavaScript>> %@  %@",data,error.localizedDescription);
-    }];
+//    NSString *jsStr = [NSString stringWithFormat:@"showAler('%@')",@"AB1"];
+//
+//    [self evaluateJavaScript:jsStr handler:^(id data, NSError *error) {
+//         NSLog(@"evaluateJavaScript>> %@  %@",data,error.localizedDescription);
+//    }];
+    
+    self.handler(@"A", ^(id  _Nullable result) {
+        NSLog(@"result>> %@",result);
+    });
+    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -1,17 +1,17 @@
 //
-//  UIImage+AXLocal.m
+//  UIImage+AXBundle.m
 //  AXiOSTools
 //
 //  Created by AXing on 2019/1/5.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
-#import "UIImage+AXLocal.h"
-#import "NSBundle+AXLocal.h"
+#import "UIImage+AXBundle.h"
+#import "NSBundle+AXBundle.h"
 
-@implementation UIImage (AXLocal)
+@implementation UIImage (AXBundle)
 
-+ (UIImage *)axLocale_imageNamed:(NSString *)imageName {
++ (UIImage *)axBundle_imageNamed:(NSString *)imageName {
     if (imageName == nil || imageName.length == 0) {
         return nil;
     }
@@ -24,7 +24,7 @@
     return image;
 }
 
-+ (UIImage *)axLocale_noCache_imageNamed:(NSString *)imageName {
++ (UIImage *)axBundle_noCache_imageNamed:(NSString *)imageName {
     if (!imageName) return nil;
     NSBundle *bundle =  [NSBundle ax_mainBundle];;
     

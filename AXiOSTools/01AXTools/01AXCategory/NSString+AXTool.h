@@ -259,7 +259,20 @@
  */
 - (NSString *)ax_removeHeadFootWhitespaceeAndNewline;
 
-
+/**
+ 当前string 正则 inString 中的 需要的
+ 
+ @param inString 需要保留的
+ @return NSString
+ */
+-(NSString *)ax_scannerInString:(NSString *)inString;
+/**
+ 当前string 正则 upToString 中的 不需要的
+ 
+ @param upToString 不需要保留的
+ @return NSString
+ */
+-(NSString *)ax_scannerUpToString:(NSString *)upToString;
 
 
 @end

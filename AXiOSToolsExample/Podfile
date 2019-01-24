@@ -9,6 +9,7 @@ target 'AXiOSToolsExample' do
 
   # Pods for AXiOSToolsExample
 pod 'AXiOSTools', :path => '../'
+#pod 'AXiOSTools' , :git => 'https://github.com/AXinger/AXiOSTools.git'
 pod 'FLAnimatedImage'
 pod 'SDWebImage/GIF'
 end

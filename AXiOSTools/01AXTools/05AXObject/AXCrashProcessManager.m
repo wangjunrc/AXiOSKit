@@ -15,7 +15,8 @@
  [WKContentView isSecureTextEntry]: unrecognized selector sent to instance 0x101bd5000
  */
 + (void)crashProgressWKContentViewCrash {
-    if (([[[UIDevice currentDevice] systemVersion] doubleValue] >= 8.0)) {
+    
+    if (@available(iOS 8.0, *)) {
         const char *className = @"WKContentView".UTF8String;
         Class WKContentViewClass = objc_getClass(className);
         SEL isSecureTextEntry = NSSelectorFromString(@"isSecureTextEntry");
@@ -26,6 +27,7 @@
             NSLog(@"WKContentView-Crash->修复失败");
         }
     }
+    
 }
 
 /**

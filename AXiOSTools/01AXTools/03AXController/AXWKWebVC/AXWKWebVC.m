@@ -7,11 +7,9 @@
 //
 
 #import "AXWKWebVC.h"
-#if __has_include("WKWebViewJavascriptBridge.h")
 @import WebKit;
 #import "AXiOSTools.h"
-#import "WKWebViewJavascriptBridge.h"
-#import "NSBundle+AXLocal.h"
+#import "NSBundle+AXBundle.h"
 #import "AXWeakProxy.h"
 #import "AXWKScriptMessageHandler.h"
 
@@ -20,7 +18,6 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     WKWebLoadTypeHTMLString,
     WKWebLoadTypeHTMLFilePath,
 };
-
 
 @interface AXWKWebVC ()<WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate,UINavigationControllerDelegate,UIScrollViewDelegate>
 
@@ -55,9 +52,15 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
  */
 @property (nonatomic, strong) UIBarButtonItem* closeItem;
 
-@property (nonatomic, strong)WKWebViewJavascriptBridge *bridge;
-/**<#description#>*/
-@property (nonatomic, copy) NSMutableDictionary <NSString *,DidReceiveScriptMessageHandler>* scriptMessageDict;
+/**
+ *解决self.webView.configuration.userContentController强引用
+ */
+@property (nonatomic, strong) AXWKScriptMessageHandler *weakScriptMessageHandler;
+
+/**
+ *多个js交互,根据name保存,回调
+ */
+@property (nonatomic, copy) NSMutableDictionary <NSString *,AddScriptMessageHandler>* scriptMessageDict;
 
 @end
 
@@ -89,65 +92,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
     }];
     
-    [self __initWebViewJavascriptBridge];
-    
-    // oc条用js方法
-    //    NSString *colorStr = [[UIColor redColor] ax_colorToHexString];
-    //
-    //    NSString *js = [NSString stringWithFormat:@"\
-    //                    window.onload = function(){\
-    //                    document.body.style.backgroundColor = '%@';\
-    //                    };",colorStr];
-    //
 }
-
-
-/**
- WebViewJavascriptBridge js 交互
- */
-- (void)__initWebViewJavascriptBridge{
-    
-    // 开启日志，方便调试
-    [WKWebViewJavascriptBridge enableLogging];
-    // 给哪个webview建立JS与OjbC的沟通桥梁
-    self.bridge = [WKWebViewJavascriptBridge bridgeForWebView:self.webView];
-    // 设置代理，如果不需要实现，可以不设置
-    // 如果控制器里需要监听WKWebView 的`navigationDelegate`方法，就需要添加下面这行。
-    [self.bridge setWebViewDelegate:self];
-    
-    [self.bridge registerHandler:@"iosWeixinPay" handler:^(id data, WVJBResponseCallback responseCallback) {
-        //data  js 传来的参数
-        NSLog(@"data>> %@", data);
-        
-        //        if (responseCallback) {
-        //            // 反馈给JS ,js 不需要反馈 就不需要写
-        //            responseCallback(@{@"userId": @"123456"});
-        //        }
-    }];
-    
-    
-    
-    // 时机调用回调
-    //    [self.bridge callHandler:@"payCallBack" data:@"123"];
-    
-    
-    //    [self.bridge callHandler:@"function_name"data:@{} responseCallback:^(id responseData) {
-    //
-    //        NSLog(@"from js: %@", responseData);
-    //    }];
-    
-    
-    //    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-    //    btn.backgroundColor = [UIColor orangeColor];
-    //    [self.webView addSubview:btn];
-    //
-    //    [btn ax_addActionBlock:^(UIButton * _Nullable button) {
-    //        AXLog(@"btn>>>");
-    //        [self.bridge callHandler:@"payCallBack" data:@"123"];
-    //
-    //    }];
-}
-
 
 /**
  * UINavigationController itme
@@ -191,20 +136,9 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation { // 类似
     
     AXLog(@"页面加载完成之后调用 webView.title: %@",webView.title);
-    
     //更新左边itme
     [self func_canGoBackItems];
     
-    
-    // 加载成功,传递值给js
-    
-    //    NSString * jsStr  =[NSString stringWithFormat:@"sendKey('%@')",@"123"];
-    //
-    //    [webView  evaluateJavaScript:jsStr completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-    //
-    //        //此处可以打印error.
-    //
-    //    }];
 }
 
 /**
@@ -365,7 +299,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 //依然是这个协议方法,获取注入方法名对象,获取js返回的状态值.
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     
-    DidReceiveScriptMessageHandler handler = self.scriptMessageDict[message.name];
+    AddScriptMessageHandler handler = self.scriptMessageDict[message.name];
     if (handler) {
         handler(message.name,message.body);
     }
@@ -377,24 +311,25 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
  @param name oc方法名
  @param handler 回调
  */
--(void)addScriptMessageWithName:(NSString *)name handler:(DidReceiveScriptMessageHandler )handler {
+-(void)addScriptMessageWithName:(NSString *)name
+                        handler:(AddScriptMessageHandler )handler {
     
     if (handler) {
         self.scriptMessageDict[name] = handler;
     }
-    [self.webView.configuration.userContentController addScriptMessageHandler:[AXWKScriptMessageHandler scriptMessageWithHandler:self] name:name];
+     [self.webView.configuration.userContentController addScriptMessageHandler:self.weakScriptMessageHandler name:name];
 }
-
 
 /**
  oc 调用js方法
  
  @param javaScriptString js方法名
- @param completionHandler 回调
+ @param handler 回调
  */
-- (void)evaluateJavaScript:(NSString *)javaScriptString completionHandler:(void (^)(id, NSError * error))completionHandler {
+- (void)evaluateJavaScript:(NSString *)javaScriptString
+                   handler:(EvaluateJavaScriptHandler)handler {
     
-    [self.webView evaluateJavaScript:javaScriptString completionHandler:completionHandler];
+    [self.webView evaluateJavaScript:javaScriptString completionHandler:handler];
 }
 
 #pragma mark - KVO
@@ -428,9 +363,12 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
                     self.title = AXToolsLocalizedString(@"网页");
                 }
             }
+        }else {
+            [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
         }
         
     }else{
+        
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
@@ -589,7 +527,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         
         WKUserContentController *userContentController = [[WKUserContentController alloc] init];
         config.userContentController = userContentController;
-        _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
+        _webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
         _webView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
@@ -620,8 +558,8 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 
 - (UIBarButtonItem*)backItem{
     if (!_backItem) {
-        UIImage* backItemImage = [[UIImage axLocale_imageNamed:@"ax_itemBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        UIImage* backItemHlImage = [[UIImage axLocale_imageNamed:@"ax_itemBack_h"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        UIImage* backItemImage = [[UIImage axBundle_imageNamed:@"ax_itemBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        UIImage* backItemHlImage = [[UIImage axBundle_imageNamed:@"ax_itemBack_h"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         UIButton* backButton = [[UIButton alloc] init];
         [backButton setTitle:AXToolsLocalizedString(@"ax.back") forState:UIControlStateNormal];
         [backButton setTitleColor:self.navigationController.navigationBar.tintColor forState:UIControlStateNormal];
@@ -666,6 +604,13 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     return _cancelItem;
 }
 
+- (AXWKScriptMessageHandler *)weakScriptMessageHandler {
+    if (!_weakScriptMessageHandler) {
+        _weakScriptMessageHandler = [AXWKScriptMessageHandler scriptMessageWithHandler:self];
+    }
+    return _weakScriptMessageHandler;
+}
+
 - (NSMutableDictionary *)scriptMessageDict {
     if (!_scriptMessageDict) {
         _scriptMessageDict = [NSMutableDictionary dictionary];
@@ -690,7 +635,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 //    return UIInterfaceOrientationPortrait;
 //}
 
-
+@end
 
 
 #pragma mark - 文档
@@ -772,10 +717,32 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
  }
  
  
- 
- </script>
- 
- */
-
-@end
-#endif
+ //
+ // WebViewJavascriptBridge js 交互
+ // */
+//- (void)__initWebViewJavascriptBridge{
+//
+//    // 开启日志，方便调试
+//    [WKWebViewJavascriptBridge enableLogging];
+//    // 给哪个webview建立JS与OjbC的沟通桥梁
+//    self.bridge = [WKWebViewJavascriptBridge bridgeForWebView:self.webView];
+//    // 设置代理，如果不需要实现，可以不设置
+//    // 如果控制器里需要监听WKWebView 的`navigationDelegate`方法，就需要添加下面这行。
+//    [self.bridge setWebViewDelegate:self];
+//
+//    [self.bridge registerHandler:@"iosWeixinPay" handler:^(id data, WVJBResponseCallback responseCallback) {
+//        //data  js 传来的参数
+//        NSLog(@"data>> %@", data);
+//
+//        //        if (responseCallback) {
+//        //            // 反馈给JS ,js 不需要反馈 就不需要写
+//        //            responseCallback(@{@"userId": @"123456"});
+//        //        }
+//    }];
+//
+//    //    [self.bridge callHandler:@"function_name"data:@{} responseCallback:^(id responseData) {
+//    //
+//    //        NSLog(@"from js: %@", responseData);
+//    //    }];
+//
+//}

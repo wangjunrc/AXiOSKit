@@ -322,8 +322,8 @@
 }
 
 /**
-中文转 Encoding 编码集
-
+ 中文转 Encoding 编码集
+ 
  @return NSString
  */
 - (NSString *)ax_toEncoding {
@@ -617,12 +617,12 @@
 
 /**
  去除首尾空格
-
+ 
  @return NSString
  */
 - (NSString *)ax_removeHeadFootWhitespace {
     
-  return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
 }
 
@@ -634,7 +634,6 @@
 - (NSString *)ax_removeHeadFootNewline {
     
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-    
 }
 
 /**
@@ -645,9 +644,55 @@
 - (NSString *)ax_removeHeadFootWhitespaceeAndNewline {
     
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
 }
 
+
+/**
+ 当前string 正则 inString 中的 需要的
+ 
+ @param inString 需要保留的
+ @return NSString
+ */
+-(NSString *)ax_scannerInString:(NSString *)inString {
     
+    NSString *originStr = self;
+    NSScanner *scanner = [NSScanner scannerWithString:originStr];
+    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:inString];
+    NSMutableString * result = [NSMutableString string];
+    while (!scanner.isAtEnd) {
+        NSString *bufferStr;
+        //要set中的
+        if ([scanner scanCharactersFromSet:set intoString:&bufferStr]) {
+            [ result appendString:bufferStr];
+        }else{
+            scanner.scanLocation = scanner.scanLocation+1;
+        }
+    }
+    return  result;
+}
+/**
+ 当前string 正则 upToString 中的 不需要的
+ 
+ @param upToString 不需要保留的
+ @return NSString
+ */
+-(NSString *)ax_scannerUpToString:(NSString *)upToString {
+    
+    NSString *originStr = self;
+    NSScanner *scanner = [NSScanner scannerWithString:originStr];
+    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:upToString];
+    NSMutableString * result = [NSMutableString string];
+    while (!scanner.isAtEnd) {
+        NSString *bufferStr;
+        //要set中的
+        if ([scanner scanUpToCharactersFromSet:set intoString:&bufferStr]) {
+            [ result appendString:bufferStr];
+        }else{
+            scanner.scanLocation = scanner.scanLocation+1;
+        }
+    }
+    return  result;
+}
+
 @end
 

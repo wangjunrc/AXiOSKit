@@ -1,12 +1,12 @@
 //
-//  NSBundle+AXLocal.m
+//  NSBundle+AXBundle.m
 //  AXiOSTools
 //
 //  Created by AXing on 2019/1/5.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
-#import "NSBundle+AXLocal.h"
+#import "NSBundle+AXBundle.h"
 
 /**
  增加这个私有类，目的是不想导入其他的类
@@ -33,7 +33,7 @@
 
 @end
 
-@implementation NSBundle (AXLocal)
+@implementation NSBundle (AXBundle)
 
 + (NSBundle *)ax_mainBundle {
     return AXBundle.ax_mainBundle;
@@ -41,7 +41,11 @@
 
 
 + (NSBundle *)ax_currentBundleWithName:(NSString *)name {
-    NSString *bundlePath = [NSBundle.mainBundle pathForResource:name ofType:@"bundle"];
+    NSString *type = @"bundle";
+    if ([name.pathExtension isEqualToString:@"bundle"]) {
+        type = nil;
+    }
+    NSString *bundlePath = [NSBundle.mainBundle pathForResource:name ofType:type];
     NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
     return bundle;
 }

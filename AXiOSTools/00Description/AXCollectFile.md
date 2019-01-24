@@ -1,6 +1,6 @@
 
-//************************************************************************
-//************************************************************************
+
+
 # import 不同类型
 #if __has_include(<YYWebImage/YYWebImage.h>)
 #import <YYWebImage/YYWebImage.h>
@@ -8,10 +8,12 @@
 #import "YYWebImage.h"
 #endif
 
-//************************************************************************
-//************************************************************************
 
 
+
+
+# GitHub汇总
+https://github.com/Tim9Liu9/TimLiu-iOS
 
 # 消除 过期警告 top
 #pragma clang diagnostic push
@@ -26,10 +28,10 @@
 // 将此行放在出现警告的. m 文件中。 消除所有警告
 #pragma GCC diagnostic ignored"-Wundeclared-selector"
 
-//************************************************************************
-//************************************************************************
 
-#  过期宏 三种方式都是 第一种的宏
+
+
+# 过期宏 三种方式都是 第一种的宏
 
 __attribute__((deprecated(" ")));
 
@@ -43,17 +45,20 @@ NS_UNAVAILABLE 当我们不想要其他开发人员，用普通的 init 方法�
 
 NS_DESIGNATED_INITIALIZER 指定的初始化方法。当一个类提供多种初始化方法时，所有的初始化方法最终都会调用这个指定的初始化方法。比较常见的有：
 - (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
-//************************************************************************
-//************************************************************************
+
+
 
 # 1 NSSet / NSHashTable 、NSDictionary/ NSMapTable 的学习
 
-NSSet 是过滤掉重复 object 的集合类，NSHashTable 是 NSSet 的升级版容器，并且只有可变版本，允许对添加到容器中的对象是弱引用的持有关系， 当NSHashTable 中的对象销毁时，该对象也会从容器中移除。
+NSSet 是过滤掉重复 object 的集合类，
+NSHashTable 是 NSSet 的升级版容器，并且只有可变版本，允许对添加到容器中的对象是弱引用的持有关系， 当NSHashTable 中的对象销毁时，该对象也会从容器中移除。
 NSMapTable 同 NSDictionary 类似，唯一区别是多了个功能：可以设置 key 和 value 的 NSPointerFunctionsOptions 特性! NSDictionary的 key 策略固定是 copy，考虑到开销问题，一般使用简单的数字或者字符串为 key。但是如果碰到需要用 object 作为 key 的应用场景呢？NSMapTable 就可以派上用场了！可以通过 NSFunctionsPointer 来分别定义对 key 和 value 的内存管理策略，简单可以分为 strong,weak以及 copy。
 
 # 2 几个比较有用的宏
 
-NS_ASSUME_NONNULL_BEGIN、NS_ASSUME_NONNULL_END，如果需要每个属性或每个方法都去指定 nonnull 和 nullable，是一件非常繁琐的事。苹果为了减轻我们的工作量，专门提供了这两个宏。在这两个宏之间的代码，所有比较简单指针对象都被假定为 nonnull，因此我们只需要去指定那些 nullable 的指针。如果我们强行通过点语法将一个非空指针置空，编译器会报 warning。
+NS_ASSUME_NONNULL_BEGIN、
+NS_ASSUME_NONNULL_END，
+如果需要每个属性或每个方法都去指定 nonnull 和 nullable，是一件非常繁琐的事。苹果为了减轻我们的工作量，专门提供了这两个宏。在这两个宏之间的代码，所有比较简单指针对象都被假定为 nonnull，因此我们只需要去指定那些 nullable 的指针。如果我们强行通过点语法将一个非空指针置空，编译器会报 warning。
 NS_UNAVAILABLE 当我们不想要其他开发人员，用普通的 init 方法去初始化一个类，我们可以在.h 文件里这样写：
 - (instancetype)init NS_UNAVAILABLE;
 编译器不但不会提示补全 init 方法，就算开发人员强制发送 init 消息，编译器会直接报错。
@@ -65,15 +70,15 @@ NSAssert(x,y);：x 为 BOOL 值，y 为 字符串类型。当 x = YES，则不�
 4 互斥锁的使用
 
 
-//************************************************************************
-//************************************************************************
+
+
 
 # 代码触发点击事件
-
+```
 sendActionsForControlEvents
+```
 
-//************************************************************************
-//************************************************************************
+
 
 NSMutableAttributedString 常见的属性：
 
@@ -91,17 +96,17 @@ NSParagraphStyleAttributeName 设置段落／间距 vlue>> NSMutableParagraphSty
 
 
 
-//************************************************************************
-//************************************************************************
+
+
 # pod github资源 格式
-
+```
 pod 'AXiOSTools',  :git => 'https://github.com/liuweixingGitHub/AXiOSTools.git'
+```
 
-//************************************************************************
-//************************************************************************
+
 
 # 播放音频,不与其他app冲突
-
+```
 // 1.启动代理
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -118,17 +123,17 @@ NSURL *fileUrl = [NSURL URLWithString:filePath];
 self.musicPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:fileUrl error:nil];
 self.musicPlayer.delegate = self;
 [self.musicPlayer play];
+```
 
 
-//************************************************************************
-//************************************************************************
+
 
 # tableView 默认选中
-
+```
 [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+```
 
-//************************************************************************
-//************************************************************************
+
 
 # wkwebView 加载本地 css 文件
 1.建立一个bundle文件
@@ -151,12 +156,12 @@ NSURLRequest *request = [NSURLRequest requestWithURL:url];
 <!--NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];-->
 <!--[self.webView loadFileURL:[NSURL fileURLWithPath:indexPath] allowingReadAccessToURL: baseUrl];-->
 
-//************************************************************************
-//************************************************************************
+
+
 
 # scrollView 滚动方向,x 判断左右, y判断上下
 
-
+```
 CGPoint point =  [scrollView.panGestureRecognizer translationInView:self.view];
 
 if (point.x < 0 ) {
@@ -165,12 +170,12 @@ if (point.x < 0 ) {
 }
 }
 }
+```
 
-//************************************************************************
-//************************************************************************
+
 
 # 同时多个aler 顺序弹出
-
+```
 //创建一个队列，串行并行都可以，主要为了操作信号量
 dispatch_queue_t queue = dispatch_queue_create("com.se7en.alert", DISPATCH_QUEUE_SERIAL);
 
@@ -213,12 +218,13 @@ dispatch_semaphore_signal(sema);
 [self presentViewController:alert animated:YES completion:nil];
 });
 });
+```
 
-//************************************************************************
-//************************************************************************
+
 
 
 //类属性
+```
 @property (class,nonatomic, copy) NSString *nameAge;
 
 static NSString *_nameAge1 = nil;
@@ -232,13 +238,13 @@ _nameAge1 = nameAge;
 
 return _nameAge1;
 }
+```
 
 
-//************************************************************************
-//************************************************************************
+
 
 # UIScrollView 滚动g内容高度 子视图适应
-
+```
 UIScrollView *scrollView = [[UIScrollView alloc] init];
 scrollView.backgroundColor = [UIColor greenColor];
 [self.view addSubview:scrollView];
@@ -269,10 +275,7 @@ view0.backgroundColor = [UIColor redColor];
 make.edges.mas_equalTo(UIEdgeInsetsZero);
 make.height.mas_equalTo(400);
 }];
-
-//************************************************************************
-
-
+```
 
 # 制作脚本
 1.可以.sh结尾,执行 ./文件名
@@ -293,12 +296,14 @@ echo "当前路径: $currentPath"
 
 
 # UIView 始终最上面 .layer.zPosition> 0就行,
+```
 UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 260)];
 view1.backgroundColor = [UIColor redColor];
 [self.view addSubview:view1];
 view1.layer.zPosition = 10;
-
+```
 # 键盘弹起
+```
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 
@@ -306,6 +311,7 @@ view1.layer.zPosition = 10;
 /**
 *  键盘即将显示的时候调用
 */
+
 - (void)keyboardWillShow:(NSNotification *)note{
 
 // 1.取出键盘的frame
@@ -331,12 +337,12 @@ self.view.transform = CGAffineTransformMakeTranslation(0, -end.size.height);
 
 }];
 }
-
 }
 
 /**
 *  键盘即将退出的时候调用
 */
+
 - (void)keyboardWillHide:(NSNotification *)note
 {
 // 1.取出键盘弹出的时间
@@ -346,10 +352,11 @@ CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] double
 self.view_comment.transform = CGAffineTransformIdentity;
 }];
 }
+```
 =======
 // NSOperation 
 # 使用子类 NSBlockOperation 子线程
-
+```
 - (void)opDemo6{
 
 NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
@@ -448,14 +455,44 @@ NSLog(@"继续");
 NSLog(@"正在执行");
 }
 }
+```
 
-
-# copy | strong
+## copy | strong
  集合类(NSMutable,NS) 属性用 copy
 @property(nonatomic, copy) 
  非集合 属性用 strong
 @property( nonatomic,  strong)   
 
-# 添加数据到粘贴板中
+## 添加数据到粘贴板中
+```
 UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
 pasteboard.string = @"AAA";
+```
+## NSString 断句
+`只能识别中文符号,句子以。？结尾算句子`
+```
+NSString *str = @"AAA。bbbb？cc,dd?";
+[str enumerateSubstringsInRange:NSMakeRange(0, str.length) options:NSStringEnumerationBySentences usingBlock:^(NSString * _Nullable substring, NSRange substringRange, NSRange enclosingRange, BOOL * _Nonnull stop) {
+NSLog(@"substring>> %@",substring);
+}];
+```
+
+## NSScanner 分词器
+```
+NSString *originStr = @"130-F130-130-*3";
+
+NSScanner *scanner = [NSScanner scannerWithString:originStr];
+NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+
+NSMutableString *phone = [NSMutableString string];
+
+while (!scanner.isAtEnd) {
+NSString *bufferStr;
+//要set中的
+if ([scanner scanCharactersFromSet:set intoString:&bufferStr]) {
+[phone appendString:bufferStr];
+}else{
+scanner.scanLocation = scanner.scanLocation+1;
+}
+}
+```

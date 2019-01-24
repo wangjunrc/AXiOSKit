@@ -1,5 +1,5 @@
 //
-//  NSBundle+AXLocal.h
+//  NSBundle+AXBundle.h
 //  AXiOSTools
 //
 //  Created by AXing on 2019/1/5.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSBundle (AXLocal)
+@interface NSBundle (AXBundle)
 
 
 /**
@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  当前 Bundle
 
- @param name Bundle名,不带后缀
+ @param name Bundle名
  @return NSBundle
  */
 + (NSBundle *)ax_currentBundleWithName:(NSString *)name;

@@ -10,7 +10,7 @@
 #import "AXMacros_log.h"
 #import <UIKit/UIKit.h>
 #import "UIViewController+AXTool.h"
-#import "NSBundle+AXLocal.h"
+#import "NSBundle+AXBundle.h"
 #include <libkern/OSAtomic.h>
 #include <stdatomic.h>
 

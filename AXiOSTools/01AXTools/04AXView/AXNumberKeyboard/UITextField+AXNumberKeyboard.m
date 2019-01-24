@@ -12,6 +12,7 @@
 #import "AXMacros_addProperty.h"
 #import "UITextField+AXTool.h"
 #import "NSString+AXTool.h"
+#import "AXUIAssistant.h"
 
 @implementation UITextField (AXNumberKeyboard)
 
@@ -42,12 +43,12 @@
 
 - (void)setAx_inputAccessoryText:(NSString *)ax_inputAccessoryText{
     // inputAccessoryView
-    UIView *tView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SYS_DEVICE_WIDTH, 35)];
+    UIView *tView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, ax_screen_width(), 35)];
     // 顶部分割线
-    UIView *tLine = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SYS_DEVICE_WIDTH, 0.5)];
+    UIView *tLine = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, ax_screen_width(), 0.5)];
     tLine.backgroundColor = [UIColor colorWithRed:210/255.0 green:210/255.0 blue:210/255.0 alpha:1.0];
     // 字体label
-    UILabel *tLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SYS_DEVICE_WIDTH, 35)];
+    UILabel *tLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, ax_screen_width(), 35)];
     tLabel.text = ax_inputAccessoryText;
     tLabel.textAlignment = NSTextAlignmentCenter;
     tLabel.font = [UIFont systemFontOfSize:14.0];

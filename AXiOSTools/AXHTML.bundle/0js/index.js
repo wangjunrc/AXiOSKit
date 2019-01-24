@@ -1,7 +1,20 @@
+
+var button2 = document.getElementById('button2');
+button2.addEventListener('click',function () {
+                         
+                         button2Click();
+                         });
+
+document.getElementById('button3').addEventListener('click',function () {
+                                                    button3Click();
+                                                    });
+
+
+
 function showAler(data) {
     alert(data);
     return data+'收到'
-//    iosWeixinPay();
+    //    iosWeixinPay();
 }
 function showAler2() {
     alert(4);
@@ -11,13 +24,13 @@ function showAler2() {
 
 
 // js调oc 原生注入方式
-function button1Click() {
-//    alert('JSUseOCFunctionName_test1');
-    window.webkit.messageHandlers.JSUseOCFunctionName_test1.postMessage('TOM');
-}
 function button2Click() {
     //    alert('JSUseOCFunctionName_test1');
-    window.webkit.messageHandlers.JSUseOCFunctionName_test2.postMessage('jim');
+    window.webkit.messageHandlers.JSUseOCFunctionName_test1.postMessage('jim');
+}
+function button3Click() {
+    //    alert('JSUseOCFunctionName_test1');
+    window.webkit.messageHandlers.JSUseOCFunctionName_test2.postMessage('tom');
 }
 
 function buttonClick() {

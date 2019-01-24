@@ -7,10 +7,11 @@
 //
 
 #import "AXNumberKeyboard.h"
-
+#import "AXUIAssistant.h"
+#import "UIImage+AXBundle.h"
 @interface AXNumberKeyboard ()
 
-@property (strong, nonatomic) IBOutlet UIView *keyboardView;
+@property (strong, nonatomic)UIView *contentView;
 
 @end
 
@@ -19,12 +20,17 @@
 - (instancetype)initWithInputType:(AXNumberKeyboardType)inputType{
     
     if([super init]){
-        // 添加keyboardview
-        [[NSBundle mainBundle] loadNibNamed:@"AXNumberKeyboard" owner:self options:nil];
-        self.frame = CGRectMake(0, 0, SYS_DEVICE_WIDTH, 216);
-        self.keyboardView.frame = self.frame;
-        [self addSubview:self.keyboardView];
+        
+      self.contentView = [[NSBundle mainBundle] loadNibNamed:@"AXNumberKeyboard" owner:self options:nil].firstObject;
+        self.frame = CGRectMake(0, 0, ax_screen_width(), 216+ax_safe_area_insets_bottom());
+        self.backgroundColor = self.contentView.backgroundColor;
+        self.contentView.frame = self.frame;
+        [self addSubview:self.contentView];
+        
         self.inputType = inputType;
+        [self.deleteBtn setImage:[UIImage axBundle_imageNamed:@"ax_delete"] forState:UIControlStateNormal];
+        [self.doneBtn setImage:[UIImage axBundle_imageNamed:@"ax_resign"] forState:UIControlStateNormal];
+        
         
     }
     
@@ -37,7 +43,6 @@
 
 
 - (void)setInputType:(AXNumberKeyboardType)inputType{
-    
     
     // 小数点 或者 x
     UIButton *pointBtn = [self viewWithTag:1010];
@@ -70,8 +75,7 @@
     }
 }
 
-- (IBAction)keyboardViewAction:(UIButton *)sender
-{
+- (IBAction)keyboardViewAction:(UIButton *)sender{
     NSInteger tag = sender.tag;
     
     /*

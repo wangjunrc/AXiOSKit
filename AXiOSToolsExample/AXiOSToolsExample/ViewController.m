@@ -9,27 +9,36 @@
 #import "ViewController.h"
 #import "ABViewController.h"
 #import "AXiOSTools.h"
+#import <StoreKit/StoreKit.h>
+#import "UITextField+AXNumberKeyboard.h"
 
 @interface ViewController ()
+
+
 
 @end
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
-    // Do any additional setup after loading the view, typically from a nib.
+    
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-        ABViewController *VC = [ABViewController ax_init];
+    ABViewController *vc = [[ABViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+    vc.loadHTMLFilePath = [[NSBundle ax_currentBundleWithName:@"AXHTML.bundle"]pathForResource:@"index.html" ofType:nil];
     
-    //    NSString *bundlePath = [NSBundle.mainBundle pathForResource:@"AXHTML.bundle/wk_index.html" ofType:nil];
+    [vc setMethodCallHandler:^(NSString *call, void (^FlutterResult)(id  _Nullable result)) {
+        FlutterResult(@"B");
+    }];
     
-        VC.loadHTMLFilePath = [[NSBundle ax_currentBundleWithName:@"AXHTML"]pathForResource:@"index.html" ofType:nil];
     
-        [self.navigationController pushViewController:VC animated:YES];
+    
 }
+
 
 @end

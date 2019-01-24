@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^DidReceiveScriptMessageHandler)(NSString *name,id body);
+typedef void(^AddScriptMessageHandler)(NSString *name,id body);
+typedef void(^EvaluateJavaScriptHandler)(id data, NSError * error);
 
 @interface AXWKWebVC : UIViewController
 
@@ -35,15 +36,17 @@ typedef void(^DidReceiveScriptMessageHandler)(NSString *name,id body);
  @param name oc方法名
  @param handler 回调
  */
--(void)addScriptMessageWithName:(NSString *)name handler:(DidReceiveScriptMessageHandler )handler;
+- (void)addScriptMessageWithName:(NSString *)name
+                        handler:(AddScriptMessageHandler )handler;
 
 /**
  oc 调用js方法
  
  @param javaScriptString js方法名
- @param completionHandler 回调
+ @param handler 回调
  */
-- (void)evaluateJavaScript:(NSString *)javaScriptString completionHandler:(void (^)(id, NSError * error))completionHandler;
+- (void)evaluateJavaScript:(NSString *)javaScriptString
+                   handler:(EvaluateJavaScriptHandler )handler;
 
 
 @end

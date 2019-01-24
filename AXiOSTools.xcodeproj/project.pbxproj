@@ -21,7 +21,7 @@
 		245BD4B621E6138000831542 /* UISwitch+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD45021E6137F00831542 /* UISwitch+AXTool.m */; };
 		245BD4B721E6138000831542 /* NSURL+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD45121E6137F00831542 /* NSURL+AXTool.h */; };
 		245BD4B821E6138000831542 /* NSNumber+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD45221E6137F00831542 /* NSNumber+AXTool.h */; };
-		245BD4B921E6138000831542 /* UIImage+AXLocal.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD45321E6137F00831542 /* UIImage+AXLocal.h */; };
+		245BD4B921E6138000831542 /* UIImage+AXBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD45321E6137F00831542 /* UIImage+AXBundle.h */; };
 		245BD4BA21E6138000831542 /* NSObject+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD45421E6137F00831542 /* NSObject+AXTool.m */; };
 		245BD4BB21E6138000831542 /* CALayer+AXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD45521E6137F00831542 /* CALayer+AXFrame.m */; };
 		245BD4BC21E6138000831542 /* NSString+AXDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD45621E6137F00831542 /* NSString+AXDate.m */; };
@@ -55,11 +55,11 @@
 		245BD4D821E6138000831542 /* NSArray+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD47221E6137F00831542 /* NSArray+AXTool.h */; };
 		245BD4D921E6138000831542 /* UIView+AXAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD47321E6137F00831542 /* UIView+AXAnimation.h */; };
 		245BD4DA21E6138000831542 /* UIBarButtonItem+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD47421E6137F00831542 /* UIBarButtonItem+AXTool.m */; };
-		245BD4DB21E6138000831542 /* NSBundle+AXLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD47521E6137F00831542 /* NSBundle+AXLocal.m */; };
+		245BD4DB21E6138000831542 /* NSBundle+AXBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD47521E6137F00831542 /* NSBundle+AXBundle.m */; };
 		245BD4DC21E6138000831542 /* UIControl+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD47621E6137F00831542 /* UIControl+AXTool.m */; };
 		245BD4DD21E6138000831542 /* UIView+AXSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD47721E6137F00831542 /* UIView+AXSnapshot.h */; };
 		245BD4DE21E6138000831542 /* NSNumber+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD47821E6137F00831542 /* NSNumber+AXTool.m */; };
-		245BD4DF21E6138000831542 /* UIImage+AXLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD47921E6137F00831542 /* UIImage+AXLocal.m */; };
+		245BD4DF21E6138000831542 /* UIImage+AXBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD47921E6137F00831542 /* UIImage+AXBundle.m */; };
 		245BD4E021E6138000831542 /* UISwitch+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD47A21E6137F00831542 /* UISwitch+AXTool.h */; };
 		245BD4E121E6138000831542 /* NSURL+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD47B21E6137F00831542 /* NSURL+AXTool.m */; };
 		245BD4E221E6138000831542 /* UIScrollView+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD47C21E6137F00831542 /* UIScrollView+AXTool.m */; };
@@ -98,7 +98,7 @@
 		245BD50321E6138000831542 /* UITableView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD49D21E6137F00831542 /* UITableView+AXTool.h */; };
 		245BD50421E6138000831542 /* UIView+AXSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD49E21E6137F00831542 /* UIView+AXSnapshot.m */; };
 		245BD50521E6138000831542 /* UIControl+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD49F21E6137F00831542 /* UIControl+AXTool.h */; };
-		245BD50621E6138000831542 /* NSBundle+AXLocal.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD4A021E6137F00831542 /* NSBundle+AXLocal.h */; };
+		245BD50621E6138000831542 /* NSBundle+AXBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD4A021E6137F00831542 /* NSBundle+AXBundle.h */; };
 		245BD50721E6138000831542 /* UIView+AXAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD4A121E6137F00831542 /* UIView+AXAnimation.m */; };
 		245BD50821E6138000831542 /* UIBarButtonItem+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD4A221E6137F00831542 /* UIBarButtonItem+AXTool.h */; };
 		245BD50921E6138000831542 /* NSArray+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD4A321E6137F00831542 /* NSArray+AXTool.m */; };
@@ -307,7 +307,7 @@
 		245BD45021E6137F00831542 /* UISwitch+AXTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+AXTool.m"; sourceTree = "<group>"; };
 		245BD45121E6137F00831542 /* NSURL+AXTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+AXTool.h"; sourceTree = "<group>"; };
 		245BD45221E6137F00831542 /* NSNumber+AXTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+AXTool.h"; sourceTree = "<group>"; };
-		245BD45321E6137F00831542 /* UIImage+AXLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AXLocal.h"; sourceTree = "<group>"; };
+		245BD45321E6137F00831542 /* UIImage+AXBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AXBundle.h"; sourceTree = "<group>"; };
 		245BD45421E6137F00831542 /* NSObject+AXTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AXTool.m"; sourceTree = "<group>"; };
 		245BD45521E6137F00831542 /* CALayer+AXFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+AXFrame.m"; sourceTree = "<group>"; };
 		245BD45621E6137F00831542 /* NSString+AXDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AXDate.m"; sourceTree = "<group>"; };
@@ -341,11 +341,11 @@
 		245BD47221E6137F00831542 /* NSArray+AXTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AXTool.h"; sourceTree = "<group>"; };
 		245BD47321E6137F00831542 /* UIView+AXAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AXAnimation.h"; sourceTree = "<group>"; };
 		245BD47421E6137F00831542 /* UIBarButtonItem+AXTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+AXTool.m"; sourceTree = "<group>"; };
-		245BD47521E6137F00831542 /* NSBundle+AXLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+AXLocal.m"; sourceTree = "<group>"; };
+		245BD47521E6137F00831542 /* NSBundle+AXBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+AXBundle.m"; sourceTree = "<group>"; };
 		245BD47621E6137F00831542 /* UIControl+AXTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+AXTool.m"; sourceTree = "<group>"; };
 		245BD47721E6137F00831542 /* UIView+AXSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AXSnapshot.h"; sourceTree = "<group>"; };
 		245BD47821E6137F00831542 /* NSNumber+AXTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+AXTool.m"; sourceTree = "<group>"; };
-		245BD47921E6137F00831542 /* UIImage+AXLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AXLocal.m"; sourceTree = "<group>"; };
+		245BD47921E6137F00831542 /* UIImage+AXBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AXBundle.m"; sourceTree = "<group>"; };
 		245BD47A21E6137F00831542 /* UISwitch+AXTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISwitch+AXTool.h"; sourceTree = "<group>"; };
 		245BD47B21E6137F00831542 /* NSURL+AXTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+AXTool.m"; sourceTree = "<group>"; };
 		245BD47C21E6137F00831542 /* UIScrollView+AXTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+AXTool.m"; sourceTree = "<group>"; };
@@ -384,7 +384,7 @@
 		245BD49D21E6137F00831542 /* UITableView+AXTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+AXTool.h"; sourceTree = "<group>"; };
 		245BD49E21E6137F00831542 /* UIView+AXSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXSnapshot.m"; sourceTree = "<group>"; };
 		245BD49F21E6137F00831542 /* UIControl+AXTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+AXTool.h"; sourceTree = "<group>"; };
-		245BD4A021E6137F00831542 /* NSBundle+AXLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+AXLocal.h"; sourceTree = "<group>"; };
+		245BD4A021E6137F00831542 /* NSBundle+AXBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+AXBundle.h"; sourceTree = "<group>"; };
 		245BD4A121E6137F00831542 /* UIView+AXAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXAnimation.m"; sourceTree = "<group>"; };
 		245BD4A221E6137F00831542 /* UIBarButtonItem+AXTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+AXTool.h"; sourceTree = "<group>"; };
 		245BD4A321E6137F00831542 /* NSArray+AXTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AXTool.m"; sourceTree = "<group>"; };
@@ -603,8 +603,8 @@
 				245BD48521E6137F00831542 /* Foundation+Log.m */,
 				245BD47221E6137F00831542 /* NSArray+AXTool.h */,
 				245BD4A321E6137F00831542 /* NSArray+AXTool.m */,
-				245BD4A021E6137F00831542 /* NSBundle+AXLocal.h */,
-				245BD47521E6137F00831542 /* NSBundle+AXLocal.m */,
+				245BD4A021E6137F00831542 /* NSBundle+AXBundle.h */,
+				245BD47521E6137F00831542 /* NSBundle+AXBundle.m */,
 				245BD48021E6137F00831542 /* NSData+AXTool.h */,
 				245BD44D21E6137F00831542 /* NSData+AXTool.m */,
 				245BD46921E6137F00831542 /* NSDate+AXTool.h */,
@@ -653,8 +653,8 @@
 				245BD47621E6137F00831542 /* UIControl+AXTool.m */,
 				245BD49121E6137F00831542 /* UIDevice+AXTool.h */,
 				245BD45721E6137F00831542 /* UIDevice+AXTool.m */,
-				245BD45321E6137F00831542 /* UIImage+AXLocal.h */,
-				245BD47921E6137F00831542 /* UIImage+AXLocal.m */,
+				245BD45321E6137F00831542 /* UIImage+AXBundle.h */,
+				245BD47921E6137F00831542 /* UIImage+AXBundle.m */,
 				245BD45B21E6137F00831542 /* UIImage+AXTool.h */,
 				245BD48B21E6137F00831542 /* UIImage+AXTool.m */,
 				245BD46021E6137F00831542 /* UIImageView+AXTool.h */,
@@ -799,11 +799,11 @@
 		24EE7A4421E0F4EF00BF9114 /* AXNumberKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				24EE7A4921E0F4EF00BF9114 /* AXNumberKeyboard.h */,
+				24EE7A4721E0F4EF00BF9114 /* AXNumberKeyboard.m */,
 				24EE7A4521E0F4EF00BF9114 /* AXNumberKeyboard.xib */,
 				24EE7A4621E0F4EF00BF9114 /* UITextField+AXNumberKeyboard.h */,
-				24EE7A4721E0F4EF00BF9114 /* AXNumberKeyboard.m */,
 				24EE7A4821E0F4EF00BF9114 /* UITextField+AXNumberKeyboard.m */,
-				24EE7A4921E0F4EF00BF9114 /* AXNumberKeyboard.h */,
 			);
 			path = AXNumberKeyboard;
 			sourceTree = "<group>";
@@ -1059,12 +1059,12 @@
 		24EE7AB721E0F4EF00BF9114 /* AXQRCodeVC */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7AB821E0F4EF00BF9114 /* QRCodeViewController.xib */,
-				24EE7AB921E0F4EF00BF9114 /* QRCodeViewController.m */,
 				24EE7ABA21E0F4EF00BF9114 /* AXQRCodeVC.h */,
+				24EE7ACE21E0F4EF00BF9114 /* AXQRCodeVC.m */,
 				24EE7ACC21E0F4EF00BF9114 /* AXQRCodeVC.xib */,
 				24EE7ACD21E0F4EF00BF9114 /* QRCodeViewController.h */,
-				24EE7ACE21E0F4EF00BF9114 /* AXQRCodeVC.m */,
+				24EE7AB921E0F4EF00BF9114 /* QRCodeViewController.m */,
+				24EE7AB821E0F4EF00BF9114 /* QRCodeViewController.xib */,
 			);
 			path = AXQRCodeVC;
 			sourceTree = "<group>";
@@ -1413,7 +1413,7 @@
 				24EE7C1921E0F4F100BF9114 /* QRCodeViewController.h in Headers */,
 				24EE7BB421E0F4F100BF9114 /* IBObjectHeader.h in Headers */,
 				245BD4FD21E6138000831542 /* UIButton+AXCountDown2.h in Headers */,
-				245BD50621E6138000831542 /* NSBundle+AXLocal.h in Headers */,
+				245BD50621E6138000831542 /* NSBundle+AXBundle.h in Headers */,
 				245BD4C621E6138000831542 /* UIImageView+AXTool.h in Headers */,
 				245BD4AC21E6138000831542 /* NSObject+AXRuntime.h in Headers */,
 				24EE7BB621E0F4F100BF9114 /* IBUIImageView.h in Headers */,
@@ -1437,7 +1437,7 @@
 				24EE7C0821E0F4F100BF9114 /* AXQRCodeVC.h in Headers */,
 				245BD4E821E6138000831542 /* UIView+AXTool.h in Headers */,
 				24EE7BF121E0F4F100BF9114 /* AXCollectionViewController.h in Headers */,
-				245BD4B921E6138000831542 /* UIImage+AXLocal.h in Headers */,
+				245BD4B921E6138000831542 /* UIImage+AXBundle.h in Headers */,
 				245BD4B021E6138000831542 /* WKWebView+AXTool.h in Headers */,
 				245BD4CF21E6138000831542 /* NSDate+AXTool.h in Headers */,
 				245BD4F921E6138000831542 /* NSString+AXDate.h in Headers */,
@@ -1584,7 +1584,7 @@
 				24EE7C3C21E0F4F100BF9114 /* UIScrollView+AXRefresh.m in Sources */,
 				24EE7C4421E0F4F100BF9114 /* UIButton+AXCircle.m in Sources */,
 				245BD4FC21E6138000831542 /* NSString+AXNet.m in Sources */,
-				245BD4DF21E6138000831542 /* UIImage+AXLocal.m in Sources */,
+				245BD4DF21E6138000831542 /* UIImage+AXBundle.m in Sources */,
 				24EE7BA521E0F4F100BF9114 /* AXVeriCodeView.m in Sources */,
 				245BD4F521E6138000831542 /* UIImageView+SDImageCut.m in Sources */,
 				245BD4E121E6138000831542 /* NSURL+AXTool.m in Sources */,
@@ -1656,7 +1656,7 @@
 				245BD4BC21E6138000831542 /* NSString+AXDate.m in Sources */,
 				245BD50921E6138000831542 /* NSArray+AXTool.m in Sources */,
 				24EE7BB121E0F4F100BF9114 /* AXLocationManager.m in Sources */,
-				245BD4DB21E6138000831542 /* NSBundle+AXLocal.m in Sources */,
+				245BD4DB21E6138000831542 /* NSBundle+AXBundle.m in Sources */,
 				245BD4CA21E6138000831542 /* UIViewController+AXNavBarConfig.m in Sources */,
 				24EE7C5621E0F4F100BF9114 /* WKWebViewController.m in Sources */,
 				245BD4EB21E6138000831542 /* Foundation+Log.m in Sources */,
