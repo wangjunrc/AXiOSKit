@@ -65,47 +65,12 @@ static void ax_HandleExceptionr(NSException*exception) {
     NSLog(@"xcode运行崩溃--> %@\n%@", exception, exception.callStackSymbols);
     NSLog(@"↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑  xcode运行崩溃  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑\n");
     
-    /**把异常崩溃信息上传服务器*/
-    //    int32_t exceptionCount = OSAtomicIncrement32(0);
-    //    if (exceptionCount > 10) {
-    //        return;
-    //    }
-    //    NSString *callStack = [BSBacktraceLogger bs_backtraceOfAllThread];
-    //    NSMutableDictionary *exceptionInfo = [NSMutableDictionary dictionary];
-    //    [exceptionInfo setValue:exception forKey:@"exception"];
-    //    [exceptionInfo setValue:callStack forKey:@"callStack"];
-    //    [[SPTCrashHelper sharedHelper] performSelectorOnMainThread:@selector(handleException:) withObject:exceptionInfo waitUntilDone:YES];
+    
     
 }
 
 void ax_SignalHandler(int signal) {
     
-    //    int32_t exceptionCount = OSAtomicIncrement32(&ax_HandleExceptionr);
-    //
-    //    if (exceptionCount > 10) {
-    //        return;
-    //    }
-    //
-    //    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-    //    userInfo[@"UncaughtExceptionHandlerSignalKey"] = @(signal);
-    //
-    //
-    //    NSException *exception = [NSException
-    //                              exceptionWithName:@"UncaughtExceptionHandlerSignalExceptionName"
-    //                              reason:
-    //                              [NSString stringWithFormat:
-    //                               NSLocalizedString(@"Signal %d was raised.", nil),
-    //                               signal]
-    //                              userInfo:userInfo];
-    //
-    //    NSString *callStack = [BSBacktraceLogger bs_backtraceOfAllThread];
-    //
-    //    NSMutableDictionary *exceptionInfo = [NSMutableDictionary dictionary];
-    //    [exceptionInfo setValue:exception forKey:@"exception"];
-    //    [exceptionInfo setValue:callStack forKey:@"callStack"];
-    //
-    //
-    //    [[SPTCrashHelper sharedHelper] performSelectorOnMainThread:@selector(handleException:) withObject:exceptionInfo waitUntilDone:YES];
 }
 
 
