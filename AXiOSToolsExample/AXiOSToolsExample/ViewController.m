@@ -20,10 +20,18 @@
 
 @implementation ViewController
 
+#define weakify(...) \
+try {} @finally {} \
+metamacro_foreach_cxt(ext_weakify_,, __weak, __VA_ARGS__)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
+   
+    
+    
+    
+
     
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

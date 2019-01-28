@@ -50,5 +50,7 @@ pod 'UITableView+FDTemplateLayoutCell'
 ## 安全集合
 pod 'AvoidCrash'
 
+
 end
+
 
