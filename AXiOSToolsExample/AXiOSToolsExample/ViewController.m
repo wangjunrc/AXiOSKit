@@ -15,7 +15,6 @@
 @interface ViewController ()
 
 
-
 @end
 
 @implementation ViewController
@@ -24,18 +23,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
-   
-    
-    
-    
-
-    
 }
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     ABViewController *vc = [[ABViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
-    vc.loadHTMLFilePath = [[NSBundle ax_currentBundleWithName:@"AXHTML.bundle"]pathForResource:@"index.html" ofType:nil];
+    vc.loadHTMLFilePath = [[NSBundle  mainBundle]pathForResource:@"HTML/home.html" ofType:nil];
     
     [vc setMethodCallHandler:^(NSString *call, void (^FlutterResult)(id  _Nullable result)) {
         FlutterResult(@"B");
