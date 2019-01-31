@@ -280,6 +280,8 @@ make.height.mas_equalTo(400);
 # 制作脚本
 1.可以.sh结尾,执行 ./文件名
 2.无后缀,直接双击
+3.脚本运行
+./ <文件名>
 
 /*
 #dirname $0,获取当前执行脚本文件的父路径
@@ -496,3 +498,13 @@ scanner.scanLocation = scanner.scanLocation+1;
 }
 }
 ```
+# pod 操作
+pod search 不到,删除以下文件
+~/Library/Caches/CocoaPods/Pods/search_index
+
+本地仓库路径
+.cocoapods/repos/master
+
+pod update --no-repo-update
+
+pod repo update 
