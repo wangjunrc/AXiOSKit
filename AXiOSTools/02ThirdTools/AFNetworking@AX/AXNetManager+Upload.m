@@ -40,11 +40,11 @@
  @param progress      进度回调
  @param failure       失败回调
  */
-+ (void)POSTUpLoadWithURL:(NSString *)url parameters:(NSDictionary *)parameters formDataArray:(NSArray<AXFormData *> *)formDataArray progress:(void (^)(NSProgress *aProgress))progress success:(void (^)(id json))success failure:(void (^)(NSString *errorString))failure{
++ (void)POSTUpLoadWithURL:(NSString *)url parameters:(id )parameters formDataArray:(NSArray<AXFormData *> *)formDataArray progress:(void (^)(NSProgress *aProgress))progress success:(void (^)(id json))success failure:(void (^)(NSString *errorString))failure{
    
      AXLog(@"%@ -- %@",url,parameters);
     
-    [[self shareManager] POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  formData) {
+    [[self shareManagerWithParameters:parameters] POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  formData) {
         
         for (AXFormData *file in formDataArray) {
             
@@ -74,7 +74,7 @@
 /**
  * 上传单个Jpeg图片
  */
-+ (void)uploadJpegWithURL:(NSString *)url parameters:(NSDictionary *)parameters image:(UIImage* )image success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
++ (void)uploadJpegWithURL:(NSString *)url parameters:(id )parameters image:(UIImage* )image success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
     
     NSData *imageData = UIImageJPEGRepresentation(image, 1);
     

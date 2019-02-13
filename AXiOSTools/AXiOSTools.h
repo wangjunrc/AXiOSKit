@@ -101,7 +101,7 @@ FOUNDATION_EXPORT const unsigned char AXiOSToolsVersionString[];
 #import "NSBundle+AXBundle.h"
 
 #if __has_include("Masonry.h")
-#import "Masonry.h"
+#import <Masonry/Masonry.h>
 #endif
 
 #if __has_include("IQKeyboardManager.h")

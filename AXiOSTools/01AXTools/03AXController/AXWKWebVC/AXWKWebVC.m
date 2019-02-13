@@ -13,6 +13,7 @@
 #import "AXWeakProxy.h"
 #import "AXWKScriptMessageHandler.h"
 
+
 typedef NS_ENUM(NSInteger, WKWebLoadType){
     WKWebLoadTypeURLString,
     WKWebLoadTypeHTMLString,
@@ -87,10 +88,11 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     
     [self.view addSubview:self.webView];
     [self.view addSubview:self.progressView];
+
+//    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
+//    }];
     
-    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
-    }];
     
 }
 

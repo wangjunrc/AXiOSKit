@@ -28,35 +28,51 @@ NSString *const pngMimeType = @"image/png";
 NSString *const icoMimeType = @"image/png";
 NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
 
-
 @implementation AXNetManager
-
-
-//static NSURLSessionDataTask *_dataTask;
-
-/**
- 创建请求对象
+/*
+ 3. 请求格式
  
- @return 请求对象
+ AFHTTPRequestSerializer            二进制格式
+ AFJSONRequestSerializer            JSON
+ AFPropertyListRequestSerializer    PList(是一种特殊的XML,解析起来相对容易)
+ 
+ 4. 返回格式
+ 
+ AFHTTPResponseSerializer           二进制格式
+ AFJSONResponseSerializer           JSON
+ AFXMLParserResponseSerializer      XML,只能返回XMLParser,还需要自己通过代理方法解析
+ AFXMLDocumentResponseSerializer (Mac OS X)
+ AFPropertyListResponseSerializer   plist编码格式
+ AFImageResponseSerializer          Image
+ AFCompoundResponseSerializer       组合
+ 
+ 
+ //https请求自定义证书
+ NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"https" ofType:@"cer"];
+ NSData * certData =[NSData dataWithContentsOfFile:cerPath];
+ NSSet * certSet = [[NSSet alloc] initWithObjects:certData, nil];
+ AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+ // 是否允许,NO-- 不允许无效的证书
+ [securityPolicy setAllowInvalidCertificates:YES];
+ // 设置证书
+ [securityPolicy setPinnedCertificates:certSet];
+ manager.securityPolicy = securityPolicy;
+ 
  */
-+(AFHTTPSessionManager *)shareManager{
+
+
++(AFHTTPSessionManager *)shareManagerWithParameters:(id )parameters {
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    //请求参数含有数组时候,需要序列化
+    if ([parameters isKindOfClass:NSArray.class]) {
+        //请求值解析类型
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    }
+    //返回值解析类型
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.requestSerializer.timeoutInterval = 20;
     
-    //    //https请求使用
-    //    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"https" ofType:@"cer"];
-    //    NSData * certData =[NSData dataWithContentsOfFile:cerPath];
-    //    NSSet * certSet = [[NSSet alloc] initWithObjects:certData, nil];
-    //    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
-    //    // 是否允许,NO-- 不允许无效的证书
-    //    [securityPolicy setAllowInvalidCertificates:YES];
-    //    // 设置证书
-    //    [securityPolicy setPinnedCertificates:certSet];
-    //    manager.securityPolicy = securityPolicy;
     return manager;
-    
 }
 
 /**
@@ -80,6 +96,7 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
     
     id json = nil;
     NSString *responseStr = [[responseObject class]description];
+    
     
     if ([responseStr isEqualToString:@"_NSInlineData"]) {
         
@@ -276,13 +293,13 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
  @param failure 失败
  */
 + (void)getURL:(NSString *)url
-    parameters:(NSDictionary *)parameter
+    parameters:(id )parameter
        success:(void(^)(id json))success
        failure:(void(^)(NSError * error))failure{
     
     [self cancelAFN];
     
-    _dataTask = [[self shareManager] GET:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * task, id  responseObject) {
+    _dataTask = [[self shareManagerWithParameters:parameter] GET:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * task, id  responseObject) {
         if (success) {
             
             id obj = [self handleResponse:responseObject];
@@ -307,13 +324,11 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
  @param failure 失败
  */
 + (void)postURL:(NSString *)url
-     parameters:(NSDictionary *)parameter
+     parameters:(id )parameter
         success:(void(^)(id json))success
         failure:(void(^)(NSError * error))failure{
     
-    [self cancelAFN];
-    
-    _dataTask = [[self shareManager] POST:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * task, id  responseObject) {
+    _dataTask = [[self shareManagerWithParameters:parameter] POST:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * task, id  responseObject) {
         
         if (success) {
             id json = [self handleResponse:responseObject];

@@ -46,7 +46,7 @@ static NSURLSessionDataTask *_dataTask;
 
  @return 请求对象
  */
-+(AFHTTPSessionManager *)shareManager;
++(AFHTTPSessionManager *)shareManagerWithParameters:(id )parameters;
 
 /**
  处理AFN 返回结果,进行判断 json xml等类型
@@ -75,7 +75,7 @@ static NSURLSessionDataTask *_dataTask;
  @param failure 失败
  */
 + (void)getURL:(NSString *)url
-    parameters:(NSDictionary *)parameter
+    parameters:(id )parameter
        success:(void(^)(id json))success
        failure:(void(^)(NSError * error))failure;
 
@@ -88,7 +88,7 @@ static NSURLSessionDataTask *_dataTask;
  @param failure 失败
  */
 + (void)postURL:(NSString *)url
-     parameters:(NSDictionary *)parameter
+     parameters:(id )parameter
         success:(void(^)(id json))success
         failure:(void(^)(NSError * error))failure;
 
