@@ -1,33 +1,39 @@
 //
-//  AXConfigureFunction.m
+//  AXConfigureManager.m
 //  AXTools
 //
 //  Created by AXing on 2018/12/4.
 //  Copyright © 2018 liuweixing. All rights reserved.
 //
 
-#import "AXConfigureFunction.h"
-
+#import "AXConfigureManager.h"
+#import "AXUNNotificationHandler.h"
 #if __has_include("IQKeyboardManager.h")
 #import "IQKeyboardManager.h"
 #endif
 
-@implementation AXConfigureFunction
+@interface AXConfigureManager ()
+
+@property(nonatomic,strong) AXUNNotificationHandler *notificationhandler API_AVAILABLE(ios(10.0));
+
+@end
+@implementation AXConfigureManager
+
+axSharedInstance_M;
 
 /**
  键盘等 基础配置
  */
-void ax_configure(void) {
-    ax_IQKeyboardManager();
++(void)configure{
+   [self IQKeyboardManager];
 }
 
 /**
  * 键盘
  */
-void ax_IQKeyboardManager(void) {
++(void)IQKeyboardManager{
     
 #if __has_include("IQKeyboardManager.h")
-    
     //拖入工程即生效,这里只是做一下设置
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     //控制整个功能是否启用
@@ -46,7 +52,7 @@ void ax_IQKeyboardManager(void) {
 /**
  xcode 奔溃日志
  */
-void ax_registerCatch(void){
++(void)registerCatch {
     
     NSSetUncaughtExceptionHandler(&ax_HandleExceptionr);
     signal(SIGABRT, ax_SignalHandler);
@@ -60,20 +66,25 @@ void ax_registerCatch(void){
  * 这里方法只能放类里面,所以用类方法定义
  */
 static void ax_HandleExceptionr(NSException*exception) {
-    
     NSLog(@"\n↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  xcode运行崩溃  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓");
     NSLog(@"xcode运行崩溃--> %@\n%@", exception, exception.callStackSymbols);
     NSLog(@"↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑  xcode运行崩溃  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑\n");
-    
-    
-    
 }
 
 void ax_SignalHandler(int signal) {
     
 }
 
++(void)UserNotificationCenterDelegate __IOS_AVAILABLE(10.0) __TVOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0) __OSX_AVAILABLE(10.14){
+    
+    [[AXConfigureManager sharedInstance] UserNotificationCenterDelegate];
+}
 
+-(void)UserNotificationCenterDelegate __IOS_AVAILABLE(10.0) __TVOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0) __OSX_AVAILABLE(10.14){
+    
+    self.notificationhandler = [[AXUNNotificationHandler alloc] init];
+    [UNUserNotificationCenter currentNotificationCenter].delegate = self.notificationhandler;
+}
 
 /*
  // 以下是设置其他界面

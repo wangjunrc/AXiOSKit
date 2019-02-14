@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 
+#import "AXConfigureManager.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +17,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    
+    if (@available(iOS 10.0, *)) {
+        
+        [AXConfigureManager UserNotificationCenterDelegate];
+        
+    } else {
+       
+        
+    }
+    
+    
+    
     return YES;
 }
 

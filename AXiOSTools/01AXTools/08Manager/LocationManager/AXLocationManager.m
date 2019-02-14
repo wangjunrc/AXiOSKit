@@ -28,7 +28,6 @@
 + (instancetype )managerWithState:(AXLocationState )state result:(void(^)( BOOL state, CLLocation *location))resultBlock{
     
     AXLocationManager *obj = [[AXLocationManager alloc]initWithState:state result:resultBlock];
-  
     return obj;
 }
 

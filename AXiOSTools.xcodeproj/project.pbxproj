@@ -119,6 +119,10 @@
 		24A0EB8221F446FC00EA4224 /* AXCrashProcessManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24A0EB8021F446FC00EA4224 /* AXCrashProcessManager.h */; };
 		24A0EB8321F446FC00EA4224 /* AXCrashProcessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A0EB8121F446FC00EA4224 /* AXCrashProcessManager.m */; };
 		24CB557421E597DC00468BAD /* AXHTML.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 24CB557321E597DC00468BAD /* AXHTML.bundle */; };
+		24DCAB382215608100EBA274 /* AXUNNotificationHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DCAB362215608100EBA274 /* AXUNNotificationHandler.h */; };
+		24DCAB392215608100EBA274 /* AXUNNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DCAB372215608100EBA274 /* AXUNNotificationHandler.m */; };
+		24DCAB40221562E500EBA274 /* AXAuthorizationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DCAB3E221562E500EBA274 /* AXAuthorizationManager.h */; };
+		24DCAB41221562E500EBA274 /* AXAuthorizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DCAB3F221562E500EBA274 /* AXAuthorizationManager.m */; };
 		24EE79CB21E0F48800BF9114 /* AXiOSTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE79C921E0F48800BF9114 /* AXiOSTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24EE7B3D21E0F4F100BF9114 /* AXWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE79D521E0F4EE00BF9114 /* AXWeakProxy.m */; };
 		24EE7B3E21E0F4F100BF9114 /* AXWeakProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE79D621E0F4EE00BF9114 /* AXWeakProxy.h */; };
@@ -159,7 +163,7 @@
 		24EE7BC421E0F4F100BF9114 /* AXViewModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A6821E0F4EF00BF9114 /* AXViewModelProtocol.h */; };
 		24EE7BC521E0F4F100BF9114 /* AXDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A6921E0F4EF00BF9114 /* AXDataModel.h */; };
 		24EE7BC621E0F4F100BF9114 /* AXExternFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A6A21E0F4EF00BF9114 /* AXExternFunction.h */; };
-		24EE7BC721E0F4F100BF9114 /* AXConfigureFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A6B21E0F4EF00BF9114 /* AXConfigureFunction.m */; };
+		24EE7BC721E0F4F100BF9114 /* AXConfigureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A6B21E0F4EF00BF9114 /* AXConfigureManager.m */; };
 		24EE7BC821E0F4F100BF9114 /* AXDataModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A6C21E0F4EF00BF9114 /* AXDataModelProtocol.h */; };
 		24EE7BC921E0F4F100BF9114 /* AXCountDownObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A6E21E0F4EF00BF9114 /* AXCountDownObject.h */; };
 		24EE7BCA21E0F4F100BF9114 /* AXCountDownObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A6F21E0F4EF00BF9114 /* AXCountDownObject.m */; };
@@ -168,7 +172,7 @@
 		24EE7BCE21E0F4F100BF9114 /* AXObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A7321E0F4EF00BF9114 /* AXObject.m */; };
 		24EE7BCF21E0F4F100BF9114 /* AXExternFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A7421E0F4EF00BF9114 /* AXExternFunction.m */; };
 		24EE7BD021E0F4F100BF9114 /* AXDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24EE7A7521E0F4EF00BF9114 /* AXDataModel.m */; };
-		24EE7BD121E0F4F100BF9114 /* AXConfigureFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A7621E0F4EF00BF9114 /* AXConfigureFunction.h */; };
+		24EE7BD121E0F4F100BF9114 /* AXConfigureManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A7621E0F4EF00BF9114 /* AXConfigureManager.h */; };
 		24EE7BD221E0F4F100BF9114 /* AXMacros_value.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A7821E0F4EF00BF9114 /* AXMacros_value.h */; };
 		24EE7BD321E0F4F100BF9114 /* AXMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A7921E0F4EF00BF9114 /* AXMacros.h */; };
 		24EE7BD421E0F4F100BF9114 /* AXMacros_addProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EE7A7A21E0F4EF00BF9114 /* AXMacros_addProperty.h */; };
@@ -406,6 +410,10 @@
 		24A0EB8021F446FC00EA4224 /* AXCrashProcessManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXCrashProcessManager.h; sourceTree = "<group>"; };
 		24A0EB8121F446FC00EA4224 /* AXCrashProcessManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXCrashProcessManager.m; sourceTree = "<group>"; };
 		24CB557321E597DC00468BAD /* AXHTML.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AXHTML.bundle; sourceTree = "<group>"; };
+		24DCAB362215608100EBA274 /* AXUNNotificationHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUNNotificationHandler.h; sourceTree = "<group>"; };
+		24DCAB372215608100EBA274 /* AXUNNotificationHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXUNNotificationHandler.m; sourceTree = "<group>"; };
+		24DCAB3E221562E500EBA274 /* AXAuthorizationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXAuthorizationManager.h; sourceTree = "<group>"; };
+		24DCAB3F221562E500EBA274 /* AXAuthorizationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXAuthorizationManager.m; sourceTree = "<group>"; };
 		24EE79C621E0F48800BF9114 /* AXiOSTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AXiOSTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24EE79C921E0F48800BF9114 /* AXiOSTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXiOSTools.h; sourceTree = "<group>"; };
 		24EE79CA21E0F48800BF9114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -448,7 +456,7 @@
 		24EE7A6821E0F4EF00BF9114 /* AXViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXViewModelProtocol.h; sourceTree = "<group>"; };
 		24EE7A6921E0F4EF00BF9114 /* AXDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDataModel.h; sourceTree = "<group>"; };
 		24EE7A6A21E0F4EF00BF9114 /* AXExternFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXExternFunction.h; sourceTree = "<group>"; };
-		24EE7A6B21E0F4EF00BF9114 /* AXConfigureFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXConfigureFunction.m; sourceTree = "<group>"; };
+		24EE7A6B21E0F4EF00BF9114 /* AXConfigureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXConfigureManager.m; sourceTree = "<group>"; };
 		24EE7A6C21E0F4EF00BF9114 /* AXDataModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDataModelProtocol.h; sourceTree = "<group>"; };
 		24EE7A6E21E0F4EF00BF9114 /* AXCountDownObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXCountDownObject.h; sourceTree = "<group>"; };
 		24EE7A6F21E0F4EF00BF9114 /* AXCountDownObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXCountDownObject.m; sourceTree = "<group>"; };
@@ -457,7 +465,7 @@
 		24EE7A7321E0F4EF00BF9114 /* AXObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXObject.m; sourceTree = "<group>"; };
 		24EE7A7421E0F4EF00BF9114 /* AXExternFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXExternFunction.m; sourceTree = "<group>"; };
 		24EE7A7521E0F4EF00BF9114 /* AXDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDataModel.m; sourceTree = "<group>"; };
-		24EE7A7621E0F4EF00BF9114 /* AXConfigureFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXConfigureFunction.h; sourceTree = "<group>"; };
+		24EE7A7621E0F4EF00BF9114 /* AXConfigureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXConfigureManager.h; sourceTree = "<group>"; };
 		24EE7A7821E0F4EF00BF9114 /* AXMacros_value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros_value.h; sourceTree = "<group>"; };
 		24EE7A7921E0F4EF00BF9114 /* AXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros.h; sourceTree = "<group>"; };
 		24EE7A7A21E0F4EF00BF9114 /* AXMacros_addProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros_addProperty.h; sourceTree = "<group>"; };
@@ -813,6 +821,8 @@
 			children = (
 				24EE7A4B21E0F4EF00BF9114 /* TouchIDManager */,
 				24EE7A4E21E0F4EF00BF9114 /* LocationManager */,
+				24DCAB3E221562E500EBA274 /* AXAuthorizationManager.h */,
+				24DCAB3F221562E500EBA274 /* AXAuthorizationManager.m */,
 			);
 			path = 08Manager;
 			sourceTree = "<group>";
@@ -860,10 +870,12 @@
 		24EE7A5F21E0F4EF00BF9114 /* 05AXObject */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7A7621E0F4EF00BF9114 /* AXConfigureFunction.h */,
-				24EE7A6B21E0F4EF00BF9114 /* AXConfigureFunction.m */,
+				24EE7A7621E0F4EF00BF9114 /* AXConfigureManager.h */,
+				24EE7A6B21E0F4EF00BF9114 /* AXConfigureManager.m */,
 				24EE7A7221E0F4EF00BF9114 /* AXConstant.h */,
 				24EE7A6021E0F4EF00BF9114 /* AXConstant.m */,
+				24A0EB8021F446FC00EA4224 /* AXCrashProcessManager.h */,
+				24A0EB8121F446FC00EA4224 /* AXCrashProcessManager.m */,
 				24EE7A6921E0F4EF00BF9114 /* AXDataModel.h */,
 				24EE7A7521E0F4EF00BF9114 /* AXDataModel.m */,
 				24EE7A6C21E0F4EF00BF9114 /* AXDataModelProtocol.h */,
@@ -876,9 +888,9 @@
 				24EE7A6621E0F4EF00BF9114 /* AXSetValueProtocol.h */,
 				249F52D421EDCBF100840340 /* AXUIAssistant.h */,
 				249F52D521EDCBF100840340 /* AXUIAssistant.m */,
+				24DCAB362215608100EBA274 /* AXUNNotificationHandler.h */,
+				24DCAB372215608100EBA274 /* AXUNNotificationHandler.m */,
 				24EE7A6821E0F4EF00BF9114 /* AXViewModelProtocol.h */,
-				24A0EB8021F446FC00EA4224 /* AXCrashProcessManager.h */,
-				24A0EB8121F446FC00EA4224 /* AXCrashProcessManager.m */,
 				24EE7A6D21E0F4EF00BF9114 /* CountDownObj */,
 				24EE7A6321E0F4EF00BF9114 /* GCDTimer */,
 			);
@@ -1256,8 +1268,8 @@
 		24EE7B1621E0F4F000BF9114 /* AliPay@AX */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7B1721E0F4F000BF9114 /* AXAliPayManager.m */,
 				24EE7B1821E0F4F000BF9114 /* AXAliPayManager.h */,
+				24EE7B1721E0F4F000BF9114 /* AXAliPayManager.m */,
 			);
 			path = "AliPay@AX";
 			sourceTree = "<group>";
@@ -1366,6 +1378,7 @@
 				24EE7BD621E0F4F100BF9114 /* AXMacros_log.h in Headers */,
 				245BD4B821E6138000831542 /* NSNumber+AXTool.h in Headers */,
 				245BD50321E6138000831542 /* UITableView+AXTool.h in Headers */,
+				24DCAB40221562E500EBA274 /* AXAuthorizationManager.h in Headers */,
 				245BD4F621E6138000831542 /* UICollectionView+AXTool.h in Headers */,
 				245BD4E421E6138000831542 /* UIButton+AXTool.h in Headers */,
 				247C382521F31122000F718A /* AXWKScriptMessageHandler.h in Headers */,
@@ -1399,7 +1412,7 @@
 				245BD4F021E6138000831542 /* UIButton+AXCountDown.h in Headers */,
 				245BD50121E6138000831542 /* UIViewController+AXNavBarConfig.h in Headers */,
 				245BD4F221E6138000831542 /* UIViewController+AXTool.h in Headers */,
-				24EE7BD121E0F4F100BF9114 /* AXConfigureFunction.h in Headers */,
+				24EE7BD121E0F4F100BF9114 /* AXConfigureManager.h in Headers */,
 				245BD4FA21E6138000831542 /* NSObject+AXTool.h in Headers */,
 				24EE7BC321E0F4F100BF9114 /* AXObject.h in Headers */,
 				24EE7C5A21E0F4F100BF9114 /* AXNetGroup.h in Headers */,
@@ -1461,6 +1474,7 @@
 				24EE7BD521E0F4F100BF9114 /* AXMacros_runTime.h in Headers */,
 				24EE7C2321E0F4F100BF9114 /* AXGuidePageVC.h in Headers */,
 				24EE7BDF21E0F4F100BF9114 /* AXChoosePayModel.h in Headers */,
+				24DCAB382215608100EBA274 /* AXUNNotificationHandler.h in Headers */,
 				24EE7BF521E0F4F100BF9114 /* AXHalfWidthLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1558,7 +1572,7 @@
 				24EE7C6121E0F4F100BF9114 /* AXNetGroup.m in Sources */,
 				24EE7C3B21E0F4F100BF9114 /* LameHelper.m in Sources */,
 				245BD4B121E6138000831542 /* NSUserDefaults+AXTool.m in Sources */,
-				24EE7BC721E0F4F100BF9114 /* AXConfigureFunction.m in Sources */,
+				24EE7BC721E0F4F100BF9114 /* AXConfigureManager.m in Sources */,
 				245BD4B621E6138000831542 /* UISwitch+AXTool.m in Sources */,
 				24EE7BCF21E0F4F100BF9114 /* AXExternFunction.m in Sources */,
 				245BD4F421E6138000831542 /* UILabel+AXTool.m in Sources */,
@@ -1573,6 +1587,7 @@
 				245BD4D721E6138000831542 /* NSObject+AXKVO.m in Sources */,
 				245BD4B221E6138000831542 /* UIButton+AXTool.m in Sources */,
 				24EE7BEE21E0F4F100BF9114 /* AXNavigationController.m in Sources */,
+				24DCAB392215608100EBA274 /* AXUNNotificationHandler.m in Sources */,
 				24EE7BFB21E0F4F100BF9114 /* AXBaseAlertVC.m in Sources */,
 				245BD4C521E6138000831542 /* UIButton+AXCountDown.m in Sources */,
 				24EE7C5321E0F4F100BF9114 /* DBStatements.m in Sources */,
@@ -1671,6 +1686,7 @@
 				24EE7C4721E0F4F100BF9114 /* NSObject+AXCacheImage.m in Sources */,
 				24EE7BD921E0F4F100BF9114 /* AXChoosePayStyleVC.m in Sources */,
 				245BD4B321E6138000831542 /* NSData+AXTool.m in Sources */,
+				24DCAB41221562E500EBA274 /* AXAuthorizationManager.m in Sources */,
 				24EE7BB321E0F4F100BF9114 /* IBUIButton.m in Sources */,
 				24EE7BF021E0F4F100BF9114 /* AXFullLayout.m in Sources */,
 				245BD4AF21E6138000831542 /* UIView+AXTool.m in Sources */,

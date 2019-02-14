@@ -25,6 +25,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>定位3</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>定位2</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>定位1</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
