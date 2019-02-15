@@ -11,6 +11,7 @@
 #import "NSString+AXTool.h"
 
 @implementation AXNetManager (Version)
+
 +(void )appStoreVersionAppid:(NSString *)appid success:(void(^)(NSString *appVersion))successBlock failure:(void(^)(void))failureBlock{
     
     NSString *url = [[NSString alloc] initWithFormat:@"http://itunes.apple.com/lookup?id=%@",appid];
@@ -46,12 +47,13 @@
             return ;
         }
         
-        
         NSString *loc = [NSString ax_getAppVersion];
         NSString *ser = appVersion;
         AXLog(@"工程版本:loc--> %@   苹果服务器版本-->%@",loc,ser);
         successBlock([loc compare:ser options:NSNumericSearch]);
     
+//        if ([appCurrentVersion compare:appStoreVersion options:NSNumericSearch] == NSOrderedAscending) {
+        
     } failure:^{
         if (failureBlock) {
             failureBlock();

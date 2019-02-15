@@ -521,3 +521,45 @@ pod update --no-repo-update
 
 pod repo update 
 
+
+## 保护App,
+```
+一般常见的问题不会导致闪退，增强App的健壮性，同时会将错误抛出来，根据每个App自身的日志渠道记录，下次迭代或者热修复以下问题.
+
+Unrecognized Selector Sent to Instance(方法不存在异常)
+
+NSNull(方法不存在异常)
+
+NSArray,NSMutableArray,NSDictonary,NSMutableDictionary(数组越界,key-value参数异常)
+
+KVO(忘记移除keypath导致闪退)
+
+Zombie Pointer(野指针)
+
+NSTimer(忘记移除导致内存泄漏)
+
+NSNotification(忘记移除导致异常)
+
+NSString,NSMutableString,NSAttributedString,NSMutableAttributedString(下标越界以及参数nil异常)
+```
+
+pod 'JJException'
+
+demo
+```
+
+设置异常类型并开启，建议放在didFinishLaunchingWithOptions第一行，以免在多线程出现异常的情况
+//开启保护
+- (void)startGuardAction{
+JJException.exceptionWhenTerminate = NO;
+[JJException configExceptionCategory:JJExceptionGuardAll];
+[JJException startGuardException];
+[JJException registerExceptionHandle:self];
+}
+
+//关闭保护
+- (void)stopGuardAction{
+[JJException stopGuardException];
+}
+
+```

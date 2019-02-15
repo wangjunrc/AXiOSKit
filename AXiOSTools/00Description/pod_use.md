@@ -50,6 +50,8 @@ pod 'UITableView+FDTemplateLayoutCell'
 ## 安全集合
 pod 'AvoidCrash'
 
+## 保护App
+pod 'JJException'
 
 end
 

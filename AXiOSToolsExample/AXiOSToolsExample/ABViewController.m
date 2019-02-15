@@ -7,7 +7,7 @@
 //
 
 #import "ABViewController.h"
-
+#import "AXiOSTools.h"
 @interface ABViewController ()
 
 @property(nonatomic,copy)FlutterMethodCallHandler handler;
@@ -52,6 +52,8 @@
     
 }
 
-
+- (void)dealloc{
+    axLong_dealloc;
+}
 
 @end
