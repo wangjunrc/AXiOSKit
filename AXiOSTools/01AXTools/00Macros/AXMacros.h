@@ -13,7 +13,7 @@
 #import "AXMacros_instance.h"
 #import "AXMacros_value.h"
 
-
+typedef void(^AxBlock)(void);
 
 
 //import 不同类型

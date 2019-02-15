@@ -11,12 +11,25 @@
 #import "NSDate+AXTool.h"
 #import "AXExternFunction.h"
 
+/**
+ FILEString 文件名
+ 
+ */
+//#ifdef DEBUG
+//#define FILEString [[NSString stringWithFormat:@"%s", __FILE__].lastPathComponent UTF8String]
+//#define AXLog(...) printf("%s [%s 第%d行]: %s\n\n",[[NSDate ax_nowDateToStringFormatter:@"yyyy-MM-dd HH:mm:ss.SSSSSS"]UTF8String], FILEString  ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+//#else
+//#define AXLog(...)
+//#endif
+
 #ifdef DEBUG
 #define FILEString [[NSString stringWithFormat:@"%s", __FILE__].lastPathComponent UTF8String]
-#define AXLog(...) printf("%s [%s 第%d行]: %s\n\n",[[NSDate ax_nowDateToStringFormatter:@"yyyy-MM-dd HH:mm:ss.SSSSSS"]UTF8String], FILEString  ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+#define AXLog(...) AXLoger(@"[%s 第%d行]: %s\n\n", FILEString  ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
 #else
 #define AXLog(...)
 #endif
+
+
 
 //#ifdef DEBUG
 //#define FILEString [[NSString stringWithFormat:@"%s", __FILE__].lastPathComponent UTF8String]

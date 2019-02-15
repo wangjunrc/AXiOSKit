@@ -434,35 +434,46 @@ UIWindow *ax_keyWindow(void) {
     }
 }
 
+const char* __dateChar(){
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSSSSSZ";
+    const char *dateChar = [dateFormatter stringFromDate:[NSDate date]].UTF8String;
+    return dateChar;
+}
+
 /**
  封装NSLog用printf 没有__FILE__ 和 __FILE__
  
  @param format NSLog样式 format
  @param ... NSLog样式 ...
  */
-void AXNSLog(NSString *format, ...) {
+void AXLoger(NSString *format, ...) {
     
 #ifdef DEBUG
-    
     __block va_list arg_list;
     va_start (arg_list, format);
-    //时间
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSSSSS";
-    NSString *dateStr = [dateFormatter stringFromDate:[NSDate date]];
-    const char *dateChar = dateStr.UTF8String;
-    //.m文件名
-    //    const char *fileChar = [NSString stringWithFormat:@"%s", __FILE__].lastPathComponent.UTF8String;
-    //行号
-    //    int line =  __LINE__;
-    //log内容
+    const char *dateChar = __dateChar();
     const char *formatChar = [[NSString alloc] initWithFormat:format arguments:arg_list].UTF8String;
-    //    printf("%s [%s 第%d行]: %s\n\n",dateChar, fileChar ,line,formatChar);
-    printf("%s : %s\n\n",dateChar,formatChar);
+    printf("%s %s",dateChar,formatChar);
     va_end(arg_list);
-    
 #else
+ 
+#endif
     
+}
+
+void AXLogerMessage(NSString *msg,NSString *format, ...) {
+    
+#ifdef DEBUG
+    __block va_list arg_list;
+    va_start (arg_list, format);
+    const char *dateChar = __dateChar();
+    const char *msgChar = msg.UTF8String;
+    const char *formatChar = [[NSString alloc] initWithFormat:format arguments:arg_list].UTF8String;
+    printf("\n%s [%s] %s",dateChar,msgChar,formatChar);
+    va_end(arg_list);
+#else
+
 #endif
     
 }
@@ -476,14 +487,12 @@ void AXNSLog(NSString *format, ...) {
 void AXNoMsgLog(NSString *format, ...) {
     
 #ifdef DEBUG
-    
     __block va_list arg_list;
     va_start (arg_list, format);
     //log内容
     const char *formatChar = [[NSString alloc] initWithFormat:format arguments:arg_list].UTF8String;
     printf("%s",formatChar);
     va_end(arg_list);
-    
 #else
     
 #endif

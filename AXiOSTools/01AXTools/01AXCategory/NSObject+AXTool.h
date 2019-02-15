@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
-//typedef void(^AX_backBlock)(id obj);
-
-
 @interface NSObject (AXTool)
 
 /**
@@ -64,5 +61,12 @@
  @return 结果
  */
 + (BOOL)isiPad;
+
+/**
+ 代码旋转屏幕
+ 
+ @param orientation 屏幕方向
+ */
+-(void)ax_revolveOrientation:(UIInterfaceOrientation )orientation;
 
 @end

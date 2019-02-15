@@ -240,7 +240,9 @@ UIWindow *ax_keyWindow(void);
  @param format NSLog样式 format
  @param ... NSLog样式 ...
  */
-void AXNSLog(NSString *format, ...);
+void AXLoger(NSString *format, ...);
+
+void AXLogerMessage(NSString *msg,NSString *format, ...);
 
 /**
  封装NSLog用printf 纯输出

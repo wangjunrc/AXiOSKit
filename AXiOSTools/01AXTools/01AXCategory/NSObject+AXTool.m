@@ -100,7 +100,53 @@
     }
     
 }
+
+
+/**
+ 代码旋转屏幕
+
+ @param orientation 屏幕方向
+ */
+-(void)ax_revolveOrientation:(UIInterfaceOrientation )orientation {
     
+    //kvc方法
+    //    NSNumber *orientationUnknown = [NSNumber numberWithInt:UIInterfaceOrientationUnknown];
+    //
+    //    [[UIDevice currentDevice] setValue:orientationUnknown forKey:@"orientation"];
+    //
+    //    NSNumber *orientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeLeft];
+    //
+    //    [[UIDevice currentDevice] setValue:orientationTarget forKey:@"orientation"];
+    //
+    
+    if([[UIDevice currentDevice]respondsToSelector:@selector(setOrientation:)]) {
+        
+        SEL selector = NSSelectorFromString(@"setOrientation:");
+        
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        
+        [invocation setSelector:selector];
+        
+        [invocation setTarget:[UIDevice currentDevice]];
+        
+        UIInterfaceOrientation val = orientation;
+        /**
+         第一个参数需要接收一个指针，也就是传递值的时候需要传递地址
+         
+         第二个参数：需要给指定方法的第几个参数传值
+         
+         注意：设置参数的索引时不能从0开始，因为0已经被self(target)占用，1已经被_cmd(selector)占用在NSInvocation的官方文档中已经说明
+         
+         (_cmd在Objective-C的方法中表示当前方法的selector，正如同self表示当前方法调用的对象实例。
+         */
+        [invocation setArgument:&val atIndex:2];
+        
+        [invocation invoke];
+        
+        
+    }
+}
+
 #pragma mark - set and get
 
 

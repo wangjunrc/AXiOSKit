@@ -75,9 +75,13 @@ void ax_SignalHandler(int signal) {
     
 }
 
-+(void)UserNotificationCenterDelegate __IOS_AVAILABLE(10.0) __TVOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0) __OSX_AVAILABLE(10.14){
++(void)UserNotificationCenterDelegate{
     
-    [[AXConfigureManager sharedInstance] UserNotificationCenterDelegate];
+    if (@available(iOS 10.0, *)) {
+        [[AXConfigureManager sharedInstance] UserNotificationCenterDelegate];
+    } else {
+        
+    }
 }
 
 -(void)UserNotificationCenterDelegate __IOS_AVAILABLE(10.0) __TVOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0) __OSX_AVAILABLE(10.14){

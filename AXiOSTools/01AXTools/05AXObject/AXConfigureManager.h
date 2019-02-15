@@ -31,7 +31,7 @@ axSharedInstance_H;
 +(void)registerCatch;
 
 
-+(void)UserNotificationCenterDelegate __IOS_AVAILABLE(10.0) __TVOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0) __OSX_AVAILABLE(10.14);
++(void)UserNotificationCenterDelegate;
 
 @end
 
