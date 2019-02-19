@@ -9,6 +9,7 @@
 #import "AXAuthorizationManager.h"
 #import "UserNotifications/UserNotifications.h"
 #import <CoreLocation/CoreLocation.h>
+#import <UIKit/UIKit.h>
 
 @interface AXAuthorizationManager ()
 

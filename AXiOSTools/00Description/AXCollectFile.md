@@ -563,3 +563,57 @@ JJException.exceptionWhenTerminate = NO;
 }
 
 ```
+## view旋转屏
+```
+- (instancetype)initWithFrame:(CGRect)frame
+{
+self = [super initWithFrame:frame];
+if (self) {
+//开启和监听 设备旋转的通知（不开启的话，设备方向一直是UIInterfaceOrientationUnknown）
+if (![UIDevice currentDevice].generatesDeviceOrientationNotifications) {
+[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+}
+[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(handleDeviceOrientationChange:)
+name:UIDeviceOrientationDidChangeNotification object:nil];
+
+}
+return self;
+}
+
+- (void)handleDeviceOrientationChange:(NSNotification *)notification{
+
+
+//这个能取到APP启动时的屏幕方向,不是设备方向,比如,手机竖屏时,APP只支持横屏,这个办法能正确
+//UIDeviceOrientation deviceOrientation = [UIDevice currentDevice].orientation;这个方法不行
+UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+
+switch (orientation) {
+case UIInterfaceOrientationPortrait:
+//            NSLog(@"portrait");
+[self verticalTwoViews];
+break;
+case UIInterfaceOrientationLandscapeLeft:
+//            NSLog(@"landscape left");
+[self horizontalTwoViews];
+break;
+case UIInterfaceOrientationLandscapeRight:
+//            NSLog(@"landscape right");
+[self horizontalTwoViews];
+break;
+case UIInterfaceOrientationPortraitUpsideDown:
+//            NSLog(@"portrait upside down");
+break;
+case UIInterfaceOrientationUnknown:
+break;
+default:
+break;
+}
+
+}
+
+- (void)dealloc{
+
+[[NSNotificationCenter defaultCenter]removeObserver:self];
+[[UIDevice currentDevice]endGeneratingDeviceOrientationNotifications];
+}
+```
