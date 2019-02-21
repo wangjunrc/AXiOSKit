@@ -9,7 +9,7 @@
 #import "QRCodeViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "AXiOSTools.h"
-@interface QRCodeViewController () <UITabBarDelegate,AVCaptureMetadataOutputObjectsDelegate>
+@interface QRCodeViewController () <UITabBarDelegate,AVCaptureMetadataOutputObjectsDelegate,UIGestureRecognizerDelegate>
 
 // 显示扫描后的结果
 @property (strong, nonatomic) IBOutlet UILabel *resultLab;
@@ -57,18 +57,81 @@
  */
 @property (nonatomic, assign,getter=isCanRun) BOOL canRun;
 
+@property (nonatomic, strong)  AVCaptureDevice *device;
+
+@property(nonatomic) CGFloat currentZoomFactor ;
+@property(nonatomic) CGFloat maxZoomFactor;
+@property(nonatomic) CGFloat minZoomFactor;
+
+
+/**
+ 当前扫码的type
+ * 二维码 AVMetadataObjectTypeQRCode
+ * 条形码 AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code
+ */
+@property (nonatomic, copy) NSMutableArray *currentTypeArray;
+
 @end
 
 @implementation QRCodeViewController
 
+- (NSMutableArray *)currentTypeArray {
+    if (nil == _currentTypeArray) {
+        _currentTypeArray = [[NSMutableArray alloc]init];
+    }
+    return _currentTypeArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = AXToolsLocalizedString(@"二维码/条码");
     self.view.backgroundColor = [UIColor blackColor];
-    self.customTabBar.selectedItem = self.customTabBar.items[0];
     self.customTabBar.delegate = self;
-    NSLog(@"self.seeView>> %@",NSStringFromCGRect(self.seeView.frame));
     [self setupSessionView];
+    [self tabBar:self.customTabBar didSelectItem:self.customTabBar.items.firstObject];
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    
+    if ([gestureRecognizer isKindOfClass:[UIPinchGestureRecognizer class]]){
+        //        self.slider.minimumValue = self.minZoomFactor;
+        //        self.slider.maximumValue = self.maxZoomFactor;
+        self.currentZoomFactor = self.device.videoZoomFactor;
+        NSLog(@"self.currentZoomFactor>> %lf",self.currentZoomFactor);
+    }
+    return YES;
+}
+
+//缩放手势
+- (void)zoomChangePinchGestureRecognizerClick:(UIPinchGestureRecognizer *)pinchGestureRecognizer{
+    
+    if (pinchGestureRecognizer.state == UIGestureRecognizerStateBegan ||
+        pinchGestureRecognizer.state == UIGestureRecognizerStateChanged){
+        
+        
+        CGFloat currentZoomFactor = self.currentZoomFactor * pinchGestureRecognizer.scale;
+
+        
+        
+        if (currentZoomFactor < self.maxZoomFactor &&
+            currentZoomFactor > self.minZoomFactor){
+
+            NSError *error = nil;
+
+            if ([self.device lockForConfiguration:&error] ) {
+
+                self.device.videoZoomFactor = currentZoomFactor;
+                [self.device unlockForConfiguration];
+
+                [self.previewLayer setAffineTransform:CGAffineTransformMakeScale(1 +currentZoomFactor , 1 + currentZoomFactor)];
+            }
+            else {
+                NSLog( @"Could not lock device for configuration: %@", error );
+            }
+        }
+//    }
+//    else
+//    {
+//
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -78,7 +141,7 @@
         [self startAnimation];
         [self startScan];
     });
-
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -122,7 +185,24 @@
     
     // 4.设置输出能够解析的数据类型
     // 注意: 设置能够解析的数据类型, 一定要在输出对象添加到会员之后设置, 否则会报错
-    self.output.metadataObjectTypes = self.output.availableMetadataObjectTypes;
+//    self.output.metadataObjectTypes = self.output.availableMetadataObjectTypes;
+    /**
+     ios原生AVFoundation支持同时扫描二维码和条形码
+     
+     但是，如果设置扫描类型，同时为二维码和条形码（
+     
+     dataOutput.metadataObjectTypes = @[AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeEAN8Code,AVMetadataObjectTypeCode128Code];
+     ）
+     
+     会存在一个bug，就是
+     
+     扫描条形码的时候，效率非常低下
+     */
+    NSLog(@"");
+    
+    self.output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode];
+    
+    
     [self.output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     
     // 如果想实现只扫描一张图片, 那么系统自带的二维码扫描是不支持的
@@ -130,11 +210,11 @@
     //    self.output.rectOfInterest = CGRectMake(0.0, 0.0, 1, 1);
     
     // 设置二维码区域参开http://www.tuicool.com/articles/6jUjmur
-        CGFloat ScreenHigh = [UIScreen mainScreen].bounds.size.height;
-        CGFloat ScreenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat ScreenHigh = [UIScreen mainScreen].bounds.size.height;
+    CGFloat ScreenWidth = [UIScreen mainScreen].bounds.size.width;
     
-//        [self.output setRectOfInterest : CGRectMake (( 160 )/ ScreenHigh ,(( ScreenWidth - 300 )/ 2 )/ ScreenWidth , 300 / ScreenHigh , 300 / ScreenWidth)];
-//    self.output.rectOfInterest = self.seeView.frame;
+    //        [self.output setRectOfInterest : CGRectMake (( 160 )/ ScreenHigh ,(( ScreenWidth - 300 )/ 2 )/ ScreenWidth , 300 / ScreenHigh , 300 / ScreenWidth)];
+    //    self.output.rectOfInterest = self.seeView.frame;
     
     // CGRectMake（y的起点/屏幕的高，x的起点/屏幕的宽，扫描的区域的高/屏幕的高，扫描的区域的宽/屏幕的宽）
     CGFloat x = ((ScreenHigh-300-64)*0.5-80)/ScreenHigh;
@@ -151,11 +231,16 @@
     [self.previewLayer addSublayer:self.drawLayer];
     
     self.canRun = YES;
-}
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
     
+    
+    self.maxZoomFactor = 3;
+    self.minZoomFactor = 1;
+    UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoomChangePinchGestureRecognizerClick:)];
+    pinchGestureRecognizer.delegate = self;
+    [self.view addGestureRecognizer:pinchGestureRecognizer];
 }
+
+
 
 - (void)stopScan{
     if ([self.session isRunning]) {
@@ -168,17 +253,16 @@
 - (void)startAnimation{
     
     // 让约束从顶部开始
+    self.scanLineView.layer.hidden = NO;
     self.scanLineCons.constant = 0;
     [self.view layoutIfNeeded];
-
+    
     // 设置动画指定的次数
-
+    
     [UIView animateWithDuration:2.0 animations:^{
         // 1.修改约束
         self.scanLineCons.constant = self.containerHeightCons.constant;
-        
         [UIView setAnimationRepeatCount:MAXFLOAT];
-        
         // 2.强制更新界面
         [self.view layoutIfNeeded];
     }];
@@ -187,6 +271,8 @@
 // 停止动画
 - (void)stopAnimation{
     [self.view.layer removeAllAnimations];
+    self.scanLineView.layer.hidden = YES;
+    [self.scanLineView.layer removeAllAnimations];
 }
 
 /**
@@ -196,72 +282,60 @@
  *  @param metadataObjects 信息
  *  @param connection 结果
  */
-- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
-{
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
     // 0.清空图层
     [self clearCorners];
     
     if (metadataObjects.count == 0 || metadataObjects == nil) {
+        
         return;
     }
     
-    
     // 1.获取扫描到的数据
     // 注意: 要使用stringValue
-
-    //判断是否有数据
-    if (metadataObjects != nil && [metadataObjects count] > 0) {
-        AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects lastObject];
-        //判断回传的数据类型
-        if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode] && [metadataObj isKindOfClass:[AVMetadataMachineReadableCodeObject class]]) {
-            
-            // 扫描结果
-            NSString *result = [metadataObjects.lastObject stringValue];
-            NSLog(@"result>> %@",result);
-            // 停止扫描
-            [self stopScan];
-            
-             [self.beepPlayer play];
-            
-            if (self.completionBlock) {
-                self.completionBlock(result);
-            }
-            if (self.delegate && [self.delegate respondsToSelector:@selector(reader:didScanResult:)]) {
-                [self.delegate reader:self didScanResult:result];
-            }
-           
-            return;
-        }
-    }
-
+    AVMetadataObject *metadataObj = metadataObjects.lastObject;
     
-    // 2.获取扫描到的二维码的位置
-    // 2.1转换坐标
-    for (AVMetadataObject *object in metadataObjects) {
-        // 2.1.1判断当前获取到的数据, 是否是机器可识别的类型
-        if ([object isKindOfClass:[AVMetadataMachineReadableCodeObject class]]) {
-            // 2.1.2将坐标转换界面可识别的坐标
-            AVMetadataMachineReadableCodeObject *codeObject = (AVMetadataMachineReadableCodeObject *)[self.previewLayer transformedMetadataObjectForMetadataObject:object];
-            // 2.1.3绘制图形
-            [self drawCorners:codeObject];
+    //判断回传的数据类型 是二维码 还是 条形码
+    if ([self.currentTypeArray containsObject:metadataObj.type] && [metadataObj isKindOfClass:[AVMetadataMachineReadableCodeObject class]]) {
+        
+        // 扫描结果
+        NSString *result = [metadataObjects.lastObject stringValue];
+        
+        // 停止扫描
+        [self stopScan];
+        [self.beepPlayer play];
+        
+        if (self.completionBlock) {
+            self.completionBlock(result);
         }
+        if (self.delegate && [self.delegate respondsToSelector:@selector(qrCodeViewController:didScanResult:)]) {
+            [self.delegate qrCodeViewController:self didScanResult:result];
+        }
+        [self drawCorners:metadataObj];
+        
     }
 }
+
+
 
 
 /**
  *  画出二维码的边框
  *
- *  @param codeObject 保存了坐标的对象
+ *  @param metadataObj 保存了坐标的对象
  */
-- (void)drawCorners:(AVMetadataMachineReadableCodeObject *)codeObject{
+- (void)drawCorners:(AVMetadataObject *)metadataObj{
+    
+    AVMetadataMachineReadableCodeObject *codeObject = (AVMetadataMachineReadableCodeObject *)[self.previewLayer transformedMetadataObjectForMetadataObject:metadataObj];
+    
+    
     if (codeObject.corners.count == 0) {
         return;
     }
     
     // 1.创建一个图层
     CAShapeLayer *layer = [[CAShapeLayer alloc] init];
-    layer.lineWidth = 4;
+    layer.lineWidth = 2;
     layer.strokeColor = [UIColor redColor].CGColor;
     layer.fillColor = [UIColor clearColor].CGColor;
     
@@ -311,11 +385,25 @@
  *  @param item   tabBar的item
  */
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
+    
+    [self.currentTypeArray removeAllObjects];
+    
     if (item.tag == 1) {
+        self.title = AXToolsLocalizedString(@"二维码");
+        self.resultLab.text = @"请将二维码放在上面框中";
         self.containerHeightCons.constant = 300;
+        [self.currentTypeArray addObject:AVMetadataObjectTypeQRCode];
     } else {
+        self.title = AXToolsLocalizedString(@"条形码");
+        self.resultLab.text = @"请将条形码放在上面框中";
         self.containerHeightCons.constant = 150;
+        [self.currentTypeArray addObject:AVMetadataObjectTypeEAN13Code];
+        [self.currentTypeArray addObject:AVMetadataObjectTypeEAN8Code];
     }
+    
+    [self clearCorners];
+    self.canRun = YES;
+    [self startScan];
     
     // 2.停止动画
     [self.view.layer removeAllAnimations];
@@ -333,12 +421,24 @@
     }
     return _session;
 }
+
+- (AVCaptureDevice *)device {
+    if (nil == _device) {
+        _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+        
+        if ([_device isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
+            if ([_device lockForConfiguration:nil]) {
+                _device.focusMode = AVCaptureExposureModeContinuousAutoExposure;
+            }
+            
+        }
+    }
+    return _device;
+}
 // 拿到输入设备
 - (AVCaptureDeviceInput *)deviceInput{
     if (_deviceInput == nil) {
-        AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-        
-        _deviceInput = [[AVCaptureDeviceInput alloc] initWithDevice:device error:nil];
+        _deviceInput = [[AVCaptureDeviceInput alloc] initWithDevice:self.device error:nil];
     }
     return _deviceInput;
 }
@@ -353,6 +453,9 @@
 - (AVCaptureVideoPreviewLayer *)previewLayer{
     if (_previewLayer == nil) {
         _previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
+        
+//        想要实现调整焦距 需先设置AVCaptureVideoPreviewLayer的videoGravity为AVLayerVideoGravityResizeAspectFill.
+        _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
         _previewLayer.frame = [UIScreen mainScreen].bounds;
     }
     return _previewLayer;

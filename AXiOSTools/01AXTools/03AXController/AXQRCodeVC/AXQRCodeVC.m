@@ -63,9 +63,6 @@ typedef void(^QRCodeBlock)(NSString *code);
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(activeCodeDidEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
     }
-    
-    NSLog(@"seeView>> %@",NSStringFromCGRect(self.seeView.frame));
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -100,6 +97,7 @@ typedef void(^QRCodeBlock)(NSString *code);
         NSString *qrCode = metadataObject.stringValue;
         if (self.qrCodeBlock) {
             self.qrCodeBlock(nil, qrCode);
+              [self.navigationController dismissViewControllerAnimated:YES completion:nil];
         }
     }
 }

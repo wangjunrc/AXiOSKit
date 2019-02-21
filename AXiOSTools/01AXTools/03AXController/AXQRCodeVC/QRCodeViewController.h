@@ -17,14 +17,13 @@
  *  @param reader 扫描二维码控制器
  *  @param result 扫描结果
  */
-- (void)reader:(QRCodeViewController *)reader didScanResult:(NSString *)result;
+- (void)qrCodeViewController:(QRCodeViewController *)reader didScanResult:(NSString *)result;
 
 @end
 
 @interface QRCodeViewController : UIViewController
 
 @property (nonatomic, weak) id<QRCodeViewControllerDelegate> delegate;
-
 
 /**
  *  设置扫描二维码完成后回调的block
