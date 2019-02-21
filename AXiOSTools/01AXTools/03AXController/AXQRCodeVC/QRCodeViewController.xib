@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbI-0m-VUG">
-                    <rect key="frame" x="0.0" y="763" width="375" height="49"/>
+                    <rect key="frame" x="0.0" y="729" width="375" height="49"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="49" id="txa-nQ-4SZ"/>
@@ -36,9 +35,9 @@
                         <tabBarItem tag="1" title="二维码" image="qrcode_tabbar_icon_qrcode" id="ffE-C4-HLw"/>
                         <tabBarItem title="条形码" image="qrcode_tabbar_icon_barcode" id="h26-dW-QIY"/>
                     </items>
-                    <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tabBar>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nnp-tK-sc1" userLabel="容器">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nnp-tK-sc1" userLabel="扫描区域View">
                     <rect key="frame" x="37.666666666666657" y="176" width="300" height="300"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode_border.png" translatesAutoresizingMaskIntoConstraints="NO" id="gJX-Ow-A6e" userLabel="边框">
@@ -51,6 +50,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="gJX-Ow-A6e" secondAttribute="trailing" id="6VZ-FF-adT"/>
                         <constraint firstItem="BeV-eC-SWh" firstAttribute="width" secondItem="Nnp-tK-sc1" secondAttribute="width" multiplier="1.2" id="8v2-i8-IqI"/>
@@ -69,22 +69,6 @@
                         </mask>
                     </variation>
                 </view>
-                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PhD-9T-6M3">
-                    <rect key="frame" x="0.0" y="0.0" width="37.666666666666664" height="763"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKI-bB-aTc">
-                    <rect key="frame" x="37.666666666666657" y="476" width="300" height="287"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fss-PE-k6m">
-                    <rect key="frame" x="337.66666666666669" y="0.0" width="37.333333333333314" height="763"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAf-Nj-aXv">
-                    <rect key="frame" x="37.666666666666657" y="0.0" width="300" height="176"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请将二维码放在上面框中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkx-VD-MTH">
                     <rect key="frame" x="92" y="496" width="191" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -95,28 +79,12 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="xbI-0m-VUG" firstAttribute="leading" secondItem="goN-Ew-frY" secondAttribute="leading" id="3jV-2v-0uM"/>
-                <constraint firstItem="PhD-9T-6M3" firstAttribute="leading" secondItem="goN-Ew-frY" secondAttribute="leading" id="406-g2-thR"/>
                 <constraint firstItem="Nnp-tK-sc1" firstAttribute="centerX" secondItem="goN-Ew-frY" secondAttribute="centerX" id="61W-NR-KdY"/>
-                <constraint firstItem="Nnp-tK-sc1" firstAttribute="top" secondItem="gAf-Nj-aXv" secondAttribute="bottom" id="6hc-fK-cfz"/>
-                <constraint firstItem="fss-PE-k6m" firstAttribute="leading" secondItem="ZKI-bB-aTc" secondAttribute="trailing" id="KAE-gA-IGc"/>
-                <constraint firstItem="gAf-Nj-aXv" firstAttribute="leading" secondItem="PhD-9T-6M3" secondAttribute="trailing" id="NzD-gs-mp0"/>
-                <constraint firstItem="fss-PE-k6m" firstAttribute="leading" secondItem="Nnp-tK-sc1" secondAttribute="trailing" id="VCm-wh-a0p"/>
-                <constraint firstItem="xbI-0m-VUG" firstAttribute="top" secondItem="fss-PE-k6m" secondAttribute="bottom" id="WZA-f1-eUl"/>
+                <constraint firstAttribute="bottomMargin" secondItem="xbI-0m-VUG" secondAttribute="bottom" id="IQS-wY-x6A"/>
                 <constraint firstItem="Nnp-tK-sc1" firstAttribute="centerY" secondItem="goN-Ew-frY" secondAttribute="centerY" constant="-80" id="Yrl-pb-A7Q"/>
                 <constraint firstAttribute="trailing" secondItem="xbI-0m-VUG" secondAttribute="trailing" id="ZNZ-wr-CxC"/>
                 <constraint firstItem="Zkx-VD-MTH" firstAttribute="top" secondItem="Nnp-tK-sc1" secondAttribute="bottom" constant="20" id="a21-3O-mN1"/>
-                <constraint firstItem="fss-PE-k6m" firstAttribute="leading" secondItem="gAf-Nj-aXv" secondAttribute="trailing" id="arI-C3-MKK"/>
-                <constraint firstItem="xbI-0m-VUG" firstAttribute="top" secondItem="PhD-9T-6M3" secondAttribute="bottom" id="auc-jJ-wp2"/>
-                <constraint firstAttribute="trailing" secondItem="fss-PE-k6m" secondAttribute="trailing" id="b6h-xj-wA6"/>
-                <constraint firstAttribute="bottom" secondItem="xbI-0m-VUG" secondAttribute="bottom" id="bhN-Of-mad"/>
                 <constraint firstItem="Zkx-VD-MTH" firstAttribute="centerX" secondItem="goN-Ew-frY" secondAttribute="centerX" id="e72-De-KKs"/>
-                <constraint firstItem="ZKI-bB-aTc" firstAttribute="top" secondItem="Nnp-tK-sc1" secondAttribute="bottom" id="fTv-sK-9bi"/>
-                <constraint firstItem="Nnp-tK-sc1" firstAttribute="leading" secondItem="PhD-9T-6M3" secondAttribute="trailing" id="hM0-Xh-ChS"/>
-                <constraint firstItem="PhD-9T-6M3" firstAttribute="top" secondItem="goN-Ew-frY" secondAttribute="top" id="hVO-i3-I6u"/>
-                <constraint firstItem="ZKI-bB-aTc" firstAttribute="leading" secondItem="PhD-9T-6M3" secondAttribute="trailing" id="izy-dQ-Mcn"/>
-                <constraint firstItem="fss-PE-k6m" firstAttribute="top" secondItem="goN-Ew-frY" secondAttribute="top" id="jmq-Ue-ufl"/>
-                <constraint firstItem="gAf-Nj-aXv" firstAttribute="top" secondItem="goN-Ew-frY" secondAttribute="top" id="laE-Tu-GqI"/>
-                <constraint firstItem="xbI-0m-VUG" firstAttribute="top" secondItem="ZKI-bB-aTc" secondAttribute="bottom" id="zDQ-1d-jw1"/>
             </constraints>
             <point key="canvasLocation" x="24" y="52"/>
         </view>

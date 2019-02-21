@@ -67,6 +67,7 @@
     self.view.backgroundColor = [UIColor blackColor];
     self.customTabBar.selectedItem = self.customTabBar.items[0];
     self.customTabBar.delegate = self;
+    NSLog(@"self.seeView>> %@",NSStringFromCGRect(self.seeView.frame));
     [self setupSessionView];
 }
 
@@ -214,12 +215,9 @@
         //判断回传的数据类型
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode] && [metadataObj isKindOfClass:[AVMetadataMachineReadableCodeObject class]]) {
             
-            AXLog(@"扫描结果: %@",metadataObjects);
-            
-            
             // 扫描结果
             NSString *result = [metadataObjects.lastObject stringValue];
-            
+            NSLog(@"result>> %@",result);
             // 停止扫描
             [self stopScan];
             
@@ -256,8 +254,7 @@
  *
  *  @param codeObject 保存了坐标的对象
  */
-- (void)drawCorners:(AVMetadataMachineReadableCodeObject *)codeObject
-{
+- (void)drawCorners:(AVMetadataMachineReadableCodeObject *)codeObject{
     if (codeObject.corners.count == 0) {
         return;
     }
@@ -296,8 +293,7 @@
 /**
  *  清除边线
  */
-- (void)clearCorners
-{
+- (void)clearCorners{
     if (self.drawLayer.sublayers == nil || self.drawLayer.sublayers.count == 0) {
         return;
     }
@@ -331,16 +327,14 @@
 
 #pragma mark - 懒加载
 // 会话
-- (AVCaptureSession *)session
-{
+- (AVCaptureSession *)session{
     if (_session == nil) {
         _session = [[AVCaptureSession alloc] init];
     }
     return _session;
 }
 // 拿到输入设备
-- (AVCaptureDeviceInput *)deviceInput
-{
+- (AVCaptureDeviceInput *)deviceInput{
     if (_deviceInput == nil) {
         AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
         
@@ -349,16 +343,14 @@
     return _deviceInput;
 }
 // 拿到输出对象
-- (AVCaptureMetadataOutput *)output
-{
+- (AVCaptureMetadataOutput *)output{
     if (_output == nil) {
         _output = [[AVCaptureMetadataOutput alloc] init];
     }
     return _output;
 }
 // 创建预览图层
-- (AVCaptureVideoPreviewLayer *)previewLayer
-{
+- (AVCaptureVideoPreviewLayer *)previewLayer{
     if (_previewLayer == nil) {
         _previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
         _previewLayer.frame = [UIScreen mainScreen].bounds;
@@ -366,8 +358,7 @@
     return _previewLayer;
 }
 // 创建用于绘制边线的图层
-- (CALayer *)drawLayer
-{
+- (CALayer *)drawLayer{
     if (_drawLayer == nil) {
         _drawLayer = [[CALayer alloc] init];
         _drawLayer.frame = [UIScreen mainScreen].bounds;

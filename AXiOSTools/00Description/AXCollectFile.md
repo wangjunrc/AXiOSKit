@@ -617,3 +617,37 @@ break;
 [[UIDevice currentDevice]endGeneratingDeviceOrientationNotifications];
 }
 ```
+
+## NSError
+
+//预定义的userinfo键名
+NSString *const NSUnderlyingErrorKey;//推荐的标准方式，通用键
+NSString *const NSLocalizedDescriptionKey;             // 详细描述键
+NSString *const NSLocalizedFailureReasonErrorKey;      // 失败原因键
+NSString *const NSLocalizedRecoverySuggestionErrorKey; //恢复建议键
+NSString *const NSLocalizedRecoveryOptionsErrorKey;    // 恢复选项键
+
+//其他键
+NSString *const NSRecoveryAttempterErrorKey;
+NSString *const NSHelpAnchorErrorKey;
+NSString *const NSStringEncodingErrorKey ;
+NSString *const NSURLErrorKey;
+NSString *const NSFilePathErrorKey;
+
+```
+
+NSDictionary *userInfo1 = @{
+NSLocalizedDescriptionKey:@"由于文件不存在，无法打开",
+NSLocalizedFailureReasonErrorKey:@"失败原因：文件不存在",
+NSLocalizedRecoverySuggestionErrorKey:@"恢复建议：请创建该文件"
+};
+
+NSError *error = [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:4 userInfo:userInfo1];
+
+
+NSLog(@"========%@",error);
+NSLog(@"========%@",[error localizedDescription]);
+NSLog(@"========%@",[error localizedFailureReason]);
+NSLog(@"========%@",[error localizedRecoverySuggestion]);
+
+```

@@ -10,6 +10,6 @@
 
 @interface AXQRCodeVC : UIViewController
 
-- (void)successQRCode:(void(^)(NSString *code))code;
+@property (nonatomic, copy) void(^qrCodeBlock)(NSError *error,NSString *qrCode);
 
 @end

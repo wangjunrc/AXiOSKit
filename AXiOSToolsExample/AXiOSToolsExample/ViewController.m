@@ -17,7 +17,7 @@
 #import "AAViewController.h"
 #import "AView.h"
 #import "AView.h"
-
+#import "QRCodeViewController.h"
 @interface ViewController ()
 
 @property(nonatomic,strong)AAViewController *avc;
@@ -53,14 +53,21 @@
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    AAViewController *avc = [[AAViewController alloc]init];
-//    avc.vc = self;
-    avc.did = ^{
-        self.view.backgroundColor = [UIColor redColor];
+//
+    AXQRCodeVC *vc = [[AXQRCodeVC alloc]init];
+    vc.qrCodeBlock = ^(NSError *error, NSString *code) {
+        NSLog(@"%@  %@",error,code);
     };
-    self.avc = avc;
-    [self.navigationController pushViewController:avc animated:YES];
+    [self.navigationController pushViewController:vc animated:YES];
     
+    
+//    QRCodeViewController *vc = [[QRCodeViewController alloc]init];
+//  
+//    
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+  
 }
 - (IBAction)btnAction:(id)sender {
     
