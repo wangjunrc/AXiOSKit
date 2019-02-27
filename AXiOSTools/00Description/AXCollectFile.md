@@ -46,7 +46,27 @@ NS_UNAVAILABLE 当我们不想要其他开发人员，用普通的 init 方法�
 NS_DESIGNATED_INITIALIZER 指定的初始化方法。当一个类提供多种初始化方法时，所有的初始化方法最终都会调用这个指定的初始化方法。比较常见的有：
 - (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
 
+一个子类如果有自己的 designed initializer，则必须要实现父类的 designed initializer。比如一个继承自 NSObject 的 Person 类，就必须要重写 init 方法，并在 init 方法中，调用自己的 designed initializer，而不是调用 super 的初始化方法。如果未实现，可以看到编译警告：
+Method override for the designed initializer of the superclass ‘- init’ not found.
+所以，对于 Person 来说，如果 initWithName: 被标记了 NS_DESIGNED_INITIALIZER ，那么实现应该为：
 
+
+````Object-C
+
+- (instancetype)init {
+// 在外部调用不需要 name 变量时，应该给出默认值
+return [self initWithName:@"John doe"];
+}
+
+- (instancetype)initWithName:(NSString *)name {
+self = [super init];
+if (self) {
+self.name = name;
+}
+return self;
+}
+
+```
 
 # 1 NSSet / NSHashTable 、NSDictionary/ NSMapTable 的学习
 
@@ -650,4 +670,15 @@ NSLog(@"========%@",[error localizedDescription]);
 NSLog(@"========%@",[error localizedFailureReason]);
 NSLog(@"========%@",[error localizedRecoverySuggestion]);
 
+```
+## 拦截view点击事件
+```
+- (UIView*)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+UIView *hitView = [super hitTest:point withEvent:event];
+
+if(hitView == self){
+[self dismiss];
+}
+return hitView;
+}
 ```

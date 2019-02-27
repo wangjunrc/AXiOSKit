@@ -15,10 +15,13 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
         
         [self addSubview:self.view1];
         [self addSubview:self.view2];
         [self addSubview:self.view3];
+        [self handleDeviceOrientationChange:nil];
+        
         
         //开启和监听 设备旋转的通知（不开启的话，设备方向一直是UIInterfaceOrientationUnknown）
         if (![UIDevice currentDevice].generatesDeviceOrientationNotifications) {
@@ -29,12 +32,6 @@
         
     }
     return self;
-}
-
-- (void)layoutSubviews{
-    [super layoutSubviews];
-    
-    
 }
 
 - (UIView *)view1 {
@@ -116,6 +113,7 @@
 //设备方向改变的处理
 - (void)handleDeviceOrientationChange:(NSNotification *)notification{
     
+     NSLog(@"deviceOrientationNote");
     
     //这个能取到APP启动时的屏幕方向,不是设备方向,比如,手机竖屏时,APP只支持横屏,这个办法能正确
     //UIDeviceOrientation deviceOrientation = [UIDevice currentDevice].orientation;这个方法不行

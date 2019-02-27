@@ -12,6 +12,7 @@
 		24C6F5BF22164C22006E1847 /* AAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C6F5BE22164C22006E1847 /* AAViewController.m */; };
 		24C6F5C22216530B006E1847 /* ACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C6F5C12216530B006E1847 /* ACViewController.m */; };
 		24C6F5C522169E30006E1847 /* AView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C6F5C422169E30006E1847 /* AView.m */; };
+		24CAC8442223E40D00FFC0B3 /* BView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CAC8432223E40D00FFC0B3 /* BView.m */; };
 		24E9ED9321F32C3A0007B4D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ED9221F32C3A0007B4D2 /* AppDelegate.m */; };
 		24E9ED9621F32C3A0007B4D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ED9521F32C3A0007B4D2 /* ViewController.m */; };
 		24E9ED9921F32C3A0007B4D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E9ED9721F32C3A0007B4D2 /* Main.storyboard */; };
@@ -31,6 +32,8 @@
 		24C6F5C12216530B006E1847 /* ACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACViewController.m; sourceTree = "<group>"; };
 		24C6F5C322169E30006E1847 /* AView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AView.h; sourceTree = "<group>"; };
 		24C6F5C422169E30006E1847 /* AView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AView.m; sourceTree = "<group>"; };
+		24CAC8422223E40D00FFC0B3 /* BView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BView.h; sourceTree = "<group>"; };
+		24CAC8432223E40D00FFC0B3 /* BView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BView.m; sourceTree = "<group>"; };
 		24E9ED8E21F32C3A0007B4D2 /* AXiOSToolsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSToolsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E9ED9121F32C3A0007B4D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24E9ED9221F32C3A0007B4D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				24E9ED9521F32C3A0007B4D2 /* ViewController.m */,
 				24C6F5C322169E30006E1847 /* AView.h */,
 				24C6F5C422169E30006E1847 /* AView.m */,
+				24CAC8422223E40D00FFC0B3 /* BView.h */,
+				24CAC8432223E40D00FFC0B3 /* BView.m */,
 			);
 			path = AXiOSToolsExample;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				24A0EB7F21F3628B00EA4224 /* ABViewController.m in Sources */,
 				24C6F5C22216530B006E1847 /* ACViewController.m in Sources */,
 				24C6F5BF22164C22006E1847 /* AAViewController.m in Sources */,
+				24CAC8442223E40D00FFC0B3 /* BView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

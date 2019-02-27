@@ -18,6 +18,9 @@
 #import "AView.h"
 #import "AView.h"
 #import "QRCodeViewController.h"
+#import "AView.h"
+#import "BView.h"
+
 @interface ViewController ()<QRCodeViewControllerDelegate>
 
 @property(nonatomic,strong)AAViewController *avc;
@@ -36,6 +39,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
+    
+    
+  
+    
 }
 
 
@@ -52,9 +59,9 @@
 //    [self.navigationController pushViewController:vc animated:YES];
     
     
-    QRCodeViewController *vc = [[QRCodeViewController alloc]init];
-    vc.delegate = self;
-    [self.navigationController pushViewController:vc animated:YES];
+//    QRCodeViewController *vc = [[QRCodeViewController alloc]init];
+//    vc.delegate = self;
+//    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
@@ -64,7 +71,17 @@
 }
 
 - (IBAction)btnAction:(id)sender {
- 
+    
+    BView *VIEW = [[BView alloc]init];
+    
+    [self.view addSubview:VIEW];
+    
+    
+    [VIEW mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(100);
+        make.left.mas_equalTo(10);
+        make.size.mas_equalTo(CGSizeMake(300, 300));
+    }];
     
 }
 
