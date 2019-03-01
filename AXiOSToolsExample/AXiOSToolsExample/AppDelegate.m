@@ -33,6 +33,18 @@
     return YES;
 }
 
+//- (BOOL)application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(UIApplicationExtensionPointIdentifier)extensionPointIdentifier {
+//    
+//    if ([extensionPointIdentifier isEqualToString:@"com.apple.keyboard-service"]) {
+//        
+//        return NO;
+//        
+//        
+//    }
+//    
+//    NSLog(@"extensionPointIdentifier>> %@",extensionPointIdentifier);
+//    return YES;
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

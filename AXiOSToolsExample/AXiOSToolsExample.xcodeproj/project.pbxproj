@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2425768922278D8B0033ACAF /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 2425768822278D8B0033ACAF /* Person.m */; };
+		2425768C22278FDB0033ACAF /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 2425768B22278FDB0033ACAF /* Student.m */; };
+		2425768F222792A90033ACAF /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2425768E222792A90033ACAF /* Dog.m */; };
 		243DFFD822019CBF00D8DF1A /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 243DFFD722019CBF00D8DF1A /* HTML */; };
 		24A0EB7F21F3628B00EA4224 /* ABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A0EB7E21F3628B00EA4224 /* ABViewController.m */; };
 		24C6F5BF22164C22006E1847 /* AAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C6F5BE22164C22006E1847 /* AAViewController.m */; };
@@ -23,6 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2425768722278D8B0033ACAF /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		2425768822278D8B0033ACAF /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		2425768A22278FDB0033ACAF /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		2425768B22278FDB0033ACAF /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		2425768D222792A90033ACAF /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		2425768E222792A90033ACAF /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 		243DFFD722019CBF00D8DF1A /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
 		24A0EB7D21F3628B00EA4224 /* ABViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABViewController.h; sourceTree = "<group>"; };
 		24A0EB7E21F3628B00EA4224 /* ABViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABViewController.m; sourceTree = "<group>"; };
@@ -102,6 +111,12 @@
 				24C6F5C422169E30006E1847 /* AView.m */,
 				24CAC8422223E40D00FFC0B3 /* BView.h */,
 				24CAC8432223E40D00FFC0B3 /* BView.m */,
+				2425768722278D8B0033ACAF /* Person.h */,
+				2425768822278D8B0033ACAF /* Person.m */,
+				2425768A22278FDB0033ACAF /* Student.h */,
+				2425768B22278FDB0033ACAF /* Student.m */,
+				2425768D222792A90033ACAF /* Dog.h */,
+				2425768E222792A90033ACAF /* Dog.m */,
 			);
 			path = AXiOSToolsExample;
 			sourceTree = "<group>";
@@ -267,12 +282,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2425768F222792A90033ACAF /* Dog.m in Sources */,
 				24E9ED9621F32C3A0007B4D2 /* ViewController.m in Sources */,
 				24E9EDA121F32C3B0007B4D2 /* main.m in Sources */,
 				24E9ED9321F32C3A0007B4D2 /* AppDelegate.m in Sources */,
 				24C6F5C522169E30006E1847 /* AView.m in Sources */,
 				24A0EB7F21F3628B00EA4224 /* ABViewController.m in Sources */,
 				24C6F5C22216530B006E1847 /* ACViewController.m in Sources */,
+				2425768922278D8B0033ACAF /* Person.m in Sources */,
+				2425768C22278FDB0033ACAF /* Student.m in Sources */,
 				24C6F5BF22164C22006E1847 /* AAViewController.m in Sources */,
 				24CAC8442223E40D00FFC0B3 /* BView.m in Sources */,
 			);

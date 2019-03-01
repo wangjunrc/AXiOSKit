@@ -9,9 +9,10 @@
 #import "AAViewController.h"
 #import "AXiOSTools.h"
 #import "ACViewController.h"
+#import "Student.h"
 
 @interface AAViewController ()
-
+@property(nonatomic,strong)Student *sutdent;
 @end
 
 @implementation AAViewController
@@ -20,9 +21,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor orangeColor];
-    if(self.did){
-        self.did();
-    }
+    self.sutdent = [[Student alloc]init];
+    self.sutdent.age = @"12";
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2444B9DA2226402700B10309 /* AXSheetView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2444B9D82226402700B10309 /* AXSheetView.h */; };
-		2444B9DB2226402700B10309 /* AXSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2444B9D92226402700B10309 /* AXSheetView.m */; };
+		242576A02228C3070033ACAF /* UIView+AXSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 2425769E2228C3070033ACAF /* UIView+AXSheet.h */; };
+		242576A12228C3070033ACAF /* UIView+AXSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2425769F2228C3070033ACAF /* UIView+AXSheet.m */; };
+		244C9DC82227823500EDC208 /* NSError+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 244C9DC62227823500EDC208 /* NSError+AXTool.h */; };
+		244C9DC92227823500EDC208 /* NSError+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 244C9DC72227823500EDC208 /* NSError+AXTool.m */; };
 		245BD4AB21E6138000831542 /* UITextField+AXAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD44521E6137F00831542 /* UITextField+AXAction.h */; };
 		245BD4AC21E6138000831542 /* NSObject+AXRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD44621E6137F00831542 /* NSObject+AXRuntime.h */; };
 		245BD4AD21E6138000831542 /* UITextView+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 245BD44721E6137F00831542 /* UITextView+AXTool.h */; };
@@ -299,8 +301,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2444B9D82226402700B10309 /* AXSheetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXSheetView.h; sourceTree = "<group>"; };
-		2444B9D92226402700B10309 /* AXSheetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXSheetView.m; sourceTree = "<group>"; };
+		2425769E2228C3070033ACAF /* UIView+AXSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+AXSheet.h"; sourceTree = "<group>"; };
+		2425769F2228C3070033ACAF /* UIView+AXSheet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXSheet.m"; sourceTree = "<group>"; };
+		244C9DC62227823500EDC208 /* NSError+AXTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+AXTool.h"; sourceTree = "<group>"; };
+		244C9DC72227823500EDC208 /* NSError+AXTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+AXTool.m"; sourceTree = "<group>"; };
 		245BD44521E6137F00831542 /* UITextField+AXAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+AXAction.h"; sourceTree = "<group>"; };
 		245BD44621E6137F00831542 /* NSObject+AXRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AXRuntime.h"; sourceTree = "<group>"; };
 		245BD44721E6137F00831542 /* UITextView+AXTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+AXTool.h"; sourceTree = "<group>"; };
@@ -606,20 +610,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2444B9D72226401200B10309 /* AXSheetView */ = {
-			isa = PBXGroup;
-			children = (
-				2444B9D82226402700B10309 /* AXSheetView.h */,
-				2444B9D92226402700B10309 /* AXSheetView.m */,
-			);
-			path = AXSheetView;
-			sourceTree = "<group>";
-		};
 		245BD44421E6137F00831542 /* 01AXCategory */ = {
 			isa = PBXGroup;
 			children = (
 				245BD49221E6137F00831542 /* CALayer+AXFrame.h */,
 				245BD45521E6137F00831542 /* CALayer+AXFrame.m */,
+				244C9DC62227823500EDC208 /* NSError+AXTool.h */,
+				244C9DC72227823500EDC208 /* NSError+AXTool.m */,
 				245BD45D21E6137F00831542 /* Foundation+AXLog.m */,
 				245BD48521E6137F00831542 /* Foundation+Log.m */,
 				245BD47221E6137F00831542 /* NSArray+AXTool.h */,
@@ -720,6 +717,8 @@
 				245BD45C21E6137F00831542 /* UIViewController+AXTool.m */,
 				245BD44A21E6137F00831542 /* WKWebView+AXTool.h */,
 				245BD48121E6137F00831542 /* WKWebView+AXTool.m */,
+				2425769E2228C3070033ACAF /* UIView+AXSheet.h */,
+				2425769F2228C3070033ACAF /* UIView+AXSheet.m */,
 			);
 			path = 01AXCategory;
 			sourceTree = "<group>";
@@ -782,7 +781,6 @@
 		24EE7A3A21E0F4EF00BF9114 /* 04AXView */ = {
 			isa = PBXGroup;
 			children = (
-				2444B9D72226401200B10309 /* AXSheetView */,
 				24EE7A3B21E0F4EF00BF9114 /* AXCycleScrollView */,
 				24EE7A3E21E0F4EF00BF9114 /* AXDottedLineView */,
 				24EE7A4121E0F4EF00BF9114 /* AXVerificationCode */,
@@ -1369,6 +1367,7 @@
 				24EE7C5C21E0F4F100BF9114 /* AXNetManager+Version.h in Headers */,
 				24EE7BE621E0F4F100BF9114 /* AXWebVC.h in Headers */,
 				245BD4CB21E6138000831542 /* NSString+AXTool.h in Headers */,
+				244C9DC82227823500EDC208 /* NSError+AXTool.h in Headers */,
 				24EE7BF721E0F4F100BF9114 /* AXNavigationController.h in Headers */,
 				24EE7C4F21E0F4F100BF9114 /* YYLabel+AXTool.h in Headers */,
 				24EE7BC521E0F4F100BF9114 /* AXDataModel.h in Headers */,
@@ -1454,8 +1453,8 @@
 				24EE7BE121E0F4F100BF9114 /* AXChoosePayStyleCell.h in Headers */,
 				24EE7C3F21E0F4F100BF9114 /* UIScrollView+AXRefresh.h in Headers */,
 				245BD4AD21E6138000831542 /* UITextView+AXTool.h in Headers */,
+				242576A02228C3070033ACAF /* UIView+AXSheet.h in Headers */,
 				245BD50E21E6138000831542 /* UINavigationController+AXTool.h in Headers */,
-				2444B9DA2226402700B10309 /* AXSheetView.h in Headers */,
 				24EE7C5821E0F4F100BF9114 /* WKWebViewController.h in Headers */,
 				24EE7C4B21E0F4F100BF9114 /* UIScrollView+AXEmptyDataSet.h in Headers */,
 				24EE7BB721E0F4F100BF9114 /* IBUILabel.h in Headers */,
@@ -1589,6 +1588,7 @@
 				245BD4B121E6138000831542 /* NSUserDefaults+AXTool.m in Sources */,
 				24EE7BC721E0F4F100BF9114 /* AXConfigureManager.m in Sources */,
 				245BD4B621E6138000831542 /* UISwitch+AXTool.m in Sources */,
+				244C9DC92227823500EDC208 /* NSError+AXTool.m in Sources */,
 				24EE7BCF21E0F4F100BF9114 /* AXExternFunction.m in Sources */,
 				245BD4F421E6138000831542 /* UILabel+AXTool.m in Sources */,
 				245BD4C821E6138000831542 /* UITableView+AXTool.m in Sources */,
@@ -1625,6 +1625,7 @@
 				245BD4CD21E6138000831542 /* UIButton+AXCountDown2.m in Sources */,
 				245BD4D321E6138000831542 /* UIColor+AXTool.m in Sources */,
 				24EE7BE221E0F4F100BF9114 /* AXChoosePayStyleCell.m in Sources */,
+				242576A12228C3070033ACAF /* UIView+AXSheet.m in Sources */,
 				24EE7BA921E0F4F100BF9114 /* AXNumberKeyboard.m in Sources */,
 				245BD4C321E6138000831542 /* Foundation+AXLog.m in Sources */,
 				245BD4BB21E6138000831542 /* CALayer+AXFrame.m in Sources */,
@@ -1670,7 +1671,6 @@
 				245BD4DE21E6138000831542 /* NSNumber+AXTool.m in Sources */,
 				24EE7BD021E0F4F100BF9114 /* AXDataModel.m in Sources */,
 				24EE7C5D21E0F4F100BF9114 /* AXNetManager+Verson.m in Sources */,
-				2444B9DB2226402700B10309 /* AXSheetView.m in Sources */,
 				24EE7BEB21E0F4F100BF9114 /* AXCollectionViewController.m in Sources */,
 				245BD50021E6138000831542 /* NSString+AXTool.m in Sources */,
 				24EE7BE321E0F4F100BF9114 /* AXWebVC.m in Sources */,

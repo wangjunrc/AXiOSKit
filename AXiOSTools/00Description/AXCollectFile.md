@@ -51,7 +51,7 @@ Method override for the designed initializer of the superclass ‘- init’ not 
 所以，对于 Person 来说，如果 initWithName: 被标记了 NS_DESIGNED_INITIALIZER ，那么实现应该为：
 
 
-````Object-C
+```
 
 - (instancetype)init {
 // 在外部调用不需要 name 变量时，应该给出默认值
@@ -542,7 +542,7 @@ pod update --no-repo-update
 pod repo update 
 
 
-## 保护App,
+# 保护App,
 ```
 一般常见的问题不会导致闪退，增强App的健壮性，同时会将错误抛出来，根据每个App自身的日志渠道记录，下次迭代或者热修复以下问题.
 
@@ -583,7 +583,7 @@ JJException.exceptionWhenTerminate = NO;
 }
 
 ```
-## view旋转屏
+# view旋转屏
 ```
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -638,7 +638,7 @@ break;
 }
 ```
 
-## NSError
+# NSError
 
 //预定义的userinfo键名
 NSString *const NSUnderlyingErrorKey;//推荐的标准方式，通用键
@@ -671,7 +671,7 @@ NSLog(@"========%@",[error localizedFailureReason]);
 NSLog(@"========%@",[error localizedRecoverySuggestion]);
 
 ```
-## 拦截view点击事件
+# 拦截view点击事件
 ```
 - (UIView*)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
 UIView *hitView = [super hitTest:point withEvent:event];
@@ -682,3 +682,4 @@ if(hitView == self){
 return hitView;
 }
 ```
+# 自定义window,用单例,系统就是单例

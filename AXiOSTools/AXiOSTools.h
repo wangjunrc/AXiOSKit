@@ -63,6 +63,7 @@ FOUNDATION_EXPORT const unsigned char AXiOSToolsVersionString[];
 #import "UIViewController+AXiPadAlert.h"
 #import "UIViewController+AXTool.h"
 #import "UITextField+AXAction.h"
+#import "NSError+AXTool.h"
 #import "IBObjectHeader.h"
 #import "AXExternFunction.h"
 #import "AXViewController.h"
