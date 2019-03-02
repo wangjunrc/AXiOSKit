@@ -350,5 +350,9 @@ pod 'lua'
 ###FFmpeg及视频格式转码
 pod 'FFmpeg'
 
+###分享协议
+pod 'OpenShare'
 
+###分享UI
+pod 'IFMShare'
 
