@@ -685,7 +685,32 @@ return hitView;
 # 自定义window,用单例,系统就是单例
 
 
-# 微信拉起第三方APP(同微信分享回调类似)
+
+# 2个APP中间通信(如微信分享)
+主动分享端(我方app)
+```
+
+NSDictionary *dict= @{@"name":@"jim",@"age":@(25)};
+
+/**plist 序列化*/
+NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:dict
+format:NSPropertyListBinaryFormat_v1_0
+options:0
+error:nil];
+/**json 序列化*/
+NSData *jsonData= [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+
+
+/**同时赋值会覆盖*/
+[[UIPasteboard generalPasteboard] setData:jsonData forPasteboardType:@"content_json"];
+[[UIPasteboard generalPasteboard] setData:plistData forPasteboardType:@"content_plist"];
+
+[UIApplication.sharedApplication openURL:ax_URLWithStr(@"axApp://")];
+
+```
+
+被拉起APP (如:微信)
+
 
 ```
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
@@ -695,7 +720,7 @@ return [self ax_openURL:url];
 
 //打开url
 - (BOOL)ax_openURL:(NSURL *)URL {
-
+// 序列化方式 有 json 和plist 两种,微信用的plist方式
 if ([URL.scheme isEqualToString:@"wx_key"]) {
 
 //通过粘贴板机制通信
@@ -720,31 +745,7 @@ return YES;
 }
 ```
 
-# 2个APP中间通信(如微信分享)
-主动分享端-我方app
-```
-
-NSDictionary *dict= @{@"name":@"jim",@"age":@(25)};
-
-/**plist 序列化*/
-NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:dict
-format:NSPropertyListBinaryFormat_v1_0
-options:0
-error:nil];
-/**json 序列化*/
-NSData *jsonData= [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
-
-
-/**同时赋值会覆盖*/
-[[UIPasteboard generalPasteboard] setData:jsonData forPasteboardType:@"content_json"];
-[[UIPasteboard generalPasteboard] setData:plistData forPasteboardType:@"content_plist"];
-
-[UIApplication.sharedApplication openURL:ax_URLWithStr(@"axApp://")];
-
-```
-
-被拉起APP -微信
-
+## 序列化方式
 ```
 // 要确定序列化方式,才能取出数据,微信用的是plist方式
 
@@ -766,4 +767,6 @@ NSLog(@"obj2>> %@",obj2);
 }
 
 ```
+
+
 
