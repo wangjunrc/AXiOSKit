@@ -223,12 +223,6 @@
  */
 - (NSString *)ax_to2Decimal2;
 
-/**
- NSString 转化 NSData
- 
- @return NSData
- */
-- (NSData *)ax_toData;
 
 /**
  时间秒 转换 时分秒 字符串

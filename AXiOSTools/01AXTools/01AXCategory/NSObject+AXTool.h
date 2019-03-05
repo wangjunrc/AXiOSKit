@@ -13,14 +13,20 @@
 @interface NSObject (AXTool)
 
 /**
- NSObject转换json字串
+ Foundation NSObject转换json字串
  */
 - (NSString *)ax_toJSONString;
 
 /**
- json字串 转换 NSObject
+ json字串 转换 Foundation NSObject
  */
-- (id)ax_JSONObject;
+- (id)ax_toJSONObject;
+
+/**
+ Foundation NSObject转换data
+ */
+- (NSData *)ax_toData;
+
 
 /**
  封装 alloc]init]

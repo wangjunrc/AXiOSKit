@@ -18,7 +18,7 @@
 @implementation NSObject (AXTool)
 
 /**
- NSObject转换json字串
+ Foundation NSObject转换json字串
  */
 - (NSString *)ax_toJSONString{
     
@@ -27,6 +27,7 @@
         return (NSString *)self;
         
     } else if ([self isKindOfClass:[NSData class]]) {
+        
         return [[NSString alloc] initWithData:(NSData *)self encoding:NSUTF8StringEncoding];
     }
     
@@ -36,17 +37,40 @@
 }
 
 /**
- json字串 转换 NSObject
+ json字串 转换 Foundation NSObject
  */
-- (id)ax_JSONObject {
+- (id)ax_toJSONObject {
     
     if ([self isKindOfClass:[NSString class]]) {
-        return [NSJSONSerialization JSONObjectWithData:[((NSString *)self) dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+        
+        NSData *data = [((NSString *)self) dataUsingEncoding:NSUTF8StringEncoding];
+        return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     } else if ([self isKindOfClass:[NSData class]]) {
+        
         return [NSJSONSerialization JSONObjectWithData:(NSData *)self options:kNilOptions error:nil];
     }
     return self;
 }
+
+/**
+ Foundation NSObject转换data
+ */
+- (NSData *)ax_toData {
+    
+    if ([self isKindOfClass:[NSString class]]) {
+        
+       return [(NSString *)self dataUsingEncoding:NSUTF8StringEncoding];
+        
+    } else if ([self isKindOfClass:[NSData class]]) {
+        return (NSData *)self;
+    }
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:nil];
+    
+    return  data;
+}
+
+
 
 /**
  封装 alloc]init]

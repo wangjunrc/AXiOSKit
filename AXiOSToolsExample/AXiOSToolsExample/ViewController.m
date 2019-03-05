@@ -32,14 +32,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
-    
+    NSLog(@"??? %@", [@{@"age":@"25"} ax_toData]);
     
 }
 
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-
     
     
     AAViewController *vc = [[AAViewController alloc]init];

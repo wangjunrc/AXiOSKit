@@ -583,16 +583,6 @@
 }
 
 /**
- NSString 转化 NSData
- 
- @return NSData
- */
-- (NSData *)ax_toData{
-    
-    return [self dataUsingEncoding:NSUTF8StringEncoding];
-}
-
-/**
  时间秒 转换 时分秒 字符串
  
  @param seconds 秒
