@@ -41,14 +41,6 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 
     
-//    AXQRCodeVC *vc = [[AXQRCodeVC alloc]init];
-//    vc.qrCodeBlock = ^(NSError *error, NSString *code) {
-//        NSLog(@"%@  %@",error,code);
-//        self.label.text = code;
-////        [vc.navigationController dismissViewControllerAnimated:YES completion:nil];
-//    };
-//    [self.navigationController pushViewController:vc animated:YES];
-    
     
     AAViewController *vc = [[AAViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
@@ -58,8 +50,6 @@
 
 - (IBAction)btnAction:(id)sender {
     
-    NSLog(@"%@",[Person sharedInstance].student);
-    NSLog(@"age> %@",[Person sharedInstance].student.age);
 }
 
 - (IBAction)btnAc2:(id)sender {

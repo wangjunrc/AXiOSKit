@@ -683,3 +683,87 @@ return hitView;
 }
 ```
 # 自定义window,用单例,系统就是单例
+
+
+# 微信拉起第三方APP(同微信分享回调类似)
+
+```
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+
+return [self ax_openURL:url];
+}
+
+//打开url
+- (BOOL)ax_openURL:(NSURL *)URL {
+
+if ([URL.scheme isEqualToString:@"wx_key"]) {
+
+//通过粘贴板机制通信
+NSData *data = [[UIPasteboard generalPasteboard] dataForPasteboardType:@"content"];
+//xml(plist) 解析data
+id obj = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListImmutable format:nil error:nil];
+
+if ([obj isKindOfClass:NSDictionary.class]) {
+
+NSDictionary *dict = (NSDictionary *)obj;
+
+//微信小程序传参
+NSString *messageExt =  dict[URL.scheme][@"messageExt"];
+//自己app的scheme
+if ([messageExt hasPrefix:@"myURLScheme://"]) {
+
+}
+};
+return YES;
+}
+return YES;
+}
+```
+
+# 2个APP中间通信(如微信分享)
+主动分享端-我方app
+```
+
+NSDictionary *dict= @{@"name":@"jim",@"age":@(25)};
+
+/**plist 序列化*/
+NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:dict
+format:NSPropertyListBinaryFormat_v1_0
+options:0
+error:nil];
+/**json 序列化*/
+NSData *jsonData= [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+
+
+/**同时赋值会覆盖*/
+[[UIPasteboard generalPasteboard] setData:jsonData forPasteboardType:@"content_json"];
+[[UIPasteboard generalPasteboard] setData:plistData forPasteboardType:@"content_plist"];
+
+[UIApplication.sharedApplication openURL:ax_URLWithStr(@"axApp://")];
+
+```
+
+被拉起APP -微信
+
+```
+// 要确定序列化方式,才能取出数据,微信用的是plist方式
+
+NSData *plistData = [[UIPasteboard generalPasteboard] dataForPasteboardType:@"content_plist"];
+//xml(plist) 解析data
+if (plistData!=nil) {
+
+id obj = [NSPropertyListSerialization propertyListWithData:plistData options:NSPropertyListImmutable format:nil error:nil];
+NSLog(@"obj>> %@",obj);
+}
+
+
+NSData *jsonData = [[UIPasteboard generalPasteboard] dataForPasteboardType:@"content_json"];
+// json 解析data
+if (jsonData!=nil) {
+id obj2 = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+NSLog(@"obj2>> %@",obj2);
+
+}
+
+```
+
