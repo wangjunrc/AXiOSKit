@@ -66,10 +66,12 @@ CGFloat ax_navigation_and_status_height(void) {
     return ax_status_bar_height() + ax_navigation_bar_height();
 }
 
+/**状态栏高 20 或者 44*/
 CGFloat ax_status_bar_height(void) {
     return UIApplication.sharedApplication.statusBarFrame.size.height;
 }
 
+/**导航栏高 */
 CGFloat ax_navigation_bar_height(void) {
     return 44.0f;
 }
@@ -82,27 +84,6 @@ UIEdgeInsets ax_safe_area_insets(void) {
     }
     return UIEdgeInsetsZero;
 }
-
-
-CGFloat ax_safe_area_insets_top(void) {
-    return ax_safe_area_insets().top;
-}
-
-
-CGFloat ax_safe_area_insets_left(void) {
-    return ax_safe_area_insets().left;
-}
-
-
-CGFloat ax_safe_area_insets_bottom(void) {
-    return ax_safe_area_insets().bottom;
-}
-
-
-CGFloat ax_safe_area_insets_right(void) {
-    return ax_safe_area_insets().right;
-}
-
 
 UIEdgeInsets ax_screen_padding_insets(void) {
     if ([UIView instancesRespondToSelector:@selector(safeAreaInsets)]) {
@@ -117,6 +98,23 @@ UIEdgeInsets ax_screen_padding_insets(void) {
     return UIEdgeInsetsZero;
 }
 
+CGFloat ax_safe_area_insets_top(void) {
+    return ax_safe_area_insets().top;
+}
+
+CGFloat ax_safe_area_insets_left(void) {
+    return ax_safe_area_insets().left;
+}
+
+
+CGFloat ax_safe_area_insets_bottom(void) {
+    return ax_safe_area_insets().bottom;
+}
+
+
+CGFloat ax_safe_area_insets_right(void) {
+    return ax_safe_area_insets().right;
+}
 
 CGFloat ax_screen_adaptive_float(CGFloat floatValue) {
     return ax_screen_adaptive_float_with_padding(floatValue, 0.0f);

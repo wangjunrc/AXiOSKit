@@ -7,8 +7,10 @@
 //
 
 #import "UIView+AXSheet.h"
+#import "AXExternFunction.h"
+#if __has_include("Masonry.h")
 #import <Masonry/Masonry.h>
-
+#endif
 /**
  为了遍历父视图 class
  */
@@ -27,6 +29,7 @@
     }
     return self;
 }
+
 -(void)didDismiss {
     [self removeFromSuperview];
 }
@@ -38,22 +41,23 @@
 
 - (void)ax_showSheet {
     
-    UIWindow *rootWindow =  UIApplication.sharedApplication.delegate.window;
-    
+    UIView *rootView = ax_rootViewController().view;
     AXSheetCoverView *coverView = [[AXSheetCoverView alloc]initWithFrame:UIScreen.mainScreen.bounds];
-    [rootWindow addSubview:coverView];
+    [rootView addSubview:coverView];
     [coverView addSubview:self];
-    
+#if __has_include("Masonry.h")
+
     [coverView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
-    
+
     [self mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(coverView.mas_bottom);
         make.left.right.mas_equalTo(0);
         make.height.equalTo(coverView);
     }];
-    
+
+
     /**显示动画*/
     [self.superview layoutIfNeeded];
     [UIView animateWithDuration:0.3 animations:^{
@@ -64,9 +68,41 @@
         }];
         [self.superview layoutIfNeeded];
     }];
-    
+#endif
 }
 
+//-(void)__viewAnimate:(UIView *)coverView {
+//    
+//    CGRect frame = self.frame;;
+//    
+//#if __has_include("Masonry.h")
+//    
+//    [coverView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.mas_equalTo(UIEdgeInsetsZero);
+//    }];
+//    
+//    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(coverView.mas_bottom);
+//        make.left.mas_equalTo(frame.origin.x);
+//        make.width.mas_equalTo(frame.size.width);
+//        make.height.mas_equalTo(frame.size.height);
+//        
+//    }];
+//    
+//    /**显示动画*/
+//    [self.superview layoutIfNeeded];
+//    [UIView animateWithDuration:0.3 animations:^{
+//        
+//        [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(coverView.mas_top).mas_offset(frame.origin.y);
+//            make.left.mas_offset(frame.origin.x);
+//            make.width.mas_equalTo(frame.size.width);
+//            make.height.mas_equalTo(frame.size.height);
+//        }];
+//        [self.superview layoutIfNeeded];
+//    }];
+//#endif
+//}
 
 - (void)ax_dismissSheet {
     

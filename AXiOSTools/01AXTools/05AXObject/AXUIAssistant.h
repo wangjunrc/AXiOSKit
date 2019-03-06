@@ -47,15 +47,19 @@ extern CGFloat ax_navigation_bar_height(void);
 /**安全区域 UIEdgeInsets*/
 extern UIEdgeInsets ax_safe_area_insets(void);
 
+extern UIEdgeInsets ax_screen_padding_insets(void);
+
+/**安全区域 UIEdgeInsets top*/
 extern CGFloat ax_safe_area_insets_top(void);
 
+/**安全区域 UIEdgeInsets left*/
 extern CGFloat ax_safe_area_insets_left(void);
 
+/**安全区域 UIEdgeInsets bottom*/
 extern CGFloat ax_safe_area_insets_bottom(void);
 
+/**安全区域 UIEdgeInsets righ*/
 extern CGFloat ax_safe_area_insets_right(void);
-
-extern UIEdgeInsets ax_screen_padding_insets(void);
 
 extern CGFloat ax_screen_adaptive_float(CGFloat floatValue);
 

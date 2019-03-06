@@ -122,6 +122,8 @@
 		249F52D721EDCBF100840340 /* AXUIAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F52D521EDCBF100840340 /* AXUIAssistant.m */; };
 		24A0EB8221F446FC00EA4224 /* AXCrashProcessManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24A0EB8021F446FC00EA4224 /* AXCrashProcessManager.h */; };
 		24A0EB8321F446FC00EA4224 /* AXCrashProcessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A0EB8121F446FC00EA4224 /* AXCrashProcessManager.m */; };
+		24A37EA3222F70B500195B91 /* UIWindow+AXTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24A37EA1222F70B500195B91 /* UIWindow+AXTool.h */; };
+		24A37EA4222F70B500195B91 /* UIWindow+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A37EA2222F70B500195B91 /* UIWindow+AXTool.m */; };
 		24CB557421E597DC00468BAD /* AXHTML.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 24CB557321E597DC00468BAD /* AXHTML.bundle */; };
 		24DCAB382215608100EBA274 /* AXUNNotificationHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DCAB362215608100EBA274 /* AXUNNotificationHandler.h */; };
 		24DCAB392215608100EBA274 /* AXUNNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DCAB372215608100EBA274 /* AXUNNotificationHandler.m */; };
@@ -417,6 +419,8 @@
 		249F52D521EDCBF100840340 /* AXUIAssistant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXUIAssistant.m; sourceTree = "<group>"; };
 		24A0EB8021F446FC00EA4224 /* AXCrashProcessManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXCrashProcessManager.h; sourceTree = "<group>"; };
 		24A0EB8121F446FC00EA4224 /* AXCrashProcessManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXCrashProcessManager.m; sourceTree = "<group>"; };
+		24A37EA1222F70B500195B91 /* UIWindow+AXTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+AXTool.h"; sourceTree = "<group>"; };
+		24A37EA2222F70B500195B91 /* UIWindow+AXTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+AXTool.m"; sourceTree = "<group>"; };
 		24CB557321E597DC00468BAD /* AXHTML.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AXHTML.bundle; sourceTree = "<group>"; };
 		24DCAB362215608100EBA274 /* AXUNNotificationHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUNNotificationHandler.h; sourceTree = "<group>"; };
 		24DCAB372215608100EBA274 /* AXUNNotificationHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXUNNotificationHandler.m; sourceTree = "<group>"; };
@@ -615,8 +619,6 @@
 			children = (
 				245BD49221E6137F00831542 /* CALayer+AXFrame.h */,
 				245BD45521E6137F00831542 /* CALayer+AXFrame.m */,
-				244C9DC62227823500EDC208 /* NSError+AXTool.h */,
-				244C9DC72227823500EDC208 /* NSError+AXTool.m */,
 				245BD45D21E6137F00831542 /* Foundation+AXLog.m */,
 				245BD48521E6137F00831542 /* Foundation+Log.m */,
 				245BD47221E6137F00831542 /* NSArray+AXTool.h */,
@@ -631,6 +633,8 @@
 				245BD4AA21E6137F00831542 /* NSDateComponents+AXTool.m */,
 				245BD45E21E6137F00831542 /* NSDictionary+AXTool.h */,
 				245BD48D21E6137F00831542 /* NSDictionary+AXTool.m */,
+				244C9DC62227823500EDC208 /* NSError+AXTool.h */,
+				244C9DC72227823500EDC208 /* NSError+AXTool.m */,
 				245BD45221E6137F00831542 /* NSNumber+AXTool.h */,
 				245BD47821E6137F00831542 /* NSNumber+AXTool.m */,
 				245BD4A421E6137F00831542 /* NSObject+AXKVO.h */,
@@ -703,6 +707,8 @@
 				245BD49921E6137F00831542 /* UIView+AXFrame.m */,
 				245BD44821E6137F00831542 /* UIView+AXIBInspectable.h */,
 				245BD48421E6137F00831542 /* UIView+AXIBInspectable.m */,
+				2425769E2228C3070033ACAF /* UIView+AXSheet.h */,
+				2425769F2228C3070033ACAF /* UIView+AXSheet.m */,
 				245BD47721E6137F00831542 /* UIView+AXSnapshot.h */,
 				245BD49E21E6137F00831542 /* UIView+AXSnapshot.m */,
 				245BD48221E6137F00831542 /* UIView+AXTool.h */,
@@ -715,10 +721,10 @@
 				245BD46421E6137F00831542 /* UIViewController+AXNavBarConfig.m */,
 				245BD48C21E6137F00831542 /* UIViewController+AXTool.h */,
 				245BD45C21E6137F00831542 /* UIViewController+AXTool.m */,
+				24A37EA1222F70B500195B91 /* UIWindow+AXTool.h */,
+				24A37EA2222F70B500195B91 /* UIWindow+AXTool.m */,
 				245BD44A21E6137F00831542 /* WKWebView+AXTool.h */,
 				245BD48121E6137F00831542 /* WKWebView+AXTool.m */,
-				2425769E2228C3070033ACAF /* UIView+AXSheet.h */,
-				2425769F2228C3070033ACAF /* UIView+AXSheet.m */,
 			);
 			path = 01AXCategory;
 			sourceTree = "<group>";
@@ -1470,6 +1476,7 @@
 				245BD4F921E6138000831542 /* NSString+AXDate.h in Headers */,
 				24EE7C4321E0F4F100BF9114 /* NSObject+AXCacheImage.h in Headers */,
 				24EE7C3821E0F4F100BF9114 /* UMTool.h in Headers */,
+				24A37EA3222F70B500195B91 /* UIWindow+AXTool.h in Headers */,
 				24EE7BB521E0F4F100BF9114 /* IBUIView.h in Headers */,
 				245BD50A21E6138000831542 /* NSObject+AXKVO.h in Headers */,
 				24EE7C5E21E0F4F100BF9114 /* AXNetManager+Upload.h in Headers */,
@@ -1704,6 +1711,7 @@
 				245BD4B321E6138000831542 /* NSData+AXTool.m in Sources */,
 				24DCAB41221562E500EBA274 /* AXAuthorizationManager.m in Sources */,
 				24EE7BB321E0F4F100BF9114 /* IBUIButton.m in Sources */,
+				24A37EA4222F70B500195B91 /* UIWindow+AXTool.m in Sources */,
 				24EE7BF021E0F4F100BF9114 /* AXFullLayout.m in Sources */,
 				245BD4AF21E6138000831542 /* UIView+AXTool.m in Sources */,
 				24EE7C5921E0F4F100BF9114 /* AXNetManager+Upload.m in Sources */,

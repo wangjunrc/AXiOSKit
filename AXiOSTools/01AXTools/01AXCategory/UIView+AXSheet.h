@@ -12,8 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (AXSheet)
 
+
+/**
+ *  show view 由下向上动画显示
+ *  self 背景色请设置透明或者 白色,内部已经设置透明度0.3
+ *  self 需要是一个容器view,会被父视图frame一致,
+ */
 - (void)ax_showSheet;
 
+/**
+ *  dismiss view 无动画
+ */
 - (void)ax_dismissSheet;
 
 @end

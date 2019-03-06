@@ -31,8 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
-    NSLog(@"??? %@", [@{@"age":@"25"} ax_toData]);
+    self.view.backgroundColor = [UIColor grayColor];
     
 }
 
@@ -40,9 +39,9 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
+//    AAViewController *vc = [[AAViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
     
-    AAViewController *vc = [[AAViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
