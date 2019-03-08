@@ -43,8 +43,33 @@
 //    [self.navigationController pushViewController:vc animated:YES];
     
     
+    
+    
+    
 }
 
+//-(void)doText {
+//
+//    NSData *data = [NSData dataWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"abc" ofType:nil]];
+//
+//
+//    NSString *str =  [data ax_toString];
+//
+//    str = [str stringByReplacingOccurrencesOfString:@" " withString:@""];
+//
+//    NSString *temp = [str stringByReplacingOccurrencesOfString:@" " withString:@""];
+//    temp = [temp stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+//    temp = [temp stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+//
+//
+//    NSArray * array2 = [temp componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"！。"]];
+//
+//    for (NSString *word in array2) {
+//        if ([word containsString:@"射"] || [word containsString:@"头球"]) {
+//            AXNoMsgLog(@"%@\n",word);
+//        }
+//    }
+//}
 
 - (IBAction)btnAction:(id)sender {
     

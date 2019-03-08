@@ -602,7 +602,25 @@
     return format_time;
     
 }
-
+/**
+ (NSCharacterSet *)controlCharacterSet;             //控制符
+ 
+ (NSCharacterSet *)whitespaceCharacterSet;          //空格
+ (NSCharacterSet *)whitespaceAndNewlineCharacterSet;//首位空格
+ (NSCharacterSet *)decimalDigitCharacterSet;        //小数
+ (NSCharacterSet *)letterCharacterSet;              //文字
+ (NSCharacterSet *)lowercaseLetterCharacterSet;     //小写字母
+ (NSCharacterSet *)uppercaseLetterCharacterSet;     //大写字母
+ (NSCharacterSet *)nonBaseCharacterSet;             //非基础
+ (NSCharacterSet *)alphanumericCharacterSet;        //字母数字
+ (NSCharacterSet *)decomposableCharacterSet;        //可分解
+ (NSCharacterSet *)illegalCharacterSet;             //非法
+ (NSCharacterSet *)punctuationCharacterSet;         //标点
+ (NSCharacterSet *)capitalizedLetterCharacterSet;   //大写
+ (NSCharacterSet *)symbolCharacterSet;              //符号
+ (NSCharacterSet *)newlineCharacterSet NS_AVAILABLE(10_5, 2_0);//换行符
+ 
+ */
 
 
 /**

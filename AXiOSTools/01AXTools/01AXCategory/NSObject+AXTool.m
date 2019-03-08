@@ -44,10 +44,10 @@
     if ([self isKindOfClass:[NSString class]]) {
         
         NSData *data = [((NSString *)self) dataUsingEncoding:NSUTF8StringEncoding];
-        return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     } else if ([self isKindOfClass:[NSData class]]) {
         
-        return [NSJSONSerialization JSONObjectWithData:(NSData *)self options:kNilOptions error:nil];
+        return [NSJSONSerialization JSONObjectWithData:(NSData *)self options:NSJSONReadingMutableContainers error:nil];
     }
     return self;
 }
