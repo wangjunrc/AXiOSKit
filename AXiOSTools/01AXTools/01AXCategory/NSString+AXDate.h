@@ -17,7 +17,8 @@
  @param toformatter 需要转换的格式
  @return 时间字符串
  */
-- (NSString *)ax_toChangeTpyeCurrentFormat:(NSString *)currentformat toFormatter:(NSString *)toformatter;
+- (NSString *)ax_toChangeTpyeCurrentFormat:(NSString *)currentformat
+                               toFormatter:(NSString *)toformatter;
 
 /**
  当前系统时间显示为字符串

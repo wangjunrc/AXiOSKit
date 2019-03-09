@@ -40,12 +40,14 @@
  *  替换 实例 方法 Instance
  * 如 newSEL 方法内调用 [self newSEL] 会重新父方法 即执行originalSEL
  */
-+ (void)ax_replaceInstanceMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL;
++ (void)ax_replaceInstanceMethodWithOriginal:(SEL)originalSEL
+                                 newSelector:(SEL)newSEL;
 
 /**
  * 更换 类 方法
  * 如 newSEL 方法内调用 [self newSEL] 会重新父方法 即执行originalSEL
  */
-+ (void)ax_replaceClassMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL;
++ (void)ax_replaceClassMethodWithOriginal:(SEL)originalSEL
+                              newSelector:(SEL)newSEL;
 
 @end

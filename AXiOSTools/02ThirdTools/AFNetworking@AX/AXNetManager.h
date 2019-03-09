@@ -102,9 +102,15 @@ static NSURLSessionDataTask *_dataTask;
  @param success 完成
  @param failure 失败 code != 200
  */
-+ (void )postDownURL:(NSString *)url showStatus:(BOOL )showStatus downPath:(NSString *)downPath progress:(void (^)(float aProgress))progress success:(void(^)(NSString *filePath))success failure:(void(^)(NSInteger statusCode))failure;
++ (void )postDownURL:(NSString *)url
+          showStatus:(BOOL )showStatus
+            downPath:(NSString *)downPath
+            progress:(void (^)(float aProgress))progress
+             success:(void(^)(NSString *filePath))success
+             failure:(void(^)(NSInteger statusCode))failure;
 
-+ (void)postGroup:(NSArray<AXNetGroup *> *)group complete:(void(^)(NSArray<AXNetGroupResult *> *results))complete;
++ (void)postGroup:(NSArray<AXNetGroup *> *)group
+         complete:(void(^)(NSArray<AXNetGroupResult *> *results))complete;
 
 #endif
 

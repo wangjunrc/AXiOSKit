@@ -130,7 +130,12 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
 }
 
 
-+ (void )postDownURL:(NSString *)url showStatus:(BOOL )showStatus downPath:(NSString *)downPath progress:(void (^)(float aProgress))progress success:(void(^)(NSString *filePath))success failure:(void(^)(NSInteger statusCode))failure{
++ (void )postDownURL:(NSString *)url
+          showStatus:(BOOL )showStatus
+            downPath:(NSString *)downPath
+            progress:(void (^)(float aProgress))progress
+             success:(void(^)(NSString *filePath))success
+             failure:(void(^)(NSInteger statusCode))failure{
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
@@ -201,7 +206,8 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
 /**
  * 拼接文件路径
  */
-+(NSURL *)getFileURL:(NSString *)downPath filename:(NSString *)suggestedFilename{
++(NSURL *)getFileURL:(NSString *)downPath
+            filename:(NSString *)suggestedFilename{
     
     if(![[NSFileManager defaultManager]fileExistsAtPath:downPath]){
         [[NSFileManager defaultManager]createDirectoryAtPath:downPath withIntermediateDirectories:YES attributes:nil error:nil];
@@ -345,7 +351,8 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
 
 dispatch_group_t _group;
 
-+ (void)postGroup:(NSArray<AXNetGroup *> *)group complete:(void(^)(NSArray<AXNetGroupResult *> *results))complete{
++ (void)postGroup:(NSArray<AXNetGroup *> *)group
+         complete:(void(^)(NSArray<AXNetGroupResult *> *results))complete{
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
     

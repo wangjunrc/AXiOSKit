@@ -10,6 +10,9 @@
 #import "AXiOSTools.h"
 #import "ACViewController.h"
 #import "Student.h"
+#import "UITextField+AXTool.h"
+
+#import "UITextField+AXAction.h"
 
 @interface AAViewController ()
 @property(nonatomic,strong)Student *sutdent;
@@ -21,8 +24,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor orangeColor];
-    self.sutdent = [[Student alloc]init];
-    self.sutdent.age = @"12";
+    
+    UITextField *tf = [[UITextField alloc]initWithFrame:CGRectMake(100, 100, 100, 40)];
+    [self.view addSubview:tf];
+    tf.backgroundColor = [UIColor redColor];
+    
+     tf.axDelegateHandler.didBeginBlock = ^(UITextField *textField) {
+       
+    };
+    
+    tf.axDelegateHandler.didEndBlock = ^(UITextField *textField) {
+        NSLog(@">>> %@",textField.text);
+    };
     
 }
 

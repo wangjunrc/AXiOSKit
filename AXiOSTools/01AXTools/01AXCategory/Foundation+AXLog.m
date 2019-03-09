@@ -186,8 +186,7 @@
     return [self ax_descriptionWithLevel:1];
 }
 
--(NSString *)descriptionWithLocale:(id)locale
-{
+-(NSString *)descriptionWithLocale:(id)locale{
     return [self ax_descriptionWithLevel:1];
 }
 

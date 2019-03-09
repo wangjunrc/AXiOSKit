@@ -39,10 +39,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-//    AAViewController *vc = [[AAViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-    
+    AAViewController *vc = [[AAViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
     
     
     
@@ -70,6 +68,15 @@
 //        }
 //    }
 //}
+
+- (void)ax_showAlertTF2:(NSString *(^)(NSString *name))textFBlock
+     
+    {
+    
+        NSLog(@">> %@",textFBlock(@"jim"));
+        
+}
+
 
 - (IBAction)btnAction:(id)sender {
     

@@ -11,9 +11,9 @@
 #import "UITextField+AXTool.h"
 
 
-#pragma mark - implementation AXTextFieldDelegateObj
+#pragma mark - implementation AXTextFieldDelegateHandler
 
-@implementation AXTextFieldDelegateObj
+@implementation AXTextFieldDelegateHandler
 
 
 #pragma mark delegate
@@ -48,8 +48,8 @@
  */
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     
-    if (self.ax_didBeginBlock){
-        self.ax_didBeginBlock(textField);
+    if (self.didBeginBlock){
+        self.didBeginBlock(textField);
     }
 }
 
@@ -57,8 +57,8 @@
  * 当前输入框结束编辑时触发 ( 键盘收回之后触发 )
  */
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if (self.ax_didEndBlock){
-        self.ax_didEndBlock(textField);
+    if (self.didEndBlock){
+        self.didEndBlock(textField);
     }
 }
 
@@ -68,15 +68,15 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     
     
-    if (self.ax_shouldChangeBlock) {
-        return self.ax_shouldChangeBlock(textField,range,string);
+    if (self.shouldChangeBlock) {
+        return self.shouldChangeBlock(textField,range,string);
     }
     
     return YES;
 }
 
-- (void)setAx_didEditingChangedBlock:(void (^)(UITextField *))ax_didEditingChangedBlock{
-    _ax_didEditingChangedBlock = ax_didEditingChangedBlock;
+- (void)setDidEditingChangedBlock:(void (^)(UITextField *))didEditingChangedBlock{
+    _didEditingChangedBlock = didEditingChangedBlock;
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(TextFieldChangedAction:) name:UITextFieldTextDidChangeNotification object:self.currentTextField];
 }
@@ -85,9 +85,9 @@
     
     UITextField *tf = ( UITextField *)note.object;
     
-    if( self.ax_didEditingChangedBlock ){
+    if( self.didEditingChangedBlock ){
         
-        self.ax_didEditingChangedBlock(tf);
+        self.didEditingChangedBlock(tf);
     }
 }
 
@@ -103,9 +103,9 @@
 /**
  只能输入数字 整数
  */
-- (void)ax_canShouldChangeNumber {
+- (void)canShouldChangeNumber {
     self.currentTextField.keyboardType = UIKeyboardTypeNumberPad;
-    self.ax_shouldChangeBlock = ^BOOL(UITextField *textField, NSRange range, NSString *aString) {
+    self.shouldChangeBlock = ^BOOL(UITextField *textField, NSRange range, NSString *aString) {
         return [textField ax_getFloatCount:0 range:range string:aString];;
     };
     
@@ -114,10 +114,10 @@
 /**
  只能输入小数
  */
-- (void)ax_canShouldChangeFloat:(NSInteger )count {
+- (void)canShouldChangeFloat:(NSInteger )count {
     
     self.currentTextField.keyboardType = UIKeyboardTypeDecimalPad;
-    self.ax_shouldChangeBlock = ^BOOL(UITextField *textField, NSRange range, NSString *aString) {
+    self.shouldChangeBlock = ^BOOL(UITextField *textField, NSRange range, NSString *aString) {
         
         return [textField ax_getFloatCount:count range:range string:aString];
         
@@ -134,23 +134,23 @@
 
 @implementation UITextField (AXAction)
 
-- (void)setAxDelegateObj:(AXTextFieldDelegateObj *)axDelegateObj{
-    ax_setStrongPropertyAssociated(axDelegateObj);
+
+- (void)setAxDelegateHandler:(AXTextFieldDelegateHandler *)axDelegateHandler {
+     ax_setStrongPropertyAssociated(axDelegateHandler);
 }
 
-- (AXTextFieldDelegateObj *)axDelegateObj{
+- (AXTextFieldDelegateHandler *)axDelegateHandler{
     
-    AXTextFieldDelegateObj *obj = ax_getValueAssociated(axDelegateObj);
+    AXTextFieldDelegateHandler *handler = ax_getValueAssociated(axDelegateHandler);
     
-    if (!obj ){
+    if (handler == nil ){
         
-        obj = [[AXTextFieldDelegateObj alloc]init];
-        obj.currentTextField = self;
-        self.delegate = obj;
-        self.axDelegateObj = obj;
-        
+        handler = [[AXTextFieldDelegateHandler alloc]init];
+        handler.currentTextField = self;
+        self.delegate = handler;
+        self.axDelegateHandler = handler;
     }
-    return obj;
+    return handler;
 }
 
 
