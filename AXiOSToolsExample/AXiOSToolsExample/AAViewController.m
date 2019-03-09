@@ -37,6 +37,8 @@
         NSLog(@">>> %@",textField.text);
     };
     
+    MBProgressHUD * hud  = [MBProgressHUD ax_showProgressMessage:@"AAA"];
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

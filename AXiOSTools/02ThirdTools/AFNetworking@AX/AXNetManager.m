@@ -97,10 +97,9 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
     id json = nil;
     NSString *responseStr = [[responseObject class]description];
     
-    
     if ([responseStr isEqualToString:@"_NSInlineData"]) {
         
-        json  = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
         
     }else{
         json = responseObject;
