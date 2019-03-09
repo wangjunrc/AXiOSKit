@@ -25,7 +25,8 @@
  @param keyPath 路径
  @param block 回调,新 旧 值
  */
-- (void)ax_addFBKVOKeyPath:(nullable NSString *)keyPath block:(void(^_Nullable)(NSString * _Nullable keyPath,id _Nullable oldValue ,id _Nullable newValue ))block {
+- (void)ax_addFBKVOKeyPath:(nullable NSString *)keyPath
+                     block:(void(^_Nullable)(NSString * _Nullable keyPath,id _Nullable oldValue ,id _Nullable newValue ))block {
     // KVOControllerNonRetaining
     //KVOController
     [self.KVOControllerNonRetaining observe:self keyPath:keyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSKeyValueChangeKey,id> * _Nonnull change) {
@@ -42,7 +43,8 @@
  @param keyPath 路径
  @param result 回调,新 旧 值
  */
-- (void)ax_addFBKVOKeyPath:(nullable NSString *)keyPath result:(void(^_Nullable)(AXKVOResultModel *resultModel))result {
+- (void)ax_addFBKVOKeyPath:(nullable NSString *)keyPath
+                    result:(void(^)(AXKVOResultModel *resultModel))result {
     // KVOControllerNonRetaining
     //KVOController
     [self.KVOControllerNonRetaining observe:self keyPath:keyPath options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSKeyValueChangeKey,id> * _Nonnull change) {

@@ -41,7 +41,8 @@ js 调用oc 方法 格式
  @param handlerName oc方法名
  @param handler js传给oc
  */
-- (void)registerHandler:(NSString *)handlerName handler:(void(^)(id data))handler;
+- (void)registerHandler:(NSString *)handlerName
+                handler:(void(^)(id data))handler;
 
 
 /**

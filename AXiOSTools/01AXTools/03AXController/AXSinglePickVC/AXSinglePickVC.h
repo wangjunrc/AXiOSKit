@@ -18,7 +18,10 @@
  @param confirm 确定
  @param cancel 取消
  */
-- (void)didSelected:(NSArray <NSString *>*)dataArray showRow:(NSInteger )row confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel;
+- (void)didSelected:(NSArray <NSString *>*)dataArray
+            showRow:(NSInteger )row
+            confirm:(void(^)(NSInteger index))confirm
+             cancel:(void(^)(void))cancel;
 
 
 @end

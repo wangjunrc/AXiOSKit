@@ -13,7 +13,8 @@
 /**
  * 初始化刷新
  */
-- (void)ax_setRefreshHeader:(void(^)(void))header foot:(void(^)(void))foot{
+- (void)ax_setRefreshHeader:(void(^)(void))header
+                       foot:(void(^)(void))foot{
     if (header) {
         //        MJRefreshNormalHeader
         self.mj_header = [AXRefreshHeader headerWithRefreshingBlock:^{

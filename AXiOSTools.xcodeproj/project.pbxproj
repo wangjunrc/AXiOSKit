@@ -978,12 +978,12 @@
 		24EE7A8021E0F4EF00BF9114 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7A8121E0F4EF00BF9114 /* AXChoosePayVC.h */,
-				24EE7A8221E0F4EF00BF9114 /* AXChoosePayStyleVC.m */,
-				24EE7A8321E0F4EF00BF9114 /* AXChoosePayVC.xib */,
-				24EE7A8421E0F4EF00BF9114 /* AXChoosePayStyleVC.xib */,
 				24EE7A8521E0F4EF00BF9114 /* AXChoosePayStyleVC.h */,
+				24EE7A8221E0F4EF00BF9114 /* AXChoosePayStyleVC.m */,
+				24EE7A8421E0F4EF00BF9114 /* AXChoosePayStyleVC.xib */,
+				24EE7A8121E0F4EF00BF9114 /* AXChoosePayVC.h */,
 				24EE7A8621E0F4EF00BF9114 /* AXChoosePayVC.m */,
+				24EE7A8321E0F4EF00BF9114 /* AXChoosePayVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -991,8 +991,8 @@
 		24EE7A8721E0F4EF00BF9114 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7A8821E0F4EF00BF9114 /* AXChoosePayModel.m */,
 				24EE7A8921E0F4EF00BF9114 /* AXChoosePayModel.h */,
+				24EE7A8821E0F4EF00BF9114 /* AXChoosePayModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1000,9 +1000,9 @@
 		24EE7A8A21E0F4EF00BF9114 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7A8B21E0F4EF00BF9114 /* AXChoosePayStyleCell.xib */,
 				24EE7A8C21E0F4EF00BF9114 /* AXChoosePayStyleCell.h */,
 				24EE7A8D21E0F4EF00BF9114 /* AXChoosePayStyleCell.m */,
+				24EE7A8B21E0F4EF00BF9114 /* AXChoosePayStyleCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1079,9 +1079,9 @@
 		24EE7AB321E0F4EF00BF9114 /* AXDateVC */ = {
 			isa = PBXGroup;
 			children = (
+				24EE7AB621E0F4EF00BF9114 /* AXDateVC.h */,
 				24EE7AB421E0F4EF00BF9114 /* AXDateVC.m */,
 				24EE7AB521E0F4EF00BF9114 /* AXDateVC.xib */,
-				24EE7AB621E0F4EF00BF9114 /* AXDateVC.h */,
 			);
 			path = AXDateVC;
 			sourceTree = "<group>";

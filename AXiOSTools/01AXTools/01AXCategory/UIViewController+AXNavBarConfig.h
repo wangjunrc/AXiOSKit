@@ -20,7 +20,8 @@
  @param aColor navigationBar 颜色
  @param textColor 文字颜色
  */
--(void)ax_setNavigationBarColor:(UIColor *)aColor textColor:(UIColor *)textColor;
+-(void)ax_setNavigationBarColor:(UIColor *)aColor
+                      textColor:(UIColor *)textColor;
 
 /**
  设置 navigationBar 透明
@@ -33,7 +34,8 @@
  @param aColor 颜色
  @param alpha 渐变值
  */
--(void)ax_setNavBarGradientWithColor:(UIColor *)aColor alpha:(CGFloat )alpha;
+-(void)ax_setNavBarGradientWithColor:(UIColor *)aColor
+                               alpha:(CGFloat )alpha;
 
 /**
  取消分隔线

@@ -199,7 +199,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Alert含有输入文本框
  */
-- (void)ax_showAlertTF:(UITextField *)textF Title:(NSString *)title message:(NSString *)message confirm:(void(^)( UITextField *textF))confirm cancel:(void(^)(void))cancel{
+- (void)ax_showAlertTF:(UITextField *)textF title:(NSString *)title message:(NSString *)message confirm:(void(^)( UITextField *textF))confirm cancel:(void(^)(void))cancel{
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     

@@ -43,7 +43,8 @@
     return bridge;
 }
 
-- (void)registerHandler:(NSString *)handlerName handler:(void(^)(id data))handler{
+- (void)registerHandler:(NSString *)handlerName
+                handler:(void(^)(id data))handler{
     
     AXJSContextModel *model  = [[AXJSContextModel alloc] init];
     model.callHandler = ^(id  _Nonnull data) {

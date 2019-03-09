@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AXChoosePayStyleCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *selectImageView;

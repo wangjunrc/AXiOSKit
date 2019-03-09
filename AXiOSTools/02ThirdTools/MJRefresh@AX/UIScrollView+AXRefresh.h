@@ -15,7 +15,8 @@
 /**
  * 初始化刷新
  */
-- (void)ax_setRefreshHeader:(void(^)(void))header foot:(void(^)(void))foot;
+- (void)ax_setRefreshHeader:(void(^)(void))header
+                       foot:(void(^)(void))foot;
 
 /**
  控制 Footer hidden ,一般 有数据 YES 没有数据 NO
