@@ -89,8 +89,7 @@
  * 当前控制器
  */
 +(UIViewController *)ax_currentViewController {
-    UIViewController *resultVC;
-    resultVC = [self ax_topViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
+    UIViewController *resultVC = [self ax_topViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
     while (resultVC.presentedViewController) {
         resultVC = [self ax_topViewController:resultVC.presentedViewController];
     }
