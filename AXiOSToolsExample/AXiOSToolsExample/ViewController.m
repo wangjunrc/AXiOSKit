@@ -7,6 +7,9 @@
 //
 #import "ViewController.h"
 #import "AAViewController.h"
+#import "AXiOSTools.h"
+#import "WebSocketManager.h"
+
 
 @interface ViewController ()
 
@@ -19,6 +22,7 @@
 @property (nonatomic, strong) UILabel *rightLabel;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UITextField *tf;
+
 @end
 
 @implementation ViewController
@@ -26,30 +30,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor grayColor];
-    
+    self.view.backgroundColor = [UIColor orangeColor];
+    [[WebSocketManager shared]connectServer];
 }
-
-
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     AAViewController *vc = [[AAViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
+
+    
     
 }
-
-- (void)ax_showAlertTF2:(NSString *(^)(NSString *name))textFBlock
-     
-    {
-    
-        NSLog(@">> %@",textFBlock(@"jim"));
-        
-}
-
 
 - (IBAction)btnAction:(id)sender {
     
+    NSDictionary *dcit =  @{@"msg":self.tf.text,@"onlineCount":@2,@"type":@"SPEAK",@"username":@"tom"};
+    
+    [WebSocketManager.shared sendDataToServer: [dcit ax_toJSONString]];
 }
 
 - (IBAction)btnAc2:(id)sender {

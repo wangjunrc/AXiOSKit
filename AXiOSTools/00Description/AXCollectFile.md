@@ -697,9 +697,12 @@ NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:dict
 format:NSPropertyListBinaryFormat_v1_0
 options:0
 error:nil];
+
 /**json 序列化*/
 NSData *jsonData= [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
 
+/**NSKeyedArchiver 序列化*/
+NSData *archiverData= [NSKeyedArchiver archivedDataWithRootObject:dict];
 
 /**同时赋值会覆盖*/
 [[UIPasteboard generalPasteboard] setData:jsonData forPasteboardType:@"content_json"];

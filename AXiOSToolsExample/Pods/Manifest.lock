@@ -48,11 +48,13 @@ PODS:
   - SDWebImage/GIF (4.4.6):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
+  - SocketRocket (0.5.1)
 
 DEPENDENCIES:
   - AXiOSTools (from `../`)
   - FLAnimatedImage
   - SDWebImage/GIF
+  - SocketRocket
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -70,6 +72,7 @@ SPEC REPOS:
     - NullSafe
     - SDCycleScrollView
     - SDWebImage
+    - SocketRocket
 
 EXTERNAL SOURCES:
   AXiOSTools:
@@ -91,7 +94,8 @@ SPEC CHECKSUMS:
   NullSafe: 948feba938f03abede5ed3758694a9fe5b3a65ce
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
-PODFILE CHECKSUM: ad576422dd29095a1c1396512b5157623017ff88
+PODFILE CHECKSUM: aedde5c7c024449ec15cee2ba19c487fc532e929
 
 COCOAPODS: 1.5.2

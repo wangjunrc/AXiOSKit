@@ -356,3 +356,6 @@ pod 'OpenShare'
 ###分享UI
 pod 'IFMShare'
 
+## Facebook长链接
+####目前Facebook的SocketRocket应该是目前最好的 关于WebSocket使用的框架了.而且简单易用.
+pod 'SocketRocket'
