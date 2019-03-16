@@ -702,5 +702,48 @@
     return  result;
 }
 
+
+/**
+ url path 拼接参数
+
+ @param parameter 参数
+ @return path
+ */
+-(NSString *)ax_pathAppendingWithParameter:(NSDictionary <NSString *,NSString *>*)parameter {
+  
+    NSMutableArray *keyAndValueArray = [NSMutableArray arrayWithCapacity:parameter.count];
+    [parameter enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
+        [keyAndValueArray addObject:[NSString stringWithFormat:@"%@=%@",key,obj]];
+    }];
+    NSString *parameterStr = [keyAndValueArray componentsJoinedByString:@"&"];
+    
+    
+    NSString *string = self;
+    NSRange range = [string rangeOfString:@"?"];
+    if (range.location != NSNotFound) {//找到了
+        
+        //如果?是最后一个直接拼接参数
+        if (string.length == (range.location + range.length)) {
+            
+            string = [string stringByAppendingString:parameterStr];
+            
+        }else{//如果不是最后一个需要加&
+            
+            if([string hasSuffix:@"&"]){//如果最后一个是&,直接拼接
+                string = [string stringByAppendingString:parameterStr];
+            }else{//如果最后不是&,需要加&后拼接
+                string = [string stringByAppendingString:[NSString stringWithFormat:@"&%@",parameterStr]];
+            }
+        }
+        
+    }else{//没找到
+        
+        if([string hasSuffix:@"&"]){//如果最后一个是&,去掉&后拼接
+            string = [string substringToIndex:string.length-1];
+        }
+        string = [string stringByAppendingString:[NSString stringWithFormat:@"?%@",parameterStr]];
+    }
+    return string;
+}
 @end
 

@@ -27,11 +27,30 @@
 
 @implementation ViewController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        NSLog(@"view>> %@",self.view);
+    }
+    return self;
+}
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+          NSLog(@"view>>3 %@",self.view);
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     self.view.backgroundColor = [UIColor orangeColor];
-    [[WebSocketManager shared]connectServer];
+    
+    [@"www.baodu.com/" ax_pathAppendingWithParameter:@{@"age":@"18",@"name":@"jim"}];
+     [@"www.baodu.com" ax_pathAppendingWithParameter:@{@"age":@"18",@"name":@"jim"}];
+     [@"www.baodu.com?tap=18" ax_pathAppendingWithParameter:@{@"age":@"18",@"name":@"jim"}];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

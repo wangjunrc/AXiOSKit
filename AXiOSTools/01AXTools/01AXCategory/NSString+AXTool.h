@@ -268,5 +268,12 @@
  */
 -(NSString *)ax_scannerUpToString:(NSString *)upToString;
 
+/**
+ url path 拼接参数
+ 
+ @param parameter 参数
+ @return path
+ */
+-(NSString *)ax_pathAppendingWithParameter:(NSDictionary <NSString *,NSString *>*)parameter;
 
 @end
