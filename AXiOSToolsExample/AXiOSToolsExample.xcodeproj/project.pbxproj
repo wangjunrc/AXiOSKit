@@ -16,10 +16,11 @@
 		24E9ED9B21F32C3B0007B4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E9ED9A21F32C3B0007B4D2 /* Assets.xcassets */; };
 		24E9ED9E21F32C3B0007B4D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E9ED9C21F32C3B0007B4D2 /* LaunchScreen.storyboard */; };
 		24E9EDA121F32C3B0007B4D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9EDA021F32C3B0007B4D2 /* main.m */; };
-		C2CA1C715FD42627C06A7AE9 /* libPods-AXiOSToolsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DF2745A92A32D3A0449185 /* libPods-AXiOSToolsExample.a */; };
+		665439189DB1182CA9A9CE88 /* Pods_AXiOSToolsExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15135638448086A3A92B6B7C /* Pods_AXiOSToolsExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15135638448086A3A92B6B7C /* Pods_AXiOSToolsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSToolsExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		242C596A2238EE6A001EE82E /* WebSocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketManager.h; sourceTree = "<group>"; };
 		242C596B2238EE6A001EE82E /* WebSocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketManager.m; sourceTree = "<group>"; };
 		243DFFD722019CBF00D8DF1A /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		24E9ED9F21F32C3B0007B4D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24E9EDA021F32C3B0007B4D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ACC2E472DAA3DE47194BF1D7 /* Pods-AXiOSToolsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSToolsExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample.debug.xcconfig"; sourceTree = "<group>"; };
-		D4DF2745A92A32D3A0449185 /* libPods-AXiOSToolsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AXiOSToolsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D907BF1DF4ABC8FBE87A6A68 /* Pods-AXiOSToolsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSToolsExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2CA1C715FD42627C06A7AE9 /* libPods-AXiOSToolsExample.a in Frameworks */,
+				665439189DB1182CA9A9CE88 /* Pods_AXiOSToolsExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 		3DEF43890FD98594F1C51E9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D4DF2745A92A32D3A0449185 /* libPods-AXiOSToolsExample.a */,
+				15135638448086A3A92B6B7C /* Pods_AXiOSToolsExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,7 +119,7 @@
 				24E9ED8A21F32C3A0007B4D2 /* Sources */,
 				24E9ED8B21F32C3A0007B4D2 /* Frameworks */,
 				24E9ED8C21F32C3A0007B4D2 /* Resources */,
-				A16EEBC23C48CFA4A6DD6A0A /* [CP] Copy Pods Resources */,
+				21F94C9865D2670654E99F99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +177,54 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		21F94C9865D2670654E99F99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AXiOSTools/AXiOSTools.framework",
+				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GKPhotoBrowser/GKPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/NullSafe/NullSafe.framework",
+				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXiOSTools.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GKPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NullSafe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		31E9314E0A5761D08D2F0787 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,56 +241,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A16EEBC23C48CFA4A6DD6A0A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample-resources.sh",
-				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXChoosePay/Controller/AXChoosePayStyleVC.xib",
-				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXChoosePay/Controller/AXChoosePayVC.xib",
-				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXChoosePay/View/AXChoosePayStyleCell.xib",
-				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXDateVC/AXDateVC.xib",
-				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXGuidePageVC/AXGuidePageCell.xib",
-				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXGuidePageVC/AXGuidePageVC.xib",
-				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXQRCodeVC/AXQRCodeVC.xib",
-				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXQRCodeVC/QRCodeViewController.xib",
-				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXSafariVC/AXSafariVC.xib",
-				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXSinglePickVC/AXSinglePickVC.xib",
-				"${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXWebVC/AXWebVC.xib",
-				"${PODS_ROOT}/../../AXiOSTools/01AXTools/04AXView/AXNumberKeyboard/AXNumberKeyboard.xib",
-				"${PODS_ROOT}/../../AXiOSTools/AXHTML.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/AXiOSTools/AXiOSToolsResource.bundle",
-				"${PODS_ROOT}/GKPhotoBrowser/GKPhotoBrowser/GKPhotoBrowser.bundle",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXChoosePayStyleVC.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXChoosePayVC.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXChoosePayStyleCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXDateVC.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXGuidePageCell.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXGuidePageVC.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXQRCodeVC.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QRCodeViewController.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXSafariVC.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXSinglePickVC.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXWebVC.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXNumberKeyboard.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXHTML.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AXiOSToolsResource.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GKPhotoBrowser.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

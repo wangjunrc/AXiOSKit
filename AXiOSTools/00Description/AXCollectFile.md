@@ -823,3 +823,15 @@ NSLog(@"obj2>> %@",obj2);
 </dict>
 ```
 
+# delegate 重写父类
+```.m文件中
+@dynamic delegate;
+- (id<SPTBusinessWebViewDelegate>)delegate{
+id curDelegate = [super delegate];
+return curDelegate;
+}
+
+- (void)setDelegate:(id<SPTBusinessWebViewDelegate>)delegate{
+[super setDelegate:delegate];
+}
+```

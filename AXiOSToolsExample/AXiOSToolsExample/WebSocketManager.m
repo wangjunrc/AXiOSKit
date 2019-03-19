@@ -98,7 +98,7 @@ dispatch_async(queue, block);\
     
     NSLog(@"连接失败，这里可以实现掉线自动重连，要注意以下几点");
     NSLog(@"1.判断当前网络环境，如果断网了就不要连了，等待网络到来，在发起重连");
-    NSLog(@"3.连接次数限制，如果连接失败了，重试10次左右就可以了");
+    NSLog(@"2.连接次数限制，如果连接失败了，重试10次左右就可以了");
     
     //判断网络环境
     if (AFNetworkReachabilityManager.sharedManager.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable){ //没有网络

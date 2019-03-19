@@ -91,44 +91,6 @@ EOM
       ;;
   esac
 }
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXChoosePay/Controller/AXChoosePayStyleVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXChoosePay/Controller/AXChoosePayVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXChoosePay/View/AXChoosePayStyleCell.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXDateVC/AXDateVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXGuidePageVC/AXGuidePageCell.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXGuidePageVC/AXGuidePageVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXQRCodeVC/AXQRCodeVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXQRCodeVC/QRCodeViewController.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXSafariVC/AXSafariVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXSinglePickVC/AXSinglePickVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXWebVC/AXWebVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/04AXView/AXNumberKeyboard/AXNumberKeyboard.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/AXHTML.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/AXiOSTools/AXiOSToolsResource.bundle"
-  install_resource "${PODS_ROOT}/GKPhotoBrowser/GKPhotoBrowser/GKPhotoBrowser.bundle"
-  install_resource "${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
-  install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXChoosePay/Controller/AXChoosePayStyleVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXChoosePay/Controller/AXChoosePayVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXChoosePay/View/AXChoosePayStyleCell.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXDateVC/AXDateVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXGuidePageVC/AXGuidePageCell.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXGuidePageVC/AXGuidePageVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXQRCodeVC/AXQRCodeVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXQRCodeVC/QRCodeViewController.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXSafariVC/AXSafariVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXSinglePickVC/AXSinglePickVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/03AXController/AXWebVC/AXWebVC.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/01AXTools/04AXView/AXNumberKeyboard/AXNumberKeyboard.xib"
-  install_resource "${PODS_ROOT}/../../AXiOSTools/AXHTML.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/AXiOSTools/AXiOSToolsResource.bundle"
-  install_resource "${PODS_ROOT}/GKPhotoBrowser/GKPhotoBrowser/GKPhotoBrowser.bundle"
-  install_resource "${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
-  install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
-fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
