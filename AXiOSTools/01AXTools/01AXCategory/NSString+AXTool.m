@@ -745,5 +745,35 @@
     }
     return string;
 }
+
+
+/**
+ 含有Unicode的字串 to emoj 表情,用于显示
+
+ @return 含有emoj表情的string
+ */
+-(NSString *)ax_stringToEmojiCode {
+    
+    const char *jsonString = self.UTF8String;
+    NSData *jsonData = [NSData dataWithBytes:jsonString length:strlen(jsonString)];
+    NSString *emoji = [[NSString alloc] initWithData:jsonData encoding:NSNonLossyASCIIStringEncoding];
+    return emoji;
+}
+
+
+/**
+ emoj 表情  转 Unicode的字串,用于存储
+
+ @return 含有emoj表情的string
+ */
+-(NSString *)ax_emojiCodeToString{
+    
+    NSString *uniStr = self;
+    NSData *uniData = [uniStr dataUsingEncoding:NSNonLossyASCIIStringEncoding];
+    NSString *str = [[NSString alloc] initWithData:uniData encoding:NSUTF8StringEncoding] ;
+    return str;
+    
+}
+
 @end
 

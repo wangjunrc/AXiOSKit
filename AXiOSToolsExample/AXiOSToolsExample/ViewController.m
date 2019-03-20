@@ -28,6 +28,9 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+    NSLog(@">> %@",[@"bb我的" ax_emojiCodeToUnicode]);
+//
+    NSLog(@"%@",[[@"aaa🌰" ax_emojiCodeToUnicode] ax_unicodeToEmojiCode]);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
