@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		242C596C2238EE6A001EE82E /* WebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 242C596B2238EE6A001EE82E /* WebSocketManager.m */; };
 		243DFFD822019CBF00D8DF1A /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 243DFFD722019CBF00D8DF1A /* HTML */; };
-		24C6F5BF22164C22006E1847 /* AAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C6F5BE22164C22006E1847 /* AAViewController.m */; };
 		24E9ED9321F32C3A0007B4D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ED9221F32C3A0007B4D2 /* AppDelegate.m */; };
 		24E9ED9621F32C3A0007B4D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ED9521F32C3A0007B4D2 /* ViewController.m */; };
 		24E9ED9921F32C3A0007B4D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E9ED9721F32C3A0007B4D2 /* Main.storyboard */; };
 		24E9ED9B21F32C3B0007B4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E9ED9A21F32C3B0007B4D2 /* Assets.xcassets */; };
 		24E9ED9E21F32C3B0007B4D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E9ED9C21F32C3B0007B4D2 /* LaunchScreen.storyboard */; };
 		24E9EDA121F32C3B0007B4D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9EDA021F32C3B0007B4D2 /* main.m */; };
+		24F41973224325810089D185 /* AAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F41971224325810089D185 /* AAViewController.m */; };
 		665439189DB1182CA9A9CE88 /* Pods_AXiOSToolsExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15135638448086A3A92B6B7C /* Pods_AXiOSToolsExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,8 +24,6 @@
 		242C596A2238EE6A001EE82E /* WebSocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketManager.h; sourceTree = "<group>"; };
 		242C596B2238EE6A001EE82E /* WebSocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketManager.m; sourceTree = "<group>"; };
 		243DFFD722019CBF00D8DF1A /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
-		24C6F5BD22164C22006E1847 /* AAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAViewController.h; sourceTree = "<group>"; };
-		24C6F5BE22164C22006E1847 /* AAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAViewController.m; sourceTree = "<group>"; };
 		24E9ED8E21F32C3A0007B4D2 /* AXiOSToolsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSToolsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E9ED9121F32C3A0007B4D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24E9ED9221F32C3A0007B4D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,6 +34,8 @@
 		24E9ED9D21F32C3B0007B4D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24E9ED9F21F32C3B0007B4D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24E9EDA021F32C3B0007B4D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		24F41971224325810089D185 /* AAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAViewController.m; sourceTree = "<group>"; };
+		24F41972224325810089D185 /* AAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAViewController.h; sourceTree = "<group>"; };
 		ACC2E472DAA3DE47194BF1D7 /* Pods-AXiOSToolsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSToolsExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample.debug.xcconfig"; sourceTree = "<group>"; };
 		D907BF1DF4ABC8FBE87A6A68 /* Pods-AXiOSToolsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSToolsExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AXiOSToolsExample/Pods-AXiOSToolsExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,8 +73,8 @@
 		24E9ED9021F32C3A0007B4D2 /* AXiOSToolsExample */ = {
 			isa = PBXGroup;
 			children = (
-				24C6F5BD22164C22006E1847 /* AAViewController.h */,
-				24C6F5BE22164C22006E1847 /* AAViewController.m */,
+				24F41972224325810089D185 /* AAViewController.h */,
+				24F41971224325810089D185 /* AAViewController.m */,
 				24E9ED9121F32C3A0007B4D2 /* AppDelegate.h */,
 				24E9ED9221F32C3A0007B4D2 /* AppDelegate.m */,
 				24E9ED9A21F32C3B0007B4D2 /* Assets.xcassets */,
@@ -254,7 +254,7 @@
 				242C596C2238EE6A001EE82E /* WebSocketManager.m in Sources */,
 				24E9EDA121F32C3B0007B4D2 /* main.m in Sources */,
 				24E9ED9321F32C3A0007B4D2 /* AppDelegate.m in Sources */,
-				24C6F5BF22164C22006E1847 /* AAViewController.m in Sources */,
+				24F41973224325810089D185 /* AAViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
