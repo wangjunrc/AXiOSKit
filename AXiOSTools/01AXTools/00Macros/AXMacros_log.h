@@ -23,8 +23,7 @@
 //#endif
 
 #ifdef DEBUG
-#define FILEString [[NSString stringWithFormat:@"%s", __FILE__].lastPathComponent UTF8String]
-#define AXLog(...) AXLoger(@"[%s 第%d行]: %s\n\n", FILEString  ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+#define AXLog(...) AXLogerInfo(__FILE__,__FUNCTION__,__LINE__,##__VA_ARGS__);
 #else
 #define AXLog(...)
 #endif

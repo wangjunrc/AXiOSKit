@@ -26,16 +26,35 @@
 
 @implementation ViewController
 
+
+
+
 - (void)viewDidLoad {
   [super viewDidLoad];
+    axLong_viewDidLoad
     
-   
+    
+    AXLog(@"中文~~%@",@"迭代22");
+    
+    
+    
 }
+
+
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
+    
+    
 //  AAViewController *vc = [[AAViewController alloc] init];
 //  [self.navigationController pushViewController:vc animated:YES];
+  
+   
+//    AXWKWebVC *vc = [[AXWKWebVC alloc]init];
+//    vc.loadHTMLFilePath = [NSBundle.mainBundle pathForResource:@"HTML/home.html" ofType:nil];
+//
+//     NSLog(@"%@",vc.loadHTMLFilePath);
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)btnAction:(id)sender {
