@@ -10,9 +10,8 @@
 @import WebKit;
 #import "AXiOSTools.h"
 #import "NSBundle+AXBundle.h"
-#import "AXWeakProxy.h"
 #import "AXWKScriptMessageHandler.h"
-
+#import <Masonry/Masonry.h>
 
 typedef NS_ENUM(NSInteger, WKWebLoadType){
     WKWebLoadTypeURLString,
@@ -89,10 +88,9 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     [self.view addSubview:self.webView];
     [self.view addSubview:self.progressView];
 
-//    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
-//    }];
-    
+    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
+    }];
     
 }
 
@@ -378,6 +376,10 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 
 #pragma mark - func
 
+-(void)loadWebView {
+    [self __webViewloadURLType];
+}
+
 - (void)__webViewloadURLType{
     
     if (self.url.length == 0) {
@@ -529,7 +531,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         
         WKUserContentController *userContentController = [[WKUserContentController alloc] init];
         config.userContentController = userContentController;
-        _webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
+        _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
         _webView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];

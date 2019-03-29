@@ -30,6 +30,14 @@ typedef void(^EvaluateJavaScriptHandler)(id data, NSError * error);
  */
 @property (nonatomic, copy) NSString *loadHTMLFilePath;
 
+
+/**
+ 加载 webview ,viewController  viewDidLoad 会自动加载一次
+ 需要更换url的 需主动调用一次
+ */
+-(void)loadWebView;
+
+
 /**
  js 回调oc
  

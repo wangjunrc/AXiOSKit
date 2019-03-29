@@ -1,21 +1,19 @@
 
-
-
 # import 不同类型
+```
+
 #if __has_include(<YYWebImage/YYWebImage.h>)
 #import <YYWebImage/YYWebImage.h>
 #else
 #import "YYWebImage.h"
 #endif
 
-
-
-
-
+```
 # GitHub汇总
 https://github.com/Tim9Liu9/TimLiu-iOS
 
 # 消除 过期警告 top
+```
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
 
@@ -27,31 +25,43 @@ https://github.com/Tim9Liu9/TimLiu-iOS
 
 // 将此行放在出现警告的. m 文件中。 消除所有警告
 #pragma GCC diagnostic ignored"-Wundeclared-selector"
-
+```
 
 
 
 # 过期宏 三种方式都是 第一种的宏
-
+```
 __attribute__((deprecated(" ")));
 
 DEPRECATED_MSG_ATTRIBUTE ()
 
 DEPRECATED_ATTRIBUTE
-
+```
 #  禁用宏
+```
+NS_UNAVAILABLE
+```
+```
 NS_UNAVAILABLE 当我们不想要其他开发人员，用普通的 init 方法去初始化一个类，我们可以在.h 文件里这样写：
 - (instancetype)init NS_UNAVAILABLE;
+假如禁用父类方法(包含属性),内部调用,super调用,
+假如数属性 会有警告,重写dynamic方法
+如: @dynamic delegate;
+```
 
+# 初始化方法 宏
+
+```
+NS_DESIGNATED_INITIALIZER
+
+```
+```
 NS_DESIGNATED_INITIALIZER 指定的初始化方法。当一个类提供多种初始化方法时，所有的初始化方法最终都会调用这个指定的初始化方法。比较常见的有：
 - (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
 
 一个子类如果有自己的 designed initializer，则必须要实现父类的 designed initializer。比如一个继承自 NSObject 的 Person 类，就必须要重写 init 方法，并在 init 方法中，调用自己的 designed initializer，而不是调用 super 的初始化方法。如果未实现，可以看到编译警告：
 Method override for the designed initializer of the superclass ‘- init’ not found.
 所以，对于 Person 来说，如果 initWithName: 被标记了 NS_DESIGNED_INITIALIZER ，那么实现应该为：
-
-
-```
 
 - (instancetype)init {
 // 在外部调用不需要 name 变量时，应该给出默认值
@@ -68,8 +78,8 @@ return self;
 
 ```
 
-# 1 NSSet / NSHashTable 、NSDictionary/ NSMapTable 的学习
-
+#  NSSet / NSHashTable 、NSDictionary/ NSMapTable 的学习
+```
 NSSet 是过滤掉重复 object 的集合类，
 NSHashTable 是 NSSet 的升级版容器，并且只有可变版本，允许对添加到容器中的对象是弱引用的持有关系， 当NSHashTable 中的对象销毁时，该对象也会从容器中移除。
 NSMapTable 同 NSDictionary 类似，唯一区别是多了个功能：可以设置 key 和 value 的 NSPointerFunctionsOptions 特性! NSDictionary的 key 策略固定是 copy，考虑到开销问题，一般使用简单的数字或者字符串为 key。但是如果碰到需要用 object 作为 key 的应用场景呢？NSMapTable 就可以派上用场了！可以通过 NSFunctionsPointer 来分别定义对 key 和 value 的内存管理策略，简单可以分为 strong,weak以及 copy。
@@ -89,7 +99,7 @@ NS_DESIGNATED_INITIALIZER 指定的初始化方法。当一个类提供多种初
 NSAssert(x,y);：x 为 BOOL 值，y 为 字符串类型。当 x = YES，则不产生断言。当 x = NO，则产生断言，app 会 crash，并在控制台中打印 y 字符串内容。合理利用断言，可以保证 app 的健壮性。
 4 互斥锁的使用
 
-
+```
 
 
 
@@ -97,9 +107,8 @@ NSAssert(x,y);：x 为 BOOL 值，y 为 字符串类型。当 x = YES，则不�
 ```
 sendActionsForControlEvents
 ```
-
-
-
+# NSMutableAttributedString 属性
+```
 NSMutableAttributedString 常见的属性：
 
 NSFontAttributeName 字体
@@ -114,8 +123,7 @@ NSUnderlineStyleAttributeName 下划线(默认是0，无下划线)
 
 NSParagraphStyleAttributeName 设置段落／间距 vlue>> NSMutableParagraphStyle
 
-
-
+```
 
 
 # pod github资源 格式
@@ -156,6 +164,7 @@ self.musicPlayer.delegate = self;
 
 
 # wkwebView 加载本地 css 文件
+```
 1.建立一个bundle文件
 2.把js,css,html文件拖入
 3.直接加载相对路径
@@ -175,7 +184,7 @@ NSURLRequest *request = [NSURLRequest requestWithURL:url];
 <!--NSURL *fileUrl = [NSURL fileURLWithPath:indexPath];-->
 <!--NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];-->
 <!--[self.webView loadFileURL:[NSURL fileURLWithPath:indexPath] allowingReadAccessToURL: baseUrl];-->
-
+```
 
 
 
@@ -492,11 +501,12 @@ NSLog(@"正在执行");
 ```
 
 ## copy | strong
+```
  集合类(NSMutable,NS) 属性用 copy
 @property(nonatomic, copy) 
  非集合 属性用 strong
 @property( nonatomic,  strong)   
-
+```
 ## 添加数据到粘贴板中
 ```
 UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
@@ -531,6 +541,7 @@ scanner.scanLocation = scanner.scanLocation+1;
 }
 ```
 # pod 操作
+```
 pod search 不到,删除以下文件
 ~/Library/Caches/CocoaPods/Pods/search_index
 
@@ -540,7 +551,7 @@ pod search 不到,删除以下文件
 pod update --no-repo-update
 
 pod repo update 
-
+```
 
 # 保护App,
 ```
@@ -749,9 +760,13 @@ return YES;
 ```
 
 ## 序列化方式
+```
 ### 微信用的是粘贴板默认名称,
 ### 支付宝用的是url拼接参数,
 ### QQ登录用的是粘贴板自定义名称,com.tencent.tencent+id,QQ分享用的是url
+```
+
+
 ```
 // 要确定序列化方式,才能取出数据,微信用的是plist方式
 
