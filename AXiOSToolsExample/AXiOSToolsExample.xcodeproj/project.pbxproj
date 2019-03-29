@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		242C596C2238EE6A001EE82E /* WebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 242C596B2238EE6A001EE82E /* WebSocketManager.m */; };
 		243DFFD822019CBF00D8DF1A /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 243DFFD722019CBF00D8DF1A /* HTML */; };
 		24E9ED9321F32C3A0007B4D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ED9221F32C3A0007B4D2 /* AppDelegate.m */; };
 		24E9ED9621F32C3A0007B4D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ED9521F32C3A0007B4D2 /* ViewController.m */; };
@@ -21,8 +20,6 @@
 
 /* Begin PBXFileReference section */
 		15135638448086A3A92B6B7C /* Pods_AXiOSToolsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSToolsExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		242C596A2238EE6A001EE82E /* WebSocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketManager.h; sourceTree = "<group>"; };
-		242C596B2238EE6A001EE82E /* WebSocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketManager.m; sourceTree = "<group>"; };
 		243DFFD722019CBF00D8DF1A /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
 		24E9ED8E21F32C3A0007B4D2 /* AXiOSToolsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSToolsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E9ED9121F32C3A0007B4D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -85,8 +82,6 @@
 				24E9ED9721F32C3A0007B4D2 /* Main.storyboard */,
 				24E9ED9421F32C3A0007B4D2 /* ViewController.h */,
 				24E9ED9521F32C3A0007B4D2 /* ViewController.m */,
-				242C596A2238EE6A001EE82E /* WebSocketManager.h */,
-				242C596B2238EE6A001EE82E /* WebSocketManager.m */,
 			);
 			path = AXiOSToolsExample;
 			sourceTree = "<group>";
@@ -251,7 +246,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				24E9ED9621F32C3A0007B4D2 /* ViewController.m in Sources */,
-				242C596C2238EE6A001EE82E /* WebSocketManager.m in Sources */,
 				24E9EDA121F32C3B0007B4D2 /* main.m in Sources */,
 				24E9ED9321F32C3A0007B4D2 /* AppDelegate.m in Sources */,
 				24F41973224325810089D185 /* AAViewController.m in Sources */,

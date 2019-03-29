@@ -149,6 +149,7 @@
 #import "NSObject+AXCacheImage.h"
 #import "UIButton+AXCircle.h"
 #import "UIImageView+AXCircle.h"
+#import "AXWebSocketManager.h"
 #import "UMTool.h"
 #import "WKWebViewController.h"
 #import "YYLabel+AXTool.h"

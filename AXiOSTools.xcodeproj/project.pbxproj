@@ -300,6 +300,8 @@
 		24EE7C6521E0F4F100BF9114 /* AXCollectFile.md in Resources */ = {isa = PBXBuildFile; fileRef = 24EE7B3621E0F4F100BF9114 /* AXCollectFile.md */; };
 		24EE7C6921E0F4F100BF9114 /* pod_no_use.md in Resources */ = {isa = PBXBuildFile; fileRef = 24EE7B3B21E0F4F100BF9114 /* pod_no_use.md */; };
 		24EE7C6A21E0F4F100BF9114 /* pod_use.md in Resources */ = {isa = PBXBuildFile; fileRef = 24EE7B3C21E0F4F100BF9114 /* pod_use.md */; };
+		24FF1D98224E084A0033C453 /* AXWebSocketManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24FF1D96224E084A0033C453 /* AXWebSocketManager.h */; };
+		24FF1D99224E084A0033C453 /* AXWebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24FF1D97224E084A0033C453 /* AXWebSocketManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -600,6 +602,8 @@
 		24EE7B3621E0F4F100BF9114 /* AXCollectFile.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = AXCollectFile.md; sourceTree = "<group>"; };
 		24EE7B3B21E0F4F100BF9114 /* pod_no_use.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = pod_no_use.md; sourceTree = "<group>"; };
 		24EE7B3C21E0F4F100BF9114 /* pod_use.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = pod_use.md; sourceTree = "<group>"; };
+		24FF1D96224E084A0033C453 /* AXWebSocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXWebSocketManager.h; sourceTree = "<group>"; };
+		24FF1D97224E084A0033C453 /* AXWebSocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXWebSocketManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1142,6 +1146,7 @@
 		24EE7AEB21E0F4F000BF9114 /* 02ThirdTools */ = {
 			isa = PBXGroup;
 			children = (
+				24FF1D95224E08260033C453 /* SocketRocket@AX */,
 				24EE7AEC21E0F4F000BF9114 /* MBProgressHUD@AX */,
 				24EE7AF021E0F4F000BF9114 /* lame */,
 				24EE7AF621E0F4F000BF9114 /* KVOController@AX */,
@@ -1348,6 +1353,15 @@
 			path = 00Description;
 			sourceTree = "<group>";
 		};
+		24FF1D95224E08260033C453 /* SocketRocket@AX */ = {
+			isa = PBXGroup;
+			children = (
+				24FF1D96224E084A0033C453 /* AXWebSocketManager.h */,
+				24FF1D97224E084A0033C453 /* AXWebSocketManager.m */,
+			);
+			path = "SocketRocket@AX";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1427,6 +1441,7 @@
 				24EE7BE421E0F4F100BF9114 /* AXJSContext.h in Headers */,
 				24EE7BA121E0F4F100BF9114 /* AXCycleScrollView.h in Headers */,
 				24A0EB8221F446FC00EA4224 /* AXCrashProcessManager.h in Headers */,
+				24FF1D98224E084A0033C453 /* AXWebSocketManager.h in Headers */,
 				24EE7C1C21E0F4F100BF9114 /* AXSafariVC.h in Headers */,
 				245BD4F021E6138000831542 /* UIButton+AXCountDown.h in Headers */,
 				245BD50121E6138000831542 /* UIViewController+AXNavBarConfig.h in Headers */,
@@ -1713,6 +1728,7 @@
 				24EE7BB321E0F4F100BF9114 /* IBUIButton.m in Sources */,
 				24A37EA4222F70B500195B91 /* UIWindow+AXTool.m in Sources */,
 				24EE7BF021E0F4F100BF9114 /* AXFullLayout.m in Sources */,
+				24FF1D99224E084A0033C453 /* AXWebSocketManager.m in Sources */,
 				245BD4AF21E6138000831542 /* UIView+AXTool.m in Sources */,
 				24EE7C5921E0F4F100BF9114 /* AXNetManager+Upload.m in Sources */,
 				24EE7BAE21E0F4F100BF9114 /* LocationManager.m in Sources */,

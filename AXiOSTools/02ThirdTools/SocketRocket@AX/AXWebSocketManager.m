@@ -1,12 +1,14 @@
 //
-//  WebSocketManager.m
-//  AXiOSToolsExample
+//  AXWebSocketManager.m
+//  AXiOSTools
 //
-//  Created by AXing on 2019/3/13.
+//  Created by AXing on 2019/3/29.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
-#import "WebSocketManager.h"
+#import "AXWebSocketManager.h"
+#if __has_include(<SocketRocket/SocketRocket.h>)
+
 #import "AFNetworkReachabilityManager.h"
 
 #ifndef dispatch_queue_async_safe
@@ -22,7 +24,7 @@ dispatch_async(queue, block);\
 #define dispatch_main_async_safe(block) dispatch_queue_async_safe(dispatch_get_main_queue(), block)
 #endif
 
-@interface WebSocketManager ()<SRWebSocketDelegate>
+@interface AXWebSocketManager ()<SRWebSocketDelegate>
 
 @property (nonatomic, strong) NSTimer *heartBeatTimer; //心跳定时器
 @property (nonatomic, strong) NSTimer *netWorkTestingTimer; //没有网络的时候检测网络定时器
@@ -59,7 +61,7 @@ dispatch_async(queue, block);\
     [self.webSocket close];
     _webSocket = nil;
     //    self.webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"https://dev-im-gateway.runxsports.com/ws/token=88888888"]];
-//    self.webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"ws://chat.workerman.net:7272"]];
+    //    self.webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"ws://chat.workerman.net:7272"]];
     
     self.webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"ws://localhost:8080/chat"]];
     
@@ -145,7 +147,7 @@ dispatch_async(queue, block);\
 
 ///ping
 -(void)webSocket:(SRWebSocket *)webSocket didReceivePong:(NSData *)pongData{
-   NSString *pong = [[NSString alloc] initWithData:pongData encoding:NSUTF8StringEncoding];
+    NSString *pong = [[NSString alloc] initWithData:pongData encoding:NSUTF8StringEncoding];
     
     NSLog(@"接受pong数据--> %@",pong);
 }
@@ -180,7 +182,7 @@ dispatch_async(queue, block);\
         return;
     }
     
-  __weak typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.reConnectTime *NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         if(weakSelf.webSocket.readyState == SR_OPEN && weakSelf.webSocket.readyState ==  SR_CONNECTING) {
@@ -202,7 +204,7 @@ dispatch_async(queue, block);\
 //发送心跳
 - (void)senderheartBeat{
     //和服务端约定好发送什么作为心跳标识，尽可能的减小心跳包大小
-   __weak typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     dispatch_main_async_safe(^{
         if(weakSelf.webSocket.readyState ==  SR_OPEN){
             [weakSelf sendPing:nil];
@@ -232,7 +234,7 @@ dispatch_async(queue, block);\
 
 //取消网络检测
 - (void)destoryNetWorkStartTesting{
-   __weak typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     dispatch_main_async_safe(^{
         if(weakSelf.netWorkTestingTimer)
         {
@@ -245,7 +247,7 @@ dispatch_async(queue, block);\
 
 //取消心跳
 - (void)destoryHeartBeat{
-   __weak typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     dispatch_main_async_safe(^{
         if(weakSelf.heartBeatTimer)
         {
@@ -310,3 +312,5 @@ dispatch_async(queue, block);\
 }
 
 @end
+
+#endif

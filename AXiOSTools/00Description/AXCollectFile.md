@@ -850,3 +850,71 @@ return curDelegate;
 [super setDelegate:delegate];
 }
 ```
+
+# 消息转发 NSInvocation
+
+```
+
+-(id)invokeWithSEL:(NSString *)selStr {
+
+SEL sel = NSSelectorFromString(selStr);
+
+id obj = self;;
+
+if (![obj respondsToSelector:sel]) {
+return nil;
+}
+
+//        NSMethodSignature *sig= [[self class] instanceMethodSignatureForSelector:sel];
+
+NSMethodSignature* sig = [obj methodSignatureForSelector:sel];
+NSInvocation* invocation = [NSInvocation invocationWithMethodSignature:sig];
+[invocation setSelector:sel];
+[invocation setTarget:obj];
+[invocation invoke];
+
+//获得返回值类型
+const char* returnType = sig.methodReturnType;
+//声明返回值变量
+id returnValue;
+//如果没有返回值，也就是消息声明为void，那么returnValue=nil
+if (!strcmp(returnType, @encode(void))) {
+returnValue = nil;
+
+} else if (!strcmp(returnType, @encode(id))) {
+//如果返回值为对象，那么为变量赋值
+[invocation getReturnValue:&returnValue];
+} else {
+//如果返回值为普通类型NSInteger  BOOL
+NSUInteger length = [sig methodReturnLength];
+//根据长度申请内存
+void* buffer = (void*)malloc(length);
+//为变量赋值
+[invocation getReturnValue:buffer];
+if (!strcmp(returnType, @encode(BOOL))) {
+returnValue = [NSNumber numberWithBool:*((BOOL*)buffer)];
+
+}else if(!strcmp(returnType, @encode(NSInteger)) ){
+returnValue = [NSNumber numberWithInteger:*((NSInteger*)buffer)];
+
+}else if(!strcmp(returnType, @encode(double)) ){
+returnValue = [NSNumber numberWithDouble:*((double*)buffer)];
+
+}else if(!strcmp(returnType, @encode(float)) ){
+returnValue = [NSNumber numberWithFloat:*((float*)buffer)];
+
+}else if(!strcmp(returnType, @encode(int)) ){
+returnValue = [NSNumber numberWithInt:*((int*)buffer)];
+
+}else if(!strcmp(returnType, @encode(long)) ){
+returnValue = [NSNumber numberWithLong:*((long*)buffer)];
+
+}else{
+returnValue = [NSValue valueWithBytes:buffer objCType:returnType];
+}
+}
+
+return returnValue;
+
+}
+```

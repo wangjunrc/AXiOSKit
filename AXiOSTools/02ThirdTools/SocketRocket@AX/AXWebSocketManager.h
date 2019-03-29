@@ -1,13 +1,18 @@
 //
-//  WebSocketManager.h
-//  AXiOSToolsExample
+//  AXWebSocketManager.h
+//  AXiOSTools
 //
-//  Created by AXing on 2019/3/13.
+//  Created by AXing on 2019/3/29.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "SocketRocket.h"
+
+#if __has_include(<SocketRocket/SocketRocket.h>)
+
+#import <SocketRocket/SocketRocket.h>
+
+//#import "SocketRocket.h"
 
 typedef NS_ENUM(NSUInteger,WebSocketConnectType){
     WebSocketDefault = 0, //初始状态,未连接
@@ -18,7 +23,7 @@ typedef NS_ENUM(NSUInteger,WebSocketConnectType){
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WebSocketManager : NSObject
+@interface AXWebSocketManager : NSObject
 
 @property (nonatomic, strong) SRWebSocket *webSocket;
 
@@ -35,3 +40,5 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif

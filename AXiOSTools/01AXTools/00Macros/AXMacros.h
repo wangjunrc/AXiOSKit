@@ -157,3 +157,85 @@ return (aViewClass *)[super view];\
 #define AX_UNLOCK dispatch_semaphore_signal(sem);
 /**GCD 信号量等待*/
 #define AX_LOCK dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+
+#pragma mark - weakify
+
+/**weakify*/
+#ifndef weakify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define weakify(object) autoreleasepool{} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) autoreleasepool{} __block __typeof__(object) block##_##object = object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define weakify(object) try{} @finally{} {} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) try{} @finally{} {} __block __typeof__(object) block##_##object = object;
+#endif
+#endif
+#endif
+
+#pragma mark - strongify
+
+/**strongify*/
+#ifndef strongify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define strongify(object) autoreleasepool{} __typeof__(object) object = weak##_##object;
+#else
+#define strongify(object) autoreleasepool{} __typeof__(object) object = block##_##object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define strongify(object) try{} @finally{} __typeof__(object) object = weak##_##object;
+#else
+#define strongify(object) try{} @finally{} __typeof__(object) object = block##_##object;
+#endif
+#endif
+#endif
+
+
+
+#pragma mark - ax_keypath
+/**
+ 此处@keypath(TARGET, KEYPATH)一定要添加@符号，就是为了能预编译出TARGET中所有的KEYPATH属性。
+ 何为预编译？
+ 在main函数执行之前，执行预编译处理。把整个类加载进内存中，在编程过程中，会去匹配TARGET类的类型，当匹配到对应类之后，会去编译查找对应的属性表property list、成员表IRG list、方法表method list。所以这里执行了预编译处理后，就可以提示出TARGET所有的示例变量、属性以及方法。
+ */
+
+/**
+ forKey
+[self.view setValue:UIColor.redColor forKey:@ax_keypath(self.view, backgroundColor)];
+ */
+#define ax_keypath(OBJ, PATH) \
+(((void)(NO && ((void)OBJ.PATH, NO)), # PATH))
+
+
+#pragma mark - 懒加载
+
+#ifndef PCH_LazyLoading
+#define PCH_LazyLoading(_type_, _ivar_)        \
+-(_type_*)_ivar_                           \
+{                                          \
+if (!_##_ivar_) {                      \
+_##_ivar_ = [[_type_ alloc] init]; \
+}                                      \
+return _##_ivar_;                      \
+}
+#endif
+
+#ifndef PCH_LazyLoadingBlock
+#define PCH_LazyLoadingBlock(_type_, _ivar_, block)                   \
+-(_type_*)_ivar_                                                  \
+{                                                                 \
+void (^initBlock)(_type_ * _ivar_) = ^(_type_ * _ivar_)block; \
+if (!_##_ivar_) {                                             \
+_type_* _ivar_ = [[_type_ alloc] init];                   \
+_##_ivar_ = _ivar_;                                       \
+initBlock(_ivar_);                                        \
+}                                                             \
+return _##_ivar_;                                             \
+}
+#endif
