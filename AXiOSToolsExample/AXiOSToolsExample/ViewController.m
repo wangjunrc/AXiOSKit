@@ -10,6 +10,7 @@
 #import "AXiOSTools.h"
 
 
+
 @interface ViewController ()
 
 @property (nonatomic, strong) AAViewController* avc;
@@ -29,7 +30,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     
+}
+
+
+NSString* __attribute__((overloadable)) mytest(NSString* x, NSString* y)
+{
+    return [NSString stringWithFormat:@"%@%@",x,y];
+}
+
+int __attribute__((overloadable)) mytest(int x)
+{
+    return x;
 }
 
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event
@@ -47,13 +60,9 @@
 
 - (IBAction)btnAction:(id)sender
 {
-  
-    
 }
 
 - (IBAction)btnAc2:(id)sender
 {
-
-    
 }
 @end

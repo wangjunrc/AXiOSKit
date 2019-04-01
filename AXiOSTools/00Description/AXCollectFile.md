@@ -918,3 +918,30 @@ return returnValue;
 
 }
 ```
+
+# 方法重载-同一个方法,不同参数
+```
+c语言方法
+```
+```
+NSString* __attribute__((overloadable)) mytest(NSString* x, NSString* y)
+{
+return [NSString stringWithFormat:@"%@%@",x,y];
+}
+
+int __attribute__((overloadable)) mytest(int x)
+{
+return x;
+}
+
+```
+# 用一个C字符串来表示一个数据类型
+
+```
+char *buf1 = @encode(int);
+char *buf2 = @encode(float);
+char *buf3 = @encode(NSString *);
+NSLog(@"%s",buf1);
+NSLog(@"%s",buf2);
+NSLog(@"%s",buf3);
+```
