@@ -9,60 +9,38 @@
 #import "AAViewController.h"
 #import "AXiOSTools.h"
 
-
-
 @interface ViewController ()
 
-@property (nonatomic, strong) AAViewController* avc;
+@property(nonatomic, strong) AAViewController* avc;
 
-/**<#description#>*/
-@property (nonatomic, strong) UIView* leftView;
-@property (nonatomic, strong) UIView* rightView;
-@property (nonatomic, strong) UILabel* leftLabel;
-@property (nonatomic, strong) UILabel* rightLabel;
-@property (weak, nonatomic) IBOutlet UILabel* label;
-@property (weak, nonatomic) IBOutlet UITextField* tf;
+@property(weak, nonatomic) IBOutlet UILabel* label;
+
+@property(weak, nonatomic) IBOutlet UITextField* tf;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    
+- (void)viewDidLoad {
+  [super viewDidLoad];
+    NSLog(@">> %@",[@"http//:www.baidu.com/?age=12&"  ax_pathAppendingWithParameter:@{@"name":@"jim"}]);
 }
 
+- (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
+  //  AAViewController *vc = [[AAViewController alloc] init];
+  //  [self.navigationController pushViewController:vc animated:YES];
 
-NSString* __attribute__((overloadable)) mytest(NSString* x, NSString* y)
-{
-    return [NSString stringWithFormat:@"%@%@",x,y];
+  AXWKWebVC* vc = [[AXWKWebVC alloc] init];
+  vc.loadHTMLFilePath =
+      [NSBundle.mainBundle pathForResource:@"HTML/home.html" ofType:nil];
+
+  NSLog(@"%@", vc.loadHTMLFilePath);
+  [self.navigationController pushViewController:vc animated:YES];
 }
 
-int __attribute__((overloadable)) mytest(int x)
-{
-    return x;
+- (IBAction)btnAction:(id)sender {
 }
 
-- (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event
-{
-
-    //  AAViewController *vc = [[AAViewController alloc] init];
-    //  [self.navigationController pushViewController:vc animated:YES];
-
-    AXWKWebVC* vc = [[AXWKWebVC alloc] init];
-    vc.loadHTMLFilePath = [NSBundle.mainBundle pathForResource:@"HTML/home.html" ofType:nil];
-
-    NSLog(@"%@", vc.loadHTMLFilePath);
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (IBAction)btnAction:(id)sender
-{
-}
-
-- (IBAction)btnAc2:(id)sender
-{
+- (IBAction)btnAc2:(id)sender {
 }
 @end

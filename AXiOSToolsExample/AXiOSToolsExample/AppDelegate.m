@@ -21,7 +21,7 @@
     
     if (@available(iOS 10.0, *)) {
         
-        [AXConfigureManager UserNotificationCenterDelegate];
+        [AXConfigureManager UserNotificationCenterConfigure];
         
     } else {
        

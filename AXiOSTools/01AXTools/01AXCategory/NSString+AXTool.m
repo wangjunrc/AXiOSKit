@@ -711,7 +711,8 @@
  */
 -(NSString *)ax_pathAppendingWithParameter:(NSDictionary <NSString *,NSString *>*)parameter {
   
-    NSMutableArray *keyAndValueArray = [NSMutableArray arrayWithCapacity:parameter.count];
+    NSMutableArray <NSString *> *keyAndValueArray = [NSMutableArray arrayWithCapacity:parameter.count];
+    
     [parameter enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
         [keyAndValueArray addObject:[NSString stringWithFormat:@"%@=%@",key,obj]];
     }];

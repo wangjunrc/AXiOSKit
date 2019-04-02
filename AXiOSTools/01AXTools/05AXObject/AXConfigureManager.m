@@ -75,16 +75,16 @@ void ax_SignalHandler(int signal) {
     
 }
 
-+(void)UserNotificationCenterDelegate{
++(void)UserNotificationCenterConfigure{
     
     if (@available(iOS 10.0, *)) {
-        [[AXConfigureManager sharedInstance] UserNotificationCenterDelegate];
+        [[AXConfigureManager sharedInstance] UserNotificationCenterConfigure];
     } else {
         
     }
 }
 
--(void)UserNotificationCenterDelegate __IOS_AVAILABLE(10.0) __TVOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0) __OSX_AVAILABLE(10.14){
+-(void)UserNotificationCenterConfigure __IOS_AVAILABLE(10.0) __TVOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0) __OSX_AVAILABLE(10.14){
     
     self.notificationhandler = [[AXUNNotificationHandler alloc] init];
     [UNUserNotificationCenter currentNotificationCenter].delegate = self.notificationhandler;

@@ -31,7 +31,7 @@ axSharedInstance_H;
 +(void)registerCatch;
 
 
-+(void)UserNotificationCenterDelegate;
++(void)UserNotificationCenterConfigure;
 
 @end
 
