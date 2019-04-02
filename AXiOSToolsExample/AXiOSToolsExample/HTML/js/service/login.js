@@ -79,7 +79,7 @@ $(function () {
 
                     if (data.state){
 
-//                        $.messager.confirm("提示","登陆成功,点击确定跳转到个人中心",function() {
+//                        $.messager.confirm("提示","登录成功,点击确定跳转到个人中心",function() {
 /**直接进去静态页面*/
 // window.location.href="/home.html";
   window.location.href="/home.page";
