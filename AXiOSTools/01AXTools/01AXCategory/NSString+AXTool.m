@@ -775,6 +775,55 @@
     return str;
     
 }
+/// NS_FORMAT_FUNCTION(1, 2)是什么意思呢？它会告诉编译器，索引1处的参数是一个格式化字符串，而实际参数从索引2处开始。
 
++ (instancetype)ax_stringWithFormat:(NSString *)format,... NS_FORMAT_FUNCTION(1,2){
+    
+   
+    va_list arg_list;
+    
+
+    va_start(arg_list, format);
+    
+
+//    NSString *tmp = nil;
+
+//    while ((tmp = va_arg(arg_list, NSString *))) {
+//
+//        NSLog(@"arg_list>> %@",tmp);
+//    }
+
+    
+    while (TRUE)
+    {
+        id obj = va_arg(arg_list, id);
+        if (nil == obj) {
+            
+             NSLog(@"arg_list>> %@",obj);
+        }
+        
+        
+    }
+    
+    
+    va_end(arg_list);
+    
+    return @"AA";
+    
+}
+
++(NSString *)function:(NSString*)value,...{
+    va_list argumentList;
+    va_start(argumentList, value);
+    NSString *tmp = nil;
+    
+    while ((tmp = va_arg(argumentList, NSString *))) {
+        NSLog(@"%@",tmp);
+    }
+    
+    va_end(argumentList);
+    
+    return @"A";
+}
 @end
 

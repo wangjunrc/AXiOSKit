@@ -290,4 +290,7 @@
  */
 -(NSString *)ax_emojiCodeToUnicode;
 
+
++ (instancetype)ax_stringWithFormat:(NSString *)format,... NS_FORMAT_FUNCTION(1,2);
+
 @end

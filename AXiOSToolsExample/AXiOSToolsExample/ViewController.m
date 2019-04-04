@@ -8,22 +8,50 @@
 #import "ViewController.h"
 #import "AAViewController.h"
 #import "AXiOSTools.h"
+#import "Person.h"
+#import "Dog.h"
+#import "NSString+AXTool.h"
 
 @interface ViewController ()
 
-@property(nonatomic, strong) AAViewController* avc;
+@property(nonatomic, strong) Person* person;
+
+@property(nonatomic, strong) Dog* dog;
 
 @property(weak, nonatomic) IBOutlet UILabel* label;
 
 @property(weak, nonatomic) IBOutlet UITextField* tf;
 
+
 @end
 
 @implementation ViewController
 
++(NSString *)function:(NSString*)value,...{
+    va_list argumentList;
+    va_start(argumentList, value);
+    NSString *tmp = nil;
+    
+    while ((tmp = va_arg(argumentList, NSString *))) {
+        NSLog(@"%@",tmp);
+    }
+    
+    va_end(argumentList);
+    
+    return @"A";
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
-    NSLog(@">> %@",[@"http//:www.baidu.com/?age=12&"  ax_pathAppendingWithParameter:@{@"name":@"jim"}]);
+    NSLog(@"person %@",self.person.nickname);
+    NSLog(@"dog %@",self.dog.nickname);
+    
+    self.label.text = [NSString ax_stringWithFormat:@"%@>>>%@",@"A",2,nil];
+    
+//    [self.class function:@"1",@"2",@"3",nil];
+    [NSString stringWithFormat:@"%ld",3];
+    
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
