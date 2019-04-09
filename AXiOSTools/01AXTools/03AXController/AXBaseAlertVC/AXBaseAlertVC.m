@@ -49,7 +49,7 @@
     }
 }
 
-#pragma mark - 专场动画 UIViewControllerTransitioningDelegate
+#pragma mark - 转场动画 UIViewControllerTransitioningDelegate
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
     

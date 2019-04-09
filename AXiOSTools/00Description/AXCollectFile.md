@@ -945,3 +945,13 @@ NSLog(@"%s",buf1);
 NSLog(@"%s",buf2);
 NSLog(@"%s",buf3);
 ```
+
+# 富文本 显示图片
+```
+
+NSTextAttachment *textAttachment = [[NSTextAttachment alloc] init];
+textAttachment.image = [UIImage imageNamed:@"icon_push_gift"];
+textAttachment.bounds = CGRectMake(0,0,height,height);
+NSAttributedString *imageString = [NSAttributedString attributedStringWithAttachment:textAttachment];
+
+```

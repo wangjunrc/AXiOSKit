@@ -27,43 +27,17 @@
 
 @implementation ViewController
 
-+(NSString *)function:(NSString*)value,...{
-    va_list argumentList;
-    va_start(argumentList, value);
-    NSString *tmp = nil;
-    
-    while ((tmp = va_arg(argumentList, NSString *))) {
-        NSLog(@"%@",tmp);
-    }
-    
-    va_end(argumentList);
-    
-    return @"A";
-}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-    NSLog(@"person %@",self.person.nickname);
-    NSLog(@"dog %@",self.dog.nickname);
-    
-    self.label.text = [NSString ax_stringWithFormat:@"%@>>>%@",@"A",2,nil];
-    
-//    [self.class function:@"1",@"2",@"3",nil];
-    [NSString stringWithFormat:@"%ld",3];
-    
-    
 }
+
 
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
   //  AAViewController *vc = [[AAViewController alloc] init];
   //  [self.navigationController pushViewController:vc animated:YES];
 
-  AXWKWebVC* vc = [[AXWKWebVC alloc] init];
-  vc.loadHTMLFilePath =
-      [NSBundle.mainBundle pathForResource:@"HTML/home.html" ofType:nil];
 
-  NSLog(@"%@", vc.loadHTMLFilePath);
-  [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)btnAction:(id)sender {
