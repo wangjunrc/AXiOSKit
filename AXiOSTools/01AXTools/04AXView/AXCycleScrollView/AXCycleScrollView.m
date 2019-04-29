@@ -170,7 +170,9 @@ static NSString *cellID = @"cellID";
     
     
 }
-
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    
+}
 #pragma mark  手动滚动 开始调用
 /**
  *  手动滚动 开始调用

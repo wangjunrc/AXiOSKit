@@ -839,14 +839,22 @@ NSLog(@"obj2>> %@",obj2);
 ```
 
 # delegate 重写父类
+
+```.h文件中
+
+@protocol CurrentDelegate<SuperDelegate>
+
+@end
+
+```
 ```.m文件中
 @dynamic delegate;
-- (id<SPTBusinessWebViewDelegate>)delegate{
+- (id<CurrentDelegate>)delegate{
 id curDelegate = [super delegate];
 return curDelegate;
 }
 
-- (void)setDelegate:(id<SPTBusinessWebViewDelegate>)delegate{
+- (void)setDelegate:(id<CurrentDelegate>)delegate{
 [super setDelegate:delegate];
 }
 ```
@@ -953,5 +961,35 @@ NSTextAttachment *textAttachment = [[NSTextAttachment alloc] init];
 textAttachment.image = [UIImage imageNamed:@"icon_push_gift"];
 textAttachment.bounds = CGRectMake(0,0,height,height);
 NSAttributedString *imageString = [NSAttributedString attributedStringWithAttachment:textAttachment];
+
+```
+
+# 旋转动画
+```
+self.arrowBtn.transform = !self.arrowBtn.isSelected
+? CGAffineTransformMakeRotation(M_PI)
+: CGAffineTransformIdentity;
+```
+
+
+# popView
+```
+AAViewController *testVC = [[AAViewController alloc]init];
+
+testVC.preferredContentSize = CGSizeMake(240, 62);
+testVC.modalPresentationStyle = UIModalPresentationPopover;
+testVC.popoverPresentationController.delegate = self;
+testVC.popoverPresentationController.sourceView = sender;
+testVC.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionDown;
+testVC.popoverPresentationController.passthroughViews =@[self.view];
+//    testVC.popoverPresentationController.backgroundColor = [UIColor redColor];
+
+if (@available(iOS 9.0, *)) {
+testVC.popoverPresentationController.canOverlapSourceViewRect = YES;
+} else {
+
+}
+
+[self presentViewController:testVC animated:YES completion:nil];
 
 ```

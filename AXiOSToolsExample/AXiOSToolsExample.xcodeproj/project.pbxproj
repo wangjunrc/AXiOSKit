@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		243DFFD822019CBF00D8DF1A /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 243DFFD722019CBF00D8DF1A /* HTML */; };
+		2473359322655F350059363F /* BubbleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473359122655F350059363F /* BubbleLayer.m */; };
+		247EB1E42263B162005B6E9E /* AAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 247EB1E32263B162005B6E9E /* AAView.m */; };
 		24994A9B2254CAC0005502A8 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 24994A9A2254CAC0005502A8 /* Person.m */; };
 		24994A9E2254CAEB005502A8 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 24994A9D2254CAEB005502A8 /* Dog.m */; };
+		249ACB5E22706D4500AD0E24 /* CustomTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 249ACB5D22706D4500AD0E24 /* CustomTextView.m */; };
 		24E9ED9321F32C3A0007B4D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ED9221F32C3A0007B4D2 /* AppDelegate.m */; };
 		24E9ED9621F32C3A0007B4D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ED9521F32C3A0007B4D2 /* ViewController.m */; };
 		24E9ED9921F32C3A0007B4D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E9ED9721F32C3A0007B4D2 /* Main.storyboard */; };
@@ -23,10 +26,16 @@
 /* Begin PBXFileReference section */
 		15135638448086A3A92B6B7C /* Pods_AXiOSToolsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSToolsExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		243DFFD722019CBF00D8DF1A /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
+		2473359122655F350059363F /* BubbleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleLayer.m; sourceTree = "<group>"; };
+		2473359222655F350059363F /* BubbleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleLayer.h; sourceTree = "<group>"; };
+		247EB1E22263B162005B6E9E /* AAView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAView.h; sourceTree = "<group>"; };
+		247EB1E32263B162005B6E9E /* AAView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAView.m; sourceTree = "<group>"; };
 		24994A992254CAC0005502A8 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		24994A9A2254CAC0005502A8 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		24994A9C2254CAEB005502A8 /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		24994A9D2254CAEB005502A8 /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		249ACB5C22706D4500AD0E24 /* CustomTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTextView.h; sourceTree = "<group>"; };
+		249ACB5D22706D4500AD0E24 /* CustomTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTextView.m; sourceTree = "<group>"; };
 		24E9ED8E21F32C3A0007B4D2 /* AXiOSToolsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSToolsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E9ED9121F32C3A0007B4D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24E9ED9221F32C3A0007B4D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -55,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2473359022655F350059363F /* BubbleLayer */ = {
+			isa = PBXGroup;
+			children = (
+				2473359122655F350059363F /* BubbleLayer.m */,
+				2473359222655F350059363F /* BubbleLayer.h */,
+			);
+			path = BubbleLayer;
+			sourceTree = "<group>";
+		};
 		24E9ED8521F32C3A0007B4D2 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +94,7 @@
 		24E9ED9021F32C3A0007B4D2 /* AXiOSToolsExample */ = {
 			isa = PBXGroup;
 			children = (
+				2473359022655F350059363F /* BubbleLayer */,
 				24F41972224325810089D185 /* AAViewController.h */,
 				24F41971224325810089D185 /* AAViewController.m */,
 				24E9ED9121F32C3A0007B4D2 /* AppDelegate.h */,
@@ -92,6 +111,10 @@
 				24994A9A2254CAC0005502A8 /* Person.m */,
 				24994A9C2254CAEB005502A8 /* Dog.h */,
 				24994A9D2254CAEB005502A8 /* Dog.m */,
+				247EB1E22263B162005B6E9E /* AAView.h */,
+				247EB1E32263B162005B6E9E /* AAView.m */,
+				249ACB5C22706D4500AD0E24 /* CustomTextView.h */,
+				249ACB5D22706D4500AD0E24 /* CustomTextView.m */,
 			);
 			path = AXiOSToolsExample;
 			sourceTree = "<group>";
@@ -256,11 +279,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				24994A9E2254CAEB005502A8 /* Dog.m in Sources */,
+				2473359322655F350059363F /* BubbleLayer.m in Sources */,
 				24E9ED9621F32C3A0007B4D2 /* ViewController.m in Sources */,
 				24E9EDA121F32C3B0007B4D2 /* main.m in Sources */,
 				24994A9B2254CAC0005502A8 /* Person.m in Sources */,
 				24E9ED9321F32C3A0007B4D2 /* AppDelegate.m in Sources */,
+				247EB1E42263B162005B6E9E /* AAView.m in Sources */,
 				24F41973224325810089D185 /* AAViewController.m in Sources */,
+				249ACB5E22706D4500AD0E24 /* CustomTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,25 +25,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor orangeColor];
+  
     
-    self.leftView = [[UIView alloc]init];
-    self.leftView.backgroundColor = [UIColor greenColor];
+  
     
-    [self.view addSubview:self.leftView];
-    
-    [self.leftView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        
-        make.left.equalTo(self.view);
-         make.top.equalTo(self.view);
-        make.size.mas_equalTo(CGSizeMake(100, 100));
-    }];
-    
-
-    
-   
 }
 
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (self.didNameBlock()) {
+        NSString *name = self.didNameBlock();
+        NSLog(@"name >> %@",name);
+    }
+    
+}
 
 
 - (void)dealloc{

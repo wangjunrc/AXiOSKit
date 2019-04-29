@@ -60,7 +60,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 /**
  *多个js交互,根据name保存,回调
  */
-@property (nonatomic, copy) NSMutableDictionary <NSString *,AddScriptMessageHandler>* scriptMessageDict;
+@property (nonatomic, copy) NSMutableDictionary <NSString *,void(^)(id data, NSError* error)>* scriptMessageDict;
 
 @end
 
@@ -299,7 +299,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 //依然是这个协议方法,获取注入方法名对象,获取js返回的状态值.
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     
-    AddScriptMessageHandler handler = self.scriptMessageDict[message.name];
+    void(^handler)(id data, NSError* error)  = self.scriptMessageDict[message.name];
     if (handler) {
         handler(message.name,message.body);
     }
@@ -312,7 +312,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
  @param handler 回调
  */
 -(void)addScriptMessageWithName:(NSString *)name
-                        handler:(AddScriptMessageHandler )handler {
+                        handler:(void(^)(NSString* name, id body) )handler {
     
     if (handler) {
         self.scriptMessageDict[name] = handler;
@@ -327,7 +327,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
  @param handler 回调
  */
 - (void)evaluateJavaScript:(NSString *)javaScriptString
-                   handler:(EvaluateJavaScriptHandler)handler {
+                   handler:(void(^)(id data, NSError* error))handler {
     
     [self.webView evaluateJavaScript:javaScriptString completionHandler:handler];
 }

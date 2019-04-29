@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**<#description#>*/
 @property (nonatomic, copy) void(^did)(void);
+
+@property (nonatomic, copy) NSString * (^didNameBlock)(void);
+
+
 @end
 
 NS_ASSUME_NONNULL_END
