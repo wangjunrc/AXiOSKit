@@ -39,9 +39,9 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:nil]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.TakePhoto") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.TakePhoto") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){ //支持拍照
             UIImagePickerController *picker = [[UIImagePickerController alloc]init];
             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -51,7 +51,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
         }
     }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.FromPhotoAlbum") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.FromPhotoAlbum") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){//图片列表方式
             
@@ -119,7 +119,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         if (cancel) {
             cancel();
         }
@@ -151,13 +151,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 - (void)ax_showSheeLogoutByPadView:(UIView *)iPadView confirm:(void(^)(void))confirm{
     
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:AXToolsLocalizedString(@"ax.logOut.message") preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:AXKitLocalizedString(@"ax.logOut.message") preferredStyle:UIAlertControllerStyleActionSheet];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
     }]];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.logOut") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.logOut") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         if (confirm) {
             confirm();
         }
@@ -183,7 +183,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
         if (cancel) {
             cancel();

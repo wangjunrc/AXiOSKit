@@ -9,7 +9,7 @@
 #import "AXExternFunction.h"
 #import "AXMacros_log.h"
 #import <UIKit/UIKit.h>
-#import "UIViewController+AXTool.h"
+#import "UIViewController+AXKit.h"
 #import "NSBundle+AXBundle.h"
 #include <libkern/OSAtomic.h>
 #include <stdatomic.h>
@@ -350,15 +350,15 @@ NSString *AXNSLocalizedString(NSString *key) {
 }
 
 /**
- * AXTools 自定义国际化文件
+ * AXKit 自定义国际化文件
  */
-NSString *AXToolsLocalizedString(NSString *key) {
+NSString *AXKitLocalizedString(NSString *key) {
   NSString *str =
       [NSBundle.ax_mainBundle localizedStringForKey:key
                                               value:@""
-                                              table:@"AXToolsLocalizedString"];
+                                              table:@"AXKitLocalizedString"];
   if (str.length == 0) {
-    str = NSLocalizedStringFromTable(key, @"AXToolsLocalizedString", @"");
+    str = NSLocalizedStringFromTable(key, @"AXKitLocalizedString", @"");
   }
   return str;
 }

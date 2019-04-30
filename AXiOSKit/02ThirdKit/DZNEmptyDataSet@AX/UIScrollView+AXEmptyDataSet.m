@@ -10,7 +10,7 @@
 #import "UIScrollView+AXEmptyDataSet.h"
 #import "AXMacros.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
-#import "UIImage+AXTool.h"
+#import "UIImage+AXKit.h"
 
 typedef void(^ReloadBlock)(void);
 
@@ -126,7 +126,7 @@ typedef void(^ReloadBlock)(void);
 - (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
     if (self.reloadBlock) {
         NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0f],NSForegroundColorAttributeName:[UIColor whiteColor]};
-        return [[NSAttributedString alloc] initWithString:AXToolsLocalizedString(@"点击刷新") attributes:attributes];
+        return [[NSAttributedString alloc] initWithString:AXKitLocalizedString(@"点击刷新") attributes:attributes];
     }else{
         return nil;
         

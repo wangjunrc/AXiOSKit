@@ -7,7 +7,7 @@
 //
 
 #import "UIButton+AXCountDown.h"
-#import "UIButton+AXTool.h"
+#import "UIButton+AXKit.h"
 @interface UIButton ()
 
 

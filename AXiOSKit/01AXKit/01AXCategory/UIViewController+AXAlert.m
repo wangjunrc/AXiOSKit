@@ -8,7 +8,7 @@
 
 #import "UIViewController+AXAlert.h"
 #import <objc/runtime.h>
-#import "UIViewController+AXTool.h"
+#import "UIViewController+AXKit.h"
 #import "UIViewController+AXiPadAlert.h"
 
 typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
@@ -84,7 +84,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.i.know") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.i.know") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (confirm) {
             confirm();
         }
@@ -99,7 +99,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.i.know") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.i.know") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (confirm) {
             confirm();
         }
@@ -116,13 +116,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(confirmTitle )style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(confirmTitle )style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (confirm) {
             confirm();
         }
     }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         if (cancel) {
             cancel();
         }
@@ -136,7 +136,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  */
 - (void)ax_showAlertByTitle:(NSString *)title message:(NSString *)message confirm:(void(^)(void))confirm cancel:(void(^)(void))cancel{
     
-    [self ax_showAlertByTitle:title message:message confirmTitle:AXToolsLocalizedString(@"ax.confirm") confirm:confirm cancel:cancel];
+    [self ax_showAlertByTitle:title message:message confirmTitle:AXKitLocalizedString(@"ax.confirm") confirm:confirm cancel:cancel];
 }
 
 /**
@@ -144,16 +144,16 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  */
 - (void)ax_showNetDownloadGo:(void(^)(void))go cancel:(void(^)(void))cancel{
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:AXToolsLocalizedString(@"当前网络为数据流量") message:AXToolsLocalizedString(@"是否取消下载") preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:AXKitLocalizedString(@"当前网络为数据流量") message:AXKitLocalizedString(@"是否取消下载") preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"继续下载") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"继续下载") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         if (go) {
             go();
         }
     }]];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"取消下载") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"取消下载") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (cancel) {
             cancel();
         }
@@ -180,13 +180,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     }];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.confirm") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.confirm") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (confirm) {
             confirm(weaktextF.text);
         }
     }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         if (cancel) {
             cancel();
         }
@@ -215,13 +215,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     }];
     
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.confirm") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.confirm") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         if (confirm) {
             confirm(weaktextF);
         }
     }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:AXToolsLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
         if (cancel) {
             cancel();
         }

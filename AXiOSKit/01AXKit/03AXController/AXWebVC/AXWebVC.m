@@ -87,7 +87,7 @@
 //}
 //- (UIButton *)setupBackBtn{
 //    UIButton *button = [[UIButton alloc]init];
-//    NSString*title = AXToolsLocalizedString(@"ax.cancel");
+//    NSString*title = AXKitLocalizedString(@"ax.cancel");
 //    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 //    [button setTitle:title forState:UIControlStateNormal];
 //    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];

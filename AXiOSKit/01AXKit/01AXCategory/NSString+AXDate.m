@@ -7,7 +7,7 @@
 //
 
 #import "NSString+AXDate.h"
-#import "NSString+AXTool.h"
+#import "NSString+AXKit.h"
 @implementation NSString (AXDate)
 /**
  时间字符串,转换成指定格式的时间字符串

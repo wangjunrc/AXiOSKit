@@ -204,9 +204,9 @@ dispatch_queue_t ax_get_queue_CONCURRENT(const char *label);
 NSString *AXNSLocalizedString(NSString *key);
 
 /**
- * AXTools 自定义国际化文件
+ * AXKit 自定义国际化文件
  */
-NSString *AXToolsLocalizedString(NSString *key);
+NSString *AXKitLocalizedString(NSString *key);
 
 /**
  * 当前活动窗口的控制器

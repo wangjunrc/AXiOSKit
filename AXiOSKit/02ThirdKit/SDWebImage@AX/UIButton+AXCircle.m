@@ -8,8 +8,8 @@
 
 #import "UIButton+AXCircle.h"
 
-#import "UIButton+AXTool.h"
-#import "UIImage+AXTool.h"
+#import "UIButton+AXKit.h"
+#import "UIImage+AXKit.h"
 @implementation UIButton (AXCircle)
 
 #if __has_include("UIButton+WebCache.h")

@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		242702452278318F00842E85 /* WebJSHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 242702442278318F00842E85 /* WebJSHandler.m */; };
 		24732B782277FE79005CF92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B772277FE79005CF92D /* AppDelegate.m */; };
 		24732B7B2277FE79005CF92D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B7A2277FE79005CF92D /* ViewController.m */; };
 		24732B7E2277FE79005CF92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24732B7C2277FE79005CF92D /* Main.storyboard */; };
 		24732B802277FE7A005CF92D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24732B7F2277FE7A005CF92D /* Assets.xcassets */; };
 		24732B832277FE7A005CF92D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24732B812277FE7A005CF92D /* LaunchScreen.storyboard */; };
 		24732B862277FE7A005CF92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B852277FE7A005CF92D /* main.m */; };
+		2498E4692278375A0024EAE6 /* H5.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2498E4682278375A0024EAE6 /* H5.bundle */; };
 		7A33BF7A2B10FBB6F488E19F /* Pods_AXiOSKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534D3B83102C63BEA0A4E042 /* Pods_AXiOSKitExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		242702432278318F00842E85 /* WebJSHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebJSHandler.h; sourceTree = "<group>"; };
+		242702442278318F00842E85 /* WebJSHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebJSHandler.m; sourceTree = "<group>"; };
 		24732B732277FE79005CF92D /* AXiOSKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24732B762277FE79005CF92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24732B772277FE79005CF92D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -27,6 +31,7 @@
 		24732B822277FE7A005CF92D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24732B842277FE7A005CF92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24732B852277FE7A005CF92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2498E4682278375A0024EAE6 /* H5.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = H5.bundle; sourceTree = "<group>"; };
 		534D3B83102C63BEA0A4E042 /* Pods_AXiOSKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		866D6D8E976EA79929191341 /* Pods-AXiOSKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.release.xcconfig"; sourceTree = "<group>"; };
 		BFF5D1465FADC051DA9B06C0 /* Pods-AXiOSKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,11 +74,14 @@
 				24732B772277FE79005CF92D /* AppDelegate.m */,
 				24732B792277FE79005CF92D /* ViewController.h */,
 				24732B7A2277FE79005CF92D /* ViewController.m */,
+				242702432278318F00842E85 /* WebJSHandler.h */,
+				242702442278318F00842E85 /* WebJSHandler.m */,
 				24732B7C2277FE79005CF92D /* Main.storyboard */,
 				24732B7F2277FE7A005CF92D /* Assets.xcassets */,
 				24732B812277FE7A005CF92D /* LaunchScreen.storyboard */,
 				24732B842277FE7A005CF92D /* Info.plist */,
 				24732B852277FE7A005CF92D /* main.m */,
+				2498E4682278375A0024EAE6 /* H5.bundle */,
 			);
 			path = AXiOSKitExample;
 			sourceTree = "<group>";
@@ -156,6 +164,7 @@
 			files = (
 				24732B832277FE7A005CF92D /* LaunchScreen.storyboard in Resources */,
 				24732B802277FE7A005CF92D /* Assets.xcassets in Resources */,
+				2498E4692278375A0024EAE6 /* H5.bundle in Resources */,
 				24732B7E2277FE79005CF92D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +255,7 @@
 			files = (
 				24732B7B2277FE79005CF92D /* ViewController.m in Sources */,
 				24732B862277FE7A005CF92D /* main.m in Sources */,
+				242702452278318F00842E85 /* WebJSHandler.m in Sources */,
 				24732B782277FE79005CF92D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

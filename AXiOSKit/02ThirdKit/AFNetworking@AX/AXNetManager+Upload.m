@@ -10,7 +10,7 @@
 #if __has_include("AFNetworking.h")
 #import "MBProgressHUD+AX.h"
 #import "AXMacros.h"
-#import "NSString+AXTool.h"
+#import "NSString+AXKit.h"
 @import UIKit;
 #pragma mark - NetFormData
 @implementation  AXFormData

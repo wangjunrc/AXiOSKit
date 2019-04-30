@@ -8,7 +8,7 @@
 
 #import "UIImageView+AXCircle.h"
 #if __has_include("UIImageView+WebCache.h")
-#import "UIImage+AXTool.h"
+#import "UIImage+AXKit.h"
 #import "UIImageView+WebCache.h"
 #endif
 

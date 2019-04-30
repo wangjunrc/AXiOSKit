@@ -1,5 +1,5 @@
 //
-//  UIScrollView+AXTool.m
+//  UIScrollView+AXKit.m
 //  AXiOSKit
 //
 //  Created by liuweixing on 2016/12/2.

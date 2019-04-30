@@ -8,7 +8,7 @@
 
 #import "AXNetManager+Version.h"
 #if __has_include("AFNetworking.h")
-#import "NSString+AXTool.h"
+#import "NSString+AXKit.h"
 
 @implementation AXNetManager (Version)
 

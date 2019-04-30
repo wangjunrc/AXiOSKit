@@ -389,12 +389,12 @@
     [self.currentTypeArray removeAllObjects];
     
     if (item.tag == 1) {
-        self.title = AXToolsLocalizedString(@"二维码");
+        self.title = AXKitLocalizedString(@"二维码");
         self.resultLab.text = @"请将二维码放在上面框中";
         self.containerHeightCons.constant = 300;
         [self.currentTypeArray addObject:AVMetadataObjectTypeQRCode];
     } else {
-        self.title = AXToolsLocalizedString(@"条形码");
+        self.title = AXKitLocalizedString(@"条形码");
         self.resultLab.text = @"请将条形码放在上面框中";
         self.containerHeightCons.constant = 150;
         [self.currentTypeArray addObject:AVMetadataObjectTypeEAN13Code];

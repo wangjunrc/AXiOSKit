@@ -7,7 +7,7 @@
 //
 
 #import "AXButton.h"
-#import "UIButton+AXTool.h"
+#import "UIButton+AXKit.h"
 
 @implementation AXButton
 

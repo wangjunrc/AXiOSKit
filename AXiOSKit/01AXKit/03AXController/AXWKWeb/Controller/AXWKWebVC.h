@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
+@class AXWKWebVC;
+@protocol AXScriptMessageInstanceHandler <NSObject>
+
+/**
+ 处理消息
+ 
+ @param webVC webView
+ @param message 消息内容
+ */
+- (void)webVC:(AXWKWebVC *)webVC handleMessage:(id)message;
+
+@end
+
 
 @interface AXWKWebVC : UIViewController
 
@@ -47,6 +60,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)addScriptMessageWithName:(NSString*)ocMethodName
                          handler:(void (^)(NSString* name, id body))handler;
+
+/**
+  js 回调oc
+
+ @param instance 遵守 AXScriptMessageInstanceHandler 协议的 实例
+ @param name js与oc 对应的key
+ */
+- (void)addScriptHandler:(id<AXScriptMessageInstanceHandler>)instance
+                 forKey:(NSString *)name;
 
 /**
  oc 调用js方法

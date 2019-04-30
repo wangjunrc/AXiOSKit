@@ -10,14 +10,15 @@
 @import WebKit;
 #import "AXiOSKit.h"
 #import "NSBundle+AXBundle.h"
-#import "AXWKScriptMessageHandlerHelper.h"
+#import "AXScriptMessageHandlerHelper.h"
 #import <Masonry/Masonry.h>
+#import "AXWebScriptMessageModel.h"
 
 typedef NS_ENUM(NSInteger, WKWebLoadType){
     WKWebLoadTypeURLString,
     WKWebLoadTypeHTMLString,
     WKWebLoadTypeHTMLFilePath,
-     WKWebLoadTypeURL,
+    WKWebLoadTypeURL,
 };
 
 @interface AXWKWebVC ()<WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate,UINavigationControllerDelegate,UIScrollViewDelegate>
@@ -56,12 +57,15 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 /**
  *解决self.webView.configuration.userContentController强引用
  */
-@property (nonatomic, strong) AXWKScriptMessageHandlerHelper *handlerHelper;
+@property (nonatomic, strong) AXScriptMessageHandlerHelper *handlerHelper;
 
 /**
  *多个js交互,根据name保存,回调
  */
 @property (nonatomic, copy) NSMutableDictionary <NSString *,void(^)(id data, NSError* error)>* scriptMessageDict;
+
+@property (nonatomic, copy) NSMutableDictionary <NSString *,AXWebScriptMessageModel *>* scriptMessageModelDict;
+
 
 @end
 
@@ -88,7 +92,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     
     [self.view addSubview:self.webView];
     [self.view addSubview:self.progressView];
-
+    
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
     }];
@@ -303,6 +307,18 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     void(^handler)(id data, NSError* error)  = self.scriptMessageDict[message.name];
     if (handler) {
         handler(message.name,message.body);
+        return;
+    }
+    
+    AXWebScriptMessageModel *model = self.scriptMessageModelDict[message.name];
+    if (model) {
+        
+        id<AXScriptMessageInstanceHandler> obj = model.obj;
+        
+        if (obj && [obj respondsToSelector:@selector(webVC:handleMessage:)]) {
+            [obj webVC:self handleMessage:message.body];
+        }
+        return;
     }
 }
 
@@ -318,7 +334,21 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     if (handler) {
         self.scriptMessageDict[name] = handler;
     }
-     [self.webView.configuration.userContentController addScriptMessageHandler:self.handlerHelper name:name];
+    [self.webView.configuration.userContentController addScriptMessageHandler:self.handlerHelper name:name];
+}
+
+- (void)addScriptHandler:(id<AXScriptMessageInstanceHandler>)instance
+                  forKey:(NSString *)name {
+    
+    if (instance && name.length>0 ){
+        
+        AXWebScriptMessageModel *model = [[AXWebScriptMessageModel alloc]init];
+        model.obj = instance;
+        
+        self.scriptMessageModelDict[name] = model;
+        
+        [self.webView.configuration.userContentController addScriptMessageHandler:self.handlerHelper name:name];
+    }
 }
 
 /**
@@ -339,7 +369,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     
     if (object == self.webView ) {
         
-        if ([keyPath isEqualToString:@"estimatedProgress"]) {
+        if ([keyPath isEqualToString:NSStringFromSelector(@selector(estimatedProgress))]) {
             self.progressView.alpha = 1.0f;
             BOOL animated = self.webView.estimatedProgress > self.progressView.progress;
             [self.progressView setProgress:self.webView.estimatedProgress animated:animated];
@@ -353,7 +383,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
                     
                 }];
             }
-        }else if ([keyPath isEqualToString:@"title"]){
+        }else if ([keyPath isEqualToString:NSStringFromSelector(@selector(title))]){
             //使用KVO 显示title 更快一点
             
             NSString *title = change[@"new"];
@@ -361,7 +391,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
                 if (title.length>0) {
                     self.title = title;
                 }else{
-                    self.title = AXToolsLocalizedString(@"网页");
+                    self.title = AXKitLocalizedString(@"网页");
                 }
             }
         }else {
@@ -547,10 +577,10 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         
         WKUserContentController *userContentController = [[WKUserContentController alloc] init];
         config.userContentController = userContentController;
-        _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
+        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, 100, 100) configuration:config];
         _webView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
-        [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
+        [_webView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:NSKeyValueObservingOptionNew context:nil];
+        [_webView addObserver:self forKeyPath:NSStringFromSelector(@selector(title)) options:NSKeyValueObservingOptionNew context:nil];
         _webView.navigationDelegate = self;
         _webView.UIDelegate = self;
     }
@@ -581,7 +611,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         UIImage* backItemImage = [[UIImage axBundle_imageNamed:@"ax_itemBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         UIImage* backItemHlImage = [[UIImage axBundle_imageNamed:@"ax_itemBack_h"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         UIButton* backButton = [[UIButton alloc] init];
-        [backButton setTitle:AXToolsLocalizedString(@"ax.back") forState:UIControlStateNormal];
+        [backButton setTitle:AXKitLocalizedString(@"ax.back") forState:UIControlStateNormal];
         [backButton setTitleColor:self.navigationController.navigationBar.tintColor forState:UIControlStateNormal];
         [backButton setTitleColor:[self.navigationController.navigationBar.tintColor colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
         [backButton.titleLabel setFont:[UIFont systemFontOfSize:17]];
@@ -598,7 +628,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 - (UIButton *)cancelButton{
     if (!_cancelButton) {
         _cancelButton = [[UIButton alloc]init];
-        NSString*title = AXToolsLocalizedString(@"ax.cancel");
+        NSString*title = AXKitLocalizedString(@"ax.cancel");
         [_cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_cancelButton setTitle:title forState:UIControlStateNormal];
         [_cancelButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
@@ -612,7 +642,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 
 - (UIBarButtonItem*)closeItem{
     if (!_closeItem) {
-        _closeItem = [[UIBarButtonItem alloc] initWithTitle:AXToolsLocalizedString(@"ax.close") style:UIBarButtonItemStylePlain target:self action:@selector(closeItemAction:)];
+        _closeItem = [[UIBarButtonItem alloc] initWithTitle:AXKitLocalizedString(@"ax.close") style:UIBarButtonItemStylePlain target:self action:@selector(closeItemAction:)];
     }
     return _closeItem;
 }
@@ -624,9 +654,9 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     return _cancelItem;
 }
 
-- (AXWKScriptMessageHandlerHelper *)handlerHelper {
+- (AXScriptMessageHandlerHelper *)handlerHelper {
     if (!_handlerHelper) {
-        _handlerHelper = [AXWKScriptMessageHandlerHelper scriptMessageWithHandler:self];
+        _handlerHelper = [AXScriptMessageHandlerHelper scriptMessageWithHandler:self];
     }
     return _handlerHelper;
 }
@@ -637,13 +667,18 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     }
     return _scriptMessageDict;
 }
-
+- (NSMutableDictionary<NSString *,AXWebScriptMessageModel *> *)scriptMessageModelDict {
+    if (!_scriptMessageModelDict) {
+        _scriptMessageModelDict = [[NSMutableDictionary alloc]init];
+    }
+    return _scriptMessageModelDict;
+}
 #pragma mark - dealloc
 - (void)dealloc{
     [self.webView.configuration.userContentController removeAllUserScripts];
     self.webView.scrollView.delegate = nil;
-    [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
-    [self.webView removeObserver:self forKeyPath:@"title"];
+    [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
+    [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(title))];
     axLong_dealloc;
 }
 

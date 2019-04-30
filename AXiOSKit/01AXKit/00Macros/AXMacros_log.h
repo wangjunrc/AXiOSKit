@@ -8,7 +8,7 @@
 
 #ifndef AXMacros_log_h
 #define AXMacros_log_h
-#import "NSDate+AXTool.h"
+#import "NSDate+AXKit.h"
 #import "AXExternFunction.h"
 
 /**

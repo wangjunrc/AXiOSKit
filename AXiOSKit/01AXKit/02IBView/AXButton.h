@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIButton+AXTool.h"
+#import "UIButton+AXKit.h"
 IB_DESIGNABLE
 
 NS_ASSUME_NONNULL_BEGIN

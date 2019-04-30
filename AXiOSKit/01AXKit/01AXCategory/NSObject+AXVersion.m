@@ -1,13 +1,13 @@
 //
 //  NSObject+AXVersion.m
-//  AXTools
+//  AXKit
 //
 //  Created by liuweixing on 16/4/6.
 //  Copyright © 2016年 liuweixing All rights reserved.
 //
 
 #import "NSObject+AXVersion.h"
-#import "NSString+AXTool.h"
+#import "NSString+AXKit.h"
 
 #define AX_APPVERSION_SAVE_KEY @"ax_AppVersion_save_key"
 
