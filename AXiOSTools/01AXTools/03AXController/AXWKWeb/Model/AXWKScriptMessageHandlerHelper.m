@@ -1,14 +1,14 @@
 //
-//  AXWKScriptMessageHandler.m
+//  AXWKScriptMessageHandlerHelper.m
 //  AXiOSTools
 //
 //  Created by AXing on 2019/1/19.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
-#import "AXWKScriptMessageHandler.h"
+#import "AXWKScriptMessageHandlerHelper.h"
 #import "AXiOSTools.h"
-@implementation AXWKScriptMessageHandler
+@implementation AXWKScriptMessageHandlerHelper
 
 - (instancetype)initWithHandler:(id<WKScriptMessageHandler>)handler
 {

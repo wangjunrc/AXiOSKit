@@ -24,11 +24,22 @@
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
     //spec文件resource_bundles对应的key 
     NSString *bundlePath = [bundle pathForResource:@"AXiOSToolsResource" ofType:@"bundle"];
-    NSBundle *ax_mainBundle = [NSBundle bundleWithPath:bundlePath];
-    if (ax_mainBundle == nil) {
-        ax_mainBundle = bundle;
+    NSBundle *tempBundle = [NSBundle bundleWithPath:bundlePath];
+    if (tempBundle == nil) {
+        tempBundle = bundle;
     }
-    return ax_mainBundle;
+    return tempBundle;
+}
+
++ (NSBundle *)ax_HTMLBundle {
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    // 直接取 bundle 名称
+    NSString *bundlePath = [bundle pathForResource:@"AXHTML" ofType:@"bundle"];
+    NSBundle *tempBundle = [NSBundle bundleWithPath:bundlePath];
+    if (tempBundle == nil) {
+        tempBundle = bundle;
+    }
+    return tempBundle;
 }
 
 @end
@@ -39,6 +50,9 @@
     return AXBundle.ax_mainBundle;
 }
 
++ (NSBundle *)ax_HTMLBundle {
+    return AXBundle.ax_HTMLBundle;
+}
 
 + (NSBundle *)ax_currentBundleWithName:(NSString *)name {
     NSString *type = @"bundle";

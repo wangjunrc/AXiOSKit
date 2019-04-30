@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+NS_ASSUME_NONNULL_BEGIN
 
 @interface AXWKWebVC : UIViewController
 
@@ -24,8 +25,13 @@
 /**
  *加载本地网页
  *使用[NSBundle.mainBundle pathForResource:@"xx.html" ofType:nil];方式赋值
+ NSURL *path = [[NSBundle mainBundle] URLForResource:@"Cookie" withExtension:@"html"];
  */
 @property (nonatomic, copy) NSString* loadHTMLFilePath;
+
+
+@property (nonatomic, strong) NSURL* loadURL;
+
 
 /**
  加载 webview ,viewController  viewDidLoad 会自动加载一次
@@ -36,19 +42,20 @@
 /**
  js 回调oc
  
- @param name oc方法名
+ @param ocMethodName oc方法名
  @param handler 回调
  */
-- (void)addScriptMessageWithName:(NSString*)name
+- (void)addScriptMessageWithName:(NSString*)ocMethodName
                          handler:(void (^)(NSString* name, id body))handler;
 
 /**
  oc 调用js方法
  
- @param javaScriptString js方法名
+ @param jsMethodName js方法名
  @param handler 回调
  */
-- (void)evaluateJavaScript:(NSString*)javaScriptString
+- (void)evaluateJavaScript:(NSString*)jsMethodName
                    handler:(void (^)(id data, NSError* error))handler;
 
 @end
+NS_ASSUME_NONNULL_END

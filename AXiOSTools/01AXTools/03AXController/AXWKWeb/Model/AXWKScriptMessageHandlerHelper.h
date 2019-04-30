@@ -1,5 +1,5 @@
 //
-//  AXWKScriptMessageHandler.h
+//  AXWKScriptMessageHandlerHelper.h
 //  AXiOSTools
 //
 //  Created by AXing on 2019/1/19.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AXWKScriptMessageHandler : NSObject <WKScriptMessageHandler>
+@interface AXWKScriptMessageHandlerHelper : NSObject <WKScriptMessageHandler>
 
 /**weak handler*/
 @property (nonatomic, weak) id<WKScriptMessageHandler> handler;

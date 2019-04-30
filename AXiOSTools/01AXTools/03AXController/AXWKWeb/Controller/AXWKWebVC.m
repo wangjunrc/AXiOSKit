@@ -10,13 +10,14 @@
 @import WebKit;
 #import "AXiOSTools.h"
 #import "NSBundle+AXBundle.h"
-#import "AXWKScriptMessageHandler.h"
+#import "AXWKScriptMessageHandlerHelper.h"
 #import <Masonry/Masonry.h>
 
 typedef NS_ENUM(NSInteger, WKWebLoadType){
     WKWebLoadTypeURLString,
     WKWebLoadTypeHTMLString,
     WKWebLoadTypeHTMLFilePath,
+     WKWebLoadTypeURL,
 };
 
 @interface AXWKWebVC ()<WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate,UINavigationControllerDelegate,UIScrollViewDelegate>
@@ -55,7 +56,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 /**
  *解决self.webView.configuration.userContentController强引用
  */
-@property (nonatomic, strong) AXWKScriptMessageHandler *weakScriptMessageHandler;
+@property (nonatomic, strong) AXWKScriptMessageHandlerHelper *handlerHelper;
 
 /**
  *多个js交互,根据name保存,回调
@@ -317,7 +318,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     if (handler) {
         self.scriptMessageDict[name] = handler;
     }
-     [self.webView.configuration.userContentController addScriptMessageHandler:self.weakScriptMessageHandler name:name];
+     [self.webView.configuration.userContentController addScriptMessageHandler:self.handlerHelper name:name];
 }
 
 /**
@@ -405,8 +406,14 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
             [self.webView loadRequest:request];
             break;
         }
+        case WKWebLoadTypeURL:{
+            NSURLRequest *request = [NSURLRequest requestWithURL:self.loadURL];
+            [self.webView loadRequest:request];
+            break;
+        }
     }
 }
+
 
 /**
  * 页面加载完成 更新LeftBarButtonItems
@@ -500,7 +507,13 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     }];
 }
 
-#pragma mark - set and get
+#pragma mark - set
+
+- (void)setLoadURL:(NSURL *)loadURL {
+    _loadURL = loadURL;
+    self.url = loadURL.absoluteString;
+    self.loadType =  WKWebLoadTypeURL;
+}
 
 - (void)setLoadURLString:(NSString *)loadURLString {
     _loadURLString = loadURLString;
@@ -520,6 +533,9 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     self.url = loadHTMLFilePath;
     self.loadType = WKWebLoadTypeHTMLFilePath;
 }
+
+
+#pragma mark - get
 
 - (WKWebView *)webView{
     if (!_webView) {
@@ -608,11 +624,11 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     return _cancelItem;
 }
 
-- (AXWKScriptMessageHandler *)weakScriptMessageHandler {
-    if (!_weakScriptMessageHandler) {
-        _weakScriptMessageHandler = [AXWKScriptMessageHandler scriptMessageWithHandler:self];
+- (AXWKScriptMessageHandlerHelper *)handlerHelper {
+    if (!_handlerHelper) {
+        _handlerHelper = [AXWKScriptMessageHandlerHelper scriptMessageWithHandler:self];
     }
-    return _weakScriptMessageHandler;
+    return _handlerHelper;
 }
 
 - (NSMutableDictionary *)scriptMessageDict {

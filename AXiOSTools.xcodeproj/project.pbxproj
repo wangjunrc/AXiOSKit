@@ -115,8 +115,8 @@
 		245BD51021E6138000831542 /* NSDateComponents+AXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 245BD4AA21E6137F00831542 /* NSDateComponents+AXTool.m */; };
 		2472144121F0411F00EF9BCC /* AXButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 2472143F21F0411F00EF9BCC /* AXButton.h */; };
 		2472144221F0411F00EF9BCC /* AXButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2472144021F0411F00EF9BCC /* AXButton.m */; };
-		247C382521F31122000F718A /* AXWKScriptMessageHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 247C382321F31122000F718A /* AXWKScriptMessageHandler.h */; };
-		247C382621F31122000F718A /* AXWKScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 247C382421F31122000F718A /* AXWKScriptMessageHandler.m */; };
+		247C382521F31122000F718A /* AXWKScriptMessageHandlerHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 247C382321F31122000F718A /* AXWKScriptMessageHandlerHelper.h */; };
+		247C382621F31122000F718A /* AXWKScriptMessageHandlerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 247C382421F31122000F718A /* AXWKScriptMessageHandlerHelper.m */; };
 		247C382821F32826000F718A /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 247C382721F32825000F718A /* libmp3lame.a */; };
 		249F52D621EDCBF100840340 /* AXUIAssistant.h in Headers */ = {isa = PBXBuildFile; fileRef = 249F52D421EDCBF100840340 /* AXUIAssistant.h */; };
 		249F52D721EDCBF100840340 /* AXUIAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 249F52D521EDCBF100840340 /* AXUIAssistant.m */; };
@@ -414,8 +414,8 @@
 		2472143F21F0411F00EF9BCC /* AXButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXButton.h; sourceTree = "<group>"; };
 		2472144021F0411F00EF9BCC /* AXButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXButton.m; sourceTree = "<group>"; };
 		2472144621F073D700EF9BCC /* AXiOSToolsEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXiOSToolsEnum.h; sourceTree = "<group>"; };
-		247C382321F31122000F718A /* AXWKScriptMessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXWKScriptMessageHandler.h; sourceTree = "<group>"; };
-		247C382421F31122000F718A /* AXWKScriptMessageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXWKScriptMessageHandler.m; sourceTree = "<group>"; };
+		247C382321F31122000F718A /* AXWKScriptMessageHandlerHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXWKScriptMessageHandlerHelper.h; sourceTree = "<group>"; };
+		247C382421F31122000F718A /* AXWKScriptMessageHandlerHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXWKScriptMessageHandlerHelper.m; sourceTree = "<group>"; };
 		247C382721F32825000F718A /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		249F52D421EDCBF100840340 /* AXUIAssistant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUIAssistant.h; sourceTree = "<group>"; };
 		249F52D521EDCBF100840340 /* AXUIAssistant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXUIAssistant.m; sourceTree = "<group>"; };
@@ -733,6 +733,31 @@
 			path = 01AXCategory;
 			sourceTree = "<group>";
 		};
+		2473289E2277D8DD005CF92D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2473289F2277D8F2005CF92D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				24EE7AA621E0F4EF00BF9114 /* AXWKWebVC.h */,
+				24EE7AA721E0F4EF00BF9114 /* AXWKWebVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		247328A02277D8F9005CF92D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				247C382321F31122000F718A /* AXWKScriptMessageHandlerHelper.h */,
+				247C382421F31122000F718A /* AXWKScriptMessageHandlerHelper.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		24EE79BC21E0F48800BF9114 = {
 			isa = PBXGroup;
 			children = (
@@ -957,7 +982,7 @@
 				24EE7A7F21E0F4EF00BF9114 /* AXChoosePay */,
 				24EE7A8E21E0F4EF00BF9114 /* AXWebVC */,
 				24EE7A9421E0F4EF00BF9114 /* AXBaseVC */,
-				24EE7AA521E0F4EF00BF9114 /* AXWKWebVC */,
+				24EE7AA521E0F4EF00BF9114 /* AXWKWeb */,
 				24EE7AA821E0F4EF00BF9114 /* AXBaseAlertVC */,
 				24EE7AAF21E0F4EF00BF9114 /* AXSinglePickVC */,
 				24EE7AB321E0F4EF00BF9114 /* AXDateVC */,
@@ -1046,15 +1071,14 @@
 			path = AXBaseVC;
 			sourceTree = "<group>";
 		};
-		24EE7AA521E0F4EF00BF9114 /* AXWKWebVC */ = {
+		24EE7AA521E0F4EF00BF9114 /* AXWKWeb */ = {
 			isa = PBXGroup;
 			children = (
-				24EE7AA621E0F4EF00BF9114 /* AXWKWebVC.h */,
-				24EE7AA721E0F4EF00BF9114 /* AXWKWebVC.m */,
-				247C382321F31122000F718A /* AXWKScriptMessageHandler.h */,
-				247C382421F31122000F718A /* AXWKScriptMessageHandler.m */,
+				247328A02277D8F9005CF92D /* Model */,
+				2473289F2277D8F2005CF92D /* Controller */,
+				2473289E2277D8DD005CF92D /* View */,
 			);
-			path = AXWKWebVC;
+			path = AXWKWeb;
 			sourceTree = "<group>";
 		};
 		24EE7AA821E0F4EF00BF9114 /* AXBaseAlertVC */ = {
@@ -1414,7 +1438,7 @@
 				24DCAB40221562E500EBA274 /* AXAuthorizationManager.h in Headers */,
 				245BD4F621E6138000831542 /* UICollectionView+AXTool.h in Headers */,
 				245BD4E421E6138000831542 /* UIButton+AXTool.h in Headers */,
-				247C382521F31122000F718A /* AXWKScriptMessageHandler.h in Headers */,
+				247C382521F31122000F718A /* AXWKScriptMessageHandlerHelper.h in Headers */,
 				24EE7BD421E0F4F100BF9114 /* AXMacros_addProperty.h in Headers */,
 				245BD4B421E6138000831542 /* NSString+AXEffective.h in Headers */,
 				24EE7BF221E0F4F100BF9114 /* AXTabBarController.h in Headers */,
@@ -1690,7 +1714,7 @@
 				24EE7C1E21E0F4F100BF9114 /* AXPlayVC.m in Sources */,
 				245BD4EE21E6138000831542 /* UIImageView+AXTool.m in Sources */,
 				245BD4ED21E6138000831542 /* UITextField+AXAction.m in Sources */,
-				247C382621F31122000F718A /* AXWKScriptMessageHandler.m in Sources */,
+				247C382621F31122000F718A /* AXWKScriptMessageHandlerHelper.m in Sources */,
 				245BD4DE21E6138000831542 /* NSNumber+AXTool.m in Sources */,
 				24EE7BD021E0F4F100BF9114 /* AXDataModel.m in Sources */,
 				24EE7C5D21E0F4F100BF9114 /* AXNetManager+Verson.m in Sources */,

@@ -233,24 +233,40 @@
 
 
 - (IBAction)btnAction:(id)sender {
-    NSLog(@"btnAction");
-    UIViewController *testVC = [[UIViewController alloc]init];
-    testVC.view.backgroundColor = UIColor.orangeColor;
-    testVC.preferredContentSize = CGSizeMake(240, 62);
-    testVC.modalPresentationStyle = UIModalPresentationPopover;
-    testVC.popoverPresentationController.delegate = self;
-    testVC.popoverPresentationController.sourceView = sender;
-    testVC.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionDown;
-    testVC.popoverPresentationController.passthroughViews =@[self.view];
-//    testVC.popoverPresentationController.backgroundColor = [UIColor redColor];
+//    NSURL *path = [[NSBundle mainBundle] URLForResource:@"HTML/home" withExtension:@"html"];
+//   NSURL *path =   [NSBundle.ax_mainBundle URLForResource:@"AXHTML.bundle/index" withExtension:@"html"];
+//     NSBundle *ax_mainBundle = [NSBundle ax_mainBundle];
+//
+//    NSBundle *ax_HTMLBundle = [NSBundle ax_HTMLBundle];
+//
+//    
+//    NSString *url =    [[NSBundle ax_HTMLBundle] pathForResource:@"index" ofType:@"html"];
     
-    if (@available(iOS 9.0, *)) {
-        testVC.popoverPresentationController.canOverlapSourceViewRect = YES;
-    } else {
-        
-    }
+    NSURL *path = [[NSBundle ax_HTMLBundle] URLForResource:@"index" withExtension:@"html"];
     
-    [self presentViewController:testVC animated:YES completion:nil];
+    
+    AXWKWebVC *web = [[AXWKWebVC alloc]init];
+    web.loadURL =path;
+    [self.navigationController pushViewController:web animated:YES];
+    
+//    NSLog(@"btnAction");
+//    UIViewController *testVC = [[UIViewController alloc]init];
+//    testVC.view.backgroundColor = UIColor.orangeColor;
+//    testVC.preferredContentSize = CGSizeMake(240, 62);
+//    testVC.modalPresentationStyle = UIModalPresentationPopover;
+//    testVC.popoverPresentationController.delegate = self;
+//    testVC.popoverPresentationController.sourceView = sender;
+//    testVC.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionDown;
+//    testVC.popoverPresentationController.passthroughViews =@[self.view];
+////    testVC.popoverPresentationController.backgroundColor = [UIColor redColor];
+//
+//    if (@available(iOS 9.0, *)) {
+//        testVC.popoverPresentationController.canOverlapSourceViewRect = YES;
+//    } else {
+//
+//    }
+//
+//    [self presentViewController:testVC animated:YES completion:nil];
 }
 
 - (IBAction)btnAc2:(id)sender {

@@ -22,6 +22,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ # html,css,js 放在一个bundle中,放这里,
+ # 如果放resource_bundles,会bundle嵌套,模拟器有缓存,不好实时更新,所以这样写,这里的.bundle与AXiOSTools_ax_mainBundle同级别
+
+ @return NSBundle
+ */
++ (NSBundle *)ax_HTMLBundle;
+
+/**
  当前 Bundle
 
  @param name Bundle名
