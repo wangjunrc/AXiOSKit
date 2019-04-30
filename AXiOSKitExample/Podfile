@@ -1,0 +1,41 @@
+install! 'cocoapods', :warn_for_multiple_pod_sources => false
+platform :ios, '8.0'
+inhibit_all_warnings!
+use_frameworks!
+
+#baseUrl = 'http://git.GitHub.com/ios/'
+#source baseUrl+'axingspecs.git'
+
+workspace 'AXiOSKitExample.xcworkspace'
+
+target 'AXiOSKitExample' do
+    project 'AXiOSKitExample.xcodeproj'
+    
+    pod 'AXiOSKit', :path => '../'
+    
+    #pod 'AXiOSKit' , :git => 'https://github.com/AXinger/AXiOSKit.git'
+    pod 'FLAnimatedImage'
+    pod 'SDWebImage/GIF'
+    pod 'SocketRocket'
+end
+
+target 'AXiOSKit' do
+    project '../AXiOSKit.xcodeproj'
+    
+    pod "AFNetworking"
+    pod "SDWebImage"
+    pod "IQKeyboardManager"
+    pod "MJRefresh"
+    pod "NullSafe"
+    pod "MJExtension"
+    pod "MBProgressHUD"
+    pod "DZNEmptyDataSet"
+    pod "SDCycleScrollView"
+    pod "KVOController"
+    pod "Masonry"
+    pod "GKPhotoBrowser"
+    pod "Aspects"
+    
+end
+
+
