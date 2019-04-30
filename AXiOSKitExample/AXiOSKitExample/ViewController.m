@@ -23,17 +23,15 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-//    NSURL *path = [[NSBundle ax_HTMLBundle] URLForResource:@"index" withExtension:@"html"];
-   NSURL *path =  [NSBundle.mainBundle URLForResource:@"H5.bundle/index" withExtension:@"html"];
     
-    
+    NSURL *path =  [NSBundle.mainBundle URLForResource:@"H5.bundle/index" withExtension:@"html"];
     AXWKWebVC *web = [[AXWKWebVC alloc]init];
-    
     web.loadURL =path;
-        [web addScriptHandler:WebJSHandler.alloc.init forKey:@"JSUseOCFunctionName_test1"];
-//    [web addScriptMessageWithName:@"JSUseOCFunctionName_test1" handler:^(NSString * _Nonnull name, id  _Nonnull body) {
-//        NSLog(@"body>> %@",body);
-//    }];
+  WebJSHandler *obj =  WebJSHandler.alloc.init;
+    NSLog(@"obj  %p",obj);
+    [web addScriptDelegate:obj forKey:@"JSUseOCFunctionName_test1"];
     [self.navigationController pushViewController:web animated:YES];
 }
+
+
 @end

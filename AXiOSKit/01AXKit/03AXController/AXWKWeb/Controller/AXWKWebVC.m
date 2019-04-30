@@ -313,10 +313,10 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     AXWebScriptMessageModel *model = self.scriptMessageModelDict[message.name];
     if (model) {
         
-        id<AXScriptMessageInstanceHandler> obj = model.obj;
+        id<AXScriptMessageDelegate> delegate = model.obj;
         
-        if (obj && [obj respondsToSelector:@selector(webVC:handleMessage:)]) {
-            [obj webVC:self handleMessage:message.body];
+        if (delegate && [delegate respondsToSelector:@selector(webVC:handleMessage:)]) {
+            [delegate webVC:self handleMessage:message.body];
         }
         return;
     }
@@ -337,13 +337,13 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     [self.webView.configuration.userContentController addScriptMessageHandler:self.handlerHelper name:name];
 }
 
-- (void)addScriptHandler:(id<AXScriptMessageInstanceHandler>)instance
-                  forKey:(NSString *)name {
+- (void)addScriptDelegate:(id<AXScriptMessageDelegate>)delegate
+                   forKey:(NSString *)name {
     
-    if (instance && name.length>0 ){
+    if (delegate && name.length>0 ){
         
         AXWebScriptMessageModel *model = [[AXWebScriptMessageModel alloc]init];
-        model.obj = instance;
+        model.obj = delegate;
         
         self.scriptMessageModelDict[name] = model;
         
@@ -367,7 +367,10 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     
-    if (object == self.webView ) {
+    if (object != self.webView ) {
+        
+         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }else{
         
         if ([keyPath isEqualToString:NSStringFromSelector(@selector(estimatedProgress))]) {
             self.progressView.alpha = 1.0f;
@@ -385,9 +388,9 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
             }
         }else if ([keyPath isEqualToString:NSStringFromSelector(@selector(title))]){
             //使用KVO 显示title 更快一点
-            
-            NSString *title = change[@"new"];
             if (self.title.length==0) {
+                
+                NSString *title = change[@"new"];
                 if (title.length>0) {
                     self.title = title;
                 }else{
@@ -397,10 +400,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         }else {
             [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
         }
-        
-    }else{
-        
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+       
     }
 }
 

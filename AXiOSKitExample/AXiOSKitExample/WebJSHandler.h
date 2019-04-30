@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WebJSHandler : NSObject <AXScriptMessageInstanceHandler>
+@interface WebJSHandler : NSObject <AXScriptMessageDelegate>
 
 @end
 

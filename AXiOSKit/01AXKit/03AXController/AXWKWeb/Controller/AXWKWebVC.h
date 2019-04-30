@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 @class AXWKWebVC;
-@protocol AXScriptMessageInstanceHandler <NSObject>
+@protocol AXScriptMessageDelegate <NSObject>
 
 /**
  处理消息
@@ -62,13 +62,13 @@ NS_ASSUME_NONNULL_BEGIN
                          handler:(void (^)(NSString* name, id body))handler;
 
 /**
-  js 回调oc
-
- @param instance 遵守 AXScriptMessageInstanceHandler 协议的 实例
+ js 回调oc
+ 
+ @param delegate 遵守 AXScriptMessageDelegate 协议的 实例
  @param name js与oc 对应的key
  */
-- (void)addScriptHandler:(id<AXScriptMessageInstanceHandler>)instance
-                 forKey:(NSString *)name;
+- (void)addScriptDelegate:(id<AXScriptMessageDelegate>)delegate
+                   forKey:(NSString *)name;
 
 /**
  oc 调用js方法

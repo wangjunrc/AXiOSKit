@@ -13,9 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AXWebScriptMessageModel : NSObject
 
-@property (nonatomic, strong) id obj;
-
-@property (nonatomic, weak) id<AXScriptMessageInstanceHandler> handler;
+@property (nonatomic, strong) id <AXScriptMessageDelegate> obj;
 
 @property (nonatomic, assign) Class objClass;
 
