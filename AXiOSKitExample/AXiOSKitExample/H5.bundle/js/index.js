@@ -1,3 +1,6 @@
+document.write("<script language=javascript src='js/client.js'></script>");
+
+
 
 var button2 = document.getElementById('button2');
 button2.addEventListener('click',function () {
@@ -30,7 +33,12 @@ function button2Click() {
     person.name = 'jim';
     person.age = 12;
     
+alert(isiOS);
+
+if (isiOS) {
+    
     window.webkit.messageHandlers.JSUseOCFunctionName_test1.postMessage(person);
+}
     
 }
 
