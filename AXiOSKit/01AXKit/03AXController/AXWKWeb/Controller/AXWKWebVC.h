@@ -15,9 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
  处理消息
  
  @param webVC webView
- @param message 消息内容
+ @param name 消息名称
+ @param body 消息内容
  */
-- (void)webVC:(AXWKWebVC *)webVC handleMessage:(id)message;
+- (void)webVC:(AXWKWebVC *)webVC messageName:(NSString *)name messageBody:(id)body;
 
 @end
 

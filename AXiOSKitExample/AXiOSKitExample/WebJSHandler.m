@@ -10,7 +10,8 @@
 
 @implementation WebJSHandler
 
-- (void)webVC:(nonnull AXWKWebVC *)webVC handleMessage:(nonnull id)message {
+- (void)webVC:(nonnull AXWKWebVC *)webVC messageName:(NSString *)name messageBody:(nonnull id)message {
+    NSLog(@"WebJSHandler messageName>> %@",name);
     NSLog(@"WebJSHandler message>> %@",message);
     
 }

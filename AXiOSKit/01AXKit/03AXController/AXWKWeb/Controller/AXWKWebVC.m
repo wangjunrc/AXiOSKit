@@ -315,8 +315,8 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         
         id<AXScriptMessageDelegate> delegate = model.obj;
         
-        if (delegate && [delegate respondsToSelector:@selector(webVC:handleMessage:)]) {
-            [delegate webVC:self handleMessage:message.body];
+        if (delegate && [delegate respondsToSelector:@selector(webVC:messageName:messageBody:)]) {
+            [delegate webVC:self messageName:message.name messageBody:message.body];
         }
         return;
     }
