@@ -30,6 +30,9 @@
   WebJSHandler *obj =  WebJSHandler.alloc.init;
     NSLog(@"obj  %p",obj);
     [web addScriptDelegate:obj forKey:@"JSUseOCFunctionName_test1"];
+//    [web addScriptMessageWithName:@"JSUseOCFunctionName_test1" handler:^(NSString * _Nonnull name, id  _Nonnull body) {
+//        AXLog(@"%@",body);
+//    }];
     [self.navigationController pushViewController:web animated:YES];
 }
 

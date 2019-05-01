@@ -331,15 +331,24 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 -(void)addScriptMessageWithName:(NSString *)name
                         handler:(void(^)(NSString* name, id body) )handler {
     
+    if (self.scriptMessageDict[name] !=nil || self.scriptMessageModelDict[name] !=nil) {
+        AXLog(@"addScriptMessageHandler重复注册");
+        return;
+    }
     if (handler) {
         self.scriptMessageDict[name] = handler;
+        [self.webView.configuration.userContentController addScriptMessageHandler:self.handlerHelper name:name];
     }
-    [self.webView.configuration.userContentController addScriptMessageHandler:self.handlerHelper name:name];
 }
 
 - (void)addScriptDelegate:(id<AXScriptMessageDelegate>)delegate
                    forKey:(NSString *)name {
     
+    if (self.scriptMessageDict[name] !=nil || self.scriptMessageModelDict[name] !=nil) {
+        AXLog(@"addScriptMessageHandler重复注册");
+        return;
+    }
+
     if (delegate && name.length>0 ){
         
         AXWebScriptMessageModel *model = [[AXWebScriptMessageModel alloc]init];
