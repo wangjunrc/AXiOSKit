@@ -33,7 +33,7 @@ target 'AXiOSKit' do
     pod "SDCycleScrollView"
     pod "KVOController"
     pod "Masonry"
-    pod "GKPhotoBrowser"
+    #pod "GKPhotoBrowser"
     pod "Aspects"
     
 end

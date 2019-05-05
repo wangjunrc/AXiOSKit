@@ -688,7 +688,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     self.webView.scrollView.delegate = nil;
     [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
     [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(title))];
-    axLong_dealloc;
+//    axLong_dealloc;
 }
 
 //- (UIInterfaceOrientationMask)supportedInterfaceOrientations{

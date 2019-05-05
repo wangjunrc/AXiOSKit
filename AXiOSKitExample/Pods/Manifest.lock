@@ -19,7 +19,6 @@ PODS:
     - AFNetworking
     - Aspects
     - DZNEmptyDataSet
-    - GKPhotoBrowser
     - IQKeyboardManager
     - KVOController
     - Masonry
@@ -31,8 +30,6 @@ PODS:
     - SDWebImage
   - DZNEmptyDataSet (1.8.1)
   - FLAnimatedImage (1.0.12)
-  - GKPhotoBrowser (1.4.5):
-    - SDWebImage
   - IQKeyboardManager (6.2.0)
   - KVOController (1.2.0)
   - Masonry (1.1.0)
@@ -56,7 +53,6 @@ DEPENDENCIES:
   - AXiOSKit (from `../`)
   - DZNEmptyDataSet
   - FLAnimatedImage
-  - GKPhotoBrowser
   - IQKeyboardManager
   - KVOController
   - Masonry
@@ -75,7 +71,6 @@ SPEC REPOS:
     - Aspects
     - DZNEmptyDataSet
     - FLAnimatedImage
-    - GKPhotoBrowser
     - IQKeyboardManager
     - KVOController
     - Masonry
@@ -94,10 +89,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  AXiOSKit: c0162ab7c114ed15b7e2863ffbdf62ae3e1a6786
+  AXiOSKit: c19e440bdbbc4ce30dfa282e69120bd7ad8b1d46
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  GKPhotoBrowser: 07d9af1a29c81da9eef195dd4bc02230f0cf76c4
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -109,6 +103,6 @@ SPEC CHECKSUMS:
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
-PODFILE CHECKSUM: d58ba7986c685cbfe0357cf6bf5d83ab612543f6
+PODFILE CHECKSUM: e1203cea17186c7d661f6ef819e0762f92e254fe
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

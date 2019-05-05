@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
     s.dependency "SDCycleScrollView"
     s.dependency "KVOController"
     s.dependency "Masonry"
-    s.dependency "GKPhotoBrowser"
+    #s.dependency "GKPhotoBrowser"
     s.dependency "Aspects"
 end
 
