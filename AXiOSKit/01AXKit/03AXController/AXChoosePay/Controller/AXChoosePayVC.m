@@ -9,7 +9,8 @@
 #import "AXChoosePayVC.h"
 #import "AXiOSKit.h"
 #import "AXChoosePayStyleVC.h"
-
+#import "UIButton+AXKit.h"
+#import "UIImage+AXBundle.h"
 @interface AXChoosePayVC ()
 
 @property (weak, nonatomic) IBOutlet UILabel *orderMsgLabel;
@@ -38,6 +39,7 @@
     self.axTouchesBeganDismiss = NO;
     self.orderMsgLabel.text = nil;
     self.amountLabel.text = @"0元";
+    [self.closeBtn setImage:[UIImage axBundle_imageNamed:@"ax_close"] forState:UIControlStateNormal];
     
     if (self.orderMsgStr.length>0) {
         self.orderMsgLabel.text = self.orderMsgStr;

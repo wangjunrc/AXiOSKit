@@ -26,12 +26,6 @@ typedef NS_ENUM(NSUInteger, AXAlertControllerStyle){
  */
 @property (nonatomic, assign)BOOL axTouchesBeganDismiss;
 
-
-/**
- alertControllerStyle 样式
- */
-@property (nonatomic, assign,readonly)AXAlertControllerStyle axAlertControllerStyle;
-
 /**
  子vc重写此方法,更改 alertControllerStyle 样式
 

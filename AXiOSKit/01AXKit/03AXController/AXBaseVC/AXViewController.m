@@ -14,6 +14,13 @@
 
 @implementation AXViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self =[super initWithNibName:nibNameOrNil bundle:[NSBundle bundleForClass:self.class]]) {
+        
+    }
+    return self;
+}
+
 +(AXNavigationController *)navigationVC{
     
     AXViewController *myVC = [[self alloc]init];

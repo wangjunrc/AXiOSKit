@@ -21,8 +21,11 @@ Pod::Spec.new do |s|
     # html,css,js 放在一个bundle中,放这里,
     # 如果放resource_bundles,会bundle嵌套,模拟器有缓存,不好实时更新,所以这样写,这里的.bundle与AXiOSKit_ax_mainBundle同级别
 #    s.resource = 'AXiOSKit/**/*.{xib,bundle}'
-     s.resources = ['AXiOSKit/**/*.xib', 'AXiOSKit/**/*.bundle']
-   
+     s.resources = ['AXiOSKit/**/*.xib','AXiOSKit/**/*.nib', 'AXiOSKit/**/*.bundle']
+
+#    s.resources = ['AXiOSKit/**/*.bundle']
+#    spec.resources = "Resources/*.png"
+
     # 允许定义当前 Pod 库的资源包的 名称和文件 。用 hash 的形式来声明，key 是 bundle 的名称，value 是需要包括的文件的通配 patterns。
     s.resource_bundles = {
         'AXiOSKitResource' => ['AXiOSKit/**/*.{xcassets,gif,json,strings}'],

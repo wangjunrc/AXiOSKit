@@ -805,7 +805,6 @@ NSLog(@"obj2>> %@",obj2);
 <string>使用此功能需要访问您的相册</string>
 <key>NSPhotoLibraryUsageDescription</key>
 <string>使用此功能需要访问您的相册</string>
-<key>SUNINGSPORTS</key>
 <key>NSAppTransportSecurity</key>
 <dict>
 <key>NSAllowsArbitraryLoads</key>
@@ -991,5 +990,17 @@ testVC.popoverPresentationController.canOverlapSourceViewRect = YES;
 }
 
 [self presentViewController:testVC animated:YES completion:nil];
+
+```
+
+
+# pod 不能加载xib
+```
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+if (self =[super initWithNibName:nibNameOrNil bundle:[NSBundle bundleForClass:self.class]]) {
+
+}
+return self;
+}
 
 ```

@@ -53,4 +53,8 @@ return UITableViewAutomaticDimension;\
 return UITableViewAutomaticDimension;\
 }\
 
+
+#define AX_NIB(name) [UINib nibWithNibName:name bundle:[NSBundle bundleForClass:self.class]]
+
+
 #endif /* AXMacros_value_h */

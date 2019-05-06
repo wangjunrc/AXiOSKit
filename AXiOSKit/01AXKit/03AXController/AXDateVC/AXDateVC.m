@@ -20,7 +20,6 @@
 
 @implementation AXDateVC
 
-
 - (AXAlertControllerStyle)axAlertControllerStyle{
     return AXAlertControllerStyleUpward;
 }

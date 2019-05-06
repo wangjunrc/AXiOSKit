@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2415E9AE227FD3DB00F969A7 /* AAAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415E9AC227FD3DB00F969A7 /* AAAViewController.m */; };
+		2415E9AF227FD3DB00F969A7 /* AAAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2415E9AD227FD3DB00F969A7 /* AAAViewController.xib */; };
+		2415E9B3227FDDA000F969A7 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415E9B1227FDDA000F969A7 /* BViewController.m */; };
+		2415E9B4227FDDA000F969A7 /* BViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2415E9B2227FDDA000F969A7 /* BViewController.xib */; };
 		242702452278318F00842E85 /* WebJSHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 242702442278318F00842E85 /* WebJSHandler.m */; };
 		24732B782277FE79005CF92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B772277FE79005CF92D /* AppDelegate.m */; };
 		24732B7B2277FE79005CF92D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B7A2277FE79005CF92D /* ViewController.m */; };
@@ -20,6 +24,12 @@
 
 /* Begin PBXFileReference section */
 		19A06B8B5C535464B31E65C1 /* Pods-AXiOSKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.release.xcconfig"; sourceTree = "<group>"; };
+		2415E9AB227FD3DB00F969A7 /* AAAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAAViewController.h; sourceTree = "<group>"; };
+		2415E9AC227FD3DB00F969A7 /* AAAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAAViewController.m; sourceTree = "<group>"; };
+		2415E9AD227FD3DB00F969A7 /* AAAViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AAAViewController.xib; sourceTree = "<group>"; };
+		2415E9B0227FDDA000F969A7 /* BViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
+		2415E9B1227FDDA000F969A7 /* BViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
+		2415E9B2227FDDA000F969A7 /* BViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BViewController.xib; sourceTree = "<group>"; };
 		242702432278318F00842E85 /* WebJSHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebJSHandler.h; sourceTree = "<group>"; };
 		242702442278318F00842E85 /* WebJSHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebJSHandler.m; sourceTree = "<group>"; };
 		24732B732277FE79005CF92D /* AXiOSKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +86,12 @@
 				24732B7A2277FE79005CF92D /* ViewController.m */,
 				242702432278318F00842E85 /* WebJSHandler.h */,
 				242702442278318F00842E85 /* WebJSHandler.m */,
+				2415E9AB227FD3DB00F969A7 /* AAAViewController.h */,
+				2415E9AC227FD3DB00F969A7 /* AAAViewController.m */,
+				2415E9AD227FD3DB00F969A7 /* AAAViewController.xib */,
+				2415E9B0227FDDA000F969A7 /* BViewController.h */,
+				2415E9B1227FDDA000F969A7 /* BViewController.m */,
+				2415E9B2227FDDA000F969A7 /* BViewController.xib */,
 				24732B7C2277FE79005CF92D /* Main.storyboard */,
 				24732B7F2277FE7A005CF92D /* Assets.xcassets */,
 				24732B812277FE7A005CF92D /* LaunchScreen.storyboard */,
@@ -92,7 +108,6 @@
 				D21DE98ED5F2F46349743687 /* Pods-AXiOSKitExample.debug.xcconfig */,
 				19A06B8B5C535464B31E65C1 /* Pods-AXiOSKitExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -164,7 +179,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				24732B832277FE7A005CF92D /* LaunchScreen.storyboard in Resources */,
+				2415E9AF227FD3DB00F969A7 /* AAAViewController.xib in Resources */,
 				24732B802277FE7A005CF92D /* Assets.xcassets in Resources */,
+				2415E9B4227FDDA000F969A7 /* BViewController.xib in Resources */,
 				2498E4692278375A0024EAE6 /* H5.bundle in Resources */,
 				24732B7E2277FE79005CF92D /* Main.storyboard in Resources */,
 			);
@@ -253,7 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				24732B7B2277FE79005CF92D /* ViewController.m in Sources */,
+				2415E9B3227FDDA000F969A7 /* BViewController.m in Sources */,
 				24732B862277FE7A005CF92D /* main.m in Sources */,
+				2415E9AE227FD3DB00F969A7 /* AAAViewController.m in Sources */,
 				242702452278318F00842E85 /* WebJSHandler.m in Sources */,
 				24732B782277FE79005CF92D /* AppDelegate.m in Sources */,
 			);

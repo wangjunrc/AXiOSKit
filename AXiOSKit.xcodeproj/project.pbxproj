@@ -1015,12 +1015,12 @@
 		247329822277FBB8005CF92D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				247329832277FBB8005CF92D /* AXChoosePayVC.h */,
-				247329842277FBB8005CF92D /* AXChoosePayStyleVC.m */,
-				247329852277FBB8005CF92D /* AXChoosePayVC.xib */,
-				247329862277FBB8005CF92D /* AXChoosePayStyleVC.xib */,
 				247329872277FBB8005CF92D /* AXChoosePayStyleVC.h */,
+				247329842277FBB8005CF92D /* AXChoosePayStyleVC.m */,
+				247329862277FBB8005CF92D /* AXChoosePayStyleVC.xib */,
+				247329832277FBB8005CF92D /* AXChoosePayVC.h */,
 				247329882277FBB8005CF92D /* AXChoosePayVC.m */,
+				247329852277FBB8005CF92D /* AXChoosePayVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1082,12 +1082,12 @@
 		247329A72277FBB8005CF92D /* AXBaseAlertVC */ = {
 			isa = PBXGroup;
 			children = (
-				247329A82277FBB8005CF92D /* AXAlertCentreAnimation.m */,
-				247329A92277FBB8005CF92D /* AXBaseAlertVC.m */,
-				247329AA2277FBB8005CF92D /* AXAlerUpwardAnimation.h */,
 				247329AB2277FBB8005CF92D /* AXAlertCentreAnimation.h */,
-				247329AC2277FBB8005CF92D /* AXBaseAlertVC.h */,
+				247329A82277FBB8005CF92D /* AXAlertCentreAnimation.m */,
+				247329AA2277FBB8005CF92D /* AXAlerUpwardAnimation.h */,
 				247329AD2277FBB8005CF92D /* AXAlerUpwardAnimation.m */,
+				247329AC2277FBB8005CF92D /* AXBaseAlertVC.h */,
+				247329A92277FBB8005CF92D /* AXBaseAlertVC.m */,
 			);
 			path = AXBaseAlertVC;
 			sourceTree = "<group>";

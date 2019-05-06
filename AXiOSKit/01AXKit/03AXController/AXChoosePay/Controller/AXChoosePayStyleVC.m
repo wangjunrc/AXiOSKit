@@ -9,6 +9,7 @@
 #import "AXChoosePayStyleVC.h"
 #import "AXChoosePayStyleCell.h"
 #import "AXiOSKit.h"
+
 @interface AXChoosePayStyleVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -27,7 +28,8 @@
     self.axTouchesBeganDismiss = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView registerNib:ax_Nib(@"AXChoosePayStyleCell") forCellReuseIdentifier:k_axCellID];
+    
+    [self.tableView registerNib:AX_NIB(@"AXChoosePayStyleCell") forCellReuseIdentifier:k_axCellID];
     axTableFooterViewZero;
 }
 
@@ -44,7 +46,7 @@
     
     AXChoosePayModel *model = self.dataArray[indexPath.row];
     
-    cell.logoImageView.image = [UIImage imageNamed:model.imageName];
+    cell.logoImageView.image = [UIImage axBundle_imageNamed:model.imageName];
     cell.nameLabel.text = model.name;
     
     if (self.selectIndex == indexPath.row) {

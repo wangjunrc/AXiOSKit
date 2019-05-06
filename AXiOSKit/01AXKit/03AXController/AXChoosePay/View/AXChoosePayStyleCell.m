@@ -8,6 +8,8 @@
 
 #import "AXChoosePayStyleCell.h"
 #import "UIView+AXFrame.h"
+#import "UIImage+AXBundle.h"
+
 @implementation AXChoosePayStyleCell
 
 - (void)awakeFromNib {
@@ -15,7 +17,8 @@
     // Initialization code
     self.selectedBackgroundView = [[UIView alloc]init];
     self.selectedBackgroundView.backgroundColor = [UIColor clearColor];
-    
+    self.selectImageView.image = [UIImage axBundle_imageNamed:@"ax_checkBox_none"];
+    self.selectImageView.highlightedImage = [UIImage axBundle_imageNamed:@"ax_checkBox_select"];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
