@@ -23,10 +23,12 @@
 - (AXAlertControllerStyle)axAlertControllerStyle{
     return AXAlertControllerStyleUpward;
 }
+- (UIView *)axAlertControllerView {
+    return self.contentView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.axContentView = self.contentView;
     self.datePicker.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.datePicker.datePickerMode = UIDatePickerModeDate;
 }

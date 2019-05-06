@@ -42,11 +42,11 @@
      
         toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
         
-        toVC.axContentView.center = CGPointMake(containerView.center.x, containerView.bounds.size.height);
+        toVC.axAlertControllerView.center = CGPointMake(containerView.center.x, containerView.bounds.size.height);
         
         [UIView animateWithDuration:duration animations:^{
             
-            toVC.axContentView.center = containerView.center;
+            toVC.axAlertControllerView.center = containerView.center;
             
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];

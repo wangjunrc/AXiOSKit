@@ -21,10 +21,11 @@
 - (AXAlertControllerStyle)axAlertControllerStyle{
     return AXAlertControllerStyleUpward;
 }
-
+- (UIView *)axAlertControllerView {
+    return self.contentView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.axContentView = self.contentView;
     self.axTouchesBeganDismiss = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

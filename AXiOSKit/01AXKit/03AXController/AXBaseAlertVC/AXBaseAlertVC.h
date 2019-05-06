@@ -16,10 +16,7 @@ typedef NS_ENUM(NSUInteger, AXAlertControllerStyle){
 
 @interface AXBaseAlertVC : AXViewController
 
-/**
- 自定义,需要显示的view 子控制器进行赋值
- */
-@property (nonatomic, strong) UIView *axContentView;
+
 
 /**
  是否touchesBegan,dismiss
@@ -32,5 +29,10 @@ typedef NS_ENUM(NSUInteger, AXAlertControllerStyle){
  @return AXAlertControllerStyle
  */
 - (AXAlertControllerStyle )axAlertControllerStyle;
+
+/**
+ 自定义,需要显示的view 子控制器进行赋值
+ */
+-(UIView *)axAlertControllerView;
 
 @end

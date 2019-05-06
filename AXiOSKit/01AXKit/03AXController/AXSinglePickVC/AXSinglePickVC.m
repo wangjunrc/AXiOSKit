@@ -37,11 +37,11 @@
     
     return AXAlertControllerStyleUpward;
 }
-
+- (UIView *)axAlertControllerView {
+    return self.contentView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.axContentView = self.contentView;
 }
 
 #pragma mark - UIPicker Delegate

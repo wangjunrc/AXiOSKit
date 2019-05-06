@@ -1059,22 +1059,22 @@
 		247329962277FBB8005CF92D /* AXBaseVC */ = {
 			isa = PBXGroup;
 			children = (
-				247329972277FBB8005CF92D /* AXNavigationController.h */,
-				247329982277FBB8005CF92D /* AXFullLayout.h */,
-				247329992277FBB8005CF92D /* AXTableViewController.h */,
-				2473299A2277FBB8005CF92D /* AXCollectionViewController.m */,
-				2473299B2277FBB8005CF92D /* AXHalfWidthLayout.m */,
-				2473299C2277FBB8005CF92D /* AXFullLayout2.h */,
-				2473299D2277FBB8005CF92D /* AXTabBarController.h */,
-				2473299E2277FBB8005CF92D /* AXViewController.m */,
-				2473299F2277FBB8005CF92D /* AXFullLayout.m */,
-				247329A02277FBB8005CF92D /* AXNavigationController.m */,
 				247329A12277FBB8005CF92D /* AXCollectionViewController.h */,
-				247329A22277FBB8005CF92D /* AXTableViewController.m */,
-				247329A32277FBB8005CF92D /* AXTabBarController.m */,
+				2473299A2277FBB8005CF92D /* AXCollectionViewController.m */,
+				247329982277FBB8005CF92D /* AXFullLayout.h */,
+				2473299F2277FBB8005CF92D /* AXFullLayout.m */,
+				2473299C2277FBB8005CF92D /* AXFullLayout2.h */,
 				247329A42277FBB8005CF92D /* AXFullLayout2.m */,
 				247329A52277FBB8005CF92D /* AXHalfWidthLayout.h */,
+				2473299B2277FBB8005CF92D /* AXHalfWidthLayout.m */,
+				247329972277FBB8005CF92D /* AXNavigationController.h */,
+				247329A02277FBB8005CF92D /* AXNavigationController.m */,
+				2473299D2277FBB8005CF92D /* AXTabBarController.h */,
+				247329A32277FBB8005CF92D /* AXTabBarController.m */,
+				247329992277FBB8005CF92D /* AXTableViewController.h */,
+				247329A22277FBB8005CF92D /* AXTableViewController.m */,
 				247329A62277FBB8005CF92D /* AXViewController.h */,
+				2473299E2277FBB8005CF92D /* AXViewController.m */,
 			);
 			path = AXBaseVC;
 			sourceTree = "<group>";

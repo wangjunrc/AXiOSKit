@@ -64,21 +64,21 @@
 //        popAnimation.timingFunctions = @[[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
 //                                         [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
 //                                         [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-//        [toVC.axContentView.layer addAnimation:popAnimation forKey:nil];
+//        [toVC.axAlertControllerView.layer addAnimation:popAnimation forKey:nil];
 //        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         
         
         toVC.view.frame = containerView.bounds;
 
         toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-        CGAffineTransform oldTransform = toVC.axContentView.transform;
-        toVC.axContentView.transform = CGAffineTransformScale(oldTransform, 0.3, 0.3);
-        toVC.axContentView.center = containerView.center;
+        CGAffineTransform oldTransform = toVC.axAlertControllerView.transform;
+        toVC.axAlertControllerView.transform = CGAffineTransformScale(oldTransform, 0.3, 0.3);
+        toVC.axAlertControllerView.center = containerView.center;
 
         [UIView animateWithDuration:duration animations:^{
 
             toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-            toVC.axContentView.transform = oldTransform;
+            toVC.axAlertControllerView.transform = oldTransform;
 
         } completion:^(BOOL finished) {
 

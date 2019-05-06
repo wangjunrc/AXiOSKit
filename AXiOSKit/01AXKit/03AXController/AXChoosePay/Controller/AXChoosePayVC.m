@@ -31,11 +31,11 @@
 @end
 
 @implementation AXChoosePayVC
-
+- (UIView *)axAlertControllerView {
+    return self.contentView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.axContentView = self.contentView;
     self.axTouchesBeganDismiss = NO;
     self.orderMsgLabel.text = nil;
     self.amountLabel.text = @"0元";
