@@ -1,8 +1,9 @@
 //
 //  AXiOSKit.h
 //  AXiOSKit
+//  https://github.com/AXinger/AXiOSKit.git
 //
-//  Created by AXing on 2019/4/30.
+//  Created by AXing on 2017/4/30.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
@@ -100,11 +101,15 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "AXNetManager.h"
 #import "NSBundle+AXBundle.h"
 
-#if __has_include("Masonry.h")
+#if __has_include(<Masonry/Masonry.h>)
 #import <Masonry/Masonry.h>
+#elif __has_include("Masonry.h")
+#import "Masonry.h"
 #endif
 
-#if __has_include("IQKeyboardManager.h")
+#if __has_include(<IQKeyboardManager/IQKeyboardManager.h>)
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#elif __has_include("IQKeyboardManager.h")
 #import "IQKeyboardManager.h"
 #endif
 

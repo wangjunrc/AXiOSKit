@@ -13,7 +13,12 @@ target 'AXiOSKitExample' do
     
     pod 'AXiOSKit', :path => '../'
     
-    #pod 'AXiOSKit' , :git => 'https://github.com/AXinger/AXiOSKit.git'
+    
+     
+    
+#    pod 'AXiOSKit' , :git => 'https://github.com/AXinger/AXiOSKit.git', :branch => 'release/20190530_new'
+
+    
     pod 'FLAnimatedImage'
     pod 'SDWebImage/GIF'
     pod 'SocketRocket'
