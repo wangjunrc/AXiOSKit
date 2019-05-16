@@ -84,16 +84,16 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     
-    //    NSURL *path =  [NSBundle.mainBundle URLForResource:@"H5.bundle/index" withExtension:@"html"];
-    //    AXWKWebVC *web = [[AXWKWebVC alloc]init];
-    //    web.loadURL =path;
+        NSURL *path =  [NSBundle.mainBundle URLForResource:@"H5.bundle/index" withExtension:@"html"];
+        AXWKWebVC *web = [[AXWKWebVC alloc]init];
+        web.loadURL =path;
     //  WebJSHandler *obj =  WebJSHandler.alloc.init;
     //    NSLog(@"obj  %p",obj);
     //    [web addScriptDelegate:obj forKey:@"JSUseOCFunctionName_test1"];
     ////    [web addScriptMessageWithName:@"JSUseOCFunctionName_test1" handler:^(NSString * _Nonnull name, id  _Nonnull body) {
     ////        AXLog(@"%@",body);
     ////    }];
-    //    [self.navigationController pushViewController:web animated:YES];
+        [self.navigationController pushViewController:web animated:YES];
     
     //    UISplitViewController *vc = [[UISplitViewController alloc]init];
     //    vc.maximumPrimaryColumnWidth = 30.f;

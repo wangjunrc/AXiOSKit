@@ -1068,3 +1068,58 @@ NSLog(@"向下滑动");
 }
 
 ```
+
+# CABasicAnimation
+```
+
+CABasicAnimation *baseicAnimation = [CABasicAnimation animationWithKeyPath:@"position.x"];
+baseicAnimation.delegate = self;
+
+baseicAnimation.fromValue = @(0);
+baseicAnimation.toValue = @(toValue);
+baseicAnimation.duration = time;
+baseicAnimation.removedOnCompletion = NO;
+baseicAnimation.fillMode = kCAFillModeForwards;
+baseicAnimation.beginTime = CACurrentMediaTime();
+
+[self.progressLine.layer addAnimation:baseicAnimation forKey:@"videoProcessing_progressLine_move_x"];
+
+
+/**
+*  暂停
+*
+*  @param layer 被停止的layer
+*/
+- (void)pauseLayer:(CALayer*)layer{
+
+CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
+
+CFTimeInterval time = self.spt_width * self.timeScale;
+CFTimeInterval palyTime = pausedTime - self.beginMediaTime;
+CGFloat toValue = self.previewView.spt_width;
+self.processOffset = palyTime/time * toValue;
+
+
+
+layer.speed = 0.0;
+layer.timeOffset = pausedTime;
+
+
+
+}
+
+/**
+*  恢复
+*
+*  @param layer 被恢复的layer
+*/
+- (void)resumeLayer:(CALayer*)layer{
+CFTimeInterval pausedTime = [layer timeOffset];
+layer.speed = 1.0;
+layer.timeOffset = 0.0;
+layer.beginTime = 0.0;
+CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+layer.beginTime = timeSincePause;
+}
+
+```

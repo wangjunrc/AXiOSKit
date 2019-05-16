@@ -2,14 +2,14 @@ document.write("<script language=javascript src='js/client.js'></script>");
 
 
 
-var button2 = document.getElementById('button2');
-button2.addEventListener('click',function () {
+var button1 = document.getElementById('button1');
+button1.addEventListener('click',function () {
                          
-                         button2Click();
+                         buttonClick1();
                          });
 
-document.getElementById('button3').addEventListener('click',function () {
-                                                    button3Click();
+document.getElementById('button2').addEventListener('click',function () {
+                                                    buttonClick2();
                                                     });
 
 
@@ -27,24 +27,32 @@ function showAler2() {
 
 
 // js调oc 原生注入方式
-function button2Click() {
+function buttonClick1() {
     
     var person = new Person();
     person.name = 'jim';
     person.age = 12;
     
-alert(isiOS);
-
-if (isiOS) {
+    alert(isiOS);
     
-    window.webkit.messageHandlers.JSUseOCFunctionName_test1.postMessage(person);
-}
+    if (isiOS) {
+        window.webkit.messageHandlers.JSUseOCFunctionName_test1.postMessage(person);
+    }
     
 }
 
-function button3Click() {
+function buttonClick2() {
     //        alert('JSUseOCFunctionName_test1');
-    window.webkit.messageHandlers.JSUseOCFunctionName_test2.postMessage('tom');
+    
+//    alert('window.webkit>> '+window.webkit);
+//    alert('window.webkit.messageHandlers>> '+window.webkit.messageHandlers);
+    window.webkit&&window.webkit.messageHandlers
+    if(window.webki&&window.webkit.messageHandlers){
+      alert("ios");
+    }else{
+        alert("其他");
+    }
+    //    window.webkit.messageHandlers.JSUseOCFunctionName_test2.postMessage('tom');
 }
 
 function buttonClick() {
@@ -77,7 +85,7 @@ function iosWeixinPay() {
     globalPerson.name = 'tom'
     globalPerson.age = 12
     
-   
+    
     
 }
 
