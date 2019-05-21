@@ -12,6 +12,10 @@
 		2415E9B3227FDDA000F969A7 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415E9B1227FDDA000F969A7 /* BViewController.m */; };
 		2415E9B4227FDDA000F969A7 /* BViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2415E9B2227FDDA000F969A7 /* BViewController.xib */; };
 		242702452278318F00842E85 /* WebJSHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 242702442278318F00842E85 /* WebJSHandler.m */; };
+		245B6BF02293E99800FD2BA9 /* SolveCrashHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B6BEF2293E99800FD2BA9 /* SolveCrashHelp.m */; };
+		245B6BF32293E9A700FD2BA9 /* SC_CrashMethodProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B6BF12293E9A700FD2BA9 /* SC_CrashMethodProxy.m */; };
+		245B6BF62293E9B800FD2BA9 /* NSObject+AFCrashExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B6BF42293E9B700FD2BA9 /* NSObject+AFCrashExtension.m */; };
+		245B6BF92293EBB100FD2BA9 /* SolveCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B6BF82293EBB100FD2BA9 /* SolveCrash.m */; };
 		24732B782277FE79005CF92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B772277FE79005CF92D /* AppDelegate.m */; };
 		24732B7B2277FE79005CF92D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B7A2277FE79005CF92D /* ViewController.m */; };
 		24732B7E2277FE79005CF92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24732B7C2277FE79005CF92D /* Main.storyboard */; };
@@ -32,6 +36,14 @@
 		2415E9B2227FDDA000F969A7 /* BViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BViewController.xib; sourceTree = "<group>"; };
 		242702432278318F00842E85 /* WebJSHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebJSHandler.h; sourceTree = "<group>"; };
 		242702442278318F00842E85 /* WebJSHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebJSHandler.m; sourceTree = "<group>"; };
+		245B6BEE2293E99800FD2BA9 /* SolveCrashHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolveCrashHelp.h; sourceTree = "<group>"; };
+		245B6BEF2293E99800FD2BA9 /* SolveCrashHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolveCrashHelp.m; sourceTree = "<group>"; };
+		245B6BF12293E9A700FD2BA9 /* SC_CrashMethodProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SC_CrashMethodProxy.m; sourceTree = "<group>"; };
+		245B6BF22293E9A700FD2BA9 /* SC_CrashMethodProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_CrashMethodProxy.h; sourceTree = "<group>"; };
+		245B6BF42293E9B700FD2BA9 /* NSObject+AFCrashExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AFCrashExtension.m"; sourceTree = "<group>"; };
+		245B6BF52293E9B800FD2BA9 /* NSObject+AFCrashExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AFCrashExtension.h"; sourceTree = "<group>"; };
+		245B6BF72293EBB100FD2BA9 /* SolveCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolveCrash.h; sourceTree = "<group>"; };
+		245B6BF82293EBB100FD2BA9 /* SolveCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolveCrash.m; sourceTree = "<group>"; };
 		24732B732277FE79005CF92D /* AXiOSKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24732B762277FE79005CF92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24732B772277FE79005CF92D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -59,6 +71,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		245B6BFA2293EE2C00FD2BA9 /* Test_Crash */ = {
+			isa = PBXGroup;
+			children = (
+				245B6BF52293E9B800FD2BA9 /* NSObject+AFCrashExtension.h */,
+				245B6BF42293E9B700FD2BA9 /* NSObject+AFCrashExtension.m */,
+				245B6BF22293E9A700FD2BA9 /* SC_CrashMethodProxy.h */,
+				245B6BF12293E9A700FD2BA9 /* SC_CrashMethodProxy.m */,
+				245B6BF72293EBB100FD2BA9 /* SolveCrash.h */,
+				245B6BF82293EBB100FD2BA9 /* SolveCrash.m */,
+				245B6BEE2293E99800FD2BA9 /* SolveCrashHelp.h */,
+				245B6BEF2293E99800FD2BA9 /* SolveCrashHelp.m */,
+			);
+			path = Test_Crash;
+			sourceTree = "<group>";
+		};
+		245B6BFB2293EE4500FD2BA9 /* Test_VC */ = {
+			isa = PBXGroup;
+			children = (
+				2415E9AB227FD3DB00F969A7 /* AAAViewController.h */,
+				2415E9AC227FD3DB00F969A7 /* AAAViewController.m */,
+				2415E9AD227FD3DB00F969A7 /* AAAViewController.xib */,
+				2415E9B0227FDDA000F969A7 /* BViewController.h */,
+				2415E9B1227FDDA000F969A7 /* BViewController.m */,
+				2415E9B2227FDDA000F969A7 /* BViewController.xib */,
+			);
+			path = Test_VC;
+			sourceTree = "<group>";
+		};
+		245B6BFC2293EE6C00FD2BA9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2498E4682278375A0024EAE6 /* H5.bundle */,
+				24732B7F2277FE7A005CF92D /* Assets.xcassets */,
+				24732B842277FE7A005CF92D /* Info.plist */,
+				24732B852277FE7A005CF92D /* main.m */,
+				24732B812277FE7A005CF92D /* LaunchScreen.storyboard */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 		24732B6A2277FE79005CF92D = {
 			isa = PBXGroup;
 			children = (
@@ -80,24 +132,16 @@
 		24732B752277FE79005CF92D /* AXiOSKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				245B6BFC2293EE6C00FD2BA9 /* Resource */,
+				245B6BFB2293EE4500FD2BA9 /* Test_VC */,
+				245B6BFA2293EE2C00FD2BA9 /* Test_Crash */,
 				24732B762277FE79005CF92D /* AppDelegate.h */,
 				24732B772277FE79005CF92D /* AppDelegate.m */,
+				24732B7C2277FE79005CF92D /* Main.storyboard */,
 				24732B792277FE79005CF92D /* ViewController.h */,
 				24732B7A2277FE79005CF92D /* ViewController.m */,
 				242702432278318F00842E85 /* WebJSHandler.h */,
 				242702442278318F00842E85 /* WebJSHandler.m */,
-				2415E9AB227FD3DB00F969A7 /* AAAViewController.h */,
-				2415E9AC227FD3DB00F969A7 /* AAAViewController.m */,
-				2415E9AD227FD3DB00F969A7 /* AAAViewController.xib */,
-				2415E9B0227FDDA000F969A7 /* BViewController.h */,
-				2415E9B1227FDDA000F969A7 /* BViewController.m */,
-				2415E9B2227FDDA000F969A7 /* BViewController.xib */,
-				24732B7C2277FE79005CF92D /* Main.storyboard */,
-				24732B7F2277FE7A005CF92D /* Assets.xcassets */,
-				24732B812277FE7A005CF92D /* LaunchScreen.storyboard */,
-				24732B842277FE7A005CF92D /* Info.plist */,
-				24732B852277FE7A005CF92D /* main.m */,
-				2498E4682278375A0024EAE6 /* H5.bundle */,
 			);
 			path = AXiOSKitExample;
 			sourceTree = "<group>";
@@ -274,7 +318,11 @@
 				24732B862277FE7A005CF92D /* main.m in Sources */,
 				2415E9AE227FD3DB00F969A7 /* AAAViewController.m in Sources */,
 				242702452278318F00842E85 /* WebJSHandler.m in Sources */,
+				245B6BF92293EBB100FD2BA9 /* SolveCrash.m in Sources */,
+				245B6BF62293E9B800FD2BA9 /* NSObject+AFCrashExtension.m in Sources */,
 				24732B782277FE79005CF92D /* AppDelegate.m in Sources */,
+				245B6BF02293E99800FD2BA9 /* SolveCrashHelp.m in Sources */,
+				245B6BF32293E9A700FD2BA9 /* SC_CrashMethodProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

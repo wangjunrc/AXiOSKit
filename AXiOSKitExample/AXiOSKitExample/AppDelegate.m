@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NSObject+AFCrashExtension.h"
 
 @interface AppDelegate ()
 
