@@ -21,24 +21,45 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  iPhone 模式回调
  */
-@property (nonatomic, copy, readonly) AXHelper *(^isIPhone)(void(^)(void));
+@property (nonatomic, copy, readonly) AXHelper *(^isiPhone)(void(^)(void));
 
 /**
  iPad 模式回调
  */
-@property (nonatomic, copy, readonly) AXHelper *(^isIPad)(void(^)(void));
+@property (nonatomic, copy, readonly) AXHelper *(^isiPad)(void(^)(void));
 
 
 /**
  Debug 模式回调
  */
-@property (nonatomic, copy, readonly) AXHelper *(^axDebug)(void(^)(void));
+@property (nonatomic, copy, readonly) AXHelper *(^isDebug)(void(^)(void));
 
 /**
  Release 模式回调
  */
-@property (nonatomic, copy, readonly) AXHelper *(^axRelease)(void(^)(void));
+@property (nonatomic, copy, readonly) AXHelper *(^isRelease)(void(^)(void));
 
+
+///**
+// iPhone 模式回调
+// */
+//@property (class,nonatomic) AXHelper *(^isiPhone)(void(^)(void));
+//
+///**
+// iPad 模式回调
+// */
+//@property (class,nonatomic) AXHelper *(^isiPad)(void(^)(void));
+//
+//
+///**
+// Debug 模式回调
+// */
+//@property (class,nonatomic) AXHelper *(^isDebug)(void(^)(void));
+//
+///**
+// Release 模式回调
+// */
+//@property (class,nonatomic) AXHelper *(^isRelease)(void(^)(void));
 
 @end
 

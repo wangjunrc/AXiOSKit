@@ -12,10 +12,10 @@
 @implementation AXHelper
 
 /**
- isIPhone 模式回调
+ isiPhone 模式回调
  */
-- (AXHelper *(^)(void(^)(void)))isIPhone {
-    
+- (AXHelper *(^)(void(^)(void)))isiPhone {
+
     __weak typeof(self) weakSelf = self;
     return ^AXHelper *(void (^block)(void)){
         __strong typeof(weakSelf) self = weakSelf;
@@ -29,14 +29,14 @@
 }
 
 /**
- isIPad 模式回调
+ isiPad 模式回调
  */
-- (AXHelper *(^)(void(^)(void)))isIPad {
-    
+- (AXHelper *(^)(void(^)(void)))isiPad {
+
     __weak typeof(self) weakSelf = self;
     return ^AXHelper *(void (^block)(void)){
         __strong typeof(weakSelf) self = weakSelf;
-        
+
         if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ){
             if (block) {
                 block();
@@ -50,8 +50,8 @@
 /**
  Debug 模式回调
  */
-- (AXHelper *(^)(void(^)(void)))axDebug {
-    
+- (AXHelper *(^)(void(^)(void)))isDebug {
+
     __weak typeof(self) weakSelf = self;
     return ^AXHelper *(void (^block)(void)){
         __strong typeof(weakSelf) self = weakSelf;
@@ -68,12 +68,12 @@
 /**
  Release 模式回调
  */
-- (AXHelper *(^)(void(^)(void)))axRelease {
-    
+- (AXHelper *(^)(void(^)(void)))isRelease {
+
     __weak typeof(self) weakSelf = self;
     return ^AXHelper *(void (^block)(void)){
         __strong typeof(weakSelf) self = weakSelf;
-        
+
 #ifdef DEBUG
 #else
         if (block) {
@@ -83,6 +83,79 @@
         return self;
     };
 }
+
+///**
+// isiPhone 模式回调
+// */
+//+ (AXHelper *(^)(void(^)(void)))isiPhone {
+//
+//    __weak typeof(self) weakSelf = self;
+//    return ^AXHelper *(void (^block)(void)){
+//        __strong typeof(weakSelf) self = weakSelf;
+//        if( UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad ){
+//            if (block) {
+//                block();
+//            }
+//        }
+//        return AXHelper.class;
+//    };
+//}
+//
+///**
+// isiPad 模式回调
+// */
+//+ (AXHelper *(^)(void(^)(void)))isiPad {
+//
+//    __weak typeof(self) weakSelf = self;
+//    return ^AXHelper *(void (^block)(void)){
+//        __strong typeof(weakSelf) self = weakSelf;
+//
+//        if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ){
+//            if (block) {
+//                block();
+//            }
+//        }
+//        return AXHelper.class;
+//    };
+//}
+//
+//
+///**
+// Debug 模式回调
+// */
+//+ (AXHelper *(^)(void(^)(void)))isDebug {
+//
+//    __weak typeof(self) weakSelf = self;
+//    return ^AXHelper *(void (^block)(void)){
+//        __strong typeof(weakSelf) self = weakSelf;
+//#ifdef DEBUG
+//        if (block) {
+//            block();
+//        }
+//#else
+//#endif
+//        return AXHelper.class;
+//    };
+//}
+//
+///**
+// Release 模式回调
+// */
+//+ (AXHelper *(^)(void(^)(void)))isRelease {
+//
+//    __weak typeof(self) weakSelf = self;
+//    return ^AXHelper *(void (^block)(void)){
+//        __strong typeof(weakSelf) self = weakSelf;
+//
+//#ifdef DEBUG
+//#else
+//        if (block) {
+//            block();
+//        }
+//#endif
+//        return AXHelper.class;
+//    };
+//}
 
 //+(void)isDebug:(void(^)(void))bebug release:(void(^)(void))release{
 //

@@ -13,7 +13,7 @@
 #import "AXDateVC.h"
 #import "AAAViewController.h"
 #import "SolveCrash.h"
-
+#import "AXHelper.h"
 
 
 @interface ViewController ()
@@ -28,6 +28,19 @@
     [super viewDidLoad];
     
 
+    [[AXHelper alloc]init].isiPad(^{
+        NSLog(@"isiPad");
+
+    }).isiPhone(^{
+         NSLog(@"isiPhone");
+    }).isDebug(^{
+         NSLog(@"isDebug");
+    }).isRelease(^{
+         NSLog(@"isRelease");
+    });
+    
+    
+    
     
 }
 
