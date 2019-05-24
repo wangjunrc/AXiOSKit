@@ -276,19 +276,19 @@
  */
 -(NSString *)ax_pathAppendingWithParameter:(NSDictionary <NSString *,NSString *>*)parameter;
 
-/**
- 含有Unicode的字串 to emoj 表情,用于显示
- 中文也是Unicode的一种
- @return 含有emoj表情的string
- */
--(NSString *)ax_unicodeToEmojiCode;
-
-/**
- emoj 表情  转 Unicode的字串,用于存储
- 
- @return 含有Unicode的字串
- */
--(NSString *)ax_emojiCodeToUnicode;
+///**
+// 含有Unicode的字串 to emoj 表情,用于显示
+// 中文也是Unicode的一种
+// @return 含有emoj表情的string
+// */
+//-(NSString *)ax_unicodeToEmojiCode;
+//
+///**
+// emoj 表情  转 Unicode的字串,用于存储
+//
+// @return 含有Unicode的字串
+// */
+//-(NSString *)ax_emojiCodeToUnicode;
 
 
 + (instancetype)ax_stringWithFormat:(NSString *)format,... NS_FORMAT_FUNCTION(1,2);

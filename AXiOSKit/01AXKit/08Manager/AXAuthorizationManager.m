@@ -53,12 +53,15 @@
             
         }];
     } else {
-       
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Wdeprecated-declarations"
         UIUserNotificationSettings *setting = [[UIApplication sharedApplication] currentUserNotificationSettings];
         BOOL isEnable = (UIUserNotificationTypeNone == setting.types) ? NO : YES;
         if (block) {
             block(isEnable);
         }
+#pragma clang diagnostic pop
+       
         
     }
 }

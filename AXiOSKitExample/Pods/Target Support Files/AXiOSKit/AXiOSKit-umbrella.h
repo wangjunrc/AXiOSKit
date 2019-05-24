@@ -79,6 +79,7 @@
 #import "IBUIView.h"
 #import "AXAlertCentreAnimation.h"
 #import "AXAlerUpwardAnimation.h"
+#import "AXBaseAlertDefine.h"
 #import "AXBaseAlertVC.h"
 #import "AXCollectionViewController.h"
 #import "AXFullLayout.h"

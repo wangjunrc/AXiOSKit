@@ -12,16 +12,11 @@ target 'AXiOSKitExample' do
     project 'AXiOSKitExample.xcodeproj'
     
     pod 'AXiOSKit', :path => '../'
-    
-    
-     
-    
 #    pod 'AXiOSKit' , :git => 'https://github.com/AXinger/AXiOSKit.git', :branch => 'release/20190530_new'
 
-    
-    pod 'FLAnimatedImage'
-    pod 'SDWebImage/GIF'
-    pod 'SocketRocket'
+    pod "FLAnimatedImage"
+    pod "SDWebImage/GIF"
+    pod "SocketRocket"
 end
 
 target 'AXiOSKit' do
@@ -40,7 +35,7 @@ target 'AXiOSKit' do
     pod "Masonry"
     #pod "GKPhotoBrowser"
     pod "Aspects"
-    
+
 end
 
 
