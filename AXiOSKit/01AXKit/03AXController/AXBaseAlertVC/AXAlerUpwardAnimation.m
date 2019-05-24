@@ -22,9 +22,11 @@
         return 0.3;
     } else if (fromVC.isBeingDismissed) {
         return 0.1;
+    }else{
+        return 0.3;
     }
 
-    return 0.3;
+   
 }
 
 - (void)animateTransition:
