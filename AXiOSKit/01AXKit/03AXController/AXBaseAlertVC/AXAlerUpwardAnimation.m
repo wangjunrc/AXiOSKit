@@ -42,23 +42,18 @@
         return;
     }
     UIView* containerView = [transitionContext containerView];
+    containerView.backgroundColor =
+    [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    
     NSTimeInterval duration = [self transitionDuration:transitionContext];
     if (toVC.isBeingPresented) {
-
-        // 遮罩view,显示直接有背景色的,避免动画色差
-        UIView* coverView = [[UIView alloc] initWithFrame:containerView.bounds];
-        coverView.backgroundColor =
-            [[UIColor blackColor] colorWithAlphaComponent:0.5];
-
         // 控制器对应的view
         UIView* toView =
             [transitionContext viewForKey:UITransitionContextToViewKey];
         toView.frame = containerView.bounds;
         toView.center = CGPointMake(containerView.center.x, containerView.bounds.size.height);
         toView.backgroundColor = [UIColor clearColor];
-
-        [containerView addSubview:coverView];
-        [coverView addSubview:toView];
+        [containerView addSubview:toView];
 
         [UIView animateWithDuration:duration
             animations:^{

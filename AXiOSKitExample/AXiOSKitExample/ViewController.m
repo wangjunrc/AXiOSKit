@@ -94,11 +94,11 @@
 //    [self presentViewController:vc animated:YES completion:nil];
     
     
-//    AXDateVC *vc = [AXDateVC ax_init];
-//    [self ax_showVC:vc];
+    AXDateVC *vc = [AXDateVC ax_init];
+    [self ax_showVC:vc];
     
-        AAAViewController *vc = [AAAViewController ax_init];
-        [self ax_showVC:vc];
+//        AAAViewController *vc = [AAAViewController ax_init];
+//        [self ax_showVC:vc];
 //
     
 //    [self ax_showAlertByTitle:@"AAAA"];
