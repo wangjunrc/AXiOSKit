@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,18 +22,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VL6-VC-Fvo">
-                    <rect key="frame" x="0.0" y="646" width="414" height="216"/>
+                    <rect key="frame" x="107" y="348" width="200" height="200"/>
                     <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="216" id="rMi-A5-Use"/>
+                        <constraint firstAttribute="height" constant="200" id="BmK-dv-uXP"/>
+                        <constraint firstAttribute="width" constant="200" id="HDp-qZ-90x"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="VL6-VC-Fvo" secondAttribute="trailing" id="E2W-g1-OC2"/>
-                <constraint firstItem="VL6-VC-Fvo" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="cMG-gO-FQN"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="VL6-VC-Fvo" secondAttribute="bottom" id="m6Z-6u-hc1"/>
+                <constraint firstItem="VL6-VC-Fvo" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="aWg-P2-k7R"/>
+                <constraint firstItem="VL6-VC-Fvo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qIL-MZ-aUS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
         </view>

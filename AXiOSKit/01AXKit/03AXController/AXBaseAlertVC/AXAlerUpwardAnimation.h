@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXBaseAlertVC.h"
 
 @interface AXAlerUpwardAnimation : NSObject<UIViewControllerAnimatedTransitioning>
 

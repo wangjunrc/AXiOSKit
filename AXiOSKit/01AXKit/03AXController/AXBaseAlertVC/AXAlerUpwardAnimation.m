@@ -10,55 +10,75 @@
 
 @implementation AXAlerUpwardAnimation
 
-- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
-    // 1
-    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+- (NSTimeInterval)transitionDuration:
+    (id<UIViewControllerContextTransitioning>)transitionContext
+{
+
+    UIViewController* toVC = [transitionContext
+        viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIViewController* fromVC = [transitionContext
+        viewControllerForKey:UITransitionContextFromViewControllerKey];
     if (toVC.isBeingPresented) {
         return 0.3;
-    }
-    else if (fromVC.isBeingDismissed) {
+    } else if (fromVC.isBeingDismissed) {
         return 0.1;
     }
-    
+
     return 0.3;
 }
 
-
-- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
+- (void)animateTransition:
+    (id<UIViewControllerContextTransitioning>)transitionContext
 {
-    AXBaseAlertVC *toVC = (AXBaseAlertVC *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController* toVC = [transitionContext
+        viewControllerForKey:UITransitionContextToViewControllerKey];
+
+    UIViewController* fromVC = [transitionContext
+        viewControllerForKey:UITransitionContextFromViewControllerKey];
+
     if (!toVC || !fromVC) {
         return;
     }
-    UIView *containerView = [transitionContext containerView];
+    UIView* containerView = [transitionContext containerView];
     NSTimeInterval duration = [self transitionDuration:transitionContext];
     if (toVC.isBeingPresented) {
- 
-        
-        [containerView addSubview:toVC.view];
-        toVC.view.frame = containerView.bounds;
-     
-        toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-        
-        toVC.axAlertControllerView.center = CGPointMake(containerView.center.x, containerView.bounds.size.height);
-        
-        [UIView animateWithDuration:duration animations:^{
-            
-            toVC.axAlertControllerView.center = containerView.center;
-            
-        } completion:^(BOOL finished) {
-            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-        }];
-    }
-    else if (fromVC.isBeingDismissed) {
-        
-        [UIView animateWithDuration:duration animations:^{
-            fromVC.view.alpha = 0.0;
-        } completion:^(BOOL finished) {
-            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-        }];
+
+        // 遮罩view,显示直接有背景色的,避免动画色差
+        UIView* coverView = [[UIView alloc] initWithFrame:containerView.bounds];
+        coverView.backgroundColor =
+            [[UIColor blackColor] colorWithAlphaComponent:0.5];
+
+        // 控制器对应的view
+        UIView* toView =
+            [transitionContext viewForKey:UITransitionContextToViewKey];
+        toView.frame = containerView.bounds;
+        toView.center = CGPointMake(containerView.center.x, containerView.bounds.size.height);
+        toView.backgroundColor = [UIColor clearColor];
+
+        [containerView addSubview:coverView];
+        [coverView addSubview:toView];
+
+        [UIView animateWithDuration:duration
+            animations:^{
+                toView.center = containerView.center;
+            }
+            completion:^(BOOL finished) {
+                [transitionContext
+                    completeTransition:![transitionContext transitionWasCancelled]];
+            }];
+
+    } else if (fromVC.isBeingDismissed) {
+
+        [UIView animateWithDuration:duration
+            animations:^{
+                fromVC.view.alpha = 0.0;
+            }
+            completion:^(BOOL finished) {
+                [transitionContext
+                    completeTransition:![transitionContext transitionWasCancelled]];
+            }];
+
+    } else {
     }
 }
 

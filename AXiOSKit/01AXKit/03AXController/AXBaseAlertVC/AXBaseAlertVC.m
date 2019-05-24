@@ -16,10 +16,8 @@
 
 @implementation AXBaseAlertVC
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.transitioningDelegate = self;
         self.axTouchesBeganDismiss = YES;
@@ -27,22 +25,14 @@
     return self;
 }
 
-- (AXAlertControllerStyle)axAlertControllerStyle
-{
-
-    return AXAlertControllerStyleUpward;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    self.view.backgroundColor = [UIColor clearColor];
 }
 
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event
 {
-
     UITouch* touch = [[event allTouches] anyObject];
 
     if (self.axTouchesBeganDismiss && touch.view == self.view) {
@@ -50,11 +40,19 @@
     }
 }
 
+#pragma mark - 默认present 方式
+- (AXAlertControllerStyle)axAlertControllerStyle
+{
+    return AXAlertControllerStyleUpward;
+}
+
 #pragma mark - 转场动画 UIViewControllerTransitioningDelegate
 
-- (nullable id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController*)presented presentingController:(UIViewController*)presenting sourceController:(UIViewController*)source
+- (id<UIViewControllerAnimatedTransitioning>)
+animationControllerForPresentedController:(UIViewController*)presented
+                     presentingController:(UIViewController*)presenting
+                         sourceController:(UIViewController*)source
 {
-
     switch (self.axAlertControllerStyle) {
     case AXAlertControllerStyleCentre:
         return [[AXAlertCentreAnimation alloc] init];
@@ -69,9 +67,9 @@
     }
 }
 
-- (nullable id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController*)dismissed
+- (id<UIViewControllerAnimatedTransitioning>)
+animationControllerForDismissedController:(UIViewController*)dismissed
 {
-
     switch (self.axAlertControllerStyle) {
     case AXAlertControllerStyleCentre:
         return [[AXAlertCentreAnimation alloc] init];

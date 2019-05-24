@@ -10,89 +10,84 @@
 
 @implementation AXAlertCentreAnimation
 
-- (instancetype)initWithVC:(AXBaseAlertVC *)alertVC{
-    if (self = [super init]) {
-        self.alertVC = alertVC;
-    }
-    return self;
-}
-
-
-- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
+- (NSTimeInterval)transitionDuration:
+    (id<UIViewControllerContextTransitioning>)transitionContext
 {
-    // 1
-    UIViewController *toVC = (AXBaseAlertVC *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+
+    UIViewController* toVC = [transitionContext
+        viewControllerForKey:UITransitionContextToViewControllerKey];
+
+    UIViewController* fromVC = [transitionContext
+        viewControllerForKey:UITransitionContextFromViewControllerKey];
     if (toVC.isBeingPresented) {
         return 0.3;
-    }
-    else if (fromVC.isBeingDismissed) {
+    } else if (fromVC.isBeingDismissed) {
         return 0.1;
     }
-    
+
     return 0.3;
 }
 
+- (void)animateTransition:
+    (id<UIViewControllerContextTransitioning>)transitionContext
+{
 
-- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
-    
-    
-    AXBaseAlertVC *toVC = (AXBaseAlertVC *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
-    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    
+    UIViewController* toVC = [transitionContext
+        viewControllerForKey:UITransitionContextToViewControllerKey];
+
+    UIViewController* fromVC = [transitionContext
+        viewControllerForKey:UITransitionContextFromViewControllerKey];
+
     if (!toVC || !fromVC) {
         return;
     }
-    
-    UIView *containerView = [transitionContext containerView];
+
+    UIView* containerView = [transitionContext containerView];
     NSTimeInterval duration = [self transitionDuration:transitionContext];
-    
+
     if (toVC.isBeingPresented) {
-        
-        [containerView addSubview:toVC.view];
-        
-        //矩阵动画
-//        CAKeyframeAnimation *popAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
-//        popAnimation.duration = 0.5;
-//        popAnimation.values = @[[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.1f, 0.1f, 1.0f)],
-//                                [NSValue valueWithCATransform3D:CATransform3DMakeScale(1.1f, 1.1f, 1.0f)],
-//                                [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.9f, 0.9f, 0.9f)],
-//                                [NSValue valueWithCATransform3D:CATransform3DIdentity]];
-//        popAnimation.keyTimes = @[@0.0f, @0.5f, @0.75f, @1.0f];
-//        popAnimation.timingFunctions = @[[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
-//                                         [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
-//                                         [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-//        [toVC.axAlertControllerView.layer addAnimation:popAnimation forKey:nil];
-//        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-        
-        
-        toVC.view.frame = containerView.bounds;
 
-        toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-        CGAffineTransform oldTransform = toVC.axAlertControllerView.transform;
-        toVC.axAlertControllerView.transform = CGAffineTransformScale(oldTransform, 0.3, 0.3);
-        toVC.axAlertControllerView.center = containerView.center;
+        // 遮罩view,显示直接有背景色的,避免动画色差
+        UIView* coverView = [[UIView alloc] initWithFrame:containerView.bounds];
+        coverView.backgroundColor =
+            [[UIColor blackColor] colorWithAlphaComponent:0.5];
 
-        [UIView animateWithDuration:duration animations:^{
+        // 控制器对应的view
+        UIView* toView =
+            [transitionContext viewForKey:UITransitionContextToViewKey];
+        toView.frame = containerView.bounds;
+        toView.backgroundColor = [UIColor clearColor];
 
-            toVC.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
-            toVC.axAlertControllerView.transform = oldTransform;
+        CGAffineTransform oldTransform = toView.transform;
+        toView.transform = CGAffineTransformScale(oldTransform, 0.3, 0.3);
+        toView.center = containerView.center;
 
-        } completion:^(BOOL finished) {
+        [containerView addSubview:coverView];
+        [coverView addSubview:toView];
 
-            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-        }];
-    }
-    else if (fromVC.isBeingDismissed) {
-        
-        [UIView animateWithDuration:duration animations:^{
-            fromVC.view.alpha = 0.0;
-            
-        } completion:^(BOOL finished) {
-            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-        }];
+        [UIView animateWithDuration:duration
+            animations:^{
+
+                toView.transform = oldTransform;
+
+            }
+            completion:^(BOOL finished) {
+
+                [transitionContext
+                    completeTransition:![transitionContext transitionWasCancelled]];
+            }];
+    } else if (fromVC.isBeingDismissed) {
+
+        [UIView animateWithDuration:duration
+            animations:^{
+                fromVC.view.alpha = 0.0;
+
+            }
+            completion:^(BOOL finished) {
+                [transitionContext
+                    completeTransition:![transitionContext transitionWasCancelled]];
+            }];
+    } else {
     }
 }
 @end

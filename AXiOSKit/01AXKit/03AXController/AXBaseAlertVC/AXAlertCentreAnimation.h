@@ -7,14 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXBaseAlertVC.h"
 
 @interface AXAlertCentreAnimation : NSObject<UIViewControllerAnimatedTransitioning>
-/**
- <#Description#>
- */
-@property (nonatomic, strong)AXBaseAlertVC *alertVC;
-
-- (instancetype)initWithVC:(AXBaseAlertVC *)alertVC;
 
 @end

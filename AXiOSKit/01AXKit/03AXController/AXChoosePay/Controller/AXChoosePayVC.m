@@ -31,9 +31,8 @@
 @end
 
 @implementation AXChoosePayVC
-- (UIView *)axAlertControllerView {
-    return self.contentView;
-}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.axTouchesBeganDismiss = NO;

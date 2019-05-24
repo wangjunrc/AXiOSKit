@@ -12,6 +12,7 @@
 		2415E9B3227FDDA000F969A7 /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2415E9B1227FDDA000F969A7 /* BViewController.m */; };
 		2415E9B4227FDDA000F969A7 /* BViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2415E9B2227FDDA000F969A7 /* BViewController.xib */; };
 		242702452278318F00842E85 /* WebJSHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 242702442278318F00842E85 /* WebJSHandler.m */; };
+		244FC1CF2297A065003BD65F /* AXViewControllerTransitioningCentre.m in Sources */ = {isa = PBXBuildFile; fileRef = 244FC1CE2297A065003BD65F /* AXViewControllerTransitioningCentre.m */; };
 		245B6BF02293E99800FD2BA9 /* SolveCrashHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B6BEF2293E99800FD2BA9 /* SolveCrashHelp.m */; };
 		245B6BF32293E9A700FD2BA9 /* SC_CrashMethodProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B6BF12293E9A700FD2BA9 /* SC_CrashMethodProxy.m */; };
 		245B6BF62293E9B800FD2BA9 /* NSObject+AFCrashExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B6BF42293E9B700FD2BA9 /* NSObject+AFCrashExtension.m */; };
@@ -36,6 +37,8 @@
 		2415E9B2227FDDA000F969A7 /* BViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BViewController.xib; sourceTree = "<group>"; };
 		242702432278318F00842E85 /* WebJSHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebJSHandler.h; sourceTree = "<group>"; };
 		242702442278318F00842E85 /* WebJSHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebJSHandler.m; sourceTree = "<group>"; };
+		244FC1CD2297A065003BD65F /* AXViewControllerTransitioningCentre.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXViewControllerTransitioningCentre.h; sourceTree = "<group>"; };
+		244FC1CE2297A065003BD65F /* AXViewControllerTransitioningCentre.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXViewControllerTransitioningCentre.m; sourceTree = "<group>"; };
 		245B6BEE2293E99800FD2BA9 /* SolveCrashHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolveCrashHelp.h; sourceTree = "<group>"; };
 		245B6BEF2293E99800FD2BA9 /* SolveCrashHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolveCrashHelp.m; sourceTree = "<group>"; };
 		245B6BF12293E9A700FD2BA9 /* SC_CrashMethodProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SC_CrashMethodProxy.m; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 				2415E9B0227FDDA000F969A7 /* BViewController.h */,
 				2415E9B1227FDDA000F969A7 /* BViewController.m */,
 				2415E9B2227FDDA000F969A7 /* BViewController.xib */,
+				244FC1CD2297A065003BD65F /* AXViewControllerTransitioningCentre.h */,
+				244FC1CE2297A065003BD65F /* AXViewControllerTransitioningCentre.m */,
 			);
 			path = Test_VC;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			files = (
 				24732B7B2277FE79005CF92D /* ViewController.m in Sources */,
 				2415E9B3227FDDA000F969A7 /* BViewController.m in Sources */,
+				244FC1CF2297A065003BD65F /* AXViewControllerTransitioningCentre.m in Sources */,
 				24732B862277FE7A005CF92D /* main.m in Sources */,
 				2415E9AE227FD3DB00F969A7 /* AAAViewController.m in Sources */,
 				242702452278318F00842E85 /* WebJSHandler.m in Sources */,

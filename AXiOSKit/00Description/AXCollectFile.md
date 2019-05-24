@@ -1123,3 +1123,13 @@ layer.beginTime = timeSincePause;
 }
 
 ```
+
+# addChildViewController
+```
+[self addChildViewController:aVC];
+
+//addChildViewController 会调用 [child willMoveToParentViewController:self] 方法，但是不会调用 didMoveToParentViewController:方法，官方建议显示调用
+
+[aVC didMoveToParentViewController:self];
+
+```
