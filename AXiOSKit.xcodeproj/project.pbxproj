@@ -1096,8 +1096,8 @@
 			isa = PBXGroup;
 			children = (
 				247329AF2277FBB8005CF92D /* AXSinglePickVC.h */,
-				247329B02277FBB8005CF92D /* AXSinglePickVC.xib */,
 				247329B12277FBB8005CF92D /* AXSinglePickVC.m */,
+				247329B02277FBB8005CF92D /* AXSinglePickVC.xib */,
 			);
 			path = AXSinglePickVC;
 			sourceTree = "<group>";
@@ -1105,9 +1105,9 @@
 		247329B22277FBB8005CF92D /* AXDateVC */ = {
 			isa = PBXGroup;
 			children = (
+				247329B52277FBB8005CF92D /* AXDateVC.h */,
 				247329B32277FBB8005CF92D /* AXDateVC.m */,
 				247329B42277FBB8005CF92D /* AXDateVC.xib */,
-				247329B52277FBB8005CF92D /* AXDateVC.h */,
 			);
 			path = AXDateVC;
 			sourceTree = "<group>";
@@ -1115,12 +1115,12 @@
 		247329B62277FBB8005CF92D /* AXQRCodeVC */ = {
 			isa = PBXGroup;
 			children = (
-				247329B72277FBB8005CF92D /* QRCodeViewController.xib */,
-				247329B82277FBB8005CF92D /* QRCodeViewController.m */,
 				247329B92277FBB8005CF92D /* AXQRCodeVC.h */,
+				247329BC2277FBB8005CF92D /* AXQRCodeVC.m */,
 				247329BA2277FBB8005CF92D /* AXQRCodeVC.xib */,
 				247329BB2277FBB8005CF92D /* QRCodeViewController.h */,
-				247329BC2277FBB8005CF92D /* AXQRCodeVC.m */,
+				247329B82277FBB8005CF92D /* QRCodeViewController.m */,
+				247329B72277FBB8005CF92D /* QRCodeViewController.xib */,
 			);
 			path = AXQRCodeVC;
 			sourceTree = "<group>";
@@ -1138,8 +1138,8 @@
 		247329C12277FBB8005CF92D /* AXPlayVC */ = {
 			isa = PBXGroup;
 			children = (
-				247329C22277FBB8005CF92D /* AXPlayVC.m */,
 				247329C32277FBB8005CF92D /* AXPlayVC.h */,
+				247329C22277FBB8005CF92D /* AXPlayVC.m */,
 			);
 			path = AXPlayVC;
 			sourceTree = "<group>";
@@ -1147,12 +1147,12 @@
 		247329C42277FBB8005CF92D /* AXGuidePageVC */ = {
 			isa = PBXGroup;
 			children = (
-				247329C52277FBB8005CF92D /* AXGuidePageVC.xib */,
-				247329C62277FBB8005CF92D /* AXGuidePageVC.m */,
-				247329C72277FBB8005CF92D /* AXGuidePageCell.m */,
-				247329C82277FBB8005CF92D /* AXGuidePageVC.h */,
-				247329C92277FBB8005CF92D /* AXGuidePageCell.xib */,
 				247329CA2277FBB8005CF92D /* AXGuidePageCell.h */,
+				247329C72277FBB8005CF92D /* AXGuidePageCell.m */,
+				247329C92277FBB8005CF92D /* AXGuidePageCell.xib */,
+				247329C82277FBB8005CF92D /* AXGuidePageVC.h */,
+				247329C62277FBB8005CF92D /* AXGuidePageVC.m */,
+				247329C52277FBB8005CF92D /* AXGuidePageVC.xib */,
 			);
 			path = AXGuidePageVC;
 			sourceTree = "<group>";
