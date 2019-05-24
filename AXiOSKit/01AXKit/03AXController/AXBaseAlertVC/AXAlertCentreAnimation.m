@@ -7,6 +7,7 @@
 //
 
 #import "AXAlertCentreAnimation.h"
+#import "AXBaseAlertDefine.h"
 
 @implementation AXAlertCentreAnimation
 
@@ -20,11 +21,11 @@
     UIViewController* fromVC = [transitionContext
         viewControllerForKey:UITransitionContextFromViewControllerKey];
     if (toVC.isBeingPresented) {
-        return 0.3;
+        return AX_ALERT_PRESENTED_TIME;
     } else if (fromVC.isBeingDismissed) {
-        return 0.1;
+        return AX_ALERT_DISMISSED_TIME;
     }else{
-        return 0.3;
+        return AX_ALERT_PRESENTED_TIME;
     }
 }
 
@@ -43,15 +44,12 @@
     }
 
     UIView* containerView = [transitionContext containerView];
-    containerView.backgroundColor =
-    [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    containerView.backgroundColor = AX_ALERT_COVER_COLOR;
     
     NSTimeInterval duration = [self transitionDuration:transitionContext];
 
     if (toVC.isBeingPresented) {
-
         
-
         // 控制器对应的view
         UIView* toView =
             [transitionContext viewForKey:UITransitionContextToViewKey];
@@ -79,7 +77,6 @@
         [UIView animateWithDuration:duration
             animations:^{
                 fromVC.view.alpha = 0.0;
-
             }
             completion:^(BOOL finished) {
                 [transitionContext

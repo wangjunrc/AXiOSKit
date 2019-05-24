@@ -310,6 +310,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		244FC1D02297C0D7003BD65F /* AXBaseAlertDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXBaseAlertDefine.h; sourceTree = "<group>"; };
 		247328B32277FB8B005CF92D /* AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AXiOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		247328B62277FB8B005CF92D /* AXiOSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXiOSKit.h; sourceTree = "<group>"; };
 		247328B72277FB8B005CF92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1088,6 +1089,7 @@
 				247329AD2277FBB8005CF92D /* AXAlerUpwardAnimation.m */,
 				247329AC2277FBB8005CF92D /* AXBaseAlertVC.h */,
 				247329A92277FBB8005CF92D /* AXBaseAlertVC.m */,
+				244FC1D02297C0D7003BD65F /* AXBaseAlertDefine.h */,
 			);
 			path = AXBaseAlertVC;
 			sourceTree = "<group>";
