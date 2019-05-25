@@ -10,6 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+/**
+ 各种授权 管理类
+ */
 @interface AXAuthorizationManager : NSObject
 
 /**

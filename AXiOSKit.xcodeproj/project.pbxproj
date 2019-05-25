@@ -661,53 +661,38 @@
 		247328B52277FB8B005CF92D /* AXiOSKit */ = {
 			isa = PBXGroup;
 			children = (
-				247328BE2277FBB8005CF92D /* 00Description */,
-				247328C22277FBB8005CF92D /* 01AXKit */,
-				24732AD02277FD53005CF92D /* 02ThirdKit */,
-				247329D92277FBB9005CF92D /* AXHTML.bundle */,
 				247328B62277FB8B005CF92D /* AXiOSKit.h */,
-				247329D82277FBB9005CF92D /* AXiOSKit.xcassets */,
-				247328B72277FB8B005CF92D /* Info.plist */,
+				24A5737D2298EBE700F95D4E /* Class */,
+				247328BE2277FBB8005CF92D /* README */,
 			);
 			path = AXiOSKit;
 			sourceTree = "<group>";
 		};
-		247328BE2277FBB8005CF92D /* 00Description */ = {
+		247328BE2277FBB8005CF92D /* README */ = {
 			isa = PBXGroup;
 			children = (
 				247328BF2277FBB8005CF92D /* AXCollectFile.md */,
 				247328C02277FBB8005CF92D /* pod_no_use.md */,
 				247328C12277FBB8005CF92D /* pod_use.md */,
 			);
-			path = 00Description;
+			path = README;
 			sourceTree = "<group>";
 		};
 		247328C22277FBB8005CF92D /* 01AXKit */ = {
 			isa = PBXGroup;
 			children = (
-				247329782277FBB8005CF92D /* 00Macros */,
-				247328C62277FBB8005CF92D /* 01AXCategory */,
+				247329782277FBB8005CF92D /* 00Define */,
+				247328C62277FBB8005CF92D /* 01Category */,
 				2473294E2277FBB8005CF92D /* 02IBView */,
-				247329802277FBB8005CF92D /* 03AXController */,
-				247329332277FBB8005CF92D /* 04AXView */,
-				2473295C2277FBB8005CF92D /* 05AXObject */,
-				247329D32277FBB8005CF92D /* 06AXResources */,
-				247328C32277FBB8005CF92D /* 07AXProxy */,
-				247329432277FBB8005CF92D /* 08Manager */,
+				247329802277FBB8005CF92D /* 03ViewController */,
+				247329332277FBB8005CF92D /* 04View */,
+				2473295C2277FBB8005CF92D /* 05Model */,
+				247329432277FBB8005CF92D /* 06Manager */,
 			);
 			path = 01AXKit;
 			sourceTree = "<group>";
 		};
-		247328C32277FBB8005CF92D /* 07AXProxy */ = {
-			isa = PBXGroup;
-			children = (
-				247328C42277FBB8005CF92D /* AXWeakProxy.m */,
-				247328C52277FBB8005CF92D /* AXWeakProxy.h */,
-			);
-			path = 07AXProxy;
-			sourceTree = "<group>";
-		};
-		247328C62277FBB8005CF92D /* 01AXCategory */ = {
+		247328C62277FBB8005CF92D /* 01Category */ = {
 			isa = PBXGroup;
 			children = (
 				247329172277FBB8005CF92D /* CALayer+AXFrame.h */,
@@ -819,119 +804,77 @@
 				247328CD2277FBB8005CF92D /* WKWebView+AXKit.h */,
 				247329052277FBB8005CF92D /* WKWebView+AXKit.m */,
 			);
-			path = 01AXCategory;
+			path = 01Category;
 			sourceTree = "<group>";
 		};
-		247329332277FBB8005CF92D /* 04AXView */ = {
+		247329332277FBB8005CF92D /* 04View */ = {
 			isa = PBXGroup;
 			children = (
-				247329342277FBB8005CF92D /* AXCycleScrollView */,
-				247329372277FBB8005CF92D /* AXDottedLineView */,
-				2473293A2277FBB8005CF92D /* AXVerificationCode */,
-				2473293D2277FBB8005CF92D /* AXNumberKeyboard */,
-			);
-			path = 04AXView;
-			sourceTree = "<group>";
-		};
-		247329342277FBB8005CF92D /* AXCycleScrollView */ = {
-			isa = PBXGroup;
-			children = (
+				247329512277FBB8005CF92D /* AXButton.h */,
+				247329572277FBB8005CF92D /* AXButton.m */,
+				2473296D2277FBB8005CF92D /* AXCountDownObject.h */,
+				2473296E2277FBB8005CF92D /* AXCountDownObject.m */,
 				247329352277FBB8005CF92D /* AXCycleScrollView.h */,
 				247329362277FBB8005CF92D /* AXCycleScrollView.m */,
-			);
-			path = AXCycleScrollView;
-			sourceTree = "<group>";
-		};
-		247329372277FBB8005CF92D /* AXDottedLineView */ = {
-			isa = PBXGroup;
-			children = (
-				247329382277FBB8005CF92D /* AXDottedLineView.m */,
 				247329392277FBB8005CF92D /* AXDottedLineView.h */,
-			);
-			path = AXDottedLineView;
-			sourceTree = "<group>";
-		};
-		2473293A2277FBB8005CF92D /* AXVerificationCode */ = {
-			isa = PBXGroup;
-			children = (
-				2473293B2277FBB8005CF92D /* AXVeriCodeView.m */,
-				2473293C2277FBB8005CF92D /* AXVeriCodeView.h */,
-			);
-			path = AXVerificationCode;
-			sourceTree = "<group>";
-		};
-		2473293D2277FBB8005CF92D /* AXNumberKeyboard */ = {
-			isa = PBXGroup;
-			children = (
-				2473293E2277FBB8005CF92D /* AXNumberKeyboard.xib */,
-				2473293F2277FBB8005CF92D /* UITextField+AXNumberKeyboard.h */,
-				247329402277FBB8005CF92D /* AXNumberKeyboard.m */,
-				247329412277FBB8005CF92D /* UITextField+AXNumberKeyboard.m */,
+				247329382277FBB8005CF92D /* AXDottedLineView.m */,
 				247329422277FBB8005CF92D /* AXNumberKeyboard.h */,
+				247329402277FBB8005CF92D /* AXNumberKeyboard.m */,
+				2473293E2277FBB8005CF92D /* AXNumberKeyboard.xib */,
+				2473293C2277FBB8005CF92D /* AXVeriCodeView.h */,
+				2473293B2277FBB8005CF92D /* AXVeriCodeView.m */,
+				2473293F2277FBB8005CF92D /* UITextField+AXNumberKeyboard.h */,
+				247329412277FBB8005CF92D /* UITextField+AXNumberKeyboard.m */,
 			);
-			path = AXNumberKeyboard;
+			path = 04View;
 			sourceTree = "<group>";
 		};
-		247329432277FBB8005CF92D /* 08Manager */ = {
+		247329432277FBB8005CF92D /* 06Manager */ = {
 			isa = PBXGroup;
 			children = (
-				247329442277FBB8005CF92D /* TouchIDManager */,
-				247329472277FBB8005CF92D /* AXAuthorizationManager.h */,
-				247329482277FBB8005CF92D /* AXAuthorizationManager.m */,
-				247329492277FBB8005CF92D /* LocationManager */,
-			);
-			path = 08Manager;
-			sourceTree = "<group>";
-		};
-		247329442277FBB8005CF92D /* TouchIDManager */ = {
-			isa = PBXGroup;
-			children = (
-				247329452277FBB8005CF92D /* AXTouchIDManager.h */,
-				247329462277FBB8005CF92D /* AXTouchIDManager.m */,
-			);
-			path = TouchIDManager;
-			sourceTree = "<group>";
-		};
-		247329492277FBB8005CF92D /* LocationManager */ = {
-			isa = PBXGroup;
-			children = (
+				247329722277FBB8005CF92D /* AXCrashProcessManager.h */,
+				2473295D2277FBB8005CF92D /* AXCrashProcessManager.m */,
+				247329612277FBB8005CF92D /* AXUNNotificationHandler.h */,
+				247329742277FBB8005CF92D /* AXUNNotificationHandler.m */,
+				247329602277FBB8005CF92D /* AXConfigureManager.h */,
+				2473296F2277FBB8005CF92D /* AXConfigureManager.m */,
 				2473294A2277FBB8005CF92D /* LocationManager.m */,
 				2473294B2277FBB8005CF92D /* AXLocationManager.h */,
 				2473294C2277FBB8005CF92D /* LocationManager.h */,
 				2473294D2277FBB8005CF92D /* AXLocationManager.m */,
+				247329452277FBB8005CF92D /* AXTouchIDManager.h */,
+				247329462277FBB8005CF92D /* AXTouchIDManager.m */,
+				247329472277FBB8005CF92D /* AXAuthorizationManager.h */,
+				247329482277FBB8005CF92D /* AXAuthorizationManager.m */,
 			);
-			path = LocationManager;
+			path = 06Manager;
 			sourceTree = "<group>";
 		};
 		2473294E2277FBB8005CF92D /* 02IBView */ = {
 			isa = PBXGroup;
 			children = (
-				2473294F2277FBB8005CF92D /* IBUITextField.m */,
-				247329502277FBB8005CF92D /* IBUIButton.m */,
-				247329512277FBB8005CF92D /* AXButton.h */,
 				247329522277FBB8005CF92D /* IBObjectHeader.h */,
-				247329532277FBB8005CF92D /* IBUIView.h */,
-				247329542277FBB8005CF92D /* IBUIImageView.h */,
-				247329552277FBB8005CF92D /* IBUILabel.h */,
-				247329562277FBB8005CF92D /* IBUITextField.h */,
-				247329572277FBB8005CF92D /* AXButton.m */,
 				247329582277FBB8005CF92D /* IBUIButton.h */,
-				247329592277FBB8005CF92D /* IBUILabel.m */,
+				247329502277FBB8005CF92D /* IBUIButton.m */,
+				247329542277FBB8005CF92D /* IBUIImageView.h */,
 				2473295A2277FBB8005CF92D /* IBUIImageView.m */,
+				247329552277FBB8005CF92D /* IBUILabel.h */,
+				247329592277FBB8005CF92D /* IBUILabel.m */,
+				247329562277FBB8005CF92D /* IBUITextField.h */,
+				2473294F2277FBB8005CF92D /* IBUITextField.m */,
+				247329532277FBB8005CF92D /* IBUIView.h */,
 				2473295B2277FBB8005CF92D /* IBUIView.m */,
 			);
 			path = 02IBView;
 			sourceTree = "<group>";
 		};
-		2473295C2277FBB8005CF92D /* 05AXObject */ = {
+		2473295C2277FBB8005CF92D /* 05Model */ = {
 			isa = PBXGroup;
 			children = (
-				247329602277FBB8005CF92D /* AXConfigureManager.h */,
-				2473296F2277FBB8005CF92D /* AXConfigureManager.m */,
+				247328C52277FBB8005CF92D /* AXWeakProxy.h */,
+				247328C42277FBB8005CF92D /* AXWeakProxy.m */,
 				247329712277FBB8005CF92D /* AXConstant.h */,
 				2473295E2277FBB8005CF92D /* AXConstant.m */,
-				247329722277FBB8005CF92D /* AXCrashProcessManager.h */,
-				2473295D2277FBB8005CF92D /* AXCrashProcessManager.m */,
 				247329682277FBB8005CF92D /* AXDataModel.h */,
 				247329762277FBB8005CF92D /* AXDataModel.m */,
 				2473296B2277FBB8005CF92D /* AXDataModelProtocol.h */,
@@ -944,13 +887,10 @@
 				247329652277FBB8005CF92D /* AXSetValueProtocol.h */,
 				247329772277FBB8005CF92D /* AXUIAssistant.h */,
 				2473296A2277FBB8005CF92D /* AXUIAssistant.m */,
-				247329612277FBB8005CF92D /* AXUNNotificationHandler.h */,
-				247329742277FBB8005CF92D /* AXUNNotificationHandler.m */,
 				247329672277FBB8005CF92D /* AXViewModelProtocol.h */,
-				2473296C2277FBB8005CF92D /* CountDownObj */,
 				247329622277FBB8005CF92D /* GCDTimer */,
 			);
-			path = 05AXObject;
+			path = 05Model;
 			sourceTree = "<group>";
 		};
 		247329622277FBB8005CF92D /* GCDTimer */ = {
@@ -962,16 +902,7 @@
 			path = GCDTimer;
 			sourceTree = "<group>";
 		};
-		2473296C2277FBB8005CF92D /* CountDownObj */ = {
-			isa = PBXGroup;
-			children = (
-				2473296D2277FBB8005CF92D /* AXCountDownObject.h */,
-				2473296E2277FBB8005CF92D /* AXCountDownObject.m */,
-			);
-			path = CountDownObj;
-			sourceTree = "<group>";
-		};
-		247329782277FBB8005CF92D /* 00Macros */ = {
+		247329782277FBB8005CF92D /* 00Define */ = {
 			isa = PBXGroup;
 			children = (
 				24732B8C2278215F005CF92D /* AXiOSKitDefine.h */,
@@ -982,35 +913,35 @@
 				2473297E2277FBB8005CF92D /* AXMacros_log.h */,
 				2473297F2277FBB8005CF92D /* AXMacros_instance.h */,
 			);
-			path = 00Macros;
+			path = 00Define;
 			sourceTree = "<group>";
 		};
-		247329802277FBB8005CF92D /* 03AXController */ = {
+		247329802277FBB8005CF92D /* 03ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				247329812277FBB8005CF92D /* AXChoosePay */,
-				247329902277FBB8005CF92D /* AXWebVC */,
-				247329962277FBB8005CF92D /* AXBaseVC */,
-				247329A72277FBB8005CF92D /* AXBaseAlertVC */,
-				247329AE2277FBB8005CF92D /* AXSinglePickVC */,
-				247329B22277FBB8005CF92D /* AXDateVC */,
-				247329B62277FBB8005CF92D /* AXQRCodeVC */,
-				247329BD2277FBB8005CF92D /* AXSafariVC */,
-				247329C12277FBB8005CF92D /* AXPlayVC */,
-				247329C42277FBB8005CF92D /* AXGuidePageVC */,
-				247329CB2277FBB8005CF92D /* AXWKWeb */,
+				247329812277FBB8005CF92D /* ChoosePay */,
+				247329902277FBB8005CF92D /* UIWeb */,
+				247329962277FBB8005CF92D /* Base */,
+				247329A72277FBB8005CF92D /* BaseAlert */,
+				247329AE2277FBB8005CF92D /* SinglePick */,
+				247329B22277FBB8005CF92D /* Date */,
+				247329B62277FBB8005CF92D /* QRCode */,
+				247329BD2277FBB8005CF92D /* Safari */,
+				247329C12277FBB8005CF92D /* Play */,
+				247329C42277FBB8005CF92D /* GuidePage */,
+				247329CB2277FBB8005CF92D /* WKWeb */,
 			);
-			path = 03AXController;
+			path = 03ViewController;
 			sourceTree = "<group>";
 		};
-		247329812277FBB8005CF92D /* AXChoosePay */ = {
+		247329812277FBB8005CF92D /* ChoosePay */ = {
 			isa = PBXGroup;
 			children = (
 				247329822277FBB8005CF92D /* Controller */,
 				247329892277FBB8005CF92D /* Model */,
 				2473298C2277FBB8005CF92D /* View */,
 			);
-			path = AXChoosePay;
+			path = ChoosePay;
 			sourceTree = "<group>";
 		};
 		247329822277FBB8005CF92D /* Controller */ = {
@@ -1045,7 +976,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		247329902277FBB8005CF92D /* AXWebVC */ = {
+		247329902277FBB8005CF92D /* UIWeb */ = {
 			isa = PBXGroup;
 			children = (
 				247329912277FBB8005CF92D /* AXWebVC.m */,
@@ -1054,10 +985,10 @@
 				247329942277FBB8005CF92D /* AXWebVC.h */,
 				247329952277FBB8005CF92D /* AXJSContext.m */,
 			);
-			path = AXWebVC;
+			path = UIWeb;
 			sourceTree = "<group>";
 		};
-		247329962277FBB8005CF92D /* AXBaseVC */ = {
+		247329962277FBB8005CF92D /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				247329A12277FBB8005CF92D /* AXCollectionViewController.h */,
@@ -1077,10 +1008,10 @@
 				247329A62277FBB8005CF92D /* AXViewController.h */,
 				2473299E2277FBB8005CF92D /* AXViewController.m */,
 			);
-			path = AXBaseVC;
+			path = Base;
 			sourceTree = "<group>";
 		};
-		247329A72277FBB8005CF92D /* AXBaseAlertVC */ = {
+		247329A72277FBB8005CF92D /* BaseAlert */ = {
 			isa = PBXGroup;
 			children = (
 				247329AB2277FBB8005CF92D /* AXAlertCentreAnimation.h */,
@@ -1091,30 +1022,30 @@
 				247329A92277FBB8005CF92D /* AXBaseAlertVC.m */,
 				244FC1D02297C0D7003BD65F /* AXBaseAlertDefine.h */,
 			);
-			path = AXBaseAlertVC;
+			path = BaseAlert;
 			sourceTree = "<group>";
 		};
-		247329AE2277FBB8005CF92D /* AXSinglePickVC */ = {
+		247329AE2277FBB8005CF92D /* SinglePick */ = {
 			isa = PBXGroup;
 			children = (
 				247329AF2277FBB8005CF92D /* AXSinglePickVC.h */,
 				247329B12277FBB8005CF92D /* AXSinglePickVC.m */,
 				247329B02277FBB8005CF92D /* AXSinglePickVC.xib */,
 			);
-			path = AXSinglePickVC;
+			path = SinglePick;
 			sourceTree = "<group>";
 		};
-		247329B22277FBB8005CF92D /* AXDateVC */ = {
+		247329B22277FBB8005CF92D /* Date */ = {
 			isa = PBXGroup;
 			children = (
 				247329B52277FBB8005CF92D /* AXDateVC.h */,
 				247329B32277FBB8005CF92D /* AXDateVC.m */,
 				247329B42277FBB8005CF92D /* AXDateVC.xib */,
 			);
-			path = AXDateVC;
+			path = Date;
 			sourceTree = "<group>";
 		};
-		247329B62277FBB8005CF92D /* AXQRCodeVC */ = {
+		247329B62277FBB8005CF92D /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
 				247329B92277FBB8005CF92D /* AXQRCodeVC.h */,
@@ -1124,29 +1055,29 @@
 				247329B82277FBB8005CF92D /* QRCodeViewController.m */,
 				247329B72277FBB8005CF92D /* QRCodeViewController.xib */,
 			);
-			path = AXQRCodeVC;
+			path = QRCode;
 			sourceTree = "<group>";
 		};
-		247329BD2277FBB8005CF92D /* AXSafariVC */ = {
+		247329BD2277FBB8005CF92D /* Safari */ = {
 			isa = PBXGroup;
 			children = (
 				247329BE2277FBB8005CF92D /* AXSafariVC.xib */,
 				247329BF2277FBB8005CF92D /* AXSafariVC.h */,
 				247329C02277FBB8005CF92D /* AXSafariVC.m */,
 			);
-			path = AXSafariVC;
+			path = Safari;
 			sourceTree = "<group>";
 		};
-		247329C12277FBB8005CF92D /* AXPlayVC */ = {
+		247329C12277FBB8005CF92D /* Play */ = {
 			isa = PBXGroup;
 			children = (
 				247329C32277FBB8005CF92D /* AXPlayVC.h */,
 				247329C22277FBB8005CF92D /* AXPlayVC.m */,
 			);
-			path = AXPlayVC;
+			path = Play;
 			sourceTree = "<group>";
 		};
-		247329C42277FBB8005CF92D /* AXGuidePageVC */ = {
+		247329C42277FBB8005CF92D /* GuidePage */ = {
 			isa = PBXGroup;
 			children = (
 				247329CA2277FBB8005CF92D /* AXGuidePageCell.h */,
@@ -1156,17 +1087,17 @@
 				247329C62277FBB8005CF92D /* AXGuidePageVC.m */,
 				247329C52277FBB8005CF92D /* AXGuidePageVC.xib */,
 			);
-			path = AXGuidePageVC;
+			path = GuidePage;
 			sourceTree = "<group>";
 		};
-		247329CB2277FBB8005CF92D /* AXWKWeb */ = {
+		247329CB2277FBB8005CF92D /* WKWeb */ = {
 			isa = PBXGroup;
 			children = (
 				247329CC2277FBB8005CF92D /* Controller */,
 				247329CF2277FBB8005CF92D /* Model */,
 				247329D22277FBB8005CF92D /* View */,
 			);
-			path = AXWKWeb;
+			path = WKWeb;
 			sourceTree = "<group>";
 		};
 		247329CC2277FBB8005CF92D /* Controller */ = {
@@ -1194,15 +1125,6 @@
 			children = (
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		247329D32277FBB8005CF92D /* 06AXResources */ = {
-			isa = PBXGroup;
-			children = (
-				247329D42277FBB8005CF92D /* AXKitLocalizedString.strings */,
-				247329D72277FBB8005CF92D /* beep.wav */,
-			);
-			path = 06AXResources;
 			sourceTree = "<group>";
 		};
 		24732AD02277FD53005CF92D /* 02ThirdKit */ = {
@@ -1412,6 +1334,28 @@
 				24732B152277FD53005CF92D /* AXNetGroup.m */,
 			);
 			path = "AFNetworking@AX";
+			sourceTree = "<group>";
+		};
+		24A5737C2298EB4800F95D4E /* 03Resource */ = {
+			isa = PBXGroup;
+			children = (
+				247329D92277FBB9005CF92D /* AXHTML.bundle */,
+				247328B72277FB8B005CF92D /* Info.plist */,
+				247329D82277FBB9005CF92D /* AXiOSKit.xcassets */,
+				247329D42277FBB8005CF92D /* AXKitLocalizedString.strings */,
+				247329D72277FBB8005CF92D /* beep.wav */,
+			);
+			path = 03Resource;
+			sourceTree = "<group>";
+		};
+		24A5737D2298EBE700F95D4E /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				247328C22277FBB8005CF92D /* 01AXKit */,
+				24732AD02277FD53005CF92D /* 02ThirdKit */,
+				24A5737C2298EB4800F95D4E /* 03Resource */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		88A89C0D56DEC220E70D4B27 /* Frameworks */ = {
