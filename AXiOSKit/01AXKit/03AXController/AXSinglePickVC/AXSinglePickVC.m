@@ -11,7 +11,6 @@
 
 @interface AXSinglePickVC ()<UIPickerViewDelegate,UIPickerViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 

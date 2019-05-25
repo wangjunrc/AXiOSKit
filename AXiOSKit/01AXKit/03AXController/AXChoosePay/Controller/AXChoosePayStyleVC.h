@@ -16,9 +16,6 @@
 
 @property(nonatomic,strong)NSArray <AXChoosePayModel *>*dataArray;
 
-@property (weak, nonatomic) IBOutlet UIView *contentView;
-
-
 @property(nonatomic,copy)void(^didSelectBlock)(NSInteger row);
 
 

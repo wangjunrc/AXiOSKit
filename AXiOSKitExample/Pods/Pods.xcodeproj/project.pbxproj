@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -996,7 +996,7 @@
 		02908BBD0E8A83AC644E43EEA1E813B2 /* DZNEmptyDataSet-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DZNEmptyDataSet-Info.plist"; sourceTree = "<group>"; };
 		029B5E360062C1222BD5EBBB051DDEDD /* AXAliPayManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXAliPayManager.h; sourceTree = "<group>"; };
 		02B05723901D03043A521708DB73D70D /* KVOController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0348B3AC45DD8CCF63006EF1E8238E6E /* AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AXiOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0348B3AC45DD8CCF63006EF1E8238E6E /* AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AXiOSKit.framework; path = AXiOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03593EF0932D01DB5F3AD9ACBE084159 /* AXBaseAlertVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AXBaseAlertVC.m; sourceTree = "<group>"; };
 		03E9B893DAA98D21B1FF143AA3825435 /* NSURL+AXKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSURL+AXKit.m"; sourceTree = "<group>"; };
 		042E611924C3A1F412B49B28A1910554 /* AXMacros_log.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXMacros_log.h; sourceTree = "<group>"; };
@@ -1034,7 +1034,7 @@
 		114A3F7A668D806DDBA781A5E8E1C790 /* UISwitch+AXKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UISwitch+AXKit.h"; sourceTree = "<group>"; };
 		117C97E83435B2057F1D19D22E601B59 /* UIImageView+AXKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AXKit.m"; sourceTree = "<group>"; };
 		1196FD039867DCDF3E4BD10455667701 /* AXQRCodeVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXQRCodeVC.h; sourceTree = "<group>"; };
-		11A6A35E1E3198D96376847F09E1085E /* Pods_AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A6A35E1E3198D96376847F09E1085E /* Pods_AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AXiOSKit.framework; path = "Pods-AXiOSKit.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1229E7B0EE539C277F738E87F76A2F2E /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+GIF.h"; path = "SDWebImage/UIImage+GIF.h"; sourceTree = "<group>"; };
 		1307C7881B4785C1DA63FB4501E876F4 /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MJKeyValue.h"; path = "MJExtension/NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
 		1337C211EEDB091335ED40112830025E /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateHeader.h; path = MJRefresh/Custom/Header/MJRefreshStateHeader.h; sourceTree = "<group>"; };
@@ -1127,7 +1127,7 @@
 		2F76CA5741511E847EBB0A4E272EF790 /* AXAuthorizationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AXAuthorizationManager.m; sourceTree = "<group>"; };
 		2FB721FD51E92B58585FEC6A1DD3109D /* AXChoosePayVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AXChoosePayVC.m; sourceTree = "<group>"; };
 		30624A99140ADBE941BBA4DF96F024DE /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
-		30EC30F2F82785C1D0C6B134AA184F47 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30EC30F2F82785C1D0C6B134AA184F47 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31AF1ADE9580312B430A3C4DB46673CF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		31B2F6979C9B8C45DCA74B1216A2924E /* FBKVOController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBKVOController.h; path = FBKVOController/FBKVOController.h; sourceTree = "<group>"; };
 		31E54A954F4F79B10351DFA679505676 /* AXNetManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXNetManager.h; sourceTree = "<group>"; };
@@ -1157,7 +1157,7 @@
 		3F077275C4F4BCD1CE2873D0DB9825A5 /* TADotView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TADotView.h; path = SDCycleScrollView/Lib/SDCycleScrollView/PageControl/TADotView.h; sourceTree = "<group>"; };
 		3FAF5BAF88885C9FD91C4C1C72645751 /* AXGuidePageVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AXGuidePageVC.m; sourceTree = "<group>"; };
 		402BE00117A258124730FD25F1158CDF /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		4034A55A1A68E5FDAC8F3C73C295C955 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4034A55A1A68E5FDAC8F3C73C295C955 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CB9D7CDCA90D641BBB25B87DF098E3 /* MJRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MJRefresh-dummy.m"; sourceTree = "<group>"; };
 		40D9D2641FCBCFD0EF5997743D839EA9 /* SDWebImage.default-GIF-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "SDWebImage.default-GIF-Info.plist"; path = "../SDWebImage.default-GIF/SDWebImage.default-GIF-Info.plist"; sourceTree = "<group>"; };
 		41938D54265D645A224DF41163C402CA /* IBUIButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = IBUIButton.h; sourceTree = "<group>"; };
@@ -1187,7 +1187,7 @@
 		49C1C17C652E8A64A55BB4DB2A99A058 /* SocketRocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-prefix.pch"; sourceTree = "<group>"; };
 		4A259C8CD625AD9912160F652AF8FE43 /* NSObject+MJCoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MJCoding.h"; path = "MJExtension/NSObject+MJCoding.h"; sourceTree = "<group>"; };
 		4BD540FD522BC8F0C130810BBE9FF3D4 /* IQBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQBarButtonItem.h; path = IQKeyboardManager/IQToolbar/IQBarButtonItem.h; sourceTree = "<group>"; };
-		4CCB76039F5A2A121AC697BCCAFCB588 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCB76039F5A2A121AC697BCCAFCB588 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E458A1C99C0371C7B43F56BDC2B2E32 /* AXHalfWidthLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AXHalfWidthLayout.m; sourceTree = "<group>"; };
 		4E900F8C71FCCB1E6CD9BE7FE1AE9540 /* NSString+AXCrypto.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+AXCrypto.m"; sourceTree = "<group>"; };
 		4F03E690EA92BEEC0832AEB75770A25E /* SDWebImage.default-GIF.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "SDWebImage.default-GIF.modulemap"; path = "../SDWebImage.default-GIF/SDWebImage.default-GIF.modulemap"; sourceTree = "<group>"; };
@@ -1210,7 +1210,7 @@
 		5642EA6B7CB35C421F7A76DBCA307AF0 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		56A79B291BFDA2516411493F32E04668 /* NSButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSButton+WebCache.m"; path = "SDWebImage/NSButton+WebCache.m"; sourceTree = "<group>"; };
 		56ABEDA0C1C1E76B0E4AB23AA101926A /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/UIButton+WebCache.h"; sourceTree = "<group>"; };
-		56D85CB81C5846A2218F297231A2FFD0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		56D85CB81C5846A2218F297231A2FFD0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		56F4BE5E82F59DE3543341519E07F4BE /* AXGuidePageVC.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = AXGuidePageVC.xib; sourceTree = "<group>"; };
 		571311DC0D28EAD6BC862183C41CDB4A /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
 		571B5BE8497B8F5456BF4B986096E48E /* MSWeakTimer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
@@ -1219,10 +1219,10 @@
 		59CA6C763F9C4195B3CFAD736DB3A823 /* NSBundle+AXBundle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+AXBundle.m"; sourceTree = "<group>"; };
 		59D646045F71C9F4B96E3303A17D6C2C /* UIScrollView+AXRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+AXRefresh.m"; sourceTree = "<group>"; };
 		5A112E8E0AE4E8DA2A8D2ABFE3D9B7EA /* AXMacros_value.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXMacros_value.h; sourceTree = "<group>"; };
-		5AA79D8091C0EBC6F1E32EAE30C25744 /* NullSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NullSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA79D8091C0EBC6F1E32EAE30C25744 /* NullSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NullSafe.framework; path = NullSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC8039BE904216EDB238C989032BD87 /* NSImage+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSImage+WebCache.m"; path = "SDWebImage/NSImage+WebCache.m"; sourceTree = "<group>"; };
 		5B0DD4BE41F984518D863BA0BBE7B58C /* IBUITextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = IBUITextField.h; sourceTree = "<group>"; };
-		5B62169518168738F9CF97F68541B581 /* KVOController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B62169518168738F9CF97F68541B581 /* KVOController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KVOController.framework; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B65A05D2F50DD53DAA268FD4FD794B1 /* AXiOSKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit-prefix.pch"; sourceTree = "<group>"; };
 		5C8920943AAA3A7EEC88002090A337E2 /* AXLocationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AXLocationManager.m; sourceTree = "<group>"; };
 		5CA9D8640F477E8D3D5C6BFB75E72AF0 /* Pods-AXiOSKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AXiOSKit-Info.plist"; sourceTree = "<group>"; };
@@ -1232,7 +1232,7 @@
 		5FB18D7C8FEC7C580C34F4F70A28F6DA /* AXKitLocalizedString.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = AXKitLocalizedString.strings; path = en.lproj/AXKitLocalizedString.strings; sourceTree = "<group>"; };
 		5FD14C5E4B5B209F6CFC8B6DDD2E5228 /* SDAnimatedImageRep.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImageRep.m; path = SDWebImage/SDAnimatedImageRep.m; sourceTree = "<group>"; };
 		6013F2CEFBAC9ADC9E8623432BC41E1C /* UITextField+AXKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITextField+AXKit.h"; sourceTree = "<group>"; };
-		604FFA8FCDDA52CA8FA91A099231FBEE /* AXiOSKitResource.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AXiOSKitResource.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		604FFA8FCDDA52CA8FA91A099231FBEE /* AXiOSKitResource.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AXiOSKitResource.bundle; path = "AXiOSKit-AXiOSKitResource.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6096588AAFBA611657A500F44F1042B2 /* SDWebImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-dummy.m"; sourceTree = "<group>"; };
 		60AC0CFEE0EEB156736DD19BF8CEA77C /* NullSafe.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NullSafe.xcconfig; sourceTree = "<group>"; };
 		60D389DE4378DE905203B29F46FF6F99 /* DataBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
@@ -1268,7 +1268,7 @@
 		6A836D3CA9C19D57CD811016BC6E2026 /* UIView+AXIBInspectable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXIBInspectable.m"; sourceTree = "<group>"; };
 		6B05175B676855658C00A4ECC89EABD6 /* SDWebImageCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCompat.h; path = SDWebImage/SDWebImageCompat.h; sourceTree = "<group>"; };
 		6B3CED6090C967054B78F4AF115D765C /* SDCycleScrollView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SDCycleScrollView.modulemap; sourceTree = "<group>"; };
-		6B7824FEEFB4DA920A2090BD0EFAF42A /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DZNEmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B7824FEEFB4DA920A2090BD0EFAF42A /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DZNEmptyDataSet.framework; path = DZNEmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCF8DD178F581E65F79AF73A47781EA /* SDCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDCollectionViewCell.h; path = SDCycleScrollView/Lib/SDCycleScrollView/SDCollectionViewCell.h; sourceTree = "<group>"; };
 		6C3FDED8DD6B60A87FDEC7B3402343ED /* AXCycleScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXCycleScrollView.h; sourceTree = "<group>"; };
 		6CFF0A0999E18B9E2D3CE36CA8F36B7E /* UITableView+AXKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITableView+AXKit.m"; sourceTree = "<group>"; };
@@ -1335,7 +1335,7 @@
 		8454DC1602C3922EE56BCA4D53215478 /* Foundation+Log.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		84A5A3A6AE1BEC5D544B7B7D5D0559E4 /* IQToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQToolbar.m; path = IQKeyboardManager/IQToolbar/IQToolbar.m; sourceTree = "<group>"; };
 		84AA059317AB9488F74C59C1801381B7 /* NSBundle+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+MJRefresh.m"; path = "MJRefresh/NSBundle+MJRefresh.m"; sourceTree = "<group>"; };
-		84D89D67AC91950BC58BA6767951F8A0 /* SDCycleScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDCycleScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D89D67AC91950BC58BA6767951F8A0 /* SDCycleScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDCycleScrollView.framework; path = SDCycleScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8541FAD2BD50AAF95151DFA8AB441080 /* NSObject+AXCacheImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+AXCacheImage.h"; sourceTree = "<group>"; };
 		85E3DB6AD39A3F95DE561DDB7F884445 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoFooter.m; path = MJRefresh/Base/MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		86AFAB36EE6D5AB8F29A6917A222945B /* AXSinglePickVC.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = AXSinglePickVC.xib; sourceTree = "<group>"; };
@@ -1401,18 +1401,18 @@
 		9BEC0F96293D5240C1F4DBC6218167A4 /* NSDateComponents+AXKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+AXKit.m"; sourceTree = "<group>"; };
 		9C03E3F4901DA79BC4DC7A57BDD01458 /* FLAnimatedImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLAnimatedImage.h; path = FLAnimatedImage/FLAnimatedImage.h; sourceTree = "<group>"; };
 		9CF647845B9FE0DFD892ED8A5A8A7C51 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DBB74E6B6EA62BE21C95B0119975028 /* AXScriptMessageHandlerHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXScriptMessageHandlerHelper.h; sourceTree = "<group>"; };
 		9DF667AEA0FF34ADEA51B62FEAD4A0F0 /* NullSafe-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NullSafe-umbrella.h"; sourceTree = "<group>"; };
 		9E074E9459E38D7D2ACF7C86666F8B97 /* NSError+AXKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSError+AXKit.m"; sourceTree = "<group>"; };
 		9E134C143BF7A23F8F62E2EA168523D0 /* UIViewController+AXAlert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXAlert.m"; sourceTree = "<group>"; };
-		9E9C4945FF9FBF09BF34D10CF7197FAB /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E9C4945FF9FBF09BF34D10CF7197FAB /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB3E1C08301A4BA7B72C79754659EFD /* SDWebImageCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCoder.m; path = SDWebImage/SDWebImageCoder.m; sourceTree = "<group>"; };
 		9ECD722F3A6FBA24CCCD6D4072AE10A4 /* TAAbstractDotView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TAAbstractDotView.m; path = SDCycleScrollView/Lib/SDCycleScrollView/PageControl/TAAbstractDotView.m; sourceTree = "<group>"; };
 		9ED0DFCEAFD21FE07933DD1A8A8DEE7A /* QRCodeViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		9EE1C257586F28B872C866213F2AC5B7 /* AXConfigureManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXConfigureManager.h; sourceTree = "<group>"; };
 		9F0F38D16C11C4BC0F80F56F697169FE /* IQUIViewController+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIViewController+Additions.h"; path = "IQKeyboardManager/Categories/IQUIViewController+Additions.h"; sourceTree = "<group>"; };
-		9FA032CDBEDF55198F69685A6C77B01B /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FA032CDBEDF55198F69685A6C77B01B /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SocketRocket.framework; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA6FDB4D3BE2B6B0BA6DC5F456858F7 /* AXGuidePageCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = AXGuidePageCell.xib; sourceTree = "<group>"; };
 		9FC06F5CFC68DA31C4E11D1C4A1697F3 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
 		9FE7B5EE544234B2935CD12640ACE526 /* SDWebImage.default-GIF-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SDWebImage.default-GIF-prefix.pch"; path = "../SDWebImage.default-GIF/SDWebImage.default-GIF-prefix.pch"; sourceTree = "<group>"; };
@@ -1430,7 +1430,7 @@
 		A2F50FF8CFCD495B831783A506163740 /* SDWebImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.xcconfig; sourceTree = "<group>"; };
 		A4584C0B131E79B736E3CD33B6C96AB1 /* MJExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MJExtension-Info.plist"; sourceTree = "<group>"; };
 		A48CAB44EC107E11C5EC1AAC5A7E811E /* AXNetManager+Upload.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AXNetManager+Upload.h"; sourceTree = "<group>"; };
-		A4A9FA44F262F441AE845BB632D1E98A /* Pods_AXiOSKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4A9FA44F262F441AE845BB632D1E98A /* Pods_AXiOSKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AXiOSKitExample.framework; path = "Pods-AXiOSKitExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4CAD0CAFCD34B20157BD06C35D1998C /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5072C5628BB5BADFACED5A03887FA7D /* Foundation+AXLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Foundation+AXLog.m"; sourceTree = "<group>"; };
 		A5147758CA066F1101F98BB67556E12C /* MJRefreshStateHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshStateHeader.m; path = MJRefresh/Custom/Header/MJRefreshStateHeader.m; sourceTree = "<group>"; };
@@ -1451,7 +1451,7 @@
 		AA434F9CBA6764CF1C8CC9FD1D85ABCE /* AXWeakProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXWeakProxy.h; sourceTree = "<group>"; };
 		AA4D691CDF3B1234711D8C0AB8C077C3 /* NSObject+AXVersion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AXVersion.m"; sourceTree = "<group>"; };
 		AA5A83804A97260D4F38593D9E8B81A0 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
-		AA7C621B9476977E017E8DA609AED6C2 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA7C621B9476977E017E8DA609AED6C2 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MJRefresh.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA9A91443B392C861E144DD6D7E89BE8 /* UIBarButtonItem+AXKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+AXKit.h"; sourceTree = "<group>"; };
 		AA9D69816B96A447F58E4C19A6ABB229 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
 		AAD76D43602F4933610418840CDC0E06 /* AXVeriCodeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXVeriCodeView.h; sourceTree = "<group>"; };
@@ -1460,7 +1460,7 @@
 		AB84F97DA775D07EB67948B67EFF82CE /* NSString+AXCrypto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+AXCrypto.h"; sourceTree = "<group>"; };
 		AC564EA434C2D199F60064FF1289FBB5 /* CALayer+AXFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CALayer+AXFrame.h"; sourceTree = "<group>"; };
 		AC60E6AED98F871AF53384A5270C3C25 /* AXChoosePayStyleCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = AXChoosePayStyleCell.xib; sourceTree = "<group>"; };
-		ACA58BF5DEFA134CD3089072E8FAB83E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		ACA58BF5DEFA134CD3089072E8FAB83E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		AD024A727F83AA8B4FA1F3015E4C97F0 /* IQKeyboardManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0C16DF1DF47F0E678440B699BFCAB4 /* IBUIView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = IBUIView.m; sourceTree = "<group>"; };
 		AD46EC92B786A84692042A4AC35128A8 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TAAnimatedDotView.h; path = SDCycleScrollView/Lib/SDCycleScrollView/PageControl/TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -1470,7 +1470,7 @@
 		ADFCC704FB30CA41593A399DF7DECFF6 /* UIImage+ForceDecode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ForceDecode.h"; path = "SDWebImage/UIImage+ForceDecode.h"; sourceTree = "<group>"; };
 		AE382BD0AA06680BA06716A6A2B888A3 /* AXRefreshFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AXRefreshFooter.m; sourceTree = "<group>"; };
 		AE532C5420B08DB05B5FA86CD83CCD1B /* UIButton+AXCountDown2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+AXCountDown2.h"; sourceTree = "<group>"; };
-		AF15E3547178183F96F751264AA43C1C /* IQKeyboardManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF15E3547178183F96F751264AA43C1C /* IQKeyboardManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManager.framework; path = IQKeyboardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF46FCD1D0E2D08D28B7317455763149 /* Aspects-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Aspects-Info.plist"; sourceTree = "<group>"; };
 		AF77F1798A33505A804CEE990D96F656 /* UICollectionView+AXKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+AXKit.m"; sourceTree = "<group>"; };
 		AF940F6539D77114810C1FC51064A614 /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+IQKeyboardToolbar.h"; path = "IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
@@ -1498,7 +1498,7 @@
 		B7C4810CB562EBFDD2193B586215B2D6 /* SDWebImageFrame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageFrame.m; path = SDWebImage/SDWebImageFrame.m; sourceTree = "<group>"; };
 		B8202A2E16A201FA408789CBAFB92C82 /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
 		B873BB24A2ADDED5D7925133C2793C7C /* MJRefreshHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshHeader.m; path = MJRefresh/Base/MJRefreshHeader.m; sourceTree = "<group>"; };
-		B89B9317056F7E28CAB8882B1027533E /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B89B9317056F7E28CAB8882B1027533E /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = "SDWebImage.default-GIF.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A174BFC25AAC6A5C0CF59D24B4B046 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		B8AFC9EFF13D4AB44638CB614077814C /* MJRefreshAutoStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoStateFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m; sourceTree = "<group>"; };
 		B8E9D1D17A449632D7A54C20BC4F8D16 /* SDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = SDWebImage/SDWebImageCompat.m; sourceTree = "<group>"; };
@@ -1552,7 +1552,7 @@
 		CCB24F883D01EE1C8294797F48B3E926 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDCollectionViewCell.m; path = SDCycleScrollView/Lib/SDCycleScrollView/SDCollectionViewCell.m; sourceTree = "<group>"; };
 		CD43394A5FBC11FA12C6CF4504F30571 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		CD4538FA46BA6BF6BC9D76ABC0E78C06 /* Pods-AXiOSKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AXiOSKit-dummy.m"; sourceTree = "<group>"; };
-		CDB02A7BEB940FAD0D5500EBE8DE4085 /* Aspects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Aspects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDB02A7BEB940FAD0D5500EBE8DE4085 /* Aspects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Aspects.framework; path = Aspects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2760343561042468883C994B308F09 /* MJRefreshBackNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackNormalFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h; sourceTree = "<group>"; };
 		CF617758E864AAB30936DAAA1C9DB374 /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
 		D05C2CFCE8D4F765466A4AACE402E083 /* SDCycleScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDCycleScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1562,9 +1562,9 @@
 		D188EE5DD372127F22EBA7BCE545D940 /* UIView+SDExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+SDExtension.h"; path = "SDCycleScrollView/Lib/SDCycleScrollView/UIView+SDExtension.h"; sourceTree = "<group>"; };
 		D20E7E24E90F54A25DD2FCF8AEF868BC /* SDWebImage.default-GIF-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SDWebImage.default-GIF-umbrella.h"; path = "../SDWebImage.default-GIF/SDWebImage.default-GIF-umbrella.h"; sourceTree = "<group>"; };
 		D2C27333E37516CDB74D7E775ADD17CD /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		D401CCE15A17AFB8EF6AA2352F1CB873 /* FLAnimatedImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FLAnimatedImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D401CCE15A17AFB8EF6AA2352F1CB873 /* FLAnimatedImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FLAnimatedImage.framework; path = FLAnimatedImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4184A78431343192ED5BFB0E1D2489F /* FLAnimatedImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FLAnimatedImageView+WebCache.m"; path = "SDWebImage/FLAnimatedImage/FLAnimatedImageView+WebCache.m"; sourceTree = "<group>"; };
-		D423788A9F23140605B992E4B79E80C2 /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D423788A9F23140605B992E4B79E80C2 /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MJExtension.framework; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45216123218349DF1E57B5F494060B9 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
 		D454410BBCF387A37E5FAC30966E4D70 /* MJFoundation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJFoundation.m; path = MJExtension/MJFoundation.m; sourceTree = "<group>"; };
 		D4DAEA96933610B19568FE42695E4182 /* SDWebImageCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCoder.h; path = SDWebImage/SDWebImageCoder.h; sourceTree = "<group>"; };
@@ -1652,7 +1652,7 @@
 		F18EFF7B9FAE5C5394FCBF1F36518DA7 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
 		F1E49F3BA888F46994E712E91EAC1EB2 /* MJExtensionConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJExtensionConst.m; path = MJExtension/MJExtensionConst.m; sourceTree = "<group>"; };
 		F27CE6CBC7D797ACC9C7420BAAB5BDEE /* AXNetManagerHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXNetManagerHeader.h; sourceTree = "<group>"; };
-		F2DF8807869AC07A0E44BC0012A1A8EB /* AXiOSKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = AXiOSKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F2DF8807869AC07A0E44BC0012A1A8EB /* AXiOSKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AXiOSKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F31741D3C64BB4EE04075621197C6AC8 /* UIWindow+AXKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+AXKit.m"; sourceTree = "<group>"; };
 		F449CE7C0D18F63425EBB00815BD1D1E /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshGifHeader.h; path = MJRefresh/Custom/Header/MJRefreshGifHeader.h; sourceTree = "<group>"; };
 		F4A020F878F126CB840D752E5995CBFC /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -1897,6 +1897,7 @@
 				322EB797895727EE39573244E4E8643F /* AXSinglePickVC */,
 				5C67BFE31075B99A6ACBC3127C471C1A /* AXWebVC */,
 			);
+			name = 03AXController;
 			path = 03AXController;
 			sourceTree = "<group>";
 		};
@@ -1908,6 +1909,7 @@
 				B64751F56205A3D840ACF1A1935CC435 /* AXChoosePayVC.h */,
 				2FB721FD51E92B58585FEC6A1DD3109D /* AXChoosePayVC.m */,
 			);
+			name = Controller;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -1930,6 +1932,7 @@
 			children = (
 				0EA796F1DADA40F60DBE0F36CB794C51 /* lame */,
 			);
+			name = include;
 			path = include;
 			sourceTree = "<group>";
 		};
@@ -1939,6 +1942,7 @@
 				9820F9862182326FD9690EB635ED0CE5 /* AXChoosePayModel.h */,
 				C41B46B4DD2419632A32100531B93AEA /* AXChoosePayModel.m */,
 			);
+			name = Model;
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -1973,6 +1977,7 @@
 				0999A642D1ECC2BDBBB2F90F70E67775 /* Aspects.m */,
 				B6FC4FF1FEDFBA321FBCCEA2365E2E61 /* Support Files */,
 			);
+			name = Aspects;
 			path = Aspects;
 			sourceTree = "<group>";
 		};
@@ -1982,6 +1987,7 @@
 				909E80D2A4C7996543E68D523E9642F1 /* NullSafe.m */,
 				18B9B1EA8013BC208A70AF197DA92F7C /* Support Files */,
 			);
+			name = NullSafe;
 			path = NullSafe;
 			sourceTree = "<group>";
 		};
@@ -2006,6 +2012,7 @@
 			children = (
 				48075ED4A7D008C6C7D87F74EC91C6FF /* lame.h */,
 			);
+			name = lame;
 			path = lame;
 			sourceTree = "<group>";
 		};
@@ -2063,6 +2070,7 @@
 				AFA8B49A6F0CA81892BFE9A292B41826 /* NSString+MJExtension.m */,
 				1181C165DADEE668F53F106D45C24459 /* Support Files */,
 			);
+			name = MJExtension;
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
@@ -2086,6 +2094,7 @@
 				AA434F9CBA6764CF1C8CC9FD1D85ABCE /* AXWeakProxy.h */,
 				45D1539558B396111FB1934C0A6184A1 /* AXWeakProxy.m */,
 			);
+			name = 07AXProxy;
 			path = 07AXProxy;
 			sourceTree = "<group>";
 		};
@@ -2095,6 +2104,7 @@
 				09EE0CCFC7B4DFA2732671ED75112C70 /* AXCountDownObject.h */,
 				53D0EC0EFFACCEE4F3B43739A19B1E51 /* AXCountDownObject.m */,
 			);
+			name = CountDownObj;
 			path = CountDownObj;
 			sourceTree = "<group>";
 		};
@@ -2135,6 +2145,7 @@
 				E967673774CC3878747D40189FEEC4BA /* AXBaseAlertVC.h */,
 				03593EF0932D01DB5F3AD9ACBE084159 /* AXBaseAlertVC.m */,
 			);
+			name = AXBaseAlertVC;
 			path = AXBaseAlertVC;
 			sourceTree = "<group>";
 		};
@@ -2149,6 +2160,7 @@
 				AA4F6542418B2F6FA39AF8811C606C7D /* Support Files */,
 				DD5670B2E11AD6C7268A4E189B764FA1 /* UIKit */,
 			);
+			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -2167,6 +2179,7 @@
 				ED03A3DAE130A274D7A54FDCF374A4BF /* UMTool.h */,
 				1CCF9F014FCFFEF54C3C2AA487290AFE /* UMTool.m */,
 			);
+			name = "UMengUShare@AX";
 			path = "UMengUShare@AX";
 			sourceTree = "<group>";
 		};
@@ -2176,6 +2189,7 @@
 				F810876DB998B25D69709B0F69AE13BB /* AXDateVC.h */,
 				42DBED09EACB7FB5F6BFAB81EF00226C /* AXDateVC.m */,
 			);
+			name = AXDateVC;
 			path = AXDateVC;
 			sourceTree = "<group>";
 		};
@@ -2208,6 +2222,7 @@
 				BDF8263D5676075041C466ADAA6348F3 /* MBProgressHUD+AX.h */,
 				B13AF354A6EB5864FA6ABA9C0A947533 /* MBProgressHUD+AX.m */,
 			);
+			name = "MBProgressHUD@AX";
 			path = "MBProgressHUD@AX";
 			sourceTree = "<group>";
 		};
@@ -2217,6 +2232,7 @@
 				AAD76D43602F4933610418840CDC0E06 /* AXVeriCodeView.h */,
 				789331FE5EAE409D00DCE3735A5C47E3 /* AXVeriCodeView.m */,
 			);
+			name = AXVerificationCode;
 			path = AXVerificationCode;
 			sourceTree = "<group>";
 		};
@@ -2225,6 +2241,7 @@
 			children = (
 				3526ED3C8C18503B6C1C5C3F394D633F /* AXKitLocalizedString.strings */,
 			);
+			name = 06AXResources;
 			path = 06AXResources;
 			sourceTree = "<group>";
 		};
@@ -2233,6 +2250,7 @@
 			children = (
 				86AFAB36EE6D5AB8F29A6917A222945B /* AXSinglePickVC.xib */,
 			);
+			name = AXSinglePickVC;
 			path = AXSinglePickVC;
 			sourceTree = "<group>";
 		};
@@ -2241,6 +2259,7 @@
 			children = (
 				C96C3731AC999B7E5920A4F972937ED5 /* AXNumberKeyboard */,
 			);
+			name = 04AXView;
 			path = 04AXView;
 			sourceTree = "<group>";
 		};
@@ -2250,6 +2269,7 @@
 				594DB63E76342758F3E1BAF1F1CE8AFC /* YYLabel+AXiOSKit.h */,
 				327DB64F0F535F96F958B9523F154773 /* YYLabel+AXiOSKit.m */,
 			);
+			name = "YYLabel@AX";
 			path = "YYLabel@AX";
 			sourceTree = "<group>";
 		};
@@ -2272,6 +2292,7 @@
 			children = (
 				059C956203F155FA72645511EB78FA3B /* include */,
 			);
+			name = lame;
 			path = lame;
 			sourceTree = "<group>";
 		};
@@ -2281,6 +2302,7 @@
 				CB3AA6BCB371424548B1A3D269ED2832 /* AXTouchIDManager.h */,
 				796F811C0A15897525E58E8C4807DDA2 /* AXTouchIDManager.m */,
 			);
+			name = TouchIDManager;
 			path = TouchIDManager;
 			sourceTree = "<group>";
 		};
@@ -2306,6 +2328,7 @@
 				E35C8AA309A2AC5BDB211C6B2D5B5EA8 /* AXMacros_runTime.h */,
 				5A112E8E0AE4E8DA2A8D2ABFE3D9B7EA /* AXMacros_value.h */,
 			);
+			name = 00Macros;
 			path = 00Macros;
 			sourceTree = "<group>";
 		};
@@ -2324,6 +2347,7 @@
 				8E1EE8B1C6ED80BD6537FED4893E3EB4 /* UIScrollView+EmptyDataSet.m */,
 				54EA649DD2ECBD7D0258C91400B412E9 /* Support Files */,
 			);
+			name = DZNEmptyDataSet;
 			path = DZNEmptyDataSet;
 			sourceTree = "<group>";
 		};
@@ -2333,6 +2357,7 @@
 				33FE42362E8C66F454D748B761E7BC3F /* AXGCDTimer.h */,
 				A54FB1D0E5288755B4D4DB4A2508287C /* AXGCDTimer.m */,
 			);
+			name = GCDTimer;
 			path = GCDTimer;
 			sourceTree = "<group>";
 		};
@@ -2344,6 +2369,7 @@
 				1F804A883F955ACD067D8C35E6440960 /* SRWebSocket.m */,
 				3B26F2ADD6A3D09BF13E85C93D16FB0A /* Support Files */,
 			);
+			name = SocketRocket;
 			path = SocketRocket;
 			sourceTree = "<group>";
 		};
@@ -2353,6 +2379,7 @@
 				87530750299ECBF2ECDD55005255CBB4 /* Controller */,
 				F531B5FE67160DD4615006609FCA9107 /* View */,
 			);
+			name = AXChoosePay;
 			path = AXChoosePay;
 			sourceTree = "<group>";
 		};
@@ -2404,6 +2431,7 @@
 				5BCE977E6DDDF99DF75696A6BFA5A734 /* Resources */,
 				8D1F679F3CE5CBE46DDF74BDC0830D45 /* Support Files */,
 			);
+			name = IQKeyboardManager;
 			path = IQKeyboardManager;
 			sourceTree = "<group>";
 		};
@@ -2463,6 +2491,7 @@
 				6DD97D220C6004C43A8A26DD2698D29D /* Resources */,
 				0F50C0E685D7F45D667538629BEB421B /* Support Files */,
 			);
+			name = MJRefresh;
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
@@ -2479,6 +2508,7 @@
 			children = (
 				3375FA979A78C681131BBE7924030B22 /* AXWebVC.xib */,
 			);
+			name = AXWebVC;
 			path = AXWebVC;
 			sourceTree = "<group>";
 		};
@@ -2502,6 +2532,7 @@
 				09C9E6C194CDD9EA8A035B7E16BE5195 /* AXSafariVC.h */,
 				33F05F4B6BC9DAD78253BBD464C96578 /* AXSafariVC.m */,
 			);
+			name = AXSafariVC;
 			path = AXSafariVC;
 			sourceTree = "<group>";
 		};
@@ -2512,6 +2543,7 @@
 				D562DD6AFA491954A50180BC560C1FD9 /* MBProgressHUD.m */,
 				05380A4B6B715F366637829DDCEE4905 /* Support Files */,
 			);
+			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -2523,6 +2555,7 @@
 				66C16E777524117835812CA138B099AC /* AXWebVC.h */,
 				611052E69F4C4BF673CAD2BDC340D7DA /* AXWebVC.m */,
 			);
+			name = AXWebVC;
 			path = AXWebVC;
 			sourceTree = "<group>";
 		};
@@ -2532,6 +2565,7 @@
 				2976BD34627169504D61876917CEE7B1 /* NSObject+FBKVOControllerAX.h */,
 				C44D6A699841D94B29F5BBF0C80D7A78 /* NSObject+FBKVOControllerAX.m */,
 			);
+			name = "KVOController@AX";
 			path = "KVOController@AX";
 			sourceTree = "<group>";
 		};
@@ -2544,6 +2578,7 @@
 				4515A883BAA69F414EF8A055C3DB2305 /* FLAnimatedImageView.m */,
 				002DA9313085B427AABA9026DDE1C416 /* Support Files */,
 			);
+			name = FLAnimatedImage;
 			path = FLAnimatedImage;
 			sourceTree = "<group>";
 		};
@@ -2555,6 +2590,7 @@
 				D85B273C386DD69786994AF115FF4675 /* DBStatements.h */,
 				64E9F18135B823B423F9A48B10D5BA1E /* DBStatements.m */,
 			);
+			name = "FMDB@AX";
 			path = "FMDB@AX";
 			sourceTree = "<group>";
 		};
@@ -2574,6 +2610,7 @@
 				E1815EB529A0997F5EBB0F36AA791ECC /* LocationManager */,
 				44F99D46A5E3339E071564174C4355CC /* TouchIDManager */,
 			);
+			name = 08Manager;
 			path = 08Manager;
 			sourceTree = "<group>";
 		};
@@ -2584,6 +2621,7 @@
 				22FD9B429854ABAE1065B973E8A5DDD7 /* GIF */,
 				E90F1DBBDD3B78F31C59B14A9BC556B8 /* Support Files */,
 			);
+			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -2606,6 +2644,7 @@
 				3A048AEBCD187EEA5F016060D5D0CD09 /* UIView+SDExtension.m */,
 				8910976B8FE3ED4AA911A5AB1B111971 /* Support Files */,
 			);
+			name = SDCycleScrollView;
 			path = SDCycleScrollView;
 			sourceTree = "<group>";
 		};
@@ -2629,6 +2668,7 @@
 			children = (
 				DBBFB770486B8A4C1DDAB8CF12E30675 /* AXSafariVC.xib */,
 			);
+			name = AXSafariVC;
 			path = AXSafariVC;
 			sourceTree = "<group>";
 		};
@@ -2638,6 +2678,7 @@
 				08A72742E2BB2605200307A24D0CC55D /* AXDottedLineView.h */,
 				D80F82AB8F311823403F68425FF93A54 /* AXDottedLineView.m */,
 			);
+			name = AXDottedLineView;
 			path = AXDottedLineView;
 			sourceTree = "<group>";
 		};
@@ -2647,6 +2688,7 @@
 				571B5BE8497B8F5456BF4B986096E48E /* MSWeakTimer.h */,
 				6564B522B1F46E8A28344C5B5C759BCE /* MSWeakTimer.m */,
 			);
+			name = MSWeakTimer;
 			path = MSWeakTimer;
 			sourceTree = "<group>";
 		};
@@ -2660,6 +2702,7 @@
 				FF2469CC106C785E9EE4F1248CAFB239 /* UIScrollView+AXRefresh.h */,
 				59D646045F71C9F4B96E3303A17D6C2C /* UIScrollView+AXRefresh.m */,
 			);
+			name = "MJRefresh@AX";
 			path = "MJRefresh@AX";
 			sourceTree = "<group>";
 		};
@@ -2775,6 +2818,7 @@
 				2BDF470F08D153946B91C9F72CE4B8A2 /* WKWebView+AXKit.h */,
 				9983F16198A32AB4C8BB77CB42E70598 /* WKWebView+AXKit.m */,
 			);
+			name = 01AXCategory;
 			path = 01AXCategory;
 			sourceTree = "<group>";
 		};
@@ -2795,6 +2839,7 @@
 				94D965B52BA9434E386708ADD7F28951 /* IBUIView.h */,
 				AD0C16DF1DF47F0E678440B699BFCAB4 /* IBUIView.m */,
 			);
+			name = 02IBView;
 			path = 02IBView;
 			sourceTree = "<group>";
 		};
@@ -2804,6 +2849,7 @@
 				A2C4AADDB94C7DEC144927EFB2BFF42B /* AXChoosePayStyleVC.xib */,
 				9B5D6C2466A1FDABA8E2A26021EA84DC /* AXChoosePayVC.xib */,
 			);
+			name = Controller;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -2908,6 +2954,7 @@
 				65A4BEB0E37170E0A797E96E42572004 /* AXWebVC */,
 				E13B964EF841176EF2DAC49EF41138FC /* AXWKWeb */,
 			);
+			name = 03AXController;
 			path = 03AXController;
 			sourceTree = "<group>";
 		};
@@ -2931,6 +2978,7 @@
 				2D562A8A4796097ADD11443BD642BFC4 /* AXChoosePayStyleCell.h */,
 				AD83B7EF06A197460C046F91423231EC /* AXChoosePayStyleCell.m */,
 			);
+			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -2954,6 +3002,7 @@
 				46FF59F19F9F62DF3099C4EC366CDC73 /* AXViewController.h */,
 				E06C8E97E3077562A2F37054637B2868 /* AXViewController.m */,
 			);
+			name = AXBaseVC;
 			path = AXBaseVC;
 			sourceTree = "<group>";
 		};
@@ -2988,6 +3037,7 @@
 				BE8531A61B274B60E63A0A6FE50869CF /* UIImageView+AXCircle.h */,
 				8F3BBDC62E921CF61BD1813309161E44 /* UIImageView+AXCircle.m */,
 			);
+			name = "SDWebImage@AX";
 			path = "SDWebImage@AX";
 			sourceTree = "<group>";
 		};
@@ -3001,6 +3051,7 @@
 				CAACE84A29B3862399798CCF81239ADA /* NSObject+FBKVOController.m */,
 				60A67F9C1E58BEACBD1ECC2DC63C4B96 /* Support Files */,
 			);
+			name = KVOController;
 			path = KVOController;
 			sourceTree = "<group>";
 		};
@@ -3012,6 +3063,7 @@
 				7E04B16FF53438E5D67107F8B0A61494 /* AXWebScriptMessageModel.h */,
 				2DF38592006AF86DD793139DF733ECA1 /* AXWebScriptMessageModel.m */,
 			);
+			name = Model;
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -3037,6 +3089,7 @@
 				F5B71879CECA45207A4072B17A577A78 /* AXNumberKeyboard */,
 				2DD1B954BBB9436353EC4C78E0B69F00 /* AXVerificationCode */,
 			);
+			name = 04AXView;
 			path = 04AXView;
 			sourceTree = "<group>";
 		};
@@ -3046,6 +3099,7 @@
 				A1E4AA889A4BB5953D80FE4AC549E749 /* AXPhotoBrowserVC.h */,
 				90F0E9DF61ADA9C607A7E614213F0590 /* AXPhotoBrowserVC.m */,
 			);
+			name = "PhotoBrowser@AX";
 			path = "PhotoBrowser@AX";
 			sourceTree = "<group>";
 		};
@@ -3055,6 +3109,7 @@
 				73C946BBB258377AB0F552EA3F0AA808 /* AXSinglePickVC.h */,
 				4426FDB6A273C0491EBE32197B2CF9A6 /* AXSinglePickVC.m */,
 			);
+			name = AXSinglePickVC;
 			path = AXSinglePickVC;
 			sourceTree = "<group>";
 		};
@@ -3107,6 +3162,7 @@
 				06AD0806321C0AC5175CA37B351ADB30 /* Model */,
 				8FBF1A192BC3215FEF4D0F41DCBF4166 /* View */,
 			);
+			name = AXChoosePay;
 			path = AXChoosePay;
 			sourceTree = "<group>";
 		};
@@ -3132,6 +3188,7 @@
 				9ED0DFCEAFD21FE07933DD1A8A8DEE7A /* QRCodeViewController.h */,
 				35876973E35829F1873E4F57560DD22C /* QRCodeViewController.m */,
 			);
+			name = AXQRCodeVC;
 			path = AXQRCodeVC;
 			sourceTree = "<group>";
 		};
@@ -3140,6 +3197,7 @@
 			children = (
 				8A3F1D3E913B39CFE46287392101B7BA /* AXDateVC.xib */,
 			);
+			name = AXDateVC;
 			path = AXDateVC;
 			sourceTree = "<group>";
 		};
@@ -3165,6 +3223,7 @@
 				DC72068248DA565964C393B61B50E068 /* AXWKWebVC.h */,
 				A5F4A82CF72AA62D355A38DBE54C8FE1 /* AXWKWebVC.m */,
 			);
+			name = Controller;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -3173,6 +3232,7 @@
 			children = (
 				37EE7DAD7739D37ABA26D66E6486EAEE /* AXNumberKeyboard.xib */,
 			);
+			name = AXNumberKeyboard;
 			path = AXNumberKeyboard;
 			sourceTree = "<group>";
 		};
@@ -3206,6 +3266,7 @@
 				6581F361EC26A3D3E2B94C39CEA3EB7F /* AXQRCodeVC.xib */,
 				14B81E9DCF58FA94A63C1005CCAC3350 /* QRCodeViewController.xib */,
 			);
+			name = AXQRCodeVC;
 			path = AXQRCodeVC;
 			sourceTree = "<group>";
 		};
@@ -3215,6 +3276,7 @@
 				6C3FDED8DD6B60A87FDEC7B3402343ED /* AXCycleScrollView.h */,
 				E9BF630B09218FC788AD127142853824 /* AXCycleScrollView.m */,
 			);
+			name = AXCycleScrollView;
 			path = AXCycleScrollView;
 			sourceTree = "<group>";
 		};
@@ -3261,6 +3323,7 @@
 				1BD157D11DCDA9B2E0AAED9846BA9C29 /* CountDownObj */,
 				4FBCD9B663CBBA2E16CA8C5D1D074BE5 /* GCDTimer */,
 			);
+			name = 05AXObject;
 			path = 05AXObject;
 			sourceTree = "<group>";
 		};
@@ -3277,6 +3340,7 @@
 				07D907AB45B67A3712B10AB974C6AB05 /* AXNetManager+Verson.m */,
 				F27CE6CBC7D797ACC9C7420BAAB5BDEE /* AXNetManagerHeader.h */,
 			);
+			name = "AFNetworking@AX";
 			path = "AFNetworking@AX";
 			sourceTree = "<group>";
 		};
@@ -3286,6 +3350,7 @@
 				7DA68F3CD61E986410F7943CDB5BE224 /* UIScrollView+AXEmptyDataSet.h */,
 				C8D456578E80E565EE70AD220CC42090 /* UIScrollView+AXEmptyDataSet.m */,
 			);
+			name = "DZNEmptyDataSet@AX";
 			path = "DZNEmptyDataSet@AX";
 			sourceTree = "<group>";
 		};
@@ -3339,6 +3404,7 @@
 				C7A16F5506774BE26CAE2ED87B0111CC /* Controller */,
 				A8E7A21FFF6E27C54E320979DDF27D59 /* Model */,
 			);
+			name = AXWKWeb;
 			path = AXWKWeb;
 			sourceTree = "<group>";
 		};
@@ -3359,6 +3425,7 @@
 				7D8EF3323F531E7EDCD6FB32743A59D4 /* LocationManager.h */,
 				DA9E3E680122466747FB781C047C17B3 /* LocationManager.m */,
 			);
+			name = LocationManager;
 			path = LocationManager;
 			sourceTree = "<group>";
 		};
@@ -3368,6 +3435,7 @@
 				769596F04534E34020A425429234CB71 /* LameHelper.h */,
 				52070259FA07A405F5143E59F4C25AEB /* LameHelper.m */,
 			);
+			name = "lame@AX";
 			path = "lame@AX";
 			sourceTree = "<group>";
 		};
@@ -3377,6 +3445,7 @@
 				3ED7709C3F80C6F59E54CF51DE3D7B21 /* AXWebSocketManager.h */,
 				89C147969400448DB3DC493C4F3908A3 /* AXWebSocketManager.m */,
 			);
+			name = "SocketRocket@AX";
 			path = "SocketRocket@AX";
 			sourceTree = "<group>";
 		};
@@ -3444,6 +3513,7 @@
 				1DC912E977A2989D5352D5E85E6FC0D9 /* ViewController+MASAdditions.m */,
 				EB0E6F17260765B2B99BF98D8BE38FEB /* Support Files */,
 			);
+			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -3453,6 +3523,7 @@
 				9FA6FDB4D3BE2B6B0BA6DC5F456858F7 /* AXGuidePageCell.xib */,
 				56F4BE5E82F59DE3543341519E07F4BE /* AXGuidePageVC.xib */,
 			);
+			name = AXGuidePageVC;
 			path = AXGuidePageVC;
 			sourceTree = "<group>";
 		};
@@ -3462,6 +3533,7 @@
 				EAAAB694E8E5696233FB4696C25B8899 /* AXPlayVC.h */,
 				8E92D6A409172752FCAE83B8500B8B5C /* AXPlayVC.m */,
 			);
+			name = AXPlayVC;
 			path = AXPlayVC;
 			sourceTree = "<group>";
 		};
@@ -3470,6 +3542,7 @@
 			children = (
 				AC60E6AED98F871AF53384A5270C3C25 /* AXChoosePayStyleCell.xib */,
 			);
+			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -3481,6 +3554,7 @@
 				1616DCD8C0F1BDDC7CBDC7B8630CFE4C /* UITextField+AXNumberKeyboard.h */,
 				43D6FF326AE582628B5340FF9F162866 /* UITextField+AXNumberKeyboard.m */,
 			);
+			name = AXNumberKeyboard;
 			path = AXNumberKeyboard;
 			sourceTree = "<group>";
 		};
@@ -3492,6 +3566,7 @@
 				50E7544CC5310403988681913075C95E /* AXGuidePageVC.h */,
 				3FAF5BAF88885C9FD91C4C1C72645751 /* AXGuidePageVC.m */,
 			);
+			name = AXGuidePageVC;
 			path = AXGuidePageVC;
 			sourceTree = "<group>";
 		};
@@ -3501,6 +3576,7 @@
 				F879857E297A17F555E76F704F7014FE /* WKWebViewController.h */,
 				C65CE4CD0CF97D41BC036BCA2C88CB77 /* WKWebViewController.m */,
 			);
+			name = WKWebViewController;
 			path = WKWebViewController;
 			sourceTree = "<group>";
 		};
@@ -3510,6 +3586,7 @@
 				029B5E360062C1222BD5EBBB051DDEDD /* AXAliPayManager.h */,
 				8A191F5CF79FEF3A6645EAE3D8A4C27C /* AXAliPayManager.m */,
 			);
+			name = "AliPay@AX";
 			path = "AliPay@AX";
 			sourceTree = "<group>";
 		};
@@ -4354,7 +4431,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -5257,7 +5334,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.modulemap";
 				OTHER_LDFLAGS = "";
@@ -5277,7 +5358,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -5327,7 +5407,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -5350,7 +5431,11 @@
 				INFOPLIST_FILE = "Target Support Files/NullSafe/NullSafe-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/NullSafe/NullSafe.modulemap";
 				PRODUCT_MODULE_NAME = NullSafe;
 				PRODUCT_NAME = NullSafe;
@@ -5381,7 +5466,11 @@
 				INFOPLIST_FILE = "Target Support Files/AXiOSKit/AXiOSKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/AXiOSKit/AXiOSKit.modulemap";
 				PRODUCT_MODULE_NAME = AXiOSKit;
 				PRODUCT_NAME = AXiOSKit;
@@ -5411,7 +5500,11 @@
 				INFOPLIST_FILE = "Target Support Files/SocketRocket/SocketRocket-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SocketRocket/SocketRocket.modulemap";
 				PRODUCT_MODULE_NAME = SocketRocket;
 				PRODUCT_NAME = SocketRocket;
@@ -5442,7 +5535,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.modulemap";
 				OTHER_LDFLAGS = "";
@@ -5475,7 +5572,11 @@
 				INFOPLIST_FILE = "Target Support Files/KVOController/KVOController-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/KVOController/KVOController.modulemap";
 				PRODUCT_MODULE_NAME = KVOController;
 				PRODUCT_NAME = KVOController;
@@ -5505,7 +5606,11 @@
 				INFOPLIST_FILE = "Target Support Files/MJExtension/MJExtension-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/MJExtension/MJExtension.modulemap";
 				PRODUCT_MODULE_NAME = MJExtension;
 				PRODUCT_NAME = MJExtension;
@@ -5535,7 +5640,11 @@
 				INFOPLIST_FILE = "Target Support Files/FLAnimatedImage/FLAnimatedImage-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/FLAnimatedImage/FLAnimatedImage.modulemap";
 				PRODUCT_MODULE_NAME = FLAnimatedImage;
 				PRODUCT_NAME = FLAnimatedImage;
@@ -5565,7 +5674,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.modulemap";
 				OTHER_LDFLAGS = "";
@@ -5586,7 +5699,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -5664,7 +5776,11 @@
 				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
 				PRODUCT_MODULE_NAME = MBProgressHUD;
 				PRODUCT_NAME = MBProgressHUD;
@@ -5694,7 +5810,11 @@
 				INFOPLIST_FILE = "Target Support Files/MJExtension/MJExtension-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/MJExtension/MJExtension.modulemap";
 				PRODUCT_MODULE_NAME = MJExtension;
 				PRODUCT_NAME = MJExtension;
@@ -5725,7 +5845,11 @@
 				INFOPLIST_FILE = "Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet.modulemap";
 				PRODUCT_MODULE_NAME = DZNEmptyDataSet;
 				PRODUCT_NAME = DZNEmptyDataSet;
@@ -5755,7 +5879,11 @@
 				INFOPLIST_FILE = "Target Support Files/KVOController/KVOController-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/KVOController/KVOController.modulemap";
 				PRODUCT_MODULE_NAME = KVOController;
 				PRODUCT_NAME = KVOController;
@@ -5775,10 +5903,8 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AXiOSKit";
-				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Target Support Files/AXiOSKit/ResourceBundle-AXiOSKitResource-AXiOSKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ax.fx.demo;
 				PRODUCT_NAME = AXiOSKitResource;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -5804,7 +5930,11 @@
 				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
 				PRODUCT_MODULE_NAME = Masonry;
 				PRODUCT_NAME = Masonry;
@@ -5834,7 +5964,11 @@
 				INFOPLIST_FILE = "Target Support Files/IQKeyboardManager/IQKeyboardManager-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/IQKeyboardManager/IQKeyboardManager.modulemap";
 				PRODUCT_MODULE_NAME = IQKeyboardManager;
 				PRODUCT_NAME = IQKeyboardManager;
@@ -5865,7 +5999,11 @@
 				INFOPLIST_FILE = "Target Support Files/IQKeyboardManager/IQKeyboardManager-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/IQKeyboardManager/IQKeyboardManager.modulemap";
 				PRODUCT_MODULE_NAME = IQKeyboardManager;
 				PRODUCT_NAME = IQKeyboardManager;
@@ -5895,7 +6033,11 @@
 				INFOPLIST_FILE = "Target Support Files/SDCycleScrollView/SDCycleScrollView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SDCycleScrollView/SDCycleScrollView.modulemap";
 				PRODUCT_MODULE_NAME = SDCycleScrollView;
 				PRODUCT_NAME = SDCycleScrollView;
@@ -5925,7 +6067,11 @@
 				INFOPLIST_FILE = "Target Support Files/NullSafe/NullSafe-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/NullSafe/NullSafe.modulemap";
 				PRODUCT_MODULE_NAME = NullSafe;
 				PRODUCT_NAME = NullSafe;
@@ -5955,7 +6101,11 @@
 				INFOPLIST_FILE = "Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/DZNEmptyDataSet/DZNEmptyDataSet.modulemap";
 				PRODUCT_MODULE_NAME = DZNEmptyDataSet;
 				PRODUCT_NAME = DZNEmptyDataSet;
@@ -5986,7 +6136,11 @@
 				INFOPLIST_FILE = "Target Support Files/Aspects/Aspects-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/Aspects/Aspects.modulemap";
 				PRODUCT_MODULE_NAME = Aspects;
 				PRODUCT_NAME = Aspects;
@@ -6016,7 +6170,11 @@
 				INFOPLIST_FILE = "Target Support Files/SDWebImage/SDWebImage-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SDWebImage/SDWebImage.modulemap";
 				PRODUCT_MODULE_NAME = SDWebImage;
 				PRODUCT_NAME = SDWebImage;
@@ -6047,7 +6205,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.modulemap";
 				OTHER_LDFLAGS = "";
@@ -6081,7 +6243,11 @@
 				INFOPLIST_FILE = "Target Support Files/SDCycleScrollView/SDCycleScrollView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SDCycleScrollView/SDCycleScrollView.modulemap";
 				PRODUCT_MODULE_NAME = SDCycleScrollView;
 				PRODUCT_NAME = SDCycleScrollView;
@@ -6112,7 +6278,11 @@
 				INFOPLIST_FILE = "Target Support Files/SocketRocket/SocketRocket-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SocketRocket/SocketRocket.modulemap";
 				PRODUCT_MODULE_NAME = SocketRocket;
 				PRODUCT_NAME = SocketRocket;
@@ -6142,7 +6312,11 @@
 				INFOPLIST_FILE = "Target Support Files/SDWebImage.default-GIF/SDWebImage.default-GIF-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SDWebImage.default-GIF/SDWebImage.default-GIF.modulemap";
 				PRODUCT_MODULE_NAME = SDWebImage;
 				PRODUCT_NAME = SDWebImage;
@@ -6173,7 +6347,11 @@
 				INFOPLIST_FILE = "Target Support Files/AFNetworking/AFNetworking-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
 				PRODUCT_MODULE_NAME = AFNetworking;
 				PRODUCT_NAME = AFNetworking;
@@ -6203,7 +6381,11 @@
 				INFOPLIST_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/MBProgressHUD/MBProgressHUD.modulemap";
 				PRODUCT_MODULE_NAME = MBProgressHUD;
 				PRODUCT_NAME = MBProgressHUD;
@@ -6234,7 +6416,11 @@
 				INFOPLIST_FILE = "Target Support Files/SDWebImage/SDWebImage-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SDWebImage/SDWebImage.modulemap";
 				PRODUCT_MODULE_NAME = SDWebImage;
 				PRODUCT_NAME = SDWebImage;
@@ -6253,10 +6439,8 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AXiOSKit";
-				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Target Support Files/AXiOSKit/ResourceBundle-AXiOSKitResource-AXiOSKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ax.fx.demo;
 				PRODUCT_NAME = AXiOSKitResource;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -6282,7 +6466,11 @@
 				INFOPLIST_FILE = "Target Support Files/MJRefresh/MJRefresh-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/MJRefresh/MJRefresh.modulemap";
 				PRODUCT_MODULE_NAME = MJRefresh;
 				PRODUCT_NAME = MJRefresh;
@@ -6313,7 +6501,11 @@
 				INFOPLIST_FILE = "Target Support Files/SDWebImage.default-GIF/SDWebImage.default-GIF-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SDWebImage.default-GIF/SDWebImage.default-GIF.modulemap";
 				PRODUCT_MODULE_NAME = SDWebImage;
 				PRODUCT_NAME = SDWebImage;
@@ -6343,7 +6535,11 @@
 				INFOPLIST_FILE = "Target Support Files/Aspects/Aspects-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/Aspects/Aspects.modulemap";
 				PRODUCT_MODULE_NAME = Aspects;
 				PRODUCT_NAME = Aspects;
@@ -6374,7 +6570,11 @@
 				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
 				PRODUCT_MODULE_NAME = Masonry;
 				PRODUCT_NAME = Masonry;
@@ -6405,7 +6605,11 @@
 				INFOPLIST_FILE = "Target Support Files/AXiOSKit/AXiOSKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/AXiOSKit/AXiOSKit.modulemap";
 				PRODUCT_MODULE_NAME = AXiOSKit;
 				PRODUCT_NAME = AXiOSKit;
@@ -6436,7 +6640,11 @@
 				INFOPLIST_FILE = "Target Support Files/AFNetworking/AFNetworking-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
 				PRODUCT_MODULE_NAME = AFNetworking;
 				PRODUCT_NAME = AFNetworking;
@@ -6467,7 +6675,11 @@
 				INFOPLIST_FILE = "Target Support Files/MJRefresh/MJRefresh-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/MJRefresh/MJRefresh.modulemap";
 				PRODUCT_MODULE_NAME = MJRefresh;
 				PRODUCT_NAME = MJRefresh;
@@ -6497,7 +6709,11 @@
 				INFOPLIST_FILE = "Target Support Files/FLAnimatedImage/FLAnimatedImage-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/FLAnimatedImage/FLAnimatedImage.modulemap";
 				PRODUCT_MODULE_NAME = FLAnimatedImage;
 				PRODUCT_NAME = FLAnimatedImage;

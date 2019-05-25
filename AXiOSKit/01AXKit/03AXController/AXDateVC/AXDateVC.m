@@ -10,8 +10,6 @@
 
 @interface AXDateVC ()
 
-@property (weak, nonatomic) IBOutlet UIView *contentView;
-
 @property (nonatomic, copy) void(^confirmBloack)(NSDate *date);
 
 @property (nonatomic, copy) void(^cancelBlock)(void);

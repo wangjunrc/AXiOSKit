@@ -23,7 +23,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *closeBtn;
 
-@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @property(nonatomic,assign)NSInteger selectIndex;
 
