@@ -24,6 +24,7 @@
 		24732B832277FE7A005CF92D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24732B812277FE7A005CF92D /* LaunchScreen.storyboard */; };
 		24732B862277FE7A005CF92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B852277FE7A005CF92D /* main.m */; };
 		2498E4692278375A0024EAE6 /* H5.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2498E4682278375A0024EAE6 /* H5.bundle */; };
+		249A6C65229B86E1004CA707 /* HistogramView.m in Sources */ = {isa = PBXBuildFile; fileRef = 249A6C64229B86E1004CA707 /* HistogramView.m */; };
 		E6687B32C4739B3098C0E7DC /* Pods_AXiOSKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D321525B5BED5264BD07204 /* Pods_AXiOSKitExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,8 @@
 		24732B842277FE7A005CF92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24732B852277FE7A005CF92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2498E4682278375A0024EAE6 /* H5.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = H5.bundle; sourceTree = "<group>"; };
+		249A6C63229B86E1004CA707 /* HistogramView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistogramView.h; sourceTree = "<group>"; };
+		249A6C64229B86E1004CA707 /* HistogramView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistogramView.m; sourceTree = "<group>"; };
 		3D321525B5BED5264BD07204 /* Pods_AXiOSKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D21DE98ED5F2F46349743687 /* Pods-AXiOSKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +150,8 @@
 				24732B7A2277FE79005CF92D /* ViewController.m */,
 				242702432278318F00842E85 /* WebJSHandler.h */,
 				242702442278318F00842E85 /* WebJSHandler.m */,
+				249A6C63229B86E1004CA707 /* HistogramView.h */,
+				249A6C64229B86E1004CA707 /* HistogramView.m */,
 			);
 			path = AXiOSKitExample;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				24732B7B2277FE79005CF92D /* ViewController.m in Sources */,
 				2415E9B3227FDDA000F969A7 /* BViewController.m in Sources */,
 				244FC1CF2297A065003BD65F /* AXViewControllerTransitioningCentre.m in Sources */,
+				249A6C65229B86E1004CA707 /* HistogramView.m in Sources */,
 				24732B862277FE7A005CF92D /* main.m in Sources */,
 				2415E9AE227FD3DB00F969A7 /* AAAViewController.m in Sources */,
 				242702452278318F00842E85 /* WebJSHandler.m in Sources */,

@@ -58,6 +58,7 @@
 #import "UITableView+AXKit.h"
 #import "UITextField+AXAction.h"
 #import "UITextField+AXKit.h"
+#import "UITextView+AXAction.h"
 #import "UITextView+AXKit.h"
 #import "UIView+AXAnimation.h"
 #import "UIView+AXFrame.h"

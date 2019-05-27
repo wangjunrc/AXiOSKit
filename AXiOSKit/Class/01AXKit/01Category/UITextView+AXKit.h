@@ -16,6 +16,14 @@
  @param aText 文字
  @param aColor 颜色
  */
-- (void)ax_setPlaceholder:(NSString *)aText color:(UIColor *)aColor;
+- (void)ax_setPlaceholder:(NSString*)aText color:(UIColor*)aColor;
+
+/**
+ 最长输入文字数量
+ */
+- (BOOL)ax_textView:(UITextView*)textView
+          maxCharacterCount:(NSUInteger)count
+    shouldChangeTextInRange:(NSRange)range
+            replacementText:(NSString*)text;
 
 @end

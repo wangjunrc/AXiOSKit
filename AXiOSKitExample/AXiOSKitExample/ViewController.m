@@ -17,12 +17,15 @@
 #import "AXAlertCentreAnimation.h"
 #import "BViewController.h"
 #import "AXViewControllerTransitioningCentre.h"
+#import "HistogramView.h"
+#import "UITextView+AXAction.h"
 
 @protocol SPTDataContainer <NSObject>
 
 
 @property (nonatomic) BOOL individual;
 @property (nonatomic, copy) NSString *fileName;
+
 
 @end
 
@@ -77,31 +80,9 @@
 }
 - (IBAction)action1:(id)sender {
     
-//    [NSObject becomeActive];
-    
-//      [[SolveCrash sharedInstance] becomeActive];
-    
-//    AXChoosePayVC *vc = [[AXChoosePayVC alloc]init];
-//    [self ax_showVC:vc];
     
     
-//    [self.view layoutIfNeeded];
-//    NSLog(@"action1");
     
-//    BViewController *vc = [BViewController ax_init];
-//     vc.modalPresentationStyle = UIModalPresentationCustom;
-//    vc.transitioningDelegate = self.centre;
-//    [self presentViewController:vc animated:YES completion:nil];
-    
-    
-    AXDateVC *vc = [AXDateVC ax_init];
-    [self ax_showVC:vc];
-    
-//        AAAViewController *vc = [AAAViewController ax_init];
-//        [self ax_showVC:vc];
-//
-    
-//    [self ax_showAlertByTitle:@"AAAA"];
 }
 
 - (IBAction)action2:(id)sender {

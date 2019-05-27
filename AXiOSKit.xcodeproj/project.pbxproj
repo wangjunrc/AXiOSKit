@@ -306,6 +306,8 @@
 		24732B8D2278215F005CF92D /* AXiOSKitDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B8C2278215F005CF92D /* AXiOSKitDefine.h */; };
 		24732B9822782D9E005CF92D /* AXWebScriptMessageModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B9622782D9D005CF92D /* AXWebScriptMessageModel.h */; };
 		24732B9922782D9E005CF92D /* AXWebScriptMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B9722782D9D005CF92D /* AXWebScriptMessageModel.m */; };
+		24BB8353229BDDF800442276 /* UITextView+AXAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 24BB8351229BDDF800442276 /* UITextView+AXAction.h */; };
+		24BB8354229BDDF800442276 /* UITextView+AXAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB8352229BDDF800442276 /* UITextView+AXAction.m */; };
 		EE6E67F87341AF5B40C46726 /* Pods_AXiOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860156833FF908E319884FA3 /* Pods_AXiOSKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -613,6 +615,8 @@
 		24732B8C2278215F005CF92D /* AXiOSKitDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXiOSKitDefine.h; sourceTree = "<group>"; };
 		24732B9622782D9D005CF92D /* AXWebScriptMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWebScriptMessageModel.h; sourceTree = "<group>"; };
 		24732B9722782D9D005CF92D /* AXWebScriptMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWebScriptMessageModel.m; sourceTree = "<group>"; };
+		24BB8351229BDDF800442276 /* UITextView+AXAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+AXAction.h"; sourceTree = "<group>"; };
+		24BB8352229BDDF800442276 /* UITextView+AXAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+AXAction.m"; sourceTree = "<group>"; };
 		796A17CB51A0D95B1F9603FA /* Pods-AXiOSKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit.release.xcconfig"; path = "AXiOSKitExample/Pods/Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.release.xcconfig"; sourceTree = "<group>"; };
 		860156833FF908E319884FA3 /* Pods_AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2DD46C7D383BA35FFE16AA /* Pods-AXiOSKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit.debug.xcconfig"; path = "AXiOSKitExample/Pods/Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -775,6 +779,8 @@
 				247328E52277FBB8005CF92D /* UITableView+AXKit.m */,
 				247328C72277FBB8005CF92D /* UITextField+AXAction.h */,
 				2473290C2277FBB8005CF92D /* UITextField+AXAction.m */,
+				24BB8351229BDDF800442276 /* UITextView+AXAction.h */,
+				24BB8352229BDDF800442276 /* UITextView+AXAction.m */,
 				247328E62277FBB8005CF92D /* UITextField+AXKit.h */,
 				247329222277FBB8005CF92D /* UITextField+AXKit.m */,
 				247328CA2277FBB8005CF92D /* UITextView+AXKit.h */,
@@ -1454,6 +1460,7 @@
 				24732B292277FD53005CF92D /* NSObject+AXCacheImage.h in Headers */,
 				24732A2F2277FBB9005CF92D /* CALayer+AXFrame.h in Headers */,
 				24732A472277FBB9005CF92D /* UINavigationController+AXKit.h in Headers */,
+				24BB8353229BDDF800442276 /* UITextView+AXAction.h in Headers */,
 				24732A7D2277FBB9005CF92D /* AXConstant.h in Headers */,
 				24732A492277FBB9005CF92D /* UIViewController+AXAlert.h in Headers */,
 				24732B3A2277FD53005CF92D /* DataBase.h in Headers */,
@@ -1753,6 +1760,7 @@
 				24732B1F2277FD53005CF92D /* UMTool.m in Sources */,
 				24732AA72277FBB9005CF92D /* AXTabBarController.m in Sources */,
 				24732A422277FBB9005CF92D /* NSArray+AXKit.m in Sources */,
+				24BB8354229BDDF800442276 /* UITextView+AXAction.m in Sources */,
 				24732A282277FBB9005CF92D /* UIImage+AXKit.m in Sources */,
 				247329FC2277FBB9005CF92D /* UIWindow+AXKit.m in Sources */,
 				24732A822277FBB9005CF92D /* AXDataModel.m in Sources */,
