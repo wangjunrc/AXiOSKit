@@ -1133,3 +1133,10 @@ layer.beginTime = timeSincePause;
 [aVC didMoveToParentViewController:self];
 
 ```
+
+# 2个 Label 自适应约束
+```
+[textLabel setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
+[detailTextLabel setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
+
+```

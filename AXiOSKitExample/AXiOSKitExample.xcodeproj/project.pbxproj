@@ -25,6 +25,10 @@
 		24732B862277FE7A005CF92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B852277FE7A005CF92D /* main.m */; };
 		2498E4692278375A0024EAE6 /* H5.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2498E4682278375A0024EAE6 /* H5.bundle */; };
 		249A6C65229B86E1004CA707 /* HistogramView.m in Sources */ = {isa = PBXBuildFile; fileRef = 249A6C64229B86E1004CA707 /* HistogramView.m */; };
+		24BB837E229CC2FA00442276 /* AATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB837C229CC2FA00442276 /* AATableViewController.m */; };
+		24BB837F229CC2FA00442276 /* AATableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BB837D229CC2FA00442276 /* AATableViewController.xib */; };
+		24BB8383229CC30900442276 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB8381229CC30900442276 /* TableViewCell.m */; };
+		24BB8384229CC30900442276 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BB8382229CC30900442276 /* TableViewCell.xib */; };
 		E6687B32C4739B3098C0E7DC /* Pods_AXiOSKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D321525B5BED5264BD07204 /* Pods_AXiOSKitExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +65,12 @@
 		2498E4682278375A0024EAE6 /* H5.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = H5.bundle; sourceTree = "<group>"; };
 		249A6C63229B86E1004CA707 /* HistogramView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistogramView.h; sourceTree = "<group>"; };
 		249A6C64229B86E1004CA707 /* HistogramView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistogramView.m; sourceTree = "<group>"; };
+		24BB837B229CC2FA00442276 /* AATableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AATableViewController.h; sourceTree = "<group>"; };
+		24BB837C229CC2FA00442276 /* AATableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AATableViewController.m; sourceTree = "<group>"; };
+		24BB837D229CC2FA00442276 /* AATableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AATableViewController.xib; sourceTree = "<group>"; };
+		24BB8380229CC30900442276 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		24BB8381229CC30900442276 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		24BB8382229CC30900442276 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		3D321525B5BED5264BD07204 /* Pods_AXiOSKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D21DE98ED5F2F46349743687 /* Pods-AXiOSKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +158,12 @@
 				24732B7C2277FE79005CF92D /* Main.storyboard */,
 				24732B792277FE79005CF92D /* ViewController.h */,
 				24732B7A2277FE79005CF92D /* ViewController.m */,
+				24BB837B229CC2FA00442276 /* AATableViewController.h */,
+				24BB837C229CC2FA00442276 /* AATableViewController.m */,
+				24BB837D229CC2FA00442276 /* AATableViewController.xib */,
+				24BB8380229CC30900442276 /* TableViewCell.h */,
+				24BB8381229CC30900442276 /* TableViewCell.m */,
+				24BB8382229CC30900442276 /* TableViewCell.xib */,
 				242702432278318F00842E85 /* WebJSHandler.h */,
 				242702442278318F00842E85 /* WebJSHandler.m */,
 				249A6C63229B86E1004CA707 /* HistogramView.h */,
@@ -235,7 +251,9 @@
 				24732B832277FE7A005CF92D /* LaunchScreen.storyboard in Resources */,
 				2415E9AF227FD3DB00F969A7 /* AAAViewController.xib in Resources */,
 				24732B802277FE7A005CF92D /* Assets.xcassets in Resources */,
+				24BB837F229CC2FA00442276 /* AATableViewController.xib in Resources */,
 				2415E9B4227FDDA000F969A7 /* BViewController.xib in Resources */,
+				24BB8384229CC30900442276 /* TableViewCell.xib in Resources */,
 				2498E4692278375A0024EAE6 /* H5.bundle in Resources */,
 				24732B7E2277FE79005CF92D /* Main.storyboard in Resources */,
 			);
@@ -330,10 +348,12 @@
 				24732B862277FE7A005CF92D /* main.m in Sources */,
 				2415E9AE227FD3DB00F969A7 /* AAAViewController.m in Sources */,
 				242702452278318F00842E85 /* WebJSHandler.m in Sources */,
+				24BB8383229CC30900442276 /* TableViewCell.m in Sources */,
 				245B6BF92293EBB100FD2BA9 /* SolveCrash.m in Sources */,
 				245B6BF62293E9B800FD2BA9 /* NSObject+AFCrashExtension.m in Sources */,
 				24732B782277FE79005CF92D /* AppDelegate.m in Sources */,
 				245B6BF02293E99800FD2BA9 /* SolveCrashHelp.m in Sources */,
+				24BB837E229CC2FA00442276 /* AATableViewController.m in Sources */,
 				245B6BF32293E9A700FD2BA9 /* SC_CrashMethodProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,6 +19,7 @@
 #import "AXViewControllerTransitioningCentre.h"
 #import "HistogramView.h"
 #import "UITextView+AXAction.h"
+#import "AATableViewController.h"
 
 @protocol SPTDataContainer <NSObject>
 
@@ -42,46 +43,14 @@
 
 @synthesize individual;
 
-- (AXViewControllerTransitioningCentre *)centre {
-    if (!_centre) {
-        _centre = [[AXViewControllerTransitioningCentre alloc]init];
-    }
-    return _centre;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-
-    NSLog(@"fileName>> %@",self.fileName);;
-    
-    self.fileName = @"AAAA";
-     NSLog(@"fileName>> %@",self.fileName);;
-    
-    self.btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 50, 50)];
-    self.btn.backgroundColor = [UIColor redColor];
-    [self.view addSubview:self.btn];
-    [self.btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).equalTo(@120);
-         make.left.equalTo(self.view).equalTo(@20);
-        make.left.mas_equalTo(100);
-        make.right.mas_equalTo(100);
-}];
-    
-    
-    
-}
-
-
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-    NSLog(@"viewDidLayoutSubviews");
-    
     
 }
 - (IBAction)action1:(id)sender {
     
-    
-    
+    AATableViewController *vc = [AATableViewController ax_init];
+    [self ax_pushVC:vc];
     
 }
 
@@ -91,8 +60,8 @@
     
     
     [self.view setNeedsLayout];
-     [self.view layoutIfNeeded];
-     NSLog(@"action22222");
+    [self.view layoutIfNeeded];
+    NSLog(@"action22222");
 }
 - (IBAction)action3:(id)sender {
     
