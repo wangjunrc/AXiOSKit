@@ -107,6 +107,14 @@
  */
 - (void)ax_showVC:(UIViewController *)aVC;
 
+
+/**
+ 封装 presentViewController
+ 
+ @param aVC vc
+ */
+- (void)ax_showVCClass:(Class )aClass;
+
 /**
  封装 pushViewController
  

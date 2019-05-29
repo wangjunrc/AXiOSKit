@@ -28,7 +28,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    [self.tableView registerNib:AX_NIB(@"AXChoosePayStyleCell") forCellReuseIdentifier:k_axCellID];
+    [self.tableView registerNib:ax_NibClass(AXChoosePayStyleCell.class) forCellReuseIdentifier:k_axCellID];
     axTableFooterViewZero;
 }
 

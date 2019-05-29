@@ -31,8 +31,8 @@
  */
 - (void)ax_saveImageToPhotos:(UIImage*)image{
     // 这个方法不会吊起隐私权限,所以会crash
-//    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
-//    //因为需要知道该操作的完成情况，即保存成功与否，所以此处需要一个回调方法image:didFinishSavingWithError:contextInfo:
+    //    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+    //    //因为需要知道该操作的完成情况，即保存成功与否，所以此处需要一个回调方法image:didFinishSavingWithError:contextInfo:
     
     // Asynchronously 异步执行操作
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
@@ -284,7 +284,7 @@
 - (void)ax_AppStoreUpdateWithAppleStoreID:(NSString *)AppleStoreID{
     
     [self ax_versionProjectCompareAppStoreWithAppid:AppleStoreID comparisonResult:^(NSString *projectVersion, NSString *appStoreVersion, NSComparisonResult comparisonResult) {
-    
+        
         
         if (comparisonResult == NSOrderedAscending) {
             
@@ -327,6 +327,21 @@
     
     [self presentViewController:aVC animated:YES completion:nil];
 }
+
+/**
+ 封装 presentViewController
+ 
+ @param aVC vc
+ */
+- (void)ax_showVCClass:(Class )aClass {
+    
+    if ( [aClass isSubclassOfClass:UIViewController.class]) {
+        UIViewController *vc = ( UIViewController *)[[aClass alloc]init];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+    
+}
+
 
 /**
  封装 pushViewController

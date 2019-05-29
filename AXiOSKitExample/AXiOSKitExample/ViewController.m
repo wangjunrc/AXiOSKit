@@ -21,6 +21,7 @@
 #import "UITextView+AXAction.h"
 #import "AATableViewController.h"
 #import "UITextField+AXAction.h"
+#import "AXChoosePayStyleVC.h"
 
 @protocol SPTDataContainer <NSObject>
 
@@ -47,7 +48,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.atf.ax_keyboardObserve.containerView = self.view;
+//    self.atf.ax_keyboardObserve.containerView = self.view;
     
 }
 - (IBAction)action1:(id)sender {
@@ -65,6 +66,10 @@
     [self.view setNeedsLayout];
     [self.view layoutIfNeeded];
     NSLog(@"action22222");
+//    AXChoosePayStyleVC
+    [self ax_showVCClass:AXChoosePayStyleVC.class];
+    
+    
 }
 - (IBAction)action3:(id)sender {
     

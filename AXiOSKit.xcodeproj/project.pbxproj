@@ -842,20 +842,20 @@
 		247329432277FBB8005CF92D /* 06Manager */ = {
 			isa = PBXGroup;
 			children = (
-				247329722277FBB8005CF92D /* AXCrashProcessManager.h */,
-				2473295D2277FBB8005CF92D /* AXCrashProcessManager.m */,
-				247329612277FBB8005CF92D /* AXUNNotificationHandler.h */,
-				247329742277FBB8005CF92D /* AXUNNotificationHandler.m */,
+				247329472277FBB8005CF92D /* AXAuthorizationManager.h */,
+				247329482277FBB8005CF92D /* AXAuthorizationManager.m */,
 				247329602277FBB8005CF92D /* AXConfigureManager.h */,
 				2473296F2277FBB8005CF92D /* AXConfigureManager.m */,
-				2473294A2277FBB8005CF92D /* LocationManager.m */,
+				247329722277FBB8005CF92D /* AXCrashProcessManager.h */,
+				2473295D2277FBB8005CF92D /* AXCrashProcessManager.m */,
 				2473294B2277FBB8005CF92D /* AXLocationManager.h */,
-				2473294C2277FBB8005CF92D /* LocationManager.h */,
 				2473294D2277FBB8005CF92D /* AXLocationManager.m */,
 				247329452277FBB8005CF92D /* AXTouchIDManager.h */,
 				247329462277FBB8005CF92D /* AXTouchIDManager.m */,
-				247329472277FBB8005CF92D /* AXAuthorizationManager.h */,
-				247329482277FBB8005CF92D /* AXAuthorizationManager.m */,
+				247329612277FBB8005CF92D /* AXUNNotificationHandler.h */,
+				247329742277FBB8005CF92D /* AXUNNotificationHandler.m */,
+				2473294C2277FBB8005CF92D /* LocationManager.h */,
+				2473294A2277FBB8005CF92D /* LocationManager.m */,
 			);
 			path = 06Manager;
 			sourceTree = "<group>";

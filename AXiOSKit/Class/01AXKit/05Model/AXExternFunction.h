@@ -128,7 +128,7 @@ UINib *ax_Nib(NSString *name);
 /**
  创建xib
 
- @param aClass xib 名称 xib与源文件名称一致
+ @param aClass 必须 xib 同名称
  @return UINib
  */
 UINib *ax_NibClass(Class _Nonnull aClass);
