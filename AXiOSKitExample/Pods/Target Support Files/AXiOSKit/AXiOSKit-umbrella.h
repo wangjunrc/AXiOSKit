@@ -92,6 +92,7 @@
 #import "AXBaseAlertVC.h"
 #import "AXChoosePayStyleVC.h"
 #import "AXChoosePayVC.h"
+#import "AXPayVC.h"
 #import "AXChoosePayModel.h"
 #import "AXChoosePayStyleCell.h"
 #import "AXDateVC.h"

@@ -21,21 +21,32 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHJ-eN-ctn">
-                    <rect key="frame" x="157" y="398" width="100" height="100"/>
+                    <rect key="frame" x="157" y="762" width="100" height="100"/>
                     <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="100" id="ed5-cn-IHb"/>
-                        <constraint firstAttribute="height" constant="100" id="iu4-JI-WPQ"/>
+                        <constraint firstAttribute="height" constant="100" id="HWd-IA-fxI"/>
+                        <constraint firstAttribute="width" constant="100" id="sdV-OE-eXE"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kql-gD-JXI">
+                    <rect key="frame" x="157" y="44" width="100" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="b7V-V2-O3G"/>
+                        <constraint firstAttribute="width" constant="100" id="sd9-cX-OGN"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="YHJ-eN-ctn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Yd3-ZN-8lk"/>
-                <constraint firstItem="YHJ-eN-ctn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jde-h0-Mdy"/>
+                <constraint firstItem="kql-gD-JXI" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="3Po-c0-4YW"/>
+                <constraint firstItem="kql-gD-JXI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CsP-G2-VlT"/>
+                <constraint firstItem="YHJ-eN-ctn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UZs-5x-a3R"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="YHJ-eN-ctn" secondAttribute="bottom" id="eHh-kM-90w"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
         </view>

@@ -22,6 +22,7 @@
 #import "AATableViewController.h"
 #import "UITextField+AXAction.h"
 #import "AXChoosePayStyleVC.h"
+#import "AXPayVC.h"
 
 @protocol SPTDataContainer <NSObject>
 
@@ -60,14 +61,14 @@
 
 - (IBAction)action2:(id)sender {
     
-    NSLog(@"action2");
     
+//    AXChoosePayStyleVC *vc = [[AXChoosePayVC alloc]init];
+    AXPayVC *vc = [[AXPayVC alloc]init];
+    vc.confirmPayBlock = ^(AXChoosePayModel * _Nonnull payModel) {
+        NSLog(@"payModel>> %@",payModel);
+    };
+    [self ax_showVC:vc];
     
-    [self.view setNeedsLayout];
-    [self.view layoutIfNeeded];
-    NSLog(@"action22222");
-//    AXChoosePayStyleVC
-    [self ax_showVCClass:AXChoosePayStyleVC.class];
     
     
 }

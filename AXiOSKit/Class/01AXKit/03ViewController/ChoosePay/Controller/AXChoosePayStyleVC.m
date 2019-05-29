@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.axTouchesBeganDismiss = NO;
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -62,7 +62,8 @@
         return;
     }
 
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
     if (self.didSelectBlock) {
         self.didSelectBlock(indexPath.row);
     }

@@ -6,11 +6,10 @@
 //  Copyright © 2018年 liuweixing. All rights reserved.
 //
 
-#import "AXBaseAlertVC.h"
+#import "AXViewController.h"
 #import "AXChoosePayModel.h"
 
-@interface AXChoosePayStyleVC : AXBaseAlertVC
-
+@interface AXChoosePayStyleVC : AXViewController
 
 @property(nonatomic,assign)NSInteger selectIndex;
 

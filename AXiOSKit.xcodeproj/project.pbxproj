@@ -310,6 +310,8 @@
 		24BB8354229BDDF800442276 /* UITextView+AXAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB8352229BDDF800442276 /* UITextView+AXAction.m */; };
 		24BB839C229E2ED700442276 /* AXKeyboardObserve.h in Headers */ = {isa = PBXBuildFile; fileRef = 24BB839A229E2ED700442276 /* AXKeyboardObserve.h */; };
 		24BB839D229E2ED700442276 /* AXKeyboardObserve.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB839B229E2ED700442276 /* AXKeyboardObserve.m */; };
+		24BB8672229E9B4300442276 /* AXPayVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24BB8670229E9B4300442276 /* AXPayVC.h */; };
+		24BB8673229E9B4300442276 /* AXPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB8671229E9B4300442276 /* AXPayVC.m */; };
 		EE6E67F87341AF5B40C46726 /* Pods_AXiOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860156833FF908E319884FA3 /* Pods_AXiOSKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -621,6 +623,8 @@
 		24BB8352229BDDF800442276 /* UITextView+AXAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+AXAction.m"; sourceTree = "<group>"; };
 		24BB839A229E2ED700442276 /* AXKeyboardObserve.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXKeyboardObserve.h; sourceTree = "<group>"; };
 		24BB839B229E2ED700442276 /* AXKeyboardObserve.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXKeyboardObserve.m; sourceTree = "<group>"; };
+		24BB8670229E9B4300442276 /* AXPayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXPayVC.h; sourceTree = "<group>"; };
+		24BB8671229E9B4300442276 /* AXPayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXPayVC.m; sourceTree = "<group>"; };
 		796A17CB51A0D95B1F9603FA /* Pods-AXiOSKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit.release.xcconfig"; path = "AXiOSKitExample/Pods/Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.release.xcconfig"; sourceTree = "<group>"; };
 		860156833FF908E319884FA3 /* Pods_AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2DD46C7D383BA35FFE16AA /* Pods-AXiOSKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit.debug.xcconfig"; path = "AXiOSKitExample/Pods/Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -965,6 +969,8 @@
 				247329832277FBB8005CF92D /* AXChoosePayVC.h */,
 				247329882277FBB8005CF92D /* AXChoosePayVC.m */,
 				247329852277FBB8005CF92D /* AXChoosePayVC.xib */,
+				24BB8670229E9B4300442276 /* AXPayVC.h */,
+				24BB8671229E9B4300442276 /* AXPayVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1500,6 +1506,7 @@
 				247329E52277FBB9005CF92D /* WKWebView+AXKit.h in Headers */,
 				24732A062277FBB9005CF92D /* NSString+AXNet.h in Headers */,
 				24732A722277FBB9005CF92D /* AXSetValueProtocol.h in Headers */,
+				24BB8672229E9B4300442276 /* AXPayVC.h in Headers */,
 				24732B332277FD53005CF92D /* UIScrollView+AXEmptyDataSet.h in Headers */,
 				24732A782277FBB9005CF92D /* AXDataModelProtocol.h in Headers */,
 				24732AA02277FBB9005CF92D /* AXFullLayout2.h in Headers */,
@@ -1681,6 +1688,7 @@
 				247329FF2277FBB9005CF92D /* UIImage+AXBundle.m in Sources */,
 				24732B3B2277FD53005CF92D /* DBStatements.m in Sources */,
 				24732A332277FBB9005CF92D /* NSString+AXNet.m in Sources */,
+				24BB8673229E9B4300442276 /* AXPayVC.m in Sources */,
 				24732A032277FBB9005CF92D /* UIButton+AXCountDown2.m in Sources */,
 				24732AB32277FBB9005CF92D /* AXSinglePickVC.m in Sources */,
 				24732A3D2277FBB9005CF92D /* UIView+AXSnapshot.m in Sources */,

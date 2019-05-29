@@ -10,7 +10,6 @@
 #import "BViewController.h"
 #import <Masonry/Masonry.h>
 @interface AAAViewController ()
-@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @end
 
@@ -32,6 +31,21 @@
 //
 //    }];
 //    [self addChildViewController:nav];
+    
+    
+    BViewController *vc = [[BViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    
+    [self.view addSubview:nav.view];
+    [self addChildViewController:nav];
+    
+        [nav.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view);
+             make.left.equalTo(self.view);
+             make.right.equalTo(self.view);
+            make.height.mas_equalTo(216);
+    
+        }];
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     NSLog(@"AAAViewController");
@@ -41,7 +55,7 @@
 - (AXAlertControllerStyle)axAlertControllerStyle
 {
     
-    return AXAlertControllerStyleCentre;
+    return AXAlertControllerStyleUpward;
 }
 /*
 #pragma mark - Navigation

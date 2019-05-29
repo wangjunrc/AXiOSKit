@@ -59,6 +59,17 @@
  @param action action
  @return UIBarButtonItem
  */
++ (instancetype)ax_itemOriginalImageName:(NSString *)image target:(id)target action:(SEL)action;
+
+
+/**
+ 初始化未渲染图标的 UIBarButtonItem
+ 
+ @param image image
+ @param target target
+ @param action action
+ @return UIBarButtonItem
+ */
 + (instancetype)ax_itemOriginalImage:(NSString *)image target:(id)target action:(SEL)action;
 
 /**

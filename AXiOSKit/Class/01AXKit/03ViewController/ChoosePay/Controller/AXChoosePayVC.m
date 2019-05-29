@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *payStyleLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *payStyleImv;
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *payBtn;
@@ -34,20 +35,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.axTouchesBeganDismiss = NO;
+    
     self.orderMsgLabel.text = nil;
     self.amountLabel.text = @"0元";
     [self.closeBtn setImage:[UIImage axBundle_imageNamed:@"ax_close"] forState:UIControlStateNormal];
+    self.payStyleImv.image = [UIImage axBundle_imageNamed:@"ax_to_left"];
     
-    if (self.orderMsgStr.length>0) {
-        self.orderMsgLabel.text = self.orderMsgStr;
-    }
+    self.orderMsgLabel.text = self.orderMsgStr.length>0 ? self.orderMsgStr : @"暂无";
     
     if (self.amountFloat>0) {
         self.amountLabel.text = [NSString stringWithFormat:@"%.2lf元",self.amountFloat];;
     }
     
     [self func_payStyleText];
+    
+    UIImage *leftItmeIm = [UIImage axBundle_imageNamed:@"ax_close"];
+     self.navigationItem.rightBarButtonItem =  [UIBarButtonItem ax_itemOriginalImage:leftItmeIm target:self action:@selector(closeBtnAction)];
+    
 }
 
 - (void)func_payStyleText {
@@ -57,14 +61,17 @@
 }
 
 - (IBAction)payBtnAction:(id)sender {
+    
+    // 这里需要添加 输入密码框 或者指纹识别,然后再回调
     if (self.confirmPayBlock) {
         self.confirmPayBlock(self.dataArray[self.selectIndex]);
     }
     
 }
-- (IBAction)closeBtnAction:(id)sender {
-    
-  [self dismissViewControllerAnimated:YES completion:nil];
+- (void)closeBtnAction{
+    if (self.cancelBlock) {
+        self.cancelBlock();
+    }
 }
 
 - (IBAction)selectPayStyleAction:(id)sender {
@@ -73,9 +80,7 @@
     payStyleVC.dataArray = self.dataArray;
     payStyleVC.selectIndex = self.selectIndex;
     
-    
-    [self ax_showVC:payStyleVC];
-    
+    [self ax_pushVC:payStyleVC];
     payStyleVC.didSelectBlock = ^(NSInteger row) {
         self.selectIndex = row;
         [self func_payStyleText];

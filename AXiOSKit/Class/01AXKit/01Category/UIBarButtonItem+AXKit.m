@@ -168,9 +168,22 @@
  @param action action
  @return UIBarButtonItem
  */
-+ (instancetype)ax_itemOriginalImage:(NSString *)image target:(id)target action:(SEL)action{
++ (instancetype)ax_itemOriginalImageName:(NSString *)image target:(id)target action:(SEL)action{
     
     return [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:image]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:target action:action];
+}
+
+/**
+ 初始化未渲染图标的 UIBarButtonItem
+ 
+ @param image image
+ @param target target
+ @param action action
+ @return UIBarButtonItem
+ */
++ (instancetype)ax_itemOriginalImage:(UIImage *)image target:(id)target action:(SEL)action{
+    
+    return [[UIBarButtonItem alloc]initWithImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:target action:action];
 }
 
 

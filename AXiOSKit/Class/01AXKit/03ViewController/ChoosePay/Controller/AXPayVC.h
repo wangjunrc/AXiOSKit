@@ -1,15 +1,16 @@
 //
-//  AXChoosePayVC.h
-//  AXiOSKitDemo
+//  AXPayVC.h
+//  AXiOSKit
 //
-//  Created by mac on 2018/8/20.
-//  Copyright © 2018年 liuweixing. All rights reserved.
+//  Created by AXing on 2019/5/29.
+//  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
-#import "AXViewController.h"
+#import "AXBaseAlertVC.h"
 #import "AXChoosePayModel.h"
+NS_ASSUME_NONNULL_BEGIN
 
-@interface AXChoosePayVC : AXViewController
+@interface AXPayVC : AXBaseAlertVC
 
 @property(nonatomic,strong)NSArray <AXChoosePayModel *>*dataArray;
 
@@ -19,6 +20,6 @@
 
 @property(nonatomic,copy)void(^confirmPayBlock)(AXChoosePayModel *payModel);
 
-@property(nonatomic,copy)void(^cancelBlock)(void);
-
 @end
+
+NS_ASSUME_NONNULL_END
