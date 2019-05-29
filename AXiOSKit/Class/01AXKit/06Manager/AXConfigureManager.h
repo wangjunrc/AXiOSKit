@@ -23,7 +23,7 @@ axSharedInstance_H;
 /**
  * 键盘
  */
-+(void)IQKeyboardManager;
++(void)userIQKeyboardManager:(BOOL )user;
 
 /**
  xcode 奔溃日志

@@ -25,21 +25,21 @@ axSharedInstance_M;
  键盘等 基础配置
  */
 +(void)configure{
-   [self IQKeyboardManager];
+    [self userIQKeyboardManager:YES];
 }
 
 /**
  * 键盘
  */
-+(void)IQKeyboardManager{
++(void)userIQKeyboardManager:(BOOL )user{
     
 #if __has_include("IQKeyboardManager.h")
     //拖入工程即生效,这里只是做一下设置
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     //控制整个功能是否启用
-    manager.enable = YES;
+    manager.enable = user;
     //控制整个功能是否启用
-    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldResignOnTouchOutside = user;
     //控制键盘上的工具条文字颜色是否用户自定义
     manager.shouldToolbarUsesTextFieldTintColor = YES;
     //控制是否显示键盘上的工具条

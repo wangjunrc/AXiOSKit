@@ -134,25 +134,42 @@
 
 @implementation UITextField (AXAction)
 
+#pragma mark - ax_delegateHandler
 
-- (void)setAxDelegateHandler:(AXTextFieldDelegateHandler *)axDelegateHandler {
-     ax_setStrongPropertyAssociated(axDelegateHandler);
+- (void)setAx_delegateHandler:(AXTextFieldDelegateHandler *)ax_delegateHandler {
+     ax_setStrongPropertyAssociated(ax_delegateHandler);
 }
 
-- (AXTextFieldDelegateHandler *)axDelegateHandler{
+
+- (AXTextFieldDelegateHandler *)ax_delegateHandler{
     
-    AXTextFieldDelegateHandler *handler = ax_getValueAssociated(axDelegateHandler);
+    AXTextFieldDelegateHandler *handler = ax_getValueAssociated(ax_delegateHandler);
     
     if (handler == nil ){
         
         handler = [[AXTextFieldDelegateHandler alloc]init];
         handler.currentTextField = self;
         self.delegate = handler;
-        self.axDelegateHandler = handler;
+        self.ax_delegateHandler = handler;
     }
     return handler;
 }
 
+#pragma mark - AXKeyboardObserve
+- (void)setAx_keyboardObserve:(AXKeyboardObserve *)ax_keyboardObserve {
+    ax_setStrongPropertyAssociated(ax_keyboardObserve);
+}
 
+- (AXKeyboardObserve *)ax_keyboardObserve {
+    
+    AXKeyboardObserve *obj = ax_getValueAssociated(ax_delegateHandler);
+    
+    if (obj == nil ){
+        obj = [[AXKeyboardObserve alloc] initWithOwner:self];
+        self.ax_keyboardObserve = obj;
+    }
+    return obj;
+    
+}
 
 @end

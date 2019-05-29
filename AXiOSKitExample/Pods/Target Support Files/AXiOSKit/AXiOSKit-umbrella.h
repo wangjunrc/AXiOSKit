@@ -119,6 +119,7 @@
 #import "AXDataModelProtocol.h"
 #import "AXExternFunction.h"
 #import "AXHelper.h"
+#import "AXKeyboardObserve.h"
 #import "AXObject.h"
 #import "AXSetValueProtocol.h"
 #import "AXUIAssistant.h"

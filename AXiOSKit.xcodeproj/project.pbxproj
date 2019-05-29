@@ -308,6 +308,8 @@
 		24732B9922782D9E005CF92D /* AXWebScriptMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B9722782D9D005CF92D /* AXWebScriptMessageModel.m */; };
 		24BB8353229BDDF800442276 /* UITextView+AXAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 24BB8351229BDDF800442276 /* UITextView+AXAction.h */; };
 		24BB8354229BDDF800442276 /* UITextView+AXAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB8352229BDDF800442276 /* UITextView+AXAction.m */; };
+		24BB839C229E2ED700442276 /* AXKeyboardObserve.h in Headers */ = {isa = PBXBuildFile; fileRef = 24BB839A229E2ED700442276 /* AXKeyboardObserve.h */; };
+		24BB839D229E2ED700442276 /* AXKeyboardObserve.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB839B229E2ED700442276 /* AXKeyboardObserve.m */; };
 		EE6E67F87341AF5B40C46726 /* Pods_AXiOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860156833FF908E319884FA3 /* Pods_AXiOSKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -617,6 +619,8 @@
 		24732B9722782D9D005CF92D /* AXWebScriptMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWebScriptMessageModel.m; sourceTree = "<group>"; };
 		24BB8351229BDDF800442276 /* UITextView+AXAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+AXAction.h"; sourceTree = "<group>"; };
 		24BB8352229BDDF800442276 /* UITextView+AXAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+AXAction.m"; sourceTree = "<group>"; };
+		24BB839A229E2ED700442276 /* AXKeyboardObserve.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXKeyboardObserve.h; sourceTree = "<group>"; };
+		24BB839B229E2ED700442276 /* AXKeyboardObserve.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXKeyboardObserve.m; sourceTree = "<group>"; };
 		796A17CB51A0D95B1F9603FA /* Pods-AXiOSKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit.release.xcconfig"; path = "AXiOSKitExample/Pods/Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.release.xcconfig"; sourceTree = "<group>"; };
 		860156833FF908E319884FA3 /* Pods_AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2DD46C7D383BA35FFE16AA /* Pods-AXiOSKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit.debug.xcconfig"; path = "AXiOSKitExample/Pods/Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -894,6 +898,8 @@
 				247329772277FBB8005CF92D /* AXUIAssistant.h */,
 				2473296A2277FBB8005CF92D /* AXUIAssistant.m */,
 				247329672277FBB8005CF92D /* AXViewModelProtocol.h */,
+				24BB839A229E2ED700442276 /* AXKeyboardObserve.h */,
+				24BB839B229E2ED700442276 /* AXKeyboardObserve.m */,
 				247329622277FBB8005CF92D /* GCDTimer */,
 			);
 			path = 05Model;
@@ -1430,6 +1436,7 @@
 				24732A292277FBB9005CF92D /* UIViewController+AXKit.h in Headers */,
 				24732A312277FBB9005CF92D /* NSObject+AXKit.h in Headers */,
 				24732A0D2277FBB9005CF92D /* UIViewController+AXiPadAlert.h in Headers */,
+				24BB839C229E2ED700442276 /* AXKeyboardObserve.h in Headers */,
 				24732A9C2277FBB9005CF92D /* AXFullLayout.h in Headers */,
 				24732A5B2277FBB9005CF92D /* AXLocationManager.h in Headers */,
 				24732B252277FD53005CF92D /* UIScrollView+AXRefresh.h in Headers */,
@@ -1654,6 +1661,7 @@
 				24732A6B2277FBB9005CF92D /* AXCrashProcessManager.m in Sources */,
 				24732A0E2277FBB9005CF92D /* NSObject+AXKVO.m in Sources */,
 				24732B282277FD53005CF92D /* UIImageView+AXCircle.m in Sources */,
+				24BB839D229E2ED700442276 /* AXKeyboardObserve.m in Sources */,
 				24732AC92277FBB9005CF92D /* AXWKWebVC.m in Sources */,
 				24732A2C2277FBB9005CF92D /* UIImageView+SDImageCut.m in Sources */,
 				24732B2D2277FD53005CF92D /* NSObject+AXCacheImage.m in Sources */,

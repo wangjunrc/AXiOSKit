@@ -44,11 +44,11 @@
 
 @implementation UITextView (AXAction)
 
-- (void)setAxDelegateHandler:(AXTextViewDelegateHandler *)axDelegateHandler {
-    ax_setStrongPropertyAssociated(axDelegateHandler);
-}
 
-- (AXTextViewDelegateHandler *)axDelegateHandler{
+- (void)setAx_delegateHandler:(AXTextViewDelegateHandler * _Nonnull)ax_delegateHandler {
+    ax_setStrongPropertyAssociated(ax_delegateHandler);
+}
+- (AXTextViewDelegateHandler *)ax_delegateHandler {
     
     AXTextViewDelegateHandler *handler = ax_getValueAssociated(axDelegateHandler);
     
@@ -57,7 +57,7 @@
         handler = [[AXTextViewDelegateHandler alloc]init];
         handler.currentTextView = self;
         self.delegate = handler;
-        self.axDelegateHandler = handler;
+        self.ax_delegateHandler = handler;
     }
     return handler;
 }

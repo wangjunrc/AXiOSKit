@@ -20,6 +20,7 @@
 #import "HistogramView.h"
 #import "UITextView+AXAction.h"
 #import "AATableViewController.h"
+#import "UITextField+AXAction.h"
 
 @protocol SPTDataContainer <NSObject>
 
@@ -35,6 +36,7 @@
 @property(nonatomic,strong)UIButton *btn;
 
 @property(nonatomic,strong) AXViewControllerTransitioningCentre *centre;
+@property (weak, nonatomic) IBOutlet UITextField *atf;
 @end
 
 @implementation ViewController
@@ -45,6 +47,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.atf.ax_keyboardObserve.containerView = self.view;
     
 }
 - (IBAction)action1:(id)sender {

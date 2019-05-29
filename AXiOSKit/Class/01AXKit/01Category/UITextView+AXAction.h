@@ -46,12 +46,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  UITextField  代理对象,直接调用block
  例子:
- tf.axDelegateHandler.didBeginBlock = ^(UITextField *textField) {
+ tf.ax_delegateHandler.didBeginBlock = ^(UITextField *textField) {
  
  };
  最好不要用自己做代理,有bug
  */
-@property (nonatomic, strong, readonly) AXTextViewDelegateHandler* axDelegateHandler;
+@property (nonatomic, strong, readonly) AXTextViewDelegateHandler* ax_delegateHandler;
 
 @end
 
