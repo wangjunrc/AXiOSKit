@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
-/**UIScreen.mainScreen scale*/
+/**屏宽比*/
 extern CGFloat ax_screen_scale(void);
 
 /**屏宽*/
@@ -49,7 +47,7 @@ extern UIEdgeInsets ax_safe_area_insets(void);
 
 extern UIEdgeInsets ax_screen_padding_insets(void);
 
-/**安全区域 UIEdgeInsets top*/
+/**安全区域 UIEdgeInsets top, 状态栏高度 20 或者 44*/
 extern CGFloat ax_safe_area_insets_top(void);
 
 /**安全区域 UIEdgeInsets left*/
@@ -73,7 +71,13 @@ extern CGRect ax_screen_adaptive_rect(CGRect rectValue);
 
 extern CGFloat ax_screen_vertical_adaptive_float_with_padding(CGFloat floatValue, CGFloat padding);
 
+/**
+ 是否 nil 或者 空
+ 不要用分类, 为nil 时,不走分类方法
+ */
+extern BOOL ax_is_null(id obj);
 
-
-
-NS_ASSUME_NONNULL_END
+/**
+ 是否不为 nil 或者 空
+ */
+extern BOOL ax_is_no_null(id obj);

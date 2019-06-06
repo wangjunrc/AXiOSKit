@@ -1243,3 +1243,13 @@ self.label.text = [NSString stringWithFormat:@"\u00A0\u00A0中\u00A0\u00A0"];
 self.label.text = [NSString stringWithFormat:@"\u3000文\u3000"];
 
 ```
+
+# extern
+```
+如果项目中涉及到使用C++语言的编程的话则最好使用
+FOUNDATION_EXPORT
+FOUNDATION_IMPORT
+否则 使用
+FOUNDATION_EXTERN 这个就可以了
+当然使用extern 也是没有问题的
+```

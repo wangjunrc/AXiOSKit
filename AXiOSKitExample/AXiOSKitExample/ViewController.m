@@ -23,6 +23,7 @@
 #import "UITextField+AXAction.h"
 #import "AXChoosePayStyleVC.h"
 #import "AXPayVC.h"
+#import "NSObject+AXKit.h"
 
 @protocol SPTDataContainer <NSObject>
 
@@ -55,18 +56,54 @@
 //    self.label.text = [NSString stringWithFormat:@" %@\\u0020",@"A"];
     
 //    self.label.text = @"  AAA\u0020 ";
-    self.label.backgroundColor = [UIColor redColor];
-//   self.label.text = [NSString stringWithFormat:@"%@%@",@"aaaaa",@"\u3000"];
-    
-    self.label.text = [NSString stringWithFormat:@"\u00A0\u00A0中\u00A0\u00A0"];
-     self.label.text = [NSString stringWithFormat:@"\u3000文\u3000"];
+//    self.label.backgroundColor = [UIColor redColor];
+////   self.label.text = [NSString stringWithFormat:@"%@%@",@"aaaaa",@"\u3000"];
+//
+//    self.label.text = [NSString stringWithFormat:@"\u00A0\u00A0中\u00A0\u00A0"];
+//     self.label.text = [NSString stringWithFormat:@"\u3000文\u3000"];
 //    self.label.text = [NSString stringWithFormat:@"A\u00A0"];
     
 //    和
     
 //       self.label.text = [NSString stringWithFormat:@"%@ ",@"aaaaa"];
+
+    id str;
+    NSLog(@">>??? %d",ax_is_null(str));
+    
+//     NSLog(@">>??? %d",[self ax_is_null:str]);
     
 }
+
+- (BOOL)ax_is_null:(id)obj {
+    
+     NSLog(@"ax_is_null %d",(NSNull *)obj == [NSNull null]);
+    
+    
+    if (obj == nil) {
+         return YES;
+    }
+        
+        
+    if ((NSNull *)obj == [NSNull null]) {
+        return YES;
+    }
+    
+    if ([obj respondsToSelector:@selector(count)]) {
+        if ([(id)obj count] == 0) {
+            return YES;
+        }
+    }
+    
+    if ([obj respondsToSelector:@selector(length)]) {
+        if ([(id)obj length] == 0) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+
 - (IBAction)action1:(id)sender {
     
     AATableViewController *vc = [AATableViewController ax_init];

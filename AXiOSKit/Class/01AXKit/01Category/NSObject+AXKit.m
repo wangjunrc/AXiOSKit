@@ -59,7 +59,7 @@
     
     if ([self isKindOfClass:[NSString class]]) {
         
-       return [(NSString *)self dataUsingEncoding:NSUTF8StringEncoding];
+        return [(NSString *)self dataUsingEncoding:NSUTF8StringEncoding];
         
     } else if ([self isKindOfClass:[NSData class]]) {
         return (NSData *)self;
@@ -128,7 +128,7 @@
 
 /**
  代码旋转屏幕
-
+ 
  @param orientation 屏幕方向
  */
 -(void)ax_revolveOrientation:(UIInterfaceOrientation )orientation {
@@ -191,5 +191,7 @@
 //- (AX_backBlock)ax_backBlock{
 //    return ax_getValueAssociated(ax_backBlock);
 //}
+
+
 
 @end
