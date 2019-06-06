@@ -39,6 +39,7 @@
 
 @property(nonatomic,strong) AXViewControllerTransitioningCentre *centre;
 @property (weak, nonatomic) IBOutlet UITextField *atf;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @end
 
 @implementation ViewController
@@ -50,6 +51,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.atf.ax_keyboardObserve.containerView = self.view;
+    
+//    self.label.text = [NSString stringWithFormat:@" %@\\u0020",@"A"];
+    
+//    self.label.text = @"  AAA\u0020 ";
+    self.label.backgroundColor = [UIColor redColor];
+//   self.label.text = [NSString stringWithFormat:@"%@%@",@"aaaaa",@"\u3000"];
+    
+    self.label.text = [NSString stringWithFormat:@"\u00A0\u00A0中\u00A0\u00A0"];
+     self.label.text = [NSString stringWithFormat:@"\u3000文\u3000"];
+//    self.label.text = [NSString stringWithFormat:@"A\u00A0"];
+    
+//    和
+    
+//       self.label.text = [NSString stringWithFormat:@"%@ ",@"aaaaa"];
     
 }
 - (IBAction)action1:(id)sender {
