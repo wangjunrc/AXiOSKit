@@ -293,4 +293,55 @@
 
 + (instancetype)ax_stringWithFormat:(NSString *)format,... NS_FORMAT_FUNCTION(1,2);
 
+
+/********************** validation *************************/
+
+/**
+ 是不是含有表情
+ */
+@property (nonatomic, readonly) BOOL ax_containsEmoji;
+
+/**
+ 判断是不是干净的int数据
+ */
+@property (nonatomic, readonly) BOOL ax_isPureIntNumber;
+
+/**
+ 是否是邮箱
+ */
+@property (nonatomic, readonly) BOOL ax_conformsToEMailFormat;
+
+/**
+ 身份是身份证
+ */
+@property (nonatomic, readonly) BOOL ax_conformsIDCard;
+
+/**
+ 是否是中文字符
+ */
+@property (nonatomic, readonly) BOOL ax_isChineseCharacter;
+
+/**
+ 是否是number或者英文或者中文
+ */
+@property (nonatomic, readonly) BOOL ax_isNumberOrEnglishOrChineseCharacter;
+
+/**
+ 是否是纯正的Decimal
+ */
+@property (nonatomic, readonly) BOOL ax_isPureDecimalDigits;
+
+/**
+ 是否包含非法字符
+ 
+ @return YES：包含了非法字符 NO：没有包含非法字符
+ */
+@property (nonatomic, readonly) BOOL ax_containInvalidString;
+
+/**
+ 去掉空格、空行之后判断是否为空
+ */
+@property (nonatomic, readonly) BOOL ax_isEmptyAfterTrimmingWhitespaceAndNewlineCharacters;
+
+
 @end

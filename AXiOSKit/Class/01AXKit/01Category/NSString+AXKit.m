@@ -825,5 +825,156 @@
     
     return @"A";
 }
+
+
+
+/******************** validation *************************/
+
+
+- (BOOL)ax_containsEmoji {
+    __block BOOL containsEmoji = NO;
+    [self enumerateSubstringsInRange:NSMakeRange(0, [self length]) options:NSStringEnumerationByComposedCharacterSequences usingBlock:
+     ^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+         const unichar hs = [substring characterAtIndex:0];
+         if (0xd800 <= hs && hs <= 0xdbff) {
+             if (substring.length > 1) {
+                 const unichar ls = [substring characterAtIndex:1];
+                 const int uc = ((hs - 0xd800) * 0x400) + (ls - 0xdc00) + 0x10000;
+                 if (0x1d000 <= uc && uc <= 0x1f77f) {
+                     containsEmoji = YES;
+                 }
+             }
+         } else if (substring.length > 1) {
+             const unichar ls = [substring characterAtIndex:1];
+             if (ls == 0x20e3) {
+                 containsEmoji = YES;
+             }
+         } else {
+             if (0x2100 <= hs && hs <= 0x27ff && hs != 0x263b) {
+                 containsEmoji = YES;
+             } else if (0x2B05 <= hs && hs <= 0x2b07) {
+                 containsEmoji = YES;
+             } else if (0x2934 <= hs && hs <= 0x2935) {
+                 containsEmoji = YES;
+             } else if (0x3297 <= hs && hs <= 0x3299) {
+                 containsEmoji = YES;
+             } else if (hs == 0xa9 || hs == 0xae || hs == 0x303d || hs == 0x3030 || hs == 0x2b55 || hs == 0x2b1c || hs == 0x2b1b || hs == 0x2b50|| hs == 0x231a) {
+                 containsEmoji = YES;
+             }
+         }
+     }];
+    return containsEmoji;
+}
+
+
+- (BOOL)ax_isPureIntNumber {
+    NSScanner *scanner = [NSScanner scannerWithString:self];
+    int val;
+    return [scanner scanInt:&val] && [scanner isAtEnd];
+}
+
+
+// 是否是邮箱
+- (BOOL)ax_conformsToEMailFormat {
+    return [self ax_matchesRegularExpressionPattern:@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"];
+}
+
+
+- (BOOL)ax_conformsIDCard {
+    if (self.length == 15) {
+        for (NSUInteger i = 0; i < self.length; i++) {
+            unichar character = [self characterAtIndex:i];
+            if ('0' <= character && character <= '9') {
+                continue;
+            }
+            return NO;
+        }
+        return YES;
+    }
+    
+    if (self.length == 18) {
+        NSInteger weights[17] = {7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2};
+        NSInteger total = 0;
+        for (NSUInteger i = 0; i < self.length - 1; i++) {
+            unichar character = [self characterAtIndex:i];
+            if ('0' <= character && character <= '9') {
+                NSInteger integer = (NSInteger)(character - '0');
+                total += integer * weights[i];
+                continue;
+            }
+            return NO;
+        }
+        NSInteger result = (12 - total % 11) % 11;
+        unichar character = [self characterAtIndex:17];
+        if (result == 10) {
+            if (character == 'x') {
+                return YES;
+            }
+            if (character == 'X') {
+                return YES;
+            }
+            return NO;
+        }
+        
+        if (result == (NSInteger)(character - '0')) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+
+- (BOOL)ax_containInvalidString {
+    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"@／：；（）¥「」＂、[]{}#%-*+=_\\|~＜＞$€^•'@#$%^&*()_+'\""];
+    NSString *trimmedString = [self stringByTrimmingCharactersInSet:set];
+    if ([self ax_matchesRegularExpressionPattern:trimmedString]) {
+        return NO;
+    }
+    return YES;
+}
+
+
+- (BOOL)ax_isChineseCharacter {
+    NSString *regex = @"^[\u4E00-\u9FA5]+$";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    return [predicate evaluateWithObject:self];
+}
+
+
+- (BOOL)ax_isNumberOrEnglishOrChineseCharacter {
+    NSString *regex = @"[a-zA-Z0-9\u4e00-\u9fa5][a-zA-Z0-9\u4e00-\u9fa5]*";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    return [predicate evaluateWithObject:self];
+}
+
+
+- (BOOL)ax_isPureDecimalDigits {
+    NSString *string = [self stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
+    if (string.length > 0) {
+        return NO;
+    }
+    return YES;
+}
+
+
+- (BOOL)ax_isEmptyAfterTrimmingWhitespaceAndNewlineCharacters {
+    return [[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0;
+}
+
+- (BOOL)ax_matchesRegularExpressionPattern:(NSString *)regularExpressionPattern {
+    NSRange fullRange = NSMakeRange(0, [self length]);
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regularExpressionPattern
+                                                                                       options:NSRegularExpressionCaseInsensitive
+                                                                                         error:nil];
+    NSRange range = [regularExpression rangeOfFirstMatchInString:self
+                                                         options:0
+                                                           range:fullRange];
+    if (NSEqualRanges(fullRange, range)) {
+        return YES;
+    }
+    return NO;
+}
+
 @end
 
