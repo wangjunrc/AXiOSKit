@@ -25,12 +25,32 @@
 		24732B862277FE7A005CF92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B852277FE7A005CF92D /* main.m */; };
 		2498E4692278375A0024EAE6 /* H5.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2498E4682278375A0024EAE6 /* H5.bundle */; };
 		249A6C65229B86E1004CA707 /* HistogramView.m in Sources */ = {isa = PBXBuildFile; fileRef = 249A6C64229B86E1004CA707 /* HistogramView.m */; };
+		24B24B8D22B1D58900D93D1F /* AXiOSKitExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B24B8C22B1D58900D93D1F /* AXiOSKitExampleTests.m */; };
+		24B24B9522B1D5D500D93D1F /* PersonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B24B9422B1D5D500D93D1F /* PersonTest.m */; };
+		24B24B9D22B1D9BE00D93D1F /* AXiOSKitExampleUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B24B9C22B1D9BE00D93D1F /* AXiOSKitExampleUITest.m */; };
 		24BB837E229CC2FA00442276 /* AATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB837C229CC2FA00442276 /* AATableViewController.m */; };
 		24BB837F229CC2FA00442276 /* AATableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BB837D229CC2FA00442276 /* AATableViewController.xib */; };
 		24BB8383229CC30900442276 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB8381229CC30900442276 /* TableViewCell.m */; };
 		24BB8384229CC30900442276 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BB8382229CC30900442276 /* TableViewCell.xib */; };
 		E6687B32C4739B3098C0E7DC /* Pods_AXiOSKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D321525B5BED5264BD07204 /* Pods_AXiOSKitExample.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24B24B8F22B1D58900D93D1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24732B6B2277FE79005CF92D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24732B722277FE79005CF92D;
+			remoteInfo = AXiOSKitExample;
+		};
+		24B24B9F22B1D9BE00D93D1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24732B6B2277FE79005CF92D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24732B722277FE79005CF92D;
+			remoteInfo = AXiOSKitExample;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		19A06B8B5C535464B31E65C1 /* Pods-AXiOSKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +85,13 @@
 		2498E4682278375A0024EAE6 /* H5.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = H5.bundle; sourceTree = "<group>"; };
 		249A6C63229B86E1004CA707 /* HistogramView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistogramView.h; sourceTree = "<group>"; };
 		249A6C64229B86E1004CA707 /* HistogramView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistogramView.m; sourceTree = "<group>"; };
+		24B24B8A22B1D58900D93D1F /* AXiOSKitExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AXiOSKitExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24B24B8C22B1D58900D93D1F /* AXiOSKitExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXiOSKitExampleTests.m; sourceTree = "<group>"; };
+		24B24B8E22B1D58900D93D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24B24B9422B1D5D500D93D1F /* PersonTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonTest.m; sourceTree = "<group>"; };
+		24B24B9A22B1D9BE00D93D1F /* AXiOSKitExampleUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AXiOSKitExampleUITest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24B24B9C22B1D9BE00D93D1F /* AXiOSKitExampleUITest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXiOSKitExampleUITest.m; sourceTree = "<group>"; };
+		24B24B9E22B1D9BE00D93D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24BB837B229CC2FA00442276 /* AATableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AATableViewController.h; sourceTree = "<group>"; };
 		24BB837C229CC2FA00442276 /* AATableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AATableViewController.m; sourceTree = "<group>"; };
 		24BB837D229CC2FA00442276 /* AATableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AATableViewController.xib; sourceTree = "<group>"; };
@@ -81,6 +108,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6687B32C4739B3098C0E7DC /* Pods_AXiOSKitExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24B24B8722B1D58900D93D1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24B24B9722B1D9BE00D93D1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				24732B752277FE79005CF92D /* AXiOSKitExample */,
+				24B24B8B22B1D58900D93D1F /* AXiOSKitExampleTests */,
+				24B24B9B22B1D9BE00D93D1F /* AXiOSKitExampleUITest */,
 				24732B742277FE79005CF92D /* Products */,
 				D5BEF71999B63D198637CCC0 /* Pods */,
 				E4952BEF4BBD2A1F566B9DF3 /* Frameworks */,
@@ -143,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				24732B732277FE79005CF92D /* AXiOSKitExample.app */,
+				24B24B8A22B1D58900D93D1F /* AXiOSKitExampleTests.xctest */,
+				24B24B9A22B1D9BE00D93D1F /* AXiOSKitExampleUITest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +215,25 @@
 				249A6C64229B86E1004CA707 /* HistogramView.m */,
 			);
 			path = AXiOSKitExample;
+			sourceTree = "<group>";
+		};
+		24B24B8B22B1D58900D93D1F /* AXiOSKitExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				24B24B8C22B1D58900D93D1F /* AXiOSKitExampleTests.m */,
+				24B24B9422B1D5D500D93D1F /* PersonTest.m */,
+				24B24B8E22B1D58900D93D1F /* Info.plist */,
+			);
+			path = AXiOSKitExampleTests;
+			sourceTree = "<group>";
+		};
+		24B24B9B22B1D9BE00D93D1F /* AXiOSKitExampleUITest */ = {
+			isa = PBXGroup;
+			children = (
+				24B24B9C22B1D9BE00D93D1F /* AXiOSKitExampleUITest.m */,
+				24B24B9E22B1D9BE00D93D1F /* Info.plist */,
+			);
+			path = AXiOSKitExampleUITest;
 			sourceTree = "<group>";
 		};
 		D5BEF71999B63D198637CCC0 /* Pods */ = {
@@ -211,17 +275,62 @@
 			productReference = 24732B732277FE79005CF92D /* AXiOSKitExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		24B24B8922B1D58900D93D1F /* AXiOSKitExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24B24B9322B1D58900D93D1F /* Build configuration list for PBXNativeTarget "AXiOSKitExampleTests" */;
+			buildPhases = (
+				24B24B8622B1D58900D93D1F /* Sources */,
+				24B24B8722B1D58900D93D1F /* Frameworks */,
+				24B24B8822B1D58900D93D1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24B24B9022B1D58900D93D1F /* PBXTargetDependency */,
+			);
+			name = AXiOSKitExampleTests;
+			productName = AXiOSKitExampleTests;
+			productReference = 24B24B8A22B1D58900D93D1F /* AXiOSKitExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		24B24B9922B1D9BE00D93D1F /* AXiOSKitExampleUITest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24B24BA122B1D9BE00D93D1F /* Build configuration list for PBXNativeTarget "AXiOSKitExampleUITest" */;
+			buildPhases = (
+				24B24B9622B1D9BE00D93D1F /* Sources */,
+				24B24B9722B1D9BE00D93D1F /* Frameworks */,
+				24B24B9822B1D9BE00D93D1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24B24BA022B1D9BE00D93D1F /* PBXTargetDependency */,
+			);
+			name = AXiOSKitExampleUITest;
+			productName = AXiOSKitExampleUITest;
+			productReference = 24B24B9A22B1D9BE00D93D1F /* AXiOSKitExampleUITest.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		24732B6B2277FE79005CF92D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = liu.weixing;
 				TargetAttributes = {
 					24732B722277FE79005CF92D = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					24B24B8922B1D58900D93D1F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 24732B722277FE79005CF92D;
+					};
+					24B24B9922B1D9BE00D93D1F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 24732B722277FE79005CF92D;
 					};
 				};
 			};
@@ -239,6 +348,8 @@
 			projectRoot = "";
 			targets = (
 				24732B722277FE79005CF92D /* AXiOSKitExample */,
+				24B24B8922B1D58900D93D1F /* AXiOSKitExampleTests */,
+				24B24B9922B1D9BE00D93D1F /* AXiOSKitExampleUITest */,
 			);
 		};
 /* End PBXProject section */
@@ -256,6 +367,20 @@
 				24BB8384229CC30900442276 /* TableViewCell.xib in Resources */,
 				2498E4692278375A0024EAE6 /* H5.bundle in Resources */,
 				24732B7E2277FE79005CF92D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24B24B8822B1D58900D93D1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24B24B9822B1D9BE00D93D1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +483,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		24B24B8622B1D58900D93D1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24B24B9522B1D5D500D93D1F /* PersonTest.m in Sources */,
+				24B24B8D22B1D58900D93D1F /* AXiOSKitExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24B24B9622B1D9BE00D93D1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24B24B9D22B1D9BE00D93D1F /* AXiOSKitExampleUITest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24B24B9022B1D58900D93D1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24732B722277FE79005CF92D /* AXiOSKitExample */;
+			targetProxy = 24B24B8F22B1D58900D93D1F /* PBXContainerItemProxy */;
+		};
+		24B24BA022B1D9BE00D93D1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24732B722277FE79005CF92D /* AXiOSKitExample */;
+			targetProxy = 24B24B9F22B1D9BE00D93D1F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		24732B7C2277FE79005CF92D /* Main.storyboard */ = {
@@ -530,6 +685,76 @@
 			};
 			name = Release;
 		};
+		24B24B9122B1D58900D93D1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AXiOSKitExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AX.AXiOSKitExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AXiOSKitExample.app/AXiOSKitExample";
+			};
+			name = Debug;
+		};
+		24B24B9222B1D58900D93D1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AXiOSKitExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AX.AXiOSKitExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AXiOSKitExample.app/AXiOSKitExample";
+			};
+			name = Release;
+		};
+		24B24BA222B1D9BE00D93D1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AXiOSKitExampleUITest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AX.AXiOSKitExampleUITest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AXiOSKitExample;
+			};
+			name = Debug;
+		};
+		24B24BA322B1D9BE00D93D1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AXiOSKitExampleUITest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AX.AXiOSKitExampleUITest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AXiOSKitExample;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -547,6 +772,24 @@
 			buildConfigurations = (
 				24732B8A2277FE7A005CF92D /* Debug */,
 				24732B8B2277FE7A005CF92D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24B24B9322B1D58900D93D1F /* Build configuration list for PBXNativeTarget "AXiOSKitExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24B24B9122B1D58900D93D1F /* Debug */,
+				24B24B9222B1D58900D93D1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24B24BA122B1D9BE00D93D1F /* Build configuration list for PBXNativeTarget "AXiOSKitExampleUITest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24B24BA222B1D9BE00D93D1F /* Debug */,
+				24B24BA322B1D9BE00D93D1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
