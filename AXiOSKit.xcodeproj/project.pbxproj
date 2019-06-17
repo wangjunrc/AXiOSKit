@@ -52,7 +52,6 @@
 		24732A032277FBB9005CF92D /* UIButton+AXCountDown2.m in Sources */ = {isa = PBXBuildFile; fileRef = 247328EB2277FBB8005CF92D /* UIButton+AXCountDown2.m */; };
 		24732A042277FBB9005CF92D /* NSString+AXCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 247328EC2277FBB8005CF92D /* NSString+AXCrypto.h */; };
 		24732A052277FBB9005CF92D /* NSDate+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 247328ED2277FBB8005CF92D /* NSDate+AXKit.h */; };
-		24732A062277FBB9005CF92D /* NSString+AXNet.h in Headers */ = {isa = PBXBuildFile; fileRef = 247328EE2277FBB8005CF92D /* NSString+AXNet.h */; };
 		24732A072277FBB9005CF92D /* NSDateComponents+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 247328EF2277FBB8005CF92D /* NSDateComponents+AXKit.h */; };
 		24732A082277FBB9005CF92D /* UIViewController+AXAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 247328F02277FBB8005CF92D /* UIViewController+AXAlert.m */; };
 		24732A092277FBB9005CF92D /* UIColor+AXKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 247328F12277FBB8005CF92D /* UIColor+AXKit.m */; };
@@ -97,7 +96,6 @@
 		24732A302277FBB9005CF92D /* NSString+AXDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329182277FBB8005CF92D /* NSString+AXDate.h */; };
 		24732A312277FBB9005CF92D /* NSObject+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329192277FBB8005CF92D /* NSObject+AXKit.h */; };
 		24732A322277FBB9005CF92D /* NSDate+AXKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473291A2277FBB8005CF92D /* NSDate+AXKit.m */; };
-		24732A332277FBB9005CF92D /* NSString+AXNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473291B2277FBB8005CF92D /* NSString+AXNet.m */; };
 		24732A342277FBB9005CF92D /* UIButton+AXCountDown2.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473291C2277FBB8005CF92D /* UIButton+AXCountDown2.h */; };
 		24732A352277FBB9005CF92D /* NSString+AXCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473291D2277FBB8005CF92D /* NSString+AXCrypto.m */; };
 		24732A362277FBB9005CF92D /* UIView+AXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473291E2277FBB8005CF92D /* UIView+AXFrame.m */; };
@@ -366,7 +364,6 @@
 		247328EB2277FBB8005CF92D /* UIButton+AXCountDown2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AXCountDown2.m"; sourceTree = "<group>"; };
 		247328EC2277FBB8005CF92D /* NSString+AXCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AXCrypto.h"; sourceTree = "<group>"; };
 		247328ED2277FBB8005CF92D /* NSDate+AXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+AXKit.h"; sourceTree = "<group>"; };
-		247328EE2277FBB8005CF92D /* NSString+AXNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AXNet.h"; sourceTree = "<group>"; };
 		247328EF2277FBB8005CF92D /* NSDateComponents+AXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+AXKit.h"; sourceTree = "<group>"; };
 		247328F02277FBB8005CF92D /* UIViewController+AXAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXAlert.m"; sourceTree = "<group>"; };
 		247328F12277FBB8005CF92D /* UIColor+AXKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AXKit.m"; sourceTree = "<group>"; };
@@ -411,7 +408,6 @@
 		247329182277FBB8005CF92D /* NSString+AXDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AXDate.h"; sourceTree = "<group>"; };
 		247329192277FBB8005CF92D /* NSObject+AXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AXKit.h"; sourceTree = "<group>"; };
 		2473291A2277FBB8005CF92D /* NSDate+AXKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+AXKit.m"; sourceTree = "<group>"; };
-		2473291B2277FBB8005CF92D /* NSString+AXNet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AXNet.m"; sourceTree = "<group>"; };
 		2473291C2277FBB8005CF92D /* UIButton+AXCountDown2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AXCountDown2.h"; sourceTree = "<group>"; };
 		2473291D2277FBB8005CF92D /* NSString+AXCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AXCrypto.m"; sourceTree = "<group>"; };
 		2473291E2277FBB8005CF92D /* UIView+AXFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXFrame.m"; sourceTree = "<group>"; };
@@ -731,12 +727,12 @@
 				247329272277FBB8005CF92D /* NSError+AXKit.m */,
 				247328D52277FBB8005CF92D /* NSNumber+AXKit.h */,
 				247328FD2277FBB8005CF92D /* NSNumber+AXKit.m */,
+				247329192277FBB8005CF92D /* NSObject+AXKit.h */,
+				247328D62277FBB8005CF92D /* NSObject+AXKit.m */,
 				2473292B2277FBB8005CF92D /* NSObject+AXKVO.h */,
 				247328F62277FBB8005CF92D /* NSObject+AXKVO.m */,
 				247328C82277FBB8005CF92D /* NSObject+AXRuntime.h */,
 				2473290A2277FBB8005CF92D /* NSObject+AXRuntime.m */,
-				247329192277FBB8005CF92D /* NSObject+AXKit.h */,
-				247328D62277FBB8005CF92D /* NSObject+AXKit.m */,
 				2473290E2277FBB8005CF92D /* NSObject+AXVersion.h */,
 				247328E32277FBB8005CF92D /* NSObject+AXVersion.m */,
 				247328EC2277FBB8005CF92D /* NSString+AXCrypto.h */,
@@ -745,8 +741,6 @@
 				247328D82277FBB8005CF92D /* NSString+AXDate.m */,
 				247328D12277FBB8005CF92D /* NSString+AXEffective.h */,
 				247329012277FBB8005CF92D /* NSString+AXEffective.m */,
-				247328EE2277FBB8005CF92D /* NSString+AXNet.h */,
-				2473291B2277FBB8005CF92D /* NSString+AXNet.m */,
 				247328E92277FBB8005CF92D /* NSString+AXKit.h */,
 				2473291F2277FBB8005CF92D /* NSString+AXKit.m */,
 				247328D42277FBB8005CF92D /* NSURL+AXKit.h */,
@@ -769,6 +763,8 @@
 				247328FB2277FBB8005CF92D /* UIControl+AXKit.m */,
 				247329162277FBB8005CF92D /* UIDevice+AXKit.h */,
 				247328D92277FBB8005CF92D /* UIDevice+AXKit.m */,
+				24835B9322B72DB000F4125C /* UIGestureRecognizer+AXKit.h */,
+				24835B9422B72DB000F4125C /* UIGestureRecognizer+AXKit.m */,
 				247329212277FBB8005CF92D /* UIImage+AXBundle.h */,
 				247328E72277FBB8005CF92D /* UIImage+AXBundle.m */,
 				247328DD2277FBB8005CF92D /* UIImage+AXKit.h */,
@@ -791,10 +787,10 @@
 				247328E52277FBB8005CF92D /* UITableView+AXKit.m */,
 				247328C72277FBB8005CF92D /* UITextField+AXAction.h */,
 				2473290C2277FBB8005CF92D /* UITextField+AXAction.m */,
-				24BB8351229BDDF800442276 /* UITextView+AXAction.h */,
-				24BB8352229BDDF800442276 /* UITextView+AXAction.m */,
 				247328E62277FBB8005CF92D /* UITextField+AXKit.h */,
 				247329222277FBB8005CF92D /* UITextField+AXKit.m */,
+				24BB8351229BDDF800442276 /* UITextView+AXAction.h */,
+				24BB8352229BDDF800442276 /* UITextView+AXAction.m */,
 				247328CA2277FBB8005CF92D /* UITextView+AXKit.h */,
 				247329072277FBB8005CF92D /* UITextView+AXKit.m */,
 				247328F82277FBB8005CF92D /* UIView+AXAnimation.h */,
@@ -803,26 +799,24 @@
 				2473291E2277FBB8005CF92D /* UIView+AXFrame.m */,
 				247328CB2277FBB8005CF92D /* UIView+AXIBInspectable.h */,
 				247329082277FBB8005CF92D /* UIView+AXIBInspectable.m */,
+				247329062277FBB8005CF92D /* UIView+AXKit.h */,
+				247328CC2277FBB8005CF92D /* UIView+AXKit.m */,
 				2473290B2277FBB8005CF92D /* UIView+AXSheet.h */,
 				247328C92277FBB8005CF92D /* UIView+AXSheet.m */,
 				247328FC2277FBB8005CF92D /* UIView+AXSnapshot.h */,
 				247329252277FBB8005CF92D /* UIView+AXSnapshot.m */,
-				247329062277FBB8005CF92D /* UIView+AXKit.h */,
-				247328CC2277FBB8005CF92D /* UIView+AXKit.m */,
 				247329312277FBB8005CF92D /* UIViewController+AXAlert.h */,
 				247328F02277FBB8005CF92D /* UIViewController+AXAlert.m */,
 				247328F52277FBB8005CF92D /* UIViewController+AXiPadAlert.h */,
 				2473292C2277FBB8005CF92D /* UIViewController+AXiPadAlert.m */,
-				247329202277FBB8005CF92D /* UIViewController+AXNavBarConfig.h */,
-				247328E82277FBB8005CF92D /* UIViewController+AXNavBarConfig.m */,
 				247329112277FBB8005CF92D /* UIViewController+AXKit.h */,
 				247328DE2277FBB8005CF92D /* UIViewController+AXKit.m */,
+				247329202277FBB8005CF92D /* UIViewController+AXNavBarConfig.h */,
+				247328E82277FBB8005CF92D /* UIViewController+AXNavBarConfig.m */,
 				247329242277FBB8005CF92D /* UIWindow+AXKit.h */,
 				247328E42277FBB8005CF92D /* UIWindow+AXKit.m */,
 				247328CD2277FBB8005CF92D /* WKWebView+AXKit.h */,
 				247329052277FBB8005CF92D /* WKWebView+AXKit.m */,
-				24835B9322B72DB000F4125C /* UIGestureRecognizer+AXKit.h */,
-				24835B9422B72DB000F4125C /* UIGestureRecognizer+AXKit.m */,
 			);
 			path = 01Category;
 			sourceTree = "<group>";
@@ -1511,7 +1505,6 @@
 				24732A612277FBB9005CF92D /* IBObjectHeader.h in Headers */,
 				24732A552277FBB9005CF92D /* AXNumberKeyboard.h in Headers */,
 				247329E52277FBB9005CF92D /* WKWebView+AXKit.h in Headers */,
-				24732A062277FBB9005CF92D /* NSString+AXNet.h in Headers */,
 				24732A722277FBB9005CF92D /* AXSetValueProtocol.h in Headers */,
 				24BB8672229E9B4300442276 /* AXPayVC.h in Headers */,
 				24732B332277FD53005CF92D /* UIScrollView+AXEmptyDataSet.h in Headers */,
@@ -1694,7 +1687,6 @@
 				24732A532277FBB9005CF92D /* AXNumberKeyboard.m in Sources */,
 				247329FF2277FBB9005CF92D /* UIImage+AXBundle.m in Sources */,
 				24732B3B2277FD53005CF92D /* DBStatements.m in Sources */,
-				24732A332277FBB9005CF92D /* NSString+AXNet.m in Sources */,
 				24BB8673229E9B4300442276 /* AXPayVC.m in Sources */,
 				24732A032277FBB9005CF92D /* UIButton+AXCountDown2.m in Sources */,
 				24732AB32277FBB9005CF92D /* AXSinglePickVC.m in Sources */,

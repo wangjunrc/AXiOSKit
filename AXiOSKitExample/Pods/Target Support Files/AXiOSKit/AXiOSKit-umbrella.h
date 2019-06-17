@@ -35,7 +35,6 @@
 #import "NSString+AXDate.h"
 #import "NSString+AXEffective.h"
 #import "NSString+AXKit.h"
-#import "NSString+AXNet.h"
 #import "NSURL+AXKit.h"
 #import "NSUserDefaults+AXKit.h"
 #import "UIBarButtonItem+AXKit.h"

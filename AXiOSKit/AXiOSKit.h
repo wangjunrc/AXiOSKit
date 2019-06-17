@@ -30,7 +30,6 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "NSString+AXCrypto.h"
 #import "NSString+AXDate.h"
 #import "NSString+AXEffective.h"
-#import "NSString+AXNet.h"
 #import "NSString+AXKit.h"
 #import "NSURL+AXKit.h"
 #import "NSUserDefaults+AXKit.h"
