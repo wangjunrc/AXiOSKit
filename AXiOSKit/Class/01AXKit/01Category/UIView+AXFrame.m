@@ -150,4 +150,136 @@
     self.frame = frame;
 }
 
+
+/*========================ax 前缀==================================*/
+
+- (void)setAx_x:(CGFloat)x{
+    CGRect frame = self.frame;
+    frame.origin.x = x;
+    self.frame = frame;
+}
+- (CGFloat)ax_x{
+    return self.frame.origin.x;
+}
+
+- (void)setAx_y:(CGFloat)ax_y{
+    CGRect frame = self.frame;
+    frame.origin.y = ax_y;
+    self.frame = frame;
+}
+
+- (CGFloat)ax_y{
+    return self.frame.origin.y;
+}
+- (void)setAx_centerX:(CGFloat)ax_centerX{
+    CGPoint center = self.center;
+    center.x = ax_centerX;
+    self.center = center;
+}
+
+- (CGFloat)ax_centerX{
+    return self.center.x;
+}
+
+- (void)setAx_centerY:(CGFloat)ax_centerY{
+    CGPoint center = self.center;
+    center.y = ax_centerY;
+    self.center = center;
+}
+
+- (CGFloat)ax_centerY{
+    return self.center.y;
+}
+
+- (void)setAx_width:(CGFloat)ax_width {
+    CGRect frame = self.frame;
+    frame.size.width = ax_width;
+    self.frame = frame;
+}
+
+- (CGFloat)ax_width{
+    return self.frame.size.width;
+}
+
+- (void)setAx_height:(CGFloat)ax_height {
+    CGRect frame = self.frame;
+    frame.size.height = ax_height;
+    self.frame = frame;
+}
+
+- (CGFloat)ax_height{
+    return self.frame.size.height;
+}
+
+
+- (void)setAx_size:(CGSize)ax_size {
+    CGRect frame = self.frame;
+    frame.size = ax_size;
+    self.frame = frame;
+}
+
+- (CGSize)ax_size{
+    return self.frame.size;
+}
+
+- (void)setAx_origin:(CGPoint)ax_origin {
+    CGRect frame = self.frame;
+    frame.origin = ax_origin;
+    self.frame = frame;
+}
+
+- (CGPoint)ax_origin{
+    return self.frame.origin;
+}
+
+- (void)setAx_right:(CGFloat)ax_right {
+    CGRect frame = self.frame;
+    frame.origin.x = ax_right - frame.size.width;
+    self.frame = frame;
+}
+
+- (CGFloat)ax_right{
+    return self.frame.origin.x + self.frame.size.width;
+}
+
+
+- (void)setAx_left:(CGFloat)ax_left {
+    CGRect frame = self.frame;
+    frame.origin.x = ax_left;
+    self.frame = frame;
+}
+
+- (CGFloat)ax_left{
+    
+    return self.frame.origin.x;
+}
+
+- (void)setAx_top:(CGFloat)ax_top {
+    CGRect frame = self.frame;
+    frame.origin.y = ax_top;
+    self.frame = frame;
+}
+
+- (CGFloat)ax_top{
+    return self.frame.origin.y;
+}
+
+- (void)setAx_bottom:(CGFloat)ax_bottom
+{
+    CGRect frame = self.frame;
+    frame.origin.y = ax_bottom - frame.size.height;
+    self.frame = frame;
+}
+
+- (CGFloat)ax_bottom{
+    
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+- (void)ax_removeAllSubviews{
+    for (UIView *view in self.subviews)
+    {
+        [view removeFromSuperview];
+    }
+}
 @end
