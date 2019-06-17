@@ -18,6 +18,7 @@
 @implementation UIGestureRecognizer (AXKit)
 
 +(instancetype )ax_gestureRecognizerWithActionBlock:(AXGestureBlock )block {
+    
     return [[self alloc]initWithActionBlock:block];
 }
 
@@ -27,6 +28,15 @@
         [self addTarget:self action:@selector(__gestureAction:)];
     }
     return self;
+}
+
+
+/**
+ * 事件block
+ */
+- (void)ax_addActionBlock:(void(^)(UIGestureRecognizer *sender))block {
+     self.actionBlock = block;
+    [self addTarget:self action:@selector(__gestureAction:)];
 }
 
 -(void)__gestureAction:(UIGestureRecognizer *)sender {

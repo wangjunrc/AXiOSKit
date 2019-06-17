@@ -10,13 +10,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^AXGestureBlock)(UIGestureRecognizer *ges);
+typedef void(^AXGestureBlock)(UIGestureRecognizer *sender);
 
 @interface UIGestureRecognizer (AXKit)
 
 +(instancetype )ax_gestureRecognizerWithActionBlock:(AXGestureBlock )block;
 
 -(instancetype )initWithActionBlock:(AXGestureBlock )block;
+
+/**
+ * 事件block
+ */
+- (void)ax_addActionBlock:(AXGestureBlock )block;
 
 @end
 

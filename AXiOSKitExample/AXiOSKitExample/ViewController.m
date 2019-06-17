@@ -53,10 +53,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    [self.view addGestureRecognizer: [UITapGestureRecognizer ax_gestureRecognizerWithActionBlock:^(UIGestureRecognizer * _Nonnull ges) {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithActionBlock:^(UIGestureRecognizer * _Nonnull ges) {
         NSLog(@"ax_gestureRecognizerWithActionBlock");
-    }]];
+    }];
+    [self.view addGestureRecognizer: tap];
+//    [tap ax_addActionBlock:^(UIGestureRecognizer * _Nonnull sender) {
+//        NSLog(@"ax_gestureRecognizerWithActionBlock");
+//    }];
+    
+//    [self.view addGestureRecognizer: [UITapGestureRecognizer ax_gestureRecognizerWithActionBlock:^(UIGestureRecognizer * _Nonnull ges) {
+//        NSLog(@"ax_gestureRecognizerWithActionBlock");
+//    }]];
     
 //    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 100, 100, 100)];
 //    btn.backgroundColor = [UIColor redColor];
