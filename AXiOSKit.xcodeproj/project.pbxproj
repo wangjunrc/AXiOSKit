@@ -306,6 +306,8 @@
 		24732B8D2278215F005CF92D /* AXiOSKitDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B8C2278215F005CF92D /* AXiOSKitDefine.h */; };
 		24732B9822782D9E005CF92D /* AXWebScriptMessageModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B9622782D9D005CF92D /* AXWebScriptMessageModel.h */; };
 		24732B9922782D9E005CF92D /* AXWebScriptMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B9722782D9D005CF92D /* AXWebScriptMessageModel.m */; };
+		24835B9522B72DB000F4125C /* UIGestureRecognizer+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 24835B9322B72DB000F4125C /* UIGestureRecognizer+AXKit.h */; };
+		24835B9622B72DB000F4125C /* UIGestureRecognizer+AXKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 24835B9422B72DB000F4125C /* UIGestureRecognizer+AXKit.m */; };
 		24BB8353229BDDF800442276 /* UITextView+AXAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 24BB8351229BDDF800442276 /* UITextView+AXAction.h */; };
 		24BB8354229BDDF800442276 /* UITextView+AXAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB8352229BDDF800442276 /* UITextView+AXAction.m */; };
 		24BB839C229E2ED700442276 /* AXKeyboardObserve.h in Headers */ = {isa = PBXBuildFile; fileRef = 24BB839A229E2ED700442276 /* AXKeyboardObserve.h */; };
@@ -619,6 +621,8 @@
 		24732B8C2278215F005CF92D /* AXiOSKitDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXiOSKitDefine.h; sourceTree = "<group>"; };
 		24732B9622782D9D005CF92D /* AXWebScriptMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWebScriptMessageModel.h; sourceTree = "<group>"; };
 		24732B9722782D9D005CF92D /* AXWebScriptMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWebScriptMessageModel.m; sourceTree = "<group>"; };
+		24835B9322B72DB000F4125C /* UIGestureRecognizer+AXKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+AXKit.h"; sourceTree = "<group>"; };
+		24835B9422B72DB000F4125C /* UIGestureRecognizer+AXKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+AXKit.m"; sourceTree = "<group>"; };
 		24BB8351229BDDF800442276 /* UITextView+AXAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+AXAction.h"; sourceTree = "<group>"; };
 		24BB8352229BDDF800442276 /* UITextView+AXAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+AXAction.m"; sourceTree = "<group>"; };
 		24BB839A229E2ED700442276 /* AXKeyboardObserve.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXKeyboardObserve.h; sourceTree = "<group>"; };
@@ -817,6 +821,8 @@
 				247328E42277FBB8005CF92D /* UIWindow+AXKit.m */,
 				247328CD2277FBB8005CF92D /* WKWebView+AXKit.h */,
 				247329052277FBB8005CF92D /* WKWebView+AXKit.m */,
+				24835B9322B72DB000F4125C /* UIGestureRecognizer+AXKit.h */,
+				24835B9422B72DB000F4125C /* UIGestureRecognizer+AXKit.m */,
 			);
 			path = 01Category;
 			sourceTree = "<group>";
@@ -1490,6 +1496,7 @@
 				24732A562277FBB9005CF92D /* AXTouchIDManager.h in Headers */,
 				24732A942277FBB9005CF92D /* AXChoosePayStyleCell.h in Headers */,
 				24732A432277FBB9005CF92D /* NSObject+AXKVO.h in Headers */,
+				24835B9522B72DB000F4125C /* UIGestureRecognizer+AXKit.h in Headers */,
 				24732B172277FD53005CF92D /* MBProgressHUD+AX.h in Headers */,
 				24732A8B2277FBB9005CF92D /* AXChoosePayVC.h in Headers */,
 				24732A412277FBB9005CF92D /* UIBarButtonItem+AXKit.h in Headers */,
@@ -1701,6 +1708,7 @@
 				24732B362277FD53005CF92D /* YYLabel+AXiOSKit.m in Sources */,
 				24732AC32277FBB9005CF92D /* AXGuidePageVC.m in Sources */,
 				24732AB42277FBB9005CF92D /* AXDateVC.m in Sources */,
+				24835B9622B72DB000F4125C /* UIGestureRecognizer+AXKit.m in Sources */,
 				24732A482277FBB9005CF92D /* NSBundle+AXBundle.m in Sources */,
 				24732ACA2277FBB9005CF92D /* AXScriptMessageHandlerHelper.m in Sources */,
 				24732AB82277FBB9005CF92D /* QRCodeViewController.m in Sources */,

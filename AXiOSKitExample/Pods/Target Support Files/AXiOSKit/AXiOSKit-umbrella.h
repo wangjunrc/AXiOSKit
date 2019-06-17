@@ -46,6 +46,7 @@
 #import "UIColor+AXKit.h"
 #import "UIControl+AXKit.h"
 #import "UIDevice+AXKit.h"
+#import "UIGestureRecognizer+AXKit.h"
 #import "UIImage+AXBundle.h"
 #import "UIImage+AXKit.h"
 #import "UIImageView+AXKit.h"

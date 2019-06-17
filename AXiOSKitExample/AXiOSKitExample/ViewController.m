@@ -24,6 +24,7 @@
 #import "AXChoosePayStyleVC.h"
 #import "AXPayVC.h"
 #import "NSObject+AXKit.h"
+#import "UIGestureRecognizer+AXKit.h"
 
 @protocol SPTDataContainer <NSObject>
 
@@ -51,27 +52,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.atf.ax_keyboardObserve.containerView = self.view;
     
-//    self.label.text = [NSString stringWithFormat:@" %@\\u0020",@"A"];
     
-//    self.label.text = @"  AAA\u0020 ";
-//    self.label.backgroundColor = [UIColor redColor];
-////   self.label.text = [NSString stringWithFormat:@"%@%@",@"aaaaa",@"\u3000"];
-//
-//    self.label.text = [NSString stringWithFormat:@"\u00A0\u00A0中\u00A0\u00A0"];
-//     self.label.text = [NSString stringWithFormat:@"\u3000文\u3000"];
-//    self.label.text = [NSString stringWithFormat:@"A\u00A0"];
+    [self.view addGestureRecognizer: [UITapGestureRecognizer ax_gestureRecognizerWithActionBlock:^(UIGestureRecognizer * _Nonnull ges) {
+        NSLog(@"ax_gestureRecognizerWithActionBlock");
+    }]];
     
-//    和
-    
-//       self.label.text = [NSString stringWithFormat:@"%@ ",@"aaaaa"];
-
-    id str;
-    NSLog(@">>??? %d",ax_is_null(str));
-    
-//     NSLog(@">>??? %d",[self ax_is_null:str]);
-    
+//    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 100, 100, 100)];
+//    btn.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:btn];
+//    [btn ax_addActionBlock:^(UIButton * _Nullable button) {
+//         NSLog(@"ax_gestureRecognizerWithActionBlock");
+//    }];
 }
 
 - (BOOL)ax_is_null:(id)obj {

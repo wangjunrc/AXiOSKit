@@ -12,15 +12,42 @@
 typedef void(^ButtonBlock)(UIButton *button);
 
 @interface UIButton ()
+
 @property (nonatomic, copy)ButtonBlock buttonBlock;
+
 @end
 
 @implementation UIButton (AXKit)
 
 #pragma mark - 点击事件
+///**
+// 不需要定义属性写法,没区别,就是触发 objc_setAssociatedObject 一下而已
+// */
+//- (void)ax_addActionBlock:(void (^)(UIButton *))block{
+//    [self addActionBlock:block];
+//    [self addTarget:self action:@selector(__buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+//}
+//
+//-(void)addActionBlock:(ButtonBlock )block {
+//    if (block) {
+//        objc_setAssociatedObject(self, @selector(__buttonAction), block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//    }
+//}
+//
+//- (void)buttonEvents:(UIButton *)button{
+//    ButtonBlock block = objc_getAssociatedObject(self, @selector(__buttonAction));
+//    if (block) {
+//        block(button);
+//    }
+//}
+
+/**
+ 需要定义属性写法
+ */
 - (void)ax_addActionBlock:(void (^)(UIButton *))block{
-    [self addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];
+    
     self.buttonBlock = block;
+    [self addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];
 }
 - (void)buttonEvents:(UIButton *)button{
     if (self.buttonBlock) {
