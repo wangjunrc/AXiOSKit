@@ -203,7 +203,7 @@ if (point.x < 0 ) {
 
 
 
-#同时多个aler 顺序弹出
+# 同时多个aler 顺序弹出
 ```
 //创建一个队列，串行并行都可以，主要为了操作信号量
 dispatch_queue_t queue = dispatch_queue_create("com.ax.queue.alert", DISPATCH_QUEUE_SERIAL);
@@ -927,10 +927,8 @@ return returnValue;
 ```
 
 # 方法重载-同一个方法,不同参数
-```
-c语言方法
-```
-```
+
+```C语言方法
 NSString* __attribute__((overloadable)) mytest(NSString* x, NSString* y)
 {
 return [NSString stringWithFormat:@"%@%@",x,y];
@@ -1252,4 +1250,28 @@ FOUNDATION_IMPORT
 否则 使用
 FOUNDATION_EXTERN 这个就可以了
 当然使用extern 也是没有问题的
+```
+# tableView分割线
+```
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+[cell setSeparatorInset:UIEdgeInsetsZero];
+}
+
+if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+[cell setLayoutMargins:UIEdgeInsetsZero];
+}
+}
+-(void)viewDidLayoutSubviews
+{
+[super viewDidLayoutSubviews];
+if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+[self.tableView setSeparatorInset:UIEdgeInsetsZero];
+}
+
+if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+[self.tableView setLayoutMargins:UIEdgeInsetsZero];
+}
+}
 ```
