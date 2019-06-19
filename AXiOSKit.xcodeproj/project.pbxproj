@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24064AC622BA58C200F6EC73 /* 命令行.md in Resources */ = {isa = PBXBuildFile; fileRef = 24064AC522BA58C200F6EC73 /* 命令行.md */; };
 		247328B82277FB8B005CF92D /* AXiOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 247328B62277FB8B005CF92D /* AXiOSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		247329DA2277FBB9005CF92D /* AXCollectFile.md in Resources */ = {isa = PBXBuildFile; fileRef = 247328BF2277FBB8005CF92D /* AXCollectFile.md */; };
 		247329DB2277FBB9005CF92D /* pod_no_use.md in Resources */ = {isa = PBXBuildFile; fileRef = 247328C02277FBB8005CF92D /* pod_no_use.md */; };
@@ -316,6 +317,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24064AC522BA58C200F6EC73 /* 命令行.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "命令行.md"; sourceTree = "<group>"; };
 		244FC1D02297C0D7003BD65F /* AXBaseAlertDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXBaseAlertDefine.h; sourceTree = "<group>"; };
 		247328B32277FB8B005CF92D /* AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AXiOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		247328B62277FB8B005CF92D /* AXiOSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXiOSKit.h; sourceTree = "<group>"; };
@@ -686,6 +688,7 @@
 				247328BF2277FBB8005CF92D /* AXCollectFile.md */,
 				247328C02277FBB8005CF92D /* pod_no_use.md */,
 				247328C12277FBB8005CF92D /* pod_use.md */,
+				24064AC522BA58C200F6EC73 /* 命令行.md */,
 			);
 			path = README;
 			sourceTree = "<group>";
@@ -1602,6 +1605,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24732A512277FBB9005CF92D /* AXNumberKeyboard.xib in Resources */,
+				24064AC622BA58C200F6EC73 /* 命令行.md in Resources */,
 				24732B3D2277FD53005CF92D /* WKJSPOST.html in Resources */,
 				24732A932277FBB9005CF92D /* AXChoosePayStyleCell.xib in Resources */,
 				24732ABD2277FBB9005CF92D /* AXSafariVC.xib in Resources */,
