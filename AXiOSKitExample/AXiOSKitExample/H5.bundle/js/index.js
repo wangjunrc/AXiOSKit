@@ -42,17 +42,13 @@ function buttonClick1() {
 }
 
 function buttonClick2() {
-    //        alert('JSUseOCFunctionName_test1');
     
-//    alert('window.webkit>> '+window.webkit);
-//    alert('window.webkit.messageHandlers>> '+window.webkit.messageHandlers);
-    window.webkit&&window.webkit.messageHandlers
-    if(window.webki&&window.webkit.messageHandlers){
-      alert("ios");
+    if(isiOS){
+      alert("ios平台");
     }else{
-        alert("其他");
+        alert("其他平台");
     }
-    //    window.webkit.messageHandlers.JSUseOCFunctionName_test2.postMessage('tom');
+    
 }
 
 function buttonClick() {

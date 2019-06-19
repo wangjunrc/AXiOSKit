@@ -2,13 +2,11 @@
 //  AppDelegate.m
 //  AXiOSKitExample
 //
-//  Created by AXing on 2019/4/30.
+//  Created by AXing on 2019/6/19.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "NSObject+AFCrashExtension.h"
-#import "AXConfigureManager.h"
 
 @interface AppDelegate ()
 
@@ -19,8 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-//    [AXConfigureManager userIQKeyboardManager:NO];
     return YES;
 }
 
