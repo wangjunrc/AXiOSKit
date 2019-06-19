@@ -33,8 +33,6 @@ function buttonClick1() {
     person.name = 'jim';
     person.age = 12;
     
-    alert(isiOS);
-    
     if (isiOS) {
         window.webkit.messageHandlers.JSUseOCFunctionName_test1.postMessage(person);
     }

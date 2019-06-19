@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import <AXiOSKit/AXiOSKit.h>
-
+#import "AAViewController.h"
 @interface ViewController ()
 
 @end
@@ -21,11 +21,11 @@
 }
 
 - (IBAction)btnAction1:(id)sender {
+    
     AXWKWebVC *vc = [[AXWKWebVC alloc]init];
     vc.loadHTMLFilePath = [NSBundle.mainBundle pathForResource:@"H5.bundle/index.html" ofType:nil];
-    NSLog(@"vc.loadHTMLFilePath>> %@",vc.loadHTMLFilePath);
-    
     [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 @end

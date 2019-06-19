@@ -125,14 +125,14 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
  */
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     
-    AXLog(@"开始加载 title: %@",webView.title);
+//    AXLog(@"开始加载 title: %@",webView.title);
 }
 
 /**
  * 当内容开始返回时调用
  */
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
-    AXLog(@"当内容开始返回时调用title: %@",webView.title);
+//    AXLog(@"当内容开始返回时调用title: %@",webView.title);
 }
 
 /**

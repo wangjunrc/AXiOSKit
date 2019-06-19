@@ -16,6 +16,8 @@
 		24064AA122BA3A5B00F6EC73 /* AXiOSKitExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24064AA022BA3A5B00F6EC73 /* AXiOSKitExampleTests.m */; };
 		24064AAC22BA3A5B00F6EC73 /* AXiOSKitExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24064AAB22BA3A5B00F6EC73 /* AXiOSKitExampleUITests.m */; };
 		24064ABF22BA430F00F6EC73 /* H5.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 24064ABE22BA430F00F6EC73 /* H5.bundle */; };
+		24064AC322BA531500F6EC73 /* AAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24064AC122BA531500F6EC73 /* AAViewController.m */; };
+		24064AC422BA531500F6EC73 /* AAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24064AC222BA531500F6EC73 /* AAViewController.xib */; };
 		BA5D448F9D6147196E41B98C /* Pods_AXiOSKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DE37C66E240B10AB7E4C787 /* Pods_AXiOSKitExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,9 @@
 		24064AAB22BA3A5B00F6EC73 /* AXiOSKitExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXiOSKitExampleUITests.m; sourceTree = "<group>"; };
 		24064AAD22BA3A5B00F6EC73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24064ABE22BA430F00F6EC73 /* H5.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = H5.bundle; sourceTree = "<group>"; };
+		24064AC022BA531500F6EC73 /* AAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAViewController.h; sourceTree = "<group>"; };
+		24064AC122BA531500F6EC73 /* AAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAViewController.m; sourceTree = "<group>"; };
+		24064AC222BA531500F6EC73 /* AAViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AAViewController.xib; sourceTree = "<group>"; };
 		2548A22781D45664175BECD5 /* Pods-AXiOSKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.release.xcconfig"; sourceTree = "<group>"; };
 		3DE37C66E240B10AB7E4C787 /* Pods_AXiOSKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -115,6 +120,9 @@
 				24064A8822BA3A5A00F6EC73 /* AppDelegate.m */,
 				24064A8A22BA3A5A00F6EC73 /* ViewController.h */,
 				24064A8B22BA3A5A00F6EC73 /* ViewController.m */,
+				24064AC022BA531500F6EC73 /* AAViewController.h */,
+				24064AC122BA531500F6EC73 /* AAViewController.m */,
+				24064AC222BA531500F6EC73 /* AAViewController.xib */,
 				24064A8D22BA3A5A00F6EC73 /* Main.storyboard */,
 				24064A9022BA3A5B00F6EC73 /* Assets.xcassets */,
 				24064A9222BA3A5B00F6EC73 /* LaunchScreen.storyboard */,
@@ -264,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24064AC422BA531500F6EC73 /* AAViewController.xib in Resources */,
 				24064A9422BA3A5B00F6EC73 /* LaunchScreen.storyboard in Resources */,
 				24064A9122BA3A5B00F6EC73 /* Assets.xcassets in Resources */,
 				24064ABF22BA430F00F6EC73 /* H5.bundle in Resources */,
@@ -369,6 +378,7 @@
 			files = (
 				24064A8C22BA3A5A00F6EC73 /* ViewController.m in Sources */,
 				24064A9722BA3A5B00F6EC73 /* main.m in Sources */,
+				24064AC322BA531500F6EC73 /* AAViewController.m in Sources */,
 				24064A8922BA3A5A00F6EC73 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
