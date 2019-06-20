@@ -25,7 +25,9 @@
     AXWKWebVC *vc = [[AXWKWebVC alloc]init];
     vc.loadHTMLFilePath = [NSBundle.mainBundle pathForResource:@"H5.bundle/index.html" ofType:nil];
     [self.navigationController pushViewController:vc animated:YES];
-    
+    [vc addScriptMessageWithName:@"person" handler:^(NSString * _Nonnull name, id  _Nonnull body) {
+        NSLog(@"body>> %@",body);
+    }];
 }
 
 @end

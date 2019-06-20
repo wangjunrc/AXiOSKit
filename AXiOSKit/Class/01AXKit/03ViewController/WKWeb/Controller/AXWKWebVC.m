@@ -185,7 +185,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     
     NSURL *URL = navigationAction.request.URL;
     
-    AXLog(@"服务器开始请求的时候调用 %@  %@ %ld",URL.scheme,URL ,(long)navigationAction.navigationType);
+    AXLog(@"服务器开始请求的时候调用\n scheme:%@\n URL:%@\n navigationType:%ld",URL.scheme,URL ,(long)navigationAction.navigationType);
     
     if ([URL.scheme isEqual:@"tel"]) {
         

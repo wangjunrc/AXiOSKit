@@ -32,9 +32,13 @@ function buttonClick1() {
     var person = new Person();
     person.name = 'jim';
     person.age = 12;
-    
+    person.isAll = true;
     if (isiOS) {
-        window.webkit.messageHandlers.JSUseOCFunctionName_test1.postMessage(person);
+        
+        window.webkit.messageHandlers.person.postMessage(person);
+    }else{
+        
+        
     }
     
 }
@@ -62,9 +66,10 @@ var globalPerson = new Person() //用一个构造函数来创建了对象
 
 
 // 定义对象
-function Person(name, age) { //创建一个person的函数
+function Person(name, age,isAll) { //创建一个person的函数
     this.name = name; //此处的this对应的是对象obj
     this.age = age
+    this.isAll = isAll
 }
 
 
