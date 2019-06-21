@@ -138,7 +138,7 @@
     NSDate *fromDate = self;
     NSCalendar *gregorian = [[NSCalendar alloc]
                              initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    [gregorian setFirstWeekday:2];
+    gregorian.firstWeekday = 2;
     //去掉时分秒信息
     [gregorian rangeOfUnit:NSCalendarUnitDay startDate:&fromDate interval:NULL forDate:fromDate];
     [gregorian rangeOfUnit:NSCalendarUnitDay startDate:&toDate interval:NULL forDate:toDate];
