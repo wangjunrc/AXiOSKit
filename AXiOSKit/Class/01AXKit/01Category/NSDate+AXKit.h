@@ -55,4 +55,13 @@
  */
 - (NSDate *)ax_dateApartToYear:(NSInteger )year month:(NSInteger )month day:(NSInteger )day;
 
+
+/**
+ NSDate 相差天数
+ 
+ @param toDate 对比的
+ @return 相差天数
+ */
+-(NSInteger)ax_apartDayTo:(NSDate *)toDate;
+
 @end

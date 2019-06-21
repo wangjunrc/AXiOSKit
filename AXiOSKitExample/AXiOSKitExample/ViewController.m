@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <AXiOSKit/AXiOSKit.h>
 #import "AAViewController.h"
+#import <AXiOSKit/NSData+AXKit.h>
 @interface ViewController ()
 
 @end
@@ -17,7 +18,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
+    NSDate *date1 = [@"2019-01-01 01:00:00" ax_toDateWithFormat:@"yyyy-MM-dd HH:mm:ss"];
     
+     NSDate *date2 = [@"2019-01-02 02:00:00" ax_toDateWithFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    
+    NSLog(@">> %ld",[date1 ax_apartDayTo:date2]);
+    
+    
+    
+//    apartDayTo
 }
 
 - (IBAction)btnAction1:(id)sender {

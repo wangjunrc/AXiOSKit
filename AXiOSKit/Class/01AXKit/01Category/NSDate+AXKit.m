@@ -126,4 +126,26 @@
     return [calendar dateByAddingComponents:adcomps toDate:todayDate options:0];
 }
 
+
+/**
+ NSDate 相差天数
+
+ @param toDate 对比的
+ @return 相差天数
+ */
+-(NSInteger)ax_apartDayTo:(NSDate *)toDate {
+    
+    NSDate *fromDate = self;
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    [gregorian setFirstWeekday:2];
+    //去掉时分秒信息
+    [gregorian rangeOfUnit:NSCalendarUnitDay startDate:&fromDate interval:NULL forDate:fromDate];
+    [gregorian rangeOfUnit:NSCalendarUnitDay startDate:&toDate interval:NULL forDate:toDate];
+    NSDateComponents *dayComponents = [gregorian components:NSCalendarUnitDay fromDate:fromDate toDate:toDate options:0];
+    
+    return dayComponents.day;
+}
+
+
 @end
