@@ -139,12 +139,32 @@
     NSCalendar *gregorian = [[NSCalendar alloc]
                              initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     gregorian.firstWeekday = 2;
-    //去掉时分秒信息
+    //去掉时分秒信息,不考虑时分差异
     [gregorian rangeOfUnit:NSCalendarUnitDay startDate:&fromDate interval:NULL forDate:fromDate];
     [gregorian rangeOfUnit:NSCalendarUnitDay startDate:&toDate interval:NULL forDate:toDate];
+    
     NSDateComponents *dayComponents = [gregorian components:NSCalendarUnitDay fromDate:fromDate toDate:toDate options:0];
     
     return dayComponents.day;
+}
+
+/**
+ NSDate 相差NSDateComponents
+ 
+ @param toDate 对比的
+ @return 相差天数
+ */
+-(NSDateComponents *)ax_apartDateComponents:(NSDate *)toDate {
+    
+    NSDate *fromDate = self;
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    gregorian.firstWeekday = 2;
+    
+     NSInteger components = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMonth | NSCalendarUnitSecond;
+    
+    NSDateComponents *dayComponents = [gregorian components:components  fromDate:fromDate toDate:toDate options:0];
+    return dayComponents;
 }
 
 

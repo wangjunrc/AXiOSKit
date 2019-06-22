@@ -64,4 +64,12 @@
  */
 -(NSInteger)ax_apartDayTo:(NSDate *)toDate;
 
+/**
+ NSDate 相差NSDateComponents
+ 
+ @param toDate 对比的
+ @return 相差天数
+ */
+-(NSDateComponents *)ax_apartDateComponents:(NSDate *)toDate;
+
 @end
