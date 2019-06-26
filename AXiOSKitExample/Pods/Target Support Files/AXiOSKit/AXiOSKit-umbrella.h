@@ -90,6 +90,7 @@
 #import "AXAlerUpwardAnimation.h"
 #import "AXBaseAlertDefine.h"
 #import "AXBaseAlertVC.h"
+#import "AXPresentationController.h"
 #import "AXChoosePayStyleVC.h"
 #import "AXChoosePayVC.h"
 #import "AXPayVC.h"

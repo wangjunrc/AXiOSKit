@@ -42,9 +42,9 @@
     if (!toVC || !fromVC) {
         return;
     }
-
+    
     UIView* containerView = [transitionContext containerView];
-    containerView.backgroundColor = AX_ALERT_COVER_COLOR;
+//    containerView.backgroundColor = AX_ALERT_COVER_COLOR;
     
     NSTimeInterval duration = [self transitionDuration:transitionContext];
 
@@ -54,7 +54,7 @@
         UIView* toView =
             [transitionContext viewForKey:UITransitionContextToViewKey];
         toView.frame = containerView.bounds;
-        toView.backgroundColor = [UIColor clearColor];
+//        toView.backgroundColor = [UIColor clearColor];
 
         CGAffineTransform oldTransform = toView.transform;
         toView.transform = CGAffineTransformScale(oldTransform, 0.3, 0.3);

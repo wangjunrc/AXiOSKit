@@ -26,6 +26,8 @@
     [super viewDidLoad];
     self.datePicker.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.datePicker.datePickerMode = UIDatePickerModeDate;
+    NSLocale *locale = [NSLocale currentLocale];
+    self.datePicker.locale = locale;
 }
 
 

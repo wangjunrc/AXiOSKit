@@ -32,12 +32,16 @@
 
 - (IBAction)btnAction1:(id)sender {
     
-    AXWKWebVC *vc = [[AXWKWebVC alloc]init];
-    vc.loadHTMLFilePath = [NSBundle.mainBundle pathForResource:@"H5.bundle/index.html" ofType:nil];
-    [self.navigationController pushViewController:vc animated:YES];
-    [vc addScriptMessageWithName:@"person" handler:^(NSString * _Nonnull name, id  _Nonnull body) {
-        NSLog(@"body>> %@",body);
-    }];
+//    AXWKWebVC *vc = [[AXWKWebVC alloc]init];
+//    vc.loadHTMLFilePath = [NSBundle.mainBundle pathForResource:@"H5.bundle/index.html" ofType:nil];
+//    [self.navigationController pushViewController:vc animated:YES];
+//    [vc addScriptMessageWithName:@"person" handler:^(NSString * _Nonnull name, id  _Nonnull body) {
+//        NSLog(@"body>> %@",body);
+//    }];
+    
+    AXDateVC *vc = [[AXDateVC alloc]init];
+    [self ax_showVC:vc];
+    
 }
 
 @end

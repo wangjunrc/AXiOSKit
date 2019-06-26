@@ -43,16 +43,15 @@
         return;
     }
     UIView* containerView = [transitionContext containerView];
-    containerView.backgroundColor = AX_ALERT_COVER_COLOR;
+//    containerView.backgroundColor = AX_ALERT_COVER_COLOR;
     
     NSTimeInterval duration = [self transitionDuration:transitionContext];
     if (toVC.isBeingPresented) {
         // 控制器对应的view
-        UIView* toView =
-            [transitionContext viewForKey:UITransitionContextToViewKey];
+        UIView* toView = [transitionContext viewForKey:UITransitionContextToViewKey];
         toView.frame = containerView.bounds;
         toView.center = CGPointMake(containerView.center.x, containerView.bounds.size.height);
-        toView.backgroundColor = [UIColor clearColor];
+//        toView.backgroundColor = [UIColor clearColor];
         [containerView addSubview:toView];
 
         [UIView animateWithDuration:duration
