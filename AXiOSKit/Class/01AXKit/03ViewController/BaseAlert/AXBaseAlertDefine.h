@@ -22,4 +22,13 @@ typedef NS_ENUM(NSUInteger, AXAlertControllerStyle){
 /**dismissed 动画时间*/
 #define AX_ALERT_DISMISSED_TIME 0.1f
 
+@protocol AXBaseAlertDataSource <NSObject>
+
+@optional
+
+- (CGSize)sizeForPopup;
+
+@end
+
+
 #endif /* AXBaseAlertDefine_h */

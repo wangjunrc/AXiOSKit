@@ -315,6 +315,18 @@
 		24BB8673229E9B4300442276 /* AXPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB8671229E9B4300442276 /* AXPayVC.m */; };
 		24F0F09722C3144C009DD02B /* AXPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F0F09522C3144C009DD02B /* AXPresentationController.h */; };
 		24F0F09822C3144C009DD02B /* AXPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F0F09622C3144C009DD02B /* AXPresentationController.m */; };
+		24F0F0C822C4B7F5009DD02B /* AXNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F0F0C622C4B7F5009DD02B /* AXNavigationBar.h */; };
+		24F0F0C922C4B7F5009DD02B /* AXNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F0F0C722C4B7F5009DD02B /* AXNavigationBar.m */; };
+		24F0F0D022C4B90B009DD02B /* AXMultiSelectViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F0F0CE22C4B90B009DD02B /* AXMultiSelectViewController.h */; };
+		24F0F0D122C4B90B009DD02B /* AXMultiSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F0F0CF22C4B90B009DD02B /* AXMultiSelectViewController.m */; };
+		24F0F0D422C4B938009DD02B /* AXMultiSelectConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F0F0D222C4B938009DD02B /* AXMultiSelectConfig.h */; };
+		24F0F0D522C4B938009DD02B /* AXMultiSelectConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F0F0D322C4B938009DD02B /* AXMultiSelectConfig.m */; };
+		24F0F0D822C4B988009DD02B /* AXMultiSelectViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F0F0D622C4B988009DD02B /* AXMultiSelectViewModel.h */; };
+		24F0F0D922C4B988009DD02B /* AXMultiSelectViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F0F0D722C4B988009DD02B /* AXMultiSelectViewModel.m */; };
+		24F0F0DC22C4BAC3009DD02B /* AXMultiSelectCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F0F0DA22C4BAC3009DD02B /* AXMultiSelectCell.h */; };
+		24F0F0DD22C4BAC3009DD02B /* AXMultiSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F0F0DB22C4BAC3009DD02B /* AXMultiSelectCell.m */; };
+		24F0F0E022C4BAF4009DD02B /* AXMultiSelectSectionHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F0F0DE22C4BAF4009DD02B /* AXMultiSelectSectionHeaderView.h */; };
+		24F0F0E122C4BAF4009DD02B /* AXMultiSelectSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F0F0DF22C4BAF4009DD02B /* AXMultiSelectSectionHeaderView.m */; };
 		EE6E67F87341AF5B40C46726 /* Pods_AXiOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860156833FF908E319884FA3 /* Pods_AXiOSKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -631,6 +643,18 @@
 		24BB8671229E9B4300442276 /* AXPayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXPayVC.m; sourceTree = "<group>"; };
 		24F0F09522C3144C009DD02B /* AXPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXPresentationController.h; sourceTree = "<group>"; };
 		24F0F09622C3144C009DD02B /* AXPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXPresentationController.m; sourceTree = "<group>"; };
+		24F0F0C622C4B7F5009DD02B /* AXNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXNavigationBar.h; sourceTree = "<group>"; };
+		24F0F0C722C4B7F5009DD02B /* AXNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXNavigationBar.m; sourceTree = "<group>"; };
+		24F0F0CE22C4B90B009DD02B /* AXMultiSelectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXMultiSelectViewController.h; sourceTree = "<group>"; };
+		24F0F0CF22C4B90B009DD02B /* AXMultiSelectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXMultiSelectViewController.m; sourceTree = "<group>"; };
+		24F0F0D222C4B938009DD02B /* AXMultiSelectConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXMultiSelectConfig.h; sourceTree = "<group>"; };
+		24F0F0D322C4B938009DD02B /* AXMultiSelectConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXMultiSelectConfig.m; sourceTree = "<group>"; };
+		24F0F0D622C4B988009DD02B /* AXMultiSelectViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXMultiSelectViewModel.h; sourceTree = "<group>"; };
+		24F0F0D722C4B988009DD02B /* AXMultiSelectViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXMultiSelectViewModel.m; sourceTree = "<group>"; };
+		24F0F0DA22C4BAC3009DD02B /* AXMultiSelectCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXMultiSelectCell.h; sourceTree = "<group>"; };
+		24F0F0DB22C4BAC3009DD02B /* AXMultiSelectCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXMultiSelectCell.m; sourceTree = "<group>"; };
+		24F0F0DE22C4BAF4009DD02B /* AXMultiSelectSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXMultiSelectSectionHeaderView.h; sourceTree = "<group>"; };
+		24F0F0DF22C4BAF4009DD02B /* AXMultiSelectSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXMultiSelectSectionHeaderView.m; sourceTree = "<group>"; };
 		796A17CB51A0D95B1F9603FA /* Pods-AXiOSKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit.release.xcconfig"; path = "AXiOSKitExample/Pods/Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.release.xcconfig"; sourceTree = "<group>"; };
 		860156833FF908E319884FA3 /* Pods_AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2DD46C7D383BA35FFE16AA /* Pods-AXiOSKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit.debug.xcconfig"; path = "AXiOSKitExample/Pods/Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -846,6 +870,8 @@
 				2473293B2277FBB8005CF92D /* AXVeriCodeView.m */,
 				2473293F2277FBB8005CF92D /* UITextField+AXNumberKeyboard.h */,
 				247329412277FBB8005CF92D /* UITextField+AXNumberKeyboard.m */,
+				24F0F0C622C4B7F5009DD02B /* AXNavigationBar.h */,
+				24F0F0C722C4B7F5009DD02B /* AXNavigationBar.m */,
 			);
 			path = 04View;
 			sourceTree = "<group>";
@@ -942,6 +968,7 @@
 		247329802277FBB8005CF92D /* 03ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				24F0F0CA22C4B8C9009DD02B /* Alert */,
 				247329812277FBB8005CF92D /* ChoosePay */,
 				247329902277FBB8005CF92D /* UIWeb */,
 				247329962277FBB8005CF92D /* Base */,
@@ -1385,6 +1412,47 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
+		24F0F0CA22C4B8C9009DD02B /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				24F0F0CD22C4B8E8009DD02B /* Controller */,
+				24F0F0CB22C4B8DD009DD02B /* Model */,
+				24F0F0CC22C4B8E4009DD02B /* View */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		24F0F0CB22C4B8DD009DD02B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				24F0F0D222C4B938009DD02B /* AXMultiSelectConfig.h */,
+				24F0F0D322C4B938009DD02B /* AXMultiSelectConfig.m */,
+				24F0F0D622C4B988009DD02B /* AXMultiSelectViewModel.h */,
+				24F0F0D722C4B988009DD02B /* AXMultiSelectViewModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		24F0F0CC22C4B8E4009DD02B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				24F0F0DA22C4BAC3009DD02B /* AXMultiSelectCell.h */,
+				24F0F0DB22C4BAC3009DD02B /* AXMultiSelectCell.m */,
+				24F0F0DE22C4BAF4009DD02B /* AXMultiSelectSectionHeaderView.h */,
+				24F0F0DF22C4BAF4009DD02B /* AXMultiSelectSectionHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		24F0F0CD22C4B8E8009DD02B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				24F0F0CE22C4B90B009DD02B /* AXMultiSelectViewController.h */,
+				24F0F0CF22C4B90B009DD02B /* AXMultiSelectViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		88A89C0D56DEC220E70D4B27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1415,19 +1483,23 @@
 				24732A1B2277FBB9005CF92D /* NSUserDefaults+AXKit.h in Headers */,
 				24732B442277FD53005CF92D /* AXNetManager+Upload.h in Headers */,
 				24732B452277FD53005CF92D /* AXNetManagerHeader.h in Headers */,
+				24F0F0D022C4B90B009DD02B /* AXMultiSelectViewController.h in Headers */,
 				24732A7C2277FBB9005CF92D /* AXHelper.h in Headers */,
+				24F0F0E022C4BAF4009DD02B /* AXMultiSelectSectionHeaderView.h in Headers */,
 				24732A262277FBB9005CF92D /* NSObject+AXVersion.h in Headers */,
 				24732B1E2277FD53005CF92D /* UMTool.h in Headers */,
 				24732A122277FBB9005CF92D /* NSError+AXKit.h in Headers */,
 				24732A762277FBB9005CF92D /* AXExternFunction.h in Headers */,
 				24732A992277FBB9005CF92D /* AXWebVC.h in Headers */,
 				247329DE2277FBB9005CF92D /* AXWeakProxy.h in Headers */,
+				24F0F0DC22C4BAC3009DD02B /* AXMultiSelectCell.h in Headers */,
 				24732AB62277FBB9005CF92D /* AXDateVC.h in Headers */,
 				24732AA92277FBB9005CF92D /* AXHalfWidthLayout.h in Headers */,
 				247329E92277FBB9005CF92D /* NSString+AXEffective.h in Headers */,
 				24732ACB2277FBB9005CF92D /* AXScriptMessageHandlerHelper.h in Headers */,
 				24732A622277FBB9005CF92D /* IBUIView.h in Headers */,
 				24732A272277FBB9005CF92D /* UIButton+AXCountDown.h in Headers */,
+				24F0F0D422C4B938009DD02B /* AXMultiSelectConfig.h in Headers */,
 				24732B1A2277FD53005CF92D /* NSObject+FBKVOControllerAX.h in Headers */,
 				24732B182277FD53005CF92D /* lame.h in Headers */,
 				24732A642277FBB9005CF92D /* IBUILabel.h in Headers */,
@@ -1485,6 +1557,7 @@
 				24BB8353229BDDF800442276 /* UITextView+AXAction.h in Headers */,
 				24732A7D2277FBB9005CF92D /* AXConstant.h in Headers */,
 				24732A492277FBB9005CF92D /* UIViewController+AXAlert.h in Headers */,
+				24F0F0C822C4B7F5009DD02B /* AXNavigationBar.h in Headers */,
 				24732B3A2277FD53005CF92D /* DataBase.h in Headers */,
 				24732AA12277FBB9005CF92D /* AXTabBarController.h in Headers */,
 				247329ED2277FBB9005CF92D /* NSNumber+AXKit.h in Headers */,
@@ -1525,6 +1598,7 @@
 				24F0F09722C3144C009DD02B /* AXPresentationController.h in Headers */,
 				24732A2E2277FBB9005CF92D /* UIDevice+AXKit.h in Headers */,
 				24732A012277FBB9005CF92D /* NSString+AXKit.h in Headers */,
+				24F0F0D822C4B988009DD02B /* AXMultiSelectViewModel.h in Headers */,
 				24732AAE2277FBB9005CF92D /* AXAlertCentreAnimation.h in Headers */,
 				24732A022277FBB9005CF92D /* UIView+AXFrame.h in Headers */,
 				24732A602277FBB9005CF92D /* AXButton.h in Headers */,
@@ -1671,6 +1745,7 @@
 				24732B2A2277FD53005CF92D /* UIButton+AXCircle.m in Sources */,
 				24732A212277FBB9005CF92D /* Foundation+Log.m in Sources */,
 				24732A242277FBB9005CF92D /* UITextField+AXAction.m in Sources */,
+				24F0F0E122C4BAF4009DD02B /* AXMultiSelectSectionHeaderView.m in Sources */,
 				247329FB2277FBB9005CF92D /* NSObject+AXVersion.m in Sources */,
 				24732B242277FD53005CF92D /* AXRefreshHeader.m in Sources */,
 				24732A592277FBB9005CF92D /* AXAuthorizationManager.m in Sources */,
@@ -1723,6 +1798,7 @@
 				247329F02277FBB9005CF92D /* NSString+AXDate.m in Sources */,
 				247329F22277FBB9005CF92D /* UICollectionView+AXKit.m in Sources */,
 				24732A4C2277FBB9005CF92D /* AXCycleScrollView.m in Sources */,
+				24F0F0DD22C4BAC3009DD02B /* AXMultiSelectCell.m in Sources */,
 				24732A902277FBB9005CF92D /* AXChoosePayVC.m in Sources */,
 				24732A7A2277FBB9005CF92D /* AXCountDownObject.m in Sources */,
 				24732AAC2277FBB9005CF92D /* AXBaseAlertVC.m in Sources */,
@@ -1738,6 +1814,7 @@
 				24732A5A2277FBB9005CF92D /* LocationManager.m in Sources */,
 				24732A442277FBB9005CF92D /* UIViewController+AXiPadAlert.m in Sources */,
 				247329FD2277FBB9005CF92D /* UITableView+AXKit.m in Sources */,
+				24F0F0D122C4B90B009DD02B /* AXMultiSelectViewController.m in Sources */,
 				24732A3A2277FBB9005CF92D /* UITextField+AXKit.m in Sources */,
 				24732B3F2277FD53005CF92D /* AXNetManager+Upload.m in Sources */,
 				24732A182277FBB9005CF92D /* UIScrollView+AXKit.m in Sources */,
@@ -1759,11 +1836,13 @@
 				24732A5F2277FBB9005CF92D /* IBUIButton.m in Sources */,
 				24732A352277FBB9005CF92D /* NSString+AXCrypto.m in Sources */,
 				24732A682277FBB9005CF92D /* IBUILabel.m in Sources */,
+				24F0F0D922C4B988009DD02B /* AXMultiSelectViewModel.m in Sources */,
 				24732A362277FBB9005CF92D /* UIView+AXFrame.m in Sources */,
 				24732A802277FBB9005CF92D /* AXUNNotificationHandler.m in Sources */,
 				247329E82277FBB9005CF92D /* NSData+AXKit.m in Sources */,
 				24732A092277FBB9005CF92D /* UIColor+AXKit.m in Sources */,
 				24732A812277FBB9005CF92D /* AXExternFunction.m in Sources */,
+				24F0F0D522C4B938009DD02B /* AXMultiSelectConfig.m in Sources */,
 				247329E72277FBB9005CF92D /* UIButton+AXKit.m in Sources */,
 				24732A082277FBB9005CF92D /* UIViewController+AXAlert.m in Sources */,
 				24732A6C2277FBB9005CF92D /* AXConstant.m in Sources */,
@@ -1773,6 +1852,7 @@
 				24732AA42277FBB9005CF92D /* AXNavigationController.m in Sources */,
 				24732A712277FBB9005CF92D /* AXGCDTimer.m in Sources */,
 				24732B312277FD53005CF92D /* AXWebSocketManager.m in Sources */,
+				24F0F0C922C4B7F5009DD02B /* AXNavigationBar.m in Sources */,
 				24732B222277FD53005CF92D /* UIScrollView+AXRefresh.m in Sources */,
 				24732B342277FD53005CF92D /* AXAliPayManager.m in Sources */,
 				24732A9E2277FBB9005CF92D /* AXCollectionViewController.m in Sources */,

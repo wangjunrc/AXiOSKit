@@ -16,7 +16,7 @@
     [self.presentedViewController.transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
         
         self.containerView.backgroundColor = AX_ALERT_COVER_COLOR;
-        self.presentedView.backgroundColor = [UIColor clearColor];
+//        self.presentedView.backgroundColor = [UIColor clearColor];
         
     } completion:nil];
 }

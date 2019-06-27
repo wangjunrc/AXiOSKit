@@ -8,6 +8,7 @@
 
 #import "AXAlertCentreAnimation.h"
 #import "AXBaseAlertDefine.h"
+#import "UIView+AXFrame.h"
 
 @implementation AXAlertCentreAnimation
 
@@ -53,9 +54,19 @@
         // 控制器对应的view
         UIView* toView =
             [transitionContext viewForKey:UITransitionContextToViewKey];
-        toView.frame = containerView.bounds;
-//        toView.backgroundColor = [UIColor clearColor];
-
+        
+        CGSize toViewSize = containerView.size;
+        
+        // AXAlertCentreAnimation 里面需要 通过 DataSource 获得需要裁剪的size
+        if ([toVC conformsToProtocol:@protocol(AXBaseAlertDataSource)] &&
+            [toVC respondsToSelector:@selector(sizeForPopup)]) {
+            
+            toViewSize = [(id<AXBaseAlertDataSource>)toVC sizeForPopup];
+        }
+        
+        toView.size = toViewSize;
+        toView.center = containerView.center;
+        
         CGAffineTransform oldTransform = toView.transform;
         toView.transform = CGAffineTransformScale(oldTransform, 0.3, 0.3);
         toView.center = containerView.center;
