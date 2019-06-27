@@ -22,7 +22,7 @@
     if (self) {
         [self addSubview:self.titleLabel];
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self).with.insets(UIEdgeInsetsZero);
+            make.edges.equalTo(self).with.insets(UIEdgeInsetsMake(0, 10, 0, 0));
         }];
     }
     return self;
