@@ -46,6 +46,9 @@ PODS:
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
   - SocketRocket (0.5.1)
+  - TZImagePickerController (3.2.0)
+  - ZLPhotoBrowser (3.0.1):
+    - SDWebImage (~> 4.4.6)
 
 DEPENDENCIES:
   - AFNetworking
@@ -64,6 +67,8 @@ DEPENDENCIES:
   - SDWebImage
   - SDWebImage/GIF
   - SocketRocket
+  - TZImagePickerController
+  - ZLPhotoBrowser
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -81,6 +86,8 @@ SPEC REPOS:
     - SDCycleScrollView
     - SDWebImage
     - SocketRocket
+    - TZImagePickerController
+    - ZLPhotoBrowser
 
 EXTERNAL SOURCES:
   AXiOSKit:
@@ -102,7 +109,9 @@ SPEC CHECKSUMS:
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  TZImagePickerController: 7850b158d025065b162a1a963d445040b828abc9
+  ZLPhotoBrowser: ea030d12699a9dd3c7f2a7808cafdccd3fdece7e
 
-PODFILE CHECKSUM: 6424b268cbc79658d90effc27a306ce3db17495b
+PODFILE CHECKSUM: 6149d59e26fd0432c169d94d0d75345dcf6b03e3
 
 COCOAPODS: 1.6.1

@@ -67,6 +67,25 @@ pod 'TZScrollViewPopGesture'
 
 ## 相册多选
 pod 'TZImagePickerController'
+```
+
+TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:nil];
+imagePickerVc. allowPickingMultipleVideo = YES;
+
+imagePickerVc.allowPickingVideo = NO;
+
+imagePickerVc.allowPickingGif = YES;
+
+imagePickerVc.allowPickingImage = YES;
+imagePickerVc.showSelectedIndex = YES;
+
+
+[imagePickerVc setDidFinishPickingPhotosWithInfosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto, NSArray<NSDictionary *> *infos) {
+
+}];
+[self presentViewController:imagePickerVc animated:YES completion:nil];
+
+```
 
 ## UIWebView 加载进度条
 pod 'NJKWebViewProgress'
@@ -83,6 +102,14 @@ pod 'FreeStreamer'
 ## 图片浏览器
 pod 'GKPhotoBrowser'
 
+```
+MWPhotoBrowser 不维护了
+
+IDMPhotoBrowser 很少维护
+
+ZLPhotoBrowser 维护
+
+```
 
 ## coreData 封装
 pod 'MagicalRecord'

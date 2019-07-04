@@ -17,6 +17,8 @@ target 'AXiOSKitExample' do
     pod "FLAnimatedImage"
     pod "SDWebImage/GIF"
     pod "SocketRocket"
+     pod "TZImagePickerController"
+      pod "ZLPhotoBrowser"
 end
 
 target 'AXiOSKit' do
@@ -35,7 +37,10 @@ target 'AXiOSKit' do
     pod "Masonry"
     #pod "GKPhotoBrowser"
     pod "Aspects"
+     pod "TZImagePickerController"
 
+     pod "ZLPhotoBrowser"
+     
 end
 
 
