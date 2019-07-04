@@ -1275,3 +1275,27 @@ if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
 }
 }
 ```
+
+# try-catch-finally
+```
+- (IBAction)btnAction1:(id)sender {
+@try {
+// 可能会出现崩溃的代码
+[self test];
+} @catch (NSException* exception) {
+// 捕获到的异常exception
+NSLog(@"exception>> %@", exception);
+} @finally {
+// 结果处理
+NSLog(@"结果处理");
+}
+}
+```
+# throw
+```
+- (void)test {
+@throw [NSException exceptionWithName:@"error"
+reason:@"预览对象不能为空"
+userInfo:nil];
+}
+```
