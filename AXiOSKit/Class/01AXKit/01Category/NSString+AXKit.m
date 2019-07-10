@@ -590,16 +590,32 @@
  */
 + (NSString *)ax_getHHMMSSWithSeconds:(NSInteger )seconds{
     
-    //format of hour
-    NSString *str_hour = [NSString stringWithFormat:@"%02ld",seconds/3600];
-    //format of minute
-    NSString *str_minute = [NSString stringWithFormat:@"%02ld",(seconds%3600)/60];
+//    //format of hour
+//    NSString *str_hour = [NSString stringWithFormat:@"%02ld",seconds/3600];
+//    //format of minute
+//    NSString *str_minute = [NSString stringWithFormat:@"%02ld",(seconds%3600)/60];
+//    
+//    //format of second
+//    NSString *str_second = [NSString stringWithFormat:@"%02ld",seconds%60];
+//    //format of time
+//    NSString *format_time = [NSString stringWithFormat:@"%@:%@:%@",str_hour,str_minute,str_second];
+//    return format_time;
     
-    //format of second
-    NSString *str_second = [NSString stringWithFormat:@"%02ld",seconds%60];
-    //format of time
-    NSString *format_time = [NSString stringWithFormat:@"%@:%@:%@",str_hour,str_minute,str_second];
-    return format_time;
+    
+    NSInteger duration = seconds;
+    
+    if (duration < 60) {
+        return [NSString stringWithFormat:@"00:%02ld", duration];
+    } else if (duration < 3600) {
+        NSInteger m = duration / 60;
+        NSInteger s = duration % 60;
+        return [NSString stringWithFormat:@"%02ld:%02ld", m, s];
+    } else {
+        NSInteger h = duration / 3600;
+        NSInteger m = (duration % 3600) / 60;
+        NSInteger s = duration % 60;
+        return [NSString stringWithFormat:@"%02ld:%02ld:%02ld", h, m, s];
+    }
     
 }
 /**
