@@ -11,6 +11,7 @@
 #if __has_include("IQKeyboardManager.h")
 #import "IQKeyboardManager.h"
 #endif
+#include <libkern/OSAtomic.h>
 
 @interface AXConfigureManager ()
 
@@ -48,7 +49,6 @@ axSharedInstance_M;
     
 }
 
-
 /**
  xcode 奔溃日志
  */
@@ -62,6 +62,7 @@ axSharedInstance_M;
     signal(SIGBUS, ax_SignalHandler);
     signal(SIGPIPE, ax_SignalHandler);
 }
+
 /**
  * 这里方法只能放类里面,所以用类方法定义
  */
@@ -71,7 +72,39 @@ static void ax_HandleExceptionr(NSException*exception) {
     NSLog(@"↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑  xcode运行崩溃  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑\n");
 }
 
+volatile int32_t UncaughtExceptionCount = 0;
+const int32_t UncaughtExceptionMaximum = 10;
+const NSInteger UncaughtExceptionHandlerSkipAddressCount = 4;
+const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
+
 void ax_SignalHandler(int signal) {
+   
+    int32_t exceptionCount = OSAtomicIncrement32(&UncaughtExceptionCount);
+    if (exceptionCount > UncaughtExceptionMaximum) {
+        return;
+    }
+    
+    NSMutableDictionary *userInfo =
+    [NSMutableDictionary
+     dictionaryWithObject:[NSNumber numberWithInt:signal]
+     forKey:@"UncaughtExceptionHandlerSignalKey"];
+    
+    NSException *exception = [NSException
+                              exceptionWithName:@"UncaughtExceptionHandlerSignalExceptionName"
+                              reason:
+                              [NSString stringWithFormat:
+                               NSLocalizedString(@"Signal %d was raised.", nil),
+                               signal]
+                              userInfo:userInfo];
+    
+//    NSString *callStack = @"";
+    
+    NSMutableDictionary *exceptionInfo = [NSMutableDictionary dictionary];
+    [exceptionInfo setValue:exception forKey:@"exception"];
+//    [exceptionInfo setValue:callStack forKey:@"callStack"];
+    
+    
+//    [[SPTCrashHelper sharedHelper] performSelectorOnMainThread:@selector(handleException:) withObject:exceptionInfo waitUntilDone:YES];
     
 }
 

@@ -9,8 +9,7 @@
 #import "ViewController.h"
 #import <AXiOSKit/AXiOSKit.h>
 #import "AAViewController.h"
-#import <AXiOSKit/NSData+AXKit.h>
-#import "AXMultiSelectViewController.h"
+
 
 @interface ViewController ()
 
@@ -25,6 +24,10 @@
 }
 
 - (IBAction)btnAction1:(id)sender {
+    
+    [self ax_showCameraWithEditing:YES block:^(UIImage *originalImage, UIImage *editedImage) {
+       [self ax_saveImageToPhotos:originalImage];
+    }];
     
 }
 

@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <AXiOSKit/AXiOSKit.h>
+#import <AXiOSKit/AXConfigureManager.h>
 
 @interface AppDelegate ()
 
@@ -17,23 +19,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
-    NSSetUncaughtExceptionHandler(&UncaughtExceptionHandler);
     
+    [AXConfigureManager registerCatch];
     return YES;
 }
 
 
-// 获取异常崩溃信息
-void UncaughtExceptionHandler(NSException *exception) {
-    NSArray *callStack = [exception callStackSymbols];
-    NSString *reason = [exception reason];
-    NSString *name = [exception name];
-    NSString *errorMessage = [NSString stringWithFormat:@"========异常错误报告========\nname:%@\nreason:\n%@\ncallStackSymbols:\n%@",name,reason,[callStack componentsJoinedByString:@"\n"]];
-    NSLog(@"errorMessage = %@", errorMessage);
-    
-}
     
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
