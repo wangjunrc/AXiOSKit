@@ -1299,3 +1299,14 @@ reason:@"预览对象不能为空"
 userInfo:nil];
 }
 ```
+
+
+# UISlider 拖动事件
+```
+[self.progressSlider addTarget:self action:@selector(sliderProgressChange) forControlEvents:UIControlEventValueChanged];
+[self.progressSlider addTarget:self action:@selector(sliderProgressChangeBegin) forControlEvents:UIControlEventTouchDown];
+
+[self.progressSlider addTarget:self action:@selector(sliderProgressChangeEnd) forControlEvents:UIControlEventTouchUpOutside | UIControlEventTouchUpInside];
+```
+
+
