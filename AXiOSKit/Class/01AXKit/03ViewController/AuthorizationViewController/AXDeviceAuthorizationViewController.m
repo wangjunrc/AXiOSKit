@@ -36,8 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction)];
     
     NSString *typeStr = nil;
 
@@ -74,9 +72,6 @@
     }
 }
 
--(void)cancelAction  {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (IBAction)opneAction:(id)sender {
     AXOpenSettings();

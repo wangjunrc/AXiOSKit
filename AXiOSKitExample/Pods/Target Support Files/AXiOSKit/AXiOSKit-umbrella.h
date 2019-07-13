@@ -79,6 +79,7 @@
 #import "IBUITextField.h"
 #import "IBUIView.h"
 #import "AXDeviceAuthorizationViewController.h"
+#import "AXDeviceFunctionDisableViewController.h"
 #import "AXCollectionViewController.h"
 #import "AXFullLayout.h"
 #import "AXFullLayout2.h"

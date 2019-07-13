@@ -11,7 +11,8 @@
 #import "AXiOSKit.h"
 #import <AVFoundation/AVCaptureDevice.h>
 #import <Photos/Photos.h>
-#import "AXDeviceAuthorizationViewController.h"
+#import "AXDeviceFunctionDisableViewController.h"
+
 
 typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 
@@ -47,13 +48,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     __weak typeof(self) weakSelf = self;
     // 拍照
     [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.TakePhoto") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-         __strong typeof(weakSelf) strongSelf = weakSelf;
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf __alertToCamera:edit];
     }]];
     
     // 相册
     [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.FromPhotoAlbum") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-         __strong typeof(weakSelf) strongSelf = weakSelf;
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf __alertToPhotoLibrary:edit];
     }]];
     
@@ -72,30 +73,30 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     if(![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
         
         // 设备不支持拍照
-        AXDeviceAuthorizationViewController *vc = [[AXDeviceAuthorizationViewController alloc]initWithType:AXDeviceFunctionTypeCamera disableType:AXDeviceFunctionDisableTypeNotSupport];
+        AXDeviceFunctionDisableViewController *vc = [[AXDeviceFunctionDisableViewController alloc]initWithType:AXDeviceFunctionTypeCamera disableType:AXDeviceFunctionDisableTypeNotSupport];
         
-        AXNavigationController *nav = [[AXNavigationController alloc]initWithRootViewController:vc];
-        [self presentViewController:nav animated:YES completion:nil];
+        [self presentViewController:vc animated:YES completion:nil];
         
     }else{
         AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
         
-        // 拍照权限是否允许
-        if(authStatus == AVAuthorizationStatusAuthorized){
+        
+        if (authStatus == AVAuthorizationStatusRestricted || authStatus ==AVAuthorizationStatusDenied) {
+            
+            // 设备未授权拍照
+            
+            AXDeviceFunctionDisableViewController *vc = [[AXDeviceFunctionDisableViewController alloc]initWithType:AXDeviceFunctionTypeCamera disableType:AXDeviceFunctionDisableTypeNotAuthorize];
+            
+            [self presentViewController:vc animated:YES completion:nil];
+            
+        }else {
+            
             //做你想做的（可以去打开设置的路径）
             UIImagePickerController *picker = [[UIImagePickerController alloc]init];
             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
             picker.allowsEditing = edit;
             picker.delegate = self;
             [self presentViewController:picker animated:YES completion:nil];
-            
-        }else if (authStatus == AVAuthorizationStatusRestricted || authStatus ==AVAuthorizationStatusDenied) {
-            
-            // 设备未授权拍照
-            AXDeviceAuthorizationViewController *vc = [[AXDeviceAuthorizationViewController alloc]initWithType:AXDeviceFunctionTypeCamera disableType:AXDeviceFunctionDisableTypeNotAuthorize];
-            AXNavigationController *nav = [[AXNavigationController alloc]initWithRootViewController:vc];
-            [self presentViewController:nav animated:YES completion:nil];
-            
         }
     }
 }
@@ -105,21 +106,20 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     //是否有相册功能,iTouch 是没有此功能的
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
         
-        AXDeviceAuthorizationViewController *vc = [[AXDeviceAuthorizationViewController alloc]initWithType:AXDeviceFunctionTypeAlbumRead disableType:AXDeviceFunctionDisableTypeNotSupport];
-        AXNavigationController *nav = [[AXNavigationController alloc]initWithRootViewController:vc];
-        [self presentViewController:nav animated:YES completion:nil];
+        AXDeviceFunctionDisableViewController *vc = [[AXDeviceFunctionDisableViewController alloc]initWithType:AXDeviceFunctionTypeAlbumRead disableType:AXDeviceFunctionDisableTypeNotSupport];
+        
+        [self presentViewController:vc animated:YES completion:nil];
         
     }else{
         
         PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
         
-        if(status == PHAuthorizationStatusRestricted ||
-           status == PHAuthorizationStatusDenied){
+        if(status == PHAuthorizationStatusRestricted || status == PHAuthorizationStatusDenied){
             
             // 设备未授权拍照
-            AXDeviceAuthorizationViewController *vc = [[AXDeviceAuthorizationViewController alloc]initWithType:AXDeviceFunctionTypeAlbumRead disableType:AXDeviceFunctionDisableTypeNotAuthorize];
-            AXNavigationController *nav = [[AXNavigationController alloc]initWithRootViewController:vc];
-            [self presentViewController:nav animated:YES completion:nil];
+            AXDeviceFunctionDisableViewController *vc = [[AXDeviceFunctionDisableViewController alloc]initWithType:AXDeviceFunctionTypeAlbumRead disableType:AXDeviceFunctionDisableTypeNotAuthorize];
+            
+            [self presentViewController:vc animated:YES completion:nil];
             
         }else {
             
