@@ -17,6 +17,11 @@
 - (void)ax_saveImageToPhotos:(UIImage*)image;
 
 /**
+ * 保存图片到自定义相册
+ */
+- (void)ax_saveImageToLibrary:(UIImage*)image;
+
+/**
  * 导航栏 push 到vc
  */
 - (void)ax_navigationControllerPush:(Class)aClass

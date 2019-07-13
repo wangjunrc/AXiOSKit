@@ -10,6 +10,7 @@
 #import "UIViewController+AXAlert.h"
 #import <Photos/Photos.h>
 #import "NSObject+AXVersion.h"
+#import "NSString+AXKit.h"
 
 @interface UIViewController ()
 
@@ -29,7 +30,7 @@
 /**
  * 保存图片到系统相册
  */
-- (void)ax_saveImageToPhotos:(UIImage*)image{
+- (void)ax_saveImageToPhotos:(UIImage*)image {
     // 这个方法不会吊起隐私权限,所以会crash
     //    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
     //    //因为需要知道该操作的完成情况，即保存成功与否，所以此处需要一个回调方法image:didFinishSavingWithError:contextInfo:
@@ -53,6 +54,91 @@
         
         [self ax_showAlertByTitle:msg];
     }];
+}
+
+/**
+ * 保存图片到系统相册
+ */
+- (void)ax_saveImageToLibrary:(UIImage*)image {
+    // 1.先保存图片到【相机胶卷】
+    /// 同步执行修改操作
+    NSError *error = nil;
+    __block PHObjectPlaceholder *placeholder = nil;
+    [[PHPhotoLibrary sharedPhotoLibrary]performChangesAndWait:^{
+        placeholder =  [PHAssetChangeRequest creationRequestForAssetFromImage:image].placeholderForCreatedAsset;
+    } error:&error];
+
+    if (error) {
+        AXLoger(@"保存失败");
+        return;
+    }
+    // 2.拥有一个【自定义相册】
+    PHAssetCollection * assetCollection = [self getCollection];
+    // 3.将刚才保存到【相机胶卷】里面的图片引用到【自定义相册】
+    [[PHPhotoLibrary sharedPhotoLibrary]performChangesAndWait:^{
+        PHAssetCollectionChangeRequest *requtes = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:assetCollection];
+        [requtes addAssets:@[placeholder]];
+    } error:&error];
+
+    if (error) {
+        AXLoger(@"保存图片失败");
+         [self ax_showAlertByTitle:@"保存图片失败"];
+    } else {
+        AXLoger(@"保存图片成功");
+         [self ax_showAlertByTitle:@"保存图片成功"];
+    }
+}
+
+/**
+ * 保存图片到系统相册
+ */
+//- (void)ax_saveImageToLibrary:(UIImage*)image {
+//
+//    //保存图片
+//    __block NSString *assetId = nil;
+//    // 1. 存储图片到"相机胶卷"
+//    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+//        // 新建一个PHAssetCreationRequest对象
+//        // 返回PHAsset(图片)的字符串标识
+//        assetId = [PHAssetCreationRequest creationRequestForAssetFromImage:image].placeholderForCreatedAsset.localIdentifier;
+//    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+//        // 2. 获得相册对象
+//        PHAssetCollection *collection = [self getCollection];
+//        // 3. 将“相机胶卷”中的图片添加到新的相册
+//        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+//            PHAssetCollectionChangeRequest *request = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:collection];
+////            NSLog(@"%@", [PHAsset fetchAssetsWithLocalIdentifiers:@[assetId] options:nil]);
+//            // 根据唯一标示获得相片对象
+//            PHAsset *asset = [PHAsset fetchAssetsWithLocalIdentifiers:@[assetId] options:nil].firstObject;
+//            // 添加图片到相册中
+//            [request addAssets:@[asset]];
+//        } completionHandler:^(BOOL success, NSError * _Nullable error) {
+//            NSLog(@"成功保存到相簿：%@", collection.localizedTitle);
+//        }];
+//    }];
+//}
+
+- (PHAssetCollection *)getCollection {
+    // 先获得之前创建过的相册
+    
+    NSString *appName =  [NSString ax_getAppName];
+    
+    PHFetchResult<PHAssetCollection *> *collectionResult = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    for (PHAssetCollection *collection in collectionResult) {
+        if ([collection.localizedTitle isEqualToString:appName]) {
+            return collection;
+        }
+    }
+    
+    // 如果相册不存在,就创建新的相册(文件夹)
+    __block NSString *collectionId = nil; // __block修改block外部的变量的值
+    // 这个方法会在相册创建完毕后才会返回
+    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+        // 新建一个PHAssertCollectionChangeRequest对象, 用来创建一个新的相册
+        collectionId = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:appName].placeholderForCreatedAssetCollection.localIdentifier;
+    } error:nil];
+    
+    return [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[collectionId] options:nil].firstObject;
 }
 
 //回调方法

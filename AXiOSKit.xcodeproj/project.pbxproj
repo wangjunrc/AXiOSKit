@@ -313,6 +313,9 @@
 		24BB839D229E2ED700442276 /* AXKeyboardObserve.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB839B229E2ED700442276 /* AXKeyboardObserve.m */; };
 		24BB8672229E9B4300442276 /* AXPayVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24BB8670229E9B4300442276 /* AXPayVC.h */; };
 		24BB8673229E9B4300442276 /* AXPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB8671229E9B4300442276 /* AXPayVC.m */; };
+		24DB149222D998A300777FB6 /* AXDeviceAuthorizationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DB148F22D998A300777FB6 /* AXDeviceAuthorizationViewController.h */; };
+		24DB149322D998A300777FB6 /* AXDeviceAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DB149022D998A300777FB6 /* AXDeviceAuthorizationViewController.m */; };
+		24DB149422D998A300777FB6 /* AXDeviceAuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24DB149122D998A300777FB6 /* AXDeviceAuthorizationViewController.xib */; };
 		24F0F09722C3144C009DD02B /* AXPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F0F09522C3144C009DD02B /* AXPresentationController.h */; };
 		24F0F09822C3144C009DD02B /* AXPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F0F09622C3144C009DD02B /* AXPresentationController.m */; };
 		24F0F0C822C4B7F5009DD02B /* AXNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F0F0C622C4B7F5009DD02B /* AXNavigationBar.h */; };
@@ -645,6 +648,9 @@
 		24BB839B229E2ED700442276 /* AXKeyboardObserve.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXKeyboardObserve.m; sourceTree = "<group>"; };
 		24BB8670229E9B4300442276 /* AXPayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXPayVC.h; sourceTree = "<group>"; };
 		24BB8671229E9B4300442276 /* AXPayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXPayVC.m; sourceTree = "<group>"; };
+		24DB148F22D998A300777FB6 /* AXDeviceAuthorizationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDeviceAuthorizationViewController.h; sourceTree = "<group>"; };
+		24DB149022D998A300777FB6 /* AXDeviceAuthorizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDeviceAuthorizationViewController.m; sourceTree = "<group>"; };
+		24DB149122D998A300777FB6 /* AXDeviceAuthorizationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AXDeviceAuthorizationViewController.xib; sourceTree = "<group>"; };
 		24F0F09522C3144C009DD02B /* AXPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXPresentationController.h; sourceTree = "<group>"; };
 		24F0F09622C3144C009DD02B /* AXPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXPresentationController.m; sourceTree = "<group>"; };
 		24F0F0C622C4B7F5009DD02B /* AXNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXNavigationBar.h; sourceTree = "<group>"; };
@@ -976,6 +982,7 @@
 		247329802277FBB8005CF92D /* 03ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				24DB148E22D9988600777FB6 /* AuthorizationViewController */,
 				24F0F11F22C7683A009DD02B /* TripleInteraction */,
 				24F0F0CA22C4B8C9009DD02B /* MultiSelect */,
 				247329812277FBB8005CF92D /* ChoosePay */,
@@ -1421,6 +1428,16 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
+		24DB148E22D9988600777FB6 /* AuthorizationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				24DB148F22D998A300777FB6 /* AXDeviceAuthorizationViewController.h */,
+				24DB149022D998A300777FB6 /* AXDeviceAuthorizationViewController.m */,
+				24DB149122D998A300777FB6 /* AXDeviceAuthorizationViewController.xib */,
+			);
+			path = AuthorizationViewController;
+			sourceTree = "<group>";
+		};
 		24F0F0CA22C4B8C9009DD02B /* MultiSelect */ = {
 			isa = PBXGroup;
 			children = (
@@ -1648,6 +1665,7 @@
 				24732A042277FBB9005CF92D /* NSString+AXCrypto.h in Headers */,
 				24732A652277FBB9005CF92D /* IBUITextField.h in Headers */,
 				24732A852277FBB9005CF92D /* AXMacros.h in Headers */,
+				24DB149222D998A300777FB6 /* AXDeviceAuthorizationViewController.h in Headers */,
 				24732AC12277FBB9005CF92D /* AXPlayVC.h in Headers */,
 				24732A9D2277FBB9005CF92D /* AXTableViewController.h in Headers */,
 				24732ABB2277FBB9005CF92D /* QRCodeViewController.h in Headers */,
@@ -1732,6 +1750,7 @@
 				24732ABD2277FBB9005CF92D /* AXSafariVC.xib in Resources */,
 				247329DA2277FBB9005CF92D /* AXCollectFile.md in Resources */,
 				24732ACD2277FBB9005CF92D /* beep.wav in Resources */,
+				24DB149422D998A300777FB6 /* AXDeviceAuthorizationViewController.xib in Resources */,
 				247329DC2277FBB9005CF92D /* pod_use.md in Resources */,
 				24732ACE2277FBB9005CF92D /* AXiOSKit.xcassets in Resources */,
 				24732AC22277FBB9005CF92D /* AXGuidePageVC.xib in Resources */,
@@ -1864,6 +1883,7 @@
 				24732A7F2277FBB9005CF92D /* AXObject.m in Sources */,
 				24732B232277FD53005CF92D /* AXRefreshFooter.m in Sources */,
 				24732A8C2277FBB9005CF92D /* AXChoosePayStyleVC.m in Sources */,
+				24DB149322D998A300777FB6 /* AXDeviceAuthorizationViewController.m in Sources */,
 				24732A952277FBB9005CF92D /* AXChoosePayStyleCell.m in Sources */,
 				24732AA22277FBB9005CF92D /* AXViewController.m in Sources */,
 				24732A6D2277FBB9005CF92D /* AXHelper.m in Sources */,

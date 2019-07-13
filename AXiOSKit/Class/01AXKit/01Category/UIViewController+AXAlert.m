@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 #import "UIViewController+AXKit.h"
 #import "UIViewController+AXiPadAlert.h"
+#import "AXDeviceAuthorizationViewController.h"
 
 typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 

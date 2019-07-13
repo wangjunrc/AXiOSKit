@@ -20,13 +20,32 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
     
+    NSString *str =
+    [NSBundle.ax_mainBundle localizedStringForKey:@"ax.cancel"
+                                            value:@""
+                                            table:@"AXKitLocalizedString"];
+     NSLog(@"NSBundle.ax_mainBundle>> %@",NSBundle.mainBundle);
+     NSLog(@"NSBundle.ax_mainBundle>> %@",NSBundle.ax_mainBundle);
+        NSLog(@"str>> %@",str);
+    
+//    if (str.length == 0) {
+//        str = NSLocalizedStringFromTable(key, @"AXKitLocalizedString", @"");
+//    }
+    
+    
+    NSString *str2 = AXKitLocalizedString(@"ax.cancel");
+    
+    NSLog(@"str>> %@",str2);
+    
     
 }
 
 - (IBAction)btnAction1:(id)sender {
     
-    [self ax_showCameraWithEditing:YES block:^(UIImage *originalImage, UIImage *editedImage) {
-       [self ax_saveImageToPhotos:originalImage];
+    [self ax_showCameraWithEditing:NO block:^(UIImage *originalImage, UIImage *editedImage) {
+//       [self ax_saveImageToPhotos:originalImage];
+//         [self ax_saveImageToLibrary:originalImage];
+        
     }];
     
 }
