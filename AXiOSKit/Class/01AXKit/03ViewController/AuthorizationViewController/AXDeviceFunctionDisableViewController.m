@@ -36,7 +36,7 @@
     
     AXDeviceAuthorizationViewController *vc = [[AXDeviceAuthorizationViewController alloc]initWithType:self.type disableType:self.disableType];
     self.viewControllers = @[vc];
-    self.topViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction)];
+    self.topViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelAction)];
 }
 
 -(void)cancelAction  {
