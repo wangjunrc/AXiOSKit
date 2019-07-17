@@ -59,9 +59,9 @@
         
         // AXAlertCentreAnimation 里面需要 通过 DataSource 获得需要裁剪的size
         if ([toVC conformsToProtocol:@protocol(AXBaseAlertDataSource)] &&
-            [toVC respondsToSelector:@selector(sizeForPopup)]) {
+            [toVC respondsToSelector:@selector(sizeForAlert)]) {
             
-            toViewSize = [(id<AXBaseAlertDataSource>)toVC sizeForPopup];
+            toViewSize = [(id<AXBaseAlertDataSource>)toVC sizeForAlert];
         }
         
         toView.size = toViewSize;

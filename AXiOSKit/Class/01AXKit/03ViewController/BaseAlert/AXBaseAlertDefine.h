@@ -26,7 +26,7 @@ typedef NS_ENUM(NSUInteger, AXAlertControllerStyle){
 
 @optional
 
-- (CGSize)sizeForPopup;
+- (CGSize)sizeForAlert;
 
 @end
 

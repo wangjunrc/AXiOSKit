@@ -56,10 +56,6 @@
             return [[AXAlertCentreAnimation alloc] init];
             break;
             
-            //    case AXAlertControllerStyleUpward:
-            //        return [[AXAlerUpwardAnimation alloc] init];
-            //        break;
-            
         default:
             return [[AXAlerUpwardAnimation alloc] init];
             break;
@@ -72,10 +68,6 @@
         case AXAlertControllerStyleCentre:
             return [[AXAlertCentreAnimation alloc] init];
             break;
-            
-            //        case AXAlertControllerStyleUpward:
-            //            return [[AXAlerUpwardAnimation alloc] init];
-            //            break;
             
         default:
             return [[AXAlerUpwardAnimation alloc] init];
@@ -93,4 +85,5 @@
     AXPresentationController * vc = [[AXPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
     return vc;
 }
+
 @end

@@ -202,8 +202,8 @@
     
 }
 
-#pragma mark - sizeForPopup
-- (CGSize)sizeForPopup {
+#pragma mark - sizeForAlert
+- (CGSize)sizeForAlert {
 
     CGFloat column = self.config.column*1.0;
     if (column == 0.0) {
