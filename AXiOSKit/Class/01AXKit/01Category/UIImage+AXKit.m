@@ -263,7 +263,7 @@
 /**
  矩形颜色图片CGSize(1.0f, 1.0f);
  */
-+(UIImage *)ax_imageWithColor:(UIColor *)aColor {
++(UIImage *)ax_imageSquareWithColor:(UIColor *)aColor {
     
     return [self ax_imageRectangleWithSize:CGSizeMake(1.0f, 1.0f) color:aColor];
 //    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
@@ -284,7 +284,7 @@
 /**
  * 圆形颜色图片
  */
-+(UIImage *)ax_imageWithRadius:(CGFloat )radius color:(UIColor *)aColor{
++(UIImage *)ax_imageCircularWithRadius:(CGFloat )radius color:(UIColor *)aColor{
     
     UIGraphicsBeginImageContextWithOptions( CGSizeMake(radius*2, radius*2), NO,0);
     UIBezierPath *path=[UIBezierPath bezierPathWithArcCenter:CGPointMake(radius, radius) radius:radius startAngle:0 endAngle:M_PI*2 clockwise:YES];

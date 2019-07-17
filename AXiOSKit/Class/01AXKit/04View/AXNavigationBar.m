@@ -21,10 +21,10 @@
         self.barTintColor = [UIColor whiteColor];
         self.tintColor = [UIColor whiteColor];
         
-        UIImage *backgroundImage =  [UIImage ax_imageWithColor:[UIColor ax_colorFromHexString:@"#202020"]];
+        UIImage *backgroundImage =  [UIImage ax_imageSquareWithColor:[UIColor ax_colorFromHexString:@"#202020"]];
         [self setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
         
-        UIImage *shadowImage =  [UIImage ax_imageWithColor:[UIColor ax_colorFromHexString:@"#363636"]];
+        UIImage *shadowImage =  [UIImage ax_imageSquareWithColor:[UIColor ax_colorFromHexString:@"#363636"]];
         [self setShadowImage:shadowImage];
         
         NSDictionary *dic = @{ NSForegroundColorAttributeName : [UIColor whiteColor],NSFontAttributeName : [UIFont systemFontOfSize:16] };

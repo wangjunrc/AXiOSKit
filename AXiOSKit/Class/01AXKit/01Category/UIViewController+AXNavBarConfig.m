@@ -21,7 +21,7 @@
 -(void)ax_setNavigationBarColor:(UIColor *)aColor textColor:(UIColor *)textColor{
     
     [self ax_setNavigationBarTextColor:textColor];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage ax_imageWithColor:aColor] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:aColor] forBarMetrics:UIBarMetricsDefault];
 }
 
 
@@ -54,7 +54,7 @@
  */
 -(void)ax_setNavBarGradientWithColor:(UIColor *)aColor alpha:(CGFloat )alpha{
     
-    UIImage *bgImage = [UIImage ax_imageWithColor:[aColor colorWithAlphaComponent:alpha]];
+    UIImage *bgImage = [UIImage ax_imageSquareWithColor:[aColor colorWithAlphaComponent:alpha]];
     
     if ([self isKindOfClass:UINavigationController.class]) {
         

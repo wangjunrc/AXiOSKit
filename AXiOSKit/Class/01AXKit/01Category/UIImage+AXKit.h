@@ -67,14 +67,15 @@
 +(UIImage *)ax_imageRectangleWithSize:(CGSize )aSzize color:(UIColor *)aColor;
 
 /**
- 矩形颜色图片CGSize(1.0f, 1.0f);
+ 正方形颜色图片CGSize(1.0f, 1.0f);
  */
-+(UIImage *)ax_imageWithColor:(UIColor *)color ;
++(UIImage *)ax_imageSquareWithColor:(UIColor *)color ;
 
 /**
  * 圆形颜色图片
+ radius 半径
  */
-+(UIImage *)ax_imageWithRadius:(CGFloat )radius color:(UIColor *)aColor;
++(UIImage *)ax_imageCircularWithRadius:(CGFloat )radius color:(UIColor *)aColor;
 
 /**
  * string 生成二维码
