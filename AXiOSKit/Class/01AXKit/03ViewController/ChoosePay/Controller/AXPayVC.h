@@ -12,13 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AXPayVC : AXBaseAlertVC
 
-@property(nonatomic,strong)NSArray <AXChoosePayModel *>*dataArray;
+@property (nonatomic, strong) NSArray<AXChoosePayModel*>* dataArray;
 
-@property(nonatomic,copy)NSString *orderMsgStr;
+@property (nonatomic, copy) NSString* orderMsgStr;
 
-@property(nonatomic,assign)CGFloat amountFloat;
+@property (nonatomic, assign) CGFloat amountFloat;
 
-@property(nonatomic,copy)void(^confirmPayBlock)(AXChoosePayModel *payModel);
+@property (nonatomic, copy) void (^confirmPayBlock)(AXChoosePayModel* payModel);
 
 @end
 

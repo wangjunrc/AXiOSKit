@@ -1041,9 +1041,9 @@
 		2473298C2277FBB8005CF92D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2473298D2277FBB8005CF92D /* AXChoosePayStyleCell.xib */,
 				2473298E2277FBB8005CF92D /* AXChoosePayStyleCell.h */,
 				2473298F2277FBB8005CF92D /* AXChoosePayStyleCell.m */,
+				2473298D2277FBB8005CF92D /* AXChoosePayStyleCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
