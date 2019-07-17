@@ -14,6 +14,20 @@
 
 @implementation UILabel (AXKit)
 
+- (void)setAx_longPressCopyMenu:(BOOL)ax_longPressCopyMenu {
+    objc_setAssociatedObject(self, @selector(ax_longPressCopyMenu), @(ax_longPressCopyMenu), OBJC_ASSOCIATION_ASSIGN);
+    [self attachTapHandler];
+}
+
+- (BOOL)ax_longPressCopyMenu{
+    return [objc_getAssociatedObject(self, @selector(ax_longPressCopyMenu)) boolValue];
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+    return [objc_getAssociatedObject(self, @selector(ax_longPressCopyMenu)) boolValue];
+}
+
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender
 {
     return (action == @selector(copyText:));
@@ -58,21 +72,9 @@
     }
 }
 
-- (BOOL)canBecomeFirstResponder
-{
-    return [objc_getAssociatedObject(self, @selector(axCopyable)) boolValue];
-}
 
-- (void)setAxCopyable:(BOOL)number
-{
-    objc_setAssociatedObject(self, @selector(axCopyable), [NSNumber numberWithBool:number], OBJC_ASSOCIATION_ASSIGN);
-    [self attachTapHandler];
-}
 
-- (BOOL)axCopyable
-{
-    return [objc_getAssociatedObject(self, @selector(axCopyable)) boolValue];
-}
+
 
 /**
  设置 电话 含有下划线,并可以点击打电话

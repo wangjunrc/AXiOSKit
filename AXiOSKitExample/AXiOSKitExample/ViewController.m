@@ -37,7 +37,11 @@
     
     NSLog(@"str>> %@",str2);
     
-    
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 50)];
+    [self.view addSubview:label];
+    label.backgroundColor =UIColor.orangeColor;
+    label.text =@"akc";
+    label.ax_longPressCopyMenu = YES;;
 }
 
 - (IBAction)btnAction1:(id)sender {

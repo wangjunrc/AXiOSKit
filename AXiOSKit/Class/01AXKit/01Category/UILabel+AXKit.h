@@ -11,9 +11,9 @@
 @interface UILabel (AXKit)
 
 /**
- * 是否可以长按显示复制
+ * 是否可以长按显示复制Menu
  */
-@property (nonatomic, assign) BOOL axCopyable;
+@property (nonatomic, assign) BOOL ax_longPressCopyMenu;
 
 /**
  设置 电话 含有下划线,并可以点击打电话
