@@ -25,7 +25,7 @@
 
 - (BOOL)canBecomeFirstResponder
 {
-    return [objc_getAssociatedObject(self, @selector(ax_longPressCopyMenu)) boolValue];
+    return self.ax_longPressCopyMenu;
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender

@@ -1308,5 +1308,7 @@ userInfo:nil];
 
 [self.progressSlider addTarget:self action:@selector(sliderProgressChangeEnd) forControlEvents:UIControlEventTouchUpOutside | UIControlEventTouchUpInside];
 ```
-
-
+# 定义通知
+```
+UIKIT_EXTERN NSNotificationName const UIMenuControllerWillShowMenuNotification
+```
