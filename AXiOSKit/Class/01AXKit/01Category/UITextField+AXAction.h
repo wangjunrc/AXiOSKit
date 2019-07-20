@@ -11,7 +11,7 @@
 
 @interface AXTextFieldDelegateHandler : NSObject <UITextFieldDelegate>
 
-@property (nonatomic, weak) UITextField* currentTextField;
+- (instancetype)initWithTextField:(UITextField*)textField;
 
 /**
  开始编辑
@@ -32,16 +32,20 @@
  是否能输入当前文字
  */
 @property (nonatomic, copy) BOOL (^shouldChangeBlock)(UITextField* textField, NSRange range, NSString* aString);
+/**
+ 最大输入文字数量
+ */
+@property (nonatomic, assign) NSUInteger maxCharacterCount;
 
 /**
- 只能输入数字
+ 只能输入正正数
  */
-- (void)canShouldChangeNumber;
+@property (nonatomic, assign) BOOL onlyPositiveNumber;
 
 /**
- 只能输入小数
+ 最多只能输入小数 的个数
  */
-- (void)canShouldChangeFloat:(NSInteger)count;
+@property (nonatomic, assign) NSUInteger maxFloatCount;
 
 @end
 
@@ -60,7 +64,7 @@
 /**
  编辑配置
  */
-@property(nonatomic, strong, readonly) AXKeyboardObserve *ax_keyboardObserve;
+@property(nonatomic, strong, readonly) AXKeyboardObserve* ax_keyboardObserve;
 
 
 @end

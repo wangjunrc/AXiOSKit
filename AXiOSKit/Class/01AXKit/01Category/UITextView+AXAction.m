@@ -9,19 +9,22 @@
 #import "UITextView+AXAction.h"
 #import "AXMacros_addProperty.h"
 #import "UITextView+AXKit.h"
+@interface AXTextViewDelegateHandler ()
+
+@property (nonatomic, weak) UITextView* currentTextView;
+
+@end
 
 @implementation AXTextViewDelegateHandler
 
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
-    
     if (self.didEndBlock) {
         self.didEndBlock(textView.text);
     }
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
-    
     if (self.shouldChangeBlock) {
        return self.shouldChangeBlock(textView, range, text);
     }
@@ -31,12 +34,19 @@
 /**
  最大输入文字数量
  */
-- (void)maxCharacterCount:(NSUInteger)count {
+//- (void)maxCharacterCount:(NSUInteger)count {
+//
+//    self.shouldChangeBlock = ^BOOL(UITextView * _Nonnull textView, NSRange range, NSString * _Nonnull aString) {
+//        return [textView ax_textView:textView maxCharacterCount:count shouldChangeTextInRange:range replacementText:aString];
+//    };
+//
+//}
+- (void)setMaxCharacterCount:(NSUInteger)maxCharacterCount {
+    _maxCharacterCount = maxCharacterCount;
     
     self.shouldChangeBlock = ^BOOL(UITextView * _Nonnull textView, NSRange range, NSString * _Nonnull aString) {
-        return [textView ax_textView:textView maxCharacterCount:count shouldChangeTextInRange:range replacementText:aString];
+        return [textView ax_textView:textView maxCharacterCount:maxCharacterCount shouldChangeTextInRange:range replacementText:aString];
     };
-    
 }
 
 

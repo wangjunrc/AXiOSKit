@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AXTextViewDelegateHandler : NSObject <UITextViewDelegate>
 
-@property (nonatomic, weak) UITextView* currentTextView;
-
 /**
  开始编辑
  */
@@ -37,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  最大输入文字数量
  */
-- (void)maxCharacterCount:(NSUInteger)count;
+@property (nonatomic, assign) NSUInteger maxCharacterCount;
 
 @end
 

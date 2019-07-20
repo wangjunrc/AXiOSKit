@@ -8,15 +8,11 @@
 
 #import "UITextField+AXKit.h"
 
-
 @interface UITextField ()
-
-
 
 @end
 
 @implementation UITextField (AXKit)
-
 
 /**
  textField 控制输入的字符为整数  或者 小数
@@ -27,177 +23,171 @@
  @param string string
  @return BOOL
  */
-- (BOOL)ax_getFloatCount:(NSInteger )count range:(NSRange)range string:(NSString *)string {
-    
-    UITextField *textField = self;
-    
-    if (count <=0 ){
-        
-        if ([string length]>0){
-            
-            unichar single=[string characterAtIndex:0];//当前输入的字符
-            
-            if ((single >='0' && single<='9'))//数据格式正确
+- (BOOL)ax_getFloatCount:(NSInteger)count range:(NSRange)range string:(NSString*)string
+{
+
+    UITextField* textField = self;
+
+    if (count <= 0) {
+
+        if ([string length] > 0) {
+
+            unichar single = [string characterAtIndex:0]; //当前输入的字符
+
+            if ((single >= '0' && single <= '9')) //数据格式正确
             {
                 return YES;
-            }else{
-                
+            } else {
+
                 [textField.text stringByReplacingCharactersInRange:range withString:@""];
                 return NO;
             }
-            
-        }else{
-            
+
+        } else {
+
             return YES;
         }
     }
-    
-    
-    
+
     BOOL isHaveDian = YES;
-    
-    if ([textField.text rangeOfString:@"."].location==NSNotFound) {
-        isHaveDian=NO;
+
+    if ([textField.text rangeOfString:@"."].location == NSNotFound) {
+        isHaveDian = NO;
     }
-    if ([string length]>0)
-    {
-        unichar single=[string characterAtIndex:0];//当前输入的字符
-        
-        if ((single >='0' && single<='9') || single=='.')//数据格式正确
+    if ([string length] > 0) {
+        unichar single = [string characterAtIndex:0]; //当前输入的字符
+
+        if ((single >= '0' && single <= '9') || single == '.') //数据格式正确
         {
             //首字母不能为小数点
-            if([textField.text length]==0){
-                if(single == '.'){
+            if ([textField.text length] == 0) {
+                if (single == '.') {
                     [textField.text stringByReplacingCharactersInRange:range withString:@""];
                     return NO;
-                    
                 }
             }
-            if([textField.text length]==1 && [textField.text isEqualToString:@"0"]){
-                if(single != '.'){
+            if ([textField.text length] == 1 && [textField.text isEqualToString:@"0"]) {
+                if (single != '.') {
                     [textField.text stringByReplacingCharactersInRange:range withString:@""];
                     return NO;
-                    
                 }
             }
-            if (single=='.')
-            {
-                if(!isHaveDian)//text中还没有小数点
+            if (single == '.') {
+                if (!isHaveDian) //text中还没有小数点
                 {
-                    isHaveDian=YES;
+                    isHaveDian = YES;
                     return isHaveDian;
-                }else
-                {
+                } else {
                     [textField.text stringByReplacingCharactersInRange:range withString:@""];
                     return NO;
                 }
-            }
-            else
-            {
-                if (isHaveDian)//存在小数点
+            } else {
+                if (isHaveDian) //存在小数点
                 {
                     //判断小数点的位数
-                    NSRange ran=[textField.text rangeOfString:@"."];
-                    NSInteger tt=range.location-ran.location;
-                    
-                    if (tt <= count){
+                    NSRange ran = [textField.text rangeOfString:@"."];
+                    NSInteger tt = range.location - ran.location;
+
+                    if (tt <= count) {
                         return YES;
-                    }else{
+                    } else {
                         return NO;
                     }
-                }
-                else
-                {
+                } else {
                     return YES;
                 }
             }
-        }else{//输入的数据格式不正确
+        } else { //输入的数据格式不正确
             [textField.text stringByReplacingCharactersInRange:range withString:@""];
             return NO;
         }
-    }
-    else
-    {
+    } else {
         return YES;
     }
-    
-    
-    
 }
 /**
  * - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
  方法中调用,控制输入的字符为最多2位小数的数字 包含0
  */
-- (BOOL)ax_getTF2FloatRange:(NSRange)range string:(NSString *)string{
-    
-    UITextField *textField = self;
-    
+- (BOOL)ax_getTF2FloatRange:(NSRange)range string:(NSString*)string
+{
+
+    UITextField* textField = self;
+
     BOOL isHaveDian = YES;
-    if ([textField.text rangeOfString:@"."].location==NSNotFound) {
-        isHaveDian=NO;
+    if ([textField.text rangeOfString:@"."].location == NSNotFound) {
+        isHaveDian = NO;
     }
-    if ([string length]>0)
-    {
-        unichar single=[string characterAtIndex:0];//当前输入的字符
-        
-        if ((single >='0' && single<='9') || single=='.')//数据格式正确
+    if ([string length] > 0) {
+        unichar single = [string characterAtIndex:0]; //当前输入的字符
+
+        if ((single >= '0' && single <= '9') || single == '.') //数据格式正确
         {
             //首字母不能为小数点
-            if([textField.text length]==0){
-                if(single == '.'){
+            if ([textField.text length] == 0) {
+                if (single == '.') {
                     [textField.text stringByReplacingCharactersInRange:range withString:@""];
                     return NO;
-                    
                 }
             }
-            if([textField.text length]==1 && [textField.text isEqualToString:@"0"]){
-                if(single != '.'){
+            if ([textField.text length] == 1 && [textField.text isEqualToString:@"0"]) {
+                if (single != '.') {
                     [textField.text stringByReplacingCharactersInRange:range withString:@""];
                     return NO;
-                    
                 }
             }
-            if (single=='.')
-            {
-                if(!isHaveDian)//text中还没有小数点
+            if (single == '.') {
+                if (!isHaveDian) //text中还没有小数点
                 {
-                    isHaveDian=YES;
+                    isHaveDian = YES;
                     return isHaveDian;
-                }else
-                {
+                } else {
                     [textField.text stringByReplacingCharactersInRange:range withString:@""];
                     return NO;
                 }
-            }
-            else
-            {
-                if (isHaveDian)//存在小数点
+            } else {
+                if (isHaveDian) //存在小数点
                 {
                     //判断小数点的位数
-                    NSRange ran=[textField.text rangeOfString:@"."];
-                    NSInteger tt=range.location-ran.location;
-                    if (tt <= 2){
+                    NSRange ran = [textField.text rangeOfString:@"."];
+                    NSInteger tt = range.location - ran.location;
+                    if (tt <= 2) {
                         return YES;
-                    }else{
+                    } else {
                         return NO;
                     }
-                }
-                else
-                {
+                } else {
                     return YES;
                 }
             }
-        }else{//输入的数据格式不正确
+        } else { //输入的数据格式不正确
             [textField.text stringByReplacingCharactersInRange:range withString:@""];
             return NO;
         }
-    }
-    else
-    {
+    } else {
         return YES;
     }
 }
 
-
+- (BOOL)ax_maxCharacterCount:(NSUInteger)count
+             replacementText:(NSString*)text {
+    
+    UITextField *textField = self;
+    // 删除键
+    if ([text isEqualToString:@""]) {
+        return YES;
+    }
+    
+    // 点击return键
+    if ([text isEqualToString:@"\n"]) {
+        return NO;
+    }
+    
+    // 大于最大数量
+    if ((textField.text.length + text.length) > count) {
+        return NO;
+    }
+    return YES;
+}
 
 @end

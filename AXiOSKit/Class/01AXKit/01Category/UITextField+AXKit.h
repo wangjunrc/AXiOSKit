@@ -27,4 +27,14 @@
 - (BOOL)ax_getFloatCount:(NSInteger )count range:(NSRange)range string:(NSString *)string;
 
 
+/**
+ 最大输入字数
+
+ @param count 字数
+ @param text 当前输入的文字
+ @return YES NO
+ */
+- (BOOL)ax_maxCharacterCount:(NSUInteger)count
+             replacementText:(NSString*)text;
+
 @end

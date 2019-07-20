@@ -22,12 +22,14 @@
   
     
     
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 50)];
+    UITextField *label = [[UITextField alloc]initWithFrame:CGRectMake(100, 100, 100, 50)];
     [self.view addSubview:label];
     label.backgroundColor =UIColor.orangeColor;
-    label.text =@"akc";
-    label.ax_longPressCopyMenu = YES;;
     
+    label.ax_delegateHandler.maxCharacterCount = 5;
+    
+//     label.ax_delegateHandler.maxFloatCount = 3;
+//    label.ax_delegateHandler.onlyPositiveNumber = YES;
 }
 
 - (IBAction)btnAction1:(id)sender {
