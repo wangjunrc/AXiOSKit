@@ -117,7 +117,6 @@
         self.currentTextField.keyboardType = UIKeyboardTypeNumberPad;
         self.shouldChangeBlock = ^BOOL(UITextField* textField, NSRange range, NSString* aString) {
             return [textField ax_getFloatCount:0 range:range string:aString];
-            ;
         };
     } else {
         if (self.shouldChangeBlock) {
