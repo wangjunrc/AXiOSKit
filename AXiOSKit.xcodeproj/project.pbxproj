@@ -10,6 +10,7 @@
 		24064AC622BA58C200F6EC73 /* 命令行.md in Resources */ = {isa = PBXBuildFile; fileRef = 24064AC522BA58C200F6EC73 /* 命令行.md */; };
 		24170BBF22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */; };
 		24170BC022D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */; };
+		242CA2D722E81A9600D7C9F6 /* read.md in Resources */ = {isa = PBXBuildFile; fileRef = 242CA2D622E81A9600D7C9F6 /* read.md */; };
 		247328B82277FB8B005CF92D /* AXiOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 247328B62277FB8B005CF92D /* AXiOSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		247329DA2277FBB9005CF92D /* AXCollectFile.md in Resources */ = {isa = PBXBuildFile; fileRef = 247328BF2277FBB8005CF92D /* AXCollectFile.md */; };
 		247329DB2277FBB9005CF92D /* pod_no_use.md in Resources */ = {isa = PBXBuildFile; fileRef = 247328C02277FBB8005CF92D /* pod_no_use.md */; };
@@ -343,6 +344,7 @@
 		24064AC522BA58C200F6EC73 /* 命令行.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "命令行.md"; sourceTree = "<group>"; };
 		24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDeviceFunctionDisableViewController.h; sourceTree = "<group>"; };
 		24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDeviceFunctionDisableViewController.m; sourceTree = "<group>"; };
+		242CA2D622E81A9600D7C9F6 /* read.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = read.md; sourceTree = "<group>"; };
 		244FC1D02297C0D7003BD65F /* AXBaseAlertDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXBaseAlertDefine.h; sourceTree = "<group>"; };
 		247328B32277FB8B005CF92D /* AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AXiOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		247328B62277FB8B005CF92D /* AXiOSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXiOSKit.h; sourceTree = "<group>"; };
@@ -735,6 +737,7 @@
 				247328C02277FBB8005CF92D /* pod_no_use.md */,
 				247328C12277FBB8005CF92D /* pod_use.md */,
 				24064AC522BA58C200F6EC73 /* 命令行.md */,
+				242CA2D622E81A9600D7C9F6 /* read.md */,
 			);
 			path = README;
 			sourceTree = "<group>";
@@ -1757,6 +1760,7 @@
 				24732ABD2277FBB9005CF92D /* AXSafariVC.xib in Resources */,
 				247329DA2277FBB9005CF92D /* AXCollectFile.md in Resources */,
 				24732ACD2277FBB9005CF92D /* beep.wav in Resources */,
+				242CA2D722E81A9600D7C9F6 /* read.md in Resources */,
 				24DB149422D998A300777FB6 /* AXDeviceAuthorizationViewController.xib in Resources */,
 				247329DC2277FBB9005CF92D /* pod_use.md in Resources */,
 				24732ACE2277FBB9005CF92D /* AXiOSKit.xcassets in Resources */,

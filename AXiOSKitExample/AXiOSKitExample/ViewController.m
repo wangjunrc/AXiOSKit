@@ -12,7 +12,11 @@
 #import "AXPayVC.h"
 #import "AXDateVC.h"
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
+@property(nonatomic,strong)CAEmitterLayer *rainLayer;
+@property(nonatomic, strong)CALayer *moveLayer;
+@property(nonatomic, strong)NSTimer  *timer;
 @end
 
 @implementation ViewController
@@ -23,24 +27,7 @@
 }
 
 - (IBAction)btnAction1:(id)sender {
-    
-//    [self ax_showCameraWithEditing:NO block:^(UIImage *originalImage, UIImage *editedImage) {
-////       [self ax_saveImageToPhotos:originalImage];
-////         [self ax_saveImageToLibrary:originalImage];
-//
-//    }];
-    
-    
-//    AXPayVC *vc = [[AXPayVC alloc]init];
-//    [self ax_showVC:vc];
-    
-    AXDateVC *vc = [[AXDateVC alloc]init];
-    [self ax_showVC:vc];
-    
-    
-    
-//      AXChoosePayVC *vc = [[AXChoosePayVC alloc]init];
-//    [self ax_pushVC:vc];
 }
+
 
 @end
