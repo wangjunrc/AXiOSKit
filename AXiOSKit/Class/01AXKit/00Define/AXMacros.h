@@ -130,7 +130,7 @@ self.frame = frame;\
  */
 #define AX_showHUD_Message(String)  MBProgressHUD *hud = [MBProgressHUD ax_showMessage:String];
 /**
- hideHUD 
+ hideHUD
  */
 #define AX_hideHUD  [hud hideAnimated:YES];
 
@@ -196,8 +196,6 @@ return (aViewClass *)[super view];\
 #endif
 #endif
 
-
-
 #pragma mark - ax_keypath
 /**
  此处@keypath(TARGET, KEYPATH)一定要添加@符号，就是为了能预编译出TARGET中所有的KEYPATH属性。
@@ -206,6 +204,7 @@ return (aViewClass *)[super view];\
  */
 
 /**
+ 代码前面 手动添加@ 符号
  forKey
 [self.view setValue:UIColor.redColor forKey:@ax_keypath(self.view, backgroundColor)];
  */
