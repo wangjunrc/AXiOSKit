@@ -1092,9 +1092,9 @@ baseicAnimation.beginTime = CACurrentMediaTime();
 
 CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
 
-CFTimeInterval time = self.spt_width * self.timeScale;
+CFTimeInterval time = self.width * self.timeScale;
 CFTimeInterval palyTime = pausedTime - self.beginMediaTime;
-CGFloat toValue = self.previewView.spt_width;
+CGFloat toValue = self.previewView.width;
 self.processOffset = palyTime/time * toValue;
 
 

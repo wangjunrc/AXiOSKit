@@ -101,10 +101,7 @@ void ax_SignalHandler(int signal) {
     
     NSMutableDictionary *exceptionInfo = [NSMutableDictionary dictionary];
     [exceptionInfo setValue:exception forKey:@"exception"];
-//    [exceptionInfo setValue:callStack forKey:@"callStack"];
     
-    
-//    [[SPTCrashHelper sharedHelper] performSelectorOnMainThread:@selector(handleException:) withObject:exceptionInfo waitUntilDone:YES];
     
 }
 
