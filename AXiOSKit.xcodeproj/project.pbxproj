@@ -11,6 +11,9 @@
 		24170BBF22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */; };
 		24170BC022D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */; };
 		242CA2D722E81A9600D7C9F6 /* read.md in Resources */ = {isa = PBXBuildFile; fileRef = 242CA2D622E81A9600D7C9F6 /* read.md */; };
+		2469429422EA8BA3009E9CB9 /* AXiOSFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2469429222EA8BA3009E9CB9 /* AXiOSFoundation.h */; };
+		2469429822EA8E62009E9CB9 /* AXFoundationAssistant.h in Headers */ = {isa = PBXBuildFile; fileRef = 2469429622EA8E62009E9CB9 /* AXFoundationAssistant.h */; };
+		2469429922EA8E62009E9CB9 /* AXFoundationAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 2469429722EA8E62009E9CB9 /* AXFoundationAssistant.m */; };
 		247328B82277FB8B005CF92D /* AXiOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 247328B62277FB8B005CF92D /* AXiOSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		247329DA2277FBB9005CF92D /* AXCollectFile.md in Resources */ = {isa = PBXBuildFile; fileRef = 247328BF2277FBB8005CF92D /* AXCollectFile.md */; };
 		247329DB2277FBB9005CF92D /* pod_no_use.md in Resources */ = {isa = PBXBuildFile; fileRef = 247328C02277FBB8005CF92D /* pod_no_use.md */; };
@@ -166,7 +169,6 @@
 		24732A732277FBB9005CF92D /* AXObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329662277FBB8005CF92D /* AXObject.h */; };
 		24732A742277FBB9005CF92D /* AXViewModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329672277FBB8005CF92D /* AXViewModelProtocol.h */; };
 		24732A752277FBB9005CF92D /* AXDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329682277FBB8005CF92D /* AXDataModel.h */; };
-		24732A762277FBB9005CF92D /* AXExternFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329692277FBB8005CF92D /* AXExternFunction.h */; };
 		24732A772277FBB9005CF92D /* AXUIAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473296A2277FBB8005CF92D /* AXUIAssistant.m */; };
 		24732A782277FBB9005CF92D /* AXDataModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473296B2277FBB8005CF92D /* AXDataModelProtocol.h */; };
 		24732A792277FBB9005CF92D /* AXCountDownObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473296D2277FBB8005CF92D /* AXCountDownObject.h */; };
@@ -177,7 +179,6 @@
 		24732A7E2277FBB9005CF92D /* AXCrashProcessManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329722277FBB8005CF92D /* AXCrashProcessManager.h */; };
 		24732A7F2277FBB9005CF92D /* AXObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 247329732277FBB8005CF92D /* AXObject.m */; };
 		24732A802277FBB9005CF92D /* AXUNNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 247329742277FBB8005CF92D /* AXUNNotificationHandler.m */; };
-		24732A812277FBB9005CF92D /* AXExternFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 247329752277FBB8005CF92D /* AXExternFunction.m */; };
 		24732A822277FBB9005CF92D /* AXDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 247329762277FBB8005CF92D /* AXDataModel.m */; };
 		24732A832277FBB9005CF92D /* AXUIAssistant.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329772277FBB8005CF92D /* AXUIAssistant.h */; };
 		24732A842277FBB9005CF92D /* AXMacros_value.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329792277FBB8005CF92D /* AXMacros_value.h */; };
@@ -346,6 +347,9 @@
 		24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDeviceFunctionDisableViewController.m; sourceTree = "<group>"; };
 		242CA2D622E81A9600D7C9F6 /* read.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = read.md; sourceTree = "<group>"; };
 		244FC1D02297C0D7003BD65F /* AXBaseAlertDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXBaseAlertDefine.h; sourceTree = "<group>"; };
+		2469429222EA8BA3009E9CB9 /* AXiOSFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXiOSFoundation.h; sourceTree = "<group>"; };
+		2469429622EA8E62009E9CB9 /* AXFoundationAssistant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXFoundationAssistant.h; sourceTree = "<group>"; };
+		2469429722EA8E62009E9CB9 /* AXFoundationAssistant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXFoundationAssistant.m; sourceTree = "<group>"; };
 		247328B32277FB8B005CF92D /* AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AXiOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		247328B62277FB8B005CF92D /* AXiOSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXiOSKit.h; sourceTree = "<group>"; };
 		247328B72277FB8B005CF92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -503,7 +507,6 @@
 		247329662277FBB8005CF92D /* AXObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXObject.h; sourceTree = "<group>"; };
 		247329672277FBB8005CF92D /* AXViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXViewModelProtocol.h; sourceTree = "<group>"; };
 		247329682277FBB8005CF92D /* AXDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDataModel.h; sourceTree = "<group>"; };
-		247329692277FBB8005CF92D /* AXExternFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXExternFunction.h; sourceTree = "<group>"; };
 		2473296A2277FBB8005CF92D /* AXUIAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXUIAssistant.m; sourceTree = "<group>"; };
 		2473296B2277FBB8005CF92D /* AXDataModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDataModelProtocol.h; sourceTree = "<group>"; };
 		2473296D2277FBB8005CF92D /* AXCountDownObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXCountDownObject.h; sourceTree = "<group>"; };
@@ -514,7 +517,6 @@
 		247329722277FBB8005CF92D /* AXCrashProcessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXCrashProcessManager.h; sourceTree = "<group>"; };
 		247329732277FBB8005CF92D /* AXObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXObject.m; sourceTree = "<group>"; };
 		247329742277FBB8005CF92D /* AXUNNotificationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXUNNotificationHandler.m; sourceTree = "<group>"; };
-		247329752277FBB8005CF92D /* AXExternFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXExternFunction.m; sourceTree = "<group>"; };
 		247329762277FBB8005CF92D /* AXDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDataModel.m; sourceTree = "<group>"; };
 		247329772277FBB8005CF92D /* AXUIAssistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXUIAssistant.h; sourceTree = "<group>"; };
 		247329792277FBB8005CF92D /* AXMacros_value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros_value.h; sourceTree = "<group>"; };
@@ -724,6 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				247328B62277FB8B005CF92D /* AXiOSKit.h */,
+				2469429222EA8BA3009E9CB9 /* AXiOSFoundation.h */,
 				24A5737D2298EBE700F95D4E /* Class */,
 				247328BE2277FBB8005CF92D /* README */,
 			);
@@ -939,25 +942,25 @@
 		2473295C2277FBB8005CF92D /* 05Model */ = {
 			isa = PBXGroup;
 			children = (
-				247328C52277FBB8005CF92D /* AXWeakProxy.h */,
-				247328C42277FBB8005CF92D /* AXWeakProxy.m */,
 				247329712277FBB8005CF92D /* AXConstant.h */,
 				2473295E2277FBB8005CF92D /* AXConstant.m */,
 				247329682277FBB8005CF92D /* AXDataModel.h */,
 				247329762277FBB8005CF92D /* AXDataModel.m */,
 				2473296B2277FBB8005CF92D /* AXDataModelProtocol.h */,
-				247329692277FBB8005CF92D /* AXExternFunction.h */,
-				247329752277FBB8005CF92D /* AXExternFunction.m */,
+				2469429622EA8E62009E9CB9 /* AXFoundationAssistant.h */,
+				2469429722EA8E62009E9CB9 /* AXFoundationAssistant.m */,
 				247329702277FBB8005CF92D /* AXHelper.h */,
 				2473295F2277FBB8005CF92D /* AXHelper.m */,
+				24BB839A229E2ED700442276 /* AXKeyboardObserve.h */,
+				24BB839B229E2ED700442276 /* AXKeyboardObserve.m */,
 				247329662277FBB8005CF92D /* AXObject.h */,
 				247329732277FBB8005CF92D /* AXObject.m */,
 				247329652277FBB8005CF92D /* AXSetValueProtocol.h */,
 				247329772277FBB8005CF92D /* AXUIAssistant.h */,
 				2473296A2277FBB8005CF92D /* AXUIAssistant.m */,
 				247329672277FBB8005CF92D /* AXViewModelProtocol.h */,
-				24BB839A229E2ED700442276 /* AXKeyboardObserve.h */,
-				24BB839B229E2ED700442276 /* AXKeyboardObserve.m */,
+				247328C52277FBB8005CF92D /* AXWeakProxy.h */,
+				247328C42277FBB8005CF92D /* AXWeakProxy.m */,
 				247329622277FBB8005CF92D /* GCDTimer */,
 			);
 			path = 05Model;
@@ -1532,6 +1535,7 @@
 			files = (
 				247329EC2277FBB9005CF92D /* NSURL+AXKit.h in Headers */,
 				247329F52277FBB9005CF92D /* UIImage+AXKit.h in Headers */,
+				2469429422EA8BA3009E9CB9 /* AXiOSFoundation.h in Headers */,
 				24732B412277FD53005CF92D /* AXNetManager.h in Headers */,
 				24732A0B2277FBB9005CF92D /* NSBundle+AXBundle.h in Headers */,
 				24732A882277FBB9005CF92D /* AXMacros_runTime.h in Headers */,
@@ -1552,7 +1556,6 @@
 				24732A262277FBB9005CF92D /* NSObject+AXVersion.h in Headers */,
 				24732B1E2277FD53005CF92D /* UMTool.h in Headers */,
 				24732A122277FBB9005CF92D /* NSError+AXKit.h in Headers */,
-				24732A762277FBB9005CF92D /* AXExternFunction.h in Headers */,
 				24732A992277FBB9005CF92D /* AXWebVC.h in Headers */,
 				247329DE2277FBB9005CF92D /* AXWeakProxy.h in Headers */,
 				24F0F0DC22C4BAC3009DD02B /* AXMultiSelectCell.h in Headers */,
@@ -1581,6 +1584,7 @@
 				24732B9822782D9E005CF92D /* AXWebScriptMessageModel.h in Headers */,
 				247329E02277FBB9005CF92D /* NSObject+AXRuntime.h in Headers */,
 				24732A162277FBB9005CF92D /* UISwitch+AXKit.h in Headers */,
+				2469429822EA8E62009E9CB9 /* AXFoundationAssistant.h in Headers */,
 				24732B8D2278215F005CF92D /* AXiOSKitDefine.h in Headers */,
 				24732A632277FBB9005CF92D /* IBUIImageView.h in Headers */,
 				24732A292277FBB9005CF92D /* UIViewController+AXKit.h in Headers */,
@@ -1855,6 +1859,7 @@
 				247329F72277FBB9005CF92D /* Foundation+AXLog.m in Sources */,
 				24732A222277FBB9005CF92D /* NSObject+AXRuntime.m in Sources */,
 				24732B362277FD53005CF92D /* YYLabel+AXiOSKit.m in Sources */,
+				2469429922EA8E62009E9CB9 /* AXFoundationAssistant.m in Sources */,
 				24732AC32277FBB9005CF92D /* AXGuidePageVC.m in Sources */,
 				24732AB42277FBB9005CF92D /* AXDateVC.m in Sources */,
 				24F0F09822C3144C009DD02B /* AXPresentationController.m in Sources */,
@@ -1914,7 +1919,6 @@
 				24732A802277FBB9005CF92D /* AXUNNotificationHandler.m in Sources */,
 				247329E82277FBB9005CF92D /* NSData+AXKit.m in Sources */,
 				24732A092277FBB9005CF92D /* UIColor+AXKit.m in Sources */,
-				24732A812277FBB9005CF92D /* AXExternFunction.m in Sources */,
 				24F0F0D522C4B938009DD02B /* AXMultiSelectConfig.m in Sources */,
 				247329E72277FBB9005CF92D /* UIButton+AXKit.m in Sources */,
 				24732A082277FBB9005CF92D /* UIViewController+AXAlert.m in Sources */,

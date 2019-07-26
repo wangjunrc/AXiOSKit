@@ -6,8 +6,8 @@
 
 #import "MBProgressHUD+AX.h"
 #import "UIImage+AXBundle.h"
-#import "AXExternFunction.h"
-
+#import "AXFoundationAssistant.h"
+#import "AXUIAssistant.h"
 #define MBPafterDelay 1.3
 
 @implementation MBProgressHUD (AX)

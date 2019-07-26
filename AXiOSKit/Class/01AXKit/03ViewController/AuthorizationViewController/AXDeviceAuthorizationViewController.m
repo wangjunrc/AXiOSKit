@@ -7,7 +7,7 @@
 //
 
 #import "AXDeviceAuthorizationViewController.h"
-#import "AXExternFunction.h"
+#import "AXFoundationAssistant.h"
 
 @interface AXDeviceAuthorizationViewController ()
 

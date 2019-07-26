@@ -7,6 +7,7 @@
 //
 
 #import "AXUIAssistant.h"
+#import "UIViewController+AXKit.h"
 
 CGFloat ax_screen_scale(void) {
   CGFloat scale = ([UIScreen instancesRespondToSelector:@selector(scale)]
@@ -146,33 +147,67 @@ CGFloat ax_screen_vertical_adaptive_float_with_padding(CGFloat floatValue,
   return floorf(floatValue / standardScreenHeight * currentScreenHeight);
 }
 
-/// 是否 nil 或者 空
-/// 不要用分类, 为nil 时,不走分类方法
-extern BOOL ax_is_null(id obj) {
-  if (obj == nil) {
-    return YES;
-  }
-
-  if ((NSNull*)obj == [NSNull null]) {
-    return YES;
-  }
-
-  if ([obj respondsToSelector:@selector(count)]) {
-    if ([(id)obj count] == 0) {
-      return YES;
-    }
-  }
-
-  if ([obj respondsToSelector:@selector(length)]) {
-    if ([(id)obj length] == 0) {
-      return YES;
-    }
-  }
-
-  return NO;
+/**
+ * 当前活动窗口的控制器
+ */
+UIViewController *ax_currentViewController(void) {
+    return [UIViewController ax_currentViewController];
 }
 
-/// 是否不为 nil 或者 空
-extern BOOL ax_is_no_null(id obj) {
-    return !ax_is_null(obj);
+/**
+ * app代理
+ */
+id<UIApplicationDelegate> ax_mainAppDelegate(void) {
+    return (
+            (id<UIApplicationDelegate>)([UIApplication sharedApplication].delegate));
+}
+
+/**
+ * app根控制器
+ */
+UIViewController *ax_rootViewController(void) {
+    return [UIApplication sharedApplication].keyWindow.rootViewController;
+}
+
+/**
+ * AppDelegate app根控制器 个别情况下 AXRootViewController 取值不对
+ */
+UIViewController *ax_rootViewController_appDelegate(void) {
+    return ax_mainAppDelegate().window.rootViewController;
+}
+
+/**
+ keyWindow
+ */
+UIWindow *ax_keyWindow(void) {
+    UIApplication *app = [UIApplication sharedApplication];
+    if ([app.delegate respondsToSelector:@selector(window)]) {
+        return app.delegate.window;
+    } else {
+        return app.keyWindow;
+    }
+}
+
+/**键盘背景色透明 alpha=0 */
+void ax_keyboard_bg_alpha_zero(void) { ax_keyboard_bg_alpha(0); }
+
+/**键盘背景色透明*/
+void ax_keyboard_bg_alpha(CGFloat alpha) {
+    ax_keyboard_host_view().alpha = alpha;
+}
+
+/**键盘背景UIInputSetHostView*/
+UIView *ax_keyboard_host_view(void) {
+    
+    UIView *peripheralHostView =  UIApplication.sharedApplication.windows.lastObject.subviews.lastObject;
+    UIView *InputSetHostView;
+    if ([peripheralHostView isKindOfClass:NSClassFromString(@"UIInputSetContainerView")]) {
+        for (UIView *view in peripheralHostView.subviews) {
+            if ([view isKindOfClass:NSClassFromString(@"UIInputSetHostView")]) {
+                InputSetHostView = view;
+                break;
+            }
+        }
+    }
+    return InputSetHostView.subviews.firstObject;
 }

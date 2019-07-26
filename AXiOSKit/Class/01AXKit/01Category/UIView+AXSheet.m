@@ -7,7 +7,8 @@
 //
 
 #import "UIView+AXSheet.h"
-#import "AXExternFunction.h"
+#import "AXFoundationAssistant.h"
+#import "AXUIAssistant.h"
 #if __has_include("Masonry.h")
 #import <Masonry/Masonry.h>
 #endif

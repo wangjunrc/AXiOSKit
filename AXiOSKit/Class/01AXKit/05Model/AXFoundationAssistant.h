@@ -1,18 +1,16 @@
 //
-//  AXExternFunction.h
-//  AXiOSKitDemo
+//  AXFoundationAssistant.h
+//  AXiOSKit
 //
-//  Created by mac on 2018/8/31.
-//  Copyright © 2018年 liuweixing. All rights reserved.
+//  Created by AXing on 2019/7/26.
+//  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-NS_ASSUME_NONNULL_BEGIN
+#import <Foundation/Foundation.h>
 
 /**
  是debug 环境下
-
+ 
  @return 是否
  */
 BOOL ax_isDebug(void);
@@ -30,7 +28,7 @@ NSString *ax_AppStoreURL(NSString *appId);
 
 /**
  AppStore 评分 url
-
+ 
  @param AppStoreID AppStoreID
  @return url String
  */
@@ -38,9 +36,9 @@ NSString *ax_AppStoreScoreURL(NSString *AppStoreID);
 
 /**
  拨打电话,直接拨打
-
+ 
  @param phone 号码
-
+ 
  @return 是否成功
  */
 BOOL ax_CallTel(NSString *phone);
@@ -52,25 +50,25 @@ BOOL ax_OpenPrefsRoot(void);
 
 /**
  是否能打开url
-
+ 
  @param url url str
-
+ 
  @return 是否打开
  */
 BOOL ax_CanOpenURL(id url);
 
 /**
  打开url
-
+ 
  @param url url str
-
+ 
  @return 打开是否成功
  */
 BOOL ax_OpenURLStr(id _Nonnull url);
 
 /**
  打开URL NSString || NSURL
-
+ 
  @param url NSString || NSURL
  @return BOOL
  */
@@ -78,9 +76,9 @@ BOOL ax_OpenURL(id _Nonnull url);
 
 /**
  拨打电话,弹出alert界面
-
+ 
  @param phone 号码
-
+ 
  @return 是否成功
  */
 BOOL ax_CallTelprompt(NSString *phone);
@@ -115,76 +113,20 @@ int ax_randomZeroToValue(int to);
  */
 int ax_randomFromTo(int from, int to);
 
-#pragma mark - UIKit
+/**
+ 是否 nil 或者 空
+ 不要用分类, 为nil 时,不走分类方法
+ */
+extern BOOL ax_is_null(id obj);
 
 /**
- 创建xib With xib 名称
-
- @param name xib 名称
- @return UINib
+ 是否不为 nil 或者 空
  */
-UINib *ax_Nib(NSString *name);
-
-/**
- 创建xib
-
- @param aClass xib 名称 xib与源文件名称一致
- @return UINib
- */
-UINib *ax_NibClass(Class _Nonnull aClass);
-
-/**
- UIImage With 图片名
-
- @param name 图片名
- @return UIImage
- */
-UIImage *ax_Image(NSString *name);
-
-#pragma mark - 添加属性
-
-/**
- Retain Strong nonatomic 属性添加值
-
- @param object 对象
- @param propertyName 属性名 @selector() 格式
- @param value 值
- */
-void ax_setStrongAssociatedObject(id object, const void *propertyName,
-                                  id value);
-
-/**
- Copy nonatomic 属性添加值
-
- @param object 对象
- @param propertyName 属性名 @selector() 格式
- @param value 值
- */
-void ax_setCopyAssociatedObject(id object, const void *propertyName, id value);
-
-/**
- Retain Strong nonatomic 属性添加值
-
- @param object 对象
- @param propertyName 属性名 @selector() 格式
- @param value 值
- */
-void ax_setAssignAssociatedObject(id object, const void *propertyName,
-                                  id value);
-
-/**
- Retain Strong Copy Assign 对象获取值
- Assign 需要转型
-
- @param object 实例
- @param propertyName 属性名 @selector() 格式
- @return id 值
- */
-id ax_getAssociatedObject(id object, const void *propertyName);
+extern BOOL ax_is_no_null(id obj);
 
 /**
  gcd 创建串行队列 queue
-
+ 
  @param label 队列标识
  @return dispatch_queue_t
  */
@@ -192,7 +134,7 @@ dispatch_queue_t ax_get_queue_SERIAL(const char *label);
 
 /**
  gcd 创建并行队列 queue
-
+ 
  @param label 队列标识
  @return dispatch_queue_t
  */
@@ -209,42 +151,16 @@ NSString *AXNSLocalizedString(NSString *key);
 NSString *AXKitLocalizedString(NSString *key);
 
 /**
- * 当前活动窗口的控制器
- */
-UIViewController *ax_currentViewController(void);
-
-/**
- * app代理
- */
-id<UIApplicationDelegate> ax_mainAppDelegate(void);
-
-/**
- * app根控制器
- */
-UIViewController *ax_rootViewController(void);
-
-/**
- * AppDelegate app根控制器 个别情况下 AXRootViewController 取值不对
- */
-UIViewController *ax_rootViewController_appDelegate(void);
-
-/**
- keyWindow
- */
-UIWindow *ax_keyWindow(void);
-
-/**
  封装NSLog用printf 没有__FILE__ 和 __FILE__
-
+ 
  @param format NSLog样式 format
  @param ... NSLog样式 ...
  */
 void AXLoger(NSString *format, ...);
 
-
 /**
-  封装NSLog用printf 有__FILE__ 和 __FILE__
-
+ 封装NSLog用printf 有__FILE__ 和 __FILE__
+ 
  @param file __FILE__
  @param function __FUNCTION__
  @param line __LINE__
@@ -254,6 +170,13 @@ void AXLoger(NSString *format, ...);
 void AXLogerInfo(const char *file, const char *function, NSUInteger line,
                  NSString *format, ...);
 
+/**
+ 封装NSLog用printf,添加打印头部标识 没有__FILE__ 和 __FILE__
+
+ @param msg 标识
+ @param format 样式
+ @param ... 参数
+ */
 void AXLogerMessage(NSString *msg,NSString *format, ...);
 
 /**
@@ -269,13 +192,43 @@ void AXNoMsgLog(NSString *format, ...);
  */
 void AXOpenSettings(void);
 
-/**键盘背景色透明 alpha=0 */
-void ax_keyboard_bg_alpha_zero(void);
+#pragma mark - 添加属性
 
-/**键盘背景色透明*/
-void ax_keyboard_bg_alpha(CGFloat alpha);
+/**
+ Retain Strong nonatomic 属性添加值
+ 
+ @param object 对象
+ @param propertyName 属性名 @selector() 格式
+ @param value 值
+ */
+void ax_setStrongAssociatedObject(id object, const void *propertyName,
+                                  id value);
 
-/**键盘背景UIInputSetHostView*/
-UIView *ax_keyboard_host_view(void);
+/**
+ Copy nonatomic 属性添加值
+ 
+ @param object 对象
+ @param propertyName 属性名 @selector() 格式
+ @param value 值
+ */
+void ax_setCopyAssociatedObject(id object, const void *propertyName, id value);
 
-NS_ASSUME_NONNULL_END
+/**
+ Retain Strong nonatomic 属性添加值
+ 
+ @param object 对象
+ @param propertyName 属性名 @selector() 格式
+ @param value 值
+ */
+void ax_setAssignAssociatedObject(id object, const void *propertyName,
+                                  id value);
+
+/**
+ Retain Strong Copy Assign 对象获取值
+ Assign 需要转型
+ 
+ @param object 实例
+ @param propertyName 属性名 @selector() 格式
+ @return id 值
+ */
+id ax_getAssociatedObject(id object, const void *propertyName);

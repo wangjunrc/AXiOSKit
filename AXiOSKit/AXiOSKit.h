@@ -16,23 +16,9 @@ FOUNDATION_EXPORT double AXiOSKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AXiOSKit/PublicHeader.h>
+#import "AXiOSFoundation.h"
 
-#import "AXMacros.h"
-#import "CALayer+AXFrame.h"
-#import "NSArray+AXKit.h"
-#import "NSData+AXKit.h"
-#import "NSDate+AXKit.h"
-#import "NSDateComponents+AXKit.h"
-#import "NSNumber+AXKit.h"
-#import "NSObject+AXKVO.h"
-#import "NSObject+AXKit.h"
-#import "NSObject+AXVersion.h"
-#import "NSString+AXCrypto.h"
-#import "NSString+AXDate.h"
-#import "NSString+AXEffective.h"
-#import "NSString+AXKit.h"
-#import "NSURL+AXKit.h"
-#import "NSUserDefaults+AXKit.h"
+#import "AXUIAssistant.h"
 #import "UIBarButtonItem+AXKit.h"
 #import "UIButton+AXCountDown.h"
 #import "UIButton+AXKit.h"
@@ -63,9 +49,8 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "UITextField+AXAction.h"
 #import "UIWindow+AXKit.h"
 #import "UIView+AXSheet.h"
-#import "NSError+AXKit.h"
 #import "IBObjectHeader.h"
-#import "AXExternFunction.h"
+#import "AXFoundationAssistant.h"
 #import "AXViewController.h"
 #import "AXBaseAlertVC.h"
 #import "AXQRCodeVC.h"
@@ -76,8 +61,6 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "AXFullLayout.h"
 #import "AXDateVC.h"
 #import "AXVeriCodeView.h"
-#import "AXObject.h"
-#import "AXHelper.h"
 #import "QRCodeViewController.h"
 #import "WKWebViewController.h"
 #import "AXTableViewController.h"
@@ -95,7 +78,6 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #pragma mark - 02ThirdTools
 #import "UIScrollView+AXRefresh.h"
 #import "AXNetManager.h"
-#import "NSObject+FBKVOControllerAX.h"
 #import "MBProgressHUD+AX.h"
 #import "NSObject+AXCacheImage.h"
 #import "AXNetManager.h"
@@ -123,6 +105,4 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "UIImage+GIF.h"
 #endif
 
-#if __has_include("MJExtension.h")
-#import "MJExtension.h"
-#endif
+

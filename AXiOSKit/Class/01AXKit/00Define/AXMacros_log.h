@@ -9,7 +9,7 @@
 #ifndef AXMacros_log_h
 #define AXMacros_log_h
 #import "NSDate+AXKit.h"
-#import "AXExternFunction.h"
+#import "AXFoundationAssistant.h"
 
 /**
  FILEString 文件名

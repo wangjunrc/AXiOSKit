@@ -72,12 +72,59 @@ extern CGRect ax_screen_adaptive_rect(CGRect rectValue);
 extern CGFloat ax_screen_vertical_adaptive_float_with_padding(CGFloat floatValue, CGFloat padding);
 
 /**
- 是否 nil 或者 空
- 不要用分类, 为nil 时,不走分类方法
+ * 当前活动窗口的控制器
  */
-extern BOOL ax_is_null(id obj);
+UIViewController *ax_currentViewController(void);
 
 /**
- 是否不为 nil 或者 空
+ * app代理
  */
-extern BOOL ax_is_no_null(id obj);
+id<UIApplicationDelegate> ax_mainAppDelegate(void);
+
+/**
+ * app根控制器
+ */
+UIViewController *ax_rootViewController(void);
+
+/**
+ * AppDelegate app根控制器 个别情况下 AXRootViewController 取值不对
+ */
+UIViewController *ax_rootViewController_appDelegate(void);
+
+/**
+ keyWindow
+ */
+UIWindow *ax_keyWindow(void);
+
+/**
+ 创建xib With xib 名称
+ 
+ @param name xib 名称
+ @return UINib
+ */
+UINib *ax_Nib(NSString *name);
+
+/**
+ 创建xib
+ 
+ @param aClass xib 名称 xib与源文件名称一致
+ @return UINib
+ */
+UINib *ax_NibClass(Class _Nonnull aClass);
+
+/**
+ UIImage With 图片名
+ 
+ @param name 图片名
+ @return UIImage
+ */
+UIImage *ax_Image(NSString *name);
+
+/**键盘背景色透明 alpha=0 */
+void ax_keyboard_bg_alpha_zero(void);
+
+/**键盘背景色透明*/
+void ax_keyboard_bg_alpha(CGFloat alpha);
+
+/**键盘背景UIInputSetHostView*/
+UIView *ax_keyboard_host_view(void);

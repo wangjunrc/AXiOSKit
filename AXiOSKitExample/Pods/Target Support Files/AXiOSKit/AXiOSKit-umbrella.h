@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "AXiOSFoundation.h"
 #import "AXiOSKit.h"
 #import "AXiOSKitDefine.h"
 #import "AXMacros.h"
@@ -129,7 +130,8 @@
 #import "AXConstant.h"
 #import "AXDataModel.h"
 #import "AXDataModelProtocol.h"
-#import "AXExternFunction.h"
+#import "AXFoundationAssistant.h"
+#import "AXFoundationAssistant.h"
 #import "AXHelper.h"
 #import "AXKeyboardObserve.h"
 #import "AXObject.h"

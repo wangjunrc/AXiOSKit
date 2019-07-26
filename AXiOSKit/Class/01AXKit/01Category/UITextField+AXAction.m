@@ -9,7 +9,7 @@
 #import "UITextField+AXAction.h"
 #import "AXMacros_addProperty.h"
 #import "UITextField+AXKit.h"
-#import "AXExternFunction.h"
+#import "AXFoundationAssistant.h"
 
 @interface AXTextFieldDelegateHandler ()
 
