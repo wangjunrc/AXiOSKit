@@ -85,7 +85,6 @@
 		24732A1E2277FBB9005CF92D /* UIView+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329062277FBB8005CF92D /* UIView+AXKit.h */; };
 		24732A1F2277FBB9005CF92D /* UITextView+AXKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 247329072277FBB8005CF92D /* UITextView+AXKit.m */; };
 		24732A202277FBB9005CF92D /* UIView+AXIBInspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 247329082277FBB8005CF92D /* UIView+AXIBInspectable.m */; };
-		24732A212277FBB9005CF92D /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 247329092277FBB8005CF92D /* Foundation+Log.m */; };
 		24732A222277FBB9005CF92D /* NSObject+AXRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473290A2277FBB8005CF92D /* NSObject+AXRuntime.m */; };
 		24732A232277FBB9005CF92D /* UIView+AXSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473290B2277FBB8005CF92D /* UIView+AXSheet.h */; };
 		24732A242277FBB9005CF92D /* UITextField+AXAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473290C2277FBB8005CF92D /* UITextField+AXAction.m */; };
@@ -421,7 +420,6 @@
 		247329062277FBB8005CF92D /* UIView+AXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AXKit.h"; sourceTree = "<group>"; };
 		247329072277FBB8005CF92D /* UITextView+AXKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+AXKit.m"; sourceTree = "<group>"; };
 		247329082277FBB8005CF92D /* UIView+AXIBInspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXIBInspectable.m"; sourceTree = "<group>"; };
-		247329092277FBB8005CF92D /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		2473290A2277FBB8005CF92D /* NSObject+AXRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AXRuntime.m"; sourceTree = "<group>"; };
 		2473290B2277FBB8005CF92D /* UIView+AXSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AXSheet.h"; sourceTree = "<group>"; };
 		2473290C2277FBB8005CF92D /* UITextField+AXAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+AXAction.m"; sourceTree = "<group>"; };
@@ -761,7 +759,6 @@
 				247329172277FBB8005CF92D /* CALayer+AXFrame.h */,
 				247328D72277FBB8005CF92D /* CALayer+AXFrame.m */,
 				247328DF2277FBB8005CF92D /* Foundation+AXLog.m */,
-				247329092277FBB8005CF92D /* Foundation+Log.m */,
 				247328F72277FBB8005CF92D /* NSArray+AXKit.h */,
 				2473292A2277FBB8005CF92D /* NSArray+AXKit.m */,
 				247328F32277FBB8005CF92D /* NSBundle+AXBundle.h */,
@@ -1801,7 +1798,6 @@
 			files = (
 				247329E62277FBB9005CF92D /* NSUserDefaults+AXKit.m in Sources */,
 				24732B2A2277FD53005CF92D /* UIButton+AXCircle.m in Sources */,
-				24732A212277FBB9005CF92D /* Foundation+Log.m in Sources */,
 				24732A242277FBB9005CF92D /* UITextField+AXAction.m in Sources */,
 				24F0F0E122C4BAF4009DD02B /* AXMultiSelectSectionHeaderView.m in Sources */,
 				247329FB2277FBB9005CF92D /* NSObject+AXVersion.m in Sources */,
