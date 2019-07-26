@@ -26,7 +26,6 @@
 #include <net/if.h>
 @implementation NSString (AXKit)
 
-
 +(NSString *)ax_documentPath{
     return NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES ).firstObject;
 }

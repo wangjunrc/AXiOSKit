@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NSURL (AXKit)
-/**
- * 电话号码拼接成URL
- */
-+(NSURL *)ax_URLByPhone:(NSString *)phone;
+
 
 @end

@@ -10,9 +10,4 @@
 
 @implementation NSURL (AXKit)
 
-+(NSURL *)ax_URLByPhone:(NSString *)phone{
-    return [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",phone]];
-}
-
-
 @end
