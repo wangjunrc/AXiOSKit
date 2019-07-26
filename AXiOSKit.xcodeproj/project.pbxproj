@@ -165,12 +165,10 @@
 		24732A6F2277FBB9005CF92D /* AXUNNotificationHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329612277FBB8005CF92D /* AXUNNotificationHandler.h */; };
 		24732A702277FBB9005CF92D /* AXGCDTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329632277FBB8005CF92D /* AXGCDTimer.h */; };
 		24732A712277FBB9005CF92D /* AXGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 247329642277FBB8005CF92D /* AXGCDTimer.m */; };
-		24732A722277FBB9005CF92D /* AXSetValueProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329652277FBB8005CF92D /* AXSetValueProtocol.h */; };
 		24732A732277FBB9005CF92D /* AXObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329662277FBB8005CF92D /* AXObject.h */; };
 		24732A742277FBB9005CF92D /* AXViewModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329672277FBB8005CF92D /* AXViewModelProtocol.h */; };
 		24732A752277FBB9005CF92D /* AXDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329682277FBB8005CF92D /* AXDataModel.h */; };
 		24732A772277FBB9005CF92D /* AXUIAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473296A2277FBB8005CF92D /* AXUIAssistant.m */; };
-		24732A782277FBB9005CF92D /* AXDataModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473296B2277FBB8005CF92D /* AXDataModelProtocol.h */; };
 		24732A792277FBB9005CF92D /* AXCountDownObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473296D2277FBB8005CF92D /* AXCountDownObject.h */; };
 		24732A7A2277FBB9005CF92D /* AXCountDownObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473296E2277FBB8005CF92D /* AXCountDownObject.m */; };
 		24732A7B2277FBB9005CF92D /* AXConfigureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473296F2277FBB8005CF92D /* AXConfigureManager.m */; };
@@ -503,12 +501,10 @@
 		247329612277FBB8005CF92D /* AXUNNotificationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXUNNotificationHandler.h; sourceTree = "<group>"; };
 		247329632277FBB8005CF92D /* AXGCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXGCDTimer.h; sourceTree = "<group>"; };
 		247329642277FBB8005CF92D /* AXGCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXGCDTimer.m; sourceTree = "<group>"; };
-		247329652277FBB8005CF92D /* AXSetValueProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXSetValueProtocol.h; sourceTree = "<group>"; };
 		247329662277FBB8005CF92D /* AXObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXObject.h; sourceTree = "<group>"; };
 		247329672277FBB8005CF92D /* AXViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXViewModelProtocol.h; sourceTree = "<group>"; };
 		247329682277FBB8005CF92D /* AXDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDataModel.h; sourceTree = "<group>"; };
 		2473296A2277FBB8005CF92D /* AXUIAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXUIAssistant.m; sourceTree = "<group>"; };
-		2473296B2277FBB8005CF92D /* AXDataModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDataModelProtocol.h; sourceTree = "<group>"; };
 		2473296D2277FBB8005CF92D /* AXCountDownObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXCountDownObject.h; sourceTree = "<group>"; };
 		2473296E2277FBB8005CF92D /* AXCountDownObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXCountDownObject.m; sourceTree = "<group>"; };
 		2473296F2277FBB8005CF92D /* AXConfigureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXConfigureManager.m; sourceTree = "<group>"; };
@@ -753,7 +749,7 @@
 				2473294E2277FBB8005CF92D /* 02IBView */,
 				247329802277FBB8005CF92D /* 03ViewController */,
 				247329332277FBB8005CF92D /* 04View */,
-				2473295C2277FBB8005CF92D /* 05Model */,
+				2473295C2277FBB8005CF92D /* 05Object */,
 				247329432277FBB8005CF92D /* 06Manager */,
 			);
 			path = 01AXKit;
@@ -881,12 +877,12 @@
 			children = (
 				247329512277FBB8005CF92D /* AXButton.h */,
 				247329572277FBB8005CF92D /* AXButton.m */,
-				2473296D2277FBB8005CF92D /* AXCountDownObject.h */,
-				2473296E2277FBB8005CF92D /* AXCountDownObject.m */,
 				247329352277FBB8005CF92D /* AXCycleScrollView.h */,
 				247329362277FBB8005CF92D /* AXCycleScrollView.m */,
 				247329392277FBB8005CF92D /* AXDottedLineView.h */,
 				247329382277FBB8005CF92D /* AXDottedLineView.m */,
+				24F0F0C622C4B7F5009DD02B /* AXNavigationBar.h */,
+				24F0F0C722C4B7F5009DD02B /* AXNavigationBar.m */,
 				247329422277FBB8005CF92D /* AXNumberKeyboard.h */,
 				247329402277FBB8005CF92D /* AXNumberKeyboard.m */,
 				2473293E2277FBB8005CF92D /* AXNumberKeyboard.xib */,
@@ -894,8 +890,6 @@
 				2473293B2277FBB8005CF92D /* AXVeriCodeView.m */,
 				2473293F2277FBB8005CF92D /* UITextField+AXNumberKeyboard.h */,
 				247329412277FBB8005CF92D /* UITextField+AXNumberKeyboard.m */,
-				24F0F0C622C4B7F5009DD02B /* AXNavigationBar.h */,
-				24F0F0C722C4B7F5009DD02B /* AXNavigationBar.m */,
 			);
 			path = 04View;
 			sourceTree = "<group>";
@@ -939,14 +933,15 @@
 			path = 02IBView;
 			sourceTree = "<group>";
 		};
-		2473295C2277FBB8005CF92D /* 05Model */ = {
+		2473295C2277FBB8005CF92D /* 05Object */ = {
 			isa = PBXGroup;
 			children = (
+				2473296D2277FBB8005CF92D /* AXCountDownObject.h */,
+				2473296E2277FBB8005CF92D /* AXCountDownObject.m */,
 				247329712277FBB8005CF92D /* AXConstant.h */,
 				2473295E2277FBB8005CF92D /* AXConstant.m */,
 				247329682277FBB8005CF92D /* AXDataModel.h */,
 				247329762277FBB8005CF92D /* AXDataModel.m */,
-				2473296B2277FBB8005CF92D /* AXDataModelProtocol.h */,
 				2469429622EA8E62009E9CB9 /* AXFoundationAssistant.h */,
 				2469429722EA8E62009E9CB9 /* AXFoundationAssistant.m */,
 				247329702277FBB8005CF92D /* AXHelper.h */,
@@ -955,24 +950,15 @@
 				24BB839B229E2ED700442276 /* AXKeyboardObserve.m */,
 				247329662277FBB8005CF92D /* AXObject.h */,
 				247329732277FBB8005CF92D /* AXObject.m */,
-				247329652277FBB8005CF92D /* AXSetValueProtocol.h */,
 				247329772277FBB8005CF92D /* AXUIAssistant.h */,
 				2473296A2277FBB8005CF92D /* AXUIAssistant.m */,
 				247329672277FBB8005CF92D /* AXViewModelProtocol.h */,
 				247328C52277FBB8005CF92D /* AXWeakProxy.h */,
 				247328C42277FBB8005CF92D /* AXWeakProxy.m */,
-				247329622277FBB8005CF92D /* GCDTimer */,
-			);
-			path = 05Model;
-			sourceTree = "<group>";
-		};
-		247329622277FBB8005CF92D /* GCDTimer */ = {
-			isa = PBXGroup;
-			children = (
 				247329632277FBB8005CF92D /* AXGCDTimer.h */,
 				247329642277FBB8005CF92D /* AXGCDTimer.m */,
 			);
-			path = GCDTimer;
+			path = 05Object;
 			sourceTree = "<group>";
 		};
 		247329782277FBB8005CF92D /* 00Define */ = {
@@ -1655,10 +1641,8 @@
 				24732A612277FBB9005CF92D /* IBObjectHeader.h in Headers */,
 				24732A552277FBB9005CF92D /* AXNumberKeyboard.h in Headers */,
 				247329E52277FBB9005CF92D /* WKWebView+AXKit.h in Headers */,
-				24732A722277FBB9005CF92D /* AXSetValueProtocol.h in Headers */,
 				24BB8672229E9B4300442276 /* AXPayVC.h in Headers */,
 				24732B332277FD53005CF92D /* UIScrollView+AXEmptyDataSet.h in Headers */,
-				24732A782277FBB9005CF92D /* AXDataModelProtocol.h in Headers */,
 				24732AA02277FBB9005CF92D /* AXFullLayout2.h in Headers */,
 				24732B3E2277FD53005CF92D /* WKWebViewController.h in Headers */,
 				24732AC52277FBB9005CF92D /* AXGuidePageVC.h in Headers */,

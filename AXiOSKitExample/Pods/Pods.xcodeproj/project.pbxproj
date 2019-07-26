@@ -23,7 +23,6 @@
 		03D191DB82F1CFE0ECA8C2A9F0A8E169 /* UIButton+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = BA10FDC9150188BA238766715AED39C4 /* UIButton+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03E20379B276F2B2739954E239FD40C5 /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E34BC788AECE4E5763F15B25892FE5E /* SRWebSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		042080D08985B6776078B0160B073E63 /* UIControl+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C7F96D923B7674227D88FDAE4ACD56C /* UIControl+AXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		04219448D34B7D237DDCD95A332A8AEC /* AXDataModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = AE12A30D95BFE76885FA9C642F8F64B9 /* AXDataModelProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		042B9DCCFE377D935B40B24E5D2D86BA /* SDWebImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DD9429D5AA38E6762B85DD96AF6827 /* SDWebImage-dummy.m */; };
 		04C7B45C2D95780DE9FDDCD944ACFAD8 /* UMTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 6156C43728D41BA21E316318E5D132A1 /* UMTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0549B1DC5B94CA93E39F18333489E800 /* NSError+AXKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E8BCA2CC68709FDACEC1FCF97A4933 /* NSError+AXKit.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -1744,7 +1743,6 @@
 		AD54710548E5BC448E33F42D3232DD53 /* DZNEmptyDataSet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DZNEmptyDataSet-dummy.m"; sourceTree = "<group>"; };
 		AD8B42ECB5E53394E326DB99FE554E0B /* AXChoosePayStyleVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AXChoosePayStyleVC.m; sourceTree = "<group>"; };
 		ADCC50D22C857B79CE1E8E7E544A58EF /* ZLAnimateTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZLAnimateTransition.h; path = ZLPhotoBrowser/PhotoBrowser/Animation/ZLAnimateTransition.h; sourceTree = "<group>"; };
-		AE12A30D95BFE76885FA9C642F8F64B9 /* AXDataModelProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXDataModelProtocol.h; sourceTree = "<group>"; };
 		AE45A9FB0048371F978034C726219F2D /* AXViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXViewController.h; sourceTree = "<group>"; };
 		AE698B1459C673433F03FD4878AB22B3 /* NSButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSButton+WebCache.m"; path = "SDWebImage/NSButton+WebCache.m"; sourceTree = "<group>"; };
 		AE8BD24B42CF58E20CCE59E93C75238A /* AXDottedLineView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AXDottedLineView.m; sourceTree = "<group>"; };
@@ -3715,7 +3713,6 @@
 				08603C65DACF203D00100EA073C5CE4E /* AXConstant.m */,
 				A6C84A4B83BB2823C32FEFE58BCD9397 /* AXDataModel.h */,
 				3AA6177B2415440844319BAF24F43AC6 /* AXDataModel.m */,
-				AE12A30D95BFE76885FA9C642F8F64B9 /* AXDataModelProtocol.h */,
 				220509D616C9824E6EAB873280835E84 /* AXFoundationAssistant.h */,
 				2519B628AACB1EBAB43A00BB3F2FEAB5 /* AXFoundationAssistant.m */,
 				5A2C16419ADE9F2EC8C3F8671EE9E78D /* AXHelper.h */,
@@ -4070,7 +4067,6 @@
 				5DA1E8CB620109F1D86F9F6AFFFCA3EC /* AXCrashProcessManager.h in Headers */,
 				5926F0630078ACBF64735E8612587261 /* AXCycleScrollView.h in Headers */,
 				80FC66CC5178215329D82CB826E3A65C /* AXDataModel.h in Headers */,
-				04219448D34B7D237DDCD95A332A8AEC /* AXDataModelProtocol.h in Headers */,
 				4790C8235B71DA51BFD2302B0B3A1ADA /* AXDateVC.h in Headers */,
 				ADB9C4754B6C4379187AD3580E87B71A /* AXDeviceAuthorizationViewController.h in Headers */,
 				FD551B76915AC7B74B3E41AEBA90CF51 /* AXDeviceFunctionDisableViewController.h in Headers */,
