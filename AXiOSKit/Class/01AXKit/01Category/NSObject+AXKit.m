@@ -7,7 +7,7 @@
 //
 
 #import "NSObject+AXKit.h"
-#import "AXMacros_runTime.h"
+
 #import "AXMacros_addProperty.h"
 #import <UIKit/UIKit.h>
 

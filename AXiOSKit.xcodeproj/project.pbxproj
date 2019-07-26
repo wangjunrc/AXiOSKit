@@ -181,7 +181,6 @@
 		24732A842277FBB9005CF92D /* AXMacros_value.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329792277FBB8005CF92D /* AXMacros_value.h */; };
 		24732A852277FBB9005CF92D /* AXMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473297A2277FBB8005CF92D /* AXMacros.h */; };
 		24732A872277FBB9005CF92D /* AXMacros_addProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473297C2277FBB8005CF92D /* AXMacros_addProperty.h */; };
-		24732A882277FBB9005CF92D /* AXMacros_runTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473297D2277FBB8005CF92D /* AXMacros_runTime.h */; };
 		24732A892277FBB9005CF92D /* AXMacros_log.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473297E2277FBB8005CF92D /* AXMacros_log.h */; };
 		24732A8A2277FBB9005CF92D /* AXMacros_instance.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473297F2277FBB8005CF92D /* AXMacros_instance.h */; };
 		24732A8B2277FBB9005CF92D /* AXChoosePayVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329832277FBB8005CF92D /* AXChoosePayVC.h */; };
@@ -516,7 +515,6 @@
 		247329792277FBB8005CF92D /* AXMacros_value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros_value.h; sourceTree = "<group>"; };
 		2473297A2277FBB8005CF92D /* AXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros.h; sourceTree = "<group>"; };
 		2473297C2277FBB8005CF92D /* AXMacros_addProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros_addProperty.h; sourceTree = "<group>"; };
-		2473297D2277FBB8005CF92D /* AXMacros_runTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros_runTime.h; sourceTree = "<group>"; };
 		2473297E2277FBB8005CF92D /* AXMacros_log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros_log.h; sourceTree = "<group>"; };
 		2473297F2277FBB8005CF92D /* AXMacros_instance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros_instance.h; sourceTree = "<group>"; };
 		247329832277FBB8005CF92D /* AXChoosePayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXChoosePayVC.h; sourceTree = "<group>"; };
@@ -965,7 +963,6 @@
 				247329792277FBB8005CF92D /* AXMacros_value.h */,
 				2473297A2277FBB8005CF92D /* AXMacros.h */,
 				2473297C2277FBB8005CF92D /* AXMacros_addProperty.h */,
-				2473297D2277FBB8005CF92D /* AXMacros_runTime.h */,
 				2473297E2277FBB8005CF92D /* AXMacros_log.h */,
 				2473297F2277FBB8005CF92D /* AXMacros_instance.h */,
 			);
@@ -1521,7 +1518,6 @@
 				2469429422EA8BA3009E9CB9 /* AXiOSFoundation.h in Headers */,
 				24732B412277FD53005CF92D /* AXNetManager.h in Headers */,
 				24732A0B2277FBB9005CF92D /* NSBundle+AXBundle.h in Headers */,
-				24732A882277FBB9005CF92D /* AXMacros_runTime.h in Headers */,
 				24732A6F2277FBB9005CF92D /* AXUNNotificationHandler.h in Headers */,
 				24732AC82277FBB9005CF92D /* AXWKWebVC.h in Headers */,
 				24732AAD2277FBB9005CF92D /* AXAlerUpwardAnimation.h in Headers */,

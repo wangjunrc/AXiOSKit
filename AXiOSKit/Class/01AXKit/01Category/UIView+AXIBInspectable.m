@@ -7,7 +7,7 @@
 //
 
 #import "UIView+AXIBInspectable.h"
-//#import "AXMacros_runTime.h"
+//
 //#import "AXMacros_addProperty.h"
 
 @implementation UIView (AXIBInspectable)

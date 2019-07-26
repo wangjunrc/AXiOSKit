@@ -67,7 +67,6 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "AXSafariVC.h"
 #import "AXMacros.h"
 #import "AXGCDTimer.h"
-#import "AXSetValueProtocol.h"
 #import "AXWeakProxy.h"
 #import "AXLocationManager.h"
 #import "AXTouchIDManager.h"

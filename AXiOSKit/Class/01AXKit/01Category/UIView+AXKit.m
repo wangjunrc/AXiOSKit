@@ -7,7 +7,7 @@
 //
 
 #import "UIView+AXKit.h"
-#import "AXMacros_runTime.h"
+
 #import "AXMacros_addProperty.h"
 #import "AXMacros_addProperty.h"
 typedef void(^DidViewBlock)(UIView *view);

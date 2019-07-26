@@ -8,7 +8,7 @@
 
 #import "UIView+AXSnapshot.h"
 #import <WebKit/WebKit.h>
-#import "AXMacros_runTime.h"
+
 #import "AXMacros_addProperty.h"
 #define DELAY_TIME_DRAW 0.1
 
