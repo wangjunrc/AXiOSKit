@@ -19,6 +19,8 @@ target 'AXiOSKitExample' do
   pod "SocketRocket"
   pod "TZImagePickerController"
   pod "ZLPhotoBrowser"
+  pod "PromisesObjC"
+  
 end
 
 target 'AXiOSKit' do

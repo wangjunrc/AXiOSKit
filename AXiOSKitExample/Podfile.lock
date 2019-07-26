@@ -37,6 +37,7 @@ PODS:
   - MJExtension (3.1.0)
   - MJRefresh (3.2.0)
   - NullSafe (2.0)
+  - PromisesObjC (1.2.8)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
   - SDWebImage (4.4.7):
@@ -63,6 +64,7 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - NullSafe
+  - PromisesObjC
   - SDCycleScrollView
   - SDWebImage
   - SDWebImage/GIF
@@ -83,6 +85,7 @@ SPEC REPOS:
     - MJExtension
     - MJRefresh
     - NullSafe
+    - PromisesObjC
     - SDCycleScrollView
     - SDWebImage
     - SocketRocket
@@ -106,12 +109,13 @@ SPEC CHECKSUMS:
   MJExtension: 6b69b3bef2864fd550ce1a184eda219e321209d2
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   NullSafe: 948feba938f03abede5ed3758694a9fe5b3a65ce
+  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   TZImagePickerController: bf4c57b98d8707fce41ea6be872414a71c7a8c9d
   ZLPhotoBrowser: ea030d12699a9dd3c7f2a7808cafdccd3fdece7e
 
-PODFILE CHECKSUM: 14d10528691a96493d60eef3cad18e5c6d59c720
+PODFILE CHECKSUM: 624a9b2042439f86de0dc95095f1ad9d76a40042
 
 COCOAPODS: 1.6.1

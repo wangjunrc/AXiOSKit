@@ -392,3 +392,6 @@ CocoaAsyncSocket
 
 ## CocoaLumberjack——简单好用的日志框架
 CocoaLumberjack
+
+## pod 'PromisesObjC'
+pod 'PromisesObjC'

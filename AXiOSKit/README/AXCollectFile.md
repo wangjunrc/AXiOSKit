@@ -174,16 +174,16 @@ NSURLRequest *request = [NSURLRequest requestWithURL:url];
 [self.webView loadRequest:request];
 
 
-<!--//获取bundlePath 路径-->
-<!--NSString *bundlePath = [[NSBundle mainBundle] bundlePath];-->
-<!--//获取本地html目录 basePath-->
-<!--NSString *basePath = [NSString stringWithFormat: @"%@/www", bundlePath];-->
-<!--//获取本地html目录 baseUrl-->
-<!--//html 路径-->
-<!--NSString *indexPath = [NSString stringWithFormat: @"%@/%@.html", basePath,url];-->
-<!--NSURL *fileUrl = [NSURL fileURLWithPath:indexPath];-->
-<!--NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];-->
-<!--[self.webView loadFileURL:[NSURL fileURLWithPath:indexPath] allowingReadAccessToURL: baseUrl];-->
+//获取bundlePath 路径
+NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
+//获取本地html目录 basePath
+NSString *basePath = [NSString stringWithFormat: @"%@/www", bundlePath];
+//获取本地html目录 baseUrl
+//html 路径
+NSString *indexPath = [NSString stringWithFormat: @"%@/%@.html", basePath,url];
+NSURL *fileUrl = [NSURL fileURLWithPath:indexPath];
+NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];
+[self.webView loadFileURL:[NSURL fileURLWithPath:indexPath] allowingReadAccessToURL: baseUrl];
 ```
 
 
@@ -203,7 +203,7 @@ if (point.x < 0 ) {
 
 
 
-# 同时多个aler 顺序弹出
+# 同时多个alert 顺序弹出
 ```
 //创建一个队列，串行并行都可以，主要为了操作信号量
 dispatch_queue_t queue = dispatch_queue_create("com.ax.queue.alert", DISPATCH_QUEUE_SERIAL);
@@ -573,12 +573,12 @@ NSNotification(忘记移除导致异常)
 
 NSString,NSMutableString,NSAttributedString,NSMutableAttributedString(下标越界以及参数nil异常)
 ```
-
-pod 'JJException'
-
-demo
 ```
+pod 'JJException'
+```
+demo
 
+```
 设置异常类型并开启，建议放在didFinishLaunchingWithOptions第一行，以免在多线程出现异常的情况
 //开启保护
 - (void)startGuardAction{
@@ -650,7 +650,7 @@ break;
 ```
 
 # NSError
-
+```
 //预定义的userinfo键名
 NSString *const NSUnderlyingErrorKey;//推荐的标准方式，通用键
 NSString *const NSLocalizedDescriptionKey;             // 详细描述键
@@ -664,9 +664,8 @@ NSString *const NSHelpAnchorErrorKey;
 NSString *const NSStringEncodingErrorKey ;
 NSString *const NSURLErrorKey;
 NSString *const NSFilePathErrorKey;
-
 ```
-
+```
 NSDictionary *userInfo1 = @{
 NSLocalizedDescriptionKey:@"由于文件不存在，无法打开",
 NSLocalizedFailureReasonErrorKey:@"失败原因：文件不存在",
@@ -699,8 +698,8 @@ return hitView;
 
 # 2个APP之间通信(如微信分享)
 主动分享端(我方app)
-```
 
+```
 NSDictionary *dict= @{@"name":@"jim",@"age":@(25)};
 
 /**plist 序列化*/
@@ -760,11 +759,9 @@ return YES;
 ```
 
 ## 序列化方式
-```
 ### 微信用的是粘贴板默认名称,
 ### 支付宝用的是url拼接参数,
 ### QQ登录用的是粘贴板自定义名称,com.tencent.tencent+id,QQ分享用的是url
-```
 
 
 ```
@@ -1311,4 +1308,88 @@ userInfo:nil];
 # 定义通知
 ```
 UIKIT_EXTERN NSNotificationName const UIMenuControllerWillShowMenuNotification
+```
+
+# iOS的异步处理神器——Promises
+```
+#import "FBLPromises.h"
+```
+```
+- (void)testAllAndAny {
+NSMutableArray *arr = [NSMutableArray new];
+[arr addObject:[self work1]];
+[arr addObject:[self work2]];
+
+//All是所有Promise都成功 fulfill才算完成；
+[[[FBLPromise all:arr] then:^id _Nullable(NSArray * _Nullable value) {
+NSLog(@"then, value:%@", value);
+return value;
+}] catch:^(NSError * _Nonnull error) {
+NSLog(@"all error:%@", error);
+}];
+
+//Any是任何一个Promise成功 完成都会执行fulfill；
+//    [[[FBLPromise any:arr] then:^id _Nullable(NSArray * _Nullable value) {
+//        NSLog(@"then, value:%@", value);
+//        return value;
+//    }] catch:^(NSError * _Nonnull error) {
+//        NSLog(@"any error:%@", error);
+//    }];
+}
+
+- (FBLPromise<NSString *> *)work1 {
+//    return [FBLPromise do:^id _Nullable{
+//        BOOL success = arc4random() % 2;
+//        return success ? @"work1>> work1 success" : [NSError errorWithDomain:@"work1_error" code:-1 userInfo:nil];
+//    }];
+//
+return  [FBLPromise onQueue:dispatch_get_main_queue()
+async:^(FBLPromiseFulfillBlock fulfill,
+FBLPromiseRejectBlock reject) {
+
+dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+BOOL success = arc4random() % 2;
+if (success) {
+fulfill(@"work1>>> success");
+}
+else {
+reject([NSError errorWithDomain:@"work1_error" code:-1 userInfo:nil]);
+}
+});
+
+}];
+}
+
+- (FBLPromise<NSString *> *)work2 {
+
+//  return  [FBLPromise async:^(FBLPromiseFulfillBlock  _Nonnull fulfill, FBLPromiseRejectBlock  _Nonnull reject) {
+//
+//      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//          BOOL success = arc4random() % 2;
+//
+//          if (success) {
+//              fulfill(@"work2>>> success");
+//          }
+//          else {
+//              reject([NSError errorWithDomain:@"work2_error" code:-1 userInfo:nil]);
+//          }
+//      });
+//
+//    }];
+return  [FBLPromise onQueue:dispatch_get_main_queue()
+async:^(FBLPromiseFulfillBlock fulfill,
+FBLPromiseRejectBlock reject) {
+
+dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+BOOL success = arc4random() % 2;
+if (success) {
+fulfill(@"work2>>> success");
+}
+else {
+reject([NSError errorWithDomain:@"work2_error" code:-1 userInfo:nil]);
+}
+});
+
+}];
+}
 ```
