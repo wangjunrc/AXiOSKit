@@ -7,6 +7,8 @@
 //
 
 #import "AAViewController.h"
+#import <AXiOSKit/AXiOSKit.h>
+#import "FBKVOController.h"
 
 @interface AAViewController ()
 
@@ -17,21 +19,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.redColor;
+
+    __weak typeof(self) weakSelf = self;
+    [self ax_addFBKVOKeyPath:FBKVOKeyPath(weakSelf.view.backgroundColor) block:^(NSString * _Nullable keyPath, id  _Nullable oldValue, id  _Nullable newValue) {
+        NSLog(@"newValue>> %@",newValue);
+        
+    }];
     
-    NSLog(@" [self.navigationController.viewControllers.firstObject isEqual:self] %d",[self.navigationController.viewControllers.firstObject isEqual:self] && self.navigationController);
     
-    NSLog(@"self.presentedViewController>> %@",self.parentViewController);
-//    NSLog(@"self.presentedViewController>> %d",self.parentViewController);
+}
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+     self.view.backgroundColor = [UIColor ax_randomColor];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)dealloc
+{
+    axLong_dealloc;
 }
-*/
-
 @end

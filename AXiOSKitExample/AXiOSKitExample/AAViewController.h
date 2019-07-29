@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AAViewController : UIViewController
-
+-(instancetype)init NS_UNAVAILABLE;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -211,6 +211,9 @@ return (aViewClass *)[super view];\
 #define ax_keypath(OBJ, PATH) \
 (((void)(NO && ((void)OBJ.PATH, NO)), # PATH))
 
+#define AX_KVOKeyPath(KEYPATH) \
+@(((void)(NO && ((void)KEYPATH, NO)), \
+({ const char *fbkvokeypath = strchr(#KEYPATH, '.'); NSCAssert(fbkvokeypath, @"Provided key path is invalid."); fbkvokeypath + 1; })))
 
 #pragma mark - 懒加载
 
