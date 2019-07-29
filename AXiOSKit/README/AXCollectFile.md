@@ -261,10 +261,8 @@ dispatch_semaphore_signal(sema);
 
 ```
 
+# 类属性
 
-
-
-//类属性
 ```
 @property (class,nonatomic, copy) NSString *nameAge;
 
