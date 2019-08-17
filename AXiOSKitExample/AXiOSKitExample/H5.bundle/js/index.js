@@ -22,6 +22,7 @@ function showAler(data) {
 function showAler2() {
     alert(4);
     //    iosWeixinPay();
+
 }
 
 

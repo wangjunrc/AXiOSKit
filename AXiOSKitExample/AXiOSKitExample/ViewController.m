@@ -34,7 +34,8 @@
 }
 
 - (IBAction)btnAction1:(id)sender {
-    AAViewController *vc = [AAViewController ax_init];
+    AXWKWebVC *vc = [AXWKWebVC ax_init];
+    vc.loadHTMLFilePath = [NSBundle.mainBundle pathForResource:@"H5.bundle/photo.html" ofType:nil];
     [self ax_pushVC:vc];
     
 }

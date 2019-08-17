@@ -38,7 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *加载本地网页
- *使用[NSBundle.mainBundle pathForResource:@"xx.html" ofType:nil];方式赋值
+ *使用[NSBundle.mainBundle pathForResource:@"H5.bundle/xx.html" ofType:nil];方式赋值
+ 
  NSURL *path = [[NSBundle mainBundle] URLForResource:@"Cookie" withExtension:@"html"];
  */
 @property (nonatomic, copy) NSString* loadHTMLFilePath;

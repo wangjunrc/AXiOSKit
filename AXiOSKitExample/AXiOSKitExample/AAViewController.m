@@ -8,28 +8,30 @@
 
 #import "AAViewController.h"
 #import <AXiOSKit/AXiOSKit.h>
+#import <AXiOSKit/UIColor+AXKit.h>
 #import "FBKVOController.h"
 
 @interface AAViewController ()
-
+@property (nonatomic, copy)NSString *name;
+@property (nonatomic   , copy    )NSString *aaaaaaaaaaaaaname;
 @end
 
 @implementation AAViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.redColor;
 
     __weak typeof(self) weakSelf = self;
     [self ax_addFBKVOKeyPath:FBKVOKeyPath(weakSelf.view.backgroundColor) block:^(NSString * _Nullable keyPath, id  _Nullable oldValue, id  _Nullable newValue) {
         NSLog(@"newValue>> %@",newValue);
-        
+
     }];
-    
-    
+
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-     self.view.backgroundColor = [UIColor ax_randomColor];
+    self.view.backgroundColor = [UIColor ax_randomColor];
 }
 
 - (void)dealloc
