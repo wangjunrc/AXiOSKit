@@ -12,6 +12,7 @@
 #import "AXPayVC.h"
 #import "AXDateVC.h"
 #import "FBLPromises.h"
+#import "UIViewController+AXNavBarConfig.h"
 
 #import "FBKVOController.h"
 @interface ViewController ()
@@ -27,7 +28,6 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
     
- 
     
     
     
