@@ -47,4 +47,6 @@
  */
 - (NSString *)ax_toHexString;
 
++(UIColor *)ax_colorWithNormalStyle:(UIColor *)normalColor darkStyle:(UIColor *)darkColor;
+
 @end

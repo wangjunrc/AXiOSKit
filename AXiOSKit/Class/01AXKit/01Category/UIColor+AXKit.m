@@ -143,4 +143,23 @@
             lroundf(g * 255),
             lroundf(b * 255)];
 }
+
+
++(UIColor *)ax_colorWithNormalStyle:(UIColor *)normalColor darkStyle:(UIColor *)darkColor{
+    
+    if (@available(iOS 13.0, *)) {
+        
+       return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+              if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                  return darkColor;
+              }else {
+                  return normalColor;
+              }
+          }];
+        
+      } else {
+          return normalColor;
+      }
+}
+
 @end
