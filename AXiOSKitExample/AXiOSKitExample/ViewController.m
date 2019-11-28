@@ -30,8 +30,9 @@
     
     
          
-    self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.redColor darkStyle:UIColor.greenColor];
-   
+    if (@available(iOS 13.0, *)) {
+        self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.redColor darkStyle:UIColor.systemBackgroundColor];
+    }
     
     
    
@@ -45,6 +46,9 @@
     view2.backgroundColor = UIColor.systemRedColor;
     
     
+    UIImageView *imv = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ax_icon_weixin"]];
+    [self.view addSubview:imv];
+    imv.frame= CGRectMake(100, 300, 100, 100);
 }
 
 - (IBAction)btnAction1:(id)sender {
@@ -52,32 +56,40 @@
 //    vc.loadHTMLFilePath = [NSBundle.mainBundle pathForResource:@"H5.bundle/photo.html" ofType:nil];
 //    [self ax_pushVC:vc];
    
-    [self ax_showAlertByTitle:@"A"];
+//    [self ax_showAlertByTitle:@"A"];
     
-//    if (@available(iOS 13.0, *)) {
-//
-//        if ( self.overrideUserInterfaceStyle == UIUserInterfaceStyleLight) {
-//            self.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
-//        }else{
-//            self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
-//        }
-//    }
+    if (@available(iOS 13.0, *)) {
+
+        if ( self.overrideUserInterfaceStyle == UIUserInterfaceStyleLight) {
+            self.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
+        }else{
+            self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+        }
+    }
     
+    AAViewController *aa = [AAViewController ax_init];
+//    [self ax_showVC:aa];
+    [self ax_pushVC:aa];
     
 }
 
 - (void) traitCollectionDidChange: (UITraitCollection *) previousTraitCollection {
+  
+    
     [super traitCollectionDidChange: previousTraitCollection];
     
-//    if ((self.traitCollection.verticalSizeClass != previousTraitCollection.verticalSizeClass)
-//        || (self.traitCollection.horizontalSizeClass != previousTraitCollection.horizontalSizeClass)) {
-        // your custom implementation here
+    if ((self.traitCollection.verticalSizeClass != previousTraitCollection.verticalSizeClass)
+        || (self.traitCollection.horizontalSizeClass != previousTraitCollection.horizontalSizeClass)) {
+//         your custom implementation here
         NSLog(@"traitCollectionDidChange");
-//    }
+    }
     
 //    改变当前模式
 //
 //    self.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
+    
+   
+    
 }
 
 @end

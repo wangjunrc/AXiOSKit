@@ -23,15 +23,19 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.redColor;
 
-    __weak typeof(self) weakSelf = self;
-    [self ax_addFBKVOKeyPath:FBKVOKeyPath(weakSelf.view.backgroundColor) block:^(NSString * _Nullable keyPath, id  _Nullable oldValue, id  _Nullable newValue) {
-        NSLog(@"newValue>> %@",newValue);
-
-    }];
+//    __weak typeof(self) weakSelf = self;
+//    [self ax_addFBKVOKeyPath:FBKVOKeyPath(weakSelf.view.backgroundColor) block:^(NSString * _Nullable keyPath, id  _Nullable oldValue, id  _Nullable newValue) {
+//        NSLog(@"newValue>> %@",newValue);
+//
+//    }];
+    
+    UIImageView *imv = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ax_icon_weixin"]];
+       [self.view addSubview:imv];
+       imv.frame= CGRectMake(100, 300, 100, 100);
 
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.view.backgroundColor = [UIColor ax_randomColor];
+//    self.view.backgroundColor = [UIColor ax_randomColor];
 }
 
 - (void)dealloc
