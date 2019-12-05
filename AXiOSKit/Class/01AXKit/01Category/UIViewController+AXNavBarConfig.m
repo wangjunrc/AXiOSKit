@@ -21,7 +21,15 @@
 -(void)ax_setNavigationBarColor:(UIColor *)aColor textColor:(UIColor *)textColor{
     
     [self ax_setNavigationBarTextColor:textColor];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:aColor] forBarMetrics:UIBarMetricsDefault];
+    
+    if ([self isKindOfClass:UINavigationController.class]) {
+       UINavigationController *nav = (UINavigationController *)self;
+        [nav.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:aColor] forBarMetrics:UIBarMetricsDefault];
+        
+    }else if ([self isKindOfClass:UIViewController.class]){
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:aColor] forBarMetrics:UIBarMetricsDefault];
+    }
+    
 }
 
 
@@ -48,7 +56,7 @@
 
 /**
  ScrollView navigationBar 滚动渐变
-
+ 
  @param aColor 颜色
  @param alpha 渐变值
  */
@@ -92,7 +100,7 @@
 
 /**
  navigationBar 文字颜色
-
+ 
  @param textColor 颜色
  */
 -(void)ax_setNavigationBarTextColor:(UIColor *)textColor{

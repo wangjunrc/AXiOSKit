@@ -26,69 +26,100 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
-  [super viewDidLoad];
+    [super viewDidLoad];
     
-    
-         
     if (@available(iOS 13.0, *)) {
-        self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.redColor darkStyle:UIColor.systemBackgroundColor];
+        self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor darkStyle:UIColor.systemBackgroundColor];
+    }
+    //    AXLoger(@"模式>> %ld",self.overrideUserInterfaceStyle);
+    if (@available(iOS 13.0, *)) {
+        AXLoger(@"模式>> %ld", ax_keyWindow().overrideUserInterfaceStyle);
+    } else {
+        // Fallback on earlier versions
     }
     
     
-   
-    
-    UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 50)];
-    [self.view addSubview:view1];
-    view1.backgroundColor = UIColor.redColor;
-    
-    UIView *view2 = [[UIView alloc]initWithFrame:CGRectMake(100, 200, 100, 50)];
-       [self.view addSubview:view2];
-    view2.backgroundColor = UIColor.systemRedColor;
-    
+    UILabel *label = [[UILabel alloc]init];
+    [self.view addSubview:label];
+    label.frame = CGRectMake(100, 300, 100, 50);
+    label.backgroundColor = UIColor.blueColor;
+    label.text = @"文本";
+    label.textColor = [UIColor ax_colorWithNormalStyle:UIColor.greenColor darkStyle:UIColor.systemRedColor];
     
     UIImageView *imv = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ax_icon_weixin"]];
     [self.view addSubview:imv];
     imv.frame= CGRectMake(100, 300, 100, 100);
-}
-
-- (IBAction)btnAction1:(id)sender {
-//    AXWKWebVC *vc = [AXWKWebVC ax_init];
-//    vc.loadHTMLFilePath = [NSBundle.mainBundle pathForResource:@"H5.bundle/photo.html" ofType:nil];
-//    [self ax_pushVC:vc];
-   
-//    [self ax_showAlertByTitle:@"A"];
+    imv.ax_top = label.ax_bottom+10;
     
+    UIButton *btn = [[UIButton alloc]init];
+    [self.view addSubview:btn];
+    btn.frame = CGRectMake(0, 0, 100, 50);
+    btn.backgroundColor = UIColor.blueColor;
+    [btn ax_setTitleStateNormal:@"改变模式"];
+    btn.ax_top = imv.ax_bottom+10;
+    btn.ax_left = imv.ax_left;
+    [btn ax_addActionBlock:^(UIButton * _Nullable button) {
     if (@available(iOS 13.0, *)) {
-
-        if ( self.overrideUserInterfaceStyle == UIUserInterfaceStyleLight) {
-            self.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
+        
+        if (ax_keyWindow().overrideUserInterfaceStyle != UIUserInterfaceStyleDark) {
+            ax_keyWindow().overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
+            
         }else{
-            self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+            ax_keyWindow().overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
         }
-    }
+//            AXLoger(@"模式>> %ld", ax_keyWindow().overrideUserInterfaceStyle);
+        }
+    }];
     
-    AAViewController *aa = [AAViewController ax_init];
-//    [self ax_showVC:aa];
-    [self ax_pushVC:aa];
     
+    UIButton *btn2 = [[UIButton alloc]init];
+    [self.view addSubview:btn2];
+    btn2.frame = CGRectMake(0, 0, 100, 50);
+    btn2.backgroundColor = UIColor.blueColor;
+    [btn2 ax_setTitleStateNormal:@"push"];
+    btn2.ax_top = btn.ax_bottom+10;
+    btn2.ax_left = btn.ax_left;
+    [btn2 ax_addActionBlock:^(UIButton * _Nullable button) {
+        AAViewController *aa = [AAViewController ax_init];
+        [self ax_pushVC:aa];
+        
+    }];
+    
+    UIButton *btn3 = [[UIButton alloc]init];
+    [self.view addSubview:btn3];
+    btn3.frame = CGRectMake(0, 0, 100, 50);
+    btn3.backgroundColor = UIColor.blueColor;
+    [btn3 ax_setTitleStateNormal:@"show"];
+    btn3.ax_top = btn2.ax_bottom+10;
+    btn3.ax_left = btn2.ax_left;
+    [btn3 ax_addActionBlock:^(UIButton * _Nullable button) {
+        AAViewController *aa = [AAViewController ax_init];
+        [self ax_showVC:aa];
+        
+    }];
 }
+
+
 
 - (void) traitCollectionDidChange: (UITraitCollection *) previousTraitCollection {
-  
+    
     
     [super traitCollectionDidChange: previousTraitCollection];
     
     if ((self.traitCollection.verticalSizeClass != previousTraitCollection.verticalSizeClass)
         || (self.traitCollection.horizontalSizeClass != previousTraitCollection.horizontalSizeClass)) {
-//         your custom implementation here
+        //         your custom implementation here
         NSLog(@"traitCollectionDidChange");
     }
     
-//    改变当前模式
-//
-//    self.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
+    //    改变当前模式
+    if (@available(iOS 13.0, *)) {
+         AXLoger(@"模式>>1 %ld", ax_keyWindow().overrideUserInterfaceStyle);
+        AXLoger(@"模式>>2 %ld", self.overrideUserInterfaceStyle);
+    } else {
+        // Fallback on earlier versions
+    }
     
-   
     
 }
 
