@@ -19,7 +19,7 @@ static const char MJIgnoredCodingPropertyNamesKey = '\0';
 
 @implementation NSObject (MJClass)
 
-+ (NSMutableDictionary *)mj_classDictForKey:(const void *)key
++ (NSMutableDictionary *)classDictForKey:(const void *)key
 {
     static NSMutableDictionary *allowedPropertyNamesDict;
     static NSMutableDictionary *ignoredPropertyNamesDict;
@@ -141,7 +141,7 @@ static const char MJIgnoredCodingPropertyNamesKey = '\0';
     // 清空数据
     MJExtensionSemaphoreCreate
     MJExtensionSemaphoreWait
-    [[self mj_classDictForKey:key] removeAllObjects];
+    [[self classDictForKey:key] removeAllObjects];
     MJExtensionSemaphoreSignal
 }
 
@@ -149,16 +149,17 @@ static const char MJIgnoredCodingPropertyNamesKey = '\0';
 {
     MJExtensionSemaphoreCreate
     MJExtensionSemaphoreWait
-    NSMutableArray *array = [self mj_classDictForKey:key][NSStringFromClass(self)];
+    
+    NSMutableArray *array = [self classDictForKey:key][NSStringFromClass(self)];
     if (array == nil) {
         // 创建、存储
-        [self mj_classDictForKey:key][NSStringFromClass(self)] = array = [NSMutableArray array];
+        [self classDictForKey:key][NSStringFromClass(self)] = array = [NSMutableArray array];
         
         if ([self respondsToSelector:selector]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             NSArray *subArray = [self performSelector:selector];
-#pragma clang diagnostic pop
+    #pragma clang diagnostic pop
             if (subArray) {
                 [array addObjectsFromArray:subArray];
             }
@@ -169,7 +170,9 @@ static const char MJIgnoredCodingPropertyNamesKey = '\0';
             [array addObjectsFromArray:subArray];
         }];
     }
+    
     MJExtensionSemaphoreSignal
+    
     return array;
 }
 @end

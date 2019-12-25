@@ -12,14 +12,6 @@
 #import "UIViewController+AXiPadAlert.h"
 
 
-typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
-
-@interface UIViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
-
-@property (nonatomic, strong)CameraEditBlock cameraEditBlock;
-
-@end
-
 @implementation UIViewController (AXAlert)
 
 #pragma mark - Sheet
@@ -231,19 +223,5 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-#pragma mark分类重写 set get 方法
-/**
- * cameraEditBlock set方法
- */
-- (void)setCameraEditBlock:(CameraEditBlock)cameraEditBlock{
-    objc_setAssociatedObject(self, @selector(cameraEditBlock),cameraEditBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-/**
- * cameraEditBlock get方法
- */
-- (CameraEditBlock)cameraEditBlock{
-    return objc_getAssociatedObject(self,@selector(cameraEditBlock));
-}
 
 @end

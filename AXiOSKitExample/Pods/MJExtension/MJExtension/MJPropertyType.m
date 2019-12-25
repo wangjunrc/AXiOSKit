@@ -23,12 +23,15 @@
         types = [NSMutableDictionary dictionary];
     });
     
+    MJExtensionSemaphoreCreate
+    MJExtensionSemaphoreWait
     MJPropertyType *type = types[code];
     if (type == nil) {
         type = [[self alloc] init];
         type.code = code;
         types[code] = type;
     }
+    MJExtensionSemaphoreSignal
     return type;
 }
 

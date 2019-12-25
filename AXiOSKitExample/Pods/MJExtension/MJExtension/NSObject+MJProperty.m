@@ -27,7 +27,7 @@ static const char MJCachedPropertiesKey = '\0';
 
 @implementation NSObject (Property)
 
-+ (NSMutableDictionary *)mj_propertyDictForKey:(const void *)key
++ (NSMutableDictionary *)propertyDictForKey:(const void *)key
 {
     static NSMutableDictionary *replacedKeyFromPropertyNameDict;
     static NSMutableDictionary *replacedKeyFromPropertyName121Dict;
@@ -53,7 +53,7 @@ static const char MJCachedPropertiesKey = '\0';
 }
 
 #pragma mark - --私有方法--
-+ (id)mj_propertyKey:(NSString *)propertyName
++ (id)propertyKey:(NSString *)propertyName
 {
     MJExtensionAssertParamNotNil2(propertyName, nil);
     
@@ -61,6 +61,10 @@ static const char MJCachedPropertiesKey = '\0';
     // 查看有没有需要替换的key
     if ([self respondsToSelector:@selector(mj_replacedKeyFromPropertyName121:)]) {
         key = [self mj_replacedKeyFromPropertyName121:propertyName];
+    }
+    // 兼容旧版本
+    if ([self respondsToSelector:@selector(replacedKeyFromPropertyName121:)]) {
+        key = [self performSelector:@selector(replacedKeyFromPropertyName121) withObject:propertyName];
     }
     
     // 调用block
@@ -77,6 +81,10 @@ static const char MJCachedPropertiesKey = '\0';
     // 查看有没有需要替换的key
     if ((!key || [key isEqual:propertyName]) && [self respondsToSelector:@selector(mj_replacedKeyFromPropertyName)]) {
         key = [self mj_replacedKeyFromPropertyName][propertyName];
+    }
+    // 兼容旧版本
+    if ((!key || [key isEqual:propertyName]) && [self respondsToSelector:@selector(replacedKeyFromPropertyName)]) {
+        key = [self performSelector:@selector(replacedKeyFromPropertyName)][propertyName];
     }
     
     if (!key || [key isEqual:propertyName]) {
@@ -95,11 +103,15 @@ static const char MJCachedPropertiesKey = '\0';
     return key;
 }
 
-+ (Class)mj_propertyObjectClassInArray:(NSString *)propertyName
++ (Class)propertyObjectClassInArray:(NSString *)propertyName
 {
     __block id clazz = nil;
     if ([self respondsToSelector:@selector(mj_objectClassInArray)]) {
         clazz = [self mj_objectClassInArray][propertyName];
+    }
+    // 兼容旧版本
+    if ([self respondsToSelector:@selector(objectClassInArray)]) {
+        clazz = [self performSelector:@selector(objectClassInArray)][propertyName];
     }
     
     if (!clazz) {
@@ -123,10 +135,8 @@ static const char MJCachedPropertiesKey = '\0';
 + (void)mj_enumerateProperties:(MJPropertiesEnumeration)enumeration
 {
     // 获得成员变量
-    MJExtensionSemaphoreCreate
-    MJExtensionSemaphoreWait
-    NSArray *cachedProperties = [self mj_properties];
-    MJExtensionSemaphoreSignal
+    NSArray *cachedProperties = [self properties];
+    
     // 遍历成员变量
     BOOL stop = NO;
     for (MJProperty *property in cachedProperties) {
@@ -136,11 +146,14 @@ static const char MJCachedPropertiesKey = '\0';
 }
 
 #pragma mark - 公共方法
-+ (NSMutableArray *)mj_properties
++ (NSMutableArray *)properties
 {
-    NSMutableArray *cachedProperties = [self mj_propertyDictForKey:&MJCachedPropertiesKey][NSStringFromClass(self)];
-    if (cachedProperties == nil) {
+    NSMutableArray *cachedProperties = [self propertyDictForKey:&MJCachedPropertiesKey][NSStringFromClass(self)];
     
+    if (cachedProperties == nil) {
+        MJExtensionSemaphoreCreate
+        MJExtensionSemaphoreWait
+        
         if (cachedProperties == nil) {
             cachedProperties = [NSMutableArray array];
             
@@ -154,12 +167,9 @@ static const char MJCachedPropertiesKey = '\0';
                     MJProperty *property = [MJProperty cachedPropertyWithProperty:properties[i]];
                     // 过滤掉Foundation框架类里面的属性
                     if ([MJFoundation isClassFromFoundation:property.srcClass]) continue;
-                    // 过滤掉`hash`, `superclass`, `description`, `debugDescription`
-                    if ([MJFoundation isFromNSObjectProtocolProperty:property.name]) continue;
-                    
                     property.srcClass = c;
-                    [property setOriginKey:[self mj_propertyKey:property.name] forClass:self];
-                    [property setObjectClassInArray:[self mj_propertyObjectClassInArray:property.name] forClass:self];
+                    [property setOriginKey:[self propertyKey:property.name] forClass:self];
+                    [property setObjectClassInArray:[self propertyObjectClassInArray:property.name] forClass:self];
                     [cachedProperties addObject:property];
                 }
                 
@@ -167,8 +177,10 @@ static const char MJCachedPropertiesKey = '\0';
                 free(properties);
             }];
             
-            [self mj_propertyDictForKey:&MJCachedPropertiesKey][NSStringFromClass(self)] = cachedProperties;
+            [self propertyDictForKey:&MJCachedPropertiesKey][NSStringFromClass(self)] = cachedProperties;
         }
+        
+        MJExtensionSemaphoreSignal
     }
     
     return cachedProperties;
@@ -184,6 +196,10 @@ static const char MJCachedPropertiesKey = '\0';
     // 如果有实现方法
     if ([object respondsToSelector:@selector(mj_newValueFromOldValue:property:)]) {
         return [object mj_newValueFromOldValue:oldValue property:property];
+    }
+    // 兼容旧版本
+    if ([self respondsToSelector:@selector(newValueFromOldValue:property:)]) {
+        return [self performSelector:@selector(newValueFromOldValue:property:)  withObject:oldValue  withObject:property];
     }
     
     // 查看静态设置
@@ -205,7 +221,7 @@ static const char MJCachedPropertiesKey = '\0';
     
     MJExtensionSemaphoreCreate
     MJExtensionSemaphoreWait
-    [[self mj_propertyDictForKey:&MJCachedPropertiesKey] removeAllObjects];
+    [[self propertyDictForKey:&MJCachedPropertiesKey] removeAllObjects];
     MJExtensionSemaphoreSignal
 }
 
@@ -216,7 +232,7 @@ static const char MJCachedPropertiesKey = '\0';
     
     MJExtensionSemaphoreCreate
     MJExtensionSemaphoreWait
-    [[self mj_propertyDictForKey:&MJCachedPropertiesKey] removeAllObjects];
+    [[self propertyDictForKey:&MJCachedPropertiesKey] removeAllObjects];
     MJExtensionSemaphoreSignal
 }
 
@@ -226,8 +242,41 @@ static const char MJCachedPropertiesKey = '\0';
     
     MJExtensionSemaphoreCreate
     MJExtensionSemaphoreWait
-    [[self mj_propertyDictForKey:&MJCachedPropertiesKey] removeAllObjects];
+    [[self propertyDictForKey:&MJCachedPropertiesKey] removeAllObjects];
     MJExtensionSemaphoreSignal
 }
 @end
+
+@implementation NSObject (MJPropertyDeprecated_v_2_5_16)
++ (void)enumerateProperties:(MJPropertiesEnumeration)enumeration
+{
+    [self mj_enumerateProperties:enumeration];
+}
+
++ (void)setupNewValueFromOldValue:(MJNewValueFromOldValue)newValueFormOldValue
+{
+    [self mj_setupNewValueFromOldValue:newValueFormOldValue];
+}
+
++ (id)getNewValueFromObject:(__unsafe_unretained id)object oldValue:(__unsafe_unretained id)oldValue property:(__unsafe_unretained MJProperty *)property
+{
+    return [self mj_getNewValueFromObject:object oldValue:oldValue property:property];
+}
+
++ (void)setupReplacedKeyFromPropertyName:(MJReplacedKeyFromPropertyName)replacedKeyFromPropertyName
+{
+    [self mj_setupReplacedKeyFromPropertyName:replacedKeyFromPropertyName];
+}
+
++ (void)setupReplacedKeyFromPropertyName121:(MJReplacedKeyFromPropertyName121)replacedKeyFromPropertyName121
+{
+    [self mj_setupReplacedKeyFromPropertyName121:replacedKeyFromPropertyName121];
+}
+
++ (void)setupObjectClassInArray:(MJObjectClassInArray)objectClassInArray
+{
+    [self mj_setupObjectClassInArray:objectClassInArray];
+}
+@end
+
 #pragma clang diagnostic pop

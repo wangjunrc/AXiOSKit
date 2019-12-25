@@ -11,6 +11,8 @@
 #import "AXChoosePayStyleVC.h"
 #import "UIButton+AXKit.h"
 #import "UIImage+AXBundle.h"
+#import "NSObject+AXKit.h"
+
 @interface AXChoosePayVC ()
 
 @property (weak, nonatomic) IBOutlet UILabel *orderMsgLabel;

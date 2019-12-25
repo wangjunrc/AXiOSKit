@@ -9,6 +9,15 @@
 #import "TZImageRequestOperation.h"
 #import "TZImageManager.h"
 
+@interface TZImageRequestOperation ()
+@property (nonatomic, copy) TZImageRequestCompletedBlock completedBlock;
+@property (nonatomic, copy) TZImageRequestProgressBlock progressBlock;
+@property (nonatomic, strong) PHAsset *asset;
+
+@property (assign, nonatomic, getter = isExecuting) BOOL executing;
+@property (assign, nonatomic, getter = isFinished) BOOL finished;
+@end
+
 @implementation TZImageRequestOperation
 
 @synthesize executing = _executing;

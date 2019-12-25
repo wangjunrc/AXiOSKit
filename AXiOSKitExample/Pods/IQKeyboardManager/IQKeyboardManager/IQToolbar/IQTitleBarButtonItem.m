@@ -30,8 +30,8 @@
 
 @interface IQTitleBarButtonItem ()
 
-@property(nullable, nonatomic, strong) UIView *titleView;
-@property(nullable, nonatomic, strong) UIButton *titleButton;
+@property(nonatomic, strong) UIView *titleView;
+@property(nonatomic, strong) UIButton *titleButton;
 
 @end
 
@@ -56,6 +56,7 @@
         [self setTitleFont:[UIFont systemFontOfSize:13.0]];
         [_titleView addSubview:_titleButton];
         
+#ifdef __IPHONE_11_0
         if (@available(iOS 11.0, *))
         {
             CGFloat layoutDefaultLowPriority = UILayoutPriorityDefaultLow-1;
@@ -80,6 +81,7 @@
             [_titleView addConstraints:@[top,bottom,leading,trailing]];
         }
         else
+#endif
         {
             _titleView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
             _titleButton.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;

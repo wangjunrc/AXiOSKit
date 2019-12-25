@@ -13,6 +13,7 @@
 #import "AXScriptMessageHandlerHelper.h"
 #import <Masonry/Masonry.h>
 #import "AXWebScriptMessageModel.h"
+#import "NSString+AXKit.h"
 
 typedef NS_ENUM(NSInteger, WKWebLoadType){
     WKWebLoadTypeURLString,

@@ -13,14 +13,17 @@
 #import "AXDateVC.h"
 #import "FBLPromises.h"
 #import "UIViewController+AXNavBarConfig.h"
-
+#import "NSObject+AXKit.h"
 #import "FBKVOController.h"
+
 @interface ViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
 @property(nonatomic,strong)CAEmitterLayer *rainLayer;
 @property(nonatomic, strong)CALayer *moveLayer;
 @property(nonatomic, strong)NSTimer  *timer;
+
 @end
 
 @implementation ViewController

@@ -18,7 +18,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 
 @interface UIViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
 
-@property (nonatomic, strong)CameraEditBlock cameraEditBlock;
+@property (nonatomic, copy)CameraEditBlock cameraEditBlock;
 
 @end
 

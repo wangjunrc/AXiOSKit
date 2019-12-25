@@ -7,6 +7,7 @@
 //
 
 #import "AXKeyboardObserve.h"
+#import <UIKit/UIKit.h>
 
 @interface AXKeyboardObserve ()
 

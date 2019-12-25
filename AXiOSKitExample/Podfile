@@ -5,6 +5,7 @@ use_frameworks!
 
 #baseUrl = 'http://git.GitHub.com/ios/'
 #source baseUrl+'axingspecs.git'
+source 'https://github.com/CocoaPods/Specs.git'
 
 workspace 'AXiOSKitExample.xcworkspace'
 

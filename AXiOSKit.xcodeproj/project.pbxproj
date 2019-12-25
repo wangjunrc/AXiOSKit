@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21448E9123B3D69C00BE36A5 /* AXiOSKit in Resources */ = {isa = PBXBuildFile; fileRef = 21448E9023B3D69C00BE36A5 /* AXiOSKit */; };
+		21448E9323B3E4CF00BE36A5 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21448E9223B3E4CF00BE36A5 /* AXiOSKit-Info.plist */; };
 		24064AC622BA58C200F6EC73 /* 命令行.md in Resources */ = {isa = PBXBuildFile; fileRef = 24064AC522BA58C200F6EC73 /* 命令行.md */; };
 		24170BBF22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */; };
 		24170BC022D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */; };
@@ -254,8 +256,6 @@
 		24732ACF2277FBB9005CF92D /* AXHTML.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 247329D92277FBB9005CF92D /* AXHTML.bundle */; };
 		24732B162277FD53005CF92D /* MBProgressHUD+AX.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AD22277FD53005CF92D /* MBProgressHUD+AX.m */; };
 		24732B172277FD53005CF92D /* MBProgressHUD+AX.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AD32277FD53005CF92D /* MBProgressHUD+AX.h */; };
-		24732B182277FD53005CF92D /* lame.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AD72277FD53005CF92D /* lame.h */; };
-		24732B192277FD53005CF92D /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24732AD92277FD53005CF92D /* libmp3lame.a */; };
 		24732B1A2277FD53005CF92D /* NSObject+FBKVOControllerAX.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732ADB2277FD53005CF92D /* NSObject+FBKVOControllerAX.h */; };
 		24732B1B2277FD53005CF92D /* NSObject+FBKVOControllerAX.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732ADC2277FD53005CF92D /* NSObject+FBKVOControllerAX.m */; };
 		24732B1C2277FD53005CF92D /* MSWeakTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732ADE2277FD53005CF92D /* MSWeakTimer.h */; };
@@ -338,6 +338,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21448E9023B3D69C00BE36A5 /* AXiOSKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AXiOSKit; sourceTree = "<group>"; };
+		21448E9223B3E4CF00BE36A5 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
 		24064AC522BA58C200F6EC73 /* 命令行.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "命令行.md"; sourceTree = "<group>"; };
 		24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDeviceFunctionDisableViewController.h; sourceTree = "<group>"; };
 		24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDeviceFunctionDisableViewController.m; sourceTree = "<group>"; };
@@ -348,7 +350,6 @@
 		2469429722EA8E62009E9CB9 /* AXFoundationAssistant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXFoundationAssistant.m; sourceTree = "<group>"; };
 		247328B32277FB8B005CF92D /* AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AXiOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		247328B62277FB8B005CF92D /* AXiOSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXiOSKit.h; sourceTree = "<group>"; };
-		247328B72277FB8B005CF92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		247328BF2277FBB8005CF92D /* AXCollectFile.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = AXCollectFile.md; sourceTree = "<group>"; };
 		247328C02277FBB8005CF92D /* pod_no_use.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = pod_no_use.md; sourceTree = "<group>"; };
 		247328C12277FBB8005CF92D /* pod_use.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = pod_use.md; sourceTree = "<group>"; };
@@ -589,8 +590,6 @@
 		247329D92277FBB9005CF92D /* AXHTML.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AXHTML.bundle; sourceTree = "<group>"; };
 		24732AD22277FD53005CF92D /* MBProgressHUD+AX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+AX.m"; sourceTree = "<group>"; };
 		24732AD32277FD53005CF92D /* MBProgressHUD+AX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+AX.h"; sourceTree = "<group>"; };
-		24732AD72277FD53005CF92D /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
-		24732AD92277FD53005CF92D /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		24732ADB2277FD53005CF92D /* NSObject+FBKVOControllerAX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FBKVOControllerAX.h"; sourceTree = "<group>"; };
 		24732ADC2277FD53005CF92D /* NSObject+FBKVOControllerAX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FBKVOControllerAX.m"; sourceTree = "<group>"; };
 		24732ADE2277FD53005CF92D /* MSWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
@@ -679,7 +678,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24732B192277FD53005CF92D /* libmp3lame.a in Frameworks */,
 				EE6E67F87341AF5B40C46726 /* Pods_AXiOSKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,8 +715,10 @@
 		247328B52277FB8B005CF92D /* AXiOSKit */ = {
 			isa = PBXGroup;
 			children = (
-				247328B62277FB8B005CF92D /* AXiOSKit.h */,
+				21448E9023B3D69C00BE36A5 /* AXiOSKit */,
 				2469429222EA8BA3009E9CB9 /* AXiOSFoundation.h */,
+				247328B62277FB8B005CF92D /* AXiOSKit.h */,
+				21448E9223B3E4CF00BE36A5 /* AXiOSKit-Info.plist */,
 				24A5737D2298EBE700F95D4E /* Class */,
 				247328BE2277FBB8005CF92D /* README */,
 			);
@@ -1195,7 +1195,6 @@
 				24732AFA2277FD53005CF92D /* DZNEmptyDataSet@AX */,
 				24732B032277FD53005CF92D /* FMDB@AX */,
 				24732ADA2277FD53005CF92D /* KVOController@AX */,
-				24732AD42277FD53005CF92D /* lame */,
 				24732AE32277FD53005CF92D /* lame@AX */,
 				24732AD12277FD53005CF92D /* MBProgressHUD@AX */,
 				24732AE62277FD53005CF92D /* MJRefresh@AX */,
@@ -1217,39 +1216,6 @@
 				24732AD32277FD53005CF92D /* MBProgressHUD+AX.h */,
 			);
 			path = "MBProgressHUD@AX";
-			sourceTree = "<group>";
-		};
-		24732AD42277FD53005CF92D /* lame */ = {
-			isa = PBXGroup;
-			children = (
-				24732AD52277FD53005CF92D /* include */,
-				24732AD82277FD53005CF92D /* lib */,
-			);
-			path = lame;
-			sourceTree = "<group>";
-		};
-		24732AD52277FD53005CF92D /* include */ = {
-			isa = PBXGroup;
-			children = (
-				24732AD62277FD53005CF92D /* lame */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		24732AD62277FD53005CF92D /* lame */ = {
-			isa = PBXGroup;
-			children = (
-				24732AD72277FD53005CF92D /* lame.h */,
-			);
-			path = lame;
-			sourceTree = "<group>";
-		};
-		24732AD82277FD53005CF92D /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				24732AD92277FD53005CF92D /* libmp3lame.a */,
-			);
-			path = lib;
 			sourceTree = "<group>";
 		};
 		24732ADA2277FD53005CF92D /* KVOController@AX */ = {
@@ -1400,7 +1366,6 @@
 			isa = PBXGroup;
 			children = (
 				247329D92277FBB9005CF92D /* AXHTML.bundle */,
-				247328B72277FB8B005CF92D /* Info.plist */,
 				247329D82277FBB9005CF92D /* AXiOSKit.xcassets */,
 				247329D42277FBB8005CF92D /* AXKitLocalizedString.strings */,
 				247329D72277FBB8005CF92D /* beep.wav */,
@@ -1546,7 +1511,6 @@
 				24732A272277FBB9005CF92D /* UIButton+AXCountDown.h in Headers */,
 				24F0F0D422C4B938009DD02B /* AXMultiSelectConfig.h in Headers */,
 				24732B1A2277FD53005CF92D /* NSObject+FBKVOControllerAX.h in Headers */,
-				24732B182277FD53005CF92D /* lame.h in Headers */,
 				24732A642277FBB9005CF92D /* IBUILabel.h in Headers */,
 				24732AAA2277FBB9005CF92D /* AXViewController.h in Headers */,
 				24732ABE2277FBB9005CF92D /* AXSafariVC.h in Headers */,
@@ -1746,6 +1710,7 @@
 				247329DC2277FBB9005CF92D /* pod_use.md in Resources */,
 				24732ACE2277FBB9005CF92D /* AXiOSKit.xcassets in Resources */,
 				24732AC22277FBB9005CF92D /* AXGuidePageVC.xib in Resources */,
+				21448E9323B3E4CF00BE36A5 /* AXiOSKit-Info.plist in Resources */,
 				24732A982277FBB9005CF92D /* AXWebVC.xib in Resources */,
 				24732A8E2277FBB9005CF92D /* AXChoosePayStyleVC.xib in Resources */,
 				24732AB72277FBB9005CF92D /* QRCodeViewController.xib in Resources */,
@@ -1754,6 +1719,7 @@
 				24732A8D2277FBB9005CF92D /* AXChoosePayVC.xib in Resources */,
 				24732ACF2277FBB9005CF92D /* AXHTML.bundle in Resources */,
 				24732AB52277FBB9005CF92D /* AXDateVC.xib in Resources */,
+				21448E9123B3D69C00BE36A5 /* AXiOSKit in Resources */,
 				247329DB2277FBB9005CF92D /* pod_no_use.md in Resources */,
 				24732ACC2277FBB9005CF92D /* AXKitLocalizedString.strings in Resources */,
 				24732AB22277FBB9005CF92D /* AXSinglePickVC.xib in Resources */,
@@ -2086,7 +2052,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AXiOSKit/Info.plist;
+				INFOPLIST_FILE = "AXiOSKit/AXiOSKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2112,7 +2078,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AXiOSKit/Info.plist;
+				INFOPLIST_FILE = "AXiOSKit/AXiOSKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

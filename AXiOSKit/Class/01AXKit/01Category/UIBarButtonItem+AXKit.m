@@ -8,6 +8,8 @@
 
 #import "UIBarButtonItem+AXKit.h"
 #import "AXiOSKit.h"
+#import "NSString+AXKit.h"
+
 @implementation UIBarButtonItem (AXKit)
 
 + (instancetype)ax_itemWithImage:(UIImage *)image target:(id)target action:(SEL)action{

@@ -12,6 +12,7 @@
 #include <libkern/OSAtomic.h>
 #include <stdatomic.h>
 #import <objc/runtime.h>
+#import <UIKit/UIKit.h>
 
 /**
  是否能打开url
@@ -230,7 +231,8 @@ BOOL ax_isDebug() {
  @return 是否
  */
 BOOL ax_isiPad(void) {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         return YES;
     } else {
         return NO;

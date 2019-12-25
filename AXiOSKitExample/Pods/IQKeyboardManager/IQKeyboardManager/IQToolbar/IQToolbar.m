@@ -31,7 +31,7 @@
 
 @interface IQTitleBarButtonItem (PrivateAccessor)
 
-@property(nonnull, nonatomic, strong) UIButton *titleButton;
+@property(nonatomic, strong) UIButton *titleButton;
 
 @end
 
@@ -89,6 +89,11 @@
 -(void)dealloc
 {
     self.items = nil;
+    _previousBarButton = nil;
+    _nextBarButton = nil;
+    _titleBarButton = nil;
+    _doneBarButton = nil;
+    _fixedSpaceBarButton = nil;
 }
 
 -(IQBarButtonItem *)previousBarButton
@@ -96,7 +101,7 @@
     if (_previousBarButton == nil)
     {
         _previousBarButton = [[IQBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStylePlain target:nil action:nil];
-        _previousBarButton.accessibilityLabel = @"Previous";
+        _previousBarButton.accessibilityLabel = @"Toolbar Previous Button";
     }
     
     return _previousBarButton;
@@ -107,7 +112,7 @@
     if (_nextBarButton == nil)
     {
         _nextBarButton = [[IQBarButtonItem alloc] initWithImage:nil style:UIBarButtonItemStylePlain target:nil action:nil];
-        _nextBarButton.accessibilityLabel = @"Next";
+        _nextBarButton.accessibilityLabel = @"Toolbar Next Button";
     }
     
     return _nextBarButton;
@@ -118,7 +123,7 @@
     if (_titleBarButton == nil)
     {
         _titleBarButton = [[IQTitleBarButtonItem alloc] initWithTitle:nil];
-        _titleBarButton.accessibilityLabel = @"Title";
+        _titleBarButton.accessibilityLabel = @"Toolbar Title Button";
     }
     
     return _titleBarButton;
@@ -129,7 +134,7 @@
     if (_doneBarButton == nil)
     {
         _doneBarButton = [[IQBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:nil action:nil];
-        _doneBarButton.accessibilityLabel = @"Done";
+        _doneBarButton.accessibilityLabel = @"Toolbar Done Button";
     }
     
     return _doneBarButton;
@@ -140,14 +145,18 @@
     if (_fixedSpaceBarButton == nil)
     {
         _fixedSpaceBarButton = [[IQBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+#ifdef __IPHONE_11_0
         if (@available(iOS 10.0, *))
-        {
-            [_fixedSpaceBarButton setWidth:6];
-        }
-        else
-        {
-            [_fixedSpaceBarButton setWidth:20];
-        }
+#else
+            if (IQ_IS_IOS10_OR_GREATER)
+#endif
+            {
+                [_fixedSpaceBarButton setWidth:6];
+            }
+            else
+            {
+                [_fixedSpaceBarButton setWidth:20];
+            }
     }
     
     return _fixedSpaceBarButton;
@@ -193,8 +202,12 @@
 {
     [super layoutSubviews];
 
+    //If running on Xcode9 (iOS11) only then we'll validate for iOS version, otherwise for older versions of Xcode (iOS10 and below) we'll just execute the tweak
+#ifdef __IPHONE_11_0
     if (@available(iOS 11.0, *)) {}
-    else {
+    else
+#endif
+    {
         CGRect leftRect = CGRectNull;
         CGRect rightRect = CGRectNull;
         
