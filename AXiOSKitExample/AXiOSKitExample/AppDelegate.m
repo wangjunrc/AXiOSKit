@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AXiOSKit/AXiOSKit.h>
-//#import <AXiOSKit/AXConfigureManager.h>
+#import <AXiOSKit/AXConfigureManager.h>
 #import "ViewController.h"
 #import "AANavigationController.h"
 @interface AppDelegate ()
@@ -32,7 +32,7 @@
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
-//    [AXConfigureManager registerCatch];
+    [AXConfigureManager registerCatch];
     
     return YES;
 }

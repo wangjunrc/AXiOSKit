@@ -148,6 +148,8 @@
 #import "AXNetManager+Version.h"
 #import "AXNetManager.h"
 #import "AXNetManagerHeader.h"
+#import "AXNetwork.h"
+#import "AXNetworkManager.h"
 #import "AXAliPayManager.h"
 #import "UIScrollView+AXEmptyDataSet.h"
 #import "DataBase.h"

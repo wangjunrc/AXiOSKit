@@ -67,9 +67,9 @@ axSharedInstance_M;
  * 这里方法只能放类里面,所以用类方法定义
  */
 static void ax_HandleExceptionr(NSException*exception) {
-    NSLog(@"\n↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  xcode运行崩溃  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓");
+    NSLog(@"\n\n⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️  xcode运行崩溃  ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️\n");
     NSLog(@"xcode运行崩溃--> %@\n%@", exception, exception.callStackSymbols);
-    NSLog(@"↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑  xcode运行崩溃  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑\n");
+    NSLog(@"\n\n⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️  xcode运行崩溃  ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️\n");
 }
 
 volatile int32_t UncaughtExceptionCount = 0;

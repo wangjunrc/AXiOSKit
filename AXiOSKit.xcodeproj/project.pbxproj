@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21448E9123B3D69C00BE36A5 /* AXiOSKit in Resources */ = {isa = PBXBuildFile; fileRef = 21448E9023B3D69C00BE36A5 /* AXiOSKit */; };
 		21448E9323B3E4CF00BE36A5 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21448E9223B3E4CF00BE36A5 /* AXiOSKit-Info.plist */; };
+		216B51AE23B4D7BD00A67384 /* AXNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 216B51AB23B4D7BD00A67384 /* AXNetworkManager.m */; };
+		216B51AF23B4D7BD00A67384 /* AXNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 216B51AC23B4D7BD00A67384 /* AXNetwork.h */; };
+		216B51B023B4D7BD00A67384 /* AXNetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 216B51AD23B4D7BD00A67384 /* AXNetworkManager.h */; };
 		24064AC622BA58C200F6EC73 /* 命令行.md in Resources */ = {isa = PBXBuildFile; fileRef = 24064AC522BA58C200F6EC73 /* 命令行.md */; };
 		24170BBF22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */; };
 		24170BC022D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */; };
@@ -338,8 +340,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		21448E9023B3D69C00BE36A5 /* AXiOSKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AXiOSKit; sourceTree = "<group>"; };
 		21448E9223B3E4CF00BE36A5 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
+		216B51AB23B4D7BD00A67384 /* AXNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNetworkManager.m; sourceTree = "<group>"; };
+		216B51AC23B4D7BD00A67384 /* AXNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetwork.h; sourceTree = "<group>"; };
+		216B51AD23B4D7BD00A67384 /* AXNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetworkManager.h; sourceTree = "<group>"; };
 		24064AC522BA58C200F6EC73 /* 命令行.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "命令行.md"; sourceTree = "<group>"; };
 		24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDeviceFunctionDisableViewController.h; sourceTree = "<group>"; };
 		24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDeviceFunctionDisableViewController.m; sourceTree = "<group>"; };
@@ -715,7 +719,6 @@
 		247328B52277FB8B005CF92D /* AXiOSKit */ = {
 			isa = PBXGroup;
 			children = (
-				21448E9023B3D69C00BE36A5 /* AXiOSKit */,
 				2469429222EA8BA3009E9CB9 /* AXiOSFoundation.h */,
 				247328B62277FB8B005CF92D /* AXiOSKit.h */,
 				21448E9223B3E4CF00BE36A5 /* AXiOSKit-Info.plist */,
@@ -1358,6 +1361,9 @@
 				24732B102277FD53005CF92D /* AXNetManager+Version.h */,
 				24732B112277FD53005CF92D /* AXNetManager+Verson.m */,
 				24732B132277FD53005CF92D /* AXNetManagerHeader.h */,
+				216B51AC23B4D7BD00A67384 /* AXNetwork.h */,
+				216B51AD23B4D7BD00A67384 /* AXNetworkManager.h */,
+				216B51AB23B4D7BD00A67384 /* AXNetworkManager.m */,
 			);
 			path = "AFNetworking@AX";
 			sourceTree = "<group>";
@@ -1481,6 +1487,7 @@
 				247329EC2277FBB9005CF92D /* NSURL+AXKit.h in Headers */,
 				247329F52277FBB9005CF92D /* UIImage+AXKit.h in Headers */,
 				2469429422EA8BA3009E9CB9 /* AXiOSFoundation.h in Headers */,
+				216B51AF23B4D7BD00A67384 /* AXNetwork.h in Headers */,
 				24732B412277FD53005CF92D /* AXNetManager.h in Headers */,
 				24732A0B2277FBB9005CF92D /* NSBundle+AXBundle.h in Headers */,
 				24732A6F2277FBB9005CF92D /* AXUNNotificationHandler.h in Headers */,
@@ -1493,6 +1500,7 @@
 				24732A1B2277FBB9005CF92D /* NSUserDefaults+AXKit.h in Headers */,
 				24732B442277FD53005CF92D /* AXNetManager+Upload.h in Headers */,
 				24F0F12822C76944009DD02B /* AXTripleInteractionModel.h in Headers */,
+				216B51B023B4D7BD00A67384 /* AXNetworkManager.h in Headers */,
 				24732B452277FD53005CF92D /* AXNetManagerHeader.h in Headers */,
 				24F0F0D022C4B90B009DD02B /* AXMultiSelectViewController.h in Headers */,
 				24732A7C2277FBB9005CF92D /* AXHelper.h in Headers */,
@@ -1719,7 +1727,6 @@
 				24732A8D2277FBB9005CF92D /* AXChoosePayVC.xib in Resources */,
 				24732ACF2277FBB9005CF92D /* AXHTML.bundle in Resources */,
 				24732AB52277FBB9005CF92D /* AXDateVC.xib in Resources */,
-				21448E9123B3D69C00BE36A5 /* AXiOSKit in Resources */,
 				247329DB2277FBB9005CF92D /* pod_no_use.md in Resources */,
 				24732ACC2277FBB9005CF92D /* AXKitLocalizedString.strings in Resources */,
 				24732AB22277FBB9005CF92D /* AXSinglePickVC.xib in Resources */,
@@ -1879,6 +1886,7 @@
 				247329EB2277FBB9005CF92D /* UISwitch+AXKit.m in Sources */,
 				247329EE2277FBB9005CF92D /* NSObject+AXKit.m in Sources */,
 				24732A692277FBB9005CF92D /* IBUIImageView.m in Sources */,
+				216B51AE23B4D7BD00A67384 /* AXNetworkManager.m in Sources */,
 				247329E42277FBB9005CF92D /* UIView+AXKit.m in Sources */,
 				24732A152277FBB9005CF92D /* NSNumber+AXKit.m in Sources */,
 				24732A572277FBB9005CF92D /* AXTouchIDManager.m in Sources */,

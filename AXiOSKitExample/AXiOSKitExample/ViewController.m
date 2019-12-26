@@ -15,6 +15,8 @@
 #import "UIViewController+AXNavBarConfig.h"
 #import "NSObject+AXKit.h"
 #import "FBKVOController.h"
+#import <AXiOSKit/AXNetworkManager.h>
+#import "AXNetworkTestViewController.h"
 
 @interface ViewController ()
 
@@ -96,8 +98,14 @@
     btn3.ax_top = btn2.ax_bottom+10;
     btn3.ax_left = btn2.ax_left;
     [btn3 ax_addActionBlock:^(UIButton * _Nullable button) {
-        AAViewController *aa = [AAViewController ax_init];
-        [self ax_showVC:aa];
+//        AAViewController *aa = [AAViewController ax_init];
+//        [self ax_showVC:aa];
+        
+                AXNetworkTestViewController *aa = [AXNetworkTestViewController ax_init];
+                [self ax_showVC:aa];
+        
+        
+
         
     }];
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		216B51B423B4DA2800A67384 /* AXNetworkTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216B51B223B4DA2800A67384 /* AXNetworkTestViewController.m */; };
+		216B51B523B4DA2800A67384 /* AXNetworkTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216B51B323B4DA2800A67384 /* AXNetworkTestViewController.xib */; };
 		24064A8922BA3A5A00F6EC73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24064A8822BA3A5A00F6EC73 /* AppDelegate.m */; };
 		24064A8C22BA3A5A00F6EC73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24064A8B22BA3A5A00F6EC73 /* ViewController.m */; };
 		24064A8F22BA3A5A00F6EC73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24064A8D22BA3A5A00F6EC73 /* Main.storyboard */; };
@@ -42,6 +44,9 @@
 
 /* Begin PBXFileReference section */
 		00ED64151ED237DEDBADFC65 /* Pods-AXiOSKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.debug.xcconfig"; sourceTree = "<group>"; };
+		216B51B123B4DA2800A67384 /* AXNetworkTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXNetworkTestViewController.h; sourceTree = "<group>"; };
+		216B51B223B4DA2800A67384 /* AXNetworkTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXNetworkTestViewController.m; sourceTree = "<group>"; };
+		216B51B323B4DA2800A67384 /* AXNetworkTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AXNetworkTestViewController.xib; sourceTree = "<group>"; };
 		24064A8422BA3A5A00F6EC73 /* AXiOSKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24064A8722BA3A5A00F6EC73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24064A8822BA3A5A00F6EC73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -136,6 +141,9 @@
 				24064A9222BA3A5B00F6EC73 /* LaunchScreen.storyboard */,
 				24064A9522BA3A5B00F6EC73 /* Info.plist */,
 				24064A9622BA3A5B00F6EC73 /* main.m */,
+				216B51B123B4DA2800A67384 /* AXNetworkTestViewController.h */,
+				216B51B223B4DA2800A67384 /* AXNetworkTestViewController.m */,
+				216B51B323B4DA2800A67384 /* AXNetworkTestViewController.xib */,
 				24D81C3822D9919700142F07 /* File.strings */,
 			);
 			path = AXiOSKitExample;
@@ -283,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24064AC422BA531500F6EC73 /* AAViewController.xib in Resources */,
+				216B51B523B4DA2800A67384 /* AXNetworkTestViewController.xib in Resources */,
 				24064A9422BA3A5B00F6EC73 /* LaunchScreen.storyboard in Resources */,
 				24D81C3622D9919700142F07 /* File.strings in Resources */,
 				24064A9122BA3A5B00F6EC73 /* Assets.xcassets in Resources */,
@@ -356,6 +365,7 @@
 			files = (
 				24064A8C22BA3A5A00F6EC73 /* ViewController.m in Sources */,
 				24064A9722BA3A5B00F6EC73 /* main.m in Sources */,
+				216B51B423B4DA2800A67384 /* AXNetworkTestViewController.m in Sources */,
 				49BFF31E23993E0800F5650B /* AANavigationController.m in Sources */,
 				24064AC322BA531500F6EC73 /* AAViewController.m in Sources */,
 				24064A8922BA3A5A00F6EC73 /* AppDelegate.m in Sources */,
