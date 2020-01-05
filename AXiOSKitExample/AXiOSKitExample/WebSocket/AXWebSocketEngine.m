@@ -1,14 +1,14 @@
 //
-//  AXWebSocketManager.m
+//  AXWebSocketEngine.m
 //  AXiOSKit
 //
-//  Created by AXing on 2019/3/29.
-//  Copyright © 2019 liu.weixing. All rights reserved.
+//  Created by liuweixing on 2020/1/5.
+//  Copyright © 2020 liu.weixing. All rights reserved.
 //
 
-#import "AXWebSocketManager.h"
-#if __has_include(<SocketRocket/SocketRocket.h>)
-
+#import "AXWebSocketEngine.h"
+//#if __has_include(<SocketRocket/SocketRocket.h>)
+#import <SocketRocket/SRWebSocket.h>
 #import "AFNetworkReachabilityManager.h"
 
 #ifndef dispatch_queue_async_safe
@@ -22,23 +22,31 @@ dispatch_async(queue, block);\
 
 #ifndef dispatch_main_async_safe
 #define dispatch_main_async_safe(block) dispatch_queue_async_safe(dispatch_get_main_queue(), block)
-#endif
+//#endif
 
-@interface AXWebSocketManager ()<SRWebSocketDelegate>
+@interface AXWebSocketEngine ()<SRWebSocketDelegate>
+
+
+@property (nonatomic, strong) SRWebSocket *webSocket;
 
 @property (nonatomic, strong) NSTimer *heartBeatTimer; //心跳定时器
 @property (nonatomic, strong) NSTimer *netWorkTestingTimer; //没有网络的时候检测网络定时器
 @property (nonatomic, assign) NSTimeInterval reConnectTime; //重连时间
 @property (nonatomic, assign) BOOL isActivelyClose;    //用于判断是否主动关闭长连接，如果是主动断开连接，连接失败的代理中，就不用执行 重新连接方法
 
+/**
+ * NSInteger )userid
+ */
+@property(nonatomic,assign) NSInteger userid;
 @end
-@implementation WebSocketManager
+@implementation AXWebSocketEngine
 
-+(instancetype)shared{
-    static WebSocketManager *_instance = nil;
++ (AXWebSocketEngine *)shared{
+    
+    static AXWebSocketEngine *_instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _instance = [[self alloc]init];
+        _instance = [[AXWebSocketEngine alloc]init];
     });
     return _instance;
 }
@@ -54,16 +62,18 @@ dispatch_async(queue, block);\
 }
 
 //建立长连接
-- (void)connectServer{
+- (void)connectServer:(NSInteger )userid {
+    self.userid = userid;
     self.isActivelyClose = NO;
     
     self.webSocket.delegate = nil;
     [self.webSocket close];
     _webSocket = nil;
-    //    self.webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"https://dev-im-gateway.runxsports.com/ws/token=88888888"]];
-    //    self.webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"ws://chat.workerman.net:7272"]];
     
-    self.webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:@"ws://localhost:8080/chat"]];
+    
+    NSString *url = [NSString stringWithFormat:@"ws://localhost:8080/chat/%ld",userid];
+    
+    self.webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:url]];
     
     self.webSocket.delegate = self;
     [self.webSocket open];
@@ -189,7 +199,7 @@ dispatch_async(queue, block);\
             return;
         }
         
-        [weakSelf connectServer];
+        [weakSelf connectServer:self.userid];
         //        CTHLog(@"正在重连......");
         
         if(weakSelf.reConnectTime == 0){  //重连时间2的指数级增长
@@ -276,9 +286,9 @@ dispatch_async(queue, block);\
     [self destoryNetWorkStartTesting];
 }
 
-
 //发送数据给服务器
-- (void)sendDataToServer:(NSString *)data{
+-(void)setSendMesssage:(NSString *)sendMesssage {
+    NSString *data = sendMesssage;
     //没有网络
     if (AFNetworkReachabilityManager.sharedManager.networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable)
     {
@@ -306,7 +316,7 @@ dispatch_async(queue, block);\
         }
         else
         {
-            [self connectServer]; //连接服务器
+            [self connectServer:self.userid]; //连接服务器
         }
     }
 }

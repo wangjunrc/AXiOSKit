@@ -17,6 +17,8 @@
 #import "FBKVOController.h"
 #import <AXiOSKit/AXNetworkManager.h>
 #import "AXNetworkTestViewController.h"
+#import "ChatViewController.h"
+#import "ChatTextMessageModel.h"
 
 @interface ViewController ()
 
@@ -100,12 +102,26 @@
     [btn3 ax_addActionBlock:^(UIButton * _Nullable button) {
 //        AAViewController *aa = [AAViewController ax_init];
 //        [self ax_showVC:aa];
-        
-                AXNetworkTestViewController *aa = [AXNetworkTestViewController ax_init];
-                [self ax_showVC:aa];
-        
+//
+//                AXNetworkTestViewController *aa = [AXNetworkTestViewController ax_init];
+//                [self ax_showVC:aa];
         
 
+//        ChatViewController *aa = [ChatViewController ax_init];
+//        [self ax_showVC:aa];
+      
+        
+        
+        ChatTextMessageModel *model = [[ChatTextMessageModel alloc]init];
+        model.userid = 100;
+        model.toUserId = 200;
+        model.content = @"aa";
+        
+       NSString *str  =[model mj_JSONString];
+          NSLog(@"str>> %@",str);
+       ChatTextMessageModel *model2 =  [ChatTextMessageModel mj_objectWithKeyValues:str];
+        
+        NSLog(@"%@",model2.content);
         
     }];
 }

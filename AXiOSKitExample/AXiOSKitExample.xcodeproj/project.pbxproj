@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		216B51B423B4DA2800A67384 /* AXNetworkTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216B51B223B4DA2800A67384 /* AXNetworkTestViewController.m */; };
 		216B51B523B4DA2800A67384 /* AXNetworkTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216B51B323B4DA2800A67384 /* AXNetworkTestViewController.xib */; };
+		216F93CD23C23AE200760CC9 /* AXWebSocketEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F93CC23C23AE200760CC9 /* AXWebSocketEngine.m */; };
+		216F93D923C2405E00760CC9 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216F93D123C2405E00760CC9 /* ChatViewController.xib */; };
+		216F93DA23C2405E00760CC9 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F93D223C2405E00760CC9 /* ChatViewController.m */; };
+		216F93DB23C2405E00760CC9 /* ChatMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F93D523C2405E00760CC9 /* ChatMessageModel.m */; };
+		216F93DC23C2405E00760CC9 /* ChatTextMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F93D723C2405E00760CC9 /* ChatTextMessageModel.m */; };
+		216F93DF23C2644C00760CC9 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F93DE23C2644C00760CC9 /* TableViewController.m */; };
 		24064A8922BA3A5A00F6EC73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24064A8822BA3A5A00F6EC73 /* AppDelegate.m */; };
 		24064A8C22BA3A5A00F6EC73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24064A8B22BA3A5A00F6EC73 /* ViewController.m */; };
 		24064A8F22BA3A5A00F6EC73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24064A8D22BA3A5A00F6EC73 /* Main.storyboard */; };
@@ -47,6 +53,17 @@
 		216B51B123B4DA2800A67384 /* AXNetworkTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXNetworkTestViewController.h; sourceTree = "<group>"; };
 		216B51B223B4DA2800A67384 /* AXNetworkTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXNetworkTestViewController.m; sourceTree = "<group>"; };
 		216B51B323B4DA2800A67384 /* AXNetworkTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AXNetworkTestViewController.xib; sourceTree = "<group>"; };
+		216F93CB23C23AE200760CC9 /* AXWebSocketEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWebSocketEngine.h; sourceTree = "<group>"; };
+		216F93CC23C23AE200760CC9 /* AXWebSocketEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWebSocketEngine.m; sourceTree = "<group>"; };
+		216F93D123C2405E00760CC9 /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		216F93D223C2405E00760CC9 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		216F93D323C2405E00760CC9 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		216F93D523C2405E00760CC9 /* ChatMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageModel.m; sourceTree = "<group>"; };
+		216F93D623C2405E00760CC9 /* ChatTextMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTextMessageModel.h; sourceTree = "<group>"; };
+		216F93D723C2405E00760CC9 /* ChatTextMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTextMessageModel.m; sourceTree = "<group>"; };
+		216F93D823C2405E00760CC9 /* ChatMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageModel.h; sourceTree = "<group>"; };
+		216F93DD23C2644C00760CC9 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		216F93DE23C2644C00760CC9 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		24064A8422BA3A5A00F6EC73 /* AXiOSKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24064A8722BA3A5A00F6EC73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24064A8822BA3A5A00F6EC73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,6 +118,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		216F93CA23C23AE200760CC9 /* WebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				216F93CB23C23AE200760CC9 /* AXWebSocketEngine.h */,
+				216F93CC23C23AE200760CC9 /* AXWebSocketEngine.m */,
+			);
+			path = WebSocket;
+			sourceTree = "<group>";
+		};
+		216F93CF23C2405E00760CC9 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				216F93D023C2405E00760CC9 /* Controller */,
+				216F93D423C2405E00760CC9 /* Model */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		216F93D023C2405E00760CC9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				216F93D323C2405E00760CC9 /* ChatViewController.h */,
+				216F93D223C2405E00760CC9 /* ChatViewController.m */,
+				216F93D123C2405E00760CC9 /* ChatViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		216F93D423C2405E00760CC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				216F93D823C2405E00760CC9 /* ChatMessageModel.h */,
+				216F93D523C2405E00760CC9 /* ChatMessageModel.m */,
+				216F93D623C2405E00760CC9 /* ChatTextMessageModel.h */,
+				216F93D723C2405E00760CC9 /* ChatTextMessageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		24064A7B22BA3A5A00F6EC73 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +182,8 @@
 		24064A8622BA3A5A00F6EC73 /* AXiOSKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				216F93CF23C2405E00760CC9 /* Chat */,
+				216F93CA23C23AE200760CC9 /* WebSocket */,
 				24064ABE22BA430F00F6EC73 /* H5.bundle */,
 				24064A8722BA3A5A00F6EC73 /* AppDelegate.h */,
 				24064A8822BA3A5A00F6EC73 /* AppDelegate.m */,
@@ -135,6 +193,8 @@
 				24064A8B22BA3A5A00F6EC73 /* ViewController.m */,
 				24064AC022BA531500F6EC73 /* AAViewController.h */,
 				24064AC122BA531500F6EC73 /* AAViewController.m */,
+				216F93DD23C2644C00760CC9 /* TableViewController.h */,
+				216F93DE23C2644C00760CC9 /* TableViewController.m */,
 				24064AC222BA531500F6EC73 /* AAViewController.xib */,
 				24064A8D22BA3A5A00F6EC73 /* Main.storyboard */,
 				24064A9022BA3A5B00F6EC73 /* Assets.xcassets */,
@@ -296,6 +356,7 @@
 				24D81C3622D9919700142F07 /* File.strings in Resources */,
 				24064A9122BA3A5B00F6EC73 /* Assets.xcassets in Resources */,
 				24064ABF22BA430F00F6EC73 /* H5.bundle in Resources */,
+				216F93D923C2405E00760CC9 /* ChatViewController.xib in Resources */,
 				24064A8F22BA3A5A00F6EC73 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,12 +424,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				216F93DF23C2644C00760CC9 /* TableViewController.m in Sources */,
 				24064A8C22BA3A5A00F6EC73 /* ViewController.m in Sources */,
 				24064A9722BA3A5B00F6EC73 /* main.m in Sources */,
+				216F93DC23C2405E00760CC9 /* ChatTextMessageModel.m in Sources */,
 				216B51B423B4DA2800A67384 /* AXNetworkTestViewController.m in Sources */,
 				49BFF31E23993E0800F5650B /* AANavigationController.m in Sources */,
 				24064AC322BA531500F6EC73 /* AAViewController.m in Sources */,
+				216F93CD23C23AE200760CC9 /* AXWebSocketEngine.m in Sources */,
+				216F93DA23C2405E00760CC9 /* ChatViewController.m in Sources */,
 				24064A8922BA3A5A00F6EC73 /* AppDelegate.m in Sources */,
+				216F93DB23C2405E00760CC9 /* ChatMessageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

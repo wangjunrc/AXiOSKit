@@ -7,6 +7,7 @@
 //
 
 #import "AXNetworkTestViewController.h"
+#import "AXNetworkManager.h"
 
 @interface AXNetworkTestViewController ()
 
@@ -20,13 +21,14 @@
 }
 - (IBAction)action1:(id)sender {
     
-    //        AXNetworkManager.manager.get(@"http://localhost:8080/login.do").addParameters(@{@"username":@"jim",@"password":@"123456"}).successHandler(^(id  _Nonnull json) {
-    //
-    //            AXLoger(@"json>> %@",json);
-    //
-    //        }).failureHandler(^(NSError * _Nonnull error) {
-    //             AXLoger(@"error>> %@",error);
-    //        }).start();
+            AXNetworkManager.manager.get(@"http://localhost:8080/login.do").addParameters(@{@"username":@"jim",@"password":@"123456"}).successHandler(^(id  _Nonnull json) {
+    
+                NSLog(@"json>> %@",json);
+    
+            }).failureHandler(^(NSError * _Nonnull error) {
+                 NSLog(@"error>> %@",error);
+            }).start();
+    
             
     //        [AXNetManager getURL:@"http://localhost:8080/login.do" parameters:@{@"username":@"jim",@"password":@"123456"} success:^(id json) {
     //            AXLoger(@"json>> %@",json);

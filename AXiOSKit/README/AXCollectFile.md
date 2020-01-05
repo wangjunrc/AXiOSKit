@@ -1391,3 +1391,13 @@ reject([NSError errorWithDomain:@"work2_error" code:-1 userInfo:nil]);
 }];
 }
 ```
+# 字典中存放block
+```
+@{
+    @"title":@"暗黑主题-ViewController",
+    @"action":  ^{
+        ViewController *vc = [[ViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    },
+},
+```

@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21448E9323B3E4CF00BE36A5 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21448E9223B3E4CF00BE36A5 /* AXiOSKit-Info.plist */; };
 		216B51AE23B4D7BD00A67384 /* AXNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 216B51AB23B4D7BD00A67384 /* AXNetworkManager.m */; };
 		216B51AF23B4D7BD00A67384 /* AXNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 216B51AC23B4D7BD00A67384 /* AXNetwork.h */; };
 		216B51B023B4D7BD00A67384 /* AXNetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 216B51AD23B4D7BD00A67384 /* AXNetworkManager.h */; };
+		216F93C423C235F800760CC9 /* AXWebSocketManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 216F93C223C235F800760CC9 /* AXWebSocketManager.h */; };
+		216F93C523C235F800760CC9 /* AXWebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F93C323C235F800760CC9 /* AXWebSocketManager.m */; };
 		24064AC622BA58C200F6EC73 /* 命令行.md in Resources */ = {isa = PBXBuildFile; fileRef = 24064AC522BA58C200F6EC73 /* 命令行.md */; };
 		24170BBF22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */; };
 		24170BC022D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */; };
@@ -280,8 +281,6 @@
 		24732B2D2277FD53005CF92D /* NSObject+AXCacheImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AF32277FD53005CF92D /* NSObject+AXCacheImage.m */; };
 		24732B2E2277FD53005CF92D /* AXPhotoBrowserVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AF52277FD53005CF92D /* AXPhotoBrowserVC.h */; };
 		24732B2F2277FD53005CF92D /* AXPhotoBrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AF62277FD53005CF92D /* AXPhotoBrowserVC.m */; };
-		24732B302277FD53005CF92D /* AXWebSocketManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AF82277FD53005CF92D /* AXWebSocketManager.h */; };
-		24732B312277FD53005CF92D /* AXWebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AF92277FD53005CF92D /* AXWebSocketManager.m */; };
 		24732B322277FD53005CF92D /* UIScrollView+AXEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AFB2277FD53005CF92D /* UIScrollView+AXEmptyDataSet.m */; };
 		24732B332277FD53005CF92D /* UIScrollView+AXEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AFC2277FD53005CF92D /* UIScrollView+AXEmptyDataSet.h */; };
 		24732B342277FD53005CF92D /* AXAliPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AFE2277FD53005CF92D /* AXAliPayManager.m */; };
@@ -344,6 +343,8 @@
 		216B51AB23B4D7BD00A67384 /* AXNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNetworkManager.m; sourceTree = "<group>"; };
 		216B51AC23B4D7BD00A67384 /* AXNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetwork.h; sourceTree = "<group>"; };
 		216B51AD23B4D7BD00A67384 /* AXNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetworkManager.h; sourceTree = "<group>"; };
+		216F93C223C235F800760CC9 /* AXWebSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWebSocketManager.h; sourceTree = "<group>"; };
+		216F93C323C235F800760CC9 /* AXWebSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWebSocketManager.m; sourceTree = "<group>"; };
 		24064AC522BA58C200F6EC73 /* 命令行.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "命令行.md"; sourceTree = "<group>"; };
 		24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDeviceFunctionDisableViewController.h; sourceTree = "<group>"; };
 		24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDeviceFunctionDisableViewController.m; sourceTree = "<group>"; };
@@ -616,8 +617,6 @@
 		24732AF32277FD53005CF92D /* NSObject+AXCacheImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AXCacheImage.m"; sourceTree = "<group>"; };
 		24732AF52277FD53005CF92D /* AXPhotoBrowserVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXPhotoBrowserVC.h; sourceTree = "<group>"; };
 		24732AF62277FD53005CF92D /* AXPhotoBrowserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXPhotoBrowserVC.m; sourceTree = "<group>"; };
-		24732AF82277FD53005CF92D /* AXWebSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWebSocketManager.h; sourceTree = "<group>"; };
-		24732AF92277FD53005CF92D /* AXWebSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWebSocketManager.m; sourceTree = "<group>"; };
 		24732AFB2277FD53005CF92D /* UIScrollView+AXEmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+AXEmptyDataSet.m"; sourceTree = "<group>"; };
 		24732AFC2277FD53005CF92D /* UIScrollView+AXEmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+AXEmptyDataSet.h"; sourceTree = "<group>"; };
 		24732AFE2277FD53005CF92D /* AXAliPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXAliPayManager.m; sourceTree = "<group>"; };
@@ -689,6 +688,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		216F93C123C235F800760CC9 /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				216F93C223C235F800760CC9 /* AXWebSocketManager.h */,
+				216F93C323C235F800760CC9 /* AXWebSocketManager.m */,
+			);
+			path = SocketRocket;
+			sourceTree = "<group>";
+		};
 		22408E2038A31DF4963FFC5B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1193,6 +1201,7 @@
 		24732AD02277FD53005CF92D /* 02ThirdKit */ = {
 			isa = PBXGroup;
 			children = (
+				216F93C123C235F800760CC9 /* SocketRocket */,
 				24732B0C2277FD53005CF92D /* AFNetworking@AX */,
 				24732AFD2277FD53005CF92D /* AliPay@AX */,
 				24732AFA2277FD53005CF92D /* DZNEmptyDataSet@AX */,
@@ -1204,7 +1213,6 @@
 				24732ADD2277FD53005CF92D /* MSWeakTimer */,
 				24732AF42277FD53005CF92D /* PhotoBrowser@AX */,
 				24732AED2277FD53005CF92D /* SDWebImage@AX */,
-				24732AF72277FD53005CF92D /* SocketRocket@AX */,
 				24732AE02277FD53005CF92D /* UMengUShare@AX */,
 				24732B082277FD53005CF92D /* WKWebViewController */,
 				24732B002277FD53005CF92D /* YYLabel@AX */,
@@ -1290,15 +1298,6 @@
 				24732AF62277FD53005CF92D /* AXPhotoBrowserVC.m */,
 			);
 			path = "PhotoBrowser@AX";
-			sourceTree = "<group>";
-		};
-		24732AF72277FD53005CF92D /* SocketRocket@AX */ = {
-			isa = PBXGroup;
-			children = (
-				24732AF82277FD53005CF92D /* AXWebSocketManager.h */,
-				24732AF92277FD53005CF92D /* AXWebSocketManager.m */,
-			);
-			path = "SocketRocket@AX";
 			sourceTree = "<group>";
 		};
 		24732AFA2277FD53005CF92D /* DZNEmptyDataSet@AX */ = {
@@ -1525,11 +1524,11 @@
 				24732A702277FBB9005CF92D /* AXGCDTimer.h in Headers */,
 				24732A232277FBB9005CF92D /* UIView+AXSheet.h in Headers */,
 				24732A732277FBB9005CF92D /* AXObject.h in Headers */,
-				24732B302277FD53005CF92D /* AXWebSocketManager.h in Headers */,
 				247328B82277FB8B005CF92D /* AXiOSKit.h in Headers */,
 				24732A072277FBB9005CF92D /* NSDateComponents+AXKit.h in Headers */,
 				24732A972277FBB9005CF92D /* AXJSContext.h in Headers */,
 				24732A3B2277FBB9005CF92D /* UITableView+AXKit.h in Headers */,
+				216F93C423C235F800760CC9 /* AXWebSocketManager.h in Headers */,
 				247329E22277FBB9005CF92D /* UITextView+AXKit.h in Headers */,
 				24732A3E2277FBB9005CF92D /* UIControl+AXKit.h in Headers */,
 				24732B9822782D9E005CF92D /* AXWebScriptMessageModel.h in Headers */,
@@ -1674,7 +1673,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AX;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = liu.weixing;
 				TargetAttributes = {
 					247328B22277FB8B005CF92D = {
@@ -1718,7 +1717,6 @@
 				247329DC2277FBB9005CF92D /* pod_use.md in Resources */,
 				24732ACE2277FBB9005CF92D /* AXiOSKit.xcassets in Resources */,
 				24732AC22277FBB9005CF92D /* AXGuidePageVC.xib in Resources */,
-				21448E9323B3E4CF00BE36A5 /* AXiOSKit-Info.plist in Resources */,
 				24732A982277FBB9005CF92D /* AXWebVC.xib in Resources */,
 				24732A8E2277FBB9005CF92D /* AXChoosePayStyleVC.xib in Resources */,
 				24732AB72277FBB9005CF92D /* QRCodeViewController.xib in Resources */,
@@ -1789,6 +1787,7 @@
 				24732AC42277FBB9005CF92D /* AXGuidePageCell.m in Sources */,
 				24732A6A2277FBB9005CF92D /* IBUIView.m in Sources */,
 				24732B1D2277FD53005CF92D /* MSWeakTimer.m in Sources */,
+				216F93C523C235F800760CC9 /* AXWebSocketManager.m in Sources */,
 				24732AB02277FBB9005CF92D /* AXAlerUpwardAnimation.m in Sources */,
 				24732A452277FBB9005CF92D /* UISlider+AXKit.m in Sources */,
 				24732AAB2277FBB9005CF92D /* AXAlertCentreAnimation.m in Sources */,
@@ -1877,7 +1876,6 @@
 				24732A7B2277FBB9005CF92D /* AXConfigureManager.m in Sources */,
 				24732AA42277FBB9005CF92D /* AXNavigationController.m in Sources */,
 				24732A712277FBB9005CF92D /* AXGCDTimer.m in Sources */,
-				24732B312277FD53005CF92D /* AXWebSocketManager.m in Sources */,
 				24F0F0C922C4B7F5009DD02B /* AXNavigationBar.m in Sources */,
 				24732B222277FD53005CF92D /* UIScrollView+AXRefresh.m in Sources */,
 				24732B342277FD53005CF92D /* AXAliPayManager.m in Sources */,

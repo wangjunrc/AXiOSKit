@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, AxRequestSerializerType) {
 
 @property (class, nonatomic, readonly, strong)AXNetworkManager *manager;
 
-@property (class, nonatomic, readonly, strong)AXNetworkManager *(^managerWithURL)(NSString *baseURL);;
+@property (class, nonatomic, readonly, strong)AXNetworkManager *(^managerWithURL)(NSString *baseURL);
 
 @property (nonatomic, readonly, copy) AXNetworkManager *(^serializerType)(AxRequestSerializerType serializerType);
 

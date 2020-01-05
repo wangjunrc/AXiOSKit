@@ -1,18 +1,14 @@
 //
-//  AXWebSocketManager.h
+//  AXWebSocketEngine.h
 //  AXiOSKit
 //
-//  Created by AXing on 2019/3/29.
-//  Copyright © 2019 liu.weixing. All rights reserved.
+//  Created by liuweixing on 2020/1/5.
+//  Copyright © 2020 liu.weixing. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-#if __has_include(<SocketRocket/SocketRocket.h>)
 
-#import <SocketRocket/SocketRocket.h>
-
-//#import "SocketRocket.h"
 
 typedef NS_ENUM(NSUInteger,WebSocketConnectType){
     WebSocketDefault = 0, //初始状态,未连接
@@ -23,22 +19,26 @@ typedef NS_ENUM(NSUInteger,WebSocketConnectType){
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AXWebSocketManager : NSObject
+@interface AXWebSocketEngine : NSObject
 
-@property (nonatomic, strong) SRWebSocket *webSocket;
+@property (class, nonatomic, readonly, strong)AXWebSocketEngine *shared;
 
 @property (nonatomic, assign)   BOOL isConnect;  //是否连接
 @property (nonatomic, assign)   WebSocketConnectType connectType;
 
-+(instancetype)shared;
-- (void)connectServer;//建立长连接
+
+- (void)connectServer:(NSInteger )userid;//建立长连接
 - (void)reConnectServer;//重新连接
 - (void)RMWebSocketClose;//关闭长连接
-- (void)sendDataToServer:(NSString *)data;//发送数据给服务器
+
+/**发送数据给服务器*/
+@property (nonatomic, copy) NSString *sendMesssage;
+
 /**接收到消息*/
 @property (nonatomic, copy) void(^didReceiveMessage)(id message);
+
 @end
 
 NS_ASSUME_NONNULL_END
 
-#endif
+//#endif

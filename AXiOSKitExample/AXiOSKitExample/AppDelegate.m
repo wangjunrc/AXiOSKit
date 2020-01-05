@@ -11,6 +11,8 @@
 #import <AXiOSKit/AXConfigureManager.h>
 #import "ViewController.h"
 #import "AANavigationController.h"
+#import "TableViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -19,7 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    ViewController *roorvc = [[ViewController alloc]init];
+    TableViewController *roorvc = [[TableViewController alloc]init];
     AANavigationController *nav = [[AANavigationController alloc]initWithRootViewController:roorvc];
     
     self.window = [[UIWindow alloc]initWithFrame:UIScreen.mainScreen.bounds];
