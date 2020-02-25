@@ -1401,3 +1401,24 @@ reject([NSError errorWithDomain:@"work2_error" code:-1 userInfo:nil]);
     },
 },
 ```
+
+# InjectionIII
+```
+#if DEBUG
+    //    for iOS
+    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection10.bundle"] load];
+    //    for tvOS
+    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/tvOSInjection10.bundle"] load];
+    //    for masOS
+    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/macOSInjection10.bundle"] load];
+#endif
+```
+
+### 在注入界面.m文件中实现- (void)injected方法然后所有的需要调试的界面，都写在injected方法里面
+```
+- (void)injected{
+    NSLog(@"I've been injected: %@", self);
+    [self viewDidLoad];
+}
+
+```
