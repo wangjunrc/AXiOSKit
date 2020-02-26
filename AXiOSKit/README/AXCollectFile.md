@@ -1422,3 +1422,35 @@ reject([NSError errorWithDomain:@"work2_error" code:-1 userInfo:nil]);
 }
 
 ```
+
+# 隐藏导航栏
+```
+@interface AAViewController () <UINavigationControllerDelegate,UIGestureRecognizerDelegate>
+
+@end
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.view.backgroundColor = UIColor.redColor;
+    
+    // 设置导航控制器的代理为self
+    self.navigationController.delegate = self;
+    // 必须设置,不然返回手势失效
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+}
+#pragma mark - UINavigationControllerDelegate
+//将要显示控制器
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    // 判断要显示的控制器是否是自己
+    BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
+    [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
+}
+
+
+
+- (void)dealloc {
+    self.navigationController.delegate = nil;
+    NSLog(@"dealloc>>>>");
+}
+```

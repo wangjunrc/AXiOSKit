@@ -9,6 +9,8 @@
 #import "TableViewController.h"
 #import "ViewController.h"
 #import "ChatViewController.h"
+#import "UIViewController+AXKit.h"
+
 typedef void (^CollectionBlock)(void);
 
 @interface TableViewController ()
@@ -40,17 +42,17 @@ typedef void (^CollectionBlock)(void);
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSDictionary *dict = self.dataArray[indexPath.row];
-     
-   void (^didSelectRowAtIndexPath)(void) = dict[@"action"];
+    
+    void (^didSelectRowAtIndexPath)(void) = dict[@"action"];
     
     didSelectRowAtIndexPath();
-             
+    
 }
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
         _dataArray = @[
-        
+            
             @{
                 @"title":@"暗黑主题-ViewController",
                 @"action":  ^{
@@ -59,12 +61,23 @@ typedef void (^CollectionBlock)(void);
                 },
             },
             @{
-                          @"title":@"聊天-ChatViewController",
-                          @"action":  ^{
-                              ChatViewController *vc = [[ChatViewController alloc]init];
-                              [self.navigationController pushViewController:vc animated:YES];
-                          },
-                      },
+                @"title":@"聊天-ChatViewController",
+                @"action":  ^{
+                    ChatViewController *vc = [[ChatViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+            },
+            
+            @{
+                @"title":@"隐藏导航栏",
+                @"action":  ^{
+                    ViewController *vc = [[ViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                    vc.ax_shouldNavigationBarHidden = YES;
+                },
+            },
+            
+            
         ];
     }
     return _dataArray;

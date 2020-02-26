@@ -127,4 +127,8 @@
  */
 - (void)ax_pushVC:(UIViewController *)aVC;
 
+
+/// 是否隐藏导航栏。默认NO。
+@property (nonatomic , assign) BOOL ax_shouldNavigationBarHidden;
+
 @end
