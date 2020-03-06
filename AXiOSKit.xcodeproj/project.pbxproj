@@ -7,11 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		216B51AE23B4D7BD00A67384 /* AXNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 216B51AB23B4D7BD00A67384 /* AXNetworkManager.m */; };
-		216B51AF23B4D7BD00A67384 /* AXNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 216B51AC23B4D7BD00A67384 /* AXNetwork.h */; };
-		216B51B023B4D7BD00A67384 /* AXNetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 216B51AD23B4D7BD00A67384 /* AXNetworkManager.h */; };
-		216F93C423C235F800760CC9 /* AXWebSocketManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 216F93C223C235F800760CC9 /* AXWebSocketManager.h */; };
-		216F93C523C235F800760CC9 /* AXWebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F93C323C235F800760CC9 /* AXWebSocketManager.m */; };
+		219D766724123ED500196BFE /* DBStatements.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D762624123ED400196BFE /* DBStatements.h */; };
+		219D766824123ED500196BFE /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D762724123ED400196BFE /* DataBase.m */; };
+		219D766924123ED500196BFE /* DataBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D762824123ED400196BFE /* DataBase.h */; };
+		219D766A24123ED500196BFE /* DBStatements.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D762924123ED400196BFE /* DBStatements.m */; };
+		219D766B24123ED500196BFE /* MSWeakTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D762B24123ED400196BFE /* MSWeakTimer.h */; };
+		219D766C24123ED500196BFE /* MSWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D762C24123ED400196BFE /* MSWeakTimer.m */; };
+		219D766D24123ED500196BFE /* AXNetManager+Upload.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D762E24123ED400196BFE /* AXNetManager+Upload.m */; };
+		219D766E24123ED500196BFE /* AXNetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D762F24123ED400196BFE /* AXNetworkManager.h */; };
+		219D766F24123ED500196BFE /* AXNetGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D763024123ED400196BFE /* AXNetGroup.h */; };
+		219D767024123ED500196BFE /* AXNetManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D763124123ED400196BFE /* AXNetManager.h */; };
+		219D767124123ED500196BFE /* AXNetManager+Version.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D763224123ED400196BFE /* AXNetManager+Version.h */; };
+		219D767224123ED500196BFE /* AXNetManager+Verson.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D763324123ED400196BFE /* AXNetManager+Verson.m */; };
+		219D767324123ED500196BFE /* AXNetManager+Upload.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D763424123ED400196BFE /* AXNetManager+Upload.h */; };
+		219D767424123ED500196BFE /* AXNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D763524123ED400196BFE /* AXNetwork.h */; };
+		219D767524123ED500196BFE /* AXNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D763624123ED400196BFE /* AXNetworkManager.m */; };
+		219D767624123ED500196BFE /* AXNetManagerHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D763724123ED400196BFE /* AXNetManagerHeader.h */; };
+		219D767724123ED500196BFE /* AXNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D763824123ED400196BFE /* AXNetManager.m */; };
+		219D767824123ED500196BFE /* AXNetGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D763924123ED400196BFE /* AXNetGroup.m */; };
+		219D767924123ED500196BFE /* UIScrollView+AXEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D763B24123ED400196BFE /* UIScrollView+AXEmptyDataSet.m */; };
+		219D767A24123ED500196BFE /* UIScrollView+AXEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D763C24123ED400196BFE /* UIScrollView+AXEmptyDataSet.h */; };
+		219D767B24123ED500196BFE /* AXAliPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D763E24123ED400196BFE /* AXAliPayManager.m */; };
+		219D767C24123ED500196BFE /* AXAliPayManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D763F24123ED400196BFE /* AXAliPayManager.h */; };
+		219D767D24123ED500196BFE /* AXWebSocketManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D764124123ED400196BFE /* AXWebSocketManager.h */; };
+		219D767E24123ED500196BFE /* AXWebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D764224123ED400196BFE /* AXWebSocketManager.m */; };
+		219D767F24123ED500196BFE /* YYLabel+AXiOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D764424123ED400196BFE /* YYLabel+AXiOSKit.h */; };
+		219D768024123ED500196BFE /* YYLabel+AXiOSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D764524123ED400196BFE /* YYLabel+AXiOSKit.m */; };
+		219D768124123ED500196BFE /* UIScrollView+AXRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D764724123ED400196BFE /* UIScrollView+AXRefresh.m */; };
+		219D768224123ED500196BFE /* AXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D764824123ED400196BFE /* AXRefreshFooter.m */; };
+		219D768324123ED500196BFE /* AXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D764924123ED400196BFE /* AXRefreshHeader.m */; };
+		219D768424123ED500196BFE /* UIScrollView+AXRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D764A24123ED400196BFE /* UIScrollView+AXRefresh.h */; };
+		219D768524123ED500196BFE /* AXRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D764B24123ED400196BFE /* AXRefreshHeader.h */; };
+		219D768624123ED500196BFE /* AXRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D764C24123ED400196BFE /* AXRefreshFooter.h */; };
+		219D768724123ED500196BFE /* UIImageView+AXCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D764E24123ED400196BFE /* UIImageView+AXCircle.m */; };
+		219D768824123ED500196BFE /* NSObject+AXCacheImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D764F24123ED400196BFE /* NSObject+AXCacheImage.h */; };
+		219D768924123ED500196BFE /* UIButton+AXCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D765024123ED400196BFE /* UIButton+AXCircle.m */; };
+		219D768A24123ED500196BFE /* UIImageView+AXCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D765124123ED400196BFE /* UIImageView+AXCircle.h */; };
+		219D768B24123ED500196BFE /* UIButton+AXCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D765224123ED400196BFE /* UIButton+AXCircle.h */; };
+		219D768C24123ED500196BFE /* NSObject+AXCacheImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D765324123ED400196BFE /* NSObject+AXCacheImage.m */; };
+		219D768D24123ED500196BFE /* AXPhotoBrowserVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D765524123ED400196BFE /* AXPhotoBrowserVC.h */; };
+		219D768E24123ED500196BFE /* AXPhotoBrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D765624123ED400196BFE /* AXPhotoBrowserVC.m */; };
+		219D768F24123ED500196BFE /* MBProgressHUD+AX.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D765824123ED400196BFE /* MBProgressHUD+AX.m */; };
+		219D769024123ED500196BFE /* MBProgressHUD+AX.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D765924123ED400196BFE /* MBProgressHUD+AX.h */; };
+		219D769124123ED500196BFE /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D765B24123ED400196BFE /* WKWebViewController.m */; };
+		219D769224123ED500196BFE /* WKJSPOST.html in Resources */ = {isa = PBXBuildFile; fileRef = 219D765C24123ED400196BFE /* WKJSPOST.html */; };
+		219D769324123ED500196BFE /* WKWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D765D24123ED400196BFE /* WKWebViewController.h */; };
+		219D769424123ED500196BFE /* UMTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D765F24123ED400196BFE /* UMTool.h */; };
+		219D769524123ED500196BFE /* UMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D766024123ED400196BFE /* UMTool.m */; };
+		219D769624123ED500196BFE /* NSObject+FBKVOControllerAX.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D766224123ED400196BFE /* NSObject+FBKVOControllerAX.h */; };
+		219D769724123ED500196BFE /* NSObject+FBKVOControllerAX.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D766324123ED400196BFE /* NSObject+FBKVOControllerAX.m */; };
+		219D769824123ED500196BFE /* LameHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D766524123ED400196BFE /* LameHelper.h */; };
+		219D769924123ED500196BFE /* LameHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D766624123ED400196BFE /* LameHelper.m */; };
 		24064AC622BA58C200F6EC73 /* 命令行.md in Resources */ = {isa = PBXBuildFile; fileRef = 24064AC522BA58C200F6EC73 /* 命令行.md */; };
 		24170BBF22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */; };
 		24170BC022D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */; };
@@ -257,52 +303,6 @@
 		24732ACD2277FBB9005CF92D /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 247329D72277FBB8005CF92D /* beep.wav */; };
 		24732ACE2277FBB9005CF92D /* AXiOSKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247329D82277FBB9005CF92D /* AXiOSKit.xcassets */; };
 		24732ACF2277FBB9005CF92D /* AXHTML.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 247329D92277FBB9005CF92D /* AXHTML.bundle */; };
-		24732B162277FD53005CF92D /* MBProgressHUD+AX.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AD22277FD53005CF92D /* MBProgressHUD+AX.m */; };
-		24732B172277FD53005CF92D /* MBProgressHUD+AX.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AD32277FD53005CF92D /* MBProgressHUD+AX.h */; };
-		24732B1A2277FD53005CF92D /* NSObject+FBKVOControllerAX.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732ADB2277FD53005CF92D /* NSObject+FBKVOControllerAX.h */; };
-		24732B1B2277FD53005CF92D /* NSObject+FBKVOControllerAX.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732ADC2277FD53005CF92D /* NSObject+FBKVOControllerAX.m */; };
-		24732B1C2277FD53005CF92D /* MSWeakTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732ADE2277FD53005CF92D /* MSWeakTimer.h */; };
-		24732B1D2277FD53005CF92D /* MSWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732ADF2277FD53005CF92D /* MSWeakTimer.m */; };
-		24732B1E2277FD53005CF92D /* UMTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AE12277FD53005CF92D /* UMTool.h */; };
-		24732B1F2277FD53005CF92D /* UMTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AE22277FD53005CF92D /* UMTool.m */; };
-		24732B202277FD53005CF92D /* LameHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AE42277FD53005CF92D /* LameHelper.h */; };
-		24732B212277FD53005CF92D /* LameHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AE52277FD53005CF92D /* LameHelper.m */; };
-		24732B222277FD53005CF92D /* UIScrollView+AXRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AE72277FD53005CF92D /* UIScrollView+AXRefresh.m */; };
-		24732B232277FD53005CF92D /* AXRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AE82277FD53005CF92D /* AXRefreshFooter.m */; };
-		24732B242277FD53005CF92D /* AXRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AE92277FD53005CF92D /* AXRefreshHeader.m */; };
-		24732B252277FD53005CF92D /* UIScrollView+AXRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AEA2277FD53005CF92D /* UIScrollView+AXRefresh.h */; };
-		24732B262277FD53005CF92D /* AXRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AEB2277FD53005CF92D /* AXRefreshHeader.h */; };
-		24732B272277FD53005CF92D /* AXRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AEC2277FD53005CF92D /* AXRefreshFooter.h */; };
-		24732B282277FD53005CF92D /* UIImageView+AXCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AEE2277FD53005CF92D /* UIImageView+AXCircle.m */; };
-		24732B292277FD53005CF92D /* NSObject+AXCacheImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AEF2277FD53005CF92D /* NSObject+AXCacheImage.h */; };
-		24732B2A2277FD53005CF92D /* UIButton+AXCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AF02277FD53005CF92D /* UIButton+AXCircle.m */; };
-		24732B2B2277FD53005CF92D /* UIImageView+AXCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AF12277FD53005CF92D /* UIImageView+AXCircle.h */; };
-		24732B2C2277FD53005CF92D /* UIButton+AXCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AF22277FD53005CF92D /* UIButton+AXCircle.h */; };
-		24732B2D2277FD53005CF92D /* NSObject+AXCacheImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AF32277FD53005CF92D /* NSObject+AXCacheImage.m */; };
-		24732B2E2277FD53005CF92D /* AXPhotoBrowserVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AF52277FD53005CF92D /* AXPhotoBrowserVC.h */; };
-		24732B2F2277FD53005CF92D /* AXPhotoBrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AF62277FD53005CF92D /* AXPhotoBrowserVC.m */; };
-		24732B322277FD53005CF92D /* UIScrollView+AXEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AFB2277FD53005CF92D /* UIScrollView+AXEmptyDataSet.m */; };
-		24732B332277FD53005CF92D /* UIScrollView+AXEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AFC2277FD53005CF92D /* UIScrollView+AXEmptyDataSet.h */; };
-		24732B342277FD53005CF92D /* AXAliPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732AFE2277FD53005CF92D /* AXAliPayManager.m */; };
-		24732B352277FD53005CF92D /* AXAliPayManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732AFF2277FD53005CF92D /* AXAliPayManager.h */; };
-		24732B362277FD53005CF92D /* YYLabel+AXiOSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B012277FD53005CF92D /* YYLabel+AXiOSKit.m */; };
-		24732B372277FD53005CF92D /* YYLabel+AXiOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B022277FD53005CF92D /* YYLabel+AXiOSKit.h */; };
-		24732B382277FD53005CF92D /* DBStatements.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B042277FD53005CF92D /* DBStatements.h */; };
-		24732B392277FD53005CF92D /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B052277FD53005CF92D /* DataBase.m */; };
-		24732B3A2277FD53005CF92D /* DataBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B062277FD53005CF92D /* DataBase.h */; };
-		24732B3B2277FD53005CF92D /* DBStatements.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B072277FD53005CF92D /* DBStatements.m */; };
-		24732B3C2277FD53005CF92D /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B092277FD53005CF92D /* WKWebViewController.m */; };
-		24732B3D2277FD53005CF92D /* WKJSPOST.html in Resources */ = {isa = PBXBuildFile; fileRef = 24732B0A2277FD53005CF92D /* WKJSPOST.html */; };
-		24732B3E2277FD53005CF92D /* WKWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B0B2277FD53005CF92D /* WKWebViewController.h */; };
-		24732B3F2277FD53005CF92D /* AXNetManager+Upload.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B0D2277FD53005CF92D /* AXNetManager+Upload.m */; };
-		24732B402277FD53005CF92D /* AXNetGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B0E2277FD53005CF92D /* AXNetGroup.h */; };
-		24732B412277FD53005CF92D /* AXNetManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B0F2277FD53005CF92D /* AXNetManager.h */; };
-		24732B422277FD53005CF92D /* AXNetManager+Version.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B102277FD53005CF92D /* AXNetManager+Version.h */; };
-		24732B432277FD53005CF92D /* AXNetManager+Verson.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B112277FD53005CF92D /* AXNetManager+Verson.m */; };
-		24732B442277FD53005CF92D /* AXNetManager+Upload.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B122277FD53005CF92D /* AXNetManager+Upload.h */; };
-		24732B452277FD53005CF92D /* AXNetManagerHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B132277FD53005CF92D /* AXNetManagerHeader.h */; };
-		24732B462277FD53005CF92D /* AXNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B142277FD53005CF92D /* AXNetManager.m */; };
-		24732B472277FD53005CF92D /* AXNetGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B152277FD53005CF92D /* AXNetGroup.m */; };
 		24732B8D2278215F005CF92D /* AXiOSKitDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B8C2278215F005CF92D /* AXiOSKitDefine.h */; };
 		24732B9822782D9E005CF92D /* AXWebScriptMessageModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 24732B9622782D9D005CF92D /* AXWebScriptMessageModel.h */; };
 		24732B9922782D9E005CF92D /* AXWebScriptMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24732B9722782D9D005CF92D /* AXWebScriptMessageModel.m */; };
@@ -340,11 +340,57 @@
 
 /* Begin PBXFileReference section */
 		21448E9223B3E4CF00BE36A5 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
-		216B51AB23B4D7BD00A67384 /* AXNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNetworkManager.m; sourceTree = "<group>"; };
-		216B51AC23B4D7BD00A67384 /* AXNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetwork.h; sourceTree = "<group>"; };
-		216B51AD23B4D7BD00A67384 /* AXNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetworkManager.h; sourceTree = "<group>"; };
-		216F93C223C235F800760CC9 /* AXWebSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWebSocketManager.h; sourceTree = "<group>"; };
-		216F93C323C235F800760CC9 /* AXWebSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWebSocketManager.m; sourceTree = "<group>"; };
+		219D762624123ED400196BFE /* DBStatements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStatements.h; sourceTree = "<group>"; };
+		219D762724123ED400196BFE /* DataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBase.m; sourceTree = "<group>"; };
+		219D762824123ED400196BFE /* DataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
+		219D762924123ED400196BFE /* DBStatements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStatements.m; sourceTree = "<group>"; };
+		219D762B24123ED400196BFE /* MSWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
+		219D762C24123ED400196BFE /* MSWeakTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWeakTimer.m; sourceTree = "<group>"; };
+		219D762E24123ED400196BFE /* AXNetManager+Upload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AXNetManager+Upload.m"; sourceTree = "<group>"; };
+		219D762F24123ED400196BFE /* AXNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetworkManager.h; sourceTree = "<group>"; };
+		219D763024123ED400196BFE /* AXNetGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetGroup.h; sourceTree = "<group>"; };
+		219D763124123ED400196BFE /* AXNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetManager.h; sourceTree = "<group>"; };
+		219D763224123ED400196BFE /* AXNetManager+Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AXNetManager+Version.h"; sourceTree = "<group>"; };
+		219D763324123ED400196BFE /* AXNetManager+Verson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AXNetManager+Verson.m"; sourceTree = "<group>"; };
+		219D763424123ED400196BFE /* AXNetManager+Upload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AXNetManager+Upload.h"; sourceTree = "<group>"; };
+		219D763524123ED400196BFE /* AXNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetwork.h; sourceTree = "<group>"; };
+		219D763624123ED400196BFE /* AXNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNetworkManager.m; sourceTree = "<group>"; };
+		219D763724123ED400196BFE /* AXNetManagerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetManagerHeader.h; sourceTree = "<group>"; };
+		219D763824123ED400196BFE /* AXNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNetManager.m; sourceTree = "<group>"; };
+		219D763924123ED400196BFE /* AXNetGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNetGroup.m; sourceTree = "<group>"; };
+		219D763B24123ED400196BFE /* UIScrollView+AXEmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+AXEmptyDataSet.m"; sourceTree = "<group>"; };
+		219D763C24123ED400196BFE /* UIScrollView+AXEmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+AXEmptyDataSet.h"; sourceTree = "<group>"; };
+		219D763E24123ED400196BFE /* AXAliPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXAliPayManager.m; sourceTree = "<group>"; };
+		219D763F24123ED400196BFE /* AXAliPayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXAliPayManager.h; sourceTree = "<group>"; };
+		219D764124123ED400196BFE /* AXWebSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWebSocketManager.h; sourceTree = "<group>"; };
+		219D764224123ED400196BFE /* AXWebSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWebSocketManager.m; sourceTree = "<group>"; };
+		219D764424123ED400196BFE /* YYLabel+AXiOSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YYLabel+AXiOSKit.h"; sourceTree = "<group>"; };
+		219D764524123ED400196BFE /* YYLabel+AXiOSKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YYLabel+AXiOSKit.m"; sourceTree = "<group>"; };
+		219D764724123ED400196BFE /* UIScrollView+AXRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+AXRefresh.m"; sourceTree = "<group>"; };
+		219D764824123ED400196BFE /* AXRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXRefreshFooter.m; sourceTree = "<group>"; };
+		219D764924123ED400196BFE /* AXRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXRefreshHeader.m; sourceTree = "<group>"; };
+		219D764A24123ED400196BFE /* UIScrollView+AXRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+AXRefresh.h"; sourceTree = "<group>"; };
+		219D764B24123ED400196BFE /* AXRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXRefreshHeader.h; sourceTree = "<group>"; };
+		219D764C24123ED400196BFE /* AXRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXRefreshFooter.h; sourceTree = "<group>"; };
+		219D764E24123ED400196BFE /* UIImageView+AXCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AXCircle.m"; sourceTree = "<group>"; };
+		219D764F24123ED400196BFE /* NSObject+AXCacheImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AXCacheImage.h"; sourceTree = "<group>"; };
+		219D765024123ED400196BFE /* UIButton+AXCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AXCircle.m"; sourceTree = "<group>"; };
+		219D765124123ED400196BFE /* UIImageView+AXCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AXCircle.h"; sourceTree = "<group>"; };
+		219D765224123ED400196BFE /* UIButton+AXCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AXCircle.h"; sourceTree = "<group>"; };
+		219D765324123ED400196BFE /* NSObject+AXCacheImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AXCacheImage.m"; sourceTree = "<group>"; };
+		219D765524123ED400196BFE /* AXPhotoBrowserVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXPhotoBrowserVC.h; sourceTree = "<group>"; };
+		219D765624123ED400196BFE /* AXPhotoBrowserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXPhotoBrowserVC.m; sourceTree = "<group>"; };
+		219D765824123ED400196BFE /* MBProgressHUD+AX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+AX.m"; sourceTree = "<group>"; };
+		219D765924123ED400196BFE /* MBProgressHUD+AX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+AX.h"; sourceTree = "<group>"; };
+		219D765B24123ED400196BFE /* WKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
+		219D765C24123ED400196BFE /* WKJSPOST.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKJSPOST.html; sourceTree = "<group>"; };
+		219D765D24123ED400196BFE /* WKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
+		219D765F24123ED400196BFE /* UMTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMTool.h; sourceTree = "<group>"; };
+		219D766024123ED400196BFE /* UMTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMTool.m; sourceTree = "<group>"; };
+		219D766224123ED400196BFE /* NSObject+FBKVOControllerAX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FBKVOControllerAX.h"; sourceTree = "<group>"; };
+		219D766324123ED400196BFE /* NSObject+FBKVOControllerAX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FBKVOControllerAX.m"; sourceTree = "<group>"; };
+		219D766524123ED400196BFE /* LameHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LameHelper.h; sourceTree = "<group>"; };
+		219D766624123ED400196BFE /* LameHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LameHelper.m; sourceTree = "<group>"; };
 		24064AC522BA58C200F6EC73 /* 命令行.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "命令行.md"; sourceTree = "<group>"; };
 		24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDeviceFunctionDisableViewController.h; sourceTree = "<group>"; };
 		24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDeviceFunctionDisableViewController.m; sourceTree = "<group>"; };
@@ -593,52 +639,6 @@
 		247329D72277FBB8005CF92D /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		247329D82277FBB9005CF92D /* AXiOSKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AXiOSKit.xcassets; sourceTree = "<group>"; };
 		247329D92277FBB9005CF92D /* AXHTML.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AXHTML.bundle; sourceTree = "<group>"; };
-		24732AD22277FD53005CF92D /* MBProgressHUD+AX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+AX.m"; sourceTree = "<group>"; };
-		24732AD32277FD53005CF92D /* MBProgressHUD+AX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+AX.h"; sourceTree = "<group>"; };
-		24732ADB2277FD53005CF92D /* NSObject+FBKVOControllerAX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FBKVOControllerAX.h"; sourceTree = "<group>"; };
-		24732ADC2277FD53005CF92D /* NSObject+FBKVOControllerAX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FBKVOControllerAX.m"; sourceTree = "<group>"; };
-		24732ADE2277FD53005CF92D /* MSWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
-		24732ADF2277FD53005CF92D /* MSWeakTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWeakTimer.m; sourceTree = "<group>"; };
-		24732AE12277FD53005CF92D /* UMTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMTool.h; sourceTree = "<group>"; };
-		24732AE22277FD53005CF92D /* UMTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMTool.m; sourceTree = "<group>"; };
-		24732AE42277FD53005CF92D /* LameHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LameHelper.h; sourceTree = "<group>"; };
-		24732AE52277FD53005CF92D /* LameHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LameHelper.m; sourceTree = "<group>"; };
-		24732AE72277FD53005CF92D /* UIScrollView+AXRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+AXRefresh.m"; sourceTree = "<group>"; };
-		24732AE82277FD53005CF92D /* AXRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXRefreshFooter.m; sourceTree = "<group>"; };
-		24732AE92277FD53005CF92D /* AXRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXRefreshHeader.m; sourceTree = "<group>"; };
-		24732AEA2277FD53005CF92D /* UIScrollView+AXRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+AXRefresh.h"; sourceTree = "<group>"; };
-		24732AEB2277FD53005CF92D /* AXRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXRefreshHeader.h; sourceTree = "<group>"; };
-		24732AEC2277FD53005CF92D /* AXRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXRefreshFooter.h; sourceTree = "<group>"; };
-		24732AEE2277FD53005CF92D /* UIImageView+AXCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AXCircle.m"; sourceTree = "<group>"; };
-		24732AEF2277FD53005CF92D /* NSObject+AXCacheImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AXCacheImage.h"; sourceTree = "<group>"; };
-		24732AF02277FD53005CF92D /* UIButton+AXCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AXCircle.m"; sourceTree = "<group>"; };
-		24732AF12277FD53005CF92D /* UIImageView+AXCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AXCircle.h"; sourceTree = "<group>"; };
-		24732AF22277FD53005CF92D /* UIButton+AXCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AXCircle.h"; sourceTree = "<group>"; };
-		24732AF32277FD53005CF92D /* NSObject+AXCacheImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AXCacheImage.m"; sourceTree = "<group>"; };
-		24732AF52277FD53005CF92D /* AXPhotoBrowserVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXPhotoBrowserVC.h; sourceTree = "<group>"; };
-		24732AF62277FD53005CF92D /* AXPhotoBrowserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXPhotoBrowserVC.m; sourceTree = "<group>"; };
-		24732AFB2277FD53005CF92D /* UIScrollView+AXEmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+AXEmptyDataSet.m"; sourceTree = "<group>"; };
-		24732AFC2277FD53005CF92D /* UIScrollView+AXEmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+AXEmptyDataSet.h"; sourceTree = "<group>"; };
-		24732AFE2277FD53005CF92D /* AXAliPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXAliPayManager.m; sourceTree = "<group>"; };
-		24732AFF2277FD53005CF92D /* AXAliPayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXAliPayManager.h; sourceTree = "<group>"; };
-		24732B012277FD53005CF92D /* YYLabel+AXiOSKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YYLabel+AXiOSKit.m"; sourceTree = "<group>"; };
-		24732B022277FD53005CF92D /* YYLabel+AXiOSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YYLabel+AXiOSKit.h"; sourceTree = "<group>"; };
-		24732B042277FD53005CF92D /* DBStatements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStatements.h; sourceTree = "<group>"; };
-		24732B052277FD53005CF92D /* DataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBase.m; sourceTree = "<group>"; };
-		24732B062277FD53005CF92D /* DataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
-		24732B072277FD53005CF92D /* DBStatements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStatements.m; sourceTree = "<group>"; };
-		24732B092277FD53005CF92D /* WKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
-		24732B0A2277FD53005CF92D /* WKJSPOST.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKJSPOST.html; sourceTree = "<group>"; };
-		24732B0B2277FD53005CF92D /* WKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
-		24732B0D2277FD53005CF92D /* AXNetManager+Upload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AXNetManager+Upload.m"; sourceTree = "<group>"; };
-		24732B0E2277FD53005CF92D /* AXNetGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetGroup.h; sourceTree = "<group>"; };
-		24732B0F2277FD53005CF92D /* AXNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetManager.h; sourceTree = "<group>"; };
-		24732B102277FD53005CF92D /* AXNetManager+Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AXNetManager+Version.h"; sourceTree = "<group>"; };
-		24732B112277FD53005CF92D /* AXNetManager+Verson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AXNetManager+Verson.m"; sourceTree = "<group>"; };
-		24732B122277FD53005CF92D /* AXNetManager+Upload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AXNetManager+Upload.h"; sourceTree = "<group>"; };
-		24732B132277FD53005CF92D /* AXNetManagerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXNetManagerHeader.h; sourceTree = "<group>"; };
-		24732B142277FD53005CF92D /* AXNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNetManager.m; sourceTree = "<group>"; };
-		24732B152277FD53005CF92D /* AXNetGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXNetGroup.m; sourceTree = "<group>"; };
 		24732B8C2278215F005CF92D /* AXiOSKitDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXiOSKitDefine.h; sourceTree = "<group>"; };
 		24732B9622782D9D005CF92D /* AXWebScriptMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWebScriptMessageModel.h; sourceTree = "<group>"; };
 		24732B9722782D9D005CF92D /* AXWebScriptMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWebScriptMessageModel.m; sourceTree = "<group>"; };
@@ -688,13 +688,182 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		216F93C123C235F800760CC9 /* SocketRocket */ = {
+		219D762424123ED400196BFE /* 02ThirdKit */ = {
 			isa = PBXGroup;
 			children = (
-				216F93C223C235F800760CC9 /* AXWebSocketManager.h */,
-				216F93C323C235F800760CC9 /* AXWebSocketManager.m */,
+				219D762524123ED400196BFE /* FMDB.AX */,
+				219D762A24123ED400196BFE /* MSWeakTimer */,
+				219D762D24123ED400196BFE /* AFNetworking.AX */,
+				219D763A24123ED400196BFE /* DZNEmptyDataSet.AX */,
+				219D763D24123ED400196BFE /* AliPay.AX */,
+				219D764024123ED400196BFE /* SocketRocket */,
+				219D764324123ED400196BFE /* YYLabel.AX */,
+				219D764624123ED400196BFE /* MJRefresh.AX */,
+				219D764D24123ED400196BFE /* SDWebImage.AX */,
+				219D765424123ED400196BFE /* PhotoBrowser.AX */,
+				219D765724123ED400196BFE /* MBProgressHUD.AX */,
+				219D765A24123ED400196BFE /* WKWebViewController */,
+				219D765E24123ED400196BFE /* UMengUShare.AX */,
+				219D766124123ED400196BFE /* KVOController.AX */,
+				219D766424123ED400196BFE /* lame.AX */,
+			);
+			path = 02ThirdKit;
+			sourceTree = "<group>";
+		};
+		219D762524123ED400196BFE /* FMDB.AX */ = {
+			isa = PBXGroup;
+			children = (
+				219D762624123ED400196BFE /* DBStatements.h */,
+				219D762724123ED400196BFE /* DataBase.m */,
+				219D762824123ED400196BFE /* DataBase.h */,
+				219D762924123ED400196BFE /* DBStatements.m */,
+			);
+			path = FMDB.AX;
+			sourceTree = "<group>";
+		};
+		219D762A24123ED400196BFE /* MSWeakTimer */ = {
+			isa = PBXGroup;
+			children = (
+				219D762B24123ED400196BFE /* MSWeakTimer.h */,
+				219D762C24123ED400196BFE /* MSWeakTimer.m */,
+			);
+			path = MSWeakTimer;
+			sourceTree = "<group>";
+		};
+		219D762D24123ED400196BFE /* AFNetworking.AX */ = {
+			isa = PBXGroup;
+			children = (
+				219D762E24123ED400196BFE /* AXNetManager+Upload.m */,
+				219D762F24123ED400196BFE /* AXNetworkManager.h */,
+				219D763024123ED400196BFE /* AXNetGroup.h */,
+				219D763124123ED400196BFE /* AXNetManager.h */,
+				219D763224123ED400196BFE /* AXNetManager+Version.h */,
+				219D763324123ED400196BFE /* AXNetManager+Verson.m */,
+				219D763424123ED400196BFE /* AXNetManager+Upload.h */,
+				219D763524123ED400196BFE /* AXNetwork.h */,
+				219D763624123ED400196BFE /* AXNetworkManager.m */,
+				219D763724123ED400196BFE /* AXNetManagerHeader.h */,
+				219D763824123ED400196BFE /* AXNetManager.m */,
+				219D763924123ED400196BFE /* AXNetGroup.m */,
+			);
+			path = AFNetworking.AX;
+			sourceTree = "<group>";
+		};
+		219D763A24123ED400196BFE /* DZNEmptyDataSet.AX */ = {
+			isa = PBXGroup;
+			children = (
+				219D763B24123ED400196BFE /* UIScrollView+AXEmptyDataSet.m */,
+				219D763C24123ED400196BFE /* UIScrollView+AXEmptyDataSet.h */,
+			);
+			path = DZNEmptyDataSet.AX;
+			sourceTree = "<group>";
+		};
+		219D763D24123ED400196BFE /* AliPay.AX */ = {
+			isa = PBXGroup;
+			children = (
+				219D763E24123ED400196BFE /* AXAliPayManager.m */,
+				219D763F24123ED400196BFE /* AXAliPayManager.h */,
+			);
+			path = AliPay.AX;
+			sourceTree = "<group>";
+		};
+		219D764024123ED400196BFE /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				219D764124123ED400196BFE /* AXWebSocketManager.h */,
+				219D764224123ED400196BFE /* AXWebSocketManager.m */,
 			);
 			path = SocketRocket;
+			sourceTree = "<group>";
+		};
+		219D764324123ED400196BFE /* YYLabel.AX */ = {
+			isa = PBXGroup;
+			children = (
+				219D764424123ED400196BFE /* YYLabel+AXiOSKit.h */,
+				219D764524123ED400196BFE /* YYLabel+AXiOSKit.m */,
+			);
+			path = YYLabel.AX;
+			sourceTree = "<group>";
+		};
+		219D764624123ED400196BFE /* MJRefresh.AX */ = {
+			isa = PBXGroup;
+			children = (
+				219D764724123ED400196BFE /* UIScrollView+AXRefresh.m */,
+				219D764824123ED400196BFE /* AXRefreshFooter.m */,
+				219D764924123ED400196BFE /* AXRefreshHeader.m */,
+				219D764A24123ED400196BFE /* UIScrollView+AXRefresh.h */,
+				219D764B24123ED400196BFE /* AXRefreshHeader.h */,
+				219D764C24123ED400196BFE /* AXRefreshFooter.h */,
+			);
+			path = MJRefresh.AX;
+			sourceTree = "<group>";
+		};
+		219D764D24123ED400196BFE /* SDWebImage.AX */ = {
+			isa = PBXGroup;
+			children = (
+				219D764E24123ED400196BFE /* UIImageView+AXCircle.m */,
+				219D764F24123ED400196BFE /* NSObject+AXCacheImage.h */,
+				219D765024123ED400196BFE /* UIButton+AXCircle.m */,
+				219D765124123ED400196BFE /* UIImageView+AXCircle.h */,
+				219D765224123ED400196BFE /* UIButton+AXCircle.h */,
+				219D765324123ED400196BFE /* NSObject+AXCacheImage.m */,
+			);
+			path = SDWebImage.AX;
+			sourceTree = "<group>";
+		};
+		219D765424123ED400196BFE /* PhotoBrowser.AX */ = {
+			isa = PBXGroup;
+			children = (
+				219D765524123ED400196BFE /* AXPhotoBrowserVC.h */,
+				219D765624123ED400196BFE /* AXPhotoBrowserVC.m */,
+			);
+			path = PhotoBrowser.AX;
+			sourceTree = "<group>";
+		};
+		219D765724123ED400196BFE /* MBProgressHUD.AX */ = {
+			isa = PBXGroup;
+			children = (
+				219D765824123ED400196BFE /* MBProgressHUD+AX.m */,
+				219D765924123ED400196BFE /* MBProgressHUD+AX.h */,
+			);
+			path = MBProgressHUD.AX;
+			sourceTree = "<group>";
+		};
+		219D765A24123ED400196BFE /* WKWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				219D765B24123ED400196BFE /* WKWebViewController.m */,
+				219D765C24123ED400196BFE /* WKJSPOST.html */,
+				219D765D24123ED400196BFE /* WKWebViewController.h */,
+			);
+			path = WKWebViewController;
+			sourceTree = "<group>";
+		};
+		219D765E24123ED400196BFE /* UMengUShare.AX */ = {
+			isa = PBXGroup;
+			children = (
+				219D765F24123ED400196BFE /* UMTool.h */,
+				219D766024123ED400196BFE /* UMTool.m */,
+			);
+			path = UMengUShare.AX;
+			sourceTree = "<group>";
+		};
+		219D766124123ED400196BFE /* KVOController.AX */ = {
+			isa = PBXGroup;
+			children = (
+				219D766224123ED400196BFE /* NSObject+FBKVOControllerAX.h */,
+				219D766324123ED400196BFE /* NSObject+FBKVOControllerAX.m */,
+			);
+			path = KVOController.AX;
+			sourceTree = "<group>";
+		};
+		219D766424123ED400196BFE /* lame.AX */ = {
+			isa = PBXGroup;
+			children = (
+				219D766524123ED400196BFE /* LameHelper.h */,
+				219D766624123ED400196BFE /* LameHelper.m */,
+			);
+			path = lame.AX;
 			sourceTree = "<group>";
 		};
 		22408E2038A31DF4963FFC5B /* Pods */ = {
@@ -1198,175 +1367,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		24732AD02277FD53005CF92D /* 02ThirdKit */ = {
-			isa = PBXGroup;
-			children = (
-				216F93C123C235F800760CC9 /* SocketRocket */,
-				24732B0C2277FD53005CF92D /* AFNetworking@AX */,
-				24732AFD2277FD53005CF92D /* AliPay@AX */,
-				24732AFA2277FD53005CF92D /* DZNEmptyDataSet@AX */,
-				24732B032277FD53005CF92D /* FMDB@AX */,
-				24732ADA2277FD53005CF92D /* KVOController@AX */,
-				24732AE32277FD53005CF92D /* lame@AX */,
-				24732AD12277FD53005CF92D /* MBProgressHUD@AX */,
-				24732AE62277FD53005CF92D /* MJRefresh@AX */,
-				24732ADD2277FD53005CF92D /* MSWeakTimer */,
-				24732AF42277FD53005CF92D /* PhotoBrowser@AX */,
-				24732AED2277FD53005CF92D /* SDWebImage@AX */,
-				24732AE02277FD53005CF92D /* UMengUShare@AX */,
-				24732B082277FD53005CF92D /* WKWebViewController */,
-				24732B002277FD53005CF92D /* YYLabel@AX */,
-			);
-			path = 02ThirdKit;
-			sourceTree = "<group>";
-		};
-		24732AD12277FD53005CF92D /* MBProgressHUD@AX */ = {
-			isa = PBXGroup;
-			children = (
-				24732AD22277FD53005CF92D /* MBProgressHUD+AX.m */,
-				24732AD32277FD53005CF92D /* MBProgressHUD+AX.h */,
-			);
-			path = "MBProgressHUD@AX";
-			sourceTree = "<group>";
-		};
-		24732ADA2277FD53005CF92D /* KVOController@AX */ = {
-			isa = PBXGroup;
-			children = (
-				24732ADB2277FD53005CF92D /* NSObject+FBKVOControllerAX.h */,
-				24732ADC2277FD53005CF92D /* NSObject+FBKVOControllerAX.m */,
-			);
-			path = "KVOController@AX";
-			sourceTree = "<group>";
-		};
-		24732ADD2277FD53005CF92D /* MSWeakTimer */ = {
-			isa = PBXGroup;
-			children = (
-				24732ADE2277FD53005CF92D /* MSWeakTimer.h */,
-				24732ADF2277FD53005CF92D /* MSWeakTimer.m */,
-			);
-			path = MSWeakTimer;
-			sourceTree = "<group>";
-		};
-		24732AE02277FD53005CF92D /* UMengUShare@AX */ = {
-			isa = PBXGroup;
-			children = (
-				24732AE12277FD53005CF92D /* UMTool.h */,
-				24732AE22277FD53005CF92D /* UMTool.m */,
-			);
-			path = "UMengUShare@AX";
-			sourceTree = "<group>";
-		};
-		24732AE32277FD53005CF92D /* lame@AX */ = {
-			isa = PBXGroup;
-			children = (
-				24732AE42277FD53005CF92D /* LameHelper.h */,
-				24732AE52277FD53005CF92D /* LameHelper.m */,
-			);
-			path = "lame@AX";
-			sourceTree = "<group>";
-		};
-		24732AE62277FD53005CF92D /* MJRefresh@AX */ = {
-			isa = PBXGroup;
-			children = (
-				24732AE72277FD53005CF92D /* UIScrollView+AXRefresh.m */,
-				24732AE82277FD53005CF92D /* AXRefreshFooter.m */,
-				24732AE92277FD53005CF92D /* AXRefreshHeader.m */,
-				24732AEA2277FD53005CF92D /* UIScrollView+AXRefresh.h */,
-				24732AEB2277FD53005CF92D /* AXRefreshHeader.h */,
-				24732AEC2277FD53005CF92D /* AXRefreshFooter.h */,
-			);
-			path = "MJRefresh@AX";
-			sourceTree = "<group>";
-		};
-		24732AED2277FD53005CF92D /* SDWebImage@AX */ = {
-			isa = PBXGroup;
-			children = (
-				24732AEE2277FD53005CF92D /* UIImageView+AXCircle.m */,
-				24732AEF2277FD53005CF92D /* NSObject+AXCacheImage.h */,
-				24732AF02277FD53005CF92D /* UIButton+AXCircle.m */,
-				24732AF12277FD53005CF92D /* UIImageView+AXCircle.h */,
-				24732AF22277FD53005CF92D /* UIButton+AXCircle.h */,
-				24732AF32277FD53005CF92D /* NSObject+AXCacheImage.m */,
-			);
-			path = "SDWebImage@AX";
-			sourceTree = "<group>";
-		};
-		24732AF42277FD53005CF92D /* PhotoBrowser@AX */ = {
-			isa = PBXGroup;
-			children = (
-				24732AF52277FD53005CF92D /* AXPhotoBrowserVC.h */,
-				24732AF62277FD53005CF92D /* AXPhotoBrowserVC.m */,
-			);
-			path = "PhotoBrowser@AX";
-			sourceTree = "<group>";
-		};
-		24732AFA2277FD53005CF92D /* DZNEmptyDataSet@AX */ = {
-			isa = PBXGroup;
-			children = (
-				24732AFB2277FD53005CF92D /* UIScrollView+AXEmptyDataSet.m */,
-				24732AFC2277FD53005CF92D /* UIScrollView+AXEmptyDataSet.h */,
-			);
-			path = "DZNEmptyDataSet@AX";
-			sourceTree = "<group>";
-		};
-		24732AFD2277FD53005CF92D /* AliPay@AX */ = {
-			isa = PBXGroup;
-			children = (
-				24732AFE2277FD53005CF92D /* AXAliPayManager.m */,
-				24732AFF2277FD53005CF92D /* AXAliPayManager.h */,
-			);
-			path = "AliPay@AX";
-			sourceTree = "<group>";
-		};
-		24732B002277FD53005CF92D /* YYLabel@AX */ = {
-			isa = PBXGroup;
-			children = (
-				24732B012277FD53005CF92D /* YYLabel+AXiOSKit.m */,
-				24732B022277FD53005CF92D /* YYLabel+AXiOSKit.h */,
-			);
-			path = "YYLabel@AX";
-			sourceTree = "<group>";
-		};
-		24732B032277FD53005CF92D /* FMDB@AX */ = {
-			isa = PBXGroup;
-			children = (
-				24732B042277FD53005CF92D /* DBStatements.h */,
-				24732B052277FD53005CF92D /* DataBase.m */,
-				24732B062277FD53005CF92D /* DataBase.h */,
-				24732B072277FD53005CF92D /* DBStatements.m */,
-			);
-			path = "FMDB@AX";
-			sourceTree = "<group>";
-		};
-		24732B082277FD53005CF92D /* WKWebViewController */ = {
-			isa = PBXGroup;
-			children = (
-				24732B0A2277FD53005CF92D /* WKJSPOST.html */,
-				24732B0B2277FD53005CF92D /* WKWebViewController.h */,
-				24732B092277FD53005CF92D /* WKWebViewController.m */,
-			);
-			path = WKWebViewController;
-			sourceTree = "<group>";
-		};
-		24732B0C2277FD53005CF92D /* AFNetworking@AX */ = {
-			isa = PBXGroup;
-			children = (
-				24732B0E2277FD53005CF92D /* AXNetGroup.h */,
-				24732B152277FD53005CF92D /* AXNetGroup.m */,
-				24732B0F2277FD53005CF92D /* AXNetManager.h */,
-				24732B142277FD53005CF92D /* AXNetManager.m */,
-				24732B122277FD53005CF92D /* AXNetManager+Upload.h */,
-				24732B0D2277FD53005CF92D /* AXNetManager+Upload.m */,
-				24732B102277FD53005CF92D /* AXNetManager+Version.h */,
-				24732B112277FD53005CF92D /* AXNetManager+Verson.m */,
-				24732B132277FD53005CF92D /* AXNetManagerHeader.h */,
-				216B51AC23B4D7BD00A67384 /* AXNetwork.h */,
-				216B51AD23B4D7BD00A67384 /* AXNetworkManager.h */,
-				216B51AB23B4D7BD00A67384 /* AXNetworkManager.m */,
-			);
-			path = "AFNetworking@AX";
-			sourceTree = "<group>";
-		};
 		24A5737C2298EB4800F95D4E /* 03Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1382,7 +1382,7 @@
 			isa = PBXGroup;
 			children = (
 				247328C22277FBB8005CF92D /* 01AXKit */,
-				24732AD02277FD53005CF92D /* 02ThirdKit */,
+				219D762424123ED400196BFE /* 02ThirdKit */,
 				24A5737C2298EB4800F95D4E /* 03Resource */,
 			);
 			path = Class;
@@ -1486,40 +1486,41 @@
 				247329EC2277FBB9005CF92D /* NSURL+AXKit.h in Headers */,
 				247329F52277FBB9005CF92D /* UIImage+AXKit.h in Headers */,
 				2469429422EA8BA3009E9CB9 /* AXiOSFoundation.h in Headers */,
-				216B51AF23B4D7BD00A67384 /* AXNetwork.h in Headers */,
-				24732B412277FD53005CF92D /* AXNetManager.h in Headers */,
 				24732A0B2277FBB9005CF92D /* NSBundle+AXBundle.h in Headers */,
 				24732A6F2277FBB9005CF92D /* AXUNNotificationHandler.h in Headers */,
+				219D768424123ED500196BFE /* UIScrollView+AXRefresh.h in Headers */,
 				24732AC82277FBB9005CF92D /* AXWKWebVC.h in Headers */,
 				24732AAD2277FBB9005CF92D /* AXAlerUpwardAnimation.h in Headers */,
 				24732A1A2277FBB9005CF92D /* UIButton+AXKit.h in Headers */,
-				24732B2B2277FD53005CF92D /* UIImageView+AXCircle.h in Headers */,
 				24732AAF2277FBB9005CF92D /* AXBaseAlertVC.h in Headers */,
 				24732A4B2277FBB9005CF92D /* AXCycleScrollView.h in Headers */,
 				24732A1B2277FBB9005CF92D /* NSUserDefaults+AXKit.h in Headers */,
-				24732B442277FD53005CF92D /* AXNetManager+Upload.h in Headers */,
 				24F0F12822C76944009DD02B /* AXTripleInteractionModel.h in Headers */,
-				216B51B023B4D7BD00A67384 /* AXNetworkManager.h in Headers */,
-				24732B452277FD53005CF92D /* AXNetManagerHeader.h in Headers */,
 				24F0F0D022C4B90B009DD02B /* AXMultiSelectViewController.h in Headers */,
 				24732A7C2277FBB9005CF92D /* AXHelper.h in Headers */,
+				219D766E24123ED500196BFE /* AXNetworkManager.h in Headers */,
 				24F0F0E022C4BAF4009DD02B /* AXMultiSelectSectionHeaderView.h in Headers */,
+				219D768B24123ED500196BFE /* UIButton+AXCircle.h in Headers */,
 				24732A262277FBB9005CF92D /* NSObject+AXVersion.h in Headers */,
-				24732B1E2277FD53005CF92D /* UMTool.h in Headers */,
 				24732A122277FBB9005CF92D /* NSError+AXKit.h in Headers */,
 				24732A992277FBB9005CF92D /* AXWebVC.h in Headers */,
+				219D768D24123ED500196BFE /* AXPhotoBrowserVC.h in Headers */,
 				247329DE2277FBB9005CF92D /* AXWeakProxy.h in Headers */,
+				219D766B24123ED500196BFE /* MSWeakTimer.h in Headers */,
 				24F0F0DC22C4BAC3009DD02B /* AXMultiSelectCell.h in Headers */,
 				24732AB62277FBB9005CF92D /* AXDateVC.h in Headers */,
+				219D766724123ED500196BFE /* DBStatements.h in Headers */,
 				24732AA92277FBB9005CF92D /* AXHalfWidthLayout.h in Headers */,
 				247329E92277FBB9005CF92D /* NSString+AXEffective.h in Headers */,
 				24732ACB2277FBB9005CF92D /* AXScriptMessageHandlerHelper.h in Headers */,
+				219D767C24123ED500196BFE /* AXAliPayManager.h in Headers */,
 				24732A622277FBB9005CF92D /* IBUIView.h in Headers */,
 				24732A272277FBB9005CF92D /* UIButton+AXCountDown.h in Headers */,
 				24F0F0D422C4B938009DD02B /* AXMultiSelectConfig.h in Headers */,
-				24732B1A2277FD53005CF92D /* NSObject+FBKVOControllerAX.h in Headers */,
 				24732A642277FBB9005CF92D /* IBUILabel.h in Headers */,
+				219D767424123ED500196BFE /* AXNetwork.h in Headers */,
 				24732AAA2277FBB9005CF92D /* AXViewController.h in Headers */,
+				219D768624123ED500196BFE /* AXRefreshFooter.h in Headers */,
 				24732ABE2277FBB9005CF92D /* AXSafariVC.h in Headers */,
 				24732A702277FBB9005CF92D /* AXGCDTimer.h in Headers */,
 				24732A232277FBB9005CF92D /* UIView+AXSheet.h in Headers */,
@@ -1528,36 +1529,36 @@
 				24732A072277FBB9005CF92D /* NSDateComponents+AXKit.h in Headers */,
 				24732A972277FBB9005CF92D /* AXJSContext.h in Headers */,
 				24732A3B2277FBB9005CF92D /* UITableView+AXKit.h in Headers */,
-				216F93C423C235F800760CC9 /* AXWebSocketManager.h in Headers */,
 				247329E22277FBB9005CF92D /* UITextView+AXKit.h in Headers */,
+				219D767F24123ED500196BFE /* YYLabel+AXiOSKit.h in Headers */,
 				24732A3E2277FBB9005CF92D /* UIControl+AXKit.h in Headers */,
 				24732B9822782D9E005CF92D /* AXWebScriptMessageModel.h in Headers */,
 				247329E02277FBB9005CF92D /* NSObject+AXRuntime.h in Headers */,
 				24732A162277FBB9005CF92D /* UISwitch+AXKit.h in Headers */,
 				2469429822EA8E62009E9CB9 /* AXFoundationAssistant.h in Headers */,
+				219D769024123ED500196BFE /* MBProgressHUD+AX.h in Headers */,
+				219D767A24123ED500196BFE /* UIScrollView+AXEmptyDataSet.h in Headers */,
 				24732B8D2278215F005CF92D /* AXiOSKitDefine.h in Headers */,
 				24732A632277FBB9005CF92D /* IBUIImageView.h in Headers */,
 				24732A292277FBB9005CF92D /* UIViewController+AXKit.h in Headers */,
 				24732A312277FBB9005CF92D /* NSObject+AXKit.h in Headers */,
 				24732A0D2277FBB9005CF92D /* UIViewController+AXiPadAlert.h in Headers */,
 				24BB839C229E2ED700442276 /* AXKeyboardObserve.h in Headers */,
+				219D768824123ED500196BFE /* NSObject+AXCacheImage.h in Headers */,
 				24732A9C2277FBB9005CF92D /* AXFullLayout.h in Headers */,
 				24732A5B2277FBB9005CF92D /* AXLocationManager.h in Headers */,
-				24732B252277FD53005CF92D /* UIScrollView+AXRefresh.h in Headers */,
 				247329F82277FBB9005CF92D /* NSDictionary+AXKit.h in Headers */,
-				24732B2C2277FD53005CF92D /* UIButton+AXCircle.h in Headers */,
 				24732A832277FBB9005CF92D /* AXUIAssistant.h in Headers */,
 				24732A8A2277FBB9005CF92D /* AXMacros_instance.h in Headers */,
 				24732A582277FBB9005CF92D /* AXAuthorizationManager.h in Headers */,
 				24732A7E2277FBB9005CF92D /* AXCrashProcessManager.h in Headers */,
 				24732A102277FBB9005CF92D /* UIView+AXAnimation.h in Headers */,
 				24732A872277FBB9005CF92D /* AXMacros_addProperty.h in Headers */,
+				219D769824123ED500196BFE /* LameHelper.h in Headers */,
 				24732A3C2277FBB9005CF92D /* UIWindow+AXKit.h in Headers */,
 				24732A5C2277FBB9005CF92D /* LocationManager.h in Headers */,
-				24732B1C2277FD53005CF92D /* MSWeakTimer.h in Headers */,
 				247329FA2277FBB9005CF92D /* UIImageView+AXKit.h in Headers */,
 				24732AA52277FBB9005CF92D /* AXCollectionViewController.h in Headers */,
-				24732B352277FD53005CF92D /* AXAliPayManager.h in Headers */,
 				24732A302277FBB9005CF92D /* NSString+AXDate.h in Headers */,
 				24732A0F2277FBB9005CF92D /* NSArray+AXKit.h in Headers */,
 				247329F32277FBB9005CF92D /* UILabel+AXKit.h in Headers */,
@@ -1569,63 +1570,66 @@
 				24732A1E2277FBB9005CF92D /* UIView+AXKit.h in Headers */,
 				24732A752277FBB9005CF92D /* AXDataModel.h in Headers */,
 				24732A842277FBB9005CF92D /* AXMacros_value.h in Headers */,
-				24732B292277FD53005CF92D /* NSObject+AXCacheImage.h in Headers */,
+				219D769624123ED500196BFE /* NSObject+FBKVOControllerAX.h in Headers */,
 				24732A2F2277FBB9005CF92D /* CALayer+AXFrame.h in Headers */,
 				24732A472277FBB9005CF92D /* UINavigationController+AXKit.h in Headers */,
 				24BB8353229BDDF800442276 /* UITextView+AXAction.h in Headers */,
 				24732A7D2277FBB9005CF92D /* AXConstant.h in Headers */,
 				24732A492277FBB9005CF92D /* UIViewController+AXAlert.h in Headers */,
 				24F0F0C822C4B7F5009DD02B /* AXNavigationBar.h in Headers */,
-				24732B3A2277FD53005CF92D /* DataBase.h in Headers */,
 				24732AA12277FBB9005CF92D /* AXTabBarController.h in Headers */,
 				247329ED2277FBB9005CF92D /* NSNumber+AXKit.h in Headers */,
 				24732AB12277FBB9005CF92D /* AXSinglePickVC.h in Headers */,
 				24732A462277FBB9005CF92D /* UIColor+AXKit.h in Headers */,
+				219D768A24123ED500196BFE /* UIImageView+AXCircle.h in Headers */,
 				24732A522277FBB9005CF92D /* UITextField+AXNumberKeyboard.h in Headers */,
 				24732A4E2277FBB9005CF92D /* AXDottedLineView.h in Headers */,
 				24732A392277FBB9005CF92D /* UIImage+AXBundle.h in Headers */,
-				24732B2E2277FD53005CF92D /* AXPhotoBrowserVC.h in Headers */,
 				24732A922277FBB9005CF92D /* AXChoosePayModel.h in Headers */,
+				219D767324123ED500196BFE /* AXNetManager+Upload.h in Headers */,
 				24732A0C2277FBB9005CF92D /* UISlider+AXKit.h in Headers */,
 				24732A562277FBB9005CF92D /* AXTouchIDManager.h in Headers */,
 				24732A942277FBB9005CF92D /* AXChoosePayStyleCell.h in Headers */,
 				24732A432277FBB9005CF92D /* NSObject+AXKVO.h in Headers */,
 				24835B9522B72DB000F4125C /* UIGestureRecognizer+AXKit.h in Headers */,
-				24732B172277FD53005CF92D /* MBProgressHUD+AX.h in Headers */,
 				24732A8B2277FBB9005CF92D /* AXChoosePayVC.h in Headers */,
 				24732A412277FBB9005CF92D /* UIBarButtonItem+AXKit.h in Headers */,
 				24732A502277FBB9005CF92D /* AXVeriCodeView.h in Headers */,
-				24732B422277FD53005CF92D /* AXNetManager+Version.h in Headers */,
-				24732B262277FD53005CF92D /* AXRefreshHeader.h in Headers */,
 				24732A052277FBB9005CF92D /* NSDate+AXKit.h in Headers */,
 				24732AB92277FBB9005CF92D /* AXQRCodeVC.h in Headers */,
 				24732A142277FBB9005CF92D /* UIView+AXSnapshot.h in Headers */,
+				219D766F24123ED500196BFE /* AXNetGroup.h in Headers */,
 				247329E32277FBB9005CF92D /* UIView+AXIBInspectable.h in Headers */,
 				24732A342277FBB9005CF92D /* UIButton+AXCountDown2.h in Headers */,
 				24732A612277FBB9005CF92D /* IBObjectHeader.h in Headers */,
 				24732A552277FBB9005CF92D /* AXNumberKeyboard.h in Headers */,
+				219D769424123ED500196BFE /* UMTool.h in Headers */,
 				247329E52277FBB9005CF92D /* WKWebView+AXKit.h in Headers */,
 				24BB8672229E9B4300442276 /* AXPayVC.h in Headers */,
-				24732B332277FD53005CF92D /* UIScrollView+AXEmptyDataSet.h in Headers */,
 				24732AA02277FBB9005CF92D /* AXFullLayout2.h in Headers */,
-				24732B3E2277FD53005CF92D /* WKWebViewController.h in Headers */,
 				24732AC52277FBB9005CF92D /* AXGuidePageVC.h in Headers */,
 				247329DF2277FBB9005CF92D /* UITextField+AXAction.h in Headers */,
 				24F0F09722C3144C009DD02B /* AXPresentationController.h in Headers */,
 				24732A2E2277FBB9005CF92D /* UIDevice+AXKit.h in Headers */,
+				219D769324123ED500196BFE /* WKWebViewController.h in Headers */,
 				24732A012277FBB9005CF92D /* NSString+AXKit.h in Headers */,
+				219D766924123ED500196BFE /* DataBase.h in Headers */,
 				24F0F0D822C4B988009DD02B /* AXMultiSelectViewModel.h in Headers */,
 				24732AAE2277FBB9005CF92D /* AXAlertCentreAnimation.h in Headers */,
 				24732A022277FBB9005CF92D /* UIView+AXFrame.h in Headers */,
+				219D767124123ED500196BFE /* AXNetManager+Version.h in Headers */,
 				24732A602277FBB9005CF92D /* AXButton.h in Headers */,
+				219D767024123ED500196BFE /* AXNetManager.h in Headers */,
 				24732A742277FBB9005CF92D /* AXViewModelProtocol.h in Headers */,
 				24732A9B2277FBB9005CF92D /* AXNavigationController.h in Headers */,
 				24732A6E2277FBB9005CF92D /* AXConfigureManager.h in Headers */,
-				24732B202277FD53005CF92D /* LameHelper.h in Headers */,
 				247329FE2277FBB9005CF92D /* UITextField+AXKit.h in Headers */,
+				219D767D24123ED500196BFE /* AXWebSocketManager.h in Headers */,
+				219D768524123ED500196BFE /* AXRefreshHeader.h in Headers */,
 				24732A042277FBB9005CF92D /* NSString+AXCrypto.h in Headers */,
 				24732A652277FBB9005CF92D /* IBUITextField.h in Headers */,
 				24732A852277FBB9005CF92D /* AXMacros.h in Headers */,
+				219D767624123ED500196BFE /* AXNetManagerHeader.h in Headers */,
 				24DB149222D998A300777FB6 /* AXDeviceAuthorizationViewController.h in Headers */,
 				24732AC12277FBB9005CF92D /* AXPlayVC.h in Headers */,
 				24732A9D2277FBB9005CF92D /* AXTableViewController.h in Headers */,
@@ -1633,14 +1637,10 @@
 				24170BBF22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h in Headers */,
 				24732A1C2277FBB9005CF92D /* NSData+AXKit.h in Headers */,
 				24732A2D2277FBB9005CF92D /* UICollectionView+AXKit.h in Headers */,
-				24732B372277FD53005CF92D /* YYLabel+AXiOSKit.h in Headers */,
 				24732A792277FBB9005CF92D /* AXCountDownObject.h in Headers */,
 				24732A382277FBB9005CF92D /* UIViewController+AXNavBarConfig.h in Headers */,
-				24732B402277FD53005CF92D /* AXNetGroup.h in Headers */,
 				24732AC72277FBB9005CF92D /* AXGuidePageCell.h in Headers */,
-				24732B272277FD53005CF92D /* AXRefreshFooter.h in Headers */,
 				247329F42277FBB9005CF92D /* UIImageView+SDImageCut.h in Headers */,
-				24732B382277FD53005CF92D /* DBStatements.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1707,7 +1707,6 @@
 			files = (
 				24732A512277FBB9005CF92D /* AXNumberKeyboard.xib in Resources */,
 				24064AC622BA58C200F6EC73 /* 命令行.md in Resources */,
-				24732B3D2277FD53005CF92D /* WKJSPOST.html in Resources */,
 				24732A932277FBB9005CF92D /* AXChoosePayStyleCell.xib in Resources */,
 				24732ABD2277FBB9005CF92D /* AXSafariVC.xib in Resources */,
 				247329DA2277FBB9005CF92D /* AXCollectFile.md in Resources */,
@@ -1721,6 +1720,7 @@
 				24732A8E2277FBB9005CF92D /* AXChoosePayStyleVC.xib in Resources */,
 				24732AB72277FBB9005CF92D /* QRCodeViewController.xib in Resources */,
 				24732ABA2277FBB9005CF92D /* AXQRCodeVC.xib in Resources */,
+				219D769224123ED500196BFE /* WKJSPOST.html in Resources */,
 				24732AC62277FBB9005CF92D /* AXGuidePageCell.xib in Resources */,
 				24732A8D2277FBB9005CF92D /* AXChoosePayVC.xib in Resources */,
 				24732ACF2277FBB9005CF92D /* AXHTML.bundle in Resources */,
@@ -1764,37 +1764,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				247329E62277FBB9005CF92D /* NSUserDefaults+AXKit.m in Sources */,
-				24732B2A2277FD53005CF92D /* UIButton+AXCircle.m in Sources */,
 				24732A242277FBB9005CF92D /* UITextField+AXAction.m in Sources */,
 				24F0F0E122C4BAF4009DD02B /* AXMultiSelectSectionHeaderView.m in Sources */,
 				247329FB2277FBB9005CF92D /* NSObject+AXVersion.m in Sources */,
-				24732B242277FD53005CF92D /* AXRefreshHeader.m in Sources */,
 				24732A592277FBB9005CF92D /* AXAuthorizationManager.m in Sources */,
 				24732A132277FBB9005CF92D /* UIControl+AXKit.m in Sources */,
-				24732B392277FD53005CF92D /* DataBase.m in Sources */,
 				24732A6B2277FBB9005CF92D /* AXCrashProcessManager.m in Sources */,
 				24732A0E2277FBB9005CF92D /* NSObject+AXKVO.m in Sources */,
-				24732B282277FD53005CF92D /* UIImageView+AXCircle.m in Sources */,
 				24BB839D229E2ED700442276 /* AXKeyboardObserve.m in Sources */,
 				24732AC92277FBB9005CF92D /* AXWKWebVC.m in Sources */,
 				24732A2C2277FBB9005CF92D /* UIImageView+SDImageCut.m in Sources */,
-				24732B2D2277FD53005CF92D /* NSObject+AXCacheImage.m in Sources */,
 				24732A4F2277FBB9005CF92D /* AXVeriCodeView.m in Sources */,
 				24732A112277FBB9005CF92D /* UIBarButtonItem+AXKit.m in Sources */,
 				24732A372277FBB9005CF92D /* NSString+AXKit.m in Sources */,
+				219D766824123ED500196BFE /* DataBase.m in Sources */,
+				219D769924123ED500196BFE /* LameHelper.m in Sources */,
 				24732AC02277FBB9005CF92D /* AXPlayVC.m in Sources */,
 				24732A962277FBB9005CF92D /* AXWebVC.m in Sources */,
 				24732AC42277FBB9005CF92D /* AXGuidePageCell.m in Sources */,
+				219D768F24123ED500196BFE /* MBProgressHUD+AX.m in Sources */,
+				219D767824123ED500196BFE /* AXNetGroup.m in Sources */,
 				24732A6A2277FBB9005CF92D /* IBUIView.m in Sources */,
-				24732B1D2277FD53005CF92D /* MSWeakTimer.m in Sources */,
-				216F93C523C235F800760CC9 /* AXWebSocketManager.m in Sources */,
 				24732AB02277FBB9005CF92D /* AXAlerUpwardAnimation.m in Sources */,
 				24732A452277FBB9005CF92D /* UISlider+AXKit.m in Sources */,
 				24732AAB2277FBB9005CF92D /* AXAlertCentreAnimation.m in Sources */,
 				24732A252277FBB9005CF92D /* UIImageView+AXKit.m in Sources */,
 				24732A532277FBB9005CF92D /* AXNumberKeyboard.m in Sources */,
+				219D768324123ED500196BFE /* AXRefreshHeader.m in Sources */,
 				247329FF2277FBB9005CF92D /* UIImage+AXBundle.m in Sources */,
-				24732B3B2277FD53005CF92D /* DBStatements.m in Sources */,
 				24BB8673229E9B4300442276 /* AXPayVC.m in Sources */,
 				24732A032277FBB9005CF92D /* UIButton+AXCountDown2.m in Sources */,
 				24732AB32277FBB9005CF92D /* AXSinglePickVC.m in Sources */,
@@ -1802,22 +1799,26 @@
 				247329EF2277FBB9005CF92D /* CALayer+AXFrame.m in Sources */,
 				247329F92277FBB9005CF92D /* UIButton+AXCountDown.m in Sources */,
 				24F0F12422C76874009DD02B /* AXTripleInteractionViewController.m in Sources */,
+				219D767724123ED500196BFE /* AXNetManager.m in Sources */,
 				24732A912277FBB9005CF92D /* AXChoosePayModel.m in Sources */,
 				24732A402277FBB9005CF92D /* UIView+AXAnimation.m in Sources */,
 				247329F72277FBB9005CF92D /* Foundation+AXLog.m in Sources */,
 				24732A222277FBB9005CF92D /* NSObject+AXRuntime.m in Sources */,
-				24732B362277FD53005CF92D /* YYLabel+AXiOSKit.m in Sources */,
 				2469429922EA8E62009E9CB9 /* AXFoundationAssistant.m in Sources */,
 				24732AC32277FBB9005CF92D /* AXGuidePageVC.m in Sources */,
 				24732AB42277FBB9005CF92D /* AXDateVC.m in Sources */,
 				24F0F09822C3144C009DD02B /* AXPresentationController.m in Sources */,
 				24835B9622B72DB000F4125C /* UIGestureRecognizer+AXKit.m in Sources */,
 				24732A482277FBB9005CF92D /* NSBundle+AXBundle.m in Sources */,
+				219D767E24123ED500196BFE /* AXWebSocketManager.m in Sources */,
+				219D769124123ED500196BFE /* WKWebViewController.m in Sources */,
 				24732ACA2277FBB9005CF92D /* AXScriptMessageHandlerHelper.m in Sources */,
 				24732AB82277FBB9005CF92D /* QRCodeViewController.m in Sources */,
 				24732A1D2277FBB9005CF92D /* WKWebView+AXKit.m in Sources */,
-				24732B3C2277FD53005CF92D /* WKWebViewController.m in Sources */,
+				219D766D24123ED500196BFE /* AXNetManager+Upload.m in Sources */,
+				219D768924123ED500196BFE /* UIButton+AXCircle.m in Sources */,
 				24732A772277FBB9005CF92D /* AXUIAssistant.m in Sources */,
+				219D767924123ED500196BFE /* UIScrollView+AXEmptyDataSet.m in Sources */,
 				24732A9F2277FBB9005CF92D /* AXHalfWidthLayout.m in Sources */,
 				247329F02277FBB9005CF92D /* NSString+AXDate.m in Sources */,
 				247329F22277FBB9005CF92D /* UICollectionView+AXKit.m in Sources */,
@@ -1826,39 +1827,41 @@
 				24732A902277FBB9005CF92D /* AXChoosePayVC.m in Sources */,
 				24732A7A2277FBB9005CF92D /* AXCountDownObject.m in Sources */,
 				24732AAC2277FBB9005CF92D /* AXBaseAlertVC.m in Sources */,
-				24732B472277FD53005CF92D /* AXNetGroup.m in Sources */,
+				219D768224123ED500196BFE /* AXRefreshFooter.m in Sources */,
 				24732A2A2277FBB9005CF92D /* NSDictionary+AXKit.m in Sources */,
 				24170BC022D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m in Sources */,
+				219D768C24123ED500196BFE /* NSObject+AXCacheImage.m in Sources */,
 				24732A2B2277FBB9005CF92D /* UILabel+AXKit.m in Sources */,
+				219D768124123ED500196BFE /* UIScrollView+AXRefresh.m in Sources */,
 				24732AA82277FBB9005CF92D /* AXFullLayout2.m in Sources */,
 				24732A662277FBB9005CF92D /* AXButton.m in Sources */,
 				247329DD2277FBB9005CF92D /* AXWeakProxy.m in Sources */,
+				219D767B24123ED500196BFE /* AXAliPayManager.m in Sources */,
 				24732A4A2277FBB9005CF92D /* NSDateComponents+AXKit.m in Sources */,
 				24732A5D2277FBB9005CF92D /* AXLocationManager.m in Sources */,
-				24732B432277FD53005CF92D /* AXNetManager+Verson.m in Sources */,
 				24732A5A2277FBB9005CF92D /* LocationManager.m in Sources */,
+				219D767524123ED500196BFE /* AXNetworkManager.m in Sources */,
 				24732A442277FBB9005CF92D /* UIViewController+AXiPadAlert.m in Sources */,
 				247329FD2277FBB9005CF92D /* UITableView+AXKit.m in Sources */,
 				24F0F0D122C4B90B009DD02B /* AXMultiSelectViewController.m in Sources */,
 				24732A3A2277FBB9005CF92D /* UITextField+AXKit.m in Sources */,
-				24732B3F2277FD53005CF92D /* AXNetManager+Upload.m in Sources */,
 				24732A182277FBB9005CF92D /* UIScrollView+AXKit.m in Sources */,
 				247329F62277FBB9005CF92D /* UIViewController+AXKit.m in Sources */,
 				24732ABF2277FBB9005CF92D /* AXSafariVC.m in Sources */,
 				24732A7F2277FBB9005CF92D /* AXObject.m in Sources */,
-				24732B232277FD53005CF92D /* AXRefreshFooter.m in Sources */,
 				24732A8C2277FBB9005CF92D /* AXChoosePayStyleVC.m in Sources */,
 				24DB149322D998A300777FB6 /* AXDeviceAuthorizationViewController.m in Sources */,
 				24732A952277FBB9005CF92D /* AXChoosePayStyleCell.m in Sources */,
 				24732AA22277FBB9005CF92D /* AXViewController.m in Sources */,
 				24732A6D2277FBB9005CF92D /* AXHelper.m in Sources */,
 				24732A9A2277FBB9005CF92D /* AXJSContext.m in Sources */,
+				219D768E24123ED500196BFE /* AXPhotoBrowserVC.m in Sources */,
 				24732AA62277FBB9005CF92D /* AXTableViewController.m in Sources */,
-				24732B462277FD53005CF92D /* AXNetManager.m in Sources */,
 				24732ABC2277FBB9005CF92D /* AXQRCodeVC.m in Sources */,
 				247329F12277FBB9005CF92D /* UIDevice+AXKit.m in Sources */,
 				24732A1F2277FBB9005CF92D /* UITextView+AXKit.m in Sources */,
 				247329E12277FBB9005CF92D /* UIView+AXSheet.m in Sources */,
+				219D767224123ED500196BFE /* AXNetManager+Verson.m in Sources */,
 				24732A5F2277FBB9005CF92D /* IBUIButton.m in Sources */,
 				24732A352277FBB9005CF92D /* NSString+AXCrypto.m in Sources */,
 				24732A682277FBB9005CF92D /* IBUILabel.m in Sources */,
@@ -1866,6 +1869,7 @@
 				24732A362277FBB9005CF92D /* UIView+AXFrame.m in Sources */,
 				24732A802277FBB9005CF92D /* AXUNNotificationHandler.m in Sources */,
 				247329E82277FBB9005CF92D /* NSData+AXKit.m in Sources */,
+				219D769724123ED500196BFE /* NSObject+FBKVOControllerAX.m in Sources */,
 				24732A092277FBB9005CF92D /* UIColor+AXKit.m in Sources */,
 				24F0F0D522C4B938009DD02B /* AXMultiSelectConfig.m in Sources */,
 				247329E72277FBB9005CF92D /* UIButton+AXKit.m in Sources */,
@@ -1877,38 +1881,34 @@
 				24732AA42277FBB9005CF92D /* AXNavigationController.m in Sources */,
 				24732A712277FBB9005CF92D /* AXGCDTimer.m in Sources */,
 				24F0F0C922C4B7F5009DD02B /* AXNavigationBar.m in Sources */,
-				24732B222277FD53005CF92D /* UIScrollView+AXRefresh.m in Sources */,
-				24732B342277FD53005CF92D /* AXAliPayManager.m in Sources */,
+				219D769524123ED500196BFE /* UMTool.m in Sources */,
 				24732A9E2277FBB9005CF92D /* AXCollectionViewController.m in Sources */,
-				24732B212277FD53005CF92D /* LameHelper.m in Sources */,
 				247329EB2277FBB9005CF92D /* UISwitch+AXKit.m in Sources */,
 				247329EE2277FBB9005CF92D /* NSObject+AXKit.m in Sources */,
 				24732A692277FBB9005CF92D /* IBUIImageView.m in Sources */,
-				216B51AE23B4D7BD00A67384 /* AXNetworkManager.m in Sources */,
+				219D768724123ED500196BFE /* UIImageView+AXCircle.m in Sources */,
 				247329E42277FBB9005CF92D /* UIView+AXKit.m in Sources */,
 				24732A152277FBB9005CF92D /* NSNumber+AXKit.m in Sources */,
 				24732A572277FBB9005CF92D /* AXTouchIDManager.m in Sources */,
 				24732A322277FBB9005CF92D /* NSDate+AXKit.m in Sources */,
-				24732B2F2277FD53005CF92D /* AXPhotoBrowserVC.m in Sources */,
 				24F0F12922C76944009DD02B /* AXTripleInteractionModel.m in Sources */,
-				24732B1F2277FD53005CF92D /* UMTool.m in Sources */,
 				24732AA72277FBB9005CF92D /* AXTabBarController.m in Sources */,
 				24732A422277FBB9005CF92D /* NSArray+AXKit.m in Sources */,
+				219D766A24123ED500196BFE /* DBStatements.m in Sources */,
 				24BB8354229BDDF800442276 /* UITextView+AXAction.m in Sources */,
 				24732A282277FBB9005CF92D /* UIImage+AXKit.m in Sources */,
 				247329FC2277FBB9005CF92D /* UIWindow+AXKit.m in Sources */,
+				219D768024123ED500196BFE /* YYLabel+AXiOSKit.m in Sources */,
+				219D766C24123ED500196BFE /* MSWeakTimer.m in Sources */,
 				24732A822277FBB9005CF92D /* AXDataModel.m in Sources */,
 				24732B9922782D9E005CF92D /* AXWebScriptMessageModel.m in Sources */,
 				24732A0A2277FBB9005CF92D /* UINavigationController+AXKit.m in Sources */,
 				24732A5E2277FBB9005CF92D /* IBUITextField.m in Sources */,
 				24732A002277FBB9005CF92D /* UIViewController+AXNavBarConfig.m in Sources */,
-				24732B1B2277FD53005CF92D /* NSObject+FBKVOControllerAX.m in Sources */,
 				24732A192277FBB9005CF92D /* NSString+AXEffective.m in Sources */,
 				24732A542277FBB9005CF92D /* UITextField+AXNumberKeyboard.m in Sources */,
-				24732B162277FD53005CF92D /* MBProgressHUD+AX.m in Sources */,
 				24732A202277FBB9005CF92D /* UIView+AXIBInspectable.m in Sources */,
 				24732A4D2277FBB9005CF92D /* AXDottedLineView.m in Sources */,
-				24732B322277FD53005CF92D /* UIScrollView+AXEmptyDataSet.m in Sources */,
 				24732AA32277FBB9005CF92D /* AXFullLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
