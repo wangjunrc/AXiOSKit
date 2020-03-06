@@ -57,45 +57,25 @@ typedef void(^AxBlock)(void);
 /**
  * ax_kWeakObj(block 外面使用)
  */
-#define axWeakObj(obj) __weak typeof(obj) obj##Weak = obj;
+#define ax_weakify(obj) __weak typeof(obj) obj##Weak = obj;
 
 /**
  * StrongObj(block 里面使用)
  */
-#define axStrongObj(obj) __strong typeof(obj) obj = obj##Weak;
+#define ax_strongify(obj) __strong typeof(obj) obj = obj##Weak;
 
 /**
  * 弱引用 self
  */
-#define axSelfWeak axWeakObj(self);
+#define axSelfWeak ax_weakify(self);
 
 /**
  * 强引用 self
  */
-#define axSelfStrong axStrongObj(self);
+#define axSelfStrong ax_strongify(self);
 
 
 /***/
-
-/**
- * ax_kWeakObj(block 外面使用)
- */
-#define AX_WEAK_OBJ(obj) __weak typeof(obj) AxWeak##obj = obj;
-
-/**
- * StrongObj(block 里面使用) obj = obj##Weak;
- */
-#define AX_STRONG_OBJ(obj) __strong typeof(obj) obj = AxWeak##obj;
-
-/**
- * 弱引用 self
- */
-#define AX_WEAK_SELF AX_WEAK_OBJ(self);
-
-/**
- * 强引用 self
- */
-#define AX_STRONG_SELF AX_STRONG_OBJ(self);
 
 /**
  * NSNotificationCenter

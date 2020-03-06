@@ -15,6 +15,11 @@
 		216F93DB23C2405E00760CC9 /* ChatMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F93D523C2405E00760CC9 /* ChatMessageModel.m */; };
 		216F93DC23C2405E00760CC9 /* ChatTextMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F93D723C2405E00760CC9 /* ChatTextMessageModel.m */; };
 		216F93DF23C2644C00760CC9 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F93DE23C2644C00760CC9 /* TableViewController.m */; };
+		218A4F63240E707A00965FB5 /* NSObject+SelectorDefender.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A4F62240E707A00965FB5 /* NSObject+SelectorDefender.m */; };
+		218A4F6F240E719B00965FB5 /* NSObject+MethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A4F6E240E719B00965FB5 /* NSObject+MethodSwizzling.m */; };
+		219D761F2412291700196BFE /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D761D2412291700196BFE /* RunLoopViewController.m */; };
+		219D76202412291700196BFE /* RunLoopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219D761E2412291700196BFE /* RunLoopViewController.xib */; };
+		21CB9590240927C500C02812 /* TestObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CB958F240927C500C02812 /* TestObj.m */; };
 		24064A8922BA3A5A00F6EC73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24064A8822BA3A5A00F6EC73 /* AppDelegate.m */; };
 		24064A8C22BA3A5A00F6EC73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24064A8B22BA3A5A00F6EC73 /* ViewController.m */; };
 		24064A8F22BA3A5A00F6EC73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24064A8D22BA3A5A00F6EC73 /* Main.storyboard */; };
@@ -64,6 +69,15 @@
 		216F93D823C2405E00760CC9 /* ChatMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageModel.h; sourceTree = "<group>"; };
 		216F93DD23C2644C00760CC9 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		216F93DE23C2644C00760CC9 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		218A4F61240E707A00965FB5 /* NSObject+SelectorDefender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SelectorDefender.h"; sourceTree = "<group>"; };
+		218A4F62240E707A00965FB5 /* NSObject+SelectorDefender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SelectorDefender.m"; sourceTree = "<group>"; };
+		218A4F6D240E719B00965FB5 /* NSObject+MethodSwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodSwizzling.h"; sourceTree = "<group>"; };
+		218A4F6E240E719B00965FB5 /* NSObject+MethodSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodSwizzling.m"; sourceTree = "<group>"; };
+		219D761C2412291700196BFE /* RunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
+		219D761D2412291700196BFE /* RunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
+		219D761E2412291700196BFE /* RunLoopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunLoopViewController.xib; sourceTree = "<group>"; };
+		21CB958E240927C500C02812 /* TestObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObj.h; sourceTree = "<group>"; };
+		21CB958F240927C500C02812 /* TestObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestObj.m; sourceTree = "<group>"; };
 		24064A8422BA3A5A00F6EC73 /* AXiOSKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24064A8722BA3A5A00F6EC73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24064A8822BA3A5A00F6EC73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -157,6 +171,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		219D762324123B3F00196BFE /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				216B51B123B4DA2800A67384 /* AXNetworkTestViewController.h */,
+				216B51B223B4DA2800A67384 /* AXNetworkTestViewController.m */,
+				216B51B323B4DA2800A67384 /* AXNetworkTestViewController.xib */,
+				218A4F61240E707A00965FB5 /* NSObject+SelectorDefender.h */,
+				218A4F62240E707A00965FB5 /* NSObject+SelectorDefender.m */,
+				218A4F6D240E719B00965FB5 /* NSObject+MethodSwizzling.h */,
+				218A4F6E240E719B00965FB5 /* NSObject+MethodSwizzling.m */,
+				21CB958E240927C500C02812 /* TestObj.h */,
+				21CB958F240927C500C02812 /* TestObj.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		24064A7B22BA3A5A00F6EC73 = {
 			isa = PBXGroup;
 			children = (
@@ -182,29 +212,30 @@
 		24064A8622BA3A5A00F6EC73 /* AXiOSKitExample */ = {
 			isa = PBXGroup;
 			children = (
-				216F93CF23C2405E00760CC9 /* Chat */,
-				216F93CA23C23AE200760CC9 /* WebSocket */,
-				24064ABE22BA430F00F6EC73 /* H5.bundle */,
-				24064A8722BA3A5A00F6EC73 /* AppDelegate.h */,
-				24064A8822BA3A5A00F6EC73 /* AppDelegate.m */,
 				49BFF31C23993E0800F5650B /* AANavigationController.h */,
 				49BFF31D23993E0800F5650B /* AANavigationController.m */,
-				24064A8A22BA3A5A00F6EC73 /* ViewController.h */,
-				24064A8B22BA3A5A00F6EC73 /* ViewController.m */,
 				24064AC022BA531500F6EC73 /* AAViewController.h */,
 				24064AC122BA531500F6EC73 /* AAViewController.m */,
+				24064AC222BA531500F6EC73 /* AAViewController.xib */,
+				24064A8722BA3A5A00F6EC73 /* AppDelegate.h */,
+				24064A8822BA3A5A00F6EC73 /* AppDelegate.m */,
+				24064A9022BA3A5B00F6EC73 /* Assets.xcassets */,
+				216F93CF23C2405E00760CC9 /* Chat */,
+				24D81C3822D9919700142F07 /* File.strings */,
+				24064ABE22BA430F00F6EC73 /* H5.bundle */,
+				24064A9522BA3A5B00F6EC73 /* Info.plist */,
+				24064A9222BA3A5B00F6EC73 /* LaunchScreen.storyboard */,
+				24064A9622BA3A5B00F6EC73 /* main.m */,
+				24064A8D22BA3A5A00F6EC73 /* Main.storyboard */,
+				219D761C2412291700196BFE /* RunLoopViewController.h */,
+				219D761D2412291700196BFE /* RunLoopViewController.m */,
+				219D761E2412291700196BFE /* RunLoopViewController.xib */,
 				216F93DD23C2644C00760CC9 /* TableViewController.h */,
 				216F93DE23C2644C00760CC9 /* TableViewController.m */,
-				24064AC222BA531500F6EC73 /* AAViewController.xib */,
-				24064A8D22BA3A5A00F6EC73 /* Main.storyboard */,
-				24064A9022BA3A5B00F6EC73 /* Assets.xcassets */,
-				24064A9222BA3A5B00F6EC73 /* LaunchScreen.storyboard */,
-				24064A9522BA3A5B00F6EC73 /* Info.plist */,
-				24064A9622BA3A5B00F6EC73 /* main.m */,
-				216B51B123B4DA2800A67384 /* AXNetworkTestViewController.h */,
-				216B51B223B4DA2800A67384 /* AXNetworkTestViewController.m */,
-				216B51B323B4DA2800A67384 /* AXNetworkTestViewController.xib */,
-				24D81C3822D9919700142F07 /* File.strings */,
+				219D762324123B3F00196BFE /* Test */,
+				24064A8A22BA3A5A00F6EC73 /* ViewController.h */,
+				24064A8B22BA3A5A00F6EC73 /* ViewController.m */,
+				216F93CA23C23AE200760CC9 /* WebSocket */,
 			);
 			path = AXiOSKitExample;
 			sourceTree = "<group>";
@@ -356,6 +387,7 @@
 				24D81C3622D9919700142F07 /* File.strings in Resources */,
 				24064A9122BA3A5B00F6EC73 /* Assets.xcassets in Resources */,
 				24064ABF22BA430F00F6EC73 /* H5.bundle in Resources */,
+				219D76202412291700196BFE /* RunLoopViewController.xib in Resources */,
 				216F93D923C2405E00760CC9 /* ChatViewController.xib in Resources */,
 				24064A8F22BA3A5A00F6EC73 /* Main.storyboard in Resources */,
 			);
@@ -427,14 +459,18 @@
 				216F93DF23C2644C00760CC9 /* TableViewController.m in Sources */,
 				24064A8C22BA3A5A00F6EC73 /* ViewController.m in Sources */,
 				24064A9722BA3A5B00F6EC73 /* main.m in Sources */,
+				21CB9590240927C500C02812 /* TestObj.m in Sources */,
 				216F93DC23C2405E00760CC9 /* ChatTextMessageModel.m in Sources */,
 				216B51B423B4DA2800A67384 /* AXNetworkTestViewController.m in Sources */,
+				218A4F6F240E719B00965FB5 /* NSObject+MethodSwizzling.m in Sources */,
 				49BFF31E23993E0800F5650B /* AANavigationController.m in Sources */,
 				24064AC322BA531500F6EC73 /* AAViewController.m in Sources */,
 				216F93CD23C23AE200760CC9 /* AXWebSocketEngine.m in Sources */,
 				216F93DA23C2405E00760CC9 /* ChatViewController.m in Sources */,
+				219D761F2412291700196BFE /* RunLoopViewController.m in Sources */,
 				24064A8922BA3A5A00F6EC73 /* AppDelegate.m in Sources */,
 				216F93DB23C2405E00760CC9 /* ChatMessageModel.m in Sources */,
+				218A4F63240E707A00965FB5 /* NSObject+SelectorDefender.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

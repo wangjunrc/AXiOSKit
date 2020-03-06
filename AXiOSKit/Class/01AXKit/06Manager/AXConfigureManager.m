@@ -68,7 +68,7 @@ axSharedInstance_M;
  */
 static void ax_HandleExceptionr(NSException*exception) {
     NSLog(@"\n\n⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️  xcode运行崩溃  ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️\n");
-    NSLog(@"xcode运行崩溃--> %@\n%@", exception, exception.callStackSymbols);
+    NSLog(@"exception = %@\n exception.name = %@ \n exception.callStackSymbols = %@", exception,exception.name, exception.callStackSymbols);
     NSLog(@"\n\n⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️  xcode运行崩溃  ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️\n");
 }
 

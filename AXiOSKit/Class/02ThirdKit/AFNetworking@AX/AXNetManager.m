@@ -141,7 +141,7 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     
     NSURLSessionDownloadTask *task = nil;
-    axWeakObj(task);
+    ax_weakify(task);
     
     task = [manager downloadTaskWithRequest:request progress:^(NSProgress *downloadProgress) {
         

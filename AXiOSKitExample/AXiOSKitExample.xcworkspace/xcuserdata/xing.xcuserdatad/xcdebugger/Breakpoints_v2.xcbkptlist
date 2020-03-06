@@ -7,32 +7,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "47F17EC7-E75E-4CBF-ABD8-D7C7F3D472E5"
+            uuid = "BA953873-039E-42FC-AD84-74B82973B825"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../AXiOSKit/Class/01AXKit/01Category/NSObject+AXKit.m"
+            filePath = "AXiOSKitExample/NSObject+SelectorDefender.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "-ax_toJSONString"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-ysc_forwardingTargetForSelector:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B60B9356-155E-43B4-963B-D58FFB2AAC74"
+            uuid = "9EBC771D-FE31-4C49-A8E8-826827309167"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../AXiOSKit/Class/01AXKit/01Category/NSObject+AXKit.m"
+            filePath = "AXiOSKitExample/NSObject+SelectorDefender.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "-ax_toJSONString"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-ysc_forwardingTargetForSelector:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56AFA6D1-3E1C-49BA-ADA4-1D0D358A5EE8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AXiOSKitExample/NSObject+SelectorDefender.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-ysc_forwardingTargetForSelector:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

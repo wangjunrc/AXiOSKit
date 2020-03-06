@@ -10,12 +10,23 @@
 #import "ViewController.h"
 #import "ChatViewController.h"
 #import "UIViewController+AXKit.h"
+#import "TestObj.h"
+#import "RunLoopViewController.h"
 
 typedef void (^CollectionBlock)(void);
 
 @interface TableViewController ()
 
 @property(nonatomic,strong)NSArray *dataArray;
+
+@property(nonatomic, strong) NSString *strongStr;
+
+@property(nonatomic, copy) NSString *copyedStr;
+
+
+@property(nonatomic, strong) NSMutableString *strongMStr;
+
+@property(nonatomic, copy) NSMutableString *copyedMStr;
 
 @end
 
@@ -25,6 +36,7 @@ typedef void (^CollectionBlock)(void);
     [super viewDidLoad];
     
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cellid"];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -77,10 +89,43 @@ typedef void (^CollectionBlock)(void);
                 },
             },
             
+            @{
+                @"title":@"NSRunLoop模式",
+                @"action":  ^{
+                    RunLoopViewController *vc = [[RunLoopViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+            },
             
+            
+            @{
+                @"title":@"对象未实现方法",
+                @"action":  ^{
+                    
+                    UIButton *testButton = [[UIButton alloc] init];
+                    [testButton performSelector:@selector(someMethod:)];
+                },
+            },
         ];
     }
     return _dataArray;
 }
 
+
+
+-(void)testObj:(TestObj *)obj{
+    NSAssert([obj respondsToSelector:@selector(log)], @"对的不对");
+    
+    NSLog(@">>>> %d == %d",[obj.class instancesRespondToSelector:@selector(log)],[obj.class instancesRespondToSelector:@selector(log2)]);
+    
+    NSLog(@"=== %d",[obj respondsToSelector:@selector(log)]);
+    
+    if ([obj.class instancesRespondToSelector:@selector(log)]) {
+        
+        [obj log];
+    }else{
+        NSLog(@"未z实现");
+    }
+    
+}
 @end

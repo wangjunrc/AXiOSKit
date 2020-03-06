@@ -1454,3 +1454,12 @@ reject([NSError errorWithDomain:@"work2_error" code:-1 userInfo:nil]);
     NSLog(@"dealloc>>>>");
 }
 ```
+
+# view 被移除
+```
+- (void)removeFromSuperview {
+    [super removeFromSuperview];
+    
+}
+```
+
