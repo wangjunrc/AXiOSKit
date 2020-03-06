@@ -32,11 +32,16 @@ typedef void (^CollectionBlock)(void);
 
 @implementation TableViewController
 
+- (void)injected{
+    NSLog(@"I've been injected: %@", self);
+    [self viewDidLoad];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cellid"];
-    
+    self.tableView.backgroundColor = UIColor.redColor;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
