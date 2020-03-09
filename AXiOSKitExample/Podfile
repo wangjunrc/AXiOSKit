@@ -31,6 +31,9 @@ target 'AXiOSKitExample' do
   ## 保护App
   pod 'JJException'
   
+  # 微信开源数据库操作层
+  pod 'WCDB'
+  
 end
 
 target 'AXiOSKit' do

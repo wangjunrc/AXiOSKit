@@ -12,10 +12,13 @@
 #import "UIViewController+AXKit.h"
 #import "TestObj.h"
 #import "RunLoopViewController.h"
-
+#import "AView.h"
+#import "WCDBViewController.h"
 typedef void (^CollectionBlock)(void);
 
-@interface TableViewController ()
+@interface TableViewController (){
+    NSInteger _count;
+}
 
 @property(nonatomic,strong)NSArray *dataArray;
 
@@ -28,6 +31,13 @@ typedef void (^CollectionBlock)(void);
 
 @property(nonatomic, copy) NSMutableString *copyedMStr;
 
+@property(atomic, copy) NSString *name;
+
+@property(atomic, assign) NSInteger count;;
+
+
+
+
 @end
 
 @implementation TableViewController
@@ -37,12 +47,29 @@ typedef void (^CollectionBlock)(void);
     [self viewDidLoad];
 }
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cellid"];
-    self.tableView.backgroundColor = UIColor.redColor;
+    
+    
+    self.name = @"-1";
+    self.count = 0;
+    
+    
+    AView *aview = [[AView alloc]initWithFrame:CGRectMake(0, 100, 100, 100)];
+    aview.backgroundColor = [UIColor redColor];
+    NSLog(@"11111 %p",self.view);
+    [self.view addSubview:aview];
+    
+    NSLog(@"22222");
+    
+    
+    
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -111,6 +138,19 @@ typedef void (^CollectionBlock)(void);
                     [testButton performSelector:@selector(someMethod:)];
                 },
             },
+            @{
+                @"title":@"WCDB",
+                @"action":  ^{
+                    
+                    WCDBViewController *vc = [[WCDBViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                    
+                    
+                },
+            },
+            
+            
+            
         ];
     }
     return _dataArray;

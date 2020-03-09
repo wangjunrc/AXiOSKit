@@ -1463,3 +1463,33 @@ reject([NSError errorWithDomain:@"work2_error" code:-1 userInfo:nil]);
 }
 ```
 
+# nonatomic 和 natomic 区别
+```
+Property多线程安全小结：
+
+简而言之，atomic的作用只是给getter和setter加了个锁，atomic只能保证代码进入getter或者setter函数内部时是安全的，一旦出了getter和setter，多线程安全只能靠程序员自己保障了。所以atomic属性和使用property的多线程安全并没什么直接的联系。另外，atomic由于加锁也会带来一些性能损耗，所以我们在编写iOS代码的时候，一般声明property为nonatomic，在需要做多线程安全的场景，自己去额外加锁做同步。
+```
+```
+/// 加锁
+- (void)testSynchronized {
+    
+    @synchronized (self) {
+        
+          self.count++;
+        
+    }
+}
+```
+# view 被添加到父视图
+```
+- (void)didMoveToSuperview{
+    [super didMoveToSuperview];
+    
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(100);
+        make.top.equalTo(self.superview).mas_equalTo(300);
+        make.left.equalTo(self.superview).mas_equalTo(300);
+    }];
+    
+}
+```

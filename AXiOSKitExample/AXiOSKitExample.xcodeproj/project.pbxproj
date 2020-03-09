@@ -19,7 +19,15 @@
 		218A4F6F240E719B00965FB5 /* NSObject+MethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A4F6E240E719B00965FB5 /* NSObject+MethodSwizzling.m */; };
 		219D761F2412291700196BFE /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D761D2412291700196BFE /* RunLoopViewController.m */; };
 		219D76202412291700196BFE /* RunLoopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219D761E2412291700196BFE /* RunLoopViewController.xib */; };
+		21C9D9D9241602B000A0F0E4 /* AView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C9D9D8241602B000A0F0E4 /* AView.m */; };
 		21CB9590240927C500C02812 /* TestObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CB958F240927C500C02812 /* TestObj.m */; };
+		21CC478424164A95007FAE5E /* SoundRecordDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21CC477F24164A95007FAE5E /* SoundRecordDB.mm */; };
+		21CC478524164A95007FAE5E /* PalyThemeDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21CC478324164A95007FAE5E /* PalyThemeDB.mm */; };
+		21CC478B24164AB7007FAE5E /* BAThemeListModel+WCDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21CC478724164AB7007FAE5E /* BAThemeListModel+WCDB.mm */; };
+		21CC478C24164AB7007FAE5E /* BAThemeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC478A24164AB7007FAE5E /* BAThemeListModel.m */; };
+		21CC479224164F85007FAE5E /* BAUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC479124164F85007FAE5E /* BAUserInfo.m */; };
+		21CC4799241650BD007FAE5E /* WCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC4797241650BD007FAE5E /* WCDBViewController.m */; };
+		21CC479A241650BD007FAE5E /* WCDBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CC4798241650BD007FAE5E /* WCDBViewController.xib */; };
 		24064A8922BA3A5A00F6EC73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24064A8822BA3A5A00F6EC73 /* AppDelegate.m */; };
 		24064A8C22BA3A5A00F6EC73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24064A8B22BA3A5A00F6EC73 /* ViewController.m */; };
 		24064A8F22BA3A5A00F6EC73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24064A8D22BA3A5A00F6EC73 /* Main.storyboard */; };
@@ -76,8 +84,25 @@
 		219D761C2412291700196BFE /* RunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
 		219D761D2412291700196BFE /* RunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
 		219D761E2412291700196BFE /* RunLoopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunLoopViewController.xib; sourceTree = "<group>"; };
+		21C9D9D7241602B000A0F0E4 /* AView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AView.h; sourceTree = "<group>"; };
+		21C9D9D8241602B000A0F0E4 /* AView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AView.m; sourceTree = "<group>"; };
 		21CB958E240927C500C02812 /* TestObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObj.h; sourceTree = "<group>"; };
 		21CB958F240927C500C02812 /* TestObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestObj.m; sourceTree = "<group>"; };
+		21CC477F24164A95007FAE5E /* SoundRecordDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SoundRecordDB.mm; sourceTree = "<group>"; };
+		21CC478024164A95007FAE5E /* SoundRecordDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundRecordDB.h; sourceTree = "<group>"; };
+		21CC478124164A95007FAE5E /* PalyThemeDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PalyThemeDB.h; sourceTree = "<group>"; };
+		21CC478224164A95007FAE5E /* DBFunctionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFunctionProtocol.h; sourceTree = "<group>"; };
+		21CC478324164A95007FAE5E /* PalyThemeDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PalyThemeDB.mm; sourceTree = "<group>"; };
+		21CC478724164AB7007FAE5E /* BAThemeListModel+WCDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "BAThemeListModel+WCDB.mm"; sourceTree = "<group>"; };
+		21CC478824164AB7007FAE5E /* BAThemeListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAThemeListModel.h; sourceTree = "<group>"; };
+		21CC478924164AB7007FAE5E /* BAThemeListModel+WCDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BAThemeListModel+WCDB.h"; sourceTree = "<group>"; };
+		21CC478A24164AB7007FAE5E /* BAThemeListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAThemeListModel.m; sourceTree = "<group>"; };
+		21CC478D24164AD6007FAE5E /* BAFileHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BAFileHeader.h; sourceTree = "<group>"; };
+		21CC479024164F85007FAE5E /* BAUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAUserInfo.h; sourceTree = "<group>"; };
+		21CC479124164F85007FAE5E /* BAUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAUserInfo.m; sourceTree = "<group>"; };
+		21CC4796241650BD007FAE5E /* WCDBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCDBViewController.h; sourceTree = "<group>"; };
+		21CC4797241650BD007FAE5E /* WCDBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCDBViewController.m; sourceTree = "<group>"; };
+		21CC4798241650BD007FAE5E /* WCDBViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WCDBViewController.xib; sourceTree = "<group>"; };
 		24064A8422BA3A5A00F6EC73 /* AXiOSKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24064A8722BA3A5A00F6EC73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24064A8822BA3A5A00F6EC73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -187,6 +212,41 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		21CC477D24164A63007FAE5E /* TestDB */ = {
+			isa = PBXGroup;
+			children = (
+				21CC477E24164A95007FAE5E /* DBManager */,
+			);
+			path = TestDB;
+			sourceTree = "<group>";
+		};
+		21CC477E24164A95007FAE5E /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				21CC478D24164AD6007FAE5E /* BAFileHeader.h */,
+				21CC478624164AB7007FAE5E /* Model */,
+				21CC478224164A95007FAE5E /* DBFunctionProtocol.h */,
+				21CC478124164A95007FAE5E /* PalyThemeDB.h */,
+				21CC478324164A95007FAE5E /* PalyThemeDB.mm */,
+				21CC478024164A95007FAE5E /* SoundRecordDB.h */,
+				21CC477F24164A95007FAE5E /* SoundRecordDB.mm */,
+			);
+			path = DBManager;
+			sourceTree = "<group>";
+		};
+		21CC478624164AB7007FAE5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21CC479024164F85007FAE5E /* BAUserInfo.h */,
+				21CC479124164F85007FAE5E /* BAUserInfo.m */,
+				21CC478824164AB7007FAE5E /* BAThemeListModel.h */,
+				21CC478A24164AB7007FAE5E /* BAThemeListModel.m */,
+				21CC478924164AB7007FAE5E /* BAThemeListModel+WCDB.h */,
+				21CC478724164AB7007FAE5E /* BAThemeListModel+WCDB.mm */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		24064A7B22BA3A5A00F6EC73 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +280,8 @@
 				24064A8722BA3A5A00F6EC73 /* AppDelegate.h */,
 				24064A8822BA3A5A00F6EC73 /* AppDelegate.m */,
 				24064A9022BA3A5B00F6EC73 /* Assets.xcassets */,
+				21C9D9D7241602B000A0F0E4 /* AView.h */,
+				21C9D9D8241602B000A0F0E4 /* AView.m */,
 				216F93CF23C2405E00760CC9 /* Chat */,
 				24D81C3822D9919700142F07 /* File.strings */,
 				24064ABE22BA430F00F6EC73 /* H5.bundle */,
@@ -232,7 +294,11 @@
 				219D761E2412291700196BFE /* RunLoopViewController.xib */,
 				216F93DD23C2644C00760CC9 /* TableViewController.h */,
 				216F93DE23C2644C00760CC9 /* TableViewController.m */,
+				21CC4796241650BD007FAE5E /* WCDBViewController.h */,
+				21CC4797241650BD007FAE5E /* WCDBViewController.m */,
+				21CC4798241650BD007FAE5E /* WCDBViewController.xib */,
 				219D762324123B3F00196BFE /* Test */,
+				21CC477D24164A63007FAE5E /* TestDB */,
 				24064A8A22BA3A5A00F6EC73 /* ViewController.h */,
 				24064A8B22BA3A5A00F6EC73 /* ViewController.m */,
 				216F93CA23C23AE200760CC9 /* WebSocket */,
@@ -387,6 +453,7 @@
 				24D81C3622D9919700142F07 /* File.strings in Resources */,
 				24064A9122BA3A5B00F6EC73 /* Assets.xcassets in Resources */,
 				24064ABF22BA430F00F6EC73 /* H5.bundle in Resources */,
+				21CC479A241650BD007FAE5E /* WCDBViewController.xib in Resources */,
 				219D76202412291700196BFE /* RunLoopViewController.xib in Resources */,
 				216F93D923C2405E00760CC9 /* ChatViewController.xib in Resources */,
 				24064A8F22BA3A5A00F6EC73 /* Main.storyboard in Resources */,
@@ -465,11 +532,18 @@
 				218A4F6F240E719B00965FB5 /* NSObject+MethodSwizzling.m in Sources */,
 				49BFF31E23993E0800F5650B /* AANavigationController.m in Sources */,
 				24064AC322BA531500F6EC73 /* AAViewController.m in Sources */,
+				21CC479224164F85007FAE5E /* BAUserInfo.m in Sources */,
 				216F93CD23C23AE200760CC9 /* AXWebSocketEngine.m in Sources */,
 				216F93DA23C2405E00760CC9 /* ChatViewController.m in Sources */,
 				219D761F2412291700196BFE /* RunLoopViewController.m in Sources */,
+				21CC478C24164AB7007FAE5E /* BAThemeListModel.m in Sources */,
 				24064A8922BA3A5A00F6EC73 /* AppDelegate.m in Sources */,
 				216F93DB23C2405E00760CC9 /* ChatMessageModel.m in Sources */,
+				21CC478424164A95007FAE5E /* SoundRecordDB.mm in Sources */,
+				21CC478524164A95007FAE5E /* PalyThemeDB.mm in Sources */,
+				21C9D9D9241602B000A0F0E4 /* AView.m in Sources */,
+				21CC478B24164AB7007FAE5E /* BAThemeListModel+WCDB.mm in Sources */,
+				21CC4799241650BD007FAE5E /* WCDBViewController.m in Sources */,
 				218A4F63240E707A00965FB5 /* NSObject+SelectorDefender.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

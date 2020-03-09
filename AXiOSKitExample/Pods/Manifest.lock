@@ -67,7 +67,13 @@ PODS:
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
   - SocketRocket (0.5.1)
+  - SQLiteRepairKit (1.2.1):
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
   - TZImagePickerController (3.1.7)
+  - WCDB (1.0.7.5):
+    - SQLiteRepairKit (~> 1.2.0)
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - WCDBOptimizedSQLCipher (1.2.1)
   - ZLPhotoBrowser (2.7.6):
     - GPUImage
     - SDWebImage
@@ -93,6 +99,7 @@ DEPENDENCIES:
   - SDWebImage/GIF
   - SocketRocket
   - TZImagePickerController
+  - WCDB
   - ZLPhotoBrowser
 
 SPEC REPOS:
@@ -115,7 +122,10 @@ SPEC REPOS:
     - SDCycleScrollView
     - SDWebImage
     - SocketRocket
+    - SQLiteRepairKit
     - TZImagePickerController
+    - WCDB
+    - WCDBOptimizedSQLCipher
     - ZLPhotoBrowser
 
 EXTERNAL SOURCES:
@@ -142,9 +152,12 @@ SPEC CHECKSUMS:
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  SQLiteRepairKit: 4d21bab9eff6a273f63da6815a0d1659e53f5bde
   TZImagePickerController: 3027e1e2029c830186c6a167c88c933b8556fdc7
+  WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
+  WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   ZLPhotoBrowser: 6dfadc4706429424f0a851fe40752aff076689ab
 
-PODFILE CHECKSUM: 1d0a2ea97aed185eac133cb5500f8911f8f877ed
+PODFILE CHECKSUM: acc46a4d2b3106de1372c3487e66e170c60c0c11
 
 COCOAPODS: 1.8.4
