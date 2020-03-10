@@ -733,18 +733,18 @@
 		219D762D24123ED400196BFE /* AFNetworking.AX */ = {
 			isa = PBXGroup;
 			children = (
-				219D762E24123ED400196BFE /* AXNetManager+Upload.m */,
-				219D762F24123ED400196BFE /* AXNetworkManager.h */,
 				219D763024123ED400196BFE /* AXNetGroup.h */,
+				219D763924123ED400196BFE /* AXNetGroup.m */,
 				219D763124123ED400196BFE /* AXNetManager.h */,
+				219D763824123ED400196BFE /* AXNetManager.m */,
+				219D763424123ED400196BFE /* AXNetManager+Upload.h */,
+				219D762E24123ED400196BFE /* AXNetManager+Upload.m */,
 				219D763224123ED400196BFE /* AXNetManager+Version.h */,
 				219D763324123ED400196BFE /* AXNetManager+Verson.m */,
-				219D763424123ED400196BFE /* AXNetManager+Upload.h */,
-				219D763524123ED400196BFE /* AXNetwork.h */,
-				219D763624123ED400196BFE /* AXNetworkManager.m */,
 				219D763724123ED400196BFE /* AXNetManagerHeader.h */,
-				219D763824123ED400196BFE /* AXNetManager.m */,
-				219D763924123ED400196BFE /* AXNetGroup.m */,
+				219D763524123ED400196BFE /* AXNetwork.h */,
+				219D762F24123ED400196BFE /* AXNetworkManager.h */,
+				219D763624123ED400196BFE /* AXNetworkManager.m */,
 			);
 			path = AFNetworking.AX;
 			sourceTree = "<group>";

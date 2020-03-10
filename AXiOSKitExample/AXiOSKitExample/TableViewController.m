@@ -14,6 +14,9 @@
 #import "RunLoopViewController.h"
 #import "AView.h"
 #import "WCDBViewController.h"
+#import "VideoViewController.h"
+#import <AXiOSKit/AXiOSKit.h>
+
 typedef void (^CollectionBlock)(void);
 
 @interface TableViewController (){
@@ -147,8 +150,29 @@ typedef void (^CollectionBlock)(void);
                     
                     
                 },
+                
+                
+            },
+            @{
+                @"title":@"视频",
+                @"action":  ^{
+                    
+                    VideoViewController *vc = [[VideoViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
             },
             
+            @{
+                @"title":@"网页",
+                @"action":  ^{
+                    
+                    AXWKWebVC *vc = [[AXWKWebVC alloc]init];
+                    vc.loadURLString = @"http://127.0.0.1:8091";
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+                
+                
+            },
             
             
         ];

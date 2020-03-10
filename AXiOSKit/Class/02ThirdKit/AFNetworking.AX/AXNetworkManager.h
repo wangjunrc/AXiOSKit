@@ -18,25 +18,38 @@ typedef NS_ENUM(NSInteger, AxRequestSerializerType) {
 
 @interface AXNetworkManager : NSObject
 
+/// 实例,不是单利模式
 @property (class, nonatomic, readonly, strong)AXNetworkManager *manager;
 
+/// host
 @property (class, nonatomic, readonly, strong)AXNetworkManager *(^managerWithURL)(NSString *baseURL);
 
+/// 序列化方式
 @property (nonatomic, readonly, copy) AXNetworkManager *(^serializerType)(AxRequestSerializerType serializerType);
 
-@property (nonatomic, readonly, copy) AXNetworkManager *(^post)(NSString *pathOrFullURLString);
-
+/// get请求
 @property (nonatomic, readonly, copy) AXNetworkManager *(^get)(NSString *pathOrFullURLString);
 
+/// post请求
+@property (nonatomic, readonly, copy) AXNetworkManager *(^post)(NSString *pathOrFullURLString);
+
+/// 添加参数
 @property (nonatomic, readonly, copy) AXNetworkManager *(^addParameters)(id parameters);
 
+/// 请求进度
 @property (nonatomic, readonly, copy) AXNetworkManager *(^progressHandler)(void(^)(NSProgress  *progress));
 
+/// 请求成功
 @property (nonatomic, readonly, copy) AXNetworkManager *(^successHandler)(void(^)(id JSONObject));
 
+/// 请求失败
 @property (nonatomic, readonly, copy) AXNetworkManager *(^failureHandler)(void(^)(NSError *error));
 
+/// 开始请求,
 @property (nonatomic, readonly, copy) void(^start)(void);
+
+/// 取消请求
+@property (nonatomic, readonly, copy) void(^cancel)(void);
 
 @end
 

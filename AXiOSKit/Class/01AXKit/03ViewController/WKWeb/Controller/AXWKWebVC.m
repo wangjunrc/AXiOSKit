@@ -604,7 +604,8 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         
         __block CGRect tempFrame = CGRectZero;
         [self ax_haveNav:^(UINavigationController *nav) {
-            tempFrame = CGRectMake(0,ax_navigation_and_status_height(), self.view.bounds.size.width, 3);
+            tempFrame = CGRectMake(0,0, self.view.bounds.size.width, 3);
+            
         } isPushNav:nil isPresentNav:nil noneNav:^{
             tempFrame = CGRectMake(0, 0, self.view.bounds.size.width, 3);
         }];
