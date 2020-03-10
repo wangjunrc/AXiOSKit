@@ -24,7 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    
+    
     
 //   AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.onlinePlayer];
 //
