@@ -62,6 +62,7 @@
         }
         
     } failure:^(NSURLSessionDataTask * task, NSError * error) {
+        NSLog(@"error = %@",error);
         
         if (failure) {
             failure(error.localizedDescription);
@@ -77,9 +78,12 @@
 + (void)uploadJpegWithURL:(NSString *)url parameters:(id )parameters image:(UIImage* )image success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
     
     NSData *imageData = UIImageJPEGRepresentation(image, 1);
-    
-    NSString *name = [NSString ax_uuid];
-    NSString *fileName =[NSString stringWithFormat:@"%@.jpeg",name];
+    /**
+      @RequestParam(value = "file", required = false) MultipartFile file
+     name 就是 value =  值
+     */
+    NSString *name = @"file";
+    NSString *fileName =[NSString stringWithFormat:@"%@.jpeg",[NSString ax_uuid]];
     
     AXFormData *formData = [AXFormData formDataWithData:imageData name:name filename:fileName mimeType:jpegMimeType];
     
