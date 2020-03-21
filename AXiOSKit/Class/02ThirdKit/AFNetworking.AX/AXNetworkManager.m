@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 
 @interface AXNetworkManager ()
 
-@property (nonatomic, strong)AFHTTPSessionManager *sessionManager;
+@property (nonatomic, strong)AFHTTPSessionManager *anSessionManager;
 
 @property (nonatomic, copy) NSString *baseURLString;
 @property (nonatomic, copy) NSString *path;
@@ -38,7 +38,7 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 @property (nonatomic, copy) void(^successBlock)(id successHandlerJson);
 @property (nonatomic, copy) void(^failureBlock)(NSError *error);
 
-@property(nonatomic, strong)NSURLSessionDataTask *sessionDataTask;
+@property(nonatomic, strong)NSURLSessionDataTask *afSessionDataTask;
 
 @end
 
@@ -47,7 +47,6 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 + (AXNetworkManager *)manager{
     
     AXNetworkManager *manager = [[AXNetworkManager alloc]init];
-    
     
     return manager;
 }
@@ -78,11 +77,11 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
         switch (serializerType) {
             case AxRequestSerializerTypePropertyList:
-                strongSelf.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+                strongSelf.anSessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
                 break;
                 
             default:
-                strongSelf.sessionManager.requestSerializer = [AFPropertyListRequestSerializer serializer];
+                strongSelf.anSessionManager.requestSerializer = [AFPropertyListRequestSerializer serializer];
                 break;
         }
         return self;
@@ -173,7 +172,7 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
     __weak typeof(self) weakSelf = self;
     return ^(void) {
         __strong __typeof(&*weakSelf)strongSelf = weakSelf;
-        [strongSelf.sessionDataTask cancel];
+        [strongSelf.afSessionDataTask cancel];
     };
 }
 
@@ -235,7 +234,7 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 #pragma mark - 调用 get post put delete 方法
 -(void)__getStart{
     
-    [self.sessionManager GET:self.path parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+    self.afSessionDataTask = [self.anSessionManager GET:self.path parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         self.started = NO;
         [self __progress:uploadProgress];
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -249,7 +248,7 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 
 -(void)__postStart{
     
-    [self.sessionManager POST:self.path parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+    self.afSessionDataTask = [self.anSessionManager POST:self.path parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         self.started = NO;
         [self __progress:uploadProgress];
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -263,7 +262,8 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 }
 
 -(void)__putStart{
-    [self.sessionManager PUT:self.path parameters:self.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    
+    self.afSessionDataTask = [self.anSessionManager PUT:self.path parameters:self.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         self.started = NO;
         [self __success:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -273,7 +273,8 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 }
 
 -(void)__deleteStart{
-    [self.sessionManager DELETE:self.path parameters:self.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    
+    self.afSessionDataTask = [self.anSessionManager DELETE:self.path parameters:self.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         self.started = NO;
         [self __success:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -299,18 +300,18 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 }
 
 #pragma mark - set and get
-- (AFHTTPSessionManager *)sessionManager {
+- (AFHTTPSessionManager *)anSessionManager {
     
-    if (!_sessionManager) {
+    if (!_anSessionManager) {
         
         if (self.baseURLString.length > 0) {
-            _sessionManager = [[AFHTTPSessionManager alloc]initWithBaseURL:[NSURL URLWithString:self.baseURLString]];
+            _anSessionManager = [[AFHTTPSessionManager alloc]initWithBaseURL:[NSURL URLWithString:self.baseURLString]];
         }else{
-            _sessionManager = [AFHTTPSessionManager manager];
+            _anSessionManager = [AFHTTPSessionManager manager];
         }
         
-        _sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        _anSessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
     }
-    return _sessionManager;
+    return _anSessionManager;
 }
 @end

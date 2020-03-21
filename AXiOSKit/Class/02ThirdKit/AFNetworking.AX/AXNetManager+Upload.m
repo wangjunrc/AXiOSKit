@@ -50,6 +50,7 @@
             
             [formData appendPartWithFileData:file.data name:file.name fileName:file.filename mimeType:file.mimeType];
         }
+        NSLog(@"formData = %@",formData);
         
     } progress:^(NSProgress * uploadProgress) {
         if (progress) {
@@ -75,14 +76,14 @@
 /**
  * 上传单个Jpeg图片
  */
-+ (void)uploadJpegWithURL:(NSString *)url parameters:(id )parameters image:(UIImage* )image success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
++ (void)uploadJpegWithURL:(NSString *)url parameters:(id )parameters image:(UIImage* )image name:(NSString *)name success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
     
     NSData *imageData = UIImageJPEGRepresentation(image, 1);
     /**
       @RequestParam(value = "file", required = false) MultipartFile file
      name 就是 value =  值
      */
-    NSString *name = @"file";
+//    NSString *name = @"file";
     NSString *fileName =[NSString stringWithFormat:@"%@.jpeg",[NSString ax_uuid]];
     
     AXFormData *formData = [AXFormData formDataWithData:imageData name:name filename:fileName mimeType:jpegMimeType];

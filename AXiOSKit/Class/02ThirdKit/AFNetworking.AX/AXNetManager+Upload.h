@@ -58,7 +58,7 @@
 /**
  * 上传单个Jpeg图片
  */
-+ (void)uploadJpegWithURL:(NSString *)url parameters:(id )parameters image:(UIImage* )image success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure;
++ (void)uploadJpegWithURL:(NSString *)url parameters:(id )parameters image:(UIImage* )image name:(NSString *)name success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure;
 
 #endif
 @end

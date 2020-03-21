@@ -43,11 +43,19 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="755-Wm-DG5">
-                    <rect key="frame" x="235" y="195" width="31" height="30"/>
+                    <rect key="frame" x="220" y="195" width="62" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="上传"/>
+                    <state key="normal" title="上传单个"/>
                     <connections>
                         <action selector="upload:" destination="-1" eventType="touchUpInside" id="rmk-2k-xKo"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xq-7T-7tS">
+                    <rect key="frame" x="227" y="269" width="62" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="上传多个"/>
+                    <connections>
+                        <action selector="uploadMore:" destination="-1" eventType="touchUpInside" id="a1D-ij-MSH"/>
                     </connections>
                 </button>
             </subviews>
