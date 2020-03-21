@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2145287D242654A6006DF93D /* AFNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2145287B242654A6006DF93D /* AFNViewController.m */; };
+		2145287E242654A6006DF93D /* AFNViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2145287C242654A6006DF93D /* AFNViewController.xib */; };
 		216B51B423B4DA2800A67384 /* AXNetworkTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216B51B223B4DA2800A67384 /* AXNetworkTestViewController.m */; };
 		216B51B523B4DA2800A67384 /* AXNetworkTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216B51B323B4DA2800A67384 /* AXNetworkTestViewController.xib */; };
 		216F93CD23C23AE200760CC9 /* AXWebSocketEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 216F93CC23C23AE200760CC9 /* AXWebSocketEngine.m */; };
@@ -66,6 +68,9 @@
 
 /* Begin PBXFileReference section */
 		00ED64151ED237DEDBADFC65 /* Pods-AXiOSKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.debug.xcconfig"; sourceTree = "<group>"; };
+		2145287A242654A6006DF93D /* AFNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNViewController.h; sourceTree = "<group>"; };
+		2145287B242654A6006DF93D /* AFNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNViewController.m; sourceTree = "<group>"; };
+		2145287C242654A6006DF93D /* AFNViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AFNViewController.xib; sourceTree = "<group>"; };
 		216B51B123B4DA2800A67384 /* AXNetworkTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXNetworkTestViewController.h; sourceTree = "<group>"; };
 		216B51B223B4DA2800A67384 /* AXNetworkTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXNetworkTestViewController.m; sourceTree = "<group>"; };
 		216B51B323B4DA2800A67384 /* AXNetworkTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AXNetworkTestViewController.xib; sourceTree = "<group>"; };
@@ -318,6 +323,9 @@
 				21F8BEF1241781BE0027E378 /* VideoViewController.h */,
 				21F8BEF2241781BE0027E378 /* VideoViewController.m */,
 				21F8BEF3241781BE0027E378 /* VideoViewController.xib */,
+				2145287A242654A6006DF93D /* AFNViewController.h */,
+				2145287B242654A6006DF93D /* AFNViewController.m */,
+				2145287C242654A6006DF93D /* AFNViewController.xib */,
 				219D762324123B3F00196BFE /* Test */,
 				21CC477D24164A63007FAE5E /* TestDB */,
 				24064A8A22BA3A5A00F6EC73 /* ViewController.h */,
@@ -478,6 +486,7 @@
 				219D76202412291700196BFE /* RunLoopViewController.xib in Resources */,
 				216F93D923C2405E00760CC9 /* ChatViewController.xib in Resources */,
 				21F8BEF5241781BE0027E378 /* VideoViewController.xib in Resources */,
+				2145287E242654A6006DF93D /* AFNViewController.xib in Resources */,
 				24064A8F22BA3A5A00F6EC73 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,6 +575,7 @@
 				21F8BEF4241781BE0027E378 /* VideoViewController.m in Sources */,
 				21CC478524164A95007FAE5E /* PalyThemeDB.mm in Sources */,
 				21C9D9D9241602B000A0F0E4 /* AView.m in Sources */,
+				2145287D242654A6006DF93D /* AFNViewController.m in Sources */,
 				21CC478B24164AB7007FAE5E /* BAThemeListModel+WCDB.mm in Sources */,
 				21CC4799241650BD007FAE5E /* WCDBViewController.m in Sources */,
 				218A4F63240E707A00965FB5 /* NSObject+SelectorDefender.m in Sources */,

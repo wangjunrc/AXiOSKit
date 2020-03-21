@@ -15,6 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
  *
  */
 @property(nonatomic,copy)NSString *name;
+
++(void)add:(NSString *)str,...;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

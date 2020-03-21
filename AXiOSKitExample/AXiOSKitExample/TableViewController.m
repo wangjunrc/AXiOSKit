@@ -16,6 +16,7 @@
 #import "WCDBViewController.h"
 #import "VideoViewController.h"
 #import <AXiOSKit/AXiOSKit.h>
+#import "AFNViewController.h"
 
 typedef void (^CollectionBlock)(void);
 
@@ -36,10 +37,7 @@ typedef void (^CollectionBlock)(void);
 
 @property(atomic, copy) NSString *name;
 
-@property(atomic, assign) NSInteger count;;
-
-
-
+@property(atomic, assign) NSInteger count;
 
 @end
 
@@ -62,15 +60,12 @@ typedef void (^CollectionBlock)(void);
     self.count = 0;
     
     
-    AView *aview = [[AView alloc]initWithFrame:CGRectMake(0, 100, 100, 100)];
-    aview.backgroundColor = [UIColor redColor];
-    NSLog(@"11111 %p",self.view);
-    [self.view addSubview:aview];
-    
-    NSLog(@"22222");
-    
-    
-    
+//    AView *aview = [[AView alloc]initWithFrame:CGRectMake(0, 100, 100, 100)];
+//    aview.backgroundColor = [UIColor redColor];
+//    NSLog(@"11111 %p",self.view);
+//    [self.view addSubview:aview];
+//    
+//    NSLog(@"22222");
 }
 
 
@@ -174,6 +169,18 @@ typedef void (^CollectionBlock)(void);
                 
             },
             
+            @{
+                @"title":@"AFN",
+                @"action":  ^{
+                    
+                    AFNViewController *vc = [[AFNViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+                
+                
+            },
+            
+            
             
         ];
     }
@@ -197,4 +204,99 @@ typedef void (^CollectionBlock)(void);
     }
     
 }
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;
+}
+
+//-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return @"删除";
+//}
+//
+//-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+//    if(editingStyle == UITableViewCellEditingStyleDelete){
+//
+//        NSIndexSet *sectionIndex = [NSIndexSet indexSetWithIndex:indexPath.section];
+//        [tableView deleteSections:sectionIndex withRowAnimation:UITableViewRowAnimationAutomatic];
+//    }
+//}
+
+
+- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 这里的标题我使用的 4 个空格进行占位
+    UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"    " handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        // 点击删除按钮需要执行的方法
+        
+        [tableView setEditing:NO animated:YES];
+    }];
+    
+    // 修改背景颜色
+    action.backgroundColor = UIColor.redColor;
+    
+    return @[action];
+}
+//
+//- (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath {
+//    // 在 iOS11 以下系统,因为方法线程问题,需要放到主线程执行, 不然没有效果
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self setupSlideBtnWithEditingIndexPath:indexPath];
+//    });
+//}
+//
+////MARK: 设置左滑按钮的样式
+//- (void)setupSlideBtnWithEditingIndexPath:(NSIndexPath *)editingIndexPath {
+//
+//    // 判断系统是否是 iOS13 及以上版本
+//    if (@available(iOS 13.0, *)) {
+//        for (UIView *subView in self.tableView.subviews) {
+//            if ([subView isKindOfClass:NSClassFromString(@"_UITableViewCellSwipeContainerView")] && [subView.subviews count] >= 1) {
+//                // 修改图片
+//                UIView *remarkContentView = subView.subviews.firstObject;
+//                [self setupRowActionView:remarkContentView];
+//            }
+//        }
+//        return;
+//    }
+//
+//    // 判断系统是否是 iOS11 及以上版本
+//    if (@available(iOS 11.0, *)) {
+//        for (UIView *subView in self.tableView.subviews) {
+//            if ([subView isKindOfClass:NSClassFromString(@"UISwipeActionPullView")] && [subView.subviews count] >= 1) {
+//                // 修改图片
+//                UIView *remarkContentView = subView;
+//                [self setupRowActionView:remarkContentView];
+//            }
+//        }
+//        return;
+//    }
+//
+//    // iOS11 以下的版本
+//    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:editingIndexPath];
+//    for (UIView *subView in cell.subviews) {
+//        if ([subView isKindOfClass:NSClassFromString(@"UITableViewCellDeleteConfirmationView")] && [subView.subviews count] >= 1) {
+//            // 修改图片
+//            UIView *remarkContentView = subView;
+//            [self setupRowActionView:remarkContentView];
+//        }
+//    }
+//}
+//
+//- (void)setupRowActionView:(UIView *)rowActionView {
+//    // 切割圆角
+//    rowActionView.layer.cornerRadius = 20;
+//    // 改变父 View 的frame，这句话是因为我在 contentView 里加了另一个 View，为了使划出的按钮能与其达到同一高度
+//    CGRect frame = rowActionView.frame;
+//    frame.origin.y += 7;
+//    frame.size.height -= 13;
+//    rowActionView.frame = frame;
+//    // 拿到按钮,设置图片
+//    UIButton *button = rowActionView.subviews.firstObject;
+////    [button setImage:kImageName(@"delete_col") forState:UIControlStateNormal];
+//    [button setTitle:@"按钮" forState:UIControlStateNormal];
+//}
+
+
 @end

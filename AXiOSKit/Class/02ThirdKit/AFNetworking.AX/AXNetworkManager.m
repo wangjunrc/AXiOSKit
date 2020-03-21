@@ -45,22 +45,23 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 @implementation AXNetworkManager
 
 + (AXNetworkManager *)manager{
-
-     AXNetworkManager *manager = [[AXNetworkManager alloc]init];
-
+    
+    AXNetworkManager *manager = [[AXNetworkManager alloc]init];
+    
+    
     return manager;
 }
 
 + (AXNetworkManager * _Nonnull (^)(NSString * _Nonnull))managerWithURL {
-
+    
     __weak typeof(self) weakSelf = self;
     return ^AXNetworkManager *(NSString *managerWithURL) {
-
+        
         __strong __typeof(&*weakSelf)strongSelf = weakSelf;
         if (strongSelf == nil) {
             return nil;
         }
-
+        
         AXNetworkManager *manager = AXNetworkManager.manager;
         manager.baseURLString = managerWithURL;
         return manager;
@@ -70,23 +71,23 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 
 #pragma mark - get 引用对应的block
 
-- (AXNetworkManager * _Nonnull (^)(AxRequestSerializerType))serializerType {
-
+- (AXNetworkManager * _Nonnull (^)(AxRequestSerializerType))requestSerializer {
+    
     __weak typeof(self) weakSelf = self;
     return ^AXNetworkManager *(AxRequestSerializerType serializerType) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
         switch (serializerType) {
-            case AxRequestSerializerTypeJSON:
+            case AxRequestSerializerTypePropertyList:
                 strongSelf.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
                 break;
-
+                
             default:
                 strongSelf.sessionManager.requestSerializer = [AFPropertyListRequestSerializer serializer];
                 break;
         }
         return self;
     };
-
+    
 }
 
 
@@ -97,14 +98,12 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
         if (strongSelf == nil) {
             return nil;
         }
-
+        
         strongSelf.path = pathOrFullURLString;
         strongSelf.httpMethodType =  AXHTTPMethodTypeGet;
         return strongSelf;
     };
 }
-
-
 
 - (AXNetworkManager * _Nonnull (^)(NSString * _Nonnull))post {
     __weak typeof(self) weakSelf = self;
@@ -119,8 +118,6 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
     };
 }
 
-
-
 - (AXNetworkManager * _Nonnull (^)(id _Nonnull))addParameters {
     __weak typeof(self) weakSelf = self;
     return ^AXNetworkManager *(id parameters) {
@@ -128,43 +125,43 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
         if (strongSelf == nil) {
             return nil;
         }
-
+        
         strongSelf.parameters = parameters;
         return strongSelf;
     };
 }
 
 - (void (^)(void))start {
-
+    
     __weak typeof(self) weakSelf = self;
     return ^(void) {
         __strong __typeof(&*weakSelf)strongSelf = weakSelf;
         if (strongSelf == nil) {
             return;
         }
-
+        
         if (strongSelf.isStarted) {
             return;
         }
         strongSelf.started = YES;
-
+        
         switch (strongSelf.httpMethodType) {
             case AXHTTPMethodTypeGet:
                 [strongSelf __getStart];
                 break;
-
+                
             case AXHTTPMethodTypePost:
                 [strongSelf __postStart];
                 break;
-
+                
             case AXHTTPMethodTypePut:
                 [strongSelf __putStart];
                 break;
-
+                
             case AXHTTPMethodTypeDelete:
                 [strongSelf __deleteStart];
                 break;
-
+                
             default:
                 break;
         }
@@ -172,7 +169,7 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 }
 
 - (void (^)(void))cancel {
-
+    
     __weak typeof(self) weakSelf = self;
     return ^(void) {
         __strong __typeof(&*weakSelf)strongSelf = weakSelf;
@@ -182,7 +179,7 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 
 
 - (AXNetworkManager * _Nonnull (^)(void (^ _Nonnull)(NSProgress * _Nonnull)))progressHandler {
-
+    
     __weak typeof(self) weakSelf = self;
     return ^AXNetworkManager *(void (^progressBlock)(NSProgress * _Nonnull)){
         __strong typeof(weakSelf) strongSelf = weakSelf;
@@ -192,7 +189,7 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 }
 
 - (AXNetworkManager * _Nonnull (^)(void (^ _Nonnull)(id _Nonnull)))successHandler {
-
+    
     __weak typeof(self) weakSelf = self;
     return ^AXNetworkManager *(void (^successBlock)(id _Nonnull json)){
         __strong typeof(weakSelf) strongSelf = weakSelf;
@@ -202,13 +199,13 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 }
 
 - (AXNetworkManager * _Nonnull (^)(void (^ _Nonnull)(NSError * _Nonnull)))failureHandler {
-
+    
     __weak typeof(self) weakSelf = self;
-
+    
     return ^AXNetworkManager *(void (^failureBlock)(NSError *_Nonnull error)){
         __strong typeof(weakSelf) self = weakSelf;
         self.failureBlock = failureBlock;
-
+        
         return self;
     };
 }
@@ -229,7 +226,7 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 
 
 -(void)__failure:(NSError *)error {
-
+    
     if (self.failureBlock) {
         self.failureBlock(error);
     }
@@ -237,8 +234,8 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 
 #pragma mark - 调用 get post put delete 方法
 -(void)__getStart{
-
-    self.sessionDataTask = [self.sessionManager GET:self.path parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+    
+    [self.sessionManager GET:self.path parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         self.started = NO;
         [self __progress:uploadProgress];
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -248,11 +245,10 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
         self.started = NO;
         [self __failure:error];
     }];
-
 }
 
 -(void)__postStart{
-
+    
     [self.sessionManager POST:self.path parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         self.started = NO;
         [self __progress:uploadProgress];
@@ -263,7 +259,7 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
         self.started = NO;
         [self __failure:error];
     }];
-
+    
 }
 
 -(void)__putStart{
@@ -288,14 +284,14 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 
 
 -(id)handleResponse:(id)responseObject{
-
+    
     id json = nil;
     NSString *responseStr = [[responseObject class]description];
-
+    
     if ([responseStr isEqualToString:@"_NSInlineData"]) {
-
+        
         json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-
+        
     }else{
         json = responseObject;
     }
@@ -304,14 +300,16 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 
 #pragma mark - set and get
 - (AFHTTPSessionManager *)sessionManager {
+    
     if (!_sessionManager) {
-
-        if (self.baseURLString.length == 0) {
-            _sessionManager = [AFHTTPSessionManager manager];
-        }else{
+        
+        if (self.baseURLString.length > 0) {
             _sessionManager = [[AFHTTPSessionManager alloc]initWithBaseURL:[NSURL URLWithString:self.baseURLString]];
+        }else{
+            _sessionManager = [AFHTTPSessionManager manager];
         }
-
+        
+        _sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
     }
     return _sessionManager;
 }

@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "TestString.h"
-
+#import "Person.h"
 void test1(){
+    
+    [Person add:@"1",@"2",nil ];
+    
     
     TestString *test = [[TestString alloc]init];
     

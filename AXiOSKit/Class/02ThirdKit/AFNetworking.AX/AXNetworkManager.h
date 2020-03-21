@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, AxRequestSerializerType) {
     AxRequestSerializerTypeJSON = 0,
-    AxRequestSerializerTypePropertyList,
+    AxRequestSerializerTypePropertyList,///参数中含有list,一般很少用
 };
 
 
@@ -24,8 +24,8 @@ typedef NS_ENUM(NSInteger, AxRequestSerializerType) {
 /// host
 @property (class, nonatomic, readonly, strong)AXNetworkManager *(^managerWithURL)(NSString *baseURL);
 
-/// 序列化方式
-@property (nonatomic, readonly, copy) AXNetworkManager *(^serializerType)(AxRequestSerializerType serializerType);
+/// 请求序列化方式
+@property (nonatomic, readonly, copy) AXNetworkManager *(^requestSerializer)(AxRequestSerializerType requestSerializerType);
 
 /// get请求
 @property (nonatomic, readonly, copy) AXNetworkManager *(^get)(NSString *pathOrFullURLString);

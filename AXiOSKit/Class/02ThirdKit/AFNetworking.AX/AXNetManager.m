@@ -212,8 +212,8 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
     if(![[NSFileManager defaultManager]fileExistsAtPath:downPath]){
         [[NSFileManager defaultManager]createDirectoryAtPath:downPath withIntermediateDirectories:YES attributes:nil error:nil];
     }
-    
-    NSString *path = [downPath stringByAppendingPathComponent:suggestedFilename];
+    /// 转码一下 stringByRemovingPercentEncoding
+    NSString *path = [downPath stringByAppendingPathComponent:suggestedFilename].stringByRemovingPercentEncoding;
     return [NSURL fileURLWithPath:path];
 }
 
