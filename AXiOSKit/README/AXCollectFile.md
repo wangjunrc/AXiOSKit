@@ -1493,3 +1493,13 @@ Property多线程安全小结：
     
 }
 ```
+# labe自适应宽度,并居中
+```
+[self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+    make.bottom.equalTo(self.textField.mas_top).mas_equalTo(-10);
+    make.centerX.mas_offset(0);
+    make.left.mas_greaterThanOrEqualTo(5);
+    make.right.mas_lessThanOrEqualTo(-5);
+}];
+```

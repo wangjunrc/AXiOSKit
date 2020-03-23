@@ -17,6 +17,9 @@
 #import "VideoViewController.h"
 #import <AXiOSKit/AXiOSKit.h>
 #import "AFNViewController.h"
+#import "TextFViewController.h"
+#import <objc/message.h>
+#import <objc/runtime.h>
 
 typedef void (^CollectionBlock)(void);
 
@@ -60,12 +63,9 @@ typedef void (^CollectionBlock)(void);
     self.count = 0;
     
     
-//    AView *aview = [[AView alloc]initWithFrame:CGRectMake(0, 100, 100, 100)];
-//    aview.backgroundColor = [UIColor redColor];
-//    NSLog(@"11111 %p",self.view);
-//    [self.view addSubview:aview];
-//    
-//    NSLog(@"22222");
+    
+    
+    
 }
 
 
@@ -131,9 +131,10 @@ typedef void (^CollectionBlock)(void);
             @{
                 @"title":@"对象未实现方法",
                 @"action":  ^{
-                    
-                    UIButton *testButton = [[UIButton alloc] init];
-                    [testButton performSelector:@selector(someMethod:)];
+                    [self ax_showAlertByTitle:@"是否调用" confirm:^{
+                        UIButton *testButton = [[UIButton alloc] init];
+                        [testButton performSelector:@selector(someMethod:)];
+                    }];
                 },
             },
             @{
@@ -142,8 +143,6 @@ typedef void (^CollectionBlock)(void);
                     
                     WCDBViewController *vc = [[WCDBViewController alloc]init];
                     [self.navigationController pushViewController:vc animated:YES];
-                    
-                    
                 },
                 
                 
@@ -180,6 +179,33 @@ typedef void (^CollectionBlock)(void);
                 
             },
             
+            @{
+                @"title":@"多行textview",
+                @"action":  ^{
+                    
+                    TextFViewController *vc = [[TextFViewController alloc]init];
+                    [self ax_showVC:vc];
+                },
+                
+                
+            },
+            
+            
+            @{
+                @"title":@"objc_msgSend调用方法",
+                @"action":  ^{
+                    
+                    id person   = objc_msgSend(objc_getClass("Person"),sel_registerName("alloc"),sel_registerName("init"));
+                    objc_msgSend(person, sel_registerName("logShowTest"));
+                    
+                    
+                },
+                
+                
+            },
+            
+            
+            
             
             
         ];
@@ -187,6 +213,10 @@ typedef void (^CollectionBlock)(void);
     return _dataArray;
 }
 
+-(void)testPerson{
+    
+    
+}
 
 
 -(void)testObj:(TestObj *)obj{

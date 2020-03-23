@@ -54,7 +54,7 @@
     NSString *path = NSHomeDirectory();
     NSLog(@"path = %@",path);
     
-    [AXNetManager postDownURL:@"http://127.0.0.1:8091/downFile?id=123" showStatus:YES downPath:path progress:^(float aProgress) {
+    [AXNetManager postDownURL:@"http://127.0.0.1:8091/downFile.do?id=123" showStatus:YES downPath:path progress:^(float aProgress) {
         
     } success:^(NSString *filePath) {
         NSLog(@"filePath = %@",filePath);
@@ -107,8 +107,8 @@
 //// 上传单个张图片
 -(void)imagesOne:(NSArray<UIImage *> *)photos{
     
-    NSString *url = @"http://127.0.0.1:8091/uploadFileOne";
-    [AXNetManager uploadJpegWithURL:url parameters:nil image:photos.firstObject name:@"attachment" success:^(id json) {
+    NSString *url = @"http://127.0.0.1:8091/uploadFileOne.do";
+    [AXNetManager uploadJpegWithURL:url parameters:nil image:photos.firstObject name:@"file" success:^(id json) {
         NSLog(@"json %@",json);
         
     } failure:^(NSString *errorString) {
@@ -193,7 +193,7 @@
 
         form.data = imageData;
         form.filename = [NSString stringWithFormat:@"filename%ld.jpg",index];
-        form.name = @"attachment";
+        form.name = @"files";
         form .mimeType=jpegMimeType;
         [array addObject:form];
         
@@ -206,7 +206,7 @@
         
     }
     
-    NSString *url = @"http://localhost:8091/uploadFileMore";
+    NSString *url = @"http://localhost:8091/uploadFileMore.do";
     
     
     [AXNetManager POSTUpLoadWithURL:url parameters:nil formDataArray:array progress:^(NSProgress *aProgress) {

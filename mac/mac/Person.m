@@ -9,5 +9,8 @@
 #import "Person.h"
 
 @implementation Person
-
+-(void)logShowTest{
+    NSLog(@"logShowTest>>>");
+    
+}
 @end

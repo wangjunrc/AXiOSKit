@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TestString.h"
 #import "Person.h"
+
 void test1(){
     
     [Person add:@"1",@"2",nil ];
@@ -114,8 +115,13 @@ int main(int argc, const char * argv[]) {
 //        NSLog(@"copyedStr=%p,valyue = %@", test.copyedStr,test.copyedStr);
         
         
-        test1();
+//        test1();
 //        test2();
+        
+        
+        id person   =  objc_msgSend(objc_getClass("Person"),sel_registerName("alloc"),sel_registerName("init"));
+        
+         objc_msgSend(person, sel_registerName("logShowTest"));
     }
     
     

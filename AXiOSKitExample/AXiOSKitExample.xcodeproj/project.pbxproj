@@ -30,6 +30,9 @@
 		21CC479224164F85007FAE5E /* BAUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC479124164F85007FAE5E /* BAUserInfo.m */; };
 		21CC4799241650BD007FAE5E /* WCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC4797241650BD007FAE5E /* WCDBViewController.m */; };
 		21CC479A241650BD007FAE5E /* WCDBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CC4798241650BD007FAE5E /* WCDBViewController.xib */; };
+		21D6B25324287D65004BE770 /* TextFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6B25124287D65004BE770 /* TextFViewController.m */; };
+		21D6B25424287D65004BE770 /* TextFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21D6B25224287D65004BE770 /* TextFViewController.xib */; };
+		21D6B25B2428AF74004BE770 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D6B2592428AF73004BE770 /* Person.m */; };
 		21F8BEF4241781BE0027E378 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F8BEF2241781BE0027E378 /* VideoViewController.m */; };
 		21F8BEF5241781BE0027E378 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F8BEF3241781BE0027E378 /* VideoViewController.xib */; };
 		21F8BEF924178B520027E378 /* LVieoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F8BEF824178B520027E378 /* LVieoView.m */; };
@@ -111,6 +114,11 @@
 		21CC4796241650BD007FAE5E /* WCDBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCDBViewController.h; sourceTree = "<group>"; };
 		21CC4797241650BD007FAE5E /* WCDBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCDBViewController.m; sourceTree = "<group>"; };
 		21CC4798241650BD007FAE5E /* WCDBViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WCDBViewController.xib; sourceTree = "<group>"; };
+		21D6B25024287D65004BE770 /* TextFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFViewController.h; sourceTree = "<group>"; };
+		21D6B25124287D65004BE770 /* TextFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFViewController.m; sourceTree = "<group>"; };
+		21D6B25224287D65004BE770 /* TextFViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFViewController.xib; sourceTree = "<group>"; };
+		21D6B2592428AF73004BE770 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		21D6B25A2428AF74004BE770 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		21F8BEF1241781BE0027E378 /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		21F8BEF2241781BE0027E378 /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		21F8BEF3241781BE0027E378 /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
@@ -326,6 +334,11 @@
 				2145287A242654A6006DF93D /* AFNViewController.h */,
 				2145287B242654A6006DF93D /* AFNViewController.m */,
 				2145287C242654A6006DF93D /* AFNViewController.xib */,
+				21D6B25024287D65004BE770 /* TextFViewController.h */,
+				21D6B25124287D65004BE770 /* TextFViewController.m */,
+				21D6B25224287D65004BE770 /* TextFViewController.xib */,
+				21D6B25A2428AF74004BE770 /* Person.h */,
+				21D6B2592428AF73004BE770 /* Person.m */,
 				219D762324123B3F00196BFE /* Test */,
 				21CC477D24164A63007FAE5E /* TestDB */,
 				24064A8A22BA3A5A00F6EC73 /* ViewController.h */,
@@ -485,6 +498,7 @@
 				21CC479A241650BD007FAE5E /* WCDBViewController.xib in Resources */,
 				219D76202412291700196BFE /* RunLoopViewController.xib in Resources */,
 				216F93D923C2405E00760CC9 /* ChatViewController.xib in Resources */,
+				21D6B25424287D65004BE770 /* TextFViewController.xib in Resources */,
 				21F8BEF5241781BE0027E378 /* VideoViewController.xib in Resources */,
 				2145287E242654A6006DF93D /* AFNViewController.xib in Resources */,
 				24064A8F22BA3A5A00F6EC73 /* Main.storyboard in Resources */,
@@ -556,6 +570,7 @@
 			files = (
 				21F8BEF924178B520027E378 /* LVieoView.m in Sources */,
 				216F93DF23C2644C00760CC9 /* TableViewController.m in Sources */,
+				21D6B25B2428AF74004BE770 /* Person.m in Sources */,
 				24064A8C22BA3A5A00F6EC73 /* ViewController.m in Sources */,
 				24064A9722BA3A5B00F6EC73 /* main.m in Sources */,
 				21CB9590240927C500C02812 /* TestObj.m in Sources */,
@@ -572,6 +587,7 @@
 				24064A8922BA3A5A00F6EC73 /* AppDelegate.m in Sources */,
 				216F93DB23C2405E00760CC9 /* ChatMessageModel.m in Sources */,
 				21CC478424164A95007FAE5E /* SoundRecordDB.mm in Sources */,
+				21D6B25324287D65004BE770 /* TextFViewController.m in Sources */,
 				21F8BEF4241781BE0027E378 /* VideoViewController.m in Sources */,
 				21CC478524164A95007FAE5E /* PalyThemeDB.mm in Sources */,
 				21C9D9D9241602B000A0F0E4 /* AView.m in Sources */,
@@ -678,7 +694,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -739,7 +755,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
