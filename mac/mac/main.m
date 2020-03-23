@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "TestString.h"
 #import "Person.h"
-
+#import "Person+a2.h"
+#import "Person+a1.h"
 void test1(){
     
     [Person add:@"1",@"2",nil ];
@@ -118,10 +119,9 @@ int main(int argc, const char * argv[]) {
 //        test1();
 //        test2();
         
-        
-        id person   =  objc_msgSend(objc_getClass("Person"),sel_registerName("alloc"),sel_registerName("init"));
-        
-         objc_msgSend(person, sel_registerName("logShowTest"));
+       
+        Person *person = [[Person alloc]init];
+        [person logShowTest];
     }
     
     

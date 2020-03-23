@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		215CE01B2428C21900F2E119 /* Person+a1.m in Sources */ = {isa = PBXBuildFile; fileRef = 215CE01A2428C21900F2E119 /* Person+a1.m */; };
+		215CE01E2428C22200F2E119 /* Person+a2.m in Sources */ = {isa = PBXBuildFile; fileRef = 215CE01D2428C22200F2E119 /* Person+a2.m */; };
 		21858E1023BC715E00D99327 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21858E0F23BC715E00D99327 /* main.m */; };
 		21858E1823BC716F00D99327 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 21858E1723BC716F00D99327 /* Person.m */; };
 		219D76112412161A00196BFE /* TestString.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D76102412161A00196BFE /* TestString.m */; };
@@ -25,6 +27,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		215CE0192428C21900F2E119 /* Person+a1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+a1.h"; sourceTree = "<group>"; };
+		215CE01A2428C21900F2E119 /* Person+a1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+a1.m"; sourceTree = "<group>"; };
+		215CE01C2428C22200F2E119 /* Person+a2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+a2.h"; sourceTree = "<group>"; };
+		215CE01D2428C22200F2E119 /* Person+a2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+a2.m"; sourceTree = "<group>"; };
 		21858E0C23BC715E00D99327 /* mac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mac; sourceTree = BUILT_PRODUCTS_DIR; };
 		21858E0F23BC715E00D99327 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		21858E1623BC716F00D99327 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -66,6 +72,10 @@
 				21858E0F23BC715E00D99327 /* main.m */,
 				21858E1623BC716F00D99327 /* Person.h */,
 				21858E1723BC716F00D99327 /* Person.m */,
+				215CE0192428C21900F2E119 /* Person+a1.h */,
+				215CE01A2428C21900F2E119 /* Person+a1.m */,
+				215CE01C2428C22200F2E119 /* Person+a2.h */,
+				215CE01D2428C22200F2E119 /* Person+a2.m */,
 				219D760F2412161A00196BFE /* TestString.h */,
 				219D76102412161A00196BFE /* TestString.m */,
 			);
@@ -130,6 +140,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				219D76112412161A00196BFE /* TestString.m in Sources */,
+				215CE01E2428C22200F2E119 /* Person+a2.m in Sources */,
+				215CE01B2428C21900F2E119 /* Person+a1.m in Sources */,
 				21858E1823BC716F00D99327 /* Person.m in Sources */,
 				21858E1023BC715E00D99327 /* main.m in Sources */,
 			);

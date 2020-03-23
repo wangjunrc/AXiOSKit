@@ -340,6 +340,7 @@
 
 /* Begin PBXFileReference section */
 		21448E9223B3E4CF00BE36A5 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
+		215CE01F2428C3DB00F2E119 /* 面试.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "面试.md"; sourceTree = "<group>"; };
 		219D762624123ED400196BFE /* DBStatements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStatements.h; sourceTree = "<group>"; };
 		219D762724123ED400196BFE /* DataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBase.m; sourceTree = "<group>"; };
 		219D762824123ED400196BFE /* DataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
@@ -913,6 +914,7 @@
 				247328C12277FBB8005CF92D /* pod_use.md */,
 				24064AC522BA58C200F6EC73 /* 命令行.md */,
 				242CA2D622E81A9600D7C9F6 /* read.md */,
+				215CE01F2428C3DB00F2E119 /* 面试.md */,
 			);
 			path = README;
 			sourceTree = "<group>";
