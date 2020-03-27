@@ -20,6 +20,7 @@
 #import "TextFViewController.h"
 #import <objc/message.h>
 #import <objc/runtime.h>
+#import "fishhook-master/fishhook.h"
 
 typedef void (^CollectionBlock)(void);
 
@@ -62,10 +63,20 @@ typedef void (^CollectionBlock)(void);
     self.name = @"-1";
     self.count = 0;
     
+  
+    struct rebinding nsLog;
+    nsLog.name = "NSLog";
+    nsLog.replacement = mySLog;
+    nsLog.replaced = (void *)&replacedLog;
+    struct rebinding rebinds[1] = {nsLog};
+    rebind_symbols(rebinds, 1);
     
-    
-    
-    
+}
+
+///保存系统函数地址
+static void (* replacedLog)(NSString *format, ...);
+void mySLog(NSString *format, ...) {
+    replacedLog(@"%@",[format stringByAppendingString:@"被HOOK了"]);
 }
 
 
@@ -204,6 +215,18 @@ typedef void (^CollectionBlock)(void);
                 
             },
             
+            
+            @{
+                          @"title":@"fishhook调用方法",
+                          @"action":  ^{
+                             
+                              NSLog(@"fish_log");
+                              
+                              
+                          },
+                          
+                          
+                      },
             
             
             

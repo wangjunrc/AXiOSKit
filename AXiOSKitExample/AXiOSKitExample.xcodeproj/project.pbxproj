@@ -21,6 +21,12 @@
 		218A4F6F240E719B00965FB5 /* NSObject+MethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A4F6E240E719B00965FB5 /* NSObject+MethodSwizzling.m */; };
 		219D761F2412291700196BFE /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D761D2412291700196BFE /* RunLoopViewController.m */; };
 		219D76202412291700196BFE /* RunLoopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219D761E2412291700196BFE /* RunLoopViewController.xib */; };
+		21B3972C242E2769009C2813 /* CODE_OF_CONDUCT.md in Resources */ = {isa = PBXBuildFile; fileRef = 21B39725242E2769009C2813 /* CODE_OF_CONDUCT.md */; };
+		21B3972D242E2769009C2813 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 21B39726242E2769009C2813 /* LICENSE */; };
+		21B3972E242E2769009C2813 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 21B39727242E2769009C2813 /* fishhook.c */; };
+		21B3972F242E2769009C2813 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 21B39728242E2769009C2813 /* README.md */; };
+		21B39730242E2769009C2813 /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = 21B39729242E2769009C2813 /* CONTRIBUTING.md */; };
+		21B39731242E2769009C2813 /* fishhook.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 21B3972B242E2769009C2813 /* fishhook.podspec */; };
 		21C9D9D9241602B000A0F0E4 /* AView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C9D9D8241602B000A0F0E4 /* AView.m */; };
 		21CB9590240927C500C02812 /* TestObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CB958F240927C500C02812 /* TestObj.m */; };
 		21CC478424164A95007FAE5E /* SoundRecordDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21CC477F24164A95007FAE5E /* SoundRecordDB.mm */; };
@@ -95,6 +101,13 @@
 		219D761C2412291700196BFE /* RunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
 		219D761D2412291700196BFE /* RunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
 		219D761E2412291700196BFE /* RunLoopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunLoopViewController.xib; sourceTree = "<group>"; };
+		21B39725242E2769009C2813 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
+		21B39726242E2769009C2813 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		21B39727242E2769009C2813 /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
+		21B39728242E2769009C2813 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		21B39729242E2769009C2813 /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
+		21B3972A242E2769009C2813 /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
+		21B3972B242E2769009C2813 /* fishhook.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fishhook.podspec; sourceTree = "<group>"; };
 		21C9D9D7241602B000A0F0E4 /* AView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AView.h; sourceTree = "<group>"; };
 		21C9D9D8241602B000A0F0E4 /* AView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AView.m; sourceTree = "<group>"; };
 		21CB958E240927C500C02812 /* TestObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObj.h; sourceTree = "<group>"; };
@@ -233,6 +246,20 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		21B39724242E2769009C2813 /* fishhook-master */ = {
+			isa = PBXGroup;
+			children = (
+				21B39725242E2769009C2813 /* CODE_OF_CONDUCT.md */,
+				21B39729242E2769009C2813 /* CONTRIBUTING.md */,
+				21B39727242E2769009C2813 /* fishhook.c */,
+				21B3972A242E2769009C2813 /* fishhook.h */,
+				21B3972B242E2769009C2813 /* fishhook.podspec */,
+				21B39726242E2769009C2813 /* LICENSE */,
+				21B39728242E2769009C2813 /* README.md */,
+			);
+			path = "fishhook-master";
+			sourceTree = "<group>";
+		};
 		21CC477D24164A63007FAE5E /* TestDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +329,7 @@
 		24064A8622BA3A5A00F6EC73 /* AXiOSKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				21B39724242E2769009C2813 /* fishhook-master */,
 				21F8BEF624178B470027E378 /* TestVideo */,
 				49BFF31C23993E0800F5650B /* AANavigationController.h */,
 				49BFF31D23993E0800F5650B /* AANavigationController.m */,
@@ -495,9 +523,14 @@
 				24D81C3622D9919700142F07 /* File.strings in Resources */,
 				24064A9122BA3A5B00F6EC73 /* Assets.xcassets in Resources */,
 				24064ABF22BA430F00F6EC73 /* H5.bundle in Resources */,
+				21B3972F242E2769009C2813 /* README.md in Resources */,
 				21CC479A241650BD007FAE5E /* WCDBViewController.xib in Resources */,
 				219D76202412291700196BFE /* RunLoopViewController.xib in Resources */,
 				216F93D923C2405E00760CC9 /* ChatViewController.xib in Resources */,
+				21B3972D242E2769009C2813 /* LICENSE in Resources */,
+				21B39730242E2769009C2813 /* CONTRIBUTING.md in Resources */,
+				21B3972C242E2769009C2813 /* CODE_OF_CONDUCT.md in Resources */,
+				21B39731242E2769009C2813 /* fishhook.podspec in Resources */,
 				21D6B25424287D65004BE770 /* TextFViewController.xib in Resources */,
 				21F8BEF5241781BE0027E378 /* VideoViewController.xib in Resources */,
 				2145287E242654A6006DF93D /* AFNViewController.xib in Resources */,
@@ -590,6 +623,7 @@
 				21D6B25324287D65004BE770 /* TextFViewController.m in Sources */,
 				21F8BEF4241781BE0027E378 /* VideoViewController.m in Sources */,
 				21CC478524164A95007FAE5E /* PalyThemeDB.mm in Sources */,
+				21B3972E242E2769009C2813 /* fishhook.c in Sources */,
 				21C9D9D9241602B000A0F0E4 /* AView.m in Sources */,
 				2145287D242654A6006DF93D /* AFNViewController.m in Sources */,
 				21CC478B24164AB7007FAE5E /* BAThemeListModel+WCDB.mm in Sources */,

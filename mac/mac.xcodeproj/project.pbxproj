@@ -37,6 +37,7 @@
 		21858E1723BC716F00D99327 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		219D760F2412161A00196BFE /* TestString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestString.h; sourceTree = "<group>"; };
 		219D76102412161A00196BFE /* TestString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestString.m; sourceTree = "<group>"; };
+		21B39723242E0C59009C2813 /* TestProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 				215CE01D2428C22200F2E119 /* Person+a2.m */,
 				219D760F2412161A00196BFE /* TestString.h */,
 				219D76102412161A00196BFE /* TestString.m */,
+				21B39723242E0C59009C2813 /* TestProtocol.h */,
 			);
 			path = mac;
 			sourceTree = "<group>";

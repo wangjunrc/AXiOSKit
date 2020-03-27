@@ -500,9 +500,9 @@ NSLog(@"正在执行");
 
 ## copy | strong
 ```
- 集合类(NSMutable,NS) 属性用 copy
+集合类(NSMutable,NS) 属性用 copy
 @property(nonatomic, copy) 
- 非集合 属性用 strong
+非集合 属性用 strong
 @property( nonatomic,  strong)   
 ```
 ## 添加数据到粘贴板中
@@ -1394,31 +1394,31 @@ reject([NSError errorWithDomain:@"work2_error" code:-1 userInfo:nil]);
 # 字典中存放block
 ```
 @{
-    @"title":@"暗黑主题-ViewController",
-    @"action":  ^{
-        ViewController *vc = [[ViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
-    },
+@"title":@"暗黑主题-ViewController",
+@"action":  ^{
+ViewController *vc = [[ViewController alloc]init];
+[self.navigationController pushViewController:vc animated:YES];
+},
 },
 ```
 
 # InjectionIII
 ```
 #if DEBUG
-    //    for iOS
-    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
-    //    for tvOS
-    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/tvOSInjection.bundle"] load];
-    //    for masOS
-    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle"] load];
+//    for iOS
+[[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
+//    for tvOS
+[[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/tvOSInjection.bundle"] load];
+//    for masOS
+[[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle"] load];
 #endif
 ```
 
 ### 在注入界面.m文件中实现- (void)injected方法然后所有的需要调试的界面，都写在injected方法里面
 ```
 - (void)injected{
-    NSLog(@"I've been injected: %@", self);
-    [self viewDidLoad];
+NSLog(@"I've been injected: %@", self);
+[self viewDidLoad];
 }
 
 ```
@@ -1430,36 +1430,36 @@ reject([NSError errorWithDomain:@"work2_error" code:-1 userInfo:nil]);
 @end
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.view.backgroundColor = UIColor.redColor;
-    
-    // 设置导航控制器的代理为self
-    self.navigationController.delegate = self;
-    // 必须设置,不然返回手势失效
-    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+[super viewDidLoad];
+
+self.view.backgroundColor = UIColor.redColor;
+
+// 设置导航控制器的代理为self
+self.navigationController.delegate = self;
+// 必须设置,不然返回手势失效
+self.navigationController.interactivePopGestureRecognizer.delegate = self;
 }
 #pragma mark - UINavigationControllerDelegate
 //将要显示控制器
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    // 判断要显示的控制器是否是自己
-    BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
-    [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
+// 判断要显示的控制器是否是自己
+BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
+[self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
 }
 
 
 
 - (void)dealloc {
-    self.navigationController.delegate = nil;
-    NSLog(@"dealloc>>>>");
+self.navigationController.delegate = nil;
+NSLog(@"dealloc>>>>");
 }
 ```
 
 # view 被移除
 ```
 - (void)removeFromSuperview {
-    [super removeFromSuperview];
-    
+[super removeFromSuperview];
+
 }
 ```
 
@@ -1472,34 +1472,59 @@ Property多线程安全小结：
 ```
 /// 加锁
 - (void)testSynchronized {
-    
-    @synchronized (self) {
-        
-          self.count++;
-        
-    }
+
+@synchronized (self) {
+
+self.count++;
+
+}
 }
 ```
 # view 被添加到父视图
 ```
 - (void)didMoveToSuperview{
-    [super didMoveToSuperview];
-    
-    [self mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(100);
-        make.top.equalTo(self.superview).mas_equalTo(300);
-        make.left.equalTo(self.superview).mas_equalTo(300);
-    }];
-    
+[super didMoveToSuperview];
+
+[self mas_makeConstraints:^(MASConstraintMaker *make) {
+make.width.height.mas_equalTo(100);
+make.top.equalTo(self.superview).mas_equalTo(300);
+make.left.equalTo(self.superview).mas_equalTo(300);
+}];
+
 }
 ```
 # labe自适应宽度,并居中
 ```
 [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-    
-    make.bottom.equalTo(self.textField.mas_top).mas_equalTo(-10);
-    make.centerX.mas_offset(0);
-    make.left.mas_greaterThanOrEqualTo(5);
-    make.right.mas_lessThanOrEqualTo(-5);
+
+make.bottom.equalTo(self.textField.mas_top).mas_equalTo(-10);
+make.centerX.mas_offset(0);
+make.left.mas_greaterThanOrEqualTo(5);
+make.right.mas_lessThanOrEqualTo(-5);
 }];
+```
+
+# copyWithZone
+```
+Person *person = [[Person alloc]init];
+
+Person *person2 = person.copy;
+
+```
+浅copy,地址一致
+```
+- (id)copyWithZone:(nullable NSZone *)zone {
+return self;;
+
+}
+```
+深copy,地址不一致
+```
+- (id)copyWithZone:(nullable NSZone *)zone {
+
+    Person *p = [[Person alloc]init];
+    p.name = self.name.copy;
+    return p;
+    
+}
 ```

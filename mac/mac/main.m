@@ -121,7 +121,16 @@ int main(int argc, const char * argv[]) {
         
        
         Person *person = [[Person alloc]init];
-        [person logShowTest];
+        
+//        Person *person2 = person.copy;
+        
+        
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        [dict setObject:@"a1" forKey:person];
+         [dict setObject:@"a2" forKey:person];
+        
+        
+        NSTableColumn
     }
     
     

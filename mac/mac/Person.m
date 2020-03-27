@@ -13,4 +13,13 @@
     NSLog(@"logShowTest>>>");
     
 }
+
+- (id)copyWithZone:(nullable NSZone *)zone {
+
+//    Person *p = [[Person alloc]init];
+//    p.name = self.name.copy;
+//    return p;
+    return self;;
+    
+}
 @end
