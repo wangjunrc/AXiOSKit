@@ -63,13 +63,17 @@ typedef void (^CollectionBlock)(void);
     self.name = @"-1";
     self.count = 0;
     
-  
-    struct rebinding nsLog;
-    nsLog.name = "NSLog";
-    nsLog.replacement = mySLog;
-    nsLog.replaced = (void *)&replacedLog;
-    struct rebinding rebinds[1] = {nsLog};
-    rebind_symbols(rebinds, 1);
+    //
+    //    struct rebinding nsLog;
+    //    nsLog.name = "NSLog";
+    //    nsLog.replacement = mySLog;
+    //    nsLog.replaced = (void *)&replacedLog;
+    //    struct rebinding rebinds[1] = {nsLog};
+    //    rebind_symbols(rebinds, 1);
+    //
+
+    
+    
     
 }
 
@@ -217,16 +221,16 @@ void mySLog(NSString *format, ...) {
             
             
             @{
-                          @"title":@"fishhook调用方法",
-                          @"action":  ^{
-                             
-                              NSLog(@"fish_log");
-                              
-                              
-                          },
-                          
-                          
-                      },
+                @"title":@"fishhook调用方法",
+                @"action":  ^{
+                    
+                    NSLog(@"fish_log");
+                    
+                    
+                },
+                
+                
+            },
             
             
             

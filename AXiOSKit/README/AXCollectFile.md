@@ -1528,3 +1528,24 @@ return self;;
     
 }
 ```
+
+# dispatch_barrier_async 栅格
+```
+dispatch_queue_t concurrentQueue = dispatch_queue_create("my.concurrent.queue", DISPATCH_QUEUE_CONCURRENT);
+dispatch_async(concurrentQueue, ^(){
+    NSLog(@"dispatch-1");
+});
+dispatch_async(concurrentQueue, ^(){
+    NSLog(@"dispatch-2");
+});
+
+dispatch_async(concurrentQueue, ^(){
+    NSLog(@"dispatch-3");
+});
+dispatch_barrier_async(concurrentQueue, ^(){
+    NSLog(@"dispatch-barrier");
+});
+dispatch_async(concurrentQueue, ^(){
+    NSLog(@"dispatch-4");
+});
+```
