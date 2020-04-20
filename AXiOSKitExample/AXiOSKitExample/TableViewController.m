@@ -71,10 +71,47 @@ typedef void (^CollectionBlock)(void);
     //    struct rebinding rebinds[1] = {nsLog};
     //    rebind_symbols(rebinds, 1);
     //
+    
+     NSLog(@"runLoop 1 = %p",[NSRunLoop currentRunLoop]);
+     NSLog(@"runLoop 1 = %p",[NSRunLoop mainRunLoop]);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        
+        NSLog(@"2");
+        
+        [[NSThread currentThread] setName:@"AFNetworking"];
+        
+        
+        
+        [self performSelector:@selector(test) withObject:nil afterDelay:1];
+        
+        
+        NSRunLoop *runLoop2 = [NSRunLoop currentRunLoop];
+        
+        
+        NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+        //        [runLoop addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
+        [runLoop run];
+        
+        
+        NSLog(@"runLoop = %p",runLoop);
+        NSLog(@"runLoop2 = %p",runLoop2);
+          NSLog(@"runLoop 2 = %p",[NSRunLoop mainRunLoop]);
+        //          [[NSRunLoop currentRunLoop] run];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                    NSLog(@"runLoop 6 = %p",[NSRunLoop currentRunLoop]);
+                });
+        NSLog(@"3");
+    });
+    
+    
+    
+    
+}
 
+- (void)test
+{
     
-    
-    
+    NSLog(@"5");
 }
 
 ///保存系统函数地址

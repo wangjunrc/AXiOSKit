@@ -52,6 +52,8 @@
     label.backgroundColor = UIColor.blueColor;
     label.text = @"文本";
     label.textColor = [UIColor ax_colorWithNormalStyle:UIColor.greenColor darkStyle:UIColor.systemRedColor];
+    label.layer.cornerRadius = 5;
+    label.layer.masksToBounds = YES;
     
     UIImageView *imv = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ax_icon_weixin"]];
     [self.view addSubview:imv];
