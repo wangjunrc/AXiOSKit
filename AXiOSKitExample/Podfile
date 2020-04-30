@@ -55,7 +55,8 @@ target 'AXiOSKit' do
   pod "TZImagePickerController"
   
   pod "ZLPhotoBrowser"
-   
+  pod 'LookinServer', :configurations => ['Debug']
+  
 end
 
 

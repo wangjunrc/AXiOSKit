@@ -102,8 +102,11 @@
     btn3.ax_top = btn2.ax_bottom+10;
     btn3.ax_left = btn2.ax_left;
     [btn3 ax_addActionBlock:^(UIButton * _Nullable button) {
-        AAViewController *aa = [AAViewController ax_init];
-        [self ax_showVC:aa];
+        NSLog(@">>>>>>>>>");
+//        AAViewController *aa = [AAViewController ax_init];
+//        [self ax_showVC:aa];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_2D" object:nil];
 //
 //                AXNetworkTestViewController *aa = [AXNetworkTestViewController ax_init];
 //                [self ax_showVC:aa];

@@ -72,6 +72,11 @@ axShared_M(PalyThemeDB);
     return [self.PalyDBTable getAllObjects];
 }
 
+- (id)getOneById:(NSString *)Id {
+    return nil;
+}
+
+
 - (WCTDatabase *)dataBase{
     if (!_dataBase) {
         NSLog(@"ba_db_document_path:%@",BA_DB_DOCUMENT_PATH);
