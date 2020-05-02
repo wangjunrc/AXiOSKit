@@ -62,51 +62,52 @@ typedef void (^CollectionBlock)(void);
     
     self.name = @"-1";
     self.count = 0;
+//
+//    //
+//    //    struct rebinding nsLog;
+//    //    nsLog.name = "NSLog";
+//    //    nsLog.replacement = mySLog;
+//    //    nsLog.replaced = (void *)&replacedLog;
+//    //    struct rebinding rebinds[1] = {nsLog};
+//    //    rebind_symbols(rebinds, 1);
+//    //
+//
+//     NSLog(@"runLoop 1 = %p",[NSRunLoop currentRunLoop]);
+//     NSLog(@"runLoop 1 = %p",[NSRunLoop mainRunLoop]);
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+//
+//        NSLog(@"2");
+//
+//        [[NSThread currentThread] setName:@"AFNetworking"];
+//
+//
+//
+//        [self performSelector:@selector(test) withObject:nil afterDelay:1];
+//
+//
+//        NSRunLoop *runLoop2 = [NSRunLoop currentRunLoop];
+//
+//
+//        NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+//        //        [runLoop addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
+//        [runLoop run];
+//
+//
+//        NSLog(@"runLoop = %p",runLoop);
+//        NSLog(@"runLoop2 = %p",runLoop2);
+//          NSLog(@"runLoop 2 = %p",[NSRunLoop mainRunLoop]);
+//        //          [[NSRunLoop currentRunLoop] run];
+//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+//                    NSLog(@"runLoop 6 = %p",[NSRunLoop currentRunLoop]);
+//                });
+//        NSLog(@"3");
+//    });
+//
     
-    //
-    //    struct rebinding nsLog;
-    //    nsLog.name = "NSLog";
-    //    nsLog.replacement = mySLog;
-    //    nsLog.replaced = (void *)&replacedLog;
-    //    struct rebinding rebinds[1] = {nsLog};
-    //    rebind_symbols(rebinds, 1);
-    //
     
-     NSLog(@"runLoop 1 = %p",[NSRunLoop currentRunLoop]);
-     NSLog(@"runLoop 1 = %p",[NSRunLoop mainRunLoop]);
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        
-        NSLog(@"2");
-        
-        [[NSThread currentThread] setName:@"AFNetworking"];
-        
-        
-        
-        [self performSelector:@selector(test) withObject:nil afterDelay:1];
-        
-        
-        NSRunLoop *runLoop2 = [NSRunLoop currentRunLoop];
-        
-        
-        NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-        //        [runLoop addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
-        [runLoop run];
-        
-        
-        NSLog(@"runLoop = %p",runLoop);
-        NSLog(@"runLoop2 = %p",runLoop2);
-          NSLog(@"runLoop 2 = %p",[NSRunLoop mainRunLoop]);
-        //          [[NSRunLoop currentRunLoop] run];
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                    NSLog(@"runLoop 6 = %p",[NSRunLoop currentRunLoop]);
-                });
-        NSLog(@"3");
-    });
-    
-    
-    
-    
+//    [self.tableView setEditing:YES animated:YES];
 }
+
 
 - (void)test
 {
@@ -306,91 +307,8 @@ void mySLog(NSString *format, ...) {
     return UITableViewCellEditingStyleDelete;
 }
 
-//-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return @"删除";
-//}
-//
-//-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if(editingStyle == UITableViewCellEditingStyleDelete){
-//
-//        NSIndexSet *sectionIndex = [NSIndexSet indexSetWithIndex:indexPath.section];
-//        [tableView deleteSections:sectionIndex withRowAnimation:UITableViewRowAnimationAutomatic];
-//    }
-//}
-
-
-- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // 这里的标题我使用的 4 个空格进行占位
-    UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"    " handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-        // 点击删除按钮需要执行的方法
-        
-        [tableView setEditing:NO animated:YES];
-    }];
-    
-    // 修改背景颜色
-    action.backgroundColor = UIColor.redColor;
-    
-    return @[action];
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
 }
-//
-//- (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath {
-//    // 在 iOS11 以下系统,因为方法线程问题,需要放到主线程执行, 不然没有效果
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [self setupSlideBtnWithEditingIndexPath:indexPath];
-//    });
-//}
-//
-////MARK: 设置左滑按钮的样式
-//- (void)setupSlideBtnWithEditingIndexPath:(NSIndexPath *)editingIndexPath {
-//
-//    // 判断系统是否是 iOS13 及以上版本
-//    if (@available(iOS 13.0, *)) {
-//        for (UIView *subView in self.tableView.subviews) {
-//            if ([subView isKindOfClass:NSClassFromString(@"_UITableViewCellSwipeContainerView")] && [subView.subviews count] >= 1) {
-//                // 修改图片
-//                UIView *remarkContentView = subView.subviews.firstObject;
-//                [self setupRowActionView:remarkContentView];
-//            }
-//        }
-//        return;
-//    }
-//
-//    // 判断系统是否是 iOS11 及以上版本
-//    if (@available(iOS 11.0, *)) {
-//        for (UIView *subView in self.tableView.subviews) {
-//            if ([subView isKindOfClass:NSClassFromString(@"UISwipeActionPullView")] && [subView.subviews count] >= 1) {
-//                // 修改图片
-//                UIView *remarkContentView = subView;
-//                [self setupRowActionView:remarkContentView];
-//            }
-//        }
-//        return;
-//    }
-//
-//    // iOS11 以下的版本
-//    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:editingIndexPath];
-//    for (UIView *subView in cell.subviews) {
-//        if ([subView isKindOfClass:NSClassFromString(@"UITableViewCellDeleteConfirmationView")] && [subView.subviews count] >= 1) {
-//            // 修改图片
-//            UIView *remarkContentView = subView;
-//            [self setupRowActionView:remarkContentView];
-//        }
-//    }
-//}
-//
-//- (void)setupRowActionView:(UIView *)rowActionView {
-//    // 切割圆角
-//    rowActionView.layer.cornerRadius = 20;
-//    // 改变父 View 的frame，这句话是因为我在 contentView 里加了另一个 View，为了使划出的按钮能与其达到同一高度
-//    CGRect frame = rowActionView.frame;
-//    frame.origin.y += 7;
-//    frame.size.height -= 13;
-//    rowActionView.frame = frame;
-//    // 拿到按钮,设置图片
-//    UIButton *button = rowActionView.subviews.firstObject;
-////    [button setImage:kImageName(@"delete_col") forState:UIControlStateNormal];
-//    [button setTitle:@"按钮" forState:UIControlStateNormal];
-//}
-
 
 @end

@@ -1675,7 +1675,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AX;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = liu.weixing;
 				TargetAttributes = {
 					247328B22277FB8B005CF92D = {
