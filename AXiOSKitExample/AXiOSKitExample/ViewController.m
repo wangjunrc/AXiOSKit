@@ -22,7 +22,6 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @property(nonatomic,strong)CAEmitterLayer *rainLayer;
 @property(nonatomic, strong)CALayer *moveLayer;

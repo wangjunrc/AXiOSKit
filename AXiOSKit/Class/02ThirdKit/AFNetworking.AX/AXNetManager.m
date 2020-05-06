@@ -305,7 +305,7 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
     
     [self cancelAFN];
     
-    _dataTask = [[self shareManagerWithParameters:parameter] GET:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * task, id  responseObject) {
+    _dataTask = [[self shareManagerWithParameters:parameter] GET:url parameters:parameter headers:nil progress:nil success:^(NSURLSessionDataTask * task, id  responseObject) {
         if (success) {
             
             id obj = [self handleResponse:responseObject];
@@ -334,7 +334,7 @@ NSString *const imagMimeType = @"IMAGE/PNG/JPEG/GIF/WebP";
         success:(void(^)(id json))success
         failure:(void(^)(NSError * error))failure{
     
-    _dataTask = [[self shareManagerWithParameters:parameter] POST:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * task, id  responseObject) {
+    _dataTask = [[self shareManagerWithParameters:parameter] POST:url parameters:parameter headers:nil progress:nil success:^(NSURLSessionDataTask * task, id  responseObject) {
         
         if (success) {
             id json = [self handleResponse:responseObject];

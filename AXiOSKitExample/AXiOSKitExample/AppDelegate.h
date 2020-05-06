@@ -2,15 +2,13 @@
 //  AppDelegate.h
 //  AXiOSKitExample
 //
-//  Created by AXing on 2019/6/19.
-//  Copyright © 2019 liu.weixing. All rights reserved.
+//  Created by liuweixing on 2020/5/6.
+//  Copyright © 2020 liuweixing. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
 
 
 @end

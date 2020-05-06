@@ -9,7 +9,7 @@
 #if __has_include("SDWebImageManager.h")
 
 #import <UIKit/UIKit.h>
-#import "SDWebImageManager.h"
+#import <SDWebImage/SDWebImageManager.h>
 
 
 @interface UIImageView (SDImageCut)

@@ -4,7 +4,7 @@
 //  https://github.com/AXinger/AXiOSKit.git
 //
 //  Created by AXing on 2017/4/30.
-//  Copyright © 2019 liu.weixing. All rights reserved.
+//  Copyright © 2017 liu.weixing. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -85,21 +85,21 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #elif __has_include("Masonry.h")
 #import "Masonry.h"
 #endif
-
-#if __has_include(<IQKeyboardManager/IQKeyboardManager.h>)
-#import <IQKeyboardManager/IQKeyboardManager.h>
-#elif __has_include("IQKeyboardManager.h")
-#import "IQKeyboardManager.h"
-#endif
-
-#if __has_include("MBProgressHUD.h")
-#import "MBProgressHUD.h"
-#endif
-
-#if __has_include("UIImageView+WebCache.h")
-#import "UIImageView+WebCache.h"
-#import "UIButton+WebCache.h"
-#import "UIImage+GIF.h"
-#endif
+//
+//#if __has_include(<IQKeyboardManager/IQKeyboardManager.h>)
+//#import <IQKeyboardManager/IQKeyboardManager.h>
+//#elif __has_include("IQKeyboardManager.h")
+//#import "IQKeyboardManager.h"
+//#endif
+//
+//#if __has_include("MBProgressHUD.h")
+//#import "MBProgressHUD.h"
+//#endif
+//
+//#if __has_include("UIImageView+WebCache.h")
+//#import "UIImageView+WebCache.h"
+//#import "UIButton+WebCache.h"
+//#import "UIImage+GIF.h"
+//#endif
 
 

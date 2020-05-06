@@ -19,11 +19,11 @@
  */
 - (void)ax_cacheImage:(NSString *)url completed:(void(^)(BOOL isInCache))completed{
     
-    [[SDWebImageManager sharedManager] cachedImageExistsForURL:[NSURL URLWithString:url] completion:^(BOOL isInCache) {
-        if (completed){
-            completed(isInCache);
-        }
-    }];
+//    [[SDWebImageManager sharedManager] cachedImageExistsForURL:[NSURL URLWithString:url] completion:^(BOOL isInCache) {
+//        if (completed){
+//            completed(isInCache);
+//        }
+//    }];
 }
 
 @end

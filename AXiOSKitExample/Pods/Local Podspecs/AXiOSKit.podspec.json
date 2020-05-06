@@ -12,7 +12,7 @@
     "AXinger": "136950281@qq.com"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "requires_arc": true,
   "source": {
@@ -59,9 +59,6 @@
 
     ],
     "DZNEmptyDataSet": [
-
-    ],
-    "SDCycleScrollView": [
 
     ],
     "KVOController": [

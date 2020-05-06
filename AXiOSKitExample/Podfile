@@ -9,33 +9,32 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 workspace 'AXiOSKitExample.xcworkspace'
 
+# demo 依赖
 target 'AXiOSKitExample' do
   project 'AXiOSKitExample.xcodeproj'
   
-  pod 'AXiOSKit', :path => '../'
+ pod 'AXiOSKit', :path => '../'
   #    pod 'AXiOSKit' , :git => 'https://github.com/AXinger/AXiOSKit.git', :branch => 'release/20190530_new'
-  
+  # pod 'AXiOSKit', :source => 'https://github.com/AXinger/AXiOSKit.git'
   pod "FLAnimatedImage"
   pod "SDWebImage/GIF"
-#  pod "SocketRocket"
+  #  pod "SocketRocket"
   pod "TZImagePickerController"
-  pod "ZLPhotoBrowser"
+  #pod "ZLPhotoBrowser"
   pod "PromisesObjC"
-  
-  
   pod "SocketRocket"
-  
-  ## 安全集合
+  # 安全集合
   pod 'AvoidCrash'
-
-  ## 保护App
+  # 保护App
   pod 'JJException'
-  
   # 微信开源数据库操作层
   pod 'WCDB'
+  #pod 'SDWebImage/WebP', :source => 'https://github.com/webmproject/libwebp.git'
+  #pod 'LookinServer', :configurations => ['Debug']
   
 end
 
+# AXiOSKit 依赖
 target 'AXiOSKit' do
   project '../AXiOSKit.xcodeproj'
   
@@ -47,15 +46,11 @@ target 'AXiOSKit' do
   pod "MJExtension"
   pod "MBProgressHUD"
   pod "DZNEmptyDataSet"
-  pod "SDCycleScrollView"
+  #pod "SDCycleScrollView"
   pod "KVOController"
   pod "Masonry"
   #pod "GKPhotoBrowser"
   pod "Aspects"
-  pod "TZImagePickerController"
-  
-  pod "ZLPhotoBrowser"
-  pod 'LookinServer', :configurations => ['Debug']
   
 end
 

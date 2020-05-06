@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     s.homepage     = "https://github.com/AXinger/AXiOSKit"
     s.license      = { :type => "MIT", :file => "LICENSE" }
     s.author             = { "AXinger" => "136950281@qq.com" }
-    s.ios.deployment_target = "8.0"
+    s.ios.deployment_target = "9.0"
     s.requires_arc = true
     s.source       = { :git => "https://github.com/AXinger/AXiOSKit.git", :tag => "#{s.version}" }
     s.source_files  = "AXiOSKit/**/*.{h,m}"
@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
     s.dependency "MJExtension"
     s.dependency "MBProgressHUD"
     s.dependency "DZNEmptyDataSet"
-    s.dependency "SDCycleScrollView"
+    #s.dependency "SDCycleScrollView"
     s.dependency "KVOController"
     s.dependency "Masonry"
     #s.dependency "GKPhotoBrowser"

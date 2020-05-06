@@ -5,7 +5,7 @@
 
 #if __has_include("MBProgressHUD.h")
 
-#import "MBProgressHUD.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 
 @interface MBProgressHUD (AX)

@@ -7,7 +7,7 @@
 //
 #if __has_include("MJRefresh.h")
 
-#import "MJRefresh.h"
+#import <MJRefresh/MJRefresh.h>
 //自定义 mjrefrsh foot内容
 @interface AXRefreshFooter : MJRefreshAutoNormalFooter
 

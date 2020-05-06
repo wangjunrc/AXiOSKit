@@ -234,7 +234,8 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 #pragma mark - 调用 get post put delete 方法
 -(void)__getStart{
     
-    self.afSessionDataTask = [self.anSessionManager GET:self.path parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+    
+    self.afSessionDataTask = [self.anSessionManager GET:self.path parameters:self.parameters headers:nil  progress:^(NSProgress * _Nonnull uploadProgress) {
         self.started = NO;
         [self __progress:uploadProgress];
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -248,7 +249,7 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 
 -(void)__postStart{
     
-    self.afSessionDataTask = [self.anSessionManager POST:self.path parameters:self.parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+    self.afSessionDataTask = [self.anSessionManager POST:self.path parameters:self.parameters headers:nil progress:^(NSProgress * _Nonnull uploadProgress) {
         self.started = NO;
         [self __progress:uploadProgress];
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -263,7 +264,7 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 
 -(void)__putStart{
     
-    self.afSessionDataTask = [self.anSessionManager PUT:self.path parameters:self.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    self.afSessionDataTask = [self.anSessionManager PUT:self.path parameters:self.parameters headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         self.started = NO;
         [self __success:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -274,7 +275,7 @@ typedef NS_ENUM(NSInteger, AXHTTPMethodType) {
 
 -(void)__deleteStart{
     
-    self.afSessionDataTask = [self.anSessionManager DELETE:self.path parameters:self.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    self.afSessionDataTask = [self.anSessionManager DELETE:self.path parameters:self.parameters headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         self.started = NO;
         [self __success:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

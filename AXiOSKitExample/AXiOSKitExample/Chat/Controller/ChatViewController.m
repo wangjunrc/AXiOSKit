@@ -14,7 +14,7 @@
 
 #import "AXWebSocketEngine.h"
 #import "ChatTextMessageModel.h"
-
+#import <MJExtension/MJExtension.h>
 @interface ChatViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *fromLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toLabel;

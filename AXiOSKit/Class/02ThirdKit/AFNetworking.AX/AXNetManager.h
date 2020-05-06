@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AXNetGroup.h"
 #if __has_include("AFNetworking.h")
-#import "AFNetworking.h"
+#import <AFNetworking/AFNetworking.h>
 #endif
 
 FOUNDATION_EXPORT NSString *const AXNetLoadTitle;

@@ -7,7 +7,7 @@
 //
 
 #import "BAUserInfo.h"
-
+#import <MJExtension/MJExtension.h>
 
 @implementation UserInfo
  MJExtensionCodingImplementation

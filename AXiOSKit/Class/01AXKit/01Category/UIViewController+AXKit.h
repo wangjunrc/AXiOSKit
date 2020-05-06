@@ -116,7 +116,7 @@
 /**
  封装 presentViewController
  
- @param aVC vc
+ @param aClass vc
  */
 - (void)ax_showVCClass:(Class )aClass;
 

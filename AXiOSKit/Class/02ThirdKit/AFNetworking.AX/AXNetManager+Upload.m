@@ -44,7 +44,7 @@
    
      AXLog(@"%@ -- %@",url,parameters);
     
-    [[self shareManagerWithParameters:parameters] POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  formData) {
+    [[self shareManagerWithParameters:parameters] POST:url parameters:parameters headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  formData) {
         
         for (AXFormData *file in formDataArray) {
             

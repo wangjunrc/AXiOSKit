@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+NS_ASSUME_NONNULL_BEGIN
 /**
  是debug 环境下
  
@@ -232,3 +232,5 @@ void ax_setAssignAssociatedObject(id object, const void *propertyName,
  @return id 值
  */
 id ax_getAssociatedObject(id object, const void *propertyName);
+
+NS_ASSUME_NONNULL_END
