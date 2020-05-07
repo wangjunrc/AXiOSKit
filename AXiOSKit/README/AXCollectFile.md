@@ -14,20 +14,28 @@ https://github.com/Tim9Liu9/TimLiu-iOS
 
 # 消除 过期警告 top
 ```
+/// 消除局部警告
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored"-Wdeprecated-declarations"
+#pragma clang diagnostic ignored <#参数#>
 
 /* 代码放这中间*/
-/**
-* 消除 过期警告 botton
-*/
+
 #pragma clang diagnostic pop
 
-// 将此行放在出现警告的. m 文件中。 消除所有警告
-#pragma GCC diagnostic ignored"-Wundeclared-selector"
+```
+```
+/// 过期警告
+ "-Wdeprecated-declarations"
 ```
 
-
+```
+/// 方法未实现警告
+"-Wundeclared-selector"
+```
+```
+// 将此行放在出现警告的. m 文件中。 消除所有警告
+#pragma GCC diagnostic ignored <#参数#>
+```
 
 # 过期宏 三种方式都是 第一种的宏
 ```

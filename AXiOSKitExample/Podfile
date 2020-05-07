@@ -13,11 +13,15 @@ workspace 'AXiOSKitExample.xcworkspace'
 target 'AXiOSKitExample' do
   project 'AXiOSKitExample.xcodeproj'
   
- pod 'AXiOSKit', :path => '../'
+  pod 'AXiOSKit', :path => '../'
   #    pod 'AXiOSKit' , :git => 'https://github.com/AXinger/AXiOSKit.git', :branch => 'release/20190530_new'
   # pod 'AXiOSKit', :source => 'https://github.com/AXinger/AXiOSKit.git'
-  pod "FLAnimatedImage"
-  pod "SDWebImage/GIF"
+#  pod "FLAnimatedImage"
+  pod 'SDWebImageFLPlugin'
+  pod 'SDWebImageWebPCoder'
+  #  pod "SDWebImage/GIF"
+#  pod 'libwebp', :git => 'https://github.com/webmproject/libwebp.git'
+    pod 'SDWebImage','~> 5.7.3'
   #  pod "SocketRocket"
   pod "TZImagePickerController"
   #pod "ZLPhotoBrowser"
@@ -27,9 +31,8 @@ target 'AXiOSKitExample' do
   pod 'AvoidCrash'
   # 保护App
   pod 'JJException'
-  # 微信开源数据库操作层
+  # 微信开源数据库操作层 ORM
   pod 'WCDB'
-  #pod 'SDWebImage/WebP', :source => 'https://github.com/webmproject/libwebp.git'
   #pod 'LookinServer', :configurations => ['Debug']
   
 end
@@ -39,7 +42,7 @@ target 'AXiOSKit' do
   project '../AXiOSKit.xcodeproj'
   
   pod "AFNetworking"
-  pod "SDWebImage"
+  
   pod "IQKeyboardManager"
   pod "MJRefresh"
   pod "NullSafe"

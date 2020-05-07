@@ -14,9 +14,12 @@ ${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
 ${BUILT_PRODUCTS_DIR}/NullSafe/NullSafe.framework
 ${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework
-${BUILT_PRODUCTS_DIR}/SDWebImage.default-GIF/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SDWebImageFLPlugin/SDWebImageFLPlugin.framework
+${BUILT_PRODUCTS_DIR}/SDWebImageWebPCoder/SDWebImageWebPCoder.framework
 ${BUILT_PRODUCTS_DIR}/SQLiteRepairKit/sqliterk.framework
 ${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework
 ${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework
 ${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework
 ${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework
+${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework

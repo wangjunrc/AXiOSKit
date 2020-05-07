@@ -21,7 +21,8 @@
 #import <objc/message.h>
 #import <objc/runtime.h>
 #import "fishhook-master/fishhook.h"
-#import "_20ViewController_webp.h"
+#import "_13ViewController_webp.h"
+#import "_00TableViewCell.h"
 
 typedef void (^CollectionBlock)(void);
 
@@ -58,7 +59,7 @@ typedef void (^CollectionBlock)(void);
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"主题";
-    //    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cellid"];
+    [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
     
     
     self.name = @"-1";
@@ -129,19 +130,15 @@ void mySLog(NSString *format, ...) {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    _00TableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"cellid"
-                             ];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle
-                                      reuseIdentifier: @"cellid"];
-    }
+    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     NSDictionary *dict = self.dataArray[indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",dict[@"index"]];
-    cell.detailTextLabel.text = dict[@"title"];
+    cell.indexLabel.text = [NSString stringWithFormat:@"%@",dict[@"index"]];
+    cell.nameLabel.text = dict[@"title"];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -154,6 +151,18 @@ void mySLog(NSString *format, ...) {
     
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
+
+# pragma mark -  数据源
 - (NSArray *)dataArray {
     if (!_dataArray) {
         _dataArray = @[
@@ -201,7 +210,10 @@ void mySLog(NSString *format, ...) {
                 @"action":  ^{
                     [self ax_showAlertByTitle:@"是否调用" confirm:^{
                         UIButton *testButton = [[UIButton alloc] init];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
                         [testButton performSelector:@selector(someMethod:)];
+#pragma clang diagnostic pop
                     }];
                 },
             },
@@ -212,6 +224,7 @@ void mySLog(NSString *format, ...) {
                     
                     WCDBViewController *vc = [[WCDBViewController alloc]init];
                     [self.navigationController pushViewController:vc animated:YES];
+                    
                 },
                 
                 
@@ -297,7 +310,7 @@ void mySLog(NSString *format, ...) {
                 @"index":@13,
                 @"title":@"webp图片",
                 @"action":  ^{
-                    _20ViewController_webp *vc = [[_20ViewController_webp alloc]init];
+                    _13ViewController_webp *vc = [[_13ViewController_webp alloc]init];
                     [self.navigationController pushViewController:vc animated:YES];
                 },
                 
@@ -330,17 +343,6 @@ void mySLog(NSString *format, ...) {
         NSLog(@"未z实现");
     }
     
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
-    return YES;
-}
--(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return UITableViewCellEditingStyleDelete;
-}
-
--(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return @"删除";
 }
 
 @end

@@ -69,37 +69,14 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "AXLocationManager.h"
 #import "AXTouchIDManager.h"
 #import "AXUIAssistant.h"
-//读取本framework图片资料
+///读取本framework图片资料
 #import "UIImage+AXBundle.h"
-/* 02ThirdTools */
-#pragma mark - 02ThirdTools
+#import "NSBundle+AXBundle.h"
+/// 第三方封装
 #import "UIScrollView+AXRefresh.h"
 #import "AXNetManager.h"
 #import "MBProgressHUD+AX.h"
 #import "NSObject+AXCacheImage.h"
 #import "AXNetManager.h"
-#import "NSBundle+AXBundle.h"
-
-#if __has_include(<Masonry/Masonry.h>)
-#import <Masonry/Masonry.h>
-#elif __has_include("Masonry.h")
-#import "Masonry.h"
-#endif
-//
-//#if __has_include(<IQKeyboardManager/IQKeyboardManager.h>)
-//#import <IQKeyboardManager/IQKeyboardManager.h>
-//#elif __has_include("IQKeyboardManager.h")
-//#import "IQKeyboardManager.h"
-//#endif
-//
-//#if __has_include("MBProgressHUD.h")
-//#import "MBProgressHUD.h"
-//#endif
-//
-//#if __has_include("UIImageView+WebCache.h")
-//#import "UIImageView+WebCache.h"
-//#import "UIButton+WebCache.h"
-//#import "UIImage+GIF.h"
-//#endif
 
 

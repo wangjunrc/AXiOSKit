@@ -1,6 +1,0 @@
-framework module AXiOSKit {
-  umbrella header "AXiOSKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

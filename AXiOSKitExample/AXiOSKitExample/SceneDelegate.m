@@ -11,6 +11,9 @@
 #import "AANavigationController.h"
 #import <AXiOSKit/AXConfigureManager.h>
 
+#import <SDWebImageWebPCoder/SDImageWebPCoder.h>
+#import <SDWebImage/SDImageCodersManager.h>
+
 @interface SceneDelegate ()
 
 @end
@@ -21,6 +24,12 @@
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
     
     [AXConfigureManager registerCatch];
+    
+    SDImageWebPCoder *webPCoder = [SDImageWebPCoder sharedCoder];
+    [[SDImageCodersManager sharedManager] addCoder:webPCoder];
+    
+    
+    
     TableViewController *roorvc = [[TableViewController alloc]init];
     AANavigationController *nav = [[AANavigationController alloc]initWithRootViewController:roorvc];
     
