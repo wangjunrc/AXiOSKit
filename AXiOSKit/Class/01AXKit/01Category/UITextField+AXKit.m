@@ -173,10 +173,10 @@
              replacementText:(NSString*)text {
     
     UITextField *textField = self;
-    // 删除键
-    if ([text isEqualToString:@""]) {
-        return YES;
-    }
+//    // 删除键
+//    if ([text isEqualToString:@""]) {
+//        return YES;
+//    }
     
     // 点击return键
     if ([text isEqualToString:@"\n"]) {

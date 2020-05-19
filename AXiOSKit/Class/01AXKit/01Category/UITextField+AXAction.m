@@ -15,6 +15,8 @@
 
 @property (nonatomic, weak) UITextField* currentTextField;
 
+
+
 @end
 #pragma mark - implementation AXTextFieldDelegateHandler
 
@@ -75,24 +77,58 @@
 /**
  当输入框文字发生变化时触发 ( 只有通过键盘输入时 , 文字改变 , 触发 )
  */
-- (BOOL)textField:(UITextField*)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString*)string
-{
-    if (self.shouldChangeBlock) {
-        return self.shouldChangeBlock(textField, range, string);
+- (BOOL)textField:(UITextField*)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString*)string{
+    
+    /// 这里放在一起,分开写,容易bug
+
+    /// 禁止输入空格
+    if (self.banBlankSpace) {
+        NSString *tem = [[string componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]componentsJoinedByString:@""];
+        if (![string isEqualToString:tem]) {
+            return NO;
+        }
     }
+    
+    /// 最大文字个数
+    if (self.maxCharacterCount>0) {
+        // 大于最大数量
+        if ((textField.text.length + string.length) > self.maxCharacterCount) {
+            return NO;
+        }
+    }
+    
+    /// 只能输入正正数
+    if (self.onlyPositiveNumber && self.maxFloatCount==0) {
+        
+        BOOL result = [textField ax_getFloatCount:0 range:range string:string];
+        /// 这里避免拦截后面的  规则
+        if (!result) {
+            return NO;
+        }
+    }
+    
+    ///最多只能输入小数 的个数
+    if (self.maxFloatCount>0 && !self.onlyPositiveNumber) {
+        
+        BOOL result = [textField ax_getFloatCount:self.maxFloatCount range:range string:string];
+        if (!result) {
+            return NO;
+        }
+    }
+    
     return YES;
 }
 
 - (void)setDidEditingChangedBlock:(void (^)(UITextField*))didEditingChangedBlock
 {
     _didEditingChangedBlock = didEditingChangedBlock;
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(TextFieldChangedAction:) name:UITextFieldTextDidChangeNotification object:self.currentTextField];
 }
 
 - (void)TextFieldChangedAction:(NSNotification*)note
 {
-
+    
     UITextField* tf = (UITextField*)note.object;
     if (self.didEditingChangedBlock) {
         self.didEditingChangedBlock(tf);
@@ -101,7 +137,7 @@
 
 - (void)dealloc
 {
-
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
 }
 
@@ -112,40 +148,14 @@
 - (void)setOnlyPositiveNumber:(BOOL)onlyPositiveNumber
 {
     _onlyPositiveNumber = onlyPositiveNumber;
-
-    if (onlyPositiveNumber) {
-        self.currentTextField.keyboardType = UIKeyboardTypeNumberPad;
-        self.shouldChangeBlock = ^BOOL(UITextField* textField, NSRange range, NSString* aString) {
-            return [textField ax_getFloatCount:0 range:range string:aString];
-        };
-    } else {
-        if (self.shouldChangeBlock) {
-            self.shouldChangeBlock = nil;
-        }
-    }
+    self.currentTextField.keyboardType = UIKeyboardTypeNumberPad;
 }
 
 - (void)setMaxFloatCount:(NSUInteger)maxFloatCount
 {
     _maxFloatCount = maxFloatCount;
-
+    //设置键盘
     self.currentTextField.keyboardType = UIKeyboardTypeDecimalPad;
-    self.shouldChangeBlock = ^BOOL(UITextField* textField, NSRange range, NSString* aString) {
-        return [textField ax_getFloatCount:maxFloatCount range:range string:aString];
-    };
-}
-
-- (void)setMaxCharacterCount:(NSUInteger)maxCharacterCount
-{
-    _maxCharacterCount = maxCharacterCount;
-
-    // 通知方法 截取
-    //     [self.currentTextField addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
-
-    // 代理方法 拦截
-    self.shouldChangeBlock = ^BOOL(UITextField* textField, NSRange range, NSString* aString) {
-        return [textField ax_maxCharacterCount:maxCharacterCount replacementText:aString];
-    };
 }
 
 #pragma mark - function
@@ -175,7 +185,7 @@
     if (!handler) {
         handler = [[AXTextFieldDelegateHandler alloc] initWithTextField:self];
         handler.currentTextField = self;
-//        self.delegate = handler;
+        //        self.delegate = handler;
         self.ax_delegateHandler = handler;
     }
     return handler;

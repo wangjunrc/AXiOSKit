@@ -58,6 +58,8 @@
 		213A998D246391A90045DDF0 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213A998B246391A80045DDF0 /* VideoViewController.m */; };
 		213A998E246391A90045DDF0 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213A998C246391A90045DDF0 /* VideoViewController.xib */; };
 		213A999A2463BFD10045DDF0 /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213A99992463BFD10045DDF0 /* images.bundle */; };
+		21B0F89424736EA2001BB2A0 /* _14TFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B0F89224736EA2001BB2A0 /* _14TFViewController.m */; };
+		21B0F89524736EA2001BB2A0 /* _14TFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21B0F89324736EA2001BB2A0 /* _14TFViewController.xib */; };
 		EFB53CC9DAEACE15EEBA0F67 /* Pods_AXiOSKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2AB1BCF4154D76F31004C5 /* Pods_AXiOSKitExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +149,9 @@
 		213A998B246391A80045DDF0 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		213A998C246391A90045DDF0 /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		213A99992463BFD10045DDF0 /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
+		21B0F89124736EA2001BB2A0 /* _14TFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _14TFViewController.h; sourceTree = "<group>"; };
+		21B0F89224736EA2001BB2A0 /* _14TFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _14TFViewController.m; sourceTree = "<group>"; };
+		21B0F89324736EA2001BB2A0 /* _14TFViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _14TFViewController.xib; sourceTree = "<group>"; };
 		3921CF6BEA9759A6E192CBE2 /* Pods-AXiOSKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.release.xcconfig"; sourceTree = "<group>"; };
 		5BE708E4E9DACA9F3EB268E2 /* Pods-AXiOSKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.debug.xcconfig"; sourceTree = "<group>"; };
 		ED2AB1BCF4154D76F31004C5 /* Pods_AXiOSKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +208,9 @@
 				2105E74D2462EC4C0076A65B /* _13ViewController_webp.h */,
 				2105E7772462EC4C0076A65B /* _13ViewController_webp.m */,
 				2105E7502462EC4C0076A65B /* _13ViewController_webp.xib */,
+				21B0F89124736EA2001BB2A0 /* _14TFViewController.h */,
+				21B0F89224736EA2001BB2A0 /* _14TFViewController.m */,
+				21B0F89324736EA2001BB2A0 /* _14TFViewController.xib */,
 				2105E72E2462EC4C0076A65B /* AANavigationController.h */,
 				2105E7562462EC4C0076A65B /* AANavigationController.m */,
 				2105E74B2462EC4C0076A65B /* AAViewController.h */,
@@ -438,6 +446,7 @@
 				2105E79A2462EC4C0076A65B /* AAViewController.xib in Resources */,
 				213A998E246391A90045DDF0 /* VideoViewController.xib in Resources */,
 				2116C98824638D2200492DC2 /* _00TableViewCell.xib in Resources */,
+				21B0F89524736EA2001BB2A0 /* _14TFViewController.xib in Resources */,
 				2105E7862462EC4C0076A65B /* AXNetworkTestViewController.xib in Resources */,
 				2105E7922462EC4C0076A65B /* Main.storyboard in Resources */,
 				2105E7902462EC4C0076A65B /* _13ViewController_webp.xib in Resources */,
@@ -514,6 +523,7 @@
 				2105E79E2462EC4C0076A65B /* SoundRecordDB.mm in Sources */,
 				213A998D246391A90045DDF0 /* VideoViewController.m in Sources */,
 				2105E7892462EC4C0076A65B /* ChatMessageModel.m in Sources */,
+				21B0F89424736EA2001BB2A0 /* _14TFViewController.m in Sources */,
 				2105E78E2462EC4C0076A65B /* ViewController.m in Sources */,
 				2105E7A22462EC4C0076A65B /* PalyThemeDB.mm in Sources */,
 				2105E77C2462EC4C0076A65B /* fishhook.c in Sources */,
@@ -673,6 +683,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = AXiOSKitExample/Info.plist;
@@ -681,6 +692,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "";
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.kit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -693,6 +705,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = AXiOSKitExample/Info.plist;
@@ -701,6 +714,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "";
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.kit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

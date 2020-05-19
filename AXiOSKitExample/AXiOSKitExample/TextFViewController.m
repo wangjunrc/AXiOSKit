@@ -8,6 +8,7 @@
 
 #import "TextFViewController.h"
 #import <AXiOSKit/NSString+AXKit.h>
+#import <Masonry/Masonry.h>
 @interface TextFViewController ()<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

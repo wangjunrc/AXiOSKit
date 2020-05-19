@@ -23,7 +23,7 @@
 #import "fishhook-master/fishhook.h"
 #import "_13ViewController_webp.h"
 #import "_00TableViewCell.h"
-
+#import "_14TFViewController.h"
 typedef void (^CollectionBlock)(void);
 
 @interface TableViewController (){
@@ -315,6 +315,15 @@ void mySLog(NSString *format, ...) {
                 },
                 
             },
+            @{
+                          @"index":@14,
+                          @"title":@"TextFeild",
+                          @"action":  ^{
+                              _14TFViewController *vc = [[_14TFViewController alloc]init];
+                              [self.navigationController pushViewController:vc animated:YES];
+                          },
+                          
+                      },
             
             
             
