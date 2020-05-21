@@ -32,7 +32,7 @@
         // Fallback on earlier versions
     }
     
-       
+    
 
     UIImageView *imv = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ax_icon_weixin"]];
     [self.view addSubview:imv];

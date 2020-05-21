@@ -58,10 +58,39 @@
 		213A998D246391A90045DDF0 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213A998B246391A80045DDF0 /* VideoViewController.m */; };
 		213A998E246391A90045DDF0 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213A998C246391A90045DDF0 /* VideoViewController.xib */; };
 		213A999A2463BFD10045DDF0 /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213A99992463BFD10045DDF0 /* images.bundle */; };
+		219BDE33247627EB00D7AAA6 /* MyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 219BDE32247627EB00D7AAA6 /* MyActivity.m */; };
+		219BDE3624762A2E00D7AAA6 /* CopyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 219BDE3524762A2E00D7AAA6 /* CopyActivity.m */; };
 		21B0F89424736EA2001BB2A0 /* _14TFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B0F89224736EA2001BB2A0 /* _14TFViewController.m */; };
 		21B0F89524736EA2001BB2A0 /* _14TFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21B0F89324736EA2001BB2A0 /* _14TFViewController.xib */; };
+		21D670BD2474E5D100890F8F /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D670BC2474E5D100890F8F /* ShareViewController.m */; };
+		21D670C02474E5D100890F8F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D670BE2474E5D100890F8F /* MainInterface.storyboard */; };
+		21D670C42474E5D100890F8F /* 分享.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21D670B92474E5D100890F8F /* 分享.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EFB53CC9DAEACE15EEBA0F67 /* Pods_AXiOSKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2AB1BCF4154D76F31004C5 /* Pods_AXiOSKitExample.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21D670C22474E5D100890F8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2105E6FE2462EA640076A65B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21D670B82474E5D100890F8F;
+			remoteInfo = "分享";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		21D670C82474E5D100890F8F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				21D670C42474E5D100890F8F /* 分享.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2105E7062462EA640076A65B /* AXiOSKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,9 +178,19 @@
 		213A998B246391A80045DDF0 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		213A998C246391A90045DDF0 /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		213A99992463BFD10045DDF0 /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
+		214FF8642476192A00EF0C29 /* 分享.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "分享.entitlements"; sourceTree = "<group>"; };
+		219BDE31247627EB00D7AAA6 /* MyActivity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyActivity.h; sourceTree = "<group>"; };
+		219BDE32247627EB00D7AAA6 /* MyActivity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyActivity.m; sourceTree = "<group>"; };
+		219BDE3424762A2E00D7AAA6 /* CopyActivity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyActivity.h; sourceTree = "<group>"; };
+		219BDE3524762A2E00D7AAA6 /* CopyActivity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyActivity.m; sourceTree = "<group>"; };
 		21B0F89124736EA2001BB2A0 /* _14TFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _14TFViewController.h; sourceTree = "<group>"; };
 		21B0F89224736EA2001BB2A0 /* _14TFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _14TFViewController.m; sourceTree = "<group>"; };
 		21B0F89324736EA2001BB2A0 /* _14TFViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _14TFViewController.xib; sourceTree = "<group>"; };
+		21D670B92474E5D100890F8F /* 分享.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "分享.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D670BB2474E5D100890F8F /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		21D670BC2474E5D100890F8F /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		21D670BF2474E5D100890F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		21D670C12474E5D100890F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3921CF6BEA9759A6E192CBE2 /* Pods-AXiOSKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.release.xcconfig"; sourceTree = "<group>"; };
 		5BE708E4E9DACA9F3EB268E2 /* Pods-AXiOSKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.debug.xcconfig"; sourceTree = "<group>"; };
 		ED2AB1BCF4154D76F31004C5 /* Pods_AXiOSKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +202,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFB53CC9DAEACE15EEBA0F67 /* Pods_AXiOSKitExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D670B62474E5D100890F8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				2105E7222462EC4C0076A65B /* AXiOSKitExample */,
+				21D670BA2474E5D100890F8F /* 分享 */,
 				2105E7072462EA640076A65B /* Products */,
 				03699C9438C256777AC22AB2 /* Pods */,
 				F2C213425737F5241E0FABA4 /* Frameworks */,
@@ -192,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				2105E7062462EA640076A65B /* AXiOSKitExample.app */,
+				21D670B92474E5D100890F8F /* 分享.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,6 +250,10 @@
 				213A99992463BFD10045DDF0 /* images.bundle */,
 				2105E7482462EC4C0076A65B /* _00TableViewController.h */,
 				2105E7632462EC4C0076A65B /* _00TableViewController.m */,
+				219BDE31247627EB00D7AAA6 /* MyActivity.h */,
+				219BDE32247627EB00D7AAA6 /* MyActivity.m */,
+				219BDE3424762A2E00D7AAA6 /* CopyActivity.h */,
+				219BDE3524762A2E00D7AAA6 /* CopyActivity.m */,
 				2116C98424638D2200492DC2 /* _00TableViewCell.h */,
 				2116C98524638D2200492DC2 /* _00TableViewCell.m */,
 				2116C98624638D2200492DC2 /* _00TableViewCell.xib */,
@@ -370,6 +422,18 @@
 			path = WebSocket;
 			sourceTree = "<group>";
 		};
+		21D670BA2474E5D100890F8F /* 分享 */ = {
+			isa = PBXGroup;
+			children = (
+				214FF8642476192A00EF0C29 /* 分享.entitlements */,
+				21D670BB2474E5D100890F8F /* ShareViewController.h */,
+				21D670BC2474E5D100890F8F /* ShareViewController.m */,
+				21D670BE2474E5D100890F8F /* MainInterface.storyboard */,
+				21D670C12474E5D100890F8F /* Info.plist */,
+			);
+			path = "分享";
+			sourceTree = "<group>";
+		};
 		F2C213425737F5241E0FABA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,15 +454,34 @@
 				2105E7032462EA640076A65B /* Frameworks */,
 				2105E7042462EA640076A65B /* Resources */,
 				7975C44782069503AFEA4982 /* [CP] Embed Pods Frameworks */,
+				21D670C82474E5D100890F8F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				21D670C32474E5D100890F8F /* PBXTargetDependency */,
 			);
 			name = AXiOSKitExample;
 			productName = AXiOSKitExample;
 			productReference = 2105E7062462EA640076A65B /* AXiOSKitExample.app */;
 			productType = "com.apple.product-type.application";
+		};
+		21D670B82474E5D100890F8F /* 分享 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21D670C52474E5D100890F8F /* Build configuration list for PBXNativeTarget "分享" */;
+			buildPhases = (
+				21D670B52474E5D100890F8F /* Sources */,
+				21D670B62474E5D100890F8F /* Frameworks */,
+				21D670B72474E5D100890F8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "分享";
+			productName = "分享";
+			productReference = 21D670B92474E5D100890F8F /* 分享.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -406,10 +489,14 @@
 		2105E6FE2462EA640076A65B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = liuweixing;
 				TargetAttributes = {
 					2105E7052462EA640076A65B = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					21D670B82474E5D100890F8F = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
@@ -428,6 +515,7 @@
 			projectRoot = "";
 			targets = (
 				2105E7052462EA640076A65B /* AXiOSKitExample */,
+				21D670B82474E5D100890F8F /* 分享 */,
 			);
 		};
 /* End PBXProject section */
@@ -458,6 +546,14 @@
 				2105E7912462EC4C0076A65B /* LaunchScreen.storyboard in Resources */,
 				2105E78D2462EC4C0076A65B /* Assets.xcassets in Resources */,
 				2105E77A2462EC4C0076A65B /* CODE_OF_CONDUCT.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D670B72474E5D100890F8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D670C02474E5D100890F8F /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +611,7 @@
 				2105E78A2462EC4C0076A65B /* ChatTextMessageModel.m in Sources */,
 				2105E7992462EC4C0076A65B /* AppDelegate.m in Sources */,
 				213A99892463919F0045DDF0 /* WCDBViewController.m in Sources */,
+				219BDE3624762A2E00D7AAA6 /* CopyActivity.m in Sources */,
 				2105E7942462EC4C0076A65B /* AANavigationController.m in Sources */,
 				2105E7842462EC4C0076A65B /* NSObject+MethodSwizzling.m in Sources */,
 				2105E7822462EC4C0076A65B /* TestObj.m in Sources */,
@@ -533,6 +630,7 @@
 				2105E7792462EC4C0076A65B /* TextFViewController.m in Sources */,
 				2105E79B2462EC4C0076A65B /* AAViewController.m in Sources */,
 				2105E7972462EC4C0076A65B /* main.m in Sources */,
+				219BDE33247627EB00D7AAA6 /* MyActivity.m in Sources */,
 				2105E79F2462EC4C0076A65B /* BAThemeListModel+WCDB.mm in Sources */,
 				2105E7932462EC4C0076A65B /* RunLoopViewController.m in Sources */,
 				2105E7882462EC4C0076A65B /* ChatViewController.m in Sources */,
@@ -545,7 +643,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		21D670B52474E5D100890F8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D670BD2474E5D100890F8F /* ShareViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		21D670C32474E5D100890F8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21D670B82474E5D100890F8F /* 分享 */;
+			targetProxy = 21D670C22474E5D100890F8F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2105E7512462EC4C0076A65B /* LaunchScreen.storyboard */ = {
@@ -562,6 +676,14 @@
 				2105E7542462EC4C0076A65B /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		21D670BE2474E5D100890F8F /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21D670BF2474E5D100890F8F /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -721,6 +843,44 @@
 			};
 			name = Release;
 		};
+		21D670C62474E5D100890F8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "分享/分享.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2BZJZ65HL3;
+				INFOPLIST_FILE = "分享/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.kit.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		21D670C72474E5D100890F8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "分享/分享.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2BZJZ65HL3;
+				INFOPLIST_FILE = "分享/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.kit.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -738,6 +898,15 @@
 			buildConfigurations = (
 				2105E7202462EA660076A65B /* Debug */,
 				2105E7212462EA660076A65B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21D670C52474E5D100890F8F /* Build configuration list for PBXNativeTarget "分享" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D670C62474E5D100890F8F /* Debug */,
+				21D670C72474E5D100890F8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
