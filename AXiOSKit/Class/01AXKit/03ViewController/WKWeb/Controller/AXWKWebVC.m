@@ -16,9 +16,7 @@
 #import "NSString+AXKit.h"
 
 typedef NS_ENUM(NSInteger, WKWebLoadType){
-    WKWebLoadTypeURLString,
-    WKWebLoadTypeHTMLString,
-    WKWebLoadTypeHTMLFilePath,
+    WKWebLoadTypeHTML,
     WKWebLoadTypeURL,
 };
 
@@ -26,7 +24,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 
 @property (nonatomic, strong) WKWebView *webView;
 
-@property (nonatomic, copy) NSString *url;
+//@property (nonatomic, copy) NSString *url;
 
 @property (nonatomic, strong) UIProgressView *progressView;
 
@@ -74,9 +72,9 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    [self __initView];
-    [self __initNavItme];
-    [self __webViewloadURLType];
+    [self _initView];
+    [self _initNavItme];
+    [self _webViewloadURLType];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -89,7 +87,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 /**
  * view
  */
-- (void)__initView{
+- (void)_initView{
     
     [self.view addSubview:self.webView];
     [self.view addSubview:self.progressView];
@@ -103,7 +101,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 /**
  * UINavigationController itme
  */
-- (void)__initNavItme{
+- (void)_initNavItme{
     
     [self ax_haveNav:^(UINavigationController *nav) {
         
@@ -126,14 +124,14 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
  */
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     
-//    AXLog(@"开始加载 title: %@",webView.title);
+    //    AXLog(@"开始加载 title: %@",webView.title);
 }
 
 /**
  * 当内容开始返回时调用
  */
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
-//    AXLog(@"当内容开始返回时调用title: %@",webView.title);
+    //    AXLog(@"当内容开始返回时调用title: %@",webView.title);
 }
 
 /**
@@ -349,7 +347,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         AXLog(@"addScriptMessageHandler重复注册");
         return;
     }
-
+    
     if (delegate && name.length>0 ){
         
         AXWebScriptMessageModel *model = [[AXWebScriptMessageModel alloc]init];
@@ -379,7 +377,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     
     if (object != self.webView ) {
         
-         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }else{
         
         if ([keyPath isEqualToString:NSStringFromSelector(@selector(estimatedProgress))]) {
@@ -410,7 +408,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         }else {
             [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
         }
-       
+        
     }
 }
 
@@ -418,36 +416,24 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 #pragma mark - func
 
 -(void)loadWebView {
-    [self __webViewloadURLType];
+    [self _webViewloadURLType];
 }
 
-- (void)__webViewloadURLType{
-    
-    if (self.url.length == 0) {
-        NSString *htmlString = [NSString stringWithFormat:@"<font size=\"30\">%@ 路径错误</font>",self.url];
-        [self.webView loadHTMLString:htmlString baseURL:[NSBundle.mainBundle bundleURL]];
-        return;
-    }
+- (void)_webViewloadURLType{
     
     switch (self.loadType) {
-        case WKWebLoadTypeURLString:{
-            NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.url]];
-            [self.webView loadRequest:request];
+        case WKWebLoadTypeHTML:{
+            [self.webView loadHTMLString:self.HTML baseURL:[NSBundle.mainBundle bundleURL]];
             break;
         }
             
-        case WKWebLoadTypeHTMLString:{
-            [self.webView loadHTMLString:self.loadHTMLString baseURL:[NSBundle.mainBundle bundleURL]];
-            break;
-        }
-            
-        case WKWebLoadTypeHTMLFilePath:{
-            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:self.url]];
-            [self.webView loadRequest:request];
-            break;
-        }
         case WKWebLoadTypeURL:{
-            NSURLRequest *request = [NSURLRequest requestWithURL:self.loadURL];
+            if (self.URL == nil) {
+                NSString *HTML = @"<p style='font-size: 50px'>路径错误</p>";
+                [self.webView loadHTMLString:HTML baseURL:[NSBundle.mainBundle bundleURL]];
+                break;
+            }
+            NSURLRequest *request = [NSURLRequest requestWithURL:self.URL];
             [self.webView loadRequest:request];
             break;
         }
@@ -548,30 +534,13 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 }
 
 #pragma mark - set
-
-- (void)setLoadURL:(NSURL *)loadURL {
-    _loadURL = loadURL;
-    self.url = loadURL.absoluteString;
-    self.loadType =  WKWebLoadTypeURL;
+- (void)setURL:(NSURL *)URL {
+    _URL = URL;
+    self.loadType = WKWebLoadTypeURL;
 }
-
-- (void)setLoadURLString:(NSString *)loadURLString {
-    _loadURLString = loadURLString;
-    self.url = loadURLString;
-    self.loadType = WKWebLoadTypeURLString;
-}
-
-
-- (void)setLoadHTMLString:(NSString *)loadHTMLString {
-    _loadHTMLString = loadHTMLString;
-    self.url = loadHTMLString;
-    self.loadType = WKWebLoadTypeHTMLString;
-}
-
-- (void)setLoadHTMLFilePath:(NSString *)loadHTMLFilePath {
-    _loadHTMLFilePath = loadHTMLFilePath;
-    self.url = loadHTMLFilePath;
-    self.loadType = WKWebLoadTypeHTMLFilePath;
+- (void)setHTML:(NSString *)HTML {
+    _HTML = HTML;
+    self.loadType = WKWebLoadTypeHTML;
 }
 
 
@@ -690,7 +659,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     self.webView.scrollView.delegate = nil;
     [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
     [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(title))];
-//    axLong_dealloc;
+    //    axLong_dealloc;
 }
 
 //- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
@@ -786,7 +755,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
  //
  // WebViewJavascriptBridge js 交互
  // */
-//- (void)__initWebViewJavascriptBridge{
+//- (void)_initWebViewJavascriptBridge{
 //
 //    // 开启日志，方便调试
 //    [WKWebViewJavascriptBridge enableLogging];

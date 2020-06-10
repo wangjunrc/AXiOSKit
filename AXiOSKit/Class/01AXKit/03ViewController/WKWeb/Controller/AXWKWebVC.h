@@ -26,26 +26,18 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AXWKWebVC : UIViewController
 
 /**
- *加载纯外部链接网页
+ *  加载html 文字
+ *  <p style='font-size: 20px'>测试</p>
  */
-@property (nonatomic, copy) NSString* loadURLString;
+@property (nonatomic, copy) NSString *HTML;
 
-/**
- *加载html 文字
- * <font size="30">xx</font>
- */
-@property (nonatomic, copy) NSString* loadHTMLString;
-
-/**
- *加载本地网页
- *使用[NSBundle.mainBundle pathForResource:@"H5.bundle/xx.html" ofType:nil];方式赋值
- 
- NSURL *path = [[NSBundle mainBundle] URLForResource:@"Cookie" withExtension:@"html"];
- */
-@property (nonatomic, copy) NSString* loadHTMLFilePath;
-
-
-@property (nonatomic, strong) NSURL* loadURL;
+/// 加载网页 NSURL 格式
+/// https://xxxc.com
+/// 加载本地网页 返回NSURL
+/// [[NSBundle mainBundle] URLForResource:@"H5.bundle/index.html" withExtension:nil];
+/// 加载本地网页 返回NSString
+/// [NSBundle.mainBundle pathForResource:@"H5.bundle/index.html" ofType:nil];
+@property (nonatomic, copy) NSURL *URL;
 
 
 /**

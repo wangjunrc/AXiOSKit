@@ -58,6 +58,7 @@
 		213A998D246391A90045DDF0 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213A998B246391A80045DDF0 /* VideoViewController.m */; };
 		213A998E246391A90045DDF0 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213A998C246391A90045DDF0 /* VideoViewController.xib */; };
 		213A999A2463BFD10045DDF0 /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213A99992463BFD10045DDF0 /* images.bundle */; };
+		214AF8BC249067A700A65D15 /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 214AF8BB249067A700A65D15 /* MakeKeyAndVisible.m */; };
 		219BDE33247627EB00D7AAA6 /* MyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 219BDE32247627EB00D7AAA6 /* MyActivity.m */; };
 		219BDE3624762A2E00D7AAA6 /* CopyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 219BDE3524762A2E00D7AAA6 /* CopyActivity.m */; };
 		21B0F89424736EA2001BB2A0 /* _14TFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B0F89224736EA2001BB2A0 /* _14TFViewController.m */; };
@@ -178,6 +179,8 @@
 		213A998B246391A80045DDF0 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		213A998C246391A90045DDF0 /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		213A99992463BFD10045DDF0 /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
+		214AF8BA249067A700A65D15 /* MakeKeyAndVisible.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeKeyAndVisible.h; sourceTree = "<group>"; };
+		214AF8BB249067A700A65D15 /* MakeKeyAndVisible.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeKeyAndVisible.m; sourceTree = "<group>"; };
 		214FF8642476192A00EF0C29 /* 分享.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "分享.entitlements"; sourceTree = "<group>"; };
 		219BDE31247627EB00D7AAA6 /* MyActivity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyActivity.h; sourceTree = "<group>"; };
 		219BDE32247627EB00D7AAA6 /* MyActivity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyActivity.m; sourceTree = "<group>"; };
@@ -378,6 +381,8 @@
 				2105E7532462EC4C0076A65B /* Main.storyboard */,
 				2105E7762462EC4C0076A65B /* SceneDelegate.h */,
 				2105E74F2462EC4C0076A65B /* SceneDelegate.m */,
+				214AF8BA249067A700A65D15 /* MakeKeyAndVisible.h */,
+				214AF8BB249067A700A65D15 /* MakeKeyAndVisible.m */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -642,6 +647,7 @@
 				2105E77C2462EC4C0076A65B /* fishhook.c in Sources */,
 				2105E7A12462EC4C0076A65B /* BAThemeListModel.m in Sources */,
 				2105E78F2462EC4C0076A65B /* SceneDelegate.m in Sources */,
+				214AF8BC249067A700A65D15 /* MakeKeyAndVisible.m in Sources */,
 				2105E7962462EC4C0076A65B /* Person.m in Sources */,
 				2105E7792462EC4C0076A65B /* TextFViewController.m in Sources */,
 				2105E79B2462EC4C0076A65B /* AAViewController.m in Sources */,
@@ -755,7 +761,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -807,7 +813,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

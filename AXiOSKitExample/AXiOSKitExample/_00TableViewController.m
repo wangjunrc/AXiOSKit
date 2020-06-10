@@ -247,7 +247,11 @@ void mySLog(NSString *format, ...) {
                 @"action":  ^{
                     
                     AXWKWebVC *vc = [[AXWKWebVC alloc]init];
-                    vc.loadURLString = @"http://127.0.0.1:8091";
+//                    vc.loadURLString = @"http://127.0.0.1:8091";
+//                    vc.loadHTMLFilePath = [NSBundle.mainBundle pathForResource:@"H5.bundle/index.html" ofType:nil];
+//                    vc.loadHTMLFilePath =
+//                    vc.loadURL =[[NSBundle mainBundle] URLForResource:@"H5.bundle/index.html" withExtension:nil];
+                    vc.URL = [NSURL URLWithString:@"<p style='font-size: 20px'>测试</p>"];
                     [self.navigationController pushViewController:vc animated:YES];
                 },
                 
@@ -343,7 +347,11 @@ void mySLog(NSString *format, ...) {
                                          
                                          // 2、初始化控制器，添加分享内容至控制器
                                          UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItemsArray applicationActivities:activityArray];
-                                         activityVC.modalInPresentation = YES;
+                                         if (@available(iOS 13.0, *)) {
+                                             activityVC.modalInPresentation = YES;
+                                         } else {
+                                             // Fallback on earlier versions
+                                         }
                                          
                                              // ios8.0 之后用此方法回调
                                              UIActivityViewControllerCompletionWithItemsHandler itemsBlock = ^(UIActivityType __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError){
