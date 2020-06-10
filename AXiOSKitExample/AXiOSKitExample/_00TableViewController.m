@@ -247,11 +247,15 @@ void mySLog(NSString *format, ...) {
                 @"action":  ^{
                     
                     AXWKWebVC *vc = [[AXWKWebVC alloc]init];
-//                    vc.loadURLString = @"http://127.0.0.1:8091";
-//                    vc.loadHTMLFilePath = [NSBundle.mainBundle pathForResource:@"H5.bundle/index.html" ofType:nil];
-//                    vc.loadHTMLFilePath =
-//                    vc.loadURL =[[NSBundle mainBundle] URLForResource:@"H5.bundle/index.html" withExtension:nil];
-                    vc.URL = [NSURL URLWithString:@"<p style='font-size: 20px'>测试</p>"];
+                    vc.URL = [NSURL URLWithString:@"https://www.baidu.com/"];
+                    vc.URL = [NSURL URLWithString:@"错误地址"];;
+                    vc.URL =[[NSBundle mainBundle] URLForResource:@"H5.bundle/index.html" withExtension:nil];
+                    vc.HTML =@"<p style='font-size: 20px'>测试</p>";
+                    ///第三方 framework 内部的 ,看第三方 NSBundle 是怎么放置的
+                     vc.URL =[[NSBundle mainBundle] URLForResource:@"Frameworks/AXiOSKit.framework/AXHTML.bundle/index.html" withExtension:nil];
+                     /// AXiOSKit 放置方式不一样
+                     vc.URL =[[NSBundle ax_HTMLBundle]URLForResource:@"index.html" withExtension:nil];
+                    
                     [self.navigationController pushViewController:vc animated:YES];
                 },
                 
@@ -322,60 +326,60 @@ void mySLog(NSString *format, ...) {
                 
             },
             @{
-                          @"index":@14,
-                          @"title":@"TextFeild",
-                          @"action":  ^{
-                              _14TFViewController *vc = [[_14TFViewController alloc]init];
-                              [self.navigationController pushViewController:vc animated:YES];
-                          },
-                          
-                      },
+                @"index":@14,
+                @"title":@"TextFeild",
+                @"action":  ^{
+                    _14TFViewController *vc = [[_14TFViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+                
+            },
             
             
             @{
-                                     @"index":@15,
-                                     @"title":@"系统分享",
-                                     @"action":  ^{
-                                         
-                                         MyActivity *item1 =    [[MyActivity alloc]init];
-                                            CopyActivity *item2 =    [[CopyActivity alloc]init];
-                                         
-                                         
-                                         // 1、设置分享的内容，并将内容添加到数组中
-                                         NSArray *activityItemsArray = @[@"A"];
-                                         NSArray *activityArray = @[item1,item2];
-                                         
-                                         // 2、初始化控制器，添加分享内容至控制器
-                                         UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItemsArray applicationActivities:activityArray];
-                                         if (@available(iOS 13.0, *)) {
-                                             activityVC.modalInPresentation = YES;
-                                         } else {
-                                             // Fallback on earlier versions
-                                         }
-                                         
-                                             // ios8.0 之后用此方法回调
-                                             UIActivityViewControllerCompletionWithItemsHandler itemsBlock = ^(UIActivityType __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError){
-                                                 NSLog(@"activityType == %@",activityType);
-                                                 if (completed == YES) {
-                                                     NSLog(@"completed");
-                                                 }else{
-                                                     NSLog(@"cancel");
-                                                 }
-                                             };
-                                             activityVC.completionWithItemsHandler = itemsBlock;
-                                        
-                                         //不出现在活动项目
-                                         activityVC.excludedActivityTypes=@[UIActivityTypePrint,UIActivityTypeCopyToPasteboard,UIActivityTypeAssignToContact,UIActivityTypeSaveToCameraRoll,@"com.ax.kit"];
-                                         
-                                    
-                                         
-                                         // 4、调用控制器
-                                         [self presentViewController:activityVC animated:YES completion:nil];
-
-                                         
-                                     },
-                                     
-                                 },
+                @"index":@15,
+                @"title":@"系统分享",
+                @"action":  ^{
+                    
+                    MyActivity *item1 =    [[MyActivity alloc]init];
+                    CopyActivity *item2 =    [[CopyActivity alloc]init];
+                    
+                    
+                    // 1、设置分享的内容，并将内容添加到数组中
+                    NSArray *activityItemsArray = @[@"A"];
+                    NSArray *activityArray = @[item1,item2];
+                    
+                    // 2、初始化控制器，添加分享内容至控制器
+                    UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItemsArray applicationActivities:activityArray];
+                    if (@available(iOS 13.0, *)) {
+                        activityVC.modalInPresentation = YES;
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                    
+                    // ios8.0 之后用此方法回调
+                    UIActivityViewControllerCompletionWithItemsHandler itemsBlock = ^(UIActivityType __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError){
+                        NSLog(@"activityType == %@",activityType);
+                        if (completed == YES) {
+                            NSLog(@"completed");
+                        }else{
+                            NSLog(@"cancel");
+                        }
+                    };
+                    activityVC.completionWithItemsHandler = itemsBlock;
+                    
+                    //不出现在活动项目
+                    activityVC.excludedActivityTypes=@[UIActivityTypePrint,UIActivityTypeCopyToPasteboard,UIActivityTypeAssignToContact,UIActivityTypeSaveToCameraRoll,@"com.ax.kit"];
+                    
+                    
+                    
+                    // 4、调用控制器
+                    [self presentViewController:activityVC animated:YES completion:nil];
+                    
+                    
+                },
+                
+            },
             
             
         ];
