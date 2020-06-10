@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  处理消息
- 
+
  @param webVC webView
  @param name 消息名称
  @param body 消息内容
@@ -21,7 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)webVC:(AXWKWebVC *)webVC messageName:(NSString *)name messageBody:(id)body;
 
 @end
-
 
 @interface AXWKWebVC : UIViewController
 
@@ -39,7 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// [NSBundle.mainBundle pathForResource:@"H5.bundle/index.html" ofType:nil];
 @property (nonatomic, copy) NSURL *URL;
 
-
 /**
  加载 webview ,viewController  viewDidLoad 会自动加载一次
  需要更换url的 需主动调用一次
@@ -48,16 +46,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  js 回调oc
- 
+
  @param ocMethodName oc方法名
  @param handler 回调
  */
-- (void)addScriptMessageWithName:(NSString*)ocMethodName
-                         handler:(void (^)(NSString* name, id body))handler;
+- (void)addScriptMessageWithName:(NSString *)ocMethodName
+                         handler:(void (^)(NSString *name, id body))handler;
 
 /**
  js 回调oc
- 
+
  @param delegate 遵守 AXScriptMessageDelegate 协议的 实例
  @param name js与oc 对应的key
  */
@@ -66,12 +64,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  oc 调用js方法
- 
+
  @param jsMethodName js方法名
  @param handler 回调
  */
-- (void)evaluateJavaScript:(NSString*)jsMethodName
-                   handler:(void (^)(id data, NSError* error))handler;
+- (void)evaluateJavaScript:(NSString *)jsMethodName
+                   handler:(void (^)(id data, NSError *error))handler;
 
 @end
 NS_ASSUME_NONNULL_END

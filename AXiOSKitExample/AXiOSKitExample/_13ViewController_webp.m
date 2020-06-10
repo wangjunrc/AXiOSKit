@@ -10,7 +10,6 @@
 #import <SDWebImageFLPlugin/SDWebImageFLPlugin.h>
 #import <SDWebImageWebPCoder/UIImage+WebP.h>
 
-
 @interface _13ViewController_webp ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView1;
@@ -28,15 +27,12 @@
     NSData *data = [[NSData alloc] initWithContentsOfFile:path];
     UIImage *img = [UIImage sd_imageWithWebPData:data];
     self.imageView1.image = img;
-    
+
     [self.imageView2 sd_setImageWithURL:[NSURL URLWithString:@"http://images21.happyjuzi.com/test/ea/09/91f522741b7a0976b5f21a3b9f78.jpg!200.nw.webp"]];
-    
-    
+
 //    self.animatedImageView3.contentMode = UIViewContentModeScaleAspectFit;
     self.animatedImageView3.backgroundColor = UIColor.redColor;
     [self.animatedImageView3 sd_setImageWithURL:[NSURL URLWithString:@"http://img.autohome.com.cn/album/2009/3/16/52bba7e6-1b9e-4ebb-b887-56b41be4ba2a.gif"]];
-
-
 }
 
 /*
