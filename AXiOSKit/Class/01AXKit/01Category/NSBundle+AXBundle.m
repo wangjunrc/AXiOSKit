@@ -23,7 +23,7 @@
 + (NSBundle *)ax_mainBundle {
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
     //spec文件resource_bundles对应的key 
-    NSString *bundlePath = [bundle pathForResource:@"AXiOSKitResource" ofType:@"bundle"];
+    NSString *bundlePath = [bundle pathForResource:@"AXiOSKitMain" ofType:@"bundle"];
     NSBundle *tempBundle = [NSBundle bundleWithPath:bundlePath];
     if (tempBundle == nil) {
         tempBundle = bundle;

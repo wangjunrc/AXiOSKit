@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- AXiOSKitResource.bundle 路径
+ AXiOSKitMain.bundle 路径
 
  @return NSBundle
  */

@@ -28,7 +28,7 @@
     "AXiOSKit/**/*.bundle"
   ],
   "resource_bundles": {
-    "AXiOSKitResource": [
+    "AXiOSKitMain": [
       "AXiOSKit/**/*.{xcassets,gif,json,strings}"
     ]
   },

@@ -7,63 +7,60 @@
 //
 
 #import "_00TableViewController.h"
-#import "ViewController.h"
-#import "ChatViewController.h"
-#import <AXiOSKit/UIViewController+AXKit.h>
-#import "TestObj.h"
-#import "RunLoopViewController.h"
-#import "AView.h"
-#import "WCDBViewController.h"
-#import "VideoViewController.h"
-#import <AXiOSKit/AXiOSKit.h>
 #import "AFNViewController.h"
+#import "AView.h"
+#import "ChatViewController.h"
+#import "CopyActivity.h"
+#import "MyActivity.h"
+#import "RunLoopViewController.h"
+#import "TestObj.h"
 #import "TextFViewController.h"
+#import "VideoViewController.h"
+#import "ViewController.h"
+#import "WCDBViewController.h"
+#import "_00TableViewCell.h"
+#import "_13ViewController_webp.h"
+#import "_14TFViewController.h"
+#import "fishhook-master/fishhook.h"
+#import <AXiOSKit/AXiOSKit.h>
+#import <AXiOSKit/UIViewController+AXKit.h>
 #import <objc/message.h>
 #import <objc/runtime.h>
-#import "fishhook-master/fishhook.h"
-#import "_13ViewController_webp.h"
-#import "_00TableViewCell.h"
-#import "_14TFViewController.h"
-#import "MyActivity.h"
-#import "CopyActivity.h"
 typedef void (^CollectionBlock)(void);
 
-@interface TableViewController (){
+@interface TableViewController ()
+{
     NSInteger _count;
 }
 
-@property(nonatomic,strong)NSArray *dataArray;
+@property (nonatomic, strong) NSArray *dataArray;
 
-@property(nonatomic, strong) NSString *strongStr;
+@property (nonatomic, strong) NSString *strongStr;
 
-@property(nonatomic, copy) NSString *copyedStr;
+@property (nonatomic, copy) NSString *copyedStr;
 
+@property (nonatomic, strong) NSMutableString *strongMStr;
 
-@property(nonatomic, strong) NSMutableString *strongMStr;
+@property (nonatomic, copy) NSMutableString *copyedMStr;
 
-@property(nonatomic, copy) NSMutableString *copyedMStr;
+@property (atomic, copy) NSString *name;
 
-@property(atomic, copy) NSString *name;
-
-@property(atomic, assign) NSInteger count;
+@property (atomic, assign) NSInteger count;
 
 @end
 
 @implementation TableViewController
 
-- (void)injected{
+- (void)injected {
     NSLog(@"I've been injected: %@", self);
     [self viewDidLoad];
 }
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"主题";
     [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
-    
-    
+
     self.name = @"-1";
     self.count = 0;
     //
@@ -107,60 +104,55 @@ typedef void (^CollectionBlock)(void);
     //        NSLog(@"3");
     //    });
     //
-    
-    
+
     //    [self.tableView setEditing:YES animated:YES];
 }
 
-
 - (void)test
 {
-    
     NSLog(@"5");
 }
 
 ///保存系统函数地址
-static void (* replacedLog)(NSString *format, ...);
-void mySLog(NSString *format, ...) {
-    replacedLog(@"%@",[format stringByAppendingString:@"被HOOK了"]);
+static void (*replacedLog)(NSString *format, ...);
+void mySLog(NSString *format, ...)
+{
+    replacedLog(@"%@", [format stringByAppendingString:@"被HOOK了"]);
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     _00TableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
-    
-    
+
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
+
     NSDictionary *dict = self.dataArray[indexPath.row];
-    
-    cell.indexLabel.text = [NSString stringWithFormat:@"%@",dict[@"index"]];
+
+    cell.indexLabel.text = [NSString stringWithFormat:@"%@", dict[@"index"]];
     cell.nameLabel.text = dict[@"title"];
     return cell;
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *dict = self.dataArray[indexPath.row];
-    
-    void (^didSelectRowAtIndexPath)(void) = dict[@"action"];
-    
+
+    void (^ didSelectRowAtIndexPath)(void) = dict[@"action"];
+
     didSelectRowAtIndexPath();
-    
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
--(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewCellEditingStyleDelete;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return @"删除";
 }
 
@@ -168,245 +160,202 @@ void mySLog(NSString *format, ...) {
 - (NSArray *)dataArray {
     if (!_dataArray) {
         _dataArray = @[
-            
+
             @{
-                @"index":@1,
-                @"title":@"暗黑主题-ViewController",
+                @"index": @1,
+                @"title": @"暗黑主题-ViewController",
                 @"action":  ^{
-                    ViewController *vc = [[ViewController alloc]init];
-                    [self.navigationController pushViewController:vc animated:YES];
-                },
+                ViewController *vc = [[ViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
+            },
             },
             @{
-                @"index":@2,
-                @"title":@"聊天-ChatViewController",
+                @"index": @2,
+                @"title": @"聊天-ChatViewController",
                 @"action":  ^{
-                    ChatViewController *vc = [[ChatViewController alloc]init];
-                    [self.navigationController pushViewController:vc animated:YES];
-                },
+                ChatViewController *vc = [[ChatViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
             },
-            
-            @{
-                @"index":@3,
-                @"title":@"隐藏导航栏",
-                @"action":  ^{
-                    ViewController *vc = [[ViewController alloc]init];
-                    [self.navigationController pushViewController:vc animated:YES];
-                    vc.ax_shouldNavigationBarHidden = YES;
-                },
             },
-            
+
             @{
-                @"index":@4,
-                @"title":@"NSRunLoop模式",
+                @"index": @3,
+                @"title": @"隐藏导航栏",
                 @"action":  ^{
-                    RunLoopViewController *vc = [[RunLoopViewController alloc]init];
-                    [self.navigationController pushViewController:vc animated:YES];
-                },
+                ViewController *vc = [[ViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
+                vc.ax_shouldNavigationBarHidden = YES;
             },
-            
-            
+            },
+
             @{
-                @"index":@5,
-                @"title":@"对象未实现方法",
+                @"index": @4,
+                @"title": @"NSRunLoop模式",
                 @"action":  ^{
-                    [self ax_showAlertByTitle:@"是否调用" confirm:^{
-                        UIButton *testButton = [[UIButton alloc] init];
+                RunLoopViewController *vc = [[RunLoopViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
+            },
+            },
+
+            @{
+                @"index": @5,
+                @"title": @"对象未实现方法",
+                @"action":  ^{
+                [self ax_showAlertByTitle:@"是否调用" confirm:^{
+                    UIButton *testButton = [[UIButton alloc] init];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-                        [testButton performSelector:@selector(someMethod:)];
+                    [testButton performSelector:@selector(someMethod:)];
 #pragma clang diagnostic pop
-                    }];
-                },
+                }];
+            },
             },
             @{
-                @"index":@6,
-                @"title":@"WCDB",
+                @"index": @6,
+                @"title": @"WCDB",
                 @"action":  ^{
-                    
-                    WCDBViewController *vc = [[WCDBViewController alloc]init];
-                    [self.navigationController pushViewController:vc animated:YES];
-                    
-                },
-                
-                
+                WCDBViewController *vc = [[WCDBViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
+            },
             },
             @{
-                @"index":@7,
-                @"title":@"视频",
+                @"index": @7,
+                @"title": @"视频",
                 @"action":  ^{
-                    
-                    VideoViewController *vc = [[VideoViewController alloc]init];
-                    [self.navigationController pushViewController:vc animated:YES];
-                },
+                VideoViewController *vc = [[VideoViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
             },
-            
-            @{
-                @"index":@8,
-                @"title":@"网页",
-                @"action":  ^{
-                    
-                    AXWKWebVC *vc = [[AXWKWebVC alloc]init];
-                    vc.URL = [NSURL URLWithString:@"https://www.baidu.com/"];
-                    vc.URL = [NSURL URLWithString:@"错误地址"];;
-                    vc.URL =[[NSBundle mainBundle] URLForResource:@"H5.bundle/index.html" withExtension:nil];
-                    vc.HTML =@"<p style='font-size: 20px'>测试</p>";
-                    ///第三方 framework 内部的 ,看第三方 NSBundle 是怎么放置的
-                     vc.URL =[[NSBundle mainBundle] URLForResource:@"Frameworks/AXiOSKit.framework/AXHTML.bundle/index.html" withExtension:nil];
-                     /// AXiOSKit 放置方式不一样
-                     vc.URL =[[NSBundle ax_HTMLBundle]URLForResource:@"index.html" withExtension:nil];
-                    
-                    [self.navigationController pushViewController:vc animated:YES];
-                },
-                
-                
             },
-            
+
             @{
-                @"index":@9,
-                @"title":@"AFN",
+                @"index": @8,
+                @"title": @"网页",
                 @"action":  ^{
-                    
-                    AFNViewController *vc = [[AFNViewController alloc]init];
-                    [self.navigationController pushViewController:vc animated:YES];
-                },
-                
-                
+                AXWKWebVC *vc = [[AXWKWebVC alloc]init];
+                vc.URL = [NSURL URLWithString:@"https://www.baidu.com/"];
+                vc.URL = [NSURL URLWithString:@"错误地址"];
+                vc.URL = [[NSBundle mainBundle] URLForResource:@"H5.bundle/index.html" withExtension:nil];
+                vc.HTML = @"<p style='font-size: 20px'>测试</p>";
+                ///第三方 framework 内部的 ,看第三方 NSBundle 是怎么放置的
+                vc.URL = [[NSBundle mainBundle] URLForResource:@"Frameworks/AXiOSKit.framework/AXHTML.bundle/index.html" withExtension:nil];
+                /// AXiOSKit 放置方式不一样
+                vc.URL = [[NSBundle ax_HTMLBundle]URLForResource:@"index.html" withExtension:nil];
+
+                [self.navigationController pushViewController:vc animated:YES];
             },
-            
-            @{
-                @"index":@10,
-                @"title":@"多行textview",
-                @"action":  ^{
-                    
-                    TextFViewController *vc = [[TextFViewController alloc]init];
-                    [self ax_showVC:vc];
-                },
-                
-                
             },
-            
-            
+
             @{
-                @"index":@11,
-                @"title":@"objc_msgSend调用方法",
+                @"index": @9,
+                @"title": @"AFN",
                 @"action":  ^{
-                    
-                    id person   = objc_msgSend(objc_getClass("Person"),sel_registerName("alloc"),sel_registerName("init"));
-                    objc_msgSend(person, sel_registerName("logShowTest"));
-                    
-                    
-                },
-                
-                
+                AFNViewController *vc = [[AFNViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
             },
-            
-            
-            @{
-                @"index":@12,
-                @"title":@"fishhook调用方法",
-                @"action":  ^{
-                    
-                    NSLog(@"fish_log");
-                    
-                    
-                },
-                
-                
             },
-            
-            
+
             @{
-                @"index":@13,
-                @"title":@"webp图片",
+                @"index": @10,
+                @"title": @"多行textview",
                 @"action":  ^{
-                    _13ViewController_webp *vc = [[_13ViewController_webp alloc]init];
-                    [self.navigationController pushViewController:vc animated:YES];
-                },
-                
+                TextFViewController *vc = [[TextFViewController alloc]init];
+                [self ax_showVC:vc];
+            },
+            },
+
+            @{
+                @"index": @11,
+                @"title": @"objc_msgSend调用方法",
+                @"action":  ^{
+                id person   = objc_msgSend(objc_getClass("Person"), sel_registerName("alloc"), sel_registerName("init"));
+                objc_msgSend(person, sel_registerName("logShowTest"));
+            },
+            },
+
+            @{
+                @"index": @12,
+                @"title": @"fishhook调用方法",
+                @"action":  ^{
+                NSLog(@"fish_log");
+            },
+            },
+
+            @{
+                @"index": @13,
+                @"title": @"webp图片",
+                @"action":  ^{
+                _13ViewController_webp *vc = [[_13ViewController_webp alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
+            },
             },
             @{
-                @"index":@14,
-                @"title":@"TextFeild",
+                @"index": @14,
+                @"title": @"TextFeild",
                 @"action":  ^{
-                    _14TFViewController *vc = [[_14TFViewController alloc]init];
-                    [self.navigationController pushViewController:vc animated:YES];
-                },
-                
+                _14TFViewController *vc = [[_14TFViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
             },
-            
-            
+            },
+
             @{
-                @"index":@15,
-                @"title":@"系统分享",
+                @"index": @15,
+                @"title": @"系统分享",
                 @"action":  ^{
-                    
-                    MyActivity *item1 =    [[MyActivity alloc]init];
-                    CopyActivity *item2 =    [[CopyActivity alloc]init];
-                    
-                    
-                    // 1、设置分享的内容，并将内容添加到数组中
-                    NSArray *activityItemsArray = @[@"A"];
-                    NSArray *activityArray = @[item1,item2];
-                    
-                    // 2、初始化控制器，添加分享内容至控制器
-                    UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItemsArray applicationActivities:activityArray];
-                    if (@available(iOS 13.0, *)) {
-                        activityVC.modalInPresentation = YES;
+                MyActivity *item1 =    [[MyActivity alloc]init];
+                CopyActivity *item2 =    [[CopyActivity alloc]init];
+
+                // 1、设置分享的内容，并将内容添加到数组中
+                NSArray *activityItemsArray = @[@"A"];
+                NSArray *activityArray = @[item1, item2];
+
+                // 2、初始化控制器，添加分享内容至控制器
+                UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItemsArray applicationActivities:activityArray];
+                if (@available(iOS 13.0, *)) {
+                    activityVC.modalInPresentation = YES;
+                } else {
+                    // Fallback on earlier versions
+                }
+
+                // ios8.0 之后用此方法回调
+                UIActivityViewControllerCompletionWithItemsHandler itemsBlock = ^(UIActivityType __nullable activityType, BOOL completed, NSArray *__nullable returnedItems, NSError *__nullable activityError) {
+                    NSLog(@"activityType == %@", activityType);
+                    if (completed == YES) {
+                        NSLog(@"completed");
                     } else {
-                        // Fallback on earlier versions
+                        NSLog(@"cancel");
                     }
-                    
-                    // ios8.0 之后用此方法回调
-                    UIActivityViewControllerCompletionWithItemsHandler itemsBlock = ^(UIActivityType __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError){
-                        NSLog(@"activityType == %@",activityType);
-                        if (completed == YES) {
-                            NSLog(@"completed");
-                        }else{
-                            NSLog(@"cancel");
-                        }
-                    };
-                    activityVC.completionWithItemsHandler = itemsBlock;
-                    
-                    //不出现在活动项目
-                    activityVC.excludedActivityTypes=@[UIActivityTypePrint,UIActivityTypeCopyToPasteboard,UIActivityTypeAssignToContact,UIActivityTypeSaveToCameraRoll,@"com.ax.kit"];
-                    
-                    
-                    
-                    // 4、调用控制器
-                    [self presentViewController:activityVC animated:YES completion:nil];
-                    
-                    
-                },
-                
+                };
+                activityVC.completionWithItemsHandler = itemsBlock;
+
+                //不出现在活动项目
+                activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, @"com.ax.kit"];
+
+                // 4、调用控制器
+                [self presentViewController:activityVC animated:YES completion:nil];
             },
-            
-            
+            },
+
         ];
     }
     return _dataArray;
 }
 
--(void)testPerson{
-    
-    
+- (void)testPerson {
 }
 
-
--(void)testObj:(TestObj *)obj{
+- (void)testObj:(TestObj *)obj {
     NSAssert([obj respondsToSelector:@selector(log)], @"对的不对");
-    
-    NSLog(@">>>> %d == %d",[obj.class instancesRespondToSelector:@selector(log)],[obj.class instancesRespondToSelector:@selector(log2)]);
-    
-    NSLog(@"=== %d",[obj respondsToSelector:@selector(log)]);
-    
+
+    NSLog(@">>>> %d == %d", [obj.class instancesRespondToSelector:@selector(log)], [obj.class instancesRespondToSelector:@selector(log2)]);
+
+    NSLog(@"=== %d", [obj respondsToSelector:@selector(log)]);
+
     if ([obj.class instancesRespondToSelector:@selector(log)]) {
-        
         [obj log];
-    }else{
+    } else {
         NSLog(@"未z实现");
     }
-    
 }
+
 
 @end
