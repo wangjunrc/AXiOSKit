@@ -12,10 +12,10 @@
 
 @interface _13ViewController_webp ()
 
+
+@property (weak, nonatomic) IBOutlet FLAnimatedImageView *animatedImageView3;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView1;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView2;
-@property (weak, nonatomic) IBOutlet FLAnimatedImageView *animatedImageView3;
-
 @end
 
 @implementation _13ViewController_webp
