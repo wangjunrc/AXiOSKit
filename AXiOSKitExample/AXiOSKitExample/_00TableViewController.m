@@ -26,6 +26,7 @@
 #import <AXiOSKit/UIViewController+AXKit.h>
 #import <objc/message.h>
 #import <objc/runtime.h>
+#import "_15UIMenuController.h"
 typedef void (^CollectionBlock)(void);
 
 @interface TableViewController ()
@@ -296,9 +297,20 @@ void mySLog(NSString *format, ...)
                 [self.navigationController pushViewController:vc animated:YES];
             },
             },
-
+            
             @{
                 @"index": @15,
+                @"title": @"UIMenuController",
+                @"action":  ^{
+                _15UIMenuController *vc = [[_15UIMenuController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
+            },
+            },
+            
+            
+
+            @{
+                @"index": @16,
                 @"title": @"系统分享",
                 @"action":  ^{
                 MyActivity *item1 =    [[MyActivity alloc]init];

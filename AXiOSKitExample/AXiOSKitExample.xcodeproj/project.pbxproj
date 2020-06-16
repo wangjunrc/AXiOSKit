@@ -50,6 +50,7 @@
 		2105E7A12462EC4C0076A65B /* BAThemeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2105E76D2462EC4C0076A65B /* BAThemeListModel.m */; };
 		2105E7A22462EC4C0076A65B /* PalyThemeDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2105E7722462EC4C0076A65B /* PalyThemeDB.mm */; };
 		2105E7A42462EC4C0076A65B /* _13ViewController_webp.m in Sources */ = {isa = PBXBuildFile; fileRef = 2105E7772462EC4C0076A65B /* _13ViewController_webp.m */; };
+		210753642496436100CD0C53 /* _15UIMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210753632496436100CD0C53 /* _15UIMenuController.m */; };
 		2116C98724638D2200492DC2 /* _00TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2116C98524638D2200492DC2 /* _00TableViewCell.m */; };
 		2116C98824638D2200492DC2 /* _00TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2116C98624638D2200492DC2 /* _00TableViewCell.xib */; };
 		213A9984246391850045DDF0 /* AXWebSocketEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 213A9983246391850045DDF0 /* AXWebSocketEngine.m */; };
@@ -167,6 +168,8 @@
 		2105E7752462EC4C0076A65B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2105E7762462EC4C0076A65B /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		2105E7772462EC4C0076A65B /* _13ViewController_webp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _13ViewController_webp.m; sourceTree = "<group>"; };
+		210753622496436100CD0C53 /* _15UIMenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _15UIMenuController.h; sourceTree = "<group>"; };
+		210753632496436100CD0C53 /* _15UIMenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _15UIMenuController.m; sourceTree = "<group>"; };
 		2116C98424638D2200492DC2 /* _00TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _00TableViewCell.h; sourceTree = "<group>"; };
 		2116C98524638D2200492DC2 /* _00TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _00TableViewCell.m; sourceTree = "<group>"; };
 		2116C98624638D2200492DC2 /* _00TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _00TableViewCell.xib; sourceTree = "<group>"; };
@@ -401,6 +404,8 @@
 				21B0F89124736EA2001BB2A0 /* _14TFViewController.h */,
 				21B0F89224736EA2001BB2A0 /* _14TFViewController.m */,
 				21B0F89324736EA2001BB2A0 /* _14TFViewController.xib */,
+				210753622496436100CD0C53 /* _15UIMenuController.h */,
+				210753632496436100CD0C53 /* _15UIMenuController.m */,
 				2105E72E2462EC4C0076A65B /* AANavigationController.h */,
 				2105E7562462EC4C0076A65B /* AANavigationController.m */,
 				2105E74B2462EC4C0076A65B /* AAViewController.h */,
@@ -655,6 +660,7 @@
 				219BDE33247627EB00D7AAA6 /* MyActivity.m in Sources */,
 				2105E79F2462EC4C0076A65B /* BAThemeListModel+WCDB.mm in Sources */,
 				2105E7932462EC4C0076A65B /* RunLoopViewController.m in Sources */,
+				210753642496436100CD0C53 /* _15UIMenuController.m in Sources */,
 				2105E7882462EC4C0076A65B /* ChatViewController.m in Sources */,
 				2105E78C2462EC4C0076A65B /* AView.m in Sources */,
 				2105E7A42462EC4C0076A65B /* _13ViewController_webp.m in Sources */,
