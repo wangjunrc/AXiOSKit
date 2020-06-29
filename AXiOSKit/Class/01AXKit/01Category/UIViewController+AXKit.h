@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "AXConstant.h"
 #import "AXMacros.h"
+@class PHAssetCollection;
+
 @interface UIViewController (AXKit)<UIPopoverPresentationControllerDelegate>
 
 /**
@@ -130,5 +132,7 @@
 
 /// 是否隐藏导航栏。默认NO。
 @property (nonatomic , assign) BOOL ax_shouldNavigationBarHidden;
+
+- (PHAssetCollection *)ax_PHAssetCollection;
 
 @end

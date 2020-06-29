@@ -30,7 +30,7 @@
 
 /**
  将图片剪切成圆形
-
+ 
  @param borderWidth 边框的宽度
  @param borderColor 边框的颜色
  @return 返回新的图片
@@ -140,5 +140,11 @@
  @return NSData
  */
 -(NSData *)ax_toJPEGDataScale:(CGFloat )scale;
+
+/**
+ * 保存图片到系统相册
+ */
+- (void)ax_saveImageToPhotos;
+
 @end
 

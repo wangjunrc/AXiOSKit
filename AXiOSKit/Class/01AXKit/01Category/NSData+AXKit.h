@@ -33,4 +33,9 @@
  */
 +(NSData *)ax_dataWithMainBundleResource:(NSString *)resource;
 
+/// 保存data 到相册
+/// 本地或者网络图片,转成data保存
+/// @param completionHandler 回调
+- (void)ax_savePhotoLibraryHandler:(nullable void (^)(BOOL success, NSError *__nullable error))completionHandler;
+
 @end

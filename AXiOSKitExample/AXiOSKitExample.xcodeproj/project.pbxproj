@@ -67,6 +67,8 @@
 		21D670BD2474E5D100890F8F /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D670BC2474E5D100890F8F /* ShareViewController.m */; };
 		21D670C02474E5D100890F8F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D670BE2474E5D100890F8F /* MainInterface.storyboard */; };
 		21D670C42474E5D100890F8F /* 分享.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21D670B92474E5D100890F8F /* 分享.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		21D7F7F324A9C74F0097A644 /* 123.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21D7F7F224A9C74F0097A644 /* 123.jpg */; };
+		21D7F7F524A9C79B0097A644 /* 122.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 21D7F7F424A9C79A0097A644 /* 122.GIF */; };
 		EFB53CC9DAEACE15EEBA0F67 /* Pods_AXiOSKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2AB1BCF4154D76F31004C5 /* Pods_AXiOSKitExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -197,6 +199,8 @@
 		21D670BC2474E5D100890F8F /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		21D670BF2474E5D100890F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		21D670C12474E5D100890F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21D7F7F224A9C74F0097A644 /* 123.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 123.jpg; sourceTree = "<group>"; };
+		21D7F7F424A9C79A0097A644 /* 122.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 122.GIF; sourceTree = "<group>"; };
 		3921CF6BEA9759A6E192CBE2 /* Pods-AXiOSKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.release.xcconfig"; sourceTree = "<group>"; };
 		5BE708E4E9DACA9F3EB268E2 /* Pods-AXiOSKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.debug.xcconfig"; sourceTree = "<group>"; };
 		ED2AB1BCF4154D76F31004C5 /* Pods_AXiOSKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,6 +257,8 @@
 		2105E7222462EC4C0076A65B /* AXiOSKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				21D7F7F424A9C79A0097A644 /* 122.GIF */,
+				21D7F7F224A9C74F0097A644 /* 123.jpg */,
 				21CC98F92477815B0036B47B /* App */,
 				21CC98FA247781680036B47B /* Class */,
 			);
@@ -561,12 +567,14 @@
 				213A998E246391A90045DDF0 /* VideoViewController.xib in Resources */,
 				2116C98824638D2200492DC2 /* _00TableViewCell.xib in Resources */,
 				21B0F89524736EA2001BB2A0 /* _14TFViewController.xib in Resources */,
+				21D7F7F324A9C74F0097A644 /* 123.jpg in Resources */,
 				2105E7862462EC4C0076A65B /* AXNetworkTestViewController.xib in Resources */,
 				2105E7922462EC4C0076A65B /* Main.storyboard in Resources */,
 				2105E7902462EC4C0076A65B /* _13ViewController_webp.xib in Resources */,
 				2105E7982462EC4C0076A65B /* RunLoopViewController.xib in Resources */,
 				2105E7802462EC4C0076A65B /* H5.bundle in Resources */,
 				2105E77D2462EC4C0076A65B /* README.md in Resources */,
+				21D7F7F524A9C79B0097A644 /* 122.GIF in Resources */,
 				213A999A2463BFD10045DDF0 /* images.bundle in Resources */,
 				2105E7872462EC4C0076A65B /* ChatViewController.xib in Resources */,
 				2105E7912462EC4C0076A65B /* LaunchScreen.storyboard in Resources */,

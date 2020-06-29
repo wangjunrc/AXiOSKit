@@ -27,6 +27,9 @@
 #import <objc/message.h>
 #import <objc/runtime.h>
 #import "_15UIMenuController.h"
+#import "UIImage+AXKit.h"
+@import AssetsLibrary;
+
 typedef void (^CollectionBlock)(void);
 
 @interface TableViewController ()
@@ -346,7 +349,8 @@ void mySLog(NSString *format, ...)
                 [self presentViewController:activityVC animated:YES completion:nil];
             },
             },
-
+            
+            
         ];
     }
     return _dataArray;

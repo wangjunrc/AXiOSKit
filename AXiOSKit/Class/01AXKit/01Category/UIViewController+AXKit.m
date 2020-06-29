@@ -74,7 +74,7 @@
         return;
     }
     // 2.拥有一个【自定义相册】
-    PHAssetCollection * assetCollection = [self getCollection];
+    PHAssetCollection * assetCollection = [self ax_PHAssetCollection];
     // 3.将刚才保存到【相机胶卷】里面的图片引用到【自定义相册】
     [[PHPhotoLibrary sharedPhotoLibrary]performChangesAndWait:^{
         PHAssetCollectionChangeRequest *requtes = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:assetCollection];
@@ -119,7 +119,7 @@
 //    }];
 //}
 
-- (PHAssetCollection *)getCollection {
+- (PHAssetCollection *)ax_PHAssetCollection {
     // 先获得之前创建过的相册
     
     NSString *appName =  [NSString ax_getAppName];
