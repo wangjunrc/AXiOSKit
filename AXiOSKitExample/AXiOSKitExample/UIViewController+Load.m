@@ -17,26 +17,15 @@
 + (void)load {
     
     NSError *error;
-    [UIViewController aspect_hookSelector:@selector(viewDidLoad) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo) {
-        UIViewController *vc = aspectInfo.instance;
-        
-        if (@available(iOS 13.0, *)) {
-                 vc.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor darkStyle:UIColor.systemBackgroundColor];
-             }
+    [UIViewController aspect_hookSelector:@selector(viewDidLoad) withOptions:AspectPositionBefore usingBlock:^(id<AspectInfo> aspectInfo) {
+       UIViewController *vc = aspectInfo.instance;
+         NSLog(@"拦截====1 %@",vc);
         
         
-//        [vc aop_viewDidLoad];
     } error:&error];
     if (error) NSLog(@"%@", error);
 }
  
-//- (void)aop_viewDidLoad {
-//    [su aop_viewDidLoad];
-//    // 添加自定义的代码
-//    
-//    if (@available(iOS 13.0, *)) {
-//           self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor darkStyle:UIColor.systemBackgroundColor];
-//       }
-//}
+
 
 @end

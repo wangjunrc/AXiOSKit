@@ -6,7 +6,7 @@
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "_01ViewController.h"
 #import <AXiOSKit/AXiOSKit.h>
 #import "AAViewController.h"
 #import "AXPayVC.h"
@@ -20,7 +20,7 @@
 #import "ChatViewController.h"
 #import "ChatTextMessageModel.h"
 
-@interface ViewController ()
+@interface _01ViewController ()
 
 
 @property(nonatomic,strong)CAEmitterLayer *rainLayer;
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation ViewController
+@implementation _01ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -114,7 +114,7 @@
 //        ChatViewController *aa = [ChatViewController ax_init];
 //        [self ax_showVC:aa];
       
-//        
+//
 //
 //        ChatTextMessageModel *model = [[ChatTextMessageModel alloc]init];
 //        model.userid = 100;

@@ -16,7 +16,7 @@
 #import "TestObj.h"
 #import "TextFViewController.h"
 #import "VideoViewController.h"
-#import "ViewController.h"
+#import "_01ViewController.h"
 #import "WCDBViewController.h"
 #import "_00TableViewCell.h"
 #import "_13ViewController_webp.h"
@@ -55,61 +55,18 @@ typedef void (^CollectionBlock)(void);
 
 @implementation TableViewController
 
-- (void)injected {
-    NSLog(@"I've been injected: %@", self);
-    [self viewDidLoad];
-}
+//- (void)injected {
+//    NSLog(@"I've been injected: %@", self);
+//    [self viewDidLoad];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+      NSLog(@"拦截====2 %@",self);
     self.title = @"主题";
     [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
 
-    self.name = @"-1";
-    self.count = 0;
-    //
-    //    //
-    //    //    struct rebinding nsLog;
-    //    //    nsLog.name = "NSLog";
-    //    //    nsLog.replacement = mySLog;
-    //    //    nsLog.replaced = (void *)&replacedLog;
-    //    //    struct rebinding rebinds[1] = {nsLog};
-    //    //    rebind_symbols(rebinds, 1);
-    //    //
-    //
-    //     NSLog(@"runLoop 1 = %p",[NSRunLoop currentRunLoop]);
-    //     NSLog(@"runLoop 1 = %p",[NSRunLoop mainRunLoop]);
-    //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-    //
-    //        NSLog(@"2");
-    //
-    //        [[NSThread currentThread] setName:@"AFNetworking"];
-    //
-    //
-    //
-    //        [self performSelector:@selector(test) withObject:nil afterDelay:1];
-    //
-    //
-    //        NSRunLoop *runLoop2 = [NSRunLoop currentRunLoop];
-    //
-    //
-    //        NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-    //        //        [runLoop addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
-    //        [runLoop run];
-    //
-    //
-    //        NSLog(@"runLoop = %p",runLoop);
-    //        NSLog(@"runLoop2 = %p",runLoop2);
-    //          NSLog(@"runLoop 2 = %p",[NSRunLoop mainRunLoop]);
-    //        //          [[NSRunLoop currentRunLoop] run];
-    //                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-    //                    NSLog(@"runLoop 6 = %p",[NSRunLoop currentRunLoop]);
-    //                });
-    //        NSLog(@"3");
-    //    });
-    //
-
-    //    [self.tableView setEditing:YES animated:YES];
+    
 }
 
 - (void)test
@@ -169,7 +126,7 @@ void mySLog(NSString *format, ...)
                 @"index": @1,
                 @"title": @"暗黑主题-ViewController",
                 @"action":  ^{
-                ViewController *vc = [[ViewController alloc]init];
+                _01ViewController *vc = [[_01ViewController alloc]init];
                 [self.navigationController pushViewController:vc animated:YES];
             },
             },
@@ -186,7 +143,7 @@ void mySLog(NSString *format, ...)
                 @"index": @3,
                 @"title": @"隐藏导航栏",
                 @"action":  ^{
-                ViewController *vc = [[ViewController alloc]init];
+                _01ViewController *vc = [[_01ViewController alloc]init];
                 [self.navigationController pushViewController:vc animated:YES];
                 vc.ax_shouldNavigationBarHidden = YES;
             },
