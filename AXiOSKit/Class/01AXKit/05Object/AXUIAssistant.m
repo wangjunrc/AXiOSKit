@@ -199,8 +199,7 @@ UIWindow *ax_keyWindow(void) {
             break;
         }
     }
-    
-    
+    return nil;
 }
 
 /**键盘背景色透明 alpha=0 */

@@ -8,6 +8,7 @@
 
 #import "NSData+AXKit.h"
 #import <Photos/Photos.h>
+#import <UIKit/UIKit.h>
 @implementation NSData (AXKit)
 /**
  * NSData 进行 Base64

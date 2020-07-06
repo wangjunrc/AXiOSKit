@@ -28,6 +28,7 @@
 #import <objc/runtime.h>
 #import "_15UIMenuController.h"
 #import "UIImage+AXKit.h"
+#import "_09AFNViewController.h"
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -210,7 +211,7 @@ void mySLog(NSString *format, ...)
                 @"index": @9,
                 @"title": @"AFN",
                 @"action":  ^{
-                AFNViewController *vc = [[AFNViewController alloc]init];
+                _09AFNViewController *vc = [[_09AFNViewController alloc]init];
                 [self.navigationController pushViewController:vc animated:YES];
             },
             },

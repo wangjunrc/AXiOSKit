@@ -33,17 +33,23 @@ typedef NS_ENUM(NSInteger, AxRequestSerializerType) {
 /// post请求
 @property (nonatomic, readonly, copy) AXNetworkManager *(^post)(NSString *pathOrFullURLString);
 
+/// post请求
+@property (nonatomic, readonly, copy) AXNetworkManager *(^delete)(NSString *pathOrFullURLString);
+
 /// 添加参数
-@property (nonatomic, readonly, copy) AXNetworkManager *(^addParameters)(id parameters);
+@property (nonatomic, readonly, copy) AXNetworkManager *(^parameters)(id parameters);
+
+/// 添加请求头
+@property (nonatomic, readonly, copy) AXNetworkManager *(^headers)(NSDictionary <NSString *, NSString *> *headers);
 
 /// 请求进度
-@property (nonatomic, readonly, copy) AXNetworkManager *(^progressHandler)(void(^)(NSProgress  *progress));
+@property (nonatomic, readonly, copy) AXNetworkManager *(^progress)(void(^)(NSProgress  *progress));
 
 /// 请求成功
-@property (nonatomic, readonly, copy) AXNetworkManager *(^successHandler)(void(^)(id JSONObject));
+@property (nonatomic, readonly, copy) AXNetworkManager *(^success)(void(^)(id responseObject));
 
 /// 请求失败
-@property (nonatomic, readonly, copy) AXNetworkManager *(^failureHandler)(void(^)(NSError *error));
+@property (nonatomic, readonly, copy) AXNetworkManager *(^failure)(void(^)(NSError *error));
 
 /// 开始请求,
 @property (nonatomic, readonly, copy) void(^start)(void);

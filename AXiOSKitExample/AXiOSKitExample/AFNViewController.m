@@ -12,6 +12,7 @@
 #import "AXNetworkManager.h"
 #import "TZImagePickerController.h"
 #import "AXNetManager+Upload.h"
+#import <MJExtension/MJExtension.h>
 
 @interface AFNViewController ()
 
@@ -30,10 +31,10 @@
 }
 
 - (IBAction)afn1:(id)sender {
-    self.manager.get(@"http://localhost:8091/sleep?time=5").successHandler(^(id  _Nonnull JSONObject) {
+    self.manager.get(@"http://localhost:8091/sleep?time=5").success(^(id  _Nonnull JSONObject) {
         NSLog(@"JSONObject1 = %@",JSONObject);
         
-    }).failureHandler(^(NSError * _Nonnull error) {
+    }).failure(^(NSError * _Nonnull error) {
         NSLog(@"error1 = %@",error.description);
     }).start();
     
@@ -41,13 +42,23 @@
 
 - (IBAction)afn2:(id)sender {
     
-    self.manager.get(@"http://localhost:8091/sleep?time=1").successHandler(^(id  _Nonnull JSONObject) {
+//    self.manager.get(@"http://localhost:8091/sleep?time=1").successHandler(^(id  _Nonnull JSONObject) {
+//        NSLog(@"JSONObject2 = %@",JSONObject);
+//
+//    }).failureHandler(^(NSError * _Nonnull error) {
+//        NSLog(@"error2 = %@",error.description);
+//    }).start();
+  
+    NSDictionary *dict = @{@"name":@"jim",@"age":@1};
+    
+    
+    
+AXNetworkManager.manager.post(@"http://localhost:8080/test2").parameters(dict).success(^(id  _Nonnull JSONObject) {
         NSLog(@"JSONObject2 = %@",JSONObject);
         
-    }).failureHandler(^(NSError * _Nonnull error) {
+    }).failure(^(NSError * _Nonnull error) {
         NSLog(@"error2 = %@",error.description);
     }).start();
-    
 }
 
 - (IBAction)download:(id)sender {
