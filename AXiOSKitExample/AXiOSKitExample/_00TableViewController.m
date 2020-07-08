@@ -194,14 +194,14 @@ void mySLog(NSString *format, ...)
                 @"title": @"网页",
                 @"action":  ^{
                 AXWKWebVC *vc = [[AXWKWebVC alloc]init];
-                vc.URL = [NSURL URLWithString:@"https://www.baidu.com/"];
-                vc.URL = [NSURL URLWithString:@"错误地址"];
-                vc.URL = [[NSBundle mainBundle] URLForResource:@"H5.bundle/index.html" withExtension:nil];
-                vc.HTML = @"<p style='font-size: 20px'>测试</p>";
-                ///第三方 framework 内部的 ,看第三方 NSBundle 是怎么放置的
-                vc.URL = [[NSBundle mainBundle] URLForResource:@"Frameworks/AXiOSKit.framework/AXHTML.bundle/index.html" withExtension:nil];
-                /// AXiOSKit 放置方式不一样
-                vc.URL = [[NSBundle ax_HTMLBundle]URLForResource:@"index.html" withExtension:nil];
+//                vc.URL = [NSURL URLWithString:@"https://www.baidu.com/"];
+//                vc.URL = [NSURL URLWithString:@"错误地址"];
+//                    vc.URL = [NSBundle.mainBundle URLForResource:@"H5.bundle/index.html" withExtension:nil];
+//                vc.HTML = @"<p style='font-size: 20px'>测试</p>";
+//                ///第三方 framework 内部的 ,看第三方 NSBundle 是怎么放置的
+//                    vc.URL = [NSBundle.mainBundle URLForResource:@"Frameworks/AXiOSKit.framework/AXHTML.bundle/index.html" withExtension:nil];
+//                /// AXiOSKit 放置方式不一样
+                    vc.URL = [NSBundle.ax_HTMLBundle URLForResource:@"index.html" withExtension:nil];
 
                 [self.navigationController pushViewController:vc animated:YES];
             },
