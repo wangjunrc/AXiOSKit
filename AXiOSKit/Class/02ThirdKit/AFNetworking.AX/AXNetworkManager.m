@@ -46,8 +46,6 @@
     };
 }
 
-#pragma mark - get 引用对应的block
-
 - (AXNetworkManager *_Nonnull (^)(AxRequestSerializerType))requestSerializer {
     __weak typeof(self) weakSelf = self;
     return ^AXNetworkManager *(AxRequestSerializerType serializerType) {
@@ -192,9 +190,9 @@ progress {
         } else {
             manager = [AFHTTPSessionManager manager];
         }
-//        AFHTTPRequestSerializer：第一种是普通的http的编码格式也就是mid=10&method=userInfo&dateInt=20160818，这种格式的。
-//        AFJSONRequestSerializer：第二种也是json编码格式的，也就是编码成{“mid”:“11”,“method”:“userInfo”,“dateInt”:“20160818”}
-//        AFPropertyListRequestSerializer：第三种没用过，但是看介绍接编码成pislt格式的参数
+        //        AFHTTPRequestSerializer：第一种是普通的http的编码格式也就是mid=10&method=userInfo&dateInt=20160818，这种格式的。
+        //        AFJSONRequestSerializer：第二种也是json编码格式的，也就是编码成{“mid”:“11”,“method”:“userInfo”,“dateInt”:“20160818”}
+        //        AFPropertyListRequestSerializer：第三种没用过，但是看介绍接编码成pislt格式的参数
         
         
         /// 请求参数使用json格式
