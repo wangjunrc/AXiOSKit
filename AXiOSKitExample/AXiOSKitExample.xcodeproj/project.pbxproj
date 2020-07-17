@@ -63,6 +63,7 @@
 		21B0F89524736EA2001BB2A0 /* _14TFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21B0F89324736EA2001BB2A0 /* _14TFViewController.xib */; };
 		21B5EC6F24B2CE5A00EDFE08 /* _09AFNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B5EC6D24B2CE5A00EDFE08 /* _09AFNViewController.m */; };
 		21B5EC7024B2CE5A00EDFE08 /* _09AFNViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21B5EC6E24B2CE5A00EDFE08 /* _09AFNViewController.xib */; };
+		21C1AF9324C0320D00AF5DBB /* AFHTTPSessionManager+PutFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C1AF9224C0320D00AF5DBB /* AFHTTPSessionManager+PutFile.m */; };
 		21D670BD2474E5D100890F8F /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D670BC2474E5D100890F8F /* ShareViewController.m */; };
 		21D670C02474E5D100890F8F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D670BE2474E5D100890F8F /* MainInterface.storyboard */; };
 		21D670C42474E5D100890F8F /* 分享.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21D670B92474E5D100890F8F /* 分享.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -194,6 +195,8 @@
 		21B5EC6C24B2CE5A00EDFE08 /* _09AFNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _09AFNViewController.h; sourceTree = "<group>"; };
 		21B5EC6D24B2CE5A00EDFE08 /* _09AFNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _09AFNViewController.m; sourceTree = "<group>"; };
 		21B5EC6E24B2CE5A00EDFE08 /* _09AFNViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _09AFNViewController.xib; sourceTree = "<group>"; };
+		21C1AF9124C0320D00AF5DBB /* AFHTTPSessionManager+PutFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+PutFile.h"; sourceTree = "<group>"; };
+		21C1AF9224C0320D00AF5DBB /* AFHTTPSessionManager+PutFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+PutFile.m"; sourceTree = "<group>"; };
 		21D670B92474E5D100890F8F /* 分享.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "分享.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D670BB2474E5D100890F8F /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		21D670BC2474E5D100890F8F /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
@@ -413,6 +416,8 @@
 				21E636BE24AECB79000AE0ED /* _01ViewController.xib */,
 				21B5EC6C24B2CE5A00EDFE08 /* _09AFNViewController.h */,
 				21B5EC6D24B2CE5A00EDFE08 /* _09AFNViewController.m */,
+				21C1AF9124C0320D00AF5DBB /* AFHTTPSessionManager+PutFile.h */,
+				21C1AF9224C0320D00AF5DBB /* AFHTTPSessionManager+PutFile.m */,
 				21B5EC6E24B2CE5A00EDFE08 /* _09AFNViewController.xib */,
 				2105E74D2462EC4C0076A65B /* _13ViewController_webp.h */,
 				2105E7772462EC4C0076A65B /* _13ViewController_webp.m */,
@@ -660,6 +665,7 @@
 				2105E7842462EC4C0076A65B /* NSObject+MethodSwizzling.m in Sources */,
 				2105E7822462EC4C0076A65B /* TestObj.m in Sources */,
 				2105E79C2462EC4C0076A65B /* AFNViewController.m in Sources */,
+				21C1AF9324C0320D00AF5DBB /* AFHTTPSessionManager+PutFile.m in Sources */,
 				2105E79E2462EC4C0076A65B /* SoundRecordDB.mm in Sources */,
 				213A998D246391A90045DDF0 /* VideoViewController.m in Sources */,
 				2105E7892462EC4C0076A65B /* ChatMessageModel.m in Sources */,
