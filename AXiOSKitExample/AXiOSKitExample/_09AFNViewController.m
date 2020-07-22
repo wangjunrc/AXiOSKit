@@ -84,36 +84,6 @@
 
 
 -(void)_putFile{
-    
-    NSDictionary *dict = @{@"token" : @"https://bqj-oss.oss-cn-hangzhou.aliyuncs.com/TEST_SHORTVIDIO_59ffd1ca2df545cbb090d2e32b4179cd.mp4?Expires=1594883064&OSSAccessKeyId=LTAI4FzQ3QMqrpod49w6ZLhM&Signature=osdmgNqMcx7YK/nWc1aqJGWjVE4="};
-    NSString *outputPath = @"";
-    
-    
-    
-    
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] multipartFormRequestWithMethod:@"PUT" URLString:dict[@"token"] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-        formatter.dateFormat = @"yyyyMMddHHmmss";
-        NSString *str = [formatter stringFromDate:[NSDate date]];
-        NSString *fileName = [NSString stringWithFormat:@"%@.mp4",str];
-        NSData *fileData = [NSData dataWithContentsOfFile:outputPath];
-        if (fileData) {
-            [formData appendPartWithFileData:fileData name:@"files" fileName:fileName mimeType:@"video/mp4"];
-        }
-    } error:nil];
-    [request setValue:@"video/mp4" forHTTPHeaderField:@"Content-Type"];
-    __block NSURLSessionDataTask *task;
-    task = [manager uploadTaskWithStreamedRequest:request progress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-        NSLog(@">>>>>>>>>>%@",responseObject);
-        if (!error) {
-            NSLog(@"成功%@",responseObject);
-        } else {
-            NSLog(@"失败%@",error);
-        }
-    }];
-    [task resume];
+
 }
 @end
