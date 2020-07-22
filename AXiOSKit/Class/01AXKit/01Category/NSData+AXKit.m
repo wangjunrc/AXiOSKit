@@ -82,7 +82,14 @@
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
         PHAssetResourceCreationOptions *options = [[PHAssetResourceCreationOptions alloc] init];
         [[PHAssetCreationRequest creationRequestForAsset] addResourceWithType:PHAssetResourceTypePhoto data:data options:options];
-    } completionHandler:completionHandler];
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        if (completionHandler) {
+            /// 回到主线程
+            dispatch_sync(dispatch_get_main_queue(), ^{
+               completionHandler(success,error);
+            });
+        }
+    }];
 }
 
 @end
