@@ -25,7 +25,7 @@
 #import "_14TFViewController.h"
 #import "_15UIMenuController.h"
 #import "_16KeyChainViewController.h"
-#import "fishhook-master/fishhook.h"
+#import "fishhook.h"
 #import <AXiOSKit/AXiOSKit.h>
 #import <AXiOSKit/UIViewController+AXKit.h>
 #import <objc/message.h>
