@@ -35,6 +35,7 @@ target 'AXiOSKitExample' do
   pod 'WCDB'
   #pod 'LookinServer', :configurations => ['Debug']
   
+   pod 'SSKeychain'
 end
 
 # AXiOSKit 依赖
