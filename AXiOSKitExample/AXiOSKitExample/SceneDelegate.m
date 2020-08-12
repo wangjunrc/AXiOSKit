@@ -20,6 +20,8 @@
     
     self.window.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
     
+    
+    
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
     
