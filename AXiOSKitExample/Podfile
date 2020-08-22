@@ -36,6 +36,8 @@ target 'AXiOSKitExample' do
   #pod 'LookinServer', :configurations => ['Debug']
   
    pod 'SSKeychain'
+   #蘑菇街团队提供了MGJRouter路由库
+   pod 'MGJRouter'
 end
 
 # AXiOSKit 依赖

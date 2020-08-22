@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		215B07A924F1242C00535742 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 215B07A824F1242C00535742 /* RouterManager.m */; };
 		21D670BD2474E5D100890F8F /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D670BC2474E5D100890F8F /* ShareViewController.m */; };
 		21D670C02474E5D100890F8F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D670BE2474E5D100890F8F /* MainInterface.storyboard */; };
 		21D670C42474E5D100890F8F /* 分享.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21D670B92474E5D100890F8F /* 分享.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -105,6 +106,11 @@
 /* Begin PBXFileReference section */
 		2105E7062462EA640076A65B /* AXiOSKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		214FF8642476192A00EF0C29 /* 分享.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "分享.entitlements"; sourceTree = "<group>"; };
+		215B079C24F11A9000535742 /* AxGenerator.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxGenerator.xcconfig; sourceTree = "<group>"; };
+		215B079D24F11B5600535742 /* AxDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxDebug.xcconfig; sourceTree = "<group>"; };
+		215B079E24F11B6200535742 /* AxRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxRelease.xcconfig; sourceTree = "<group>"; };
+		215B07A724F1242C00535742 /* RouterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouterManager.h; sourceTree = "<group>"; };
+		215B07A824F1242C00535742 /* RouterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouterManager.m; sourceTree = "<group>"; };
 		21D670B92474E5D100890F8F /* 分享.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "分享.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D670BB2474E5D100890F8F /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		21D670BC2474E5D100890F8F /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
@@ -268,6 +274,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		215B07A624F1241800535742 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				215B07A724F1242C00535742 /* RouterManager.h */,
+				215B07A824F1242C00535742 /* RouterManager.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		21D670BA2474E5D100890F8F /* 分享 */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +298,7 @@
 		21E549F524D98D140038F4C0 /* AXiOSKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				215B07A624F1241800535742 /* Router */,
 				21E54A1F24D98D150038F4C0 /* 123.jpg */,
 				21E54A1B24D98D150038F4C0 /* 1234.webp */,
 				21E54A0324D98D140038F4C0 /* AppDelegate.h */,
@@ -305,6 +321,9 @@
 				21E54A1C24D98D150038F4C0 /* TestVideo */,
 				21E54A5824D98D150038F4C0 /* webp.bundle */,
 				21E549F624D98D140038F4C0 /* WebSocket */,
+				215B079C24F11A9000535742 /* AxGenerator.xcconfig */,
+				215B079D24F11B5600535742 /* AxDebug.xcconfig */,
+				215B079E24F11B6200535742 /* AxRelease.xcconfig */,
 			);
 			path = AXiOSKitExample;
 			sourceTree = "<group>";
@@ -387,60 +406,60 @@
 		21E54A2124D98D150038F4C0 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				21E54A2224D98D150038F4C0 /* _16KeyChainViewController.h */,
-				21E54A2324D98D150038F4C0 /* VideoViewController.h */,
-				21E54A2424D98D150038F4C0 /* Person.h */,
-				21E54A2524D98D150038F4C0 /* TextFViewController.xib */,
-				21E54A2624D98D150038F4C0 /* TextFViewController.m */,
-				21E54A2724D98D150038F4C0 /* CopyActivity.m */,
-				21E54A2824D98D150038F4C0 /* AANavigationController.h */,
-				21E54A2924D98D150038F4C0 /* AFNViewController.xib */,
-				21E54A2A24D98D150038F4C0 /* _09AFNViewController.h */,
-				21E54A2B24D98D150038F4C0 /* UIViewController+Load.m */,
-				21E54A2C24D98D150038F4C0 /* VideoViewController.xib */,
-				21E54A2D24D98D150038F4C0 /* AFHTTPSessionManager+PutFile.m */,
-				21E54A2E24D98D150038F4C0 /* WCDBViewController.m */,
-				21E54A2F24D98D150038F4C0 /* MakeKeyAndVisible.m */,
-				21E54A3024D98D150038F4C0 /* _14TFViewController.m */,
-				21E54A3124D98D150038F4C0 /* AFNViewController.h */,
-				21E54A3224D98D150038F4C0 /* _01ViewController.xib */,
-				21E54A3324D98D150038F4C0 /* _00TableViewCell.m */,
-				21E54A3424D98D150038F4C0 /* MyActivity.m */,
-				21E54A3524D98D150038F4C0 /* _13WebpViewController.h */,
-				21E54A3624D98D150038F4C0 /* AView.m */,
-				21E54A3724D98D150038F4C0 /* AAViewController.h */,
-				21E54A3824D98D150038F4C0 /* _00TableViewController.m */,
-				21E54A3924D98D150038F4C0 /* _14TFViewController.xib */,
-				21E54A3A24D98D150038F4C0 /* _09AFNViewController.xib */,
-				21E54A3B24D98D150038F4C0 /* _01ViewController.h */,
-				21E54A3C24D98D150038F4C0 /* _15UIMenuController.h */,
-				21E54A3D24D98D150038F4C0 /* RunLoopViewController.m */,
-				21E54A3E24D98D150038F4C0 /* AANavigationController.m */,
-				21E54A3F24D98D150038F4C0 /* CopyActivity.h */,
-				21E54A4024D98D150038F4C0 /* TextFViewController.h */,
-				21E54A4124D98D150038F4C0 /* Person.m */,
-				21E54A4224D98D150038F4C0 /* VideoViewController.m */,
-				21E54A4324D98D150038F4C0 /* _00TableViewCell.xib */,
-				21E54A4424D98D150038F4C0 /* _16KeyChainViewController.m */,
-				21E54A4524D98D150038F4C0 /* WCDBViewController.h */,
-				21E54A4624D98D150038F4C0 /* AFHTTPSessionManager+PutFile.h */,
-				21E54A4724D98D150038F4C0 /* WCDBViewController.xib */,
-				21E54A4824D98D150038F4C0 /* UIViewController+Load.h */,
-				21E54A4924D98D150038F4C0 /* RunLoopViewController.xib */,
-				21E54A4A24D98D150038F4C0 /* _09AFNViewController.m */,
-				21E54A4B24D98D150038F4C0 /* AAViewController.xib */,
-				21E54A4C24D98D150038F4C0 /* AAViewController.m */,
-				21E54A4D24D98D150038F4C0 /* AView.h */,
-				21E54A4E24D98D150038F4C0 /* _13WebpViewController.m */,
-				21E54A4F24D98D150038F4C0 /* MyActivity.h */,
-				21E54A5024D98D150038F4C0 /* AFNViewController.m */,
 				21E54A5124D98D150038F4C0 /* _00TableViewCell.h */,
-				21E54A5224D98D150038F4C0 /* _14TFViewController.h */,
-				21E54A5324D98D150038F4C0 /* MakeKeyAndVisible.h */,
-				21E54A5424D98D150038F4C0 /* RunLoopViewController.h */,
-				21E54A5524D98D150038F4C0 /* _15UIMenuController.m */,
-				21E54A5624D98D150038F4C0 /* _01ViewController.m */,
+				21E54A3324D98D150038F4C0 /* _00TableViewCell.m */,
+				21E54A4324D98D150038F4C0 /* _00TableViewCell.xib */,
 				21E54A5724D98D150038F4C0 /* _00TableViewController.h */,
+				21E54A3824D98D150038F4C0 /* _00TableViewController.m */,
+				21E54A3B24D98D150038F4C0 /* _01ViewController.h */,
+				21E54A5624D98D150038F4C0 /* _01ViewController.m */,
+				21E54A3224D98D150038F4C0 /* _01ViewController.xib */,
+				21E54A2A24D98D150038F4C0 /* _09AFNViewController.h */,
+				21E54A4A24D98D150038F4C0 /* _09AFNViewController.m */,
+				21E54A3A24D98D150038F4C0 /* _09AFNViewController.xib */,
+				21E54A3524D98D150038F4C0 /* _13WebpViewController.h */,
+				21E54A4E24D98D150038F4C0 /* _13WebpViewController.m */,
+				21E54A5224D98D150038F4C0 /* _14TFViewController.h */,
+				21E54A3024D98D150038F4C0 /* _14TFViewController.m */,
+				21E54A3924D98D150038F4C0 /* _14TFViewController.xib */,
+				21E54A3C24D98D150038F4C0 /* _15UIMenuController.h */,
+				21E54A5524D98D150038F4C0 /* _15UIMenuController.m */,
+				21E54A2224D98D150038F4C0 /* _16KeyChainViewController.h */,
+				21E54A4424D98D150038F4C0 /* _16KeyChainViewController.m */,
+				21E54A2824D98D150038F4C0 /* AANavigationController.h */,
+				21E54A3E24D98D150038F4C0 /* AANavigationController.m */,
+				21E54A3724D98D150038F4C0 /* AAViewController.h */,
+				21E54A4C24D98D150038F4C0 /* AAViewController.m */,
+				21E54A4B24D98D150038F4C0 /* AAViewController.xib */,
+				21E54A4624D98D150038F4C0 /* AFHTTPSessionManager+PutFile.h */,
+				21E54A2D24D98D150038F4C0 /* AFHTTPSessionManager+PutFile.m */,
+				21E54A3124D98D150038F4C0 /* AFNViewController.h */,
+				21E54A5024D98D150038F4C0 /* AFNViewController.m */,
+				21E54A2924D98D150038F4C0 /* AFNViewController.xib */,
+				21E54A4D24D98D150038F4C0 /* AView.h */,
+				21E54A3624D98D150038F4C0 /* AView.m */,
+				21E54A3F24D98D150038F4C0 /* CopyActivity.h */,
+				21E54A2724D98D150038F4C0 /* CopyActivity.m */,
+				21E54A5324D98D150038F4C0 /* MakeKeyAndVisible.h */,
+				21E54A2F24D98D150038F4C0 /* MakeKeyAndVisible.m */,
+				21E54A4F24D98D150038F4C0 /* MyActivity.h */,
+				21E54A3424D98D150038F4C0 /* MyActivity.m */,
+				21E54A2424D98D150038F4C0 /* Person.h */,
+				21E54A4124D98D150038F4C0 /* Person.m */,
+				21E54A5424D98D150038F4C0 /* RunLoopViewController.h */,
+				21E54A3D24D98D150038F4C0 /* RunLoopViewController.m */,
+				21E54A4924D98D150038F4C0 /* RunLoopViewController.xib */,
+				21E54A4024D98D150038F4C0 /* TextFViewController.h */,
+				21E54A2624D98D150038F4C0 /* TextFViewController.m */,
+				21E54A2524D98D150038F4C0 /* TextFViewController.xib */,
+				21E54A4824D98D150038F4C0 /* UIViewController+Load.h */,
+				21E54A2B24D98D150038F4C0 /* UIViewController+Load.m */,
+				21E54A2324D98D150038F4C0 /* VideoViewController.h */,
+				21E54A4224D98D150038F4C0 /* VideoViewController.m */,
+				21E54A2C24D98D150038F4C0 /* VideoViewController.xib */,
+				21E54A4524D98D150038F4C0 /* WCDBViewController.h */,
+				21E54A2E24D98D150038F4C0 /* WCDBViewController.m */,
+				21E54A4724D98D150038F4C0 /* WCDBViewController.xib */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -663,6 +682,7 @@
 				21E54A7724D98D150038F4C0 /* NSObject+MethodSwizzling.m in Sources */,
 				21E54A9124D98D150038F4C0 /* AView.m in Sources */,
 				21E54A8D24D98D150038F4C0 /* _14TFViewController.m in Sources */,
+				215B07A924F1242C00535742 /* RouterManager.m in Sources */,
 				21E54AA324D98D150038F4C0 /* _01ViewController.m in Sources */,
 				21E54A7524D98D150038F4C0 /* TestObj.m in Sources */,
 				21E54A7924D98D150038F4C0 /* ChatViewController.m in Sources */,

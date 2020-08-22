@@ -30,6 +30,8 @@
 #import <AXiOSKit/UIViewController+AXKit.h>
 #import <objc/message.h>
 #import <objc/runtime.h>
+#import "RouterManager.h"
+
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -66,6 +68,8 @@ typedef void (^CollectionBlock)(void);
   NSLog(@"拦截====2 %@", self);
   self.title = @"主题";
   [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
+    
+//    NSLog(@"IS_PRODUCATION = %@ SERVER_HOST = %@", IS_PRODUCATION ? @"生产环境" : @"开发环境", SERVER_HOST);
 }
 
 - (void)test {
@@ -223,8 +227,12 @@ void mySLog(NSString *format, ...) {
         @"index" : @9,
         @"title" : @"AFN",
         @"action" : ^{
-          _09AFNViewController *vc = [[_09AFNViewController alloc] init];
-          [self.navigationController pushViewController:vc animated:YES];
+//          _09AFNViewController *vc = [[_09AFNViewController alloc] init];
+//          [self.navigationController pushViewController:vc animated:YES];
+            
+            [RouterManager openURL:routeNameOf withUserInfo:@{@"navigationVC":self.navigationController}  completion:^(id  _Nonnull result) {
+                
+            }];
         },
       },
 
