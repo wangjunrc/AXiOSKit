@@ -52,7 +52,7 @@
     [self func_payStyleText];
     
     UIImage *leftItmeIm = [UIImage axBundle_imageNamed:@"ax_close"];
-     self.navigationItem.rightBarButtonItem =  [UIBarButtonItem ax_itemOriginalImage:leftItmeIm target:self action:@selector(closeBtnAction)];
+    self.navigationItem.rightBarButtonItem =  [UIBarButtonItem ax_itemOriginalImage:leftItmeIm target:self action:@selector(closeBtnAction)];
     
 }
 

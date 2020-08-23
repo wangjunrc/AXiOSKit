@@ -16,7 +16,7 @@
     
     NSLog(@"收到通知>>>>");
     
-    NSString *identifier = notification.request.identifier;
+//    NSString *identifier = notification.request.identifier;
     UNNotificationPresentationOptions options = UNNotificationPresentationOptionNone; //默认什么也不做，不显示
     //    if (identifier == nil) {
     //        completionHandler(options);

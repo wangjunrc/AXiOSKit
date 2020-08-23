@@ -12,7 +12,7 @@
 #import <Foundation/Foundation.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 #import <UIKit/UIKit.h>
-
+NS_ASSUME_NONNULL_BEGIN
 @protocol AXJSContextDelegate <JSExport>
 
 /**
@@ -54,3 +54,4 @@ js 调用oc 方法 格式
 - (nullable NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)script;
 
 @end
+NS_ASSUME_NONNULL_END

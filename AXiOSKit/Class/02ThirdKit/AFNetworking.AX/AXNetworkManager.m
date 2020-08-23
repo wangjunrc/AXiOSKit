@@ -118,7 +118,7 @@
     };
 }
 
-- (AXNetworkManager *_Nonnull (^)(id _Nonnull))headers {
+- (AXNetworkManager *_Nonnull (^)(NSDictionary <NSString *, NSString *>*))headers {
     __weak typeof(self) weakSelf = self;
     return ^AXNetworkManager *(NSDictionary <NSString *, NSString *> *headers) {
         __strong __typeof(&*weakSelf) strongSelf = weakSelf;

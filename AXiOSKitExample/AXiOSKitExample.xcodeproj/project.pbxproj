@@ -75,7 +75,6 @@
 		21E54AA924D98D150038F4C0 /* BAUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E54A6224D98D150038F4C0 /* BAUserInfo.m */; };
 		21E54AAA24D98D150038F4C0 /* BAThemeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E54A6424D98D150038F4C0 /* BAThemeListModel.m */; };
 		21E54AAB24D98D150038F4C0 /* PalyThemeDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21E54A6924D98D150038F4C0 /* PalyThemeDB.mm */; };
-		21E54AAC24D98D150038F4C0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21E54A6A24D98D150038F4C0 /* Info.plist */; };
 		EFB53CC9DAEACE15EEBA0F67 /* Pods_AXiOSKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2AB1BCF4154D76F31004C5 /* Pods_AXiOSKitExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -555,7 +554,7 @@
 			isa = PBXProject;
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Original;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = liuweixing;
 				TargetAttributes = {
 					2105E7052462EA640076A65B = {
@@ -602,7 +601,6 @@
 				21E54A8424D98D150038F4C0 /* TextFViewController.xib in Resources */,
 				21E54A9C24D98D150038F4C0 /* RunLoopViewController.xib in Resources */,
 				21E54A8724D98D150038F4C0 /* AFNViewController.xib in Resources */,
-				21E54AAC24D98D150038F4C0 /* Info.plist in Resources */,
 				21E54A7424D98D150038F4C0 /* H5.bundle in Resources */,
 				21E54A8024D98D150038F4C0 /* 1234.webp in Resources */,
 				21E54A7124D98D150038F4C0 /* CONTRIBUTING.md in Resources */,

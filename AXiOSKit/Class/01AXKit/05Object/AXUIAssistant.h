@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+NS_ASSUME_NONNULL_BEGIN
 /**屏宽比*/
 extern CGFloat ax_screen_scale(void);
 
@@ -128,3 +128,4 @@ void ax_keyboard_bg_alpha(CGFloat alpha);
 
 /**键盘背景UIInputSetHostView*/
 UIView *ax_keyboard_host_view(void);
+NS_ASSUME_NONNULL_END

@@ -20,7 +20,7 @@
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
     if (self.didEndBlock) {
-        self.didEndBlock(textView.text);
+        self.didEndBlock(textView);
     }
 }
 

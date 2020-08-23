@@ -34,13 +34,13 @@
 @property (nonatomic, copy) BOOL (^shouldChangeBlock)(UITextField* textField, NSRange range, NSString* aString);
 
 ///最大输入文字数量
-@property (nonatomic, assign) NSInteger maxCharacterCount;
+@property (nonatomic, assign) NSUInteger maxCharacterCount;
 
 ///只能输入正正数
 @property (nonatomic, assign) BOOL onlyPositiveNumber;
 
 /// 最多只能输入小数 的个数
-@property (nonatomic, assign) NSInteger maxFloatCount;
+@property (nonatomic, assign) NSUInteger maxFloatCount;
 
 /// 禁止输入空格
 @property (nonatomic, assign) BOOL banBlankSpace;

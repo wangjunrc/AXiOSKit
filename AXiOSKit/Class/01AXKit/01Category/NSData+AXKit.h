@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+NS_ASSUME_NONNULL_BEGIN
 @interface NSData (AXKit)
 
 /**
@@ -39,3 +39,4 @@
 - (void)ax_savePhotoLibraryHandler:(nullable void (^)(BOOL success, NSError *__nullable error))completionHandler;
 
 @end
+NS_ASSUME_NONNULL_END

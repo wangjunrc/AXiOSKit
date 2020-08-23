@@ -141,7 +141,7 @@
             self.containerView.transform = CGAffineTransformIdentity;
             [UIView commitAnimations];
 
-            [self.dismissTap removeTarget:self action:@selector(dismissTapAction)];
+            [self.dismissTap removeTarget:self action:@selector(dismissTapAction:)];
         }
     }
 }
