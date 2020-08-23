@@ -60,7 +60,7 @@
 }
 - (AXTextViewDelegateHandler *)ax_delegateHandler {
     
-    AXTextViewDelegateHandler *handler = ax_getValueAssociated(axDelegateHandler);
+    AXTextViewDelegateHandler *handler = ax_getValueAssociated(ax_delegateHandler);
     
     if (handler == nil ){
         

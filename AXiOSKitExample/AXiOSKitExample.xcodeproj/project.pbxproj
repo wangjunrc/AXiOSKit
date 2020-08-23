@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		215B07A924F1242C00535742 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 215B07A824F1242C00535742 /* RouterManager.m */; };
+		21AF7EAD24F24B42003311AF /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */; };
 		21D670BD2474E5D100890F8F /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D670BC2474E5D100890F8F /* ShareViewController.m */; };
 		21D670C02474E5D100890F8F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D670BE2474E5D100890F8F /* MainInterface.storyboard */; };
 		21D670C42474E5D100890F8F /* 分享.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21D670B92474E5D100890F8F /* 分享.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -43,7 +44,6 @@
 		21E54A8924D98D150038F4C0 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E54A2C24D98D150038F4C0 /* VideoViewController.xib */; };
 		21E54A8A24D98D150038F4C0 /* AFHTTPSessionManager+PutFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E54A2D24D98D150038F4C0 /* AFHTTPSessionManager+PutFile.m */; };
 		21E54A8B24D98D150038F4C0 /* WCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E54A2E24D98D150038F4C0 /* WCDBViewController.m */; };
-		21E54A8C24D98D150038F4C0 /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E54A2F24D98D150038F4C0 /* MakeKeyAndVisible.m */; };
 		21E54A8D24D98D150038F4C0 /* _14TFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E54A3024D98D150038F4C0 /* _14TFViewController.m */; };
 		21E54A8E24D98D150038F4C0 /* _01ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E54A3224D98D150038F4C0 /* _01ViewController.xib */; };
 		21E54A8F24D98D150038F4C0 /* _00TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E54A3324D98D150038F4C0 /* _00TableViewCell.m */; };
@@ -110,6 +110,8 @@
 		215B079E24F11B6200535742 /* AxRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxRelease.xcconfig; sourceTree = "<group>"; };
 		215B07A724F1242C00535742 /* RouterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouterManager.h; sourceTree = "<group>"; };
 		215B07A824F1242C00535742 /* RouterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouterManager.m; sourceTree = "<group>"; };
+		21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeKeyAndVisible.m; sourceTree = "<group>"; };
+		21AF7EAC24F24B42003311AF /* MakeKeyAndVisible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeKeyAndVisible.h; sourceTree = "<group>"; };
 		21D670B92474E5D100890F8F /* 分享.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "分享.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D670BB2474E5D100890F8F /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		21D670BC2474E5D100890F8F /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
@@ -162,7 +164,6 @@
 		21E54A2C24D98D150038F4C0 /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		21E54A2D24D98D150038F4C0 /* AFHTTPSessionManager+PutFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+PutFile.m"; sourceTree = "<group>"; };
 		21E54A2E24D98D150038F4C0 /* WCDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCDBViewController.m; sourceTree = "<group>"; };
-		21E54A2F24D98D150038F4C0 /* MakeKeyAndVisible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeKeyAndVisible.m; sourceTree = "<group>"; };
 		21E54A3024D98D150038F4C0 /* _14TFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _14TFViewController.m; sourceTree = "<group>"; };
 		21E54A3124D98D150038F4C0 /* AFNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNViewController.h; sourceTree = "<group>"; };
 		21E54A3224D98D150038F4C0 /* _01ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _01ViewController.xib; sourceTree = "<group>"; };
@@ -198,7 +199,6 @@
 		21E54A5024D98D150038F4C0 /* AFNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNViewController.m; sourceTree = "<group>"; };
 		21E54A5124D98D150038F4C0 /* _00TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00TableViewCell.h; sourceTree = "<group>"; };
 		21E54A5224D98D150038F4C0 /* _14TFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _14TFViewController.h; sourceTree = "<group>"; };
-		21E54A5324D98D150038F4C0 /* MakeKeyAndVisible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeKeyAndVisible.h; sourceTree = "<group>"; };
 		21E54A5424D98D150038F4C0 /* RunLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
 		21E54A5524D98D150038F4C0 /* _15UIMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _15UIMenuController.m; sourceTree = "<group>"; };
 		21E54A5624D98D150038F4C0 /* _01ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _01ViewController.m; sourceTree = "<group>"; };
@@ -297,12 +297,14 @@
 		21E549F524D98D140038F4C0 /* AXiOSKitExample */ = {
 			isa = PBXGroup;
 			children = (
-				215B07A624F1241800535742 /* Router */,
 				21E54A1F24D98D150038F4C0 /* 123.jpg */,
 				21E54A1B24D98D150038F4C0 /* 1234.webp */,
 				21E54A0324D98D140038F4C0 /* AppDelegate.h */,
 				21E54A5924D98D150038F4C0 /* AppDelegate.m */,
 				21E54A1524D98D150038F4C0 /* Assets.xcassets */,
+				215B079D24F11B5600535742 /* AxDebug.xcconfig */,
+				215B079C24F11A9000535742 /* AxGenerator.xcconfig */,
+				215B079E24F11B6200535742 /* AxRelease.xcconfig */,
 				21E54A0B24D98D150038F4C0 /* Chat */,
 				21E54A2124D98D150038F4C0 /* Class */,
 				21E549F924D98D140038F4C0 /* fishhook-master */,
@@ -312,6 +314,9 @@
 				21E54A1724D98D150038F4C0 /* LaunchScreen.storyboard */,
 				21E54A2024D98D150038F4C0 /* main.m */,
 				21E54A1924D98D150038F4C0 /* Main.storyboard */,
+				21AF7EAC24F24B42003311AF /* MakeKeyAndVisible.h */,
+				21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */,
+				215B07A624F1241800535742 /* Router */,
 				21E54A6B24D98D150038F4C0 /* SceneDelegate.h */,
 				21E54A1624D98D150038F4C0 /* SceneDelegate.m */,
 				21E54A0424D98D140038F4C0 /* Test */,
@@ -320,9 +325,6 @@
 				21E54A1C24D98D150038F4C0 /* TestVideo */,
 				21E54A5824D98D150038F4C0 /* webp.bundle */,
 				21E549F624D98D140038F4C0 /* WebSocket */,
-				215B079C24F11A9000535742 /* AxGenerator.xcconfig */,
-				215B079D24F11B5600535742 /* AxDebug.xcconfig */,
-				215B079E24F11B6200535742 /* AxRelease.xcconfig */,
 			);
 			path = AXiOSKitExample;
 			sourceTree = "<group>";
@@ -439,8 +441,6 @@
 				21E54A3624D98D150038F4C0 /* AView.m */,
 				21E54A3F24D98D150038F4C0 /* CopyActivity.h */,
 				21E54A2724D98D150038F4C0 /* CopyActivity.m */,
-				21E54A5324D98D150038F4C0 /* MakeKeyAndVisible.h */,
-				21E54A2F24D98D150038F4C0 /* MakeKeyAndVisible.m */,
 				21E54A4F24D98D150038F4C0 /* MyActivity.h */,
 				21E54A3424D98D150038F4C0 /* MyActivity.m */,
 				21E54A2424D98D150038F4C0 /* Person.h */,
@@ -704,10 +704,10 @@
 				21E54A7624D98D150038F4C0 /* NSObject+SelectorDefender.m in Sources */,
 				21E54A8824D98D150038F4C0 /* UIViewController+Load.m in Sources */,
 				21E54A8324D98D150038F4C0 /* main.m in Sources */,
+				21AF7EAD24F24B42003311AF /* MakeKeyAndVisible.m in Sources */,
 				21E54A8524D98D150038F4C0 /* TextFViewController.m in Sources */,
 				21E54A9D24D98D150038F4C0 /* _09AFNViewController.m in Sources */,
 				21E54AA124D98D150038F4C0 /* AFNViewController.m in Sources */,
-				21E54A8C24D98D150038F4C0 /* MakeKeyAndVisible.m in Sources */,
 				21E54A8A24D98D150038F4C0 /* AFHTTPSessionManager+PutFile.m in Sources */,
 				21E54AA724D98D150038F4C0 /* SoundRecordDB.mm in Sources */,
 				21E54A8B24D98D150038F4C0 /* WCDBViewController.m in Sources */,

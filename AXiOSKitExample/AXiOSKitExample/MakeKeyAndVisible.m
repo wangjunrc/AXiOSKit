@@ -27,13 +27,7 @@
     [[SDImageCodersManager sharedManager] addCoder:webPCoder];
     TableViewController *roorvc = [[TableViewController alloc]init];
     AANavigationController *nav = [[AANavigationController alloc]initWithRootViewController:roorvc];
-    
-    
-    
-    
     return nav;
-    
-    
     
 }
 

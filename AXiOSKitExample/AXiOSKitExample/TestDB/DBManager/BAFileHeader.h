@@ -8,7 +8,7 @@
 
 #ifndef BAFileHeader_h
 #define BAFileHeader_h
-#import "NSString+AXKit.h"
+#import <AXiOSKit/AXiOSKit.h>
 #import "BAUserInfo.h"
 
 //1，游戏,2，绘本,3,卡拉ok,4,故事录音

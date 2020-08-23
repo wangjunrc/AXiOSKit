@@ -9,9 +9,9 @@
 #import "AFNViewController.h"
 #import <AXiOSKit/AXiOSKit.h>
 #import <AXiOSKit/AXNetworkManager.h>
-#import "AXNetworkManager.h"
+#import <AXiOSKit/AXNetManager.h>
+#import <AXiOSKit/AXNetManager+Upload.h>
 #import "TZImagePickerController.h"
-#import "AXNetManager+Upload.h"
 #import <MJExtension/MJExtension.h>
 
 @interface AFNViewController ()
@@ -65,13 +65,13 @@ AXNetworkManager.manager.post(@"http://localhost:8080/test2").parameters(dict).s
     NSString *path = NSHomeDirectory();
     NSLog(@"path = %@",path);
     
-    [AXNetManager postDownURL:@"http://127.0.0.1:8091/downFile.do?id=123" showStatus:YES downPath:path progress:^(float aProgress) {
-        
-    } success:^(NSString *filePath) {
-        NSLog(@"filePath = %@",filePath);
-    } failure:^(NSInteger statusCode) {
-        NSLog(@"statusCode = %ld",statusCode);
-    }];
+//    [AXNetManager postDownURL:@"http://127.0.0.1:8091/downFile.do?id=123" showStatus:YES downPath:path progress:^(float aProgress) {
+//        
+//    } success:^(NSString *filePath) {
+//        NSLog(@"filePath = %@",filePath);
+//    } failure:^(NSInteger statusCode) {
+//        NSLog(@"statusCode = %ld",statusCode);
+//    }];
     
 }
 

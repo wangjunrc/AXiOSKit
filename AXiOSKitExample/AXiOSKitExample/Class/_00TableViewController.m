@@ -14,7 +14,6 @@
 #import "RunLoopViewController.h"
 #import "TestObj.h"
 #import "TextFViewController.h"
-#import "UIImage+AXKit.h"
 #import "VideoViewController.h"
 #import "WCDBViewController.h"
 #import "_00TableViewCell.h"

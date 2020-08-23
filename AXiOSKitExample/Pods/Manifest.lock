@@ -30,25 +30,25 @@ PODS:
     - SDWebImage
   - DZNEmptyDataSet (1.8.1)
   - FLAnimatedImage (1.0.12)
-  - IQKeyboardManager (6.5.5)
-  - JJException (0.2.7):
-    - JJException/All (= 0.2.7)
-  - JJException/All (0.2.7):
+  - IQKeyboardManager (6.5.6)
+  - JJException (0.2.8):
+    - JJException/All (= 0.2.8)
+  - JJException/All (0.2.8):
     - JJException/ARC
     - JJException/DeallocBlock
     - JJException/Main
     - JJException/MRC
     - JJException/Swizzle
-  - JJException/ARC (0.2.7):
+  - JJException/ARC (0.2.8):
     - JJException/DeallocBlock
     - JJException/Main
     - JJException/Swizzle
-  - JJException/DeallocBlock (0.2.7)
-  - JJException/Main (0.2.7)
-  - JJException/MRC (0.2.7):
+  - JJException/DeallocBlock (0.2.8)
+  - JJException/Main (0.2.8)
+  - JJException/MRC (0.2.8):
     - JJException/Main
     - JJException/Swizzle
-  - JJException/Swizzle (0.2.7)
+  - JJException/Swizzle (0.2.8)
   - KVOController (1.2.0)
   - libwebp (1.1.0):
     - libwebp/demux (= 1.1.0)
@@ -62,13 +62,13 @@ PODS:
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
   - MGJRouter (0.10.0)
-  - MJExtension (3.2.1)
-  - MJRefresh (3.4.1)
+  - MJExtension (3.2.2)
+  - MJRefresh (3.5.0)
   - NullSafe (2.0)
-  - PromisesObjC (1.2.8)
-  - SDWebImage (5.7.3):
-    - SDWebImage/Core (= 5.7.3)
-  - SDWebImage/Core (5.7.3)
+  - PromisesObjC (1.2.10)
+  - SDWebImage (5.7.4):
+    - SDWebImage/Core (= 5.7.4)
+  - SDWebImage/Core (5.7.4)
   - SDWebImageFLPlugin (0.4.0):
     - FLAnimatedImage (>= 1.0.11)
     - SDWebImage/Core (~> 5.6)
@@ -79,7 +79,7 @@ PODS:
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SSKeychain (1.4.1)
-  - TZImagePickerController (3.3.1)
+  - TZImagePickerController (3.4.2)
   - WCDB (1.0.7.5):
     - SQLiteRepairKit (~> 1.2.0)
     - WCDBOptimizedSQLCipher (~> 1.2.0)
@@ -148,27 +148,27 @@ SPEC CHECKSUMS:
   AXiOSKit: ce2024f267594c8d96858333c7eaec9b7ccb86d5
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
-  JJException: 6d987840193b7ef59e778d41bca463401a80a79b
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  JJException: 2c21abbd65fb977c0acc191ec2bfbb7a2aa0c540
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   libwebp: 04242ef451672185c1fe41b285a034d2fbda483c
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MGJRouter: 15d94541eb2cc81eff7d577337288feb7ae9575f
-  MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
-  MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
+  MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   NullSafe: 948feba938f03abede5ed3758694a9fe5b3a65ce
-  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
-  SDWebImage: 97351f6582ceca541ea294ba66a1fcb342a331c2
+  PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
+  SDWebImage: 48b88379b798fd1e4298f95bb25d2cdabbf4deb3
   SDWebImageFLPlugin: 6c2295fb1242d44467c6c87dc5db6b0a13228fd8
   SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
-  TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
+  TZImagePickerController: cc0b74d5f01ab4cddcc24dcdfc3c7d68e6261056
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: f109302faffb3e14619b67045b63ccfb1a414ef8
+PODFILE CHECKSUM: 50e607ceb7275ea68ad3d18d4cfcfa701e7b53f7
 
 COCOAPODS: 1.8.4

@@ -12,8 +12,7 @@
 #import <AXiOSKit/AXiOSKit.h>
 @import AssetsLibrary;
 #import <Photos/Photos.h>
-
-#import "UIViewController+AXKit.h"
+#import <AXiOSKit/AXiOSKit.h>
 
 @interface _13WebpViewController ()
 
