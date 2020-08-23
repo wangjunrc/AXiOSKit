@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, AxRequestSerializerType) {
 /// post请求
 @property (nonatomic, readonly, copy) AXNetworkManager *(^post)(NSString *pathOrFullURLString);
 
-/// post请求
+/// delete请求
 @property (nonatomic, readonly, copy) AXNetworkManager *(^delete)(NSString *pathOrFullURLString);
 
 /// 添加参数
