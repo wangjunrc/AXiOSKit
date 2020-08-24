@@ -42,27 +42,6 @@ target 'AXiOSKitExample' do
   pod "Masonry"
   pod "AFNetworking"
   pod "IQKeyboardManager"
-  pod "MJRefresh"
-  pod "NullSafe"
-  pod "MJExtension"
-  pod "MBProgressHUD"
-  pod "DZNEmptyDataSet"
-  #pod "SDCycleScrollView"
-  pod "KVOController"
-  pod "Masonry"
-  #pod "GKPhotoBrowser"
-  pod "Aspects"
-  
-  
-end
-
-#AXiOSKit 依赖
-#target 'AXiOSKit' do
-#  project '../AXiOSKit.xcodeproj'
-#
-#  pod "AFNetworking"
-#
-#  pod "IQKeyboardManager"
 #  pod "MJRefresh"
 #  pod "NullSafe"
 #  pod "MJExtension"
@@ -73,7 +52,28 @@ end
 #  pod "Masonry"
 #  #pod "GKPhotoBrowser"
 #  pod "Aspects"
-#
-#end
+  
+pod 'WechatOpenSDK','~> 1.8.6'
+end
+
+#AXiOSKit 依赖
+target 'AXiOSKit' do
+  project '../AXiOSKit.xcodeproj'
+
+  pod "AFNetworking"
+
+  pod "IQKeyboardManager"
+  pod "MJRefresh"
+  pod "NullSafe"
+  pod "MJExtension"
+  pod "MBProgressHUD"
+  pod "DZNEmptyDataSet"
+  #pod "SDCycleScrollView"
+  pod "KVOController"
+  pod "Masonry"
+  #pod "GKPhotoBrowser"
+  pod "Aspects"
+
+end
 
 

@@ -8,36 +8,44 @@
 
 #import "AppDelegate.h"
 #import "MakeKeyAndVisible.h"
+#import <WechatOpenSDK/WXApi.h>
 
-@interface AppDelegate ()
+#define WXAppId            @"wxb1fbfdf9fe32026b"    //App ID
+
+@interface AppDelegate ()<WXApiDelegate>
 
 @end
 
+
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    if (@available(iOS 13, *)) {
-    } else {
+    
+    
+    //输出微信的log信息
+       [WXApi startLogByLevel:WXLogLevelDetail logBlock:^(NSString * _Nonnull log) {
+           NSLog(@"输出微信 %@", log);
+       }];
+
+       if([WXApi registerApp:WXAppId universalLink:@"https://wwwtest.asiacoat.com/"]){
+           NSLog(@"初始化成功");
+       }
+       
+
+
+    //自检函数
+    [WXApi checkUniversalLinkReady:^(WXULCheckStep step, WXCheckULStepResult* result) {
+        NSLog(@"自检函数 = %@, %u, %@, %@", @(step), result.success, result.errorInfo, result.suggestion);
+    }];
+    
+    
+    
+//    if (@available(iOS 13, *)) {
+//    } else {
         self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];
         [self.window makeKeyAndVisible];
-    }
+//    }
     return YES;
-}
-
-#pragma mark - UISceneSession lifecycle
-
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options  API_AVAILABLE(ios(13.0))
-{
-    // Called when a new scene session is being created.
-    // Use this method to select a configuration to create the new scene with.
-    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
-}
-
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions  API_AVAILABLE(ios(13.0))
-{
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
@@ -66,6 +74,48 @@
         [[NSFileManager defaultManager]removeItemAtURL:fileURL error:NULL];
         //重置分享标识
         [userDefaults setBool:NO forKey:@"has-new-share"];
+    }
+}
+
+
+#pragma mark - 第三方分享、登录回调
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+#pragma mark Universal Link
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray<id<UIUserActivityRestoring>> * __nullable restorableObjects))restorationHandler {
+    
+    return [WXApi handleOpenUniversalLink:userActivity delegate:self];
+}
+
+//注意：微信和QQ回调方法用的是同一个，这里注意判断resp类型来区别分享来源
+- (void)onResp:(id)resp{
+
+    if([resp isKindOfClass:[SendMessageToWXResp class]]){//微信回调
+        
+        SendMessageToWXResp *response = (SendMessageToWXResp *)resp;
+
+        if(response.errCode == WXSuccess){
+            //目前分享回调只会走成功
+            NSLog(@"分享完成");
+        }
+    }else if([resp isKindOfClass:[SendAuthResp class]]){//判断是否为授权登录类
+
+        SendAuthResp *req = (SendAuthResp *)resp;
+        if([req.state isEqualToString:@"wx_oauth_authorization_state"]){//微信授权成功
+            NSLog(@"微信登录完成，code：%@", req.code);//获取到第一步code
+        }
+    }else if ([resp isKindOfClass:[WXLaunchMiniProgramResp class]]){
+        
+        WXLaunchMiniProgramResp *req = (WXLaunchMiniProgramResp *)resp;
+        NSLog(@"%@", req.extMsg);// 对应JsApi navigateBackApplication中的extraData字段数据
     }
 }
 

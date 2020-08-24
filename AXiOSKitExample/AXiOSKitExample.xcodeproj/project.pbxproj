@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2100F46424F404120057DD66 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2100F46324F404120057DD66 /* libWeChatSDK.a */; };
+		2100F46724F405640057DD66 /* _17OtherShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100F46624F405640057DD66 /* _17OtherShareViewController.m */; };
+		2100F46A24F40A3D0057DD66 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2100F46924F40A3D0057DD66 /* ExternalAccessory.framework */; };
 		215B07A924F1242C00535742 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 215B07A824F1242C00535742 /* RouterManager.m */; };
 		21AF7EAD24F24B42003311AF /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */; };
 		21D670BD2474E5D100890F8F /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D670BC2474E5D100890F8F /* ShareViewController.m */; };
@@ -103,6 +106,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2100F46324F404120057DD66 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = Pods/WechatOpenSDK/OpenSDK1.8.7.1/libWeChatSDK.a; sourceTree = "<group>"; };
+		2100F46524F405640057DD66 /* _17OtherShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _17OtherShareViewController.h; sourceTree = "<group>"; };
+		2100F46624F405640057DD66 /* _17OtherShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _17OtherShareViewController.m; sourceTree = "<group>"; };
+		2100F46824F40A3D0057DD66 /* AXiOSKitExampleRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AXiOSKitExampleRelease.entitlements; sourceTree = "<group>"; };
+		2100F46924F40A3D0057DD66 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		2105E7062462EA640076A65B /* AXiOSKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		214FF8642476192A00EF0C29 /* 分享.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "分享.entitlements"; sourceTree = "<group>"; };
 		215B079C24F11A9000535742 /* AxGenerator.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxGenerator.xcconfig; sourceTree = "<group>"; };
@@ -230,6 +238,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2100F46A24F40A3D0057DD66 /* ExternalAccessory.framework in Frameworks */,
+				2100F46424F404120057DD66 /* libWeChatSDK.a in Frameworks */,
 				EFB53CC9DAEACE15EEBA0F67 /* Pods_AXiOSKitExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +307,7 @@
 		21E549F524D98D140038F4C0 /* AXiOSKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				2100F46824F40A3D0057DD66 /* AXiOSKitExampleRelease.entitlements */,
 				21E54A1F24D98D150038F4C0 /* 123.jpg */,
 				21E54A1B24D98D150038F4C0 /* 1234.webp */,
 				21E54A0324D98D140038F4C0 /* AppDelegate.h */,
@@ -427,6 +438,8 @@
 				21E54A5524D98D150038F4C0 /* _15UIMenuController.m */,
 				21E54A2224D98D150038F4C0 /* _16KeyChainViewController.h */,
 				21E54A4424D98D150038F4C0 /* _16KeyChainViewController.m */,
+				2100F46524F405640057DD66 /* _17OtherShareViewController.h */,
+				2100F46624F405640057DD66 /* _17OtherShareViewController.m */,
 				21E54A2824D98D150038F4C0 /* AANavigationController.h */,
 				21E54A3E24D98D150038F4C0 /* AANavigationController.m */,
 				21E54A3724D98D150038F4C0 /* AAViewController.h */,
@@ -501,6 +514,8 @@
 		F2C213425737F5241E0FABA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2100F46924F40A3D0057DD66 /* ExternalAccessory.framework */,
+				2100F46324F404120057DD66 /* libWeChatSDK.a */,
 				ED2AB1BCF4154D76F31004C5 /* Pods_AXiOSKitExample.framework */,
 			);
 			name = Frameworks;
@@ -684,6 +699,7 @@
 				21E54AA324D98D150038F4C0 /* _01ViewController.m in Sources */,
 				21E54A7524D98D150038F4C0 /* TestObj.m in Sources */,
 				21E54A7924D98D150038F4C0 /* ChatViewController.m in Sources */,
+				2100F46724F405640057DD66 /* _17OtherShareViewController.m in Sources */,
 				21E54A9A24D98D150038F4C0 /* _16KeyChainViewController.m in Sources */,
 				21E54A9224D98D150038F4C0 /* _00TableViewController.m in Sources */,
 				21E54A6F24D98D150038F4C0 /* fishhook.c in Sources */,
@@ -887,11 +903,98 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/WechatOpenSDK/OpenSDK1.8.7.1";
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ax.kit;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3.0\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AXiOSKit\"",
+					"-framework",
+					"\"Aspects\"",
+					"-framework",
+					"\"AvoidCrash\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"DZNEmptyDataSet\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"FLAnimatedImage\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JJException\"",
+					"-framework",
+					"\"KVOController\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MGJRouter\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"NullSafe\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SDWebImageFLPlugin\"",
+					"-framework",
+					"\"SDWebImageWebPCoder\"",
+					"-framework",
+					"\"SSKeychain\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SocketRocket\"",
+					"-framework",
+					"\"TZImagePickerController\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"WCDB\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"libwebp\"",
+					"-framework",
+					"\"sqlcipher\"",
+					"-framework",
+					"\"sqliterk\"",
+					"\"-lWeChatSDK\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/libwebp/src",
+				);
 			};
 			name = Debug;
 		};
@@ -900,6 +1003,7 @@
 			baseConfigurationReference = 3921CF6BEA9759A6E192CBE2 /* Pods-AXiOSKitExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AXiOSKitExample/AXiOSKitExampleRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
@@ -909,11 +1013,98 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/WechatOpenSDK/OpenSDK1.8.7.1";
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ax.kit;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3.0\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AXiOSKit\"",
+					"-framework",
+					"\"Aspects\"",
+					"-framework",
+					"\"AvoidCrash\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"DZNEmptyDataSet\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"FLAnimatedImage\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JJException\"",
+					"-framework",
+					"\"KVOController\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MGJRouter\"",
+					"-framework",
+					"\"MJExtension\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"NullSafe\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SDWebImageFLPlugin\"",
+					"-framework",
+					"\"SDWebImageWebPCoder\"",
+					"-framework",
+					"\"SSKeychain\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SocketRocket\"",
+					"-framework",
+					"\"TZImagePickerController\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"WCDB\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"libwebp\"",
+					"-framework",
+					"\"sqlcipher\"",
+					"-framework",
+					"\"sqliterk\"",
+					"\"-lWeChatSDK\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/libwebp/src",
+				);
 			};
 			name = Release;
 		};
@@ -929,7 +1120,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ax.kit.share;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo.share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -948,7 +1139,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ax.kit.share;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo.share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

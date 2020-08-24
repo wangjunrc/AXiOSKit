@@ -30,7 +30,7 @@
 #import <objc/message.h>
 #import <objc/runtime.h>
 #import "RouterManager.h"
-
+#import "_17OtherShareViewController.h"
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -345,6 +345,16 @@ void mySLog(NSString *format, ...) {
                [self.navigationController pushViewController:vc animated:YES];
              },
            },
+      
+      @{
+                  @"index" : @17,
+                  @"title" : @"微信分享",
+                  @"action" : ^{
+                    _17OtherShareViewController *vc = [[_17OtherShareViewController alloc] init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                  },
+                },
+      
       
 
     ];

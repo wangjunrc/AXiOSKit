@@ -1567,6 +1567,11 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
+## WechatOpenSDK
+
+Copyright 2020 tencent.com. All rights reserved.
+
+
 ## libwebp
 
 Copyright (c) 2010, Google Inc. All rights reserved.
