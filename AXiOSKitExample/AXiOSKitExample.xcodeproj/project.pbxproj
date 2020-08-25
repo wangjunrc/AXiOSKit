@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2100F46424F404120057DD66 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2100F46324F404120057DD66 /* libWeChatSDK.a */; };
 		2100F46724F405640057DD66 /* _17OtherShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100F46624F405640057DD66 /* _17OtherShareViewController.m */; };
 		2100F46A24F40A3D0057DD66 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2100F46924F40A3D0057DD66 /* ExternalAccessory.framework */; };
 		215B07A924F1242C00535742 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 215B07A824F1242C00535742 /* RouterManager.m */; };
+		21A6F66F24F50E1800E85AAC /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A6F66E24F50E1800E85AAC /* libWeChatSDK.a */; };
 		21AF7EAD24F24B42003311AF /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */; };
 		21D670BD2474E5D100890F8F /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D670BC2474E5D100890F8F /* ShareViewController.m */; };
 		21D670C02474E5D100890F8F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D670BE2474E5D100890F8F /* MainInterface.storyboard */; };
@@ -118,6 +118,7 @@
 		215B079E24F11B6200535742 /* AxRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxRelease.xcconfig; sourceTree = "<group>"; };
 		215B07A724F1242C00535742 /* RouterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouterManager.h; sourceTree = "<group>"; };
 		215B07A824F1242C00535742 /* RouterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouterManager.m; sourceTree = "<group>"; };
+		21A6F66E24F50E1800E85AAC /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = Pods/WechatOpenSDK/OpenSDK1.7.7/libWeChatSDK.a; sourceTree = "<group>"; };
 		21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeKeyAndVisible.m; sourceTree = "<group>"; };
 		21AF7EAC24F24B42003311AF /* MakeKeyAndVisible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeKeyAndVisible.h; sourceTree = "<group>"; };
 		21D670B92474E5D100890F8F /* 分享.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "分享.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,8 +239,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A6F66F24F50E1800E85AAC /* libWeChatSDK.a in Frameworks */,
 				2100F46A24F40A3D0057DD66 /* ExternalAccessory.framework in Frameworks */,
-				2100F46424F404120057DD66 /* libWeChatSDK.a in Frameworks */,
 				EFB53CC9DAEACE15EEBA0F67 /* Pods_AXiOSKitExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +515,7 @@
 		F2C213425737F5241E0FABA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21A6F66E24F50E1800E85AAC /* libWeChatSDK.a */,
 				2100F46924F40A3D0057DD66 /* ExternalAccessory.framework */,
 				2100F46324F404120057DD66 /* libWeChatSDK.a */,
 				ED2AB1BCF4154D76F31004C5 /* Pods_AXiOSKitExample.framework */,
@@ -903,7 +905,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/WechatOpenSDK/OpenSDK1.8.7.1";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/WechatOpenSDK/OpenSDK1.7.7";
 				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1013,7 +1015,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/WechatOpenSDK/OpenSDK1.8.7.1";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Pods/WechatOpenSDK/OpenSDK1.7.7";
 				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",

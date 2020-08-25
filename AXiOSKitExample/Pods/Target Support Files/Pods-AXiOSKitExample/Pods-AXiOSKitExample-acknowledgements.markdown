@@ -1569,7 +1569,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## WechatOpenSDK
 
-Copyright 2020 tencent.com. All rights reserved.
+Copyright 2017 tencent.com. All rights reserved.
 
 
 ## libwebp

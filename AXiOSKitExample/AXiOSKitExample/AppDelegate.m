@@ -21,22 +21,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     
-    //输出微信的log信息
-    [WXApi startLogByLevel:WXLogLevelDetail logBlock:^(NSString * _Nonnull log) {
-        NSLog(@"输出微信 %@", log);
-    }];
+//    //输出微信的log信息
+//    [WXApi startLogByLevel:WXLogLevelDetail logBlock:^(NSString * _Nonnull log) {
+//        NSLog(@"输出微信 %@", log);
+//    }];
+//
+//    if([WXApi registerApp:WXAppId universalLink:@"https://wwwtest.asiacoat.com/"]){
+//        NSLog(@"初始化成功");
+//    }
+//
+//
+//
+//    //自检函数
+//    [WXApi checkUniversalLinkReady:^(WXULCheckStep step, WXCheckULStepResult* result) {
+//        NSLog(@"自检函数 = %@, %u, %@, %@", @(step), result.success, result.errorInfo, result.suggestion);
+//    }];
     
-    if([WXApi registerApp:WXAppId universalLink:@"https://wwwtest.asiacoat.com/"]){
-        NSLog(@"初始化成功");
-    }
-    
-    
-    
-    //自检函数
-    [WXApi checkUniversalLinkReady:^(WXULCheckStep step, WXCheckULStepResult* result) {
-        NSLog(@"自检函数 = %@, %u, %@, %@", @(step), result.success, result.errorInfo, result.suggestion);
-    }];
-    
+    [WXApi registerApp:WXAppId];
     
     
     //    if (@available(iOS 13, *)) {
@@ -90,10 +91,10 @@
 }
 
 #pragma mark Universal Link
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray<id<UIUserActivityRestoring>> * __nullable restorableObjects))restorationHandler {
-    
-    return [WXApi handleOpenUniversalLink:userActivity delegate:self];
-}
+//- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray<id<UIUserActivityRestoring>> * __nullable restorableObjects))restorationHandler {
+//    
+//    return [WXApi handleOpenUniversalLink:userActivity delegate:self];
+//}
 
 //注意：微信和QQ回调方法用的是同一个，这里注意判断resp类型来区别分享来源
 - (void)onResp:(id)resp{
@@ -112,11 +113,12 @@
         if([req.state isEqualToString:@"wx_oauth_authorization_state"]){//微信授权成功
             NSLog(@"微信登录完成，code：%@", req.code);//获取到第一步code
         }
-    }else if ([resp isKindOfClass:[WXLaunchMiniProgramResp class]]){
-        
-        WXLaunchMiniProgramResp *req = (WXLaunchMiniProgramResp *)resp;
-        NSLog(@"%@", req.extMsg);// 对应JsApi navigateBackApplication中的extraData字段数据
     }
+//    else if ([resp isKindOfClass:[WXLaunchMiniProgramResp class]]){
+//        
+//        WXLaunchMiniProgramResp *req = (WXLaunchMiniProgramResp *)resp;
+//        NSLog(@"%@", req.extMsg);// 对应JsApi navigateBackApplication中的extraData字段数据
+//    }
 }
 
 @end

@@ -42,7 +42,7 @@ target 'AXiOSKitExample' do
   pod "Masonry"
   pod "AFNetworking"
   pod "IQKeyboardManager"
-  pod 'WechatOpenSDK'
+  pod 'WechatOpenSDK','1.7.7'
 #  pod "MJRefresh"
 #  pod "NullSafe"
 #  pod "MJExtension"

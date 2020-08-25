@@ -61,10 +61,10 @@
     req.bText = YES;
     req.text = @"分享的内容";
     req.scene = WXSceneSession;
-      [WXApi sendReq:req completion:^(BOOL success) {
-            NSLog(@"唤起微信:%@", success ? @"成功" : @"失败");
-        }];
-    
+//      [WXApi sendReq:req completion:^(BOOL success) {
+//            NSLog(@"唤起微信:%@", success ? @"成功" : @"失败");
+//        }];
+    [WXApi sendReq:req];
 }
 
 - (void)authAction:(id)sender{
@@ -74,8 +74,9 @@
     req.scope = @"snsapi_userinfo";//授权作用域：获取用户个人信息
     
     //发送请求
-    [WXApi sendReq:req completion:^(BOOL success) {
-        NSLog(@"唤起微信:%@", success ? @"成功" : @"失败");
-    }];
+//    [WXApi sendReq:req completion:^(BOOL success) {
+//        NSLog(@"唤起微信:%@", success ? @"成功" : @"失败");
+//    }];
+    [WXApi sendReq:req];
 }
 @end
