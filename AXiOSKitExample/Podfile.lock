@@ -109,7 +109,7 @@ DEPENDENCIES:
   - SSKeychain
   - TZImagePickerController
   - WCDB
-  - WechatOpenSDK (~> 1.8.6)
+  - WechatOpenSDK
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -173,6 +173,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
 
-PODFILE CHECKSUM: df4f10af1e1de5d705e5b2029e338d5d1f04909b
+PODFILE CHECKSUM: 11690cc44cf641177455e177ef3140c579712919
 
 COCOAPODS: 1.8.4

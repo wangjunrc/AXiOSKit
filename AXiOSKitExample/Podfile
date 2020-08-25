@@ -42,6 +42,7 @@ target 'AXiOSKitExample' do
   pod "Masonry"
   pod "AFNetworking"
   pod "IQKeyboardManager"
+  pod 'WechatOpenSDK'
 #  pod "MJRefresh"
 #  pod "NullSafe"
 #  pod "MJExtension"
@@ -52,8 +53,6 @@ target 'AXiOSKitExample' do
 #  pod "Masonry"
 #  #pod "GKPhotoBrowser"
 #  pod "Aspects"
-  
-pod 'WechatOpenSDK','~> 1.8.6'
 end
 
 #AXiOSKit 依赖

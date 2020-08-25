@@ -22,16 +22,16 @@
     
     
     //输出微信的log信息
-       [WXApi startLogByLevel:WXLogLevelDetail logBlock:^(NSString * _Nonnull log) {
-           NSLog(@"输出微信 %@", log);
-       }];
-
-       if([WXApi registerApp:WXAppId universalLink:@"https://wwwtest.asiacoat.com/"]){
-           NSLog(@"初始化成功");
-       }
-       
-
-
+    [WXApi startLogByLevel:WXLogLevelDetail logBlock:^(NSString * _Nonnull log) {
+        NSLog(@"输出微信 %@", log);
+    }];
+    
+    if([WXApi registerApp:WXAppId universalLink:@"https://wwwtest.asiacoat.com/"]){
+        NSLog(@"初始化成功");
+    }
+    
+    
+    
     //自检函数
     [WXApi checkUniversalLinkReady:^(WXULCheckStep step, WXCheckULStepResult* result) {
         NSLog(@"自检函数 = %@, %u, %@, %@", @(step), result.success, result.errorInfo, result.suggestion);
@@ -39,12 +39,12 @@
     
     
     
-//    if (@available(iOS 13, *)) {
-//    } else {
-        self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];
-        [self.window makeKeyAndVisible];
-//    }
+    //    if (@available(iOS 13, *)) {
+    //    } else {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];
+    [self.window makeKeyAndVisible];
+    //    }
     return YES;
 }
 
@@ -97,17 +97,17 @@
 
 //注意：微信和QQ回调方法用的是同一个，这里注意判断resp类型来区别分享来源
 - (void)onResp:(id)resp{
-
+    
     if([resp isKindOfClass:[SendMessageToWXResp class]]){//微信回调
         
         SendMessageToWXResp *response = (SendMessageToWXResp *)resp;
-
+        
         if(response.errCode == WXSuccess){
             //目前分享回调只会走成功
             NSLog(@"分享完成");
         }
     }else if([resp isKindOfClass:[SendAuthResp class]]){//判断是否为授权登录类
-
+        
         SendAuthResp *req = (SendAuthResp *)resp;
         if([req.state isEqualToString:@"wx_oauth_authorization_state"]){//微信授权成功
             NSLog(@"微信登录完成，code：%@", req.code);//获取到第一步code
