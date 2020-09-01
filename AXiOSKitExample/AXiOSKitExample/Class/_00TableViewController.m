@@ -355,6 +355,20 @@ void mySLog(NSString *format, ...) {
                   },
                 },
       
+      @{
+                     @"index" : @18,
+                     @"title" : @"退出",
+                     @"action" : ^{
+                         
+//                         exit和abort都是终止程序执行退出的处理函数，其中exit是正常退出，abort是异常退出，退出时会输出错误信息，然后再调用exit退出。
+//
+//                         用户体验来说，exit就像是程序崩溃了，直接退出程序。
+//                         abort就像是点击了home键，有过渡动画，一般我们在使用的时候会选择abort();
+//                         abort();
+
+                         exit(0);
+                     },
+                   },
       
 
     ];

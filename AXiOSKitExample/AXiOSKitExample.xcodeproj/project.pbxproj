@@ -308,7 +308,6 @@
 		21E549F524D98D140038F4C0 /* AXiOSKitExample */ = {
 			isa = PBXGroup;
 			children = (
-				2100F46824F40A3D0057DD66 /* AXiOSKitExampleRelease.entitlements */,
 				21E54A1F24D98D150038F4C0 /* 123.jpg */,
 				21E54A1B24D98D150038F4C0 /* 1234.webp */,
 				21E54A0324D98D140038F4C0 /* AppDelegate.h */,
@@ -316,6 +315,7 @@
 				21E54A1524D98D150038F4C0 /* Assets.xcassets */,
 				215B079D24F11B5600535742 /* AxDebug.xcconfig */,
 				215B079C24F11A9000535742 /* AxGenerator.xcconfig */,
+				2100F46824F40A3D0057DD66 /* AXiOSKitExampleRelease.entitlements */,
 				215B079E24F11B6200535742 /* AxRelease.xcconfig */,
 				21E54A0B24D98D150038F4C0 /* Chat */,
 				21E54A2124D98D150038F4C0 /* Class */,
