@@ -17,9 +17,9 @@
 - (AXHelper *(^)(void(^)(void)))isiPhone {
 
     __weak typeof(self) weakSelf = self;
-    return ^AXHelper *(void (^block)(void)){
+    return ^AXHelper *(void (^block)(void)) {
         __strong typeof(weakSelf) self = weakSelf;
-        if( UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad ){
+        if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
             if (block) {
                 block();
             }
@@ -34,10 +34,10 @@
 - (AXHelper *(^)(void(^)(void)))isiPad {
 
     __weak typeof(self) weakSelf = self;
-    return ^AXHelper *(void (^block)(void)){
+    return ^AXHelper *(void (^block)(void)) {
         __strong typeof(weakSelf) self = weakSelf;
 
-        if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ){
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             if (block) {
                 block();
             }
@@ -53,7 +53,7 @@
 - (AXHelper *(^)(void(^)(void)))isDebug {
 
     __weak typeof(self) weakSelf = self;
-    return ^AXHelper *(void (^block)(void)){
+    return ^AXHelper *(void (^block)(void)) {
         __strong typeof(weakSelf) self = weakSelf;
 #ifdef DEBUG
         if (block) {
@@ -71,7 +71,7 @@
 - (AXHelper *(^)(void(^)(void)))isRelease {
 
     __weak typeof(self) weakSelf = self;
-    return ^AXHelper *(void (^block)(void)){
+    return ^AXHelper *(void (^block)(void)) {
         __strong typeof(weakSelf) self = weakSelf;
 
 #ifdef DEBUG

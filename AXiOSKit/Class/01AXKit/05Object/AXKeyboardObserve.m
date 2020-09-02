@@ -11,23 +11,22 @@
 
 @interface AXKeyboardObserve ()
 
-@property (nonatomic, weak) UIView* editView;
+@property(nonatomic, weak) UIView *editView;
 
-@property (nonatomic, strong) UITapGestureRecognizer* dismissTap;
+@property(nonatomic, strong) UITapGestureRecognizer *dismissTap;
 
 @end
 
 @implementation AXKeyboardObserve
 
-- (id)initWithOwner:(UIView*)editView
-{
+- (id)initWithOwner:(UIView *)editView {
     self = [self init];
     if (self != nil) {
         _editView = editView;
         _offset = 20;
 
         if ([_editView isKindOfClass:[UITextField class]]) {
-            UITextField* textField = (UITextField*)_editView;
+            UITextField *textField = (UITextField *) _editView;
             [textField addTarget:self action:@selector(textFieldDidBeginEditing:) forControlEvents:UIControlEventEditingDidBegin];
             [textField addTarget:self action:@selector(textFieldDidEndEditing:) forControlEvents:UIControlEventEditingDidEnd];
         }
@@ -36,15 +35,13 @@
     return self;
 }
 
-- (void)dismissTapAction:(UITapGestureRecognizer*)tap
-{
+- (void)dismissTapAction:(UITapGestureRecognizer *)tap {
     if (self.editView) {
         [self.editView endEditing:YES];
     }
 }
 
-- (void)addObserver
-{
+- (void)addObserver {
     //添加键盘事件监听
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -56,8 +53,7 @@
                                                object:nil];
 }
 
-- (void)removeObserver
-{
+- (void)removeObserver {
     //移除键盘事件监听
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
@@ -70,11 +66,11 @@
 }
 
 #pragma - mark 获取键盘高度
-- (UIView*)__findKeyBoard
-{
-    UIView* keyboardView = nil;
-    NSArray* windows = [[UIApplication sharedApplication] windows];
-    for (UIWindow* window in [windows reverseObjectEnumerator]) {
+
+- (UIView *)__findKeyBoard {
+    UIView *keyboardView = nil;
+    NSArray *windows = [[UIApplication sharedApplication] windows];
+    for (UIWindow *window in [windows reverseObjectEnumerator]) {
         //逆序效率更高，因为键盘总在上方
         keyboardView = [self __findKeyBoardInView:window];
         if (keyboardView) {
@@ -84,13 +80,12 @@
     return nil;
 }
 
-- (UIView*)__findKeyBoardInView:(UIView*)view
-{
-    for (UIView* subView in [view subviews]) {
+- (UIView *)__findKeyBoardInView:(UIView *)view {
+    for (UIView *subView in [view subviews]) {
         if (strstr(object_getClassName(subView), "UIKeyboard")) {
             return subView;
         } else {
-            UIView* tempView = [self __findKeyBoardInView:subView];
+            UIView *tempView = [self __findKeyBoardInView:subView];
             if (tempView) {
                 return tempView;
             }
@@ -100,29 +95,28 @@
 }
 
 #pragma - mark 监听canBecomeFirstResponder
-- (void)textFieldDidBeginEditing:(UITextField*)textField
-{
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
     [self addObserver];
     //编辑框键盘弹出状态处理(多个键盘间切换处理)
     [self movingView];
 }
 
-- (void)textFieldDidEndEditing:(UITextField*)textField
-{
+- (void)textFieldDidEndEditing:(UITextField *)textField {
     [self removeObserver];
 }
 
 #pragma - mark textField编辑监听
-- (void)textFiledEditChanged:(NSNotification*)noti
-{
+
+- (void)textFiledEditChanged:(NSNotification *)noti {
 }
 
 #pragma - mark 监听键盘
-- (void)handleKeyboardWillShow:(NSNotification*)noti
-{
+
+- (void)handleKeyboardWillShow:(NSNotification *)noti {
     if (self.containerView != nil && [self.editView isFirstResponder]) {
-        NSDictionary* userInfo = [noti userInfo];
-        NSValue* aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+        NSDictionary *userInfo = [noti userInfo];
+        NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
         CGFloat keyboardHeight = [aValue CGRectValue].size.height;
 
         [self movingView:keyboardHeight];
@@ -132,8 +126,7 @@
     }
 }
 
-- (void)handleKeyboardWillHide:(NSNotification*)noti
-{
+- (void)handleKeyboardWillHide:(NSNotification *)noti {
     if (self.containerView != nil && [self.editView isFirstResponder]) {
         if (!CGAffineTransformIsIdentity(self.containerView.transform)) {
             [UIView beginAnimations:nil context:nil];
@@ -146,21 +139,18 @@
     }
 }
 
-- (void)handleKeyboardWillChange:(NSNotification*)noti
-{
+- (void)handleKeyboardWillChange:(NSNotification *)noti {
     [self handleKeyboardWillShow:noti];
 }
 
-- (void)movingView
-{
-    UIView* keyboardView = [self __findKeyBoard];
+- (void)movingView {
+    UIView *keyboardView = [self __findKeyBoard];
     if (self.containerView != nil && keyboardView != nil) {
         [self movingView:CGRectGetHeight(keyboardView.frame)];
     }
 }
 
-- (void)movingView:(CGFloat)keyboardHeight
-{
+- (void)movingView:(CGFloat)keyboardHeight {
     CGRect rect = [self.editView convertRect:self.editView.bounds toView:self.editView.window];
     CGFloat h = rect.origin.y + rect.size.height - (self.editView.window.bounds.size.height - keyboardHeight) + _offset;
     if (h > 0) {

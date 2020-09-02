@@ -15,12 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  键盘弹出需要上移的view
  */
-@property (nonatomic, weak) UIView *containerView;
+@property(nonatomic, weak) UIView *containerView;
 
 /**
  偏移位置
  */
-@property (nonatomic, assign) CGFloat offset;
+@property(nonatomic, assign) CGFloat offset;
 
 /**
  配置键盘移动

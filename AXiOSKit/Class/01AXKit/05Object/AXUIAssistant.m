@@ -11,8 +11,8 @@
 
 CGFloat ax_screen_scale(void) {
     CGFloat scale = ([UIScreen instancesRespondToSelector:@selector(scale)]
-                     ? [UIScreen.mainScreen scale]
-                     : (1.0f));
+            ? [UIScreen.mainScreen scale]
+            : (1.0f));
     return scale;
 }
 
@@ -84,7 +84,7 @@ UIEdgeInsets ax_screen_padding_insets(void) {
     if ([UIView instancesRespondToSelector:@selector(safeAreaInsets)]) {
         if (@available(iOS 11.0, *)) {
             UIEdgeInsets insets =
-            UIApplication.sharedApplication.delegate.window.safeAreaInsets;
+                    UIApplication.sharedApplication.delegate.window.safeAreaInsets;
             if (insets.top <= 40.0f) {
                 insets.top = 0.0f;
             }
@@ -115,34 +115,34 @@ CGFloat ax_screen_adaptive_float(CGFloat floatValue) {
 }
 
 CGFloat ax_screen_adaptive_float_with_padding(CGFloat floatValue,
-                                              CGFloat padding) {
+        CGFloat padding) {
     CGFloat currentScreenWidth =
-    MIN(ax_screen_width(), ax_screen_height()) - padding;
+            MIN(ax_screen_width(), ax_screen_height()) - padding;
     CGFloat standardScreenWidth = 375.0f - padding;
     return floorf(floatValue / standardScreenWidth * currentScreenWidth);
 }
 
 CGPoint ax_screen_adaptive_point(CGPoint pointValue) {
     return CGPointMake(ax_screen_adaptive_float(pointValue.x),
-                       ax_screen_adaptive_float(pointValue.y));
+            ax_screen_adaptive_float(pointValue.y));
 }
 
 CGSize ax_screen_adaptive_size(CGSize sizeValue) {
     return CGSizeMake(ax_screen_adaptive_float(sizeValue.width),
-                      ax_screen_adaptive_float(sizeValue.height));
+            ax_screen_adaptive_float(sizeValue.height));
 }
 
 CGRect ax_screen_adaptive_rect(CGRect rectValue) {
     return CGRectMake(ax_screen_adaptive_float(rectValue.origin.x),
-                      ax_screen_adaptive_float(rectValue.origin.y),
-                      ax_screen_adaptive_float(rectValue.size.width),
-                      ax_screen_adaptive_float(rectValue.size.height));
+            ax_screen_adaptive_float(rectValue.origin.y),
+            ax_screen_adaptive_float(rectValue.size.width),
+            ax_screen_adaptive_float(rectValue.size.height));
 }
 
 CGFloat ax_screen_vertical_adaptive_float_with_padding(CGFloat floatValue,
-                                                       CGFloat padding) {
+        CGFloat padding) {
     CGFloat currentScreenHeight =
-    MAX(ax_screen_width(), ax_screen_height()) - padding;
+            MAX(ax_screen_width(), ax_screen_height()) - padding;
     CGFloat standardScreenHeight = 667.0f - padding;
     return floorf(floatValue / standardScreenHeight * currentScreenHeight);
 }
@@ -157,9 +157,9 @@ UIViewController *ax_currentViewController(void) {
 /**
  * app代理
  */
-id<UIApplicationDelegate> ax_mainAppDelegate(void) {
+id <UIApplicationDelegate> ax_mainAppDelegate(void) {
     return (
-            (id<UIApplicationDelegate>)([UIApplication sharedApplication].delegate));
+            (id <UIApplicationDelegate>) ([UIApplication sharedApplication].delegate));
 }
 
 /**
@@ -180,7 +180,7 @@ UIViewController *ax_rootViewController_appDelegate(void) {
  keyWindow
  */
 UIWindow *ax_keyWindow(void) {
-    
+
     //    UIApplication *app = [UIApplication sharedApplication];
     //    if ([app.delegate respondsToSelector:@selector(window)]) {
     //        return app.delegate.window;
@@ -191,7 +191,7 @@ UIWindow *ax_keyWindow(void) {
     //
     //        return app.keyWindow;
     //    }
-    
+
     /// 这个方法 <UIWindowSceneDelegate> 也能获得
     for (UIWindow *window in [UIApplication sharedApplication].windows) {
         if (window.isKeyWindow) {
@@ -203,7 +203,9 @@ UIWindow *ax_keyWindow(void) {
 }
 
 /**键盘背景色透明 alpha=0 */
-void ax_keyboard_bg_alpha_zero(void) { ax_keyboard_bg_alpha(0); }
+void ax_keyboard_bg_alpha_zero(void) {
+    ax_keyboard_bg_alpha(0);
+}
 
 /**键盘背景色透明*/
 void ax_keyboard_bg_alpha(CGFloat alpha) {
@@ -212,8 +214,8 @@ void ax_keyboard_bg_alpha(CGFloat alpha) {
 
 /**键盘背景UIInputSetHostView*/
 UIView *ax_keyboard_host_view(void) {
-    
-    UIView *peripheralHostView =  UIApplication.sharedApplication.windows.lastObject.subviews.lastObject;
+
+    UIView *peripheralHostView = UIApplication.sharedApplication.windows.lastObject.subviews.lastObject;
     UIView *InputSetHostView;
     if ([peripheralHostView isKindOfClass:NSClassFromString(@"UIInputSetContainerView")]) {
         for (UIView *view in peripheralHostView.subviews) {

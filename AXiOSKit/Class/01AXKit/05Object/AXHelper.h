@@ -21,23 +21,23 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  iPhone 模式回调
  */
-@property (nonatomic, copy, readonly) AXHelper *(^isiPhone)(void(^)(void));
+@property(nonatomic, copy, readonly) AXHelper *(^isiPhone)(void(^)(void));
 
 /**
  iPad 模式回调
  */
-@property (nonatomic, copy, readonly) AXHelper *(^isiPad)(void(^)(void));
+@property(nonatomic, copy, readonly) AXHelper *(^isiPad)(void(^)(void));
 
 
 /**
  Debug 模式回调
  */
-@property (nonatomic, copy, readonly) AXHelper *(^isDebug)(void(^)(void));
+@property(nonatomic, copy, readonly) AXHelper *(^isDebug)(void(^)(void));
 
 /**
  Release 模式回调
  */
-@property (nonatomic, copy, readonly) AXHelper *(^isRelease)(void(^)(void));
+@property(nonatomic, copy, readonly) AXHelper *(^isRelease)(void(^)(void));
 
 
 ///**

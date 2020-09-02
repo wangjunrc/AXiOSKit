@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
+
 /**屏宽比*/
 extern CGFloat ax_screen_scale(void);
 
@@ -39,6 +41,7 @@ extern CGFloat ax_navigation_and_status_height(void);
 
 /**状态态栏高 20或者44*/
 extern CGFloat ax_status_bar_height(void);
+
 /**导航栏高 44*/
 extern CGFloat ax_navigation_bar_height(void);
 
@@ -79,7 +82,7 @@ UIViewController *ax_currentViewController(void);
 /**
  * app代理
  */
-id<UIApplicationDelegate> ax_mainAppDelegate(void);
+id <UIApplicationDelegate> ax_mainAppDelegate(void);
 
 /**
  * app根控制器
@@ -128,4 +131,5 @@ void ax_keyboard_bg_alpha(CGFloat alpha);
 
 /**键盘背景UIInputSetHostView*/
 UIView *ax_keyboard_host_view(void);
+
 NS_ASSUME_NONNULL_END
