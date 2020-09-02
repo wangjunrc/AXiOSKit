@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head lang="zh">
-        <meta charset="UTF-8"/>
-        <title>扫描结果</title>
-    </head>
-    <body>
-        
-       <script type="text/javascript">
-           function getpara()
-           {
-               var url=document.URL;
-               var para="";
-               if(url.lastIndexOf("?")>0){
-                   para=url.substring(url.lastIndexOf("?")+1,url.length);
-                   var arr=para.split("&");
-                   para="";
-                   for(var i=0;i<arr.length;i++)
-                   {
-                       para+="第"+(i+1)+"个参数名:"+arr[i].split("=")[0];
-                       para+=" 值:"+arr[i].split("=")[1]+"<br>";
-                   }
-                   document.write(para);
-               }
-               else
-               {
-                   document.write("没有参数!");
-               }
-           }
-       
-       getpara();//执行函数
-           </script>
-    </body>
-    
-    
+<head lang="zh">
+    <meta charset="UTF-8"/>
+    <title>扫描结果</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    function getpara() {
+        var url = document.URL;
+        var para = "";
+        if (url.lastIndexOf("?") > 0) {
+            para = url.substring(url.lastIndexOf("?") + 1, url.length);
+            var arr = para.split("&");
+            para = "";
+            for (var i = 0; i < arr.length; i++) {
+                para += "第" + (i + 1) + "个参数名:" + arr[i].split("=")[0];
+                para += " 值:" + arr[i].split("=")[1] + "<br>";
+            }
+            document.write(para);
+        } else {
+            document.write("没有参数!");
+        }
+    }
+
+    getpara();//执行函数
+</script>
+</body>
+
+
 </html>
