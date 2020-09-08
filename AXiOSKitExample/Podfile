@@ -38,6 +38,8 @@ target 'AXiOSKitExample' do
   pod 'SSKeychain'
   #蘑菇街团队提供了MGJRouter路由库
   pod 'MGJRouter'
+  #https://github.com/casatwy/CTMediator
+#  pod 'CTMediators'
   
   pod "Masonry"
   pod "AFNetworking"

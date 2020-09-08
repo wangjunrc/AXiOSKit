@@ -29,6 +29,40 @@
     [btn2 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [btn2 addTarget:self action:@selector(authAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn2];
+    
+    
+    UILabel *lb = [[UILabel alloc]initWithFrame:CGRectMake(0, 200, 320, 70)];
+    lb.text = @"闪动加载";
+    lb.textColor = [UIColor lightGrayColor];
+//    lb.backgroundColor = UIColor.redColor;
+    lb.font = [UIFont boldSystemFontOfSize:40];
+    [self.view addSubview:lb];
+
+    CAGradientLayer *colorLayer = [CAGradientLayer layer];
+    colorLayer.frame = CGRectMake(0, 0, 320, 320);
+//    colorLayer.frame = lb.bounds;
+//    colorLayer.position = self.view.center;
+    [lb.superview.layer addSublayer:colorLayer];
+
+    colorLayer.colors = @[(__bridge id)[UIColor lightGrayColor].CGColor,
+                          (__bridge id)[UIColor grayColor].CGColor,
+                          (__bridge id)[UIColor lightGrayColor].CGColor];
+    colorLayer.locations = @[@(- 0.2),@(- 0.1),@(0)];
+    colorLayer.startPoint = CGPointMake(0, 0.6);
+    colorLayer.endPoint = CGPointMake(1, 0.4);
+    colorLayer.mask = lb.layer;
+
+    if (@available(iOS 10.0, *)) {
+        [NSTimer scheduledTimerWithTimeInterval:1.5 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            CABasicAnimation *fadeA = [CABasicAnimation animationWithKeyPath:@"locations"];
+            fadeA.fromValue = @[@(-0.2), @(-0.1),@(0)] ;
+            fadeA.toValue = @[@(1.0),@(1.1),@(1.2)] ;
+            fadeA.duration = 2 ;
+            [colorLayer addAnimation:fadeA forKey:nil ];
+        }];
+    } else {
+        // Fallback on earlier versions
+    }
 }
 
 - (void)shareAction:(id)sender{
