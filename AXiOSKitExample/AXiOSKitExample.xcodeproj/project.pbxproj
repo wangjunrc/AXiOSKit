@@ -78,6 +78,9 @@
 		21E54AA924D98D150038F4C0 /* BAUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E54A6224D98D150038F4C0 /* BAUserInfo.m */; };
 		21E54AAA24D98D150038F4C0 /* BAThemeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E54A6424D98D150038F4C0 /* BAThemeListModel.m */; };
 		21E54AAB24D98D150038F4C0 /* PalyThemeDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21E54A6924D98D150038F4C0 /* PalyThemeDB.mm */; };
+		21EFCCE12509FB58000A1AAC /* PointViewController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21EFCCE02509FB58000A1AAC /* PointViewController.plist */; };
+		21EFCCE3250A0110000A1AAC /* PointViewController2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21EFCCE2250A0110000A1AAC /* PointViewController2.plist */; };
+		21EFCCE6250A0772000A1AAC /* UIControl+load.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EFCCE5250A0772000A1AAC /* UIControl+load.m */; };
 		EFB53CC9DAEACE15EEBA0F67 /* Pods_AXiOSKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2AB1BCF4154D76F31004C5 /* Pods_AXiOSKitExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -229,6 +232,10 @@
 		21E54A6924D98D150038F4C0 /* PalyThemeDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PalyThemeDB.mm; sourceTree = "<group>"; };
 		21E54A6A24D98D150038F4C0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21E54A6B24D98D150038F4C0 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		21EFCCE02509FB58000A1AAC /* PointViewController.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PointViewController.plist; sourceTree = "<group>"; };
+		21EFCCE2250A0110000A1AAC /* PointViewController2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PointViewController2.plist; sourceTree = "<group>"; };
+		21EFCCE4250A0772000A1AAC /* UIControl+load.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+load.h"; sourceTree = "<group>"; };
+		21EFCCE5250A0772000A1AAC /* UIControl+load.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+load.m"; sourceTree = "<group>"; };
 		3921CF6BEA9759A6E192CBE2 /* Pods-AXiOSKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.release.xcconfig"; sourceTree = "<group>"; };
 		5BE708E4E9DACA9F3EB268E2 /* Pods-AXiOSKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.debug.xcconfig"; sourceTree = "<group>"; };
 		ED2AB1BCF4154D76F31004C5 /* Pods_AXiOSKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,6 +344,8 @@
 				21E54A1C24D98D150038F4C0 /* TestVideo */,
 				21E54A5824D98D150038F4C0 /* webp.bundle */,
 				21E549F624D98D140038F4C0 /* WebSocket */,
+				21EFCCE02509FB58000A1AAC /* PointViewController.plist */,
+				21EFCCE2250A0110000A1AAC /* PointViewController2.plist */,
 			);
 			path = AXiOSKitExample;
 			sourceTree = "<group>";
@@ -473,6 +482,8 @@
 				21E54A4524D98D150038F4C0 /* WCDBViewController.h */,
 				21E54A2E24D98D150038F4C0 /* WCDBViewController.m */,
 				21E54A4724D98D150038F4C0 /* WCDBViewController.xib */,
+				21EFCCE4250A0772000A1AAC /* UIControl+load.h */,
+				21EFCCE5250A0772000A1AAC /* UIControl+load.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -612,6 +623,7 @@
 				21E54A7224D98D150038F4C0 /* fishhook.podspec in Resources */,
 				21E54A9324D98D150038F4C0 /* _14TFViewController.xib in Resources */,
 				21E54A7E24D98D150038F4C0 /* LaunchScreen.storyboard in Resources */,
+				21EFCCE12509FB58000A1AAC /* PointViewController.plist in Resources */,
 				21E54A6E24D98D150038F4C0 /* LICENSE in Resources */,
 				21E54A7F24D98D150038F4C0 /* Main.storyboard in Resources */,
 				21E54AA624D98D150038F4C0 /* IMG_3972.GIF in Resources */,
@@ -625,6 +637,7 @@
 				21E54A9E24D98D150038F4C0 /* AAViewController.xib in Resources */,
 				21E54A7C24D98D150038F4C0 /* Assets.xcassets in Resources */,
 				21E54A9424D98D150038F4C0 /* _09AFNViewController.xib in Resources */,
+				21EFCCE3250A0110000A1AAC /* PointViewController2.plist in Resources */,
 				21E54A9B24D98D150038F4C0 /* WCDBViewController.xib in Resources */,
 				21E54A9924D98D150038F4C0 /* _00TableViewCell.xib in Resources */,
 				21E54A8E24D98D150038F4C0 /* _01ViewController.xib in Resources */,
@@ -706,6 +719,7 @@
 				21E54A9224D98D150038F4C0 /* _00TableViewController.m in Sources */,
 				21E54A6F24D98D150038F4C0 /* fishhook.c in Sources */,
 				21E54A9624D98D150038F4C0 /* AANavigationController.m in Sources */,
+				21EFCCE6250A0772000A1AAC /* UIControl+load.m in Sources */,
 				21E54AA224D98D150038F4C0 /* _15UIMenuController.m in Sources */,
 				21E54AA824D98D150038F4C0 /* BAThemeListModel+WCDB.mm in Sources */,
 				21E54AA524D98D150038F4C0 /* AppDelegate.m in Sources */,

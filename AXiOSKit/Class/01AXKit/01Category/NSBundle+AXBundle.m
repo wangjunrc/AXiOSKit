@@ -22,7 +22,7 @@
 
 + (NSBundle *)ax_mainBundle {
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
-    //spec文件resource_bundles对应的key 
+    //spec文件resource_bundles对应的key
     NSString *bundlePath = [bundle pathForResource:@"AXiOSKitMain" ofType:@"bundle"];
     NSBundle *tempBundle = [NSBundle bundleWithPath:bundlePath];
     if (tempBundle == nil) {
@@ -62,6 +62,28 @@
     NSString *bundlePath = [NSBundle.mainBundle pathForResource:name ofType:type];
     NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
     return bundle;
+}
+
+-(NSArray *)ax_arrayForResource:(NSString *)name {
+    return [self ax_arrayForResource:name ofType:nil];
+}
+
+-(NSArray *)ax_arrayForResource:(NSString *)name ofType:(NSString *)ext{
+    
+    NSString *path =  [self pathForResource:name ofType:ext];
+    NSArray *array = [[NSArray alloc] initWithContentsOfFile:path];
+    return array;
+}
+
+-(NSDictionary *)ax_dictionaryForResource:(NSString *)name {
+    return [self ax_dictionaryForResource:name ofType:nil];
+}
+
+-(NSDictionary *)ax_dictionaryForResource:(NSString *)name ofType:(NSString *)ext{
+    
+    NSString *path =  [self pathForResource:name ofType:ext];
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
+    return dict;
 }
 
 

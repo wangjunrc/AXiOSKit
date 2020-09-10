@@ -10,22 +10,36 @@
 #import <Aspects/Aspects.h>
 
 #import <AXiOSKit/AXiOSKit.h>
-
+#import <AXiOSKit/NSBundle+AXBundle.h>
 @implementation UIViewController (Load)
 
 // UIViewController+AOP类中：
+NSDictionary *dict;
+
 + (void)load {
     
     NSError *error;
     [UIViewController aspect_hookSelector:@selector(viewDidLoad) withOptions:AspectPositionBefore usingBlock:^(id<AspectInfo> aspectInfo) {
-       UIViewController *vc = aspectInfo.instance;
-         NSLog(@"拦截====1 %@",vc);
+        UIViewController *vc = aspectInfo.instance;
+//        NSLog(@"拦截====1 %@",vc);
+        
+//        NSArray<NSDictionary*> *array = [NSBundle.mainBundle ax_arrayForResource:@"PointViewController.plist"];
+//        NSLog(@"array: %@",array[0].allValues);
+        if (dict == nil) {
+             NSLog(@"dict == nil");
+             dict = [NSBundle.mainBundle ax_dictionaryForResource:@"PointViewController2.plist"];
+        }
+        if ([dict.allKeys containsObject:NSStringFromClass(vc.class)]) {
+            
+            NSLog(@"dict: %@",dict);
+        }
+        
+        
         
         
     } error:&error];
     if (error) NSLog(@"%@", error);
 }
- 
 
 
 @end
