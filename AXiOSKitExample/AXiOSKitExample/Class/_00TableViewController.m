@@ -70,6 +70,8 @@ typedef void (^CollectionBlock)(void);
     
     //    NSLog(@"IS_PRODUCATION = %@ SERVER_HOST = %@", IS_PRODUCATION ? @"生产环境" : @"开发环境", SERVER_HOST);
     
+    
+    
 }
 
 - (void)test {
