@@ -69,9 +69,7 @@ typedef void (^CollectionBlock)(void);
     [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
     
     //    NSLog(@"IS_PRODUCATION = %@ SERVER_HOST = %@", IS_PRODUCATION ? @"生产环境" : @"开发环境", SERVER_HOST);
-    
-    
-    
+
 }
 
 - (void)test {
