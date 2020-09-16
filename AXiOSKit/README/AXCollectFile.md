@@ -1557,3 +1557,10 @@ dispatch_async(concurrentQueue, ^(){
     NSLog(@"dispatch-4");
 });
 ```
+## 取余
+```
+//可以小数取余
+NSLog(@"余数是%lf\n",fmod(10.1, 3));
+/// 只能整数取余
+NSLog(@"余数是%d",10%3);
+```

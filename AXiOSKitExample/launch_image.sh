@@ -1,6 +1,5 @@
-#!/bin/bash
 
-echo "✅  ==========添加水印开始=========="
+echo "✅  ==========启动图添加水印开始=========="
 #######################################################
 # 1、检查是否安装了ImageMagick
 #######################################################
@@ -26,39 +25,23 @@ fi
 ######################################################
 # 2. 全局字段
 ######################################################
-
-echo "😀Product Name: ${PRODUCT_NAME}"
-echo "😀Bundle Identifier: ${BUNDLE_IDENTIFIER}"
-echo "😀Version: ${MARKETING_VERSION}"
-echo "😀Build: ${CURRENT_PROJECT_VERSION}"
-
-
 # Assets中的appIcon文件名
-APPICON_NAME="AppIcon"
+APPICON_NAME="launch_image"
 
 # Assets中Debug环境的appIcon文件名
 DEBUG_APPICON_NAME="${APPICON_NAME}-Debug"
 
-# # 获取app版本号
-# APP_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' "${INFOPLIST_FILE}")
-
-# # 获取build号
-# APP_BUILD_NUM=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' "${INFOPLIST_FILE}")
-
-# xcode11 最新写法
 # 获取app版本号
-APP_VERSION="$MARKETING_VERSION"
+APP_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' "${INFOPLIST_FILE}")
 
 # 获取build号
-APP_BUILD_NUM="$CURRENT_PROJECT_VERSION"
+APP_BUILD_NUM=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' "${INFOPLIST_FILE}")
 
 # Icon上显示的文字内容, 你可以在这里修改标题格式
 CAPTION="$APP_VERSION\n($APP_BUILD_NUM)"
 
 
-echo "😀 DEBUG_APPICON_NAME=$DEBUG_APPICON_NAME"
-echo "😀 版本号=$APP_VERSION"
-echo "😀 编译号=$APP_BUILD_NUM"
+echo "🐛 DEBUG_APPICON_NAME=$DEBUG_APPICON_NAME \n APP_VERSION=$APP_VERSION \n APP_BUILD_NUM=$APP_BUILD_NUM \n CAPTION=$CAPTION"
 
 
 ######################################################
@@ -123,7 +106,13 @@ fill white  text 0,12 '$APP_VERSION($APP_BUILD_NUM)'" \
 ${BASE_IMAGE_PATH}
 
 
+# 第一个png 小的,
+# 第二个png 大的,背景图
+# 第三png 新图
+#composite -gravity southwest -compose plus -geometry +10+10 IMG_2445.PNG launch_image-Debug.png launch_image-Debug.png
+
 }
+
 
 
 

@@ -114,7 +114,7 @@
 		2100F46624F405640057DD66 /* _17OtherShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _17OtherShareViewController.m; sourceTree = "<group>"; };
 		2100F46824F40A3D0057DD66 /* AXiOSKitExampleRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AXiOSKitExampleRelease.entitlements; sourceTree = "<group>"; };
 		2100F46924F40A3D0057DD66 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
-		2105E7062462EA640076A65B /* AXiOSKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2105E7062462EA640076A65B /* 阿星Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "阿星Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		214FF8642476192A00EF0C29 /* 分享.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "分享.entitlements"; sourceTree = "<group>"; };
 		215B079C24F11A9000535742 /* AxGenerator.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxGenerator.xcconfig; sourceTree = "<group>"; };
 		215B079D24F11B5600535742 /* AxDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxDebug.xcconfig; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 		2105E7072462EA640076A65B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2105E7062462EA640076A65B /* AXiOSKitExample.app */,
+				2105E7062462EA640076A65B /* 阿星Kit.app */,
 				21D670B92474E5D100890F8F /* 分享.appex */,
 			);
 			name = Products;
@@ -556,7 +556,7 @@
 			);
 			name = AXiOSKitExample;
 			productName = AXiOSKitExample;
-			productReference = 2105E7062462EA640076A65B /* AXiOSKitExample.app */;
+			productReference = 2105E7062462EA640076A65B /* 阿星Kit.app */;
 			productType = "com.apple.product-type.application";
 		};
 		21D670B82474E5D100890F8F /* 分享 */ = {
@@ -927,7 +927,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5BE708E4E9DACA9F3EB268E2 /* Pods-AXiOSKitExample.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Debug2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Debug";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
@@ -1023,7 +1023,7 @@
 					"\"-lWeChatSDK\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "阿星Kit";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1133,7 +1133,7 @@
 					"\"-lWeChatSDK\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "阿星Kit";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = (
 					"$(inherited)",
