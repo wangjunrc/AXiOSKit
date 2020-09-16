@@ -21,21 +21,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     
-//    //输出微信的log信息
-//    [WXApi startLogByLevel:WXLogLevelDetail logBlock:^(NSString * _Nonnull log) {
-//        NSLog(@"输出微信 %@", log);
-//    }];
-//
-//    if([WXApi registerApp:WXAppId universalLink:@"https://wwwtest.asiacoat.com/"]){
-//        NSLog(@"初始化成功");
-//    }
-//
-//
-//
-//    //自检函数
-//    [WXApi checkUniversalLinkReady:^(WXULCheckStep step, WXCheckULStepResult* result) {
-//        NSLog(@"自检函数 = %@, %u, %@, %@", @(step), result.success, result.errorInfo, result.suggestion);
-//    }];
+    //    //输出微信的log信息
+    //    [WXApi startLogByLevel:WXLogLevelDetail logBlock:^(NSString * _Nonnull log) {
+    //        NSLog(@"输出微信 %@", log);
+    //    }];
+    //
+    //    if([WXApi registerApp:WXAppId universalLink:@"https://wwwtest.asiacoat.com/"]){
+    //        NSLog(@"初始化成功");
+    //    }
+    //
+    //
+    //
+    //    //自检函数
+    //    [WXApi checkUniversalLinkReady:^(WXULCheckStep step, WXCheckULStepResult* result) {
+    //        NSLog(@"自检函数 = %@, %u, %@, %@", @(step), result.success, result.errorInfo, result.suggestion);
+    //    }];
     
     [WXApi registerApp:WXAppId];
     
@@ -49,12 +49,6 @@
     return YES;
 }
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
-    NSString *path = [url absoluteString];
-    //    path = [path stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"%@", path);
-    return YES;
-}
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     //获取共享的UserDefaults
@@ -68,8 +62,9 @@
         NSMutableArray *dicts = [NSKeyedUnarchiver unarchiveObjectWithData:dictData];
         //读取文件
         for (NSDictionary *dict in dicts) {
-            UIImage *image = [[UIImage alloc]initWithData:dict[@"image"]];
+            //            UIImage *image = [[UIImage alloc]initWithData:dict[@"image"]];
             NSString *name = dict[@"text"];
+            NSLog(@"name = %@",name);
             //拿到数据了哈哈后
         }
         [[NSFileManager defaultManager]removeItemAtURL:fileURL error:NULL];
@@ -80,12 +75,7 @@
 
 
 #pragma mark - 第三方分享、登录回调
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    
-    return [WXApi handleOpenURL:url delegate:self];
-}
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     
     return [WXApi handleOpenURL:url delegate:self];
 }
@@ -114,11 +104,11 @@
             NSLog(@"微信登录完成，code：%@", req.code);//获取到第一步code
         }
     }
-//    else if ([resp isKindOfClass:[WXLaunchMiniProgramResp class]]){
-//        
-//        WXLaunchMiniProgramResp *req = (WXLaunchMiniProgramResp *)resp;
-//        NSLog(@"%@", req.extMsg);// 对应JsApi navigateBackApplication中的extraData字段数据
-//    }
+    //    else if ([resp isKindOfClass:[WXLaunchMiniProgramResp class]]){
+    //
+    //        WXLaunchMiniProgramResp *req = (WXLaunchMiniProgramResp *)resp;
+    //        NSLog(@"%@", req.extMsg);// 对应JsApi navigateBackApplication中的extraData字段数据
+    //    }
 }
 
 @end
