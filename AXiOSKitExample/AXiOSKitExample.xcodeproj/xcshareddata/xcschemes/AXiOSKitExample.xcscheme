@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2105E7052462EA640076A65B"
-               BuildableName = "AXiOSKitExample.app"
+               BuildableName = "&#x963f;&#x661f;Kit.app"
                BlueprintName = "AXiOSKitExample"
                ReferencedContainer = "container:AXiOSKitExample.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2105E7052462EA640076A65B"
-            BuildableName = "AXiOSKitExample.app"
+            BuildableName = "&#x963f;&#x661f;Kit.app"
             BlueprintName = "AXiOSKitExample"
             ReferencedContainer = "container:AXiOSKitExample.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2105E7052462EA640076A65B"
-            BuildableName = "AXiOSKitExample.app"
+            BuildableName = "&#x963f;&#x661f;Kit.app"
             BlueprintName = "AXiOSKitExample"
             ReferencedContainer = "container:AXiOSKitExample.xcodeproj">
          </BuildableReference>

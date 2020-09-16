@@ -1,5 +1,6 @@
+#!/bin/bash
 
-echo "✅  ==========启动图添加水印开始=========="
+echo "✅  ==========启动图添加版本号开始=========="
 #######################################################
 # 1、检查是否安装了ImageMagick
 #######################################################
@@ -25,23 +26,39 @@ fi
 ######################################################
 # 2. 全局字段
 ######################################################
+
+echo "😀Product Name: ${PRODUCT_NAME}"
+echo "😀Bundle Identifier: ${BUNDLE_IDENTIFIER}"
+echo "😀Version: ${MARKETING_VERSION}"
+echo "😀Build: ${CURRENT_PROJECT_VERSION}"
+
+
 # Assets中的appIcon文件名
-APPICON_NAME="launch_image"
+IMAGE_NAME="launch_image"
 
 # Assets中Debug环境的appIcon文件名
-DEBUG_APPICON_NAME="${APPICON_NAME}-Debug"
+BUNDLE_IMAGE_NAME="${IMAGE_NAME}-Build"
 
+# # 获取app版本号
+# APP_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' "${INFOPLIST_FILE}")
+
+# # 获取build号
+# APP_BUILD_NUM=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' "${INFOPLIST_FILE}")
+
+# xcode11 最新写法
 # 获取app版本号
-APP_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' "${INFOPLIST_FILE}")
+APP_VERSION="$MARKETING_VERSION"
 
 # 获取build号
-APP_BUILD_NUM=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' "${INFOPLIST_FILE}")
+APP_BUILD_NUM="$CURRENT_PROJECT_VERSION"
 
 # Icon上显示的文字内容, 你可以在这里修改标题格式
 CAPTION="$APP_VERSION\n($APP_BUILD_NUM)"
 
 
-echo "🐛 DEBUG_APPICON_NAME=$DEBUG_APPICON_NAME \n APP_VERSION=$APP_VERSION \n APP_BUILD_NUM=$APP_BUILD_NUM \n CAPTION=$CAPTION"
+echo "😀 BUNDLE_IMAGE_NAME=$BUNDLE_IMAGE_NAME"
+echo "😀 版本号=$APP_VERSION"
+echo "😀 编译号=$APP_BUILD_NUM"
 
 
 ######################################################
@@ -49,17 +66,17 @@ echo "🐛 DEBUG_APPICON_NAME=$DEBUG_APPICON_NAME \n APP_VERSION=$APP_VERSION \n
 ######################################################
 echo "🐛 Begin copy icon files"
 
-# appicon路径
-APPICON_SET_PATH=`find $SRCROOT -name "${APPICON_NAME}.appiconset"`
+# appicon路径 .imageset 后缀
+APPICON_SET_PATH=`find $SRCROOT -name "${IMAGE_NAME}.imageset"`
 
 echo "🐛 APPICON_SET_PATH=$APPICON_SET_PATH"
 if [ "$APPICON_SET_PATH" = "" ]; then
     exitWithMessage "❌  Get APPICON_SET_PATH failed." 0
 fi
 
-# appicon_debug路径
+# appicon_debug路径 .imageset 后缀
 ASSET_PATH=`echo $(dirname ${APPICON_SET_PATH})`
-DEBUG_APPICON_SET_PATH="${ASSET_PATH}/${DEBUG_APPICON_NAME}.appiconset"
+DEBUG_APPICON_SET_PATH="${ASSET_PATH}/${BUNDLE_IMAGE_NAME}.imageset"
 echo "🐛 DEBUG_APPICON_SET_PATH=$DEBUG_APPICON_SET_PATH"
 if [ "$DEBUG_APPICON_SET_PATH" = "" ]; then
     exitWithMessage "❌  Get DEBUG_APPICON_SET_PATH failed." 0
@@ -75,7 +92,7 @@ fi
 # 复制appicon到appicon_debug
 cp -rf $APPICON_SET_PATH $DEBUG_APPICON_SET_PATH
 if [ $? != 0 ];then
-    exitWithMessage "❌  Copy ${APPICON_NAME} to ${DEBUG_APPICON_NAME} failed." 0
+    exitWithMessage "❌  Copy ${IMAGE_NAME} to ${BUNDLE_IMAGE_NAME} failed." 0
 fi
 
 
@@ -106,13 +123,7 @@ fill white  text 0,12 '$APP_VERSION($APP_BUILD_NUM)'" \
 ${BASE_IMAGE_PATH}
 
 
-# 第一个png 小的,
-# 第二个png 大的,背景图
-# 第三png 新图
-#composite -gravity southwest -compose plus -geometry +10+10 IMG_2445.PNG launch_image-Debug.png launch_image-Debug.png
-
 }
-
 
 
 
@@ -129,7 +140,7 @@ processIcon "${file}"
 
 done
 
-echo "✅  ==========添加水印结束=========="
+echo "✅  ==========启动图添加版本号结束=========="
 
 
 
