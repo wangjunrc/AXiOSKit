@@ -1,18 +1,18 @@
+////
+////  Config.xcconfig
+////  AXiOSKitExample
+////
+////  Created by 小星星MacBook on 2020/8/22.
+////  Copyright © 2020 liuweixing. All rights reserved.
+////
 //
-//  Config.xcconfig
-//  AXiOSKitExample
+//// Configuration settings file format documentation can be found at:
+//// https://help.apple.com/xcode/#/dev745c5c974
 //
-//  Created by 小星星MacBook on 2020/8/22.
-//  Copyright © 2020 liuweixing. All rights reserved.
+////  Generator.xcconfig
 //
-
-// Configuration settings file format documentation can be found at:
-// https://help.apple.com/xcode/#/dev745c5c974
-
-//  Generator.xcconfig
-
-//公用编辑器配置，预编译定义
-//预处理器定义，格式照着写就行：两个参数，后面是自动取相应配置文件的值，每组以空格间隔开来。
-//参数1：IS_PRODUCATION
-//参数2：SERVER_HOST
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) IS_PRODUCATION='$(IS_PRODUCATION)' SERVER_HOST='$(SERVER_HOST)'
+////公用编辑器配置，预编译定义
+////预处理器定义，格式照着写就行：两个参数，后面是自动取相应配置文件的值，每组以空格间隔开来。
+////参数1：IS_PRODUCATION
+////参数2：SERVER_HOST
+//GCC_PREPROCESSOR_DEFINITIONS = $(inherited) IS_PRODUCATION='$(IS_PRODUCATION)' SERVER_HOST='$(SERVER_HOST)'

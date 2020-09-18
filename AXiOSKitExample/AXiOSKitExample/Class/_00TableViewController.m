@@ -31,6 +31,9 @@
 #import <objc/runtime.h>
 #import "RouterManager.h"
 #import "_17OtherShareViewController.h"
+#import "_18MGSwipeTableVC.h"
+#import "_19ScrollContentViewController.h"
+
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -366,6 +369,25 @@ void mySLog(NSString *format, ...) {
                     exit(0);
                 },
             },
+            @{
+                @"index": @18,
+                @"title": @"Scroll自适应内容",
+                @"action": ^{
+                    _18MGSwipeTableVC *vc = [[_18MGSwipeTableVC alloc] init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+            },
+            @{
+                @"index": @19,
+                @"title": @"Scroll自适应内容",
+                @"action": ^{
+                    _19ScrollContentViewController *vc = [[_19ScrollContentViewController alloc] init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+            },
+            
+            
+            
             
             
         ];

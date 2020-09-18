@@ -673,8 +673,8 @@
 		24F0F12222C76874009DD02B /* AXTripleInteractionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXTripleInteractionViewController.m; sourceTree = "<group>"; };
 		24F0F12622C76944009DD02B /* AXTripleInteractionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXTripleInteractionModel.h; sourceTree = "<group>"; };
 		24F0F12722C76944009DD02B /* AXTripleInteractionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXTripleInteractionModel.m; sourceTree = "<group>"; };
-		796A17CB51A0D95B1F9603FA /* Pods-AXiOSKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit.release.xcconfig"; path = "AXiOSKitExample/Pods/Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.release.xcconfig"; sourceTree = "<group>"; };
-		BD2DD46C7D383BA35FFE16AA /* Pods-AXiOSKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit.debug.xcconfig"; path = "AXiOSKitExample/Pods/Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.debug.xcconfig"; sourceTree = "<group>"; };
+		48710B8886F379DB710E39FA /* Pods-AXiOSKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit.release.xcconfig"; path = "AXiOSKitExample/Pods/Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.release.xcconfig"; sourceTree = "<group>"; };
+		829B86FB313CF8E8F06FF2F2 /* Pods-AXiOSKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit.debug.xcconfig"; path = "AXiOSKitExample/Pods/Target Support Files/Pods-AXiOSKit/Pods-AXiOSKit.debug.xcconfig"; sourceTree = "<group>"; };
 		F0D144B6061B53D35BCD9520 /* Pods_AXiOSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -871,8 +871,8 @@
 		22408E2038A31DF4963FFC5B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BD2DD46C7D383BA35FFE16AA /* Pods-AXiOSKit.debug.xcconfig */,
-				796A17CB51A0D95B1F9603FA /* Pods-AXiOSKit.release.xcconfig */,
+				829B86FB313CF8E8F06FF2F2 /* Pods-AXiOSKit.debug.xcconfig */,
+				48710B8886F379DB710E39FA /* Pods-AXiOSKit.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -2054,7 +2054,7 @@
 		};
 		247328BC2277FB8B005CF92D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD2DD46C7D383BA35FFE16AA /* Pods-AXiOSKit.debug.xcconfig */;
+			baseConfigurationReference = 829B86FB313CF8E8F06FF2F2 /* Pods-AXiOSKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
@@ -2084,7 +2084,7 @@
 		};
 		247328BD2277FB8B005CF92D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 796A17CB51A0D95B1F9603FA /* Pods-AXiOSKit.release.xcconfig */;
+			baseConfigurationReference = 48710B8886F379DB710E39FA /* Pods-AXiOSKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
