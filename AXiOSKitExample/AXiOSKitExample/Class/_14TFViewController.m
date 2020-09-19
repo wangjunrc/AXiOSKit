@@ -23,6 +23,7 @@
     self.myTF.ax_delegateHandler.maxCharacterCount = 5;
 //    self.myTF.ax_delegateHandler.onlyPositiveNumber = YES;
     
+    
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -40,8 +41,6 @@
     }
 
     return YES;
-
- 
 
 }
 @end

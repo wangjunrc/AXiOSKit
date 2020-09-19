@@ -33,7 +33,7 @@
 #import "_17OtherShareViewController.h"
 #import "_18MGSwipeTableVC.h"
 #import "_19ScrollContentViewController.h"
-
+#import "_01ContentViewController.h"
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -137,6 +137,15 @@ void mySLog(NSString *format, ...) {
                     [self.navigationController pushViewController:vc animated:YES];
                 },
             },
+            @{
+                @"index": @1,
+                @"title": @"ContentViewController",
+                @"action": ^{
+                    _01ContentViewController *vc = [[_01ContentViewController alloc] init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+            },
+            
             @{
                 @"index": @2,
                 @"title": @"聊天-ChatViewController",
@@ -371,7 +380,7 @@ void mySLog(NSString *format, ...) {
             },
             @{
                 @"index": @18,
-                @"title": @"Scroll自适应内容",
+                @"title": @"SwipeTableVC",
                 @"action": ^{
                     _18MGSwipeTableVC *vc = [[_18MGSwipeTableVC alloc] init];
                     [self.navigationController pushViewController:vc animated:YES];
@@ -396,6 +405,7 @@ void mySLog(NSString *format, ...) {
 }
 
 - (void)testPerson {
+    
 }
 
 - (void)testObj:(TestObj *)obj {

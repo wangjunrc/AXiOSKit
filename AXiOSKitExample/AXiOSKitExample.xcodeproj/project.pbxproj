@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2100F46724F405640057DD66 /* _17OtherShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100F46624F405640057DD66 /* _17OtherShareViewController.m */; };
 		2100F46A24F40A3D0057DD66 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2100F46924F40A3D0057DD66 /* ExternalAccessory.framework */; };
+		212B59482515E1A90073ED07 /* _01ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B59472515E1A90073ED07 /* _01ContentViewController.m */; };
 		215B07A924F1242C00535742 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 215B07A824F1242C00535742 /* RouterManager.m */; };
 		217D22D7251386AE00AFE556 /* _19ScrollContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */; };
 		217D22DB251386EA00AFE556 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 217D22DA251386EA00AFE556 /* instruction.jpg */; };
@@ -118,6 +119,8 @@
 		2100F46824F40A3D0057DD66 /* AXiOSKitExampleRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AXiOSKitExampleRelease.entitlements; sourceTree = "<group>"; };
 		2100F46924F40A3D0057DD66 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		2105E7062462EA640076A65B /* 阿星Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "阿星Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		212B59462515E1A90073ED07 /* _01ContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _01ContentViewController.h; sourceTree = "<group>"; };
+		212B59472515E1A90073ED07 /* _01ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _01ContentViewController.m; sourceTree = "<group>"; };
 		214FF8642476192A00EF0C29 /* 分享.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "分享.entitlements"; sourceTree = "<group>"; };
 		215B079C24F11A9000535742 /* AxGenerator.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxGenerator.xcconfig; sourceTree = "<group>"; };
 		215B079D24F11B5600535742 /* AxDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxDebug.xcconfig; sourceTree = "<group>"; };
@@ -445,6 +448,8 @@
 				21E54A3B24D98D150038F4C0 /* _01ViewController.h */,
 				21E54A5624D98D150038F4C0 /* _01ViewController.m */,
 				21E54A3224D98D150038F4C0 /* _01ViewController.xib */,
+				212B59462515E1A90073ED07 /* _01ContentViewController.h */,
+				212B59472515E1A90073ED07 /* _01ContentViewController.m */,
 				21E54A2A24D98D150038F4C0 /* _09AFNViewController.h */,
 				21E54A4A24D98D150038F4C0 /* _09AFNViewController.m */,
 				21E54A3A24D98D150038F4C0 /* _09AFNViewController.xib */,
@@ -767,6 +772,7 @@
 				21E54A7924D98D150038F4C0 /* ChatViewController.m in Sources */,
 				2100F46724F405640057DD66 /* _17OtherShareViewController.m in Sources */,
 				21E54A9A24D98D150038F4C0 /* _16KeyChainViewController.m in Sources */,
+				212B59482515E1A90073ED07 /* _01ContentViewController.m in Sources */,
 				21E54A9224D98D150038F4C0 /* _00TableViewController.m in Sources */,
 				21E54A6F24D98D150038F4C0 /* fishhook.c in Sources */,
 				21E54A9624D98D150038F4C0 /* AANavigationController.m in Sources */,

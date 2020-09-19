@@ -9,6 +9,7 @@
 #import "_18MGSwipeTableVC.h"
 #import <MGSwipeTableCell/MGSwipeTableCell.h>
 #import <Masonry/Masonry.h>
+#import <AXiOSKit/AXiOSKit.h>
 @interface MyTableViewCell : UITableViewCell
 @property(nonatomic, strong)UIImageView *imageView1;
 @end
@@ -46,8 +47,12 @@
 
 @end
 
-@interface _18MGSwipeTableVC ()
+@interface _18MGSwipeTableVC ()<UISearchControllerDelegate,UISearchResultsUpdating>
 
+@property (nonatomic,strong) UISearchController *searchController;
+
+
+@property(nonatomic,copy)NSString *searchText;
 @end
 
 
@@ -62,8 +67,61 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView registerClass:MyMGSwipeTableCell.class forCellReuseIdentifier:@"cellID"];
+    
+ 
+
+    
+    //创建UISearchController
+        self.searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+        //设置代理
+        self.searchController.delegate= self;
+        self.searchController.searchResultsUpdater = self;
+        //包着搜索框外层的颜色
+        // self.searchController.searchBar.barTintColor = [UIColor lig];
+        // self.searchController.searchBar.tintColor = [UIColor orangeColor];
+        //提醒字眼
+        self.searchController.searchBar.placeholder= @"搜索";
+        //提前在搜索框内加入搜索词
+        self.searchController.searchBar.text = @"123";
+        //设置UISearchController的显示属性，以下3个属性默认为YES
+        //搜索时，背景变暗色
+//        self.searchController.dimsBackgroundDuringPresentation = NO;
+        //搜索时，背景变模糊
+        //  self.searchController.obscuresBackgroundDuringPresentation = YES;
+
+        //点击搜索的时候,是否隐藏导航栏
+//        self.searchController.hidesNavigationBarDuringPresentation = YES;
+        //位置
+//        [_searchController.searchBar sizeToFit];
+    
+    
+   
+//    self.searchController.searchBar.top = 100;
+    self.definesPresentationContext = YES;
+    
+//    if (@available(iOS 11.0, *)) {
+//        self.navigationItem.searchController = self.searchController;
+//    } else {
+//        self.tableView.tableHeaderView = self.searchController.searchBar;
+//    }
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    self.searchController.searchBar.showsScopeBar = NO;
+//    self.searchController.searchBar.showsSearchResultsButton = YES;
+//    self.searchController.searchBar.showsCancelButton = YES;
+//    self.searchController.searchBar.showsBookmarkButton = YES;
+//    self.searchController.searchBar.shouldGroupAccessibilityChildren = YES;
 }
 
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+    
+    NSLog(@"%@",searchController.searchBar.text);
+    self.searchText =searchController.searchBar.text;
+    [self.tableView reloadData];
+}
+- (void)didDismissSearchController:(UISearchController *)searchController{
+    searchController.searchBar.text = @"22";
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -72,6 +130,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.searchController.active) {
+        return 3;
+    }
     return 10;
 }
 -(CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -82,7 +143,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MyMGSwipeTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld-%@",indexPath.row,self.searchText];
     cell.delegate = self;
     return cell;
 }

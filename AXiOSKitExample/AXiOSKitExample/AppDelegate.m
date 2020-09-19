@@ -21,7 +21,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     
-    
+//    [UISearchBar.appearance setBarTintColor:UIColor.redColor];
+    [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[UISearchBar.class]]
+     setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}
+     forState:UIControlStateNormal];
+//    [UIBarButtonItem.appearance setTintColor:UIColor.redColor];;
     
     //    //输出微信的log信息
     //    [WXApi startLogByLevel:WXLogLevelDetail logBlock:^(NSString * _Nonnull log) {
