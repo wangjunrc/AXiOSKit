@@ -67,12 +67,83 @@ typedef void (^CollectionBlock)(void);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"拦截====2 %@", self);
     self.title = @"主题";
     [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
     
     //    NSLog(@"IS_PRODUCATION = %@ SERVER_HOST = %@", IS_PRODUCATION ? @"生产环境" : @"开发环境", SERVER_HOST);
 
+    {
+        
+        NSLog(@"isEmoji = %d",[@"😝" isContainsEmoji]);
+        NSLog(@"isEmoji = %d",[@"2" isContainsEmoji]);
+    }
+    {
+        /// <正则表达式>
+        NSString *regEx = @"12";
+        ///<待匹配的字符串>
+        NSString *string = @"1234567";
+
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
+        BOOL matched = [predicate evaluateWithObject:string];
+        NSLog(@"是否匹配 = %d", matched);
+    }
+
+    {
+        NSString *regEx = @"12";
+        NSString *string = @"123123";
+        NSError *error;
+        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
+        if (error) {
+            NSLog(@"error = %@", error);
+        }
+
+        NSUInteger number = [regularExpression numberOfMatchesInString:string options:kNilOptions range:NSMakeRange(0, string.length)];
+        NSLog(@"匹配的个数 = %lu", (unsigned long)number);
+
+        BOOL matched = (number != 0);
+        NSLog(@"是否匹配 = %d", matched);
+
+        
+    }
+    
+    {
+        
+        NSString *regEx = @"12";
+        NSString *string = @"123123";
+        NSError *error;
+        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
+        if (error) {
+            NSLog(@"error = %@", error);
+        }
+
+        NSTextCheckingResult *firstMatch = [regularExpression firstMatchInString:string options:0 range:NSMakeRange(0, string.length)];
+        if (firstMatch) {
+            // NSTextCheckingResult 的 range 属性即匹配的字符串的位置
+            NSString *matchedString = [string substringWithRange:firstMatch.range];
+            NSLog(@"匹配的字符串 = %@", matchedString);
+        }else{
+            NSLog(@"匹配的字符串 = 错误");
+        }
+
+    }
+    
+    {
+        NSString *regEx = @"<正则表达式>";
+        NSString *string = @"<待匹配的字符串>";
+        NSError *error;
+        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
+        if (error) {
+            NSLog(@"error = %@", error);
+        }
+
+        NSArray *matchArray = [regularExpression matchesInString:string options:0 range:NSMakeRange(0, string.length)];
+        for (NSTextCheckingResult *match in matchArray) {
+            NSString *matchedString = [string substringWithRange:match.range];
+            NSLog(@"匹配的字符串 = %@", matchedString);
+        }
+
+    }
+    
 }
 
 - (void)test {
@@ -394,7 +465,30 @@ void mySLog(NSString *format, ...) {
                     [self.navigationController pushViewController:vc animated:YES];
                 },
             },
-            
+            @{
+                @"index": @20,
+                @"title": @"打开相册",
+                @"action": ^{
+                 
+                    [self ax_showCameraWithEditing:NO block:^(UIImage *originalImage, UIImage *editedImage) {
+                                            
+                    }];
+                    
+//                    // 以下 API 仅为 iOS14 only
+//                          PHPickerConfiguration *configuration = [[PHPickerConfiguration alloc] init];
+//                          configuration.filter = [PHPickerFilter videosFilter]; // 可配置查询用户相册中文件的类型，支持三种
+//                        configuration.selectionLimit = 0; // 默认为1，为0时表示可多选。
+//                      
+//                          PHPickerViewController *picker = [[PHPickerViewController alloc] initWithConfiguration:configuration];
+//                          picker.delegate = self;
+//                          // picker vc，在选完图片后需要在回调中手动 dismiss
+//                        [self presentViewController:picker animated:YES completion:^{
+//                      
+//                          }];
+                    
+                    
+                },
+            },
             
             
             

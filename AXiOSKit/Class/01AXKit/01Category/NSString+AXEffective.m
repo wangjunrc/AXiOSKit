@@ -211,6 +211,17 @@
     return res;
 }
 
+/// 是否emoji表情
+- (BOOL)isContainsEmoji{
+    NSString *string = self;
+    NSUInteger stringUtf8Length = [string lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+    if(stringUtf8Length >= 4 && (stringUtf8Length / string.length != 3)){
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
 /**
  * 一、校验数字的表达式
  

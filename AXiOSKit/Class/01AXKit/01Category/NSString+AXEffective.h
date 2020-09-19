@@ -111,4 +111,6 @@
  */
 - (BOOL)ax_isNumberOfChange;
 
+/// 是否含有emoji表情
+- (BOOL)isContainsEmoji;
 @end
