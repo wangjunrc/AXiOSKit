@@ -117,7 +117,7 @@ echo "width $WIDTH"
 FONT_SIZE=$(echo "$WIDTH * .15" | bc -l)
 echo "font size $FONT_SIZE"
 
-convert ${BASE_IMAGE_PATH}  -font Arial  -pointsize ${FONT_SIZE} \
+convert ${BASE_IMAGE_PATH}  -font Helvetica  -pointsize ${FONT_SIZE} \
 -draw "gravity south \
 fill white  text 0,12 '$APP_VERSION($APP_BUILD_NUM)'" \
 ${BASE_IMAGE_PATH}

@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		2100F46724F405640057DD66 /* _17OtherShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100F46624F405640057DD66 /* _17OtherShareViewController.m */; };
 		2100F46A24F40A3D0057DD66 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2100F46924F40A3D0057DD66 /* ExternalAccessory.framework */; };
+		212B59482515E1A90073ED07 /* _01ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B59472515E1A90073ED07 /* _01ContentViewController.m */; };
 		215B07A924F1242C00535742 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 215B07A824F1242C00535742 /* RouterManager.m */; };
+		217D22D7251386AE00AFE556 /* _19ScrollContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */; };
+		217D22DB251386EA00AFE556 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 217D22DA251386EA00AFE556 /* instruction.jpg */; };
+		21A65D6325133E6100CC3939 /* _18MGSwipeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A65D6225133E6100CC3939 /* _18MGSwipeTableVC.m */; };
 		21A6F66F24F50E1800E85AAC /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A6F66E24F50E1800E85AAC /* libWeChatSDK.a */; };
 		21AF7EAD24F24B42003311AF /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */; };
 		21D670BD2474E5D100890F8F /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D670BC2474E5D100890F8F /* ShareViewController.m */; };
@@ -115,12 +119,19 @@
 		2100F46824F40A3D0057DD66 /* AXiOSKitExampleRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AXiOSKitExampleRelease.entitlements; sourceTree = "<group>"; };
 		2100F46924F40A3D0057DD66 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		2105E7062462EA640076A65B /* 阿星Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "阿星Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		212B59462515E1A90073ED07 /* _01ContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _01ContentViewController.h; sourceTree = "<group>"; };
+		212B59472515E1A90073ED07 /* _01ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _01ContentViewController.m; sourceTree = "<group>"; };
 		214FF8642476192A00EF0C29 /* 分享.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "分享.entitlements"; sourceTree = "<group>"; };
 		215B079C24F11A9000535742 /* AxGenerator.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxGenerator.xcconfig; sourceTree = "<group>"; };
 		215B079D24F11B5600535742 /* AxDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxDebug.xcconfig; sourceTree = "<group>"; };
 		215B079E24F11B6200535742 /* AxRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxRelease.xcconfig; sourceTree = "<group>"; };
 		215B07A724F1242C00535742 /* RouterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouterManager.h; sourceTree = "<group>"; };
 		215B07A824F1242C00535742 /* RouterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouterManager.m; sourceTree = "<group>"; };
+		217D22D5251386AE00AFE556 /* _19ScrollContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _19ScrollContentViewController.h; sourceTree = "<group>"; };
+		217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _19ScrollContentViewController.m; sourceTree = "<group>"; };
+		217D22DA251386EA00AFE556 /* instruction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instruction.jpg; sourceTree = "<group>"; };
+		21A65D6125133E6100CC3939 /* _18MGSwipeTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _18MGSwipeTableVC.h; sourceTree = "<group>"; };
+		21A65D6225133E6100CC3939 /* _18MGSwipeTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _18MGSwipeTableVC.m; sourceTree = "<group>"; };
 		21A6F66E24F50E1800E85AAC /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = Pods/WechatOpenSDK/OpenSDK1.7.7/libWeChatSDK.a; sourceTree = "<group>"; };
 		21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeKeyAndVisible.m; sourceTree = "<group>"; };
 		21AF7EAC24F24B42003311AF /* MakeKeyAndVisible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeKeyAndVisible.h; sourceTree = "<group>"; };
@@ -237,7 +248,7 @@
 		21EFCCE4250A0772000A1AAC /* UIControl+load.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+load.h"; sourceTree = "<group>"; };
 		21EFCCE5250A0772000A1AAC /* UIControl+load.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+load.m"; sourceTree = "<group>"; };
 		3921CF6BEA9759A6E192CBE2 /* Pods-AXiOSKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.release.xcconfig"; sourceTree = "<group>"; };
-		5BE708E4E9DACA9F3EB268E2 /* Pods-AXiOSKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.debug.xcconfig"; sourceTree = "<group>"; };
+		A011177F86BD72A2085ADED7 /* Pods-AXiOSKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitExample.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKitExample.debug.xcconfig"; sourceTree = "<group>"; };
 		ED2AB1BCF4154D76F31004C5 /* Pods_AXiOSKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -265,8 +276,8 @@
 		03699C9438C256777AC22AB2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5BE708E4E9DACA9F3EB268E2 /* Pods-AXiOSKitExample.debug.xcconfig */,
 				3921CF6BEA9759A6E192CBE2 /* Pods-AXiOSKitExample.release.xcconfig */,
+				A011177F86BD72A2085ADED7 /* Pods-AXiOSKitExample.debug.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -315,6 +326,7 @@
 		21E549F524D98D140038F4C0 /* AXiOSKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				217D22DA251386EA00AFE556 /* instruction.jpg */,
 				21E54A1F24D98D150038F4C0 /* 123.jpg */,
 				21E54A1B24D98D150038F4C0 /* 1234.webp */,
 				21E54A0324D98D140038F4C0 /* AppDelegate.h */,
@@ -436,6 +448,8 @@
 				21E54A3B24D98D150038F4C0 /* _01ViewController.h */,
 				21E54A5624D98D150038F4C0 /* _01ViewController.m */,
 				21E54A3224D98D150038F4C0 /* _01ViewController.xib */,
+				212B59462515E1A90073ED07 /* _01ContentViewController.h */,
+				212B59472515E1A90073ED07 /* _01ContentViewController.m */,
 				21E54A2A24D98D150038F4C0 /* _09AFNViewController.h */,
 				21E54A4A24D98D150038F4C0 /* _09AFNViewController.m */,
 				21E54A3A24D98D150038F4C0 /* _09AFNViewController.xib */,
@@ -450,6 +464,10 @@
 				21E54A4424D98D150038F4C0 /* _16KeyChainViewController.m */,
 				2100F46524F405640057DD66 /* _17OtherShareViewController.h */,
 				2100F46624F405640057DD66 /* _17OtherShareViewController.m */,
+				21A65D6125133E6100CC3939 /* _18MGSwipeTableVC.h */,
+				21A65D6225133E6100CC3939 /* _18MGSwipeTableVC.m */,
+				217D22D5251386AE00AFE556 /* _19ScrollContentViewController.h */,
+				217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */,
 				21E54A2824D98D150038F4C0 /* AANavigationController.h */,
 				21E54A3E24D98D150038F4C0 /* AANavigationController.m */,
 				21E54A3724D98D150038F4C0 /* AAViewController.h */,
@@ -619,6 +637,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217D22DB251386EA00AFE556 /* instruction.jpg in Resources */,
 				21E54A7024D98D150038F4C0 /* README.md in Resources */,
 				21E54AA424D98D150038F4C0 /* webp.bundle in Resources */,
 				21E54A7324D98D150038F4C0 /* test_webp.webp in Resources */,
@@ -742,6 +761,7 @@
 			files = (
 				21E54AA024D98D150038F4C0 /* _13WebpViewController.m in Sources */,
 				21E54A8124D98D150038F4C0 /* LVieoView.m in Sources */,
+				217D22D7251386AE00AFE556 /* _19ScrollContentViewController.m in Sources */,
 				21E54A8624D98D150038F4C0 /* CopyActivity.m in Sources */,
 				21E54A7724D98D150038F4C0 /* NSObject+MethodSwizzling.m in Sources */,
 				21E54A9124D98D150038F4C0 /* AView.m in Sources */,
@@ -752,6 +772,7 @@
 				21E54A7924D98D150038F4C0 /* ChatViewController.m in Sources */,
 				2100F46724F405640057DD66 /* _17OtherShareViewController.m in Sources */,
 				21E54A9A24D98D150038F4C0 /* _16KeyChainViewController.m in Sources */,
+				212B59482515E1A90073ED07 /* _01ContentViewController.m in Sources */,
 				21E54A9224D98D150038F4C0 /* _00TableViewController.m in Sources */,
 				21E54A6F24D98D150038F4C0 /* fishhook.c in Sources */,
 				21E54A9624D98D150038F4C0 /* AANavigationController.m in Sources */,
@@ -781,6 +802,7 @@
 				21E54A8B24D98D150038F4C0 /* WCDBViewController.m in Sources */,
 				21E54A9024D98D150038F4C0 /* MyActivity.m in Sources */,
 				21E54A9824D98D150038F4C0 /* VideoViewController.m in Sources */,
+				21A65D6325133E6100CC3939 /* _18MGSwipeTableVC.m in Sources */,
 				21E54A7A24D98D150038F4C0 /* ChatMessageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -943,7 +965,7 @@
 		};
 		2105E7202462EA660076A65B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BE708E4E9DACA9F3EB268E2 /* Pods-AXiOSKitExample.debug.xcconfig */;
+			baseConfigurationReference = A011177F86BD72A2085ADED7 /* Pods-AXiOSKitExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Debug";
 				CODE_SIGN_STYLE = Automatic;

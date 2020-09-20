@@ -1564,3 +1564,12 @@ NSLog(@"余数是%lf\n",fmod(10.1, 3));
 /// 只能整数取余
 NSLog(@"余数是%d",10%3);
 ```
+##  UISearchBar 中按钮主题,比如 取消按钮颜色
+```
+[[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[UISearchBar.class]]
+ setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}
+ forState:UIControlStateNormal];
+ 
+ 
+ [UISearchBar.appearance setBarTintColor:UIColor.redColor];
+ ```

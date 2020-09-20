@@ -13,7 +13,7 @@ workspace 'AXiOSKitExample.xcworkspace'
 target 'AXiOSKitExample' do
   project 'AXiOSKitExample.xcodeproj'
   
-    pod 'AXiOSKit', :path => '../'
+  pod 'AXiOSKit', :path => '../'
   #    pod 'AXiOSKit' , :git => 'https://github.com/AXinger/AXiOSKit.git', :branch => 'release/20190530_new'
   # pod 'AXiOSKit', :source => 'https://github.com/AXinger/AXiOSKit.git'
   #  pod "FLAnimatedImage"
@@ -39,30 +39,31 @@ target 'AXiOSKitExample' do
   #蘑菇街团队提供了MGJRouter路由库
   pod 'MGJRouter'
   #https://github.com/casatwy/CTMediator
-#  pod 'CTMediators'
+  #  pod 'CTMediators'
   
   pod "Masonry"
   pod "AFNetworking"
   pod "IQKeyboardManager"
   pod 'WechatOpenSDK','1.7.7'
-#  pod "MJRefresh"
-#  pod "NullSafe"
-#  pod "MJExtension"
-#  pod "MBProgressHUD"
-#  pod "DZNEmptyDataSet"
-#  #pod "SDCycleScrollView"
-#  pod "KVOController"
-#  pod "Masonry"
-#  #pod "GKPhotoBrowser"
-#  pod "Aspects"
+  #  pod "MJRefresh"
+  #  pod "NullSafe"
+  #  pod "MJExtension"
+  #  pod "MBProgressHUD"
+  #  pod "DZNEmptyDataSet"
+  #  #pod "SDCycleScrollView"
+  #  pod "KVOController"
+  #  pod "Masonry"
+  #  #pod "GKPhotoBrowser"
+  #  pod "Aspects"
+  pod 'MGSwipeTableCell','~> 1.6.11'
 end
 
 #AXiOSKit 依赖
 target 'AXiOSKit' do
   project '../AXiOSKit.xcodeproj'
-
+  
   pod "AFNetworking"
-
+  
   pod "IQKeyboardManager"
   pod "MJRefresh"
   pod "NullSafe"
@@ -74,7 +75,7 @@ target 'AXiOSKit' do
   pod "Masonry"
   #pod "GKPhotoBrowser"
   pod "Aspects"
-
+  
 end
 
 
