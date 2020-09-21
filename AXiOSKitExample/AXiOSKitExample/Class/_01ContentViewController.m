@@ -82,6 +82,30 @@
         
     }];
     
+    
+    UIImageView *view = [[UIImageView alloc]initWithFrame:CGRectMake(10, 200, 100, 100)];
+    view.image = [UIImage imageNamed:@"exporte"];
+    view.backgroundColor=[UIColor yellowColor];
+    view.layer.masksToBounds=YES;
+    view.layer.cornerRadius=10;
+    view.layer.borderWidth = 1.5;
+    view.layer.borderColor = [UIColor redColor].CGColor;;
+//    view.layer.shadowColor=[UIColor redColor].CGColor;
+//    view.layer.shadowOffset=CGSizeMake(10, 10);
+//    view.layer.shadowOpacity=0.5;
+//    view.layer.shadowRadius=5;
+    [self.view addSubview:view];
+
+    
+    [view  ax_shadowWith:UIColor.redColor];
+
+
+    /* When true an implicit mask matching the layer bounds is applied to
+     * the layer (including the effects of the `cornerRadius' property). If
+     * both `mask' and `masksToBounds' are non-nil the two masks are
+     * multiplied to get the actual mask values. Defaults to NO.
+     * Animatable. */
+
 }
 
 /*
