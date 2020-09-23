@@ -35,6 +35,9 @@ pod 'FMDBMigrationManager'
 ## 加载图片的模糊效果
 pod 'PINRemoteImage'
 
+## 是腾讯WeRead团队开源的一款检测 iOS 内存泄漏的框架,无需修改任何业务逻辑代码，而且只在 debug 下开启，完全不影响你的 release 包。
+pod 'MLeaksFinder'
+
 ## 由Flipboard开源的iOS平台上播放GIF动画 facebook/FLAnimatedImage forked from Flipboard/FLAnimatedImage  替代品
 pod 'FLAnimatedImage'
 pod 'SDWebImage/GIF'

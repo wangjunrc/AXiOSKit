@@ -4,6 +4,7 @@ ${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework
 ${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework
 ${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework
 ${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework
+${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework
 ${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/JJException/JJException.framework
@@ -13,6 +14,7 @@ ${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework
 ${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework
 ${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework
 ${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
+${BUILT_PRODUCTS_DIR}/MLeaksFinder/MLeaksFinder.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
 ${BUILT_PRODUCTS_DIR}/NullSafe/NullSafe.framework
 ${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework

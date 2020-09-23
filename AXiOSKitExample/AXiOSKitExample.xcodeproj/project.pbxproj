@@ -18,6 +18,8 @@
 		21AF7EAD24F24B42003311AF /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */; };
 		21B14323251A2D95001737B5 /* IMB_rz9Xy4.mov in Resources */ = {isa = PBXBuildFile; fileRef = 21B14322251A2D95001737B5 /* IMB_rz9Xy4.mov */; };
 		21B14325251A2F2D001737B5 /* IMB_rz9Xy4.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 21B14324251A2F2D001737B5 /* IMB_rz9Xy4.JPG */; };
+		21B143F4251B4803001737B5 /* _21KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B143F2251B4803001737B5 /* _21KVOViewController.m */; };
+		21B143F5251B4803001737B5 /* _21KVOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21B143F3251B4803001737B5 /* _21KVOViewController.xib */; };
 		21D670BD2474E5D100890F8F /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D670BC2474E5D100890F8F /* ShareViewController.m */; };
 		21D670C02474E5D100890F8F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D670BE2474E5D100890F8F /* MainInterface.storyboard */; };
 		21D670C42474E5D100890F8F /* 分享.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21D670B92474E5D100890F8F /* 分享.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -140,6 +142,9 @@
 		21AF7EAC24F24B42003311AF /* MakeKeyAndVisible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeKeyAndVisible.h; sourceTree = "<group>"; };
 		21B14322251A2D95001737B5 /* IMB_rz9Xy4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IMB_rz9Xy4.mov; sourceTree = "<group>"; };
 		21B14324251A2F2D001737B5 /* IMB_rz9Xy4.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMB_rz9Xy4.JPG; sourceTree = "<group>"; };
+		21B143F1251B4803001737B5 /* _21KVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _21KVOViewController.h; sourceTree = "<group>"; };
+		21B143F2251B4803001737B5 /* _21KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _21KVOViewController.m; sourceTree = "<group>"; };
+		21B143F3251B4803001737B5 /* _21KVOViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _21KVOViewController.xib; sourceTree = "<group>"; };
 		21D670B92474E5D100890F8F /* 分享.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "分享.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D670BB2474E5D100890F8F /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		21D670BC2474E5D100890F8F /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
@@ -479,6 +484,9 @@
 				217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */,
 				21E45F2F2519C96F000C2834 /* _20iOS14ViewController.h */,
 				21E45F302519C96F000C2834 /* _20iOS14ViewController.m */,
+				21B143F1251B4803001737B5 /* _21KVOViewController.h */,
+				21B143F2251B4803001737B5 /* _21KVOViewController.m */,
+				21B143F3251B4803001737B5 /* _21KVOViewController.xib */,
 				21E54A2824D98D150038F4C0 /* AANavigationController.h */,
 				21E54A3E24D98D150038F4C0 /* AANavigationController.m */,
 				21E54A3724D98D150038F4C0 /* AAViewController.h */,
@@ -660,6 +668,7 @@
 				21E54A6E24D98D150038F4C0 /* LICENSE in Resources */,
 				21E54A7F24D98D150038F4C0 /* Main.storyboard in Resources */,
 				21E54AA624D98D150038F4C0 /* IMG_3972.GIF in Resources */,
+				21B143F5251B4803001737B5 /* _21KVOViewController.xib in Resources */,
 				21E54A8424D98D150038F4C0 /* TextFViewController.xib in Resources */,
 				21E54A9C24D98D150038F4C0 /* RunLoopViewController.xib in Resources */,
 				21E54A8724D98D150038F4C0 /* AFNViewController.xib in Resources */,
@@ -785,6 +794,7 @@
 				21E54A7924D98D150038F4C0 /* ChatViewController.m in Sources */,
 				2100F46724F405640057DD66 /* _17OtherShareViewController.m in Sources */,
 				21E54A9A24D98D150038F4C0 /* _16KeyChainViewController.m in Sources */,
+				21B143F4251B4803001737B5 /* _21KVOViewController.m in Sources */,
 				212B59482515E1A90073ED07 /* _01ContentViewController.m in Sources */,
 				21E54A9224D98D150038F4C0 /* _00TableViewController.m in Sources */,
 				21E54A6F24D98D150038F4C0 /* fishhook.c in Sources */,

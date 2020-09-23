@@ -56,6 +56,8 @@ target 'AXiOSKitExample' do
   #  #pod "GKPhotoBrowser"
   #  pod "Aspects"
   pod 'MGSwipeTableCell','~> 1.6.11'
+
+  pod 'MLeaksFinder'
 end
 
 #AXiOSKit 依赖

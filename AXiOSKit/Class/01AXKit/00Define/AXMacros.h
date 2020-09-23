@@ -188,9 +188,10 @@ return (aViewClass *)[super view];\
  forKey
 [self.view setValue:UIColor.redColor forKey:@ax_keypath(self.view, backgroundColor)];
  */
-#define ax_keypath(OBJ, PATH) \
-(((void)(NO && ((void)OBJ.PATH, NO)), # PATH))
+#define ax_keypath(CLASS, PATH) \
+(((void)(NO && ((void)CLASS.PATH, NO)), # PATH))
 
+/// FBKVOKeyPath(string.length) => @"length"
 #define AX_KVOKeyPath(KEYPATH) \
 @(((void)(NO && ((void)KEYPATH, NO)), \
 ({ const char *fbkvokeypath = strchr(#KEYPATH, '.'); NSCAssert(fbkvokeypath, @"Provided key path is invalid."); fbkvokeypath + 1; })))

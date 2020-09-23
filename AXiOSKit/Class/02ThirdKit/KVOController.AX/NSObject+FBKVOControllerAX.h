@@ -6,6 +6,27 @@
 //  Copyright © 2018年 liuweixing. All rights reserved.
 //
 
+/// 使用 FBKVO path 宏
+/**
+ For example: 可以提示
+ AX_FBKVOKeyPath(self.dataArray)
+ 
+ */
+#define AX_FBKVOKeyPath(KEYPATH) \
+@(((void)(NO && ((void)KEYPATH, NO)), \
+({ const char *fbkvokeypath = strchr(#KEYPATH, '.'); NSCAssert(fbkvokeypath, @"Provided key path is invalid."); fbkvokeypath + 1; })))
+
+/**
+ 
+ For example: 不会提示
+
+ AX_FBKVOClassKeyPath(ViewController,dataArray)
+ 
+ */
+#define AX_FBKVOClassKeyPath(CLASS, KEYPATH) \
+@(((void)(NO && ((void)((CLASS *)(nil)).KEYPATH, NO)), #KEYPATH))
+
+
 #import <Foundation/Foundation.h>
 
 /**

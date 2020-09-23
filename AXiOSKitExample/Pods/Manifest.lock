@@ -29,6 +29,7 @@ PODS:
     - NullSafe
     - SDWebImage
   - DZNEmptyDataSet (1.8.1)
+  - FBRetainCycleDetector (0.1.4)
   - FLAnimatedImage (1.0.12)
   - IQKeyboardManager (6.5.6)
   - JJException (0.2.9):
@@ -65,6 +66,8 @@ PODS:
   - MGSwipeTableCell (1.6.11)
   - MJExtension (3.2.2)
   - MJRefresh (3.5.0)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
   - NullSafe (2.0)
   - PromisesObjC (1.2.10)
   - SDWebImage (5.7.4):
@@ -102,6 +105,7 @@ DEPENDENCIES:
   - MGSwipeTableCell (~> 1.6.11)
   - MJExtension
   - MJRefresh
+  - MLeaksFinder
   - NullSafe
   - PromisesObjC
   - SDWebImage (~> 5.7.3)
@@ -119,6 +123,7 @@ SPEC REPOS:
     - Aspects
     - AvoidCrash
     - DZNEmptyDataSet
+    - FBRetainCycleDetector
     - FLAnimatedImage
     - IQKeyboardManager
     - JJException
@@ -130,6 +135,7 @@ SPEC REPOS:
     - MGSwipeTableCell
     - MJExtension
     - MJRefresh
+    - MLeaksFinder
     - NullSafe
     - PromisesObjC
     - SDWebImage
@@ -153,6 +159,7 @@ SPEC CHECKSUMS:
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
   AXiOSKit: ce2024f267594c8d96858333c7eaec9b7ccb86d5
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   JJException: da7c64ccf29d9938a4075378a7e9a29db7383c37
@@ -164,6 +171,7 @@ SPEC CHECKSUMS:
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
   MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   NullSafe: 948feba938f03abede5ed3758694a9fe5b3a65ce
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   SDWebImage: 48b88379b798fd1e4298f95bb25d2cdabbf4deb3
@@ -177,6 +185,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: 9ce11f92157ccbf9766fc1bf645a9c269c45c524
+PODFILE CHECKSUM: f7314c2130d0072543fd2dfbc37c456cb6562074
 
 COCOAPODS: 1.8.4
