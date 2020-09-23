@@ -186,7 +186,7 @@
 
 -(void) swipeTableCellWillEndSwiping:(nonnull MGSwipeTableCell *) cell{
     NSLog(@"swipeTableCellWillEndSwiping %ld",cell.rightButtons.count);
-    MGSwipeButton * button = cell.rightButtons.firstObject;
+    MGSwipeButton * button =( MGSwipeButton *) cell.rightButtons.firstObject;
     button.selected = NO;
 }
 /*
