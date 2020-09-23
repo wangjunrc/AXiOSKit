@@ -34,6 +34,7 @@
 #import "_18MGSwipeTableVC.h"
 #import "_19ScrollContentViewController.h"
 #import "_01ContentViewController.h"
+#import "_20iOS14ViewController.h"
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -489,6 +490,16 @@ void mySLog(NSString *format, ...) {
                     
                 },
             },
+
+                @{
+                        @"index": @20,
+                        @"title": @"iOS适配",
+                        @"action": ^{
+                    _20iOS14ViewController *vc = [[_20iOS14ViewController alloc] init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+                },
+
             
             
             
@@ -504,7 +515,12 @@ void mySLog(NSString *format, ...) {
 
 - (void)testObj:(TestObj *)obj {
     NSAssert([obj respondsToSelector:@selector(log)], @"对的不对");
-    
+
+//    if( [obj instancesRespondToSelector:@selector(log)] ) {
+//
+//    }
+
+
     NSLog(@">>>> %d == %d", [obj.class instancesRespondToSelector:@selector(log)],
           [obj.class instancesRespondToSelector:@selector(log2)]);
     

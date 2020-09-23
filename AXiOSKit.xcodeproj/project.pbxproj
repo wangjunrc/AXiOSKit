@@ -59,6 +59,12 @@
 		219D769824123ED500196BFE /* LameHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D766524123ED400196BFE /* LameHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		219D769924123ED500196BFE /* LameHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D766624123ED400196BFE /* LameHelper.m */; };
 		21AF7EAE24F24B68003311AF /* AXBaseAlertDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 244FC1D02297C0D7003BD65F /* AXBaseAlertDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21B14328251ACED5001737B5 /* AXMediaConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B14326251ACED5001737B5 /* AXMediaConfig.h */; };
+		21B14329251ACED5001737B5 /* AXMediaConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B14327251ACED5001737B5 /* AXMediaConfig.m */; };
+		21B1432C251ACEF2001737B5 /* AXMediaResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B1432A251ACEF2001737B5 /* AXMediaResult.h */; };
+		21B1432D251ACEF2001737B5 /* AXMediaResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B1432B251ACEF2001737B5 /* AXMediaResult.m */; };
+		21B14330251AD3F4001737B5 /* UIViewController+AXMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B1432E251AD3F4001737B5 /* UIViewController+AXMedia.h */; };
+		21B14331251AD3F4001737B5 /* UIViewController+AXMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B1432F251AD3F4001737B5 /* UIViewController+AXMedia.m */; };
 		24064AC622BA58C200F6EC73 /* 命令行.md in Resources */ = {isa = PBXBuildFile; fileRef = 24064AC522BA58C200F6EC73 /* 命令行.md */; };
 		24170BBF22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24170BC022D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */; };
@@ -117,7 +123,6 @@
 		24732A0A2277FBB9005CF92D /* UINavigationController+AXKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 247328F22277FBB8005CF92D /* UINavigationController+AXKit.m */; };
 		24732A0B2277FBB9005CF92D /* NSBundle+AXBundle.h in Headers */ = {isa = PBXBuildFile; fileRef = 247328F32277FBB8005CF92D /* NSBundle+AXBundle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24732A0C2277FBB9005CF92D /* UISlider+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 247328F42277FBB8005CF92D /* UISlider+AXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24732A0D2277FBB9005CF92D /* UIViewController+AXiPadAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 247328F52277FBB8005CF92D /* UIViewController+AXiPadAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24732A0E2277FBB9005CF92D /* NSObject+AXKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 247328F62277FBB8005CF92D /* NSObject+AXKVO.m */; };
 		24732A0F2277FBB9005CF92D /* NSArray+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 247328F72277FBB8005CF92D /* NSArray+AXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24732A102277FBB9005CF92D /* UIView+AXAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 247328F82277FBB8005CF92D /* UIView+AXAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -170,7 +175,6 @@
 		24732A412277FBB9005CF92D /* UIBarButtonItem+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329292277FBB8005CF92D /* UIBarButtonItem+AXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24732A422277FBB9005CF92D /* NSArray+AXKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473292A2277FBB8005CF92D /* NSArray+AXKit.m */; };
 		24732A432277FBB9005CF92D /* NSObject+AXKVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473292B2277FBB8005CF92D /* NSObject+AXKVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24732A442277FBB9005CF92D /* UIViewController+AXiPadAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473292C2277FBB8005CF92D /* UIViewController+AXiPadAlert.m */; };
 		24732A452277FBB9005CF92D /* UISlider+AXKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473292D2277FBB8005CF92D /* UISlider+AXKit.m */; };
 		24732A462277FBB9005CF92D /* UIColor+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473292E2277FBB8005CF92D /* UIColor+AXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24732A472277FBB9005CF92D /* UINavigationController+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473292F2277FBB8005CF92D /* UINavigationController+AXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -393,6 +397,12 @@
 		219D766324123ED400196BFE /* NSObject+FBKVOControllerAX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FBKVOControllerAX.m"; sourceTree = "<group>"; };
 		219D766524123ED400196BFE /* LameHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LameHelper.h; sourceTree = "<group>"; };
 		219D766624123ED400196BFE /* LameHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LameHelper.m; sourceTree = "<group>"; };
+		21B14326251ACED5001737B5 /* AXMediaConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXMediaConfig.h; sourceTree = "<group>"; };
+		21B14327251ACED5001737B5 /* AXMediaConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXMediaConfig.m; sourceTree = "<group>"; };
+		21B1432A251ACEF2001737B5 /* AXMediaResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXMediaResult.h; sourceTree = "<group>"; };
+		21B1432B251ACEF2001737B5 /* AXMediaResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXMediaResult.m; sourceTree = "<group>"; };
+		21B1432E251AD3F4001737B5 /* UIViewController+AXMedia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXMedia.h"; sourceTree = "<group>"; };
+		21B1432F251AD3F4001737B5 /* UIViewController+AXMedia.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXMedia.m"; sourceTree = "<group>"; };
 		24064AC522BA58C200F6EC73 /* 命令行.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "命令行.md"; sourceTree = "<group>"; };
 		24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDeviceFunctionDisableViewController.h; sourceTree = "<group>"; };
 		24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDeviceFunctionDisableViewController.m; sourceTree = "<group>"; };
@@ -453,7 +463,6 @@
 		247328F22277FBB8005CF92D /* UINavigationController+AXKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+AXKit.m"; sourceTree = "<group>"; };
 		247328F32277FBB8005CF92D /* NSBundle+AXBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+AXBundle.h"; sourceTree = "<group>"; };
 		247328F42277FBB8005CF92D /* UISlider+AXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISlider+AXKit.h"; sourceTree = "<group>"; };
-		247328F52277FBB8005CF92D /* UIViewController+AXiPadAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXiPadAlert.h"; sourceTree = "<group>"; };
 		247328F62277FBB8005CF92D /* NSObject+AXKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AXKVO.m"; sourceTree = "<group>"; };
 		247328F72277FBB8005CF92D /* NSArray+AXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AXKit.h"; sourceTree = "<group>"; };
 		247328F82277FBB8005CF92D /* UIView+AXAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AXAnimation.h"; sourceTree = "<group>"; };
@@ -506,7 +515,6 @@
 		247329292277FBB8005CF92D /* UIBarButtonItem+AXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+AXKit.h"; sourceTree = "<group>"; };
 		2473292A2277FBB8005CF92D /* NSArray+AXKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AXKit.m"; sourceTree = "<group>"; };
 		2473292B2277FBB8005CF92D /* NSObject+AXKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AXKVO.h"; sourceTree = "<group>"; };
-		2473292C2277FBB8005CF92D /* UIViewController+AXiPadAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXiPadAlert.m"; sourceTree = "<group>"; };
 		2473292D2277FBB8005CF92D /* UISlider+AXKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISlider+AXKit.m"; sourceTree = "<group>"; };
 		2473292E2277FBB8005CF92D /* UIColor+AXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AXKit.h"; sourceTree = "<group>"; };
 		2473292F2277FBB8005CF92D /* UINavigationController+AXKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+AXKit.h"; sourceTree = "<group>"; };
@@ -1036,8 +1044,6 @@
 				247329252277FBB8005CF92D /* UIView+AXSnapshot.m */,
 				247329312277FBB8005CF92D /* UIViewController+AXAlert.h */,
 				247328F02277FBB8005CF92D /* UIViewController+AXAlert.m */,
-				247328F52277FBB8005CF92D /* UIViewController+AXiPadAlert.h */,
-				2473292C2277FBB8005CF92D /* UIViewController+AXiPadAlert.m */,
 				247329112277FBB8005CF92D /* UIViewController+AXKit.h */,
 				247328DE2277FBB8005CF92D /* UIViewController+AXKit.m */,
 				247329202277FBB8005CF92D /* UIViewController+AXNavBarConfig.h */,
@@ -1046,6 +1052,8 @@
 				247328E42277FBB8005CF92D /* UIWindow+AXKit.m */,
 				247328CD2277FBB8005CF92D /* WKWebView+AXKit.h */,
 				247329052277FBB8005CF92D /* WKWebView+AXKit.m */,
+				21B1432E251AD3F4001737B5 /* UIViewController+AXMedia.h */,
+				21B1432F251AD3F4001737B5 /* UIViewController+AXMedia.m */,
 			);
 			path = 01Category;
 			sourceTree = "<group>";
@@ -1114,14 +1122,16 @@
 		2473295C2277FBB8005CF92D /* 05Object */ = {
 			isa = PBXGroup;
 			children = (
-				2473296D2277FBB8005CF92D /* AXCountDownObject.h */,
-				2473296E2277FBB8005CF92D /* AXCountDownObject.m */,
 				247329712277FBB8005CF92D /* AXConstant.h */,
 				2473295E2277FBB8005CF92D /* AXConstant.m */,
+				2473296D2277FBB8005CF92D /* AXCountDownObject.h */,
+				2473296E2277FBB8005CF92D /* AXCountDownObject.m */,
 				247329682277FBB8005CF92D /* AXDataModel.h */,
 				247329762277FBB8005CF92D /* AXDataModel.m */,
 				2469429622EA8E62009E9CB9 /* AXFoundationAssistant.h */,
 				2469429722EA8E62009E9CB9 /* AXFoundationAssistant.m */,
+				247329632277FBB8005CF92D /* AXGCDTimer.h */,
+				247329642277FBB8005CF92D /* AXGCDTimer.m */,
 				247329702277FBB8005CF92D /* AXHelper.h */,
 				2473295F2277FBB8005CF92D /* AXHelper.m */,
 				24BB839A229E2ED700442276 /* AXKeyboardObserve.h */,
@@ -1133,8 +1143,10 @@
 				247329672277FBB8005CF92D /* AXViewModelProtocol.h */,
 				247328C52277FBB8005CF92D /* AXWeakProxy.h */,
 				247328C42277FBB8005CF92D /* AXWeakProxy.m */,
-				247329632277FBB8005CF92D /* AXGCDTimer.h */,
-				247329642277FBB8005CF92D /* AXGCDTimer.m */,
+				21B14326251ACED5001737B5 /* AXMediaConfig.h */,
+				21B14327251ACED5001737B5 /* AXMediaConfig.m */,
+				21B1432A251ACEF2001737B5 /* AXMediaResult.h */,
+				21B1432B251ACEF2001737B5 /* AXMediaResult.m */,
 			);
 			path = 05Object;
 			sourceTree = "<group>";
@@ -1546,7 +1558,6 @@
 				24732A632277FBB9005CF92D /* IBUIImageView.h in Headers */,
 				24732A292277FBB9005CF92D /* UIViewController+AXKit.h in Headers */,
 				24732A312277FBB9005CF92D /* NSObject+AXKit.h in Headers */,
-				24732A0D2277FBB9005CF92D /* UIViewController+AXiPadAlert.h in Headers */,
 				24BB839C229E2ED700442276 /* AXKeyboardObserve.h in Headers */,
 				219D768824123ED500196BFE /* NSObject+AXCacheImage.h in Headers */,
 				24732A9C2277FBB9005CF92D /* AXFullLayout.h in Headers */,
@@ -1583,6 +1594,7 @@
 				24F0F0C822C4B7F5009DD02B /* AXNavigationBar.h in Headers */,
 				24732AA12277FBB9005CF92D /* AXTabBarController.h in Headers */,
 				247329ED2277FBB9005CF92D /* NSNumber+AXKit.h in Headers */,
+				21B1432C251ACEF2001737B5 /* AXMediaResult.h in Headers */,
 				24732AB12277FBB9005CF92D /* AXSinglePickVC.h in Headers */,
 				24732A462277FBB9005CF92D /* UIColor+AXKit.h in Headers */,
 				219D768A24123ED500196BFE /* UIImageView+AXCircle.h in Headers */,
@@ -1638,12 +1650,14 @@
 				24732AC12277FBB9005CF92D /* AXPlayVC.h in Headers */,
 				24732A9D2277FBB9005CF92D /* AXTableViewController.h in Headers */,
 				24732ABB2277FBB9005CF92D /* QRCodeViewController.h in Headers */,
+				21B14330251AD3F4001737B5 /* UIViewController+AXMedia.h in Headers */,
 				24170BBF22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h in Headers */,
 				24732A1C2277FBB9005CF92D /* NSData+AXKit.h in Headers */,
 				24732A2D2277FBB9005CF92D /* UICollectionView+AXKit.h in Headers */,
 				24732A792277FBB9005CF92D /* AXCountDownObject.h in Headers */,
 				24732A382277FBB9005CF92D /* UIViewController+AXNavBarConfig.h in Headers */,
 				24732AC72277FBB9005CF92D /* AXGuidePageCell.h in Headers */,
+				21B14328251ACED5001737B5 /* AXMediaConfig.h in Headers */,
 				247329F42277FBB9005CF92D /* UIImageView+SDImageCut.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1834,6 +1848,8 @@
 				219D768224123ED500196BFE /* AXRefreshFooter.m in Sources */,
 				24732A2A2277FBB9005CF92D /* NSDictionary+AXKit.m in Sources */,
 				24170BC022D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m in Sources */,
+				21B1432D251ACEF2001737B5 /* AXMediaResult.m in Sources */,
+				21B14331251AD3F4001737B5 /* UIViewController+AXMedia.m in Sources */,
 				219D768C24123ED500196BFE /* NSObject+AXCacheImage.m in Sources */,
 				24732A2B2277FBB9005CF92D /* UILabel+AXKit.m in Sources */,
 				219D768124123ED500196BFE /* UIScrollView+AXRefresh.m in Sources */,
@@ -1845,7 +1861,6 @@
 				24732A5D2277FBB9005CF92D /* AXLocationManager.m in Sources */,
 				24732A5A2277FBB9005CF92D /* LocationManager.m in Sources */,
 				219D767524123ED500196BFE /* AXNetworkManager.m in Sources */,
-				24732A442277FBB9005CF92D /* UIViewController+AXiPadAlert.m in Sources */,
 				247329FD2277FBB9005CF92D /* UITableView+AXKit.m in Sources */,
 				24F0F0D122C4B90B009DD02B /* AXMultiSelectViewController.m in Sources */,
 				24732A3A2277FBB9005CF92D /* UITextField+AXKit.m in Sources */,
@@ -1890,6 +1905,7 @@
 				247329EB2277FBB9005CF92D /* UISwitch+AXKit.m in Sources */,
 				247329EE2277FBB9005CF92D /* NSObject+AXKit.m in Sources */,
 				24732A692277FBB9005CF92D /* IBUIImageView.m in Sources */,
+				21B14329251ACED5001737B5 /* AXMediaConfig.m in Sources */,
 				219D768724123ED500196BFE /* UIImageView+AXCircle.m in Sources */,
 				247329E42277FBB9005CF92D /* UIView+AXKit.m in Sources */,
 				24732A152277FBB9005CF92D /* NSNumber+AXKit.m in Sources */,

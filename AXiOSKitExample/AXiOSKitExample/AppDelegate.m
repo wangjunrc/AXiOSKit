@@ -26,7 +26,14 @@
      setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}
      forState:UIControlStateNormal];
 //    [UIBarButtonItem.appearance setTintColor:UIColor.redColor];;
+//    [UIButton.appearance setTitleColor:UIColor.blueColor forState:UIControlStateNormal];
+//    [UIButton.appearance setBackgroundColor:UIColor.grayColor];
     
+   
+    
+//    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[UINavigationController class]]] setBackgroundColor:[UIColor clearColor]];
+    
+//    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[UIViewController class]]] setBackgroundColor:[UIColor grayColor]];
     //    //输出微信的log信息
     //    [WXApi startLogByLevel:WXLogLevelDetail logBlock:^(NSString * _Nonnull log) {
     //        NSLog(@"输出微信 %@", log);
