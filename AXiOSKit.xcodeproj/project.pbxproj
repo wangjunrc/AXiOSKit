@@ -762,8 +762,8 @@
 		219D763A24123ED400196BFE /* DZNEmptyDataSet.AX */ = {
 			isa = PBXGroup;
 			children = (
-				219D763B24123ED400196BFE /* UIScrollView+AXEmptyDataSet.m */,
 				219D763C24123ED400196BFE /* UIScrollView+AXEmptyDataSet.h */,
+				219D763B24123ED400196BFE /* UIScrollView+AXEmptyDataSet.m */,
 			);
 			path = DZNEmptyDataSet.AX;
 			sourceTree = "<group>";

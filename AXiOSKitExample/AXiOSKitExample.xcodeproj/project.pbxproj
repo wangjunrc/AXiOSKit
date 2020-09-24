@@ -13,6 +13,13 @@
 		215B07A924F1242C00535742 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 215B07A824F1242C00535742 /* RouterManager.m */; };
 		217D22D7251386AE00AFE556 /* _19ScrollContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */; };
 		217D22DB251386EA00AFE556 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 217D22DA251386EA00AFE556 /* instruction.jpg */; };
+		21A04565251CD2C600FEFC15 /* DLCompanyNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A04555251CD2C600FEFC15 /* DLCompanyNewsViewModel.m */; };
+		21A04566251CD2C600FEFC15 /* DLCompanyNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A04557251CD2C600FEFC15 /* DLCompanyNewsViewController.m */; };
+		21A04567251CD2C600FEFC15 /* DLCompanyNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A0455A251CD2C600FEFC15 /* DLCompanyNewsModel.m */; };
+		21A04568251CD2C600FEFC15 /* DLCompanyNewsOneSmallPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A0455D251CD2C600FEFC15 /* DLCompanyNewsOneSmallPictureCell.m */; };
+		21A04569251CD2C600FEFC15 /* DLCompanyNewsOneBigPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A0455F251CD2C600FEFC15 /* DLCompanyNewsOneBigPictureCell.m */; };
+		21A0456A251CD2C600FEFC15 /* DLCompanyNewsTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A04561251CD2C600FEFC15 /* DLCompanyNewsTextCell.m */; };
+		21A0456B251CD2C600FEFC15 /* DLCompanyNewsMoreSmallPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A04564251CD2C600FEFC15 /* DLCompanyNewsMoreSmallPictureCell.m */; };
 		21A65D6325133E6100CC3939 /* _18MGSwipeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A65D6225133E6100CC3939 /* _18MGSwipeTableVC.m */; };
 		21A6F66F24F50E1800E85AAC /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A6F66E24F50E1800E85AAC /* libWeChatSDK.a */; };
 		21AB711C251C25F7000114D2 /* _22ReactiveObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AB711A251C25F7000114D2 /* _22ReactiveObjCViewController.m */; };
@@ -137,6 +144,20 @@
 		217D22D5251386AE00AFE556 /* _19ScrollContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _19ScrollContentViewController.h; sourceTree = "<group>"; };
 		217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _19ScrollContentViewController.m; sourceTree = "<group>"; };
 		217D22DA251386EA00AFE556 /* instruction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instruction.jpg; sourceTree = "<group>"; };
+		21A04554251CD2C600FEFC15 /* DLCompanyNewsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCompanyNewsViewModel.h; sourceTree = "<group>"; };
+		21A04555251CD2C600FEFC15 /* DLCompanyNewsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCompanyNewsViewModel.m; sourceTree = "<group>"; };
+		21A04557251CD2C600FEFC15 /* DLCompanyNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCompanyNewsViewController.m; sourceTree = "<group>"; };
+		21A04558251CD2C600FEFC15 /* DLCompanyNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCompanyNewsViewController.h; sourceTree = "<group>"; };
+		21A0455A251CD2C600FEFC15 /* DLCompanyNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCompanyNewsModel.m; sourceTree = "<group>"; };
+		21A0455B251CD2C600FEFC15 /* DLCompanyNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCompanyNewsModel.h; sourceTree = "<group>"; };
+		21A0455D251CD2C600FEFC15 /* DLCompanyNewsOneSmallPictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCompanyNewsOneSmallPictureCell.m; sourceTree = "<group>"; };
+		21A0455E251CD2C600FEFC15 /* DLCompanyNewsTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCompanyNewsTextCell.h; sourceTree = "<group>"; };
+		21A0455F251CD2C600FEFC15 /* DLCompanyNewsOneBigPictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCompanyNewsOneBigPictureCell.m; sourceTree = "<group>"; };
+		21A04560251CD2C600FEFC15 /* DLCompanyNewsMoreSmallPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCompanyNewsMoreSmallPictureCell.h; sourceTree = "<group>"; };
+		21A04561251CD2C600FEFC15 /* DLCompanyNewsTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCompanyNewsTextCell.m; sourceTree = "<group>"; };
+		21A04562251CD2C600FEFC15 /* DLCompanyNewsOneSmallPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCompanyNewsOneSmallPictureCell.h; sourceTree = "<group>"; };
+		21A04563251CD2C600FEFC15 /* DLCompanyNewsOneBigPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCompanyNewsOneBigPictureCell.h; sourceTree = "<group>"; };
+		21A04564251CD2C600FEFC15 /* DLCompanyNewsMoreSmallPictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCompanyNewsMoreSmallPictureCell.m; sourceTree = "<group>"; };
 		21A65D6125133E6100CC3939 /* _18MGSwipeTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _18MGSwipeTableVC.h; sourceTree = "<group>"; };
 		21A65D6225133E6100CC3939 /* _18MGSwipeTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _18MGSwipeTableVC.m; sourceTree = "<group>"; };
 		21A6F66E24F50E1800E85AAC /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = Pods/WechatOpenSDK/OpenSDK1.7.7/libWeChatSDK.a; sourceTree = "<group>"; };
@@ -328,6 +349,59 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		21A04552251CD2C600FEFC15 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				21A04553251CD2C600FEFC15 /* ViewModel */,
+				21A04556251CD2C600FEFC15 /* Controller */,
+				21A04559251CD2C600FEFC15 /* Model */,
+				21A0455C251CD2C600FEFC15 /* View */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		21A04553251CD2C600FEFC15 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				21A04554251CD2C600FEFC15 /* DLCompanyNewsViewModel.h */,
+				21A04555251CD2C600FEFC15 /* DLCompanyNewsViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		21A04556251CD2C600FEFC15 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				21A04558251CD2C600FEFC15 /* DLCompanyNewsViewController.h */,
+				21A04557251CD2C600FEFC15 /* DLCompanyNewsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		21A04559251CD2C600FEFC15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21A0455A251CD2C600FEFC15 /* DLCompanyNewsModel.m */,
+				21A0455F251CD2C600FEFC15 /* DLCompanyNewsOneBigPictureCell.m */,
+				21A0455B251CD2C600FEFC15 /* DLCompanyNewsModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		21A0455C251CD2C600FEFC15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21A04560251CD2C600FEFC15 /* DLCompanyNewsMoreSmallPictureCell.h */,
+				21A04564251CD2C600FEFC15 /* DLCompanyNewsMoreSmallPictureCell.m */,
+				21A04563251CD2C600FEFC15 /* DLCompanyNewsOneBigPictureCell.h */,
+				21A04562251CD2C600FEFC15 /* DLCompanyNewsOneSmallPictureCell.h */,
+				21A0455D251CD2C600FEFC15 /* DLCompanyNewsOneSmallPictureCell.m */,
+				21A0455E251CD2C600FEFC15 /* DLCompanyNewsTextCell.h */,
+				21A04561251CD2C600FEFC15 /* DLCompanyNewsTextCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		21D670BA2474E5D100890F8F /* 分享 */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +431,7 @@
 				21E549F924D98D140038F4C0 /* fishhook-master */,
 				21E54A0224D98D140038F4C0 /* H5.bundle */,
 				21B14324251A2F2D001737B5 /* IMB_rz9Xy4.JPG */,
+				21A04552251CD2C600FEFC15 /* News */,
 				21B14322251A2D95001737B5 /* IMB_rz9Xy4.mov */,
 				21E54A5A24D98D150038F4C0 /* IMG_3972.GIF */,
 				21E54A6A24D98D150038F4C0 /* Info.plist */,
@@ -790,6 +865,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A0456B251CD2C600FEFC15 /* DLCompanyNewsMoreSmallPictureCell.m in Sources */,
 				21E54AA024D98D150038F4C0 /* _13WebpViewController.m in Sources */,
 				21E54A8124D98D150038F4C0 /* LVieoView.m in Sources */,
 				217D22D7251386AE00AFE556 /* _19ScrollContentViewController.m in Sources */,
@@ -800,14 +876,18 @@
 				215B07A924F1242C00535742 /* RouterManager.m in Sources */,
 				21E54AA324D98D150038F4C0 /* _01ViewController.m in Sources */,
 				21E54A7524D98D150038F4C0 /* TestObj.m in Sources */,
+				21A04565251CD2C600FEFC15 /* DLCompanyNewsViewModel.m in Sources */,
 				21E54A7924D98D150038F4C0 /* ChatViewController.m in Sources */,
+				21A04568251CD2C600FEFC15 /* DLCompanyNewsOneSmallPictureCell.m in Sources */,
 				2100F46724F405640057DD66 /* _17OtherShareViewController.m in Sources */,
 				21E54A9A24D98D150038F4C0 /* _16KeyChainViewController.m in Sources */,
 				21B143F4251B4803001737B5 /* _21KVOViewController.m in Sources */,
+				21A04566251CD2C600FEFC15 /* DLCompanyNewsViewController.m in Sources */,
 				212B59482515E1A90073ED07 /* _01ContentViewController.m in Sources */,
 				21E54A9224D98D150038F4C0 /* _00TableViewController.m in Sources */,
 				21E54A6F24D98D150038F4C0 /* fishhook.c in Sources */,
 				21E54A9624D98D150038F4C0 /* AANavigationController.m in Sources */,
+				21A04569251CD2C600FEFC15 /* DLCompanyNewsOneBigPictureCell.m in Sources */,
 				21EFCCE6250A0772000A1AAC /* UIControl+load.m in Sources */,
 				21E54AA224D98D150038F4C0 /* _15UIMenuController.m in Sources */,
 				21E54AA824D98D150038F4C0 /* BAThemeListModel+WCDB.mm in Sources */,
@@ -815,6 +895,7 @@
 				21E54A9F24D98D150038F4C0 /* AAViewController.m in Sources */,
 				21E54A7D24D98D150038F4C0 /* SceneDelegate.m in Sources */,
 				21E54A9524D98D150038F4C0 /* RunLoopViewController.m in Sources */,
+				21A0456A251CD2C600FEFC15 /* DLCompanyNewsTextCell.m in Sources */,
 				21E54AA924D98D150038F4C0 /* BAUserInfo.m in Sources */,
 				21E54A9724D98D150038F4C0 /* Person.m in Sources */,
 				21E54A7B24D98D150038F4C0 /* ChatTextMessageModel.m in Sources */,
@@ -836,6 +917,7 @@
 				21E54A8B24D98D150038F4C0 /* WCDBViewController.m in Sources */,
 				21E54A9024D98D150038F4C0 /* MyActivity.m in Sources */,
 				21E54A9824D98D150038F4C0 /* VideoViewController.m in Sources */,
+				21A04567251CD2C600FEFC15 /* DLCompanyNewsModel.m in Sources */,
 				21A65D6325133E6100CC3939 /* _18MGSwipeTableVC.m in Sources */,
 				21E54A7A24D98D150038F4C0 /* ChatMessageModel.m in Sources */,
 			);

@@ -31,6 +31,8 @@
 #import "_21KVOViewController.h"
 #import "_22ReactiveObjCViewController.h"
 #import <ReactiveObjC/ReactiveObjC.h>
+#import "DLCompanyNewsViewController.h"
+
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -521,8 +523,16 @@ void mySLog(NSString *format, ...) {
                 },
                 },
                 
-
-
+                @{
+                        @"index": @22,
+                        @"title": @"DLCompanyNewsViewController",
+                        @"action": ^{
+                            DLCompanyNewsViewController *vc = [[DLCompanyNewsViewController alloc] init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+                },
+                
+                
         ];
     }
     return _dataArray;

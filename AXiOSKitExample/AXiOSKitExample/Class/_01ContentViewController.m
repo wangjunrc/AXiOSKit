@@ -100,12 +100,52 @@
     [view  ax_shadowWith:UIColor.redColor];
 
 
-    /* When true an implicit mask matching the layer bounds is applied to
-     * the layer (including the effects of the `cornerRadius' property). If
-     * both `mask' and `masksToBounds' are non-nil the two masks are
-     * multiplied to get the actual mask values. Defaults to NO.
-     * Animatable. */
-
+    NSMutableArray<UIView *> *aryy = [NSMutableArray array];
+    UIView * _imgViewBgView = [UIView.alloc init];
+    _imgViewBgView.layer.cornerRadius = 6;
+    _imgViewBgView.backgroundColor = UIColor.blueColor;
+//    _imgViewBgView.axis = UILayoutConstraintAxisHorizontal;
+//    _imgViewBgView.alignment = UIStackViewAlignmentFill;
+//    _imgViewBgView.spacing = 10;
+//    _imgViewBgView.distribution = UIStackViewDistributionEqualCentering;
+    [self.view addSubview:_imgViewBgView];
+    [_imgViewBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_offset(20);
+        make.right.bottom.mas_offset(-20);
+//        make.height.mas_equalTo(300);
+    }];
+    
+    
+    for(int i=0;i<3;i++){
+        UIImageView *imgView = [UIImageView.alloc init];
+        imgView.layer.cornerRadius = 6;
+        [_imgViewBgView addSubview:imgView];
+        [aryy addObject:imgView];
+        if (i==0) {
+            imgView.backgroundColor = UIColor.greenColor;
+        }else  if (i==1){
+            
+            imgView.backgroundColor = UIColor.orangeColor;
+        }else {
+            
+            imgView.backgroundColor = UIColor.redColor;
+        }
+    }
+    
+    
+    [aryy mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:15 leadSpacing:10 tailSpacing:10];
+//    [aryy mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:80 leadSpacing:10 tailSpacing:10];
+    
+    [aryy mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.mas_equalTo(0);
+//        make.height.mas_equalTo(150);
+    }];
+    
+    [_imgViewBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.bottom.equalTo(aryy.firstObject.mas_bottom);
+    }];
+    
 }
 
 /*
