@@ -29,6 +29,8 @@
 #import "_01ContentViewController.h"
 #import "_20iOS14ViewController.h"
 #import "_21KVOViewController.h"
+#import "_22ReactiveObjCViewController.h"
+
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -503,6 +505,15 @@ void mySLog(NSString *format, ...) {
                     [self.navigationController pushViewController:vc animated:YES];
                 },
                 },
+                @{
+                        @"index": @22,
+                        @"title": @"ReactiveObjCViewController",
+                        @"action": ^{
+                            _22ReactiveObjCViewController *vc = [[_22ReactiveObjCViewController alloc] init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+                },
+                
 
 
         ];

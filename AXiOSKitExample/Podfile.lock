@@ -70,6 +70,7 @@ PODS:
     - FBRetainCycleDetector
   - NullSafe (2.0)
   - PromisesObjC (1.2.10)
+  - ReactiveObjC (3.1.1)
   - SDWebImage (5.7.4):
     - SDWebImage/Core (= 5.7.4)
   - SDWebImage/Core (5.7.4)
@@ -108,6 +109,7 @@ DEPENDENCIES:
   - MLeaksFinder
   - NullSafe
   - PromisesObjC
+  - ReactiveObjC
   - SDWebImage (~> 5.7.3)
   - SDWebImageFLPlugin
   - SDWebImageWebPCoder
@@ -138,6 +140,7 @@ SPEC REPOS:
     - MLeaksFinder
     - NullSafe
     - PromisesObjC
+    - ReactiveObjC
     - SDWebImage
     - SDWebImageFLPlugin
     - SDWebImageWebPCoder
@@ -174,6 +177,7 @@ SPEC CHECKSUMS:
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   NullSafe: 948feba938f03abede5ed3758694a9fe5b3a65ce
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 48b88379b798fd1e4298f95bb25d2cdabbf4deb3
   SDWebImageFLPlugin: 6c2295fb1242d44467c6c87dc5db6b0a13228fd8
   SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
@@ -185,6 +189,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: f7314c2130d0072543fd2dfbc37c456cb6562074
+PODFILE CHECKSUM: 3aeedacb3e6667282672175a3035eabfd475b627
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

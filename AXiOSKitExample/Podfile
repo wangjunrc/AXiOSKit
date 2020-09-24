@@ -58,6 +58,8 @@ target 'AXiOSKitExample' do
   pod 'MGSwipeTableCell','~> 1.6.11'
 
   pod 'MLeaksFinder'
+  pod 'ReactiveObjC'
+
 end
 
 #AXiOSKit 依赖

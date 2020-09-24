@@ -1,5 +1,10 @@
 # ********** 待用 **********
 
+pod 'ReactiveObjC'
+### swift 版本的
+pod 'ReactiveCocoa'
+
+
 ## 自定义本地通知样式,即使推送通知开关关闭,也可以使用,封装的 NSNotificationCenter
 pod 'EBBannerView'
 

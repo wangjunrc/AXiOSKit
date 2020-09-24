@@ -15,6 +15,8 @@
 		217D22DB251386EA00AFE556 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 217D22DA251386EA00AFE556 /* instruction.jpg */; };
 		21A65D6325133E6100CC3939 /* _18MGSwipeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A65D6225133E6100CC3939 /* _18MGSwipeTableVC.m */; };
 		21A6F66F24F50E1800E85AAC /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21A6F66E24F50E1800E85AAC /* libWeChatSDK.a */; };
+		21AB711C251C25F7000114D2 /* _22ReactiveObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AB711A251C25F7000114D2 /* _22ReactiveObjCViewController.m */; };
+		21AB711D251C25F7000114D2 /* _22ReactiveObjCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21AB711B251C25F7000114D2 /* _22ReactiveObjCViewController.xib */; };
 		21AF7EAD24F24B42003311AF /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */; };
 		21B14323251A2D95001737B5 /* IMB_rz9Xy4.mov in Resources */ = {isa = PBXBuildFile; fileRef = 21B14322251A2D95001737B5 /* IMB_rz9Xy4.mov */; };
 		21B14325251A2F2D001737B5 /* IMB_rz9Xy4.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 21B14324251A2F2D001737B5 /* IMB_rz9Xy4.JPG */; };
@@ -138,6 +140,9 @@
 		21A65D6125133E6100CC3939 /* _18MGSwipeTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _18MGSwipeTableVC.h; sourceTree = "<group>"; };
 		21A65D6225133E6100CC3939 /* _18MGSwipeTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _18MGSwipeTableVC.m; sourceTree = "<group>"; };
 		21A6F66E24F50E1800E85AAC /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = Pods/WechatOpenSDK/OpenSDK1.7.7/libWeChatSDK.a; sourceTree = "<group>"; };
+		21AB7119251C25F7000114D2 /* _22ReactiveObjCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _22ReactiveObjCViewController.h; sourceTree = "<group>"; };
+		21AB711A251C25F7000114D2 /* _22ReactiveObjCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _22ReactiveObjCViewController.m; sourceTree = "<group>"; };
+		21AB711B251C25F7000114D2 /* _22ReactiveObjCViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _22ReactiveObjCViewController.xib; sourceTree = "<group>"; };
 		21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeKeyAndVisible.m; sourceTree = "<group>"; };
 		21AF7EAC24F24B42003311AF /* MakeKeyAndVisible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeKeyAndVisible.h; sourceTree = "<group>"; };
 		21B14322251A2D95001737B5 /* IMB_rz9Xy4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IMB_rz9Xy4.mov; sourceTree = "<group>"; };
@@ -338,9 +343,6 @@
 		21E549F524D98D140038F4C0 /* AXiOSKitExample */ = {
 			isa = PBXGroup;
 			children = (
-				21B14324251A2F2D001737B5 /* IMB_rz9Xy4.JPG */,
-				21B14322251A2D95001737B5 /* IMB_rz9Xy4.mov */,
-				217D22DA251386EA00AFE556 /* instruction.jpg */,
 				21E54A1F24D98D150038F4C0 /* 123.jpg */,
 				21E54A1B24D98D150038F4C0 /* 1234.webp */,
 				21E54A0324D98D140038F4C0 /* AppDelegate.h */,
@@ -354,13 +356,18 @@
 				21E54A2124D98D150038F4C0 /* Class */,
 				21E549F924D98D140038F4C0 /* fishhook-master */,
 				21E54A0224D98D140038F4C0 /* H5.bundle */,
+				21B14324251A2F2D001737B5 /* IMB_rz9Xy4.JPG */,
+				21B14322251A2D95001737B5 /* IMB_rz9Xy4.mov */,
 				21E54A5A24D98D150038F4C0 /* IMG_3972.GIF */,
 				21E54A6A24D98D150038F4C0 /* Info.plist */,
+				217D22DA251386EA00AFE556 /* instruction.jpg */,
 				21E54A1724D98D150038F4C0 /* LaunchScreen.storyboard */,
 				21E54A2024D98D150038F4C0 /* main.m */,
 				21E54A1924D98D150038F4C0 /* Main.storyboard */,
 				21AF7EAC24F24B42003311AF /* MakeKeyAndVisible.h */,
 				21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */,
+				21EFCCE02509FB58000A1AAC /* PointViewController.plist */,
+				21EFCCE2250A0110000A1AAC /* PointViewController2.plist */,
 				215B07A624F1241800535742 /* Router */,
 				21E54A6B24D98D150038F4C0 /* SceneDelegate.h */,
 				21E54A1624D98D150038F4C0 /* SceneDelegate.m */,
@@ -370,8 +377,6 @@
 				21E54A1C24D98D150038F4C0 /* TestVideo */,
 				21E54A5824D98D150038F4C0 /* webp.bundle */,
 				21E549F624D98D140038F4C0 /* WebSocket */,
-				21EFCCE02509FB58000A1AAC /* PointViewController.plist */,
-				21EFCCE2250A0110000A1AAC /* PointViewController2.plist */,
 			);
 			path = AXiOSKitExample;
 			sourceTree = "<group>";
@@ -487,6 +492,9 @@
 				21B143F1251B4803001737B5 /* _21KVOViewController.h */,
 				21B143F2251B4803001737B5 /* _21KVOViewController.m */,
 				21B143F3251B4803001737B5 /* _21KVOViewController.xib */,
+				21AB7119251C25F7000114D2 /* _22ReactiveObjCViewController.h */,
+				21AB711A251C25F7000114D2 /* _22ReactiveObjCViewController.m */,
+				21AB711B251C25F7000114D2 /* _22ReactiveObjCViewController.xib */,
 				21E54A2824D98D150038F4C0 /* AANavigationController.h */,
 				21E54A3E24D98D150038F4C0 /* AANavigationController.m */,
 				21E54A3724D98D150038F4C0 /* AAViewController.h */,
@@ -671,6 +679,7 @@
 				21B143F5251B4803001737B5 /* _21KVOViewController.xib in Resources */,
 				21E54A8424D98D150038F4C0 /* TextFViewController.xib in Resources */,
 				21E54A9C24D98D150038F4C0 /* RunLoopViewController.xib in Resources */,
+				21AB711D251C25F7000114D2 /* _22ReactiveObjCViewController.xib in Resources */,
 				21E54A8724D98D150038F4C0 /* AFNViewController.xib in Resources */,
 				21E54A7424D98D150038F4C0 /* H5.bundle in Resources */,
 				21B14323251A2D95001737B5 /* IMB_rz9Xy4.mov in Resources */,
@@ -810,6 +819,7 @@
 				21E54A9724D98D150038F4C0 /* Person.m in Sources */,
 				21E54A7B24D98D150038F4C0 /* ChatTextMessageModel.m in Sources */,
 				21E54AAA24D98D150038F4C0 /* BAThemeListModel.m in Sources */,
+				21AB711C251C25F7000114D2 /* _22ReactiveObjCViewController.m in Sources */,
 				21E54A6C24D98D150038F4C0 /* AXWebSocketEngine.m in Sources */,
 				21E54AAB24D98D150038F4C0 /* PalyThemeDB.mm in Sources */,
 				21E54A8F24D98D150038F4C0 /* _00TableViewCell.m in Sources */,
