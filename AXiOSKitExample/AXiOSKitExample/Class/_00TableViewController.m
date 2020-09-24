@@ -30,7 +30,7 @@
 #import "_20iOS14ViewController.h"
 #import "_21KVOViewController.h"
 #import "_22ReactiveObjCViewController.h"
-
+#import <ReactiveObjC/ReactiveObjC.h>
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -142,6 +142,13 @@ typedef void (^CollectionBlock)(void);
     }
     
     NSLog(@"identifierForVender = %@",[UIDevice currentDevice].identifierForVendor.UUIDString);
+    
+    
+    [[self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:)
+                        fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple *tuple) {
+            NSLog(@"didSelectRowAtIndexPath = %@", tuple.first);
+            NSLog(@"%@", tuple.second);
+        }];
 
 }
 

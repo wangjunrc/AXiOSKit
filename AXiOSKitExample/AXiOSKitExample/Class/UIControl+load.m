@@ -36,7 +36,7 @@
 //    } error:&error];
 //    if (error) NSLog(@"%@", error);
     
-    [UIControl ax_replaceInstanceMethodWithOriginal:@selector(sendAction:to:forEvent:) newSelector:@selector(user_sendAction:to:forEvent:)];
+//    [UIControl ax_replaceInstanceMethodWithOriginal:@selector(sendAction:to:forEvent:) newSelector:@selector(user_sendAction:to:forEvent:)];
 }
 
 -(void)user_sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event
