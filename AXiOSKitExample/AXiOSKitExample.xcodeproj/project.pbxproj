@@ -25,8 +25,6 @@
 		21AB711C251C25F7000114D2 /* _22ReactiveObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AB711A251C25F7000114D2 /* _22ReactiveObjCViewController.m */; };
 		21AB711D251C25F7000114D2 /* _22ReactiveObjCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21AB711B251C25F7000114D2 /* _22ReactiveObjCViewController.xib */; };
 		21AF7EAD24F24B42003311AF /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */; };
-		21B14323251A2D95001737B5 /* IMB_rz9Xy4.mov in Resources */ = {isa = PBXBuildFile; fileRef = 21B14322251A2D95001737B5 /* IMB_rz9Xy4.mov */; };
-		21B14325251A2F2D001737B5 /* IMB_rz9Xy4.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 21B14324251A2F2D001737B5 /* IMB_rz9Xy4.JPG */; };
 		21B143F4251B4803001737B5 /* _21KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B143F2251B4803001737B5 /* _21KVOViewController.m */; };
 		21B143F5251B4803001737B5 /* _21KVOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21B143F3251B4803001737B5 /* _21KVOViewController.xib */; };
 		21D670BD2474E5D100890F8F /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D670BC2474E5D100890F8F /* ShareViewController.m */; };
@@ -166,8 +164,6 @@
 		21AB711B251C25F7000114D2 /* _22ReactiveObjCViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _22ReactiveObjCViewController.xib; sourceTree = "<group>"; };
 		21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeKeyAndVisible.m; sourceTree = "<group>"; };
 		21AF7EAC24F24B42003311AF /* MakeKeyAndVisible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeKeyAndVisible.h; sourceTree = "<group>"; };
-		21B14322251A2D95001737B5 /* IMB_rz9Xy4.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IMB_rz9Xy4.mov; sourceTree = "<group>"; };
-		21B14324251A2F2D001737B5 /* IMB_rz9Xy4.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMB_rz9Xy4.JPG; sourceTree = "<group>"; };
 		21B143F1251B4803001737B5 /* _21KVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _21KVOViewController.h; sourceTree = "<group>"; };
 		21B143F2251B4803001737B5 /* _21KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _21KVOViewController.m; sourceTree = "<group>"; };
 		21B143F3251B4803001737B5 /* _21KVOViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _21KVOViewController.xib; sourceTree = "<group>"; };
@@ -402,6 +398,51 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		21A04609251E0C0300FEFC15 /* ClassDemo */ = {
+			isa = PBXGroup;
+			children = (
+				21E54A1C24D98D150038F4C0 /* TestVideo */,
+				21E549F624D98D140038F4C0 /* WebSocket */,
+				21E54A5B24D98D150038F4C0 /* TestDB */,
+				21E54A0424D98D140038F4C0 /* Test */,
+				215B07A624F1241800535742 /* Router */,
+				21E54A0B24D98D150038F4C0 /* Chat */,
+				21A04552251CD2C600FEFC15 /* News */,
+			);
+			path = ClassDemo;
+			sourceTree = "<group>";
+		};
+		21A0460B251E0C6A00FEFC15 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				21E54A0224D98D140038F4C0 /* H5.bundle */,
+				21E54A5A24D98D150038F4C0 /* IMG_3972.GIF */,
+				21E54A6A24D98D150038F4C0 /* Info.plist */,
+				217D22DA251386EA00AFE556 /* instruction.jpg */,
+				21E54A1724D98D150038F4C0 /* LaunchScreen.storyboard */,
+				21E54A2024D98D150038F4C0 /* main.m */,
+				21E54A1924D98D150038F4C0 /* Main.storyboard */,
+				21AF7EAC24F24B42003311AF /* MakeKeyAndVisible.h */,
+				21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */,
+				21EFCCE02509FB58000A1AAC /* PointViewController.plist */,
+				21EFCCE2250A0110000A1AAC /* PointViewController2.plist */,
+				21E54A6B24D98D150038F4C0 /* SceneDelegate.h */,
+				21E54A1624D98D150038F4C0 /* SceneDelegate.m */,
+				21E54A0124D98D140038F4C0 /* test_webp.webp */,
+				21E54A5824D98D150038F4C0 /* webp.bundle */,
+				21E54A1F24D98D150038F4C0 /* 123.jpg */,
+				21E54A1B24D98D150038F4C0 /* 1234.webp */,
+				21E54A0324D98D140038F4C0 /* AppDelegate.h */,
+				21E54A5924D98D150038F4C0 /* AppDelegate.m */,
+				21E54A1524D98D150038F4C0 /* Assets.xcassets */,
+				215B079D24F11B5600535742 /* AxDebug.xcconfig */,
+				215B079C24F11A9000535742 /* AxGenerator.xcconfig */,
+				2100F46824F40A3D0057DD66 /* AXiOSKitExampleRelease.entitlements */,
+				215B079E24F11B6200535742 /* AxRelease.xcconfig */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
 		21D670BA2474E5D100890F8F /* 分享 */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,41 +458,10 @@
 		21E549F524D98D140038F4C0 /* AXiOSKitExample */ = {
 			isa = PBXGroup;
 			children = (
-				21E54A1F24D98D150038F4C0 /* 123.jpg */,
-				21E54A1B24D98D150038F4C0 /* 1234.webp */,
-				21E54A0324D98D140038F4C0 /* AppDelegate.h */,
-				21E54A5924D98D150038F4C0 /* AppDelegate.m */,
-				21E54A1524D98D150038F4C0 /* Assets.xcassets */,
-				215B079D24F11B5600535742 /* AxDebug.xcconfig */,
-				215B079C24F11A9000535742 /* AxGenerator.xcconfig */,
-				2100F46824F40A3D0057DD66 /* AXiOSKitExampleRelease.entitlements */,
-				215B079E24F11B6200535742 /* AxRelease.xcconfig */,
-				21E54A0B24D98D150038F4C0 /* Chat */,
 				21E54A2124D98D150038F4C0 /* Class */,
+				21A04609251E0C0300FEFC15 /* ClassDemo */,
 				21E549F924D98D140038F4C0 /* fishhook-master */,
-				21E54A0224D98D140038F4C0 /* H5.bundle */,
-				21B14324251A2F2D001737B5 /* IMB_rz9Xy4.JPG */,
-				21A04552251CD2C600FEFC15 /* News */,
-				21B14322251A2D95001737B5 /* IMB_rz9Xy4.mov */,
-				21E54A5A24D98D150038F4C0 /* IMG_3972.GIF */,
-				21E54A6A24D98D150038F4C0 /* Info.plist */,
-				217D22DA251386EA00AFE556 /* instruction.jpg */,
-				21E54A1724D98D150038F4C0 /* LaunchScreen.storyboard */,
-				21E54A2024D98D150038F4C0 /* main.m */,
-				21E54A1924D98D150038F4C0 /* Main.storyboard */,
-				21AF7EAC24F24B42003311AF /* MakeKeyAndVisible.h */,
-				21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */,
-				21EFCCE02509FB58000A1AAC /* PointViewController.plist */,
-				21EFCCE2250A0110000A1AAC /* PointViewController2.plist */,
-				215B07A624F1241800535742 /* Router */,
-				21E54A6B24D98D150038F4C0 /* SceneDelegate.h */,
-				21E54A1624D98D150038F4C0 /* SceneDelegate.m */,
-				21E54A0424D98D140038F4C0 /* Test */,
-				21E54A0124D98D140038F4C0 /* test_webp.webp */,
-				21E54A5B24D98D150038F4C0 /* TestDB */,
-				21E54A1C24D98D150038F4C0 /* TestVideo */,
-				21E54A5824D98D150038F4C0 /* webp.bundle */,
-				21E549F624D98D140038F4C0 /* WebSocket */,
+				21A0460B251E0C6A00FEFC15 /* Support */,
 			);
 			path = AXiOSKitExample;
 			sourceTree = "<group>";
@@ -739,7 +749,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21B14325251A2F2D001737B5 /* IMB_rz9Xy4.JPG in Resources */,
 				217D22DB251386EA00AFE556 /* instruction.jpg in Resources */,
 				21E54A7024D98D150038F4C0 /* README.md in Resources */,
 				21E54AA424D98D150038F4C0 /* webp.bundle in Resources */,
@@ -757,7 +766,6 @@
 				21AB711D251C25F7000114D2 /* _22ReactiveObjCViewController.xib in Resources */,
 				21E54A8724D98D150038F4C0 /* AFNViewController.xib in Resources */,
 				21E54A7424D98D150038F4C0 /* H5.bundle in Resources */,
-				21B14323251A2D95001737B5 /* IMB_rz9Xy4.mov in Resources */,
 				21E54A8024D98D150038F4C0 /* 1234.webp in Resources */,
 				21E54A7124D98D150038F4C0 /* CONTRIBUTING.md in Resources */,
 				21E54A7824D98D150038F4C0 /* ChatViewController.xib in Resources */,

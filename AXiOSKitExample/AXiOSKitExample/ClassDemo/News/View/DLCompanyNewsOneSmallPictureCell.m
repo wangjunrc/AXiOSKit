@@ -31,23 +31,27 @@
     
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.bgView);
-        make.left.equalTo(self.bgView);
-        make.right.mas_lessThanOrEqualTo(self.contentImageView.mas_left).mas_offset(-9);
+        make.top.left.equalTo(self.bgView);
+        make.right.equalTo(self.contentImageView.mas_left).mas_offset(-9);
+    }];
+    
+    
+    [self.contentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.titleLabel);
+        make.right.equalTo(self.bgView.mas_right);
+        make.width.equalTo(self.bgView.mas_width).multipliedBy(0.33);
+        make.height.equalTo(self.contentImageView.mas_width).multipliedBy(0.5);
     }];
     
     [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.equalTo(self.contentImageView.mas_bottom);
         make.left.equalTo(self.titleLabel);
-        make.right.mas_lessThanOrEqualTo(self.contentImageView.mas_left).mas_offset(-9);
-        make.bottom.equalTo(self.contentImageView);
+        make.right.equalTo(self.contentImageView.mas_left).mas_offset(-9);
+        
+        make.bottom.equalTo(self.bgView.mas_bottom);
     }];
-    
-    [self.contentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.bgView);
-        make.right.equalTo(self.bgView);
-        make.bottom.equalTo(self.bgView);
-        make.width.equalTo(self.bgView).multipliedBy(0.33);
-    }];
+    self.contentImageView .backgroundColor = UIColor.redColor;
 }
 
 -(UIView *)bgView {
@@ -82,8 +86,11 @@
 
 - (UIImageView *)contentImageView {
     if (!_contentImageView) {
-        _contentImageView = [UIImageView.alloc init];
+        _contentImageView = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"1029x1029"]];
+        _contentImageView.layer.masksToBounds = YES;
         _contentImageView.layer.cornerRadius = 6;
+        [_contentImageView setContentScaleFactor:[[UIScreen mainScreen] scale]];
+        _contentImageView.contentMode =  UIViewContentModeScaleAspectFill;
     }
     return _contentImageView;
 }

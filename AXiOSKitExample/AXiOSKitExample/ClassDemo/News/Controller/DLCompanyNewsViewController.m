@@ -34,12 +34,11 @@
 
     
     [self loadUI];
-    
     [self getNewsListsNetwork];
 }
 
 -(CGFloat )tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewAutomaticDimension;
+    return 120;
 }
 -(CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
@@ -77,7 +76,7 @@
         model.type = DLCompanyNewsTypeOneSamllPicture;
         model.TITLE = @"标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题";
         model.PUB_DATE = @"2020-01-01";
-        model.TITLE_IMG_URL_ARRAY =@[ [NSString stringWithFormat:@"https://bing.ioliu.cn/v1/rand?key=b%d&w=200&h=100",i]].mutableCopy;
+        model.TITLE_IMG_URL_ARRAY =@[[NSString stringWithFormat:@"https://bing.ioliu.cn/v1/rand?key=bc%d&w=200&h=100",i]].mutableCopy;
         [self.dataArray addObject:model];
     }
     
@@ -86,11 +85,11 @@
         model.type = DLCompanyNewsTypeMoreSamllPicture;
         model.TITLE = @"三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图三个图";
         model.PUB_DATE = @"2020-01-01";
-        
+
         for (int j=0; j<3; j++) {
-            [model.TITLE_IMG_URL_ARRAY addObject:[NSString stringWithFormat:@"https://bing.ioliu.cn/v1/rand?key=b%d&w=200&h=100",i]];
+            [model.TITLE_IMG_URL_ARRAY addObject:[NSString stringWithFormat:@"https://bing.ioliu.cn/v1/rand?key=bc%d&w=200&h=100",i]];
         }
-        
+
         [self.dataArray addObject:model];
     }
     
@@ -113,7 +112,6 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _tableView.separatorInset = UIEdgeInsetsMake(0, 18, 0, 18);
         _tableView.separatorColor = [UIColor redColor];
-        
     }
     return _tableView;
 }

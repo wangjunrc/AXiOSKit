@@ -5,7 +5,8 @@
 //  Created by liuweixing on 2017/2/20.
 //  Copyright © 2017年 liuweixing All rights reserved.
 //
-#if __has_include("UIScrollView+EmptyDataSet.h")
+
+//#if __has_include("UIScrollView+EmptyDataSet.h")
 
 #import "UIScrollView+AXEmptyDataSet.h"
 #import "AXMacros.h"
@@ -14,57 +15,21 @@
 
 typedef void(^ReloadBlock)(void);
 
-@interface UIScrollView()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
+@interface AXEmptyDataHelper : NSObject<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
 @property (nonatomic, strong)ReloadBlock reloadBlock;
 /**
  * 占位图片名称
  */
-@property (nonatomic, copy) NSString *emptyDataImageName;
+@property (nonatomic, strong) UIImage *placeImageName;
 /**
  * 占位文字
  */
-@property (nonatomic, copy) NSString *emptyDataPlaceString;
+@property (nonatomic, copy) NSString *placeTitle;
 
 @end
 
-@implementation UIScrollView (AXEmptyDataSet)
-
-
-/**
- 设置空集合view
- 
- @param reloadBlock 刷新回调
- */
-- (void)ax_emptyDataSetWithReloadBlock:(void(^)(void))reloadBlock{
-    
-    if (self.emptyDataImageName.length==0) {
-        self.emptyDataImageName = @"ax_emptyData";
-    }
-    if (self.emptyDataPlaceString.length==0) {
-        self.emptyDataPlaceString = @"亲,该页面暂无数据";
-    }
-    
-    self.emptyDataSetSource = self;
-    self.emptyDataSetDelegate = self;
-    self.reloadBlock = reloadBlock;
-    
-}
-
-/**
- 设置空集合view
- 
- @param imageName 占位图片名称
- @param title 占位文字
- @param reloadBlock 刷新回调
- */
-- (void)ax_emptyDataWithImageName:(NSString *)imageName titlte:(NSString *)title reloadBlock:(void(^)(void))reloadBlock{
-    self.emptyDataImageName = imageName;
-    self.emptyDataPlaceString = title;
-    [self ax_emptyDataSetWithReloadBlock:reloadBlock];
-}
-
-
+@implementation AXEmptyDataHelper
 
 ///**
 // *调用UITableView或者UICollectionView的［-reloadData］方法便会相应此方法。
@@ -73,7 +38,7 @@ typedef void(^ReloadBlock)(void);
 //- (void)reloadEmptyDataSet;
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
-    return [UIImage imageNamed:self.emptyDataImageName];
+    return self.placeImageName;
 }
 
 /**
@@ -94,13 +59,11 @@ typedef void(^ReloadBlock)(void);
 
 //标题文本，详细描述，富文本样式
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
-    NSString *text = self.emptyDataPlaceString;
-    
+    NSString *text = self.placeTitle;
     NSDictionary *attributes = @{
-                                 NSFontAttributeName: [UIFont boldSystemFontOfSize:15.0f],
-                                 NSForegroundColorAttributeName: [UIColor darkGrayColor]
-                                 };
-    
+        NSFontAttributeName: [UIFont boldSystemFontOfSize:15.0f],
+        NSForegroundColorAttributeName: [UIColor darkGrayColor]
+    };
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
     
 }
@@ -136,7 +99,17 @@ typedef void(^ReloadBlock)(void);
 //刷新按钮背景图片,能显示按钮文字
 - (UIImage *)buttonBackgroundImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state{
     
-    return  [UIImage ax_imageRectangleWithSize:CGSizeMake(100, 40) color:[UIColor lightGrayColor]];
+    switch (state) {
+        case UIControlStateNormal:
+            return  [UIImage ax_imageRectangleWithSize:CGSizeMake(100, 40) color:[UIColor blueColor]];
+            break;
+        case UIControlStateDisabled:
+            return  [UIImage ax_imageRectangleWithSize:CGSizeMake(100, 40) color:[UIColor grayColor]];
+            break;
+        default:
+            return nil;
+            break;
+    }
 }
 
 /**
@@ -177,39 +150,81 @@ typedef void(^ReloadBlock)(void);
 //- (void)emptyDataSetDidTapView:(UIScrollView *)scrollView{ // Do something}
 
 //点击button 响应
-//- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView{
-//    if (self.reloadBlock) {
-//        self.reloadBlock();
-//    }
-//}
+- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView{
+    if (self.reloadBlock) {
+        self.reloadBlock();
+    }
+}
+@end
 
 
+@interface UIScrollView()
+
+
+@property(nonatomic, strong) AXEmptyDataHelper *helper;
+
+@end
+
+@implementation UIScrollView (AXEmptyDataSet)
+
+
+/**
+ 设置空集合view
+ 
+ @param reloadBlock 刷新回调
+ */
+- (void)ax_emptyDataSetWithReloadBlock:(void(^)(void))reloadBlock{
+    
+    if (!self.helper) {
+        self.helper =[[AXEmptyDataHelper alloc]init];
+    }
+    
+    if (!self.helper.placeImageName) {
+        self.helper.placeImageName = [UIImage imageNamed:@"ax_emptyData"];
+    }
+    if (self.helper.placeTitle.length==0) {
+        self.helper.placeTitle = @"亲,该页面暂无数据";
+    }
+    
+    self.emptyDataSetSource = self.helper;
+    self.emptyDataSetDelegate = self.helper;
+    self.helper.reloadBlock = reloadBlock;
+    
+}
+
+/**
+ 设置空集合view
+ 
+ @param imageName 占位图片名称
+ @param title 占位文字
+ @param reloadBlock 刷新回调
+ */
+- (void)ax_emptyDataWithImage:(UIImage *)image titlte:(NSString *)title reloadBlock:(void(^)(void))reloadBlock{
+    
+    self.helper =[[AXEmptyDataHelper alloc]init];
+    self.helper.placeImageName =image;
+    self.helper.placeTitle =title;
+    [self ax_emptyDataSetWithReloadBlock:reloadBlock];
+}
 
 
 #pragma mark - set and get
 
-- (void)setReloadBlock:(ReloadBlock)reloadBlock{
-    objc_setAssociatedObject(self, @selector(reloadBlock),reloadBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (AXEmptyDataHelper *)helper {
+    return objc_getAssociatedObject(self,@selector(helper));
+//    AXEmptyDataHelper * obj = objc_getAssociatedObject(self,@selector(helper));
+//
+//    if (obj == nil) {
+//        NSLog(@"obj == nil");
+//        obj = [[AXEmptyDataHelper alloc]init];
+//    }
+//    NSLog(@"obj == nil %@",obj);
+//    return obj;
+}
+- (void)setHelper:(AXEmptyDataHelper *)helper {
+    objc_setAssociatedObject(self, @selector(helper),helper, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (ReloadBlock)reloadBlock{
-    return objc_getAssociatedObject(self,@selector(reloadBlock));
-}
-- (void)setEmptyDataImageName:(NSString *)emptyDataImageName{
-    objc_setAssociatedObject(self, @selector(emptyDataImageName),emptyDataImageName, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-- (NSString *)emptyDataImageName{
-    return  objc_getAssociatedObject(self,@selector(emptyDataImageName));
-}
-
-- (void)setEmptyDataPlaceString:(NSString *)emptyDataPlaceString{
-    objc_setAssociatedObject(self, @selector(emptyDataPlaceString),emptyDataPlaceString, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-- (NSString *)emptyDataPlaceString{
-    return  objc_getAssociatedObject(self,@selector(emptyDataPlaceString));;
-}
 
 @end
-#endif
+//#endif

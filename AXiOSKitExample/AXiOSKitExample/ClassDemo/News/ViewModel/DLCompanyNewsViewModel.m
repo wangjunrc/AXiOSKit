@@ -47,7 +47,7 @@
             DLCompanyNewsOneSmallPictureCell *cell = [self.tableView dequeueReusableCellWithIdentifier:DLCompanyNewsOneSmallPictureCell.identifier forIndexPath:indexPath];
             cell.titleLabel.text = model.TITLE;
             cell.dateLabel.text = model.PUB_DATE;
-            [cell.contentImageView sd_setImageWithURL:[NSURL URLWithString:model.TITLE_IMG_URL_ARRAY.firstObject] placeholderImage:[UIImage imageNamed:@"hot_load"]];
+            [cell.contentImageView sd_setImageWithURL:[NSURL URLWithString:model.TITLE_IMG_URL_ARRAY.firstObject] placeholderImage:[UIImage imageNamed:@"1029x1029"]];
             resCell=cell;
         }
             break;
@@ -57,9 +57,10 @@
             cell.titleLabel.text = model.TITLE;
             cell.dateLabel.text = model.PUB_DATE;
             
-//            [model.TITLE_IMG_URL_ARRAY enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//                [cell.imageViewArray[idx] sd_setImageWithURL:[NSURL URLWithString:obj] placeholderImage:[UIImage imageNamed:@"hot_load"]];
-//            }];
+            [model.TITLE_IMG_URL_ARRAY enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                NSLog(@"URL = %@",obj);
+                [cell.imageViewArray[idx] sd_setImageWithURL:[NSURL URLWithString:obj] placeholderImage:[UIImage imageNamed:@"1029x1029"]];
+            }];
             resCell=cell;
             
         }
