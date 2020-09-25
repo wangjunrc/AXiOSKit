@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#if __has_include("UIScrollView+EmptyDataSet.h")
+//#if __has_include("UIScrollView+EmptyDataSet.h")
 @interface UIScrollView (AXEmptyDataSet)
 
 /**
@@ -24,7 +24,7 @@
  @param title 占位文字
  @param reloadBlock 刷新回调
  */
-- (void)ax_emptyDataWithImageName:(NSString *)imageName titlte:(NSString *)title reloadBlock:(void(^)(void))reloadBlock;
+- (void)ax_emptyDataWithImage:(UIImage *)image titlte:(NSString *)title reloadBlock:(void(^)(void))reloadBlock;
 
 @end
-#endif
+//#endif
