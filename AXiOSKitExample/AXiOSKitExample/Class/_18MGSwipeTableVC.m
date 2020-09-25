@@ -11,8 +11,7 @@
 #import <Masonry/Masonry.h>
 #import <AXiOSKit/AXiOSKit.h>
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
-#import "UIScrollView+TT.h"
-#import "TTData.h"
+
 @interface MyTableViewCell : UITableViewCell
 @property(nonatomic, strong)UIImageView *imageView1;
 @end
@@ -74,7 +73,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView registerClass:MyMGSwipeTableCell.class forCellReuseIdentifier:@"cellID"];
     self.tableView.tableFooterView = UIView.alloc.init;
-    TTData *tt = [[TTData alloc]init];
+    
 
 //    self.tableView.emptyDataSetSource = tt;
 //        self.tableView.emptyDataSetDelegate = tt;
