@@ -19,58 +19,52 @@
 }
 
 -(void)_initUI {
+    
     [self.contentView addSubview:self.bgView];
     [self.bgView addSubview:self.titleLabel];
     [self.bgView addSubview:self.imgViewBgView];
     [self.bgView addSubview:self.dateLabel];
-    self.bgView.backgroundColor = UIColor.grayColor;
+    
+    
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(15, 15, 15, 15));
     }];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.bgView);
-        make.left.equalTo(self.bgView);
-        make.right.equalTo(self.bgView);
+        make.top.left.right.equalTo(self.bgView);
     }];
     
+    NSMutableArray<UIImageView *> *imgViewBgViewArray = [NSMutableArray array];
+    for(int i=0;i<3;i++){
+        UIImageView *imgView = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"1029x1029"]];
+        imgView.backgroundColor = UIColor.greenColor;
+        
+        [imgView setContentScaleFactor:[[UIScreen mainScreen] scale]];
+        imgView.contentMode =  UIViewContentModeScaleAspectFill;
+        imgView.clipsToBounds = YES;
+        [self.imgViewBgView addSubview:imgView];
+        [imgViewBgViewArray addObject:imgView];
+    }
     
-        
-        NSMutableArray<UIImageView *> *imgViewBgViewArray = [NSMutableArray array];
-        for(int i=0;i<3;i++){
-            UIImageView *imgView = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"exporte"]];
-            imgView.backgroundColor = UIColor.orangeColor;
-            imgView.contentMode =0;
-            [self.imgViewBgView addSubview:imgView];
-            [imgViewBgViewArray addObject:imgView];
-        }
-        
-        [self.imgViewBgView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.titleLabel.mas_bottom).mas_offset(15);
-            make.left.mas_offset(0);
-            make.right.mas_offset(0);
-            make.height.mas_lessThanOrEqualTo(120);
-        }];
-        
-        
-//        [imgViewBgViewArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:15 leadSpacing:0 tailSpacing:0];
-
-    [imgViewBgViewArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:30 leadSpacing:10 tailSpacing:10];
+    self.imageViewArray =imgViewBgViewArray.copy;
     
+    self.imgViewBgView .backgroundColor = UIColor.redColor;
+    [self.imgViewBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.titleLabel.mas_bottom).mas_offset(15);
+        make.left.mas_offset(0);
+        make.right.mas_offset(0);
+        make.height.mas_offset(84);
+    }];
     
-        [imgViewBgViewArray mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_offset(10);
-            make.bottom.mas_offset(-10);
-//            make.height.mas_equalTo(60);
-        }];
-        
-        
-        
-//        [self.imgViewBgView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.bottom.equalTo(imgViewBgViewArray.firstObject.mas_bottom);
-////            make.height.mas_equalTo(60);
-//        }];
-   
+//    [imgViewBgViewArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:3 leadSpacing:0 tailSpacing:0];
+    
+        [imgViewBgViewArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:3 leadSpacing:0 tailSpacing:0];
+    
+    [imgViewBgViewArray mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_offset(0);
+        make.bottom.mas_offset(0);
+    }];
+    
     
     
     [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -117,6 +111,9 @@
     if (!_imgViewBgView) {
         _imgViewBgView = [UIView.alloc init];
         _imgViewBgView.layer.cornerRadius = 6;
+        _imgViewBgView.layer.masksToBounds = YES;
+        _imgViewBgView.clipsToBounds = YES;
+        
     }
     return _imgViewBgView;
 }
