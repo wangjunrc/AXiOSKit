@@ -34,7 +34,6 @@
 
     
     [self loadUI];
-    
     [self getNewsListsNetwork];
 }
 

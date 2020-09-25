@@ -10,6 +10,9 @@
 #import <MGSwipeTableCell/MGSwipeTableCell.h>
 #import <Masonry/Masonry.h>
 #import <AXiOSKit/AXiOSKit.h>
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#import "UIScrollView+TT.h"
+#import "TTData.h"
 @interface MyTableViewCell : UITableViewCell
 @property(nonatomic, strong)UIImageView *imageView1;
 @end
@@ -47,7 +50,7 @@
 
 @end
 
-@interface _18MGSwipeTableVC ()<UISearchControllerDelegate,UISearchResultsUpdating>
+@interface _18MGSwipeTableVC ()<UISearchControllerDelegate,UISearchResultsUpdating,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @property (nonatomic,strong) UISearchController *searchController;
 
@@ -57,7 +60,10 @@
 
 
 @implementation _18MGSwipeTableVC
-
+//- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+//{
+//    return [UIImage imageNamed:@"chongshe"];
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -67,9 +73,16 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView registerClass:MyMGSwipeTableCell.class forCellReuseIdentifier:@"cellID"];
-    
- 
+    self.tableView.tableFooterView = UIView.alloc.init;
+    TTData *tt = [[TTData alloc]init];
 
+//    self.tableView.emptyDataSetSource = tt;
+//        self.tableView.emptyDataSetDelegate = tt;
+    
+    [self.tableView ax_emptyDataWithImage:[UIImage imageNamed:@"chongshe"] titlte:@"刷新" reloadBlock:^{
+        NSLog(@"reloadBlockreloadBlockreloadBlockreloadBlockreloadBlock");
+    }];
+    
     
     //创建UISearchController
         self.searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
@@ -110,6 +123,10 @@
 //    self.searchController.searchBar.showsCancelButton = YES;
 //    self.searchController.searchBar.showsBookmarkButton = YES;
 //    self.searchController.searchBar.shouldGroupAccessibilityChildren = YES;
+    
+    
+    
+    
 }
 
 
@@ -130,10 +147,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.searchController.active) {
-        return 3;
-    }
-    return 10;
+//    if (self.searchController.active) {
+//        return 3;
+//    }
+//    return 10;
+    
+    return  0;
 }
 -(CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return UITableViewAutomaticDimension;
