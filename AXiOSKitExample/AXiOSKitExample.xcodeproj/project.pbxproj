@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2100F46724F405640057DD66 /* _17OtherShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100F46624F405640057DD66 /* _17OtherShareViewController.m */; };
 		2100F46A24F40A3D0057DD66 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2100F46924F40A3D0057DD66 /* ExternalAccessory.framework */; };
+		2118AFA4251EEB9B0031BDB2 /* AATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2118AFA2251EEB9B0031BDB2 /* AATableViewCell.m */; };
+		2118AFA5251EEB9B0031BDB2 /* AATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2118AFA3251EEB9B0031BDB2 /* AATableViewCell.xib */; };
 		212B59482515E1A90073ED07 /* _01ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B59472515E1A90073ED07 /* _01ContentViewController.m */; };
 		215B07A924F1242C00535742 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 215B07A824F1242C00535742 /* RouterManager.m */; };
 		217D22D7251386AE00AFE556 /* _19ScrollContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */; };
@@ -131,6 +133,9 @@
 		2100F46824F40A3D0057DD66 /* AXiOSKitExampleRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AXiOSKitExampleRelease.entitlements; sourceTree = "<group>"; };
 		2100F46924F40A3D0057DD66 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		2105E7062462EA640076A65B /* 阿星Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "阿星Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2118AFA1251EEB9B0031BDB2 /* AATableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AATableViewCell.h; sourceTree = "<group>"; };
+		2118AFA2251EEB9B0031BDB2 /* AATableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AATableViewCell.m; sourceTree = "<group>"; };
+		2118AFA3251EEB9B0031BDB2 /* AATableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AATableViewCell.xib; sourceTree = "<group>"; };
 		212B59462515E1A90073ED07 /* _01ContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _01ContentViewController.h; sourceTree = "<group>"; };
 		212B59472515E1A90073ED07 /* _01ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _01ContentViewController.m; sourceTree = "<group>"; };
 		214FF8642476192A00EF0C29 /* 分享.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "分享.entitlements"; sourceTree = "<group>"; };
@@ -394,6 +399,9 @@
 				21A0455D251CD2C600FEFC15 /* DLCompanyNewsOneSmallPictureCell.m */,
 				21A0455E251CD2C600FEFC15 /* DLCompanyNewsTextCell.h */,
 				21A04561251CD2C600FEFC15 /* DLCompanyNewsTextCell.m */,
+				2118AFA1251EEB9B0031BDB2 /* AATableViewCell.h */,
+				2118AFA2251EEB9B0031BDB2 /* AATableViewCell.m */,
+				2118AFA3251EEB9B0031BDB2 /* AATableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -751,6 +759,7 @@
 			files = (
 				217D22DB251386EA00AFE556 /* instruction.jpg in Resources */,
 				21E54A7024D98D150038F4C0 /* README.md in Resources */,
+				2118AFA5251EEB9B0031BDB2 /* AATableViewCell.xib in Resources */,
 				21E54AA424D98D150038F4C0 /* webp.bundle in Resources */,
 				21E54A7324D98D150038F4C0 /* test_webp.webp in Resources */,
 				21E54A7224D98D150038F4C0 /* fishhook.podspec in Resources */,
@@ -830,7 +839,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$SRCROOT/JCIconVersion.sh\n";
+			shellScript = "# 图标加版本号\n# $SRCROOT/JCIconVersion.sh\n";
 		};
 		2150D39C25122DCE00279EE7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -847,7 +856,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$SRCROOT/launch_image.sh\n";
+			shellScript = "# 启动图加版本号\n# $SRCROOT/launch_image.sh\n";
 		};
 		7975C44782069503AFEA4982 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -906,6 +915,7 @@
 				21A0456A251CD2C600FEFC15 /* DLCompanyNewsTextCell.m in Sources */,
 				21E54AA924D98D150038F4C0 /* BAUserInfo.m in Sources */,
 				21E54A9724D98D150038F4C0 /* Person.m in Sources */,
+				2118AFA4251EEB9B0031BDB2 /* AATableViewCell.m in Sources */,
 				21E54A7B24D98D150038F4C0 /* ChatTextMessageModel.m in Sources */,
 				21E54AAA24D98D150038F4C0 /* BAThemeListModel.m in Sources */,
 				21AB711C251C25F7000114D2 /* _22ReactiveObjCViewController.m in Sources */,

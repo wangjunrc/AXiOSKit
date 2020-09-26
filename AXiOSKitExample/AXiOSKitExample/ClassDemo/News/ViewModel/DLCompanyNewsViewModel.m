@@ -10,6 +10,7 @@
 
 #import <AXiOSKit/AXiOSKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "AATableViewCell.h"
 @interface DLCompanyNewsViewModel ()
 
 @property(nonatomic,weak)UITableView *tableView;
@@ -27,6 +28,7 @@
         self.tableView =tableView;
         [tableView registerClass:DLCompanyNewsOneSmallPictureCell.class forCellReuseIdentifier:DLCompanyNewsOneSmallPictureCell.identifier];
         [tableView registerClass:DLCompanyNewsMoreSmallPictureCell.class forCellReuseIdentifier:DLCompanyNewsMoreSmallPictureCell.identifier];
+        [tableView registerNib:ax_Nib(@"AATableViewCell") forCellReuseIdentifier:@"AATableViewCell"];
     }
     return self;
     
@@ -44,10 +46,17 @@
             break;
         case DLCompanyNewsTypeOneSamllPicture:
         {
-            DLCompanyNewsOneSmallPictureCell *cell = [self.tableView dequeueReusableCellWithIdentifier:DLCompanyNewsOneSmallPictureCell.identifier forIndexPath:indexPath];
+//            DLCompanyNewsOneSmallPictureCell *cell = [self.tableView dequeueReusableCellWithIdentifier:DLCompanyNewsOneSmallPictureCell.identifier forIndexPath:indexPath];
+//            cell.titleLabel.text = model.TITLE;
+//            cell.dateLabel.text = model.PUB_DATE;
+//            [cell.contentImageView sd_setImageWithURL:[NSURL URLWithString:model.TITLE_IMG_URL_ARRAY.firstObject] placeholderImage:[UIImage imageNamed:@"1029x1029"]];
+//            resCell=cell;
+            
+            AATableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"AATableViewCell" forIndexPath:indexPath];
+            
             cell.titleLabel.text = model.TITLE;
-            cell.dateLabel.text = model.PUB_DATE;
-            [cell.contentImageView sd_setImageWithURL:[NSURL URLWithString:model.TITLE_IMG_URL_ARRAY.firstObject] placeholderImage:[UIImage imageNamed:@"1029x1029"]];
+            cell.bottomLabel.text = model.PUB_DATE;
+            [cell.logoImgView sd_setImageWithURL:[NSURL URLWithString:model.TITLE_IMG_URL_ARRAY.firstObject] placeholderImage:[UIImage imageNamed:@"200x100"]];
             resCell=cell;
         }
             break;
