@@ -119,7 +119,7 @@ echo "font size $FONT_SIZE"
 
 convert ${BASE_IMAGE_PATH}  -font Helvetica  -pointsize ${FONT_SIZE} \
 -draw "gravity south \
-fill white  text 0,12 '$APP_VERSION($APP_BUILD_NUM)'" \
+fill black  text 0,12 '$APP_VERSION($APP_BUILD_NUM)'" \
 ${BASE_IMAGE_PATH}
 
 
