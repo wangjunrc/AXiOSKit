@@ -70,16 +70,17 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.viewBottomConstraint uninstall];
         
-        [view1.superview setNeedsUpdateConstraints];
-        [UIView animateWithDuration:1 animations:^{
-            [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.right.mas_equalTo(-30);
-                
-            }];
-            
-            [view1.superview layoutIfNeeded];
-        }];
-        
+//        [view1.superview setNeedsUpdateConstraints];
+//        [UIView animateWithDuration:1 animations:^{
+//            [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+//                make.right.mas_equalTo(-30);
+//
+//            }];
+//
+//            [view1.superview layoutIfNeeded];
+//        }];
+        AXDateVC *vc = [[AXDateVC alloc]init];
+        [strongSelf ax_showVC:vc];
         
         
     }];

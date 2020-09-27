@@ -411,7 +411,11 @@
  @param aVC vc
  */
 - (void)ax_showVC:(UIViewController *)aVC{
-    
+    if (@available(iOS 13.0, *)) {
+        if (aVC.modalPresentationStyle == UIModalPresentationAutomatic || aVC.modalPresentationStyle == UIModalPresentationPageSheet) {
+            aVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        }
+    }
     [self presentViewController:aVC animated:YES completion:nil];
 }
 

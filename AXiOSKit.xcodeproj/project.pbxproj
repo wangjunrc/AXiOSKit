@@ -1046,14 +1046,14 @@
 				247328F02277FBB8005CF92D /* UIViewController+AXAlert.m */,
 				247329112277FBB8005CF92D /* UIViewController+AXKit.h */,
 				247328DE2277FBB8005CF92D /* UIViewController+AXKit.m */,
+				21B1432E251AD3F4001737B5 /* UIViewController+AXMedia.h */,
+				21B1432F251AD3F4001737B5 /* UIViewController+AXMedia.m */,
 				247329202277FBB8005CF92D /* UIViewController+AXNavBarConfig.h */,
 				247328E82277FBB8005CF92D /* UIViewController+AXNavBarConfig.m */,
 				247329242277FBB8005CF92D /* UIWindow+AXKit.h */,
 				247328E42277FBB8005CF92D /* UIWindow+AXKit.m */,
 				247328CD2277FBB8005CF92D /* WKWebView+AXKit.h */,
 				247329052277FBB8005CF92D /* WKWebView+AXKit.m */,
-				21B1432E251AD3F4001737B5 /* UIViewController+AXMedia.h */,
-				21B1432F251AD3F4001737B5 /* UIViewController+AXMedia.m */,
 			);
 			path = 01Category;
 			sourceTree = "<group>";
