@@ -31,7 +31,7 @@
 #import "_21KVOViewController.h"
 #import "_22ReactiveObjCViewController.h"
 #import <ReactiveObjC/ReactiveObjC.h>
-#import "DLCompanyNewsViewController.h"
+#import "_23FullViewController.h"
 
 @import AssetsLibrary;
 
@@ -522,17 +522,14 @@ void mySLog(NSString *format, ...) {
                     [self.navigationController pushViewController:vc animated:YES];
                 },
                 },
-                
                 @{
-                        @"index": @22,
-                        @"title": @"DLCompanyNewsViewController",
+                        @"index": @23,
+                        @"title": @"约束全屏",
                         @"action": ^{
-                            DLCompanyNewsViewController *vc = [[DLCompanyNewsViewController alloc] init];
+                            _23FullViewController *vc = [[_23FullViewController alloc] init];
                     [self.navigationController pushViewController:vc animated:YES];
                 },
                 },
-                
-                
         ];
     }
     return _dataArray;
