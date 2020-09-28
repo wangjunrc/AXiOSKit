@@ -1573,3 +1573,137 @@ NSLog(@"余数是%d",10%3);
  
  [UISearchBar.appearance setBarTintColor:UIColor.redColor];
  ```
+## 正则表达式
+```
+{
+    /// <正则表达式>
+    NSString *regEx = @"12";
+    ///<待匹配的字符串>
+    NSString *string = @"1234567";
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
+    BOOL matched = [predicate evaluateWithObject:string];
+    NSLog(@"是否匹配 = %d", matched);
+}
+
+{
+    NSString *regEx = @"12";
+    NSString *string = @"123123";
+    NSError *error;
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
+    if (error) {
+        NSLog(@"error = %@", error);
+    }
+
+    NSUInteger number = [regularExpression numberOfMatchesInString:string options:kNilOptions range:NSMakeRange(0, string.length)];
+    NSLog(@"匹配的个数 = %lu", (unsigned long) number);
+
+    BOOL matched = (number != 0);
+    NSLog(@"是否匹配 = %d", matched);
+
+
+}
+
+{
+
+    NSString *regEx = @"12";
+    NSString *string = @"123123";
+    NSError *error;
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
+    if (error) {
+        NSLog(@"error = %@", error);
+    }
+
+    NSTextCheckingResult *firstMatch = [regularExpression firstMatchInString:string options:0 range:NSMakeRange(0, string.length)];
+    if (firstMatch) {
+        // NSTextCheckingResult 的 range 属性即匹配的字符串的位置
+        NSString *matchedString = [string substringWithRange:firstMatch.range];
+        NSLog(@"匹配的字符串 = %@", matchedString);
+    } else {
+        NSLog(@"匹配的字符串 = 错误");
+    }
+
+}
+
+{
+    NSString *regEx = @"<正则表达式>";
+    NSString *string = @"<待匹配的字符串>";
+    NSError *error;
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
+    if (error) {
+        NSLog(@"error = %@", error);
+    }
+
+    NSArray *matchArray = [regularExpression matchesInString:string options:0 range:NSMakeRange(0, string.length)];
+    for (NSTextCheckingResult *match in matchArray) {
+        NSString *matchedString = [string substringWithRange:match.range];
+        NSLog(@"匹配的字符串 = %@", matchedString);
+    }
+
+}    {
+/// <正则表达式>
+NSString *regEx = @"12";
+///<待匹配的字符串>
+NSString *string = @"1234567";
+
+NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
+BOOL matched = [predicate evaluateWithObject:string];
+NSLog(@"是否匹配 = %d", matched);
+}
+
+{
+NSString *regEx = @"12";
+NSString *string = @"123123";
+NSError *error;
+NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
+if (error) {
+    NSLog(@"error = %@", error);
+}
+
+NSUInteger number = [regularExpression numberOfMatchesInString:string options:kNilOptions range:NSMakeRange(0, string.length)];
+NSLog(@"匹配的个数 = %lu", (unsigned long) number);
+
+BOOL matched = (number != 0);
+NSLog(@"是否匹配 = %d", matched);
+
+
+}
+
+{
+
+NSString *regEx = @"12";
+NSString *string = @"123123";
+NSError *error;
+NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
+if (error) {
+    NSLog(@"error = %@", error);
+}
+
+NSTextCheckingResult *firstMatch = [regularExpression firstMatchInString:string options:0 range:NSMakeRange(0, string.length)];
+if (firstMatch) {
+    // NSTextCheckingResult 的 range 属性即匹配的字符串的位置
+    NSString *matchedString = [string substringWithRange:firstMatch.range];
+    NSLog(@"匹配的字符串 = %@", matchedString);
+} else {
+    NSLog(@"匹配的字符串 = 错误");
+}
+
+}
+
+{
+NSString *regEx = @"<正则表达式>";
+NSString *string = @"<待匹配的字符串>";
+NSError *error;
+NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
+if (error) {
+    NSLog(@"error = %@", error);
+}
+
+NSArray *matchArray = [regularExpression matchesInString:string options:0 range:NSMakeRange(0, string.length)];
+for (NSTextCheckingResult *match in matchArray) {
+    NSString *matchedString = [string substringWithRange:match.range];
+    NSLog(@"匹配的字符串 = %@", matchedString);
+}
+
+}
+```

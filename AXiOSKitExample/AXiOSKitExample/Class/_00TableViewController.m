@@ -32,7 +32,8 @@
 #import "_22ReactiveObjCViewController.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "_23FullViewController.h"
-
+#import <AXiOSKit/NSMutableArray+AXKVO.h>
+#import <AXiOSKit/NSMutableArray+AXKVO.h>
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -68,90 +69,30 @@ typedef void (^CollectionBlock)(void);
     [super viewDidLoad];
     self.title = @"主题";
     [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
-
-    //    NSLog(@"IS_PRODUCATION = %@ SERVER_HOST = %@", IS_PRODUCATION ? @"生产环境" : @"开发环境", SERVER_HOST);
-
-    {
-
-        NSLog(@"isEmoji = %d", [@"😝" isContainsEmoji]);
-        NSLog(@"isEmoji = %d", [@"2" isContainsEmoji]);
-    }
-    {
-        /// <正则表达式>
-        NSString *regEx = @"12";
-        ///<待匹配的字符串>
-        NSString *string = @"1234567";
-
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
-        BOOL matched = [predicate evaluateWithObject:string];
-        NSLog(@"是否匹配 = %d", matched);
-    }
-
-    {
-        NSString *regEx = @"12";
-        NSString *string = @"123123";
-        NSError *error;
-        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
-        if (error) {
-            NSLog(@"error = %@", error);
-        }
-
-        NSUInteger number = [regularExpression numberOfMatchesInString:string options:kNilOptions range:NSMakeRange(0, string.length)];
-        NSLog(@"匹配的个数 = %lu", (unsigned long) number);
-
-        BOOL matched = (number != 0);
-        NSLog(@"是否匹配 = %d", matched);
-
-
-    }
-
-    {
-
-        NSString *regEx = @"12";
-        NSString *string = @"123123";
-        NSError *error;
-        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
-        if (error) {
-            NSLog(@"error = %@", error);
-        }
-
-        NSTextCheckingResult *firstMatch = [regularExpression firstMatchInString:string options:0 range:NSMakeRange(0, string.length)];
-        if (firstMatch) {
-            // NSTextCheckingResult 的 range 属性即匹配的字符串的位置
-            NSString *matchedString = [string substringWithRange:firstMatch.range];
-            NSLog(@"匹配的字符串 = %@", matchedString);
-        } else {
-            NSLog(@"匹配的字符串 = 错误");
-        }
-
-    }
-
-    {
-        NSString *regEx = @"<正则表达式>";
-        NSString *string = @"<待匹配的字符串>";
-        NSError *error;
-        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
-        if (error) {
-            NSLog(@"error = %@", error);
-        }
-
-        NSArray *matchArray = [regularExpression matchesInString:string options:0 range:NSMakeRange(0, string.length)];
-        for (NSTextCheckingResult *match in matchArray) {
-            NSString *matchedString = [string substringWithRange:match.range];
-            NSLog(@"匹配的字符串 = %@", matchedString);
-        }
-
-    }
     
-    NSLog(@"identifierForVender = %@",[UIDevice currentDevice].identifierForVendor.UUIDString);
+//    self.tableView.editing = YES;
     
+//    __weak typeof(self) weakSelf = self;
     
-    [[self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:)
-                        fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple *tuple) {
-            NSLog(@"didSelectRowAtIndexPath = %@", tuple.first);
-            NSLog(@"%@", tuple.second);
-        }];
-
+   
+//    [self ax_addFBKVOKeyPath: AX_FBKVOKeyPath(self.tableView.indexPathsForSelectedRows) block:^(NSString * _Nullable keyPath, id  _Nullable oldValue, id  _Nullable newValue) {
+//        NSLog(@"方法调用setObject=AA %@",self.tableView.indexPathsForSelectedRows);
+//    }];
+    
+//        [RACObserve(self, tableView.indexPathsForSelectedRows) subscribeNext:^(id  _Nullable x) {
+//
+//            NSLog(@"indexPathsForSelectedRows = %@",self.tableView.indexPathsForSelectedRows);
+//          }];
+    
+//    [RACObserve(self, tableView.indexPathsForSelectedRows) subscribeCompleted:^{
+//        NSLog(@"indexPathsForSelectedRows = %@",self.tableView.indexPathsForSelectedRows);
+//    }];
+    
+//    [self.tableView.indexPathsForSelectedRows ax_addKVO:^(NSMutableArray * _Nonnull array) {
+//        __strong typeof(weakSelf) strongSelf = weakSelf;
+//        NSLog(@"方法调用setObject=AA %@",self.dataArray);
+//        NSLog(@"方法调用setObject-array %@",array);
+//    }];
 }
 
 - (void)test {
@@ -164,6 +105,8 @@ static void (*replacedLog)(NSString *format, ...);
 void mySLog(NSString *format, ...) {
     replacedLog(@"%@", [format stringByAppendingString:@"被HOOK了"]);
 }
+
+
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
@@ -190,13 +133,17 @@ void mySLog(NSString *format, ...) {
     didSelectRowAtIndexPath();
 }
 
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
+}
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
 
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewCellEditingStyleDelete;
-}
+//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return UITableViewCellEditingStyleDelete;
+//}
 
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return @"删除";
