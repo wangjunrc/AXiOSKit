@@ -991,5 +991,43 @@
     return NO;
 }
 
+///  NSString中的数字变小
+/// @param fontSize 字号
+-(NSMutableAttributedString*)ax_smallerNumberWitSize:(CGFloat )fontSize {
+    
+    NSString* text = self;
+    if (text.length == 0) {return nil;}
+    NSMutableArray *numStrArr = [NSMutableArray array];
+    NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc]initWithString:text.uppercaseString];
+    
+    NSScanner *scanner = [NSScanner scannerWithString:text];
+    NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    
+    while (![scanner isAtEnd]) {
+        [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
+        int number;
+        [scanner scanInt:&number];
+        
+        NSString *num=[NSString stringWithFormat:@"%d",number];
+        [numStrArr addObject:num];
+    }
+    
+    if (numStrArr.count) {
+        
+        NSRange range = NSMakeRange(0, 0);
+        for (int i = 0; i < numStrArr.count; i++) {
+            range = [text rangeOfString:numStrArr[i]];
+            [attributedStr addAttribute:NSFontAttributeName
+                                  value:[UIFont systemFontOfSize:fontSize]
+                                  range:range];
+        }
+    }else{
+        [attributedStr addAttribute:NSFontAttributeName
+                              value:[UIFont systemFontOfSize:fontSize]
+                              range:NSMakeRange(0, text.length)];
+    }
+    return attributedStr;
+}
+
 @end
 

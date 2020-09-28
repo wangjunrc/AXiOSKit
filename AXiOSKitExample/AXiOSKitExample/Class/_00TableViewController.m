@@ -93,6 +93,8 @@ typedef void (^CollectionBlock)(void);
 //        NSLog(@"方法调用setObject=AA %@",self.dataArray);
 //        NSLog(@"方法调用setObject-array %@",array);
 //    }];
+    
+    
 }
 
 - (void)test {
@@ -105,6 +107,8 @@ static void (*replacedLog)(NSString *format, ...);
 void mySLog(NSString *format, ...) {
     replacedLog(@"%@", [format stringByAppendingString:@"被HOOK了"]);
 }
+
+
 
 
 

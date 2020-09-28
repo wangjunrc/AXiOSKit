@@ -343,5 +343,8 @@
  */
 @property (nonatomic, readonly) BOOL ax_isEmptyAfterTrimmingWhitespaceAndNewlineCharacters;
 
+///  NSString中的数字变小
+/// @param fontSize 字号
+-(NSMutableAttributedString*)ax_smallerNumberWitSize:(CGFloat )fontSize;
 
 @end

@@ -84,20 +84,20 @@
         
         
     }];
-    
-    UIDatePicker *picker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, 200, self.view.width, 150)];
- 
-    
-    
-    picker.datePickerMode = UIDatePickerModeCountDownTimer;
-//    picker.calendar = [NSCalendar currentCalendar];
-    picker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_GB"];
-//    picker.timeZone =[NSTimeZone systemTimeZone];
-    
-    picker.backgroundColor = UIColor.orangeColor;
-    picker.tintColor = UIColor.redColor;
-    
-    [self.view addSubview:picker];
+//
+//    UIDatePicker *picker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, 200, self.view.width, 150)];
+//
+//
+//
+//    picker.datePickerMode = UIDatePickerModeCountDownTimer;
+////    picker.calendar = [NSCalendar currentCalendar];
+//    picker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_GB"];
+////    picker.timeZone =[NSTimeZone systemTimeZone];
+//
+//    picker.backgroundColor = UIColor.orangeColor;
+//    picker.tintColor = UIColor.redColor;
+//
+//    [self.view addSubview:picker];
 //
 //    UIImageView *view = [[UIImageView alloc]initWithFrame:CGRectMake(10, 200, 100, 100)];
 //    view.image = [UIImage imageNamed:@"exporte"];
@@ -189,16 +189,12 @@
 //    }];
 //
 //    [contentImageView sd_setImageWithURL:[NSURL URLWithString:@"https://bing.ioliu.cn/v1/rand?key=b0&w=200&h=300"] placeholderImage:[UIImage imageNamed:@"hot_load"]];
+    
+    UILabel *label = [UILabel.alloc initWithFrame:CGRectMake(100, 400, 100, 20)];
+    [self.view addSubview:label];
+    label.font = [UIFont systemFontOfSize:30];
+    label.attributedText = [@"HH12KK" ax_smallerNumberWitSize:10];
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end
