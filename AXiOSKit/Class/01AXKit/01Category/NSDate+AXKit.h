@@ -72,4 +72,7 @@
  */
 -(NSDateComponents *)ax_apartDateComponents:(NSDate *)toDate;
 
+/// app 第一个安装时间,即 创建文件夹时间
++(NSDate *)ax_appFristDate;
+
 @end

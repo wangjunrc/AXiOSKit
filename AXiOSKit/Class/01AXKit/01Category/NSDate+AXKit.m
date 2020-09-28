@@ -168,4 +168,16 @@
 }
 
 
+/// app 第一个安装时间,即 创建文件夹时间
++(NSDate *)ax_appFristDate {
+    
+    NSURL* urlToDocumentsFolder = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    NSError *error;
+      NSDate *installDate = [[[NSFileManager defaultManager] attributesOfItemAtPath:urlToDocumentsFolder.path error:&error] objectForKey:NSFileCreationDate];
+    NSTimeZone *timeZone = [NSTimeZone systemTimeZone]; // 获取的是系统的时区
+    NSInteger interval = [timeZone secondsFromGMTForDate: installDate];
+    NSDate *localeDate = [installDate dateByAddingTimeInterval: interval];
+    
+    return localeDate;
+}
 @end

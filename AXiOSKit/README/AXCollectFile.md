@@ -1707,3 +1707,21 @@ for (NSTextCheckingResult *match in matchArray) {
 
 }
 ```
+
+## UIScrollViewContentInsetAdjustmentNever
+```
+/// 处理方式：为了适配iOS11，我们需要把这个属性禁用调，
+/// 使用UIScrollViewContentInsetAdjustmentNever不计算内边距，
+/// 不然系统会帮我们自动计算内边距，这样在滚动之后无法定位，会出现额外的内边距偏差。
+
+- (void)adapterIOS11{
+    // 适配iOS11以上UITableview 、UICollectionView、UIScrollview 列表/页面偏移
+    if (@available(iOS 11.0, *)){
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+
+        [[UITableView appearance] setEstimatedRowHeight:0];
+        [[UITableView appearance] setEstimatedSectionFooterHeight:0];
+        [[UITableView appearance] setEstimatedSectionHeaderHeight:0];
+    }
+}
+```

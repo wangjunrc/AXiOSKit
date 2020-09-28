@@ -72,9 +72,20 @@
     self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];
     [self.window makeKeyAndVisible];
     //    }
+    [self adapterIOS11];
     return YES;
 }
 
+- (void)adapterIOS11{
+    // 适配iOS11以上UITableview 、UICollectionView、UIScrollview 列表/页面偏移
+    if (@available(iOS 11.0, *)){
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+
+        [[UITableView appearance] setEstimatedRowHeight:0];
+        [[UITableView appearance] setEstimatedSectionFooterHeight:0];
+        [[UITableView appearance] setEstimatedSectionHeaderHeight:0];
+    }
+}
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     //获取共享的UserDefaults
