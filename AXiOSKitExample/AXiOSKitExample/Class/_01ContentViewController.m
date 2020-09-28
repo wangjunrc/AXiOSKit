@@ -11,6 +11,8 @@
 #import <AXiOSKit/AXiOSKit.h>
 
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <AuthenticationServices/AuthenticationServices.h>
+
 @interface _01ContentViewController ()
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
 
@@ -194,7 +196,77 @@
     [self.view addSubview:label];
     label.font = [UIFont systemFontOfSize:30];
     label.attributedText = [@"HH12KK" ax_smallerNumberWitSize:10];
+    
+    [self configUI];
 }
 
+
+- (void)configUI{
+    // 使用系统提供的按钮，要注意不支持系统版本的处理
+    if (@available(iOS 13.0, *)) {
+        // Sign In With Apple Button
+        ASAuthorizationAppleIDButton *appleIDBtn = [ASAuthorizationAppleIDButton buttonWithType:ASAuthorizationAppleIDButtonTypeDefault style:ASAuthorizationAppleIDButtonStyleWhite];
+        appleIDBtn.frame = CGRectMake(30, self.view.bounds.size.height - 180, self.view.bounds.size.width - 60, 100);
+        //    appleBtn.cornerRadius = 22.f;
+        [appleIDBtn addTarget:self action:@selector(didAppleIDBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:appleIDBtn];
+    }
+    
+    // 或者自己用UIButton实现按钮样式
+    UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    addBtn.frame = CGRectMake(30, 80, self.view.bounds.size.width - 60, 44);
+    addBtn.backgroundColor = [UIColor orangeColor];
+    [addBtn setTitle:@"Sign in with Apple" forState:UIControlStateNormal];
+    [addBtn addTarget:self action:@selector(didCustomBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:addBtn];
+}
+
+// 自己用UIButton按钮调用处理授权的方法
+- (void)didCustomBtnClicked{
+    // 封装Sign In with Apple 登录工具类，使用这个类时要把类对象设置为全局变量，或者直接把这个工具类做成单例，如果使用局部变量，和IAP支付工具类一样，会导致苹果回调不会执行
+//    self.signInApple = [[SignInApple alloc] init];
+//    [self.signInApple handleAuthorizationAppleIDButtonPress];
+    
+    if (@available(iOS 13.0, *)) {
+        ASAuthorizationAppleIDProvider *appleIDProvider = [ASAuthorizationAppleIDProvider new];
+        ASAuthorizationAppleIDRequest *request = appleIDProvider.createRequest;
+        [request setRequestedScopes:@[ASAuthorizationScopeFullName,ASAuthorizationScopeEmail]];
+    } else {
+        // Fallback on earlier versions
+    }
+    
+}
+
+// 使用系统提供的按钮调用处理授权的方法
+- (void)didAppleIDBtnClicked{
+    // 封装Sign In with Apple 登录工具类，使用这个类时要把类对象设置为全局变量，或者直接把这个工具类做成单例，如果使用局部变量，和IAP支付工具类一样，会导致苹果回调不会执行
+//    self.signInApple = [[SignInApple alloc] init];
+//    [self.signInApple handleAuthorizationAppleIDButtonPress];
+}
+
+// 处理授权
+- (void)handleAuthorizationAppleIDButtonPress{
+    NSLog(@"////////");
+    
+    if (@available(iOS 13.0, *)) {
+        // 基于用户的Apple ID授权用户，生成用户授权请求的一种机制
+        ASAuthorizationAppleIDProvider *appleIDProvider = [[ASAuthorizationAppleIDProvider alloc] init];
+        // 创建新的AppleID 授权请求
+        ASAuthorizationAppleIDRequest *appleIDRequest = [appleIDProvider createRequest];
+        // 在用户授权期间请求的联系信息
+        appleIDRequest.requestedScopes = @[ASAuthorizationScopeFullName, ASAuthorizationScopeEmail];
+        // 由ASAuthorizationAppleIDProvider创建的授权请求 管理授权请求的控制器
+        ASAuthorizationController *authorizationController = [[ASAuthorizationController alloc] initWithAuthorizationRequests:@[appleIDRequest]];
+        // 设置授权控制器通知授权请求的成功与失败的代理
+        authorizationController.delegate = self;
+        // 设置提供 展示上下文的代理，在这个上下文中 系统可以展示授权界面给用户
+        authorizationController.presentationContextProvider = self;
+        // 在控制器初始化期间启动授权流
+        [authorizationController performRequests];
+    }else{
+        // 处理不支持系统版本
+        NSLog(@"该系统版本不可用Apple登录");
+    }
+}
 
 @end
