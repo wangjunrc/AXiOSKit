@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
     
     s.homepage     = "https://github.com/AXinger/AXiOSKit"
     s.license      = { :type => "MIT", :file => "LICENSE" }
-    s.author             = { "AXinger" => "136950281@qq.com" }
+    s.author             = { "axinger" => "axingrun@outlook.com" }
     s.ios.deployment_target = "9.0"
     s.requires_arc = true
     s.source       = { :git => "https://github.com/AXinger/AXiOSKit.git", :tag => "#{s.version}" }
