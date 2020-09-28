@@ -85,6 +85,19 @@
         
     }];
     
+    UIDatePicker *picker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, 200, self.view.width, 150)];
+ 
+    
+    
+    picker.datePickerMode = UIDatePickerModeCountDownTimer;
+//    picker.calendar = [NSCalendar currentCalendar];
+    picker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_GB"];
+//    picker.timeZone =[NSTimeZone systemTimeZone];
+    
+    picker.backgroundColor = UIColor.orangeColor;
+    picker.tintColor = UIColor.redColor;
+    
+    [self.view addSubview:picker];
 //
 //    UIImageView *view = [[UIImageView alloc]initWithFrame:CGRectMake(10, 200, 100, 100)];
 //    view.image = [UIImage imageNamed:@"exporte"];

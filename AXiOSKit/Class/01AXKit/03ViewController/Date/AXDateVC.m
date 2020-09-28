@@ -29,8 +29,15 @@
     if (@available(iOS 13.4, *)) {
         self.datePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
     }
-    NSLocale *locale = [NSLocale currentLocale];
-    self.datePicker.locale = locale;
+//   else if (@available(iOS 14, *)) {
+//        self.datePicker.preferredDatePickerStyle = UIDatePickerStyleInline;
+//    }
+//    1. "en_GB"英文 24小时
+//    2. "zh_GB"中文24小时
+//    3. ”zh_CN“中文12小时
+    self.datePicker.calendar = [NSCalendar currentCalendar];
+    self.datePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_GB"];
+    self.datePicker.timeZone =[NSTimeZone systemTimeZone];
 }
 
 
