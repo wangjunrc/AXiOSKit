@@ -11,8 +11,8 @@
 #import <AXiOSKit/AXiOSKit.h>
 #import <KVOController/KVOController.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-
-
+#import "NSMutableArray+AXKVO.h"
+#import <AXiOSKit/NSMutableArray+AXKVO.h>
 @interface _21KVOViewController ()
 
 
@@ -90,32 +90,38 @@
 
     
     // 我们来看能不能监听到这个方法调用
+//    @weakify(self);
+//      [[self.dataArray rac_signalForSelector:@selector(addObject:)] subscribeNext:^(id  _Nullable x) {
+//          @strongify(self);
+//          NSLog(@"方法调用 %@",self.dataArray);
+//      }];
+//
+//    [[self.dataArray rac_signalForSelector:@selector(insertObject: atIndex:)] subscribeNext:^(id  _Nullable x) {
+//        @strongify(self);
+//        NSLog(@"方法调用insertObject %@",self.dataArray);
+//    }];
+//
+//    [[self.dataArray rac_signalForSelector:@selector(insertObject: atIndex:)] subscribeNext:^(id  _Nullable x) {
+//        @strongify(self);
+//        NSLog(@"方法调用insertObject %@",self.dataArray);
+//    }];
+//
+//    [[self.dataArray rac_signalForSelector:@selector(replaceObjectAtIndex: withObject: )] subscribeNext:^(id  _Nullable x) {
+//        @strongify(self);
+//        NSLog(@"方法调用insertObject %@",self.dataArray);
+//    }];
+//
+//    [[self.dataArray rac_signalForSelector:@selector(setObject:atIndexedSubscript: )] subscribeNext:^(id  _Nullable x) {
+//        @strongify(self);
+//        NSLog(@"方法调用setObject %@",self.dataArray);
+//    }];
     @weakify(self);
-      [[self.dataArray rac_signalForSelector:@selector(addObject:)] subscribeNext:^(id  _Nullable x) {
-          @strongify(self);
-          NSLog(@"方法调用 %@",self.dataArray);
-      }];
-    
-    [[self.dataArray rac_signalForSelector:@selector(insertObject: atIndex:)] subscribeNext:^(id  _Nullable x) {
+    [self.dataArray ax_addKVO:^(NSMutableArray * _Nonnull array) {
         @strongify(self);
-        NSLog(@"方法调用insertObject %@",self.dataArray);
-    }];
-  
-    [[self.dataArray rac_signalForSelector:@selector(insertObject: atIndex:)] subscribeNext:^(id  _Nullable x) {
-        @strongify(self);
-        NSLog(@"方法调用insertObject %@",self.dataArray);
+        NSLog(@"方法调用setObject=AA %@",self.dataArray);
+        NSLog(@"方法调用setObject-array %@",array);
     }];
     
-    [[self.dataArray rac_signalForSelector:@selector(replaceObjectAtIndex: withObject: )] subscribeNext:^(id  _Nullable x) {
-        @strongify(self);
-        NSLog(@"方法调用insertObject %@",self.dataArray);
-    }];
-    
-    [[self.dataArray rac_signalForSelector:@selector(setObject:atIndexedSubscript: )] subscribeNext:^(id  _Nullable x) {
-        @strongify(self);
-        NSLog(@"方法调用setObject %@",self.dataArray);
-    }];
-
     
 //    [[self rac_valuesForKeyPath:@"dataArray" observer:self] subscribeNext:^(id  _Nullable x) {
 //        @strongify(self);
@@ -143,7 +149,8 @@
        
 }
 - (IBAction)add3:(id)sender {
-    self.age++;
+//    self.age++;
+    [self.dataArray removeLastObject];
 }
 
 

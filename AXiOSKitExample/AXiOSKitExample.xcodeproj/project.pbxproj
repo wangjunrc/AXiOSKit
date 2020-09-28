@@ -320,6 +320,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		210E94ED2521D01100B0F83D /* Load */ = {
+			isa = PBXGroup;
+			children = (
+				21EFCCE4250A0772000A1AAC /* UIControl+load.h */,
+				21EFCCE5250A0772000A1AAC /* UIControl+load.m */,
+				21E54A4824D98D150038F4C0 /* UIViewController+Load.h */,
+				21E54A2B24D98D150038F4C0 /* UIViewController+Load.m */,
+			);
+			path = Load;
+			sourceTree = "<group>";
+		};
 		215B07A624F1241800535742 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +343,7 @@
 		21A04609251E0C0300FEFC15 /* ClassDemo */ = {
 			isa = PBXGroup;
 			children = (
+				210E94ED2521D01100B0F83D /* Load */,
 				21E54A1C24D98D150038F4C0 /* TestVideo */,
 				21E549F624D98D140038F4C0 /* WebSocket */,
 				21E54A5B24D98D150038F4C0 /* TestDB */,
@@ -465,8 +477,8 @@
 		21E54A1C24D98D150038F4C0 /* TestVideo */ = {
 			isa = PBXGroup;
 			children = (
-				21E54A1D24D98D150038F4C0 /* LVieoView.m */,
 				21E54A1E24D98D150038F4C0 /* LVieoView.h */,
+				21E54A1D24D98D150038F4C0 /* LVieoView.m */,
 			);
 			path = TestVideo;
 			sourceTree = "<group>";
@@ -537,10 +549,6 @@
 				21E54A4024D98D150038F4C0 /* TextFViewController.h */,
 				21E54A2624D98D150038F4C0 /* TextFViewController.m */,
 				21E54A2524D98D150038F4C0 /* TextFViewController.xib */,
-				21EFCCE4250A0772000A1AAC /* UIControl+load.h */,
-				21EFCCE5250A0772000A1AAC /* UIControl+load.m */,
-				21E54A4824D98D150038F4C0 /* UIViewController+Load.h */,
-				21E54A2B24D98D150038F4C0 /* UIViewController+Load.m */,
 				21E54A2324D98D150038F4C0 /* VideoViewController.h */,
 				21E54A4224D98D150038F4C0 /* VideoViewController.m */,
 				21E54A2C24D98D150038F4C0 /* VideoViewController.xib */,

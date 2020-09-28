@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     
     s.name         = "AXiOSKit"
-    s.version      = "0.1.1"
+    s.version      = "1.0.0"
     s.summary      = "个人开发工具类"
     s.description  = <<-DESC
     封装UIKit等个人开发工具类
@@ -45,6 +45,8 @@ Pod::Spec.new do |s|
     s.dependency "Masonry"
     #s.dependency "GKPhotoBrowser"
     s.dependency "Aspects"
+    s.dependency "ReactiveObjC"
+
 end
 
 

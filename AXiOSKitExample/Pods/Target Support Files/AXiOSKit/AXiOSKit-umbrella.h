@@ -26,6 +26,7 @@
 #import "NSDateComponents+AXKit.h"
 #import "NSDictionary+AXKit.h"
 #import "NSError+AXKit.h"
+#import "NSMutableArray+AXKVO.h"
 #import "NSNumber+AXKit.h"
 #import "NSObject+AXKit.h"
 #import "NSObject+AXKVO.h"

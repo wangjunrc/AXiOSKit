@@ -16,7 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - Aspects (1.4.1)
   - AvoidCrash (2.5.2)
-  - AXiOSKit (0.1.1):
+  - AXiOSKit (1.0.0):
     - AFNetworking
     - Aspects
     - DZNEmptyDataSet
@@ -27,6 +27,7 @@ PODS:
     - MJExtension
     - MJRefresh
     - NullSafe
+    - ReactiveObjC
     - SDWebImage
   - DZNEmptyDataSet (1.8.1)
   - FBRetainCycleDetector (0.1.4)
@@ -160,7 +161,7 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
-  AXiOSKit: ce2024f267594c8d96858333c7eaec9b7ccb86d5
+  AXiOSKit: 4e35205c5d7c13a902e8f3592ae5b9f5f3012923
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
@@ -189,6 +190,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: 3aeedacb3e6667282672175a3035eabfd475b627
+PODFILE CHECKSUM: 93ffc102bf06aaa26ec3c6e5c9eaad1b955a62f0
 
 COCOAPODS: 1.9.3

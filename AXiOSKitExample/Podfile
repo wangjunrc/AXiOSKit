@@ -80,7 +80,7 @@ target 'AXiOSKit' do
   pod "Masonry"
   #pod "GKPhotoBrowser"
   pod "Aspects"
-  
+  pod 'ReactiveObjC'
 end
 
 
