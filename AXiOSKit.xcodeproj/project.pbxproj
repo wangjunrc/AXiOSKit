@@ -62,6 +62,8 @@
 		219D769824123ED500196BFE /* LameHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D766524123ED400196BFE /* LameHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		219D769924123ED500196BFE /* LameHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D766624123ED400196BFE /* LameHelper.m */; };
 		21AF7EAE24F24B68003311AF /* AXBaseAlertDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 244FC1D02297C0D7003BD65F /* AXBaseAlertDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21B0969825270DD4002C3F5A /* AXBiometryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B0969625270DD4002C3F5A /* AXBiometryManager.h */; };
+		21B0969925270DD4002C3F5A /* AXBiometryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B0969725270DD4002C3F5A /* AXBiometryManager.m */; };
 		21B14328251ACED5001737B5 /* AXMediaConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B14326251ACED5001737B5 /* AXMediaConfig.h */; };
 		21B14329251ACED5001737B5 /* AXMediaConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B14327251ACED5001737B5 /* AXMediaConfig.m */; };
 		21B1432C251ACEF2001737B5 /* AXMediaResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B1432A251ACEF2001737B5 /* AXMediaResult.h */; };
@@ -403,6 +405,8 @@
 		219D766324123ED400196BFE /* NSObject+FBKVOControllerAX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FBKVOControllerAX.m"; sourceTree = "<group>"; };
 		219D766524123ED400196BFE /* LameHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LameHelper.h; sourceTree = "<group>"; };
 		219D766624123ED400196BFE /* LameHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LameHelper.m; sourceTree = "<group>"; };
+		21B0969625270DD4002C3F5A /* AXBiometryManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXBiometryManager.h; sourceTree = "<group>"; };
+		21B0969725270DD4002C3F5A /* AXBiometryManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXBiometryManager.m; sourceTree = "<group>"; };
 		21B14326251ACED5001737B5 /* AXMediaConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXMediaConfig.h; sourceTree = "<group>"; };
 		21B14327251ACED5001737B5 /* AXMediaConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXMediaConfig.m; sourceTree = "<group>"; };
 		21B1432A251ACEF2001737B5 /* AXMediaResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXMediaResult.h; sourceTree = "<group>"; };
@@ -1131,6 +1135,8 @@
 		2473295C2277FBB8005CF92D /* 05Object */ = {
 			isa = PBXGroup;
 			children = (
+				21B0969625270DD4002C3F5A /* AXBiometryManager.h */,
+				21B0969725270DD4002C3F5A /* AXBiometryManager.m */,
 				247329712277FBB8005CF92D /* AXConstant.h */,
 				2473295E2277FBB8005CF92D /* AXConstant.m */,
 				2473296D2277FBB8005CF92D /* AXCountDownObject.h */,
@@ -1145,6 +1151,10 @@
 				2473295F2277FBB8005CF92D /* AXHelper.m */,
 				24BB839A229E2ED700442276 /* AXKeyboardObserve.h */,
 				24BB839B229E2ED700442276 /* AXKeyboardObserve.m */,
+				21B14326251ACED5001737B5 /* AXMediaConfig.h */,
+				21B14327251ACED5001737B5 /* AXMediaConfig.m */,
+				21B1432A251ACEF2001737B5 /* AXMediaResult.h */,
+				21B1432B251ACEF2001737B5 /* AXMediaResult.m */,
 				247329662277FBB8005CF92D /* AXObject.h */,
 				247329732277FBB8005CF92D /* AXObject.m */,
 				247329772277FBB8005CF92D /* AXUIAssistant.h */,
@@ -1152,10 +1162,6 @@
 				247329672277FBB8005CF92D /* AXViewModelProtocol.h */,
 				247328C52277FBB8005CF92D /* AXWeakProxy.h */,
 				247328C42277FBB8005CF92D /* AXWeakProxy.m */,
-				21B14326251ACED5001737B5 /* AXMediaConfig.h */,
-				21B14327251ACED5001737B5 /* AXMediaConfig.m */,
-				21B1432A251ACEF2001737B5 /* AXMediaResult.h */,
-				21B1432B251ACEF2001737B5 /* AXMediaResult.m */,
 			);
 			path = 05Object;
 			sourceTree = "<group>";
@@ -1550,6 +1556,7 @@
 				24732ABE2277FBB9005CF92D /* AXSafariVC.h in Headers */,
 				24732A702277FBB9005CF92D /* AXGCDTimer.h in Headers */,
 				24732A232277FBB9005CF92D /* UIView+AXSheet.h in Headers */,
+				21B0969825270DD4002C3F5A /* AXBiometryManager.h in Headers */,
 				24732A732277FBB9005CF92D /* AXObject.h in Headers */,
 				24732A072277FBB9005CF92D /* NSDateComponents+AXKit.h in Headers */,
 				24732A972277FBB9005CF92D /* AXJSContext.h in Headers */,
@@ -1907,6 +1914,7 @@
 				24732A082277FBB9005CF92D /* UIViewController+AXAlert.m in Sources */,
 				24732A6C2277FBB9005CF92D /* AXConstant.m in Sources */,
 				24732A172277FBB9005CF92D /* NSURL+AXKit.m in Sources */,
+				21B0969925270DD4002C3F5A /* AXBiometryManager.m in Sources */,
 				24732A3F2277FBB9005CF92D /* NSError+AXKit.m in Sources */,
 				24732A7B2277FBB9005CF92D /* AXConfigureManager.m in Sources */,
 				24732AA42277FBB9005CF92D /* AXNavigationController.m in Sources */,

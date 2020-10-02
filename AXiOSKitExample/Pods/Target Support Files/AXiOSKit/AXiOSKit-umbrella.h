@@ -126,6 +126,7 @@
 #import "AXNumberKeyboard.h"
 #import "AXVeriCodeView.h"
 #import "UITextField+AXNumberKeyboard.h"
+#import "AXBiometryManager.h"
 #import "AXConstant.h"
 #import "AXCountDownObject.h"
 #import "AXDataModel.h"
