@@ -65,6 +65,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>使用相机1</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>小星星使用面容</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>摄像头</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>

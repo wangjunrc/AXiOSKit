@@ -11,16 +11,12 @@
 #import "AXMacros.h"
 
 @interface AXBiometryManager ()
-@property(nonatomic, strong)LAContext *context;
 
+@property(nonatomic, strong)LAContext *context;
 
 @property (nonatomic, copy)void(^successBlock)(void);
 
 @property (nonatomic, copy)void(^failureBlock)(NSError *error);
-
-@property (nonatomic, copy)void(^inputPasswordBlock)(void);
-
-@property (nonatomic, copy)void(^cancelBlock)(void);
 
 @end
 
@@ -33,12 +29,12 @@
  @return 是否
  */
 - (BOOL )isSupportTouchID {
-//    if (@available(iOS 11.0, *)) {
-//        NSLog(@"self.context.biometryType %ld",self.context.biometryType);
-//        return self.context.biometryType == LABiometryTypeTouchID;
-//    }else {
-        return [self.context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil];
-//    }
+    //    if (@available(iOS 11.0, *)) {
+    //        NSLog(@"self.context.biometryType %ld",self.context.biometryType);
+    //        return self.context.biometryType == LABiometryTypeTouchID;
+    //    }else {
+    return [self.context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil];
+    //    }
 }
 
 
@@ -59,22 +55,139 @@
  @param inputPasswordBlock 失败后,点击输入密码
  @param cancelBlock 点击取消
  */
-- (void)openBiometryWithSuccess:(void(^)(void))successBlock
-                       failure:(void(^)(NSError *error))failureBlock
-                 inputPassword:(void(^)(void))inputPasswordBlock
-                        cancel:(void(^)(void))cancelBlock {
+- (void)openBiometryWithSuccess:(void(^)(void))success
+                        failure:(void(^)(NSError *error))failure {
     
-    self.successBlock = successBlock;
-    self.failureBlock = failureBlock;
-    self.inputPasswordBlock = inputPasswordBlock;
-    self.cancelBlock = cancelBlock;
+    self.successBlock = success;
+    self.failureBlock = failure;
+    ///右边按钮默认是密码验证，
+    ///下面的方法 policy参数传LAPolicyDeviceOwnerAuthentication时，在两次验证失败后点击会弹出密码验证页面，
+    ///传LAPolicyDeviceOwnerAuthenticationWithBiometrics则不会。
     
-    [self _openBiometryWithPolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics success:successBlock failure:failureBlock inputPassword:inputPasswordBlock cancel:cancelBlock];
+    [self _openBiometryWithPolicy:LAPolicyDeviceOwnerAuthentication success:success failure:failure];
     
 }
 
 #pragma mark - 内部方法（Private）
 
+
+/// 开启指纹扫描
+- (void)_openBiometryWithPolicy:(LAPolicy )policy
+                        success:(void(^)(void))successBlock
+                        failure:(void(^)(NSError *error))failureBlock{
+    
+    
+    self.context.localizedFallbackTitle = @"验证码登录";
+    NSString *kind = self.isSupportTouchID ? @"指纹" : self.isSupportFaceID ? @"面容" : @"";
+    
+    
+    __weak typeof(self) weakSelf = self;
+    [self.context evaluatePolicy:policy localizedReason:[NSString stringWithFormat:@"请验证已有%@",kind] reply:^(BOOL success, NSError * _Nullable error) {
+        __strong typeof(weakSelf) self = weakSelf;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSString *message = @"";
+            
+            if (success) {
+                
+                message = [NSString stringWithFormat: @"通过了%@验证",kind];
+                if (successBlock) {
+                    successBlock();
+                }
+                
+            } else {
+                //失败操作
+                LAError code = error.code;
+                
+                switch (code) {
+                    case LAErrorAuthenticationFailed: {
+                        // -1
+                        message = [NSString stringWithFormat: @"连续三次%@识别错误",kind];
+                        [self _openBiometryWithPolicy:LAPolicyDeviceOwnerAuthentication success:successBlock failure:failureBlock];
+                    }
+                        break;
+                        
+                    case LAErrorUserCancel: {
+                        // -2
+                        message = [NSString stringWithFormat: @"用户取消%@验证",kind];
+                    }
+                        break;
+                        
+                    case LAErrorUserFallback: {
+                        // -3 用户点击了手动输入密码的按钮，所以被取消了
+                        message = @"用户选择输入密码";
+                        //                        [self _openBiometryWithPolicy:LAPolicyDeviceOwnerAuthentication success:successBlock failure:failureBlock inputPassword:inputPasswordBlock cancel:cancelBlock];
+                        
+                    }
+                        break;
+                        
+                    case LAErrorSystemCancel: {
+                        // -4 TouchID对话框被系统取消，例如按下Home或者电源键
+                        message = @"取消授权，如其他应用切入";
+                        //                        [self _openBiometryWithPolicy:LAPolicyDeviceOwnerAuthentication success:successBlock failure:failureBlock inputPassword:inputPasswordBlock cancel:cancelBlock];
+                    }
+                        break;
+                        
+                    case LAErrorPasscodeNotSet: {
+                        // -5
+                        message = @"设备系统未设置密码";
+                    }
+                        break;
+                        
+                    case LAErrorTouchIDNotAvailable: {
+                        // -6
+                        message = [NSString stringWithFormat: @"此设备不支持%@",kind];
+                    }
+                        break;
+                        
+                    case LAErrorTouchIDNotEnrolled: {
+                        // -7
+                        message = [NSString stringWithFormat: @"用户未录入%@",kind];
+                    }
+                        break;
+                        
+                    case LAErrorTouchIDLockout: {
+                        // -8 连续五次指纹识别错误，TouchID功能被锁定，下一次需要输入系统密码
+                        message = [NSString stringWithFormat: @"%@被锁，需要用户输入密码解锁",kind];
+                        //                        [self _openBiometryWithPolicy:LAPolicyDeviceOwnerAuthentication success:successBlock failure:failureBlock inputPassword:inputPasswordBlock cancel:cancelBlock];
+                    }
+                        break;
+                        
+                    case LAErrorAppCancel: {
+                        // -9 如突然来了电话，电话应用进入前台，APP被挂起啦
+                        message = @"用户不能控制情况下APP被挂起";
+                    }
+                        break;
+                        
+                    case LAErrorInvalidContext: {
+                        // -10
+                        message = [NSString stringWithFormat: @"%@失效",kind];
+                    }
+                        break;
+                        
+                    default:
+                        break;
+                }
+                NSLog(@"message = %@",message);
+                if (failureBlock) {
+                    NSError *error = [NSError errorWithDomain:@"com.ax.kit" code:code userInfo:@{@"message":message}];
+                    failureBlock(error);
+                }
+            }
+        });
+    }];
+    
+}
+
+- (LAContext *)context {
+    if (!_context) {
+        _context = [[LAContext alloc]init];
+    }
+    return _context;
+}
+
+
+#pragma mark - 说明
 /*
  typedef NS_ENUM(NSInteger, LAError)
  {
@@ -100,171 +213,5 @@
  第二个枚举LAPolicyDeviceOwnerAuthentication少了WithBiometrics则是使用TouchID或者密码验证,默认是错误两次指纹或者锁定后,弹出输入密码界面;NS_ENUM_AVAILABLE(10_11, 9_0)iOS 9可用
  */
 
-
-/// 开启指纹扫描
-- (void)_openBiometryWithPolicy:(LAPolicy )policy
-                      success:(void(^)(void))successBlock
-                      failure:(void(^)(NSError *error))failureBlock
-                inputPassword:(void(^)(void))inputPasswordBlock
-                       cancel:(void(^)(void))cancelBlock{
-    
-    LAPolicy policyType = LAPolicyDeviceOwnerAuthenticationWithBiometrics;
-        if (@available(iOS 9.0, *)) {
-            policyType = LAPolicyDeviceOwnerAuthentication;
-        }
-    
-    self.context.localizedFallbackTitle = @"输入密码";
-    
-    axSelfWeak;
-    
-    [self.context evaluatePolicy:policy localizedReason:@"请验证已有指纹" reply:^(BOOL success, NSError * _Nullable error) {
-        
-        axSelfStrong;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            NSString *message = @"";
-            
-            if (success) {
-                
-                message = @"通过了Touch ID 指纹验证";
-                
-                if (self.successBlock) {
-                    self.successBlock();
-                }
-                
-            } else {
-                //失败操作
-                LAError errorCode = error.code;
-                BOOL inputPassword = NO;
-                switch (errorCode) {
-                    case LAErrorAuthenticationFailed: {
-                        // -1
-                        message = @"连续三次指纹识别错误";
-                        if (self.failureBlock) {
-                            NSError *error = [NSError errorWithDomain:@"com.ax.kit" code:errorCode userInfo:@{@"message":message}];
-                            self.failureBlock(error);
-                        }
-                    }
-                        break;
-                        
-                    case LAErrorUserCancel: {
-                        // -2
-                        message = @"用户取消验证Touch ID";
-                        if (self.cancelBlock) {
-                            self.cancelBlock();
-                        }
-                    }
-                        break;
-                        
-                    case LAErrorUserFallback: {
-                        // -3 用户点击了手动输入密码的按钮，所以被取消了
-                        inputPassword = YES;
-                        message = @"用户选择输入密码";
-                        if (self.inputPasswordBlock) {
-                            self.inputPasswordBlock();
-                        }
-                        
-//                        if (@available(iOS 9.0, *)) {
-//
-//                            [self _openBiometryWithPolicy:LAPolicyDeviceOwnerAuthentication success:successBlock failure:failureBlock inputPassword:inputPasswordBlock cancel:cancelBlock];
-//                        } else {
-//
-//                            [self _openBiometryWithPolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics success:successBlock failure:failureBlock inputPassword:inputPasswordBlock cancel:cancelBlock];
-//                        }
-                        
-                        
-                    }
-                        break;
-                        
-                    case LAErrorSystemCancel: {
-                        // -4 TouchID对话框被系统取消，例如按下Home或者电源键
-                        message = @"取消授权，如其他应用切入";
-                        if (self.failureBlock) {
-                            NSError *error = [NSError errorWithDomain:@"com.ax.kit" code:errorCode userInfo:@{@"message":message}];
-                            self.failureBlock(error);
-                        }
-                    }
-                        break;
-                        
-                    case LAErrorPasscodeNotSet: {
-                        // -5
-                        message = @"设备系统未设置密码";
-                        if (self.failureBlock) {
-                            NSError *error = [NSError errorWithDomain:@"com.ax.kit" code:errorCode userInfo:@{@"message":message}];
-                            self.failureBlock(error);
-                        }
-                    }
-                        break;
-                        
-                    case LAErrorTouchIDNotAvailable: {
-                        // -6
-                        
-                        message = @"此设备不支持 Touch ID";
-                        if (self.failureBlock) {
-                            NSError *error = [NSError errorWithDomain:@"com.ax.kit" code:errorCode userInfo:@{@"message":message}];
-                            self.failureBlock(error);
-                        }
-                    }
-                        break;
-                        
-                    case LAErrorTouchIDNotEnrolled: {
-                        // -7
-                        message = @"用户未录入指纹";
-                        if (self.failureBlock) {
-                            NSError *error = [NSError errorWithDomain:@"com.ax.kit" code:errorCode userInfo:@{@"message":message}];
-                            self.failureBlock(error);
-                        }
-                    }
-                        break;
-                        
-                    case LAErrorTouchIDLockout: {
-                        
-                        // -8 连续五次指纹识别错误，TouchID功能被锁定，下一次需要输入系统密码
-                        
-                        if (@available(iOS 9.0, *)) {
-                            
-                            [self _openBiometryWithPolicy:LAPolicyDeviceOwnerAuthentication success:successBlock failure:failureBlock inputPassword:inputPasswordBlock cancel:cancelBlock];
-                        } else {
-                            
-                            [self _openBiometryWithPolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics success:successBlock failure:failureBlock inputPassword:inputPasswordBlock cancel:cancelBlock];
-                        }
-                        
-                        message = @"Touch ID被锁，需要用户输入密码解锁";
-                        
-                    }
-                        break;
-                        
-                    case LAErrorAppCancel: {
-                        // -9 如突然来了电话，电话应用进入前台，APP被挂起啦
-                        message = @"用户不能控制情况下APP被挂起";
-                        
-                    }
-                        break;
-                        
-                    case LAErrorInvalidContext: {
-                        // -10
-                        message = @"Touch ID 失效";
-                        if (self.failureBlock) {
-                            NSError *error = [NSError errorWithDomain:@"com.ax.kit" code:errorCode userInfo:@{@"message":message}];;
-                            self.failureBlock(error);
-                        }
-                    }
-                        break;
-                        
-                    default:
-                        break;
-                }
-            }
-        });
-    }];
-}
-
-- (LAContext *)context {
-    if (!_context) {
-        _context = [[LAContext alloc]init];
-    }
-    return _context;
-}
 
 @end

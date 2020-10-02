@@ -39,9 +39,7 @@
  @param inputPasswordBlock 失败后,点击输入密码
  @param cancelBlock 点击取消
  */
-- (void)openBiometryWithSuccess:(void(^)(void))successBlock
-                       failure:(void(^)(NSError *error))failureBlock
-                 inputPassword:(void(^)(void))inputPasswordBlock
-                        cancel:(void(^)(void))cancelBlock;
+- (void)openBiometryWithSuccess:(void(^)(void))success
+                       failure:(void(^)(NSError *error))failure;
 
 @end

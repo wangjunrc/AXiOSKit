@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		210E93CE25218B7300B0F83D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 210E93CD25218B7300B0F83D /* README.md */; };
-		210E94EB2521CD9B00B0F83D /* NSMutableArray+AXKVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 210E94E92521CD9B00B0F83D /* NSMutableArray+AXKVO.h */; };
+		210E94EB2521CD9B00B0F83D /* NSMutableArray+AXKVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 210E94E92521CD9B00B0F83D /* NSMutableArray+AXKVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		210E94EC2521CD9B00B0F83D /* NSMutableArray+AXKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 210E94EA2521CD9B00B0F83D /* NSMutableArray+AXKVO.m */; };
 		219D766724123ED500196BFE /* DBStatements.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D762624123ED400196BFE /* DBStatements.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		219D766824123ED500196BFE /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D762724123ED400196BFE /* DataBase.m */; };
@@ -62,13 +62,13 @@
 		219D769824123ED500196BFE /* LameHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D766524123ED400196BFE /* LameHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		219D769924123ED500196BFE /* LameHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D766624123ED400196BFE /* LameHelper.m */; };
 		21AF7EAE24F24B68003311AF /* AXBaseAlertDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 244FC1D02297C0D7003BD65F /* AXBaseAlertDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21B0969825270DD4002C3F5A /* AXBiometryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B0969625270DD4002C3F5A /* AXBiometryManager.h */; };
+		21B0969825270DD4002C3F5A /* AXBiometryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B0969625270DD4002C3F5A /* AXBiometryManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21B0969925270DD4002C3F5A /* AXBiometryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B0969725270DD4002C3F5A /* AXBiometryManager.m */; };
-		21B14328251ACED5001737B5 /* AXMediaConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B14326251ACED5001737B5 /* AXMediaConfig.h */; };
+		21B14328251ACED5001737B5 /* AXMediaConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B14326251ACED5001737B5 /* AXMediaConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21B14329251ACED5001737B5 /* AXMediaConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B14327251ACED5001737B5 /* AXMediaConfig.m */; };
-		21B1432C251ACEF2001737B5 /* AXMediaResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B1432A251ACEF2001737B5 /* AXMediaResult.h */; };
+		21B1432C251ACEF2001737B5 /* AXMediaResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B1432A251ACEF2001737B5 /* AXMediaResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21B1432D251ACEF2001737B5 /* AXMediaResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B1432B251ACEF2001737B5 /* AXMediaResult.m */; };
-		21B14330251AD3F4001737B5 /* UIViewController+AXMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B1432E251AD3F4001737B5 /* UIViewController+AXMedia.h */; };
+		21B14330251AD3F4001737B5 /* UIViewController+AXMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B1432E251AD3F4001737B5 /* UIViewController+AXMedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21B14331251AD3F4001737B5 /* UIViewController+AXMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B1432F251AD3F4001737B5 /* UIViewController+AXMedia.m */; };
 		24064AC622BA58C200F6EC73 /* 命令行.md in Resources */ = {isa = PBXBuildFile; fileRef = 24064AC522BA58C200F6EC73 /* 命令行.md */; };
 		24170BBF22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1556,7 +1556,6 @@
 				24732ABE2277FBB9005CF92D /* AXSafariVC.h in Headers */,
 				24732A702277FBB9005CF92D /* AXGCDTimer.h in Headers */,
 				24732A232277FBB9005CF92D /* UIView+AXSheet.h in Headers */,
-				21B0969825270DD4002C3F5A /* AXBiometryManager.h in Headers */,
 				24732A732277FBB9005CF92D /* AXObject.h in Headers */,
 				24732A072277FBB9005CF92D /* NSDateComponents+AXKit.h in Headers */,
 				24732A972277FBB9005CF92D /* AXJSContext.h in Headers */,
@@ -1578,7 +1577,6 @@
 				219D768824123ED500196BFE /* NSObject+AXCacheImage.h in Headers */,
 				24732A9C2277FBB9005CF92D /* AXFullLayout.h in Headers */,
 				24732A5B2277FBB9005CF92D /* AXLocationManager.h in Headers */,
-				210E94EB2521CD9B00B0F83D /* NSMutableArray+AXKVO.h in Headers */,
 				247329F82277FBB9005CF92D /* NSDictionary+AXKit.h in Headers */,
 				24732A832277FBB9005CF92D /* AXUIAssistant.h in Headers */,
 				24732A8A2277FBB9005CF92D /* AXMacros_instance.h in Headers */,
@@ -1611,7 +1609,6 @@
 				24F0F0C822C4B7F5009DD02B /* AXNavigationBar.h in Headers */,
 				24732AA12277FBB9005CF92D /* AXTabBarController.h in Headers */,
 				247329ED2277FBB9005CF92D /* NSNumber+AXKit.h in Headers */,
-				21B1432C251ACEF2001737B5 /* AXMediaResult.h in Headers */,
 				24732AB12277FBB9005CF92D /* AXSinglePickVC.h in Headers */,
 				24732A462277FBB9005CF92D /* UIColor+AXKit.h in Headers */,
 				219D768A24123ED500196BFE /* UIImageView+AXCircle.h in Headers */,
@@ -1667,14 +1664,17 @@
 				24732AC12277FBB9005CF92D /* AXPlayVC.h in Headers */,
 				24732A9D2277FBB9005CF92D /* AXTableViewController.h in Headers */,
 				24732ABB2277FBB9005CF92D /* QRCodeViewController.h in Headers */,
-				21B14330251AD3F4001737B5 /* UIViewController+AXMedia.h in Headers */,
 				24170BBF22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h in Headers */,
 				24732A1C2277FBB9005CF92D /* NSData+AXKit.h in Headers */,
 				24732A2D2277FBB9005CF92D /* UICollectionView+AXKit.h in Headers */,
+				21B0969825270DD4002C3F5A /* AXBiometryManager.h in Headers */,
+				210E94EB2521CD9B00B0F83D /* NSMutableArray+AXKVO.h in Headers */,
+				21B1432C251ACEF2001737B5 /* AXMediaResult.h in Headers */,
+				21B14330251AD3F4001737B5 /* UIViewController+AXMedia.h in Headers */,
+				21B14328251ACED5001737B5 /* AXMediaConfig.h in Headers */,
 				24732A792277FBB9005CF92D /* AXCountDownObject.h in Headers */,
 				24732A382277FBB9005CF92D /* UIViewController+AXNavBarConfig.h in Headers */,
 				24732AC72277FBB9005CF92D /* AXGuidePageCell.h in Headers */,
-				21B14328251ACED5001737B5 /* AXMediaConfig.h in Headers */,
 				247329F42277FBB9005CF92D /* UIImageView+SDImageCut.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
