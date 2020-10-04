@@ -40,11 +40,15 @@
     [btn1 ax_addActionBlock:^(UIButton * _Nullable button) {
         @strongify(self);
         self.manager = AXBiometryManager.ax_init;
-        [self.manager openBiometryWithSuccess:^{
-            NSLog(@"openBiometryWithSuccess");
-        } failure:^(NSError *error) {
-            NSLog(@"failure %@",error);
-        }];
+        self.manager.isSupportTouchID;
+        self.manager.isSupportFaceID;
+        
+//        NSLog(@"openBiometryWithSuccess");
+//        [self.manager openBiometryWithSuccess:^{
+//            NSLog(@"openBiometryWithSuccess");
+//        } failure:^(NSError *error) {
+//            NSLog(@"failure %@",error);
+//        }];
     }];
     
 }

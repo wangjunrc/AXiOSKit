@@ -29,18 +29,19 @@
  @return 是否
  */
 - (BOOL )isSupportTouchID {
-    //    if (@available(iOS 11.0, *)) {
-    //        NSLog(@"self.context.biometryType %ld",self.context.biometryType);
-    //        return self.context.biometryType == LABiometryTypeTouchID;
-    //    }else {
+        if (@available(iOS 11.0, *)) {
+            [self.context canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:nil];
+            return self.context.biometryType == LABiometryTypeTouchID;
+        }else {
     return [self.context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:nil];
-    //    }
+        }
 }
 
 
 /// 是否支持 FaceID
 - (BOOL )isSupportFaceID {
     if (@available(iOS 11.0, *)) {
+          [self.context canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:nil];
         return self.context.biometryType == LABiometryTypeFaceID;
     }else {
         return NO;
