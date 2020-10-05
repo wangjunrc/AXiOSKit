@@ -347,4 +347,7 @@
 /// @param fontSize 字号
 -(NSMutableAttributedString*)ax_smallerNumberWitSize:(CGFloat )fontSize;
 
+//截取字符前多少位，处理emoji表情问题
+////🐒🐒🐒🐒 + 截取3 = 🐒🐒🐒
+-(NSString *)ax_subStringContainsEmojiWithLength:(NSInteger)limitLength;
 @end
