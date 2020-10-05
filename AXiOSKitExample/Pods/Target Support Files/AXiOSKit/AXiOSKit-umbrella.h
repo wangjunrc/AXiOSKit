@@ -53,6 +53,7 @@
 #import "UIImageView+SDImageCut.h"
 #import "UILabel+AXKit.h"
 #import "UINavigationController+AXKit.h"
+#import "UIPageControl+AXKit.h"
 #import "UIScrollView+AXKit.h"
 #import "UISlider+AXKit.h"
 #import "UISwitch+AXKit.h"

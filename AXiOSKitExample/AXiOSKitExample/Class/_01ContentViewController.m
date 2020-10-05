@@ -18,6 +18,8 @@
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
 
 @property(nonatomic, strong) AXBiometryManager *manager;
+
+@property(nonatomic, strong) UIPageControl *pageControl;
 @end
 
 @implementation _01ContentViewController
@@ -35,23 +37,12 @@
         
     }];
     
-   
-    @weakify(self);
-    [btn1 ax_addActionBlock:^(UIButton * _Nullable button) {
-        @strongify(self);
-        self.manager = AXBiometryManager.ax_init;
-        self.manager.isSupportTouchID;
-        self.manager.isSupportFaceID;
-        
-//        NSLog(@"openBiometryWithSuccess");
-//        [self.manager openBiometryWithSuccess:^{
-//            NSLog(@"openBiometryWithSuccess");
-//        } failure:^(NSError *error) {
-//            NSLog(@"failure %@",error);
-//        }];
-    }];
+    
+ 
     
 }
+
+
 
 -(void)_test1 {
     

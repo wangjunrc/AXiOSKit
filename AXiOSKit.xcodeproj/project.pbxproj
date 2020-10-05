@@ -70,6 +70,8 @@
 		21B1432D251ACEF2001737B5 /* AXMediaResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B1432B251ACEF2001737B5 /* AXMediaResult.m */; };
 		21B14330251AD3F4001737B5 /* UIViewController+AXMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B1432E251AD3F4001737B5 /* UIViewController+AXMedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21B14331251AD3F4001737B5 /* UIViewController+AXMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B1432F251AD3F4001737B5 /* UIViewController+AXMedia.m */; };
+		21C63A81252B1D0800C07919 /* UIPageControl+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 21C63A7F252B1D0700C07919 /* UIPageControl+AXKit.h */; };
+		21C63A82252B1D0800C07919 /* UIPageControl+AXKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C63A80252B1D0800C07919 /* UIPageControl+AXKit.m */; };
 		24064AC622BA58C200F6EC73 /* 命令行.md in Resources */ = {isa = PBXBuildFile; fileRef = 24064AC522BA58C200F6EC73 /* 命令行.md */; };
 		24170BBF22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24170BC022D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */; };
@@ -413,6 +415,8 @@
 		21B1432B251ACEF2001737B5 /* AXMediaResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXMediaResult.m; sourceTree = "<group>"; };
 		21B1432E251AD3F4001737B5 /* UIViewController+AXMedia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXMedia.h"; sourceTree = "<group>"; };
 		21B1432F251AD3F4001737B5 /* UIViewController+AXMedia.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXMedia.m"; sourceTree = "<group>"; };
+		21C63A7F252B1D0700C07919 /* UIPageControl+AXKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIPageControl+AXKit.h"; sourceTree = "<group>"; };
+		21C63A80252B1D0800C07919 /* UIPageControl+AXKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIPageControl+AXKit.m"; sourceTree = "<group>"; };
 		24064AC522BA58C200F6EC73 /* 命令行.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "命令行.md"; sourceTree = "<group>"; };
 		24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDeviceFunctionDisableViewController.h; sourceTree = "<group>"; };
 		24170BBE22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDeviceFunctionDisableViewController.m; sourceTree = "<group>"; };
@@ -973,6 +977,8 @@
 				247329122277FBB8005CF92D /* NSDictionary+AXKit.m */,
 				247328FA2277FBB8005CF92D /* NSError+AXKit.h */,
 				247329272277FBB8005CF92D /* NSError+AXKit.m */,
+				210E94E92521CD9B00B0F83D /* NSMutableArray+AXKVO.h */,
+				210E94EA2521CD9B00B0F83D /* NSMutableArray+AXKVO.m */,
 				247328D52277FBB8005CF92D /* NSNumber+AXKit.h */,
 				247328FD2277FBB8005CF92D /* NSNumber+AXKit.m */,
 				247329192277FBB8005CF92D /* NSObject+AXKit.h */,
@@ -1025,6 +1031,8 @@
 				247329132277FBB8005CF92D /* UILabel+AXKit.m */,
 				2473292F2277FBB8005CF92D /* UINavigationController+AXKit.h */,
 				247328F22277FBB8005CF92D /* UINavigationController+AXKit.m */,
+				21C63A7F252B1D0700C07919 /* UIPageControl+AXKit.h */,
+				21C63A80252B1D0800C07919 /* UIPageControl+AXKit.m */,
 				247328D22277FBB8005CF92D /* UIScrollView+AXKit.h */,
 				247329002277FBB8005CF92D /* UIScrollView+AXKit.m */,
 				247328F42277FBB8005CF92D /* UISlider+AXKit.h */,
@@ -1065,8 +1073,6 @@
 				247328E42277FBB8005CF92D /* UIWindow+AXKit.m */,
 				247328CD2277FBB8005CF92D /* WKWebView+AXKit.h */,
 				247329052277FBB8005CF92D /* WKWebView+AXKit.m */,
-				210E94E92521CD9B00B0F83D /* NSMutableArray+AXKVO.h */,
-				210E94EA2521CD9B00B0F83D /* NSMutableArray+AXKVO.m */,
 			);
 			path = 01Category;
 			sourceTree = "<group>";
@@ -1620,6 +1626,7 @@
 				24732A0C2277FBB9005CF92D /* UISlider+AXKit.h in Headers */,
 				24732A562277FBB9005CF92D /* AXTouchIDManager.h in Headers */,
 				24732A942277FBB9005CF92D /* AXChoosePayStyleCell.h in Headers */,
+				21C63A81252B1D0800C07919 /* UIPageControl+AXKit.h in Headers */,
 				24732A432277FBB9005CF92D /* NSObject+AXKVO.h in Headers */,
 				24835B9522B72DB000F4125C /* UIGestureRecognizer+AXKit.h in Headers */,
 				24732A8B2277FBB9005CF92D /* AXChoosePayVC.h in Headers */,
@@ -1927,6 +1934,7 @@
 				24732A692277FBB9005CF92D /* IBUIImageView.m in Sources */,
 				21B14329251ACED5001737B5 /* AXMediaConfig.m in Sources */,
 				219D768724123ED500196BFE /* UIImageView+AXCircle.m in Sources */,
+				21C63A82252B1D0800C07919 /* UIPageControl+AXKit.m in Sources */,
 				247329E42277FBB9005CF92D /* UIView+AXKit.m in Sources */,
 				24732A152277FBB9005CF92D /* NSNumber+AXKit.m in Sources */,
 				24732A572277FBB9005CF92D /* AXTouchIDManager.m in Sources */,
