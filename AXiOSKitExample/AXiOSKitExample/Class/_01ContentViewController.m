@@ -27,19 +27,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
+//
+//    UIButton *btn1 = [[UIButton alloc]init];
+//    [btn1 setTitle:@"btn1" forState:UIControlStateNormal];
+//    btn1.backgroundColor = UIColor.orangeColor;
+//    [self.view addSubview:btn1];
+//    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.top.mas_equalTo(30);
+//
+//    }];
+//
+//
+//    NSLog(@"=== %@",[self subStringWithEmoji:@"哈哈😝😝😝" limitLength:3]);
     
-    UIButton *btn1 = [[UIButton alloc]init];
-    [btn1 setTitle:@"btn1" forState:UIControlStateNormal];
-    btn1.backgroundColor = UIColor.orangeColor;
-    [self.view addSubview:btn1];
-    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.mas_equalTo(30);
-        
-    }];
+    UISwitch *switchButton = [[UISwitch alloc]initWithFrame:CGRectMake(100, 200, 100, 20)];
+    [self.view addSubview:switchButton];
+//    switchButton.offImage = [UIImage imageNamed:@"Knob_off"];
+//    switchButton.onImage = [UIImage imageNamed:@"Knob_on"];
+//    switchButton.onTintColor = [UIColor yellowColor];
+//    switchButton.tintColor = [UIColor redColor];
+    switchButton.thumbTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Knob_off"]];
     
-    
-    NSLog(@"=== %@",[self subStringWithEmoji:@"哈哈😝😝😝" limitLength:3]);
-    
+    UIImage *img =  [UIImage ax_imageRectangleWithSize:CGSizeMake(100, 10) color:UIColor.orangeColor];
+    switchButton.onTintColor = [UIColor colorWithPatternImage:img];;
 }
 
 
@@ -239,12 +249,14 @@
     //
     //    [contentImageView sd_setImageWithURL:[NSURL URLWithString:@"https://bing.ioliu.cn/v1/rand?key=b0&w=200&h=300"] placeholderImage:[UIImage imageNamed:@"hot_load"]];
     
-    UILabel *label = [UILabel.alloc initWithFrame:CGRectMake(100, 400, 100, 20)];
-    [self.view addSubview:label];
-    label.font = [UIFont systemFontOfSize:30];
-    label.attributedText = [@"HH12KK" ax_smallerNumberWitSize:10];
+//    UILabel *label = [UILabel.alloc initWithFrame:CGRectMake(100, 400, 100, 20)];
+//    [self.view addSubview:label];
+//    label.font = [UIFont systemFontOfSize:30];
+//    label.attributedText = [@"HH12KK" ax_smallerNumberWitSize:10];
+//
+//    [self configUI];
     
-    [self configUI];
+   
 }
 
 
