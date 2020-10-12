@@ -21,7 +21,7 @@
 
 +(UIViewController *)makeKeyAndVisible{
     
-    
+    [self loadSettingsBundle];
     [AXConfigureManager registerCatch];
     
     SDImageWebPCoder *webPCoder = [SDImageWebPCoder sharedCoder];
@@ -31,5 +31,40 @@
     return nav;
     
 }
+
+
+
+ 
+// 加载设置文件
++ (void)loadSettingsBundle
+{
+    id version =  [NSUserDefaults.standardUserDefaults objectForKey:@"version"];
+    NSLog(@"version %@",version);
+    [NSUserDefaults.standardUserDefaults setObject:@"123" forKey:@"version"];
+    [NSUserDefaults.standardUserDefaults synchronize];
+    
+  id aihao =  [NSUserDefaults.standardUserDefaults objectForKey:@"aihao"];
+    NSLog(@"aihao %@",aihao);
+    
+    NSString *settingsBundle = [[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"bundle"];
+    if(!settingsBundle)
+    {
+        NSLog(@"加载Settings.bundle文件失败");
+        return;
+    }
+   
+    NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[settingsBundle stringByAppendingPathComponent:@"Root.plist"]];
+    NSLog(@"settings = %@",settings);
+    
+//    NSMutableDictionary *defaultsToRegister = [NSMutableDictionary dictionary];
+//    defaultsToRegister[@"version"] = @"222";
+//    defaultsToRegister[@"aihao"] = @"swimming";
+//
+//    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultsToRegister];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+ 
+    
+}
+
 
 @end

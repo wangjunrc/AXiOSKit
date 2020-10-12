@@ -22,6 +22,7 @@
 		21AF7EAD24F24B42003311AF /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AF7EAB24F24B42003311AF /* MakeKeyAndVisible.m */; };
 		21B143F4251B4803001737B5 /* _21KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B143F2251B4803001737B5 /* _21KVOViewController.m */; };
 		21B143F5251B4803001737B5 /* _21KVOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21B143F3251B4803001737B5 /* _21KVOViewController.xib */; };
+		21D5C5B82533F594002130B9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21D5C5B72533F594002130B9 /* Settings.bundle */; };
 		21D670BD2474E5D100890F8F /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D670BC2474E5D100890F8F /* ShareViewController.m */; };
 		21D670C02474E5D100890F8F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D670BE2474E5D100890F8F /* MainInterface.storyboard */; };
 		21D670C42474E5D100890F8F /* 分享.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21D670B92474E5D100890F8F /* 分享.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -152,6 +153,7 @@
 		21B143F2251B4803001737B5 /* _21KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _21KVOViewController.m; sourceTree = "<group>"; };
 		21B143F3251B4803001737B5 /* _21KVOViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _21KVOViewController.xib; sourceTree = "<group>"; };
 		21D5C507253297F0002130B9 /* 阿星Kit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "阿星Kit.entitlements"; sourceTree = "<group>"; };
+		21D5C5B72533F594002130B9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		21D670B92474E5D100890F8F /* 分享.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "分享.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D670BB2474E5D100890F8F /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		21D670BC2474E5D100890F8F /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				215B079C24F11A9000535742 /* AxGenerator.xcconfig */,
 				2100F46824F40A3D0057DD66 /* AXiOSKitExampleRelease.entitlements */,
 				215B079E24F11B6200535742 /* AxRelease.xcconfig */,
+				21D5C5B72533F594002130B9 /* Settings.bundle */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				21D670C82474E5D100890F8F /* Embed App Extensions */,
 				21253535251198C700EC2FA0 /* ShellScript */,
 				2150D39C25122DCE00279EE7 /* ShellScript */,
+				21D5C5B92533F6E1002130B9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -700,6 +704,7 @@
 				21E54A7224D98D150038F4C0 /* fishhook.podspec in Resources */,
 				21E54A9324D98D150038F4C0 /* _14TFViewController.xib in Resources */,
 				21E54A7E24D98D150038F4C0 /* LaunchScreen.storyboard in Resources */,
+				21D5C5B82533F594002130B9 /* Settings.bundle in Resources */,
 				21EFCCE12509FB58000A1AAC /* PointViewController.plist in Resources */,
 				21E54A6E24D98D150038F4C0 /* LICENSE in Resources */,
 				21E54A7F24D98D150038F4C0 /* Main.storyboard in Resources */,
@@ -792,6 +797,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# 启动图加版本号\n# $SRCROOT/launch_image.sh\n";
+		};
+		21D5C5B92533F6E1002130B9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# 启动图加版本号\n$SRCROOT/SettingsBundle.sh\n";
 		};
 		7975C44782069503AFEA4982 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
