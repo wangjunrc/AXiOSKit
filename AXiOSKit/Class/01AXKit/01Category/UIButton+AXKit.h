@@ -14,7 +14,7 @@
 /**
  * 按钮事件封装成block
  */
-- (void)ax_addActionBlock:(void(^_Nullable)(UIButton * _Nullable button))block;
+- (void)ax_addTargetBlock:(void(^_Nullable)(UIButton * _Nullable button))block;
 
 /**
  修改button 图片位置

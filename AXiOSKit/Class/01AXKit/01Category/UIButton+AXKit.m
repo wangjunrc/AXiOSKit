@@ -44,7 +44,7 @@ typedef void(^ButtonBlock)(UIButton *button);
 /**
  需要定义属性写法
  */
-- (void)ax_addActionBlock:(void (^)(UIButton *))block{
+- (void)ax_addTargetBlock:(void (^)(UIButton *))block{
     
     self.buttonBlock = block;
     [self addTarget:self action:@selector(buttonEvents:) forControlEvents:UIControlEventTouchUpInside];

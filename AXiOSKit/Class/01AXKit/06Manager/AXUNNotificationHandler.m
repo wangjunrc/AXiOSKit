@@ -63,6 +63,13 @@
     
     NSLog(@"categoryIdentifier>> %@",categoryIdentifier);
     
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        NSLog(@"点击 iOS10 远程通知");
+    } else {
+        // 本地通知
+        NSLog(@"点击 iOS10 本地通知");
+    }
+    
     if (completionHandler) {
         completionHandler();
     }

@@ -13,6 +13,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <AuthenticationServices/AuthenticationServices.h>
 #import <AXiOSKit/AXBiometryManager.h>
+#import <UserNotifications/UserNotifications.h>
 
 @interface _01ContentViewController ()
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
@@ -27,57 +28,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-//
-//    UIButton *btn1 = [[UIButton alloc]init];
-//    [btn1 setTitle:@"btn1" forState:UIControlStateNormal];
-//    btn1.backgroundColor = UIColor.orangeColor;
-//    [self.view addSubview:btn1];
-//    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.top.mas_equalTo(30);
-//
-//    }];
-//
-//
-//    NSLog(@"=== %@",[self subStringWithEmoji:@"哈哈😝😝😝" limitLength:3]);
-    
-    UISwitch *switchButton = [[UISwitch alloc]initWithFrame:CGRectMake(100, 200, 100, 20)];
-    [self.view addSubview:switchButton];
-//    switchButton.offImage = [UIImage imageNamed:@"Knob_off"];
-//    switchButton.onImage = [UIImage imageNamed:@"Knob_on"];
-//    switchButton.onTintColor = [UIColor yellowColor];
-//    switchButton.tintColor = [UIColor redColor];
-    switchButton.thumbTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Knob_off"]];
-    
-    UIImage *img =  [UIImage ax_imageRectangleWithSize:CGSizeMake(100, 10) color:UIColor.orangeColor];
-    switchButton.onTintColor = [UIColor colorWithPatternImage:img];;
-}
-
-
-//截取字符前多少位，处理emoji表情问题
-////🐒🐒🐒🐒 + 截取3 = 🐒🐒🐒
--(NSString *)subStringWithEmoji:(NSString *)emojiString
-                    limitLength:(NSInteger)limitLength{
-    if(emojiString.length < limitLength) return emojiString;
-    
-    @autoreleasepool {
-        NSString * subStr = emojiString;
-        NSRange  range;
-        NSInteger index = 0;
-        for(int i=0; i< emojiString.length; i += range.length){
-            range = [emojiString rangeOfComposedCharacterSequenceAtIndex:i];
-            NSString * charrrr = [emojiString substringToIndex:range.location + range.length];
-            index ++;
-            if(index == limitLength){
-                subStr = charrrr;
-                break;
-            }
-        }
-        return subStr;
-    }
 }
 
 
 
+- (void)didMoveToParentViewController:(UIViewController *)parent {
+    AXLogFunc;
+}
 
 -(void)_test1 {
     
@@ -125,7 +82,7 @@
     //    }];
     
     __weak typeof(self) weakSelf = self;
-    [btn1 ax_addActionBlock:^(UIButton * _Nullable button) {
+    [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.viewBottomConstraint uninstall];
         
@@ -249,14 +206,14 @@
     //
     //    [contentImageView sd_setImageWithURL:[NSURL URLWithString:@"https://bing.ioliu.cn/v1/rand?key=b0&w=200&h=300"] placeholderImage:[UIImage imageNamed:@"hot_load"]];
     
-//    UILabel *label = [UILabel.alloc initWithFrame:CGRectMake(100, 400, 100, 20)];
-//    [self.view addSubview:label];
-//    label.font = [UIFont systemFontOfSize:30];
-//    label.attributedText = [@"HH12KK" ax_smallerNumberWitSize:10];
-//
-//    [self configUI];
+    //    UILabel *label = [UILabel.alloc initWithFrame:CGRectMake(100, 400, 100, 20)];
+    //    [self.view addSubview:label];
+    //    label.font = [UIFont systemFontOfSize:30];
+    //    label.attributedText = [@"HH12KK" ax_smallerNumberWitSize:10];
+    //
+    //    [self configUI];
     
-   
+    
 }
 
 
@@ -326,5 +283,7 @@
         NSLog(@"该系统版本不可用Apple登录");
     }
 }
+
+
 
 @end

@@ -9,10 +9,10 @@
 #import "AppDelegate.h"
 #import "MakeKeyAndVisible.h"
 #import <WechatOpenSDK/WXApi.h>
-
+#import <UserNotifications/UserNotifications.h>
 #define WXAppId            @"wxb1fbfdf9fe32026b"    //App ID
 
-@interface AppDelegate ()<WXApiDelegate>
+@interface AppDelegate ()<WXApiDelegate,UNUserNotificationCenterDelegate>
 
 @end
 
@@ -21,19 +21,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     
-//    [UISearchBar.appearance setBarTintColor:UIColor.redColor];
+    //    [UISearchBar.appearance setBarTintColor:UIColor.redColor];
     [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[UISearchBar.class]]
      setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}
      forState:UIControlStateNormal];
-//    [UIBarButtonItem.appearance setTintColor:UIColor.redColor];;
-//    [UIButton.appearance setTitleColor:UIColor.blueColor forState:UIControlStateNormal];
-//    [UIButton.appearance setBackgroundColor:UIColor.grayColor];
+    //    [UIBarButtonItem.appearance setTintColor:UIColor.redColor];;
+    //    [UIButton.appearance setTitleColor:UIColor.blueColor forState:UIControlStateNormal];
+    //    [UIButton.appearance setBackgroundColor:UIColor.grayColor];
     
-   
     
-//    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[UINavigationController class]]] setBackgroundColor:[UIColor clearColor]];
     
-//    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[UIViewController class]]] setBackgroundColor:[UIColor grayColor]];
+    //    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[UINavigationController class]]] setBackgroundColor:[UIColor clearColor]];
+    
+    //    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[UIViewController class]]] setBackgroundColor:[UIColor grayColor]];
     //    //输出微信的log信息
     //    [WXApi startLogByLevel:WXLogLevelDetail logBlock:^(NSString * _Nonnull log) {
     //        NSLog(@"输出微信 %@", log);
@@ -51,17 +51,17 @@
     //    }];
     
     //获取document路径
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentDirectory = [paths objectAtIndex:0];
-        
-        //文件名及其路径
-        NSString *fileName = @"test.txt";
-        NSString *filePath = [documentDirectory stringByAppendingPathComponent:fileName];
-        
-        //建立一个char数组，并归档写入到沙盒中
-        char *a = "hello, world";
-        NSData *data = [NSData dataWithBytes:a length:12];
-        [data writeToFile:filePath atomically:YES];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    
+    //文件名及其路径
+    NSString *fileName = @"test.txt";
+    NSString *filePath = [documentDirectory stringByAppendingPathComponent:fileName];
+    
+    //建立一个char数组，并归档写入到沙盒中
+    char *a = "hello, world";
+    NSData *data = [NSData dataWithBytes:a length:12];
+    [data writeToFile:filePath atomically:YES];
     
     [WXApi registerApp:WXAppId];
     
@@ -73,6 +73,11 @@
     [self.window makeKeyAndVisible];
     //    }
     [self adapterIOS11];
+    if (@available(iOS 10.0, *)) {
+        [self _note];
+    } else {
+        // Fallback on earlier versions
+    }
     return YES;
 }
 
@@ -80,13 +85,27 @@
     // 适配iOS11以上UITableview 、UICollectionView、UIScrollview 列表/页面偏移
     if (@available(iOS 11.0, *)){
         [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
-
+        
         [[UITableView appearance] setEstimatedRowHeight:0];
         [[UITableView appearance] setEstimatedSectionFooterHeight:0];
         [[UITableView appearance] setEstimatedSectionHeaderHeight:0];
     }
 }
 
+-(void)_note __IOS_AVAILABLE(10.0) {
+    //注册本地推送
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    center.delegate = self;
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound)
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        
+    }];
+    
+    //获取当前的通知设置
+    [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+        
+    }];
+}
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     //获取共享的UserDefaults
     NSString *suitName = @"group.com.ax.kit";
@@ -147,5 +166,69 @@
     //        NSLog(@"%@", req.extMsg);// 对应JsApi navigateBackApplication中的extraData字段数据
     //    }
 }
+
+#pragma mark - <UNUserNotificationCenterDelegate>
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler  API_AVAILABLE(ios(10.0)){
+    
+    NSLog(@"点击通知");
+    
+    completionHandler(UNNotificationPresentationOptionAlert);
+}
+
+//iOS10之后  通知的点击事件
+//- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler API_AVAILABLE(ios(10.0)){
+//
+//    NSLog(@"点击通知: %@",response.notification.request.content.userInfo);
+//
+//    if ([response.actionIdentifier isEqualToString:UNNotificationDefaultActionIdentifier]) {
+//
+//        NSLog(@"response.actionIdentifier>> %@",response.notification.request.content.userInfo);
+//    }
+//
+//    NSString *categoryIdentifier = response.notification.request.content.categoryIdentifier;
+//
+//    NSLog(@"categoryIdentifier>> %@",categoryIdentifier);
+//
+//    if (completionHandler) {
+//        completionHandler();
+//    }
+//}
+
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler  API_AVAILABLE(ios(10.0)){
+    
+    NSString *categoryIdentifier = response.notification.request.content.categoryIdentifier;
+    
+    // UNNotificationCategory
+    if ([categoryIdentifier isEqualToString:@"categoryIdentifier"]) {
+        // UNNotificationAction、UNTextInputNotificationAction
+        if ([response.actionIdentifier isEqualToString:@"cancelAction"]) {
+            
+        }
+    }
+    
+    NSDictionary * userInfo = response.notification.request.content.userInfo;
+    UNNotificationRequest *request = response.notification.request; // 收到推送的请求
+    UNNotificationContent *content = request.content; // 收到推送的消息内容
+    
+    if ([response.actionIdentifier isEqualToString:UNNotificationDefaultActionIdentifier]) {
+        
+        NSLog(@"response.actionIdentifier>> %@",response.notification.request.content.userInfo);
+    }
+    
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        NSLog(@"点击 iOS10 远程通知");
+    } else {
+        // 本地通知
+        NSLog(@"点击 iOS10 本地通知");
+    }
+    
+    if (completionHandler) {
+        completionHandler();
+    }
+    
+    
+}
+
 
 @end

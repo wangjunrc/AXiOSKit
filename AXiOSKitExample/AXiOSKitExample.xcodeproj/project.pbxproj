@@ -13,6 +13,8 @@
 		210E93252520C7BC00B0F83D /* _23FullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210E93232520C7BC00B0F83D /* _23FullViewController.m */; };
 		212B59482515E1A90073ED07 /* _01ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B59472515E1A90073ED07 /* _01ContentViewController.m */; };
 		215B07A924F1242C00535742 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 215B07A824F1242C00535742 /* RouterManager.m */; };
+		215FB3C02534788B0050F7D7 /* _24NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215FB3BE2534788B0050F7D7 /* _24NoteViewController.m */; };
+		215FB3C12534788B0050F7D7 /* _24NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215FB3BF2534788B0050F7D7 /* _24NoteViewController.xib */; };
 		217D22D7251386AE00AFE556 /* _19ScrollContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */; };
 		217D22DB251386EA00AFE556 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 217D22DA251386EA00AFE556 /* instruction.jpg */; };
 		21A65D6325133E6100CC3939 /* _18MGSwipeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A65D6225133E6100CC3939 /* _18MGSwipeTableVC.m */; };
@@ -138,6 +140,9 @@
 		215B079E24F11B6200535742 /* AxRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxRelease.xcconfig; sourceTree = "<group>"; };
 		215B07A724F1242C00535742 /* RouterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouterManager.h; sourceTree = "<group>"; };
 		215B07A824F1242C00535742 /* RouterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RouterManager.m; sourceTree = "<group>"; };
+		215FB3BD2534788B0050F7D7 /* _24NoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _24NoteViewController.h; sourceTree = "<group>"; };
+		215FB3BE2534788B0050F7D7 /* _24NoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _24NoteViewController.m; sourceTree = "<group>"; };
+		215FB3BF2534788B0050F7D7 /* _24NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _24NoteViewController.xib; sourceTree = "<group>"; };
 		217D22D5251386AE00AFE556 /* _19ScrollContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _19ScrollContentViewController.h; sourceTree = "<group>"; };
 		217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _19ScrollContentViewController.m; sourceTree = "<group>"; };
 		217D22DA251386EA00AFE556 /* instruction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instruction.jpg; sourceTree = "<group>"; };
@@ -530,6 +535,9 @@
 				210E93222520C7BC00B0F83D /* _23FullViewController.h */,
 				210E93232520C7BC00B0F83D /* _23FullViewController.m */,
 				210E93212520C7BC00B0F83D /* _23FullViewController.xib */,
+				215FB3BD2534788B0050F7D7 /* _24NoteViewController.h */,
+				215FB3BE2534788B0050F7D7 /* _24NoteViewController.m */,
+				215FB3BF2534788B0050F7D7 /* _24NoteViewController.xib */,
 				21E54A2824D98D150038F4C0 /* AANavigationController.h */,
 				21E54A3E24D98D150038F4C0 /* AANavigationController.m */,
 				21E54A3724D98D150038F4C0 /* AAViewController.h */,
@@ -719,6 +727,7 @@
 				21E54A7124D98D150038F4C0 /* CONTRIBUTING.md in Resources */,
 				21E54A7824D98D150038F4C0 /* ChatViewController.xib in Resources */,
 				21E54A9E24D98D150038F4C0 /* AAViewController.xib in Resources */,
+				215FB3C12534788B0050F7D7 /* _24NoteViewController.xib in Resources */,
 				21E54A7C24D98D150038F4C0 /* Assets.xcassets in Resources */,
 				21E54A9424D98D150038F4C0 /* _09AFNViewController.xib in Resources */,
 				21EFCCE3250A0110000A1AAC /* PointViewController2.plist in Resources */,
@@ -851,6 +860,7 @@
 				21E54A7524D98D150038F4C0 /* TestObj.m in Sources */,
 				21E54A7924D98D150038F4C0 /* ChatViewController.m in Sources */,
 				2100F46724F405640057DD66 /* _17OtherShareViewController.m in Sources */,
+				215FB3C02534788B0050F7D7 /* _24NoteViewController.m in Sources */,
 				21E54A9A24D98D150038F4C0 /* _16KeyChainViewController.m in Sources */,
 				21B143F4251B4803001737B5 /* _21KVOViewController.m in Sources */,
 				212B59482515E1A90073ED07 /* _01ContentViewController.m in Sources */,
