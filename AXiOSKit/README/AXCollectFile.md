@@ -1725,3 +1725,27 @@ for (NSTextCheckingResult *match in matchArray) {
     }
 }
 ```
+## UILabel 的抗拉伸和抗压缩
+```
+// 抗被拉伸
+[self.label setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
+// 抗被压缩
+[self.label setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
+```
+## UITextField 系统键盘输入汉字,点击确定再触发事件
+```
+[textField addTarget:self action:@selector(textFieldDidChangeEvent:) forControlEvents:UIControlEventEditingChanged];
+```
+```
+- (void)textFieldDidChangeEvent:(UITextField *)textField{
+    if (textField.markedTextRange == nil)//点击完选中的字之后
+    {
+        NSLog(@"textFieldDidChange:%@", textField.text);
+    }
+    else//没有点击出现的汉字,一直在点击键盘
+    {
+        NSLog(@"markedTextRange:%@",textField.text);
+        
+    }
+}
+```

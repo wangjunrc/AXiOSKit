@@ -70,6 +70,21 @@ typedef void (^CollectionBlock)(void);
     self.title = @"主题";
     [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
     
+    
+    if (@available(iOS 13.0, *))    {
+            CGRect keyWindow = [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame;
+        
+        NSLog(@"height1 == %lf",keyWindow.size.height);
+        
+    } else {
+        NSString *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+        
+        NSLog(@"height2 == %@",statusBar);
+    }
+
+    NSLog(@"height3 == %lf",UIApplication.sharedApplication.statusBarFrame.size.height);
+    
+    
 //    self.tableView.editing = YES;
     
 //    __weak typeof(self) weakSelf = self;

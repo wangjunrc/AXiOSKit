@@ -151,6 +151,7 @@
 		21B143F1251B4803001737B5 /* _21KVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _21KVOViewController.h; sourceTree = "<group>"; };
 		21B143F2251B4803001737B5 /* _21KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _21KVOViewController.m; sourceTree = "<group>"; };
 		21B143F3251B4803001737B5 /* _21KVOViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _21KVOViewController.xib; sourceTree = "<group>"; };
+		21D5C507253297F0002130B9 /* 阿星Kit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "阿星Kit.entitlements"; sourceTree = "<group>"; };
 		21D670B92474E5D100890F8F /* 分享.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "分享.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D670BB2474E5D100890F8F /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		21D670BC2474E5D100890F8F /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
@@ -400,6 +401,7 @@
 		21E549F524D98D140038F4C0 /* AXiOSKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				21D5C507253297F0002130B9 /* 阿星Kit.entitlements */,
 				21E54A2124D98D150038F4C0 /* Class */,
 				21A04609251E0C0300FEFC15 /* ClassDemo */,
 				21E549F924D98D140038F4C0 /* fishhook-master */,
@@ -1028,6 +1030,7 @@
 			baseConfigurationReference = A011177F86BD72A2085ADED7 /* Pods-AXiOSKitExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Debug";
+				CODE_SIGN_ENTITLEMENTS = "AXiOSKitExample/阿星Kit.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
