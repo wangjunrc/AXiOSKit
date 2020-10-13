@@ -110,7 +110,7 @@
     btn.backgroundColor = UIColor.orangeColor;
     btn.top = topView.bottom+10;
     ax_weakify(self);
-    [btn ax_addActionBlock:^(UIButton * _Nullable button) {
+    [btn ax_addTargetBlock:^(UIButton * _Nullable button) {
         ax_strongify(self);
         NSString *path = [[NSBundle mainBundle] pathForResource:@"IMG_3972"
                                                          ofType:@"GIF"];

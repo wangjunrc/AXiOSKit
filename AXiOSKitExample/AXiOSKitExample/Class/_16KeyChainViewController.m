@@ -32,7 +32,7 @@
         make.left.mas_equalTo(100);
         make.top.mas_equalTo(100);
     }];
-    [btn ax_addActionBlock:^(UIButton *_Nullable button) {
+    [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
         NSString *pas =    [SSKeychain passwordForService:@"com.ax.group" account:@"user"];
         AXLoger(@"%@", pas);
     }];
@@ -45,7 +45,7 @@
         make.left.mas_equalTo(100);
         make.top.equalTo(btn.mas_bottom).offset(10);
     }];
-    [btn2 ax_addActionBlock:^(UIButton *_Nullable button) {
+    [btn2 ax_addTargetBlock:^(UIButton *_Nullable button) {
         AXLoger(@"%@", [NSBundle mainBundle].bundleIdentifier);
         NSError *error = nil;
         BOOL result = [ SSKeychain setPassword:@"abc123" forService:@"com.ax.group" account:@"user" error:&error];

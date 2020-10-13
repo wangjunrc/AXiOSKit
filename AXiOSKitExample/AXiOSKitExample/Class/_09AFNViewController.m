@@ -24,7 +24,7 @@
     btn1.frame = CGRectMake(0, 0, 100, 50);
     btn1.backgroundColor = UIColor.blueColor;
     [btn1 ax_setTitleStateNormal:@"请求1"];
-    [btn1 ax_addActionBlock:^(UIButton * _Nullable button) {
+    [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
         
         NSDictionary *dict = @{@"name":@"jim",@"age":@1};
         
@@ -45,7 +45,7 @@
     [btn2 ax_setTitleStateNormal:@"请求2"];
     btn2.ax_top = btn1.ax_bottom+10;
     btn2.ax_left = btn1.ax_left;
-    [btn2 ax_addActionBlock:^(UIButton * _Nullable button) {
+    [btn2 ax_addTargetBlock:^(UIButton * _Nullable button) {
         
         NSDictionary *dict = @{@"name":@"jim",@"age":@1};
         
@@ -66,7 +66,7 @@
     [btn3 ax_setTitleStateNormal:@"请求3"];
     btn3.ax_top = btn2.ax_bottom+10;
     btn3.ax_left = btn2.ax_left;
-    [btn3 ax_addActionBlock:^(UIButton * _Nullable button) {
+    [btn3 ax_addTargetBlock:^(UIButton * _Nullable button) {
         
         NSDictionary *dict = @{@"name":@"jim",@"age":@1};
         

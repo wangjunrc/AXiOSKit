@@ -90,7 +90,7 @@
         }
         make.left.equalTo(self.imageView);
     }];
-    [btn ax_addActionBlock:^(UIButton *_Nullable button) {
+    [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
         [self button];
     }];
     

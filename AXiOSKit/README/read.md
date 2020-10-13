@@ -26,7 +26,7 @@ UIImage *contentImage = [UIImage ax_imageRectangleWithSize:CGSizeMake(400, 400) 
 
 UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 400, 400)];
 btn.backgroundColor = UIColor.redColor;
-[btn ax_addActionBlock:^(UIButton * _Nullable button) {
+[btn ax_addTargetBlock:^(UIButton * _Nullable button) {
 NSLog(@">>>>>>>>>>>>");
 }];
 

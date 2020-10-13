@@ -46,7 +46,7 @@
     [btn ax_setTitleStateNormal:@"改变模式"];
     btn.ax_top = imv.ax_bottom+10;
     btn.ax_left = imv.ax_left;
-    [btn ax_addActionBlock:^(UIButton * _Nullable button) {
+    [btn ax_addTargetBlock:^(UIButton * _Nullable button) {
         if (@available(iOS 13.0, *)) {
 //            if ( self.overrideUserInterfaceStyle == UIUserInterfaceStyleLight) {
 //                self.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;

@@ -63,7 +63,7 @@
     
     __block typeof(width)weakWwidth = width;
     
-    //    [btn1 ax_addActionBlock:^(UIButton * _Nullable button) {
+    //    [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
     //
     //
     //        [view1 mas_updateConstraints:^(MASConstraintMaker *make) {

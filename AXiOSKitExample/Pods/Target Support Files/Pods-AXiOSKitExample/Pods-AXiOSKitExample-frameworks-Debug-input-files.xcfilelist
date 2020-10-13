@@ -9,6 +9,7 @@ ${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/JJException/JJException.framework
 ${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework
+${PODS_ROOT}/LookinServer/LookinServer.framework
 ${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework
 ${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework

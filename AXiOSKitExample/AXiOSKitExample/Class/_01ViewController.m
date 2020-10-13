@@ -60,7 +60,7 @@
     [btn ax_setTitleStateNormal:@"改变模式"];
     btn.ax_top = imv.ax_bottom + 10;
     btn.ax_left = imv.ax_left;
-    [btn ax_addActionBlock:^(UIButton *_Nullable button) {
+    [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
         if (@available(iOS 13.0, *)) {
 
             if (ax_keyWindow().overrideUserInterfaceStyle != UIUserInterfaceStyleDark) {
@@ -81,7 +81,7 @@
     [btn2 ax_setTitleStateNormal:@"push"];
     btn2.ax_top = btn.ax_bottom + 10;
     btn2.ax_left = btn.ax_left;
-    [btn2 ax_addActionBlock:^(UIButton *_Nullable button) {
+    [btn2 ax_addTargetBlock:^(UIButton *_Nullable button) {
         AAViewController *aa = [AAViewController ax_init];
         [self ax_pushVC:aa];
 
@@ -94,7 +94,7 @@
     [btn3 ax_setTitleStateNormal:@"show"];
     btn3.ax_top = btn2.ax_bottom + 10;
     btn3.ax_left = btn2.ax_left;
-    [btn3 ax_addActionBlock:^(UIButton *_Nullable button) {
+    [btn3 ax_addTargetBlock:^(UIButton *_Nullable button) {
         NSLog(@">>>>>>>>>");
 //        AAViewController *aa = [AAViewController ax_init];
 //        [self ax_showVC:aa];
