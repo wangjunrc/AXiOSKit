@@ -15,6 +15,8 @@
 		215B07A924F1242C00535742 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 215B07A824F1242C00535742 /* RouterManager.m */; };
 		215FB3C02534788B0050F7D7 /* _24NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215FB3BE2534788B0050F7D7 /* _24NoteViewController.m */; };
 		215FB3C12534788B0050F7D7 /* _24NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215FB3BF2534788B0050F7D7 /* _24NoteViewController.xib */; };
+		2161BCA725379C9E009F7F4A /* AXUserInfoDao.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2161BCA125379C9E009F7F4A /* AXUserInfoDao.mm */; };
+		2161BCA825379C9E009F7F4A /* AXUserInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2161BCA625379C9E009F7F4A /* AXUserInfo.mm */; };
 		217D22D7251386AE00AFE556 /* _19ScrollContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */; };
 		217D22DB251386EA00AFE556 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 217D22DA251386EA00AFE556 /* instruction.jpg */; };
 		21A65D6325133E6100CC3939 /* _18MGSwipeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A65D6225133E6100CC3939 /* _18MGSwipeTableVC.m */; };
@@ -143,6 +145,11 @@
 		215FB3BD2534788B0050F7D7 /* _24NoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _24NoteViewController.h; sourceTree = "<group>"; };
 		215FB3BE2534788B0050F7D7 /* _24NoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _24NoteViewController.m; sourceTree = "<group>"; };
 		215FB3BF2534788B0050F7D7 /* _24NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _24NoteViewController.xib; sourceTree = "<group>"; };
+		2161BCA025379C9E009F7F4A /* AXUserInfoDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXUserInfoDao.h; sourceTree = "<group>"; };
+		2161BCA125379C9E009F7F4A /* AXUserInfoDao.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AXUserInfoDao.mm; sourceTree = "<group>"; };
+		2161BCA425379C9E009F7F4A /* AXUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXUserInfo.h; sourceTree = "<group>"; };
+		2161BCA525379C9E009F7F4A /* AXUserInfo+DB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AXUserInfo+DB.h"; sourceTree = "<group>"; };
+		2161BCA625379C9E009F7F4A /* AXUserInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AXUserInfo.mm; sourceTree = "<group>"; };
 		217D22D5251386AE00AFE556 /* _19ScrollContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _19ScrollContentViewController.h; sourceTree = "<group>"; };
 		217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _19ScrollContentViewController.m; sourceTree = "<group>"; };
 		217D22DA251386EA00AFE556 /* instruction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instruction.jpg; sourceTree = "<group>"; };
@@ -346,6 +353,34 @@
 				215B07A824F1242C00535742 /* RouterManager.m */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		2161BC9E25379C9E009F7F4A /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				2161BC9F25379C9E009F7F4A /* Dao */,
+				2161BCA325379C9E009F7F4A /* Model */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		2161BC9F25379C9E009F7F4A /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				2161BCA025379C9E009F7F4A /* AXUserInfoDao.h */,
+				2161BCA125379C9E009F7F4A /* AXUserInfoDao.mm */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		2161BCA325379C9E009F7F4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2161BCA425379C9E009F7F4A /* AXUserInfo.h */,
+				2161BCA625379C9E009F7F4A /* AXUserInfo.mm */,
+				2161BCA525379C9E009F7F4A /* AXUserInfo+DB.h */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		21A04609251E0C0300FEFC15 /* ClassDemo */ = {
@@ -575,6 +610,8 @@
 		21E54A5B24D98D150038F4C0 /* TestDB */ = {
 			isa = PBXGroup;
 			children = (
+				21E54A6824D98D150038F4C0 /* DBFunctionProtocol.h */,
+				2161BC9E25379C9E009F7F4A /* UserInfo */,
 				21E54A5C24D98D150038F4C0 /* DBManager */,
 			);
 			path = TestDB;
@@ -583,13 +620,12 @@
 		21E54A5C24D98D150038F4C0 /* DBManager */ = {
 			isa = PBXGroup;
 			children = (
-				21E54A5D24D98D150038F4C0 /* SoundRecordDB.mm */,
 				21E54A5E24D98D150038F4C0 /* BAFileHeader.h */,
 				21E54A5F24D98D150038F4C0 /* Model */,
-				21E54A6624D98D150038F4C0 /* SoundRecordDB.h */,
 				21E54A6724D98D150038F4C0 /* PalyThemeDB.h */,
-				21E54A6824D98D150038F4C0 /* DBFunctionProtocol.h */,
 				21E54A6924D98D150038F4C0 /* PalyThemeDB.mm */,
+				21E54A6624D98D150038F4C0 /* SoundRecordDB.h */,
+				21E54A5D24D98D150038F4C0 /* SoundRecordDB.mm */,
 			);
 			path = DBManager;
 			sourceTree = "<group>";
@@ -597,12 +633,12 @@
 		21E54A5F24D98D150038F4C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				21E54A6024D98D150038F4C0 /* BAThemeListModel+WCDB.mm */,
 				21E54A6124D98D150038F4C0 /* BAThemeListModel.h */,
-				21E54A6224D98D150038F4C0 /* BAUserInfo.m */,
-				21E54A6324D98D150038F4C0 /* BAThemeListModel+WCDB.h */,
 				21E54A6424D98D150038F4C0 /* BAThemeListModel.m */,
+				21E54A6324D98D150038F4C0 /* BAThemeListModel+WCDB.h */,
+				21E54A6024D98D150038F4C0 /* BAThemeListModel+WCDB.mm */,
 				21E54A6524D98D150038F4C0 /* BAUserInfo.h */,
+				21E54A6224D98D150038F4C0 /* BAUserInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -849,6 +885,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21E54AA024D98D150038F4C0 /* _13WebpViewController.m in Sources */,
+				2161BCA825379C9E009F7F4A /* AXUserInfo.mm in Sources */,
 				21E54A8124D98D150038F4C0 /* LVieoView.m in Sources */,
 				217D22D7251386AE00AFE556 /* _19ScrollContentViewController.m in Sources */,
 				21E54A8624D98D150038F4C0 /* CopyActivity.m in Sources */,
@@ -897,6 +934,7 @@
 				21E54A9024D98D150038F4C0 /* MyActivity.m in Sources */,
 				21E54A9824D98D150038F4C0 /* VideoViewController.m in Sources */,
 				21A65D6325133E6100CC3939 /* _18MGSwipeTableVC.m in Sources */,
+				2161BCA725379C9E009F7F4A /* AXUserInfoDao.mm in Sources */,
 				21E54A7A24D98D150038F4C0 /* ChatMessageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
