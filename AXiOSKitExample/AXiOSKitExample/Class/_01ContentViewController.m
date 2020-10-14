@@ -15,7 +15,7 @@
 #import <AXiOSKit/AXBiometryManager.h>
 #import <UserNotifications/UserNotifications.h>
 
-@interface _01ContentViewController ()
+@interface _01ContentViewController ()<UITextViewDelegate>
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
 
 @property(nonatomic, strong) AXBiometryManager *manager;
@@ -28,8 +28,48 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
+    
+    
+    NSString *str1 = @"点击“立即体验”按钮，\n即表示你同意";
+    NSString *str3 = @"《许可及服务协议》";
+    NSString *str = [NSString stringWithFormat:@"%@%@",str1,str3];
+    NSRange range3 = [str rangeOfString:str3];
+    
+    NSMutableAttributedString *mastring = [[NSMutableAttributedString alloc] initWithString:str attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName: [UIColor blackColor]}];
+    [mastring addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:range3];
+    NSString *valueString3 = [[NSString stringWithFormat:@"license://%@",str3] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+    [mastring addAttribute:NSLinkAttributeName value:valueString3 range:range3];
+    
+    UITextView *textView = [[UITextView alloc] init];
+    textView.editable = NO;
+    textView. scrollEnabled= NO;
+    textView.delegate = self;
+    textView.attributedText = mastring;
+    textView.textAlignment = NSTextAlignmentCenter;
+    textView.backgroundColor = UIColor.clearColor;
+//    textView.hidden = YES;
+    [self.view addSubview:textView];
+    [textView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_offset(0);
+        make.top.mas_offset(100);
+    }];
 }
 
+
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
+    
+    if ([[URL scheme] isEqualToString:@"license"]) {
+        
+                NSString *titleString = [NSString stringWithFormat:@"你点击了第一个文字:%@",[URL host]];
+        
+        NSLog(@"%@",titleString);
+        
+        return NO;
+        
+    }
+    return YES;
+    
+}
 
 
 - (void)didMoveToParentViewController:(UIViewController *)parent {
