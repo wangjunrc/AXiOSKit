@@ -29,6 +29,7 @@ PODS:
     - NullSafe
     - ReactiveObjC
     - SDWebImage
+  - Canvas (0.1.2)
   - DZNEmptyDataSet (1.8.1)
   - FBRetainCycleDetector (0.1.4)
   - FLAnimatedImage (1.0.12)
@@ -98,6 +99,7 @@ DEPENDENCIES:
   - Aspects
   - AvoidCrash
   - AXiOSKit (from `../`)
+  - Canvas (~> 0.1.2)
   - DZNEmptyDataSet
   - IQKeyboardManager
   - JJException
@@ -127,6 +129,7 @@ SPEC REPOS:
     - AFNetworking
     - Aspects
     - AvoidCrash
+    - Canvas
     - DZNEmptyDataSet
     - FBRetainCycleDetector
     - FLAnimatedImage
@@ -165,6 +168,7 @@ SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
   AXiOSKit: 4e35205c5d7c13a902e8f3592ae5b9f5f3012923
+  Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
@@ -194,6 +198,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: 9e64e22f07e4160687ed4d5bee326312bab2d355
+PODFILE CHECKSUM: 9a77624329981f98fa8dc45793d18c24b3a34ee7
 
 COCOAPODS: 1.9.3

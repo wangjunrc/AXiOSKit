@@ -14,6 +14,7 @@
 #import <AuthenticationServices/AuthenticationServices.h>
 #import <AXiOSKit/AXBiometryManager.h>
 #import <UserNotifications/UserNotifications.h>
+#import <Canvas/Canvas.h>
 
 @interface _01ContentViewController ()<UITextViewDelegate>
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
@@ -29,6 +30,36 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     
+    
+    UIButton *btn1 = [[UIButton alloc]init];
+    [btn1 setTitle:@"btn1" forState:UIControlStateNormal];
+    btn1.backgroundColor = UIColor.orangeColor;
+    [self.view addSubview:btn1];
+    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.mas_equalTo(30);
+        
+    }];
+   
+    [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
+          
+        CSAnimationView *animationView = [[CSAnimationView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+        animationView.backgroundColor = [UIColor redColor];
+        animationView.duration = 0.5;
+        animationView.delay = 0;
+        animationView.type = CSAnimationTypeFadeOutRight;
+        [self.view addSubview:animationView];
+
+        //添加你想增加效果的 View 为 animationView 的子视图
+        // [animationView addSubview:<#(UIView *)#>]
+
+        [animationView startCanvasAnimation];
+
+    }];
+    
+  
+}
+
+-(void)test1{
     
     NSString *str1 = @"点击“立即体验”按钮，\n即表示你同意";
     NSString *str3 = @"《许可及服务协议》";
@@ -54,7 +85,6 @@
         make.top.mas_offset(100);
     }];
 }
-
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
     

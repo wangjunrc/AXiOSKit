@@ -200,6 +200,8 @@ UIWindow *ax_keyWindow(void) {
         }
     }
     return nil;
+    
+//    UIApplication.sharedApplication.connectedScenes
 }
 
 /**键盘背景色透明 alpha=0 */

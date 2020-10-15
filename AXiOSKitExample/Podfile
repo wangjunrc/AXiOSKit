@@ -61,6 +61,8 @@ target 'AXiOSKitExample' do
   pod 'MLeaksFinder'
   pod 'ReactiveObjC'
   pod 'LookinServer', :configurations => ['Debug']
+  pod 'Canvas', '~> 0.1.2'
+  
 end
 
 #AXiOSKit 依赖
