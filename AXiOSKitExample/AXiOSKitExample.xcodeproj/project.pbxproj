@@ -17,6 +17,7 @@
 		215FB3C12534788B0050F7D7 /* _24NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215FB3BF2534788B0050F7D7 /* _24NoteViewController.xib */; };
 		2161BCA725379C9E009F7F4A /* AXUserInfoDao.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2161BCA125379C9E009F7F4A /* AXUserInfoDao.mm */; };
 		2161BCA825379C9E009F7F4A /* AXUserInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2161BCA625379C9E009F7F4A /* AXUserInfo.mm */; };
+		21655DEB2539805E00071A5F /* _25LayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21655DEA2539805E00071A5F /* _25LayoutViewController.m */; };
 		217D22D7251386AE00AFE556 /* _19ScrollContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */; };
 		217D22DB251386EA00AFE556 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 217D22DA251386EA00AFE556 /* instruction.jpg */; };
 		21A65D6325133E6100CC3939 /* _18MGSwipeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A65D6225133E6100CC3939 /* _18MGSwipeTableVC.m */; };
@@ -150,6 +151,8 @@
 		2161BCA425379C9E009F7F4A /* AXUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXUserInfo.h; sourceTree = "<group>"; };
 		2161BCA525379C9E009F7F4A /* AXUserInfo+DB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AXUserInfo+DB.h"; sourceTree = "<group>"; };
 		2161BCA625379C9E009F7F4A /* AXUserInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AXUserInfo.mm; sourceTree = "<group>"; };
+		21655DE92539805E00071A5F /* _25LayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25LayoutViewController.h; sourceTree = "<group>"; };
+		21655DEA2539805E00071A5F /* _25LayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25LayoutViewController.m; sourceTree = "<group>"; };
 		217D22D5251386AE00AFE556 /* _19ScrollContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _19ScrollContentViewController.h; sourceTree = "<group>"; };
 		217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _19ScrollContentViewController.m; sourceTree = "<group>"; };
 		217D22DA251386EA00AFE556 /* instruction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instruction.jpg; sourceTree = "<group>"; };
@@ -573,6 +576,8 @@
 				215FB3BD2534788B0050F7D7 /* _24NoteViewController.h */,
 				215FB3BE2534788B0050F7D7 /* _24NoteViewController.m */,
 				215FB3BF2534788B0050F7D7 /* _24NoteViewController.xib */,
+				21655DE92539805E00071A5F /* _25LayoutViewController.h */,
+				21655DEA2539805E00071A5F /* _25LayoutViewController.m */,
 				21E54A2824D98D150038F4C0 /* AANavigationController.h */,
 				21E54A3E24D98D150038F4C0 /* AANavigationController.m */,
 				21E54A3724D98D150038F4C0 /* AAViewController.h */,
@@ -927,6 +932,7 @@
 				21E54A9D24D98D150038F4C0 /* _09AFNViewController.m in Sources */,
 				210E93252520C7BC00B0F83D /* _23FullViewController.m in Sources */,
 				21E54AA124D98D150038F4C0 /* AFNViewController.m in Sources */,
+				21655DEB2539805E00071A5F /* _25LayoutViewController.m in Sources */,
 				21E54A8A24D98D150038F4C0 /* AFHTTPSessionManager+PutFile.m in Sources */,
 				21E45F312519C96F000C2834 /* _20iOS14ViewController.m in Sources */,
 				21E54AA724D98D150038F4C0 /* SoundRecordDB.mm in Sources */,

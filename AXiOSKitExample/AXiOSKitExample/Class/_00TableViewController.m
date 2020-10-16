@@ -35,7 +35,7 @@
 #import <AXiOSKit/NSMutableArray+AXKVO.h>
 #import <AXiOSKit/NSMutableArray+AXKVO.h>
 #import "_24NoteViewController.h"
-
+#import "_25LayoutViewController.h"
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -530,6 +530,16 @@ void mySLog(NSString *format, ...) {
                     [self.navigationController pushViewController:vc animated:YES];
                 },
             },
+            @{
+                @"index": @25,
+                @"title": @"Layout",
+                @"action": ^{
+                    _25LayoutViewController *vc = [[_25LayoutViewController alloc] init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+            },
+            
+            
             
             
         ];
