@@ -9,12 +9,14 @@
 #import "_01ContentViewController.h"
 #import <Masonry/Masonry.h>
 #import <AXiOSKit/AXiOSKit.h>
+#import <AXiOSKit/AXLocationManager.h>
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <AuthenticationServices/AuthenticationServices.h>
 #import <AXiOSKit/AXBiometryManager.h>
 #import <UserNotifications/UserNotifications.h>
 #import <Canvas/Canvas.h>
+#import  <SystemConfiguration/CaptiveNetwork.h>
 
 @interface _01ContentViewController ()<UITextViewDelegate>
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
@@ -22,6 +24,8 @@
 @property(nonatomic, strong) AXBiometryManager *manager;
 
 @property(nonatomic, strong) UIPageControl *pageControl;
+
+@property(nonatomic, strong) AXLocationManager *locationManager;
 @end
 
 @implementation _01ContentViewController
@@ -30,14 +34,42 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     
-    NSDictionary *dict;
-    
-    NSLog(@"dict == %ld",dict.count);
-    
-    
-//    [self _UITextView_link];
+ self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
+        
+        [self _WiFi];
+    }];
+    [self _WiFi];
+    //    [self _UITextView_link];
+   
 }
-
+-(void)_WiFi{
+    
+    NSArray *ifs = CFBridgingRelease(CNCopySupportedInterfaces());
+    id info = nil;
+    for (NSString *ifnam in ifs) {
+        info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((CFStringRef)ifnam);
+        if (info && [info count]) {
+            break;
+        }
+    }
+    NSDictionary *dic = (NSDictionary *)info;
+    NSString *ssid = [[dic objectForKey:@"SSID"] lowercaseString];
+    NSString *bssid = [dic objectForKey:@"BSSID"];
+    NSLog(@"ssid:%@ \nssid:%@",ssid,bssid);
+    
+    
+//    NSString *ssid = nil;
+//       NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfaces();
+//       for (NSString *ifnam in ifs) {
+//           NSDictionary *info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
+//           if (info[@"SSID"]) {
+//               ssid = info[@"SSID"];
+//           }
+//       }
+//    NSLog(@"sssid = %@",ssid);
+    
+    
+}
 -(void)_CSAnimationView{
     UIButton *btn1 = [[UIButton alloc]init];
     [btn1 setTitle:@"btn1" forState:UIControlStateNormal];
@@ -45,23 +77,23 @@
     [self.view addSubview:btn1];
     [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(30);
-
+        
     }];
-
+    
     [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-
+        
         CSAnimationView *animationView = [[CSAnimationView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
         animationView.backgroundColor = [UIColor redColor];
         animationView.duration = 0.5;
         animationView.delay = 0;
         animationView.type = CSAnimationTypeFadeOutRight;
         [self.view addSubview:animationView];
-
+        
         //添加你想增加效果的 View 为 animationView 的子视图
         // [animationView addSubview:<#(UIView *)#>]
-
+        
         [animationView startCanvasAnimation];
-
+        
     }];
 }
 -(void)_UITextView_link{
@@ -103,8 +135,8 @@
         
         NSMutableAttributedString *mastring = [[NSMutableAttributedString alloc] initWithString:str attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName: [UIColor blackColor]}];
         [mastring addAttributes:@{
-                    NSForegroundColorAttributeName:[UIColor redColor],
-                    NSUnderlineStyleAttributeName:@1
+            NSForegroundColorAttributeName:[UIColor redColor],
+            NSUnderlineStyleAttributeName:@1
         } range:range3];
         label.attributedText =mastring;
         label.numberOfLines = 0;
@@ -114,15 +146,15 @@
             make.top.equalTo(textView.mas_bottom).mas_offset(20);
         }];
     }
-   
-   
+    
+    
 }
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
     
     if ([[URL scheme] isEqualToString:@"license"]) {
         
-                NSString *titleString = [NSString stringWithFormat:@"你点击了第一个文字:%@",[URL host]];
+        NSString *titleString = [NSString stringWithFormat:@"你点击了第一个文字:%@",[URL host]];
         
         NSLog(@"%@",titleString);
         

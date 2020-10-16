@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong)CLLocationManager *locationManager;
 
+@property(nonatomic,assign,readwrite)AXLocationState locationState;
 
 /**
  * 定位是否成功
@@ -27,14 +28,14 @@
 
 + (instancetype )managerWithState:(AXLocationState )state result:(void(^)( BOOL state, CLLocation *location))resultBlock{
     
-    AXLocationManager *obj = [[AXLocationManager alloc]initWithState:state result:resultBlock];
+    AXLocationManager *obj = [[self alloc]initWithState:state result:resultBlock];
     return obj;
 }
 
 - (instancetype )initWithState:(AXLocationState )state result:(void(^)( BOOL state, CLLocation *location))resultBlock{
     
-    if (self = [super init]) {
-        _locationState = state;
+    if (self = [self init]) {
+        self.locationState = state;
         self.resultBlock = resultBlock;
     }
     return self;
