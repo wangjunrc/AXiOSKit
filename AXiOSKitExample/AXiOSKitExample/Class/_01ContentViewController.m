@@ -30,9 +30,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     
-  
+    NSDictionary *dict;
     
-    [self _UITextView_link];
+    NSLog(@"dict == %ld",dict.count);
+    
+    
+//    [self _UITextView_link];
 }
 
 -(void)_CSAnimationView{
