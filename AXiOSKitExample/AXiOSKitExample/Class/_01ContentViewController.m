@@ -30,18 +30,23 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     
+  
     
+  
+}
+
+-(void)_CSAnimationView{
     UIButton *btn1 = [[UIButton alloc]init];
     [btn1 setTitle:@"btn1" forState:UIControlStateNormal];
     btn1.backgroundColor = UIColor.orangeColor;
     [self.view addSubview:btn1];
     [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(30);
-        
+
     }];
-   
+
     [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-          
+
         CSAnimationView *animationView = [[CSAnimationView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
         animationView.backgroundColor = [UIColor redColor];
         animationView.duration = 0.5;
@@ -55,11 +60,8 @@
         [animationView startCanvasAnimation];
 
     }];
-    
-  
 }
-
--(void)test1{
+-(void)_UITextView_link{
     
     NSString *str1 = @"点击“立即体验”按钮，\n即表示你同意";
     NSString *str3 = @"《许可及服务协议》";
@@ -69,6 +71,7 @@
     NSMutableAttributedString *mastring = [[NSMutableAttributedString alloc] initWithString:str attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName: [UIColor blackColor]}];
     [mastring addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:range3];
     NSString *valueString3 = [[NSString stringWithFormat:@"license://%@",str3] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+    /// 这里修改链接字体颜色无效
     [mastring addAttribute:NSLinkAttributeName value:valueString3 range:range3];
     
     UITextView *textView = [[UITextView alloc] init];
@@ -78,6 +81,9 @@
     textView.attributedText = mastring;
     textView.textAlignment = NSTextAlignmentCenter;
     textView.backgroundColor = UIColor.clearColor;
+    /// 链接字体颜色
+    textView.linkTextAttributes = @{NSForegroundColorAttributeName:[UIColor redColor]};
+    
 //    textView.hidden = YES;
     [self.view addSubview:textView];
     [textView mas_makeConstraints:^(MASConstraintMaker *make) {
