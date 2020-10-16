@@ -32,7 +32,7 @@
     
   
     
-  
+    [self _UITextView_link];
 }
 
 -(void)_CSAnimationView{
@@ -69,10 +69,11 @@
     NSRange range3 = [str rangeOfString:str3];
     
     NSMutableAttributedString *mastring = [[NSMutableAttributedString alloc] initWithString:str attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName: [UIColor blackColor]}];
+    
     [mastring addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:range3];
-    NSString *valueString3 = [[NSString stringWithFormat:@"license://%@",str3] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
-    /// 这里修改链接字体颜色无效
-    [mastring addAttribute:NSLinkAttributeName value:valueString3 range:range3];
+    NSString *link = [[NSString stringWithFormat:@"license://%@",str3] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+    /// 这里修改UITextView链接字体颜色无效
+    [mastring addAttribute:NSLinkAttributeName value:link range:range3];
     
     UITextView *textView = [[UITextView alloc] init];
     textView.editable = NO;
@@ -82,14 +83,36 @@
     textView.textAlignment = NSTextAlignmentCenter;
     textView.backgroundColor = UIColor.clearColor;
     /// 链接字体颜色
-    textView.linkTextAttributes = @{NSForegroundColorAttributeName:[UIColor redColor]};
-    
-//    textView.hidden = YES;
+    textView.linkTextAttributes = @{NSForegroundColorAttributeName:[UIColor redColor],NSUnderlineStyleAttributeName:@1};
     [self.view addSubview:textView];
     [textView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_offset(0);
         make.top.mas_offset(100);
     }];
+    
+    
+    UILabel *label = UILabel.alloc.init;
+    {
+        NSString *str1 = @"点击“立即体验”按钮，\n即表示你同意";
+        NSString *str3 = @"《许可及服务协议》";
+        NSString *str = [NSString stringWithFormat:@"%@%@",str1,str3];
+        NSRange range3 = [str rangeOfString:str3];
+        
+        NSMutableAttributedString *mastring = [[NSMutableAttributedString alloc] initWithString:str attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName: [UIColor blackColor]}];
+        [mastring addAttributes:@{
+                    NSForegroundColorAttributeName:[UIColor redColor],
+                    NSUnderlineStyleAttributeName:@1
+        } range:range3];
+        label.attributedText =mastring;
+        label.numberOfLines = 0;
+        [self.view addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_offset(0);
+            make.top.equalTo(textView.mas_bottom).mas_offset(20);
+        }];
+    }
+   
+   
 }
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
