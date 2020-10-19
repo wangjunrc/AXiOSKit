@@ -63,6 +63,8 @@ target 'AXiOSKitExample' do
   pod 'LookinServer', :configurations => ['Debug']
   pod 'Canvas', '~> 0.1.2'
   
+  pod 'RMQClient'
+  pod 'MQTTClient'
 end
 
 #AXiOSKit 依赖

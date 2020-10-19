@@ -18,6 +18,10 @@
 		2161BCA725379C9E009F7F4A /* AXUserInfoDao.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2161BCA125379C9E009F7F4A /* AXUserInfoDao.mm */; };
 		2161BCA825379C9E009F7F4A /* AXUserInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2161BCA625379C9E009F7F4A /* AXUserInfo.mm */; };
 		21655DEB2539805E00071A5F /* _25LayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21655DEA2539805E00071A5F /* _25LayoutViewController.m */; };
+		21655E28253D357600071A5F /* _26RMQClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21655E26253D357500071A5F /* _26RMQClientViewController.m */; };
+		21655E29253D357600071A5F /* _26RMQClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21655E27253D357500071A5F /* _26RMQClientViewController.xib */; };
+		21655E3E253D600600071A5F /* _27MQTTClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21655E3D253D600600071A5F /* _27MQTTClientViewController.m */; };
+		21655E40253D614B00071A5F /* mqtt.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21655E3F253D614B00071A5F /* mqtt.plist */; };
 		217D22D7251386AE00AFE556 /* _19ScrollContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */; };
 		217D22DB251386EA00AFE556 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 217D22DA251386EA00AFE556 /* instruction.jpg */; };
 		21A65D6325133E6100CC3939 /* _18MGSwipeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A65D6225133E6100CC3939 /* _18MGSwipeTableVC.m */; };
@@ -153,6 +157,12 @@
 		2161BCA625379C9E009F7F4A /* AXUserInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AXUserInfo.mm; sourceTree = "<group>"; };
 		21655DE92539805E00071A5F /* _25LayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25LayoutViewController.h; sourceTree = "<group>"; };
 		21655DEA2539805E00071A5F /* _25LayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25LayoutViewController.m; sourceTree = "<group>"; };
+		21655E25253D357500071A5F /* _26RMQClientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _26RMQClientViewController.h; sourceTree = "<group>"; };
+		21655E26253D357500071A5F /* _26RMQClientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _26RMQClientViewController.m; sourceTree = "<group>"; };
+		21655E27253D357500071A5F /* _26RMQClientViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _26RMQClientViewController.xib; sourceTree = "<group>"; };
+		21655E3C253D600600071A5F /* _27MQTTClientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _27MQTTClientViewController.h; sourceTree = "<group>"; };
+		21655E3D253D600600071A5F /* _27MQTTClientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _27MQTTClientViewController.m; sourceTree = "<group>"; };
+		21655E3F253D614B00071A5F /* mqtt.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mqtt.plist; sourceTree = "<group>"; };
 		217D22D5251386AE00AFE556 /* _19ScrollContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _19ScrollContentViewController.h; sourceTree = "<group>"; };
 		217D22D6251386AE00AFE556 /* _19ScrollContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _19ScrollContentViewController.m; sourceTree = "<group>"; };
 		217D22DA251386EA00AFE556 /* instruction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instruction.jpg; sourceTree = "<group>"; };
@@ -578,6 +588,12 @@
 				215FB3BF2534788B0050F7D7 /* _24NoteViewController.xib */,
 				21655DE92539805E00071A5F /* _25LayoutViewController.h */,
 				21655DEA2539805E00071A5F /* _25LayoutViewController.m */,
+				21655E25253D357500071A5F /* _26RMQClientViewController.h */,
+				21655E26253D357500071A5F /* _26RMQClientViewController.m */,
+				21655E27253D357500071A5F /* _26RMQClientViewController.xib */,
+				21655E3C253D600600071A5F /* _27MQTTClientViewController.h */,
+				21655E3D253D600600071A5F /* _27MQTTClientViewController.m */,
+				21655E3F253D614B00071A5F /* mqtt.plist */,
 				21E54A2824D98D150038F4C0 /* AANavigationController.h */,
 				21E54A3E24D98D150038F4C0 /* AANavigationController.m */,
 				21E54A3724D98D150038F4C0 /* AAViewController.h */,
@@ -764,9 +780,11 @@
 				21AB711D251C25F7000114D2 /* _22ReactiveObjCViewController.xib in Resources */,
 				21E54A8724D98D150038F4C0 /* AFNViewController.xib in Resources */,
 				21E54A7424D98D150038F4C0 /* H5.bundle in Resources */,
+				21655E40253D614B00071A5F /* mqtt.plist in Resources */,
 				21E54A8024D98D150038F4C0 /* 1234.webp in Resources */,
 				21E54A7124D98D150038F4C0 /* CONTRIBUTING.md in Resources */,
 				21E54A7824D98D150038F4C0 /* ChatViewController.xib in Resources */,
+				21655E29253D357600071A5F /* _26RMQClientViewController.xib in Resources */,
 				21E54A9E24D98D150038F4C0 /* AAViewController.xib in Resources */,
 				215FB3C12534788B0050F7D7 /* _24NoteViewController.xib in Resources */,
 				21E54A7C24D98D150038F4C0 /* Assets.xcassets in Resources */,
@@ -913,10 +931,12 @@
 				21E54AA224D98D150038F4C0 /* _15UIMenuController.m in Sources */,
 				21E54AA824D98D150038F4C0 /* BAThemeListModel+WCDB.mm in Sources */,
 				21E54AA524D98D150038F4C0 /* AppDelegate.m in Sources */,
+				21655E3E253D600600071A5F /* _27MQTTClientViewController.m in Sources */,
 				21E54A9F24D98D150038F4C0 /* AAViewController.m in Sources */,
 				21E54A7D24D98D150038F4C0 /* SceneDelegate.m in Sources */,
 				21E54A9524D98D150038F4C0 /* RunLoopViewController.m in Sources */,
 				21E54AA924D98D150038F4C0 /* BAUserInfo.m in Sources */,
+				21655E28253D357600071A5F /* _26RMQClientViewController.m in Sources */,
 				21E54A9724D98D150038F4C0 /* Person.m in Sources */,
 				21E54A7B24D98D150038F4C0 /* ChatTextMessageModel.m in Sources */,
 				21E54AAA24D98D150038F4C0 /* BAThemeListModel.m in Sources */,

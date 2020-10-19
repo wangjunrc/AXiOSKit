@@ -27,7 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign)   WebSocketConnectType connectType;
 
 
-- (void)connectServer:(NSInteger )userid;//建立长连接
+/// 建立长连接
+/// :@"ws://localhost:8080/chat/%ld"
+- (void)connectServer:(NSString *)wsURL;
 - (void)reConnectServer;//重新连接
 - (void)RMWebSocketClose;//关闭长连接
 

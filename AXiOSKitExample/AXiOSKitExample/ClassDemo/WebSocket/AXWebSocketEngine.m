@@ -37,7 +37,8 @@ dispatch_async(queue, block);\
 /**
  * NSInteger )userid
  */
-@property(nonatomic,assign) NSInteger userid;
+@property(nonatomic,copy) NSString *wsURL;
+
 @end
 @implementation AXWebSocketEngine
 
@@ -61,22 +62,24 @@ dispatch_async(queue, block);\
     return self;
 }
 
-//建立长连接
-- (void)connectServer:(NSInteger )userid {
-    self.userid = userid;
+/// 建立长连接
+/// :@"ws://localhost:8080/chat/%ld"
+- (void)connectServer:(NSString *)wsURL {
+    
+    self.wsURL = wsURL;
     self.isActivelyClose = NO;
     
     self.webSocket.delegate = nil;
     [self.webSocket close];
-    _webSocket = nil;
+    self.webSocket = nil;
     
-    
-    NSString *url = [NSString stringWithFormat:@"ws://localhost:8080/chat/%ld",userid];
-    
-    self.webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:url]];
-    
-    self.webSocket.delegate = self;
-    [self.webSocket open];
+    NSURL *URL = [NSURL URLWithString:wsURL];
+    if (!URL) {
+        self.webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:wsURL]];
+        self.webSocket.delegate = self;
+        [self.webSocket open];
+    }
+   
 }
 
 - (void)sendPing:(id)sender{
@@ -199,7 +202,7 @@ dispatch_async(queue, block);\
             return;
         }
         
-        [weakSelf connectServer:self.userid];
+        [weakSelf connectServer:self.wsURL];
         //        CTHLog(@"正在重连......");
         
         if(weakSelf.reConnectTime == 0){  //重连时间2的指数级增长
@@ -316,7 +319,7 @@ dispatch_async(queue, block);\
         }
         else
         {
-            [self connectServer:self.userid]; //连接服务器
+            [self connectServer:self.wsURL]; //连接服务器
         }
     }
 }

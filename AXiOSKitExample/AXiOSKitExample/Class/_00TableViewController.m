@@ -36,6 +36,8 @@
 #import <AXiOSKit/NSMutableArray+AXKVO.h>
 #import "_24NoteViewController.h"
 #import "_25LayoutViewController.h"
+#import "_26RMQClientViewController.h"
+#import "_27MQTTClientViewController.h"
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -539,8 +541,23 @@ void mySLog(NSString *format, ...) {
                 },
             },
             
-            
-            
+            @{
+                @"index": @26,
+                @"title": @"RMQClient",
+                @"action": ^{
+                    _26RMQClientViewController *vc = [[_26RMQClientViewController alloc] init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+            },
+            @{
+                @"index": @27,
+                @"title": @"MQTT",
+                @"action": ^{
+                    _27MQTTClientViewController *vc = [[_27MQTTClientViewController alloc] init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+            },
+
             
         ];
     }

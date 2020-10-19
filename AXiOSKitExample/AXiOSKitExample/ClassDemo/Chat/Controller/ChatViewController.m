@@ -35,23 +35,29 @@
 
 - (IBAction)sendAction:(id)sender {
     
-    ChatTextMessageModel *model = [[ChatTextMessageModel alloc]init];
-    model.userid = USER_A;
-    model.toUserId = USER_B;
-    model.content = self.sendTF.text;
+    NSString *url = @"ws://localhost:15675/ws";
+
+    [AXWebSocketEngine.shared connectServer:url];
     
-    NSString *msg =[model mj_JSONString];
     
-    AXWebSocketEngine.shared.sendMesssage = msg;
-    self.toLabel.text = model.content;
-    self.sendTF.text = nil;;
+//    ChatTextMessageModel *model = [[ChatTextMessageModel alloc]init];
+//    model.userid = USER_A;
+//    model.toUserId = USER_B;
+//    model.content = self.sendTF.text;
+//
+//    NSString *msg =[model mj_JSONString];
+//
+//    AXWebSocketEngine.shared.sendMesssage = msg;
+//    self.toLabel.text = model.content;
+//    self.sendTF.text = nil;;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
-    
-    [AXWebSocketEngine.shared connectServer:USER_A];
+//    NSString *url = @"mqtt://localhost:1883/ws/id1";
+    NSString *url = @"ws://localhost:15675/ws?topic=id1";
+
+    [AXWebSocketEngine.shared connectServer:url];
     
     AXWebSocketEngine.shared.didReceiveMessage = ^(NSString   * _Nonnull message) {
         NSLog(@"message>> %@",message);
@@ -64,15 +70,5 @@
 }
 
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
