@@ -78,15 +78,34 @@
     
     
     MQTTCFSocketTransport *transport = [[MQTTCFSocketTransport alloc] init];
-    transport.host = @"mqtt://localhost";
-    transport.port = 1883;
-        
+    transport.host = @"http://localhost";
+    transport.port = 15675;
+    
+//    MQTTWebsocketTransport *transport = [[MQTTWebsocketTransport alloc] init];
+    
+    
     self.session = [[MQTTSession alloc] init];
     self.session.transport = transport;
     [self.session connectWithConnectHandler:^(NSError *error) {
         NSLog(@"error = %@",error);
     }];
+    
+    [self.session subscribeToTopic:@"id1" atLevel:MQTTQosLevelExactlyOnce subscribeHandler:^(NSError*error,NSArray *gQoss) {
 
+        if(error) {
+
+            NSLog(@"Subscription failed %@", error.localizedDescription);
+
+        }else{
+
+            NSLog(@"Subscription sucessfull! Granted Qos: %@",gQoss);
+
+        }
+
+    }];
+
+    
+    
 }
 
 
