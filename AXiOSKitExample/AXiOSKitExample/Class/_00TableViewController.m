@@ -467,30 +467,30 @@ void mySLog(NSString *format, ...) {
                     [self.navigationController pushViewController:vc animated:YES];
                 },
             },
-            @{
-                @"index": @20,
-                @"title": @"打开相册",
-                @"action": ^{
-                    
-                    [self ax_showCameraWithEditing:NO block:^(UIImage *originalImage, UIImage *editedImage) {
-                        
-                    }];
-                    
-                    //                    // 以下 API 仅为 iOS14 only
-                    //                          PHPickerConfiguration *configuration = [[PHPickerConfiguration alloc] init];
-                    //                          configuration.filter = [PHPickerFilter videosFilter]; // 可配置查询用户相册中文件的类型，支持三种
-                    //                        configuration.selectionLimit = 0; // 默认为1，为0时表示可多选。
-                    //
-                    //                          PHPickerViewController *picker = [[PHPickerViewController alloc] initWithConfiguration:configuration];
-                    //                          picker.delegate = self;
-                    //                          // picker vc，在选完图片后需要在回调中手动 dismiss
-                    //                        [self presentViewController:picker animated:YES completion:^{
-                    //
-                    //                          }];
-                    
-                    
-                },
-            },
+//            @{
+//                @"index": @20,
+//                @"title": @"打开相册",
+//                @"action": ^{
+//                    
+//                    [self ax_showCameraWithEditing:NO block:^(UIImage *originalImage, UIImage *editedImage) {
+//                        
+//                    }];
+//                    
+//                    //                    // 以下 API 仅为 iOS14 only
+//                    //                          PHPickerConfiguration *configuration = [[PHPickerConfiguration alloc] init];
+//                    //                          configuration.filter = [PHPickerFilter videosFilter]; // 可配置查询用户相册中文件的类型，支持三种
+//                    //                        configuration.selectionLimit = 0; // 默认为1，为0时表示可多选。
+//                    //
+//                    //                          PHPickerViewController *picker = [[PHPickerViewController alloc] initWithConfiguration:configuration];
+//                    //                          picker.delegate = self;
+//                    //                          // picker vc，在选完图片后需要在回调中手动 dismiss
+//                    //                        [self presentViewController:picker animated:YES completion:^{
+//                    //
+//                    //                          }];
+//                    
+//                    
+//                },
+//            },
             
             @{
                 @"index": @20,

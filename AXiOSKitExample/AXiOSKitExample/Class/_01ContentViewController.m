@@ -18,6 +18,7 @@
 #import <Canvas/Canvas.h>
 #import  <SystemConfiguration/CaptiveNetwork.h>
 
+
 @interface _01ContentViewController ()<UITextViewDelegate>
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
 
@@ -34,14 +35,16 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     
- self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
-        
-        [self _WiFi];
-    }];
-    [self _WiFi];
+// self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
+//
+//        [self _WiFi];
+//    }];
+//    [self _WiFi];
     //    [self _UITextView_link];
-   
+    
 }
+
+
 -(void)_WiFi{
     
     NSArray *ifs = CFBridgingRelease(CNCopySupportedInterfaces());

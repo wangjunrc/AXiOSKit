@@ -13,7 +13,7 @@
 #import <SDWebImageFLPlugin/SDWebImageFLPlugin.h>
 #import <SDWebImageWebPCoder/UIImage+WebP.h>
 #import <MobileCoreServices/UTCoreTypes.h>
-
+#import "TZImagePickerController.h"
 
 @interface _20iOS14ViewController () <PHPickerViewControllerDelegate>
 
@@ -33,67 +33,112 @@
     self.view.backgroundColor = UIColor.whiteColor;
     
     
-    self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1028x1028"]];
-    self.imageView.backgroundColor = UIColor.orangeColor;
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.view addSubview:self.imageView];
-    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIView *topView = nil;
+    UIView *leftView = nil;
+    
+    {
+        self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1028x1028"]];
+        self.imageView.backgroundColor = UIColor.orangeColor;
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        [self.view addSubview:self.imageView];
+        [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.top.mas_offset(50);
+            make.left.mas_offset(50);
+            make.width.mas_equalTo(100.0);
+            make.height.mas_equalTo(100.0);
+        }];
+        topView = self.imageView;
+        leftView  =self.imageView;
+    }
+    
+    {
         
-        make.top.mas_offset(50);
-        make.left.mas_offset(50);
-        make.width.mas_equalTo(100.0);
-        make.height.mas_equalTo(100.0);
-        //        make.height.mas_equalTo(100);
-    }];
-    
-    
-    
-    self.imageView2 = [[FLAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"1029x1029"]];
-    self.imageView2.backgroundColor = UIColor.redColor;
-    self.imageView2.contentMode = UIViewContentModeScaleAspectFit;
-    [self.view addSubview:self.imageView2];
-    [self.imageView2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.imageView.mas_bottom).mas_offset(20);
-        make.left.equalTo(self.imageView);
-        make.width.mas_equalTo(100.0);
-        make.height.mas_equalTo(100);
-    }];
-    
-    
-    if (@available(iOS 9.1, *)) {
-        self.livePhotoView = [[PHLivePhotoView alloc] init];
-        self.livePhotoView.backgroundColor = UIColor.greenColor;
-        self.livePhotoView.contentMode = UIViewContentModeScaleAspectFit;
-        [self.view addSubview:self.livePhotoView];
-        [self.livePhotoView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.imageView2.mas_bottom).mas_offset(20);
-            make.left.equalTo(self.imageView);
+        self.imageView2 = [[FLAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"1029x1029"]];
+        self.imageView2.backgroundColor = UIColor.redColor;
+        self.imageView2.contentMode = UIViewContentModeScaleAspectFit;
+        [self.view addSubview:self.imageView2];
+        [self.imageView2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(topView.mas_bottom).mas_offset(20);
+            make.left.equalTo(leftView);
             make.width.mas_equalTo(100.0);
             make.height.mas_equalTo(100);
         }];
-        
-    } else {
-        // Fallback on earlier versions
+        topView = self.imageView2;
     }
     
     
-    
-    UIButton *btn = [UIButton.alloc init];
-    [btn setTitle:@"iOS14相册" forState:UIControlStateNormal];
-    btn.backgroundColor = UIColor.grayColor;
-    [self.view addSubview:btn];
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+    {
+        
         if (@available(iOS 9.1, *)) {
-            make.top.equalTo(self.livePhotoView.mas_bottom).mas_offset(20);
+            self.livePhotoView = [[PHLivePhotoView alloc] init];
+            self.livePhotoView.backgroundColor = UIColor.greenColor;
+            self.livePhotoView.contentMode = UIViewContentModeScaleAspectFit;
+            [self.view addSubview:self.livePhotoView];
+            [self.livePhotoView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(topView.mas_bottom).mas_offset(20);
+                make.left.equalTo(leftView);
+                make.width.mas_equalTo(100.0);
+                make.height.mas_equalTo(100);
+            }];
+            topView = self.livePhotoView;
         } else {
-            make.top.equalTo(self.imageView2.mas_bottom).mas_offset(20);
+            // Fallback on earlier versions
         }
-        make.left.equalTo(self.imageView);
-    }];
-    [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
-        [self button];
-    }];
+    }
     
+    
+    {
+        
+        UIButton *btn = [UIButton.alloc init];
+        [btn setTitle:@"iOS14相册" forState:UIControlStateNormal];
+        btn.backgroundColor = UIColor.grayColor;
+        [self.view addSubview:btn];
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(topView.mas_bottom).mas_offset(20);
+            make.left.equalTo(leftView);
+        }];
+        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
+            [self button];
+        }];
+        topView = btn;
+    }
+    
+    {
+        
+        UIButton *btn = [UIButton.alloc init];
+        [btn setTitle:@"自定义相册添加" forState:UIControlStateNormal];
+        btn.backgroundColor = UIColor.grayColor;
+        [self.view addSubview:btn];
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(topView.mas_bottom).mas_offset(20);
+            make.left.equalTo(leftView);
+        }];
+        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
+            if (@available(iOS 14, *)) {
+                [[PHPhotoLibrary sharedPhotoLibrary] presentLimitedLibraryPickerFromViewController:self];
+            } else {
+                // Fallback on earlier versions
+            }
+        }];
+        topView = btn;
+    }
+    
+    {
+        
+        UIButton *btn = [UIButton.alloc init];
+        [btn setTitle:@"自定义相册" forState:UIControlStateNormal];
+        btn.backgroundColor = UIColor.grayColor;
+        [self.view addSubview:btn];
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(topView.mas_bottom).mas_offset(20);
+            make.left.equalTo(leftView);
+        }];
+        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
+            [self __TZImagePickerController:10];
+        }];
+        topView = btn;
+    }
     
     NSLog(@"kUTTypeQuickTimeMovie = %@", (NSString*)kUTTypeQuickTimeMovie);
     NSLog(@"kUTTypeImage = %@", (NSString *)kUTTypeImage);
@@ -102,24 +147,24 @@
     NSLog(@"kUTTypePNG = %@", (NSString *)kUTTypePNG);
     
     
-   
-    if (@available(iOS 9.1, *)) {
-        [PHLivePhoto requestLivePhotoWithResourceFileURLs:@[[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"IMB_rz9Xy4" ofType:@"JPG"]],[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"IMB_rz9Xy4" ofType:@"mov"]]] placeholderImage:[UIImage imageNamed:@"1029x1029"] targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeAspectFill resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nonnull info) {
-          
-            dispatch_async(dispatch_get_main_queue(), ^{
-
-                if (livePhoto) {
-                    NSLog(@"livePhoto222 = %@  info = %@",livePhoto,info);
-                    self.livePhotoView.livePhoto = livePhoto;
-                }
-                
-
-            });
-            
-        }];
-    } else {
-        // Fallback on earlier versions					
-    }
+    
+    //    if (@available(iOS 9.1, *)) {
+    //        [PHLivePhoto requestLivePhotoWithResourceFileURLs:@[[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"IMB_rz9Xy4" ofType:@"JPG"]],[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"IMB_rz9Xy4" ofType:@"mov"]]] placeholderImage:[UIImage imageNamed:@"1029x1029"] targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeAspectFill resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nonnull info) {
+    //
+    //            dispatch_async(dispatch_get_main_queue(), ^{
+    //
+    //                if (livePhoto) {
+    //                    NSLog(@"livePhoto222 = %@  info = %@",livePhoto,info);
+    //                    self.livePhotoView.livePhoto = livePhoto;
+    //                }
+    //
+    //
+    //            });
+    //
+    //        }];
+    //    } else {
+    //        // Fallback on earlier versions
+    //    }
     
     
     
@@ -130,11 +175,11 @@
     AXMediaConfig *config = AXMediaConfig.alloc.init;
     config.editing = NO;
     config.mediaTypes = @[AXMediaType.kUTTypeImage,AXMediaType.kUTTypeMovie];
-
-    [self ax_showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
-        
-    }];
-    return;
+    
+    //    [self ax_showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
+    //
+    //    }];
+    //    return;
     
     // 以下 API 仅为 iOS14 only
     if (@available(iOS 14, *)) {
@@ -163,6 +208,35 @@
     } else {
         // Fallback on earlier versions
     }
+    
+}
+
+
+-(void)__TZImagePickerController:(NSInteger )count{
+    
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:count delegate:nil];
+    imagePickerVc. allowPickingMultipleVideo = YES;
+    
+    imagePickerVc.allowPickingVideo = NO;
+    
+    imagePickerVc.allowPickingGif = YES;
+    
+    imagePickerVc.allowPickingImage = YES;
+    imagePickerVc.showSelectedIndex = YES;
+    
+    
+    [imagePickerVc setDidFinishPickingPhotosWithInfosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto, NSArray<NSDictionary *> *infos) {
+        NSLog(@"assets %@",assets);
+        NSLog(@"infos %@",infos);
+        
+        //        if (photos.count==1) {
+        //            [self imagesOne:photos];
+        //        }else{
+        //            //             [self imagesMore:assets];
+        //            [self imagesMore:photos];
+        //        }
+    }];
+    [self presentViewController:imagePickerVc animated:YES completion:nil];
     
 }
 
@@ -241,22 +315,22 @@
                         
                         
                         if (@available(iOS 9.1, *)) {
-
+                            
                             [PHLivePhoto requestLivePhotoWithResourceFileURLs:@[item] placeholderImage:[UIImage imageNamed:@"1029x1029"] targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeAspectFill resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nonnull info) {
-                              
-                                                        dispatch_async(dispatch_get_main_queue(), ^{
                                 
-                                                            if (livePhoto) {
-                                                                NSLog(@"livePhoto222 = %@  info = %@",livePhoto,info);
-                                                                self.livePhotoView.livePhoto = livePhoto;
-                                                            }
-                                                            
-                                
-                                                        });
+                                dispatch_async(dispatch_get_main_queue(), ^{
+                                    
+                                    if (livePhoto) {
+                                        NSLog(@"livePhoto222 = %@  info = %@",livePhoto,info);
+                                        self.livePhotoView.livePhoto = livePhoto;
+                                    }
+                                    
+                                    
+                                });
                                 
                                 
                             }];
-
+                            
                         } else {
                             // Fallback on earlier versions
                         }
@@ -409,36 +483,36 @@
                 if ([(NSObject *) item isKindOfClass:[NSURL class]]) {
                     
                     
-//                    [PHLivePhoto requestLivePhotoWithResourceFileURLs:@[item] placeholderImage:[UIImage imageNamed:@"1028x1028"] targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeAspectFill resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nonnull info) {
-//
-//                        NSLog(@"livePhoto = %@  info = %@",livePhoto,info);
-//                        dispatch_async(dispatch_get_main_queue(), ^{
-//
-//                            self.livePhotoView.livePhoto = livePhoto;
-//
-//                        });
-//
-//
-//                    }];
+                    //                    [PHLivePhoto requestLivePhotoWithResourceFileURLs:@[item] placeholderImage:[UIImage imageNamed:@"1028x1028"] targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeAspectFill resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nonnull info) {
+                    //
+                    //                        NSLog(@"livePhoto = %@  info = %@",livePhoto,info);
+                    //                        dispatch_async(dispatch_get_main_queue(), ^{
+                    //
+                    //                            self.livePhotoView.livePhoto = livePhoto;
+                    //
+                    //                        });
+                    //
+                    //
+                    //                    }];
                     
                     
                     if (@available(iOS 9.1, *)) {
-
+                        
                         [PHLivePhoto requestLivePhotoWithResourceFileURLs:@[[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"IMB_rz9Xy4" ofType:@"JPG"]],item] placeholderImage:[UIImage imageNamed:@"1029x1029"] targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeAspectFill resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nonnull info) {
-                          
-                                                    dispatch_async(dispatch_get_main_queue(), ^{
                             
-                                                        if (livePhoto) {
-                                                            NSLog(@"livePhoto222 = %@  info = %@",livePhoto,info);
-                                                            self.livePhotoView.livePhoto = livePhoto;
-                                                        }
-                                                        
-                            
-                                                    });
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                
+                                if (livePhoto) {
+                                    NSLog(@"livePhoto222 = %@  info = %@",livePhoto,info);
+                                    self.livePhotoView.livePhoto = livePhoto;
+                                }
+                                
+                                
+                            });
                             
                             
                         }];
-
+                        
                     } else {
                         // Fallback on earlier versions
                     }

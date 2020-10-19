@@ -65,6 +65,8 @@ target 'AXiOSKitExample' do
   
   pod 'RMQClient'
   pod 'MQTTClient'
+  
+  
 end
 
 #AXiOSKit 依赖
