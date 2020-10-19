@@ -12,6 +12,10 @@
 		210E93242520C7BC00B0F83D /* _23FullViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 210E93212520C7BC00B0F83D /* _23FullViewController.xib */; };
 		210E93252520C7BC00B0F83D /* _23FullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210E93232520C7BC00B0F83D /* _23FullViewController.m */; };
 		212B59482515E1A90073ED07 /* _01ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B59472515E1A90073ED07 /* _01ContentViewController.m */; };
+		21462497253DC44300EB3127 /* MyApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 21462496253DC44300EB3127 /* MyApplication.m */; };
+		2146249F253DC6EF00EB3127 /* g3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2146249D253DC6EF00EB3127 /* g3@2x.png */; };
+		214624A0253DC6EF00EB3127 /* g2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2146249E253DC6EF00EB3127 /* g2@2x.png */; };
+		214624A3253DC76000EB3127 /* UIViewController+Present.m in Sources */ = {isa = PBXBuildFile; fileRef = 214624A2253DC76000EB3127 /* UIViewController+Present.m */; };
 		215B07A924F1242C00535742 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 215B07A824F1242C00535742 /* RouterManager.m */; };
 		215FB3C02534788B0050F7D7 /* _24NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215FB3BE2534788B0050F7D7 /* _24NoteViewController.m */; };
 		215FB3C12534788B0050F7D7 /* _24NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215FB3BF2534788B0050F7D7 /* _24NoteViewController.xib */; };
@@ -141,6 +145,12 @@
 		210E93232520C7BC00B0F83D /* _23FullViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _23FullViewController.m; sourceTree = "<group>"; };
 		212B59462515E1A90073ED07 /* _01ContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _01ContentViewController.h; sourceTree = "<group>"; };
 		212B59472515E1A90073ED07 /* _01ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _01ContentViewController.m; sourceTree = "<group>"; };
+		21462495253DC44300EB3127 /* MyApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyApplication.h; sourceTree = "<group>"; };
+		21462496253DC44300EB3127 /* MyApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyApplication.m; sourceTree = "<group>"; };
+		2146249D253DC6EF00EB3127 /* g3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "g3@2x.png"; sourceTree = "<group>"; };
+		2146249E253DC6EF00EB3127 /* g2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "g2@2x.png"; sourceTree = "<group>"; };
+		214624A1253DC76000EB3127 /* UIViewController+Present.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Present.h"; sourceTree = "<group>"; };
+		214624A2253DC76000EB3127 /* UIViewController+Present.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Present.m"; sourceTree = "<group>"; };
 		214FF8642476192A00EF0C29 /* 分享.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "分享.entitlements"; sourceTree = "<group>"; };
 		215B079C24F11A9000535742 /* AxGenerator.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxGenerator.xcconfig; sourceTree = "<group>"; };
 		215B079D24F11B5600535742 /* AxDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AxDebug.xcconfig; sourceTree = "<group>"; };
@@ -359,6 +369,15 @@
 			path = Load;
 			sourceTree = "<group>";
 		};
+		21462498253DC64200EB3127 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				2146249E253DC6EF00EB3127 /* g2@2x.png */,
+				2146249D253DC6EF00EB3127 /* g3@2x.png */,
+			);
+			name = icon;
+			sourceTree = "<group>";
+		};
 		215B07A624F1241800535742 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +432,7 @@
 		21A0460B251E0C6A00FEFC15 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				21462498253DC64200EB3127 /* icon */,
 				21E54A0224D98D140038F4C0 /* H5.bundle */,
 				21E54A5A24D98D150038F4C0 /* IMG_3972.GIF */,
 				21E54A6A24D98D150038F4C0 /* Info.plist */,
@@ -432,6 +452,10 @@
 				21E54A1B24D98D150038F4C0 /* 1234.webp */,
 				21E54A0324D98D140038F4C0 /* AppDelegate.h */,
 				21E54A5924D98D150038F4C0 /* AppDelegate.m */,
+				21462495253DC44300EB3127 /* MyApplication.h */,
+				21462496253DC44300EB3127 /* MyApplication.m */,
+				214624A1253DC76000EB3127 /* UIViewController+Present.h */,
+				214624A2253DC76000EB3127 /* UIViewController+Present.m */,
 				21E54A1524D98D150038F4C0 /* Assets.xcassets */,
 				215B079D24F11B5600535742 /* AxDebug.xcconfig */,
 				215B079C24F11A9000535742 /* AxGenerator.xcconfig */,
@@ -789,10 +813,12 @@
 				215FB3C12534788B0050F7D7 /* _24NoteViewController.xib in Resources */,
 				21E54A7C24D98D150038F4C0 /* Assets.xcassets in Resources */,
 				21E54A9424D98D150038F4C0 /* _09AFNViewController.xib in Resources */,
+				214624A0253DC6EF00EB3127 /* g2@2x.png in Resources */,
 				21EFCCE3250A0110000A1AAC /* PointViewController2.plist in Resources */,
 				21E54A9B24D98D150038F4C0 /* WCDBViewController.xib in Resources */,
 				21E54A9924D98D150038F4C0 /* _00TableViewCell.xib in Resources */,
 				21E54A8E24D98D150038F4C0 /* _01ViewController.xib in Resources */,
+				2146249F253DC6EF00EB3127 /* g3@2x.png in Resources */,
 				21E54A6D24D98D150038F4C0 /* CODE_OF_CONDUCT.md in Resources */,
 				21E54A8924D98D150038F4C0 /* VideoViewController.xib in Resources */,
 				21E54A8224D98D150038F4C0 /* 123.jpg in Resources */,
@@ -911,6 +937,7 @@
 				2161BCA825379C9E009F7F4A /* AXUserInfo.mm in Sources */,
 				21E54A8124D98D150038F4C0 /* LVieoView.m in Sources */,
 				217D22D7251386AE00AFE556 /* _19ScrollContentViewController.m in Sources */,
+				21462497253DC44300EB3127 /* MyApplication.m in Sources */,
 				21E54A8624D98D150038F4C0 /* CopyActivity.m in Sources */,
 				21E54A7724D98D150038F4C0 /* NSObject+MethodSwizzling.m in Sources */,
 				21E54A9124D98D150038F4C0 /* AView.m in Sources */,
@@ -953,6 +980,7 @@
 				210E93252520C7BC00B0F83D /* _23FullViewController.m in Sources */,
 				21E54AA124D98D150038F4C0 /* AFNViewController.m in Sources */,
 				21655DEB2539805E00071A5F /* _25LayoutViewController.m in Sources */,
+				214624A3253DC76000EB3127 /* UIViewController+Present.m in Sources */,
 				21E54A8A24D98D150038F4C0 /* AFHTTPSessionManager+PutFile.m in Sources */,
 				21E45F312519C96F000C2834 /* _20iOS14ViewController.m in Sources */,
 				21E54AA724D98D150038F4C0 /* SoundRecordDB.mm in Sources */,

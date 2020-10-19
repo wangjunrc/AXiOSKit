@@ -41,7 +41,43 @@
 //    }];
 //    [self _WiFi];
     //    [self _UITextView_link];
+    [self _setAlternateIconName];
+}
+-(void)_setAlternateIconName{
+    UIButton *btn1 = [[UIButton alloc]init];
+    [btn1 setTitle:@"换icon" forState:UIControlStateNormal];
+    btn1.backgroundColor = UIColor.orangeColor;
+    [self.view addSubview:btn1];
+    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.mas_equalTo(30);
+        
+    }];
     
+    [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
+        
+        
+        [self setIconname:nil];
+        
+    }];
+}
+
+- (void)setIconname:(NSString *)name {
+    UIApplication *appli = [UIApplication sharedApplication];
+    //判断系统是否支持切换icon
+    if (@available(iOS 10.3, *)) {
+        if ([appli supportsAlternateIcons]) {
+            //切换icon
+            [appli setAlternateIconName:name completionHandler:^(NSError * _Nullable error) {
+                if (error) {
+                    NSLog(@"error==> %@",error.localizedDescription);
+                }else{
+                    NSLog(@"done!!!");
+                }
+            }];
+        }
+    } else {
+        // Fallback on earlier versions
+    }
 }
 
 
