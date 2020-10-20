@@ -154,7 +154,9 @@
  */
 + (void)ax_replaceClassMethodWithOriginal:(SEL)originalSEL newSelector:(SEL)newSEL{
 
-    Class class = [self class];
+//    Class class = self.class;
+//    Class class = objc_getMetaClass(NSStringFromClass(self.class).UTF8String);
+    Class class =  object_getClass(self.class);
     Method originalMethod = class_getClassMethod(class, originalSEL);
     Method swizzledMethod = class_getClassMethod(class, newSEL);
     BOOL didAddMethod = class_addMethod(class,originalSEL,

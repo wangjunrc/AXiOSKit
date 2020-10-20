@@ -558,7 +558,6 @@ void mySLog(NSString *format, ...) {
                 },
             },
 
-            
         ];
     }
     return _dataArray;

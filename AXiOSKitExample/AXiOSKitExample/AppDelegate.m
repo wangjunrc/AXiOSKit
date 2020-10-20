@@ -25,6 +25,40 @@
     [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[UISearchBar.class]]
      setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}
      forState:UIControlStateNormal];
+    
+    // 修改message字体及颜色
+//    NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:message];
+//    [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor colorWithHexString:@"#E02020"] range:NSMakeRange(0, messageStr.length)];
+//    [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, messageStr.length)];
+//    [alertController setValue:messageStr forKey:@"attributedMessage"];
+    
+    /// 按钮颜色
+//    [UIView appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class]].tintColor = UIColor.redColor;
+    
+    
+    [UIView appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class]].tintColor = UIColor.redColor;
+    [UILabel appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class,UIAlertView.class]].textColor = UIColor.redColor;
+    
+    //实现模糊效果
+       UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+       //毛玻璃视图
+       UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];;
+      
+    
+//    @property (nonatomic, copy, nullable) UIVisualEffect *effect;
+//    [UIVisualEffectView appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class]].effect = effectView;
+    [UILabel appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class]].textColor = UIColor.orangeColor;
+    [UILabel appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class]].tintColor = UIColor.greenColor;
+    
+    NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:@"AA"];
+    [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor orangeColor] range:NSMakeRange(0, messageStr.length)];
+    [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, messageStr.length)];
+//    [alertController setValue:messageStr forKey:@"attributedMessage"];
+    
+    [UILabel appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class]].backgroundColor =UIColor.orangeColor;
+   
+    
+    
     //    [UIBarButtonItem.appearance setTintColor:UIColor.redColor];;
     //    [UIButton.appearance setTitleColor:UIColor.blueColor forState:UIControlStateNormal];
     //    [UIButton.appearance setBackgroundColor:UIColor.grayColor];
