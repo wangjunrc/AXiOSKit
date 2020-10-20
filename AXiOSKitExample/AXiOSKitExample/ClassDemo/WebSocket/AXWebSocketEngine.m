@@ -74,7 +74,7 @@ dispatch_async(queue, block);\
     self.webSocket = nil;
     
     NSURL *URL = [NSURL URLWithString:wsURL];
-    if (!URL) {
+    if (URL) {
         self.webSocket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:wsURL]];
         self.webSocket.delegate = self;
         [self.webSocket open];

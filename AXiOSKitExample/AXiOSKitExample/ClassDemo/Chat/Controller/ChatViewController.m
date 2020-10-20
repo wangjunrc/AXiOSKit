@@ -34,8 +34,8 @@
 //#define USER_B 100
 
 - (IBAction)sendAction:(id)sender {
-    
-    NSString *url = @"ws://localhost:15675/ws";
+    /// amqp://localhost:15675/ws
+    NSString *url = @"ws://localhost:1883/ws";
 
     [AXWebSocketEngine.shared connectServer:url];
     
@@ -55,18 +55,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    NSString *url = @"mqtt://localhost:1883/ws/id1";
-    NSString *url = @"ws://localhost:15675/ws?topic=id1";
-
-    [AXWebSocketEngine.shared connectServer:url];
-    
-    AXWebSocketEngine.shared.didReceiveMessage = ^(NSString   * _Nonnull message) {
-        NSLog(@"message>> %@",message);
-       ChatTextMessageModel *model = [ChatTextMessageModel mj_objectWithKeyValues:message];
-         NSLog(@"model>> %@",model);
-         NSLog(@"model.content>> %@",model.content);
-        
-        self.fromLabel.text = model.content;
-    };
+//    NSString *url = @"ws://localhost:15675/ws?topic=id1";
+//
+//    [AXWebSocketEngine.shared connectServer:url];
+//
+//    AXWebSocketEngine.shared.didReceiveMessage = ^(NSString   * _Nonnull message) {
+//        NSLog(@"message>> %@",message);
+//       ChatTextMessageModel *model = [ChatTextMessageModel mj_objectWithKeyValues:message];
+//         NSLog(@"model>> %@",model);
+//         NSLog(@"model.content>> %@",model.content);
+//
+//        self.fromLabel.text = model.content;
+//    };
 }
 
 

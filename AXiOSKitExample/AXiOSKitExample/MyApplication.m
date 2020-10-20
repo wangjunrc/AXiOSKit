@@ -36,4 +36,13 @@
    // 在这里处理一些统一的逻辑， 例如 记录行为日志
   return  [super sendAction:action to:target from:sender forEvent:event];
 }
+
+- (BOOL)openURL:(NSURL *)url{
+    NSLog(@"url ==== %@",url);
+    if ([url.absoluteString isEqualToString:@"https://www.baidu.com/"]) {
+        return NO;
+    }
+    return [super openURL:url];
+}
+
 @end

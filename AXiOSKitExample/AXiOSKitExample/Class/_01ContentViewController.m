@@ -56,7 +56,8 @@
     [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
         
         
-        [self setIconname:nil];
+//        [self setIconname:nil];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.baidu.com/"]];
         
     }];
 }
