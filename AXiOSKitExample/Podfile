@@ -65,7 +65,7 @@ target 'AXiOSKitExample' do
   
   pod 'RMQClient'
   pod 'MQTTClient'
-  
+  pod 'MQTTClient/Websocket'
   
 end
 

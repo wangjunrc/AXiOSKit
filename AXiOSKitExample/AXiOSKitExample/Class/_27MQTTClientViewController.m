@@ -10,13 +10,17 @@
 #import <MQTTClient/MQTTClient.h>
 #import <MQTTClient/MQTTClient.h>
 #import <MQTTClient/MQTTSessionManager.h>
+#import <MQTTClient/MQTTWebsocketTransport.h>
+#import <Masonry/Masonry.h>
+#import <AXiOSKit/AXiOSKit.h>
+#import <MJExtension/MJExtension.h>
 
-@interface _27MQTTClientViewController ()<MQTTSessionManagerDelegate>
+@interface _27MQTTClientViewController ()<MQTTSessionManagerDelegate,MQTTSessionDelegate>
 
 @property (strong, nonatomic) NSDictionary *mqttSettings;
 @property (strong, nonatomic) NSString *base;
 @property (strong, nonatomic) MQTTSessionManager *manager;
-@property (strong, nonatomic)  UILabel *status;
+@property (strong, nonatomic)  UILabel *statusLabel;
 @property(nonatomic, strong) MQTTSession *session;
 @end
 
@@ -26,131 +30,109 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     
-//    NSURL *bundleURL = [[NSBundle mainBundle] bundleURL];
-//    NSURL *mqttPlistUrl = [bundleURL URLByAppendingPathComponent:@"mqtt.plist"];
-//    self.mqttSettings = [NSDictionary dictionaryWithContentsOfURL:mqttPlistUrl];
-//    self.base = self.mqttSettings[@"base"];
-//
-//
-//
-//
-//    /*
-//     * MQTTClient: create an instance of MQTTSessionManager once and connect
-//     * will is set to let the broker indicate to other subscribers if the connection is lost
-//     */
-//    if (!self.manager) {
-//        self.manager = [[MQTTSessionManager alloc] init];
-//        self.manager.delegate = self;
-//        self.manager.subscriptions = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:MQTTQosLevelExactlyOnce]
-//                                                                 forKey:[NSString stringWithFormat:@"%@/#", self.base]];
-//
-//
-//
-//
-//        [self.manager connectTo:self.mqttSettings[@"host"]
-//                           port:[self.mqttSettings[@"port"] intValue]
-//                            tls:[self.mqttSettings[@"tls"] boolValue]
-//                      keepalive:60
-//                          clean:true
-//                           auth:false
-//                           user:nil
-//                           pass:nil
-//                      willTopic:[NSString stringWithFormat:@"%@/%@-%@",
-//                                 self.base,
-//                                 [UIDevice currentDevice].name,
-//                                 self.tabBarItem.title]
-//                           will:[@"offline" dataUsingEncoding:NSUTF8StringEncoding]
-//                        willQos:MQTTQosLevelExactlyOnce
-//                 willRetainFlag:FALSE
-//                   withClientId:nil];
-//    } else {
-//        [self.manager connectToLast];
-//    }
-//
-//    /*
-//     * MQTTCLient: observe the MQTTSessionManager's state to display the connection status
-//     */
-//
-//    [self.manager addObserver:self
-//                   forKeyPath:@"state"
-//                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
-//                      context:nil];
+    UIView *topView = self.view;
+    {
+        UILabel *label = [UILabel.alloc init];
+        label.backgroundColor = UIColor.orangeColor;
+        [self.view addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(30);
+            make.top.equalTo(topView).mas_equalTo(30);
+        }];
+        topView =label;
+        self.statusLabel = label;
+        
+    }
+    {
+        UIButton *btn1 = [[UIButton alloc]init];
+        [btn1 setTitle:@"发送" forState:UIControlStateNormal];
+        btn1.backgroundColor = UIColor.orangeColor;
+        [self.view addSubview:btn1];
+        [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(30);
+            make.top.equalTo(topView.mas_bottom).mas_equalTo(30);
+        }];
+        
+        [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
+            
+            NSData *publishData =  [@"iOS-内容" dataUsingEncoding:NSUTF8StringEncoding];
+            [self.session publishData:publishData onTopic:@"id1" retain:NO qos:MQTTQosLevelExactlyOnce publishHandler:^(NSError *error) {
+            }];
+            
+        }];
+        topView =btn1;
+    }
     
     
-    MQTTCFSocketTransport *transport = [[MQTTCFSocketTransport alloc] init];
-    transport.host = @"http://localhost";
-    transport.port = 15675;
-    
-//    MQTTWebsocketTransport *transport = [[MQTTWebsocketTransport alloc] init];
-    
+    MQTTWebsocketTransport *transport = [[MQTTWebsocketTransport alloc] init];
+    transport.url = [NSURL URLWithString:@"ws://localhost:15675/ws"];
     
     self.session = [[MQTTSession alloc] init];
     self.session.transport = transport;
+    self.session.delegate = self;
     [self.session connectWithConnectHandler:^(NSError *error) {
-        NSLog(@"error = %@",error);
+        NSLog(@"mqtt链接 = %@",!error ? @"成功":@"失败");
+        [self.session subscribeToTopic:@"id1" atLevel:MQTTQosLevelExactlyOnce];
     }];
     
-    [self.session subscribeToTopic:@"id1" atLevel:MQTTQosLevelExactlyOnce subscribeHandler:^(NSError*error,NSArray *gQoss) {
-
-        if(error) {
-
-            NSLog(@"Subscription failed %@", error.localizedDescription);
-
-        }else{
-
-            NSLog(@"Subscription sucessfull! Granted Qos: %@",gQoss);
-
-        }
-
-    }];
+    [self.session addObserver:self
+                   forKeyPath:@"status"
+                      options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                      context:nil];
+    
+}
+- (void)newMessage:(MQTTSession *)session data:(NSData *)data onTopic:(NSString *)topic qos:(MQTTQosLevel)qos retained:(BOOL)retained mid:(unsigned int)mid {
 
     
+    NSLog(@"A: topic = %@,retained = %d, 内容 = %@,mid = %u",topic,retained,[data ax_toJson],mid);
     
 }
 
-
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    switch (self.manager.state) {
-        case MQTTSessionManagerStateClosed:
-            self.status.text = @"closed";
-//            self.disconnect.enabled = false;
-//            self.connect.enabled = false;
+    
+    switch (self.session.status) {
+        case MQTTSessionStatusCreated:
+            self.statusLabel.text = @"Created";
+            //            self.disconnect.enabled = false;
+            //            self.connect.enabled = false;
             break;
-        case MQTTSessionManagerStateClosing:
-            self.status.text = @"closing";
-//            self.disconnect.enabled = false;
-//            self.connect.enabled = false;
+        case MQTTSessionStatusConnecting:
+            self.statusLabel.text = @"Connecting";
+            //            self.disconnect.enabled = false;
+            //            self.connect.enabled = false;
             break;
-        case MQTTSessionManagerStateConnected:
-            self.status.text = [NSString stringWithFormat:@"connected as %@-%@",
-                                [UIDevice currentDevice].name,
-                                self.tabBarItem.title];
-//            self.disconnect.enabled = true;
-//            self.connect.enabled = false;
-            [self.manager sendData:[@"joins chat" dataUsingEncoding:NSUTF8StringEncoding]
-                             topic:[NSString stringWithFormat:@"%@/%@-%@",
-                                    self.base,
-                                    [UIDevice currentDevice].name,
-                                    self.tabBarItem.title]
-                               qos:MQTTQosLevelExactlyOnce
-                            retain:FALSE];
-
+        case MQTTSessionStatusConnected:
+            self.statusLabel.text = @"Connected";
+            //            self.disconnect.enabled = true;
+            //            self.connect.enabled = false;
+            //            [self.manager sendData:[@"joins chat" dataUsingEncoding:NSUTF8StringEncoding]
+            //                             topic:[NSString stringWithFormat:@"%@/%@-%@",
+            //                                    self.base,
+            //                                    [UIDevice currentDevice].name,
+            //                                    self.tabBarItem.title]
+            //                               qos:MQTTQosLevelExactlyOnce
+            //                            retain:FALSE];
+            
             break;
-        case MQTTSessionManagerStateConnecting:
-            self.status.text = @"connecting";
-//            self.disconnect.enabled = false;
-//            self.connect.enabled = false;
+        case MQTTSessionStatusDisconnecting:
+            self.statusLabel.text = @"Disconnecting";
+            //            self.disconnect.enabled = false;
+            //            self.connect.enabled = false;
             break;
-        case MQTTSessionManagerStateError:
-            self.status.text = @"error";
-//            self.disconnect.enabled = false;
-//            self.connect.enabled = false;
+        case MQTTSessionStatusClosed:
+            self.statusLabel.text = @"Closed";
+            //            self.disconnect.enabled = false;
+            //            self.connect.enabled = false;
             break;
-        case MQTTSessionManagerStateStarting:
+        case MQTTSessionStatusError:
+            self.statusLabel.text = @"Erro";
+            //            self.disconnect.enabled = false;
+            //            self.connect.enabled = false;
+            break;
         default:
-            self.status.text = @"not connected";
-//            self.disconnect.enabled = false;
-//            self.connect.enabled = true;
+            self.statusLabel.text = @"无";
+            //            self.disconnect.enabled = false;
+            //            self.connect.enabled = true;
             break;
     }
 }

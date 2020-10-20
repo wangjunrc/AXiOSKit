@@ -40,6 +40,15 @@
     return [[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding];
 }
 
+- (id )ax_toJson {
+    id json = [NSJSONSerialization JSONObjectWithData:(NSData *)self options:NSJSONReadingMutableContainers error:nil];
+    if (!json) {
+        json = [[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding];
+    }
+    return json;
+}
+
+
 /**
  NSBundle 文件转data
 

@@ -25,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSString *)ax_toString;
 
+/// NSData 转化 json,或者string
+- (id )ax_toJson;
+
 /**
  NSBundle 文件转data
  

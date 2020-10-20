@@ -28,17 +28,17 @@
 - (void)sendEvent:(UIEvent *)event{
    // 在这里处理一些统一的逻辑
    [super sendEvent:event];
-    NSLog(@"sendEvent====");
+//    NSLog(@"sendEvent====");
 }
 - (BOOL)sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event{
-    NSLog(@"sendAction======");
+//    NSLog(@"sendAction======");
     
    // 在这里处理一些统一的逻辑， 例如 记录行为日志
   return  [super sendAction:action to:target from:sender forEvent:event];
 }
 
 - (BOOL)openURL:(NSURL *)url{
-    NSLog(@"url ==== %@",url);
+//    NSLog(@"url ==== %@",url);
     if ([url.absoluteString isEqualToString:@"https://www.baidu.com/"]) {
         return NO;
     }
