@@ -20,13 +20,13 @@ if [[ $1 != "" ]]; then
     if [ $? -ne 0 ]; then
         echo "打tag失败"
         # pod repo push xxx AXiOSTools.podspec --verbose --allow-warnings --sources=https://github.com/AXinger/AXiOSTools.git
-    pod trunk push AXiOSTools.podspec
+    pod trunk push AXiOSTools.podspec --verbose --allow-warnings
     else
         echo "打tag成功"
         git push --tags
         echo "======开始推送spec文件======"
         # pod repo push xxx AXiOSTools.podspec --verbose --allow-warnings --sources=https://github.com/AXinger/AXiOSTools.git
-    pod trunk push AXiOSTools.podspec
+    pod trunk push AXiOSTools.podspec --verbose --allow-warnings
     fi
 else
     echo "======请输入tag======"

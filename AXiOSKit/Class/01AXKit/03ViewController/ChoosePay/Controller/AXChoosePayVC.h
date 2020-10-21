@@ -5,11 +5,11 @@
 //  Created by mac on 2018/8/20.
 //  Copyright © 2018年 liuweixing. All rights reserved.
 //
-
+#import "AXBaseAlertVC.h"
 #import "AXViewController.h"
 #import "AXChoosePayModel.h"
 
-@interface AXChoosePayVC : AXViewController
+@interface AXChoosePayVC : AXBaseAlertVC
 
 @property(nonatomic,strong)NSArray <AXChoosePayModel *>*dataArray;
 

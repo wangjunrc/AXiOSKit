@@ -34,6 +34,8 @@
 #import "_23FullViewController.h"
 #import <AXiOSKit/NSMutableArray+AXKVO.h>
 #import <AXiOSKit/NSMutableArray+AXKVO.h>
+#import <AXiOSKit/AXChoosePayVC.h>
+
 #import "_24NoteViewController.h"
 #import "_25LayoutViewController.h"
 #import "_26RMQClientViewController.h"
@@ -555,6 +557,14 @@ void mySLog(NSString *format, ...) {
                 @"action": ^{
                     _27MQTTClientViewController *vc = [[_27MQTTClientViewController alloc] init];
                     [self.navigationController pushViewController:vc animated:YES];
+                },
+            },
+            @{
+                @"index": @27,
+                @"title": @"AXChoosePayVC",
+                @"action": ^{
+                    AXChoosePayVC *vc = [[AXChoosePayVC alloc] init];
+                    [self ax_showVC:vc];
                 },
             },
 
