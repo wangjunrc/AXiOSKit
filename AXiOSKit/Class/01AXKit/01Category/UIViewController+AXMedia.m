@@ -140,7 +140,7 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
 /**
  * UIImagePickerControllerDelegate
  */
-- (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+- (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id>  *)info{
     /**
      NSString *const  UIImagePickerControllerMediaType ;指定用户选择的媒体类型（文章最后进行扩展）
      NSString *const  UIImagePickerControllerOriginalImage ;原始图片
