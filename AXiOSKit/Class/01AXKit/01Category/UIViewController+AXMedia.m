@@ -39,10 +39,6 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
 
 /**
  选择照片(相册或者拍照)含有编辑的样式 兼容iPad 需要显传入显示的view iPhone可以不传
- 
- @param edit 是否编辑
- @param iPadView iPad 需要显传入显示的view
- @param block originalImage原图  editedImage编辑后图片
  */
 - (void)ax_showCameraWithConfig:(AXMediaConfig *)config showiPadView:(UIView *)iPadView block:(void(^)(AXMediaResult *result))block{
     self.reslutBlock = block;
@@ -124,7 +120,7 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
     
 }
 
--(UIImagePickerController *)_pickerController:(UIImagePickerControllerSourceType)sourceType config:(AXMediaConfig *)config{
+-(void )_pickerController:(UIImagePickerControllerSourceType)sourceType config:(AXMediaConfig *)config{
   
     //图片列表方式
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -132,7 +128,7 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
     picker.sourceType = sourceType;
     
     if (config) {
-        picker.allowsEditing = config.editing;
+        picker.allowsEditing = config.isEditing;
         if (config.mediaTypes) {
             picker.mediaTypes = config.mediaTypes;
         }
@@ -163,10 +159,8 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
         UIImage* editedImage = info[UIImagePickerControllerEditedImage];
         // 原件的URL
         NSURL *referenceURL = info[UIImagePickerControllerReferenceURL];
-        NSLog(@"referenceURL %@",referenceURL);
         /// 媒体的URL 只有视频才有
         NSURL *mediaURL = info[UIImagePickerControllerMediaURL];
-        NSLog(@"mediaURL %@",mediaURL);
         
         AXMediaResult *result = AXMediaResult.alloc.init;
         result.originalImage =originalImage;
@@ -181,8 +175,6 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
     
     
     [picker dismissViewControllerAnimated:YES completion:nil];
-    
-    
 }
 
 #pragma mark分类重写 set get 方法
