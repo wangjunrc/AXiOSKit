@@ -77,10 +77,10 @@ axShared_M(Dao);
 
 - (WCTDatabase *)dataBase{
     if (!_dataBase) {
-      NSString *path = NSSearchPathForDirectoriesInDomains(NSAutosavedInformationDirectory, NSUserDomainMask, YES ).firstObject;
-        path = [path  stringByAppendingPathComponent:@"my.sqlite"];
+      NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES ).firstObject;
+        path = [path  stringByAppendingPathComponent:@"db/my.sqlite"];
         
-        NSLog(@"ba_db_document_path:%@",path);
+        NSLog(@"ba_db_document_path = %@",path);
         
         _dataBase = [[WCTDatabase alloc] initWithPath:path];
         [_dataBase createTableAndIndexesOfName:DBTableName withClass:AXUserInfo.class];
