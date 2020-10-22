@@ -1,5 +1,5 @@
 
-# import 不同类型
+## import 不同类型
 ```
 
 #if __has_include(<YYWebImage/YYWebImage.h>)
@@ -9,10 +9,10 @@
 #endif
 
 ```
-# GitHub汇总
+## GitHub汇总
 https://github.com/Tim9Liu9/TimLiu-iOS
 
-# 消除 过期警告 top
+## 消除 过期警告 top
 ```
 /// 消除局部警告
 #pragma clang diagnostic push
@@ -37,7 +37,7 @@ https://github.com/Tim9Liu9/TimLiu-iOS
 #pragma GCC diagnostic ignored <#参数#>
 ```
 
-# 过期宏 三种方式都是 第一种的宏
+## 过期宏 三种方式都是 第一种的宏
 ```
 __attribute__((deprecated(" ")));
 
@@ -45,7 +45,7 @@ DEPRECATED_MSG_ATTRIBUTE ()
 
 DEPRECATED_ATTRIBUTE
 ```
-#  禁用宏
+##  禁用宏
 ```
 NS_UNAVAILABLE
 ```
@@ -57,7 +57,7 @@ NS_UNAVAILABLE 当我们不想要其他开发人员，用普通的 init 方法�
 如: @dynamic delegate;
 ```
 
-# 初始化方法 宏
+## 初始化方法 宏
 
 ```
 NS_DESIGNATED_INITIALIZER
