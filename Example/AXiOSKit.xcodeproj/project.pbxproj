@@ -88,11 +88,6 @@
 		213BCC35254003DB00C89B72 /* NSObject+Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBB4254003DA00C89B72 /* NSObject+Load.m */; };
 		213BCC36254003DB00C89B72 /* AXUserInfoDao.mm in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBC1254003DA00C89B72 /* AXUserInfoDao.mm */; };
 		213BCC37254003DB00C89B72 /* AXUserInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBC5254003DA00C89B72 /* AXUserInfo.mm */; };
-		213BCC38254003DB00C89B72 /* SoundRecordDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBC8254003DA00C89B72 /* SoundRecordDB.mm */; };
-		213BCC39254003DB00C89B72 /* BAThemeListModel+WCDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBCB254003DA00C89B72 /* BAThemeListModel+WCDB.mm */; };
-		213BCC3A254003DB00C89B72 /* BAUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBCD254003DA00C89B72 /* BAUserInfo.m */; };
-		213BCC3B254003DB00C89B72 /* BAThemeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBCF254003DA00C89B72 /* BAThemeListModel.m */; };
-		213BCC3C254003DB00C89B72 /* PalyThemeDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBD3254003DA00C89B72 /* PalyThemeDB.mm */; };
 		213BCC3D254003DB00C89B72 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBD6254003DA00C89B72 /* RouterManager.m */; };
 		213BCC3E254003DB00C89B72 /* PointViewController2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBD8254003DA00C89B72 /* PointViewController2.plist */; };
 		213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDA254003DA00C89B72 /* Assets.xcassets */; };
@@ -284,17 +279,6 @@
 		213BCBC4254003DA00C89B72 /* AXUserInfo+DB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AXUserInfo+DB.h"; sourceTree = "<group>"; };
 		213BCBC5254003DA00C89B72 /* AXUserInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AXUserInfo.mm; sourceTree = "<group>"; };
 		213BCBC6254003DA00C89B72 /* DBFunctionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFunctionProtocol.h; sourceTree = "<group>"; };
-		213BCBC8254003DA00C89B72 /* SoundRecordDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SoundRecordDB.mm; sourceTree = "<group>"; };
-		213BCBC9254003DA00C89B72 /* BAFileHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAFileHeader.h; sourceTree = "<group>"; };
-		213BCBCB254003DA00C89B72 /* BAThemeListModel+WCDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "BAThemeListModel+WCDB.mm"; sourceTree = "<group>"; };
-		213BCBCC254003DA00C89B72 /* BAThemeListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAThemeListModel.h; sourceTree = "<group>"; };
-		213BCBCD254003DA00C89B72 /* BAUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAUserInfo.m; sourceTree = "<group>"; };
-		213BCBCE254003DA00C89B72 /* BAThemeListModel+WCDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BAThemeListModel+WCDB.h"; sourceTree = "<group>"; };
-		213BCBCF254003DA00C89B72 /* BAThemeListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAThemeListModel.m; sourceTree = "<group>"; };
-		213BCBD0254003DA00C89B72 /* BAUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAUserInfo.h; sourceTree = "<group>"; };
-		213BCBD1254003DA00C89B72 /* SoundRecordDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundRecordDB.h; sourceTree = "<group>"; };
-		213BCBD2254003DA00C89B72 /* PalyThemeDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PalyThemeDB.h; sourceTree = "<group>"; };
-		213BCBD3254003DA00C89B72 /* PalyThemeDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PalyThemeDB.mm; sourceTree = "<group>"; };
 		213BCBD5254003DA00C89B72 /* RouterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouterManager.h; sourceTree = "<group>"; };
 		213BCBD6254003DA00C89B72 /* RouterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouterManager.m; sourceTree = "<group>"; };
 		213BCBD7254003DA00C89B72 /* AXiOSKitExampleRelease.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = AXiOSKitExampleRelease.entitlements; sourceTree = "<group>"; };
@@ -596,13 +580,13 @@
 			isa = PBXGroup;
 			children = (
 				213BCBB0254003DA00C89B72 /* NSObject+Load.h */,
-				213BCBB1254003DA00C89B72 /* UIViewController+Load.m */,
-				213BCBB2254003DA00C89B72 /* UIControl+load.m */,
-				213BCBB3254003DA00C89B72 /* UIImage+Load.m */,
 				213BCBB4254003DA00C89B72 /* NSObject+Load.m */,
-				213BCBB5254003DA00C89B72 /* UIViewController+Load.h */,
-				213BCBB6254003DA00C89B72 /* UIImage+Load.h */,
 				213BCBB7254003DA00C89B72 /* UIControl+load.h */,
+				213BCBB2254003DA00C89B72 /* UIControl+load.m */,
+				213BCBB6254003DA00C89B72 /* UIImage+Load.h */,
+				213BCBB3254003DA00C89B72 /* UIImage+Load.m */,
+				213BCBB5254003DA00C89B72 /* UIViewController+Load.h */,
+				213BCBB1254003DA00C89B72 /* UIViewController+Load.m */,
 			);
 			path = Load;
 			sourceTree = "<group>";
@@ -649,9 +633,8 @@
 		213BCBBD254003DA00C89B72 /* TestDB */ = {
 			isa = PBXGroup;
 			children = (
-				213BCBBE254003DA00C89B72 /* UserInfo */,
 				213BCBC6254003DA00C89B72 /* DBFunctionProtocol.h */,
-				213BCBC7254003DA00C89B72 /* DBManager */,
+				213BCBBE254003DA00C89B72 /* UserInfo */,
 			);
 			path = TestDB;
 			sourceTree = "<group>";
@@ -678,34 +661,8 @@
 			isa = PBXGroup;
 			children = (
 				213BCBC3254003DA00C89B72 /* AXUserInfo.h */,
-				213BCBC4254003DA00C89B72 /* AXUserInfo+DB.h */,
 				213BCBC5254003DA00C89B72 /* AXUserInfo.mm */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		213BCBC7254003DA00C89B72 /* DBManager */ = {
-			isa = PBXGroup;
-			children = (
-				213BCBC8254003DA00C89B72 /* SoundRecordDB.mm */,
-				213BCBC9254003DA00C89B72 /* BAFileHeader.h */,
-				213BCBCA254003DA00C89B72 /* Model */,
-				213BCBD1254003DA00C89B72 /* SoundRecordDB.h */,
-				213BCBD2254003DA00C89B72 /* PalyThemeDB.h */,
-				213BCBD3254003DA00C89B72 /* PalyThemeDB.mm */,
-			);
-			path = DBManager;
-			sourceTree = "<group>";
-		};
-		213BCBCA254003DA00C89B72 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				213BCBCB254003DA00C89B72 /* BAThemeListModel+WCDB.mm */,
-				213BCBCC254003DA00C89B72 /* BAThemeListModel.h */,
-				213BCBCD254003DA00C89B72 /* BAUserInfo.m */,
-				213BCBCE254003DA00C89B72 /* BAThemeListModel+WCDB.h */,
-				213BCBCF254003DA00C89B72 /* BAThemeListModel.m */,
-				213BCBD0254003DA00C89B72 /* BAUserInfo.h */,
+				213BCBC4254003DA00C89B72 /* AXUserInfo+DB.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1182,7 +1139,6 @@
 				213BCC1D254003DB00C89B72 /* _01ViewController.m in Sources */,
 				213BCBFE254003DB00C89B72 /* _14TFViewController.m in Sources */,
 				213BCC31254003DB00C89B72 /* LVieoView.m in Sources */,
-				213BCC3C254003DB00C89B72 /* PalyThemeDB.mm in Sources */,
 				213BCC18254003DB00C89B72 /* _26RMQClientViewController.m in Sources */,
 				213BCC15254003DB00C89B72 /* _23FullViewController.m in Sources */,
 				213BCC34254003DB00C89B72 /* UIImage+Load.m in Sources */,
@@ -1213,7 +1169,6 @@
 				213BCC03254003DB00C89B72 /* AView.m in Sources */,
 				213BCBEC254003DB00C89B72 /* SceneDelegate.m in Sources */,
 				213BCC19254003DB00C89B72 /* _13WebpViewController.m in Sources */,
-				213BCC3A254003DB00C89B72 /* BAUserInfo.m in Sources */,
 				213BCC09254003DB00C89B72 /* RunLoopViewController.m in Sources */,
 				213BCC10254003DB00C89B72 /* _16KeyChainViewController.m in Sources */,
 				213BCBFC254003DB00C89B72 /* WCDBViewController.m in Sources */,
@@ -1223,11 +1178,8 @@
 				21898F322541B11D00876524 /* Application.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				213BCC32254003DB00C89B72 /* UIViewController+Load.m in Sources */,
-				213BCC39254003DB00C89B72 /* BAThemeListModel+WCDB.mm in Sources */,
 				213BCC0D254003DB00C89B72 /* Person.m in Sources */,
 				213BCC04254003DB00C89B72 /* _00TableViewController.m in Sources */,
-				213BCC3B254003DB00C89B72 /* BAThemeListModel.m in Sources */,
-				213BCC38254003DB00C89B72 /* SoundRecordDB.mm in Sources */,
 				213BCC14254003DB00C89B72 /* _09AFNViewController.m in Sources */,
 				213BCC2F254003DB00C89B72 /* ChatMessageModel.m in Sources */,
 				213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */,

@@ -7,8 +7,8 @@
 //
 
 #import "WCDBViewController.h"
-#import "SoundRecordDB.h"
-#import "BAThemeListModel.h"
+#import "AXUserInfoDao.h"
+#import "AXUserInfo.h"
 #import <AXiOSKit/AXiOSKit.h>
 #import "TZImagePickerController.h"
 #import <MJExtension/MJExtension.h>
@@ -23,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tf.placeholder = @"输入name";
+    self.tf2.placeholder = @"id 为int";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -35,24 +37,18 @@
     
 }
 - (IBAction)addDB:(id)sender {
-    BAThemeListModel *model = [[BAThemeListModel alloc]init];
-    
+    AXUserInfo *model = [[AXUserInfo alloc]init];
     NSString *Id = self.tf.text;
-    
-    model.resourceId = [NSString stringWithFormat:@"%@",Id];
     model.name = [NSString stringWithFormat:@"name%@",Id];
-    model.date = [NSDate date];
-    
-    SoundRecordDB *db = [SoundRecordDB sharedSoundRecordDB];
-    BOOL result = [db insertWithModel:model];
+    model.registerDate = [NSDate date];
+    BOOL result = [AXUserInfoDao.sharedDao insertWithModel:model];
     NSLog(@"result插入数据 %@",result ? @"成功" : @"失败");
 }
 
 - (IBAction)readDB:(id)sender {
-    SoundRecordDB *db = [SoundRecordDB sharedSoundRecordDB];
-    NSString *Id = self.tf2.text;
     
-    BAThemeListModel *model = [db getOneById:Id];
+    NSString *Id = self.tf2.text;
+    AXUserInfo *model = [AXUserInfoDao.sharedDao getOneById:Id.integerValue];
     NSLog(@"model = %@",[model mj_JSONObject]);
     
 }

@@ -11,16 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AXUserInfo : NSObject
 
-
 @property(nonatomic,assign)NSInteger userId;
-
 @property(nonatomic,copy)NSString *name;
 @property(nonatomic,copy)NSString *icon;
 @property(nonatomic,copy)NSString *headUrl;
-
 @property(nonatomic,strong)NSDate *registerDate;
-
-
 
 @end
 

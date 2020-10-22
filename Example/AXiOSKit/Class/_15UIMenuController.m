@@ -29,6 +29,34 @@
     self.label.userInteractionEnabled = YES;
     //给label添加一个敲击手势
     [self.label addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelClick)]];
+    
+    if (@available(iOS 13.0, *)) {
+        NSMutableArray<UIAction *> *temp = [NSMutableArray array];
+        {
+            UIAction *tion =   [UIAction actionWithTitle:@"Copy"
+                                image:[UIImage systemImageNamed:@"doc.on.doc"]
+                           identifier:@"copy"
+                              handler:^(__kindof UIAction * _Nonnull action) {
+                
+                
+            }];
+            [temp addObject:tion];
+        }
+        UIMenu *menu = [UIMenu menuWithTitle:@"V" children:temp];
+        if (@available(iOS 14.0, *)) {
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"menu" menu:menu];
+        }
+    }
+
+//    // 给imgView添加一个上下文菜单交互
+//    if (@available(iOS 13.0, *)) {
+//        UIContextMenuInteraction *interaction = [[UIContextMenuInteraction alloc] initWithDelegate:self];
+//    } else {
+//        // Fallback on earlier versions
+//    }
+//    [_imgView addInteraction:interaction];
+
+    
 }
 
 /** 点击label触发的方法 */

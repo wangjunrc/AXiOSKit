@@ -38,6 +38,6 @@
 - (NSArray *)getAll;
 - (NSArray *)getAllByOrder;
 
-- (id )getOneById:(NSString *)Id;
+- (id )getOneById:(NSInteger )Id;
 
 @end

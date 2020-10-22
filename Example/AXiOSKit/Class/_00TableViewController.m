@@ -230,13 +230,29 @@ void mySLog(NSString *format, ...) {
                 },
             },
             
+//            @{
+//                @"index": @3,
+//                @"title": @"隐藏导航栏",
+//                @"action": ^{
+//                    _01ViewController *vc = [[_01ViewController alloc] init];
+//                    [self.navigationController pushViewController:vc animated:YES];
+//                    vc.ax_shouldNavigationBarHidden = YES;
+//                },
+//            },
             @{
                 @"index": @3,
-                @"title": @"隐藏导航栏",
+                @"title": @"UIAlertController",
                 @"action": ^{
-                    _01ViewController *vc = [[_01ViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
-                    vc.ax_shouldNavigationBarHidden = YES;
+                    [self ax_showAlertByTitle:@"A" message:@"B" confirm:^{
+
+                                        } cancel:^{
+
+                                        }];
+                    
+//                    UIAlertController *al = [[UIAlertController alloc]init];
+//                    al.title = @"A";
+//                    al.message = @"B";
+//                    [self ax_showVC:al];
                 },
             },
             
