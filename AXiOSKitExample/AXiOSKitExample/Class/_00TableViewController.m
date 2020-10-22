@@ -33,8 +33,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "_23FullViewController.h"
 #import <AXiOSKit/NSMutableArray+AXKVO.h>
-#import <AXiOSKit/NSMutableArray+AXKVO.h>
-#import <AXiOSKit/AXChoosePayVC.h>
+#import <AXiOSKit/AXPayVC.h>
 
 #import "_24NoteViewController.h"
 #import "_25LayoutViewController.h"
@@ -563,7 +562,9 @@ void mySLog(NSString *format, ...) {
                 @"index": @27,
                 @"title": @"AXChoosePayVC",
                 @"action": ^{
-                    AXChoosePayVC *vc = [[AXChoosePayVC alloc] init];
+                    AXPayVC *vc = [[AXPayVC alloc] init];
+                    vc.orderText = @"订单1111";
+                    vc.amountText = @"3.2元";
                     [self ax_showVC:vc];
                 },
             },

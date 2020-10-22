@@ -16,7 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - Aspects (1.4.1)
   - AvoidCrash (2.5.2)
-  - AXiOSKit (1.0.0):
+  - AXiOSKit (1.0.2):
     - AFNetworking
     - Aspects
     - DZNEmptyDataSet
@@ -37,9 +37,6 @@ PODS:
     - CocoaAsyncSocket/RunLoop
   - CocoaAsyncSocket/GCD (7.4.3)
   - CocoaAsyncSocket/RunLoop (7.4.3)
-  - CocoaLumberjack (3.6.2):
-    - CocoaLumberjack/Core (= 3.6.2)
-  - CocoaLumberjack/Core (3.6.2)
   - DZNEmptyDataSet (1.8.1)
   - FBRetainCycleDetector (0.1.4)
   - FLAnimatedImage (1.0.12)
@@ -90,13 +87,8 @@ PODS:
   - MQTTClient/Manager (0.15.3):
     - MQTTClient/Min
   - MQTTClient/Min (0.15.3)
-  - MQTTClient/MinL (0.15.3):
-    - CocoaLumberjack
   - MQTTClient/Websocket (0.15.3):
     - MQTTClient/Min
-    - SocketRocket
-  - MQTTClient/WebsocketL (0.15.3):
-    - MQTTClient/MinL
     - SocketRocket
   - NullSafe (2.0)
   - PromisesObjC (1.2.10)
@@ -130,6 +122,7 @@ DEPENDENCIES:
   - AvoidCrash
   - AXiOSKit (from `../`)
   - Canvas (~> 0.1.2)
+  - CocoaAsyncSocket
   - DZNEmptyDataSet
   - IQKeyboardManager
   - JJException
@@ -144,7 +137,6 @@ DEPENDENCIES:
   - MLeaksFinder
   - MQTTClient
   - MQTTClient/Websocket
-  - MQTTClient/WebsocketL
   - NullSafe
   - PromisesObjC
   - ReactiveObjC
@@ -165,7 +157,6 @@ SPEC REPOS:
     - AvoidCrash
     - Canvas
     - CocoaAsyncSocket
-    - CocoaLumberjack
     - DZNEmptyDataSet
     - FBRetainCycleDetector
     - FLAnimatedImage
@@ -206,10 +197,9 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
-  AXiOSKit: 4e35205c5d7c13a902e8f3592ae5b9f5f3012923
+  AXiOSKit: ff9322f717ee98494fb5e2cb8b204806bf5e2437
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
-  CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
@@ -242,6 +232,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: c778be57dbe353b8abd765ceeabd80eb881302d0
+PODFILE CHECKSUM: b6e8d0e2466bf9eb8c221ba6dbdfe5694f69aea7
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

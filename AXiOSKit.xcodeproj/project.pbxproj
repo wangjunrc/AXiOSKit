@@ -10,6 +10,17 @@
 		210E93CE25218B7300B0F83D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 210E93CD25218B7300B0F83D /* README.md */; };
 		210E94EB2521CD9B00B0F83D /* NSMutableArray+AXKVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 210E94E92521CD9B00B0F83D /* NSMutableArray+AXKVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		210E94EC2521CD9B00B0F83D /* NSMutableArray+AXKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 210E94EA2521CD9B00B0F83D /* NSMutableArray+AXKVO.m */; };
+		21898D0025415F2A00876524 /* AXPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898CF225415F2A00876524 /* AXPayVC.m */; };
+		21898D0125415F2A00876524 /* AXPayVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 21898CF325415F2A00876524 /* AXPayVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21898D0225415F2A00876524 /* AXPayChildVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898CF525415F2A00876524 /* AXPayChildVC.m */; };
+		21898D0325415F2A00876524 /* AXPayMethodVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 21898CF625415F2A00876524 /* AXPayMethodVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21898D0425415F2A00876524 /* AXPayChildVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 21898CF725415F2A00876524 /* AXPayChildVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21898D0525415F2A00876524 /* AXPayMethodVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898CF825415F2A00876524 /* AXPayMethodVC.m */; };
+		21898D0625415F2A00876524 /* AXChoosePayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898CFA25415F2A00876524 /* AXChoosePayModel.m */; };
+		21898D0725415F2A00876524 /* AXChoosePayModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 21898CFB25415F2A00876524 /* AXChoosePayModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21898D0825415F2A00876524 /* AXChoosePayStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21898CFD25415F2A00876524 /* AXChoosePayStyleCell.xib */; };
+		21898D0925415F2A00876524 /* AXChoosePayStyleCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 21898CFE25415F2A00876524 /* AXChoosePayStyleCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21898D0A25415F2A00876524 /* AXChoosePayStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898CFF25415F2A00876524 /* AXChoosePayStyleCell.m */; };
 		219D766724123ED500196BFE /* DBStatements.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D762624123ED400196BFE /* DBStatements.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		219D766824123ED500196BFE /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D762724123ED400196BFE /* DataBase.m */; };
 		219D766924123ED500196BFE /* DataBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 219D762824123ED400196BFE /* DataBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -70,7 +81,7 @@
 		21B1432D251ACEF2001737B5 /* AXMediaResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B1432B251ACEF2001737B5 /* AXMediaResult.m */; };
 		21B14330251AD3F4001737B5 /* UIViewController+AXMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B1432E251AD3F4001737B5 /* UIViewController+AXMedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21B14331251AD3F4001737B5 /* UIViewController+AXMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B1432F251AD3F4001737B5 /* UIViewController+AXMedia.m */; };
-		21C63A81252B1D0800C07919 /* UIPageControl+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 21C63A7F252B1D0700C07919 /* UIPageControl+AXKit.h */; };
+		21C63A81252B1D0800C07919 /* UIPageControl+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 21C63A7F252B1D0700C07919 /* UIPageControl+AXKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21C63A82252B1D0800C07919 /* UIPageControl+AXKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C63A80252B1D0800C07919 /* UIPageControl+AXKit.m */; };
 		24064AC622BA58C200F6EC73 /* 命令行.md in Resources */ = {isa = PBXBuildFile; fileRef = 24064AC522BA58C200F6EC73 /* 命令行.md */; };
 		24170BBF22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24170BBD22D9E3570066FC23 /* AXDeviceFunctionDisableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -246,17 +257,6 @@
 		24732A872277FBB9005CF92D /* AXMacros_addProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473297C2277FBB8005CF92D /* AXMacros_addProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24732A892277FBB9005CF92D /* AXMacros_log.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473297E2277FBB8005CF92D /* AXMacros_log.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24732A8A2277FBB9005CF92D /* AXMacros_instance.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473297F2277FBB8005CF92D /* AXMacros_instance.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24732A8B2277FBB9005CF92D /* AXChoosePayVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329832277FBB8005CF92D /* AXChoosePayVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24732A8C2277FBB9005CF92D /* AXChoosePayStyleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 247329842277FBB8005CF92D /* AXChoosePayStyleVC.m */; };
-		24732A8D2277FBB9005CF92D /* AXChoosePayVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247329852277FBB8005CF92D /* AXChoosePayVC.xib */; };
-		24732A8E2277FBB9005CF92D /* AXChoosePayStyleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247329862277FBB8005CF92D /* AXChoosePayStyleVC.xib */; };
-		24732A8F2277FBB9005CF92D /* AXChoosePayStyleVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329872277FBB8005CF92D /* AXChoosePayStyleVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24732A902277FBB9005CF92D /* AXChoosePayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 247329882277FBB8005CF92D /* AXChoosePayVC.m */; };
-		24732A912277FBB9005CF92D /* AXChoosePayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473298A2277FBB8005CF92D /* AXChoosePayModel.m */; };
-		24732A922277FBB9005CF92D /* AXChoosePayModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473298B2277FBB8005CF92D /* AXChoosePayModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24732A932277FBB9005CF92D /* AXChoosePayStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2473298D2277FBB8005CF92D /* AXChoosePayStyleCell.xib */; };
-		24732A942277FBB9005CF92D /* AXChoosePayStyleCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2473298E2277FBB8005CF92D /* AXChoosePayStyleCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24732A952277FBB9005CF92D /* AXChoosePayStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2473298F2277FBB8005CF92D /* AXChoosePayStyleCell.m */; };
 		24732A962277FBB9005CF92D /* AXWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 247329912277FBB8005CF92D /* AXWebVC.m */; };
 		24732A972277FBB9005CF92D /* AXJSContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 247329922277FBB8005CF92D /* AXJSContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24732A982277FBB9005CF92D /* AXWebVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247329932277FBB8005CF92D /* AXWebVC.xib */; };
@@ -324,8 +324,6 @@
 		24BB8354229BDDF800442276 /* UITextView+AXAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB8352229BDDF800442276 /* UITextView+AXAction.m */; };
 		24BB839C229E2ED700442276 /* AXKeyboardObserve.h in Headers */ = {isa = PBXBuildFile; fileRef = 24BB839A229E2ED700442276 /* AXKeyboardObserve.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24BB839D229E2ED700442276 /* AXKeyboardObserve.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB839B229E2ED700442276 /* AXKeyboardObserve.m */; };
-		24BB8672229E9B4300442276 /* AXPayVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 24BB8670229E9B4300442276 /* AXPayVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24BB8673229E9B4300442276 /* AXPayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24BB8671229E9B4300442276 /* AXPayVC.m */; };
 		24DB149222D998A300777FB6 /* AXDeviceAuthorizationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DB148F22D998A300777FB6 /* AXDeviceAuthorizationViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24DB149322D998A300777FB6 /* AXDeviceAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DB149022D998A300777FB6 /* AXDeviceAuthorizationViewController.m */; };
 		24DB149422D998A300777FB6 /* AXDeviceAuthorizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24DB149122D998A300777FB6 /* AXDeviceAuthorizationViewController.xib */; };
@@ -356,6 +354,17 @@
 		210E94EA2521CD9B00B0F83D /* NSMutableArray+AXKVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+AXKVO.m"; sourceTree = "<group>"; };
 		21448E9223B3E4CF00BE36A5 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
 		215CE01F2428C3DB00F2E119 /* 面试.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "面试.md"; sourceTree = "<group>"; };
+		21898CF225415F2A00876524 /* AXPayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXPayVC.m; sourceTree = "<group>"; };
+		21898CF325415F2A00876524 /* AXPayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXPayVC.h; sourceTree = "<group>"; };
+		21898CF525415F2A00876524 /* AXPayChildVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXPayChildVC.m; sourceTree = "<group>"; };
+		21898CF625415F2A00876524 /* AXPayMethodVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXPayMethodVC.h; sourceTree = "<group>"; };
+		21898CF725415F2A00876524 /* AXPayChildVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXPayChildVC.h; sourceTree = "<group>"; };
+		21898CF825415F2A00876524 /* AXPayMethodVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXPayMethodVC.m; sourceTree = "<group>"; };
+		21898CFA25415F2A00876524 /* AXChoosePayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXChoosePayModel.m; sourceTree = "<group>"; };
+		21898CFB25415F2A00876524 /* AXChoosePayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXChoosePayModel.h; sourceTree = "<group>"; };
+		21898CFD25415F2A00876524 /* AXChoosePayStyleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AXChoosePayStyleCell.xib; sourceTree = "<group>"; };
+		21898CFE25415F2A00876524 /* AXChoosePayStyleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXChoosePayStyleCell.h; sourceTree = "<group>"; };
+		21898CFF25415F2A00876524 /* AXChoosePayStyleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXChoosePayStyleCell.m; sourceTree = "<group>"; };
 		219D762624123ED400196BFE /* DBStatements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStatements.h; sourceTree = "<group>"; };
 		219D762724123ED400196BFE /* DataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBase.m; sourceTree = "<group>"; };
 		219D762824123ED400196BFE /* DataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
@@ -593,17 +602,6 @@
 		2473297C2277FBB8005CF92D /* AXMacros_addProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros_addProperty.h; sourceTree = "<group>"; };
 		2473297E2277FBB8005CF92D /* AXMacros_log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros_log.h; sourceTree = "<group>"; };
 		2473297F2277FBB8005CF92D /* AXMacros_instance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXMacros_instance.h; sourceTree = "<group>"; };
-		247329832277FBB8005CF92D /* AXChoosePayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXChoosePayVC.h; sourceTree = "<group>"; };
-		247329842277FBB8005CF92D /* AXChoosePayStyleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXChoosePayStyleVC.m; sourceTree = "<group>"; };
-		247329852277FBB8005CF92D /* AXChoosePayVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AXChoosePayVC.xib; sourceTree = "<group>"; };
-		247329862277FBB8005CF92D /* AXChoosePayStyleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AXChoosePayStyleVC.xib; sourceTree = "<group>"; };
-		247329872277FBB8005CF92D /* AXChoosePayStyleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXChoosePayStyleVC.h; sourceTree = "<group>"; };
-		247329882277FBB8005CF92D /* AXChoosePayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXChoosePayVC.m; sourceTree = "<group>"; };
-		2473298A2277FBB8005CF92D /* AXChoosePayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXChoosePayModel.m; sourceTree = "<group>"; };
-		2473298B2277FBB8005CF92D /* AXChoosePayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXChoosePayModel.h; sourceTree = "<group>"; };
-		2473298D2277FBB8005CF92D /* AXChoosePayStyleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AXChoosePayStyleCell.xib; sourceTree = "<group>"; };
-		2473298E2277FBB8005CF92D /* AXChoosePayStyleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXChoosePayStyleCell.h; sourceTree = "<group>"; };
-		2473298F2277FBB8005CF92D /* AXChoosePayStyleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXChoosePayStyleCell.m; sourceTree = "<group>"; };
 		247329912277FBB8005CF92D /* AXWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWebVC.m; sourceTree = "<group>"; };
 		247329922277FBB8005CF92D /* AXJSContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXJSContext.h; sourceTree = "<group>"; };
 		247329932277FBB8005CF92D /* AXWebVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AXWebVC.xib; sourceTree = "<group>"; };
@@ -672,8 +670,6 @@
 		24BB8352229BDDF800442276 /* UITextView+AXAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+AXAction.m"; sourceTree = "<group>"; };
 		24BB839A229E2ED700442276 /* AXKeyboardObserve.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXKeyboardObserve.h; sourceTree = "<group>"; };
 		24BB839B229E2ED700442276 /* AXKeyboardObserve.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXKeyboardObserve.m; sourceTree = "<group>"; };
-		24BB8670229E9B4300442276 /* AXPayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXPayVC.h; sourceTree = "<group>"; };
-		24BB8671229E9B4300442276 /* AXPayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXPayVC.m; sourceTree = "<group>"; };
 		24DB148F22D998A300777FB6 /* AXDeviceAuthorizationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDeviceAuthorizationViewController.h; sourceTree = "<group>"; };
 		24DB149022D998A300777FB6 /* AXDeviceAuthorizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDeviceAuthorizationViewController.m; sourceTree = "<group>"; };
 		24DB149122D998A300777FB6 /* AXDeviceAuthorizationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AXDeviceAuthorizationViewController.xib; sourceTree = "<group>"; };
@@ -712,6 +708,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21898CF025415F2A00876524 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				21898CF125415F2A00876524 /* Controller */,
+				21898CF925415F2A00876524 /* Model */,
+				21898CFC25415F2A00876524 /* View */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		21898CF125415F2A00876524 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				21898CF325415F2A00876524 /* AXPayVC.h */,
+				21898CF225415F2A00876524 /* AXPayVC.m */,
+				21898CF425415F2A00876524 /* Child */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		21898CF425415F2A00876524 /* Child */ = {
+			isa = PBXGroup;
+			children = (
+				21898CF525415F2A00876524 /* AXPayChildVC.m */,
+				21898CF625415F2A00876524 /* AXPayMethodVC.h */,
+				21898CF725415F2A00876524 /* AXPayChildVC.h */,
+				21898CF825415F2A00876524 /* AXPayMethodVC.m */,
+			);
+			path = Child;
+			sourceTree = "<group>";
+		};
+		21898CF925415F2A00876524 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21898CFA25415F2A00876524 /* AXChoosePayModel.m */,
+				21898CFB25415F2A00876524 /* AXChoosePayModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		21898CFC25415F2A00876524 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21898CFD25415F2A00876524 /* AXChoosePayStyleCell.xib */,
+				21898CFE25415F2A00876524 /* AXChoosePayStyleCell.h */,
+				21898CFF25415F2A00876524 /* AXChoosePayStyleCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		219D762424123ED400196BFE /* 02ThirdKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1189,65 +1235,21 @@
 			isa = PBXGroup;
 			children = (
 				24DB148E22D9988600777FB6 /* AuthorizationViewController */,
-				24F0F11F22C7683A009DD02B /* TripleInteraction */,
-				24F0F0CA22C4B8C9009DD02B /* MultiSelect */,
-				247329812277FBB8005CF92D /* ChoosePay */,
-				247329902277FBB8005CF92D /* UIWeb */,
 				247329962277FBB8005CF92D /* Base */,
 				247329A72277FBB8005CF92D /* BaseAlert */,
-				247329AE2277FBB8005CF92D /* SinglePick */,
 				247329B22277FBB8005CF92D /* Date */,
+				247329C42277FBB8005CF92D /* GuidePage */,
+				24F0F0CA22C4B8C9009DD02B /* MultiSelect */,
+				21898CF025415F2A00876524 /* Pay */,
+				247329C12277FBB8005CF92D /* Play */,
 				247329B62277FBB8005CF92D /* QRCode */,
 				247329BD2277FBB8005CF92D /* Safari */,
-				247329C12277FBB8005CF92D /* Play */,
-				247329C42277FBB8005CF92D /* GuidePage */,
+				247329AE2277FBB8005CF92D /* SinglePick */,
+				24F0F11F22C7683A009DD02B /* TripleInteraction */,
+				247329902277FBB8005CF92D /* UIWeb */,
 				247329CB2277FBB8005CF92D /* WKWeb */,
 			);
 			path = 03ViewController;
-			sourceTree = "<group>";
-		};
-		247329812277FBB8005CF92D /* ChoosePay */ = {
-			isa = PBXGroup;
-			children = (
-				247329822277FBB8005CF92D /* Controller */,
-				247329892277FBB8005CF92D /* Model */,
-				2473298C2277FBB8005CF92D /* View */,
-			);
-			path = ChoosePay;
-			sourceTree = "<group>";
-		};
-		247329822277FBB8005CF92D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				247329872277FBB8005CF92D /* AXChoosePayStyleVC.h */,
-				247329842277FBB8005CF92D /* AXChoosePayStyleVC.m */,
-				247329862277FBB8005CF92D /* AXChoosePayStyleVC.xib */,
-				247329832277FBB8005CF92D /* AXChoosePayVC.h */,
-				247329882277FBB8005CF92D /* AXChoosePayVC.m */,
-				247329852277FBB8005CF92D /* AXChoosePayVC.xib */,
-				24BB8670229E9B4300442276 /* AXPayVC.h */,
-				24BB8671229E9B4300442276 /* AXPayVC.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		247329892277FBB8005CF92D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2473298A2277FBB8005CF92D /* AXChoosePayModel.m */,
-				2473298B2277FBB8005CF92D /* AXChoosePayModel.h */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		2473298C2277FBB8005CF92D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				2473298E2277FBB8005CF92D /* AXChoosePayStyleCell.h */,
-				2473298F2277FBB8005CF92D /* AXChoosePayStyleCell.m */,
-				2473298D2277FBB8005CF92D /* AXChoosePayStyleCell.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		247329902277FBB8005CF92D /* UIWeb */ = {
@@ -1601,7 +1603,6 @@
 				24732A672277FBB9005CF92D /* IBUIButton.h in Headers */,
 				24F0F12322C76874009DD02B /* AXTripleInteractionViewController.h in Headers */,
 				24732A892277FBB9005CF92D /* AXMacros_log.h in Headers */,
-				24732A8F2277FBB9005CF92D /* AXChoosePayStyleVC.h in Headers */,
 				247329EA2277FBB9005CF92D /* UIScrollView+AXKit.h in Headers */,
 				24732A1E2277FBB9005CF92D /* UIView+AXKit.h in Headers */,
 				24732A752277FBB9005CF92D /* AXDataModel.h in Headers */,
@@ -1621,15 +1622,11 @@
 				24732A522277FBB9005CF92D /* UITextField+AXNumberKeyboard.h in Headers */,
 				24732A4E2277FBB9005CF92D /* AXDottedLineView.h in Headers */,
 				24732A392277FBB9005CF92D /* UIImage+AXBundle.h in Headers */,
-				24732A922277FBB9005CF92D /* AXChoosePayModel.h in Headers */,
 				219D767324123ED500196BFE /* AXNetManager+Upload.h in Headers */,
 				24732A0C2277FBB9005CF92D /* UISlider+AXKit.h in Headers */,
 				24732A562277FBB9005CF92D /* AXTouchIDManager.h in Headers */,
-				24732A942277FBB9005CF92D /* AXChoosePayStyleCell.h in Headers */,
-				21C63A81252B1D0800C07919 /* UIPageControl+AXKit.h in Headers */,
 				24732A432277FBB9005CF92D /* NSObject+AXKVO.h in Headers */,
 				24835B9522B72DB000F4125C /* UIGestureRecognizer+AXKit.h in Headers */,
-				24732A8B2277FBB9005CF92D /* AXChoosePayVC.h in Headers */,
 				24732A412277FBB9005CF92D /* UIBarButtonItem+AXKit.h in Headers */,
 				24732A502277FBB9005CF92D /* AXVeriCodeView.h in Headers */,
 				24732A052277FBB9005CF92D /* NSDate+AXKit.h in Headers */,
@@ -1642,7 +1639,6 @@
 				24732A552277FBB9005CF92D /* AXNumberKeyboard.h in Headers */,
 				219D769424123ED500196BFE /* UMTool.h in Headers */,
 				247329E52277FBB9005CF92D /* WKWebView+AXKit.h in Headers */,
-				24BB8672229E9B4300442276 /* AXPayVC.h in Headers */,
 				24732AA02277FBB9005CF92D /* AXFullLayout2.h in Headers */,
 				24732AC52277FBB9005CF92D /* AXGuidePageVC.h in Headers */,
 				247329DF2277FBB9005CF92D /* UITextField+AXAction.h in Headers */,
@@ -1677,8 +1673,14 @@
 				21B0969825270DD4002C3F5A /* AXBiometryManager.h in Headers */,
 				210E94EB2521CD9B00B0F83D /* NSMutableArray+AXKVO.h in Headers */,
 				21B1432C251ACEF2001737B5 /* AXMediaResult.h in Headers */,
+				21898D0125415F2A00876524 /* AXPayVC.h in Headers */,
 				21B14330251AD3F4001737B5 /* UIViewController+AXMedia.h in Headers */,
+				21898D0725415F2A00876524 /* AXChoosePayModel.h in Headers */,
 				21B14328251ACED5001737B5 /* AXMediaConfig.h in Headers */,
+				21898D0325415F2A00876524 /* AXPayMethodVC.h in Headers */,
+				21898D0425415F2A00876524 /* AXPayChildVC.h in Headers */,
+				21C63A81252B1D0800C07919 /* UIPageControl+AXKit.h in Headers */,
+				21898D0925415F2A00876524 /* AXChoosePayStyleCell.h in Headers */,
 				24732A792277FBB9005CF92D /* AXCountDownObject.h in Headers */,
 				24732A382277FBB9005CF92D /* UIViewController+AXNavBarConfig.h in Headers */,
 				24732AC72277FBB9005CF92D /* AXGuidePageCell.h in Headers */,
@@ -1749,7 +1751,6 @@
 			files = (
 				24732A512277FBB9005CF92D /* AXNumberKeyboard.xib in Resources */,
 				24064AC622BA58C200F6EC73 /* 命令行.md in Resources */,
-				24732A932277FBB9005CF92D /* AXChoosePayStyleCell.xib in Resources */,
 				24732ABD2277FBB9005CF92D /* AXSafariVC.xib in Resources */,
 				247329DA2277FBB9005CF92D /* AXCollectFile.md in Resources */,
 				24732ACD2277FBB9005CF92D /* beep.wav in Resources */,
@@ -1760,12 +1761,11 @@
 				24732ACE2277FBB9005CF92D /* AXiOSKit.xcassets in Resources */,
 				24732AC22277FBB9005CF92D /* AXGuidePageVC.xib in Resources */,
 				24732A982277FBB9005CF92D /* AXWebVC.xib in Resources */,
-				24732A8E2277FBB9005CF92D /* AXChoosePayStyleVC.xib in Resources */,
+				21898D0825415F2A00876524 /* AXChoosePayStyleCell.xib in Resources */,
 				24732AB72277FBB9005CF92D /* QRCodeViewController.xib in Resources */,
 				24732ABA2277FBB9005CF92D /* AXQRCodeVC.xib in Resources */,
 				219D769224123ED500196BFE /* WKJSPOST.html in Resources */,
 				24732AC62277FBB9005CF92D /* AXGuidePageCell.xib in Resources */,
-				24732A8D2277FBB9005CF92D /* AXChoosePayVC.xib in Resources */,
 				24732ACF2277FBB9005CF92D /* AXHTML.bundle in Resources */,
 				24732AB52277FBB9005CF92D /* AXDateVC.xib in Resources */,
 				247329DB2277FBB9005CF92D /* pod_no_use.md in Resources */,
@@ -1822,6 +1822,7 @@
 				24732A372277FBB9005CF92D /* NSString+AXKit.m in Sources */,
 				219D766824123ED500196BFE /* DataBase.m in Sources */,
 				219D769924123ED500196BFE /* LameHelper.m in Sources */,
+				21898D0025415F2A00876524 /* AXPayVC.m in Sources */,
 				24732AC02277FBB9005CF92D /* AXPlayVC.m in Sources */,
 				24732A962277FBB9005CF92D /* AXWebVC.m in Sources */,
 				24732AC42277FBB9005CF92D /* AXGuidePageCell.m in Sources */,
@@ -1835,7 +1836,6 @@
 				24732A532277FBB9005CF92D /* AXNumberKeyboard.m in Sources */,
 				219D768324123ED500196BFE /* AXRefreshHeader.m in Sources */,
 				247329FF2277FBB9005CF92D /* UIImage+AXBundle.m in Sources */,
-				24BB8673229E9B4300442276 /* AXPayVC.m in Sources */,
 				24732A032277FBB9005CF92D /* UIButton+AXCountDown2.m in Sources */,
 				24732AB32277FBB9005CF92D /* AXSinglePickVC.m in Sources */,
 				24732A3D2277FBB9005CF92D /* UIView+AXSnapshot.m in Sources */,
@@ -1843,7 +1843,6 @@
 				247329F92277FBB9005CF92D /* UIButton+AXCountDown.m in Sources */,
 				24F0F12422C76874009DD02B /* AXTripleInteractionViewController.m in Sources */,
 				219D767724123ED500196BFE /* AXNetManager.m in Sources */,
-				24732A912277FBB9005CF92D /* AXChoosePayModel.m in Sources */,
 				24732A402277FBB9005CF92D /* UIView+AXAnimation.m in Sources */,
 				247329F72277FBB9005CF92D /* Foundation+AXLog.m in Sources */,
 				24732A222277FBB9005CF92D /* NSObject+AXRuntime.m in Sources */,
@@ -1853,6 +1852,7 @@
 				24F0F09822C3144C009DD02B /* AXPresentationController.m in Sources */,
 				24835B9622B72DB000F4125C /* UIGestureRecognizer+AXKit.m in Sources */,
 				24732A482277FBB9005CF92D /* NSBundle+AXBundle.m in Sources */,
+				21898D0225415F2A00876524 /* AXPayChildVC.m in Sources */,
 				219D767E24123ED500196BFE /* AXWebSocketManager.m in Sources */,
 				219D769124123ED500196BFE /* WKWebViewController.m in Sources */,
 				24732ACA2277FBB9005CF92D /* AXScriptMessageHandlerHelper.m in Sources */,
@@ -1867,7 +1867,6 @@
 				247329F22277FBB9005CF92D /* UICollectionView+AXKit.m in Sources */,
 				24732A4C2277FBB9005CF92D /* AXCycleScrollView.m in Sources */,
 				24F0F0DD22C4BAC3009DD02B /* AXMultiSelectCell.m in Sources */,
-				24732A902277FBB9005CF92D /* AXChoosePayVC.m in Sources */,
 				24732A7A2277FBB9005CF92D /* AXCountDownObject.m in Sources */,
 				24732AAC2277FBB9005CF92D /* AXBaseAlertVC.m in Sources */,
 				219D768224123ED500196BFE /* AXRefreshFooter.m in Sources */,
@@ -1885,6 +1884,7 @@
 				24732A4A2277FBB9005CF92D /* NSDateComponents+AXKit.m in Sources */,
 				210E94EC2521CD9B00B0F83D /* NSMutableArray+AXKVO.m in Sources */,
 				24732A5D2277FBB9005CF92D /* AXLocationManager.m in Sources */,
+				21898D0A25415F2A00876524 /* AXChoosePayStyleCell.m in Sources */,
 				24732A5A2277FBB9005CF92D /* LocationManager.m in Sources */,
 				219D767524123ED500196BFE /* AXNetworkManager.m in Sources */,
 				247329FD2277FBB9005CF92D /* UITableView+AXKit.m in Sources */,
@@ -1894,9 +1894,8 @@
 				247329F62277FBB9005CF92D /* UIViewController+AXKit.m in Sources */,
 				24732ABF2277FBB9005CF92D /* AXSafariVC.m in Sources */,
 				24732A7F2277FBB9005CF92D /* AXObject.m in Sources */,
-				24732A8C2277FBB9005CF92D /* AXChoosePayStyleVC.m in Sources */,
+				21898D0525415F2A00876524 /* AXPayMethodVC.m in Sources */,
 				24DB149322D998A300777FB6 /* AXDeviceAuthorizationViewController.m in Sources */,
-				24732A952277FBB9005CF92D /* AXChoosePayStyleCell.m in Sources */,
 				24732AA22277FBB9005CF92D /* AXViewController.m in Sources */,
 				24732A6D2277FBB9005CF92D /* AXHelper.m in Sources */,
 				24732A9A2277FBB9005CF92D /* AXJSContext.m in Sources */,
@@ -1930,6 +1929,7 @@
 				219D769524123ED500196BFE /* UMTool.m in Sources */,
 				24732A9E2277FBB9005CF92D /* AXCollectionViewController.m in Sources */,
 				247329EB2277FBB9005CF92D /* UISwitch+AXKit.m in Sources */,
+				21898D0625415F2A00876524 /* AXChoosePayModel.m in Sources */,
 				247329EE2277FBB9005CF92D /* NSObject+AXKit.m in Sources */,
 				24732A692277FBB9005CF92D /* IBUIImageView.m in Sources */,
 				21B14329251ACED5001737B5 /* AXMediaConfig.m in Sources */,
