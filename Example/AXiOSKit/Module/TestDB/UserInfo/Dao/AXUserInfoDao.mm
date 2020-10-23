@@ -78,7 +78,7 @@ axShared_M(Dao);
 - (WCTDatabase *)dataBase{
     if (!_dataBase) {
       NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES ).firstObject;
-        path = [path  stringByAppendingPathComponent:@"db/my.sqlite"];
+        path = [path  stringByAppendingPathComponent:@"data/my.sqlite"];
         
         NSLog(@"ba_db_document_path = %@",path);
         

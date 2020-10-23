@@ -485,31 +485,17 @@
 		213BCB97254003DA00C89B72 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				213BCB96254003DA00C89B72 /* 123.jpg */,
-				213BCBDE254003DA00C89B72 /* 1234.webp */,
-				213BCBDC254003DA00C89B72 /* AxDebug.xcconfig */,
-				213BCB91254003D900C89B72 /* AxGenerator.xcconfig */,
-				213BCBE3254003DA00C89B72 /* AxRelease.xcconfig */,
 				213BCBA2254003DA00C89B72 /* Chat */,
-				213BCB33254003D900C89B72 /* g2@2x.png */,
-				213BCBDB254003DA00C89B72 /* g3@2x.png */,
-				213BCBE2254003DA00C89B72 /* H5.bundle */,
-				213BCB2C254003D900C89B72 /* IMG_3972.GIF */,
-				213BCB8F254003D900C89B72 /* instruction.jpg */,
 				213BCBAF254003DA00C89B72 /* Load */,
 				213BCB30254003D900C89B72 /* MakeKeyAndVisible.h */,
 				213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */,
 				213BCBB8254003DA00C89B72 /* News */,
-				213BCB90254003D900C89B72 /* PointViewController.plist */,
-				213BCBD8254003DA00C89B72 /* PointViewController2.plist */,
 				213BCBD4254003DA00C89B72 /* Router */,
 				213BCB9B254003DA00C89B72 /* Test */,
-				213BCBE4254003DA00C89B72 /* test_webp.webp */,
 				213BCBBD254003DA00C89B72 /* TestDB */,
 				213BCBAC254003DA00C89B72 /* TestVideo */,
 				213BCB95254003D900C89B72 /* UIViewController+Present.h */,
 				213BCBE5254003DB00C89B72 /* UIViewController+Present.m */,
-				213BCBE1254003DA00C89B72 /* webp.bundle */,
 				213BCB98254003DA00C89B72 /* WebSocket */,
 			);
 			path = Module;
@@ -701,6 +687,27 @@
 			path = ../AXiOSKit/README;
 			sourceTree = "<group>";
 		};
+		218990312542630D00876524 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				213BCB90254003D900C89B72 /* PointViewController.plist */,
+				213BCBD8254003DA00C89B72 /* PointViewController2.plist */,
+				213BCB96254003DA00C89B72 /* 123.jpg */,
+				213BCBDE254003DA00C89B72 /* 1234.webp */,
+				213BCBDC254003DA00C89B72 /* AxDebug.xcconfig */,
+				213BCB91254003D900C89B72 /* AxGenerator.xcconfig */,
+				213BCBE3254003DA00C89B72 /* AxRelease.xcconfig */,
+				213BCB33254003D900C89B72 /* g2@2x.png */,
+				213BCBDB254003DA00C89B72 /* g3@2x.png */,
+				213BCBE2254003DA00C89B72 /* H5.bundle */,
+				213BCB2C254003D900C89B72 /* IMG_3972.GIF */,
+				213BCB8F254003D900C89B72 /* instruction.jpg */,
+				213BCBE4254003DA00C89B72 /* test_webp.webp */,
+				213BCBE1254003DA00C89B72 /* webp.bundle */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -744,6 +751,7 @@
 				213BCB2D254003D900C89B72 /* en.lproj */,
 				213BCB87254003D900C89B72 /* fishhook-master */,
 				213BCB97254003DA00C89B72 /* Module */,
+				218990312542630D00876524 /* Resource */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for AXiOSKit";
@@ -841,6 +849,7 @@
 				6003F588195388D20070C39A /* Resources */,
 				A112F1404485DDAFA6BFF943 /* [CP] Embed Pods Frameworks */,
 				21898EA42541AD6900876524 /* Embed App Extensions */,
+				218990322542634F00876524 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -982,6 +991,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		218990322542634F00876524 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# 图标加版本号\n#$SRCROOT/JCIconVersion.sh\n\n# 启动图加版本号\n#$SRCROOT/launch_image.sh\n\n# 忘记干嘛的\n#$SRCROOT/SettingsBundle.sh\n";
+		};
 		6271D33F90BF430D6455374E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1402,12 +1428,12 @@
 			baseConfigurationReference = 3F85C681A5FA543AF8599754 /* Pods-AXiOSKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
 				INFOPLIST_FILE = "AXiOSKit/AXiOSKit-Info.plist";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 2.0.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1421,12 +1447,12 @@
 			baseConfigurationReference = 2E8212D320B7D6003E79BB8A /* Pods-AXiOSKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
 				INFOPLIST_FILE = "AXiOSKit/AXiOSKit-Info.plist";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 2.0.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
