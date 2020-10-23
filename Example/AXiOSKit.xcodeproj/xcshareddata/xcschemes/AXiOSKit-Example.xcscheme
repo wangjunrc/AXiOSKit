@@ -46,6 +46,14 @@
                BlueprintName = "AXiOSKit_Tests"
                ReferencedContainer = "container:AXiOSKit.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "Tests/testExample">
+               </Test>
+               <Test
+                  Identifier = "Tests/testLogin">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

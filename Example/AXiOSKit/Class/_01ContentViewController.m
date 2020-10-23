@@ -18,6 +18,7 @@
 #import <Canvas/Canvas.h>
 #import  <SystemConfiguration/CaptiveNetwork.h>
 
+#import <ReactiveObjC/ReactiveObjC.h>
 
 @interface _01ContentViewController ()<UITextViewDelegate>
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
@@ -27,6 +28,8 @@
 @property(nonatomic, strong) UIPageControl *pageControl;
 
 @property(nonatomic, strong) AXLocationManager *locationManager;
+
+@property(nonatomic, assign) NSInteger age;
 @end
 
 @implementation _01ContentViewController
@@ -41,8 +44,77 @@
 //    }];
 //    [self _WiFi];
     //    [self _UITextView_link];
-    [self _setAlternateIconName];
+//    [self _setAlternateIconName];
+   
+    
+//    [self _loginTest];
+    [self _kvoInt];
 }
+
+-(void)_kvoInt{
+    
+    __weak typeof(self) weakSelf = self;
+    [RACObserve(self, age) subscribeNext:^(id  _Nullable x) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+        NSLog(@"age = %ld %@",strongSelf.age,x);
+        }];
+
+    [self ax_addFBKVOKeyPath:AX_FBKVOKeyPath(self.age) result:^(AXKVOResultModel * _Nonnull resultModel) {
+        NSLog(@"age222 = %ld %@",self.age,resultModel.aNewValue);
+    }];
+    
+    UIButton *btn1 = [[UIButton alloc]init];
+    [btn1 setTitle:@"kvoInt" forState:UIControlStateNormal];
+    btn1.backgroundColor = UIColor.orangeColor;
+    [self.view addSubview:btn1];
+    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.mas_equalTo(30);
+        
+    }];
+    
+    [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
+        self.age = ax_randomZeroToValue(100);
+        
+    }];
+}
+
+-(void)_loginTest {
+    
+    
+    
+    UIView *topView = self.view;
+    
+    {
+        UITextField *nameTF = [[UITextField alloc]init];
+        nameTF.backgroundColor = UIColor.orangeColor;
+        nameTF.placeholder = @"输入姓名";
+        nameTF.accessibilityIdentifier = @"pwdTextField";
+        [self.view addSubview:nameTF];
+        [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(topView).mas_offset(10);
+            make.left.mas_equalTo(10);
+            make.width.mas_equalTo(200);
+            make.height.mas_equalTo(50);
+        }];
+        topView = nameTF;
+    }
+    {
+        UITextField *nameTF = [[UITextField alloc]init];
+        nameTF.backgroundColor = UIColor.orangeColor;
+        nameTF.placeholder = @"输入密码";
+        nameTF.accessibilityIdentifier = @"nameTextField";
+        [self.view addSubview:nameTF];
+        [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(topView.mas_bottom).mas_equalTo(10);
+            make.left.mas_equalTo(10);
+            make.width.mas_equalTo(200);
+            make.height.mas_equalTo(50);
+        }];
+        topView = nameTF;
+    }
+    
+}
+
 -(void)_setAlternateIconName{
     UIButton *btn1 = [[UIButton alloc]init];
     [btn1 setTitle:@"换icon" forState:UIControlStateNormal];
