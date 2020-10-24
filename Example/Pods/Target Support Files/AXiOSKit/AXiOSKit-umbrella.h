@@ -141,7 +141,7 @@
 #import "AXUIAssistant.h"
 #import "AXViewModelProtocol.h"
 #import "AXWeakProxy.h"
-#import "AXAuthorizationManager.h"
+#import "AXSystemAuthorizerManager.h"
 #import "AXConfigureManager.h"
 #import "AXCrashProcessManager.h"
 #import "AXLocationManager.h"

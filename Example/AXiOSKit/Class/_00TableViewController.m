@@ -40,6 +40,8 @@
 #import "_25LayoutViewController.h"
 #import "_26RMQClientViewController.h"
 #import "_27MQTTClientViewController.h"
+#import <AXiOSKit/AXSystemAuthorizerManager.h>
+
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -61,6 +63,7 @@ typedef void (^CollectionBlock)(void);
 @property(atomic, copy) NSString *name;
 
 @property(atomic, assign) NSInteger count;
+@property(nonatomic, strong) AXSystemAuthorizerManager *authorizerManager;
 
 @end
 
@@ -585,6 +588,17 @@ void mySLog(NSString *format, ...) {
                     [self ax_showVC:vc];
                 },
             },
+            @{
+                @"index": @28,
+                @"title": @"权限",
+                @"action": ^{
+                   self.authorizerManager =  [AXSystemAuthorizerManager requestAuthorizedWithType:AXSystemAuthorizerTypeLocation completion:^(AXSystemAuthorizerStatus status) {
+                       NSLog(@"status == %ld",(long)status);
+                    }];
+                },
+            },
+            
+            
 
         ];
     }

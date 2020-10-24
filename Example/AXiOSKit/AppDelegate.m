@@ -11,6 +11,7 @@
 #import <WechatOpenSDK/WXApi.h>
 #import <UserNotifications/UserNotifications.h>
 #define WXAppId            @"wxb1fbfdf9fe32026b"    //App ID
+#import <Bagel/Bagel.h>
 
 @interface AppDelegate ()<WXApiDelegate,UNUserNotificationCenterDelegate>
 
@@ -20,7 +21,14 @@
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    
+//    BagelConfiguration  *bagelConfig = [[BagelConfiguration alloc]init];
+//
+//    bagelConfig.project.projectName = @"Custom Project Name";
+//    bagelConfig.device.deviceName = @"Custom Device Name";
+//    bagelConfig.device.deviceDescription = @"Custom Device Description";
+//    
+//    
+//    [Bagel start:bagelConfig];
     //    [UISearchBar.appearance setBarTintColor:UIColor.redColor];
     [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[UISearchBar.class]]
      setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}
@@ -107,11 +115,11 @@
     [self.window makeKeyAndVisible];
     //    }
     [self adapterIOS11];
-    if (@available(iOS 10.0, *)) {
-        [self _note];
-    } else {
-        // Fallback on earlier versions
-    }
+//    if (@available(iOS 10.0, *)) {
+//        [self _note];
+//    } else {
+//        // Fallback on earlier versions
+//    }
     return YES;
 }
 

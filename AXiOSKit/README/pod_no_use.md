@@ -311,13 +311,13 @@ pod 'UIAlertView-Blocks'
 
 <!--pod 'SSKeychain'-->
 
-####由于c语言中，没有直接的字典，字符串数组等数据结构，所以要借助结构体定义，处理json。
+#### 由于c语言中，没有直接的字典，字符串数组等数据结构，所以要借助结构体定义，处理json。
 pod 'cJSON'
 
 pod 'JSONModel'
 
 
-###在大小上比png小，图片质量上跟png差不多，就是WebP。
+### 在大小上比png小，图片质量上跟png差不多，就是WebP。
 
 pod 'WebP'
 
@@ -327,10 +327,10 @@ pod 'WebP'
 
 <!--pod 'stun'-->
 
-###c/c++中使用unqlite
+### c/c++中使用unqlite
 pod 'unqlite'
 
-###C语言读和写png图片格式
+### C语言读和写png图片格式
 pod 'libpng'
 
 ### Swift  
@@ -349,10 +349,10 @@ pod 'Zip'
 
 pod 'KSCrash'
 
-###Duktape 是一个轻量级的嵌入式 JavaScript 引擎,专注于可移植性和低占用率。Duktape 可以被轻松地集成进一个 C/C++ 项目中:
+### Duktape 是一个轻量级的嵌入式 JavaScript 引擎,专注于可移植性和低占用率。Duktape 可以被轻松地集成进一个 C/C++ 项目中:
 pod 'Duktape'
 
-###Libextobjc是一个非常强大的Objective-C库的扩展,为Objective-C提供诸如Safe categories、Concrete protocols、简单和安全的key paths以及简单使用block中的弱变量等功能。libextobjc非常模块化，只需要一个或者两个依赖就能使用大部分类和模块。
+### Libextobjc是一个非常强大的Objective-C库的扩展,为Objective-C提供诸如Safe categories、Concrete protocols、简单和安全的key paths以及简单使用block中的弱变量等功能。libextobjc非常模块化，只需要一个或者两个依赖就能使用大部分类和模块。
 
 <!--pod 'libextobjc'-->
 
@@ -365,30 +365,30 @@ pod 'ProtocolBuffers'
 
 <!--pod 'GTM/AliSecXCryptoGTMDefines.h'-->
 
-###HTML解析库Gumbo
+### HTML解析库Gumbo
 pod 'gumbo-parser'
 
-###opencore框架进行语音解码amr文件转化wav播放 - 简书
+### opencore框架进行语音解码amr文件转化wav播放 - 简书
 pod 'OpencoreAmr'
 
-###openssl是一个c语言函数库，
+### openssl是一个c语言函数库，
 pod 'OpenSSL'
 
-###LZ4最快压缩算法
+### LZ4最快压缩算法
 pod 'lz4'
 
 <!--pod 'Json11'-->
 
-###Lua 是一个小巧的脚本语言
+### Lua 是一个小巧的脚本语言
 pod 'lua'
 
-###FFmpeg及视频格式转码
+### FFmpeg及视频格式转码
 pod 'FFmpeg'
 
-###分享协议
+### 分享协议
 pod 'OpenShare'
 
-###分享UI
+### 分享UI
 pod 'IFMShare'
 
 ## Facebook长链接 SRWebSocket
@@ -403,3 +403,6 @@ CocoaLumberjack
 
 ## pod 'PromisesObjC'
 pod 'PromisesObjC'
+
+## 移动端网络调试工具
+pod 'Bagel', '~>  1.3.2'

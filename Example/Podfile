@@ -62,7 +62,7 @@ target 'AXiOSKit_Example' do
   pod 'RMQClient'
   pod 'MQTTClient'
   pod 'MQTTClient/Websocket'
-  
+  pod 'Bagel', '~>  1.3.2'
   target 'AXiOSKit_Tests' do
     inherit! :search_paths
     
