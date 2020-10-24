@@ -104,6 +104,8 @@
 		21898E9F2541AD6900876524 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21898E9D2541AD6900876524 /* MainInterface.storyboard */; };
 		21898EA32541AD6900876524 /* AXShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21898E982541AD6900876524 /* AXShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		21898F322541B11D00876524 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898F312541B11D00876524 /* Application.m */; };
+		218A1E4525440A0A00E43F16 /* App.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 218A1E4425440A0A00E43F16 /* App.pdf */; };
+		218A1E4B25440BC200E43F16 /* _28ShareFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1E4A25440BC200E43F16 /* _28ShareFileViewController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -308,6 +310,10 @@
 		21898FF82541B48000876524 /* pod_use.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = pod_use.md; sourceTree = "<group>"; };
 		21898FF92541B48000876524 /* 面试.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "面试.md"; sourceTree = "<group>"; };
 		21898FFA2541B48000876524 /* 命令行.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "命令行.md"; sourceTree = "<group>"; };
+		218A1E4425440A0A00E43F16 /* App.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = App.pdf; sourceTree = "<group>"; };
+		218A1E4925440BC200E43F16 /* _28ShareFileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _28ShareFileViewController.h; sourceTree = "<group>"; };
+		218A1E4A25440BC200E43F16 /* _28ShareFileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _28ShareFileViewController.m; sourceTree = "<group>"; };
+		218A1E502544102800E43F16 /* share2.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = share2.xlsx; sourceTree = "<group>"; };
 		2E8212D320B7D6003E79BB8A /* Pods-AXiOSKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		38516BC93098DB0B54BCAE78 /* Pods-AXiOSKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3F85C681A5FA543AF8599754 /* Pods-AXiOSKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -425,6 +431,8 @@
 				213BCB38254003D900C89B72 /* _26RMQClientViewController.xib */,
 				213BCB67254003D900C89B72 /* _27MQTTClientViewController.h */,
 				213BCB3B254003D900C89B72 /* _27MQTTClientViewController.m */,
+				218A1E4925440BC200E43F16 /* _28ShareFileViewController.h */,
+				218A1E4A25440BC200E43F16 /* _28ShareFileViewController.m */,
 				213BCB41254003D900C89B72 /* AANavigationController.h */,
 				213BCB63254003D900C89B72 /* AANavigationController.m */,
 				213BCB56254003D900C89B72 /* AAViewController.h */,
@@ -690,6 +698,8 @@
 		218990312542630D00876524 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				218A1E502544102800E43F16 /* share2.xlsx */,
+				218A1E4425440A0A00E43F16 /* App.pdf */,
 				213BCB90254003D900C89B72 /* PointViewController.plist */,
 				213BCBD8254003DA00C89B72 /* PointViewController2.plist */,
 				213BCB96254003DA00C89B72 /* 123.jpg */,
@@ -748,7 +758,6 @@
 			isa = PBXGroup;
 			children = (
 				213BCB36254003D900C89B72 /* Class */,
-				213BCB2D254003D900C89B72 /* en.lproj */,
 				213BCB87254003D900C89B72 /* fishhook-master */,
 				213BCB97254003DA00C89B72 /* Module */,
 				218990312542630D00876524 /* Resource */,
@@ -761,6 +770,7 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				213BCB2D254003D900C89B72 /* en.lproj */,
 				213BCBE6254003DB00C89B72 /* AppDelegate.h */,
 				213BCBE7254003DB00C89B72 /* AppDelegate.m */,
 				21898F302541B11D00876524 /* Application.h */,
@@ -952,6 +962,7 @@
 				213BCC12254003DB00C89B72 /* WCDBViewController.xib in Resources */,
 				213BCC07254003DB00C89B72 /* _09AFNViewController.xib in Resources */,
 				213BCBF6254003DB00C89B72 /* mqtt.plist in Resources */,
+				218A1E4525440A0A00E43F16 /* App.pdf in Resources */,
 				213BCC22254003DB00C89B72 /* CONTRIBUTING.md in Resources */,
 				213BCC3E254003DB00C89B72 /* PointViewController2.plist in Resources */,
 				213BCC45254003DB00C89B72 /* webp.bundle in Resources */,
@@ -1179,6 +1190,7 @@
 				213BCC2A254003DB00C89B72 /* TestObj.m in Sources */,
 				213BCBFA254003DB00C89B72 /* _25LayoutViewController.m in Sources */,
 				213BCBF7254003DB00C89B72 /* _21KVOViewController.m in Sources */,
+				218A1E4B25440BC200E43F16 /* _28ShareFileViewController.m in Sources */,
 				213BCC06254003DB00C89B72 /* _18MGSwipeTableVC.m in Sources */,
 				213BCC2E254003DB00C89B72 /* ChatViewController.m in Sources */,
 				213BCC33254003DB00C89B72 /* UIControl+load.m in Sources */,

@@ -40,8 +40,9 @@
 #import "_25LayoutViewController.h"
 #import "_26RMQClientViewController.h"
 #import "_27MQTTClientViewController.h"
+#import "_28ShareFileViewController.h"
 #import <AXiOSKit/AXSystemAuthorizerManager.h>
-
+#import <AXiOSKit/AXPresentGesturesBack.h>
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -391,55 +392,6 @@ void mySLog(NSString *format, ...) {
                     [self.navigationController pushViewController:vc animated:YES];
                 },
             },
-            
-            @{
-                @"index": @16,
-                @"title": @"系统分享",
-                @"action": ^{
-                    MyActivity *item1 = [[MyActivity alloc] init];
-                    CopyActivity *item2 = [[CopyActivity alloc] init];
-                    
-                    // 1、设置分享的内容，并将内容添加到数组中
-                    NSArray *activityItemsArray = @[@"A"];
-                    NSArray *activityArray = @[item1, item2];
-                    
-                    // 2、初始化控制器，添加分享内容至控制器
-                    UIActivityViewController *activityVC =
-                    [[UIActivityViewController alloc]
-                     initWithActivityItems:activityItemsArray
-                     applicationActivities:activityArray];
-                    if (@available(iOS 13.0, *)) {
-                        activityVC.modalInPresentation = YES;
-                    } else {
-                        // Fallback on earlier versions
-                    }
-                    
-                    // ios8.0 之后用此方法回调
-                    UIActivityViewControllerCompletionWithItemsHandler itemsBlock =
-                    ^(UIActivityType __nullable activityType, BOOL completed,
-                      NSArray *__nullable returnedItems,
-                      NSError *__nullable activityError) {
-                        NSLog(@"activityType == %@", activityType);
-                        if (completed == YES) {
-                            NSLog(@"completed");
-                        } else {
-                            NSLog(@"cancel");
-                        }
-                    };
-                    activityVC.completionWithItemsHandler = itemsBlock;
-                    
-                    //不出现在活动项目
-                    activityVC.excludedActivityTypes = @[
-                        UIActivityTypePrint, UIActivityTypeCopyToPasteboard,
-                        UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
-                        @"com.ax.kit"
-                    ];
-                    
-                    // 4、调用控制器
-                    [self presentViewController:activityVC animated:YES completion:nil];
-                },
-            },
-            
             @{
                 @"index": @16,
                 @"title": @"KeyChain",
@@ -488,30 +440,6 @@ void mySLog(NSString *format, ...) {
                     [self.navigationController pushViewController:vc animated:YES];
                 },
             },
-//            @{
-//                @"index": @20,
-//                @"title": @"打开相册",
-//                @"action": ^{
-//                    
-//                    [self ax_showCameraWithEditing:NO block:^(UIImage *originalImage, UIImage *editedImage) {
-//                        
-//                    }];
-//                    
-//                    //                    // 以下 API 仅为 iOS14 only
-//                    //                          PHPickerConfiguration *configuration = [[PHPickerConfiguration alloc] init];
-//                    //                          configuration.filter = [PHPickerFilter videosFilter]; // 可配置查询用户相册中文件的类型，支持三种
-//                    //                        configuration.selectionLimit = 0; // 默认为1，为0时表示可多选。
-//                    //
-//                    //                          PHPickerViewController *picker = [[PHPickerViewController alloc] initWithConfiguration:configuration];
-//                    //                          picker.delegate = self;
-//                    //                          // picker vc，在选完图片后需要在回调中手动 dismiss
-//                    //                        [self presentViewController:picker animated:YES completion:^{
-//                    //
-//                    //                          }];
-//                    
-//                    
-//                },
-//            },
             
             @{
                 @"index": @20,
@@ -592,13 +520,32 @@ void mySLog(NSString *format, ...) {
                 @"index": @28,
                 @"title": @"权限",
                 @"action": ^{
+                    _28ShareFileViewController *vc = [[_28ShareFileViewController alloc] init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                },
+            },
+            @{
+                @"index": @28,
+                @"title": @"权限",
+                @"action": ^{
                    self.authorizerManager =  [AXSystemAuthorizerManager requestAuthorizedWithType:AXSystemAuthorizerTypeLocation completion:^(AXSystemAuthorizerStatus status) {
                        NSLog(@"status == %ld",(long)status);
                     }];
                 },
             },
             
-            
+            @{
+                @"index": @29,
+                @"title": @"仿微信小程序右滑关闭",
+                @"action": ^{
+                  
+                    UIViewController *vc = [UIViewController ax_init];
+                    vc.view.backgroundColor = UIColor.orangeColor;
+                    [AXPresentGesturesBack injectDismissTransitionForViewController:vc];
+                    [self ax_showVC:vc];
+                    
+                },
+            },
 
         ];
     }

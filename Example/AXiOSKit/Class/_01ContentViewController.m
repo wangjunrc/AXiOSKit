@@ -20,6 +20,7 @@
 
 #import <ReactiveObjC/ReactiveObjC.h>
 
+
 @interface _01ContentViewController ()<UITextViewDelegate>
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
 
@@ -30,6 +31,7 @@
 @property(nonatomic, strong) AXLocationManager *locationManager;
 
 @property(nonatomic, assign) NSInteger age;
+
 @end
 
 @implementation _01ContentViewController
@@ -37,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    NSLog(@"axing123");
+    
 // self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
 //
 //        [self _WiFi];
@@ -48,9 +50,19 @@
    
     
 //    [self _loginTest];
-    [self _kvoInt];
+//    [self _kvoInt];
+//    [self _bubbleImage];
 }
 
+-(void)_bubbleImage {
+//leftCapWidth: 左边不拉伸的像素
+//topCapHeight:上边不拉伸的像素
+    UIImage *image = [UIImage imageNamed:@"chat_bubble"];
+    UIImageView * imgView = [[UIImageView alloc] initWithImage:[image stretchableImageWithLeftCapWidth:30 topCapHeight:30]];
+    
+    imgView.frame = CGRectMake(50, 100, 100, 50);
+    [self.view addSubview:imgView];
+}
 -(void)_kvoInt{
     
     __weak typeof(self) weakSelf = self;
