@@ -94,6 +94,8 @@
 	<string>使用相机1</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>小星星使用面容</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>本地网络</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>使用定位</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

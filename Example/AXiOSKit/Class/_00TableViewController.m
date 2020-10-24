@@ -43,6 +43,7 @@
 #import "_28ShareFileViewController.h"
 #import <AXiOSKit/AXSystemAuthorizerManager.h>
 #import <AXiOSKit/AXPresentGesturesBack.h>
+#import <mach/mach.h>
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -75,26 +76,45 @@ typedef void (^CollectionBlock)(void);
 //    [self viewDidLoad];
 //}
 
+
+- (int64_t)memoryUsage {
+    int64_t memoryUsageInByte = 0;
+    task_vm_info_data_t vmInfo;
+    mach_msg_type_number_t count = TASK_VM_INFO_COUNT;
+    kern_return_t kernelReturn = task_info(mach_task_self(), TASK_VM_INFO, (task_info_t) &vmInfo, &count);
+    if(kernelReturn == KERN_SUCCESS) {
+        memoryUsageInByte = (int64_t) vmInfo.phys_footprint;
+        NSLog(@"Memory in use (in bytes): %lld", memoryUsageInByte);
+    } else {
+        NSLog(@"Error with task_info(): %s", mach_error_string(kernelReturn));
+    }
+    return memoryUsageInByte;
+}
+- (int64_t)memoryUsage2 {
+    int64_t memoryUsageInByte = 0;
+    struct task_basic_info taskBasicInfo;
+    mach_msg_type_number_t size = sizeof(taskBasicInfo);
+    kern_return_t kernelReturn = task_info(mach_task_self(), TASK_BASIC_INFO, (task_info_t) &taskBasicInfo, &size);
+    
+    if(kernelReturn == KERN_SUCCESS) {
+        memoryUsageInByte = (int64_t) taskBasicInfo.resident_size;
+        NSLog(@"Memory in use (in bytes): %lld", memoryUsageInByte);
+    } else {
+        NSLog(@"Error with task_info(): %s", mach_error_string(kernelReturn));
+    }
+    
+    return memoryUsageInByte;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"主题";
     [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
+  
     
+    NSLog(@"height3 == %lf M",[self memoryUsage]/1000.0/1000.0);
     
-    if (@available(iOS 13.0, *))    {
-        CGRect keyWindow = [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame;
-        
-        NSLog(@"height1 == %lf",keyWindow.size.height);
-        
-    } else {
-        NSString *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-        
-        NSLog(@"height2 == %@",statusBar);
-    }
-    
-    NSLog(@"height3 == %lf",UIApplication.sharedApplication.statusBarFrame.size.height);
-    
-    
+    NSLog(@"height3 == %lf M",[self memoryUsage2]/1000./1000.);
     //    self.tableView.editing = YES;
     
     //    __weak typeof(self) weakSelf = self;

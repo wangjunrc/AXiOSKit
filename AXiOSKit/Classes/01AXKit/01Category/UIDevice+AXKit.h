@@ -90,4 +90,9 @@ typedef NS_ENUM(NSInteger, AXDeviceSize) {
  * 手机型号
  */
 + (NSString *)ax_devicePlatForm;
+
+/// APP 占用内存
++(int64_t)memoryUsage;
+
+
 @end
