@@ -262,11 +262,23 @@ void mySLog(NSString *format, ...) {
                         @"1":@"A",
                         @"1":@"AA",
                         @"2":@"B",
+                        @"3":@"C",
                     };
-                    [dict enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
-                        NSLog(@"key:%@->value%@",key,value);
-                    }];
+//                    [dict enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
+//                        NSLog(@"key:%@->value%@",key,value);
+//                    }];
                     
+                    [dict.rac_sequence.signal subscribeNext:^(id x) {
+                        
+                        RACTupleUnpack(NSString *key,NSString*value) = x;
+                           NSLog(@"key=%@ value=%@",key,value);
+                    }];
+                    [dict.rac_keySequence.signal subscribeNext:^(id x) {
+                        NSLog(@"x2 = %@",x);
+                    }];
+                    [dict.rac_valueSequence.signal subscribeNext:^(id x) {
+                        NSLog(@"x3 = %@",x);
+                    }];
                     
                 },
             },
