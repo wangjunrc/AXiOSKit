@@ -48,7 +48,7 @@
             CopyActivity *item2 = [[CopyActivity alloc] init];
             
 //            NSString *url = [[NSBundle mainBundle] pathForResource:@"App" ofType:@"pdf"];
-            NSString *url = [[NSBundle mainBundle] pathForResource:@"share2.xlsx" ofType:nil];
+            NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/share2.xlsx" ofType:nil];
             if (!url) {
                 [self ax_showAlertByTitle:@"URL不存在"];
                 return;;
@@ -110,7 +110,8 @@
         __weak typeof(self) weakSelf = self;
         [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
             __strong typeof(weakSelf) self = weakSelf;
-            NSString *url = [[NSBundle mainBundle] pathForResource:@"App" ofType:@"pdf"];
+//            NSString *url = [[NSBundle mainBundle] pathForResource:@"App" ofType:@"pdf"];
+            NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/share2.xlsx" ofType:nil];
             self.documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:url]];
             [self.documentController presentOptionsMenuFromRect:self.view.bounds inView:self.view animated:YES];
         }];
@@ -118,7 +119,7 @@
     }
     {
         UIButton *btn1 = [[UIButton alloc]init];
-        [btn1 setTitle:@"UIDocumentInteractionController" forState:UIControlStateNormal];
+        [btn1 setTitle:@"UIDocumentInteractionController 预览" forState:UIControlStateNormal];
         btn1.backgroundColor = UIColor.orangeColor;
         [self.view addSubview:btn1];
         [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -129,7 +130,7 @@
         [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
             __strong typeof(weakSelf) self = weakSelf;
 //            NSString *url = [[NSBundle mainBundle] pathForResource:@"App" ofType:@"pdf"];
-            NSString *url = [[NSBundle mainBundle] pathForResource:@"share2.xlsx" ofType:nil];
+            NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/share2.xlsx" ofType:nil];
             if (!url) {
                 [self ax_showAlertByTitle:@"URL不存在"];
             }else{
@@ -193,5 +194,9 @@
     
     return self;
     
+}
+
+- (CGRect)documentInteractionControllerRectForPreview:(UIDocumentInteractionController *)controller{
+    return self.view.bounds;
 }
 @end
