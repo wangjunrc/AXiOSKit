@@ -1765,6 +1765,13 @@ NSLog(@"insex = 完成");
 
 ```
 /// forin 删除会越界
+/// 迭代器 删除不会越界
+[tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    if ([obj isEqualToString:@"B"]) {
+        [tempArray removeObject:obj];
+    }
+}];
+
 /// 删除不会越界
 for (int i = 0; i < array.count; i++) {
     NSString *str  = array[i];

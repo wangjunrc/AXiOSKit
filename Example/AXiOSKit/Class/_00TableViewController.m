@@ -246,13 +246,27 @@ void mySLog(NSString *format, ...) {
 
 
                     NSMutableArray *tempArray = [NSMutableArray arrayWithArray:@[@"A",@"B",@"C"]];
-                    for (NSString *number in tempArray.reverseObjectEnumerator) {
-                        if ([number isEqualToString:@"B"]) {
-                            [tempArray removeObject:number];
+//                    for (NSString *number in tempArray.reverseObjectEnumerator) {
+//                        if ([number isEqualToString:@"B"]) {
+//                            [tempArray removeObject:number];
+//                        }
+//                    }
+//                    NSLog(@"tempArray = %@",tempArray);
+                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        if ([obj isEqualToString:@"B"]) {
+                            [tempArray removeObject:obj];
                         }
-                    }
+                    }];
                     NSLog(@"tempArray = %@",tempArray);
-
+                    NSDictionary *dict = @{
+                        @"1":@"A",
+                        @"1":@"AA",
+                        @"2":@"B",
+                    };
+                    [dict enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
+                        NSLog(@"key:%@->value%@",key,value);
+                    }];
+                    
                     
                 },
             },
