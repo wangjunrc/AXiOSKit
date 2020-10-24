@@ -204,4 +204,9 @@
    return  [[UIBarButtonItem alloc]initWithCustomView:btn];
 }
 
++ (instancetype )ax_itemByButton:(UIButton *)btn {
+   return  [[UIBarButtonItem alloc]initWithCustomView:btn];
+}
+
+
 @end

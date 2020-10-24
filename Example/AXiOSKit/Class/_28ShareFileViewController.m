@@ -9,6 +9,8 @@
 #import "_28ShareFileViewController.h"
 #import "MyActivity.h"
 #import "CopyActivity.h"
+#import "_28LocalSocketClientViewController.h"
+#import "_28LocalSocketServiceViewController.h"
 
 @interface _28ShareFileViewController ()<UIDocumentInteractionControllerDelegate>
 
@@ -141,6 +143,48 @@
         }];
         topView = btn1;
     }
+    
+    {
+        ///一个App在本地的端口进行TCP的bind和listen，
+        ///另外一个App在本地同一个端口进行connect，这样就建立了一个正常的TCP连接
+        UIButton *btn1 = [[UIButton alloc]init];
+        [btn1 setTitle:@"local socket-服务端" forState:UIControlStateNormal];
+        btn1.backgroundColor = UIColor.orangeColor;
+        [self.view addSubview:btn1];
+        [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(30);
+            make.top.equalTo(topView.mas_bottom).mas_equalTo(30);
+        }];
+        __weak typeof(self) weakSelf = self;
+        [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
+            __strong typeof(weakSelf) self = weakSelf;
+            _28LocalSocketServiceViewController *vc = [_28LocalSocketServiceViewController ax_init];
+            [self ax_pushVC:vc];
+            
+        }];
+        topView = btn1;
+    }
+    {
+        ///一个App在本地的端口进行TCP的bind和listen，
+        ///另外一个App在本地同一个端口进行connect，这样就建立了一个正常的TCP连接
+        UIButton *btn1 = [[UIButton alloc]init];
+        [btn1 setTitle:@"local socket-客户端" forState:UIControlStateNormal];
+        btn1.backgroundColor = UIColor.orangeColor;
+        [self.view addSubview:btn1];
+        [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(30);
+            make.top.equalTo(topView.mas_bottom).mas_equalTo(30);
+        }];
+        __weak typeof(self) weakSelf = self;
+        [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
+            __strong typeof(weakSelf) self = weakSelf;
+            _28LocalSocketClientViewController *vc = [_28LocalSocketClientViewController ax_init];
+            [self ax_pushVC:vc];
+            
+        }];
+        topView = btn1;
+    }
+    
 }
 
 #pragma mark - UIDocumentInteractionControllerDelegate

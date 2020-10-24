@@ -106,6 +106,9 @@
 		21898F322541B11D00876524 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898F312541B11D00876524 /* Application.m */; };
 		218A1E4525440A0A00E43F16 /* App.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 218A1E4425440A0A00E43F16 /* App.pdf */; };
 		218A1E4B25440BC200E43F16 /* _28ShareFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1E4A25440BC200E43F16 /* _28ShareFileViewController.m */; };
+		218A1E9025441BBE00E43F16 /* _28LocalSocketServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1E8E25441BBD00E43F16 /* _28LocalSocketServiceViewController.m */; };
+		218A1E9125441BBE00E43F16 /* _28LocalSocketServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218A1E8F25441BBD00E43F16 /* _28LocalSocketServiceViewController.xib */; };
+		218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1E9625441C6600E43F16 /* _28LocalSocketClientViewController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -314,6 +317,11 @@
 		218A1E4925440BC200E43F16 /* _28ShareFileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _28ShareFileViewController.h; sourceTree = "<group>"; };
 		218A1E4A25440BC200E43F16 /* _28ShareFileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _28ShareFileViewController.m; sourceTree = "<group>"; };
 		218A1E502544102800E43F16 /* share2.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = share2.xlsx; sourceTree = "<group>"; };
+		218A1E8D25441BBD00E43F16 /* _28LocalSocketServiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _28LocalSocketServiceViewController.h; sourceTree = "<group>"; };
+		218A1E8E25441BBD00E43F16 /* _28LocalSocketServiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _28LocalSocketServiceViewController.m; sourceTree = "<group>"; };
+		218A1E8F25441BBD00E43F16 /* _28LocalSocketServiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _28LocalSocketServiceViewController.xib; sourceTree = "<group>"; };
+		218A1E9525441C6600E43F16 /* _28LocalSocketClientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _28LocalSocketClientViewController.h; sourceTree = "<group>"; };
+		218A1E9625441C6600E43F16 /* _28LocalSocketClientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _28LocalSocketClientViewController.m; sourceTree = "<group>"; };
 		2E8212D320B7D6003E79BB8A /* Pods-AXiOSKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		38516BC93098DB0B54BCAE78 /* Pods-AXiOSKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3F85C681A5FA543AF8599754 /* Pods-AXiOSKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -433,6 +441,11 @@
 				213BCB3B254003D900C89B72 /* _27MQTTClientViewController.m */,
 				218A1E4925440BC200E43F16 /* _28ShareFileViewController.h */,
 				218A1E4A25440BC200E43F16 /* _28ShareFileViewController.m */,
+				218A1E8D25441BBD00E43F16 /* _28LocalSocketServiceViewController.h */,
+				218A1E8E25441BBD00E43F16 /* _28LocalSocketServiceViewController.m */,
+				218A1E8F25441BBD00E43F16 /* _28LocalSocketServiceViewController.xib */,
+				218A1E9525441C6600E43F16 /* _28LocalSocketClientViewController.h */,
+				218A1E9625441C6600E43F16 /* _28LocalSocketClientViewController.m */,
 				213BCB41254003D900C89B72 /* AANavigationController.h */,
 				213BCB63254003D900C89B72 /* AANavigationController.m */,
 				213BCB56254003D900C89B72 /* AAViewController.h */,
@@ -968,6 +981,7 @@
 				213BCC45254003DB00C89B72 /* webp.bundle in Resources */,
 				213BCC28254003DB00C89B72 /* 123.jpg in Resources */,
 				213BCC13254003DB00C89B72 /* RunLoopViewController.xib in Resources */,
+				218A1E9125441BBE00E43F16 /* _28LocalSocketServiceViewController.xib in Resources */,
 				213BCC05254003DB00C89B72 /* _14TFViewController.xib in Resources */,
 				213BCC23254003DB00C89B72 /* fishhook.podspec in Resources */,
 				213BCC21254003DB00C89B72 /* README.md in Resources */,
@@ -1173,6 +1187,7 @@
 				213BCC30254003DB00C89B72 /* ChatTextMessageModel.m in Sources */,
 				213BCBFD254003DB00C89B72 /* _20iOS14ViewController.m in Sources */,
 				213BCC49254003DB00C89B72 /* UIViewController+Present.m in Sources */,
+				218A1E9025441BBE00E43F16 /* _28LocalSocketServiceViewController.m in Sources */,
 				213BCC1A254003DB00C89B72 /* AFNViewController.m in Sources */,
 				213BCBF9254003DB00C89B72 /* AFHTTPSessionManager+PutFile.m in Sources */,
 				213BCC1D254003DB00C89B72 /* _01ViewController.m in Sources */,
@@ -1200,6 +1215,7 @@
 				213BCC02254003DB00C89B72 /* MyActivity.m in Sources */,
 				213BCC01254003DB00C89B72 /* _00TableViewCell.m in Sources */,
 				213BCC3D254003DB00C89B72 /* RouterManager.m in Sources */,
+				218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */,
 				213BCBEA254003DB00C89B72 /* MakeKeyAndVisible.m in Sources */,
 				213BCC29254003DB00C89B72 /* AXWebSocketEngine.m in Sources */,
 				213BCC0E254003DB00C89B72 /* VideoViewController.m in Sources */,

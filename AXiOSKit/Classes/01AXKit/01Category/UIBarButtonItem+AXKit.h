@@ -82,4 +82,6 @@
  */
 + (instancetype )ax_itemByButton:(UIButton *)btn target:(id)target action:(SEL)action;
 
++ (instancetype )ax_itemByButton:(UIButton *)btn;
+
 @end
