@@ -207,7 +207,55 @@ void mySLog(NSString *format, ...) {
 - (NSArray *)dataArray {
     if (!_dataArray) {
         _dataArray = @[
-            
+            @{
+                @"index": @0,
+                @"title": @"单元测试",
+                @"action": ^{
+//                    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+//                    dispatch_apply(10, queue, ^(size_t insex) {
+//                        NSLog(@"insex = %zu",insex);
+//                    });
+//                    NSLog(@"insex = 完成");
+                    
+                    NSMutableArray *array = [NSMutableArray arrayWithObjects:@"2",@"3",@"4",@"4", nil];
+
+//                    for (NSString *str in array) {
+//                        if ([str isEqualToString:@"4"]) {
+//                            [array removeObject:str];
+//                        }
+//                    }
+                    
+                    for (int i = 0; i < array.count; i++) {
+                        NSString *str  = array[i];
+                        if ([str isEqualToString:@"4"]) {
+                            [array removeObject:str];
+                        }
+                    }
+                    
+                  
+//                    NSEnumerator *enumerator = [array reverseObjectEnumerator];
+//                    NSLog(@"enumerator = %@",enumerator);
+//                    for (NSString *str in array.reverseObjectEnumerator) {
+//                       if ([str isEqualToString:@"4"]) {
+//                           [array removeObject:str];
+//                       }
+//                    }
+////
+////
+//                    NSLog(@"array = %@",array);
+
+
+                    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:@[@"A",@"B",@"C"]];
+                    for (NSString *number in tempArray.reverseObjectEnumerator) {
+                        if ([number isEqualToString:@"B"]) {
+                            [tempArray removeObject:number];
+                        }
+                    }
+                    NSLog(@"tempArray = %@",tempArray);
+
+                    
+                },
+            },
             @{
                 @"index": @1,
                 @"title": @"暗黑主题-ViewController",
@@ -234,29 +282,29 @@ void mySLog(NSString *format, ...) {
                 },
             },
             
-//            @{
-//                @"index": @3,
-//                @"title": @"隐藏导航栏",
-//                @"action": ^{
-//                    _01ViewController *vc = [[_01ViewController alloc] init];
-//                    [self.navigationController pushViewController:vc animated:YES];
-//                    vc.ax_shouldNavigationBarHidden = YES;
-//                },
-//            },
+            //            @{
+            //                @"index": @3,
+            //                @"title": @"隐藏导航栏",
+            //                @"action": ^{
+            //                    _01ViewController *vc = [[_01ViewController alloc] init];
+            //                    [self.navigationController pushViewController:vc animated:YES];
+            //                    vc.ax_shouldNavigationBarHidden = YES;
+            //                },
+            //            },
             @{
                 @"index": @3,
                 @"title": @"UIAlertController",
                 @"action": ^{
                     [self ax_showAlertByTitle:@"A" message:@"B" confirm:^{
-
-                                        } cancel:^{
-
-                                        }];
+                        
+                    } cancel:^{
+                        
+                    }];
                     
-//                    UIAlertController *al = [[UIAlertController alloc]init];
-//                    al.title = @"A";
-//                    al.message = @"B";
-//                    [self ax_showVC:al];
+                    //                    UIAlertController *al = [[UIAlertController alloc]init];
+                    //                    al.title = @"A";
+                    //                    al.message = @"B";
+                    //                    [self ax_showVC:al];
                 },
             },
             
@@ -518,7 +566,7 @@ void mySLog(NSString *format, ...) {
             },
             @{
                 @"index": @28,
-                @"title": @"权限",
+                @"title": @"权分享文件",
                 @"action": ^{
                     _28ShareFileViewController *vc = [[_28ShareFileViewController alloc] init];
                     [self.navigationController pushViewController:vc animated:YES];
@@ -528,8 +576,8 @@ void mySLog(NSString *format, ...) {
                 @"index": @28,
                 @"title": @"权限",
                 @"action": ^{
-                   self.authorizerManager =  [AXSystemAuthorizerManager requestAuthorizedWithType:AXSystemAuthorizerTypeLocation completion:^(AXSystemAuthorizerStatus status) {
-                       NSLog(@"status == %ld",(long)status);
+                    self.authorizerManager =  [AXSystemAuthorizerManager requestAuthorizedWithType:AXSystemAuthorizerTypeLocation completion:^(AXSystemAuthorizerStatus status) {
+                        NSLog(@"status == %ld",(long)status);
                     }];
                 },
             },
@@ -538,7 +586,7 @@ void mySLog(NSString *format, ...) {
                 @"index": @29,
                 @"title": @"仿微信小程序右滑关闭",
                 @"action": ^{
-                  
+                    
                     UIViewController *vc = [UIViewController ax_init];
                     vc.view.backgroundColor = UIColor.orangeColor;
                     [AXPresentGesturesBack injectDismissTransitionForViewController:vc];
@@ -546,7 +594,7 @@ void mySLog(NSString *format, ...) {
                     
                 },
             },
-
+            
         ];
     }
     return _dataArray;

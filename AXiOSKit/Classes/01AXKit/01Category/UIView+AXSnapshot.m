@@ -57,7 +57,7 @@
 #pragma mark - UIView
 
 - (void)snapshotForUIView:(UIView *)aView{
-    
+    [self snapshotViewAfterScreenUpdates:YES];
     UIGraphicsBeginImageContextWithOptions(aView.bounds.size, YES, UIScreen.mainScreen.scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
     [aView.layer renderInContext:context];

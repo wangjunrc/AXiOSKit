@@ -1749,3 +1749,36 @@ for (NSTextCheckingResult *match in matchArray) {
     }
 }
 ```
+
+### 同步遍历
+
+```
+/// GCD dispatch_apply函数是一个同步调用，
+/// block任务执行n次后才返回。该函数比较适合处理耗时较长、迭代次数较多的情况。
+
+dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+dispatch_apply(10, queue, ^(size_t insex) {
+    NSLog(@"insex = %zu",insex);
+});
+NSLog(@"insex = 完成");
+```
+
+```
+/// forin 删除会越界
+/// 删除不会越界
+for (int i = 0; i < array.count; i++) {
+    NSString *str  = array[i];
+    if ([str isEqualToString:@"4"]) {
+        [array removeObject:str];
+    }
+}
+
+///逆序一下 删除不会越界
+NSMutableArray *tempArray = [NSMutableArray arrayWithArray:@[@"A",@"B",@"C"]];
+for (NSString *number in tempArray.reverseObjectEnumerator) {
+    if ([number isEqualToString:@"B"]) {
+        [tempArray removeObject:number];
+    }
+}
+NSLog(@"tempArray = %@",tempArray);
+```

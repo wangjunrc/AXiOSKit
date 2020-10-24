@@ -10,6 +10,9 @@
 
 @interface UIView (AXSnapshot)
 
+/// 截屏 返回image
+/// UIView *view = [self.view snapshotViewAfterScreenUpdates:YES]; 返回 view
+
 - (void)ax_snapshot:(void(^)(UIImage *image))block;
 
 @end
