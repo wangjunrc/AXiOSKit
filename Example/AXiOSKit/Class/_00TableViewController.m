@@ -541,7 +541,7 @@ void mySLog(NSString *format, ...) {
             },
             @{
                 @"index": @23,
-                @"title": @"约束全屏",
+                @"title": @"约束全屏-prefersStatusBarHidden,setNavigationBarHidden",
                 @"action": ^{
                     _23FullViewController *vc = [[_23FullViewController alloc] init];
                     [self.navigationController pushViewController:vc animated:YES];

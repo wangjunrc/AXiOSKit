@@ -20,19 +20,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"ax_safe_area_insets = %@   %lf",NSStringFromUIEdgeInsets(ax_safe_area_insets()),UIApplication.sharedApplication.statusBarFrame.size.height);
-    
+    self.ax_shouldNavigationBarHidden = YES;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [super viewWillDisappear:animated];
+//
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
+//}
 -(BOOL)prefersStatusBarHidden{
     return YES;
 }
