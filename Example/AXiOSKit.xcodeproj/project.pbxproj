@@ -110,6 +110,10 @@
 		218A1E9125441BBE00E43F16 /* _28LocalSocketServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218A1E8F25441BBD00E43F16 /* _28LocalSocketServiceViewController.xib */; };
 		218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1E9625441C6600E43F16 /* _28LocalSocketClientViewController.m */; };
 		218A1EC8254438C900E43F16 /* office.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 218A1EC7254438C900E43F16 /* office.bundle */; };
+		218A1EEF25469BBC00E43F16 /* WCDBErrorService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EEE25469BBC00E43F16 /* WCDBErrorService.mm */; };
+		218A1EF525469BF900E43F16 /* NSObject+performSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EF425469BF900E43F16 /* NSObject+performSelector.m */; };
+		218A1EFB25469D8000E43F16 /* SOAComponentAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* SOAComponentAppDelegate.m */; };
+		218A1F0125469DBD00E43F16 /* VoiceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1F0025469DBD00E43F16 /* VoiceService.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -324,6 +328,14 @@
 		218A1E9525441C6600E43F16 /* _28LocalSocketClientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _28LocalSocketClientViewController.h; sourceTree = "<group>"; };
 		218A1E9625441C6600E43F16 /* _28LocalSocketClientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _28LocalSocketClientViewController.m; sourceTree = "<group>"; };
 		218A1EC7254438C900E43F16 /* office.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = office.bundle; sourceTree = "<group>"; };
+		218A1EED25469BBC00E43F16 /* WCDBErrorService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCDBErrorService.h; sourceTree = "<group>"; };
+		218A1EEE25469BBC00E43F16 /* WCDBErrorService.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDBErrorService.mm; sourceTree = "<group>"; };
+		218A1EF325469BF900E43F16 /* NSObject+performSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+performSelector.h"; sourceTree = "<group>"; };
+		218A1EF425469BF900E43F16 /* NSObject+performSelector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+performSelector.m"; sourceTree = "<group>"; };
+		218A1EF925469D8000E43F16 /* SOAComponentAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOAComponentAppDelegate.h; sourceTree = "<group>"; };
+		218A1EFA25469D8000E43F16 /* SOAComponentAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOAComponentAppDelegate.m; sourceTree = "<group>"; };
+		218A1EFF25469DBD00E43F16 /* VoiceService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceService.h; sourceTree = "<group>"; };
+		218A1F0025469DBD00E43F16 /* VoiceService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceService.m; sourceTree = "<group>"; };
 		2E8212D320B7D6003E79BB8A /* Pods-AXiOSKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		38516BC93098DB0B54BCAE78 /* Pods-AXiOSKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3F85C681A5FA543AF8599754 /* Pods-AXiOSKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -789,6 +801,14 @@
 				213BCB2D254003D900C89B72 /* en.lproj */,
 				213BCBE6254003DB00C89B72 /* AppDelegate.h */,
 				213BCBE7254003DB00C89B72 /* AppDelegate.m */,
+				218A1EED25469BBC00E43F16 /* WCDBErrorService.h */,
+				218A1EEE25469BBC00E43F16 /* WCDBErrorService.mm */,
+				218A1EFF25469DBD00E43F16 /* VoiceService.h */,
+				218A1F0025469DBD00E43F16 /* VoiceService.m */,
+				218A1EF325469BF900E43F16 /* NSObject+performSelector.h */,
+				218A1EF425469BF900E43F16 /* NSObject+performSelector.m */,
+				218A1EF925469D8000E43F16 /* SOAComponentAppDelegate.h */,
+				218A1EFA25469D8000E43F16 /* SOAComponentAppDelegate.m */,
 				21898F302541B11D00876524 /* Application.h */,
 				21898F312541B11D00876524 /* Application.m */,
 				213BCBDA254003DA00C89B72 /* Assets.xcassets */,
@@ -1220,6 +1240,8 @@
 				213BCC01254003DB00C89B72 /* _00TableViewCell.m in Sources */,
 				213BCC3D254003DB00C89B72 /* RouterManager.m in Sources */,
 				218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */,
+				218A1EEF25469BBC00E43F16 /* WCDBErrorService.mm in Sources */,
+				218A1EF525469BF900E43F16 /* NSObject+performSelector.m in Sources */,
 				213BCBEA254003DB00C89B72 /* MakeKeyAndVisible.m in Sources */,
 				213BCC29254003DB00C89B72 /* AXWebSocketEngine.m in Sources */,
 				213BCC0E254003DB00C89B72 /* VideoViewController.m in Sources */,
@@ -1227,10 +1249,12 @@
 				213BCC20254003DB00C89B72 /* fishhook.c in Sources */,
 				213BCC2B254003DB00C89B72 /* NSObject+SelectorDefender.m in Sources */,
 				213BCC03254003DB00C89B72 /* AView.m in Sources */,
+				218A1F0125469DBD00E43F16 /* VoiceService.m in Sources */,
 				213BCBEC254003DB00C89B72 /* SceneDelegate.m in Sources */,
 				213BCC19254003DB00C89B72 /* _13WebpViewController.m in Sources */,
 				213BCC09254003DB00C89B72 /* RunLoopViewController.m in Sources */,
 				213BCC10254003DB00C89B72 /* _16KeyChainViewController.m in Sources */,
+				218A1EFB25469D8000E43F16 /* SOAComponentAppDelegate.m in Sources */,
 				213BCBFC254003DB00C89B72 /* WCDBViewController.m in Sources */,
 				213BCC1B254003DB00C89B72 /* _17OtherShareViewController.m in Sources */,
 				213BCC11254003DB00C89B72 /* _01ContentViewController.m in Sources */,

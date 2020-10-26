@@ -13,24 +13,25 @@
 /**
  * insert
  */
-- (BOOL)insertWithModel:( id )model;
-
+- (BOOL)insertWithModel:(id)model;
 
 /**
  * delet
  */
-- (BOOL)deletWithModel:( id )model;
+- (BOOL)deletWithModel:(id)model;
 - (BOOL)deletAllData;
 
 /**
  * update
  */
-- (BOOL)updateWithModel:( id )model;
+- (BOOL)updateWithModel:(id)model;
 
 /**
  * 插入或者更新,内部判断
  */
-- (BOOL)insertOrUpdateWithModel:( id )model;
+- (BOOL)insertOrUpdateWithModel:(id)model;
+/// 事物插入
+-(BOOL)insertTransaction:(NSArray<id>*)array;
 
 /**
  * select
@@ -38,6 +39,7 @@
 - (NSArray *)getAll;
 - (NSArray *)getAllByOrder;
 
-- (id )getOneById:(NSInteger )Id;
+- (id)getOneById:(NSInteger)Id;
+
 
 @end

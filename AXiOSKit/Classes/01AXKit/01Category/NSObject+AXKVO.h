@@ -68,6 +68,11 @@ NS_ASSUME_NONNULL_BEGIN
                            userInfo:(nullable NSDictionary *)userInfo;
 
 
+/// 请求转发 多个参数
+/// @param selector 方法名
+/// @param objects 数组,主要不要传nil
+-(id)ax_performSelector:(SEL)selector withObjects:(NSArray *)objects;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -71,10 +71,35 @@ axShared_M(Dao);
 }
 
 - (AXUserInfo *)getOneById:(NSInteger )Id {
-    return [self.table getObjectsWhere:AXUserInfo.userId == Id].firstObject;;
+    return   [self.table getObjectsWhere:AXUserInfo.userId == Id limit:1].firstObject;
+//    return [self.table getObjectsWhere:AXUserInfo.userId == Id].firstObject;;
+}
+
+/// 查询指定字段
+- (AXUserInfo *)getOneOnResultsById:(NSInteger )Id {
+    
+    return [self.table getAllObjectsOnResults:{AXUserInfo.userId,AXUserInfo.name}].firstObject;
 }
 
 
+-(BOOL)insertTransaction:(NSArray<AXUserInfo *>*)array {
+    
+    WCTTransaction *transaction = [self.dataBase getTransaction];
+    BOOL result = [transaction begin];
+    [array enumerateObjectsUsingBlock:^(AXUserInfo * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [transaction insertObject:obj into:DBTableName];
+    }];
+    result = [transaction commit];
+    if (!result) {
+        [transaction rollback];
+        NSLog(@"transaction error = %@", [transaction error]);
+    }
+    return result;
+}
+
+
+
+#pragma mark - get
 - (WCTDatabase *)dataBase{
     if (!_dataBase) {
       NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES ).firstObject;

@@ -1789,3 +1789,18 @@ for (NSString *number in tempArray.reverseObjectEnumerator) {
 }
 NSLog(@"tempArray = %@",tempArray);
 ```
+### 写入文件
+```
+//获取document路径
+NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+NSString *documentDirectory = [paths objectAtIndex:0];
+
+//文件名及其路径
+NSString *fileName = @"test.txt";
+NSString *filePath = [documentDirectory stringByAppendingPathComponent:fileName];
+
+//建立一个char数组，并归档写入到沙盒中
+char *a = "hello, world";
+NSData *data = [NSData dataWithBytes:a length:12];
+[data writeToFile:filePath atomically:YES];
+```

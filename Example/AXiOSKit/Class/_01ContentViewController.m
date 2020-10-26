@@ -19,7 +19,7 @@
 #import  <SystemConfiguration/CaptiveNetwork.h>
 
 #import <ReactiveObjC/ReactiveObjC.h>
-
+#import "NSObject+performSelector.h"
 
 @interface _01ContentViewController ()<UITextViewDelegate>
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
@@ -52,6 +52,35 @@
 //    [self _loginTest];
 //    [self _kvoInt];
 //    [self _bubbleImage];
+    [self _per];
+}
+
+-(void)_per{
+    
+ 
+    UIButton *btn1 = [[UIButton alloc]init];
+    [btn1 setTitle:@"kvoInt" forState:UIControlStateNormal];
+    btn1.backgroundColor = UIColor.orangeColor;
+    [self.view addSubview:btn1];
+    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.mas_equalTo(30);
+        
+    }];
+    
+    [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
+        
+//        [self performSelector:@selector(test:age:age2:) withObjects:@[@"JIM",@"20"]];
+        [self performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[@"JIM",@"20"]];
+        
+    }];
+}
+- (BOOL)application:(NSString *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    NSLog(@"name %@ %@",application,launchOptions);
+    
+    return NO;
+}
+-(void)test:(NSString *)name age:(NSString *)age age2:(NSString *)age2{
+    NSLog(@"name %@ %@",name,age);
 }
 
 -(void)_bubbleImage {

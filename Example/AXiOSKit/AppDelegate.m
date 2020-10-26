@@ -12,14 +12,50 @@
 #import <UserNotifications/UserNotifications.h>
 #define WXAppId            @"wxb1fbfdf9fe32026b"    //App ID
 #import <Bagel/Bagel.h>
-
+#import "SOAComponentAppDelegate.h"
+#import "NSObject+performSelector.h"
+#import "WCDBErrorService.h"
 @interface AppDelegate ()<WXApiDelegate,UNUserNotificationCenterDelegate>
 
 @end
 
 
 @implementation AppDelegate
+
+-(void)thirdSDKLifecycleManager:(NSString *)selectorStr withParameters:(NSArray *)params{
+    SEL selector = NSSelectorFromString(selectorStr);
+    NSObject <UIApplicationDelegate> *service;
+    for(service in [[SOAComponentAppDelegate instance] services]){
+        if ([service respondsToSelector:selector]){
+              //注意这里的performSelector这个是要自己写分类的（系统不带这个功能的）
+            [service performSelector:selector withObjects:params];
+
+        }
+    }
+}
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    [self thirdSDKLifecycleManager:@"application:didFinishLaunchingWithOptions:" withParameters:@[application,@{}]];
+    
+//        if ([service respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]){
+//              //注意这里的performSelector这个是要自己写分类的（系统不带这个功能的）
+//            [service performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[application,@"123"]];
+//
+//        }
+
+    
+    
+    
+//    id<UIApplicationDelegate> service;
+//        for(service in [[SOAComponentAppDelegate instance] services]){
+//            if ([service respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]){
+//                [service application:application didFinishLaunchingWithOptions:launchOptions];
+//            }
+//        }
+    
     
 //    BagelConfiguration  *bagelConfig = [[BagelConfiguration alloc]init];
 //
@@ -92,18 +128,7 @@
     //        NSLog(@"自检函数 = %@, %u, %@, %@", @(step), result.success, result.errorInfo, result.suggestion);
     //    }];
     
-    //获取document路径
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentDirectory = [paths objectAtIndex:0];
-    
-    //文件名及其路径
-    NSString *fileName = @"test.txt";
-    NSString *filePath = [documentDirectory stringByAppendingPathComponent:fileName];
-    
-    //建立一个char数组，并归档写入到沙盒中
-    char *a = "hello, world";
-    NSData *data = [NSData dataWithBytes:a length:12];
-    [data writeToFile:filePath atomically:YES];
+
     
     [WXApi registerApp:WXAppId];
     
@@ -120,6 +145,9 @@
 //    } else {
 //        // Fallback on earlier versions
 //    }
+    
+    
+    
     return YES;
 }
 
