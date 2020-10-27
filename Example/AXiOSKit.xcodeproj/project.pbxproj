@@ -72,7 +72,6 @@
 		213BCC23254003DB00C89B72 /* fishhook.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB8E254003D900C89B72 /* fishhook.podspec */; };
 		213BCC24254003DB00C89B72 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB8F254003D900C89B72 /* instruction.jpg */; };
 		213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB90254003D900C89B72 /* PointViewController.plist */; };
-		213BCC26254003DB00C89B72 /* AxGenerator.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB91254003D900C89B72 /* AxGenerator.xcconfig */; };
 		213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB93254003D900C89B72 /* LaunchScreen.storyboard */; };
 		213BCC28254003DB00C89B72 /* 123.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB96254003DA00C89B72 /* 123.jpg */; };
 		213BCC29254003DB00C89B72 /* AXWebSocketEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB9A254003DA00C89B72 /* AXWebSocketEngine.m */; };
@@ -93,11 +92,9 @@
 		213BCC3E254003DB00C89B72 /* PointViewController2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBD8254003DA00C89B72 /* PointViewController2.plist */; };
 		213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDA254003DA00C89B72 /* Assets.xcassets */; };
 		213BCC40254003DB00C89B72 /* g3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDB254003DA00C89B72 /* g3@2x.png */; };
-		213BCC41254003DB00C89B72 /* AxDebug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDC254003DA00C89B72 /* AxDebug.xcconfig */; };
 		213BCC43254003DB00C89B72 /* 1234.webp in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDE254003DA00C89B72 /* 1234.webp */; };
 		213BCC45254003DB00C89B72 /* webp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE1254003DA00C89B72 /* webp.bundle */; };
 		213BCC46254003DB00C89B72 /* H5.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE2254003DA00C89B72 /* H5.bundle */; };
-		213BCC47254003DB00C89B72 /* AxRelease.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE3254003DA00C89B72 /* AxRelease.xcconfig */; };
 		213BCC48254003DB00C89B72 /* test_webp.webp in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE4254003DA00C89B72 /* test_webp.webp */; };
 		213BCC49254003DB00C89B72 /* UIViewController+Present.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBE5254003DB00C89B72 /* UIViewController+Present.m */; };
 		213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBE7254003DB00C89B72 /* AppDelegate.m */; };
@@ -933,7 +930,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AX;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = axinger;
 				TargetAttributes = {
 					21898E972541AD6900876524 = {
@@ -994,7 +991,6 @@
 				213BCC40254003DB00C89B72 /* g3@2x.png in Resources */,
 				213BCBFF254003DB00C89B72 /* _23FullViewController.xib in Resources */,
 				213BCC16254003DB00C89B72 /* AAViewController.xib in Resources */,
-				213BCC41254003DB00C89B72 /* AxDebug.xcconfig in Resources */,
 				213BCC12254003DB00C89B72 /* WCDBViewController.xib in Resources */,
 				213BCC07254003DB00C89B72 /* _09AFNViewController.xib in Resources */,
 				213BCBF6254003DB00C89B72 /* mqtt.plist in Resources */,
@@ -1009,7 +1005,6 @@
 				213BCC05254003DB00C89B72 /* _14TFViewController.xib in Resources */,
 				213BCC23254003DB00C89B72 /* fishhook.podspec in Resources */,
 				213BCC21254003DB00C89B72 /* README.md in Resources */,
-				213BCC47254003DB00C89B72 /* AxRelease.xcconfig in Resources */,
 				213BCBF5254003DB00C89B72 /* AFNViewController.xib in Resources */,
 				213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */,
 				213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */,
@@ -1017,7 +1012,6 @@
 				213BCC08254003DB00C89B72 /* _24NoteViewController.xib in Resources */,
 				213BCC0F254003DB00C89B72 /* _00TableViewCell.xib in Resources */,
 				213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */,
-				213BCC26254003DB00C89B72 /* AxGenerator.xcconfig in Resources */,
 				213BCC46254003DB00C89B72 /* H5.bundle in Resources */,
 				213BCC1F254003DB00C89B72 /* LICENSE in Resources */,
 				213BCC43254003DB00C89B72 /* 1234.webp in Resources */,
@@ -1355,14 +1349,16 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = AXShare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 2.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo.AXShare;
@@ -1395,14 +1391,16 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = AXShare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 2.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo.AXShare;
@@ -1416,23 +1414,38 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1456,22 +1469,37 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
