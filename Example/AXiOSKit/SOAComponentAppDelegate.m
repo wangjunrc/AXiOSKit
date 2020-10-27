@@ -7,21 +7,18 @@
 //
 
 #import "SOAComponentAppDelegate.h"
-#import "WCDBErrorService.h"
-#import "VoiceService.h"
+#import "AppDelegateWCDB.h"
+#import "AppDelegateWX.h"
+#import "AppDelegateAppearance.h"
 @implementation SOAComponentAppDelegate
-
-{
-    NSMutableSet * allServices;
-}
-
 
 #pragma mark - 服务静态注册
 
 //根据项目要求 添加相应的服务。现在只添加JPush
 - (void)registeServices{
-    [self registeService:[[WCDBErrorService alloc] init]];
-    [self registeService:[[VoiceService alloc] init]];
+    [self registeService:[AppDelegateWCDB.alloc init]];
+    [self registeService:[AppDelegateWX.alloc init]];
+    [self registeService:[AppDelegateAppearance.alloc init]];
 }
 
 #pragma mark - 获取SOAComponent 单实例
@@ -30,24 +27,32 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[SOAComponentAppDelegate alloc] init];
+        [instance registeServices];
     });
     return instance;
 }
 
 #pragma mark - 获取全部服务
-- (NSMutableSet *) services{
-    if (!allServices) {
-        allServices = [[NSMutableSet alloc] init];
-        [self registeServices];
+//- (NSMutableSet *) services{
+//
+//
+//    if (!_services) {
+//        _services = [[NSMutableSet alloc] init];
+//        [self registeServices];
+//    }
+//    return _services;
+//}
+- (NSMutableSet *)services {
+    if (!_services) {
+        _services = [NSMutableSet.alloc init];
     }
-    return allServices;
+    return _services;
 }
-
 
 #pragma mark - 服务动态注册
 - (void)registeService:(id)service{
 //    if (![allServices containsObject:service]) {
-        [allServices addObject:service];
+        [self.services addObject:service];
 //    }
 }
 

@@ -28,9 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    if (@available(iOS 13.0, *)) {
-        self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor darkStyle:UIColor.systemBackgroundColor];
-    }
+    self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
     //    AXLoger(@"模式>> %ld",self.overrideUserInterfaceStyle);
     if (@available(iOS 13.0, *)) {
         AXLoger(@"模式>> %ld", ax_keyWindow().overrideUserInterfaceStyle);

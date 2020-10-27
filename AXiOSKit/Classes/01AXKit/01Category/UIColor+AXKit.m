@@ -162,4 +162,21 @@
       }
 }
 
++(UIColor *)ax_colorWithNormalStyle:(UIColor *)normalColor {
+    
+    if (@available(iOS 13.0, *)) {
+        
+       return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+              if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                  return UIColor.systemBackgroundColor;
+              }else {
+                  return normalColor;
+              }
+          }];
+        
+      } else {
+          return normalColor;
+      }
+}
+
 @end

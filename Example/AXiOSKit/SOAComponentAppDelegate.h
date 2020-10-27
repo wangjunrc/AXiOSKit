@@ -11,8 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SOAComponentAppDelegate : NSObject
+
 + (instancetype)instance;
-- (NSMutableArray *)services;
+
+
+@property(nonatomic, strong) NSMutableSet *services;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

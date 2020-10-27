@@ -90,7 +90,7 @@
                 <key>Type</key>
                 <string>PSToggleSwitchSpecifier</string>
                 <key>Title</key>
-                <string>是否成年</string>
+                <string>是否</string>
                 <key>Key</key>
                 <string>maritalStatus</string>
             </dict>

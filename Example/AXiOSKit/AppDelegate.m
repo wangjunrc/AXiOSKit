@@ -8,158 +8,107 @@
 
 #import "AppDelegate.h"
 #import "MakeKeyAndVisible.h"
-#import <WechatOpenSDK/WXApi.h>
+
 #import <UserNotifications/UserNotifications.h>
-#define WXAppId            @"wxb1fbfdf9fe32026b"    //App ID
+
 #import <Bagel/Bagel.h>
 #import "SOAComponentAppDelegate.h"
 #import "NSObject+performSelector.h"
-#import "WCDBErrorService.h"
-@interface AppDelegate ()<WXApiDelegate,UNUserNotificationCenterDelegate>
+#import "AppDelegateWCDB.h"
+#import <LLDebugTool/LLDebug.h>
+
+@interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
 
 
 @implementation AppDelegate
 
--(void)thirdSDKLifecycleManager:(NSString *)selectorStr withParameters:(NSArray *)params{
-    SEL selector = NSSelectorFromString(selectorStr);
+-(void)thirdSDKLifecycleManager:(SEL )selector withParameters:(NSArray *)params{
+    
+    //    SEL selector = NSSelectorFromString(selectorStr);
     NSObject <UIApplicationDelegate> *service;
     for(service in [[SOAComponentAppDelegate instance] services]){
         if ([service respondsToSelector:selector]){
-              //注意这里的performSelector这个是要自己写分类的（系统不带这个功能的）
+            //注意这里的performSelector这个是要自己写分类的（系统不带这个功能的）
             [service performSelector:selector withObjects:params];
-
+            
         }
     }
 }
 
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    [self thirdSDKLifecycleManager:@"application:didFinishLaunchingWithOptions:" withParameters:@[application,@{}]];
     
-//        if ([service respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]){
-//              //注意这里的performSelector这个是要自己写分类的（系统不带这个功能的）
-//            [service performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[application,@"123"]];
-//
-//        }
-
+    [self thirdSDKLifecycleManager:@selector(application:didFinishLaunchingWithOptions:) withParameters:@[application,@{}]];
     
     
-    
-//    id<UIApplicationDelegate> service;
-//        for(service in [[SOAComponentAppDelegate instance] services]){
-//            if ([service respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]){
-//                [service application:application didFinishLaunchingWithOptions:launchOptions];
-//            }
-//        }
-    
-    
-//    BagelConfiguration  *bagelConfig = [[BagelConfiguration alloc]init];
-//
-//    bagelConfig.project.projectName = @"Custom Project Name";
-//    bagelConfig.device.deviceName = @"Custom Device Name";
-//    bagelConfig.device.deviceDescription = @"Custom Device Description";
-//    
-//    
-//    [Bagel start:bagelConfig];
-    //    [UISearchBar.appearance setBarTintColor:UIColor.redColor];
-    [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[UISearchBar.class]]
-     setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}
-     forState:UIControlStateNormal];
-    
-    // 修改message字体及颜色
-//    NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:message];
-//    [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor colorWithHexString:@"#E02020"] range:NSMakeRange(0, messageStr.length)];
-//    [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, messageStr.length)];
-//    [alertController setValue:messageStr forKey:@"attributedMessage"];
-    
-    /// 按钮颜色
-//    [UIView appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class]].tintColor = UIColor.redColor;
-    
-    
-//    [UIView appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class]].tintColor = UIColor.redColor;
-//    [UILabel appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class,UIAlertView.class]].textColor = UIColor.redColor;
-//    
-//    //实现模糊效果
-//       UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-//       //毛玻璃视图
-//       UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];;
-//      
-//    
-////    @property (nonatomic, copy, nullable) UIVisualEffect *effect;
-////    [UIVisualEffectView appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class]].effect = effectView;
-//    [UILabel appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class]].textColor = UIColor.orangeColor;
-//    [UILabel appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class]].tintColor = UIColor.greenColor;
-//    
-//    NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:@"AA"];
-//    [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor orangeColor] range:NSMakeRange(0, messageStr.length)];
-//    [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, messageStr.length)];
-////    [alertController setValue:messageStr forKey:@"attributedMessage"];
-//    
-//    [UILabel appearanceWhenContainedInInstancesOfClasses:@[UIAlertController.class]].backgroundColor =UIColor.orangeColor;
-   
-    
-    
-    //    [UIBarButtonItem.appearance setTintColor:UIColor.redColor];;
-    //    [UIButton.appearance setTitleColor:UIColor.blueColor forState:UIControlStateNormal];
-    //    [UIButton.appearance setBackgroundColor:UIColor.grayColor];
-    
-    
-    
-    //    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[UINavigationController class]]] setBackgroundColor:[UIColor clearColor]];
-    
-    //    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[UIViewController class]]] setBackgroundColor:[UIColor grayColor]];
-    //    //输出微信的log信息
-    //    [WXApi startLogByLevel:WXLogLevelDetail logBlock:^(NSString * _Nonnull log) {
-    //        NSLog(@"输出微信 %@", log);
-    //    }];
+    // Start working with config.
+    //    [[LLDebugTool sharedTool] startWorkingWithConfigBlock:^(LLConfig * _Nonnull config) {
     //
-    //    if([WXApi registerApp:WXAppId universalLink:@"https://wwwtest.asiacoat.com/"]){
-    //        NSLog(@"初始化成功");
-    //    }
+    //        //####################### Color Style #######################//
+    //        // Uncomment one of the following lines to change the color configuration.
+    //        // config.colorStyle = LLConfigColorStyleSystem;
+    //        // [config configBackgroundColor:[UIColor orangeColor] primaryColor:[UIColor whiteColor] statusBarStyle:UIStatusBarStyleDefault];
     //
+    //        //####################### User Identity #######################//
+    //        // Use this line to tag user. More config please see "LLConfig.h".
+    //        config.userIdentity = @"Miss L";
     //
+    //        //####################### Window Style #######################//
+    //        // Uncomment one of the following lines to change the window style.
+    //        // config.entryWindowStyle = LLConfigEntryWindowStyleTitle;
     //
-    //    //自检函数
-    //    [WXApi checkUniversalLinkReady:^(WXULCheckStep step, WXCheckULStepResult* result) {
-    //        NSLog(@"自检函数 = %@, %u, %@, %@", @(step), result.success, result.errorInfo, result.suggestion);
+    //        //####################### Html #######################//
+    ////        config.defaultHtmlUrl = @"https://github.com/HDB-Li/LLDebugTool";
+    //
+    //        //####################### Location #######################//
+    //        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,YES) firstObject];
+    //        [config addMockRouteDirectory:documentsPath];
     //    }];
     
-
+    //        if ([service respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]){
+    //              //注意这里的performSelector这个是要自己写分类的（系统不带这个功能的）
+    //            [service performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[application,@"123"]];
+    //
+    //        }
     
-    [WXApi registerApp:WXAppId];
+    
+    
+    
+    //    id<UIApplicationDelegate> service;
+    //        for(service in [[SOAComponentAppDelegate instance] services]){
+    //            if ([service respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]){
+    //                [service application:application didFinishLaunchingWithOptions:launchOptions];
+    //            }
+    //        }
+    
+    
+    //    BagelConfiguration  *bagelConfig = [[BagelConfiguration alloc]init];
+    //
+    //    bagelConfig.project.projectName = @"Custom Project Name";
+    //    bagelConfig.device.deviceName = @"Custom Device Name";
+    //    bagelConfig.device.deviceDescription = @"Custom Device Description";
+    //
+    //
+    //    [Bagel start:bagelConfig];
+    //
     
     
     //    if (@available(iOS 13, *)) {
     //    } else {
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];
     [self.window makeKeyAndVisible];
     //    }
-    [self adapterIOS11];
-//    if (@available(iOS 10.0, *)) {
-//        [self _note];
-//    } else {
-//        // Fallback on earlier versions
-//    }
     
-    
+    //    if (@available(iOS 10.0, *)) {
+    //        [self _note];
+    //    } else {
+    //        // Fallback on earlier versions
+    //    }
     
     return YES;
-}
-
-- (void)adapterIOS11{
-    // 适配iOS11以上UITableview 、UICollectionView、UIScrollview 列表/页面偏移
-    if (@available(iOS 11.0, *)){
-        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
-        
-        [[UITableView appearance] setEstimatedRowHeight:0];
-        [[UITableView appearance] setEstimatedSectionFooterHeight:0];
-        [[UITableView appearance] setEstimatedSectionHeaderHeight:0];
-    }
 }
 
 -(void)_note __IOS_AVAILABLE(10.0) {
@@ -203,7 +152,8 @@
 #pragma mark - 第三方分享、登录回调
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     
-    return [WXApi handleOpenURL:url delegate:self];
+    [self thirdSDKLifecycleManager:@selector(application:openURL:options:) withParameters:@[application,url?url:@"",options?options:@""]];
+    return YES;
 }
 
 #pragma mark Universal Link
@@ -213,29 +163,6 @@
 //}
 
 //注意：微信和QQ回调方法用的是同一个，这里注意判断resp类型来区别分享来源
-- (void)onResp:(id)resp{
-    
-    if([resp isKindOfClass:[SendMessageToWXResp class]]){//微信回调
-        
-        SendMessageToWXResp *response = (SendMessageToWXResp *)resp;
-        
-        if(response.errCode == WXSuccess){
-            //目前分享回调只会走成功
-            NSLog(@"分享完成");
-        }
-    }else if([resp isKindOfClass:[SendAuthResp class]]){//判断是否为授权登录类
-        
-        SendAuthResp *req = (SendAuthResp *)resp;
-        if([req.state isEqualToString:@"wx_oauth_authorization_state"]){//微信授权成功
-            NSLog(@"微信登录完成，code：%@", req.code);//获取到第一步code
-        }
-    }
-    //    else if ([resp isKindOfClass:[WXLaunchMiniProgramResp class]]){
-    //
-    //        WXLaunchMiniProgramResp *req = (WXLaunchMiniProgramResp *)resp;
-    //        NSLog(@"%@", req.extMsg);// 对应JsApi navigateBackApplication中的extraData字段数据
-    //    }
-}
 
 #pragma mark - <UNUserNotificationCenterDelegate>
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler  API_AVAILABLE(ios(10.0)){

@@ -9,7 +9,7 @@
 #if __has_include("FMDB.h")
 
 #import <Foundation/Foundation.h>
-#import "FMDB.h"
+#import <FMDB/FMDB.h>
 
 @interface DataBase : NSObject
 

@@ -49,4 +49,6 @@
 
 +(UIColor *)ax_colorWithNormalStyle:(UIColor *)normalColor darkStyle:(UIColor *)darkColor;
 
++(UIColor *)ax_colorWithNormalStyle:(UIColor *)normalColor;
+
 @end

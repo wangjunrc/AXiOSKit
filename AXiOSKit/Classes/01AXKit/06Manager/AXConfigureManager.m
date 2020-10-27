@@ -55,6 +55,10 @@ axSharedInstance_M;
 +(void)registerCatch {
     
     NSSetUncaughtExceptionHandler(&ax_HandleExceptionr);
+    
+    signal(SIGHUP, ax_SignalHandler);
+    signal(SIGINT, ax_SignalHandler);
+    signal(SIGQUIT, ax_SignalHandler);
     signal(SIGABRT, ax_SignalHandler);
     signal(SIGILL, ax_SignalHandler);
     signal(SIGSEGV, ax_SignalHandler);
@@ -70,6 +74,15 @@ static void ax_HandleExceptionr(NSException*exception) {
     NSLog(@"\n\n⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️  xcode运行崩溃  ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️\n");
     NSLog(@"exception = %@\n exception.name = %@ \n exception.callStackSymbols = %@", exception,exception.name, exception.callStackSymbols);
     NSLog(@"\n\n⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️  xcode运行崩溃  ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️\n");
+    
+    //下面这两句，让APP不至于闪退，但也会卡主，可以考虑弹出个alert什么的
+    [[NSRunLoop currentRunLoop] run];
+    [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSRunLoopCommonModes];
+    //    if ([[exception name] isEqual:@"UncaughtExceptionHandlerSignalExceptionName"]) {
+    //        kill(getpid(), [[[exception userInfo] objectForKey:@"UncaughtExceptionHandlerSignalKey"] intValue]);
+    //    } else {
+    //        [exception raise];
+    //    }
 }
 
 volatile int32_t UncaughtExceptionCount = 0;
@@ -78,7 +91,7 @@ const NSInteger UncaughtExceptionHandlerSkipAddressCount = 4;
 const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
 
 void ax_SignalHandler(int signal) {
-   
+    
     int32_t exceptionCount = OSAtomicIncrement32(&UncaughtExceptionCount);
     if (exceptionCount > UncaughtExceptionMaximum) {
         return;
@@ -97,12 +110,13 @@ void ax_SignalHandler(int signal) {
                                signal]
                               userInfo:userInfo];
     
-//    NSString *callStack = @"";
+    //    NSString *callStack = @"";
     
     NSMutableDictionary *exceptionInfo = [NSMutableDictionary dictionary];
     [exceptionInfo setValue:exception forKey:@"exception"];
     
-    
+    [[NSRunLoop currentRunLoop] run];
+    [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSRunLoopCommonModes];
 }
 
 +(void)userNotificationCenterConfigure{

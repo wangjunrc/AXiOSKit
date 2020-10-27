@@ -38,7 +38,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.whiteColor;
+    self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
     
 // self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
 //
@@ -52,14 +52,16 @@
 //    [self _loginTest];
 //    [self _kvoInt];
 //    [self _bubbleImage];
-    [self _per];
+//    [self _per];
+    [self _setAlternateIconName];
+   
 }
 
 -(void)_per{
     
  
     UIButton *btn1 = [[UIButton alloc]init];
-    [btn1 setTitle:@"kvoInt" forState:UIControlStateNormal];
+    [btn1 setTitle:@"奔溃拦截" forState:UIControlStateNormal];
     btn1.backgroundColor = UIColor.orangeColor;
     [self.view addSubview:btn1];
     [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,14 +72,17 @@
     [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
         
 //        [self performSelector:@selector(test:age:age2:) withObjects:@[@"JIM",@"20"]];
-        [self performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[@"JIM",@"20"]];
+//        id obj =[self performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[@"JIM",@"20"]];
+//        NSLog(@"obj = %@",obj);
+        NSMutableArray *array = [NSMutableArray array];
+        [array addObject:nil];
         
     }];
 }
-- (BOOL)application:(NSString *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+- (NSString *)application:(NSString *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     NSLog(@"name %@ %@",application,launchOptions);
     
-    return NO;
+    return @"aaa";
 }
 -(void)test:(NSString *)name age:(NSString *)age age2:(NSString *)age2{
     NSLog(@"name %@ %@",name,age);
@@ -167,10 +172,10 @@
     }];
     
     [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
+        [self ax_showAlertByTitle:@""];
         
-        
-//        [self setIconname:nil];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.baidu.com/"]];
+//        [self setIconname:@"g2"];
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.baidu.com/"]];
         
     }];
 }
