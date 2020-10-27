@@ -39,8 +39,6 @@
 				<array>
 					<string>g3</string>
 				</array>
-				<key>UIPrerenderedIcon</key>
-				<false/>
 			</dict>
 		</dict>
 		<key>CFBundlePrimaryIcon</key>

@@ -38,8 +38,9 @@
 }
 
 - (BOOL)openURL:(NSURL *)url{
-//    NSLog(@"url ==== %@",url);
+   
     if ([url.absoluteString isEqualToString:@"https://www.baidu.com/"]) {
+        NSLog(@"不能打开url ==== %@",url);
         return NO;
     }
     return [super openURL:url];
