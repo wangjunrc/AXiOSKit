@@ -29,12 +29,12 @@
 /**
  * 获得home后部分的路径,
  */
-@property (nonatomic, copy, readonly, class) NSString *ax_getDidHomePath;
+@property (nonatomic, copy, readonly) NSString *ax_getDidHomePath;
 
 /**
  * 拼接home路径,得到全路径
  */
-@property (nonatomic, copy, readonly, class) NSString *ax_addHomePath;
+@property (nonatomic, copy, readonly) NSString *ax_addHomePath;
 
 /**
  * 文字:计算单行文字size(系统重名)
