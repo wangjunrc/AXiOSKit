@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegateAppearance.h"
+#import <AXiOSKit/NSString+AXKit.h>
 
 @implementation AppDelegateAppearance
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
@@ -61,7 +62,11 @@
     //    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[UINavigationController class]]] setBackgroundColor:[UIColor clearColor]];
     
     //    [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[UIViewController class]]] setBackgroundColor:[UIColor grayColor]];
-    
+//    [ax_libraryPaths ]
+//    [NSString ]
+    /// 清除启动图缓存
+    NSString *path=[NSString.ax_libraryPaths stringByAppendingPathComponent:@"SplashBoard"];
+    [NSFileManager.defaultManager removeItemAtPath:path error:nil];
     return YES;
 }
 
