@@ -65,28 +65,25 @@
 /**
  * 项目工程版本号
  */
-
-+ (NSString *)ax_getAppVersion;
-
+@property (nonatomic, copy, readonly, class) NSString *ax_getAppVersion;
 /**
  * 获取应用程序名称
  */
-+ (NSString *)ax_getAppName;
-
+@property (nonatomic, copy, readonly, class) NSString *ax_getAppName;
 /**
  * 获取应用程序 编译版本
  */
-+ (NSString *)ax_getAppBulid;
+@property (nonatomic, copy, readonly, class) NSString *ax_getAppBulid;
 
 /**
  * 获取应用程序的 BundleID
  */
-+ (NSString *)ax_getAppBundleID;
+@property (nonatomic, copy, readonly, class) NSString *ax_getAppBundleID;
 
 /**
  * 获取应用程序的 infor 路径
  */
-+ (NSString *)ax_getAppInfoPlistPath;
+@property (nonatomic, copy, readonly, class) NSString *ax_getAppInfoPlistPath;
 
 /**
  * 获取应用程序的 URLSchemes URLName为手工填入的
@@ -96,12 +93,12 @@
 /**
  * 获取设备的ip地址
  */
-+ (NSString *)ax_getDeviceIP;
+@property (nonatomic, copy, readonly, class) NSString *ax_getDeviceIP;
 
 /**
  * 获取设备信息
  */
-+ (NSString *)ax_getDeviceInfo;
+@property (nonatomic, copy, readonly, class) NSString *ax_getDeviceInfo;
 
 /**
  * string 生成二维码
@@ -111,31 +108,31 @@
 /**
  * 拼接 tel://
  */
-- (NSString *)ax_byPhone;
+@property (nonatomic, copy, readonly) NSString *ax_byPhone;
 
 /**
  * 是否含有Emoji表情
  */
-- (BOOL)ax_isContainsEmoji;
+@property (nonatomic, assign, readonly) BOOL ax_isContainsEmoji;
 
 /**
  * 转换为UTF8,与UTF8String有区别
  */
-- (NSString *)ax_toUTF8;
+@property (nonatomic, copy, readonly) NSString *ax_toUTF8;
 
 /**
  url Encoding 编码集
 
  @return NSString
  */
-- (NSString *)ax_toEncoding;
+@property (nonatomic, copy, readonly) NSString *ax_toEncoding;
 
 /**
  Encoding 编码集 转  中文
 
  @return NSString
  */
-- (NSString *)ax_toUnEncoding;
+@property (nonatomic, copy, readonly) NSString *ax_toUnEncoding;
 
 /**
  * 获得文件内,指定文件,只有文件名
@@ -155,7 +152,7 @@
 /**
  * 显示万元单位
  */
-- (NSString *)ax_keepWanYuan;
+@property (nonatomic, copy, readonly) NSString *ax_keepWanYuan;
 
 /**
  * 显示万元单位 ,有前缀
@@ -181,7 +178,7 @@
 
  @return 号码
  */
-- (NSString *)ax_phoneNumSecret;
+@property (nonatomic, copy, readonly) NSString *ax_phoneNumSecret;
 
 /**
  * url 拼接,用别的办法,不然就出现 http:// 变成  http:/ 或者? 不识别
@@ -193,7 +190,7 @@
 
  @return 字符串
  */
-+ (NSString *)ax_uuid;
+@property (nonatomic, copy, readonly, class) NSString *ax_uuid;
 
 /**
  拼接成 tel:// 格式
@@ -208,7 +205,7 @@
 
  @return NSString
  */
-- (NSString *) ax_to2Decimal DEPRECATED_MSG_ATTRIBUTE("使用字典转模型,属性类型为float,可以避免此情况");
+@property (nonatomic, copy, readonly) NSString * ax_to2Decimal DEPRECATED_MSG_ATTRIBUTE("使用字典转模型,属性类型为float,可以避免此情况");
 
 /**
  count位小数
@@ -220,7 +217,7 @@
  2位小数
  @return NSString
  */
-- (NSString *)ax_to2Decimal2;
+@property (nonatomic, copy, readonly) NSString *ax_to2Decimal2;
 
 /**
  时间秒 转换 时分秒 字符串
@@ -235,21 +232,21 @@
 
  @return NSString
  */
-- (NSString *)ax_removeHeadFootWhitespace;
+@property (nonatomic, copy, readonly) NSString *ax_removeHeadFootWhitespace;
 
 /**
  去除首尾换行
 
  @return NSString
  */
-- (NSString *)ax_removeHeadFootNewline;
+@property (nonatomic, copy, readonly) NSString *ax_removeHeadFootNewline;
 
 /**
  去除首尾空格和换行
 
  @return NSString
  */
-- (NSString *)ax_removeHeadFootWhitespaceeAndNewline;
+@property (nonatomic, copy, readonly) NSString *ax_removeHeadFootWhitespaceeAndNewline;
 
 /**
  当前string 正则 inString 中的 需要的
