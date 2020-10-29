@@ -7,19 +7,17 @@
 //
 
 #import "_01ContentViewController.h"
-#import <Masonry/Masonry.h>
-#import <AXiOSKit/AXiOSKit.h>
-#import <AXiOSKit/AXLocationManager.h>
 
-#import <SDWebImage/UIImageView+WebCache.h>
-#import <AuthenticationServices/AuthenticationServices.h>
 #import <AXiOSKit/AXBiometryManager.h>
-#import <UserNotifications/UserNotifications.h>
+#import <AXiOSKit/AXLocationManager.h>
+#import <AXiOSKit/AXiOSKit.h>
+#import <AuthenticationServices/AuthenticationServices.h>
 #import <Canvas/Canvas.h>
-#import  <SystemConfiguration/CaptiveNetwork.h>
-
+#import <Masonry/Masonry.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-#import "NSObject+performSelector.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SystemConfiguration/CaptiveNetwork.h>
+#import <UserNotifications/UserNotifications.h>
 
 @interface _01ContentViewController ()<UITextViewDelegate>
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;

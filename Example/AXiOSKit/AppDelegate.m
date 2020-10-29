@@ -7,15 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "MakeKeyAndVisible.h"
-
-#import <UserNotifications/UserNotifications.h>
-
-#import <Bagel/Bagel.h>
-#import "SOAComponentAppDelegate.h"
-#import "NSObject+performSelector.h"
 #import "AppDelegateWCDB.h"
+#import "MakeKeyAndVisible.h"
+#import "SOAComponentAppDelegate.h"
+#import <Bagel/Bagel.h>
 #import <LLDebugTool/LLDebug.h>
+#import <UserNotifications/UserNotifications.h>
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -31,7 +28,7 @@
     for(service in [[SOAComponentAppDelegate instance] services]){
         if ([service respondsToSelector:selector]){
             //注意这里的performSelector这个是要自己写分类的（系统不带这个功能的）
-            [service performSelector:selector withObjects:params];
+            [service ax_performSelector:selector withObjects:params];
             
         }
     }
