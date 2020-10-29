@@ -14,7 +14,7 @@
 #import "_00TableViewCell.h"
 #import "_00TableViewController.h"
 #import "_01ContentViewController.h"
-#import "_01ViewController.h"
+#import "_01ThemeViewController.h"
 #import "_02ChatViewController.h"
 #import "_04RunLoopViewController.h"
 #import "_06WCDBViewController.h"
@@ -411,7 +411,7 @@ void mySLog(NSString *format, ...)
                     @"index": @1,
                     @"title": @"暗黑主题-ViewController",
                     @"action": ^{
-                        _01ViewController *vc = [[_01ViewController alloc] init];
+                        _01ThemeViewController *vc = [[_01ThemeViewController alloc] init];
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
@@ -429,7 +429,7 @@ void mySLog(NSString *format, ...)
                     @"index": @1,
                     @"title": @"隐藏导航栏",
                     @"action": ^{
-                        _01ViewController *vc = [[_01ViewController alloc]init];
+                        _01ThemeViewController *vc = [[_01ThemeViewController alloc]init];
                         [self.navigationController pushViewController:vc animated:YES];
                         vc.ax_shouldNavigationBarHidden = YES;
                     },
@@ -655,7 +655,7 @@ void mySLog(NSString *format, ...)
                     @"index": @29,
                     @"title": @"仿微信小程序右滑关闭",
                     @"action": ^{
-                        _01ViewController *vc = [_01ViewController ax_init];
+                        _01ThemeViewController *vc = [_01ThemeViewController ax_init];
                         vc.view.backgroundColor = UIColor.orangeColor;
                         [AXPresentGesturesBack injectDismissTransitionForViewController:vc];
                         [self ax_showVC:vc];

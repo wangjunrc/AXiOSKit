@@ -28,18 +28,18 @@
 	<dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
-			<key>g2</key>
+			<key>Alternate_AppIcon_2</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>g2</string>
+					<string>Alternate_AppIcon_2</string>
 				</array>
 			</dict>
-			<key>g3</key>
+			<key>Alternate_AppIcon_3</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>g3</string>
+					<string>Alternate_AppIcon_3</string>
 				</array>
 			</dict>
 		</dict>

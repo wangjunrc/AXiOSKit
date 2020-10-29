@@ -33,9 +33,13 @@
 @end
 
 @implementation _01ContentViewController
-
+- (void)injected {
+    NSLog(@"重启了 InjectionIII: %@", self);
+    [self viewDidLoad];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"02";
     self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
     
 // self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
@@ -51,7 +55,7 @@
 //    [self _kvoInt];
 //    [self _bubbleImage];
 //    [self _per];
-//    [self _setAlternateIconName];
+    [self _setAlternateIconName];
    
 }
 
@@ -162,17 +166,19 @@
 -(void)_setAlternateIconName{
     UIButton *btn1 = [[UIButton alloc]init];
     [btn1 setTitle:@"换icon" forState:UIControlStateNormal];
+    btn1.contentEdgeInsets = UIEdgeInsetsMake(10, 40, 10, 40);
     btn1.backgroundColor = UIColor.orangeColor;
     [self.view addSubview:btn1];
     [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(30);
-        
     }];
-    
+    __weak typeof(self) weakSelf = self;
     [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-        [self ax_showAlertByTitle:@""];
+        __strong typeof(weakSelf) self = weakSelf;
+//        [self ax_showAlertByTitle:@""];
         
-//        [self setIconname:@"g2"];
+        [self setIconname:@"Alternate_AppIcon_2"];
+//        [self setIconname:nil];
 //        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.baidu.com/"]];
         
     }];

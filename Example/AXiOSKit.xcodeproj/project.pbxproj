@@ -32,7 +32,7 @@
 		213BCBFD254003DB00C89B72 /* _20iOS14ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4C254003D900C89B72 /* _20iOS14ViewController.m */; };
 		213BCBFE254003DB00C89B72 /* _14TFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4E254003D900C89B72 /* _14TFViewController.m */; };
 		213BCBFF254003DB00C89B72 /* _23FullViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB4F254003D900C89B72 /* _23FullViewController.xib */; };
-		213BCC00254003DB00C89B72 /* _01ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB51254003D900C89B72 /* _01ViewController.xib */; };
+		213BCC00254003DB00C89B72 /* _01ThemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB51254003D900C89B72 /* _01ThemeViewController.xib */; };
 		213BCC01254003DB00C89B72 /* _00TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB52254003D900C89B72 /* _00TableViewCell.m */; };
 		213BCC02254003DB00C89B72 /* MyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB53254003D900C89B72 /* MyActivity.m */; };
 		213BCC03254003DB00C89B72 /* AView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB55254003D900C89B72 /* AView.m */; };
@@ -58,7 +58,7 @@
 		213BCC19254003DB00C89B72 /* _13WebpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB7B254003D900C89B72 /* _13WebpViewController.m */; };
 		213BCC1B254003DB00C89B72 /* _17OtherShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB80254003D900C89B72 /* _17OtherShareViewController.m */; };
 		213BCC1C254003DB00C89B72 /* _15UIMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB83254003D900C89B72 /* _15UIMenuController.m */; };
-		213BCC1D254003DB00C89B72 /* _01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB84254003D900C89B72 /* _01ViewController.m */; };
+		213BCC1D254003DB00C89B72 /* _01ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB84254003D900C89B72 /* _01ThemeViewController.m */; };
 		213BCC24254003DB00C89B72 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB8F254003D900C89B72 /* instruction.jpg */; };
 		213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB90254003D900C89B72 /* PointViewController.plist */; };
 		213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB93254003D900C89B72 /* LaunchScreen.storyboard */; };
@@ -97,6 +97,8 @@
 		218A1EC8254438C900E43F16 /* office.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 218A1EC7254438C900E43F16 /* office.bundle */; };
 		218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */; };
 		218A1EFB25469D8000E43F16 /* SOAComponentAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* SOAComponentAppDelegate.m */; };
+		21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */; };
+		21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -175,7 +177,7 @@
 		213BCB4D254003D900C89B72 /* _17OtherShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _17OtherShareViewController.h; sourceTree = "<group>"; };
 		213BCB4E254003D900C89B72 /* _14TFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _14TFViewController.m; sourceTree = "<group>"; };
 		213BCB4F254003D900C89B72 /* _23FullViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _23FullViewController.xib; sourceTree = "<group>"; };
-		213BCB51254003D900C89B72 /* _01ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _01ViewController.xib; sourceTree = "<group>"; };
+		213BCB51254003D900C89B72 /* _01ThemeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _01ThemeViewController.xib; sourceTree = "<group>"; };
 		213BCB52254003D900C89B72 /* _00TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00TableViewCell.m; sourceTree = "<group>"; };
 		213BCB53254003D900C89B72 /* MyActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActivity.m; sourceTree = "<group>"; };
 		213BCB54254003D900C89B72 /* _13WebpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _13WebpViewController.h; sourceTree = "<group>"; };
@@ -186,7 +188,7 @@
 		213BCB5A254003D900C89B72 /* _14TFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _14TFViewController.xib; sourceTree = "<group>"; };
 		213BCB5B254003D900C89B72 /* _18MGSwipeTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _18MGSwipeTableVC.m; sourceTree = "<group>"; };
 		213BCB5C254003D900C89B72 /* _09AFNViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _09AFNViewController.xib; sourceTree = "<group>"; };
-		213BCB5D254003D900C89B72 /* _01ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _01ViewController.h; sourceTree = "<group>"; };
+		213BCB5D254003D900C89B72 /* _01ThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _01ThemeViewController.h; sourceTree = "<group>"; };
 		213BCB5E254003D900C89B72 /* _24NoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _24NoteViewController.xib; sourceTree = "<group>"; };
 		213BCB5F254003D900C89B72 /* _15UIMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _15UIMenuController.h; sourceTree = "<group>"; };
 		213BCB60254003D900C89B72 /* _04RunLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _04RunLoopViewController.m; sourceTree = "<group>"; };
@@ -222,7 +224,7 @@
 		213BCB81254003D900C89B72 /* _22ReactiveObjCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _22ReactiveObjCViewController.h; sourceTree = "<group>"; };
 		213BCB82254003D900C89B72 /* _04RunLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _04RunLoopViewController.h; sourceTree = "<group>"; };
 		213BCB83254003D900C89B72 /* _15UIMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _15UIMenuController.m; sourceTree = "<group>"; };
-		213BCB84254003D900C89B72 /* _01ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _01ViewController.m; sourceTree = "<group>"; };
+		213BCB84254003D900C89B72 /* _01ThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _01ThemeViewController.m; sourceTree = "<group>"; };
 		213BCB85254003D900C89B72 /* _18MGSwipeTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _18MGSwipeTableVC.h; sourceTree = "<group>"; };
 		213BCB86254003D900C89B72 /* _00TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00TableViewController.h; sourceTree = "<group>"; };
 		213BCB8F254003D900C89B72 /* instruction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instruction.jpg; sourceTree = "<group>"; };
@@ -299,6 +301,8 @@
 		218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegateWCDB.mm; sourceTree = "<group>"; };
 		218A1EF925469D8000E43F16 /* SOAComponentAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOAComponentAppDelegate.h; sourceTree = "<group>"; };
 		218A1EFA25469D8000E43F16 /* SOAComponentAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOAComponentAppDelegate.m; sourceTree = "<group>"; };
+		21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_3@2x.png"; sourceTree = "<group>"; };
+		21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_2@2x.png"; sourceTree = "<group>"; };
 		2E8212D320B7D6003E79BB8A /* Pods-AXiOSKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		38516BC93098DB0B54BCAE78 /* Pods-AXiOSKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3F85C681A5FA543AF8599754 /* Pods-AXiOSKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -375,9 +379,9 @@
 				213BCB59254003D900C89B72 /* _00TableViewController.m */,
 				213BCB47254003D900C89B72 /* _01ContentViewController.h */,
 				213BCB72254003D900C89B72 /* _01ContentViewController.m */,
-				213BCB5D254003D900C89B72 /* _01ViewController.h */,
-				213BCB84254003D900C89B72 /* _01ViewController.m */,
-				213BCB51254003D900C89B72 /* _01ViewController.xib */,
+				213BCB5D254003D900C89B72 /* _01ThemeViewController.h */,
+				213BCB84254003D900C89B72 /* _01ThemeViewController.m */,
+				213BCB51254003D900C89B72 /* _01ThemeViewController.xib */,
 				213BCBA2254003DA00C89B72 /* _02Chat */,
 				213BCB82254003D900C89B72 /* _04RunLoopViewController.h */,
 				213BCB60254003D900C89B72 /* _04RunLoopViewController.m */,
@@ -658,6 +662,8 @@
 		218990312542630D00876524 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */,
+				21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */,
 				213BCB96254003DA00C89B72 /* 123.jpg */,
 				213BCBDE254003DA00C89B72 /* 1234.webp */,
 				218A1E4425440A0A00E43F16 /* App.pdf */,
@@ -928,11 +934,12 @@
 			files = (
 				213BCC24254003DB00C89B72 /* instruction.jpg in Resources */,
 				213BCBF1254003DB00C89B72 /* _21KVOViewController.xib in Resources */,
-				213BCC00254003DB00C89B72 /* _01ViewController.xib in Resources */,
+				213BCC00254003DB00C89B72 /* _01ThemeViewController.xib in Resources */,
 				213BCBEE254003DB00C89B72 /* _26RMQClientViewController.xib in Resources */,
 				213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */,
 				213BCC0B254003DB00C89B72 /* _22ReactiveObjCViewController.xib in Resources */,
 				213BCC2D254003DB00C89B72 /* _02ChatViewController.xib in Resources */,
+				21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */,
 				213BCBF8254003DB00C89B72 /* _07VideoViewController.xib in Resources */,
 				213BCC40254003DB00C89B72 /* g3@2x.png in Resources */,
 				213BCBFF254003DB00C89B72 /* _23FullViewController.xib in Resources */,
@@ -950,6 +957,7 @@
 				213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */,
 				213BCBF0254003DB00C89B72 /* _10TextFViewController.xib in Resources */,
 				213BCC08254003DB00C89B72 /* _24NoteViewController.xib in Resources */,
+				21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */,
 				213BCC0F254003DB00C89B72 /* _00TableViewCell.xib in Resources */,
 				213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */,
 				213BCC46254003DB00C89B72 /* H5.bundle in Resources */,
@@ -1155,7 +1163,7 @@
 				213BCC49254003DB00C89B72 /* UIViewController+Present.m in Sources */,
 				218A1E9025441BBE00E43F16 /* _28LocalSocketServiceViewController.m in Sources */,
 				213BCBF9254003DB00C89B72 /* AFHTTPSessionManager+PutFile.m in Sources */,
-				213BCC1D254003DB00C89B72 /* _01ViewController.m in Sources */,
+				213BCC1D254003DB00C89B72 /* _01ThemeViewController.m in Sources */,
 				213BCBFE254003DB00C89B72 /* _14TFViewController.m in Sources */,
 				213BCC31254003DB00C89B72 /* LVieoView.m in Sources */,
 				213BCC18254003DB00C89B72 /* _26RMQClientViewController.m in Sources */,
