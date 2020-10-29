@@ -96,7 +96,6 @@
 		218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1E9625441C6600E43F16 /* _28LocalSocketClientViewController.m */; };
 		218A1EC8254438C900E43F16 /* office.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 218A1EC7254438C900E43F16 /* office.bundle */; };
 		218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */; };
-		218A1EF525469BF900E43F16 /* NSObject+performSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EF425469BF900E43F16 /* NSObject+performSelector.m */; };
 		218A1EFB25469D8000E43F16 /* SOAComponentAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* SOAComponentAppDelegate.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -298,8 +297,6 @@
 		218A1EC7254438C900E43F16 /* office.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = office.bundle; sourceTree = "<group>"; };
 		218A1EED25469BBC00E43F16 /* AppDelegateWCDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateWCDB.h; sourceTree = "<group>"; };
 		218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegateWCDB.mm; sourceTree = "<group>"; };
-		218A1EF325469BF900E43F16 /* NSObject+performSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+performSelector.h"; sourceTree = "<group>"; };
-		218A1EF425469BF900E43F16 /* NSObject+performSelector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+performSelector.m"; sourceTree = "<group>"; };
 		218A1EF925469D8000E43F16 /* SOAComponentAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOAComponentAppDelegate.h; sourceTree = "<group>"; };
 		218A1EFA25469D8000E43F16 /* SOAComponentAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOAComponentAppDelegate.m; sourceTree = "<group>"; };
 		2E8212D320B7D6003E79BB8A /* Pods-AXiOSKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -753,8 +750,6 @@
 				21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */,
 				21022AEA2547A9AF0055E0B7 /* AppDelegateWX.h */,
 				21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */,
-				218A1EF325469BF900E43F16 /* NSObject+performSelector.h */,
-				218A1EF425469BF900E43F16 /* NSObject+performSelector.m */,
 				218A1EF925469D8000E43F16 /* SOAComponentAppDelegate.h */,
 				218A1EFA25469D8000E43F16 /* SOAComponentAppDelegate.m */,
 				21898F302541B11D00876524 /* Application.h */,
@@ -1186,7 +1181,6 @@
 				213BCC3D254003DB00C89B72 /* RouterManager.m in Sources */,
 				218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */,
 				218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */,
-				218A1EF525469BF900E43F16 /* NSObject+performSelector.m in Sources */,
 				213BCBEA254003DB00C89B72 /* MakeKeyAndVisible.m in Sources */,
 				213BCC29254003DB00C89B72 /* AXWebSocketEngine.m in Sources */,
 				21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */,
