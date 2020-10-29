@@ -11,6 +11,11 @@
 #import <Foundation/Foundation.h>
 #import <FMDB/FMDB.h>
 
+/**
+ 使用 FMDatabaseQueue [dataQueue inDatabase:^(FMDatabase *db){}];
+ 线程安全的
+ */
+
 @interface DataBase : NSObject
 
 
