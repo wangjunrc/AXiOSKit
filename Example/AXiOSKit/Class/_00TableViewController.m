@@ -202,7 +202,7 @@ void mySLog(NSString *format, ...) {
     _00TableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
     
     NSDictionary *dict = self.dataArray[indexPath.section][indexPath.row];
-    cell.indexLabel.text = [NSString stringWithFormat:@"%@", dict[@"index"]];
+    cell.indexLabel.text = [dict[@"index"] stringValue];
     cell.nameLabel.text = dict[@"title"];
     return cell;
 }
