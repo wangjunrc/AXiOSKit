@@ -1804,3 +1804,12 @@ char *a = "hello, world";
 NSData *data = [NSData dataWithBytes:a length:12];
 [data writeToFile:filePath atomically:YES];
 ```
+
+### push vc 是否存在
+```
+/// parent==nil 表示返回了
+- (void)didMoveToParentViewController:(UIViewController *)parent {
+    [super didMoveToParentViewController:parent];
+    NSLog(@"didMoveToParentViewController %@  self = %@",parent,self);
+}
+```

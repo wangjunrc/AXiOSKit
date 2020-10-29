@@ -18,6 +18,36 @@
      setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}
      forState:UIControlStateNormal];
     
+//    //获取document路径
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentDirectory = [paths objectAtIndex:0];
+//
+//    //文件名及其路径
+//    NSString *fileName = @"test.txt";
+//    NSString *filePath = [documentDirectory stringByAppendingPathComponent:fileName];
+//
+//    //建立一个char数组，并归档写入到沙盒中
+//    char *a = "hello, world";
+//    NSData *data = [NSData dataWithBytes:a length:12];
+//    [data writeToFile:filePath atomically:YES];
+    
+    NSString *obj = @"home/cs046_js@mam1.ft-power.com.cn";
+//    BOOL isDirectory = NO;
+//      [[NSFileManager defaultManager] fileExistsAtPath:obj isDirectory:&isDirectory];
+//    if (!isDirectory) {
+//
+//    }
+//    NSLog(@"isDirectory = %d",isDirectory);
+
+    NSNumber *isDirectory = @(NO);
+      NSURL *fileUrl = [NSURL fileURLWithPath:obj];
+      [fileUrl getResourceValue:&isDirectory forKey:NSURLIsExcludedFromBackupKey error:nil];
+
+//    if (!isDirectory.boolValue ) {
+//        NSLog(@"isDirectory = %@",obj);
+//    }
+    NSLog(@"isDirectory = %d",isDirectory.boolValue);
+    
 //    [UISearchBar.appearance setBarTintColor:UIColor.redColor];
     
     // 修改message字体及颜色

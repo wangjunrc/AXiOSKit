@@ -1,4 +1,5 @@
 # 红包雨
+```
 - (IBAction)btnAction1:(id)sender {
 [self startTime];
 
@@ -266,3 +267,4 @@ alertView.frame = CGRectMake(point.x- 50, point.y - 100, 100, 30);
 }
 }
 }
+```

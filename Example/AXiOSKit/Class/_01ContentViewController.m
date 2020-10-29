@@ -53,7 +53,7 @@
 //    [self _kvoInt];
 //    [self _bubbleImage];
 //    [self _per];
-    [self _setAlternateIconName];
+//    [self _setAlternateIconName];
    
 }
 
@@ -228,6 +228,7 @@
     
     
 }
+
 -(void)_CSAnimationView{
     UIButton *btn1 = [[UIButton alloc]init];
     [btn1 setTitle:@"btn1" forState:UIControlStateNormal];
@@ -325,9 +326,12 @@
 
 
 - (void)didMoveToParentViewController:(UIViewController *)parent {
-    AXLogFunc;
+    [super didMoveToParentViewController:parent];
+    NSLog(@"didMoveToParentViewController %@  self = %@",parent,self);
 }
-
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 -(void)_test1 {
     
     UIButton *btn1 = [[UIButton alloc]init];
@@ -577,5 +581,12 @@
 }
 
 
-
+- (void)removeFromParentViewController {
+    [super removeFromParentViewController];
+    AXLogFunc;
+}
+- (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
+    [super popoverPresentationControllerDidDismissPopover:popoverPresentationController];
+    AXLogFunc;
+}
 @end

@@ -308,6 +308,7 @@ void mySLog(NSString *format, ...) {
                 @"action": ^{
                     _01ViewController *vc = [[_01ViewController alloc] init];
                     [self.navigationController pushViewController:vc animated:YES];
+                    
                 },
             },
             @{
@@ -315,7 +316,8 @@ void mySLog(NSString *format, ...) {
                 @"title": @"ContentViewController",
                 @"action": ^{
                     _01ContentViewController *vc = [[_01ContentViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+//                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_showVC:vc];
                 },
             },
             
