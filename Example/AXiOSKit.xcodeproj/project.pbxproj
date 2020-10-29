@@ -64,12 +64,6 @@
 		213BCC1B254003DB00C89B72 /* _17OtherShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB80254003D900C89B72 /* _17OtherShareViewController.m */; };
 		213BCC1C254003DB00C89B72 /* _15UIMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB83254003D900C89B72 /* _15UIMenuController.m */; };
 		213BCC1D254003DB00C89B72 /* _01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB84254003D900C89B72 /* _01ViewController.m */; };
-		213BCC1E254003DB00C89B72 /* CODE_OF_CONDUCT.md in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB88254003D900C89B72 /* CODE_OF_CONDUCT.md */; };
-		213BCC1F254003DB00C89B72 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB89254003D900C89B72 /* LICENSE */; };
-		213BCC20254003DB00C89B72 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB8A254003D900C89B72 /* fishhook.c */; };
-		213BCC21254003DB00C89B72 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB8B254003D900C89B72 /* README.md */; };
-		213BCC22254003DB00C89B72 /* CONTRIBUTING.md in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB8C254003D900C89B72 /* CONTRIBUTING.md */; };
-		213BCC23254003DB00C89B72 /* fishhook.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB8E254003D900C89B72 /* fishhook.podspec */; };
 		213BCC24254003DB00C89B72 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB8F254003D900C89B72 /* instruction.jpg */; };
 		213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB90254003D900C89B72 /* PointViewController.plist */; };
 		213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB93254003D900C89B72 /* LaunchScreen.storyboard */; };
@@ -246,13 +240,6 @@
 		213BCB84254003D900C89B72 /* _01ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _01ViewController.m; sourceTree = "<group>"; };
 		213BCB85254003D900C89B72 /* _18MGSwipeTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _18MGSwipeTableVC.h; sourceTree = "<group>"; };
 		213BCB86254003D900C89B72 /* _00TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00TableViewController.h; sourceTree = "<group>"; };
-		213BCB88254003D900C89B72 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
-		213BCB89254003D900C89B72 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		213BCB8A254003D900C89B72 /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
-		213BCB8B254003D900C89B72 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		213BCB8C254003D900C89B72 /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
-		213BCB8D254003D900C89B72 /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
-		213BCB8E254003D900C89B72 /* fishhook.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fishhook.podspec; sourceTree = "<group>"; };
 		213BCB8F254003D900C89B72 /* instruction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instruction.jpg; sourceTree = "<group>"; };
 		213BCB90254003D900C89B72 /* PointViewController.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PointViewController.plist; sourceTree = "<group>"; };
 		213BCB91254003D900C89B72 /* AxGenerator.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AxGenerator.xcconfig; sourceTree = "<group>"; };
@@ -491,20 +478,6 @@
 				213BCB73254003D900C89B72 /* WCDBViewController.xib */,
 			);
 			path = Class;
-			sourceTree = "<group>";
-		};
-		213BCB87254003D900C89B72 /* fishhook-master */ = {
-			isa = PBXGroup;
-			children = (
-				213BCB88254003D900C89B72 /* CODE_OF_CONDUCT.md */,
-				213BCB89254003D900C89B72 /* LICENSE */,
-				213BCB8A254003D900C89B72 /* fishhook.c */,
-				213BCB8B254003D900C89B72 /* README.md */,
-				213BCB8C254003D900C89B72 /* CONTRIBUTING.md */,
-				213BCB8D254003D900C89B72 /* fishhook.h */,
-				213BCB8E254003D900C89B72 /* fishhook.podspec */,
-			);
-			path = "fishhook-master";
 			sourceTree = "<group>";
 		};
 		213BCB92254003D900C89B72 /* Base.lproj */ = {
@@ -782,7 +755,6 @@
 			isa = PBXGroup;
 			children = (
 				213BCB36254003D900C89B72 /* Class */,
-				213BCB87254003D900C89B72 /* fishhook-master */,
 				218990312542630D00876524 /* Resource */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -995,7 +967,6 @@
 				213BCC07254003DB00C89B72 /* _09AFNViewController.xib in Resources */,
 				213BCBF6254003DB00C89B72 /* mqtt.plist in Resources */,
 				218A1E4525440A0A00E43F16 /* App.pdf in Resources */,
-				213BCC22254003DB00C89B72 /* CONTRIBUTING.md in Resources */,
 				218A1EC8254438C900E43F16 /* office.bundle in Resources */,
 				213BCC3E254003DB00C89B72 /* PointViewController2.plist in Resources */,
 				213BCC45254003DB00C89B72 /* webp.bundle in Resources */,
@@ -1003,8 +974,6 @@
 				213BCC13254003DB00C89B72 /* RunLoopViewController.xib in Resources */,
 				218A1E9125441BBE00E43F16 /* _28LocalSocketServiceViewController.xib in Resources */,
 				213BCC05254003DB00C89B72 /* _14TFViewController.xib in Resources */,
-				213BCC23254003DB00C89B72 /* fishhook.podspec in Resources */,
-				213BCC21254003DB00C89B72 /* README.md in Resources */,
 				213BCBF5254003DB00C89B72 /* AFNViewController.xib in Resources */,
 				213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */,
 				213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */,
@@ -1013,9 +982,7 @@
 				213BCC0F254003DB00C89B72 /* _00TableViewCell.xib in Resources */,
 				213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */,
 				213BCC46254003DB00C89B72 /* H5.bundle in Resources */,
-				213BCC1F254003DB00C89B72 /* LICENSE in Resources */,
 				213BCC43254003DB00C89B72 /* 1234.webp in Resources */,
-				213BCC1E254003DB00C89B72 /* CODE_OF_CONDUCT.md in Resources */,
 				213BCBE8254003DB00C89B72 /* IMG_3972.GIF in Resources */,
 				213BCBED254003DB00C89B72 /* Settings.bundle in Resources */,
 				213BCC48254003DB00C89B72 /* test_webp.webp in Resources */,
@@ -1125,6 +1092,8 @@
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/MLeaksFinder/MLeaksFinder.framework",
+				"${BUILT_PRODUCTS_DIR}/MMKV/MMKV.framework",
+				"${BUILT_PRODUCTS_DIR}/MMKVCore/MMKVCore.framework",
 				"${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/NullSafe/NullSafe.framework",
@@ -1140,6 +1109,7 @@
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
+				"${BUILT_PRODUCTS_DIR}/fishhook/fishhook.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1167,6 +1137,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLeaksFinder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKV.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKVCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MQTTClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NullSafe.framework",
@@ -1182,6 +1154,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/fishhook.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1246,7 +1219,6 @@
 				21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */,
 				213BCC0E254003DB00C89B72 /* VideoViewController.m in Sources */,
 				213BCC0A254003DB00C89B72 /* _22ReactiveObjCViewController.m in Sources */,
-				213BCC20254003DB00C89B72 /* fishhook.c in Sources */,
 				213BCC2B254003DB00C89B72 /* NSObject+SelectorDefender.m in Sources */,
 				213BCC03254003DB00C89B72 /* AView.m in Sources */,
 				213BCBEC254003DB00C89B72 /* SceneDelegate.m in Sources */,

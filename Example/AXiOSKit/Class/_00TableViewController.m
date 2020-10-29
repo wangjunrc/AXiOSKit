@@ -449,9 +449,9 @@ void mySLog(NSString *format, ...) {
                 @"title": @"objc_msgSend调用方法",
                 @"action": ^{
                     //                    id person =
-                    //                    objc_msgSend(objc_getClass("Person"), sel_registerName("alloc"),
+                    //                    (objc_getClass("Person"), sel_registerName("alloc"),
                     //                                 sel_registerName("init"));
-                    //                    objc_msgSend(person, sel_registerName("logShowTest"));
+                    //                    objc_msobjc_msgSendgSend(person, sel_registerName("logShowTest"));
                 },
             },
             
