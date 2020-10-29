@@ -53,58 +53,23 @@ typedef void (^CollectionBlock)(void);
     NSInteger _count;
 }
 
-@property (nonatomic, strong) NSArray<NSArray *> *dataArray;
-
-@property (nonatomic, strong) NSString *strongStr;
-
-@property (nonatomic, copy) NSString *copyedStr;
-
-@property (nonatomic, strong) NSMutableString *strongMStr;
-
-@property (nonatomic, copy) NSMutableString *copyedMStr;
-
-@property (atomic, copy) NSString *name;
-
 @property (atomic, assign) NSInteger count;
+@property (atomic, copy) NSString *name;
+@property (nonatomic, copy) NSMutableString *copyedMStr;
+@property (nonatomic, copy) NSString *copyedStr;
 @property (nonatomic, strong) AXSystemAuthorizerManager *authorizerManager;
+@property (nonatomic, strong) NSArray<NSArray *> *dataArray;
+@property (nonatomic, strong) NSMutableString *strongMStr;
+@property (nonatomic, strong) NSString *strongStr;
 
 @end
 
 @implementation _00TableViewController
 
-//- (void)injected {
-//    NSLog(@"I've been injected: %@", self);
-//    [self viewDidLoad];
-//}
-
-- (int64_t)memoryUsage {
-    int64_t memoryUsageInByte = 0;
-    task_vm_info_data_t vmInfo;
-    mach_msg_type_number_t count = TASK_VM_INFO_COUNT;
-    kern_return_t kernelReturn = task_info(mach_task_self(), TASK_VM_INFO, (task_info_t)&vmInfo, &count);
-    if (kernelReturn == KERN_SUCCESS) {
-        memoryUsageInByte = (int64_t)vmInfo.phys_footprint;
-        NSLog(@"Memory in use (in bytes): %lld", memoryUsageInByte);
-    } else {
-        NSLog(@"Error with task_info(): %s", mach_error_string(kernelReturn));
-    }
-    return memoryUsageInByte;
-}
-
-- (int64_t)memoryUsage2 {
-    int64_t memoryUsageInByte = 0;
-    struct task_basic_info taskBasicInfo;
-    mach_msg_type_number_t size = sizeof(taskBasicInfo);
-    kern_return_t kernelReturn = task_info(mach_task_self(), TASK_BASIC_INFO, (task_info_t)&taskBasicInfo, &size);
-
-    if (kernelReturn == KERN_SUCCESS) {
-        memoryUsageInByte = (int64_t)taskBasicInfo.resident_size;
-        NSLog(@"Memory in use (in bytes): %lld", memoryUsageInByte);
-    } else {
-        NSLog(@"Error with task_info(): %s", mach_error_string(kernelReturn));
-    }
-
-    return memoryUsageInByte;
+- (void)injected {
+    NSLog(@"重启了 InjectionIII: %@", self);
+    
+    [self viewDidLoad];
 }
 
 //- (instancetype)initWithStyle:(UITableViewStyle)style {
@@ -113,11 +78,13 @@ typedef void (^CollectionBlock)(void);
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"主题";
+    
     [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
-
-    NSLog(@"height3 == %lf M", [self memoryUsage] / 1000.0 / 1000.0);
-
-    NSLog(@"height3 == %lf M", [self memoryUsage2] / 1000. / 1000.);
+    self.dataArray = nil;
+    [self.tableView reloadData];
+//    NSLog(@"height3 == %lf M", [UIDevice ax_memoryUsage] / 1000.0 / 1000.0);
+//
+//    NSLog(@"height3 == %lf M", [UIDevice ax_memoryUsage2] / 1000. / 1000.);
     //    self.tableView.editing = YES;
 
     //    __weak typeof(self) weakSelf = self;

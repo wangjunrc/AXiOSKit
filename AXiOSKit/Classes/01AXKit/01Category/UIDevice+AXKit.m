@@ -172,5 +172,18 @@
    }
    return memoryUsageInByte;
 }
++ (int64_t)memoryUsage2 {
+    int64_t memoryUsageInByte = 0;
+    struct task_basic_info taskBasicInfo;
+    mach_msg_type_number_t size = sizeof(taskBasicInfo);
+    kern_return_t kernelReturn = task_info(mach_task_self(), TASK_BASIC_INFO, (task_info_t)&taskBasicInfo, &size);
+    if (kernelReturn == KERN_SUCCESS) {
+        memoryUsageInByte = (int64_t)taskBasicInfo.resident_size;
+        NSLog(@"Memory in use (in bytes): %lld", memoryUsageInByte);
+    } else {
+        NSLog(@"Error with task_info(): %s", mach_error_string(kernelReturn));
+    }
+    return memoryUsageInByte;
+}
 
 @end
