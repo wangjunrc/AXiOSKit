@@ -6,20 +6,20 @@
 //  Copyright © 2020 liu.weixing. All rights reserved.
 //
 
-#import "WCDBViewController.h"
+#import "_06WCDBViewController.h"
 #import "AXUserInfoDao.h"
 #import "AXUserInfo.h"
 #import <AXiOSKit/AXiOSKit.h>
 #import "TZImagePickerController.h"
 #import <MJExtension/MJExtension.h>
 
-@interface WCDBViewController ()
+@interface _06WCDBViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *tf;
 @property (weak, nonatomic) IBOutlet UITextField *tf2;
 
 @end
 
-@implementation WCDBViewController
+@implementation _06WCDBViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -12,7 +12,7 @@
 //#import <AXiOSKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TextFViewController : AXBaseAlertVC
+@interface _10TextFViewController : AXBaseAlertVC
 
 @end
 

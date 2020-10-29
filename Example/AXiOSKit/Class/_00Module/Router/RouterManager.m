@@ -10,15 +10,16 @@
 
 #import "RouterManager.h"
 #import <MGJRouter/MGJRouter.h>
-#import "_09AFNViewController.h"
+#import "_01ViewController.h"
 
 @implementation RouterManager
 
 + (void)load {
-    [MGJRouter registerURLPattern:routeNameOf toHandler:^(NSDictionary *routerParameters) {
-        UINavigationController *navigationController = routerParameters[MGJRouterParameterUserInfo][@"navigationVC"];
+    [MGJRouter registerURLPattern:routeNameWith01ViewController toHandler:^(NSDictionary *routerParameters) {
         
-        _09AFNViewController *testVC = [[_09AFNViewController alloc] init];
+        UINavigationController *navigationController = routerParameters[MGJRouterParameterUserInfo][@"navigationController"];
+        
+        _01ViewController *testVC = [[_01ViewController alloc] init];
         [navigationController pushViewController:testVC animated:YES];
     }];
     

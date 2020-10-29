@@ -18,19 +18,18 @@
 		213BCBED254003DB00C89B72 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB35254003D900C89B72 /* Settings.bundle */; };
 		213BCBEE254003DB00C89B72 /* _26RMQClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB38254003D900C89B72 /* _26RMQClientViewController.xib */; };
 		213BCBEF254003DB00C89B72 /* _27MQTTClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB3B254003D900C89B72 /* _27MQTTClientViewController.m */; };
-		213BCBF0254003DB00C89B72 /* TextFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB3C254003D900C89B72 /* TextFViewController.xib */; };
+		213BCBF0254003DB00C89B72 /* _10TextFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB3C254003D900C89B72 /* _10TextFViewController.xib */; };
 		213BCBF1254003DB00C89B72 /* _21KVOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB3D254003D900C89B72 /* _21KVOViewController.xib */; };
-		213BCBF2254003DB00C89B72 /* TextFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB3E254003D900C89B72 /* TextFViewController.m */; };
+		213BCBF2254003DB00C89B72 /* _10TextFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB3E254003D900C89B72 /* _10TextFViewController.m */; };
 		213BCBF3254003DB00C89B72 /* CopyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB3F254003D900C89B72 /* CopyActivity.m */; };
 		213BCBF4254003DB00C89B72 /* _19ScrollContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB40254003D900C89B72 /* _19ScrollContentViewController.m */; };
-		213BCBF5254003DB00C89B72 /* AFNViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB42254003D900C89B72 /* AFNViewController.xib */; };
 		213BCBF6254003DB00C89B72 /* mqtt.plist in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB44254003D900C89B72 /* mqtt.plist */; };
 		213BCBF7254003DB00C89B72 /* _21KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB45254003D900C89B72 /* _21KVOViewController.m */; };
-		213BCBF8254003DB00C89B72 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB46254003D900C89B72 /* VideoViewController.xib */; };
+		213BCBF8254003DB00C89B72 /* _07VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB46254003D900C89B72 /* _07VideoViewController.xib */; };
 		213BCBF9254003DB00C89B72 /* AFHTTPSessionManager+PutFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB48254003D900C89B72 /* AFHTTPSessionManager+PutFile.m */; };
 		213BCBFA254003DB00C89B72 /* _25LayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB49254003D900C89B72 /* _25LayoutViewController.m */; };
 		213BCBFB254003DB00C89B72 /* _24NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4A254003D900C89B72 /* _24NoteViewController.m */; };
-		213BCBFC254003DB00C89B72 /* WCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4B254003D900C89B72 /* WCDBViewController.m */; };
+		213BCBFC254003DB00C89B72 /* _06WCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4B254003D900C89B72 /* _06WCDBViewController.m */; };
 		213BCBFD254003DB00C89B72 /* _20iOS14ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4C254003D900C89B72 /* _20iOS14ViewController.m */; };
 		213BCBFE254003DB00C89B72 /* _14TFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4E254003D900C89B72 /* _14TFViewController.m */; };
 		213BCBFF254003DB00C89B72 /* _23FullViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB4F254003D900C89B72 /* _23FullViewController.xib */; };
@@ -43,24 +42,21 @@
 		213BCC06254003DB00C89B72 /* _18MGSwipeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB5B254003D900C89B72 /* _18MGSwipeTableVC.m */; };
 		213BCC07254003DB00C89B72 /* _09AFNViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB5C254003D900C89B72 /* _09AFNViewController.xib */; };
 		213BCC08254003DB00C89B72 /* _24NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB5E254003D900C89B72 /* _24NoteViewController.xib */; };
-		213BCC09254003DB00C89B72 /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB60254003D900C89B72 /* RunLoopViewController.m */; };
+		213BCC09254003DB00C89B72 /* _04RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB60254003D900C89B72 /* _04RunLoopViewController.m */; };
 		213BCC0A254003DB00C89B72 /* _22ReactiveObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB61254003D900C89B72 /* _22ReactiveObjCViewController.m */; };
 		213BCC0B254003DB00C89B72 /* _22ReactiveObjCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB62254003D900C89B72 /* _22ReactiveObjCViewController.xib */; };
 		213BCC0C254003DB00C89B72 /* AANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB63254003D900C89B72 /* AANavigationController.m */; };
 		213BCC0D254003DB00C89B72 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB68254003D900C89B72 /* Person.m */; };
-		213BCC0E254003DB00C89B72 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB69254003D900C89B72 /* VideoViewController.m */; };
+		213BCC0E254003DB00C89B72 /* _07VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB69254003D900C89B72 /* _07VideoViewController.m */; };
 		213BCC0F254003DB00C89B72 /* _00TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB6A254003D900C89B72 /* _00TableViewCell.xib */; };
 		213BCC10254003DB00C89B72 /* _16KeyChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB6B254003D900C89B72 /* _16KeyChainViewController.m */; };
 		213BCC11254003DB00C89B72 /* _01ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB72254003D900C89B72 /* _01ContentViewController.m */; };
-		213BCC12254003DB00C89B72 /* WCDBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB73254003D900C89B72 /* WCDBViewController.xib */; };
-		213BCC13254003DB00C89B72 /* RunLoopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB74254003D900C89B72 /* RunLoopViewController.xib */; };
+		213BCC12254003DB00C89B72 /* _06WCDBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB73254003D900C89B72 /* _06WCDBViewController.xib */; };
+		213BCC13254003DB00C89B72 /* _04RunLoopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB74254003D900C89B72 /* _04RunLoopViewController.xib */; };
 		213BCC14254003DB00C89B72 /* _09AFNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB75254003D900C89B72 /* _09AFNViewController.m */; };
 		213BCC15254003DB00C89B72 /* _23FullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB76254003D900C89B72 /* _23FullViewController.m */; };
-		213BCC16254003DB00C89B72 /* AAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB77254003D900C89B72 /* AAViewController.xib */; };
-		213BCC17254003DB00C89B72 /* AAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB78254003D900C89B72 /* AAViewController.m */; };
 		213BCC18254003DB00C89B72 /* _26RMQClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB7A254003D900C89B72 /* _26RMQClientViewController.m */; };
 		213BCC19254003DB00C89B72 /* _13WebpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB7B254003D900C89B72 /* _13WebpViewController.m */; };
-		213BCC1A254003DB00C89B72 /* AFNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB7D254003D900C89B72 /* AFNViewController.m */; };
 		213BCC1B254003DB00C89B72 /* _17OtherShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB80254003D900C89B72 /* _17OtherShareViewController.m */; };
 		213BCC1C254003DB00C89B72 /* _15UIMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB83254003D900C89B72 /* _15UIMenuController.m */; };
 		213BCC1D254003DB00C89B72 /* _01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB84254003D900C89B72 /* _01ViewController.m */; };
@@ -72,8 +68,8 @@
 		213BCC2A254003DB00C89B72 /* TestObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB9E254003DA00C89B72 /* TestObj.m */; };
 		213BCC2B254003DB00C89B72 /* NSObject+SelectorDefender.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB9F254003DA00C89B72 /* NSObject+SelectorDefender.m */; };
 		213BCC2C254003DB00C89B72 /* NSObject+MethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBA0254003DA00C89B72 /* NSObject+MethodSwizzling.m */; };
-		213BCC2D254003DB00C89B72 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBA4254003DA00C89B72 /* ChatViewController.xib */; };
-		213BCC2E254003DB00C89B72 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBA5254003DA00C89B72 /* ChatViewController.m */; };
+		213BCC2D254003DB00C89B72 /* _02ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBA4254003DA00C89B72 /* _02ChatViewController.xib */; };
+		213BCC2E254003DB00C89B72 /* _02ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBA5254003DA00C89B72 /* _02ChatViewController.m */; };
 		213BCC2F254003DB00C89B72 /* ChatMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBA8254003DA00C89B72 /* ChatMessageModel.m */; };
 		213BCC30254003DB00C89B72 /* ChatTextMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBAA254003DA00C89B72 /* ChatTextMessageModel.m */; };
 		213BCC31254003DB00C89B72 /* LVieoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBAD254003DA00C89B72 /* LVieoView.m */; };
@@ -162,36 +158,33 @@
 		213BCB35254003D900C89B72 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		213BCB37254003D900C89B72 /* _16KeyChainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _16KeyChainViewController.h; sourceTree = "<group>"; };
 		213BCB38254003D900C89B72 /* _26RMQClientViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _26RMQClientViewController.xib; sourceTree = "<group>"; };
-		213BCB39254003D900C89B72 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		213BCB39254003D900C89B72 /* _07VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _07VideoViewController.h; sourceTree = "<group>"; };
 		213BCB3A254003D900C89B72 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		213BCB3B254003D900C89B72 /* _27MQTTClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _27MQTTClientViewController.m; sourceTree = "<group>"; };
-		213BCB3C254003D900C89B72 /* TextFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFViewController.xib; sourceTree = "<group>"; };
+		213BCB3C254003D900C89B72 /* _10TextFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _10TextFViewController.xib; sourceTree = "<group>"; };
 		213BCB3D254003D900C89B72 /* _21KVOViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _21KVOViewController.xib; sourceTree = "<group>"; };
-		213BCB3E254003D900C89B72 /* TextFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFViewController.m; sourceTree = "<group>"; };
+		213BCB3E254003D900C89B72 /* _10TextFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _10TextFViewController.m; sourceTree = "<group>"; };
 		213BCB3F254003D900C89B72 /* CopyActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyActivity.m; sourceTree = "<group>"; };
 		213BCB40254003D900C89B72 /* _19ScrollContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _19ScrollContentViewController.m; sourceTree = "<group>"; };
 		213BCB41254003D900C89B72 /* AANavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AANavigationController.h; sourceTree = "<group>"; };
-		213BCB42254003D900C89B72 /* AFNViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFNViewController.xib; sourceTree = "<group>"; };
 		213BCB43254003D900C89B72 /* _09AFNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _09AFNViewController.h; sourceTree = "<group>"; };
 		213BCB44254003D900C89B72 /* mqtt.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mqtt.plist; sourceTree = "<group>"; };
 		213BCB45254003D900C89B72 /* _21KVOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _21KVOViewController.m; sourceTree = "<group>"; };
-		213BCB46254003D900C89B72 /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
+		213BCB46254003D900C89B72 /* _07VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _07VideoViewController.xib; sourceTree = "<group>"; };
 		213BCB47254003D900C89B72 /* _01ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _01ContentViewController.h; sourceTree = "<group>"; };
 		213BCB48254003D900C89B72 /* AFHTTPSessionManager+PutFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+PutFile.m"; sourceTree = "<group>"; };
 		213BCB49254003D900C89B72 /* _25LayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _25LayoutViewController.m; sourceTree = "<group>"; };
 		213BCB4A254003D900C89B72 /* _24NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _24NoteViewController.m; sourceTree = "<group>"; };
-		213BCB4B254003D900C89B72 /* WCDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCDBViewController.m; sourceTree = "<group>"; };
+		213BCB4B254003D900C89B72 /* _06WCDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _06WCDBViewController.m; sourceTree = "<group>"; };
 		213BCB4C254003D900C89B72 /* _20iOS14ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _20iOS14ViewController.m; sourceTree = "<group>"; };
 		213BCB4D254003D900C89B72 /* _17OtherShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _17OtherShareViewController.h; sourceTree = "<group>"; };
 		213BCB4E254003D900C89B72 /* _14TFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _14TFViewController.m; sourceTree = "<group>"; };
 		213BCB4F254003D900C89B72 /* _23FullViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _23FullViewController.xib; sourceTree = "<group>"; };
-		213BCB50254003D900C89B72 /* AFNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNViewController.h; sourceTree = "<group>"; };
 		213BCB51254003D900C89B72 /* _01ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _01ViewController.xib; sourceTree = "<group>"; };
 		213BCB52254003D900C89B72 /* _00TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00TableViewCell.m; sourceTree = "<group>"; };
 		213BCB53254003D900C89B72 /* MyActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActivity.m; sourceTree = "<group>"; };
 		213BCB54254003D900C89B72 /* _13WebpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _13WebpViewController.h; sourceTree = "<group>"; };
 		213BCB55254003D900C89B72 /* AView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AView.m; sourceTree = "<group>"; };
-		213BCB56254003D900C89B72 /* AAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAViewController.h; sourceTree = "<group>"; };
 		213BCB57254003D900C89B72 /* _26RMQClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _26RMQClientViewController.h; sourceTree = "<group>"; };
 		213BCB58254003D900C89B72 /* _23FullViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _23FullViewController.h; sourceTree = "<group>"; };
 		213BCB59254003D900C89B72 /* _00TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00TableViewController.m; sourceTree = "<group>"; };
@@ -201,41 +194,38 @@
 		213BCB5D254003D900C89B72 /* _01ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _01ViewController.h; sourceTree = "<group>"; };
 		213BCB5E254003D900C89B72 /* _24NoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _24NoteViewController.xib; sourceTree = "<group>"; };
 		213BCB5F254003D900C89B72 /* _15UIMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _15UIMenuController.h; sourceTree = "<group>"; };
-		213BCB60254003D900C89B72 /* RunLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
+		213BCB60254003D900C89B72 /* _04RunLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _04RunLoopViewController.m; sourceTree = "<group>"; };
 		213BCB61254003D900C89B72 /* _22ReactiveObjCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _22ReactiveObjCViewController.m; sourceTree = "<group>"; };
 		213BCB62254003D900C89B72 /* _22ReactiveObjCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _22ReactiveObjCViewController.xib; sourceTree = "<group>"; };
 		213BCB63254003D900C89B72 /* AANavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AANavigationController.m; sourceTree = "<group>"; };
 		213BCB64254003D900C89B72 /* _19ScrollContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _19ScrollContentViewController.h; sourceTree = "<group>"; };
 		213BCB65254003D900C89B72 /* CopyActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopyActivity.h; sourceTree = "<group>"; };
-		213BCB66254003D900C89B72 /* TextFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFViewController.h; sourceTree = "<group>"; };
+		213BCB66254003D900C89B72 /* _10TextFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _10TextFViewController.h; sourceTree = "<group>"; };
 		213BCB67254003D900C89B72 /* _27MQTTClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _27MQTTClientViewController.h; sourceTree = "<group>"; };
 		213BCB68254003D900C89B72 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		213BCB69254003D900C89B72 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		213BCB69254003D900C89B72 /* _07VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _07VideoViewController.m; sourceTree = "<group>"; };
 		213BCB6A254003D900C89B72 /* _00TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _00TableViewCell.xib; sourceTree = "<group>"; };
 		213BCB6B254003D900C89B72 /* _16KeyChainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _16KeyChainViewController.m; sourceTree = "<group>"; };
-		213BCB6C254003D900C89B72 /* WCDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCDBViewController.h; sourceTree = "<group>"; };
+		213BCB6C254003D900C89B72 /* _06WCDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _06WCDBViewController.h; sourceTree = "<group>"; };
 		213BCB6D254003D900C89B72 /* _20iOS14ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _20iOS14ViewController.h; sourceTree = "<group>"; };
 		213BCB6E254003D900C89B72 /* _24NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _24NoteViewController.h; sourceTree = "<group>"; };
 		213BCB6F254003D900C89B72 /* AFHTTPSessionManager+PutFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+PutFile.h"; sourceTree = "<group>"; };
 		213BCB70254003D900C89B72 /* _25LayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _25LayoutViewController.h; sourceTree = "<group>"; };
 		213BCB71254003D900C89B72 /* _21KVOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _21KVOViewController.h; sourceTree = "<group>"; };
 		213BCB72254003D900C89B72 /* _01ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _01ContentViewController.m; sourceTree = "<group>"; };
-		213BCB73254003D900C89B72 /* WCDBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WCDBViewController.xib; sourceTree = "<group>"; };
-		213BCB74254003D900C89B72 /* RunLoopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunLoopViewController.xib; sourceTree = "<group>"; };
+		213BCB73254003D900C89B72 /* _06WCDBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _06WCDBViewController.xib; sourceTree = "<group>"; };
+		213BCB74254003D900C89B72 /* _04RunLoopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _04RunLoopViewController.xib; sourceTree = "<group>"; };
 		213BCB75254003D900C89B72 /* _09AFNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _09AFNViewController.m; sourceTree = "<group>"; };
 		213BCB76254003D900C89B72 /* _23FullViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _23FullViewController.m; sourceTree = "<group>"; };
-		213BCB77254003D900C89B72 /* AAViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AAViewController.xib; sourceTree = "<group>"; };
-		213BCB78254003D900C89B72 /* AAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAViewController.m; sourceTree = "<group>"; };
 		213BCB79254003D900C89B72 /* AView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AView.h; sourceTree = "<group>"; };
 		213BCB7A254003D900C89B72 /* _26RMQClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _26RMQClientViewController.m; sourceTree = "<group>"; };
 		213BCB7B254003D900C89B72 /* _13WebpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _13WebpViewController.m; sourceTree = "<group>"; };
 		213BCB7C254003D900C89B72 /* MyActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActivity.h; sourceTree = "<group>"; };
-		213BCB7D254003D900C89B72 /* AFNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNViewController.m; sourceTree = "<group>"; };
 		213BCB7E254003D900C89B72 /* _00TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00TableViewCell.h; sourceTree = "<group>"; };
 		213BCB7F254003D900C89B72 /* _14TFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _14TFViewController.h; sourceTree = "<group>"; };
 		213BCB80254003D900C89B72 /* _17OtherShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _17OtherShareViewController.m; sourceTree = "<group>"; };
 		213BCB81254003D900C89B72 /* _22ReactiveObjCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _22ReactiveObjCViewController.h; sourceTree = "<group>"; };
-		213BCB82254003D900C89B72 /* RunLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
+		213BCB82254003D900C89B72 /* _04RunLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _04RunLoopViewController.h; sourceTree = "<group>"; };
 		213BCB83254003D900C89B72 /* _15UIMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _15UIMenuController.m; sourceTree = "<group>"; };
 		213BCB84254003D900C89B72 /* _01ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _01ViewController.m; sourceTree = "<group>"; };
 		213BCB85254003D900C89B72 /* _18MGSwipeTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _18MGSwipeTableVC.h; sourceTree = "<group>"; };
@@ -254,9 +244,9 @@
 		213BCB9F254003DA00C89B72 /* NSObject+SelectorDefender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SelectorDefender.m"; sourceTree = "<group>"; };
 		213BCBA0254003DA00C89B72 /* NSObject+MethodSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodSwizzling.m"; sourceTree = "<group>"; };
 		213BCBA1254003DA00C89B72 /* TestObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestObj.h; sourceTree = "<group>"; };
-		213BCBA4254003DA00C89B72 /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
-		213BCBA5254003DA00C89B72 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
-		213BCBA6254003DA00C89B72 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		213BCBA4254003DA00C89B72 /* _02ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _02ChatViewController.xib; sourceTree = "<group>"; };
+		213BCBA5254003DA00C89B72 /* _02ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _02ChatViewController.m; sourceTree = "<group>"; };
+		213BCBA6254003DA00C89B72 /* _02ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _02ChatViewController.h; sourceTree = "<group>"; };
 		213BCBA8254003DA00C89B72 /* ChatMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageModel.m; sourceTree = "<group>"; };
 		213BCBA9254003DA00C89B72 /* ChatTextMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTextMessageModel.h; sourceTree = "<group>"; };
 		213BCBAA254003DA00C89B72 /* ChatTextMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTextMessageModel.m; sourceTree = "<group>"; };
@@ -399,9 +389,22 @@
 				213BCB5D254003D900C89B72 /* _01ViewController.h */,
 				213BCB84254003D900C89B72 /* _01ViewController.m */,
 				213BCB51254003D900C89B72 /* _01ViewController.xib */,
+				213BCBA2254003DA00C89B72 /* _02Chat */,
+				213BCB82254003D900C89B72 /* _04RunLoopViewController.h */,
+				213BCB60254003D900C89B72 /* _04RunLoopViewController.m */,
+				213BCB74254003D900C89B72 /* _04RunLoopViewController.xib */,
+				213BCB6C254003D900C89B72 /* _06WCDBViewController.h */,
+				213BCB4B254003D900C89B72 /* _06WCDBViewController.m */,
+				213BCB73254003D900C89B72 /* _06WCDBViewController.xib */,
+				213BCB39254003D900C89B72 /* _07VideoViewController.h */,
+				213BCB69254003D900C89B72 /* _07VideoViewController.m */,
+				213BCB46254003D900C89B72 /* _07VideoViewController.xib */,
 				213BCB43254003D900C89B72 /* _09AFNViewController.h */,
 				213BCB75254003D900C89B72 /* _09AFNViewController.m */,
 				213BCB5C254003D900C89B72 /* _09AFNViewController.xib */,
+				213BCB66254003D900C89B72 /* _10TextFViewController.h */,
+				213BCB3E254003D900C89B72 /* _10TextFViewController.m */,
+				213BCB3C254003D900C89B72 /* _10TextFViewController.xib */,
 				213BCB54254003D900C89B72 /* _13WebpViewController.h */,
 				213BCB7B254003D900C89B72 /* _13WebpViewController.m */,
 				213BCB7F254003D900C89B72 /* _14TFViewController.h */,
@@ -447,14 +450,8 @@
 				218A1E4A25440BC200E43F16 /* _28ShareFileViewController.m */,
 				213BCB41254003D900C89B72 /* AANavigationController.h */,
 				213BCB63254003D900C89B72 /* AANavigationController.m */,
-				213BCB56254003D900C89B72 /* AAViewController.h */,
-				213BCB78254003D900C89B72 /* AAViewController.m */,
-				213BCB77254003D900C89B72 /* AAViewController.xib */,
 				213BCB6F254003D900C89B72 /* AFHTTPSessionManager+PutFile.h */,
 				213BCB48254003D900C89B72 /* AFHTTPSessionManager+PutFile.m */,
-				213BCB50254003D900C89B72 /* AFNViewController.h */,
-				213BCB7D254003D900C89B72 /* AFNViewController.m */,
-				213BCB42254003D900C89B72 /* AFNViewController.xib */,
 				213BCB79254003D900C89B72 /* AView.h */,
 				213BCB55254003D900C89B72 /* AView.m */,
 				213BCB65254003D900C89B72 /* CopyActivity.h */,
@@ -464,18 +461,6 @@
 				213BCB53254003D900C89B72 /* MyActivity.m */,
 				213BCB3A254003D900C89B72 /* Person.h */,
 				213BCB68254003D900C89B72 /* Person.m */,
-				213BCB82254003D900C89B72 /* RunLoopViewController.h */,
-				213BCB60254003D900C89B72 /* RunLoopViewController.m */,
-				213BCB74254003D900C89B72 /* RunLoopViewController.xib */,
-				213BCB66254003D900C89B72 /* TextFViewController.h */,
-				213BCB3E254003D900C89B72 /* TextFViewController.m */,
-				213BCB3C254003D900C89B72 /* TextFViewController.xib */,
-				213BCB39254003D900C89B72 /* VideoViewController.h */,
-				213BCB69254003D900C89B72 /* VideoViewController.m */,
-				213BCB46254003D900C89B72 /* VideoViewController.xib */,
-				213BCB6C254003D900C89B72 /* WCDBViewController.h */,
-				213BCB4B254003D900C89B72 /* WCDBViewController.m */,
-				213BCB73254003D900C89B72 /* WCDBViewController.xib */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -491,7 +476,6 @@
 		213BCB97254003DA00C89B72 /* _00Module */ = {
 			isa = PBXGroup;
 			children = (
-				213BCBA2254003DA00C89B72 /* Chat */,
 				213BCBAF254003DA00C89B72 /* Load */,
 				213BCB30254003D900C89B72 /* MakeKeyAndVisible.h */,
 				213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */,
@@ -527,21 +511,21 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
-		213BCBA2254003DA00C89B72 /* Chat */ = {
+		213BCBA2254003DA00C89B72 /* _02Chat */ = {
 			isa = PBXGroup;
 			children = (
 				213BCBA3254003DA00C89B72 /* Controller */,
 				213BCBA7254003DA00C89B72 /* Model */,
 			);
-			path = Chat;
+			path = _02Chat;
 			sourceTree = "<group>";
 		};
 		213BCBA3254003DA00C89B72 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				213BCBA4254003DA00C89B72 /* ChatViewController.xib */,
-				213BCBA5254003DA00C89B72 /* ChatViewController.m */,
-				213BCBA6254003DA00C89B72 /* ChatViewController.h */,
+				213BCBA6254003DA00C89B72 /* _02ChatViewController.h */,
+				213BCBA5254003DA00C89B72 /* _02ChatViewController.m */,
+				213BCBA4254003DA00C89B72 /* _02ChatViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -958,12 +942,11 @@
 				213BCBEE254003DB00C89B72 /* _26RMQClientViewController.xib in Resources */,
 				213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */,
 				213BCC0B254003DB00C89B72 /* _22ReactiveObjCViewController.xib in Resources */,
-				213BCC2D254003DB00C89B72 /* ChatViewController.xib in Resources */,
-				213BCBF8254003DB00C89B72 /* VideoViewController.xib in Resources */,
+				213BCC2D254003DB00C89B72 /* _02ChatViewController.xib in Resources */,
+				213BCBF8254003DB00C89B72 /* _07VideoViewController.xib in Resources */,
 				213BCC40254003DB00C89B72 /* g3@2x.png in Resources */,
 				213BCBFF254003DB00C89B72 /* _23FullViewController.xib in Resources */,
-				213BCC16254003DB00C89B72 /* AAViewController.xib in Resources */,
-				213BCC12254003DB00C89B72 /* WCDBViewController.xib in Resources */,
+				213BCC12254003DB00C89B72 /* _06WCDBViewController.xib in Resources */,
 				213BCC07254003DB00C89B72 /* _09AFNViewController.xib in Resources */,
 				213BCBF6254003DB00C89B72 /* mqtt.plist in Resources */,
 				218A1E4525440A0A00E43F16 /* App.pdf in Resources */,
@@ -971,13 +954,12 @@
 				213BCC3E254003DB00C89B72 /* PointViewController2.plist in Resources */,
 				213BCC45254003DB00C89B72 /* webp.bundle in Resources */,
 				213BCC28254003DB00C89B72 /* 123.jpg in Resources */,
-				213BCC13254003DB00C89B72 /* RunLoopViewController.xib in Resources */,
+				213BCC13254003DB00C89B72 /* _04RunLoopViewController.xib in Resources */,
 				218A1E9125441BBE00E43F16 /* _28LocalSocketServiceViewController.xib in Resources */,
 				213BCC05254003DB00C89B72 /* _14TFViewController.xib in Resources */,
-				213BCBF5254003DB00C89B72 /* AFNViewController.xib in Resources */,
 				213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */,
 				213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */,
-				213BCBF0254003DB00C89B72 /* TextFViewController.xib in Resources */,
+				213BCBF0254003DB00C89B72 /* _10TextFViewController.xib in Resources */,
 				213BCC08254003DB00C89B72 /* _24NoteViewController.xib in Resources */,
 				213BCC0F254003DB00C89B72 /* _00TableViewCell.xib in Resources */,
 				213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */,
@@ -1178,12 +1160,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				213BCC1C254003DB00C89B72 /* _15UIMenuController.m in Sources */,
-				213BCBF2254003DB00C89B72 /* TextFViewController.m in Sources */,
+				213BCBF2254003DB00C89B72 /* _10TextFViewController.m in Sources */,
 				213BCC30254003DB00C89B72 /* ChatTextMessageModel.m in Sources */,
 				213BCBFD254003DB00C89B72 /* _20iOS14ViewController.m in Sources */,
 				213BCC49254003DB00C89B72 /* UIViewController+Present.m in Sources */,
 				218A1E9025441BBE00E43F16 /* _28LocalSocketServiceViewController.m in Sources */,
-				213BCC1A254003DB00C89B72 /* AFNViewController.m in Sources */,
 				213BCBF9254003DB00C89B72 /* AFHTTPSessionManager+PutFile.m in Sources */,
 				213BCC1D254003DB00C89B72 /* _01ViewController.m in Sources */,
 				213BCBFE254003DB00C89B72 /* _14TFViewController.m in Sources */,
@@ -1202,10 +1183,9 @@
 				213BCBF7254003DB00C89B72 /* _21KVOViewController.m in Sources */,
 				218A1E4B25440BC200E43F16 /* _28ShareFileViewController.m in Sources */,
 				213BCC06254003DB00C89B72 /* _18MGSwipeTableVC.m in Sources */,
-				213BCC2E254003DB00C89B72 /* ChatViewController.m in Sources */,
+				213BCC2E254003DB00C89B72 /* _02ChatViewController.m in Sources */,
 				213BCC33254003DB00C89B72 /* UIControl+load.m in Sources */,
 				213BCBEF254003DB00C89B72 /* _27MQTTClientViewController.m in Sources */,
-				213BCC17254003DB00C89B72 /* AAViewController.m in Sources */,
 				21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */,
 				213BCBF4254003DB00C89B72 /* _19ScrollContentViewController.m in Sources */,
 				213BCC02254003DB00C89B72 /* MyActivity.m in Sources */,
@@ -1217,16 +1197,16 @@
 				213BCBEA254003DB00C89B72 /* MakeKeyAndVisible.m in Sources */,
 				213BCC29254003DB00C89B72 /* AXWebSocketEngine.m in Sources */,
 				21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */,
-				213BCC0E254003DB00C89B72 /* VideoViewController.m in Sources */,
+				213BCC0E254003DB00C89B72 /* _07VideoViewController.m in Sources */,
 				213BCC0A254003DB00C89B72 /* _22ReactiveObjCViewController.m in Sources */,
 				213BCC2B254003DB00C89B72 /* NSObject+SelectorDefender.m in Sources */,
 				213BCC03254003DB00C89B72 /* AView.m in Sources */,
 				213BCBEC254003DB00C89B72 /* SceneDelegate.m in Sources */,
 				213BCC19254003DB00C89B72 /* _13WebpViewController.m in Sources */,
-				213BCC09254003DB00C89B72 /* RunLoopViewController.m in Sources */,
+				213BCC09254003DB00C89B72 /* _04RunLoopViewController.m in Sources */,
 				213BCC10254003DB00C89B72 /* _16KeyChainViewController.m in Sources */,
 				218A1EFB25469D8000E43F16 /* SOAComponentAppDelegate.m in Sources */,
-				213BCBFC254003DB00C89B72 /* WCDBViewController.m in Sources */,
+				213BCBFC254003DB00C89B72 /* _06WCDBViewController.m in Sources */,
 				213BCC1B254003DB00C89B72 /* _17OtherShareViewController.m in Sources */,
 				213BCC11254003DB00C89B72 /* _01ContentViewController.m in Sources */,
 				213BCC0C254003DB00C89B72 /* AANavigationController.m in Sources */,

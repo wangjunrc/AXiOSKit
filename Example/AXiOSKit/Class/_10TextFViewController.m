@@ -6,10 +6,10 @@
 //  Copyright © 2020 liu.weixing. All rights reserved.
 //
 
-#import "TextFViewController.h"
+#import "_10TextFViewController.h"
 #import <AXiOSKit/NSString+AXKit.h>
 #import <Masonry/Masonry.h>
-@interface TextFViewController ()<UITextViewDelegate>
+@interface _10TextFViewController ()<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation TextFViewController
+@implementation _10TextFViewController
 
 /// <#Description#>
 - (void)viewDidLoad {

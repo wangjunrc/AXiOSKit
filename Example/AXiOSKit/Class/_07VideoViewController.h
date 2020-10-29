@@ -1,8 +1,8 @@
 //
-//  ChatViewController.h
+//  VideoViewController.h
 //  AXiOSKitExample
 //
-//  Created by liuweixing on 2020/1/5.
+//  Created by liuweixing on 2020/3/10.
 //  Copyright © 2020 liu.weixing. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ChatViewController : UIViewController
+@interface _07VideoViewController : UIViewController
 
 @end
 

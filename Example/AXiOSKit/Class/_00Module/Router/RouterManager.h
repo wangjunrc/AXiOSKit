@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-static NSString *const routeNameOf = @"MGJ://Test1/PushMainVC";
+static NSString *const routeNameWith01ViewController = @"MGJ://Test1/_01ViewController";
 
 @interface RouterManager : NSObject
 

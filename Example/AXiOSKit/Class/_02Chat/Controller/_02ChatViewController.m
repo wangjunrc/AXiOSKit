@@ -6,7 +6,7 @@
 //  Copyright © 2020 liu.weixing. All rights reserved.
 //
 
-#import "ChatViewController.h"
+#import "_02ChatViewController.h"
 //#import <AXiOSKit/AXWebSocketEngine.h>
 //#import "NSObject+AXKit.h"
 #import "AXiOSKit/AXiOSKit.h"
@@ -15,7 +15,7 @@
 #import "AXWebSocketEngine.h"
 #import "ChatTextMessageModel.h"
 #import <MJExtension/MJExtension.h>
-@interface ChatViewController ()
+@interface _02ChatViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *fromLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toLabel;
 
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation ChatViewController
+@implementation _02ChatViewController
 
 
 #define USER_A 100

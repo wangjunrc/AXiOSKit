@@ -1,8 +1,8 @@
 //
-//  RunLoopViewController.h
+//  WCDBViewController.h
 //  AXiOSKitExample
 //
-//  Created by liuweixing on 2020/3/6.
+//  Created by liuweixing on 2020/3/9.
 //  Copyright © 2020 liu.weixing. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RunLoopViewController : UIViewController
+@interface _06WCDBViewController : UIViewController
 
 @end
 

@@ -1,8 +1,8 @@
 //
-//  AFNViewController.h
+//  RunLoopViewController.h
 //  AXiOSKitExample
 //
-//  Created by liuweixing on 2020/3/21.
+//  Created by liuweixing on 2020/3/6.
 //  Copyright © 2020 liu.weixing. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AFNViewController : UIViewController
+@interface _04RunLoopViewController : UIViewController
 
 @end
 

@@ -6,12 +6,12 @@
 //  Copyright © 2020 liu.weixing. All rights reserved.
 //
 
-#import "VideoViewController.h"
+#import "_07VideoViewController.h"
 @import AVFoundation;
 #import <AXiOSKit/AXiOSKit.h>
 #import "LVieoView.h"
 
-@interface VideoViewController ()
+@interface _07VideoViewController ()
 
 @property (nonatomic, strong) AVPlayer  *onlinePlayer;
 /**
@@ -20,7 +20,7 @@
 @property(nonatomic,strong)AVPlayerLayer *playerLayer;
 @end
 
-@implementation VideoViewController
+@implementation _07VideoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
