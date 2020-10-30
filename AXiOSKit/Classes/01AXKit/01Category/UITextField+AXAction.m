@@ -199,7 +199,7 @@
 
 - (AXKeyboardObserve*)ax_keyboardObserve
 {
-    AXKeyboardObserve *obj = ax_getValueAssociated(ax_delegateHandler);
+    AXKeyboardObserve *obj = ax_getValueAssociated(ax_keyboardObserve);
     if (obj == nil ){
         obj = [[AXKeyboardObserve alloc] initWithOwner:self];
         self.ax_keyboardObserve = obj;

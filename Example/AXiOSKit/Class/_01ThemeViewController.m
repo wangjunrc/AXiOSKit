@@ -32,10 +32,34 @@
     
     self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
     
+//
+//    NSLog(@"isPresented == %d",self.navigationController && [self.navigationController.viewControllers.firstObject isEqual:self]);
+//
+    
+//    !self.navigationController &&
+//    ![self.navigationController.viewControllers.firstObject isEqual:strongSelf.viewController]
+    ;
+    
+//    self.presentationController; _UIPageSheetPresentationController pr
+    /// _UIFullscreenPresentationController
+   
+//   BOOL is2= [self.presentationController isKindOfClass:NSClassFromString(@"_UIPageSheetPresentationController")];
+//    NSLog(@"self.presentationController = %@ is2 %d",self.presentationController,is2);
+    
+     self.AXListener.isPushed(^{
+         NSLog(@"isPushed");
+     }).isPresented(^{
+         NSLog(@"isPresented");
+     });
+//
     if (@available(iOS 13.0, *)) {
         AXLoger(@"模式>> %ld", ax_keyWindow().overrideUserInterfaceStyle);
     }
     
+    [self _initView];
+}
+
+-(void)_initView {
     UIView *topView = self.view;
     CGFloat all_width = 150;
     CGFloat all_height = 50;
@@ -213,5 +237,7 @@
     
     
 }
-
+- (void)dealloc{
+    axLong_dealloc;
+}
 @end

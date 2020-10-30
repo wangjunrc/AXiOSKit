@@ -56,7 +56,7 @@
 //    [self _bubbleImage];
 //    [self _per];
     [self _setAlternateIconName];
-   
+ 
 }
 
 -(void)_per{

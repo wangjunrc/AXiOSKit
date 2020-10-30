@@ -225,7 +225,7 @@
  */
 - (void)ax_haveNav:(void(^)(UINavigationController *nav))haveNav isPushNav:(void(^)(UINavigationController *nav))isPush isPresentNav:(void(^)(UINavigationController *nav))presentNav noneNav:(void(^)(void))noneNav {
     
-    if (!self.navigationController) {//有导航
+    if (!self.navigationController) {//没有导航
         if (noneNav) {
             noneNav();
         }
@@ -467,6 +467,20 @@
     // 判断要显示的控制器是否是自己
     BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
     [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
+}
+
+-(void)setAXListener:(AXViewControllerListener *)AXListener {
+    ax_setStrongPropertyAssociated(AXListener);
+}
+
+- (AXViewControllerListener*)AXListener{
+    AXViewControllerListener *obj = ax_getValueAssociated(AXListener);
+    if (obj == nil ){
+        obj = [[AXViewControllerListener alloc] initWithObserve:self];
+        self.AXListener = obj;
+    }
+    return obj;
+
 }
 
 @end
