@@ -74,7 +74,7 @@
         return;
     }
     // 2.拥有一个【自定义相册】
-    PHAssetCollection * assetCollection = [self ax_PHAssetCollection];
+    PHAssetCollection * assetCollection = [self AXPHAssetCollection];
     // 3.将刚才保存到【相机胶卷】里面的图片引用到【自定义相册】
     [[PHPhotoLibrary sharedPhotoLibrary]performChangesAndWait:^{
         PHAssetCollectionChangeRequest *requtes = [PHAssetCollectionChangeRequest changeRequestForAssetCollection:assetCollection];
@@ -119,7 +119,7 @@
 //    }];
 //}
 
-- (PHAssetCollection *)ax_PHAssetCollection {
+- (PHAssetCollection *)AXPHAssetCollection {
     // 先获得之前创建过的相册
     
     NSString *appName =  [NSString ax_getAppName];
@@ -411,11 +411,11 @@
  @param aVC vc
  */
 - (void)ax_showVC:(UIViewController *)aVC{
-    if (@available(iOS 13.0, *)) {
-        if (aVC.modalPresentationStyle == UIModalPresentationAutomatic || aVC.modalPresentationStyle == UIModalPresentationPageSheet) {
-            aVC.modalPresentationStyle = UIModalPresentationFullScreen;
-        }
-    }
+//    if (@available(iOS 13.0, *)) {
+//        if (aVC.modalPresentationStyle == UIModalPresentationAutomatic || aVC.modalPresentationStyle == UIModalPresentationPageSheet) {
+//            aVC.modalPresentationStyle = UIModalPresentationFullScreen;
+//        }
+//    }
     [self presentViewController:aVC animated:YES completion:nil];
 }
 
@@ -444,30 +444,30 @@
     [self.navigationController pushViewController:aVC animated:YES];
 }
 
-# pragma mark - 隐藏导航栏
+//# pragma mark - 隐藏导航栏
 
-- (BOOL)ax_shouldNavigationBarHidden{
-    return [objc_getAssociatedObject(self, @selector(ax_shouldNavigationBarHidden)) boolValue];
-}
-
-- (void)setAx_shouldNavigationBarHidden:(BOOL)ax_shouldNavigationBarHidden {
-    
-    if (ax_shouldNavigationBarHidden) {
-        // 设置导航控制器的代理为self
-        self.navigationController.delegate = self;
-        // 必须设置,不然返回手势失效
-        self.navigationController.interactivePopGestureRecognizer.delegate = self;
-    }
-    objc_setAssociatedObject(self, @selector(ax_shouldNavigationBarHidden), @(ax_shouldNavigationBarHidden), OBJC_ASSOCIATION_ASSIGN);
-}
-
-/// UINavigationControllerDelegate
-//将要显示控制器
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    // 判断要显示的控制器是否是自己
-    BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
-    [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
-}
+//- (BOOL)ax_shouldNavigationBarHidden{
+//    return [objc_getAssociatedObject(self, @selector(ax_shouldNavigationBarHidden)) boolValue];
+//}
+//
+//- (void)setAx_shouldNavigationBarHidden:(BOOL)ax_shouldNavigationBarHidden {
+//
+//    if (ax_shouldNavigationBarHidden) {
+//        // 设置导航控制器的代理为self
+//        self.navigationController.delegate = self;
+//        // 必须设置,不然返回手势失效
+//        self.navigationController.interactivePopGestureRecognizer.delegate = self;
+//    }
+//    objc_setAssociatedObject(self, @selector(ax_shouldNavigationBarHidden), @(ax_shouldNavigationBarHidden), OBJC_ASSOCIATION_ASSIGN);
+//}
+//
+///// UINavigationControllerDelegate
+////将要显示控制器
+//- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    // 判断要显示的控制器是否是自己
+//    BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
+//    [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
+//}
 
 -(void)setAXListener:(AXViewControllerListener *)AXListener {
     ax_setStrongPropertyAssociated(AXListener);
@@ -475,12 +475,12 @@
 
 - (AXViewControllerListener*)AXListener{
     AXViewControllerListener *obj = ax_getValueAssociated(AXListener);
-    if (obj == nil ){
+    if (!obj){
         obj = [[AXViewControllerListener alloc] initWithObserve:self];
         self.AXListener = obj;
     }
     return obj;
-
+//    return [[AXViewControllerListener alloc] initWithObserve:self];
 }
 
 @end

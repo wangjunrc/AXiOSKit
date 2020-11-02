@@ -10,7 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+
 @interface AXMediaType : NSObject
+
 
 @property(nonatomic, class, readonly )NSString *kUTTypeImage;
 

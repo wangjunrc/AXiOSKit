@@ -99,7 +99,7 @@
             make.left.equalTo(leftView);
         }];
         [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
-            [self button];
+            [self _iOS14Camera];
         }];
         topView = btn;
     }
@@ -107,7 +107,7 @@
     {
         
         UIButton *btn = [UIButton.alloc init];
-        [btn setTitle:@"自定义相册添加" forState:UIControlStateNormal];
+        [btn setTitle:@"PHPhotoLibrary-授权,不是全选,才会弹出" forState:UIControlStateNormal];
         btn.backgroundColor = UIColor.grayColor;
         [self.view addSubview:btn];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -127,7 +127,7 @@
     {
         
         UIButton *btn = [UIButton.alloc init];
-        [btn setTitle:@"自定义相册" forState:UIControlStateNormal];
+        [btn setTitle:@"TZImagePickerController" forState:UIControlStateNormal];
         btn.backgroundColor = UIColor.grayColor;
         [self.view addSubview:btn];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -170,44 +170,47 @@
     
 }
 
-- (void)button {
+- (void)_iOS14Camera{
     
     AXMediaConfig *config = AXMediaConfig.alloc.init;
     config.editing = NO;
     config.mediaTypes = @[AXMediaType.kUTTypeImage,AXMediaType.kUTTypeMovie];
     
-    //    [self ax_showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
-    //
-    //    }];
-    //    return;
+        [self.AXListener showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
+
+        }];
+//    [self ax_showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
+//
+//    }];
+        return;
     
     // 以下 API 仅为 iOS14 only
-    if (@available(iOS 14, *)) {
-        PHPickerConfiguration *configuration = [[PHPickerConfiguration alloc] init];
-        ///imagesFilter 包含 livePhotosFilter
-        //        configuration.filter = [PHPickerFilter imagesFilter]; // 可配置查询用户相册中文件的类型，支持三种
-        //        configuration.filter = [PHPickerFilter livePhotosFilter];
-        
-        
-        configuration.filter = [PHPickerFilter anyFilterMatchingSubfilters:@[
-            [PHPickerFilter imagesFilter],
-            [PHPickerFilter livePhotosFilter],
-            [PHPickerFilter videosFilter]
-        ]];
-        
-        
-        configuration.selectionLimit = 0; // 默认为1，为0时表示可多选。
-        
-        PHPickerViewController *picker = [[PHPickerViewController alloc] initWithConfiguration:configuration];
-        picker.delegate = self;
-        picker.view.backgroundColor = [UIColor whiteColor];//注意需要进行暗黑模式适配
-        // picker vc，在选完图片后需要在回调中手动 dismiss
-        [self presentViewController:picker animated:YES completion:^{
-            
-        }];
-    } else {
-        // Fallback on earlier versions
-    }
+//    if (@available(iOS 14, *)) {
+//        PHPickerConfiguration *configuration = [[PHPickerConfiguration alloc] init];
+//        ///imagesFilter 包含 livePhotosFilter
+//        //        configuration.filter = [PHPickerFilter imagesFilter]; // 可配置查询用户相册中文件的类型，支持三种
+//        //        configuration.filter = [PHPickerFilter livePhotosFilter];
+//
+//
+//        configuration.filter = [PHPickerFilter anyFilterMatchingSubfilters:@[
+//            [PHPickerFilter imagesFilter],
+//            [PHPickerFilter livePhotosFilter],
+//            [PHPickerFilter videosFilter]
+//        ]];
+//
+//
+//        configuration.selectionLimit = 0; // 默认为1，为0时表示可多选。
+//
+//        PHPickerViewController *picker = [[PHPickerViewController alloc] initWithConfiguration:configuration];
+//        picker.delegate = self;
+//        picker.view.backgroundColor = [UIColor whiteColor];//注意需要进行暗黑模式适配
+//        // picker vc，在选完图片后需要在回调中手动 dismiss
+//        [self presentViewController:picker animated:YES completion:^{
+//
+//        }];
+//    } else {
+//        // Fallback on earlier versions
+//    }
     
 }
 

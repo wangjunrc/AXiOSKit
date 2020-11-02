@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"ax_safe_area_insets = %@   %lf",NSStringFromUIEdgeInsets(ax_safe_area_insets()),UIApplication.sharedApplication.statusBarFrame.size.height);
-    self.ax_shouldNavigationBarHidden = YES;
+    self.AXListener.hiddenNavigationBar = YES;
 }
 
 //- (void)viewWillAppear:(BOOL)animated {

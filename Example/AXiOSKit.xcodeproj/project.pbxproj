@@ -83,7 +83,6 @@
 		213BCC45254003DB00C89B72 /* webp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE1254003DA00C89B72 /* webp.bundle */; };
 		213BCC46254003DB00C89B72 /* H5.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE2254003DA00C89B72 /* H5.bundle */; };
 		213BCC48254003DB00C89B72 /* test_webp.webp in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE4254003DA00C89B72 /* test_webp.webp */; };
-		213BCC49254003DB00C89B72 /* UIViewController+Present.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBE5254003DB00C89B72 /* UIViewController+Present.m */; };
 		213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBE7254003DB00C89B72 /* AppDelegate.m */; };
 		21898E9C2541AD6900876524 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898E9B2541AD6900876524 /* ShareViewController.m */; };
 		21898E9F2541AD6900876524 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21898E9D2541AD6900876524 /* MainInterface.storyboard */; };
@@ -231,7 +230,6 @@
 		213BCB90254003D900C89B72 /* PointViewController.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PointViewController.plist; sourceTree = "<group>"; };
 		213BCB91254003D900C89B72 /* AxGenerator.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AxGenerator.xcconfig; sourceTree = "<group>"; };
 		213BCB94254003D900C89B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		213BCB95254003D900C89B72 /* UIViewController+Present.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Present.h"; sourceTree = "<group>"; };
 		213BCB96254003DA00C89B72 /* 123.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 123.jpg; sourceTree = "<group>"; };
 		213BCB99254003DA00C89B72 /* AXWebSocketEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXWebSocketEngine.h; sourceTree = "<group>"; };
 		213BCB9A254003DA00C89B72 /* AXWebSocketEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXWebSocketEngine.m; sourceTree = "<group>"; };
@@ -271,7 +269,6 @@
 		213BCBE2254003DA00C89B72 /* H5.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = H5.bundle; sourceTree = "<group>"; };
 		213BCBE3254003DA00C89B72 /* AxRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AxRelease.xcconfig; sourceTree = "<group>"; };
 		213BCBE4254003DA00C89B72 /* test_webp.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_webp.webp; sourceTree = "<group>"; };
-		213BCBE5254003DB00C89B72 /* UIViewController+Present.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Present.m"; sourceTree = "<group>"; };
 		213BCBE6254003DB00C89B72 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		213BCBE7254003DB00C89B72 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		21898E982541AD6900876524 /* AXShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AXShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -543,8 +540,6 @@
 				213BCBB2254003DA00C89B72 /* UIControl+load.m */,
 				213BCBB6254003DA00C89B72 /* UIImage+Load.h */,
 				213BCBB3254003DA00C89B72 /* UIImage+Load.m */,
-				213BCB95254003D900C89B72 /* UIViewController+Present.h */,
-				213BCBE5254003DB00C89B72 /* UIViewController+Present.m */,
 			);
 			path = Load;
 			sourceTree = "<group>";
@@ -1160,7 +1155,6 @@
 				213BCBF2254003DB00C89B72 /* _10TextFViewController.m in Sources */,
 				213BCC30254003DB00C89B72 /* ChatTextMessageModel.m in Sources */,
 				213BCBFD254003DB00C89B72 /* _20iOS14ViewController.m in Sources */,
-				213BCC49254003DB00C89B72 /* UIViewController+Present.m in Sources */,
 				218A1E9025441BBE00E43F16 /* _28LocalSocketServiceViewController.m in Sources */,
 				213BCBF9254003DB00C89B72 /* AFHTTPSessionManager+PutFile.m in Sources */,
 				213BCC1D254003DB00C89B72 /* _01ThemeViewController.m in Sources */,

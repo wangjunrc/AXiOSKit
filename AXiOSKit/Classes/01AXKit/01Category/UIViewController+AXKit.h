@@ -128,10 +128,10 @@
  */
 - (void)ax_pushVC:(UIViewController *)aVC;
 
-/// 是否隐藏导航栏。默认NO。
-@property (nonatomic, assign) BOOL ax_shouldNavigationBarHidden;
+///// 是否隐藏导航栏。默认NO。
+//@property (nonatomic, assign) BOOL ax_shouldNavigationBarHidden;
 
-- (PHAssetCollection *)ax_PHAssetCollection;
+@property (nonatomic, strong, readonly)PHAssetCollection *AXPHAssetCollection;
 
 @property (nonatomic, strong, readonly) AXViewControllerListener *AXListener;
 

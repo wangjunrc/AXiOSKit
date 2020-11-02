@@ -309,8 +309,14 @@ void mySLog(NSString *format, ...)
                     @"index": @2,
                     @"title": @"UIAlertController 颜色",
                     @"action": ^{
-                        [self ax_showAlertByTitle:@"A"
-                                          message:@"B"
+//                        [self ax_showAlertByTitle:@"A"
+//                                          message:@"B"
+//                                          confirm:^{
+//                                          }
+//                                           cancel:^{
+//                                           }];
+                        [self ax_showAlertByTitle:@""
+                                          message:@""
                                           confirm:^{
                                           }
                                            cancel:^{
@@ -430,8 +436,11 @@ void mySLog(NSString *format, ...)
                     @"title": @"隐藏导航栏",
                     @"action": ^{
                         _01ThemeViewController *vc = [[_01ThemeViewController alloc]init];
+                       
                         [self.navigationController pushViewController:vc animated:YES];
-                        vc.ax_shouldNavigationBarHidden = YES;
+//                        vc.ax_shouldNavigationBarHidden = YES;
+                        vc.AXListener.hiddenNavigationBar = YES;
+                        NSLog(@"vc.AXListener.shouldNavigationBarHidden %d",vc.AXListener.isHiddenNavigationBar);
                     },
                 },
 

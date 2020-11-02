@@ -70,7 +70,6 @@
 #import "UIView+AXSnapshot.h"
 #import "UIViewController+AXAlert.h"
 #import "UIViewController+AXKit.h"
-#import "UIViewController+AXMedia.h"
 #import "UIViewController+AXNavBarConfig.h"
 #import "UIWindow+AXKit.h"
 #import "WKWebView+AXKit.h"

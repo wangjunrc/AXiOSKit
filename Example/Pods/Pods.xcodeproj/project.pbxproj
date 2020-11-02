@@ -2243,7 +2243,6 @@
 		D732A5CE04B14B309332F9D1B6B56F02 /* enc_sse2.c in Sources */ = {isa = PBXBuildFile; fileRef = BB1930D57A570E39FA97942BD580D858 /* enc_sse2.c */; settings = {COMPILER_FLAGS = "-D_THREAD_SAFE -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D7339749CE604F15697269CB415A55EB /* UILabel+AXKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 868D8516BD20617DB60D386191B6D2C9 /* UILabel+AXKit.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D7660C31A5C5E43E77EBA7D8C30BEFCC /* NSString+AXDate.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E70CCD236FCF0111D2AE75BAF3D516 /* NSString+AXDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D776FB366DACABF94B90E8A4B2FE12AA /* UIViewController+AXMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5C370FC6DB2C255A1B325A01E717F8 /* UIViewController+AXMedia.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D7A79E0DAC9677BA1663ED5039F087DE /* FLAnimatedImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 32D6D8405D68552A561D1FD48431BF85 /* FLAnimatedImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D7CDD86603D0B88E7194877E5C69A85C /* IBUIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6B1295BD0AFFF0CAEA550C916F8CFDB /* IBUIImageView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D80CE3FC5E615DA2B260104B727E4103 /* NSObject+LL_Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 777C05D0EF625BD80045E1B8F09C64F3 /* NSObject+LL_Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -2540,7 +2539,6 @@
 		F47A4D3EE6FCF133AE1EB0917C26FE17 /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = BB832E3254F8D96974A381AC80EB92BD /* DataBase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F48B65CFCA2AF52F0EF43F8C2B62BA36 /* RMQHandshaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B1842B619D266BE33B7E002B4338F613 /* RMQHandshaker.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F4A10906A5A31E359651468A15C24305 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6247CE21796208919A27AD2AB43872 /* CocoaAsyncSocket.framework */; };
-		F4B14F9811E391F1AF71EDAEEB208450 /* UIViewController+AXMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E0E61E946ECA24A826D2925CCB0C3D /* UIViewController+AXMedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4B55A4C0E0C213B8D06142EECC9ABF4 /* Aspects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6AB05E9C005831666A9596A8098D149 /* Aspects.framework */; };
 		F4C60B74231C51A3F665125ECF6B2BB1 /* SDWebImageDownloaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = F6D1CCF6411AB04C96E9E11D70E00A2B /* SDWebImageDownloaderOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4CB0150C47AF42F6DD5EA6E8EF269CD /* PromisesObjC-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22EC36D263971BF82F819D93C4539FA0 /* PromisesObjC-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -5556,7 +5554,6 @@
 		D574C679902CC4549645BD61B99AB55D /* LLShortCutModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LLShortCutModel.h; path = LLDebugTool/Core/Component/ShortCut/Function/LLShortCutModel.h; sourceTree = "<group>"; };
 		D5839F5282D6B6CFDB023007E71F0438 /* MJRefreshNormalHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshNormalHeader.m; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.m; sourceTree = "<group>"; };
 		D5DEFBE7D8D17020B9F860BDED65FA09 /* LLWindowManager+ShortCut.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "LLWindowManager+ShortCut.m"; path = "LLDebugTool/Core/Component/ShortCut/UserInterface/LLWindowManager+ShortCut.m"; sourceTree = "<group>"; };
-		D5E0E61E946ECA24A826D2925CCB0C3D /* UIViewController+AXMedia.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXMedia.h"; sourceTree = "<group>"; };
 		D5EC02F3E04C1B698CA702AC82988D4E /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		D5F87CC68AD15C0CF8829A9F70024F44 /* NSString+RACSequenceAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+RACSequenceAdditions.m"; path = "ReactiveObjC/NSString+RACSequenceAdditions.m"; sourceTree = "<group>"; };
 		D645FE0CC8085B782426A1CB4ACDED34 /* quant_levels_dec_utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = quant_levels_dec_utils.h; path = src/utils/quant_levels_dec_utils.h; sourceTree = "<group>"; };
@@ -5836,7 +5833,6 @@
 		EF1CCE48CD87A4167E628F2DCFE04935 /* LLShortCutModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LLShortCutModel.m; path = LLDebugTool/Core/Component/ShortCut/Function/LLShortCutModel.m; sourceTree = "<group>"; };
 		EF2BB21E045D61D9029840A1B5102E82 /* NSString+LL_Utils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+LL_Utils.h"; path = "LLDebugTool/Core/Others/Category/NSString/NSString+LL_Utils.h"; sourceTree = "<group>"; };
 		EF332555A3260F2598485CBABF45CBFF /* UIBarButtonItem+AXKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+AXKit.m"; sourceTree = "<group>"; };
-		EF5C370FC6DB2C255A1B325A01E717F8 /* UIViewController+AXMedia.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXMedia.m"; sourceTree = "<group>"; };
 		EF63E67BC5F3B9AE118F84D53E8C01FA /* AXRefreshFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXRefreshFooter.h; sourceTree = "<group>"; };
 		EF70C22CA151CACF4388F8D1B9887D5E /* NSAttributedString+AttributedStringHook.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+AttributedStringHook.m"; path = "JJException/Source/ARC/NSAttributedString+AttributedStringHook.m"; sourceTree = "<group>"; };
 		EF74646CBCB4C27E7407240C88783BA8 /* MLeaksFinder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLeaksFinder.h; path = MLeaksFinder/MLeaksFinder.h; sourceTree = "<group>"; };
@@ -8527,8 +8523,6 @@
 				34D7048FF17E9065A9298BDFE256B08D /* UIViewController+AXAlert.m */,
 				775ADA3A298470E485ABA1B3800D32B5 /* UIViewController+AXKit.h */,
 				E170D66563E60D1C160C0A8EC322F22B /* UIViewController+AXKit.m */,
-				D5E0E61E946ECA24A826D2925CCB0C3D /* UIViewController+AXMedia.h */,
-				EF5C370FC6DB2C255A1B325A01E717F8 /* UIViewController+AXMedia.m */,
 				863849A5EB8D624C7D9B8B57E4F4F4EC /* UIViewController+AXNavBarConfig.h */,
 				E72A64B08DAE1CFD99A7EFC053B82B62 /* UIViewController+AXNavBarConfig.m */,
 				E07B44472694EE74EFAFF30CE34FDFA7 /* UIWindow+AXKit.h */,
@@ -11334,7 +11328,6 @@
 				B4D1D6DADC6C29FBD06F207E3829ACE0 /* UIView+AXSnapshot.h in Headers */,
 				66828D0D408F57192F439A9AB16DD48F /* UIViewController+AXAlert.h in Headers */,
 				501BAED8839EB85F1C9A91E76D277BB8 /* UIViewController+AXKit.h in Headers */,
-				F4B14F9811E391F1AF71EDAEEB208450 /* UIViewController+AXMedia.h in Headers */,
 				1DE403B0C03A6F17AA8E98709DED0902 /* UIViewController+AXNavBarConfig.h in Headers */,
 				49E4B301F48AE670DEAB34FF5E5989E7 /* UIWindow+AXKit.h in Headers */,
 				1033669F0CBA34923C2CCE4542E4F82A /* UMTool.h in Headers */,
@@ -15010,7 +15003,6 @@
 				60550FAE2C9B7667E5B5CDC6F42721E6 /* UIView+AXSnapshot.m in Sources */,
 				8CDF7D6C3DCED8726EF4FB002BCFFA40 /* UIViewController+AXAlert.m in Sources */,
 				6B02A21CDAD28530EAD842522E10EFB4 /* UIViewController+AXKit.m in Sources */,
-				D776FB366DACABF94B90E8A4B2FE12AA /* UIViewController+AXMedia.m in Sources */,
 				EA051F27F515F91A4F2B08F0320A7B45 /* UIViewController+AXNavBarConfig.m in Sources */,
 				F1083AF4D4CF89EA197659941EBA938A /* UIWindow+AXKit.m in Sources */,
 				9A498AAA3F9EA7C1B166E6E5619DCB1C /* UMTool.m in Sources */,
