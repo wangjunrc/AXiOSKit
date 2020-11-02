@@ -145,7 +145,7 @@ return (aViewClass *)[super view];\
 
 #pragma mark - weakify
 
-/**weakify*/
+/**weakify ,调用添加前缀@*/
 #ifndef weakify
 #if DEBUG
 #if __has_feature(objc_arc)
@@ -164,7 +164,7 @@ return (aViewClass *)[super view];\
 
 #pragma mark - strongify
 
-/**strongify*/
+/**strongify,调用添加前缀@*/
 #ifndef strongify
 #if DEBUG
 #if __has_feature(objc_arc)
