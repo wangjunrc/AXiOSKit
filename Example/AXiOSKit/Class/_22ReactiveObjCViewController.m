@@ -179,6 +179,8 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
 @property(nonatomic, strong) UIButton *subscribeButton;
 @property(nonatomic, strong) UILabel *statusLabel;
 
+@property(nonatomic, strong) NSMutableArray *dataArray;
+
 @end
 
 @implementation _22ReactiveObjCViewController
@@ -199,11 +201,154 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     
     self.title = NSLocalizedString(@"Subscribe Example", nil);
     
-    [self addViews];
-    [self defineLayout];
-    [self bindWithViewModel];
+//    [self addViews];
+//    [self defineLayout];
+//    [self bindWithViewModel];
+    
+    
+//    RACChannelTo(view, property) = RACChannelTo(model, property);
+    
+    [self _RACChannelTo];
 }
-
+-(void)_RACChannelTo{
+    
+    UIView *topView = self.view;
+    CGFloat all_width = 150;
+    CGFloat all_height = 50;
+    
+    
+    
+  UIButton *btn1;
+    
+    {
+        UIButton *btn = [[UIButton alloc] init];
+        [self.view addSubview:btn];
+        btn.frame = CGRectMake(0, 0, all_width, all_height);
+        btn.backgroundColor = UIColor.blueColor;
+        [btn ax_setTitleStateNormal:@"Normal"];
+        [btn ax_setTitleStateDisabled:@"Disabled"];
+        btn.ax_top = topView.top + ax_status_bar_height();
+        btn.ax_left = topView.ax_left+50;
+        
+        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
+            
+        }];
+        btn1 = btn;
+        topView =btn;
+    }
+    UIButton *btn2;
+    {
+        UIButton *btn = [[UIButton alloc] init];
+        [self.view addSubview:btn];
+        btn.frame = CGRectMake(0, 0, all_width, all_height);
+        btn.backgroundColor = UIColor.blueColor;
+        [btn ax_setTitleStateNormal:@"Normal-2"];
+        [btn ax_setTitleStateDisabled:@"Disabled-2"];
+        btn.ax_top = topView.ax_bottom + 10;
+        btn.ax_left = topView.ax_left;
+        
+        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
+            
+        }];
+        btn2 = btn;
+        topView =btn;
+    }
+    UILabel *label1;
+    {
+        UILabel *label = [[UILabel alloc] init];
+        [self.view addSubview:label];
+        label.frame = CGRectMake(0, 0, all_width, all_height);
+        label.backgroundColor = UIColor.blueColor;
+        label.ax_top = topView.ax_bottom + 10;
+        label.ax_left = topView.ax_left;
+        label.text = @"label1";
+        label1 =label;
+        topView =label;
+    }
+    UITextField *tf;
+    {
+        UITextField *view = [[UITextField alloc] init];
+        [self.view addSubview:view];
+        view.frame = CGRectMake(0, 0, all_width, all_height);
+        view.backgroundColor = UIColor.blueColor;
+        view.ax_top = topView.ax_bottom + 10;
+        view.ax_left = topView.ax_left;
+        view.placeholder = @"tf";
+        tf =view;
+        topView =view;
+    }
+    UILabel *label2;
+    {
+        UILabel *label = [[UILabel alloc] init];
+        [self.view addSubview:label];
+        label.frame = CGRectMake(0, 0, all_width, all_height);
+        label.backgroundColor = UIColor.grayColor;
+        label.ax_top = topView.ax_bottom + 10;
+        label.ax_left = topView.ax_left;
+        label.text = @"label2";
+        label2 =label;
+        topView =label;
+    }
+    UITextView *textView;
+    {
+        UITextView *view = [[UITextView alloc] init];
+        [self.view addSubview:view];
+        view.frame = CGRectMake(0, 0, all_width, all_height);
+        view.backgroundColor = UIColor.grayColor;
+        view.ax_top = topView.ax_bottom + 10;
+        view.ax_left = topView.ax_left;
+        textView =view;
+        topView =view;
+    }
+    {
+        UIButton *btn = [[UIButton alloc] init];
+        [self.view addSubview:btn];
+        btn.frame = CGRectMake(0, 0, all_width, all_height);
+        btn.backgroundColor = UIColor.blueColor;
+        [btn ax_setTitleStateNormal:@"清空数组"];
+        btn.ax_top = topView.ax_bottom + 10;
+        btn.ax_left = topView.ax_left;
+        
+        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
+            [self.dataArray removeAllObjects];
+            btn1.enabled = ! btn1.enabled;
+            label1.text = [NSString stringWithFormat:@"%d",ax_randomZeroToValue(100)];
+            label2.text = [NSString stringWithFormat:@"%d",ax_randomZeroToValue(50)];
+        }];
+        
+        topView =btn;
+    }
+    {
+        UIButton *btn = [[UIButton alloc] init];
+        [self.view addSubview:btn];
+        btn.frame = CGRectMake(0, 0, all_width, all_height);
+        btn.backgroundColor = UIColor.blueColor;
+        [btn ax_setTitleStateNormal:@"添加数组"];
+        btn.ax_top = topView.ax_bottom + 10;
+        btn.ax_left = topView.ax_left;
+        
+        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
+            [self.dataArray addObject:@"A"];
+            btn2.enabled = ! btn2.enabled;
+        }];
+        
+        topView =btn;
+    }
+    
+    RACChannelTo(btn1, enabled) =  RACChannelTo(btn2, enabled);
+    
+//    RACChannelTo(label1, text) =  RACChannelTo(tf, text);
+    
+    /// https://blog.csdn.net/maolianshuai/article/details/90474652
+    
+    /// UITextField 双向绑定
+    RACChannelTo(label1, text) = tf.rac_newTextChannel;
+    
+    /// UITextView 双向绑定
+    RACChannelTo(label2, text) = RACChannelTo(textView, text);
+    [textView.rac_textSignal subscribe:RACChannelTo(label2, text)];
+    
+}
 #pragma mark -
 
 - (void)addViews {
@@ -274,6 +419,11 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     }
     return _statusLabel;
 }
-
+- (NSMutableArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray.alloc init];
+    }
+    return _dataArray;
+}
 @end
 

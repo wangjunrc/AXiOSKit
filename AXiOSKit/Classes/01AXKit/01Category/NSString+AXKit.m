@@ -136,7 +136,7 @@
 
 +(NSString *)ax_getAppVersion{
     NSDictionary *info = [self ax_getAppInfo];
-    return [info[@"CFBundleShortVersionString"]description];
+    return [info[@"CFBundleShortVersionString"]stringValue];
 }
 
 /**
@@ -161,6 +161,14 @@
 + (NSString*)ax_getAppBundleID{
     NSDictionary *info = [self ax_getAppInfo];
     return info[@"CFBundleIdentifier"];
+}
+
+/**
+ * 获取应用程序的 AppIcon
+ */
++ (NSString*)ax_getAppIcon {
+    NSDictionary *info = [self ax_getAppInfo];
+    return [[[info valueForKeyPath:@"CFBundleIcons.CFBundlePrimaryIcon.CFBundleIconFiles"] lastObject] stringValue];
 }
 
 /**
@@ -535,7 +543,7 @@
 /**
  拼接成 tel:// 格式
  
- @return return value description
+ @return return value stringValue
  */
 - (NSURL *)ax_toTelURL{
     

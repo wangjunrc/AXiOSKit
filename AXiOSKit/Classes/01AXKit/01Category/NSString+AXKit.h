@@ -81,6 +81,11 @@
 @property (nonatomic, copy, readonly, class) NSString *ax_getAppBundleID;
 
 /**
+ * 获取应用程序的 AppIcon
+ */
+@property (nonatomic, copy, readonly, class) NSString *ax_getAppIcon;
+
+/**
  * 获取应用程序的 infor 路径
  */
 @property (nonatomic, copy, readonly, class) NSString *ax_getAppInfoPlistPath;

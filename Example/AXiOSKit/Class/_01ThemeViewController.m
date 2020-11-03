@@ -120,7 +120,8 @@
     }
     {
         
-        UIImageView *imv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ax_icon_weixin"]];
+        UIImageView *imv = [[UIImageView alloc] init];
+        imv.image =[UIImage imageNamed:@"ax_icon_weixin"];
         [self.view addSubview:imv];
         imv.frame = CGRectMake(0,0, all_height, all_height);
         imv.ax_top = topView.ax_bottom + 10;

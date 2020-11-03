@@ -25,37 +25,37 @@ typedef NS_ENUM(NSInteger, AxRequestSerializerType) {
 @property (class, nonatomic, readonly, strong)AXNetworkManager *(^managerWithURL)(NSString *baseURL);
 
 /// 请求序列化方式
-@property (nonatomic, readonly, copy) AXNetworkManager *(^requestSerializer)(AxRequestSerializerType requestSerializerType);
+@property (nonatomic, copy, readonly) AXNetworkManager *(^requestSerializer)(AxRequestSerializerType requestSerializerType);
 
 /// get请求
-@property (nonatomic, readonly, copy) AXNetworkManager *(^get)(NSString *pathOrFullURLString);
+@property (nonatomic, copy, readonly) AXNetworkManager *(^get)(NSString *pathOrFullURLString);
 
 /// post请求
-@property (nonatomic, readonly, copy) AXNetworkManager *(^post)(NSString *pathOrFullURLString);
+@property (nonatomic, copy, readonly) AXNetworkManager *(^post)(NSString *pathOrFullURLString);
 
 /// delete请求
-@property (nonatomic, readonly, copy) AXNetworkManager *(^delete)(NSString *pathOrFullURLString);
+@property (nonatomic, copy, readonly) AXNetworkManager *(^delete)(NSString *pathOrFullURLString);
 
 /// 添加参数
-@property (nonatomic, readonly, copy) AXNetworkManager *(^parameters)(id parameters);
+@property (nonatomic, copy, readonly) AXNetworkManager *(^parameters)(id parameters);
 
 /// 添加请求头
-@property (nonatomic, readonly, copy) AXNetworkManager *(^headers)(NSDictionary <NSString *, NSString *> *headers);
+@property (nonatomic, copy, readonly) AXNetworkManager *(^headers)(NSDictionary <NSString *, NSString *> *headers);
 
 /// 请求进度
-@property (nonatomic, readonly, copy) AXNetworkManager *(^progress)(void(^)(NSProgress  *progress));
+@property (nonatomic, copy, readonly) AXNetworkManager *(^progress)(void(^)(NSProgress  *progress));
 
 /// 请求成功
-@property (nonatomic, readonly, copy) AXNetworkManager *(^success)(void(^)(id responseObject));
+@property (nonatomic, copy, readonly) AXNetworkManager *(^success)(void(^)(id responseObject));
 
 /// 请求失败
-@property (nonatomic, readonly, copy) AXNetworkManager *(^failure)(void(^)(NSError *error));
+@property (nonatomic, copy, readonly) AXNetworkManager *(^failure)(void(^)(NSError *error));
 
 /// 开始请求,
-@property (nonatomic, readonly, copy) void(^start)(void);
+@property (nonatomic, copy, readonly) void(^start)(void);
 
 /// 取消请求
-@property (nonatomic, readonly, copy) void(^cancel)(void);
+@property (nonatomic, copy, readonly) void(^cancel)(void);
 
 @end
 
