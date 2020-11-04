@@ -201,12 +201,12 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     
     self.title = NSLocalizedString(@"Subscribe Example", nil);
     
-//    [self addViews];
-//    [self defineLayout];
-//    [self bindWithViewModel];
+    //    [self addViews];
+    //    [self defineLayout];
+    //    [self bindWithViewModel];
     
     
-//    RACChannelTo(view, property) = RACChannelTo(model, property);
+    //    RACChannelTo(view, property) = RACChannelTo(model, property);
     
     [self _RACChannelTo];
 }
@@ -218,7 +218,7 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     
     
     
-  UIButton *btn1;
+    UIButton *btn1;
     
     {
         UIButton *btn = [[UIButton alloc] init];
@@ -337,7 +337,7 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     
     RACChannelTo(btn1, enabled) =  RACChannelTo(btn2, enabled);
     
-//    RACChannelTo(label1, text) =  RACChannelTo(tf, text);
+    //    RACChannelTo(label1, text) =  RACChannelTo(tf, text);
     
     /// https://blog.csdn.net/maolianshuai/article/details/90474652
     
@@ -348,6 +348,47 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     RACChannelTo(label2, text) = RACChannelTo(textView, text);
     [textView.rac_textSignal subscribe:RACChannelTo(label2, text)];
     
+    UISwitch  *someSwitch;
+    {
+        UISwitch *btn = [[UISwitch alloc] init];
+        [self.view addSubview:btn];
+        btn.frame = CGRectMake(0, 0, all_width, all_height);
+        btn.backgroundColor = UIColor.blueColor;
+        btn.ax_top = topView.ax_bottom + 10;
+        btn.ax_left = topView.ax_left;
+        
+        topView =btn;
+        someSwitch=btn;
+    }
+    
+    NSLog(@"进入 key = %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"]);
+    //    [someSwitch setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"] forKey:@"on"];
+    //    [[RACKVOChannel alloc] initWithTarget:[NSUserDefaults standardUserDefaults]
+    //                                      keyPath:@"someBoolKey" nilValue:@(NO)][@"followingTerminal"] = [[RACKVOChannel alloc] initWithTarget:someSwitch keyPath:@"on" nilValue:@(NO)][@"followingTerminal"];
+    //
+    //    // 上面的不能完全实现双向绑定，因为 UISwitch 的 on 属性是不支持 KVO 的
+    //    @weakify(self)
+    //    [someSwitch.rac_newOnChannel subscribeNext:^(NSNumber *onValue) {
+    //        @strongify(self)
+    //
+    //        // 下面两句都可以
+    //        [someSwitch setValue:onValue forKey:@"on"];
+    //        //[[NSUserDefaults standardUserDefaults] setObject:onValue forKey:@"someBoolKey"];
+    //        NSLog(@"key = %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"]);
+    //    }];
+    
+    /// UISwitch 双向绑定
+    RACChannelTerminal *switchTerminal = someSwitch.rac_newOnChannel;
+    RACChannelTerminal *defaultsTerminal = [[NSUserDefaults standardUserDefaults] rac_channelTerminalForKey:@"someBoolKey"];
+    [switchTerminal subscribe:defaultsTerminal];
+    [defaultsTerminal subscribe:switchTerminal];
+    /// 监听变化
+    [someSwitch.rac_newOnChannel subscribeNext:^(NSNumber *onValue) {
+        // 下面两句都可以
+        //            [someSwitch setValue:onValue forKey:@"on"];
+        //[[NSUserDefaults standardUserDefaults] setObject:onValue forKey:@"someBoolKey"];
+        NSLog(@"isOn = %d  key =%@",someSwitch.isOn,[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"]);
+    }];
 }
 #pragma mark -
 
