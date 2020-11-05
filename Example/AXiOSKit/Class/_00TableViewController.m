@@ -44,6 +44,7 @@
 #import <AXiOSKit/NSMutableArray+AXKVO.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <mach/mach.h>
+#import "DLSilentDateSetViewController.h"
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -58,7 +59,7 @@ typedef void (^CollectionBlock)(void);
 @property (nonatomic, copy) NSMutableString *copyedMStr;
 @property (nonatomic, copy) NSString *copyedStr;
 @property (nonatomic, strong) AXSystemAuthorizerManager *authorizerManager;
-@property (nonatomic, strong) NSArray<NSArray *> *dataArray;
+@property (nonatomic, strong) NSMutableArray<NSMutableArray<NSDictionary *> *> *dataArray;
 @property (nonatomic, strong) NSMutableString *strongMStr;
 @property (nonatomic, strong) NSString *strongStr;
 
@@ -107,8 +108,46 @@ typedef void (^CollectionBlock)(void);
     //        NSLog(@"方法调用setObject=AA %@",self.dataArray);
     //        NSLog(@"方法调用setObject-array %@",array);
     //    }];
+    UIButton *btn = [[UIButton alloc]init];
+    [btn setTitle:@"编辑" forState:UIControlStateNormal];
+    btn.backgroundColor = UIColor.blueColor;
+    [btn addTarget:self action:@selector(enitAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *btn2 = [[UIButton alloc]init];
+    [btn2 setTitle:@"删除" forState:UIControlStateNormal];
+    btn2.backgroundColor = UIColor.blueColor;
+    [btn2 addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],[UIBarButtonItem ax_itemByButton:btn2]];
 }
 
+-(void)enitAction:(UIButton *)btn{
+    [self.tableView setEditing:!self.tableView.isEditing animated:YES];
+}
+
+-(void)deleteAction:(UIButton *)btn{
+    
+    [self.tableView beginUpdates];
+    NSMutableArray *temp = [NSMutableArray array];
+    
+    __weak typeof(self) weakSelf = self;
+    [self.tableView.indexPathsForSelectedRows
+     enumerateObjectsUsingBlock:^(NSIndexPath *_Nonnull obj, NSUInteger idx,
+                                  BOOL *_Nonnull stop) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        NSLog(@"obj.row %ld",obj.row);
+        [temp addObject:strongSelf.dataArray[0][obj.row]];
+       
+    }];
+   
+    [self.dataArray[0] removeObjectsInArray:temp];
+     [self.tableView
+      deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows
+      withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
+    
+}
 - (void)test {
     NSLog(@"5");
 }
@@ -175,6 +214,10 @@ void mySLog(NSString *format, ...)
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (tableView.isEditing) {
+        return;
+    }
     NSDictionary *dict = self.dataArray[indexPath.section][indexPath.row];
 
     void (^ didSelectRowAtIndexPath)(void) = dict[@"action"];
@@ -182,21 +225,74 @@ void mySLog(NSString *format, ...)
     didSelectRowAtIndexPath();
 }
 
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
-}
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
+
+//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
+//}
+
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return YES;
+//}
 
 //- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    return UITableViewCellEditingStyleDelete;
 //}
 
-- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return @"删除";
+//- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return @"删除";
+//}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView.isEditing) {
+        return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
+    }
+    return UITableViewCellEditingStyleDelete;
 }
+
+
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(11.0)){
+    
+//    NSString *title = @"置顶";
+//    if (indexPath.section == 0) {
+//        title = @"取消置顶";
+//    } else {
+//        title = @"置顶";
+//    }
+//    UIContextualAction *topAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:title handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {            // 这句很重要，退出编辑模式，隐藏左滑菜单
+//        [tableView setEditing:NO animated:YES];
+//        completionHandler(true);
+//    }];
+    
+    UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+        action.title =@"删除1";
+        action.image = [UIImage imageNamed:@"cell_right_delete"];
+        // 这句很重要，退出编辑模式，隐藏左滑菜单
+        [tableView setEditing:NO animated:YES];
+        completionHandler(true);
+    }];
+    deleteAction.title =@"删除1";
+    deleteAction.image = [UIImage imageNamed:@"cell_right_delete"];
+    UISwipeActionsConfiguration *actions = [UISwipeActionsConfiguration configurationWithActions:@[deleteAction]];
+    // 禁止侧滑无线拉伸
+    actions.performsFirstActionWithFullSwipe = NO;
+    return actions;
+}
+
+//- (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    for (UIView *subview in tableView.subviews) {
+//        if ([NSStringFromClass([subview class]) isEqualToString:@"UISwipeActionPullView"]) {
+//            if ([NSStringFromClass([subview.subviews[0] class]) isEqualToString:@"UISwipeActionStandardButton"]) {
+//                UIButton *collectBtn = subview.subviews[0];
+//                collectBtn.backgroundColor = [UIColor greenColor];
+//                [collectBtn setImage:[UIImage imageNamed:@"cell_right_delete"] forState:UIControlStateNormal];
+//                [collectBtn setTitle:@"删除" forState:UIControlStateNormal];
+//            }
+//        }
+//    }
+//}
+
 
 - (void)testPerson {
 }
@@ -222,7 +318,7 @@ void mySLog(NSString *format, ...)
 
 #pragma mark -  数据源
 
-- (NSArray *)dataArray {
+- (NSMutableArray *)dataArray {
     if (!_dataArray) {
         _dataArray = @[
             @[
@@ -409,7 +505,7 @@ void mySLog(NSString *format, ...)
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
-            ],
+            ].mutableCopy,
             ///*******************分组2************************
             @[
 
@@ -669,10 +765,23 @@ void mySLog(NSString *format, ...)
                         [AXPresentGesturesBack injectDismissTransitionForViewController:vc];
                         [self ax_showVC:vc];
                     },
+                    
+                    
                 },
+                @{
+                    @"index": @29,
+                    @"title": @"DLSilentDateSetViewController",
+                    @"action": ^{
+                        DLSilentDateSetViewController *vc = [DLSilentDateSetViewController ax_init];
+                        [self ax_showVC:vc];
+                    },
+                    
+                    
+                },
+                
 
-            ]
-        ];
+            ].mutableCopy
+        ].mutableCopy;
     }
     return _dataArray;
 }

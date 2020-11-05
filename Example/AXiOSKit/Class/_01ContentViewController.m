@@ -55,10 +55,37 @@
 //    [self _kvoInt];
 //    [self _bubbleImage];
 //    [self _per];
-    [self _setAlternateIconName];
- 
+//    [self _setAlternateIconName];
+//    [self _bottomView];
+    UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 50)];
+    [self.view addSubview:img];
+    img.backgroundColor = UIColor.orangeColor;
+//    img.contentMode = UIViewContentModeCenter;
+//    img.image =   [UIImage imageFromText:@[@"jim"] withFont:20 withTextColor:UIColor.redColor withBgImage:nil withBgColor:UIColor.blueColor];
+    img.contentMode = UIViewContentModeScaleAspectFill;
+    img.image = [UIImage imageFromText:@[@"jim"]  withFont:100];
 }
 
+-(void)_bottomView {
+    
+    UIView *bottomView = [UIView ax_init];
+    [self.view addSubview:bottomView];
+    bottomView.backgroundColor = UIColor.orangeColor;
+    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.height.mas_equalTo(50+ax_safe_area_insets_bottom_offset(0));
+        make.bottom.mas_equalTo(-ax_safe_area_insets_bottom_zero_offset(10));
+    }];
+    
+    UIView *subView = [UIView ax_init];
+    [bottomView addSubview:subView];
+    subView.backgroundColor = UIColor.greenColor;
+    [subView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.mas_equalTo(0);
+//        make.bottom.mas_equalTo(-ax_safe_area_insets_bottom_offset(10));
+        make.height.mas_equalTo(50);
+    }];
+}
 -(void)_per{
     
  

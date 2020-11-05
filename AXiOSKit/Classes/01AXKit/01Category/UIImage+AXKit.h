@@ -146,5 +146,10 @@
  */
 - (void)ax_saveImageToPhotos;
 
+//文字转化成图片
+
++(UIImage *)imageFromText:(NSArray*)arrContent withFont:(CGFloat)fontSize withTextColor:(UIColor *)textColor withBgImage:(UIImage *)bgImage withBgColor:(UIColor *)bgColor;
+
++(UIImage *)imageFromText:(NSArray*)arrContent withFont:(CGFloat)fontSize;
 @end
 

@@ -59,6 +59,12 @@ extern CGFloat ax_safe_area_insets_left(void);
 /**安全区域 UIEdgeInsets bottom*/
 extern CGFloat ax_safe_area_insets_bottom(void);
 
+/**安全区域 UIEdgeInsets bottom 偏移 如果 bottom>0 就返回bottom bottom==0 就返回offset */
+extern CGFloat ax_safe_area_insets_bottom_offset(CGFloat offset);
+
+/**安全区域 UIEdgeInsets bottom 偏移 如果 bottom>0 就返回0 bottom==0 就返回offset */
+extern CGFloat ax_safe_area_insets_bottom_zero_offset(CGFloat offset);
+
 /**安全区域 UIEdgeInsets righ*/
 extern CGFloat ax_safe_area_insets_right(void);
 

@@ -105,6 +105,24 @@ CGFloat ax_safe_area_insets_left(void) {
 CGFloat ax_safe_area_insets_bottom(void) {
     return ax_safe_area_insets().bottom;
 }
+CGFloat ax_safe_area_insets_bottom_offset(CGFloat offset) {
+    CGFloat bottom = ax_safe_area_insets_bottom();
+    if (bottom == 0) {
+        bottom =offset;
+    }
+    return bottom;
+}
+
+CGFloat ax_safe_area_insets_bottom_zero_offset(CGFloat offset) {
+    CGFloat bottom = ax_safe_area_insets_bottom();
+//    if (bottom > 0) {
+//        bottom =0;
+//    }else{
+//        bottom =offset;
+//    }
+    bottom = bottom ? 0 :offset;
+    return bottom;
+}
 
 CGFloat ax_safe_area_insets_right(void) {
     return ax_safe_area_insets().right;

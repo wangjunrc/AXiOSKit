@@ -35,6 +35,7 @@
 //    1. "en_GB"英文 24小时
 //    2. "zh_GB"中文24小时
 //    3. ”zh_CN“中文12小时
+    /// UIDatePickerModeCountDownTimer 设置只有 时分 24 小时 含有单位
     self.datePicker.calendar = [NSCalendar currentCalendar];
     self.datePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_GB"];
     self.datePicker.timeZone =[NSTimeZone systemTimeZone];

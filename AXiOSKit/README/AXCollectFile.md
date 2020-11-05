@@ -1813,3 +1813,15 @@ NSData *data = [NSData dataWithBytes:a length:12];
     NSLog(@"didMoveToParentViewController %@  self = %@",parent,self);
 }
 ```
+### 图片变色
+```
+UIImageRenderingModeAutomatic  // 根据图片的使用环境和所处的绘图上下文自动调整渲染模式。  
+UIImageRenderingModeAlwaysOriginal   // 始终绘制图片原始状态，不使用Tint Color。  
+UIImageRenderingModeAlwaysTemplate   // 始终根据Tint Color绘制图片，忽略图片的颜色信息。
+
+```
+```
+UIImage *image = [UIImage imageNamed:@"qr-code"];
+self.ImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+[self.ImageView setTintColor:[UIColor redColor]];
+```

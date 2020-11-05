@@ -84,6 +84,8 @@
 		213BCC46254003DB00C89B72 /* H5.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE2254003DA00C89B72 /* H5.bundle */; };
 		213BCC48254003DB00C89B72 /* test_webp.webp in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE4254003DA00C89B72 /* test_webp.webp */; };
 		213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBE7254003DB00C89B72 /* AppDelegate.m */; };
+		213E1B282553D9AC0049D90C /* DLSilentDateSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213E1B242553D9AC0049D90C /* DLSilentDateSetViewController.m */; };
+		213E1B292553D9AC0049D90C /* DLSilentDateSetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213E1B252553D9AC0049D90C /* DLSilentDateSetView.m */; };
 		21898E9C2541AD6900876524 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898E9B2541AD6900876524 /* ShareViewController.m */; };
 		21898E9F2541AD6900876524 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21898E9D2541AD6900876524 /* MainInterface.storyboard */; };
 		21898EA32541AD6900876524 /* AXShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21898E982541AD6900876524 /* AXShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -271,6 +273,10 @@
 		213BCBE4254003DA00C89B72 /* test_webp.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_webp.webp; sourceTree = "<group>"; };
 		213BCBE6254003DB00C89B72 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		213BCBE7254003DB00C89B72 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		213E1B242553D9AC0049D90C /* DLSilentDateSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLSilentDateSetViewController.m; sourceTree = "<group>"; };
+		213E1B252553D9AC0049D90C /* DLSilentDateSetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLSilentDateSetView.m; sourceTree = "<group>"; };
+		213E1B262553D9AC0049D90C /* DLSilentDateSetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLSilentDateSetView.h; sourceTree = "<group>"; };
+		213E1B272553D9AC0049D90C /* DLSilentDateSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLSilentDateSetViewController.h; sourceTree = "<group>"; };
 		21898E982541AD6900876524 /* AXShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AXShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		21898E9A2541AD6900876524 /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		21898E9B2541AD6900876524 /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
@@ -368,6 +374,10 @@
 		213BCB36254003D900C89B72 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				213E1B262553D9AC0049D90C /* DLSilentDateSetView.h */,
+				213E1B252553D9AC0049D90C /* DLSilentDateSetView.m */,
+				213E1B272553D9AC0049D90C /* DLSilentDateSetViewController.h */,
+				213E1B242553D9AC0049D90C /* DLSilentDateSetViewController.m */,
 				213BCB97254003DA00C89B72 /* _00Module */,
 				213BCB7E254003D900C89B72 /* _00TableViewCell.h */,
 				213BCB52254003D900C89B72 /* _00TableViewCell.m */,
@@ -1179,6 +1189,7 @@
 				21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */,
 				213BCBF4254003DB00C89B72 /* _19ScrollContentViewController.m in Sources */,
 				213BCC02254003DB00C89B72 /* MyActivity.m in Sources */,
+				213E1B292553D9AC0049D90C /* DLSilentDateSetView.m in Sources */,
 				213BCC01254003DB00C89B72 /* _00TableViewCell.m in Sources */,
 				213BCC3D254003DB00C89B72 /* RouterManager.m in Sources */,
 				218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */,
@@ -1191,6 +1202,7 @@
 				213BCC03254003DB00C89B72 /* AView.m in Sources */,
 				213BCBEC254003DB00C89B72 /* SceneDelegate.m in Sources */,
 				213BCC19254003DB00C89B72 /* _13WebpViewController.m in Sources */,
+				213E1B282553D9AC0049D90C /* DLSilentDateSetViewController.m in Sources */,
 				213BCC09254003DB00C89B72 /* _04RunLoopViewController.m in Sources */,
 				213BCC10254003DB00C89B72 /* _16KeyChainViewController.m in Sources */,
 				218A1EFB25469D8000E43F16 /* SOAComponentAppDelegate.m in Sources */,

@@ -14,8 +14,13 @@
     [super awakeFromNib];
     // Initialization code
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
+//    self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.textLabel.numberOfLines = 0;
+    self.tintColor = UIColor.greenColor;
+    self.backgroundView = [UIView.alloc init];
+    
+    self.selectedBackgroundView = [[UIView alloc] init];//这句不可省略
+    self.selectedBackgroundView.backgroundColor = [UIColor orangeColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
