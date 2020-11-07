@@ -1825,3 +1825,56 @@ UIImage *image = [UIImage imageNamed:@"qr-code"];
 self.ImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 [self.ImageView setTintColor:[UIColor redColor]];
 ```
+### UIAlertController 改变主图色
+```
++ (void)load {
+    
+    /// 这个方式,是 UIAlertController init 后改变颜色, 后续使用再改变颜色,以使用颜色为主
+    [UIAlertController ax_replaceClassMethodWithOriginal:@selector(alertControllerWithTitle:message:preferredStyle:) newSelector:@selector(ax_alertControllerWithTitle:message:preferredStyle:)];
+    
+    [UIAlertController ax_replaceInstanceMethodWithOriginal:@selector(addAction:) newSelector:@selector(ax_addAction:)];
+}
+-(void)ax_addAction:(UIAlertAction *)action{
+    [action setValue:UIColor.orangeColor forKey:@"_titleTextColor"];
+    [self ax_addAction:action];
+}
+
++ (UIAlertController *)ax_alertControllerWithTitle:(nullable NSString *)title message:(nullable NSString *)message preferredStyle:(UIAlertControllerStyle)preferredStyle {
+    UIAlertController *alert =  [self ax_alertControllerWithTitle:title message:message preferredStyle:preferredStyle];
+    if (alert.title.length) {
+        //修改title字体及颜色
+        NSMutableAttributedString *titleStr = [[NSMutableAttributedString alloc] initWithString:alert.title];
+        [titleStr addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(0, titleStr.string.length)];
+        [titleStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, titleStr.string.length)];
+        [alert setValue:titleStr forKey:@"attributedTitle"];
+    }
+    if(alert.message.length){
+        // 修改message字体及颜色
+        NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:alert.message];
+        [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor greenColor] range:NSMakeRange(0, messageStr.string.length)];
+        [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, messageStr.string.length)];
+        [alert setValue:messageStr forKey:@"attributedMessage"];
+    }
+    return alert;
+    
+}
+```
+###  UIAlertController title ,msg nil 时候不弹出
+```
+[UIAlertController ax_replaceInstanceMethodWithOriginal:@selector(addAction:) newSelector:@selector(ax_addAction:)];
+
+/// usingBlock: 第一个参数 调用对象,第二个是方法的第一次参数
+[UIViewController aspect_hookSelector:@selector(presentViewController:animated:completion:) withOptions:AspectPositionInstead usingBlock:^(id<AspectInfo> aspectInfo,UIViewController *presentViewController) {
+    /// aspectInfo.arguments.firstObject 就是 presentViewController
+    if (![presentViewController isKindOfClass:[UIAlertController class]]) {
+        [aspectInfo.originalInvocation invoke];
+    }else{
+        UIAlertController *alertController = (UIAlertController *)presentViewController;
+        /// 这里用 == nil ,不要用length==0,业务需求不一样
+        /// UIAlertControllerStyleAlert 才拦截
+        if (alertController.title != nil || alertController.message != nil || alertController.preferredStyle !=UIAlertControllerStyleAlert) {
+            [aspectInfo.originalInvocation invoke];
+        }
+    }
+} error:nil];
+```

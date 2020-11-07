@@ -44,7 +44,7 @@
 #import <AXiOSKit/NSMutableArray+AXKVO.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <mach/mach.h>
-#import "DLSilentDateSetViewController.h"
+
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -120,6 +120,30 @@ typedef void (^CollectionBlock)(void);
     
     
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],[UIBarButtonItem ax_itemByButton:btn2]];
+    
+    NSString * string = @"HelloChina";
+    if ([string localizedCaseInsensitiveContainsString:@"OCHI"]) {
+        NSLog(@"contain");
+    } else {
+        NSLog(@"not contain");
+    }
+    if ([string containsString:@"OCHI"]) {
+        NSLog(@"contain2");
+    } else {
+        NSLog(@"not contain2");
+    }
+    if ([string localizedStandardContainsString:@"OCHI"]) {
+        NSLog(@"contain3");
+    } else {
+        NSLog(@"not contain3");
+    }
+    
+    
+   NSRange r = [string rangeOfString:@"OCHI"
+                          options:NSCaseInsensitiveSearch];
+   BOOL b = r.location != NSNotFound;
+    NSLog(@"b = %d",b);
+    
 }
 
 -(void)enitAction:(UIButton *)btn{
@@ -411,12 +435,30 @@ void mySLog(NSString *format, ...)
 //                                          }
 //                                           cancel:^{
 //                                           }];
-                        [self ax_showAlertByTitle:@""
-                                          message:@""
-                                          confirm:^{
-                                          }
-                                           cancel:^{
-                                           }];
+//                        [self ax_showAlertByTitle:@""
+//                                          message:@""
+//                                          confirm:^{
+//                                          }
+//                                           cancel:^{
+//                                           }];
+                        
+                        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"tile" message:@"msg" preferredStyle:UIAlertControllerStyleAlert];
+                        
+                            // 修改message字体及颜色
+                            NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:alert.message];
+                            [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor redColor] range:NSMakeRange(0, alert.message.length)];
+                            [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, alert.message.length)];
+                            [alert setValue:messageStr forKey:@"attributedMessage"];
+                            
+                        [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"确定") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                        }]];
+                        
+                        
+                        [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"取消") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                            
+                        }]];
+                        
+                        [self presentViewController:alert animated:YES completion:nil];
                     },
                 },
 
@@ -768,16 +810,7 @@ void mySLog(NSString *format, ...)
                     
                     
                 },
-                @{
-                    @"index": @29,
-                    @"title": @"DLSilentDateSetViewController",
-                    @"action": ^{
-                        DLSilentDateSetViewController *vc = [DLSilentDateSetViewController ax_init];
-                        [self ax_showVC:vc];
-                    },
-                    
-                    
-                },
+                
                 
 
             ].mutableCopy

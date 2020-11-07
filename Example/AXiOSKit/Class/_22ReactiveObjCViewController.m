@@ -208,7 +208,130 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     
     //    RACChannelTo(view, property) = RACChannelTo(model, property);
     
-    [self _RACChannelTo];
+    //    [self _RACChannelTo];
+    //    [self _filt];
+    //    [self _timer];
+    [self _array];
+}
+-(void)_array {
+    NSArray *array = @[@"1", @"2", @"3"];
+//    [array.rac_sequence.signal subscribeNext:^(id  _Nullable x) {
+//
+//        NSLog(@"%@", x);
+//    }];
+//
+    
+//    [[array.rac_sequence.signal filter:^BOOL(NSString * _Nullable value) {
+//        return value.intValue !=2;
+//    }] subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@", x);
+//    }];
+
+    [[array.rac_sequence.signal map:^id _Nullable(id  _Nullable value) {
+        return [value intValue] ==2 ? @"哈哈" : value;
+    }] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@", x);
+    }];
+    NSArray *array2 = [[array.rac_sequence.signal map:^id _Nullable(id  _Nullable value) {
+            return [value intValue] ==2 ? @"哈哈" : value;
+    }]  toArray];
+    NSLog(@"array2 = %@", array2);
+    
+    
+}
+-(void)_timer {
+    
+    RACSignal *siganl = [RACSignal interval:1.0 onScheduler:[RACScheduler mainThreadScheduler]];
+    //定时器执行代码
+    [siganl subscribeNext:^(id x) {
+        NSLog(@"吃药 %@",x);
+        
+    }];
+}
+
+-(void)_filt {
+    
+    UIView *topView = self.view;
+    CGFloat all_width = 150;
+    CGFloat all_height = 50;
+    
+    
+    UILabel *label1;
+    {
+        UILabel *label = [[UILabel alloc] init];
+        [self.view addSubview:label];
+        label.frame = CGRectMake(0, 0, all_width, all_height);
+        label.backgroundColor = UIColor.blueColor;
+        
+        label.ax_top = topView.top + ax_status_bar_height();
+        label.ax_left = topView.ax_left+50;
+        label.text = @"label1";
+        label1 =label;
+        topView =label;
+    }
+    UITextField *tf;
+    {
+        UITextField *view = [[UITextField alloc] init];
+        [self.view addSubview:view];
+        view.frame = CGRectMake(0, 0, all_width, all_height);
+        view.backgroundColor = UIColor.blueColor;
+        view.ax_top = topView.ax_bottom + 10;
+        view.ax_left = topView.ax_left;
+        view.placeholder = @"tf";
+        tf =view;
+        topView =view;
+    }
+    
+    
+    
+    
+    UIButton *btn1;
+    
+    {
+        UIButton *btn = [[UIButton alloc] init];
+        [self.view addSubview:btn];
+        btn.frame = CGRectMake(0, 0, all_width, all_height);
+        btn.backgroundColor = UIColor.blueColor;
+        [btn ax_setTitleStateNormal:@"Normal"];
+        [btn ax_setTitleStateDisabled:@"Disabled"];
+        
+        btn.ax_top = topView.ax_bottom + 10;
+        btn.ax_left = topView.ax_left;
+        
+        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
+            label1.text = [NSString stringWithFormat:@"%d",ax_randomZeroToValue(10)];
+        }];
+        btn1 = btn;
+        topView =btn;
+    }
+    //    [RACObserve(label1, text) map:^id _Nullable(NSString * _Nullable value) {
+    //        NSLog(@"value = %@",value);
+    //        return [value isEqualToString:@"2"] ? @"我是2" : value;
+    //    }];
+    RACSignal *singal = RACObserve(label1, text);
+    [singal map:^id _Nullable(NSString * _Nullable value) {
+        NSLog(@"value = %@",value);
+        return [value isEqualToString:@"2"] ? @"我是2" : value;
+    }];
+    
+    //   [ RACObserve(label1, text) map:^id _Nullable(id  _Nullable value) {
+    //        return value;
+    //    }];
+    /// UITextField 双向绑定
+    RACChannelTo(label1, text) = tf.rac_newTextChannel;
+    
+    //只有value有值,才可通过
+    //      [[RACObserve(label1, text) filter:^BOOL(id value) {
+    //
+    //          return [value isEqualToString:@"2"] ? @"我是2" : value;
+    //
+    //      }] subscribeNext:^(id x) {
+    //
+    //          NSLog(@"你向%@",x);
+    //
+    //      }];
+    
+    
 }
 -(void)_RACChannelTo{
     

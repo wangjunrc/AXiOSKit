@@ -16,7 +16,7 @@
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 //    self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.textLabel.numberOfLines = 0;
-    self.tintColor = UIColor.greenColor;
+    self.tintColor = UIColor.redColor;
     self.backgroundView = [UIView.alloc init];
     
     self.selectedBackgroundView = [[UIView alloc] init];//这句不可省略

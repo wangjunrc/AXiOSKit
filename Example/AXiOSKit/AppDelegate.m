@@ -235,5 +235,8 @@
     
 }
 
+- (void)applicationWillTerminate:(UIApplication *)application {
+    NSLog(@"用户退出App = %s", __FUNCTION__);
+}
 
 @end
