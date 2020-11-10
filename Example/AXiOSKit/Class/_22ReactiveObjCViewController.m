@@ -41,296 +41,486 @@
 @end
 
 
-@interface SubscribeViewModel : NSObject
-
-@property(nonatomic, strong) RACCommand *subscribeCommand;
-
-// write to this property
-@property(nonatomic, strong) NSString *email;
-
-// read from this property
-@property(nonatomic, strong) NSString *statusMessage;
-
-@end
-
-
-
-static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribers";
-
-@interface SubscribeViewModel ()
-@property(nonatomic, strong) RACSignal *emailValidSignal;
-@end
-
-@implementation SubscribeViewModel
-
-- (id)init {
-    self = [super init];
-    if (self) {
-        [self mapSubscribeCommandStateToStatusMessage];
-    }
-    return self;
-}
-
-- (void)mapSubscribeCommandStateToStatusMessage {
-    RACSignal *startedMessageSource = [self.subscribeCommand.executionSignals map:^id(RACSignal *subscribeSignal) {
-        NSLog(@"请求=========发送");
-        
-        return @"请求=========发送";
-    }];
-    
-    
-    
-    RACSignal *completedMessageSource = [self.subscribeCommand.executionSignals flattenMap:^RACSignal *(RACSignal *subscribeSignal) {
-        
-        NSLog(@"请求=========收到 %@",subscribeSignal);
-        
-        return [[[subscribeSignal materialize] filter:^BOOL(RACEvent *event) {
-            
-            
-            return event.eventType == RACEventTypeCompleted;
-        }] map:^id(id value) {
-            
-            NSString *str = @"tom";
-            
-            __block typeof(str)strB = str;
-            [subscribeSignal subscribeNext:^(NSDictionary *x) {
-                NSLog(@"请求=========发送  %@",x);
-                if ([x isKindOfClass:NSDictionary.class]) {
-                    strB = x[@"myname"];
-                }
-                
-            }];
-            
-            
-            return str;
-            
-        }];
-        
-        
-        
-    }];
-    
-    
-    RACSignal *failedMessageSource = [[self.subscribeCommand.errors subscribeOn:[RACScheduler mainThreadScheduler]] map:^id(NSError *error) {
-        
-        NSLog(@"请求=========失败 %@",error);
-        return @"请求=========失败";
-    }];
-    
-    RAC(self, statusMessage) = [RACSignal merge:@[startedMessageSource, completedMessageSource, failedMessageSource]];
-}
-
-- (RACCommand *)subscribeCommand {
-    if (!_subscribeCommand) {
-        @weakify(self);
-        /// 判断按钮的 是否可用 根据 emailValidSignal
-        _subscribeCommand = [[RACCommand alloc] initWithEnabled:self.emailValidSignal signalBlock:^RACSignal *(id input) {
-            @strongify(self);
-            return [SubscribeViewModel postEmail:self.email];
-        }];
-    }
-    return _subscribeCommand;
-}
-
-+ (RACSignal *)postEmail:(NSString *)email {
-    
-    return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            int num = arc4random() % 10;
-            if ((num%2)==0) {
-                
-                [subscriber sendNext:@{@"myname" : @"jim"}];
-                [subscriber sendCompleted];
-            }else{
-                [subscriber sendError:nil];
-            }
-        });
-        return [RACDisposable disposableWithBlock:^{
-            
-        }];
-        
-    }];
-    
-    
-}
-
-- (RACSignal *)emailValidSignal {
-    if (!_emailValidSignal) {
-        _emailValidSignal = [RACObserve(self, email) map:^id(NSString *email) {
-            return @([email isValidEmail]);
-        }];
-    }
-    return _emailValidSignal;
-}
-
-@end
-
-
-
-
-
 @interface _22ReactiveObjCViewController ()
 
-@property(nonatomic, strong) SubscribeViewModel *viewModel;
-
-@property(nonatomic, strong) UITextField *emailTextField;
-@property(nonatomic, strong) UIButton *subscribeButton;
-@property(nonatomic, strong) UILabel *statusLabel;
 
 @property(nonatomic, strong) NSMutableArray *dataArray;
+
+@property(nonatomic, strong) UIView *containerView;
 
 @end
 
 @implementation _22ReactiveObjCViewController
 
 
-#pragma mark - Life cycle methods
-
-- (id)init {
-    self = [super init];
-    if (self) {
-        self.viewModel = [SubscribeViewModel new];
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = NSLocalizedString(@"Subscribe Example", nil);
+    self.title = @"ReactiveObjC";
     
-    //    [self addViews];
-    //    [self defineLayout];
-    //    [self bindWithViewModel];
+    UIScrollView *scrollView = [UIScrollView.alloc init];
+    [self.view addSubview:scrollView];
     
-    
-    //    RACChannelTo(view, property) = RACChannelTo(model, property);
-    
-    //    [self _RACChannelTo];
-    //    [self _filt];
-    //    [self _timer];
-    [self _array];
-}
--(void)_array {
-    NSArray *array = @[@"1", @"2", @"3"];
-//    [array.rac_sequence.signal subscribeNext:^(id  _Nullable x) {
-//
-//        NSLog(@"%@", x);
-//    }];
-//
-    
-//    [[array.rac_sequence.signal filter:^BOOL(NSString * _Nullable value) {
-//        return value.intValue !=2;
-//    }] subscribeNext:^(id  _Nullable x) {
-//        NSLog(@"%@", x);
-//    }];
-
-    [[array.rac_sequence.signal map:^id _Nullable(id  _Nullable value) {
-        return [value intValue] ==2 ? @"哈哈" : value;
-    }] subscribeNext:^(id  _Nullable x) {
-        NSLog(@"%@", x);
+    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
     }];
-    NSArray *array2 = [[array.rac_sequence.signal map:^id _Nullable(id  _Nullable value) {
-            return [value intValue] ==2 ? @"哈哈" : value;
-    }]  toArray];
-    NSLog(@"array2 = %@", array2);
     
-    
-}
--(void)_timer {
-    
-    RACSignal *siganl = [RACSignal interval:1.0 onScheduler:[RACScheduler mainThreadScheduler]];
-    //定时器执行代码
-    [siganl subscribeNext:^(id x) {
-        NSLog(@"吃药 %@",x);
-        
+    // 2.给scrollView添加一个containerView
+    UIView *containerView = [UIView.alloc init];
+    containerView.backgroundColor = UIColor.orangeColor;
+    self.containerView = containerView;
+    [scrollView addSubview:containerView];
+    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(scrollView);
+        make.width.equalTo(scrollView); // 需要设置宽度和scrollview宽度一样
     }];
+    UIView *topView = containerView;
+    topView =  [self _01UITextField:topView];
+    topView =  [self _03timer:topView];
+    topView =  [self _04arrayMap:topView];
+    topView =  [self _05ForSelector:topView];
+    topView =  [self _06RACReplaySubject:topView];
+    topView =  [self _07UITextFieldButton:topView];
+    topView =  [self _08zipWith:topView];
+    topView =  [self _08merge:topView];
+    topView =  [self _08then:topView];
+    topView =  [self _08concat:topView];
+    
+    
+    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(topView.mas_bottom).mas_equalTo(100);// 这里放最后一个view的底部
+    }];
+    
 }
 
--(void)_filt {
-    
-    UIView *topView = self.view;
-    CGFloat all_width = 150;
-    CGFloat all_height = 50;
+-(UIView *)_00Button:(UIView *)topView title:(NSString *)title handler:(void(^)(void))handler {
+    if (title.length==0) {
+        title = @"title";
+    }
+    UIButton *btn = [[UIButton alloc] init];
+    [self.containerView addSubview:btn];
+    btn.backgroundColor = UIColor.blueColor;
+    [btn ax_setTitleStateNormal:title];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+        make.left.right.height.equalTo(topView).mas_equalTo(0);
+    }];
+    /// 按钮事件
+    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
+        if (handler) {
+            handler();
+        }
+    }];
+    topView =btn;
+    return topView;
+}
+
+
+-(UIView *)_01UITextField:(UIView *)topView {
     
     
     UILabel *label1;
     {
         UILabel *label = [[UILabel alloc] init];
-        [self.view addSubview:label];
-        label.frame = CGRectMake(0, 0, all_width, all_height);
+        [self.containerView addSubview:label];
         label.backgroundColor = UIColor.blueColor;
-        
-        label.ax_top = topView.top + ax_status_bar_height();
-        label.ax_left = topView.ax_left+50;
         label.text = @"label1";
+        
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(topView.mas_top).mas_equalTo(ax_status_bar_height());
+            make.left.equalTo(topView).mas_equalTo(20);
+            make.right.equalTo(topView).mas_equalTo(-20);
+            //            make.height.mas_equalTo(all_height);
+        }];
+        
+        
         label1 =label;
         topView =label;
     }
     UITextField *tf;
     {
         UITextField *view = [[UITextField alloc] init];
-        [self.view addSubview:view];
-        view.frame = CGRectMake(0, 0, all_width, all_height);
+        [self.containerView addSubview:view];
         view.backgroundColor = UIColor.blueColor;
         view.ax_top = topView.ax_bottom + 10;
         view.ax_left = topView.ax_left;
         view.placeholder = @"tf";
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+            make.left.right.height.equalTo(topView).mas_equalTo(0);
+        }];
+        
         tf =view;
+        
         topView =view;
     }
-    
-    
-    
     
     UIButton *btn1;
     
     {
         UIButton *btn = [[UIButton alloc] init];
-        [self.view addSubview:btn];
-        btn.frame = CGRectMake(0, 0, all_width, all_height);
+        [self.containerView addSubview:btn];
         btn.backgroundColor = UIColor.blueColor;
-        [btn ax_setTitleStateNormal:@"Normal"];
-        [btn ax_setTitleStateDisabled:@"Disabled"];
+        [btn ax_setTitleStateNormal:@"UITextField 双向绑定"];
         
-        btn.ax_top = topView.ax_bottom + 10;
-        btn.ax_left = topView.ax_left;
-        
-        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
-            label1.text = [NSString stringWithFormat:@"%d",ax_randomZeroToValue(10)];
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+            make.left.right.height.equalTo(topView).mas_equalTo(0);
         }];
+        
+        //        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
+        //            label1.text = [NSString stringWithFormat:@"%d",ax_randomZeroToValue(2)];
+        //        }];
+        /// 按钮事件
+        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
+            label1.text = [NSString stringWithFormat:@"%d",ax_randomZeroToValue(3)];
+        }];
+        
         btn1 = btn;
         topView =btn;
     }
-    //    [RACObserve(label1, text) map:^id _Nullable(NSString * _Nullable value) {
-    //        NSLog(@"value = %@",value);
-    //        return [value isEqualToString:@"2"] ? @"我是2" : value;
-    //    }];
-    RACSignal *singal = RACObserve(label1, text);
-    [singal map:^id _Nullable(NSString * _Nullable value) {
-        NSLog(@"value = %@",value);
-        return [value isEqualToString:@"2"] ? @"我是2" : value;
-    }];
     
-    //   [ RACObserve(label1, text) map:^id _Nullable(id  _Nullable value) {
-    //        return value;
-    //    }];
     /// UITextField 双向绑定
+   /***
     RACChannelTo(label1, text) = tf.rac_newTextChannel;
     
-    //只有value有值,才可通过
-    //      [[RACObserve(label1, text) filter:^BOOL(id value) {
-    //
-    //          return [value isEqualToString:@"2"] ? @"我是2" : value;
-    //
-    //      }] subscribeNext:^(id x) {
-    //
-    //          NSLog(@"你向%@",x);
-    //
-    //      }];
+    [[tf.rac_textSignal filter:^BOOL(NSString * _Nullable value) {
+       return [value length] > 5;
+    }] subscribeNext:^(NSString * _Nullable x) {
+        NSLog(@"rac_textSignal filter %@", x);
+    }];
     
+    
+    RACSignal *singal = RACObserve(label1, text);
+    //    RACSignal *singal =tf.rac_newTextChannel;
+    [singal.sequence map:^id _Nullable(id  _Nullable value) {
+        NSLog(@"UITextField 双向绑定 value = %@",value);
+        return [value isEqualToString:@"2"] ? @"我是2" : value;
+    }];
+    [singal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"UITextField 双向绑定 x = %@",x);
+    }];
+    [label1.text.rac_sequence.signal subscribeNext:^(NSString * _Nullable x) {
+        NSLog(@"UITextField 双向绑定2 x = %@",x);
+    }];
+    */
+    
+//    RAC(label1, text) = RACObserve(tf, text);
+////    RAC(label1, text) = tf.rac_newTextChannel;;
+    
+    /// map
+//    RAC(tf, text) = [RACObserve(label1, text) map:^id(id value) {
+////        NSLog(@"%@ %@", value, [value class]);
+//
+//        return [value isEqualToString:@"2"] ? @"我是2" : value;
+//    }];
+//    RAC(label1, text) = [tf.rac_newTextChannel map:^id _Nullable(NSString * _Nullable value) {
+//        return [value isEqualToString:@"2"] ? @"我是2" : value;
+//    }];
+    /// filter
+    RAC(label1, text) = [tf.rac_newTextChannel filter:^BOOL(NSString * _Nullable value) {
+        return value.length>3;
+    }];
+    RAC(tf, text) = RACObserve(label1, text);
+    
+    ///
+//    RAC(label1, text) = tf.rac_newTextChannel;
+//    RAC(tf, text) = [RACObserve(label1, text) map:^id _Nullable(id  _Nullable value) {
+//        NSLog(@"value = %@",value);
+//        return [value isEqualToString:@"2"] ? @"我是2" : value;
+//    }];
+    
+    
+    return topView;
+}
+/// 定时器
+-(UIView *)_03timer:(UIView *)topView {
+    
+    return [self _00Button:topView title:@"interval 定时器" handler:^{
+        __block NSInteger count = 0;
+        __block  RACDisposable *signal =   [[RACSignal interval:1.0 onScheduler:[RACScheduler currentScheduler]] subscribeNext:^(id x) {
+            NSLog(@"interval = %@", x);
+            count++;
+            if(count>=5){
+                [signal dispose];
+            }
+        }];
+    }];
+}
+
+
+-(UIView *)_04arrayMap:(UIView *)topView {
+    
+    return [self _00Button:topView title:@"NSArray map" handler:^{
+        
+        
+        NSArray *array = @[@"1", @"2", @"3"];
+        
+        RACTuple *tuple = RACTuplePack(array);
+        NSLog(@"越界取值 = %@", tuple[10]);
+        
+        [array.rac_sequence.signal subscribeNext:^(id x) {
+            NSLog(@"array 遍历 = %@", x);
+        }];
+        
+        [[array.rac_sequence.signal map:^id _Nullable(id  _Nullable value) {
+            return [value intValue] ==2 ? @"哈哈" : value;
+        }] subscribeNext:^(id  _Nullable x) {
+            NSLog(@"array map 后遍历 = %@", x);
+        }];
+        //    NSArray *array2 = [[array.rac_sequence.signal map:^id _Nullable(id  _Nullable value) {
+        //            return [value intValue] ==2 ? @"哈哈" : value;
+        //    }]  toArray];
+        NSArray *array2 = [array.rac_sequence map:^id _Nullable(id  _Nullable value) {
+            return [value intValue] ==2 ? @"哈哈" : value;
+        }].array;
+        NSLog(@"array2 map = %@", array2);
+        
+        NSDictionary *dictionary = @{@"name": @"willing", @"age": @"26"};
+        [dictionary.rac_sequence.signal subscribeNext:^(RACTuple *x) {
+            // 方式一:
+            //        NSString *key = x[0];
+            //        NSString *value = x[1];
+            //        NSLog(@"%@: %@", key, value);
+            
+            // 方式二:
+            // RACTupleUnpack: 解析元组, 参数是解析出来的变量名, '=' 右边是被解析的元组
+            RACTupleUnpack(NSString *key, NSString *value) = x;
+            NSLog(@"dictionary = %@: %@", key, value);
+        }];
+        
+    }];
+    
+}
+
+-(void)_05Selector:(NSString *)name {
+    NSLog(@"_05Selector  %@", name);
+}
+-(UIView *)_05ForSelector:(UIView *)topView {
+    
+    // 方式二: rac_signalForSelector
+    [[self rac_signalForSelector:@selector(_05Selector:)] subscribeNext:^(id  _Nullable x) {
+        //        NSLog(@"rac_signalForSelector: %@", x);
+        NSString *name = x[0];
+        NSLog(@"rac_signalForSelector: name %@", name);
+    }];
+    
+    return [self _00Button:topView title:@"监听方法被调用" handler:^{
+        [self _05Selector:@"jim"];
+    }];
+    
+}
+
+-(UIView *)_06RACReplaySubject:(UIView *)topView {
+    
+    UIButton *btn = [[UIButton alloc] init];
+    [self.containerView addSubview:btn];
+    btn.backgroundColor = UIColor.blueColor;
+    [btn ax_setTitleStateNormal:@"UIButton 2次订阅"];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+        make.left.right.height.equalTo(topView).mas_equalTo(0);
+    }];
+    /// 按钮事件
+    RACSignal *signal =  [btn rac_signalForControlEvents:UIControlEventTouchUpInside];
+    
+    // 2.信号转换成连接类
+    //RACMulticastConnection *connection = [signal publish];
+    RACMulticastConnection *connection = [signal multicast:[RACReplaySubject subject]];
+    
+    // 3.订阅连接类的信号
+    [connection.signal subscribeNext:^(id x) {
+        // subscriber sendNext 时执行此 block
+        NSLog(@"订阅者一: %@",x);
+    }];
+    [connection.signal subscribeNext:^(id x) {
+        // subscriber sendNext 时执行此 block
+        NSLog(@"订阅者二: %@",x);
+    }];
+    
+    // 4.连接
+    [connection connect];
+    
+    
+    //    [signal subscribeNext:^(UIButton *x) {
+    //        NSLog(@"2次订阅 x : %@",x);
+    //    }];
+    topView =btn;
+    return topView;
+    
+}
+
+-(UIView *)_07UITextFieldButton:(UIView *)topView {
+    
+    UITextField *nameTF;
+    {
+        UITextField *view = [[UITextField alloc] init];
+        [self.containerView addSubview:view];
+        view.backgroundColor = UIColor.blueColor;
+        view.placeholder = @"请输入账号";
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+            make.left.right.height.equalTo(topView).mas_equalTo(0);
+        }];
+        
+        nameTF =view;
+        
+        topView =view;
+    }
+    UITextField *pswTF;
+    {
+        UITextField *view = [[UITextField alloc] init];
+        [self.containerView addSubview:view];
+        view.backgroundColor = UIColor.blueColor;
+        view.placeholder = @"请输入密码";
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+            make.left.right.height.equalTo(topView).mas_equalTo(0);
+        }];
+        
+        pswTF =view;
+        topView =view;
+    }
+    
+    UIButton *btn1;
+    
+    {
+        UIButton *btn = [[UIButton alloc] init];
+        [self.containerView addSubview:btn];
+        btn.backgroundColor = UIColor.blueColor;
+        [btn ax_setTitleStateNormal:@"账号密码UIButton可用"];
+        [btn setTitleColor:UIColor.redColor forState:UIControlStateNormal];
+        [btn setTitleColor:UIColor.grayColor forState:UIControlStateDisabled];
+        btn.enabled = NO;
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+            make.left.right.height.equalTo(topView).mas_equalTo(0);
+        }];
+        
+        
+        RACSignal *comineSiganl = [RACSignal combineLatest:@[nameTF.rac_textSignal, pswTF.rac_textSignal]
+                                                    reduce:^id _Nullable(NSString *username, NSString *password){
+            NSLog(@"username: %@, password: %@", username, password);
+            return @(username.length && password.length);
+        }];
+        // 订阅组合信号
+        //    [comineSiganl subscribeNext:^(id x) {
+        //        _loginBtn.enabled = [x boolValue];
+        //    }];
+        RAC(btn, enabled) = comineSiganl;
+        
+        btn1 = btn;
+        topView =btn;
+    }
+    
+    
+    
+    return topView;
+}
+
+-(UIView *)_08zipWith:(UIView *)topView {
+    
+    
+    return [self _00Button:topView title:@"所有请求完成" handler:^{
+        
+        // 需求: 一个界面有多个请求, 所有请求完成才更新 UI.
+        RACSubject *signalA = [RACSubject subject];
+        RACSubject *signalB = [RACSubject subject];
+        RACSignal *zipSignal = [signalA zipWith:signalB];
+        [zipSignal subscribeNext:^(id x) {
+            NSLog(@"%@", x);
+        }];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSLog(@"数据A");
+            [signalA sendNext:@"数据A"];
+        });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSLog(@"数据B");
+            [signalB sendNext:@"数据B"];
+        });
+        
+    }];
+    
+}
+
+-(UIView *)_08merge:(UIView *)topView {
+    
+    return [self _00Button:topView title:@"任意信号发送完成,都会回调" handler:^{
+        
+        // 任意信号发送完成都会调用 nextBlock block.
+        RACSubject *signalA = [RACSubject subject];
+        RACSubject *signalB = [RACSubject subject];
+        RACSignal *mergeSiganl = [signalA merge:signalB];
+        [mergeSiganl subscribeNext:^(id x) {
+            NSLog(@"%@", x);
+        }];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [signalB sendNext:@"数据B"];
+        });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [signalA sendNext:@"数据A"];
+        });
+        
+    }];
+    
+}
+
+-(UIView *)_08then:(UIView *)topView {
+    
+    return [self _00Button:topView title:@"then: 组合信号, 忽悠掉第一个信号" handler:^{
+        
+        RACSignal *siganlA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSLog(@"发送A请求");
+            [subscriber sendNext:@"数据A"];
+            [subscriber sendCompleted];
+            return nil;
+        }];
+        
+        RACSignal *siganlB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSLog(@"发送B请求");
+            [subscriber sendNext:@"数据B"];
+            return nil;
+        }];
+        
+        // then: 组合信号, 忽悠掉第一个信号.
+        RACSignal *thenSiganl = [siganlA then:^RACSignal *{
+            return siganlB; // 需要组合的信号
+        }];
+        
+        [thenSiganl subscribeNext:^(id x) {
+            NSLog(@"%@", x);
+        }];
+        
+    }];
+    
+}
+-(UIView *)_08concat:(UIView *)topView {
+    
+    return [self _00Button:topView title:@"concat: 顺序链接组合信号" handler:^{
+        
+        RACSignal *siganlA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSLog(@"发送A请求");
+            [subscriber sendNext:@"数据A"];
+            [subscriber sendCompleted];
+            return nil;
+        }];
+        
+        RACSignal *siganlB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            NSLog(@"发送B请求");
+            [subscriber sendNext:@"数据B"];
+            return nil;
+        }];
+        
+        // concat: 顺序链接组合信号
+        // 注意: concat 方法的 第一个信号必须要调用 sendCompleted.
+        RACSignal *concatSignal = [siganlA concat:siganlB];
+        
+        [concatSignal subscribeNext:^(id x) {
+            NSLog(@"%@", x);
+        }];
+        
+    }];
     
 }
 -(void)_RACChannelTo{
@@ -340,12 +530,11 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     CGFloat all_height = 50;
     
     
-    
     UIButton *btn1;
     
     {
         UIButton *btn = [[UIButton alloc] init];
-        [self.view addSubview:btn];
+        [self.containerView addSubview:btn];
         btn.frame = CGRectMake(0, 0, all_width, all_height);
         btn.backgroundColor = UIColor.blueColor;
         [btn ax_setTitleStateNormal:@"Normal"];
@@ -362,7 +551,7 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     UIButton *btn2;
     {
         UIButton *btn = [[UIButton alloc] init];
-        [self.view addSubview:btn];
+        [self.containerView addSubview:btn];
         btn.frame = CGRectMake(0, 0, all_width, all_height);
         btn.backgroundColor = UIColor.blueColor;
         [btn ax_setTitleStateNormal:@"Normal-2"];
@@ -379,7 +568,7 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     UILabel *label1;
     {
         UILabel *label = [[UILabel alloc] init];
-        [self.view addSubview:label];
+        [self.containerView addSubview:label];
         label.frame = CGRectMake(0, 0, all_width, all_height);
         label.backgroundColor = UIColor.blueColor;
         label.ax_top = topView.ax_bottom + 10;
@@ -391,7 +580,7 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     UITextField *tf;
     {
         UITextField *view = [[UITextField alloc] init];
-        [self.view addSubview:view];
+        [self.containerView addSubview:view];
         view.frame = CGRectMake(0, 0, all_width, all_height);
         view.backgroundColor = UIColor.blueColor;
         view.ax_top = topView.ax_bottom + 10;
@@ -403,7 +592,7 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     UILabel *label2;
     {
         UILabel *label = [[UILabel alloc] init];
-        [self.view addSubview:label];
+        [self.containerView addSubview:label];
         label.frame = CGRectMake(0, 0, all_width, all_height);
         label.backgroundColor = UIColor.grayColor;
         label.ax_top = topView.ax_bottom + 10;
@@ -415,7 +604,7 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     UITextView *textView;
     {
         UITextView *view = [[UITextView alloc] init];
-        [self.view addSubview:view];
+        [self.containerView addSubview:view];
         view.frame = CGRectMake(0, 0, all_width, all_height);
         view.backgroundColor = UIColor.grayColor;
         view.ax_top = topView.ax_bottom + 10;
@@ -425,7 +614,7 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     }
     {
         UIButton *btn = [[UIButton alloc] init];
-        [self.view addSubview:btn];
+        [self.containerView addSubview:btn];
         btn.frame = CGRectMake(0, 0, all_width, all_height);
         btn.backgroundColor = UIColor.blueColor;
         [btn ax_setTitleStateNormal:@"清空数组"];
@@ -443,7 +632,7 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     }
     {
         UIButton *btn = [[UIButton alloc] init];
-        [self.view addSubview:btn];
+        [self.containerView addSubview:btn];
         btn.frame = CGRectMake(0, 0, all_width, all_height);
         btn.backgroundColor = UIColor.blueColor;
         [btn ax_setTitleStateNormal:@"添加数组"];
@@ -474,7 +663,7 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
     UISwitch  *someSwitch;
     {
         UISwitch *btn = [[UISwitch alloc] init];
-        [self.view addSubview:btn];
+        [self.containerView addSubview:btn];
         btn.frame = CGRectMake(0, 0, all_width, all_height);
         btn.backgroundColor = UIColor.blueColor;
         btn.ax_top = topView.ax_bottom + 10;
@@ -513,76 +702,8 @@ static NSString *const kSubscribeURL = @"http://reactivetest.apiary.io/subscribe
         NSLog(@"isOn = %d  key =%@",someSwitch.isOn,[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"]);
     }];
 }
-#pragma mark -
 
-- (void)addViews {
-    [self.view addSubview:self.emailTextField];
-    [self.view addSubview:self.subscribeButton];
-    [self.view addSubview:self.statusLabel];
-}
 
-- (void)defineLayout {
-    @weakify(self);
-    
-    [self.emailTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        @strongify(self);
-        make.top.equalTo(self.view).with.offset(100.f);
-        make.left.equalTo(self.view).with.offset(20.f);
-        make.height.equalTo(@50.f);
-    }];
-    
-    [self.subscribeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        @strongify(self);
-        make.centerY.equalTo(self.emailTextField);
-        make.right.equalTo(self.view).with.offset(-25.f);
-        make.width.equalTo(@70.f);
-        make.height.equalTo(@30.f);
-        make.left.equalTo(self.emailTextField.mas_right).with.offset(20.f);
-    }];
-    
-    [self.statusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        @strongify(self);
-        make.top.equalTo(self.emailTextField.mas_bottom).with.offset(20.f);
-        make.left.equalTo(self.emailTextField);
-        make.right.equalTo(self.subscribeButton);
-        make.height.equalTo(@30.f);
-    }];
-}
-
-- (void)bindWithViewModel {
-    RAC(self.viewModel, email) = self.emailTextField.rac_textSignal;
-    self.subscribeButton.rac_command = self.viewModel.subscribeCommand;
-    RAC(self.statusLabel, text) = RACObserve(self.viewModel, statusMessage);
-}
-
-#pragma mark - Views
-
-- (UITextField *)emailTextField {
-    if (!_emailTextField) {
-        _emailTextField = [UITextField new];
-        _emailTextField.borderStyle = UITextBorderStyleRoundedRect;
-        _emailTextField.font = [UIFont boldSystemFontOfSize:16];
-        _emailTextField.placeholder = NSLocalizedString(@"Email address", nil);
-        _emailTextField.keyboardType = UIKeyboardTypeEmailAddress;
-        _emailTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    }
-    return _emailTextField;
-}
-
-- (UIButton *)subscribeButton {
-    if (!_subscribeButton) {
-        _subscribeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [_subscribeButton setTitle:NSLocalizedString(@"Subscribe", nil) forState:UIControlStateNormal];
-    }
-    return _subscribeButton;
-}
-
-- (UILabel *)statusLabel {
-    if (!_statusLabel) {
-        _statusLabel = [UILabel new];
-    }
-    return _statusLabel;
-}
 - (NSMutableArray *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSMutableArray.alloc init];
