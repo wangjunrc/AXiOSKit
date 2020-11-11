@@ -20,6 +20,9 @@
 #import <UserNotifications/UserNotifications.h>
 
 @interface _01ContentViewController ()<UITextViewDelegate>
+
+@property(nonatomic, strong) UIView *containerView;
+
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
 
 @property(nonatomic, strong) AXBiometryManager *manager;
@@ -42,34 +45,78 @@
     self.title = @"02";
     self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
     
-// self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
-//
-//        [self _WiFi];
-//    }];
-//    [self _WiFi];
+    // self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
+    //
+    //        [self _WiFi];
+    //    }];
+    //    [self _WiFi];
     //    [self _UITextView_link];
-//    [self _setAlternateIconName];
-   
     
-//    [self _loginTest];
-//    [self _kvoInt];
-//    [self _bubbleImage];
-//    [self _per];
-//    [self _setAlternateIconName];
-//    [self _bottomView];
-    UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 50)];
-    [self.view addSubview:img];
-    img.backgroundColor = UIColor.orangeColor;
-//    img.contentMode = UIViewContentModeCenter;
-//    img.image =   [UIImage imageFromText:@[@"jim"] withFont:20 withTextColor:UIColor.redColor withBgImage:nil withBgColor:UIColor.blueColor];
-    img.contentMode = UIViewContentModeScaleAspectFill;
-    img.image = [UIImage imageFromText:@[@"jim"]  withFont:100];
+    //    [self _kvoInt];
+    
+    
+    //    [self _bottomView];
+    
+    UIScrollView *scrollView = [UIScrollView.alloc init];
+    [self.view addSubview:scrollView];
+    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    
+    // 2.给scrollView添加一个containerView
+    UIView *containerView = [UIView.alloc init];
+    containerView.backgroundColor = UIColor.whiteColor;
+    self.containerView = containerView;
+    [scrollView addSubview:containerView];
+    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(scrollView);
+        make.width.equalTo(scrollView); // 需要设置宽度和scrollview宽度一样
+    }];
+    
+    UIView *topView = containerView;
+//    topView =  [self _01loginTest:topView];
+    topView =  [self _01UITextView_link:topView];
+    topView =  [self _02AlternateIconName:topView];
+    topView =  [self _03textToImg:topView];
+    topView =  [self _04masron_uninstall:topView];
+    topView =  [self _05DateVC:topView];
+    topView =  [self _06per:topView];
+    topView =  [self _07bubbleImage:topView];
+    
+    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(topView.mas_bottom).mas_equalTo(100);// 这里放最后一个view的底部
+    }];
+    
+}
+
+
+-(UIView *)_00ButtonTopView:(UIView *)topView title:(NSString *)title handler:(void(^)(void))handler {
+    if (title.length==0) {
+        title = @"title";
+    }
+    UIButton *btn = [[UIButton alloc] init];
+    [self.containerView addSubview:btn];
+    btn.backgroundColor = UIColor.blueColor;
+    [btn ax_setTitleStateNormal:title];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+    }];
+    /// 按钮事件
+    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
+        if (handler) {
+            handler();
+        }
+    }];
+    topView =btn;
+    return topView;
 }
 
 -(void)_bottomView {
     
     UIView *bottomView = [UIView ax_init];
-    [self.view addSubview:bottomView];
+    [self.containerView addSubview:bottomView];
     bottomView.backgroundColor = UIColor.orangeColor;
     [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
@@ -82,58 +129,29 @@
     subView.backgroundColor = UIColor.greenColor;
     [subView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.mas_equalTo(0);
-//        make.bottom.mas_equalTo(-ax_safe_area_insets_bottom_offset(10));
+        //        make.bottom.mas_equalTo(-ax_safe_area_insets_bottom_offset(10));
         make.height.mas_equalTo(50);
     }];
 }
--(void)_per{
-    
- 
-    UIButton *btn1 = [[UIButton alloc]init];
-    [btn1 setTitle:@"奔溃拦截" forState:UIControlStateNormal];
-    btn1.backgroundColor = UIColor.orangeColor;
-    [self.view addSubview:btn1];
-    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.mas_equalTo(30);
-        
-    }];
-    
-    [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-        
-//        [self performSelector:@selector(test:age:age2:) withObjects:@[@"JIM",@"20"]];
-//        id obj =[self performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[@"JIM",@"20"]];
-//        NSLog(@"obj = %@",obj);
-        NSMutableArray *array = [NSMutableArray array];
-        [array addObject:nil];
-        
-    }];
-}
-- (NSString *)application:(NSString *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-    NSLog(@"name %@ %@",application,launchOptions);
-    
-    return @"aaa";
-}
--(void)test:(NSString *)name age:(NSString *)age age2:(NSString *)age2{
-    NSLog(@"name %@ %@",name,age);
-}
 
--(void)_bubbleImage {
-//leftCapWidth: 左边不拉伸的像素
-//topCapHeight:上边不拉伸的像素
-    UIImage *image = [UIImage imageNamed:@"chat_bubble"];
-    UIImageView * imgView = [[UIImageView alloc] initWithImage:[image stretchableImageWithLeftCapWidth:30 topCapHeight:30]];
-    
-    imgView.frame = CGRectMake(50, 100, 100, 50);
-    [self.view addSubview:imgView];
-}
+//- (NSString *)application:(NSString *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+//    NSLog(@"name %@ %@",application,launchOptions);
+//
+//    return @"aaa";
+//}
+//-(void)test:(NSString *)name age:(NSString *)age age2:(NSString *)age2{
+//    NSLog(@"name %@ %@",name,age);
+//}
+
+
 -(void)_kvoInt{
     
     __weak typeof(self) weakSelf = self;
     [RACObserve(self, age) subscribeNext:^(id  _Nullable x) {
-            __strong typeof(weakSelf) strongSelf = weakSelf;
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         NSLog(@"age = %ld %@",strongSelf.age,x);
-        }];
-
+    }];
+    
     [self ax_addFBKVOKeyPath:AX_FBKVOKeyPath(self.age) result:^(AXKVOResultModel * _Nonnull resultModel) {
         NSLog(@"age222 = %ld %@",self.age,resultModel.aNewValue);
     }];
@@ -141,7 +159,7 @@
     UIButton *btn1 = [[UIButton alloc]init];
     [btn1 setTitle:@"kvoInt" forState:UIControlStateNormal];
     btn1.backgroundColor = UIColor.orangeColor;
-    [self.view addSubview:btn1];
+    [self.containerView addSubview:btn1];
     [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(30);
         
@@ -153,22 +171,19 @@
     }];
 }
 
--(void)_loginTest {
+-(UIView *)_01loginTest:(UIView *)topView {
     
-    
-    
-    UIView *topView = self.view;
     
     {
         UITextField *nameTF = [[UITextField alloc]init];
         nameTF.backgroundColor = UIColor.orangeColor;
         nameTF.placeholder = @"输入姓名";
         nameTF.accessibilityIdentifier = @"pwdTextField";
-        [self.view addSubview:nameTF];
+        [self.containerView addSubview:nameTF];
         [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(topView).mas_offset(10);
             make.left.mas_equalTo(10);
-            make.width.mas_equalTo(200);
+            make.right.mas_equalTo(-10);
             make.height.mas_equalTo(50);
         }];
         topView = nameTF;
@@ -178,115 +193,20 @@
         nameTF.backgroundColor = UIColor.orangeColor;
         nameTF.placeholder = @"输入密码";
         nameTF.accessibilityIdentifier = @"nameTextField";
-        [self.view addSubview:nameTF];
+        [self.containerView addSubview:nameTF];
         [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(topView.mas_bottom).mas_equalTo(10);
             make.left.mas_equalTo(10);
-            make.width.mas_equalTo(200);
+            make.right.mas_equalTo(-10);
             make.height.mas_equalTo(50);
         }];
         topView = nameTF;
     }
     
+    return topView;
 }
 
--(void)_setAlternateIconName{
-    UIButton *btn1 = [[UIButton alloc]init];
-    [btn1 setTitle:@"换icon" forState:UIControlStateNormal];
-    btn1.contentEdgeInsets = UIEdgeInsetsMake(10, 40, 10, 40);
-    btn1.backgroundColor = UIColor.orangeColor;
-    [self.view addSubview:btn1];
-    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.mas_equalTo(30);
-    }];
-    __weak typeof(self) weakSelf = self;
-    [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-        __strong typeof(weakSelf) self = weakSelf;
-//        [self ax_showAlertByTitle:@""];
-        
-        [self setIconname:@"Alternate_AppIcon_2"];
-//        [self setIconname:nil];
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.baidu.com/"]];
-        
-    }];
-}
-
-- (void)setIconname:(NSString *)name {
-    UIApplication *appli = [UIApplication sharedApplication];
-    //判断系统是否支持切换icon
-    if (@available(iOS 10.3, *)) {
-        if ([appli supportsAlternateIcons]) {
-            //切换icon
-            [appli setAlternateIconName:name completionHandler:^(NSError * _Nullable error) {
-                if (error) {
-                    NSLog(@"error==> %@",error.localizedDescription);
-                }else{
-                    NSLog(@"done!!!");
-                }
-            }];
-        }
-    } else {
-        // Fallback on earlier versions
-    }
-}
-
-
--(void)_WiFi{
-    
-    NSArray *ifs = CFBridgingRelease(CNCopySupportedInterfaces());
-    id info = nil;
-    for (NSString *ifnam in ifs) {
-        info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((CFStringRef)ifnam);
-        if (info && [info count]) {
-            break;
-        }
-    }
-    NSDictionary *dic = (NSDictionary *)info;
-    NSString *ssid = [[dic objectForKey:@"SSID"] lowercaseString];
-    NSString *bssid = [dic objectForKey:@"BSSID"];
-    NSLog(@"ssid:%@ \nssid:%@",ssid,bssid);
-    
-    
-//    NSString *ssid = nil;
-//       NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfaces();
-//       for (NSString *ifnam in ifs) {
-//           NSDictionary *info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
-//           if (info[@"SSID"]) {
-//               ssid = info[@"SSID"];
-//           }
-//       }
-//    NSLog(@"sssid = %@",ssid);
-    
-    
-}
-
--(void)_CSAnimationView{
-    UIButton *btn1 = [[UIButton alloc]init];
-    [btn1 setTitle:@"btn1" forState:UIControlStateNormal];
-    btn1.backgroundColor = UIColor.orangeColor;
-    [self.view addSubview:btn1];
-    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.mas_equalTo(30);
-        
-    }];
-    
-    [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-        
-        CSAnimationView *animationView = [[CSAnimationView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-        animationView.backgroundColor = [UIColor redColor];
-        animationView.duration = 0.5;
-        animationView.delay = 0;
-        animationView.type = CSAnimationTypeFadeOutRight;
-        [self.view addSubview:animationView];
-        
-        //添加你想增加效果的 View 为 animationView 的子视图
-        // [animationView addSubview:<#(UIView *)#>]
-        
-        [animationView startCanvasAnimation];
-        
-    }];
-}
--(void)_UITextView_link{
+-(UIView *)_01UITextView_link:(UIView *)topView{
     
     NSString *str1 = @"点击“立即体验”按钮，\n即表示你同意";
     NSString *str3 = @"《许可及服务协议》";
@@ -309,35 +229,17 @@
     textView.backgroundColor = UIColor.clearColor;
     /// 链接字体颜色
     textView.linkTextAttributes = @{NSForegroundColorAttributeName:[UIColor redColor],NSUnderlineStyleAttributeName:@1};
-    [self.view addSubview:textView];
+    [self.containerView addSubview:textView];
     [textView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_offset(0);
-        make.top.mas_offset(100);
+        make.top.equalTo(topView).mas_offset(10);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+        make.height.mas_equalTo(50);
     }];
     
+    topView = textView;
     
-    UILabel *label = UILabel.alloc.init;
-    {
-        NSString *str1 = @"点击“立即体验”按钮，\n即表示你同意";
-        NSString *str3 = @"《许可及服务协议》";
-        NSString *str = [NSString stringWithFormat:@"%@%@",str1,str3];
-        NSRange range3 = [str rangeOfString:str3];
-        
-        NSMutableAttributedString *mastring = [[NSMutableAttributedString alloc] initWithString:str attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName: [UIColor blackColor]}];
-        [mastring addAttributes:@{
-            NSForegroundColorAttributeName:[UIColor redColor],
-            NSUnderlineStyleAttributeName:@1
-        } range:range3];
-        label.attributedText =mastring;
-        label.numberOfLines = 0;
-        [self.view addSubview:label];
-        [label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.mas_offset(0);
-            make.top.equalTo(textView.mas_bottom).mas_offset(20);
-        }];
-    }
-    
-    
+    return topView;
 }
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
@@ -355,194 +257,187 @@
     
 }
 
-
-- (void)didMoveToParentViewController:(UIViewController *)parent {
-    [super didMoveToParentViewController:parent];
-    NSLog(@"didMoveToParentViewController %@  self = %@",parent,self);
-}
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
--(void)_test1 {
+-(UIView *)_02AlternateIconName:(UIView *)topView {
     
+    __weak typeof(self) weakSelf = self;
+    return [self _00ButtonTopView:topView title:@"换icon" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf setIconname:@"Alternate_AppIcon_2"];
+    }];
+    
+}
+
+- (void)setIconname:(NSString *)name {
+    UIApplication *appli = [UIApplication sharedApplication];
+    //判断系统是否支持切换icon
+    if (@available(iOS 10.3, *)) {
+        if ([appli supportsAlternateIcons]) {
+            //切换icon
+            [appli setAlternateIconName:name completionHandler:^(NSError * _Nullable error) {
+                if (error) {
+                    NSLog(@"error==> %@",error.localizedDescription);
+                }else{
+                    NSLog(@"done!!!");
+                }
+            }];
+        }
+    } else {
+        // Fallback on earlier versions
+    }
+}
+-(UIView *)_03textToImg:(UIView *)topView {
+    
+    UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 50)];
+    
+    [self.containerView addSubview:img];
+    [img mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView.mas_bottom).mas_equalTo(10);
+        make.left.mas_equalTo(10);
+        make.height.mas_equalTo(50);
+    }];
+    img.backgroundColor = UIColor.orangeColor;
+    //    img.contentMode = UIViewContentModeCenter;
+    //    img.image =   [UIImage imageFromText:@[@"jim"] withFont:20 withTextColor:UIColor.redColor withBgImage:nil withBgColor:UIColor.blueColor];
+    img.contentMode = UIViewContentModeScaleAspectFill;
+    img.image = [UIImage imageFromText:@[@"jim"]  withFont:100];
+    
+    return img;
+}
+
+-(UIView *)_04masron_uninstall:(UIView *)topView {
+    
+    CGFloat width = 100;
+    
+    UIView *view1 = [[UIView alloc]init];
+    [self.containerView addSubview:view1];
+    view1.backgroundColor = UIColor.orangeColor;
+    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView.mas_bottom).mas_equalTo(10);
+        make.left.mas_equalTo(30);
+        make.height.mas_equalTo(100);
+        
+        self.viewBottomConstraint = make.width.mas_equalTo(width);
+    }];
+    topView = view1;
+    
+    __weak typeof(self) weakSelf = self;
+    topView = [self _00ButtonTopView:topView title:@"masron - uninstall" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.viewBottomConstraint uninstall];
+        [view1.superview setNeedsUpdateConstraints];
+        [UIView animateWithDuration:1 animations:^{
+            [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.mas_equalTo(-30);
+            }];
+            [view1.superview layoutIfNeeded];
+        }];
+    }];
+    
+    
+    return topView;
+}
+
+-(UIView *)_05DateVC:(UIView *)topView {
+    __weak typeof(self) weakSelf = self;
+    return [self _00ButtonTopView:topView title:@"date" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        AXDateVC *vc = [[AXDateVC alloc]init];
+        [strongSelf ax_showVC:vc];
+    }];
+}
+
+-(UIView *)_06per:(UIView *)topView {
+    
+    __weak typeof(self) weakSelf = self;
+    return [self _00ButtonTopView:topView title:@"奔溃拦截" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        //        [self performSelector:@selector(test:age:age2:) withObjects:@[@"JIM",@"20"]];
+        //        id obj =[self performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[@"JIM",@"20"]];
+        //        NSLog(@"obj = %@",obj);
+        NSMutableArray *array = [NSMutableArray array];
+        [array addObject:nil];
+    }];
+    
+}
+
+-(UIView *)_07bubbleImage:(UIView *)topView {
+    //leftCapWidth: 左边不拉伸的像素
+    //topCapHeight:上边不拉伸的像素
+    UIImage *image = [UIImage imageNamed:@"chat_bubble"];
+    UIImageView * imgView = [[UIImageView alloc] initWithImage:[image stretchableImageWithLeftCapWidth:30 topCapHeight:30]];
+    
+    [self.containerView addSubview:imgView];
+    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView.mas_bottom).mas_equalTo(10);
+        make.left.mas_equalTo(30);
+        make.right.mas_equalTo(-30);
+    }];
+    
+    return imgView;
+}
+
+-(void)_WiFi{
+    
+    NSArray *ifs = CFBridgingRelease(CNCopySupportedInterfaces());
+    id info = nil;
+    for (NSString *ifnam in ifs) {
+        info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((CFStringRef)ifnam);
+        if (info && [info count]) {
+            break;
+        }
+    }
+    NSDictionary *dic = (NSDictionary *)info;
+    NSString *ssid = [[dic objectForKey:@"SSID"] lowercaseString];
+    NSString *bssid = [dic objectForKey:@"BSSID"];
+    NSLog(@"ssid:%@ \nssid:%@",ssid,bssid);
+    
+    
+    //    NSString *ssid = nil;
+    //       NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfaces();
+    //       for (NSString *ifnam in ifs) {
+    //           NSDictionary *info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
+    //           if (info[@"SSID"]) {
+    //               ssid = info[@"SSID"];
+    //           }
+    //       }
+    //    NSLog(@"sssid = %@",ssid);
+    
+    
+}
+
+-(void)_CSAnimationView{
     UIButton *btn1 = [[UIButton alloc]init];
     [btn1 setTitle:@"btn1" forState:UIControlStateNormal];
     btn1.backgroundColor = UIColor.orangeColor;
-    [self.view addSubview:btn1];
+    [self.containerView addSubview:btn1];
     [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(30);
         
     }];
     
-    CGFloat width = 100;
-    
-    UIView *view1 = [[UIView alloc]init];
-    [self.view addSubview:view1];
-    view1.backgroundColor = UIColor.orangeColor;
-    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(30);
-        make.top.equalTo(btn1.mas_bottom).mas_offset(50);
-        make.height.mas_equalTo(100);
-        
-        self.viewBottomConstraint = make.width.mas_equalTo(width);
-    }];
-    
-    
-    __block typeof(width)weakWwidth = width;
-    
-    //    [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-    //
-    //
-    //        [view1 mas_updateConstraints:^(MASConstraintMaker *make) {
-    ////            make.left.mas_equalTo(30);
-    ////            make.top.equalTo(btn1.mas_bottom).mas_offset(50);
-    ////            make.height.mas_equalTo(100);
-    //
-    //            if (weakWwidth ==100) {
-    //                weakWwidth =200;
-    //            }else{
-    //                weakWwidth = 100;
-    //            }
-    //            NSLog(@"weakWwidth %lf",weakWwidth);
-    //            make.width.mas_equalTo(weakWwidth);
-    //        }];
-    //    }];
-    
-    __weak typeof(self) weakSelf = self;
     [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.viewBottomConstraint uninstall];
         
-        //        [view1.superview setNeedsUpdateConstraints];
-        //        [UIView animateWithDuration:1 animations:^{
-        //            [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        //                make.right.mas_equalTo(-30);
-        //
-        //            }];
-        //
-        //            [view1.superview layoutIfNeeded];
-        //        }];
-        AXDateVC *vc = [[AXDateVC alloc]init];
-        [strongSelf ax_showVC:vc];
+        CSAnimationView *animationView = [[CSAnimationView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+        animationView.backgroundColor = [UIColor redColor];
+        animationView.duration = 0.5;
+        animationView.delay = 0;
+        animationView.type = CSAnimationTypeFadeOutRight;
+        [self.containerView addSubview:animationView];
         
+        //添加你想增加效果的 View 为 animationView 的子视图
+        // [animationView addSubview:<#(UIView *)#>]
+        
+        [animationView startCanvasAnimation];
         
     }];
-    //
-    //    UIDatePicker *picker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, 200, self.view.width, 150)];
-    //
-    //
-    //
-    //    picker.datePickerMode = UIDatePickerModeCountDownTimer;
-    ////    picker.calendar = [NSCalendar currentCalendar];
-    //    picker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_GB"];
-    ////    picker.timeZone =[NSTimeZone systemTimeZone];
-    //
-    //    picker.backgroundColor = UIColor.orangeColor;
-    //    picker.tintColor = UIColor.redColor;
-    //
-    //    [self.view addSubview:picker];
-    //
-    //    UIImageView *view = [[UIImageView alloc]initWithFrame:CGRectMake(10, 200, 100, 100)];
-    //    view.image = [UIImage imageNamed:@"exporte"];
-    //    view.backgroundColor=[UIColor yellowColor];
-    //    view.layer.masksToBounds=YES;
-    //    view.layer.cornerRadius=10;
-    //    view.layer.borderWidth = 1.5;
-    //    view.layer.borderColor = [UIColor redColor].CGColor;;
-    ////    view.layer.shadowColor=[UIColor redColor].CGColor;
-    ////    view.layer.shadowOffset=CGSizeMake(10, 10);
-    ////    view.layer.shadowOpacity=0.5;
-    ////    view.layer.shadowRadius=5;
-    //    [self.view addSubview:view];
-    //
-    //
-    //    [view  ax_shadowWith:UIColor.redColor];
-    //
-    //
-    //    NSMutableArray<UIView *> *aryy = [NSMutableArray array];
-    //    UIView * _imgViewBgView = [UIView.alloc init];
-    //    _imgViewBgView.layer.cornerRadius = 6;
-    //    _imgViewBgView.backgroundColor = UIColor.blueColor;
-    ////    _imgViewBgView.axis = UILayoutConstraintAxisHorizontal;
-    ////    _imgViewBgView.alignment = UIStackViewAlignmentFill;
-    ////    _imgViewBgView.spacing = 10;
-    ////    _imgViewBgView.distribution = UIStackViewDistributionEqualCentering;
-    //    [self.view addSubview:_imgViewBgView];
-    //    [_imgViewBgView mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.left.mas_offset(20);
-    //        make.right.bottom.mas_offset(-20);
-    ////        make.height.mas_equalTo(300);
-    //    }];
-    //
-    //
-    //    for(int i=0;i<3;i++){
-    //        UIImageView *imgView = [UIImageView.alloc init];
-    //        imgView.layer.cornerRadius = 6;
-    //        [_imgViewBgView addSubview:imgView];
-    //        [aryy addObject:imgView];
-    //        if (i==0) {
-    //            imgView.backgroundColor = UIColor.greenColor;
-    //        }else  if (i==1){
-    //
-    //            imgView.backgroundColor = UIColor.orangeColor;
-    //        }else {
-    //
-    //            imgView.backgroundColor = UIColor.redColor;
-    //        }
-    //    }
-    //
-    //
-    //    [aryy mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:15 leadSpacing:10 tailSpacing:10];
-    ////    [aryy mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:80 leadSpacing:10 tailSpacing:10];
-    //
-    //    [aryy mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.top.bottom.mas_equalTo(0);
-    ////        make.height.mas_equalTo(150);
-    //    }];
-    //
-    //    [_imgViewBgView mas_makeConstraints:^(MASConstraintMaker *make) {
-    //
-    //        make.bottom.equalTo(aryy.firstObject.mas_bottom);
-    //    }];
-    //
-    
-    //    UIView *bgView = [UIView.alloc init];
-    //    [self.view addSubview:bgView];
-    //    bgView.backgroundColor = UIColor.greenColor;
-    //    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.left.top.mas_offset(100);
-    //        make.right.mas_offset(-100);
-    //
-    //    }];
-    //
-    //
-    //
-    //    UIImageView *contentImageView = UIImageView.alloc.init;
-    //    [bgView addSubview:contentImageView];
-    //    contentImageView.layer.cornerRadius = 6;
-    //    contentImageView.layer.masksToBounds = YES;
-    //    contentImageView.contentMode = 0;
-    //    contentImageView.backgroundColor = UIColor.redColor;
-    //    [contentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.left.top.mas_offset(20);
-    //        make.right.mas_offset(-20);
-    ////        make.width.equalTo(self.bgView).dividedBy(3);
-    //        make.bottom.mas_offset(-20);
-    //
-    //    }];
-    //
-    //    [contentImageView sd_setImageWithURL:[NSURL URLWithString:@"https://bing.ioliu.cn/v1/rand?key=b0&w=200&h=300"] placeholderImage:[UIImage imageNamed:@"hot_load"]];
-    
-    //    UILabel *label = [UILabel.alloc initWithFrame:CGRectMake(100, 400, 100, 20)];
-    //    [self.view addSubview:label];
-    //    label.font = [UIFont systemFontOfSize:30];
-    //    label.attributedText = [@"HH12KK" ax_smallerNumberWitSize:10];
-    //
-    //    [self configUI];
-    
-    
 }
 
+
+
+//- (void)didMoveToParentViewController:(UIViewController *)parent {
+//    [super didMoveToParentViewController:parent];
+//    NSLog(@"didMoveToParentViewController %@  self = %@",parent,self);
+//}
 
 - (void)configUI{
     // 使用系统提供的按钮，要注意不支持系统版本的处理
@@ -552,7 +447,7 @@
         appleIDBtn.frame = CGRectMake(30, self.view.bounds.size.height - 180, self.view.bounds.size.width - 60, 100);
         //    appleBtn.cornerRadius = 22.f;
         [appleIDBtn addTarget:self action:@selector(didAppleIDBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:appleIDBtn];
+        [self.containerView addSubview:appleIDBtn];
     }
     
     // 或者自己用UIButton实现按钮样式
@@ -561,7 +456,7 @@
     addBtn.backgroundColor = [UIColor orangeColor];
     [addBtn setTitle:@"Sign in with Apple" forState:UIControlStateNormal];
     [addBtn addTarget:self action:@selector(didCustomBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:addBtn];
+    [self.containerView addSubview:addBtn];
 }
 
 // 自己用UIButton按钮调用处理授权的方法
@@ -612,12 +507,12 @@
 }
 
 
-- (void)removeFromParentViewController {
-    [super removeFromParentViewController];
-    AXLogFunc;
-}
-- (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
-    [super popoverPresentationControllerDidDismissPopover:popoverPresentationController];
-    AXLogFunc;
-}
+//- (void)removeFromParentViewController {
+//    [super removeFromParentViewController];
+//    AXLogFunc;
+//}
+//- (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
+//    [super popoverPresentationControllerDidDismissPopover:popoverPresentationController];
+//    AXLogFunc;
+//}
 @end
