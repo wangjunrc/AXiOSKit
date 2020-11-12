@@ -50,7 +50,7 @@
     //        [self _WiFi];
     //    }];
     //    [self _WiFi];
-    //    [self _UITextView_link];
+    
     
     //    [self _kvoInt];
     
@@ -82,6 +82,9 @@
     topView =  [self _05DateVC:topView];
     topView =  [self _06per:topView];
     topView =  [self _07bubbleImage:topView];
+    topView =  [self _08china:topView];
+    topView =  [self _09lineSpacing:topView];
+    topView =  [self _10flieExist:topView];
     
     [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(topView.mas_bottom).mas_equalTo(100);// 这里放最后一个view的底部
@@ -375,6 +378,138 @@
     
     return imgView;
 }
+
+-(UIView *)_08china:(UIView *)topView {
+    __weak typeof(self) weakSelf = self;
+    return [self _00ButtonTopView:topView title:@"中英文排序" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _chinaText];
+    }];
+}
+
+-(void)_chinaText {
+    //模拟后台返回数据
+    NSArray * array1 = @[@"陕西",@"山东",@"上海",@"内蒙古",@"新疆",@"西藏",@"北京",@"安徽",@"重庆",@"湖北",@"江苏",@"浙江",@"天津",@"California",@"贵州",@"云南",@"广东",@"甘肃",@"青海",@"宁夏",@"黑龙江",@"辽宁",@"吉林",@"江西",@"LosAngels",@"OKC",@"GSW"];
+
+    //对数组按照首字母进行排序
+    NSArray *array = [self getOrderArraywithArray:array1];
+    //创建可变字典保存处理后的数据@{@"A":@[@"A",@"AB"]};数据格式
+    NSMutableDictionary *mDic = [NSMutableDictionary new];
+    for (NSString *city in array) {
+            // 将中文转换为拼音
+            NSString *cityMutableString = [NSMutableString stringWithString:city];
+            CFStringTransform((__bridge CFMutableStringRef)cityMutableString, NULL, kCFStringTransformMandarinLatin, NO);
+            CFStringTransform((__bridge CFMutableStringRef)cityMutableString, NULL, kCFStringTransformStripCombiningMarks, NO);
+            // 拿到首字母作为key
+    NSString *firstLetter = [[cityMutableString uppercaseString]substringToIndex:1];
+            // 检查是否有firstLetter对应的分组存在, 有的话直接把city添加到对应的分组中
+            // 没有的话, 新建一个以firstLetter为key的分组
+
+    if ([mDic objectForKey:firstLetter]) {
+        NSMutableArray * mCityArray = mDic[firstLetter];
+        if (mCityArray) {
+            [mCityArray addObject:city];
+            mDic[firstLetter] = mCityArray;
+        }else{
+            mDic[firstLetter] = [NSMutableArray arrayWithArray:@[city]];
+        }
+    }else{
+        [mDic setObject:[NSMutableArray arrayWithArray:@[city]] forKey:firstLetter];
+    }
+    }
+    //获取索引栏数据 获得字母
+    NSArray *titlesArray = [self reqDiction:mDic];
+    
+    NSLog(@"mDic %@",mDic.allValues);
+    NSLog(@"titlesArray %@",titlesArray);
+
+}
+
+
+-(UIView *)_09lineSpacing:(UIView *)topView {
+    UILabel *label = UILabel.ax_init;
+    label.numberOfLines = 0;
+    label.text = @"aaa\nbbb\nccc\n";
+    label.backgroundColor = UIColor.orangeColor;
+    [self.containerView addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView.mas_bottom).mas_offset(10);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+    }];
+    topView = label;
+    
+    return [self _00ButtonTopView:topView title:@"kvc修改间距" handler:^{
+        [label setValue:@40 forKey:@"lineSpacing"];
+//        label.text = @"1111\n222\n333\n";
+    }];
+}
+
+
+-(UIView *)_10flieExist:(UIView *)topView {
+    
+    
+    return [self _00ButtonTopView:topView title:@"字符串是否包含另一字符串,不区分大小写" handler:^{
+       
+      
+        NSString * string = @"HelloChina";
+        if ([string localizedCaseInsensitiveContainsString:@"OCHI"]) {
+            NSLog(@"localizedCaseInsensitiveContainsString 包含");
+        } else {
+            NSLog(@"localizedCaseInsensitiveContainsString 不包含");
+        }
+        
+        if ([string containsString:@"OCHI"]) {
+            NSLog(@"containsString 包含");
+        } else {
+            NSLog(@"containsString 不包含");
+        }
+        if ([string localizedStandardContainsString:@"OCHI"]) {
+            NSLog(@"localizedStandardContainsString 包含");
+        } else {
+            NSLog(@"localizedStandardContainsString 不包含");
+        }
+        
+        
+       NSRange r = [string rangeOfString:@"OCHI"
+                              options:NSCaseInsensitiveSearch];
+       BOOL b = r.location != NSNotFound;
+        NSLog(@"b = %d",b);
+        
+        
+    }];
+}
+
+
+
+- (NSArray *)getOrderArraywithArray:(NSArray *)array{
+    //数组排序
+    //定义一个数字数组
+    //对数组进行排序
+    NSArray *result = [array sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        return [obj1 compare:obj2]; //升序
+    }];
+    return result;
+}
+
+- (NSArray *)reqDiction:(NSDictionary *)dict{
+ 
+    NSArray *allKeyArray = [dict allKeys];
+    NSArray *afterSortKeyArray = [allKeyArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        NSComparisonResult resuest = [obj1 compare:obj2];  //[obj1 compare:obj2]：升序
+        return resuest;
+    }];
+    
+    //通过排列的key值获取value
+    NSMutableArray *valueArray = [NSMutableArray array];
+    for (NSString *sortsing in afterSortKeyArray) {
+        NSString *valueString = [dict objectForKey:sortsing];
+        [valueArray addObject:valueString];
+    }
+ 
+    return afterSortKeyArray;
+}
+
 
 -(void)_WiFi{
     

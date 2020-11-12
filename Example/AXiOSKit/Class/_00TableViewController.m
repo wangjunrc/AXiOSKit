@@ -120,30 +120,6 @@ typedef void (^CollectionBlock)(void);
     
     
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],[UIBarButtonItem ax_itemByButton:btn2]];
-    
-    NSString * string = @"HelloChina";
-    if ([string localizedCaseInsensitiveContainsString:@"OCHI"]) {
-        NSLog(@"contain");
-    } else {
-        NSLog(@"not contain");
-    }
-    if ([string containsString:@"OCHI"]) {
-        NSLog(@"contain2");
-    } else {
-        NSLog(@"not contain2");
-    }
-    if ([string localizedStandardContainsString:@"OCHI"]) {
-        NSLog(@"contain3");
-    } else {
-        NSLog(@"not contain3");
-    }
-    
-    
-   NSRange r = [string rangeOfString:@"OCHI"
-                          options:NSCaseInsensitiveSearch];
-   BOOL b = r.location != NSNotFound;
-    NSLog(@"b = %d",b);
-    
 }
 
 -(void)enitAction:(UIButton *)btn{
@@ -700,7 +676,7 @@ void mySLog(NSString *format, ...)
 
                 @{
                     @"index": @20,
-                    @"title": @"iOS适配",
+                    @"title": @"iOS14适配",
                     @"action": ^{
                         _20iOS14ViewController *vc = [[_20iOS14ViewController alloc] init];
                         [self.navigationController pushViewController:vc animated:YES];

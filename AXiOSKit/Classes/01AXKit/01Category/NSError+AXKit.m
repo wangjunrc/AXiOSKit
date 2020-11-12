@@ -15,7 +15,7 @@
     NSDictionary *userInfo = @{
                                 NSLocalizedDescriptionKey:description,
                                 };
-  return [[NSError alloc] initWithDomain:NSCocoaErrorDomain code:-1 userInfo:userInfo];
+  return [[NSError alloc] initWithDomain:@"com.ax.error" code:-1 userInfo:userInfo];
     
 }
 @end

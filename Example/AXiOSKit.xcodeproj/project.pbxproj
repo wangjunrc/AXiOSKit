@@ -84,6 +84,9 @@
 		213BCC46254003DB00C89B72 /* H5.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE2254003DA00C89B72 /* H5.bundle */; };
 		213BCC48254003DB00C89B72 /* test_webp.webp in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE4254003DA00C89B72 /* test_webp.webp */; };
 		213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBE7254003DB00C89B72 /* AppDelegate.m */; };
+		21799C7C255BDE8500754A8B /* gift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 21799C7B255BDE8500754A8B /* gift.svg */; };
+		21799D5D255CD2E300754A8B /* AXRecordAudioService.m in Sources */ = {isa = PBXBuildFile; fileRef = 21799D5C255CD2E300754A8B /* AXRecordAudioService.m */; };
+		21799D64255CD33700754A8B /* AXRecordAudioConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21799D63255CD33700754A8B /* AXRecordAudioConfig.m */; };
 		21898E9C2541AD6900876524 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898E9B2541AD6900876524 /* ShareViewController.m */; };
 		21898E9F2541AD6900876524 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21898E9D2541AD6900876524 /* MainInterface.storyboard */; };
 		21898EA32541AD6900876524 /* AXShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21898E982541AD6900876524 /* AXShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -271,6 +274,11 @@
 		213BCBE4254003DA00C89B72 /* test_webp.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_webp.webp; sourceTree = "<group>"; };
 		213BCBE6254003DB00C89B72 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		213BCBE7254003DB00C89B72 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		21799C7B255BDE8500754A8B /* gift.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = gift.svg; sourceTree = "<group>"; };
+		21799D5B255CD2E300754A8B /* AXRecordAudioService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXRecordAudioService.h; sourceTree = "<group>"; };
+		21799D5C255CD2E300754A8B /* AXRecordAudioService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRecordAudioService.m; sourceTree = "<group>"; };
+		21799D62255CD33700754A8B /* AXRecordAudioConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXRecordAudioConfig.h; sourceTree = "<group>"; };
+		21799D63255CD33700754A8B /* AXRecordAudioConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRecordAudioConfig.m; sourceTree = "<group>"; };
 		21898E982541AD6900876524 /* AXShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AXShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		21898E9A2541AD6900876524 /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		21898E9B2541AD6900876524 /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
@@ -458,6 +466,7 @@
 		213BCB97254003DA00C89B72 /* _00Module */ = {
 			isa = PBXGroup;
 			children = (
+				21799D61255CD31F00754A8B /* RecordAudio */,
 				213BCBAF254003DA00C89B72 /* Load */,
 				213BCB30254003D900C89B72 /* MakeKeyAndVisible.h */,
 				213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */,
@@ -590,6 +599,17 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		21799D61255CD31F00754A8B /* RecordAudio */ = {
+			isa = PBXGroup;
+			children = (
+				21799D5B255CD2E300754A8B /* AXRecordAudioService.h */,
+				21799D5C255CD2E300754A8B /* AXRecordAudioService.m */,
+				21799D62255CD33700754A8B /* AXRecordAudioConfig.h */,
+				21799D63255CD33700754A8B /* AXRecordAudioConfig.m */,
+			);
+			path = RecordAudio;
+			sourceTree = "<group>";
+		};
 		21898E992541AD6900876524 /* AXShare */ = {
 			isa = PBXGroup;
 			children = (
@@ -707,6 +727,7 @@
 				213BCB2D254003D900C89B72 /* en.lproj */,
 				213BCBE6254003DB00C89B72 /* AppDelegate.h */,
 				213BCBE7254003DB00C89B72 /* AppDelegate.m */,
+				21799C7B255BDE8500754A8B /* gift.svg */,
 				218A1EED25469BBC00E43F16 /* AppDelegateWCDB.h */,
 				218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */,
 				21022AE42547A80D0055E0B7 /* AppDelegateAppearance.h */,
@@ -916,6 +937,7 @@
 				213BCC08254003DB00C89B72 /* _24NoteViewController.xib in Resources */,
 				21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */,
 				213BCC0F254003DB00C89B72 /* _00TableViewCell.xib in Resources */,
+				21799C7C255BDE8500754A8B /* gift.svg in Resources */,
 				213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */,
 				213BCC46254003DB00C89B72 /* H5.bundle in Resources */,
 				213BCC43254003DB00C89B72 /* 1234.webp in Resources */,
@@ -1129,6 +1151,7 @@
 				213BCC37254003DB00C89B72 /* AXUserInfo.mm in Sources */,
 				213BCC35254003DB00C89B72 /* NSObject+Load.m in Sources */,
 				213BCC36254003DB00C89B72 /* AXUserInfoDao.mm in Sources */,
+				21799D64255CD33700754A8B /* AXRecordAudioConfig.m in Sources */,
 				213BCBFB254003DB00C89B72 /* _24NoteViewController.m in Sources */,
 				213BCC2A254003DB00C89B72 /* TestObj.m in Sources */,
 				213BCBFA254003DB00C89B72 /* _25LayoutViewController.m in Sources */,
@@ -1160,6 +1183,7 @@
 				213BCC1B254003DB00C89B72 /* _17OtherShareViewController.m in Sources */,
 				213BCC11254003DB00C89B72 /* _01ContentViewController.m in Sources */,
 				213BCC0C254003DB00C89B72 /* AANavigationController.m in Sources */,
+				21799D5D255CD2E300754A8B /* AXRecordAudioService.m in Sources */,
 				21898F322541B11D00876524 /* Application.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				213BCC0D254003DB00C89B72 /* Person.m in Sources */,
