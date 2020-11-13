@@ -1573,7 +1573,7 @@ NSLog(@"余数是%d",10%3);
  
  [UISearchBar.appearance setBarTintColor:UIColor.redColor];
  ```
-## 正则表达式
+## 正则表达式 NSRegularExpression
 ```
 {
     /// <正则表达式>
@@ -1705,6 +1705,149 @@ for (NSTextCheckingResult *match in matchArray) {
     NSLog(@"匹配的字符串 = %@", matchedString);
 }
 
+}
+```
+### 谓词
+```
+/***
+ 类似IN NOT 这样的字符串有下面几种固定的。
+ AND、OR、IN、NOT、ALL、ANY、SOME、NONE、LIKE、CASEINSENSITIVE、CI、MATCHES、CONTAINS、BEGINSWITH、ENDSWITH、BETWEEN、NULL、NIL、SELF、TRUE、YES、FALSE、NO、FIRST、LAST、SIZE、ANYKEY、SUBQUERY、CAST、TRUEPREDICATE、FALSEPREDICATE，
+ 所表达的含义和字母意识都差不多。
+
+ 
+ 
+ */
+
+{
+    
+    NSMutableArray *array = [NSMutableArray array];
+    {
+        Person *p = Person.alloc.init;
+        p.name = @"jim";
+        p.age = 2;
+        [array addObject:p];
+    }
+    {
+        Person *p = Person.alloc.init;
+        p.name = @"jim";
+        p.age = 1;
+        [array addObject:p];
+    }
+    {
+        Person *p = Person.alloc.init;
+        p.name = @"tom";
+        p.age = 3;
+        [array addObject:p];
+    }
+    {
+        Person *p = Person.alloc.init;
+        p.name = @"tom";
+        p.age = 4;
+        [array addObject:p];
+    }
+    {
+        Person *p = Person.alloc.init;
+        p.name = @"joM";
+        p.age = 4;
+        [array addObject:p];
+    }
+    NSLog(@"sum = %@",[array valueForKeyPath:@"@sum.age"]);
+    NSLog(@"avg = %@",[array valueForKeyPath:@"@avg.age"]);
+    NSLog(@"max = %@",[array valueForKeyPath:@"@max.age"]);
+    NSLog(@"min = %@",[array valueForKeyPath:@"@min.age"]);
+
+    
+    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name IN %@",@[@"jim",@"jack"]];
+    //过滤数组
+    NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
+    NSLog(@"只有string = %@",arr);
+    [arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"name包括 %@ %ld",obj.name,obj.age);
+    }];
+    
+    {
+        NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"age BETWEEN %@",@[@2,@5]];
+        //过滤数组
+        NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
+        [arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSLog(@"BETWEEN age = %@ %ld",obj.name,obj.age);
+        }];
+        
+        
+    }
+    {
+        NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name == %@",@"jim"];
+        //过滤数组
+        NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
+        [arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSLog(@"name 等于指定 %@ %ld",obj.name,obj.age);
+        }];
+        
+        
+        NSLog(@"获得所有的 name == %@",[array valueForKey:@"name"]);
+        
+    }
+    
+    {
+        /// '*om*' 直接拼接,还没有找到好办法
+        NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name LIKE '*om*'"];
+        //过滤数组
+        NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
+        [arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSLog(@"LIKT 区分大小写 = %@ %ld",obj.name,obj.age);
+        }];
+    }
+    {
+        NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name like[cd] '*om*'"];
+        NSLog(@"predicateFormat %@",filterPredicate.predicateFormat);
+        //过滤数组
+        NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
+        [arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSLog(@"LIKT 不区分大小写 = %@ %ld",obj.name,obj.age);
+        }];
+    }
+    
+}
+{
+    NSArray *array= [NSArray arrayWithObjects:@"2.0",@"2.3",@"3.0",@"4.0",@"10",nil];
+    NSLog(@"sum ==== %@",[array valueForKeyPath:@"@sum.floatValue"]);
+    
+    CGFloat sum = [[array valueForKeyPath:@"@sum.floatValue"] floatValue];
+    
+    CGFloat avg = [[array valueForKeyPath:@"@avg.floatValue"] floatValue];
+    CGFloat max =[[array valueForKeyPath:@"@max.floatValue"] floatValue];
+    
+    CGFloat min =[[array valueForKeyPath:@"@min.floatValue"] floatValue];
+}
+{
+    
+    /// array 不在 array2 中的 的元素
+    NSArray *array = @[@"1",@"2",@"2",@"3",@"3",@"3"];
+    NSArray *array2 = @[@"1",@"4"];
+    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",array2];
+    //过滤数组
+    NSArray * reslutFilteredArray = [array filteredArrayUsingPredicate:filterPredicate];
+    
+    NSLog(@"不在 Array = %@",reslutFilteredArray);
+}
+{
+    /// array 在 array2 中的 的元素
+    NSArray *array = @[@"1",@"2",@"2",@"3",@"3",@"3"];
+    NSArray *array2 = @[@"2",@"2",@"2",@"4"];
+    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@",array2];
+    //过滤数组
+    NSArray * reslutFilteredArray = [array filteredArrayUsingPredicate:filterPredicate];
+    
+    NSLog(@"在 Array = %@",reslutFilteredArray);
+}
+{
+    /// 大于,需要是Number
+    NSArray *array = @[@1,@2,@2,@2,@3,@3];
+    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"SELF >= 2"];
+    //过滤数组
+    NSArray * reslutFilteredArray = [array filteredArrayUsingPredicate:filterPredicate];
+    
+    NSLog(@"大于 Array = %@",reslutFilteredArray);
 }
 ```
 
