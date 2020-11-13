@@ -1796,6 +1796,20 @@ for (NSTextCheckingResult *match in matchArray) {
         
         
     }
+    /// 分类汇总
+    NSMutableArray<Person *> *array2 = [NSMutableArray array];
+    [[NSSet setWithArray:[array valueForKeyPath:@"name"]] enumerateObjectsUsingBlock:^(NSString *  _Nonnull obj, BOOL * _Nonnull stop) {
+        
+        NSPredicate * pre = [NSPredicate predicateWithFormat:@"name = %@",obj];
+        NSArray * arr = [array filteredArrayUsingPredicate:pre];
+        NSInteger total = [[arr valueForKeyPath:@"@sum.age"] integerValue];
+        
+        Person *p = Person.alloc.init;
+        p.name = obj;
+        p.age = total;
+        [array2 addObject:p];
+        
+    }];
     {
         NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name == %@",@"jim"];
         //过滤数组
