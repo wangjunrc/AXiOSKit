@@ -37,6 +37,7 @@
 #import "_26RMQClientViewController.h"
 #import "_27MQTTClientViewController.h"
 #import "_28ShareFileViewController.h"
+#import "_29AudioViewController.h"
 #import <AXiOSKit/AXPayVC.h>
 #import <AXiOSKit/AXPresentGesturesBack.h>
 #import <AXiOSKit/AXSystemAuthorizerManager.h>
@@ -783,8 +784,14 @@ void mySLog(NSString *format, ...)
                         [AXPresentGesturesBack injectDismissTransitionForViewController:vc];
                         [self ax_showVC:vc];
                     },
-                    
-                    
+                },
+                @{
+                    @"index": @29,
+                    @"title": @"音频",
+                    @"action": ^{
+                        _29AudioViewController *vc = [_29AudioViewController ax_init];
+                        [self ax_pushVC:vc];
+                    },
                 },
                 
                 

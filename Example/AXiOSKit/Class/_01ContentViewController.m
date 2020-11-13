@@ -1,5 +1,5 @@
 //
-//  _01ContentViewController.m
+//  _p01ContentViewController.m
 //  AXiOSKitExample
 //
 //  Created by 小星星吃KFC on 2020/9/19.
@@ -74,18 +74,18 @@
     }];
     
     UIView *topView = containerView;
-//    topView =  [self _01loginTest:topView];
-    topView =  [self _01UITextView_link:topView];
-    topView =  [self _02AlternateIconName:topView];
-    topView =  [self _03textToImg:topView];
-    topView =  [self _04masron_uninstall:topView];
-    topView =  [self _05DateVC:topView];
-    topView =  [self _06per:topView];
-    topView =  [self _07bubbleImage:topView];
-    topView =  [self _08china:topView];
-    topView =  [self _09lineSpacing:topView];
-    topView =  [self _10flieExist:topView];
-    
+//    topView =  [self _p01loginTest:topView];
+    topView =  [self _p01UITextView_link:topView];
+    topView =  [self _p02AlternateIconName:topView];
+    topView =  [self _p03textToImg:topView];
+    topView =  [self _p04masron_uninstall:topView];
+    topView =  [self _p05DateVC:topView];
+    topView =  [self _p06per:topView];
+    topView =  [self _p07bubbleImage:topView];
+    topView =  [self _p08china:topView];
+    topView =  [self _p09lineSpacing:topView];
+    topView =  [self _p10flieExist:topView];
+    topView =  [self _p11ButtonAllEvent:topView];
     [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(topView.mas_bottom).mas_equalTo(100);// 这里放最后一个view的底部
     }];
@@ -93,7 +93,7 @@
 }
 
 
--(UIView *)_00ButtonTopView:(UIView *)topView title:(NSString *)title handler:(void(^)(void))handler {
+-(UIView *)_p00ButtonTopView:(UIView *)topView title:(NSString *)title handler:(void(^)(void))handler {
     if (title.length==0) {
         title = @"title";
     }
@@ -174,7 +174,7 @@
     }];
 }
 
--(UIView *)_01loginTest:(UIView *)topView {
+-(UIView *)_p01loginTest:(UIView *)topView {
     
     
     {
@@ -209,7 +209,7 @@
     return topView;
 }
 
--(UIView *)_01UITextView_link:(UIView *)topView{
+-(UIView *)_p01UITextView_link:(UIView *)topView{
     
     NSString *str1 = @"点击“立即体验”按钮，\n即表示你同意";
     NSString *str3 = @"《许可及服务协议》";
@@ -260,10 +260,10 @@
     
 }
 
--(UIView *)_02AlternateIconName:(UIView *)topView {
+-(UIView *)_p02AlternateIconName:(UIView *)topView {
     
     __weak typeof(self) weakSelf = self;
-    return [self _00ButtonTopView:topView title:@"换icon" handler:^{
+    return [self _p00ButtonTopView:topView title:@"换icon" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf setIconname:@"Alternate_AppIcon_2"];
     }];
@@ -288,7 +288,7 @@
         // Fallback on earlier versions
     }
 }
--(UIView *)_03textToImg:(UIView *)topView {
+-(UIView *)_p03textToImg:(UIView *)topView {
     
     UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 50)];
     
@@ -307,7 +307,7 @@
     return img;
 }
 
--(UIView *)_04masron_uninstall:(UIView *)topView {
+-(UIView *)_p04masron_uninstall:(UIView *)topView {
     
     CGFloat width = 100;
     
@@ -324,7 +324,7 @@
     topView = view1;
     
     __weak typeof(self) weakSelf = self;
-    topView = [self _00ButtonTopView:topView title:@"masron - uninstall" handler:^{
+    topView = [self _p00ButtonTopView:topView title:@"masron - uninstall" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.viewBottomConstraint uninstall];
         [view1.superview setNeedsUpdateConstraints];
@@ -340,19 +340,19 @@
     return topView;
 }
 
--(UIView *)_05DateVC:(UIView *)topView {
+-(UIView *)_p05DateVC:(UIView *)topView {
     __weak typeof(self) weakSelf = self;
-    return [self _00ButtonTopView:topView title:@"date" handler:^{
+    return [self _p00ButtonTopView:topView title:@"date" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         AXDateVC *vc = [[AXDateVC alloc]init];
         [strongSelf ax_showVC:vc];
     }];
 }
 
--(UIView *)_06per:(UIView *)topView {
+-(UIView *)_p06per:(UIView *)topView {
     
     __weak typeof(self) weakSelf = self;
-    return [self _00ButtonTopView:topView title:@"奔溃拦截" handler:^{
+    return [self _p00ButtonTopView:topView title:@"奔溃拦截" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         //        [self performSelector:@selector(test:age:age2:) withObjects:@[@"JIM",@"20"]];
         //        id obj =[self performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[@"JIM",@"20"]];
@@ -363,7 +363,7 @@
     
 }
 
--(UIView *)_07bubbleImage:(UIView *)topView {
+-(UIView *)_p07bubbleImage:(UIView *)topView {
     //leftCapWidth: 左边不拉伸的像素
     //topCapHeight:上边不拉伸的像素
     UIImage *image = [UIImage imageNamed:@"chat_bubble"];
@@ -379,9 +379,9 @@
     return imgView;
 }
 
--(UIView *)_08china:(UIView *)topView {
+-(UIView *)_p08china:(UIView *)topView {
     __weak typeof(self) weakSelf = self;
-    return [self _00ButtonTopView:topView title:@"中英文排序" handler:^{
+    return [self _p00ButtonTopView:topView title:@"中英文排序" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _chinaText];
     }];
@@ -426,7 +426,7 @@
 }
 
 
--(UIView *)_09lineSpacing:(UIView *)topView {
+-(UIView *)_p09lineSpacing:(UIView *)topView {
     UILabel *label = UILabel.ax_init;
     label.numberOfLines = 0;
     label.text = @"aaa\nbbb\nccc\n";
@@ -439,17 +439,17 @@
     }];
     topView = label;
     
-    return [self _00ButtonTopView:topView title:@"kvc修改间距" handler:^{
+    return [self _p00ButtonTopView:topView title:@"kvc修改间距" handler:^{
         [label setValue:@40 forKey:@"lineSpacing"];
 //        label.text = @"1111\n222\n333\n";
     }];
 }
 
 
--(UIView *)_10flieExist:(UIView *)topView {
+-(UIView *)_p10flieExist:(UIView *)topView {
     
     
-    return [self _00ButtonTopView:topView title:@"字符串是否包含另一字符串,不区分大小写" handler:^{
+    return [self _p00ButtonTopView:topView title:@"字符串是否包含另一字符串,不区分大小写" handler:^{
        
       
         NSString * string = @"HelloChina";
@@ -481,6 +481,49 @@
 }
 
 
+-(UIView *)_p11ButtonAllEvent:(UIView *)topView {
+    
+    
+    UIButton *btn = [[UIButton alloc] init];
+    [self.containerView addSubview:btn];
+    btn.backgroundColor = UIColor.blueColor;
+    [btn ax_setTitleStateNormal:@"按钮各种事件"];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+    }];
+    /// 按钮事件
+    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
+        NSLog(@"UIControlEventTouchUpInside 所有在控件之内触摸抬起事件");
+    }];
+    [[btn rac_signalForControlEvents:UIControlEventTouchUpOutside] subscribeNext:^(UIButton *x) {
+        NSLog(@"UIControlEventTouchUpOutside 所有在控件之外触摸抬起事件(点触必须开始与控件内部才会发送通知");
+    }];
+    
+    [[btn rac_signalForControlEvents:UIControlEventTouchDown] subscribeNext:^(UIButton *x) {
+        NSLog(@"UIControlEventTouchDown 单点触摸按下事件：用户点触屏幕，或者又有新手指落下的时候");
+    }];
+    
+    [[btn rac_signalForControlEvents:UIControlEventTouchDragEnter] subscribeNext:^(UIButton *x) {
+        NSLog(@"UIControlEventTouchDragEnter 当一次触摸从控件窗口之外拖动到内部时");
+    }];
+    [[btn rac_signalForControlEvents:UIControlEventTouchDragInside] subscribeNext:^(UIButton *x) {
+        NSLog(@"UIControlEventTouchDragInside 当一次触摸在控件窗口内拖动时。");
+    }];
+    [[btn rac_signalForControlEvents:UIControlEventTouchDragOutside] subscribeNext:^(UIButton *x) {
+        NSLog(@"UIControlEventTouchDragOutside 当一次触摸在控件窗口之外拖动时");
+    }];
+    [[btn rac_signalForControlEvents:UIControlEventTouchDragExit] subscribeNext:^(UIButton *x) {
+        NSLog(@"UIControlEventTouchDragExit 当一次触摸从控件窗口内部拖动到外部时");
+    }];
+    [[btn rac_signalForControlEvents:UIControlEventTouchDownRepeat] subscribeNext:^(UIButton *x) {
+        NSLog(@"UIControlEventTouchDownRepeat 多点触摸按下事件，点触计数大于1");
+    }];
+    topView =btn;
+    return topView;
+    
+}
 
 - (NSArray *)getOrderArraywithArray:(NSArray *)array{
     //数组排序
