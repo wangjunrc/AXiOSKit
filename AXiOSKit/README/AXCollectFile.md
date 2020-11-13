@@ -1573,6 +1573,27 @@ NSLog(@"余数是%d",10%3);
  
  [UISearchBar.appearance setBarTintColor:UIColor.redColor];
  ```
+## 正则表达式 NSRegularExpression 子类 NSDataDetector
+```
+NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeAddress | NSTextCheckingTypePhoneNumber | NSTextCheckingTypeLink
+                                                           error:nil];
+//需要检测的字符串
+NSString *testStr = @"有一个网址：wwww.JohnnyLiu.com有 一个电话：1299999 还有一个地址：安徽省来安县龙山街道 你看看这个www.baidu.com/sabc/bnss怎 么样?";
+[detector enumerateMatchesInString:testStr options:NSMatchingReportCompletion range:NSMakeRange(0, testStr.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
+    NSLog(@"result.range = %@",NSStringFromRange(result.range));
+    if (result.URL) {
+        NSLog(@"url = %@",result.URL);
+    }
+    if (result.phoneNumber) {
+        NSLog(@"phone = %@",result.phoneNumber);
+    }
+    if ([result resultType] == NSTextCheckingTypeAddress) {
+
+        NSDictionary<NSString *, NSString *> * addressComponent = [result addressComponents];
+        NSLog(@"城市:%@, 街道:%@", addressComponent[NSTextCheckingCityKey], addressComponent[NSTextCheckingStreetKey]);
+    }
+}];
+```
 ## 正则表达式 NSRegularExpression
 ```
 {
