@@ -95,4 +95,6 @@ typedef NS_ENUM(NSInteger, AXDeviceSize) {
 +(int64_t)ax_memoryUsage;
 
 + (int64_t)ax_memoryUsage2;
+
++ (int64_t)ax_memoryUsage3;
 @end

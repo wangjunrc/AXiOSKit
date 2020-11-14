@@ -9,10 +9,12 @@
 #import "AppDelegate.h"
 #import "AppDelegateWCDB.h"
 #import "MakeKeyAndVisible.h"
-#import "SOAComponentAppDelegate.h"
+#import "AppDelegateRegistryCenter.h"
 #import <Bagel/Bagel.h>
 #import <LLDebugTool/LLDebug.h>
 #import <UserNotifications/UserNotifications.h>
+
+
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -25,7 +27,7 @@
     
     //    SEL selector = NSSelectorFromString(selectorStr);
     NSObject <UIApplicationDelegate> *service;
-    for(service in [[SOAComponentAppDelegate instance] services]){
+    for(service in [[AppDelegateRegistryCenter instance] services]){
         if ([service respondsToSelector:selector]){
             //注意这里的performSelector这个是要自己写分类的（系统不带这个功能的）
             [service ax_performSelector:selector withObjects:params];
@@ -36,74 +38,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-#if DEBUG
-    /// 只能模拟器
-    /// for iOS
-    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
-    /// for tvOS
-    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/tvOSInjection.bundle"] load];
-    /// for masOS
-    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle"] load];
-#endif
-    
-    
     [self thirdSDKLifecycleManager:@selector(application:didFinishLaunchingWithOptions:) withParameters:@[application,@{}]];
-    
-    
-    // Start working with config.
-    //    [[LLDebugTool sharedTool] startWorkingWithConfigBlock:^(LLConfig * _Nonnull config) {
-    //
-    //        //####################### Color Style #######################//
-    //        // Uncomment one of the following lines to change the color configuration.
-    //        // config.colorStyle = LLConfigColorStyleSystem;
-    //        // [config configBackgroundColor:[UIColor orangeColor] primaryColor:[UIColor whiteColor] statusBarStyle:UIStatusBarStyleDefault];
-    //
-    //        //####################### User Identity #######################//
-    //        // Use this line to tag user. More config please see "LLConfig.h".
-    //        config.userIdentity = @"Miss L";
-    //
-    //        //####################### Window Style #######################//
-    //        // Uncomment one of the following lines to change the window style.
-    //        // config.entryWindowStyle = LLConfigEntryWindowStyleTitle;
-    //
-    //        //####################### Html #######################//
-    ////        config.defaultHtmlUrl = @"https://github.com/HDB-Li/LLDebugTool";
-    //
-    //        //####################### Location #######################//
-    //        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask,YES) firstObject];
-    //        [config addMockRouteDirectory:documentsPath];
-    //    }];
-    
-    //        if ([service respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]){
-    //              //注意这里的performSelector这个是要自己写分类的（系统不带这个功能的）
-    //            [service performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[application,@"123"]];
-    //
-    //        }
-    
-    
-    
-    
-    //    id<UIApplicationDelegate> service;
-    //        for(service in [[SOAComponentAppDelegate instance] services]){
-    //            if ([service respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)]){
-    //                [service application:application didFinishLaunchingWithOptions:launchOptions];
-    //            }
-    //        }
-    
-    
-    //    BagelConfiguration  *bagelConfig = [[BagelConfiguration alloc]init];
-    //
-    //    bagelConfig.project.projectName = @"Custom Project Name";
-    //    bagelConfig.device.deviceName = @"Custom Device Name";
-    //    bagelConfig.device.deviceDescription = @"Custom Device Description";
-    //
-    //
-    //    [Bagel start:bagelConfig];
-    //
-    
-    
-    //    if (@available(iOS 13, *)) {
-    //    } else {
+   
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];

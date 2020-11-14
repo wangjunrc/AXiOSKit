@@ -22,6 +22,7 @@
 #import "_09AFNViewController.h"
 #import "_10TextFViewController.h"
 #import "_13WebpViewController.h"
+#import "_13WeImageTableViewController.h"
 #import "_14TFViewController.h"
 #import "_15UIMenuController.h"
 #import "_16KeyChainViewController.h"
@@ -619,7 +620,15 @@ void mySLog(NSString *format, ...)
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
-
+                @{
+                    @"index": @13,
+                    @"title": @"WeImage",
+                    @"action": ^{
+                        _13WeImageTableViewController *vc = [[_13WeImageTableViewController alloc] init];
+                        [self.navigationController pushViewController:vc animated:YES];
+                    },
+                },
+                
                 @{
                     @"index": @14,
                     @"title": @"TextFeild",

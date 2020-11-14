@@ -98,9 +98,12 @@
 		218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1E9625441C6600E43F16 /* _28LocalSocketClientViewController.m */; };
 		218A1EC8254438C900E43F16 /* office.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 218A1EC7254438C900E43F16 /* office.bundle */; };
 		218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */; };
-		218A1EFB25469D8000E43F16 /* SOAComponentAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* SOAComponentAppDelegate.m */; };
+		218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */; };
 		21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */; };
 		21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */; };
+		21CC7C62255FA40D00E7B506 /* AppDelegateWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */; };
+		21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */; };
+		21CC7C78255FA71900E7B506 /* _13WeImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C77255FA71900E7B506 /* _13WeImageTableViewController.m */; };
 		21E306B4255EAA1100D17A8B /* _29AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E306B2255EAA1100D17A8B /* _29AudioViewController.m */; };
 		21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -230,7 +233,7 @@
 		213BCB83254003D900C89B72 /* _15UIMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _15UIMenuController.m; sourceTree = "<group>"; };
 		213BCB84254003D900C89B72 /* _01ThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _01ThemeViewController.m; sourceTree = "<group>"; };
 		213BCB85254003D900C89B72 /* _18MGSwipeTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _18MGSwipeTableVC.h; sourceTree = "<group>"; };
-		213BCB86254003D900C89B72 /* _00TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00TableViewController.h; sourceTree = "<group>"; };
+		213BCB86254003D900C89B72 /* _00TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00TableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		213BCB8F254003D900C89B72 /* instruction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instruction.jpg; sourceTree = "<group>"; };
 		213BCB90254003D900C89B72 /* PointViewController.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PointViewController.plist; sourceTree = "<group>"; };
 		213BCB91254003D900C89B72 /* AxGenerator.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AxGenerator.xcconfig; sourceTree = "<group>"; };
@@ -306,10 +309,16 @@
 		218A1EC7254438C900E43F16 /* office.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = office.bundle; sourceTree = "<group>"; };
 		218A1EED25469BBC00E43F16 /* AppDelegateWCDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateWCDB.h; sourceTree = "<group>"; };
 		218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegateWCDB.mm; sourceTree = "<group>"; };
-		218A1EF925469D8000E43F16 /* SOAComponentAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOAComponentAppDelegate.h; sourceTree = "<group>"; };
-		218A1EFA25469D8000E43F16 /* SOAComponentAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOAComponentAppDelegate.m; sourceTree = "<group>"; };
+		218A1EF925469D8000E43F16 /* AppDelegateRegistryCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateRegistryCenter.h; sourceTree = "<group>"; };
+		218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateRegistryCenter.m; sourceTree = "<group>"; };
 		21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_3@2x.png"; sourceTree = "<group>"; };
 		21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_2@2x.png"; sourceTree = "<group>"; };
+		21CC7C60255FA40D00E7B506 /* AppDelegateWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateWebImage.h; sourceTree = "<group>"; };
+		21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateWebImage.m; sourceTree = "<group>"; };
+		21CC7C66255FA4A300E7B506 /* AppDelegateDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateDebug.h; sourceTree = "<group>"; };
+		21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateDebug.m; sourceTree = "<group>"; };
+		21CC7C76255FA71900E7B506 /* _13WeImageTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _13WeImageTableViewController.h; sourceTree = "<group>"; };
+		21CC7C77255FA71900E7B506 /* _13WeImageTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _13WeImageTableViewController.m; sourceTree = "<group>"; };
 		21D83B3A255A28BE00695C28 /* rac.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = rac.md; sourceTree = "<group>"; };
 		21E306B1255EAA1100D17A8B /* _29AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _29AudioViewController.h; sourceTree = "<group>"; };
 		21E306B2255EAA1100D17A8B /* _29AudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _29AudioViewController.m; sourceTree = "<group>"; };
@@ -411,6 +420,8 @@
 				213BCB3C254003D900C89B72 /* _10TextFViewController.xib */,
 				213BCB54254003D900C89B72 /* _13WebpViewController.h */,
 				213BCB7B254003D900C89B72 /* _13WebpViewController.m */,
+				21CC7C76255FA71900E7B506 /* _13WeImageTableViewController.h */,
+				21CC7C77255FA71900E7B506 /* _13WeImageTableViewController.m */,
 				213BCB7F254003D900C89B72 /* _14TFViewController.h */,
 				213BCB4E254003D900C89B72 /* _14TFViewController.m */,
 				213BCB5A254003D900C89B72 /* _14TFViewController.xib */,
@@ -683,6 +694,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		21CC7C72255FA58200E7B506 /* AppDelegateComponent */ = {
+			isa = PBXGroup;
+			children = (
+				21022AE42547A80D0055E0B7 /* AppDelegateAppearance.h */,
+				21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */,
+				21CC7C66255FA4A300E7B506 /* AppDelegateDebug.h */,
+				21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */,
+				218A1EED25469BBC00E43F16 /* AppDelegateWCDB.h */,
+				218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */,
+				21CC7C60255FA40D00E7B506 /* AppDelegateWebImage.h */,
+				21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */,
+				21022AEA2547A9AF0055E0B7 /* AppDelegateWX.h */,
+				21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */,
+			);
+			path = AppDelegateComponent;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -732,18 +760,11 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				213BCB2D254003D900C89B72 /* en.lproj */,
 				213BCBE6254003DB00C89B72 /* AppDelegate.h */,
 				213BCBE7254003DB00C89B72 /* AppDelegate.m */,
-				21799C7B255BDE8500754A8B /* gift.svg */,
-				218A1EED25469BBC00E43F16 /* AppDelegateWCDB.h */,
-				218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */,
-				21022AE42547A80D0055E0B7 /* AppDelegateAppearance.h */,
-				21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */,
-				21022AEA2547A9AF0055E0B7 /* AppDelegateWX.h */,
-				21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */,
-				218A1EF925469D8000E43F16 /* SOAComponentAppDelegate.h */,
-				218A1EFA25469D8000E43F16 /* SOAComponentAppDelegate.m */,
+				21CC7C72255FA58200E7B506 /* AppDelegateComponent */,
+				218A1EF925469D8000E43F16 /* AppDelegateRegistryCenter.h */,
+				218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */,
 				21898F302541B11D00876524 /* Application.h */,
 				21898F312541B11D00876524 /* Application.m */,
 				213BCBDA254003DA00C89B72 /* Assets.xcassets */,
@@ -751,6 +772,8 @@
 				6003F59B195388D20070C39A /* AXiOSKit-Prefix.pch */,
 				213BCBD7254003DA00C89B72 /* AXiOSKitExampleRelease.entitlements */,
 				213BCB92254003D900C89B72 /* Base.lproj */,
+				213BCB2D254003D900C89B72 /* en.lproj */,
+				21799C7B255BDE8500754A8B /* gift.svg */,
 				6003F599195388D20070C39A /* main.m */,
 				213BCBE0254003DA00C89B72 /* SceneDelegate.h */,
 				213BCB34254003D900C89B72 /* SceneDelegate.m */,
@@ -886,10 +909,9 @@
 			};
 			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "AXiOSKit" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -1149,6 +1171,7 @@
 				213BCC30254003DB00C89B72 /* ChatTextMessageModel.m in Sources */,
 				213BCBFD254003DB00C89B72 /* _20iOS14ViewController.m in Sources */,
 				218A1E9025441BBE00E43F16 /* _28LocalSocketServiceViewController.m in Sources */,
+				21CC7C62255FA40D00E7B506 /* AppDelegateWebImage.m in Sources */,
 				213BCBF9254003DB00C89B72 /* AFHTTPSessionManager+PutFile.m in Sources */,
 				213BCC1D254003DB00C89B72 /* _01ThemeViewController.m in Sources */,
 				213BCBFE254003DB00C89B72 /* _14TFViewController.m in Sources */,
@@ -1181,6 +1204,8 @@
 				213BCBEA254003DB00C89B72 /* MakeKeyAndVisible.m in Sources */,
 				213BCC29254003DB00C89B72 /* AXWebSocketEngine.m in Sources */,
 				21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */,
+				21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */,
+				21CC7C78255FA71900E7B506 /* _13WeImageTableViewController.m in Sources */,
 				213BCC0E254003DB00C89B72 /* _07VideoViewController.m in Sources */,
 				213BCC0A254003DB00C89B72 /* _22ReactiveObjCViewController.m in Sources */,
 				213BCC03254003DB00C89B72 /* AView.m in Sources */,
@@ -1188,7 +1213,7 @@
 				213BCC19254003DB00C89B72 /* _13WebpViewController.m in Sources */,
 				213BCC09254003DB00C89B72 /* _04RunLoopViewController.m in Sources */,
 				213BCC10254003DB00C89B72 /* _16KeyChainViewController.m in Sources */,
-				218A1EFB25469D8000E43F16 /* SOAComponentAppDelegate.m in Sources */,
+				218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */,
 				213BCBFC254003DB00C89B72 /* _06WCDBViewController.m in Sources */,
 				213BCC1B254003DB00C89B72 /* _17OtherShareViewController.m in Sources */,
 				213BCC11254003DB00C89B72 /* _01ContentViewController.m in Sources */,

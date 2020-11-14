@@ -127,7 +127,7 @@ PODS:
   - MBProgressHUD (1.2.0)
   - MGJRouter (0.10.0)
   - MGSwipeTableCell (1.6.11)
-  - MJExtension (3.2.3)
+  - MJExtension (3.2.2)
   - MJRefresh (3.5.0)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
@@ -151,9 +151,9 @@ PODS:
   - RMQClient (0.10.0):
     - CocoaAsyncSocket (~> 7.4.0)
     - JKVValue
-  - SDWebImage (5.7.4):
-    - SDWebImage/Core (= 5.7.4)
-  - SDWebImage/Core (5.7.4)
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
   - SDWebImageFLPlugin (0.4.0):
     - FLAnimatedImage (>= 1.0.11)
     - SDWebImage/Core (~> 5.6)
@@ -193,7 +193,7 @@ DEPENDENCIES:
   - PromisesObjC
   - ReactiveObjC
   - RMQClient
-  - SDWebImage (~> 5.7.3)
+  - SDWebImage (~> 5.9.5)
   - SDWebImageFLPlugin
   - SDWebImageWebPCoder
   - SocketRocket
@@ -275,7 +275,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MGJRouter: 15d94541eb2cc81eff7d577337288feb7ae9575f
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
-  MJExtension: a6fd35a527dafd7f3f1259017ee57551d58b3bb8
+  MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   MMKV: f15696ad598023bf6cbb17eadee13efc185c5028
@@ -285,7 +285,7 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RMQClient: e9bfea2d08f151b6b12df82ad115c78bd8de2106
-  SDWebImage: 48b88379b798fd1e4298f95bb25d2cdabbf4deb3
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   SDWebImageFLPlugin: 6c2295fb1242d44467c6c87dc5db6b0a13228fd8
   SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
@@ -296,6 +296,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: cd5374d6294cf898198935dfb8d37a152b1be7e5
+PODFILE CHECKSUM: 7c09c7d4de5db36af86f73bc09bc1d5cc7f00406
 
 COCOAPODS: 1.10.0

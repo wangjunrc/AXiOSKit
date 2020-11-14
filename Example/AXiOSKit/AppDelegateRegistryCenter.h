@@ -10,7 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SOAComponentAppDelegate : NSObject
+/// SOA(面向服务的架构)
+@interface AppDelegateRegistryCenter : NSObject
 
 + (instancetype)instance;
 

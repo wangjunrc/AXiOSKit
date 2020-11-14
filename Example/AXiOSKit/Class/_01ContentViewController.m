@@ -86,6 +86,10 @@
     topView =  [self _p09lineSpacing:topView];
     topView =  [self _p10flieExist:topView];
     topView =  [self _p11ButtonAllEvent:topView];
+    topView =  [self _p12memoryUsage:topView];
+    topView =  [self _p12memoryUsage2:topView];
+    topView =  [self _p12memoryUsage3:topView];
+    
     [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(topView.mas_bottom).mas_equalTo(100);// 这里放最后一个view的底部
     }];
@@ -525,6 +529,46 @@
     
 }
 
+
+-(UIView *)_p12memoryUsage:(UIView *)topView {
+    UILabel *label = UILabel.ax_init;
+    [self.containerView addSubview:label];
+    label.textColor = UIColor.blackColor;
+    label.text = [NSString stringWithFormat:@"%lf/MB",[UIDevice ax_memoryUsage]/1024.0/1024.0];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+    }];
+    topView = label;
+    return topView;
+}
+-(UIView *)_p12memoryUsage2:(UIView *)topView {
+    UILabel *label = UILabel.ax_init;
+    [self.containerView addSubview:label];
+    label.textColor = UIColor.blackColor;
+    label.text = [NSString stringWithFormat:@"%lfMB",[UIDevice ax_memoryUsage2]/1024.0/1024.0];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+    }];
+    topView = label;
+    return topView;
+}
+-(UIView *)_p12memoryUsage3:(UIView *)topView {
+    UILabel *label = UILabel.ax_init;
+    [self.containerView addSubview:label];
+    label.textColor = UIColor.blackColor;
+    label.text = [NSString stringWithFormat:@"%lfMB",[UIDevice ax_memoryUsage3]/1024.0/1024.];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+    }];
+    topView = label;
+    return topView;
+}
 - (NSArray *)getOrderArraywithArray:(NSArray *)array{
     //数组排序
     //定义一个数字数组

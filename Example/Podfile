@@ -13,7 +13,7 @@ target 'AXiOSKit_Example' do
   pod 'SDWebImageWebPCoder'
   #  pod "SDWebImage/GIF"
   #  pod 'libwebp', :git => 'https://github.com/webmproject/libwebp.git'
-  pod 'SDWebImage','~> 5.7.3'
+  pod 'SDWebImage','~> 5.9.5'
   #  pod "SocketRocket"
   pod "TZImagePickerController"
   #pod "ZLPhotoBrowser"

@@ -74,6 +74,13 @@
 -(UIImageView *)gifImv_fl:(UIView *)topView{
     
     
+    
+//    SDAnimatedImageView *imageView = [SDAnimatedImageView new];
+//    SDAnimatedImage *animatedImage = [SDAnimatedImage imageNamed:@"image.gif"];
+//    imageView.image = animatedImage;
+//    imageView sd_imageURL
+    
+    /// 4.4.0 版本之后换了另外一种方式， 新增加了 FLAnimatedImageView 来实现动态图片的展示，继承自 UIImageView
     FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
     
     imageView.frame = CGRectMake(100, 100, 200, 200);;
