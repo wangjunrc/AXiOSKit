@@ -400,6 +400,8 @@
 		20B30BD272EA8FB8CF67D94CB76D74F5 /* RMQGCDHeartbeatSender.h in Headers */ = {isa = PBXBuildFile; fileRef = C6E4E911FC06D421F5D32F5D6C2142AC /* RMQGCDHeartbeatSender.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20BD779D71F43E2374C7D4CB608E63E1 /* statement_drop_table.hpp in Headers */ = {isa = PBXBuildFile; fileRef = C1B4C8BB47E92201766A0F04A3E85CF0 /* statement_drop_table.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		2121A0168D2AE21257CE87175D6FC5AA /* WCTResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C6FD4D80417C691BF47EB72266FDD41 /* WCTResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2125E8462562A14B00AC3A06 /* UICollectionViewFlowLayout+AXKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2125E8442562A14B00AC3A06 /* UICollectionViewFlowLayout+AXKit.h */; };
+		2125E8472562A14B00AC3A06 /* UICollectionViewFlowLayout+AXKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2125E8452562A14B00AC3A06 /* UICollectionViewFlowLayout+AXKit.m */; };
 		212771273354F9F344BBE34833400E9C /* LLAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3367B9E9701585057E642230281AA20A /* LLAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		213ACBD72BF0403F779528C445913518 /* SDImageGIFCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D63955CA85C53533061DB47C0CCF8848 /* SDImageGIFCoder.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		218CFB295CCBC4402AA8AF0AB36076E4 /* NSAttributedString+AttributedStringHook.h in Headers */ = {isa = PBXBuildFile; fileRef = B117EBB6918C36AF55324DEABA0B1AB9 /* NSAttributedString+AttributedStringHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -3590,6 +3592,8 @@
 		2092381472BCA1A4951688A51E39CC0F /* MBProgressHUD+AX.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+AX.h"; sourceTree = "<group>"; };
 		20D07FF2724FFBAB2A0E98BD95AAEA78 /* LLHierarchyHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LLHierarchyHelper.m; path = LLDebugTool/Core/Component/Hierarchy/Function/LLHierarchyHelper.m; sourceTree = "<group>"; };
 		20E11EC9D67C6402008E01A1E43491B4 /* LLConfigHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LLConfigHelper.m; path = LLDebugTool/Core/Others/ConfigHelper/LLConfigHelper.m; sourceTree = "<group>"; };
+		2125E8442562A14B00AC3A06 /* UICollectionViewFlowLayout+AXKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewFlowLayout+AXKit.h"; sourceTree = "<group>"; };
+		2125E8452562A14B00AC3A06 /* UICollectionViewFlowLayout+AXKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewFlowLayout+AXKit.m"; sourceTree = "<group>"; };
 		2125E866E5C2E3B5F0D42A3C8348A37D /* IQKeyboardManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManager-prefix.pch"; sourceTree = "<group>"; };
 		2148A88DEFBB2BDC1703606EF3948A18 /* MLeaksFinder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MLeaksFinder-dummy.m"; sourceTree = "<group>"; };
 		21491AB2AD645599285B406047A7D51B /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
@@ -6981,6 +6985,8 @@
 				F031C6E6CEF0BF6CC1A36C9C1C3C118F /* UIButton+AXKit.m */,
 				53CF601FAD1353661E373584F655C479 /* UICollectionView+AXKit.h */,
 				6C7D555C61540585BCBE5615CCB3CBD6 /* UICollectionView+AXKit.m */,
+				2125E8442562A14B00AC3A06 /* UICollectionViewFlowLayout+AXKit.h */,
+				2125E8452562A14B00AC3A06 /* UICollectionViewFlowLayout+AXKit.m */,
 				E5F893CBAFFDD11CDE8D22C107951FD1 /* UIColor+AXKit.h */,
 				8E191E86DEC6406715631848BC34DAE8 /* UIColor+AXKit.m */,
 				1109095D6C53391897971FF04E3BD685 /* UIControl+AXKit.h */,
@@ -10867,6 +10873,7 @@
 				CCBC176B197AA6AF13F49CFEC442220F /* AXHalfWidthLayout.h in Headers */,
 				9A178C6C53E82EC2A68552A8501BE23B /* AXHelper.h in Headers */,
 				F7B28CDE638F70081129E874F8670CB7 /* AXiOSFoundation.h in Headers */,
+				2125E8462562A14B00AC3A06 /* UICollectionViewFlowLayout+AXKit.h in Headers */,
 				6391E90A94C73F5F7E3463E3C1203DF2 /* AXiOSKit-umbrella.h in Headers */,
 				444F247172725E6CBEF223DD6A329267 /* AXiOSKit.h in Headers */,
 				95EFB98A1BFFEA09AF36058484DE436E /* AXiOSKitDefine.h in Headers */,
@@ -14646,6 +14653,7 @@
 				4DDD5A83E271FB087EB6C5241FD8732A /* AXJSContext.m in Sources */,
 				D8AF1341890B69B6C009060935AFB174 /* AXKeyboardObserve.m in Sources */,
 				37E344E02685D84FD435E9B6F7B58544 /* AXLocationManager.m in Sources */,
+				2125E8472562A14B00AC3A06 /* UICollectionViewFlowLayout+AXKit.m in Sources */,
 				BC6054D1F90AC0A4E8BF837765D24317 /* AXMediaConfig.m in Sources */,
 				AB7E6395C8F7D999337217E1AEE7D1DC /* AXMediaResult.m in Sources */,
 				13DFBA1F6DD9A7A7772F88C135DDFE07 /* AXMultiSelectCell.m in Sources */,

@@ -45,10 +45,10 @@
     self.title = @"02";
     self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
     
-    // self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
-    //
-    //        [self _WiFi];
-    //    }];
+     self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
+    
+            [self _WiFi];
+        }];
     //    [self _WiFi];
     
     
@@ -89,6 +89,7 @@
     topView =  [self _p12memoryUsage:topView];
     topView =  [self _p12memoryUsage2:topView];
     topView =  [self _p12memoryUsage3:topView];
+    topView =  [self _p13MoreAlter:topView];
     
     [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(topView.mas_bottom).mas_equalTo(100);// 这里放最后一个view的底部
@@ -273,6 +274,8 @@
     }];
     
 }
+
+
 
 - (void)setIconname:(NSString *)name {
     UIApplication *appli = [UIApplication sharedApplication];
@@ -569,6 +572,37 @@
     topView = label;
     return topView;
 }
+
+-(UIView *)_p13MoreAlter:(UIView *)topView{
+    
+    __weak typeof(self) weakSelf = self;
+    return [self _p00ButtonTopView:topView title:@"多个alert" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        // 第一个UIAlertController
+        UIAlertController *alertController1 = [UIAlertController alertControllerWithTitle:@"测试1" message:@"测试1" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController1 addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+
+        }]];
+        [alertController1 addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+
+        }]];
+        [strongSelf presentViewController:alertController1 animated:YES completion:nil];
+
+
+        // 第二个UIAlertController
+        UIAlertController *alertController2 = [UIAlertController alertControllerWithTitle:@"测试2" message:@"测试2" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController2 addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+
+        }]];
+        [alertController2 addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+
+        }]];
+        /// UIAlertController 
+        [alertController1 presentViewController:alertController2 animated:YES completion:nil];
+    }];
+    
+}
+
 - (NSArray *)getOrderArraywithArray:(NSArray *)array{
     //数组排序
     //定义一个数字数组
