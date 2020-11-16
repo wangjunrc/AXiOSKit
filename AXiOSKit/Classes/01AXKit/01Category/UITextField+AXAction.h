@@ -8,44 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AXKeyboardObserve.h"
-
-@interface AXTextFieldDelegateHandler : NSObject <UITextFieldDelegate>
-
-- (instancetype)initWithTextField:(UITextField*)textField;
-
-/**
- 开始编辑
- */
-@property (nonatomic, copy) void (^didBeginBlock)(UITextField* textField);
-
-/**
- 辑中
- */
-@property (nonatomic, copy) void (^didEditingChangedBlock)(UITextField* textField);
-
-/**
- 结束编辑
- */
-@property (nonatomic, copy) void (^didEndBlock)(UITextField* textField);
-
-/**
- 是否能输入当前文字
- */
-@property (nonatomic, copy) BOOL (^shouldChangeBlock)(UITextField* textField, NSRange range, NSString* aString);
-
-///最大输入文字数量
-@property (nonatomic, assign) NSUInteger maxCharacterCount;
-
-///只能输入正正数
-@property (nonatomic, assign) BOOL onlyPositiveNumber;
-
-/// 最多只能输入小数 的个数
-@property (nonatomic, assign) NSUInteger maxFloatCount;
-
-/// 禁止输入空格
-@property (nonatomic, assign) BOOL banBlankSpace;
-
-@end
+#import "AXTextFieldDelegateObserve.h"
 
 /// 调用 .ax_delegateHandler.对应属性
 @interface UITextField (AXAction)
@@ -56,7 +19,7 @@
 //
 // };
 // 最好不要用自己做代理,有bug
-@property (nonatomic, strong, readonly) AXTextFieldDelegateHandler* ax_delegateHandler;
+@property (nonatomic, strong, readonly) AXTextFieldDelegateObserve* ax_delegateObserve;
 
 /// 编辑配置
 @property(nonatomic, strong, readonly) AXKeyboardObserve* ax_keyboardObserve;
