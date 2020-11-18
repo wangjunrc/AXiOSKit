@@ -62,6 +62,6 @@ WCDB_NOT_NULL(AXUserInfo, name)
 WCDB_SYNTHESIZE_DEFAULT(AXUserInfo, icon, @"")
 WCDB_SYNTHESIZE(AXUserInfo, headUrl)
 WCDB_SYNTHESIZE(AXUserInfo, registerDate)
-
+WCDB_SYNTHESIZE(AXUserInfo, log)
 
 @end

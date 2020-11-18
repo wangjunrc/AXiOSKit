@@ -46,6 +46,7 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - GDataXML-HTML (1.4.1)
   - IQKeyboardManager (6.5.6)
   - JJException (0.2.9):
     - JJException/All (= 0.2.9)
@@ -179,6 +180,7 @@ DEPENDENCIES:
   - Canvas (~> 0.1.2)
   - CocoaAsyncSocket
   - fishhook
+  - GDataXML-HTML (~> 1.4.1)
   - IQKeyboardManager
   - JJException
   - LLDebugTool (~> 1.0)
@@ -215,6 +217,7 @@ SPEC REPOS:
     - fishhook
     - FLAnimatedImage
     - FMDB
+    - GDataXML-HTML
     - IQKeyboardManager
     - JJException
     - JKVValue
@@ -264,6 +267,7 @@ SPEC CHECKSUMS:
   fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GDataXML-HTML: a4f11079b48d9fe96ff1fe478943a317185227e2
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   JJException: da7c64ccf29d9938a4075378a7e9a29db7383c37
   JKVValue: d7941071b1cf9ba35c194fd40bcf4c4d9b5462e9
@@ -296,6 +300,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: 7c09c7d4de5db36af86f73bc09bc1d5cc7f00406
+PODFILE CHECKSUM: d9e8f1027ac1507e5cf91f454e7ff0eaf2062c4e
 
 COCOAPODS: 1.10.0

@@ -72,6 +72,8 @@ target 'AXiOSKit_Example' do
   # hook c函数
   pod 'fishhook'
   
+  # GDataXML 的包裹
+  pod 'GDataXML-HTML', '~> 1.4.1'
   
   
   target 'AXiOSKit_Tests' do

@@ -99,6 +99,8 @@
 		218A1EC8254438C900E43F16 /* office.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 218A1EC7254438C900E43F16 /* office.bundle */; };
 		218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */; };
 		218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */; };
+		21948C9D2563F3BC00207E18 /* AXUserLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21948C662563F11E00207E18 /* AXUserLog.mm */; };
+		21948D422564B83700207E18 /* testXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = 21948D412564B83700207E18 /* testXML.xml */; };
 		21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */; };
 		21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */; };
 		21CC7C62255FA40D00E7B506 /* AppDelegateWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */; };
@@ -311,6 +313,10 @@
 		218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegateWCDB.mm; sourceTree = "<group>"; };
 		218A1EF925469D8000E43F16 /* AppDelegateRegistryCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateRegistryCenter.h; sourceTree = "<group>"; };
 		218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateRegistryCenter.m; sourceTree = "<group>"; };
+		21948C652563F11E00207E18 /* AXUserLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUserLog.h; sourceTree = "<group>"; };
+		21948C662563F11E00207E18 /* AXUserLog.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AXUserLog.mm; sourceTree = "<group>"; };
+		21948CA72563F8D100207E18 /* AXUserLog+DB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXUserLog+DB.h"; sourceTree = "<group>"; };
+		21948D412564B83700207E18 /* testXML.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = testXML.xml; sourceTree = "<group>"; };
 		21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_3@2x.png"; sourceTree = "<group>"; };
 		21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_2@2x.png"; sourceTree = "<group>"; };
 		21CC7C60255FA40D00E7B506 /* AppDelegateWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateWebImage.h; sourceTree = "<group>"; };
@@ -605,6 +611,9 @@
 				213BCBC3254003DA00C89B72 /* AXUserInfo.h */,
 				213BCBC5254003DA00C89B72 /* AXUserInfo.mm */,
 				213BCBC4254003DA00C89B72 /* AXUserInfo+DB.h */,
+				21948C652563F11E00207E18 /* AXUserLog.h */,
+				21948C662563F11E00207E18 /* AXUserLog.mm */,
+				21948CA72563F8D100207E18 /* AXUserLog+DB.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -677,6 +686,7 @@
 				218A1E502544102800E43F16 /* share2.xlsx */,
 				213BCBE4254003DA00C89B72 /* test_webp.webp */,
 				213BCBE1254003DA00C89B72 /* webp.bundle */,
+				21948D412564B83700207E18 /* testXML.xml */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -945,6 +955,7 @@
 				213BCC00254003DB00C89B72 /* _01ThemeViewController.xib in Resources */,
 				213BCBEE254003DB00C89B72 /* _26RMQClientViewController.xib in Resources */,
 				213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */,
+				21948D422564B83700207E18 /* testXML.xml in Resources */,
 				213BCC0B254003DB00C89B72 /* _22ReactiveObjCViewController.xib in Resources */,
 				213BCC2D254003DB00C89B72 /* _02ChatViewController.xib in Resources */,
 				21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */,
@@ -1069,6 +1080,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
@@ -1114,6 +1126,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
@@ -1166,6 +1179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21948C9D2563F3BC00207E18 /* AXUserLog.mm in Sources */,
 				213BCC1C254003DB00C89B72 /* _15UIMenuController.m in Sources */,
 				213BCBF2254003DB00C89B72 /* _10TextFViewController.m in Sources */,
 				213BCC30254003DB00C89B72 /* ChatTextMessageModel.m in Sources */,

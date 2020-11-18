@@ -18,6 +18,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import <UserNotifications/UserNotifications.h>
+#import <GDataXML_HTML/GDataXMLNode.h>
 
 @interface _01ContentViewController ()<UITextViewDelegate>
 
@@ -45,10 +46,10 @@
     self.title = @"02";
     self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
     
-     self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
-    
-            [self _WiFi];
-        }];
+    self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
+        
+        [self _WiFi];
+    }];
     //    [self _WiFi];
     
     
@@ -74,7 +75,7 @@
     }];
     
     UIView *topView = containerView;
-//    topView =  [self _p01loginTest:topView];
+    //    topView =  [self _p01loginTest:topView];
     topView =  [self _p01UITextView_link:topView];
     topView =  [self _p02AlternateIconName:topView];
     topView =  [self _p03textToImg:topView];
@@ -90,6 +91,7 @@
     topView =  [self _p12memoryUsage2:topView];
     topView =  [self _p12memoryUsage3:topView];
     topView =  [self _p13MoreAlter:topView];
+    topView =  [self _p14xmlToObj:topView];
     
     [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(topView.mas_bottom).mas_equalTo(100);// 这里放最后一个view的底部
@@ -397,39 +399,39 @@
 -(void)_chinaText {
     //模拟后台返回数据
     NSArray * array1 = @[@"陕西",@"山东",@"上海",@"内蒙古",@"新疆",@"西藏",@"北京",@"安徽",@"重庆",@"湖北",@"江苏",@"浙江",@"天津",@"California",@"贵州",@"云南",@"广东",@"甘肃",@"青海",@"宁夏",@"黑龙江",@"辽宁",@"吉林",@"江西",@"LosAngels",@"OKC",@"GSW"];
-
+    
     //对数组按照首字母进行排序
     NSArray *array = [self getOrderArraywithArray:array1];
     //创建可变字典保存处理后的数据@{@"A":@[@"A",@"AB"]};数据格式
     NSMutableDictionary *mDic = [NSMutableDictionary new];
     for (NSString *city in array) {
-            // 将中文转换为拼音
-            NSString *cityMutableString = [NSMutableString stringWithString:city];
-            CFStringTransform((__bridge CFMutableStringRef)cityMutableString, NULL, kCFStringTransformMandarinLatin, NO);
-            CFStringTransform((__bridge CFMutableStringRef)cityMutableString, NULL, kCFStringTransformStripCombiningMarks, NO);
-            // 拿到首字母作为key
-    NSString *firstLetter = [[cityMutableString uppercaseString]substringToIndex:1];
-            // 检查是否有firstLetter对应的分组存在, 有的话直接把city添加到对应的分组中
-            // 没有的话, 新建一个以firstLetter为key的分组
-
-    if ([mDic objectForKey:firstLetter]) {
-        NSMutableArray * mCityArray = mDic[firstLetter];
-        if (mCityArray) {
-            [mCityArray addObject:city];
-            mDic[firstLetter] = mCityArray;
+        // 将中文转换为拼音
+        NSString *cityMutableString = [NSMutableString stringWithString:city];
+        CFStringTransform((__bridge CFMutableStringRef)cityMutableString, NULL, kCFStringTransformMandarinLatin, NO);
+        CFStringTransform((__bridge CFMutableStringRef)cityMutableString, NULL, kCFStringTransformStripCombiningMarks, NO);
+        // 拿到首字母作为key
+        NSString *firstLetter = [[cityMutableString uppercaseString]substringToIndex:1];
+        // 检查是否有firstLetter对应的分组存在, 有的话直接把city添加到对应的分组中
+        // 没有的话, 新建一个以firstLetter为key的分组
+        
+        if ([mDic objectForKey:firstLetter]) {
+            NSMutableArray * mCityArray = mDic[firstLetter];
+            if (mCityArray) {
+                [mCityArray addObject:city];
+                mDic[firstLetter] = mCityArray;
+            }else{
+                mDic[firstLetter] = [NSMutableArray arrayWithArray:@[city]];
+            }
         }else{
-            mDic[firstLetter] = [NSMutableArray arrayWithArray:@[city]];
+            [mDic setObject:[NSMutableArray arrayWithArray:@[city]] forKey:firstLetter];
         }
-    }else{
-        [mDic setObject:[NSMutableArray arrayWithArray:@[city]] forKey:firstLetter];
-    }
     }
     //获取索引栏数据 获得字母
     NSArray *titlesArray = [self reqDiction:mDic];
     
     NSLog(@"mDic %@",mDic.allValues);
     NSLog(@"titlesArray %@",titlesArray);
-
+    
 }
 
 
@@ -448,7 +450,7 @@
     
     return [self _p00ButtonTopView:topView title:@"kvc修改间距" handler:^{
         [label setValue:@40 forKey:@"lineSpacing"];
-//        label.text = @"1111\n222\n333\n";
+        //        label.text = @"1111\n222\n333\n";
     }];
 }
 
@@ -457,8 +459,8 @@
     
     
     return [self _p00ButtonTopView:topView title:@"字符串是否包含另一字符串,不区分大小写" handler:^{
-       
-      
+        
+        
         NSString * string = @"HelloChina";
         if ([string localizedCaseInsensitiveContainsString:@"OCHI"]) {
             NSLog(@"localizedCaseInsensitiveContainsString 包含");
@@ -478,9 +480,9 @@
         }
         
         
-       NSRange r = [string rangeOfString:@"OCHI"
-                              options:NSCaseInsensitiveSearch];
-       BOOL b = r.location != NSNotFound;
+        NSRange r = [string rangeOfString:@"OCHI"
+                                  options:NSCaseInsensitiveSearch];
+        BOOL b = r.location != NSNotFound;
         NSLog(@"b = %d",b);
         
         
@@ -581,27 +583,64 @@
         // 第一个UIAlertController
         UIAlertController *alertController1 = [UIAlertController alertControllerWithTitle:@"测试1" message:@"测试1" preferredStyle:UIAlertControllerStyleAlert];
         [alertController1 addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-
+            
         }]];
         [alertController1 addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-
+            
         }]];
         [strongSelf presentViewController:alertController1 animated:YES completion:nil];
-
-
+        
+        
         // 第二个UIAlertController
         UIAlertController *alertController2 = [UIAlertController alertControllerWithTitle:@"测试2" message:@"测试2" preferredStyle:UIAlertControllerStyleAlert];
         [alertController2 addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-
+            
         }]];
         [alertController2 addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-
+            
         }]];
-        /// UIAlertController 
+        /// UIAlertController
         [alertController1 presentViewController:alertController2 animated:YES completion:nil];
     }];
     
 }
+
+-(UIView *)_p14xmlToObj:(UIView *)topView{
+    
+    __weak typeof(self) weakSelf = self;
+    return [self _p00ButtonTopView:topView title:@"xml解析" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        NSString *path = [[NSBundle mainBundle]pathForResource:@"testXML" ofType:@"xml"];
+        GDataXMLDocument *document = [[GDataXMLDocument alloc] initWithData:[NSData dataWithContentsOfFile:path] encoding:NSUTF8StringEncoding  error:NULL];
+        NSLog(@"attributes = %@",document.rootElement.attributes);
+        
+        /// 这一层是 xmlns
+        for (GDataXMLElement *element in document.rootElement.attributes) {
+            NSLog(@"attributes node.name = %@----node.stringValue = %@",element.name,element.stringValue);
+            
+        }
+        /// 这一层是 body
+        for (GDataXMLElement *element in document.rootElement.children) {
+            NSLog(@"element.attributes = %@",element.attributes);
+            NSLog(@"children node.name = %@----node.stringValue = %@",element.name,element.stringValue);
+            ///再解析一下 properties
+            
+            for (GDataXMLElement *node in element.children) {
+                NSLog(@"node.name = %@----node.stringValue = %@",node.name,node.stringValue);
+                
+                //                        [video setValue:node.stringValue forKeyPath:node.name];
+            }
+            for (GDataXMLNode *att in element.attributes) {
+                NSLog(@"att.stringValue = %@",att.stringValue);
+            }
+        }
+        
+        
+    }];
+    
+}
+
 
 - (NSArray *)getOrderArraywithArray:(NSArray *)array{
     //数组排序
@@ -614,7 +653,7 @@
 }
 
 - (NSArray *)reqDiction:(NSDictionary *)dict{
- 
+    
     NSArray *allKeyArray = [dict allKeys];
     NSArray *afterSortKeyArray = [allKeyArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         NSComparisonResult resuest = [obj1 compare:obj2];  //[obj1 compare:obj2]：升序
@@ -627,7 +666,7 @@
         NSString *valueString = [dict objectForKey:sortsing];
         [valueArray addObject:valueString];
     }
- 
+    
     return afterSortKeyArray;
 }
 

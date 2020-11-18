@@ -41,6 +41,11 @@
     NSString *Id = self.tf.text;
     model.name = [NSString stringWithFormat:@"name%@",Id];
     model.registerDate = [NSDate date];
+    AXUserLog *log = AXUserLog.alloc.init;
+    log.logId = 1;
+    log.ip = @"111.222.333";
+    log.address = @"地址";
+    model.log = log;
     BOOL result = [AXUserInfoDao.sharedDao insertWithModel:model];
     NSLog(@"result插入数据 %@",result ? @"成功" : @"失败");
 }

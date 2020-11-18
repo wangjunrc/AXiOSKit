@@ -16,6 +16,7 @@ WCDB_PROPERTY(name)
 WCDB_PROPERTY(icon)
 WCDB_PROPERTY(headUrl)
 WCDB_PROPERTY(registerDate)
+WCDB_PROPERTY(log)
 
 @end
 
