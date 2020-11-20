@@ -85,31 +85,15 @@ typedef void (^CollectionBlock)(void);
     [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
     self.dataArray = nil;
     [self.tableView reloadData];
-//    NSLog(@"height3 == %lf M", [UIDevice ax_memoryUsage] / 1000.0 / 1000.0);
-//
-//    NSLog(@"height3 == %lf M", [UIDevice ax_memoryUsage2] / 1000. / 1000.);
-    //    self.tableView.editing = YES;
+    
+#if TARGET_IPHONE_SIMULATOR
+    // 模拟器
+    AXLoger(@"模拟器");
+#elif TARGET_OS_IPHONE
+    // 真机
+    AXLoger(@"真机");
+#endif
 
-    //    __weak typeof(self) weakSelf = self;
-
-    //    [self ax_addFBKVOKeyPath: AX_FBKVOKeyPath(self.tableView.indexPathsForSelectedRows) block:^(NSString * _Nullable keyPath, id  _Nullable oldValue, id  _Nullable newValue) {
-    //        NSLog(@"方法调用setObject=AA %@",self.tableView.indexPathsForSelectedRows);
-    //    }];
-
-    //        [RACObserve(self, tableView.indexPathsForSelectedRows) subscribeNext:^(id  _Nullable x) {
-    //
-    //            NSLog(@"indexPathsForSelectedRows = %@",self.tableView.indexPathsForSelectedRows);
-    //          }];
-
-    //    [RACObserve(self, tableView.indexPathsForSelectedRows) subscribeCompleted:^{
-    //        NSLog(@"indexPathsForSelectedRows = %@",self.tableView.indexPathsForSelectedRows);
-    //    }];
-
-    //    [self.tableView.indexPathsForSelectedRows ax_addKVO:^(NSMutableArray * _Nonnull array) {
-    //        __strong typeof(weakSelf) strongSelf = weakSelf;
-    //        NSLog(@"方法调用setObject=AA %@",self.dataArray);
-    //        NSLog(@"方法调用setObject-array %@",array);
-    //    }];
     UIButton *btn = [[UIButton alloc]init];
     [btn setTitle:@"编辑" forState:UIControlStateNormal];
     btn.backgroundColor = UIColor.blueColor;
