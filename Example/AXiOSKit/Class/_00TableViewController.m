@@ -39,6 +39,7 @@
 #import "_27MQTTClientViewController.h"
 #import "_28ShareFileViewController.h"
 #import "_29AudioViewController.h"
+#import "_30IGListViewController.h"
 #import <AXiOSKit/AXPayVC.h>
 #import <AXiOSKit/AXPresentGesturesBack.h>
 #import <AXiOSKit/AXSystemAuthorizerManager.h>
@@ -786,6 +787,15 @@ void mySLog(NSString *format, ...)
                         [self ax_pushVC:vc];
                     },
                 },
+                @{
+                    @"index": @30,
+                    @"title": @"IGList",
+                    @"action": ^{
+                        _30IGListViewController *vc = [_30IGListViewController ax_init];
+                        [self ax_pushVC:vc];
+                    },
+                },
+                
                 
                 
 

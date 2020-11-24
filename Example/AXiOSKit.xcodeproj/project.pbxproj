@@ -84,6 +84,14 @@
 		213BCC46254003DB00C89B72 /* H5.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE2254003DA00C89B72 /* H5.bundle */; };
 		213BCC48254003DB00C89B72 /* test_webp.webp in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE4254003DA00C89B72 /* test_webp.webp */; };
 		213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBE7254003DB00C89B72 /* AppDelegate.m */; };
+		21430AE1256C980500CB8EBC /* _30IGListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430AE0256C980500CB8EBC /* _30IGListViewController.m */; };
+		21430AE7256C98EF00CB8EBC /* _30TimeLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430AE6256C98EF00CB8EBC /* _30TimeLineModel.m */; };
+		21430AEC256C999400CB8EBC /* time_line_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 21430AEB256C999400CB8EBC /* time_line_list.json */; };
+		21430AFC256C9C9300CB8EBC /* _30TimeLinetContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430AFB256C9C9300CB8EBC /* _30TimeLinetContentController.m */; };
+		21430B02256C9D4300CB8EBC /* _20TimeLineContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430B01256C9D4300CB8EBC /* _20TimeLineContentCell.m */; };
+		21430B08256C9DC300CB8EBC /* _30TimeLineNinePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430B07256C9DC300CB8EBC /* _30TimeLineNinePhotoView.m */; };
+		21430B0F256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430B0D256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.m */; };
+		21430B10256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21430B0E256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib */; };
 		21799C7C255BDE8500754A8B /* gift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 21799C7B255BDE8500754A8B /* gift.svg */; };
 		21799D5D255CD2E300754A8B /* AXRecordAudioService.m in Sources */ = {isa = PBXBuildFile; fileRef = 21799D5C255CD2E300754A8B /* AXRecordAudioService.m */; };
 		21799D64255CD33700754A8B /* AXRecordAudioConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21799D63255CD33700754A8B /* AXRecordAudioConfig.m */; };
@@ -103,6 +111,7 @@
 		21948D422564B83700207E18 /* testXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = 21948D412564B83700207E18 /* testXML.xml */; };
 		21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */; };
 		21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */; };
+		21BC194A256CD28C0041ADBB /* _25CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BC1949256CD28C0041ADBB /* _25CollectionViewCell.m */; };
 		21CC7C62255FA40D00E7B506 /* AppDelegateWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */; };
 		21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */; };
 		21CC7C78255FA71900E7B506 /* _13WeImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C77255FA71900E7B506 /* _13WeImageTableViewController.m */; };
@@ -281,6 +290,20 @@
 		213BCBE4254003DA00C89B72 /* test_webp.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_webp.webp; sourceTree = "<group>"; };
 		213BCBE6254003DB00C89B72 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		213BCBE7254003DB00C89B72 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		21430ADF256C980500CB8EBC /* _30IGListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _30IGListViewController.h; sourceTree = "<group>"; };
+		21430AE0256C980500CB8EBC /* _30IGListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _30IGListViewController.m; sourceTree = "<group>"; };
+		21430AE5256C98EF00CB8EBC /* _30TimeLineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _30TimeLineModel.h; sourceTree = "<group>"; };
+		21430AE6256C98EF00CB8EBC /* _30TimeLineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _30TimeLineModel.m; sourceTree = "<group>"; };
+		21430AEB256C999400CB8EBC /* time_line_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = time_line_list.json; sourceTree = "<group>"; };
+		21430AFA256C9C9300CB8EBC /* _30TimeLinetContentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _30TimeLinetContentController.h; sourceTree = "<group>"; };
+		21430AFB256C9C9300CB8EBC /* _30TimeLinetContentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _30TimeLinetContentController.m; sourceTree = "<group>"; };
+		21430B00256C9D4300CB8EBC /* _20TimeLineContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _20TimeLineContentCell.h; sourceTree = "<group>"; };
+		21430B01256C9D4300CB8EBC /* _20TimeLineContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _20TimeLineContentCell.m; sourceTree = "<group>"; };
+		21430B06256C9DC300CB8EBC /* _30TimeLineNinePhotoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _30TimeLineNinePhotoView.h; sourceTree = "<group>"; };
+		21430B07256C9DC300CB8EBC /* _30TimeLineNinePhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _30TimeLineNinePhotoView.m; sourceTree = "<group>"; };
+		21430B0C256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _30TimeLineNinePhotoCell.h; sourceTree = "<group>"; };
+		21430B0D256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _30TimeLineNinePhotoCell.m; sourceTree = "<group>"; };
+		21430B0E256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _30TimeLineNinePhotoCell.xib; sourceTree = "<group>"; };
 		21799C7B255BDE8500754A8B /* gift.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = gift.svg; sourceTree = "<group>"; };
 		21799D5B255CD2E300754A8B /* AXRecordAudioService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXRecordAudioService.h; sourceTree = "<group>"; };
 		21799D5C255CD2E300754A8B /* AXRecordAudioService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRecordAudioService.m; sourceTree = "<group>"; };
@@ -319,6 +342,8 @@
 		21948D412564B83700207E18 /* testXML.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = testXML.xml; sourceTree = "<group>"; };
 		21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_3@2x.png"; sourceTree = "<group>"; };
 		21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_2@2x.png"; sourceTree = "<group>"; };
+		21BC1948256CD28C0041ADBB /* _25CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CollectionViewCell.h; sourceTree = "<group>"; };
+		21BC1949256CD28C0041ADBB /* _25CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CollectionViewCell.m; sourceTree = "<group>"; };
 		21CC7C60255FA40D00E7B506 /* AppDelegateWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateWebImage.h; sourceTree = "<group>"; };
 		21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateWebImage.m; sourceTree = "<group>"; };
 		21CC7C66255FA4A300E7B506 /* AppDelegateDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateDebug.h; sourceTree = "<group>"; };
@@ -455,8 +480,7 @@
 				213BCB6E254003D900C89B72 /* _24NoteViewController.h */,
 				213BCB4A254003D900C89B72 /* _24NoteViewController.m */,
 				213BCB5E254003D900C89B72 /* _24NoteViewController.xib */,
-				213BCB70254003D900C89B72 /* _25LayoutViewController.h */,
-				213BCB49254003D900C89B72 /* _25LayoutViewController.m */,
+				21BC1951256CDAFB0041ADBB /* _25 */,
 				213BCB57254003D900C89B72 /* _26RMQClientViewController.h */,
 				213BCB7A254003D900C89B72 /* _26RMQClientViewController.m */,
 				213BCB38254003D900C89B72 /* _26RMQClientViewController.xib */,
@@ -472,6 +496,7 @@
 				21E306B1255EAA1100D17A8B /* _29AudioViewController.h */,
 				21E306B2255EAA1100D17A8B /* _29AudioViewController.m */,
 				21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */,
+				21430AD6256C97BB00CB8EBC /* _30IGList */,
 				213BCB41254003D900C89B72 /* AANavigationController.h */,
 				213BCB63254003D900C89B72 /* AANavigationController.m */,
 				213BCB6F254003D900C89B72 /* AFHTTPSessionManager+PutFile.h */,
@@ -627,6 +652,18 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		21430AD6256C97BB00CB8EBC /* _30IGList */ = {
+			isa = PBXGroup;
+			children = (
+				21BC1944256CC2F70041ADBB /* Controller */,
+				21BC1943256CC2D90041ADBB /* Data */,
+				21BC1940256CC2BB0041ADBB /* Model */,
+				21BC1942256CC2D20041ADBB /* View */,
+				21BC1941256CC2C20041ADBB /* ViewController */,
+			);
+			path = _30IGList;
+			sourceTree = "<group>";
+		};
 		21799D61255CD31F00754A8B /* RecordAudio */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,6 +739,66 @@
 				213BCB53254003D900C89B72 /* MyActivity.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		21BC1940256CC2BB0041ADBB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21430AE5256C98EF00CB8EBC /* _30TimeLineModel.h */,
+				21430AE6256C98EF00CB8EBC /* _30TimeLineModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		21BC1941256CC2C20041ADBB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				21430ADF256C980500CB8EBC /* _30IGListViewController.h */,
+				21430AE0256C980500CB8EBC /* _30IGListViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		21BC1942256CC2D20041ADBB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21430B0C256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.h */,
+				21430B0D256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.m */,
+				21430B0E256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib */,
+				21430B06256C9DC300CB8EBC /* _30TimeLineNinePhotoView.h */,
+				21430B07256C9DC300CB8EBC /* _30TimeLineNinePhotoView.m */,
+				21430B00256C9D4300CB8EBC /* _20TimeLineContentCell.h */,
+				21430B01256C9D4300CB8EBC /* _20TimeLineContentCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		21BC1943256CC2D90041ADBB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				21430AEB256C999400CB8EBC /* time_line_list.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		21BC1944256CC2F70041ADBB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				21430AFA256C9C9300CB8EBC /* _30TimeLinetContentController.h */,
+				21430AFB256C9C9300CB8EBC /* _30TimeLinetContentController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		21BC1951256CDAFB0041ADBB /* _25 */ = {
+			isa = PBXGroup;
+			children = (
+				213BCB70254003D900C89B72 /* _25LayoutViewController.h */,
+				213BCB49254003D900C89B72 /* _25LayoutViewController.m */,
+				21BC1948256CD28C0041ADBB /* _25CollectionViewCell.h */,
+				21BC1949256CD28C0041ADBB /* _25CollectionViewCell.m */,
+			);
+			path = _25;
 			sourceTree = "<group>";
 		};
 		21CC7C72255FA58200E7B506 /* AppDelegateComponent */ = {
@@ -911,6 +1008,7 @@
 					};
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = 2BZJZ65HL3;
+						LastSwiftMigration = 1220;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -966,6 +1064,7 @@
 				213BCC07254003DB00C89B72 /* _09AFNViewController.xib in Resources */,
 				218A1E4525440A0A00E43F16 /* App.pdf in Resources */,
 				21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */,
+				21430B10256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib in Resources */,
 				218A1EC8254438C900E43F16 /* office.bundle in Resources */,
 				213BCC3E254003DB00C89B72 /* PointViewController2.plist in Resources */,
 				213BCC45254003DB00C89B72 /* webp.bundle in Resources */,
@@ -973,6 +1072,7 @@
 				213BCC13254003DB00C89B72 /* _04RunLoopViewController.xib in Resources */,
 				218A1E9125441BBE00E43F16 /* _28LocalSocketServiceViewController.xib in Resources */,
 				213BCC05254003DB00C89B72 /* _14TFViewController.xib in Resources */,
+				21430AEC256C999400CB8EBC /* time_line_list.json in Resources */,
 				213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */,
 				213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */,
 				213BCBF0254003DB00C89B72 /* _10TextFViewController.xib in Resources */,
@@ -1081,6 +1181,8 @@
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
@@ -1127,6 +1229,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
@@ -1189,9 +1293,11 @@
 				213BCBF9254003DB00C89B72 /* AFHTTPSessionManager+PutFile.m in Sources */,
 				213BCC1D254003DB00C89B72 /* _01ThemeViewController.m in Sources */,
 				213BCBFE254003DB00C89B72 /* _14TFViewController.m in Sources */,
+				21430AE7256C98EF00CB8EBC /* _30TimeLineModel.m in Sources */,
 				213BCC31254003DB00C89B72 /* LVieoView.m in Sources */,
 				213BCC18254003DB00C89B72 /* _26RMQClientViewController.m in Sources */,
 				213BCC15254003DB00C89B72 /* _23FullViewController.m in Sources */,
+				21430B0F256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.m in Sources */,
 				213BCC34254003DB00C89B72 /* UIImage+Load.m in Sources */,
 				213BCBF3254003DB00C89B72 /* CopyActivity.m in Sources */,
 				213BCC37254003DB00C89B72 /* AXUserInfo.mm in Sources */,
@@ -1200,9 +1306,12 @@
 				21799D64255CD33700754A8B /* AXRecordAudioConfig.m in Sources */,
 				213BCBFB254003DB00C89B72 /* _24NoteViewController.m in Sources */,
 				213BCC2A254003DB00C89B72 /* TestObj.m in Sources */,
+				21BC194A256CD28C0041ADBB /* _25CollectionViewCell.m in Sources */,
+				21430AE1256C980500CB8EBC /* _30IGListViewController.m in Sources */,
 				213BCBFA254003DB00C89B72 /* _25LayoutViewController.m in Sources */,
 				213BCBF7254003DB00C89B72 /* _21KVOViewController.m in Sources */,
 				21E306B4255EAA1100D17A8B /* _29AudioViewController.m in Sources */,
+				21430AFC256C9C9300CB8EBC /* _30TimeLinetContentController.m in Sources */,
 				218A1E4B25440BC200E43F16 /* _28ShareFileViewController.m in Sources */,
 				213BCC06254003DB00C89B72 /* _18MGSwipeTableVC.m in Sources */,
 				213BCC2E254003DB00C89B72 /* _02ChatViewController.m in Sources */,
@@ -1237,9 +1346,11 @@
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				213BCC0D254003DB00C89B72 /* Person.m in Sources */,
 				213BCC04254003DB00C89B72 /* _00TableViewController.m in Sources */,
+				21430B02256C9D4300CB8EBC /* _20TimeLineContentCell.m in Sources */,
 				213BCC14254003DB00C89B72 /* _09AFNViewController.m in Sources */,
 				213BCC2F254003DB00C89B72 /* ChatMessageModel.m in Sources */,
 				213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */,
+				21430B08256C9DC300CB8EBC /* _30TimeLineNinePhotoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1493,15 +1604,18 @@
 			baseConfigurationReference = 3F85C681A5FA543AF8599754 /* Pods-AXiOSKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Debug";
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
 				INFOPLIST_FILE = "AXiOSKit/AXiOSKit-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1512,11 +1626,13 @@
 			baseConfigurationReference = 2E8212D320B7D6003E79BB8A /* Pods-AXiOSKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
 				INFOPLIST_FILE = "AXiOSKit/AXiOSKit-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;

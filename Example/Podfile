@@ -75,10 +75,14 @@ target 'AXiOSKit_Example' do
   # GDataXML 的包裹
   pod 'GDataXML-HTML', '~> 1.4.1'
   
+  # Instagram在2016年年底发布了基于数据驱动的UICollectionView框架IGListKit
+#  pod 'IGListKit', '~> 4.0.0'
+pod 'IGListKit'
+#  pod 'YYKit'
+  
   
   target 'AXiOSKit_Tests' do
     inherit! :search_paths
-    
     
   end
 end
