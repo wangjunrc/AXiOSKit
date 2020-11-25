@@ -70,11 +70,11 @@ typedef void (^CollectionBlock)(void);
 
 @implementation _00TableViewController
 
-- (void)injected {
-    NSLog(@"重启了 InjectionIII: %@", self);
-    
-    [self viewDidLoad];
-}
+//- (void)injected {
+//    NSLog(@"重启了 InjectionIII: %@", self);
+//    
+//    [self viewDidLoad];
+//}
 
 //- (instancetype)initWithStyle:(UITableViewStyle)style {
 //    return [super initWithStyle:UITableViewStyleGrouped];

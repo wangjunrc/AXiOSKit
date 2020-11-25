@@ -92,6 +92,9 @@
     topView =  [self _p12memoryUsage3:topView];
     topView =  [self _p13MoreAlter:topView];
     topView =  [self _p14xmlToObj:topView];
+    topView =  [self _p15NSBlockOperation:topView];
+    topView =  [self _p16NSBlockOperation:topView];
+    
     
     [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(topView.mas_bottom).mas_equalTo(100);// 这里放最后一个view的底部
@@ -641,6 +644,64 @@
     
 }
 
+-(UIView *)_p15NSBlockOperation:(UIView *)topView {
+    return [self _p00ButtonTopView:topView title:@"NSBlockOperation" handler:^{
+        
+        //2.NSBlockOperation(最常使用)
+        NSBlockOperation * blockOp = [NSBlockOperation blockOperationWithBlock:^{
+            //要执行的操作，目前是主线程
+//            NSLog(@"NSBlockOperation 创建，线程：%@",[NSThread currentThread]);
+            
+            for (int i = 0; i < 2; i++) {
+                [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+                NSLog(@"1---%@", [NSThread currentThread]); // 打印当前线程
+            }
+            
+        }];
+        //2.1 追加任务，在子线程中执行
+        [blockOp addExecutionBlock:^{
+            NSLog(@"追加任务一, %@",[NSThread currentThread]);
+            
+            for (int i = 0; i < 2; i++) {
+                [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+                NSLog(@"追加任务一: %@", [NSThread currentThread]); // 打印当前线程
+            }
+        }];
+//        [blockOp addExecutionBlock:^{
+//            NSLog(@"追加任务二, %@",[NSThread currentThread]);
+//        }];
+        [blockOp start];
+        
+    }];
+}
+
+-(UIView *)_p16NSBlockOperation:(UIView *)topView {
+    return [self _p00ButtonTopView:topView title:@"NSOperationQueue" handler:^{
+        // 1.创建队列
+           NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+
+           // 2.使用 addOperationWithBlock: 添加操作到队列中
+           [queue addOperationWithBlock:^{
+               for (int i = 0; i < 2; i++) {
+                   [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+                   NSLog(@"1---%@", [NSThread currentThread]); // 打印当前线程
+               }
+           }];
+           [queue addOperationWithBlock:^{
+               for (int i = 0; i < 2; i++) {
+                   [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+                   NSLog(@"2---%@", [NSThread currentThread]); // 打印当前线程
+               }
+           }];
+           [queue addOperationWithBlock:^{
+               for (int i = 0; i < 2; i++) {
+                   [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+                   NSLog(@"3---%@", [NSThread currentThread]); // 打印当前线程
+               }
+           }];
+        
+    }];
+}
 
 - (NSArray *)getOrderArraywithArray:(NSArray *)array{
     //数组排序
