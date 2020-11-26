@@ -10,6 +10,7 @@
 
 #import "AXMacros_addProperty.h"
 #import "AXMacros_addProperty.h"
+#import <Masonry/Masonry.h>
 typedef void(^DidViewBlock)(UIView *view);
 
 @interface UIView ()<UIGestureRecognizerDelegate>
@@ -330,4 +331,50 @@ typedef void(^DidViewBlock)(UIView *view);
     return ax_getValueAssociated(axTag);
 }
 
+- (void)ax_addLineDirection:(AXLineDirection)direction color:(UIColor *)color height:(NSInteger)height{
+    
+    if (direction & AXLineDirectionTop) {
+        UIView *line = [UIView.alloc init];
+        line.backgroundColor = color;
+        [self addSubview:line];
+        [line mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(self);
+            make.top.equalTo(self);
+            make.height.equalTo(@(height));
+        }];
+    }
+    
+    if (direction & AXLineDirectionBottom) {
+        UIView *line = [UIView.alloc init];
+        line.backgroundColor = color;
+        [self addSubview:line];
+        [line mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(self);
+            make.bottom.equalTo(self);
+            make.height.equalTo(@(height));
+        }];
+    }
+    
+    if (direction & AXLineDirectionLeft) {
+         UIView *line = [UIView.alloc init];
+        line.backgroundColor = color;
+        [self addSubview:line];
+        [line mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(height));
+            make.left.equalTo(self);
+            make.top.bottom.equalTo(self);
+        }];
+    }
+    
+    if (direction & AXLineDirectionRight) {
+        UIView *line = [UIView.alloc init];
+        line.backgroundColor = color;
+        [self addSubview:line];
+        [line mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(height));
+            make.right.equalTo(self);
+            make.top.bottom.equalTo(self);
+        }];
+    }
+}
 @end

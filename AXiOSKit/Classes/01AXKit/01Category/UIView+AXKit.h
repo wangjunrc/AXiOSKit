@@ -11,6 +11,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// 定义边框方向枚举
+typedef NS_ENUM(NSInteger,AXLineDirection){
+    AXLineDirectionTop = 1 << 0,
+    AXLineDirectionBottom = 1 << 1,
+    AXLineDirectionLeft = 1 << 2,
+    AXLineDirectionRight = 1 << 3
+};
+
+
 @interface UIView (AXKit)
 /**
  * 指定 角 进行圆角
@@ -99,5 +108,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (UIViewController *)ax_viewController;
 
+/*!
+ *  为本view添加边线
+ *
+ *  @param direction     边线方向 中间加 | 同时添加多个边框
+ *  @param color         边框的颜色
+ *  @param heightOrwidth 变量的宽度或者高度
+ */
+- (void)ax_addLineDirection:(AXLineDirection)direction color:(UIColor *)color height:(NSInteger)height;
 @end
 NS_ASSUME_NONNULL_END

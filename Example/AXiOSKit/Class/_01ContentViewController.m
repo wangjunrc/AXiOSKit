@@ -249,7 +249,6 @@
         make.right.mas_equalTo(-10);
         make.height.mas_equalTo(50);
     }];
-    
     topView = textView;
     
     return topView;
@@ -333,6 +332,11 @@
         
         self.viewBottomConstraint = make.width.mas_equalTo(width);
     }];
+    
+    
+    [view1 ax_addLineDirection:AXLineDirectionTop color:UIColor.redColor height:2];
+    
+    
     topView = view1;
     
     __weak typeof(self) weakSelf = self;
