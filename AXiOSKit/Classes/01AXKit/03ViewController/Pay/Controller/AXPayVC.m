@@ -87,4 +87,7 @@
     }
     return _dataArray;
 }
+- (BOOL)touchesBeganDismiss {
+    return YES;
+}
 @end

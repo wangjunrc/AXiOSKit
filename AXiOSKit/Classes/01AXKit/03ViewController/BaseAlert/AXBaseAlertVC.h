@@ -16,13 +16,13 @@
 /**
  是否touchesBegan,dismiss
  */
-@property (nonatomic, assign)BOOL axTouchesBeganDismiss;
+@property (nonatomic, assign,readonly)BOOL touchesBeganDismiss;
 
 /**
  子vc重写此方法,更改 alertControllerStyle 样式
 
  @return AXAlertControllerStyle
  */
-- (AXAlertControllerStyle )axAlertControllerStyle;
+@property (nonatomic, assign,readonly)AXAlertControllerStyle alertControllerStyle;
 
 @end

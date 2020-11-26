@@ -21,7 +21,6 @@
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         self.modalPresentationStyle = UIModalPresentationCustom;
         self.transitioningDelegate = self;
-        self.axTouchesBeganDismiss = YES;
     }
     return self;
 }
@@ -36,7 +35,7 @@
 {
     UITouch* touch = [[event allTouches] anyObject];
     
-    if (self.axTouchesBeganDismiss && touch.view == self.view) {
+    if (self.touchesBeganDismiss && touch.view == self.view) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
@@ -45,13 +44,15 @@
 - (AXAlertControllerStyle)axAlertControllerStyle{
     return AXAlertControllerStyleUpward;
 }
-
+-(BOOL )touchesBeganDismiss {
+    return NO;
+}
 #pragma mark - 转场动画 UIViewControllerTransitioningDelegate
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController*)presented
                                                                   presentingController:(UIViewController*)presenting sourceController:(UIViewController*)source
 {
-    switch (self.axAlertControllerStyle) {
+    switch (self.alertControllerStyle) {
         case AXAlertControllerStyleCentre:
             return [[AXAlertCentreAnimation alloc] init];
             break;
@@ -64,7 +65,7 @@
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController*)dismissed
 {
-    switch (self.axAlertControllerStyle) {
+    switch (self.alertControllerStyle) {
         case AXAlertControllerStyleCentre:
             return [[AXAlertCentreAnimation alloc] init];
             break;
