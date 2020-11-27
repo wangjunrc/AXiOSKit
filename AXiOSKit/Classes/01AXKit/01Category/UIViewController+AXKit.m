@@ -12,6 +12,7 @@
 #import "NSObject+AXVersion.h"
 #import "NSString+AXKit.h"
 #import <objc/runtime.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 
 @interface UIViewController ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate>
 
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) UIViewController *ax_popVC;
 
 
+@property (nonatomic, strong) AXAlertTransitioningObserver *alertObserver;
 @end
 
 
@@ -411,11 +413,11 @@
  @param aVC vc
  */
 - (void)ax_showVC:(UIViewController *)aVC{
-//    if (@available(iOS 13.0, *)) {
-//        if (aVC.modalPresentationStyle == UIModalPresentationAutomatic || aVC.modalPresentationStyle == UIModalPresentationPageSheet) {
-//            aVC.modalPresentationStyle = UIModalPresentationFullScreen;
-//        }
-//    }
+    if (@available(iOS 13.0, *)) {
+        if (aVC.modalPresentationStyle == UIModalPresentationAutomatic || aVC.modalPresentationStyle == UIModalPresentationPageSheet) {
+            aVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        }
+    }
     [self presentViewController:aVC animated:YES completion:nil];
 }
 
@@ -480,7 +482,29 @@
         self.AXListener = obj;
     }
     return obj;
-//    return [[AXViewControllerListener alloc] initWithObserve:self];
 }
 
+- (AXAlertTransitioningObserver *)alertObserver {
+    return ax_getValueAssociated(alertObserver);
+    
+}
+- (void)setAlertObserver:(AXAlertTransitioningObserver *)alertObserver {
+    ax_setStrongPropertyAssociated(alertObserver);
+}
+
+-(void)ax_alertObserver:(void(^)(AXAlertTransitioningObserver *observer))handler {
+    
+    self.modalPresentationStyle = UIModalPresentationCustom;
+    self.alertObserver = [[AXAlertTransitioningObserver alloc] init];
+    if(handler){
+        handler(self.alertObserver);
+    }
+    self.transitioningDelegate = self.alertObserver;
+    __weak typeof(self) weakSelf = self;
+    [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id  _Nullable x) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        strongSelf.view.backgroundColor = UIColor.clearColor;
+    }];
+    
+}
 @end

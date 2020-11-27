@@ -6,11 +6,11 @@
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
-#import "AXBaseAlertVC.h"
+#import <UIKit/UIKit.h>
 #import "AXChoosePayModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AXPayVC : AXBaseAlertVC
+@interface AXPayVC : UIViewController
 
 @property (nonatomic, strong) NSArray<AXChoosePayModel*>* dataArray;
 

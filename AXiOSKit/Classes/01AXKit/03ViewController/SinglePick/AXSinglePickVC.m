@@ -7,6 +7,7 @@
 //
 
 #import "AXSinglePickVC.h"
+#import "UIViewController+AXKit.h"
 
 @interface AXSinglePickVC () <UIPickerViewDelegate, UIPickerViewDataSource>
 
@@ -28,9 +29,13 @@
 
 @implementation AXSinglePickVC
 
-- (AXAlertControllerStyle)axAlertControllerStyle
-{
-    return AXAlertControllerStyleUpward;
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        [self ax_alertObserver:^(AXAlertTransitioningObserver *observer) {
+            observer.alertControllerStyle = AXAlertControllerStyleUpward;
+        }];
+    }
+    return self;
 }
 
 - (void)viewDidLoad

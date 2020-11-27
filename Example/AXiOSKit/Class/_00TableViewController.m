@@ -94,7 +94,7 @@ typedef void (^CollectionBlock)(void);
     // 真机
     AXLoger(@"真机");
 #endif
-
+    
     UIButton *btn = [[UIButton alloc]init];
     [btn setTitle:@"编辑" forState:UIControlStateNormal];
     btn.backgroundColor = UIColor.blueColor;
@@ -125,13 +125,13 @@ typedef void (^CollectionBlock)(void);
         __strong typeof(weakSelf) strongSelf = weakSelf;
         NSLog(@"obj.row %ld",obj.row);
         [temp addObject:strongSelf.dataArray[0][obj.row]];
-       
+        
     }];
-   
+    
     [self.dataArray[0] removeObjectsInArray:temp];
-     [self.tableView
-      deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows
-      withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView
+     deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows
+     withRowAnimation:UITableViewRowAnimationNone];
     [self.tableView endUpdates];
     
 }
@@ -193,7 +193,7 @@ void mySLog(NSString *format, ...)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     _00TableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
-
+    
     NSDictionary *dict = self.dataArray[indexPath.section][indexPath.row];
     cell.indexLabel.text = [dict[@"index"] stringValue];
     cell.nameLabel.text = dict[@"title"];
@@ -206,9 +206,9 @@ void mySLog(NSString *format, ...)
         return;
     }
     NSDictionary *dict = self.dataArray[indexPath.section][indexPath.row];
-
+    
     void (^ didSelectRowAtIndexPath)(void) = dict[@"action"];
-
+    
     didSelectRowAtIndexPath();
 }
 
@@ -240,16 +240,16 @@ void mySLog(NSString *format, ...)
 
 - (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(11.0)){
     
-//    NSString *title = @"置顶";
-//    if (indexPath.section == 0) {
-//        title = @"取消置顶";
-//    } else {
-//        title = @"置顶";
-//    }
-//    UIContextualAction *topAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:title handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {            // 这句很重要，退出编辑模式，隐藏左滑菜单
-//        [tableView setEditing:NO animated:YES];
-//        completionHandler(true);
-//    }];
+    //    NSString *title = @"置顶";
+    //    if (indexPath.section == 0) {
+    //        title = @"取消置顶";
+    //    } else {
+    //        title = @"置顶";
+    //    }
+    //    UIContextualAction *topAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:title handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {            // 这句很重要，退出编辑模式，隐藏左滑菜单
+    //        [tableView setEditing:NO animated:YES];
+    //        completionHandler(true);
+    //    }];
     
     UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
         action.title =@"删除1";
@@ -286,16 +286,16 @@ void mySLog(NSString *format, ...)
 
 - (void)testObj:(TestObj *)obj {
     //    NSAssert([obj respondsToSelector:@selector(log)], @"对的不对");
-
+    
     //    if( [obj instancesRespondToSelector:@selector(log)] ) {
     //
     //    }
-
+    
     NSLog(@">>>> %d == %d", [obj.class instancesRespondToSelector:@selector(log)],
           [obj.class instancesRespondToSelector:@selector(log2)]);
-
+    
     NSLog(@"=== %d", [obj respondsToSelector:@selector(log)]);
-
+    
     if ([obj.class instancesRespondToSelector:@selector(log)]) {
         [obj log];
     } else {
@@ -319,23 +319,23 @@ void mySLog(NSString *format, ...)
                         //                        NSLog(@"insex = %zu",insex);
                         //                    });
                         //                    NSLog(@"insex = 完成");
-
+                        
                         NSMutableArray *array =
-                            [NSMutableArray arrayWithObjects:@"2", @"3", @"4", @"4", nil];
-
+                        [NSMutableArray arrayWithObjects:@"2", @"3", @"4", @"4", nil];
+                        
                         //                    for (NSString *str in array) {
                         //                        if ([str isEqualToString:@"4"]) {
                         //                            [array removeObject:str];
                         //                        }
                         //                    }
-
+                        
                         for (int i = 0; i < array.count; i++) {
                             NSString *str = array[i];
                             if ([str isEqualToString:@"4"]) {
                                 [array removeObject:str];
                             }
                         }
-
+                        
                         //                    NSEnumerator *enumerator = [array
                         //                    reverseObjectEnumerator]; NSLog(@"enumerator =
                         //                    %@",enumerator); for (NSString *str in
@@ -347,9 +347,9 @@ void mySLog(NSString *format, ...)
                         ////
                         ////
                         //                    NSLog(@"array = %@",array);
-
+                        
                         NSMutableArray *tempArray =
-                            [NSMutableArray arrayWithArray:@[ @"A", @"B", @"C" ]];
+                        [NSMutableArray arrayWithArray:@[ @"A", @"B", @"C" ]];
                         //                    for (NSString *number in
                         //                    tempArray.reverseObjectEnumerator) {
                         //                        if ([number isEqualToString:@"B"]) {
@@ -360,10 +360,10 @@ void mySLog(NSString *format, ...)
                         [tempArray
                          enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx,
                                                       BOOL *_Nonnull stop) {
-                                                          if ([obj isEqualToString:@"B"]) {
-                                                              [tempArray removeObject:obj];
-                                                          }
-                                                      }];
+                            if ([obj isEqualToString:@"B"]) {
+                                [tempArray removeObject:obj];
+                            }
+                        }];
                         NSLog(@"tempArray = %@", tempArray);
                         NSDictionary *dict = @{
                             @"1": @"A",
@@ -375,7 +375,7 @@ void mySLog(NSString *format, ...)
                         //                    key, id value, BOOL *stop) {
                         //                        NSLog(@"key:%@->value%@",key,value);
                         //                    }];
-
+                        
                         [dict.rac_sequence.signal subscribeNext:^(id x) {
                             RACTupleUnpack(NSString * key, NSString * value) = x;
                             NSLog(@"key=%@ value=%@", key, value);
@@ -392,27 +392,27 @@ void mySLog(NSString *format, ...)
                     @"index": @2,
                     @"title": @"UIAlertController 颜色",
                     @"action": ^{
-//                        [self ax_showAlertByTitle:@"A"
-//                                          message:@"B"
-//                                          confirm:^{
-//                                          }
-//                                           cancel:^{
-//                                           }];
-//                        [self ax_showAlertByTitle:@""
-//                                          message:@""
-//                                          confirm:^{
-//                                          }
-//                                           cancel:^{
-//                                           }];
+                        //                        [self ax_showAlertByTitle:@"A"
+                        //                                          message:@"B"
+                        //                                          confirm:^{
+                        //                                          }
+                        //                                           cancel:^{
+                        //                                           }];
+                        //                        [self ax_showAlertByTitle:@""
+                        //                                          message:@""
+                        //                                          confirm:^{
+                        //                                          }
+                        //                                           cancel:^{
+                        //                                           }];
                         
                         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"tile" message:@"msg" preferredStyle:UIAlertControllerStyleAlert];
                         
-                            // 修改message字体及颜色
-                            NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:alert.message];
-                            [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor redColor] range:NSMakeRange(0, alert.message.length)];
-                            [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, alert.message.length)];
-                            [alert setValue:messageStr forKey:@"attributedMessage"];
-                            
+                        // 修改message字体及颜色
+                        NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:alert.message];
+                        [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor redColor] range:NSMakeRange(0, alert.message.length)];
+                        [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, alert.message.length)];
+                        [alert setValue:messageStr forKey:@"attributedMessage"];
+                        
                         [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"确定") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
                         }]];
                         
@@ -424,20 +424,20 @@ void mySLog(NSString *format, ...)
                         [self presentViewController:alert animated:YES completion:nil];
                     },
                 },
-
+                
                 @{
                     @"index": @3,
                     @"title": @"对象未实现方法",
                     @"action": ^{
                         [self ax_showAlertByTitle:@"是否调用"
                                           confirm:^{
-                                              UIButton *testButton = [[UIButton alloc] init];
+                            UIButton *testButton = [[UIButton alloc] init];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-                                              [testButton
-                              performSelector:@selector(someMethod:)];
+                            [testButton
+                             performSelector:@selector(someMethod:)];
 #pragma clang diagnostic pop
-                                          }];
+                        }];
                     },
                 },
                 @{
@@ -446,12 +446,12 @@ void mySLog(NSString *format, ...)
                     @"action": ^{
                         [RouterManager
                          openURL:routeNameWith01ViewController
-                       withUserInfo:@{ @"navigationController": self.navigationController }
+                         withUserInfo:@{ @"navigationController": self.navigationController }
                          completion:^(id _Nonnull result) {
-                         }];
+                        }];
                     },
                 },
-
+                
                 @{
                     @"index": @5,
                     @"title": @"退出",
@@ -461,11 +461,11 @@ void mySLog(NSString *format, ...)
                         //                         用户体验来说，exit就像是程序崩溃了，直接退出程序。
                         //                         abort就像是点击了home键，有过渡动画，一般我们在使用的时候会选择abort();
                         //                         abort();
-
+                        
                         exit(0);
                     },
                 },
-
+                
                 @{
                     @"index": @6,
                     @"title": @"fishhook调用方法",
@@ -473,7 +473,7 @@ void mySLog(NSString *format, ...)
                         NSLog(@"fish_log");
                     },
                 },
-
+                
                 @{
                     @"index": @7,
                     @"title": @"objc_msgSend调用方法",
@@ -486,7 +486,7 @@ void mySLog(NSString *format, ...)
                         //                    sel_registerName("logShowTest"));
                     },
                 },
-
+                
                 @{
                     @"index": @8,
                     @"title": @"网页 - AXWKWebVC",
@@ -513,7 +513,7 @@ void mySLog(NSString *format, ...)
             ].mutableCopy,
             ///*******************分组2************************
             @[
-
+                
                 @{
                     @"index": @1,
                     @"title": @"暗黑主题-ViewController",
@@ -527,9 +527,9 @@ void mySLog(NSString *format, ...)
                     @"title": @"ContentViewController",
                     @"action": ^{
                         _01ContentViewController *vc =
-                            [[_01ContentViewController alloc] init];
-                        [self.navigationController pushViewController:vc animated:YES];
-                        //                        [self ax_showVC:vc];
+                        [[_01ContentViewController alloc] init];
+                        //                        [self.navigationController pushViewController:vc animated:YES];
+                        [self ax_showVC:vc];
                     },
                 },
                 @{
@@ -537,14 +537,14 @@ void mySLog(NSString *format, ...)
                     @"title": @"隐藏导航栏",
                     @"action": ^{
                         _01ThemeViewController *vc = [[_01ThemeViewController alloc]init];
-                       
+                        
                         [self.navigationController pushViewController:vc animated:YES];
-//                        vc.ax_shouldNavigationBarHidden = YES;
+                        //                        vc.ax_shouldNavigationBarHidden = YES;
                         vc.AXListener.hiddenNavigationBar = YES;
                         NSLog(@"vc.AXListener.shouldNavigationBarHidden %d",vc.AXListener.isHiddenNavigationBar);
                     },
                 },
-
+                
                 @{
                     @"index": @2,
                     @"title": @"聊天-ChatViewController",
@@ -553,7 +553,7 @@ void mySLog(NSString *format, ...)
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
-
+                
                 @{
                     @"index": @4,
                     @"title": @"NSRunLoop模式",
@@ -578,7 +578,7 @@ void mySLog(NSString *format, ...)
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
-
+                
                 @{
                     @"index": @9,
                     @"title": @"AFN",
@@ -587,16 +587,16 @@ void mySLog(NSString *format, ...)
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
-
+                
                 @{
                     @"index": @10,
-                    @"title": @"多行textview",
+                    @"title": @"多行textview-alert",
                     @"action": ^{
                         _10TextFViewController *vc = [[_10TextFViewController alloc] init];
                         [self ax_showVC:vc];
                     },
                 },
-
+                
                 @{
                     @"index": @13,
                     @"title": @"webp/GIF",
@@ -622,7 +622,7 @@ void mySLog(NSString *format, ...)
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
-
+                
                 @{
                     @"index": @15,
                     @"title": @"UIMenuController",
@@ -636,21 +636,21 @@ void mySLog(NSString *format, ...)
                     @"title": @"KeyChain",
                     @"action": ^{
                         _16KeyChainViewController *vc =
-                            [[_16KeyChainViewController alloc] init];
+                        [[_16KeyChainViewController alloc] init];
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
-
+                
                 @{
                     @"index": @17,
                     @"title": @"微信分享",
                     @"action": ^{
                         _17OtherShareViewController *vc =
-                            [[_17OtherShareViewController alloc] init];
+                        [[_17OtherShareViewController alloc] init];
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
-
+                
                 @{
                     @"index": @18,
                     @"title": @"SwipeTableVC",
@@ -664,11 +664,11 @@ void mySLog(NSString *format, ...)
                     @"title": @"Scroll自适应内容",
                     @"action": ^{
                         _19ScrollContentViewController *vc =
-                            [[_19ScrollContentViewController alloc] init];
+                        [[_19ScrollContentViewController alloc] init];
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
-
+                
                 @{
                     @"index": @20,
                     @"title": @"iOS14适配",
@@ -690,7 +690,7 @@ void mySLog(NSString *format, ...)
                     @"title": @"ReactiveObjCViewController",
                     @"action": ^{
                         _22ReactiveObjCViewController *vc =
-                            [[_22ReactiveObjCViewController alloc] init];
+                        [[_22ReactiveObjCViewController alloc] init];
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
@@ -715,17 +715,17 @@ void mySLog(NSString *format, ...)
                     @"title": @"Layout",
                     @"action": ^{
                         _25LayoutViewController *vc =
-                            [[_25LayoutViewController alloc] init];
+                        [[_25LayoutViewController alloc] init];
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
-
+                
                 @{
                     @"index": @26,
                     @"title": @"RMQClient",
                     @"action": ^{
                         _26RMQClientViewController *vc =
-                            [[_26RMQClientViewController alloc] init];
+                        [[_26RMQClientViewController alloc] init];
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
@@ -734,7 +734,7 @@ void mySLog(NSString *format, ...)
                     @"title": @"MQTT",
                     @"action": ^{
                         _27MQTTClientViewController *vc =
-                            [[_27MQTTClientViewController alloc] init];
+                        [[_27MQTTClientViewController alloc] init];
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
@@ -746,14 +746,39 @@ void mySLog(NSString *format, ...)
                         vc.orderText = @"订单1111";
                         vc.amountText = @"3.2元";
                         [self ax_showVC:vc];
+                        
                     },
                 },
+                @{
+                    @"index": @27,
+                    @"title": @"AXDateVC",
+                    @"action": ^{
+                        AXDateVC *vc = [[AXDateVC alloc] init];
+                        [self ax_showVC:vc];
+                        
+                    },
+                },
+                @{
+                    @"index": @27,
+                    @"title": @"AXSinglePickVC",
+                    @"action": ^{
+                        AXSinglePickVC *vc = [[AXSinglePickVC alloc] init];
+                        [vc didSelected:@[@"A",@"B"] showRow:1 confirm:^(NSInteger index) {
+                            
+                        } cancel:^{
+                            
+                        }];
+                        [self ax_showVC:vc];
+                        
+                    },
+                },
+                
                 @{
                     @"index": @28,
                     @"title": @"权分享文件",
                     @"action": ^{
                         _28ShareFileViewController *vc =
-                            [[_28ShareFileViewController alloc] init];
+                        [[_28ShareFileViewController alloc] init];
                         [self.navigationController pushViewController:vc animated:YES];
                     },
                 },
@@ -763,12 +788,12 @@ void mySLog(NSString *format, ...)
                     @"action": ^{
                         self.authorizerManager = [AXSystemAuthorizerManager
                                                   requestAuthorizedWithType:AXSystemAuthorizerTypeLocation
-                                                                 completion:^(AXSystemAuthorizerStatus status) {
-                                                                     NSLog(@"status == %ld", (long)status);
-                                                                 }];
+                                                  completion:^(AXSystemAuthorizerStatus status) {
+                            NSLog(@"status == %ld", (long)status);
+                        }];
                     },
                 },
-
+                
                 @{
                     @"index": @29,
                     @"title": @"仿微信小程序右滑关闭",
@@ -798,7 +823,7 @@ void mySLog(NSString *format, ...)
                 
                 
                 
-
+                
             ].mutableCopy
         ].mutableCopy;
     }

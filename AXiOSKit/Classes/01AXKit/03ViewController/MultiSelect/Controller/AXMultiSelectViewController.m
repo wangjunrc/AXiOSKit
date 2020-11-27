@@ -31,6 +31,15 @@
 
 @implementation AXMultiSelectViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        [self ax_alertObserver:^(AXAlertTransitioningObserver *observer) {
+            observer.alertControllerStyle = AXAlertControllerStyleUpward;
+        }];
+    }
+    return self;
+}
+
 -(instancetype)initWithConfig:(AXMultiSelectConfig *)config
                    viewModels:(NSArray <AXMultiSelectViewModel *>*)viewModelArray
                  didSelectRow:(void(^)(NSArray<NSIndexPath *> *selectedItems))didSelectRow {

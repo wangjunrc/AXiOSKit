@@ -20,17 +20,19 @@
 
 @implementation AXPayVC
 
-- (AXAlertControllerStyle)axAlertControllerStyle
-{
-    return AXAlertControllerStyleUpward;
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        [self ax_alertObserver:^(AXAlertTransitioningObserver *observer) {
+            observer.alertControllerStyle = AXAlertControllerStyleUpward;
+        }];
+    }
+    return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor clearColor];
-    
-//    AXChoosePayVC* choosePayVC = [[AXChoosePayVC alloc] init];
+    //    self.view.backgroundColor = [UIColor clearColor];
     AXPayChildVC* choosePayVC = [[AXPayChildVC alloc] init];
     
     choosePayVC.payArray = self.dataArray;
@@ -78,7 +80,7 @@
         {
             AXChoosePayModel *model = [AXChoosePayModel ax_init];
             model.name = @"微信";
-//            model.iconImage = [UIImage axBundle_imageNamed:@"ax_icon_weixin"];
+            //            model.iconImage = [UIImage axBundle_imageNamed:@"ax_icon_weixin"];
             model.iconImage = [UIImage imageNamed:@"ax_icon_weixin"];
             model.select = YES;
             [temp addObject:model];

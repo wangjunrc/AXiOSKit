@@ -184,7 +184,7 @@ DEPENDENCIES:
   - CocoaAsyncSocket
   - fishhook
   - GDataXML-HTML (~> 1.4.1)
-  - IGListKit (~> 4.0.0)
+  - IGListKit
   - IQKeyboardManager
   - JJException
   - LLDebugTool (~> 1.0)
@@ -308,6 +308,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: f16a3433e50b5d4cce908f111e0aeab8922fe16e
+PODFILE CHECKSUM: af72ee3765caedf1456870fbf9a3c8a73d4172f9
 
 COCOAPODS: 1.10.0

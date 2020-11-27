@@ -92,6 +92,7 @@
 #import "AXTableViewController.h"
 #import "AXViewController.h"
 #import "AXAlertCentreAnimation.h"
+#import "AXAlertTransitioningObserver.h"
 #import "AXAlerUpwardAnimation.h"
 #import "AXBaseAlertDefine.h"
 #import "AXBaseAlertVC.h"

@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXBaseAlertVC.h"
-@interface AXSinglePickVC : AXBaseAlertVC
+
+@interface AXSinglePickVC : UIViewController
 
 /**
  单选

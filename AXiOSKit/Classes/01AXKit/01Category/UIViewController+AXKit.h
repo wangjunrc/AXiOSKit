@@ -10,6 +10,8 @@
 #import "AXConstant.h"
 #import "AXMacros.h"
 #import "AXViewControllerListener.h"
+#import "AXAlertTransitioningObserver.h"
+
 @class PHAssetCollection;
 
 @interface UIViewController (AXKit)<UIPopoverPresentationControllerDelegate>
@@ -134,5 +136,25 @@
 @property (nonatomic, strong, readonly)PHAssetCollection *AXPHAssetCollection;
 
 @property (nonatomic, strong, readonly) AXViewControllerListener *AXListener;
+
+
+
+/// 自定义alert样式, 主要view背景色不能自行添加颜色,必须保持透明
+/**
+ - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+         [self ax_alertObserver:^(AXAlertTransitioningObserver *observer) {
+             observer.alertControllerStyle = AXAlertControllerStyleCentre;
+         }];
+     }
+     return self;
+ }
+ /// 调用者自控制是否点击空白页面 消失
+ - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+     [self dismissViewControllerAnimated:YES completion:nil];
+ }
+ */
+/// @param handler 参数回调
+-(void)ax_alertObserver:(void(^)(AXAlertTransitioningObserver *observer))handler;
 
 @end

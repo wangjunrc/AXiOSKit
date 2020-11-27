@@ -10,7 +10,7 @@
 #import "AXViewController.h"
 #import "AXBaseAlertDefine.h"
 
-
+__attribute__((deprecated("过期")));
 @interface AXBaseAlertVC : AXViewController
 
 /**

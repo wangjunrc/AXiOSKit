@@ -6,13 +6,13 @@
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
-#import "AXBaseAlertVC.h"
+#import <UIKit/UIKit.h>
 #import "AXMultiSelectViewModel.h"
 #import "AXMultiSelectConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AXMultiSelectViewController : AXBaseAlertVC
+@interface AXMultiSelectViewController : UIViewController
 
 -(instancetype)initWithConfig:(AXMultiSelectConfig *)config
                    viewModels:(NSArray <AXMultiSelectViewModel *>*)viewModelArray

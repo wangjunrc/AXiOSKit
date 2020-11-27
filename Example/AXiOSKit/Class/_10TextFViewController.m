@@ -8,6 +8,7 @@
 
 #import "_10TextFViewController.h"
 #import <AXiOSKit/NSString+AXKit.h>
+#import <AXiOSKit/UIViewController+AXKit.h>
 #import <Masonry/Masonry.h>
 @interface _10TextFViewController ()<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *bgView;
@@ -20,12 +21,23 @@
 
 @implementation _10TextFViewController
 
-/// <#Description#>
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        [self ax_alertObserver:^(AXAlertTransitioningObserver *observer) {
+            observer.alertControllerStyle = AXAlertControllerStyleUpward;
+        }];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self ax_alert];
     //    self.myTextView.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10);//textview内边距，上，左，下，右
-    
-    NSLog(@"textContainerInset = %@",NSStringFromUIEdgeInsets(self.textView.textContainerInset));
+//    self.view.backgroundColor = UIColor.clearColor;
+//    NSLog(@"textContainerInset = %@",NSStringFromUIEdgeInsets(self.textView.textContainerInset));
+    AXLogFunc;
+   
     
     
     self.bgView.backgroundColor = UIColor.whiteColor;
@@ -142,5 +154,9 @@
 }
 
 - (IBAction)certainBtn:(id)sender {
+}
+
+- (void)dealloc {
+    axLong_dealloc;
 }
 @end
