@@ -501,10 +501,14 @@
     }
     self.transitioningDelegate = self.alertObserver;
     __weak typeof(self) weakSelf = self;
-    [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id  _Nullable x) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        strongSelf.view.backgroundColor = UIColor.clearColor;
-    }];
+    
+    if ([self respondsToSelector:@selector(viewDidLoad)]) {
+        [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id  _Nullable x) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            strongSelf.view.backgroundColor = UIColor.clearColor;
+        }];
+    }
+   
     
 }
 @end

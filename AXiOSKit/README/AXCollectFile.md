@@ -44,6 +44,9 @@ __attribute__((deprecated(" ")));
 DEPRECATED_MSG_ATTRIBUTE ()
 
 DEPRECATED_ATTRIBUTE
+
+UIKIT_EXTERN API_DEPRECATED("ax_is_过期", ios(2.0, 9.0))
+
 ```
 ##  禁用宏
 ```

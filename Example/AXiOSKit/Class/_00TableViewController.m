@@ -95,23 +95,23 @@ typedef void (^CollectionBlock)(void);
     AXLoger(@"真机");
 #endif
     
+    __weak typeof(self) weakSelf = self;
+    
     UIButton *btn = [[UIButton alloc]init];
     [btn setTitle:@"编辑" forState:UIControlStateNormal];
     btn.backgroundColor = UIColor.blueColor;
-    [btn addTarget:self action:@selector(enitAction:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [btn ax_addTargetBlock:^(UIButton * _Nullable button) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.tableView setEditing:!strongSelf.tableView.isEditing animated:YES];
+    }];
     UIButton *btn2 = [[UIButton alloc]init];
     [btn2 setTitle:@"删除" forState:UIControlStateNormal];
     btn2.backgroundColor = UIColor.blueColor;
     [btn2 addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],[UIBarButtonItem ax_itemByButton:btn2]];
 }
 
--(void)enitAction:(UIButton *)btn{
-    [self.tableView setEditing:!self.tableView.isEditing animated:YES];
-}
 
 -(void)deleteAction:(UIButton *)btn{
     
@@ -197,6 +197,7 @@ void mySLog(NSString *format, ...)
     NSDictionary *dict = self.dataArray[indexPath.section][indexPath.row];
     cell.indexLabel.text = [dict[@"index"] stringValue];
     cell.nameLabel.text = dict[@"title"];
+    
     return cell;
 }
 

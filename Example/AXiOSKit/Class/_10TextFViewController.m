@@ -24,12 +24,11 @@
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         [self ax_alertObserver:^(AXAlertTransitioningObserver *observer) {
-            observer.alertControllerStyle = AXAlertControllerStyleUpward;
+            observer.alertControllerStyle = AXAlertControllerStyleCentre;
         }];
     }
     return self;
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self ax_alert];
@@ -38,7 +37,6 @@
 //    NSLog(@"textContainerInset = %@",NSStringFromUIEdgeInsets(self.textView.textContainerInset));
     AXLogFunc;
    
-    
     
     self.bgView.backgroundColor = UIColor.whiteColor;
     self.cancelBtn.backgroundColor = UIColor.blackColor;
@@ -110,6 +108,7 @@
     
     //    self.textView.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
 }
+
 
 
 - (void)textViewDidChange:(UITextView *)textView{

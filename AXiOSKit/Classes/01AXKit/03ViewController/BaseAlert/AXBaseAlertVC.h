@@ -10,7 +10,7 @@
 #import "AXViewController.h"
 #import "AXBaseAlertDefine.h"
 
-__attribute__((deprecated("过期")));
+UIKIT_EXTERN API_DEPRECATED("ax_is_过期", ios(2.0, 9.0))
 @interface AXBaseAlertVC : AXViewController
 
 /**

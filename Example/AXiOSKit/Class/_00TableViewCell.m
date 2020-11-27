@@ -20,7 +20,8 @@
     self.backgroundView = [UIView.alloc init];
     
     self.selectedBackgroundView = [[UIView alloc] init];//这句不可省略
-    self.selectedBackgroundView.backgroundColor = [UIColor orangeColor];
+//    self.selectedBackgroundView.backgroundColor = [UIColor whiteColor];
+    self.selectedBackgroundView.backgroundColor = self.contentView.backgroundColor;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
