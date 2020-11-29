@@ -10,6 +10,8 @@
 		17D5233E9CD5B814CAFCE82A /* Pods_AXiOSKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEF075763C5B6B190368E8B /* Pods_AXiOSKit_Example.framework */; };
 		21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */; };
 		21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */; };
+		2111E04A257377100016004D /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898E9B2541AD6900876524 /* ShareViewController.m */; };
+		2111E04D257377100016004D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21898E9D2541AD6900876524 /* MainInterface.storyboard */; };
 		211226F32573340100B6ECC8 /* AXUserLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21948C662563F11E00207E18 /* AXUserLog.mm */; };
 		211226F42573340100B6ECC8 /* _15UIMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB83254003D900C89B72 /* _15UIMenuController.m */; };
 		211226F52573340100B6ECC8 /* _10TextFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB3E254003D900C89B72 /* _10TextFViewController.m */; };
@@ -247,6 +249,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2111E058257377290016004D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2111E048257377100016004D;
+			remoteInfo = "AXShare copy";
+		};
 		21898EA12541AD6900876524 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6003F582195388D10070C39A /* Project object */;
@@ -293,6 +302,8 @@
 		21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateAppearance.m; sourceTree = "<group>"; };
 		21022AEA2547A9AF0055E0B7 /* AppDelegateWX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateWX.h; sourceTree = "<group>"; };
 		21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateWX.m; sourceTree = "<group>"; };
+		2111E051257377100016004D /* AXShare_Env_1.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AXShare_Env_1.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2111E052257377100016004D /* AXShare_Env_1_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AXShare_Env_1_Info.plist; path = /Users/xing/Develop/GitHub/AXiOSKit/Example/AXShare_Env_1_Info.plist; sourceTree = "<absolute>"; };
 		2112276B2573340100B6ECC8 /* AXiOSKit_Example_Env_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit_Example_Env_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21122775257334C600B6ECC8 /* AXiOSKit-Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info-debug.plist"; sourceTree = "<group>"; };
 		211227842573361600B6ECC8 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
@@ -510,6 +521,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2111E04B257377100016004D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		211227372573340100B6ECC8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -824,6 +842,7 @@
 				21898E9B2541AD6900876524 /* ShareViewController.m */,
 				21898E9D2541AD6900876524 /* MainInterface.storyboard */,
 				21898EA02541AD6900876524 /* Info.plist */,
+				2111E052257377100016004D /* AXShare_Env_1_Info.plist */,
 			);
 			path = AXShare;
 			sourceTree = "<group>";
@@ -980,6 +999,7 @@
 				6003F5AE195388D20070C39A /* AXiOSKit_Tests.xctest */,
 				21898E982541AD6900876524 /* AXShare.appex */,
 				2112276B2573340100B6ECC8 /* AXiOSKit_Example_Env_1.app */,
+				2111E051257377100016004D /* AXShare_Env_1.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1078,6 +1098,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2111E048257377100016004D /* AXShare_Env_1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2111E04E257377100016004D /* Build configuration list for PBXNativeTarget "AXShare_Env_1" */;
+			buildPhases = (
+				2111E049257377100016004D /* Sources */,
+				2111E04B257377100016004D /* Frameworks */,
+				2111E04C257377100016004D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AXShare_Env_1;
+			productName = AXShare;
+			productReference = 2111E051257377100016004D /* AXShare_Env_1.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		211226EE2573340100B6ECC8 /* AXiOSKit_Example_Env_1 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 211227682573340100B6ECC8 /* Build configuration list for PBXNativeTarget "AXiOSKit_Example_Env_1" */;
@@ -1093,6 +1130,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				2111E059257377290016004D /* PBXTargetDependency */,
 			);
 			name = AXiOSKit_Example_Env_1;
 			productName = AXiOSKit;
@@ -1167,6 +1205,10 @@
 				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = axinger;
 				TargetAttributes = {
+					2111E048257377100016004D = {
+						DevelopmentTeam = 2BZJZ65HL3;
+						ProvisioningStyle = Automatic;
+					};
 					211226EE2573340100B6ECC8 = {
 						DevelopmentTeam = 2BZJZ65HL3;
 					};
@@ -1201,11 +1243,20 @@
 				211226EE2573340100B6ECC8 /* AXiOSKit_Example_Env_1 */,
 				6003F5AD195388D20070C39A /* AXiOSKit_Tests */,
 				21898E972541AD6900876524 /* AXShare */,
+				2111E048257377100016004D /* AXShare_Env_1 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2111E04C257377100016004D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2111E04D257377100016004D /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2112273C2573340100B6ECC8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1637,6 +1688,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2111E049257377100016004D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2111E04A257377100016004D /* ShareViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		211226F22573340100B6ECC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1806,6 +1865,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2111E059257377290016004D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2111E048257377100016004D /* AXShare_Env_1 */;
+			targetProxy = 2111E058257377290016004D /* PBXContainerItemProxy */;
+		};
 		21898EA22541AD6900876524 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 21898E972541AD6900876524 /* AXShare */;
@@ -1854,6 +1918,89 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2111E04F257377100016004D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2BZJZ65HL3;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/AXShare_Env_1_Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 2.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo2.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2111E050257377100016004D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 3;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 2BZJZ65HL3;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/AXShare_Env_1_Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 2.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo2.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		211227692573340100B6ECC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3F85C681A5FA543AF8599754 /* Pods-AXiOSKit_Example.debug.xcconfig */;
@@ -2175,6 +2322,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2111E04E257377100016004D /* Build configuration list for PBXNativeTarget "AXShare_Env_1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2111E04F257377100016004D /* Debug */,
+				2111E050257377100016004D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		211227682573340100B6ECC8 /* Build configuration list for PBXNativeTarget "AXiOSKit_Example_Env_1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
