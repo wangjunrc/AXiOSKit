@@ -14,6 +14,11 @@
 #import <LLDebugTool/LLDebug.h>
 #import <UserNotifications/UserNotifications.h>
 
+#if ENV == 1
+#import "URI_Env_1.h"
+#else
+#import "URI.h"
+#endif
 
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
@@ -39,7 +44,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [self thirdSDKLifecycleManager:@selector(application:didFinishLaunchingWithOptions:) withParameters:@[application,@{}]];
-   
+    NSLog(@"环境 ==== PATH %@",PATH);
+#if ENV == 1
+    NSLog(@"环境 ==== 1");
+#else
+    NSLog(@"环境 ==== 默认");
+#endif
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];

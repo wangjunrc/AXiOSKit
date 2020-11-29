@@ -304,6 +304,8 @@
 		21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateWX.m; sourceTree = "<group>"; };
 		2111E051257377100016004D /* AXShare_Env_1.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AXShare_Env_1.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2111E052257377100016004D /* AXShare_Env_1_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AXShare_Env_1_Info.plist; path = /Users/xing/Develop/GitHub/AXiOSKit/Example/AXShare_Env_1_Info.plist; sourceTree = "<absolute>"; };
+		2111E073257380740016004D /* URI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URI.h; sourceTree = "<group>"; };
+		2111E0742573808E0016004D /* URI_Env_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URI_Env_1.h; sourceTree = "<group>"; };
 		2112276B2573340100B6ECC8 /* AXiOSKit_Example_Env_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit_Example_Env_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21122775257334C600B6ECC8 /* AXiOSKit-Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info-debug.plist"; sourceTree = "<group>"; };
 		211227842573361600B6ECC8 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
@@ -1037,6 +1039,8 @@
 				218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */,
 				21898F302541B11D00876524 /* Application.h */,
 				21898F312541B11D00876524 /* Application.m */,
+				2111E073257380740016004D /* URI.h */,
+				2111E0742573808E0016004D /* URI_Env_1.h */,
 				2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */,
 				213BCBDA254003DA00C89B72 /* Assets.xcassets */,
 				21122775257334C600B6ECC8 /* AXiOSKit-Info-debug.plist */,
@@ -2011,6 +2015,13 @@
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"$(inherited)",
+					"SD_WEBP=1",
+					"ENV=1",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info-debug.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0.0;
