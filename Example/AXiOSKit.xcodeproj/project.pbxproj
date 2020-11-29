@@ -10,6 +10,123 @@
 		17D5233E9CD5B814CAFCE82A /* Pods_AXiOSKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEF075763C5B6B190368E8B /* Pods_AXiOSKit_Example.framework */; };
 		21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */; };
 		21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */; };
+		211226F32573340100B6ECC8 /* AXUserLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21948C662563F11E00207E18 /* AXUserLog.mm */; };
+		211226F42573340100B6ECC8 /* _15UIMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB83254003D900C89B72 /* _15UIMenuController.m */; };
+		211226F52573340100B6ECC8 /* _10TextFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB3E254003D900C89B72 /* _10TextFViewController.m */; };
+		211226F62573340100B6ECC8 /* ChatTextMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBAA254003DA00C89B72 /* ChatTextMessageModel.m */; };
+		211226F72573340100B6ECC8 /* _20iOS14ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4C254003D900C89B72 /* _20iOS14ViewController.m */; };
+		211226F82573340100B6ECC8 /* _28LocalSocketServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1E8E25441BBD00E43F16 /* _28LocalSocketServiceViewController.m */; };
+		211226F92573340100B6ECC8 /* AppDelegateWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */; };
+		211226FA2573340100B6ECC8 /* AFHTTPSessionManager+PutFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB48254003D900C89B72 /* AFHTTPSessionManager+PutFile.m */; };
+		211226FB2573340100B6ECC8 /* _01ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB84254003D900C89B72 /* _01ThemeViewController.m */; };
+		211226FC2573340100B6ECC8 /* _14TFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4E254003D900C89B72 /* _14TFViewController.m */; };
+		211226FD2573340100B6ECC8 /* _30TimeLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430AE6256C98EF00CB8EBC /* _30TimeLineModel.m */; };
+		211226FE2573340100B6ECC8 /* LVieoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBAD254003DA00C89B72 /* LVieoView.m */; };
+		211226FF2573340100B6ECC8 /* _26RMQClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB7A254003D900C89B72 /* _26RMQClientViewController.m */; };
+		211227002573340100B6ECC8 /* _23FullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB76254003D900C89B72 /* _23FullViewController.m */; };
+		211227012573340100B6ECC8 /* _30TimeLineNinePhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430B0D256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.m */; };
+		211227022573340100B6ECC8 /* UIImage+Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBB3254003DA00C89B72 /* UIImage+Load.m */; };
+		211227032573340100B6ECC8 /* CopyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB3F254003D900C89B72 /* CopyActivity.m */; };
+		211227042573340100B6ECC8 /* AXUserInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBC5254003DA00C89B72 /* AXUserInfo.mm */; };
+		211227052573340100B6ECC8 /* NSObject+Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBB4254003DA00C89B72 /* NSObject+Load.m */; };
+		211227062573340100B6ECC8 /* AXUserInfoDao.mm in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBC1254003DA00C89B72 /* AXUserInfoDao.mm */; };
+		211227072573340100B6ECC8 /* AXRecordAudioConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21799D63255CD33700754A8B /* AXRecordAudioConfig.m */; };
+		211227082573340100B6ECC8 /* _24NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4A254003D900C89B72 /* _24NoteViewController.m */; };
+		211227092573340100B6ECC8 /* TestObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB9E254003DA00C89B72 /* TestObj.m */; };
+		2112270A2573340100B6ECC8 /* _25CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BC1949256CD28C0041ADBB /* _25CollectionViewCell.m */; };
+		2112270B2573340100B6ECC8 /* _30IGListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430AE0256C980500CB8EBC /* _30IGListViewController.m */; };
+		2112270C2573340100B6ECC8 /* _25LayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB49254003D900C89B72 /* _25LayoutViewController.m */; };
+		2112270D2573340100B6ECC8 /* _21KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB45254003D900C89B72 /* _21KVOViewController.m */; };
+		2112270E2573340100B6ECC8 /* _29AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E306B2255EAA1100D17A8B /* _29AudioViewController.m */; };
+		2112270F2573340100B6ECC8 /* _30TimeLinetContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430AFB256C9C9300CB8EBC /* _30TimeLinetContentController.m */; };
+		211227102573340100B6ECC8 /* _28ShareFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1E4A25440BC200E43F16 /* _28ShareFileViewController.m */; };
+		211227112573340100B6ECC8 /* _18MGSwipeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB5B254003D900C89B72 /* _18MGSwipeTableVC.m */; };
+		211227122573340100B6ECC8 /* _02ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBA5254003DA00C89B72 /* _02ChatViewController.m */; };
+		211227132573340100B6ECC8 /* UIControl+load.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBB2254003DA00C89B72 /* UIControl+load.m */; };
+		211227142573340100B6ECC8 /* _27MQTTClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB3B254003D900C89B72 /* _27MQTTClientViewController.m */; };
+		211227152573340100B6ECC8 /* AppDelegateWX.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */; };
+		211227162573340100B6ECC8 /* _19ScrollContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB40254003D900C89B72 /* _19ScrollContentViewController.m */; };
+		211227172573340100B6ECC8 /* MyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB53254003D900C89B72 /* MyActivity.m */; };
+		211227182573340100B6ECC8 /* _00TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB52254003D900C89B72 /* _00TableViewCell.m */; };
+		211227192573340100B6ECC8 /* RouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBD6254003DA00C89B72 /* RouterManager.m */; };
+		2112271A2573340100B6ECC8 /* _28LocalSocketClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1E9625441C6600E43F16 /* _28LocalSocketClientViewController.m */; };
+		2112271B2573340100B6ECC8 /* AppDelegateWCDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */; };
+		2112271C2573340100B6ECC8 /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */; };
+		2112271D2573340100B6ECC8 /* AXWebSocketEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB9A254003DA00C89B72 /* AXWebSocketEngine.m */; };
+		2112271E2573340100B6ECC8 /* AppDelegateAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */; };
+		2112271F2573340100B6ECC8 /* AppDelegateDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */; };
+		211227202573340100B6ECC8 /* _13WeImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C77255FA71900E7B506 /* _13WeImageTableViewController.m */; };
+		211227212573340100B6ECC8 /* _07VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB69254003D900C89B72 /* _07VideoViewController.m */; };
+		211227222573340100B6ECC8 /* _22ReactiveObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB61254003D900C89B72 /* _22ReactiveObjCViewController.m */; };
+		211227232573340100B6ECC8 /* AView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB55254003D900C89B72 /* AView.m */; };
+		211227242573340100B6ECC8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB34254003D900C89B72 /* SceneDelegate.m */; };
+		211227252573340100B6ECC8 /* _13WebpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB7B254003D900C89B72 /* _13WebpViewController.m */; };
+		211227262573340100B6ECC8 /* _04RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB60254003D900C89B72 /* _04RunLoopViewController.m */; };
+		211227272573340100B6ECC8 /* _16KeyChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB6B254003D900C89B72 /* _16KeyChainViewController.m */; };
+		211227282573340100B6ECC8 /* AppDelegateRegistryCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */; };
+		211227292573340100B6ECC8 /* _06WCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4B254003D900C89B72 /* _06WCDBViewController.m */; };
+		2112272A2573340100B6ECC8 /* _17OtherShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB80254003D900C89B72 /* _17OtherShareViewController.m */; };
+		2112272B2573340100B6ECC8 /* _01ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB72254003D900C89B72 /* _01ContentViewController.m */; };
+		2112272C2573340100B6ECC8 /* AANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB63254003D900C89B72 /* AANavigationController.m */; };
+		2112272D2573340100B6ECC8 /* AXRecordAudioService.m in Sources */ = {isa = PBXBuildFile; fileRef = 21799D5C255CD2E300754A8B /* AXRecordAudioService.m */; };
+		2112272E2573340100B6ECC8 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898F312541B11D00876524 /* Application.m */; };
+		2112272F2573340100B6ECC8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
+		211227302573340100B6ECC8 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB68254003D900C89B72 /* Person.m */; };
+		211227312573340100B6ECC8 /* _00TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB59254003D900C89B72 /* _00TableViewController.m */; };
+		211227322573340100B6ECC8 /* _20TimeLineContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430B01256C9D4300CB8EBC /* _20TimeLineContentCell.m */; };
+		211227332573340100B6ECC8 /* _09AFNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB75254003D900C89B72 /* _09AFNViewController.m */; };
+		211227342573340100B6ECC8 /* ChatMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBA8254003DA00C89B72 /* ChatMessageModel.m */; };
+		211227352573340100B6ECC8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBE7254003DB00C89B72 /* AppDelegate.m */; };
+		211227362573340100B6ECC8 /* _30TimeLineNinePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430B07256C9DC300CB8EBC /* _30TimeLineNinePhotoView.m */; };
+		211227382573340100B6ECC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
+		211227392573340100B6ECC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
+		2112273A2573340100B6ECC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
+		2112273B2573340100B6ECC8 /* Pods_AXiOSKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEF075763C5B6B190368E8B /* Pods_AXiOSKit_Example.framework */; };
+		2112273D2573340100B6ECC8 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB8F254003D900C89B72 /* instruction.jpg */; };
+		2112273E2573340100B6ECC8 /* _21KVOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB3D254003D900C89B72 /* _21KVOViewController.xib */; };
+		2112273F2573340100B6ECC8 /* _01ThemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB51254003D900C89B72 /* _01ThemeViewController.xib */; };
+		211227402573340100B6ECC8 /* _26RMQClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB38254003D900C89B72 /* _26RMQClientViewController.xib */; };
+		211227412573340100B6ECC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDA254003DA00C89B72 /* Assets.xcassets */; };
+		211227422573340100B6ECC8 /* testXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = 21948D412564B83700207E18 /* testXML.xml */; };
+		211227432573340100B6ECC8 /* _22ReactiveObjCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB62254003D900C89B72 /* _22ReactiveObjCViewController.xib */; };
+		211227442573340100B6ECC8 /* _02ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBA4254003DA00C89B72 /* _02ChatViewController.xib */; };
+		211227452573340100B6ECC8 /* Alternate_AppIcon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */; };
+		211227462573340100B6ECC8 /* _07VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB46254003D900C89B72 /* _07VideoViewController.xib */; };
+		211227472573340100B6ECC8 /* g3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDB254003DA00C89B72 /* g3@2x.png */; };
+		211227482573340100B6ECC8 /* _23FullViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB4F254003D900C89B72 /* _23FullViewController.xib */; };
+		211227492573340100B6ECC8 /* _06WCDBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB73254003D900C89B72 /* _06WCDBViewController.xib */; };
+		2112274A2573340100B6ECC8 /* _09AFNViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB5C254003D900C89B72 /* _09AFNViewController.xib */; };
+		2112274B2573340100B6ECC8 /* App.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 218A1E4425440A0A00E43F16 /* App.pdf */; };
+		2112274C2573340100B6ECC8 /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
+		2112274D2573340100B6ECC8 /* _30TimeLineNinePhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21430B0E256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib */; };
+		2112274E2573340100B6ECC8 /* office.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 218A1EC7254438C900E43F16 /* office.bundle */; };
+		2112274F2573340100B6ECC8 /* PointViewController2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBD8254003DA00C89B72 /* PointViewController2.plist */; };
+		211227502573340100B6ECC8 /* webp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE1254003DA00C89B72 /* webp.bundle */; };
+		211227512573340100B6ECC8 /* 123.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB96254003DA00C89B72 /* 123.jpg */; };
+		211227522573340100B6ECC8 /* _04RunLoopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB74254003D900C89B72 /* _04RunLoopViewController.xib */; };
+		211227532573340100B6ECC8 /* _28LocalSocketServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218A1E8F25441BBD00E43F16 /* _28LocalSocketServiceViewController.xib */; };
+		211227542573340100B6ECC8 /* _14TFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB5A254003D900C89B72 /* _14TFViewController.xib */; };
+		211227552573340100B6ECC8 /* time_line_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 21430AEB256C999400CB8EBC /* time_line_list.json */; };
+		211227562573340100B6ECC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB93254003D900C89B72 /* LaunchScreen.storyboard */; };
+		211227572573340100B6ECC8 /* PointViewController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB90254003D900C89B72 /* PointViewController.plist */; };
+		211227582573340100B6ECC8 /* _10TextFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB3C254003D900C89B72 /* _10TextFViewController.xib */; };
+		211227592573340100B6ECC8 /* _24NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB5E254003D900C89B72 /* _24NoteViewController.xib */; };
+		2112275A2573340100B6ECC8 /* Alternate_AppIcon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */; };
+		2112275B2573340100B6ECC8 /* _00TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB6A254003D900C89B72 /* _00TableViewCell.xib */; };
+		2112275C2573340100B6ECC8 /* gift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 21799C7B255BDE8500754A8B /* gift.svg */; };
+		2112275D2573340100B6ECC8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB2E254003D900C89B72 /* InfoPlist.strings */; };
+		2112275E2573340100B6ECC8 /* H5.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE2254003DA00C89B72 /* H5.bundle */; };
+		2112275F2573340100B6ECC8 /* 1234.webp in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDE254003DA00C89B72 /* 1234.webp */; };
+		211227602573340100B6ECC8 /* IMG_3972.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB2C254003D900C89B72 /* IMG_3972.GIF */; };
+		211227612573340100B6ECC8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB35254003D900C89B72 /* Settings.bundle */; };
+		211227622573340100B6ECC8 /* test_webp.webp in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE4254003DA00C89B72 /* test_webp.webp */; };
+		211227632573340100B6ECC8 /* g2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB33254003D900C89B72 /* g2@2x.png */; };
+		211227662573340100B6ECC8 /* AXShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21898E982541AD6900876524 /* AXShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		21122776257334C600B6ECC8 /* AXiOSKit-Info-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21122775257334C600B6ECC8 /* AXiOSKit-Info-debug.plist */; };
+		21122777257334C600B6ECC8 /* AXiOSKit-Info-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21122775257334C600B6ECC8 /* AXiOSKit-Info-debug.plist */; };
+		211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211227842573361600B6ECC8 /* AXiOSKit-Info.plist */; };
+		211227862573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211227842573361600B6ECC8 /* AXiOSKit-Info.plist */; };
+		2112281925733DF300B6ECC8 /* Assets_env_1.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */; };
 		213BCBE8254003DB00C89B72 /* IMG_3972.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB2C254003D900C89B72 /* IMG_3972.GIF */; };
 		213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB2E254003D900C89B72 /* InfoPlist.strings */; };
 		213BCBEA254003DB00C89B72 /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */; };
@@ -147,6 +264,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		211227652573340100B6ECC8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				211227662573340100B6ECC8 /* AXShare.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		21898EA42541AD6900876524 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,6 +293,10 @@
 		21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateAppearance.m; sourceTree = "<group>"; };
 		21022AEA2547A9AF0055E0B7 /* AppDelegateWX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateWX.h; sourceTree = "<group>"; };
 		21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateWX.m; sourceTree = "<group>"; };
+		2112276B2573340100B6ECC8 /* AXiOSKit_Example_Env_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit_Example_Env_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21122775257334C600B6ECC8 /* AXiOSKit-Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info-debug.plist"; sourceTree = "<group>"; };
+		211227842573361600B6ECC8 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
+		2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets_env_1.xcassets; sourceTree = "<group>"; };
 		213BCB2C254003D900C89B72 /* IMG_3972.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMG_3972.GIF; sourceTree = "<group>"; };
 		213BCB2F254003D900C89B72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		213BCB30254003D900C89B72 /* MakeKeyAndVisible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeKeyAndVisible.h; sourceTree = "<group>"; };
@@ -362,7 +494,6 @@
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6003F595195388D20070C39A /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
 		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6003F59B195388D20070C39A /* AXiOSKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit-Prefix.pch"; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* AXiOSKit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AXiOSKit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -379,6 +510,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		211227372573340100B6ECC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				211227382573340100B6ECC8 /* CoreGraphics.framework in Frameworks */,
+				211227392573340100B6ECC8 /* UIKit.framework in Frameworks */,
+				2112273A2573340100B6ECC8 /* Foundation.framework in Frameworks */,
+				2112273B2573340100B6ECC8 /* Pods_AXiOSKit_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		21898E952541AD6900876524 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -837,6 +979,7 @@
 				6003F58A195388D20070C39A /* AXiOSKit_Example.app */,
 				6003F5AE195388D20070C39A /* AXiOSKit_Tests.xctest */,
 				21898E982541AD6900876524 /* AXShare.appex */,
+				2112276B2573340100B6ECC8 /* AXiOSKit_Example_Env_1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -874,8 +1017,10 @@
 				218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */,
 				21898F302541B11D00876524 /* Application.h */,
 				21898F312541B11D00876524 /* Application.m */,
+				2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */,
 				213BCBDA254003DA00C89B72 /* Assets.xcassets */,
-				6003F595195388D20070C39A /* AXiOSKit-Info.plist */,
+				21122775257334C600B6ECC8 /* AXiOSKit-Info-debug.plist */,
+				211227842573361600B6ECC8 /* AXiOSKit-Info.plist */,
 				6003F59B195388D20070C39A /* AXiOSKit-Prefix.pch */,
 				213BCBD7254003DA00C89B72 /* AXiOSKitExampleRelease.entitlements */,
 				213BCB92254003D900C89B72 /* Base.lproj */,
@@ -933,6 +1078,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		211226EE2573340100B6ECC8 /* AXiOSKit_Example_Env_1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 211227682573340100B6ECC8 /* Build configuration list for PBXNativeTarget "AXiOSKit_Example_Env_1" */;
+			buildPhases = (
+				211226F12573340100B6ECC8 /* [CP] Check Pods Manifest.lock */,
+				211226F22573340100B6ECC8 /* Sources */,
+				211227372573340100B6ECC8 /* Frameworks */,
+				2112273C2573340100B6ECC8 /* Resources */,
+				211227642573340100B6ECC8 /* [CP] Embed Pods Frameworks */,
+				211227652573340100B6ECC8 /* Embed App Extensions */,
+				211227672573340100B6ECC8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AXiOSKit_Example_Env_1;
+			productName = AXiOSKit;
+			productReference = 2112276B2573340100B6ECC8 /* AXiOSKit_Example_Env_1.app */;
+			productType = "com.apple.product-type.application";
+		};
 		21898E972541AD6900876524 /* AXShare */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21898EA72541AD6900876524 /* Build configuration list for PBXNativeTarget "AXShare" */;
@@ -1001,6 +1167,9 @@
 				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = axinger;
 				TargetAttributes = {
+					211226EE2573340100B6ECC8 = {
+						DevelopmentTeam = 2BZJZ65HL3;
+					};
 					21898E972541AD6900876524 = {
 						CreatedOnToolsVersion = 12.1;
 						DevelopmentTeam = 2BZJZ65HL3;
@@ -1029,6 +1198,7 @@
 			projectRoot = "";
 			targets = (
 				6003F589195388D20070C39A /* AXiOSKit_Example */,
+				211226EE2573340100B6ECC8 /* AXiOSKit_Example_Env_1 */,
 				6003F5AD195388D20070C39A /* AXiOSKit_Tests */,
 				21898E972541AD6900876524 /* AXShare */,
 			);
@@ -1036,6 +1206,55 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2112273C2573340100B6ECC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2112273D2573340100B6ECC8 /* instruction.jpg in Resources */,
+				2112273E2573340100B6ECC8 /* _21KVOViewController.xib in Resources */,
+				2112273F2573340100B6ECC8 /* _01ThemeViewController.xib in Resources */,
+				211227402573340100B6ECC8 /* _26RMQClientViewController.xib in Resources */,
+				211227412573340100B6ECC8 /* Assets.xcassets in Resources */,
+				211227422573340100B6ECC8 /* testXML.xml in Resources */,
+				211227862573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */,
+				211227432573340100B6ECC8 /* _22ReactiveObjCViewController.xib in Resources */,
+				2112281925733DF300B6ECC8 /* Assets_env_1.xcassets in Resources */,
+				211227442573340100B6ECC8 /* _02ChatViewController.xib in Resources */,
+				211227452573340100B6ECC8 /* Alternate_AppIcon_2@2x.png in Resources */,
+				211227462573340100B6ECC8 /* _07VideoViewController.xib in Resources */,
+				211227472573340100B6ECC8 /* g3@2x.png in Resources */,
+				211227482573340100B6ECC8 /* _23FullViewController.xib in Resources */,
+				211227492573340100B6ECC8 /* _06WCDBViewController.xib in Resources */,
+				2112274A2573340100B6ECC8 /* _09AFNViewController.xib in Resources */,
+				2112274B2573340100B6ECC8 /* App.pdf in Resources */,
+				2112274C2573340100B6ECC8 /* _29AudioViewController.xib in Resources */,
+				2112274D2573340100B6ECC8 /* _30TimeLineNinePhotoCell.xib in Resources */,
+				2112274E2573340100B6ECC8 /* office.bundle in Resources */,
+				2112274F2573340100B6ECC8 /* PointViewController2.plist in Resources */,
+				211227502573340100B6ECC8 /* webp.bundle in Resources */,
+				211227512573340100B6ECC8 /* 123.jpg in Resources */,
+				211227522573340100B6ECC8 /* _04RunLoopViewController.xib in Resources */,
+				211227532573340100B6ECC8 /* _28LocalSocketServiceViewController.xib in Resources */,
+				211227542573340100B6ECC8 /* _14TFViewController.xib in Resources */,
+				211227552573340100B6ECC8 /* time_line_list.json in Resources */,
+				211227562573340100B6ECC8 /* LaunchScreen.storyboard in Resources */,
+				211227572573340100B6ECC8 /* PointViewController.plist in Resources */,
+				211227582573340100B6ECC8 /* _10TextFViewController.xib in Resources */,
+				21122777257334C600B6ECC8 /* AXiOSKit-Info-debug.plist in Resources */,
+				211227592573340100B6ECC8 /* _24NoteViewController.xib in Resources */,
+				2112275A2573340100B6ECC8 /* Alternate_AppIcon_3@2x.png in Resources */,
+				2112275B2573340100B6ECC8 /* _00TableViewCell.xib in Resources */,
+				2112275C2573340100B6ECC8 /* gift.svg in Resources */,
+				2112275D2573340100B6ECC8 /* InfoPlist.strings in Resources */,
+				2112275E2573340100B6ECC8 /* H5.bundle in Resources */,
+				2112275F2573340100B6ECC8 /* 1234.webp in Resources */,
+				211227602573340100B6ECC8 /* IMG_3972.GIF in Resources */,
+				211227612573340100B6ECC8 /* Settings.bundle in Resources */,
+				211227622573340100B6ECC8 /* test_webp.webp in Resources */,
+				211227632573340100B6ECC8 /* g2@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		21898E962541AD6900876524 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1054,6 +1273,7 @@
 				213BCBEE254003DB00C89B72 /* _26RMQClientViewController.xib in Resources */,
 				213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */,
 				21948D422564B83700207E18 /* testXML.xml in Resources */,
+				211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */,
 				213BCC0B254003DB00C89B72 /* _22ReactiveObjCViewController.xib in Resources */,
 				213BCC2D254003DB00C89B72 /* _02ChatViewController.xib in Resources */,
 				21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */,
@@ -1076,6 +1296,7 @@
 				213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */,
 				213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */,
 				213BCBF0254003DB00C89B72 /* _10TextFViewController.xib in Resources */,
+				21122776257334C600B6ECC8 /* AXiOSKit-Info-debug.plist in Resources */,
 				213BCC08254003DB00C89B72 /* _24NoteViewController.xib in Resources */,
 				21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */,
 				213BCC0F254003DB00C89B72 /* _00TableViewCell.xib in Resources */,
@@ -1101,6 +1322,151 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		211226F12573340100B6ECC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AXiOSKit_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		211227642573340100B6ECC8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
+				"${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework",
+				"${BUILT_PRODUCTS_DIR}/Bagel/Bagel.framework",
+				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
+				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
+				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
+				"${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework",
+				"${PODS_ROOT}/LookinServer/LookinServer.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework",
+				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MLeaksFinder/MLeaksFinder.framework",
+				"${BUILT_PRODUCTS_DIR}/MMKV/MMKV.framework",
+				"${BUILT_PRODUCTS_DIR}/MMKVCore/MMKVCore.framework",
+				"${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/NullSafe/NullSafe.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/RMQClient/RMQClient.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImageFLPlugin/SDWebImageFLPlugin.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImageWebPCoder/SDWebImageWebPCoder.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLiteRepairKit/sqliterk.framework",
+				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
+				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
+				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
+				"${BUILT_PRODUCTS_DIR}/fishhook/fishhook.framework",
+				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXiOSKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AvoidCrash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bagel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDebugTool.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LookinServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGJRouter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLeaksFinder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKV.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKVCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MQTTClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NullSafe.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMQClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageFLPlugin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageWebPCoder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqliterk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/fishhook.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		211227672573340100B6ECC8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# 图标加版本号\n#$SRCROOT/JCIconVersion.sh\n\n# 启动图加版本号\n#$SRCROOT/launch_image.sh\n\n# 忘记干嘛的\n#$SRCROOT/SettingsBundle.sh\n";
+		};
 		218990322542634F00876524 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1271,6 +1637,81 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		211226F22573340100B6ECC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				211226F32573340100B6ECC8 /* AXUserLog.mm in Sources */,
+				211226F42573340100B6ECC8 /* _15UIMenuController.m in Sources */,
+				211226F52573340100B6ECC8 /* _10TextFViewController.m in Sources */,
+				211226F62573340100B6ECC8 /* ChatTextMessageModel.m in Sources */,
+				211226F72573340100B6ECC8 /* _20iOS14ViewController.m in Sources */,
+				211226F82573340100B6ECC8 /* _28LocalSocketServiceViewController.m in Sources */,
+				211226F92573340100B6ECC8 /* AppDelegateWebImage.m in Sources */,
+				211226FA2573340100B6ECC8 /* AFHTTPSessionManager+PutFile.m in Sources */,
+				211226FB2573340100B6ECC8 /* _01ThemeViewController.m in Sources */,
+				211226FC2573340100B6ECC8 /* _14TFViewController.m in Sources */,
+				211226FD2573340100B6ECC8 /* _30TimeLineModel.m in Sources */,
+				211226FE2573340100B6ECC8 /* LVieoView.m in Sources */,
+				211226FF2573340100B6ECC8 /* _26RMQClientViewController.m in Sources */,
+				211227002573340100B6ECC8 /* _23FullViewController.m in Sources */,
+				211227012573340100B6ECC8 /* _30TimeLineNinePhotoCell.m in Sources */,
+				211227022573340100B6ECC8 /* UIImage+Load.m in Sources */,
+				211227032573340100B6ECC8 /* CopyActivity.m in Sources */,
+				211227042573340100B6ECC8 /* AXUserInfo.mm in Sources */,
+				211227052573340100B6ECC8 /* NSObject+Load.m in Sources */,
+				211227062573340100B6ECC8 /* AXUserInfoDao.mm in Sources */,
+				211227072573340100B6ECC8 /* AXRecordAudioConfig.m in Sources */,
+				211227082573340100B6ECC8 /* _24NoteViewController.m in Sources */,
+				211227092573340100B6ECC8 /* TestObj.m in Sources */,
+				2112270A2573340100B6ECC8 /* _25CollectionViewCell.m in Sources */,
+				2112270B2573340100B6ECC8 /* _30IGListViewController.m in Sources */,
+				2112270C2573340100B6ECC8 /* _25LayoutViewController.m in Sources */,
+				2112270D2573340100B6ECC8 /* _21KVOViewController.m in Sources */,
+				2112270E2573340100B6ECC8 /* _29AudioViewController.m in Sources */,
+				2112270F2573340100B6ECC8 /* _30TimeLinetContentController.m in Sources */,
+				211227102573340100B6ECC8 /* _28ShareFileViewController.m in Sources */,
+				211227112573340100B6ECC8 /* _18MGSwipeTableVC.m in Sources */,
+				211227122573340100B6ECC8 /* _02ChatViewController.m in Sources */,
+				211227132573340100B6ECC8 /* UIControl+load.m in Sources */,
+				211227142573340100B6ECC8 /* _27MQTTClientViewController.m in Sources */,
+				211227152573340100B6ECC8 /* AppDelegateWX.m in Sources */,
+				211227162573340100B6ECC8 /* _19ScrollContentViewController.m in Sources */,
+				211227172573340100B6ECC8 /* MyActivity.m in Sources */,
+				211227182573340100B6ECC8 /* _00TableViewCell.m in Sources */,
+				211227192573340100B6ECC8 /* RouterManager.m in Sources */,
+				2112271A2573340100B6ECC8 /* _28LocalSocketClientViewController.m in Sources */,
+				2112271B2573340100B6ECC8 /* AppDelegateWCDB.mm in Sources */,
+				2112271C2573340100B6ECC8 /* MakeKeyAndVisible.m in Sources */,
+				2112271D2573340100B6ECC8 /* AXWebSocketEngine.m in Sources */,
+				2112271E2573340100B6ECC8 /* AppDelegateAppearance.m in Sources */,
+				2112271F2573340100B6ECC8 /* AppDelegateDebug.m in Sources */,
+				211227202573340100B6ECC8 /* _13WeImageTableViewController.m in Sources */,
+				211227212573340100B6ECC8 /* _07VideoViewController.m in Sources */,
+				211227222573340100B6ECC8 /* _22ReactiveObjCViewController.m in Sources */,
+				211227232573340100B6ECC8 /* AView.m in Sources */,
+				211227242573340100B6ECC8 /* SceneDelegate.m in Sources */,
+				211227252573340100B6ECC8 /* _13WebpViewController.m in Sources */,
+				211227262573340100B6ECC8 /* _04RunLoopViewController.m in Sources */,
+				211227272573340100B6ECC8 /* _16KeyChainViewController.m in Sources */,
+				211227282573340100B6ECC8 /* AppDelegateRegistryCenter.m in Sources */,
+				211227292573340100B6ECC8 /* _06WCDBViewController.m in Sources */,
+				2112272A2573340100B6ECC8 /* _17OtherShareViewController.m in Sources */,
+				2112272B2573340100B6ECC8 /* _01ContentViewController.m in Sources */,
+				2112272C2573340100B6ECC8 /* AANavigationController.m in Sources */,
+				2112272D2573340100B6ECC8 /* AXRecordAudioService.m in Sources */,
+				2112272E2573340100B6ECC8 /* Application.m in Sources */,
+				2112272F2573340100B6ECC8 /* main.m in Sources */,
+				211227302573340100B6ECC8 /* Person.m in Sources */,
+				211227312573340100B6ECC8 /* _00TableViewController.m in Sources */,
+				211227322573340100B6ECC8 /* _20TimeLineContentCell.m in Sources */,
+				211227332573340100B6ECC8 /* _09AFNViewController.m in Sources */,
+				211227342573340100B6ECC8 /* ChatMessageModel.m in Sources */,
+				211227352573340100B6ECC8 /* AppDelegate.m in Sources */,
+				211227362573340100B6ECC8 /* _30TimeLineNinePhotoView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		21898E942541AD6900876524 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1413,6 +1854,49 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		211227692573340100B6ECC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F85C681A5FA543AF8599754 /* Pods-AXiOSKit_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_evn_1;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 2BZJZ65HL3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info-debug.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2112276A2573340100B6ECC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E8212D320B7D6003E79BB8A /* Pods-AXiOSKit_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_evn_1;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 2BZJZ65HL3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info-debug.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		21898EA52541AD6900876524 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1447,7 +1931,7 @@
 				MARKETING_VERSION = 2.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo.AXShare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo.share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1489,7 +1973,7 @@
 				MARKETING_VERSION = 2.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo.AXShare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo.share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1603,13 +2087,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3F85C681A5FA543AF8599754 /* Pods-AXiOSKit_Example.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Debug";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
-				INFOPLIST_FILE = "AXiOSKit/AXiOSKit-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0.0;
 				MODULE_NAME = ExampleApp;
@@ -1631,7 +2115,7 @@
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
-				INFOPLIST_FILE = "AXiOSKit/AXiOSKit-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0.0;
 				MODULE_NAME = ExampleApp;
@@ -1691,6 +2175,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		211227682573340100B6ECC8 /* Build configuration list for PBXNativeTarget "AXiOSKit_Example_Env_1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				211227692573340100B6ECC8 /* Debug */,
+				2112276A2573340100B6ECC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		21898EA72541AD6900876524 /* Build configuration list for PBXNativeTarget "AXShare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
