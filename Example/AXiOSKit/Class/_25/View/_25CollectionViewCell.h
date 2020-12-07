@@ -7,14 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "_25DataModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _25CollectionViewCell : UICollectionViewCell
+@interface _25CollectionViewCell : UICollectionViewCell<UIGestureRecognizerDelegate>
 
 @property(nonatomic,strong)UIImageView *headImageView;
 @property(nonatomic,strong)UILabel *nameLabel;
 @property(nonatomic,strong)UILabel *contentLabel;
+
+@property(nonatomic,strong)UIButton *addBtn;
+
+@property(nonatomic,strong)UILongPressGestureRecognizer *longGesture;
+
+@property(nonatomic,copy) void(^gestureHandler)(UIGestureRecognizer *gesture);
+
+@property(nonatomic, strong) _25DataModel *model;
 
 @end
 

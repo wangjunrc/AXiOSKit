@@ -713,7 +713,7 @@ void mySLog(NSString *format, ...)
                 },
                 @{
                     @"index": @25,
-                    @"title": @"Layout",
+                    @"title": @"Layout-UICollectionView",
                     @"action": ^{
                         _25LayoutViewController *vc =
                         [[_25LayoutViewController alloc] init];

@@ -1931,7 +1931,7 @@ for (NSTextCheckingResult *match in matchArray) {
 }
 ```
 
-### 同步遍历
+## 同步遍历 可以创建指定长度 数组
 
 ```
 /// GCD dispatch_apply函数是一个同步调用，
@@ -1970,7 +1970,7 @@ for (NSString *number in tempArray.reverseObjectEnumerator) {
 }
 NSLog(@"tempArray = %@",tempArray);
 ```
-### 写入文件
+## 写入文件
 ```
 //获取document路径
 NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -1986,7 +1986,7 @@ NSData *data = [NSData dataWithBytes:a length:12];
 [data writeToFile:filePath atomically:YES];
 ```
 
-### push vc 是否存在
+## push vc 是否存在
 ```
 /// parent==nil 表示返回了
 - (void)didMoveToParentViewController:(UIViewController *)parent {
@@ -1994,7 +1994,7 @@ NSData *data = [NSData dataWithBytes:a length:12];
     NSLog(@"didMoveToParentViewController %@  self = %@",parent,self);
 }
 ```
-### 图片变色
+## 图片变色
 ```
 UIImageRenderingModeAutomatic  // 根据图片的使用环境和所处的绘图上下文自动调整渲染模式。  
 UIImageRenderingModeAlwaysOriginal   // 始终绘制图片原始状态，不使用Tint Color。  
@@ -2006,7 +2006,7 @@ UIImage *image = [UIImage imageNamed:@"qr-code"];
 self.ImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 [self.ImageView setTintColor:[UIColor redColor]];
 ```
-### UIAlertController 改变主图色
+## UIAlertController 改变主图色
 ```
 + (void)load {
     
@@ -2040,7 +2040,7 @@ self.ImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysT
     
 }
 ```
-###  UIAlertController title ,msg nil 时候不弹出
+##  UIAlertController title ,msg nil 时候不弹出
 ```
 [UIAlertController ax_replaceInstanceMethodWithOriginal:@selector(addAction:) newSelector:@selector(ax_addAction:)];
 
