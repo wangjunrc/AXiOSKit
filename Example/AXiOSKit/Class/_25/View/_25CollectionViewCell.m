@@ -7,7 +7,7 @@
 //
 
 #import "_25CollectionViewCell.h"
-
+#import <SDWebImage/UIImageView+WebCache.h>
 @implementation _25CollectionViewCell
 
 
@@ -70,7 +70,8 @@
 - (void)setModel:(_25DataModel *)model {
     _model = model;
     
-    self.headImageView.image = [UIImage imageNamed:@"AppIcon"];
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:model.iconUri] placeholderImage:[UIImage imageNamed:@"AppIcon"]];
+    
     self.nameLabel.text = model.title;
     self.contentLabel.text = @"内容";
     

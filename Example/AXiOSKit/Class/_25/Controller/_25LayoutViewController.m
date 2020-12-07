@@ -31,6 +31,9 @@
     [self.dataArray removeAllObjects];
     for (NSInteger index=0; index<30; index++) {
         _25DataModel *model = [[_25DataModel alloc]init];
+        
+      NSString *uri =[NSString stringWithFormat:@"https://via.placeholder.com/200x200?text=icon%ld",index];
+        model.iconUri = [uri ax_toEncoding];
         model.title = [NSString stringWithFormat:@"insex = %ld",index];
         [self.dataArray addObject:model];
     }
@@ -157,4 +160,5 @@
     }
     return _dataArray;
 }
+
 @end
