@@ -46,6 +46,7 @@
     
     //    self.itemSize = CGSizeMake(self.collectionView.bounds.size.width/4.0-40, 50); //item尺寸
     self.scrollDirection =UICollectionViewScrollDirectionVertical;//滚动方向
+//    self.scrollDirection =UICollectionViewScrollDirectionHorizontal;//滚动方向
     /// ios10 api
 //    self.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize;
     

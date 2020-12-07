@@ -83,7 +83,6 @@
 		211227382573340100B6ECC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		211227392573340100B6ECC8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		2112273A2573340100B6ECC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
-		2112273B2573340100B6ECC8 /* Pods_AXiOSKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEF075763C5B6B190368E8B /* Pods_AXiOSKit_Example.framework */; };
 		2112273D2573340100B6ECC8 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB8F254003D900C89B72 /* instruction.jpg */; };
 		2112273E2573340100B6ECC8 /* _21KVOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB3D254003D900C89B72 /* _21KVOViewController.xib */; };
 		2112273F2573340100B6ECC8 /* _01ThemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB51254003D900C89B72 /* _01ThemeViewController.xib */; };
@@ -248,6 +247,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		649FC6E54C7FDB39513CF83F /* Pods_AXiOSKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F139874B823BC35CFCBEE26 /* Pods_AXiOSKit_Tests.framework */; };
+		C8A926E966641010F70D09E1 /* Pods_AXiOSKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEF075763C5B6B190368E8B /* Pods_AXiOSKit_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -300,6 +300,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		20883E74347D42E8588C5640 /* Pods-AXiOSKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		21022AE42547A80D0055E0B7 /* AppDelegateAppearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateAppearance.h; sourceTree = "<group>"; };
 		21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateAppearance.m; sourceTree = "<group>"; };
 		21022AEA2547A9AF0055E0B7 /* AppDelegateWX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateWX.h; sourceTree = "<group>"; };
@@ -505,9 +506,7 @@
 		21E306B1255EAA1100D17A8B /* _29AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _29AudioViewController.h; sourceTree = "<group>"; };
 		21E306B2255EAA1100D17A8B /* _29AudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _29AudioViewController.m; sourceTree = "<group>"; };
 		21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _29AudioViewController.xib; sourceTree = "<group>"; };
-		2E8212D320B7D6003E79BB8A /* Pods-AXiOSKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		38516BC93098DB0B54BCAE78 /* Pods-AXiOSKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		3F85C681A5FA543AF8599754 /* Pods-AXiOSKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5F139874B823BC35CFCBEE26 /* Pods_AXiOSKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* AXiOSKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -525,6 +524,7 @@
 		983399C272C4CD60D38F80E6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A226867FD6E952B6FB555BC2 /* AXiOSKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AXiOSKit.podspec; path = ../AXiOSKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BCEF075763C5B6B190368E8B /* Pods_AXiOSKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA583CDC9FC82946D5A87CE6 /* Pods-AXiOSKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F39CD1ACABCAF8BD2ACB48AE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -543,7 +543,6 @@
 				211227382573340100B6ECC8 /* CoreGraphics.framework in Frameworks */,
 				211227392573340100B6ECC8 /* UIKit.framework in Frameworks */,
 				2112273A2573340100B6ECC8 /* Foundation.framework in Frameworks */,
-				2112273B2573340100B6ECC8 /* Pods_AXiOSKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +561,7 @@
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
 				17D5233E9CD5B814CAFCE82A /* Pods_AXiOSKit_Example.framework in Frameworks */,
+				C8A926E966641010F70D09E1 /* Pods_AXiOSKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1125,10 +1125,10 @@
 		F5E308BDECF9B32A8B7865CD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3F85C681A5FA543AF8599754 /* Pods-AXiOSKit_Example.debug.xcconfig */,
-				2E8212D320B7D6003E79BB8A /* Pods-AXiOSKit_Example.release.xcconfig */,
 				820713A8EC185B7486E3FADF /* Pods-AXiOSKit_Tests.debug.xcconfig */,
 				38516BC93098DB0B54BCAE78 /* Pods-AXiOSKit_Tests.release.xcconfig */,
+				EA583CDC9FC82946D5A87CE6 /* Pods-AXiOSKit_Example.debug.xcconfig */,
+				20883E74347D42E8588C5640 /* Pods-AXiOSKit_Example.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1157,11 +1157,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 211227682573340100B6ECC8 /* Build configuration list for PBXNativeTarget "AXiOSKit_Example_Env_1" */;
 			buildPhases = (
-				211226F12573340100B6ECC8 /* [CP] Check Pods Manifest.lock */,
 				211226F22573340100B6ECC8 /* Sources */,
 				211227372573340100B6ECC8 /* Frameworks */,
 				2112273C2573340100B6ECC8 /* Resources */,
-				211227642573340100B6ECC8 /* [CP] Embed Pods Frameworks */,
 				211227652573340100B6ECC8 /* Embed App Extensions */,
 				211227672573340100B6ECC8 /* ShellScript */,
 			);
@@ -1411,134 +1409,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		211226F12573340100B6ECC8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AXiOSKit_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		211227642573340100B6ECC8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
-				"${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework",
-				"${BUILT_PRODUCTS_DIR}/Bagel/Bagel.framework",
-				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
-				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
-				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
-				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
-				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
-				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
-				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
-				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
-				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
-				"${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework",
-				"${PODS_ROOT}/LookinServer/LookinServer.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework",
-				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
-				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/MLeaksFinder/MLeaksFinder.framework",
-				"${BUILT_PRODUCTS_DIR}/MMKV/MMKV.framework",
-				"${BUILT_PRODUCTS_DIR}/MMKVCore/MMKVCore.framework",
-				"${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/NullSafe/NullSafe.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/RMQClient/RMQClient.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImageFLPlugin/SDWebImageFLPlugin.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImageWebPCoder/SDWebImageWebPCoder.framework",
-				"${BUILT_PRODUCTS_DIR}/SQLiteRepairKit/sqliterk.framework",
-				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
-				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
-				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
-				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
-				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
-				"${BUILT_PRODUCTS_DIR}/fishhook/fishhook.framework",
-				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXiOSKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AvoidCrash.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bagel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDebugTool.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LookinServer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGJRouter.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLeaksFinder.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKV.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKVCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MQTTClient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NullSafe.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMQClient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageFLPlugin.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageWebPCoder.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqliterk.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/fishhook.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		211227672573340100B6ECC8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2043,7 +1913,6 @@
 		};
 		211227692573340100B6ECC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F85C681A5FA543AF8599754 /* Pods-AXiOSKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_evn_1;
 				CLANG_ENABLE_MODULES = YES;
@@ -2072,7 +1941,6 @@
 		};
 		2112276A2573340100B6ECC8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E8212D320B7D6003E79BB8A /* Pods-AXiOSKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_evn_1;
 				CLANG_ENABLE_MODULES = YES;
@@ -2279,7 +2147,7 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F85C681A5FA543AF8599754 /* Pods-AXiOSKit_Example.debug.xcconfig */;
+			baseConfigurationReference = EA583CDC9FC82946D5A87CE6 /* Pods-AXiOSKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -2301,7 +2169,7 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E8212D320B7D6003E79BB8A /* Pods-AXiOSKit_Example.release.xcconfig */;
+			baseConfigurationReference = 20883E74347D42E8588C5640 /* Pods-AXiOSKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

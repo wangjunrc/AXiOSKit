@@ -6,11 +6,11 @@
 //  Copyright © 2016年 liuweixing. All rights reserved.
 //
 
-#import "DataBase.h"
+#import "AXDataBase.h"
 #if __has_include("FMDB.h")
 
 #import "DBStatements.h"
-@interface DataBase()
+@interface AXDataBase()
 
 /**
  *
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation DataBase
+@implementation AXDataBase
 
 /**
  *  初始化方法

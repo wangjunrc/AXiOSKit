@@ -161,7 +161,7 @@
 #import "AXNetworkManager.h"
 #import "AXAliPayManager.h"
 #import "UIScrollView+AXEmptyDataSet.h"
-#import "DataBase.h"
+#import "AXDataBase.h"
 #import "DBStatements.h"
 #import "NSObject+FBKVOControllerAX.h"
 #import "LameHelper.h"

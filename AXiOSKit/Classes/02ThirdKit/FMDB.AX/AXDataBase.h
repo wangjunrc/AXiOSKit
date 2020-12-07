@@ -16,7 +16,7 @@
  线程安全的
  */
 
-@interface DataBase : NSObject
+@interface AXDataBase : NSObject
 
 
 /**
