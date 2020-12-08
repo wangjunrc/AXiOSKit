@@ -12,7 +12,11 @@
 #import <AXiOSKit/AXiOSKit.h>
 #import "TZImagePickerController.h"
 #import <MJExtension/MJExtension.h>
+#import "AXiOSKit_Example-Swift.h"
+#import "GRDB-Swift.h"
 
+//@import GRDB;
+#import <GRDB/GRDB-Swift.h>
 @interface _06WCDBViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *tf;
 @property (weak, nonatomic) IBOutlet UITextField *tf2;
@@ -25,6 +29,7 @@
     [super viewDidLoad];
     self.tf.placeholder = @"输入name";
     self.tf2.placeholder = @"id 为int";
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {

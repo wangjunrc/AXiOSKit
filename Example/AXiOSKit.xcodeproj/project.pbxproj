@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17D5233E9CD5B814CAFCE82A /* Pods_AXiOSKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEF075763C5B6B190368E8B /* Pods_AXiOSKit_Example.framework */; };
 		21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */; };
 		21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */; };
 		2111E04A257377100016004D /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898E9B2541AD6900876524 /* ShareViewController.m */; };
@@ -235,8 +234,12 @@
 		21CC7C78255FA71900E7B506 /* _13WeImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C77255FA71900E7B506 /* _13WeImageTableViewController.m */; };
 		21CC815C257E004A0062ACE5 /* _25DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC815B257E004A0062ACE5 /* _25DataModel.m */; };
 		21CC8169257E00840062ACE5 /* _25Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC8168257E00840062ACE5 /* _25Layout.m */; };
+		21D61EEC257F106E0059201A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* Test.swift */; };
+		21D61EED257F106E0059201A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* Test.swift */; };
 		21E306B4255EAA1100D17A8B /* _29AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E306B2255EAA1100D17A8B /* _29AudioViewController.m */; };
 		21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
+		22B101711E80BB6789BBCAF1 /* Pods_AXiOSKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16B496756062CE8BD2DCFE /* Pods_AXiOSKit_Example.framework */; };
+		5E6043E71FBCDD83C71D8C6A /* Pods_AXiOSKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A88A5D3295EADFD9289E18 /* Pods_AXiOSKit_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -246,8 +249,6 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		649FC6E54C7FDB39513CF83F /* Pods_AXiOSKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F139874B823BC35CFCBEE26 /* Pods_AXiOSKit_Tests.framework */; };
-		C8A926E966641010F70D09E1 /* Pods_AXiOSKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEF075763C5B6B190368E8B /* Pods_AXiOSKit_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -502,12 +503,14 @@
 		21CC815B257E004A0062ACE5 /* _25DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25DataModel.m; sourceTree = "<group>"; };
 		21CC8167257E00840062ACE5 /* _25Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25Layout.h; sourceTree = "<group>"; };
 		21CC8168257E00840062ACE5 /* _25Layout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25Layout.m; sourceTree = "<group>"; };
+		21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		21D61EEA257F106D0059201A /* AXiOSKit_Example_Env_1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit_Example_Env_1-Bridging-Header.h"; sourceTree = "<group>"; };
+		21D61EEB257F106E0059201A /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		21D83B3A255A28BE00695C28 /* rac.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = rac.md; sourceTree = "<group>"; };
 		21E306B1255EAA1100D17A8B /* _29AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _29AudioViewController.h; sourceTree = "<group>"; };
 		21E306B2255EAA1100D17A8B /* _29AudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _29AudioViewController.m; sourceTree = "<group>"; };
 		21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _29AudioViewController.xib; sourceTree = "<group>"; };
 		38516BC93098DB0B54BCAE78 /* Pods-AXiOSKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		5F139874B823BC35CFCBEE26 /* Pods_AXiOSKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* AXiOSKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -522,8 +525,9 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		820713A8EC185B7486E3FADF /* Pods-AXiOSKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		983399C272C4CD60D38F80E6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		9B16B496756062CE8BD2DCFE /* Pods_AXiOSKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A226867FD6E952B6FB555BC2 /* AXiOSKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AXiOSKit.podspec; path = ../AXiOSKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BCEF075763C5B6B190368E8B /* Pods_AXiOSKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7A88A5D3295EADFD9289E18 /* Pods_AXiOSKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA583CDC9FC82946D5A87CE6 /* Pods-AXiOSKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F39CD1ACABCAF8BD2ACB48AE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -560,8 +564,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				17D5233E9CD5B814CAFCE82A /* Pods_AXiOSKit_Example.framework in Frameworks */,
-				C8A926E966641010F70D09E1 /* Pods_AXiOSKit_Example.framework in Frameworks */,
+				22B101711E80BB6789BBCAF1 /* Pods_AXiOSKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,7 +575,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				649FC6E54C7FDB39513CF83F /* Pods_AXiOSKit_Tests.framework in Frameworks */,
+				5E6043E71FBCDD83C71D8C6A /* Pods_AXiOSKit_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1047,8 +1050,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				BCEF075763C5B6B190368E8B /* Pods_AXiOSKit_Example.framework */,
-				5F139874B823BC35CFCBEE26 /* Pods_AXiOSKit_Tests.framework */,
+				9B16B496756062CE8BD2DCFE /* Pods_AXiOSKit_Example.framework */,
+				E7A88A5D3295EADFD9289E18 /* Pods_AXiOSKit_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1087,7 +1090,10 @@
 				6003F599195388D20070C39A /* main.m */,
 				213BCBE0254003DA00C89B72 /* SceneDelegate.h */,
 				213BCB34254003D900C89B72 /* SceneDelegate.m */,
+				21D61EEB257F106E0059201A /* Test.swift */,
 				213BCB35254003D900C89B72 /* Settings.bundle */,
+				21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */,
+				21D61EEA257F106D0059201A /* AXiOSKit_Example_Env_1-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1247,6 +1253,7 @@
 					};
 					211226EE2573340100B6ECC8 = {
 						DevelopmentTeam = 2BZJZ65HL3;
+						LastSwiftMigration = 1220;
 					};
 					21898E972541AD6900876524 = {
 						CreatedOnToolsVersion = 12.1;
@@ -1506,6 +1513,7 @@
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
+				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
@@ -1554,6 +1562,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
@@ -1646,6 +1655,7 @@
 				211227162573340100B6ECC8 /* _19ScrollContentViewController.m in Sources */,
 				211227172573340100B6ECC8 /* MyActivity.m in Sources */,
 				211227182573340100B6ECC8 /* _00TableViewCell.m in Sources */,
+				21D61EED257F106E0059201A /* Test.swift in Sources */,
 				211227192573340100B6ECC8 /* RouterManager.m in Sources */,
 				2112271A2573340100B6ECC8 /* _28LocalSocketClientViewController.m in Sources */,
 				2112271B2573340100B6ECC8 /* AppDelegateWCDB.mm in Sources */,
@@ -1710,6 +1720,7 @@
 				213BCBF3254003DB00C89B72 /* CopyActivity.m in Sources */,
 				213BCC37254003DB00C89B72 /* AXUserInfo.mm in Sources */,
 				213BCC35254003DB00C89B72 /* NSObject+Load.m in Sources */,
+				21D61EEC257F106E0059201A /* Test.swift in Sources */,
 				213BCC36254003DB00C89B72 /* AXUserInfoDao.mm in Sources */,
 				21799D64255CD33700754A8B /* AXRecordAudioConfig.m in Sources */,
 				213BCBFB254003DB00C89B72 /* _24NoteViewController.m in Sources */,
@@ -1933,8 +1944,9 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AXiOSKit/AXiOSKit_Example_Env_1-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1954,7 +1966,8 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "AXiOSKit/AXiOSKit_Example_Env_1-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -2090,7 +2103,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2138,7 +2151,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -2152,6 +2165,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 3;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
@@ -2161,8 +2175,9 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AXiOSKit/AXiOSKit_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2174,6 +2189,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 3;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
@@ -2183,7 +2199,8 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "AXiOSKit/AXiOSKit_Example-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -2192,6 +2209,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 820713A8EC185B7486E3FADF /* Pods-AXiOSKit_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -2217,6 +2235,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38516BC93098DB0B54BCAE78 /* Pods-AXiOSKit_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",

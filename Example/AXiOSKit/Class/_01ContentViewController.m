@@ -19,6 +19,7 @@
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import <UserNotifications/UserNotifications.h>
 #import <GDataXML_HTML/GDataXMLNode.h>
+#import "AXiOSKit_Example-Swift.h"
 
 @interface _01ContentViewController ()<UITextViewDelegate>
 
@@ -45,7 +46,7 @@
     [super viewDidLoad];
     self.title = @"02";
     self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
-    
+    [[Test alloc]init];
     self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
         
         [self _WiFi];

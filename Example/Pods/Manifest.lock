@@ -47,6 +47,9 @@ PODS:
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - GDataXML-HTML (1.4.1)
+  - GRDB.swift (5.2.0):
+    - GRDB.swift/standard (= 5.2.0)
+  - GRDB.swift/standard (5.2.0)
   - IGListDiffKit (4.0.0)
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
@@ -184,6 +187,7 @@ DEPENDENCIES:
   - CocoaAsyncSocket
   - fishhook
   - GDataXML-HTML (~> 1.4.1)
+  - GRDB.swift
   - IGListKit
   - IQKeyboardManager
   - JJException
@@ -222,6 +226,7 @@ SPEC REPOS:
     - FLAnimatedImage
     - FMDB
     - GDataXML-HTML
+    - GRDB.swift
     - IGListDiffKit
     - IGListKit
     - IQKeyboardManager
@@ -274,6 +279,7 @@ SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GDataXML-HTML: a4f11079b48d9fe96ff1fe478943a317185227e2
+  GRDB.swift: f44f61fd032e176e3aadb1f70e15656dc50ca018
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
@@ -308,6 +314,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: af72ee3765caedf1456870fbf9a3c8a73d4172f9
+PODFILE CHECKSUM: c6f24f3b85178bc126685f60bd26373bdcb9f818
 
 COCOAPODS: 1.10.0
