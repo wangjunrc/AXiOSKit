@@ -255,7 +255,21 @@
     return topView;
 }
 
-- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
+//- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
+//
+//    if ([[URL scheme] isEqualToString:@"license"]) {
+//
+//        NSString *titleString = [NSString stringWithFormat:@"你点击了第一个文字:%@",[URL host]];
+//
+//        NSLog(@"%@",titleString);
+//
+//        return NO;
+//
+//    }
+//    return YES;
+//
+//}
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction {
     
     if ([[URL scheme] isEqualToString:@"license"]) {
         
@@ -267,8 +281,8 @@
         
     }
     return YES;
-    
 }
+
 
 -(UIView *)_p02AlternateIconName:(UIView *)topView {
     
