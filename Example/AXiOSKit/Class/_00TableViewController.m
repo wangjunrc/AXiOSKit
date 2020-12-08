@@ -529,8 +529,8 @@ void mySLog(NSString *format, ...)
                     @"action": ^{
                         _01ContentViewController *vc =
                         [[_01ContentViewController alloc] init];
-                        //                        [self.navigationController pushViewController:vc animated:YES];
-                        [self ax_showVC:vc];
+//                        [self ax_showVC:vc];
+                        [self ax_pushVC:vc];
                     },
                 },
                 @{

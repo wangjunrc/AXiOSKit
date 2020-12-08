@@ -238,6 +238,8 @@
 		21D61EED257F106E0059201A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* Test.swift */; };
 		21E306B4255EAA1100D17A8B /* _29AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E306B2255EAA1100D17A8B /* _29AudioViewController.m */; };
 		21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
+		21E5C8A9257F6BF8002A4D59 /* _00BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */; };
+		21E5C8AA257F6BF8002A4D59 /* _00BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */; };
 		22B101711E80BB6789BBCAF1 /* Pods_AXiOSKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16B496756062CE8BD2DCFE /* Pods_AXiOSKit_Example.framework */; };
 		5E6043E71FBCDD83C71D8C6A /* Pods_AXiOSKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A88A5D3295EADFD9289E18 /* Pods_AXiOSKit_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -510,6 +512,8 @@
 		21E306B1255EAA1100D17A8B /* _29AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _29AudioViewController.h; sourceTree = "<group>"; };
 		21E306B2255EAA1100D17A8B /* _29AudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _29AudioViewController.m; sourceTree = "<group>"; };
 		21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _29AudioViewController.xib; sourceTree = "<group>"; };
+		21E5C8A7257F6BF8002A4D59 /* _00BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00BaseViewController.h; sourceTree = "<group>"; };
+		21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00BaseViewController.m; sourceTree = "<group>"; };
 		38516BC93098DB0B54BCAE78 /* Pods-AXiOSKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* AXiOSKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -593,6 +597,8 @@
 		213BCB36254003D900C89B72 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				21E5C8A7257F6BF8002A4D59 /* _00BaseViewController.h */,
+				21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */,
 				213BCB97254003DA00C89B72 /* _00Module */,
 				213BCB7E254003D900C89B72 /* _00TableViewCell.h */,
 				213BCB52254003D900C89B72 /* _00TableViewCell.m */,
@@ -1628,6 +1634,7 @@
 				211226FB2573340100B6ECC8 /* _01ThemeViewController.m in Sources */,
 				211226FC2573340100B6ECC8 /* _14TFViewController.m in Sources */,
 				211226FD2573340100B6ECC8 /* _30TimeLineModel.m in Sources */,
+				21E5C8AA257F6BF8002A4D59 /* _00BaseViewController.m in Sources */,
 				211226FE2573340100B6ECC8 /* LVieoView.m in Sources */,
 				211226FF2573340100B6ECC8 /* _26RMQClientViewController.m in Sources */,
 				211227002573340100B6ECC8 /* _23FullViewController.m in Sources */,
@@ -1768,6 +1775,7 @@
 				213BCC0D254003DB00C89B72 /* Person.m in Sources */,
 				213BCC04254003DB00C89B72 /* _00TableViewController.m in Sources */,
 				21430B02256C9D4300CB8EBC /* _20TimeLineContentCell.m in Sources */,
+				21E5C8A9257F6BF8002A4D59 /* _00BaseViewController.m in Sources */,
 				213BCC14254003DB00C89B72 /* _09AFNViewController.m in Sources */,
 				213BCC2F254003DB00C89B72 /* ChatMessageModel.m in Sources */,
 				213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */,

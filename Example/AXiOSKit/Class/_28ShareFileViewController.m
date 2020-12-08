@@ -23,170 +23,235 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    [self _loginTest];
+    
+    //    MASViewAttribute *bottomAttribute = self.bottomAttribute;
+    //
+    //    __weak typeof(self) weakSelf = self;
+    //    bottomAttribute = [self _p00ButtonTopView:bottomAttribute title:@"系统分享,自定义按钮,可以分享图片" handler:^{
+    //        __strong typeof(weakSelf) strongSelf = weakSelf;
+    //        [strongSelf _share0];
+    //    }];
+    //
+    //    bottomAttribute = [self _p00ButtonTopView:bottomAttribute title:@"UIDocumentInteractionController" handler:^{
+    //        __strong typeof(weakSelf) strongSelf = weakSelf;
+    //        [strongSelf _share1];
+    //    }];
+    //
+    //    bottomAttribute = [self _p00ButtonTopView:bottomAttribute title:@"UIDocumentInteractionController-2" handler:^{
+    //        __strong typeof(weakSelf) strongSelf = weakSelf;
+    //        [strongSelf createXLSFile];
+    //    }];
+    //
+    //    bottomAttribute = [self _p00ButtonTopView:bottomAttribute title:@"local socket-服务端" handler:^{
+    //        __strong typeof(weakSelf) strongSelf = weakSelf;
+    //        [strongSelf _share2];
+    //    }];
+    
+    
+    [self _p00ButtonTitle:@"系统分享,自定义按钮,可以分享图片" handler:^{
+        
+    }];
+    [self _p00ButtonTitle:@"UIDocumentInteractionController" handler:^{
+        
+    }];
+    [self _p00ButtonTitle:@"UIDocumentInteractionController-2" handler:^{
+        
+    }];
+    [self _p00ButtonTitle:@"local socket-服务端" handler:^{
+        
+    }];
+    
+    // 这里放最后一个view的底部
+    [self _loadBottomAttribute];
+}
+
+-(void)_share0 {
+    
+    MyActivity *item1 = [[MyActivity alloc] init];
+    CopyActivity *item2 = [[CopyActivity alloc] init];
+    NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/share2.xlsx" ofType:nil];
+    if (!url) {
+        [self ax_showAlertByTitle:@"URL不存在"];
+        return;;
+    }
+    NSURL *pdfURL=[NSURL fileURLWithPath:url];
+    
+    // 1、设置分享的内容，并将内容添加到数组中
+    //            NSArray *activityItemsArray = @[@"A"];
+    NSArray *activityItemsArray = @[pdfURL];
+    
+    NSArray *activityArray = @[item1, item2];
+    
+    // 2、初始化控制器，添加分享内容至控制器
+    UIActivityViewController *activityVC =
+    [[UIActivityViewController alloc]
+     initWithActivityItems:activityItemsArray
+     applicationActivities:activityArray];
+    if (@available(iOS 13.0, *)) {
+        activityVC.modalInPresentation = YES;
+    } else {
+        // Fallback on earlier versions
+    }
+    
+    // ios8.0 之后用此方法回调
+    UIActivityViewControllerCompletionWithItemsHandler itemsBlock =
+    ^(UIActivityType __nullable activityType, BOOL completed,
+      NSArray *__nullable returnedItems,
+      NSError *__nullable activityError) {
+        NSLog(@"activityType == %@", activityType);
+        if (completed == YES) {
+            NSLog(@"completed");
+        } else {
+            NSLog(@"cancel");
+        }
+    };
+    activityVC.completionWithItemsHandler = itemsBlock;
+    
+    //不出现在活动项目
+    activityVC.excludedActivityTypes = @[
+        UIActivityTypePrint, UIActivityTypeCopyToPasteboard,
+        UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
+        @"com.ax.kit"
+    ];
+    
+    // 4、调用控制器
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 
--(void)_loginTest {
+-(void)_share1 {
     
-    UIView *topView = self.view;
-    
-    {
-        UIButton *btn1 = [[UIButton alloc]init];
-        [btn1 setTitle:@"系统分享,自定义按钮,可以分享图片" forState:UIControlStateNormal];
-        btn1.backgroundColor = UIColor.orangeColor;
-        [self.view addSubview:btn1];
-        [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.top.mas_equalTo(30);
-            
-        }];
-        __weak typeof(self) weakSelf = self;
-        [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-            __strong typeof(weakSelf) self = weakSelf;
-            
-            MyActivity *item1 = [[MyActivity alloc] init];
-            CopyActivity *item2 = [[CopyActivity alloc] init];
-            
-//            NSString *url = [[NSBundle mainBundle] pathForResource:@"App" ofType:@"pdf"];
-            NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/share2.xlsx" ofType:nil];
-            if (!url) {
-                [self ax_showAlertByTitle:@"URL不存在"];
-                return;;
-            }
-            NSURL *pdfURL=[NSURL fileURLWithPath:url];
-            
-            // 1、设置分享的内容，并将内容添加到数组中
-//            NSArray *activityItemsArray = @[@"A"];
-            NSArray *activityItemsArray = @[pdfURL];
-            
-            NSArray *activityArray = @[item1, item2];
-            
-            // 2、初始化控制器，添加分享内容至控制器
-            UIActivityViewController *activityVC =
-            [[UIActivityViewController alloc]
-             initWithActivityItems:activityItemsArray
-             applicationActivities:activityArray];
-            if (@available(iOS 13.0, *)) {
-                activityVC.modalInPresentation = YES;
-            } else {
-                // Fallback on earlier versions
-            }
-            
-            // ios8.0 之后用此方法回调
-            UIActivityViewControllerCompletionWithItemsHandler itemsBlock =
-            ^(UIActivityType __nullable activityType, BOOL completed,
-              NSArray *__nullable returnedItems,
-              NSError *__nullable activityError) {
-                NSLog(@"activityType == %@", activityType);
-                if (completed == YES) {
-                    NSLog(@"completed");
-                } else {
-                    NSLog(@"cancel");
-                }
-            };
-            activityVC.completionWithItemsHandler = itemsBlock;
-            
-            //不出现在活动项目
-            activityVC.excludedActivityTypes = @[
-                UIActivityTypePrint, UIActivityTypeCopyToPasteboard,
-                UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,
-                @"com.ax.kit"
-            ];
-            
-            // 4、调用控制器
-            [self presentViewController:activityVC animated:YES completion:nil];
-        }];
-        topView = btn1;
-    }
-    {
-        UIButton *btn1 = [[UIButton alloc]init];
-        [btn1 setTitle:@"UIDocumentInteractionController" forState:UIControlStateNormal];
-        btn1.backgroundColor = UIColor.orangeColor;
-        [self.view addSubview:btn1];
-        [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(30);
-            make.top.equalTo(topView.mas_bottom).mas_equalTo(30);
-        }];
-        __weak typeof(self) weakSelf = self;
-        [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-            __strong typeof(weakSelf) self = weakSelf;
-//            NSString *url = [[NSBundle mainBundle] pathForResource:@"App" ofType:@"pdf"];
-            NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/share2.xlsx" ofType:nil];
-            self.documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:url]];
-            [self.documentController presentOptionsMenuFromRect:self.view.bounds inView:self.view animated:YES];
-        }];
-        topView = btn1;
-    }
-    {
-        UIButton *btn1 = [[UIButton alloc]init];
-        [btn1 setTitle:@"UIDocumentInteractionController 预览" forState:UIControlStateNormal];
-        btn1.backgroundColor = UIColor.orangeColor;
-        [self.view addSubview:btn1];
-        [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(30);
-            make.top.equalTo(topView.mas_bottom).mas_equalTo(30);
-        }];
-        __weak typeof(self) weakSelf = self;
-        [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-            __strong typeof(weakSelf) self = weakSelf;
-//            NSString *url = [[NSBundle mainBundle] pathForResource:@"App" ofType:@"pdf"];
-            NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/share2.xlsx" ofType:nil];
-            if (!url) {
-                [self ax_showAlertByTitle:@"URL不存在"];
-            }else{
-                
-                self.documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:url]];
-                self.documentController.delegate = self;
-                //直接预览
-                [self.documentController presentPreviewAnimated:YES];
-            }
-              
-        }];
-        topView = btn1;
-    }
-    
-    {
-        ///一个App在本地的端口进行TCP的bind和listen，
-        ///另外一个App在本地同一个端口进行connect，这样就建立了一个正常的TCP连接
-        UIButton *btn1 = [[UIButton alloc]init];
-        [btn1 setTitle:@"local socket-服务端" forState:UIControlStateNormal];
-        btn1.backgroundColor = UIColor.orangeColor;
-        [self.view addSubview:btn1];
-        [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(30);
-            make.top.equalTo(topView.mas_bottom).mas_equalTo(30);
-        }];
-        __weak typeof(self) weakSelf = self;
-        [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-            __strong typeof(weakSelf) self = weakSelf;
-            _28LocalSocketServiceViewController *vc = [_28LocalSocketServiceViewController ax_init];
-            [self ax_pushVC:vc];
-            
-        }];
-        topView = btn1;
-    }
-    {
-        ///一个App在本地的端口进行TCP的bind和listen，
-        ///另外一个App在本地同一个端口进行connect，这样就建立了一个正常的TCP连接
-        UIButton *btn1 = [[UIButton alloc]init];
-        [btn1 setTitle:@"local socket-客户端" forState:UIControlStateNormal];
-        btn1.backgroundColor = UIColor.orangeColor;
-        [self.view addSubview:btn1];
-        [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(30);
-            make.top.equalTo(topView.mas_bottom).mas_equalTo(30);
-        }];
-        __weak typeof(self) weakSelf = self;
-        [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-            __strong typeof(weakSelf) self = weakSelf;
-            _28LocalSocketClientViewController *vc = [_28LocalSocketClientViewController ax_init];
-            [self ax_pushVC:vc];
-            
-        }];
-        topView = btn1;
-    }
+    NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/share2.xlsx" ofType:nil];
+    self.documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:url]];
+    [self.documentController presentOptionsMenuFromRect:self.view.bounds inView:self.view animated:YES];
     
 }
+-(void)_share2 {
+    _28LocalSocketServiceViewController *vc = [_28LocalSocketServiceViewController ax_init];
+    [self ax_pushVC:vc];
+}
+
+- (void)createXLSFile {
+    
+    // 创建存放XLS文件数据的数组
+    
+    NSMutableArray  *xlsDataMuArr = [[NSMutableArray alloc] init];
+    
+    // 第一行内容
+    
+    [xlsDataMuArr addObject:@"Time"];
+    
+    [xlsDataMuArr addObject:@"Address"];
+    
+    [xlsDataMuArr addObject:@"Person"];
+    
+    [xlsDataMuArr addObject:@"Reason"];
+    
+    [xlsDataMuArr addObject:@"Process"];
+    
+    [xlsDataMuArr addObject:@"Result"];
+    
+    // 10行数据
+    
+    for (int i = 0; i < 10; i ++) {
+        
+        [xlsDataMuArr addObject:@"下班时间"];
+        
+        [xlsDataMuArr addObject:@"大连"];
+        
+        [xlsDataMuArr addObject:@"弄啪波勒"];
+        
+        [xlsDataMuArr addObject:@"哦"];
+        
+        [xlsDataMuArr addObject:@"很酷"];
+        
+        [xlsDataMuArr addObject:@"又很帅气"];
+        
+    }
+    
+    // 把数组拼接成字符串，连接符是 \t（功能同键盘上的tab键）
+    
+    NSString *fileContent = [xlsDataMuArr componentsJoinedByString:@"\t"];
+    
+    // 字符串转换为可变字符串，方便改变某些字符
+    
+    NSMutableString *muStr = [fileContent mutableCopy];
+    
+    // 新建一个可变数组，存储每行最后一个\t的下标（以便改为\n）
+    
+    NSMutableArray *subMuArr = [NSMutableArray array];
+    
+    for (int i = 0; i < muStr.length; i ++) {
+        
+        NSRange range = [muStr rangeOfString:@"\t" options:NSBackwardsSearch range:NSMakeRange(i, 1)];
+        
+        if (range.length == 1) {
+            
+            [subMuArr addObject:@(range.location)];
+            
+        }
+        
+    }
+    
+    // 替换末尾\t
+    
+    for (NSUInteger i = 0; i < subMuArr.count; i ++) {
+        
+#warning  下面的6是列数，根据需求修改
+        
+        if ( i > 0 && (i%6 == 0) ) {
+            
+            [muStr replaceCharactersInRange:NSMakeRange([[subMuArr objectAtIndex:i-1] intValue], 1) withString:@"\n"];
+            
+        }
+        
+    }
+    
+    // 文件管理器
+    
+    NSFileManager *fileManager = [[NSFileManager alloc]init];
+    
+    //使用UTF16才能显示汉字；如果显示为#######是因为格子宽度不够，拉开即可
+    
+    NSData *fileData = [muStr dataUsingEncoding:NSUTF16StringEncoding];
+    
+    // 文件路径
+    
+    NSString *path = NSHomeDirectory();
+    
+    NSString *filePath = [path stringByAppendingPathComponent:@"/Documents/export.xlsx"];
+    
+    AXLoger(@"文件路径：\n%@",filePath);
+    
+    // 生成xls文件
+    
+    [fileManager createFileAtPath:filePath contents:fileData attributes:nil];
+    
+    
+    // 调用safari分享功能将文件分享出去
+    
+    UIDocumentInteractionController *documentIc = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:filePath]];
+    
+    // 记得要强引用UIDocumentInteractionController,否则控制器释放后再次点击分享程序会崩溃
+    
+    self.documentController = documentIc;
+    
+    // 如果需要其他safari分享的更多交互,可以设置代理
+    
+    documentIc.delegate = self;
+    
+    // 设置分享显示的矩形框
+    
+    CGRect rect = CGRectMake(0, 0, 300, 300);
+    
+    [documentIc presentOpenInMenuFromRect:rect inView:self.view animated:YES];
+    
+    [documentIc presentPreviewAnimated:YES];
+    
+}
+
+
+
 
 #pragma mark - UIDocumentInteractionControllerDelegate
 

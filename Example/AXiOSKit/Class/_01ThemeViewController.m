@@ -30,65 +30,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
+    self.containerView.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
     
-//
-//    NSLog(@"isPresented == %d",self.navigationController && [self.navigationController.viewControllers.firstObject isEqual:self]);
-//
-    
-//    !self.navigationController &&
-//    ![self.navigationController.viewControllers.firstObject isEqual:strongSelf.viewController]
-    ;
-    
-//    self.presentationController; _UIPageSheetPresentationController pr
-    /// _UIFullscreenPresentationController
-   
-//   BOOL is2= [self.presentationController isKindOfClass:NSClassFromString(@"_UIPageSheetPresentationController")];
-//    NSLog(@"self.presentationController = %@ is2 %d",self.presentationController,is2);
-    
-     self.AXListener.isPushed(^{
-         NSLog(@"isPushed");
-     }).isPresented(^{
-         NSLog(@"isPresented");
-     });
-//
+    self.AXListener.isPushed(^{
+        NSLog(@"isPushed");
+    }).isPresented(^{
+        NSLog(@"isPresented");
+    });
     if (@available(iOS 13.0, *)) {
         AXLoger(@"模式>> %ld", ax_keyWindow().overrideUserInterfaceStyle);
     }
-    
     [self _initView];
 }
 
 -(void)_initView {
-    UIView *topView = self.view;
-    CGFloat all_width = 150;
-    CGFloat all_height = 50;
     
-    {
-        UIButton *btn = [[UIButton alloc] init];
-        [self.view addSubview:btn];
-        btn.frame = CGRectMake(0, 0, all_width, all_height);
-        btn.backgroundColor = UIColor.blueColor;
-        [btn ax_setTitleStateNormal:@"改变模式"];
-        btn.ax_top = topView.top + ax_status_bar_height();
-        btn.ax_left = topView.ax_left+50;
-        
-        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
-            
-            if (@available(iOS 13.0, *)) {
-                ax_keyWindow().overrideUserInterfaceStyle = (ax_keyWindow().overrideUserInterfaceStyle != UIUserInterfaceStyleDark )? UIUserInterfaceStyleDark : UIUserInterfaceStyleLight;
-            }
-        }];
-        
-        topView =btn;
-    }
+    CGFloat all_height = 50;
+    __weak typeof(self) weakSelf = self;
+    [self _p00ButtonTitle:@"改变模式" handler:^{
+        if (@available(iOS 13.0, *)) {
+            ax_keyWindow().overrideUserInterfaceStyle = (ax_keyWindow().overrideUserInterfaceStyle != UIUserInterfaceStyleDark )? UIUserInterfaceStyleDark : UIUserInterfaceStyleLight;
+        }
+    }];
     
     {
         
         UILabel *label = [[UILabel alloc] init];
-        [self.view addSubview:label];
-        label.frame = CGRectMake(0,0, all_width, all_height);
+        [self.containerView addSubview:label];
         label.backgroundColor = UIColor.blueColor;
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.left.mas_equalTo(10);
+            make.right.mas_equalTo(-10);
+        }];
+        self.bottomAttribute = label.mas_bottom;
         if (@available(iOS 13.0, *)) {
             NSString *text = @"暂无";
             switch (ax_keyWindow().overrideUserInterfaceStyle) {
@@ -112,94 +87,56 @@
         label.textColor = [UIColor ax_colorWithNormalStyle:UIColor.greenColor darkStyle:UIColor.systemRedColor];
         label.layer.cornerRadius = 5;
         label.layer.masksToBounds = YES;
-        
-        label.ax_top = topView.ax_bottom + 10;
-        label.ax_left = topView.ax_left;
         self.label = label;
-        topView =label;
     }
+    
     {
         
         UIImageView *imv = [[UIImageView alloc] init];
         imv.image =[UIImage imageNamed:@"ax_icon_weixin"];
-        [self.view addSubview:imv];
-        imv.frame = CGRectMake(0,0, all_height, all_height);
-        imv.ax_top = topView.ax_bottom + 10;
-        imv.ax_left = topView.ax_left;
-        topView =imv;
-    }
-    {
-        UIButton *btn = [[UIButton alloc] init];
-        [self.view addSubview:btn];
-        btn.frame = CGRectMake(0, 0, all_width, all_height);
-        btn.backgroundColor = UIColor.blueColor;
-        [btn ax_setTitleStateNormal:@"push"];
-        btn.ax_top = topView.ax_bottom + 10;
-        btn.ax_left = topView.ax_left;
-        __weak typeof(self) weakSelf = self;;
-        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            _01ThemeViewController *aa = [_01ThemeViewController ax_init];
-            [strongSelf ax_pushVC:aa];
-            
+        [self.containerView addSubview:imv];
+        [imv mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.width.height.mas_equalTo(all_height);
+            make.centerX.mas_equalTo(0);
         }];
-        topView =btn;
+        self.bottomAttribute = imv.mas_bottom;
     }
     
-    {
-        UIButton *btn = [[UIButton alloc] init];
-        [self.view addSubview:btn];
-        btn.frame = CGRectMake(0, 0, all_width, all_height);
-        btn.backgroundColor = UIColor.blueColor;
-        [btn ax_setTitleStateNormal:@"show"];
-        btn.ax_top = topView.ax_bottom + 10;
-        btn.ax_left = topView.ax_left;
-        __weak typeof(self) weakSelf = self;
-        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            _01ThemeViewController *aa = [_01ThemeViewController ax_init];
-            [strongSelf ax_showVC:aa];
-        }];
-        topView =btn;
-    }
-    {
-        UIButton *btn = [[UIButton alloc] init];
-        [self.view addSubview:btn];
-        btn.frame = CGRectMake(0, 0, all_width, all_height);
-        btn.backgroundColor = UIColor.blueColor;
-        [btn ax_setTitleStateNormal:@"Lookin_2D"];
-        btn.ax_top = topView.ax_bottom + 10;
-        btn.ax_left = topView.ax_left;
-        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_2D" object:nil];
+    
+    [self _p00ButtonTitle:@"push" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        _01ThemeViewController *aa = [_01ThemeViewController ax_init];
+        [strongSelf ax_pushVC:aa];
+    }];
+    
+    
+    [self _p00ButtonTitle:@"show" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        _01ThemeViewController *vc = [_01ThemeViewController ax_init];
+        [strongSelf ax_showVC:vc];
+    }];
+    
+    [self _p00ButtonTitle:@"Lookin_2D" handler:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_2D" object:nil];
+    }];
+    
+    [self _p00ButtonTitle:@"dismis 或者 pop" handler:^{
+        __strong typeof(weakSelf) self = weakSelf;
+        [self ax_haveNav:^(UINavigationController *nav) {
+            [self.navigationController popViewControllerAnimated:YES];
             
+        } isPushNav:^(UINavigationController *nav) {
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        } isPresentNav:^(UINavigationController *nav) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } noneNav:^{
+            [self dismissViewControllerAnimated:YES completion:nil];
         }];
-        topView =btn;
-    }
-    {
-        UIButton *btn = [[UIButton alloc] init];
-        [self.view addSubview:btn];
-        btn.frame = CGRectMake(0, 0, all_width, all_height);
-        btn.backgroundColor = UIColor.blueColor;
-        [btn ax_setTitleStateNormal:@"dismis 或者 pop "];
-        btn.ax_top = topView.ax_bottom + 10;
-        btn.ax_left = topView.ax_left;
-        __weak typeof(self) weakSelf = self;
-        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
-            __strong typeof(weakSelf) self = weakSelf;
-            [self ax_haveNav:^(UINavigationController *nav) {
-                [self.navigationController popViewControllerAnimated:YES];
-                
-            } isPushNav:^(UINavigationController *nav) {
-                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-            } isPresentNav:^(UINavigationController *nav) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-            } noneNav:^{
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }];
-        }];
-        topView =btn;
-    }
+    }];
+    
+    self.bottomAttribute = self.view.mas_bottom;
+    [self _loadBottomAttribute];
 }
 
 
