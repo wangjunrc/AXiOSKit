@@ -23,8 +23,6 @@
 #import <MJExtension/MJExtension.h>
 @interface _01ContentViewController ()<UITextViewDelegate>
 
-@property(nonatomic, strong) UIView *containerView;
-
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
 
 @property(nonatomic, strong) AXBiometryManager *manager;
@@ -46,78 +44,54 @@
     [super viewDidLoad];
     self.title = @"02";
     
-    
-    UIScrollView *scrollView = [UIScrollView.alloc init];
-    [self.view addSubview:scrollView];
-    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+    __weak typeof(self) weakSelf = self;
+    [self _p01UITextView_link];
+    [self _p01loginTest];
+    [self _p02AlternateIconName];
+    [self _p03LocationManager];
+    [self _p03wifi];
+    [self _p03textToImg];
+    [self _p04masron_uninstall];
+    [self _p05DateVC];
+    [self _p06per];
+    [self _p07bubbleImage];
+    [self _p08china];
+    [self _p09lineSpacing];
+    [self _p10flieExist];
+    [self _p11ButtonAllEvent];
+    [self _p12memoryUsage];
+    [self _p12memoryUsage2];
+    [self _p12memoryUsage3];
+    [self _p13MoreAlter];
+    [self _p14xmlToObj];
+    [self _p15NSBlockOperation];
+    [self _p16NSBlockOperation];
+    /// 会弹出 "想要查找并连接到本地网络上的设备" 弹窗
+    [self _p00ButtonTitle:@"NSProcessInfo" handler:^{
+        
+        NSString *uuid1 = [[NSProcessInfo processInfo] globallyUniqueString];
+        
+        NSLog(@"processInfoww = %@",[NSProcessInfo.processInfo mj_JSONObject] );
+        
+        NSLog(@"uuid1 = %@",uuid1);
+        NSLog(@"uuid2 = %@",[NSString ax_uuid]);
     }];
     
-    // 2.给scrollView添加一个containerView
-    UIView *containerView = [UIView.alloc init];
-    containerView.backgroundColor = UIColor.whiteColor;
-    self.containerView = containerView;
-    [scrollView addSubview:containerView];
-    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(scrollView);
-        make.width.equalTo(scrollView); // 需要设置宽度和scrollview宽度一样
+    [self _p00ButtonTitle:@"_01ContentViewController" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        _01ContentViewController *vc = [[_01ContentViewController alloc]init];
+        [strongSelf.navigationController pushViewController:vc animated:YES];
     }];
     
-    UIView *topView = containerView;
-    topView =  [self _p01UITextView_link:topView];
-    topView =  [self _p01loginTest:topView];
-    topView =  [self _p02AlternateIconName:topView];
-    topView =  [self _p03LocationManager:topView];
-    topView =  [self _p03wifi:topView];
-    topView =  [self _p03textToImg:topView];
-    topView =  [self _p04masron_uninstall:topView];
-    topView =  [self _p05DateVC:topView];
-    topView =  [self _p06per:topView];
-    topView =  [self _p07bubbleImage:topView];
-    topView =  [self _p08china:topView];
-    topView =  [self _p09lineSpacing:topView];
-    topView =  [self _p10flieExist:topView];
-    topView =  [self _p11ButtonAllEvent:topView];
-    topView =  [self _p12memoryUsage:topView];
-    topView =  [self _p12memoryUsage2:topView];
-    topView =  [self _p12memoryUsage3:topView];
-    topView =  [self _p13MoreAlter:topView];
-    topView =  [self _p14xmlToObj:topView];
-    topView =  [self _p15NSBlockOperation:topView];
-    topView =  [self _p16NSBlockOperation:topView];
-    topView =  [self _p17UUID:topView];
-    topView =  [self _18pushViewController:topView];
-    topView =  [self _18popToRoot:topView];
-    
-    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(topView.mas_bottom).mas_equalTo(100);// 这里放最后一个view的底部
+    [self _p00ButtonTitle:@"popToRootViewControllerAnimated" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.navigationController popToRootViewControllerAnimated:YES];
     }];
+    
+    [self _loadBottomAttribute];
     
 }
 
-
--(UIView *)_p00ButtonTopView:(UIView *)topView title:(NSString *)title handler:(void(^)(void))handler {
-    if (title.length==0) {
-        title = @"title";
-    }
-    UIButton *btn = [[UIButton alloc] init];
-    [self.containerView addSubview:btn];
-    btn.backgroundColor = UIColor.blueColor;
-    [btn ax_setTitleStateNormal:title];
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
-        make.left.mas_equalTo(10);
-        make.right.mas_equalTo(-10);
-    }];
-    /// 按钮事件
-    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
-        if (handler) {
-            handler();
-        }
-    }];
-    topView =btn;
-    return topView;
-}
 
 -(void)_bottomView {
     
@@ -177,7 +151,7 @@
     }];
 }
 
--(UIView *)_p01loginTest:(UIView *)topView {
+-(void)_p01loginTest {
     
     
     {
@@ -187,12 +161,12 @@
         nameTF.accessibilityIdentifier = @"pwdTextField";
         [self.containerView addSubview:nameTF];
         [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topView.mas_bottom).mas_offset(20);
+            make.top.equalTo(self.bottomAttribute).mas_offset(20);
             make.left.mas_equalTo(10);
             make.right.mas_equalTo(-10);
             make.height.mas_equalTo(50);
         }];
-        topView = nameTF;
+        self.bottomAttribute = nameTF.mas_bottom;
     }
     {
         UITextField *nameTF = [[UITextField alloc]init];
@@ -201,18 +175,16 @@
         nameTF.accessibilityIdentifier = @"nameTextField";
         [self.containerView addSubview:nameTF];
         [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topView.mas_bottom).mas_equalTo(10);
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(10);
             make.left.mas_equalTo(10);
             make.right.mas_equalTo(-10);
             make.height.mas_equalTo(50);
         }];
-        topView = nameTF;
+        self.bottomAttribute = nameTF.mas_bottom;
     }
-    
-    return topView;
 }
 
--(UIView *)_p01UITextView_link:(UIView *)topView{
+-(void)_p01UITextView_link {
     
     NSString *str1 = @"点击“立即体验”按钮，\n即表示你同意";
     NSString *str3 = @"《许可及服务协议》";
@@ -237,14 +209,14 @@
     textView.linkTextAttributes = @{NSForegroundColorAttributeName:[UIColor redColor],NSUnderlineStyleAttributeName:@1};
     [self.containerView addSubview:textView];
     [textView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView).mas_offset(10);
+        make.top.equalTo(self.bottomAttribute).mas_offset(10);
         make.left.mas_equalTo(10);
         make.right.mas_equalTo(-10);
         make.height.mas_equalTo(50);
     }];
-    topView = textView;
     
-    return topView;
+    self.bottomAttribute = textView.mas_bottom;
+    
 }
 
 //- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
@@ -276,13 +248,15 @@
 }
 
 
--(UIView *)_p02AlternateIconName:(UIView *)topView {
+-(void)_p02AlternateIconName {
     
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTopView:topView title:@"换icon" handler:^{
+    return [self _p00ButtonTitle:@"换icon" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf setIconname:@"Alternate_AppIcon_2"];
     }];
+    
+    
     
 }
 
@@ -306,31 +280,31 @@
         // Fallback on earlier versions
     }
 }
--(UIView *)_p03LocationManager:(UIView *)topView {
+-(void)_p03LocationManager {
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTopView:topView title:@"定位" handler:^{
+    return [self _p00ButtonTitle:@"定位" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         strongSelf.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
             NSLog(@"定位 = %@",location);
-            }];
+        }];
     }];
 }
 
--(UIView *)_p03wifi:(UIView *)topView {
+-(void)_p03wifi {
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTopView:topView title:@"wifi信息" handler:^{
+    return [self _p00ButtonTitle:@"wifi信息" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _WiFi];
     }];
 }
 
--(UIView *)_p03textToImg:(UIView *)topView {
+-(void)_p03textToImg {
     
     UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 50)];
     
     [self.containerView addSubview:img];
     [img mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_bottom).mas_equalTo(10);
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(10);
         make.left.mas_equalTo(10);
         make.height.mas_equalTo(50);
     }];
@@ -339,11 +313,10 @@
     //    img.image =   [UIImage imageFromText:@[@"jim"] withFont:20 withTextColor:UIColor.redColor withBgImage:nil withBgColor:UIColor.blueColor];
     img.contentMode = UIViewContentModeScaleAspectFill;
     img.image = [UIImage imageFromText:@[@"jim"]  withFont:100];
-    
-    return img;
+    self.bottomAttribute = img.mas_bottom;
 }
 
--(UIView *)_p04masron_uninstall:(UIView *)topView {
+-(void)_p04masron_uninstall {
     
     CGFloat width = 100;
     
@@ -351,7 +324,7 @@
     [self.containerView addSubview:view1];
     view1.backgroundColor = UIColor.orangeColor;
     [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_bottom).mas_equalTo(10);
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(10);
         make.left.mas_equalTo(30);
         make.height.mas_equalTo(100);
         
@@ -362,10 +335,10 @@
     [view1 ax_addLineDirection:AXLineDirectionTop color:UIColor.redColor height:2];
     
     
-    topView = view1;
+    self.bottomAttribute = view1.mas_bottom; ;
     
     __weak typeof(self) weakSelf = self;
-    topView = [self _p00ButtonTopView:topView title:@"masron - uninstall" handler:^{
+    [self _p00ButtonTitle:@"masron - uninstall" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.viewBottomConstraint uninstall];
         [view1.superview setNeedsUpdateConstraints];
@@ -376,24 +349,21 @@
             [view1.superview layoutIfNeeded];
         }];
     }];
-    
-    
-    return topView;
 }
 
--(UIView *)_p05DateVC:(UIView *)topView {
+-(void)_p05DateVC {
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTopView:topView title:@"date" handler:^{
+    return [self _p00ButtonTitle:@"date" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         AXDateVC *vc = [[AXDateVC alloc]init];
         [strongSelf ax_showVC:vc];
     }];
 }
 
--(UIView *)_p06per:(UIView *)topView {
+-(void)_p06per {
     
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTopView:topView title:@"奔溃拦截" handler:^{
+    return [self _p00ButtonTitle:@"奔溃拦截" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         //        [self performSelector:@selector(test:age:age2:) withObjects:@[@"JIM",@"20"]];
         //        id obj =[self performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[@"JIM",@"20"]];
@@ -404,7 +374,7 @@
     
 }
 
--(UIView *)_p07bubbleImage:(UIView *)topView {
+-(void)_p07bubbleImage {
     //leftCapWidth: 左边不拉伸的像素
     //topCapHeight:上边不拉伸的像素
     UIImage *image = [UIImage imageNamed:@"chat_bubble"];
@@ -412,17 +382,17 @@
     
     [self.containerView addSubview:imgView];
     [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_bottom).mas_equalTo(10);
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(10);
         make.left.mas_equalTo(30);
         make.right.mas_equalTo(-30);
     }];
     
-    return imgView;
+    self.bottomAttribute = imgView.mas_bottom;
 }
 
--(UIView *)_p08china:(UIView *)topView {
+-(void)_p08china {
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTopView:topView title:@"中英文排序" handler:^{
+    return [self _p00ButtonTitle:@"中英文排序" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _chinaText];
     }];
@@ -467,30 +437,30 @@
 }
 
 
--(UIView *)_p09lineSpacing:(UIView *)topView {
+-(void)_p09lineSpacing {
     UILabel *label = UILabel.ax_init;
     label.numberOfLines = 0;
     label.text = @"aaa\nbbb\nccc\n";
     label.backgroundColor = UIColor.orangeColor;
     [self.containerView addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_bottom).mas_offset(10);
+        make.top.equalTo(self.bottomAttribute).mas_offset(10);
         make.left.mas_equalTo(10);
         make.right.mas_equalTo(-10);
     }];
-    topView = label;
+    self.bottomAttribute = label.mas_bottom;
     
-    return [self _p00ButtonTopView:topView title:@"kvc修改间距" handler:^{
+    return [self _p00ButtonTitle:@"kvc修改间距" handler:^{
         [label setValue:@40 forKey:@"lineSpacing"];
         //        label.text = @"1111\n222\n333\n";
     }];
 }
 
 
--(UIView *)_p10flieExist:(UIView *)topView {
+-(void)_p10flieExist {
     
     
-    return [self _p00ButtonTopView:topView title:@"字符串是否包含另一字符串,不区分大小写" handler:^{
+    return [self _p00ButtonTitle:@"字符串是否包含另一字符串,不区分大小写" handler:^{
         
         
         NSString * string = @"HelloChina";
@@ -522,7 +492,7 @@
 }
 
 
--(UIView *)_p11ButtonAllEvent:(UIView *)topView {
+-(void)_p11ButtonAllEvent {
     
     
     UIButton *btn = [[UIButton alloc] init];
@@ -530,7 +500,7 @@
     btn.backgroundColor = UIColor.blueColor;
     [btn ax_setTitleStateNormal:@"按钮各种事件"];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
         make.left.mas_equalTo(10);
         make.right.mas_equalTo(-10);
     }];
@@ -561,56 +531,52 @@
     [[btn rac_signalForControlEvents:UIControlEventTouchDownRepeat] subscribeNext:^(UIButton *x) {
         NSLog(@"UIControlEventTouchDownRepeat 多点触摸按下事件，点触计数大于1");
     }];
-    topView =btn;
-    return topView;
     
+    self.bottomAttribute = btn.mas_bottom;
 }
 
 
--(UIView *)_p12memoryUsage:(UIView *)topView {
+-(void)_p12memoryUsage {
     UILabel *label = UILabel.ax_init;
     [self.containerView addSubview:label];
     label.textColor = UIColor.blackColor;
     label.text = [NSString stringWithFormat:@"%lf/MB",[UIDevice ax_memoryUsage]/1024.0/1024.0];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
         make.left.mas_equalTo(10);
         make.right.mas_equalTo(-10);
     }];
-    topView = label;
-    return topView;
+    self.bottomAttribute = label.mas_bottom;
 }
--(UIView *)_p12memoryUsage2:(UIView *)topView {
+-(void)_p12memoryUsage2 {
     UILabel *label = UILabel.ax_init;
     [self.containerView addSubview:label];
     label.textColor = UIColor.blackColor;
     label.text = [NSString stringWithFormat:@"%lfMB",[UIDevice ax_memoryUsage2]/1024.0/1024.0];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
         make.left.mas_equalTo(10);
         make.right.mas_equalTo(-10);
     }];
-    topView = label;
-    return topView;
+    self.bottomAttribute = label.mas_bottom;
 }
--(UIView *)_p12memoryUsage3:(UIView *)topView {
+-(void)_p12memoryUsage3 {
     UILabel *label = UILabel.ax_init;
     [self.containerView addSubview:label];
     label.textColor = UIColor.blackColor;
     label.text = [NSString stringWithFormat:@"%lfMB",[UIDevice ax_memoryUsage3]/1024.0/1024.];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
         make.left.mas_equalTo(10);
         make.right.mas_equalTo(-10);
     }];
-    topView = label;
-    return topView;
+    self.bottomAttribute = label.mas_bottom;
 }
 
--(UIView *)_p13MoreAlter:(UIView *)topView{
+-(void)_p13MoreAlter{
     
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTopView:topView title:@"多个alert" handler:^{
+    return [self _p00ButtonTitle:@"多个alert" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         // 第一个UIAlertController
         UIAlertController *alertController1 = [UIAlertController alertControllerWithTitle:@"测试1" message:@"测试1" preferredStyle:UIAlertControllerStyleAlert];
@@ -637,10 +603,10 @@
     
 }
 
--(UIView *)_p14xmlToObj:(UIView *)topView{
+-(void)_p14xmlToObj{
     
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTopView:topView title:@"xml解析" handler:^{
+    return [self _p00ButtonTitle:@"xml解析" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         
         NSString *path = [[NSBundle mainBundle]pathForResource:@"testXML" ofType:@"xml"];
@@ -673,13 +639,13 @@
     
 }
 
--(UIView *)_p15NSBlockOperation:(UIView *)topView {
-    return [self _p00ButtonTopView:topView title:@"NSBlockOperation" handler:^{
+-(void)_p15NSBlockOperation {
+    return [self _p00ButtonTitle:@"NSBlockOperation" handler:^{
         
         //2.NSBlockOperation(最常使用)
         NSBlockOperation * blockOp = [NSBlockOperation blockOperationWithBlock:^{
             //要执行的操作，目前是主线程
-//            NSLog(@"NSBlockOperation 创建，线程：%@",[NSThread currentThread]);
+            //            NSLog(@"NSBlockOperation 创建，线程：%@",[NSThread currentThread]);
             
             for (int i = 0; i < 2; i++) {
                 [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
@@ -696,71 +662,41 @@
                 NSLog(@"追加任务一: %@", [NSThread currentThread]); // 打印当前线程
             }
         }];
-//        [blockOp addExecutionBlock:^{
-//            NSLog(@"追加任务二, %@",[NSThread currentThread]);
-//        }];
+        //        [blockOp addExecutionBlock:^{
+        //            NSLog(@"追加任务二, %@",[NSThread currentThread]);
+        //        }];
         [blockOp start];
         
     }];
 }
 
--(UIView *)_p16NSBlockOperation:(UIView *)topView {
-    return [self _p00ButtonTopView:topView title:@"NSOperationQueue222" handler:^{
+-(void)_p16NSBlockOperation {
+    return [self _p00ButtonTitle:@"NSOperationQueue222" handler:^{
         // 1.创建队列
-           NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-
-           // 2.使用 addOperationWithBlock: 添加操作到队列中
-           [queue addOperationWithBlock:^{
-               for (int i = 0; i < 2; i++) {
-                   [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-                   NSLog(@"1---%@", [NSThread currentThread]); // 打印当前线程
-               }
-           }];
-           [queue addOperationWithBlock:^{
-               for (int i = 0; i < 2; i++) {
-                   [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-                   NSLog(@"2---%@", [NSThread currentThread]); // 打印当前线程
-               }
-           }];
-           [queue addOperationWithBlock:^{
-               for (int i = 0; i < 2; i++) {
-                   [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-                   NSLog(@"3---%@", [NSThread currentThread]); // 打印当前线程
-               }
-           }];
+        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        
+        // 2.使用 addOperationWithBlock: 添加操作到队列中
+        [queue addOperationWithBlock:^{
+            for (int i = 0; i < 2; i++) {
+                [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+                NSLog(@"1---%@", [NSThread currentThread]); // 打印当前线程
+            }
+        }];
+        [queue addOperationWithBlock:^{
+            for (int i = 0; i < 2; i++) {
+                [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+                NSLog(@"2---%@", [NSThread currentThread]); // 打印当前线程
+            }
+        }];
+        [queue addOperationWithBlock:^{
+            for (int i = 0; i < 2; i++) {
+                [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
+                NSLog(@"3---%@", [NSThread currentThread]); // 打印当前线程
+            }
+        }];
         
     }];
 }
-/// 会弹出 "想要查找并连接到本地网络上的设备" 弹窗
--(UIView *)_p17UUID:(UIView *)topView {
-    return [self _p00ButtonTopView:topView title:@"NSProcessInfo" handler:^{
-        
-        NSString *uuid1 = [[NSProcessInfo processInfo] globallyUniqueString];
-        
-        NSLog(@"processInfoww = %@",[NSProcessInfo.processInfo mj_JSONObject] );
-        
-        NSLog(@"uuid1 = %@",uuid1);
-        NSLog(@"uuid2 = %@",[NSString ax_uuid]);
-    }];
-}
-
--(UIView *)_18pushViewController:(UIView *)topView {
-    __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTopView:topView title:@"_01ContentViewController" handler:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        _01ContentViewController *vc = [[_01ContentViewController alloc]init];
-        [strongSelf.navigationController pushViewController:vc animated:YES];
-    }];
-}
-
--(UIView *)_18popToRoot:(UIView *)topView {
-    __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTopView:topView title:@"popToRootViewControllerAnimated" handler:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.navigationController popToRootViewControllerAnimated:YES];
-    }];
-}
-
 
 - (NSArray *)getOrderArraywithArray:(NSArray *)array{
     //数组排序
@@ -840,7 +776,7 @@
         [self.containerView addSubview:animationView];
         
         //添加你想增加效果的 View 为 animationView 的子视图
-        // [animationView addSubview:<#(UIView *)#>]
+        // [animationView addSubview:<#(void)#>]
         
         [animationView startCanvasAnimation];
         

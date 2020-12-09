@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "_00BaseViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _01ContentViewController : UIViewController
+@interface _01ContentViewController : _00BaseViewController
 
 
 @end
