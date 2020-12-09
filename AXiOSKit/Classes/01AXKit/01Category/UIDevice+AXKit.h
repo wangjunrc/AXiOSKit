@@ -97,4 +97,11 @@ typedef NS_ENUM(NSInteger, AXDeviceSize) {
 + (int64_t)ax_memoryUsage2;
 
 + (int64_t)ax_memoryUsage3;
+
+/// 判断手机WiFi是否打开
++ (BOOL)ax_isWiFiEnabled;
+
+/// 获取WiFi名称
++ (NSString *)ax_getWiFiName;
+
 @end

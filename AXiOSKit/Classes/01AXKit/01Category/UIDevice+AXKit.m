@@ -9,6 +9,11 @@
 #import "UIDevice+AXKit.h"
 #import <sys/utsname.h>
 #import <mach/mach.h>
+#import <ifaddrs.h>
+#import <net/if.h>
+#import <SystemConfiguration/CaptiveNetwork.h>
+#import <CoreLocation/CoreLocation.h>
+
 @implementation UIDevice (AXKit)
 
 
@@ -197,6 +202,62 @@
       }
       
     return taskInfo.resident_size;
+}
+
+
+/// 判断手机WiFi是否打开
++ (BOOL)ax_isWiFiEnabled {
+    NSCountedSet * cset = [NSCountedSet new];
+    struct ifaddrs *interfaces;
+    if(!getifaddrs(&interfaces)){
+        for( struct ifaddrs *interface = interfaces; interface; interface = interface->ifa_next) {
+            if ( (interface->ifa_flags & IFF_UP) == IFF_UP ) {
+                [cset addObject:[NSString stringWithUTF8String:interface->ifa_name]];
+            }
+        }
+    }
+    return [cset countForObject:@"awdl0"] > 1 ? YES : NO;
+}
+
+
+/// 获取WiFi名称
++ (NSString *)ax_getWiFiName {
+    if (@available(iOS 13.0, *)) {
+        //用户明确拒绝，可以弹窗提示用户到设置中手动打开权限
+        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
+            NSLog(@"User has explicitly denied authorization for this application, or location services are disabled in Settings.");
+            //使用下面接口可以打开当前应用的设置页面
+            //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+            return nil;
+        }
+        CLLocationManager* cllocation = [[CLLocationManager alloc] init];
+        if(![CLLocationManager locationServicesEnabled] || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined){
+            //弹框提示用户是否开启位置权限
+            [cllocation requestWhenInUseAuthorization];
+            usleep(50);
+            //递归等待用户选选择
+            //return [self getWifiSsidWithCallback:callback];
+        }
+    }
+    NSString *wifiName = nil;
+    CFArrayRef wifiInterfaces = CNCopySupportedInterfaces();
+    if (!wifiInterfaces) {
+        return nil;
+    }
+    NSArray *interfaces = (__bridge NSArray *)wifiInterfaces;
+    for (NSString *interfaceName in interfaces) {
+        CFDictionaryRef dictRef = CNCopyCurrentNetworkInfo((__bridge CFStringRef)(interfaceName));
+
+        if (dictRef) {
+            NSDictionary *networkInfo = (__bridge NSDictionary *)dictRef;
+            NSLog(@"network info -> %@", networkInfo);
+            wifiName = [networkInfo objectForKey:(__bridge NSString *)kCNNetworkInfoKeySSID];
+            CFRelease(dictRef);
+        }
+    }
+
+    CFRelease(wifiInterfaces);
+    return wifiName;
 }
 
 @end
