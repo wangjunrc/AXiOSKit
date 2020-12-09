@@ -442,7 +442,7 @@
  @param aVC vc
  */
 - (void)ax_pushVC:(UIViewController *)aVC {
-    
+    aVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:aVC animated:YES];
 }
 

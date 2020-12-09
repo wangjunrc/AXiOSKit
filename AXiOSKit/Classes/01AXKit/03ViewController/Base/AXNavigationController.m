@@ -57,5 +57,21 @@
     
     axLong_dealloc;
 }
+/// OS 14 push多个控制器，返回到根控制器，发现tabbar消失的问题
+//- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    
+//    if (self.childViewControllers.count > 0) {
+//
+//        viewController.hidesBottomBarWhenPushed = YES;
+//        
+//        // 解决push多个控制器后，popToRootViewController TabBar消失
+//        if (self.childViewControllers.count > 1) {
+//            viewController.hidesBottomBarWhenPushed = NO;
+//        }
+//    }
+//   
+// 
+//    [super pushViewController:viewController animated:animated];
+//}
 
 @end

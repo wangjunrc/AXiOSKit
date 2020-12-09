@@ -12,7 +12,7 @@
 @implementation AppDelegateAppearance
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     
-    [self adapterIOS11];
+//    [self adapterIOS11];
     
     [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[UISearchBar.class]]
      setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}

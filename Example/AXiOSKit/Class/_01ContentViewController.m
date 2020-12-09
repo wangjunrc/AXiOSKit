@@ -38,19 +38,19 @@
 @end
 
 @implementation _01ContentViewController
-- (void)injected {
-    NSLog(@"重启了 InjectionIII: %@", self);
-    [self viewDidLoad];
-}
+//- (void)injected {
+//    NSLog(@"重启了 InjectionIII: %@", self);
+//    [self viewDidLoad];
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"02";
-    self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
-    [[Test alloc]init];
-    self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
-        
-        [self _WiFi];
-    }];
+//    self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
+//    __weak typeof(self) weakSelf = self;
+//    self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
+//        __strong typeof(weakSelf) strongSelf = weakSelf;
+//        [strongSelf _WiFi];
+//    }];
     //    [self _WiFi];
     
     
@@ -96,6 +96,8 @@
     topView =  [self _p15NSBlockOperation:topView];
     topView =  [self _p16NSBlockOperation:topView];
     topView =  [self _p17UUID:topView];
+    topView =  [self _18pushViewController:topView];
+    topView =  [self _18popToRoot:topView];
     
     [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(topView.mas_bottom).mas_equalTo(100);// 这里放最后一个view的底部
@@ -695,7 +697,7 @@
 }
 
 -(UIView *)_p16NSBlockOperation:(UIView *)topView {
-    return [self _p00ButtonTopView:topView title:@"NSOperationQueue" handler:^{
+    return [self _p00ButtonTopView:topView title:@"NSOperationQueue222" handler:^{
         // 1.创建队列
            NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 
@@ -727,12 +729,31 @@
         
         NSString *uuid1 = [[NSProcessInfo processInfo] globallyUniqueString];
         
-        NSLog(@"processInfo = %@",[NSProcessInfo.processInfo mj_JSONObject] );
+        NSLog(@"processInfoww = %@",[NSProcessInfo.processInfo mj_JSONObject] );
         
         NSLog(@"uuid1 = %@",uuid1);
         NSLog(@"uuid2 = %@",[NSString ax_uuid]);
     }];
 }
+
+-(UIView *)_18pushViewController:(UIView *)topView {
+    __weak typeof(self) weakSelf = self;
+    return [self _p00ButtonTopView:topView title:@"_01ContentViewController" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        _01ContentViewController *vc = [[_01ContentViewController alloc]init];
+        [strongSelf.navigationController pushViewController:vc animated:YES];
+    }];
+}
+
+-(UIView *)_18popToRoot:(UIView *)topView {
+    __weak typeof(self) weakSelf = self;
+    return [self _p00ButtonTopView:topView title:@"popToRootViewControllerAnimated" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.navigationController popToRootViewControllerAnimated:YES];
+    }];
+}
+
+
 - (NSArray *)getOrderArraywithArray:(NSArray *)array{
     //数组排序
     //定义一个数字数组

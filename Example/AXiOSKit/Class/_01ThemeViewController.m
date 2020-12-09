@@ -122,17 +122,23 @@
     }];
     
     [self _p00ButtonTitle:@"dismis 或者 pop" handler:^{
-        __strong typeof(weakSelf) self = weakSelf;
-        [self ax_haveNav:^(UINavigationController *nav) {
-            [self.navigationController popViewControllerAnimated:YES];
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf ax_haveNav:^(UINavigationController *nav) {
+            [strongSelf.navigationController popViewControllerAnimated:YES];
             
         } isPushNav:^(UINavigationController *nav) {
-            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+            [strongSelf.navigationController dismissViewControllerAnimated:YES completion:nil];
         } isPresentNav:^(UINavigationController *nav) {
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [strongSelf dismissViewControllerAnimated:YES completion:nil];
         } noneNav:^{
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [strongSelf dismissViewControllerAnimated:YES completion:nil];
         }];
+    }];
+    
+    [self _p00ButtonTitle:@"popToRoot" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.navigationController popToRootViewControllerAnimated:YES];
+        
     }];
     
     self.bottomAttribute = self.view.mas_bottom;

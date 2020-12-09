@@ -22,10 +22,19 @@
 #pragma mark - 主题字体颜色等
 - (void)setupTitle{
     NSDictionary *noDic= @{NSForegroundColorAttributeName : [UIColor grayColor]};
-    NSDictionary *seDic= @{NSForegroundColorAttributeName : [UIColor lightGrayColor]};
+    NSDictionary *seDic= @{NSForegroundColorAttributeName : [UIColor redColor]};
     
     [[UITabBarItem appearance] setTitleTextAttributes:noDic forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:seDic forState:UIControlStateSelected];
+//    [self.tabBarItem setTitleTextAttributes:noDic forState:UIControlStateNormal];
+//    [self.tabBarItem setTitleTextAttributes:seDic forState:UIControlStateSelected];
+    
+    self.tabBar.tintColor = [UIColor greenColor];
+    self.tabBar.unselectedItemTintColor = [UIColor purpleColor];
+    /// 背景色
+    [self.tabBar setBarTintColor:UIColor.orangeColor];
+    
+    
 }
 
 
