@@ -45,19 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"02";
-//    self.view.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
-//    __weak typeof(self) weakSelf = self;
-//    self.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
-//        __strong typeof(weakSelf) strongSelf = weakSelf;
-//        [strongSelf _WiFi];
-//    }];
-    //    [self _WiFi];
     
-    
-    //    [self _kvoInt];
-    
-    
-    //    [self _bottomView];
     
     UIScrollView *scrollView = [UIScrollView.alloc init];
     [self.view addSubview:scrollView];
@@ -76,9 +64,11 @@
     }];
     
     UIView *topView = containerView;
-    //    topView =  [self _p01loginTest:topView];
     topView =  [self _p01UITextView_link:topView];
+    topView =  [self _p01loginTest:topView];
     topView =  [self _p02AlternateIconName:topView];
+    topView =  [self _p03LocationManager:topView];
+    topView =  [self _p03wifi:topView];
     topView =  [self _p03textToImg:topView];
     topView =  [self _p04masron_uninstall:topView];
     topView =  [self _p05DateVC:topView];
@@ -197,7 +187,7 @@
         nameTF.accessibilityIdentifier = @"pwdTextField";
         [self.containerView addSubview:nameTF];
         [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topView).mas_offset(10);
+            make.top.equalTo(topView.mas_bottom).mas_offset(20);
             make.left.mas_equalTo(10);
             make.right.mas_equalTo(-10);
             make.height.mas_equalTo(50);
@@ -316,6 +306,24 @@
         // Fallback on earlier versions
     }
 }
+-(UIView *)_p03LocationManager:(UIView *)topView {
+    __weak typeof(self) weakSelf = self;
+    return [self _p00ButtonTopView:topView title:@"定位" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        strongSelf.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
+            NSLog(@"定位 = %@",location);
+            }];
+    }];
+}
+
+-(UIView *)_p03wifi:(UIView *)topView {
+    __weak typeof(self) weakSelf = self;
+    return [self _p00ButtonTopView:topView title:@"wifi信息" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _WiFi];
+    }];
+}
+
 -(UIView *)_p03textToImg:(UIView *)topView {
     
     UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 50)];
@@ -796,7 +804,7 @@
     NSDictionary *dic = (NSDictionary *)info;
     NSString *ssid = [[dic objectForKey:@"SSID"] lowercaseString];
     NSString *bssid = [dic objectForKey:@"BSSID"];
-    NSLog(@"ssid:%@ \nssid:%@",ssid,bssid);
+    NSLog(@"wifi ssid:%@ \nssid:%@",ssid,bssid);
     
     
     //    NSString *ssid = nil;
