@@ -20,7 +20,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import <GDataXML_HTML/GDataXMLNode.h>
 #import "AXiOSKit_Example-Swift.h"
-
+#import <MJExtension/MJExtension.h>
 @interface _01ContentViewController ()<UITextViewDelegate>
 
 @property(nonatomic, strong) UIView *containerView;
@@ -95,7 +95,7 @@
     topView =  [self _p14xmlToObj:topView];
     topView =  [self _p15NSBlockOperation:topView];
     topView =  [self _p16NSBlockOperation:topView];
-    
+    topView =  [self _p17UUID:topView];
     
     [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(topView.mas_bottom).mas_equalTo(100);// 这里放最后一个view的底部
@@ -721,7 +721,18 @@
         
     }];
 }
-
+/// 会弹出 "想要查找并连接到本地网络上的设备" 弹窗
+-(UIView *)_p17UUID:(UIView *)topView {
+    return [self _p00ButtonTopView:topView title:@"NSProcessInfo" handler:^{
+        
+        NSString *uuid1 = [[NSProcessInfo processInfo] globallyUniqueString];
+        
+        NSLog(@"processInfo = %@",[NSProcessInfo.processInfo mj_JSONObject] );
+        
+        NSLog(@"uuid1 = %@",uuid1);
+        NSLog(@"uuid2 = %@",[NSString ax_uuid]);
+    }];
+}
 - (NSArray *)getOrderArraywithArray:(NSArray *)array{
     //数组排序
     //定义一个数字数组
