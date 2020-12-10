@@ -184,9 +184,7 @@
     kern_return_t kernelReturn = task_info(mach_task_self(), TASK_BASIC_INFO, (task_info_t)&taskBasicInfo, &size);
     if (kernelReturn == KERN_SUCCESS) {
         memoryUsageInByte = (int64_t)taskBasicInfo.resident_size;
-        NSLog(@"Memory in use (in bytes): %lld", memoryUsageInByte);
     } else {
-        NSLog(@"Error with task_info(): %s", mach_error_string(kernelReturn));
     }
     return memoryUsageInByte;
 }
@@ -225,7 +223,7 @@
     if (@available(iOS 13.0, *)) {
         //用户明确拒绝，可以弹窗提示用户到设置中手动打开权限
         if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
-            NSLog(@"User has explicitly denied authorization for this application, or location services are disabled in Settings.");
+            NSLog(@"阿星 = 用户明确拒绝，可以弹窗提示用户到设置中手动打开权限");
             //使用下面接口可以打开当前应用的设置页面
             //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
             return nil;
@@ -250,7 +248,6 @@
 
         if (dictRef) {
             NSDictionary *networkInfo = (__bridge NSDictionary *)dictRef;
-            NSLog(@"network info -> %@", networkInfo);
             wifiName = [networkInfo objectForKey:(__bridge NSString *)kCNNetworkInfoKeySSID];
             CFRelease(dictRef);
         }

@@ -21,7 +21,7 @@
 #import <GDataXML_HTML/GDataXMLNode.h>
 #import "AXiOSKit_Example-Swift.h"
 #import <MJExtension/MJExtension.h>
-@interface _01ContentViewController ()<UITextViewDelegate>
+@interface _01ContentViewController ()<UITextViewDelegate,ASAuthorizationControllerDelegate,ASAuthorizationControllerPresentationContextProviding>
 
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
 
@@ -87,7 +87,11 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.navigationController popToRootViewControllerAnimated:YES];
     }];
+    [self _p17CSAnimationView];
+    [self _p18appleLogin];
     
+    
+    /// 底部约束
     [self _loadBottomAttribute];
     
 }
@@ -362,9 +366,9 @@
 
 -(void)_p06per {
     
-    __weak typeof(self) weakSelf = self;
+    //    __weak typeof(self) weakSelf = self;
     return [self _p00ButtonTitle:@"奔溃拦截" handler:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
+        //        __strong typeof(weakSelf) strongSelf = weakSelf;
         //        [self performSelector:@selector(test:age:age2:) withObjects:@[@"JIM",@"20"]];
         //        id obj =[self performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[@"JIM",@"20"]];
         //        NSLog(@"obj = %@",obj);
@@ -741,110 +745,120 @@
     NSString *ssid = [[dic objectForKey:@"SSID"] lowercaseString];
     NSString *bssid = [dic objectForKey:@"BSSID"];
     NSLog(@"wifi ssid:%@ \nssid:%@",ssid,bssid);
-    
-    
-    //    NSString *ssid = nil;
-    //       NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfaces();
-    //       for (NSString *ifnam in ifs) {
-    //           NSDictionary *info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
-    //           if (info[@"SSID"]) {
-    //               ssid = info[@"SSID"];
-    //           }
-    //       }
-    //    NSLog(@"sssid = %@",ssid);
-    
-    
 }
 
--(void)_CSAnimationView{
+-(void)_p17CSAnimationView{
+    
+    CSAnimationView *animationView = [[CSAnimationView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    
+    [self.containerView addSubview:animationView];
+    [animationView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.centerX.mas_equalTo(0);
+        make.width.height.mas_equalTo(100);
+    }];
+    
+    animationView.backgroundColor = [UIColor redColor];
+    animationView.duration = 0.5;
+    animationView.delay = 0;
+    animationView.type = CSAnimationTypeFadeOutRight;
+    
+    self.bottomAttribute = animationView.mas_bottom;
+    
     UIButton *btn1 = [[UIButton alloc]init];
-    [btn1 setTitle:@"btn1" forState:UIControlStateNormal];
+    [btn1 setTitle:@"CSAnimationView" forState:UIControlStateNormal];
     btn1.backgroundColor = UIColor.orangeColor;
     [self.containerView addSubview:btn1];
     [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.mas_equalTo(30);
-        
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
     }];
+    self.bottomAttribute = btn1.mas_bottom;
     
     [btn1 ax_addTargetBlock:^(UIButton * _Nullable button) {
-        
-        CSAnimationView *animationView = [[CSAnimationView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-        animationView.backgroundColor = [UIColor redColor];
-        animationView.duration = 0.5;
-        animationView.delay = 0;
-        animationView.type = CSAnimationTypeFadeOutRight;
-        [self.containerView addSubview:animationView];
-        
         //添加你想增加效果的 View 为 animationView 的子视图
         // [animationView addSubview:<#(void)#>]
         
-        [animationView startCanvasAnimation];
+        //        [animationView startCanvasAnimation];
         
     }];
 }
 
 
-
-//- (void)didMoveToParentViewController:(UIViewController *)parent {
-//    [super didMoveToParentViewController:parent];
-//    NSLog(@"didMoveToParentViewController %@  self = %@",parent,self);
-//}
-
-- (void)configUI{
+- (void)_p18appleLogin{
     // 使用系统提供的按钮，要注意不支持系统版本的处理
     if (@available(iOS 13.0, *)) {
         // Sign In With Apple Button
         ASAuthorizationAppleIDButton *appleIDBtn = [ASAuthorizationAppleIDButton buttonWithType:ASAuthorizationAppleIDButtonTypeDefault style:ASAuthorizationAppleIDButtonStyleWhite];
-        appleIDBtn.frame = CGRectMake(30, self.view.bounds.size.height - 180, self.view.bounds.size.width - 60, 100);
-        //    appleBtn.cornerRadius = 22.f;
-        [appleIDBtn addTarget:self action:@selector(didAppleIDBtnClicked) forControlEvents:UIControlEventTouchUpInside];
         [self.containerView addSubview:appleIDBtn];
+        [appleIDBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.left.mas_equalTo(10);
+            make.right.mas_equalTo(-10);
+        }];
+        appleIDBtn.backgroundColor = [UIColor orangeColor];
+        [appleIDBtn addTarget:self action:@selector(didCustomBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+        self.bottomAttribute = appleIDBtn.mas_bottom;
     }
     
     // 或者自己用UIButton实现按钮样式
     UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    addBtn.frame = CGRectMake(30, 80, self.view.bounds.size.width - 60, 44);
-    addBtn.backgroundColor = [UIColor orangeColor];
-    [addBtn setTitle:@"Sign in with Apple" forState:UIControlStateNormal];
-    [addBtn addTarget:self action:@selector(didCustomBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.containerView addSubview:addBtn];
-}
-
-// 自己用UIButton按钮调用处理授权的方法
-- (void)didCustomBtnClicked{
-    // 封装Sign In with Apple 登录工具类，使用这个类时要把类对象设置为全局变量，或者直接把这个工具类做成单例，如果使用局部变量，和IAP支付工具类一样，会导致苹果回调不会执行
-    //    self.signInApple = [[SignInApple alloc] init];
-    //    [self.signInApple handleAuthorizationAppleIDButtonPress];
+    [addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+    }];
+    addBtn.backgroundColor = [UIColor redColor];
+    [addBtn setBackgroundImage:[UIImage ax_imageSquareWithColor:UIColor.orangeColor] forState:UIControlStateNormal];
+     [addBtn setBackgroundImage:[UIImage ax_imageSquareWithColor:UIColor.greenColor] forState:UIControlStateHighlighted];
+    [addBtn setTitle:@"苹果登录" forState:UIControlStateNormal];
+    [addBtn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+    [addBtn addTarget:self action:@selector(didCustomBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     
+    self.bottomAttribute = addBtn.mas_bottom;
+    
+    /// 监听 ASAuthorizationAppleIDProviderCredentialRevokedNotification 通知
+    // 注册通知
     if (@available(iOS 13.0, *)) {
-        ASAuthorizationAppleIDProvider *appleIDProvider = [ASAuthorizationAppleIDProvider new];
-        ASAuthorizationAppleIDRequest *request = appleIDProvider.createRequest;
-        [request setRequestedScopes:@[ASAuthorizationScopeFullName,ASAuthorizationScopeEmail]];
-    } else {
-        // Fallback on earlier versions
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleSignInWithAppleStateChanged:) name:ASAuthorizationAppleIDProviderCredentialRevokedNotification object:nil];
     }
-    
 }
-// 使用系统提供的按钮调用处理授权的方法
-- (void)didAppleIDBtnClicked{
-    // 封装Sign In with Apple 登录工具类，使用这个类时要把类对象设置为全局变量，或者直接把这个工具类做成单例，如果使用局部变量，和IAP支付工具类一样，会导致苹果回调不会执行
-    //    self.signInApple = [[SignInApple alloc] init];
-    //    [self.signInApple handleAuthorizationAppleIDButtonPress];
+#pragma mark- apple授权状态 更改通知
+- (void)handleSignInWithAppleStateChanged:(NSNotification *)notification
+{
+    NSLog(@"ASAuthorizationAppleIDProviderCredentialRevokedNotification = %@", notification.userInfo);
 }
 
-// 处理授权
-- (void)handleAuthorizationAppleIDButtonPress{
-    NSLog(@"////////");
+
+- (void)didCustomBtnClicked{
     
     if (@available(iOS 13.0, *)) {
         // 基于用户的Apple ID授权用户，生成用户授权请求的一种机制
         ASAuthorizationAppleIDProvider *appleIDProvider = [[ASAuthorizationAppleIDProvider alloc] init];
+        
+        
+        NSMutableArray <ASAuthorizationRequest *> * array = [NSMutableArray arrayWithCapacity:2];
+        
         // 创建新的AppleID 授权请求
         ASAuthorizationAppleIDRequest *appleIDRequest = [appleIDProvider createRequest];
         // 在用户授权期间请求的联系信息
         appleIDRequest.requestedScopes = @[ASAuthorizationScopeFullName, ASAuthorizationScopeEmail];
+        
+        if (appleIDRequest) {
+            [array addObject:appleIDRequest];
+        }
+        
+        ASAuthorizationPasswordRequest * passwordRequest = [[[ASAuthorizationPasswordProvider alloc] init] createRequest];
+        
+        
+        if (passwordRequest) {
+            [array addObject:passwordRequest];
+        }
+        
         // 由ASAuthorizationAppleIDProvider创建的授权请求 管理授权请求的控制器
-        ASAuthorizationController *authorizationController = [[ASAuthorizationController alloc] initWithAuthorizationRequests:@[appleIDRequest]];
+        ASAuthorizationController *authorizationController = [[ASAuthorizationController alloc] initWithAuthorizationRequests:array.copy];
         // 设置授权控制器通知授权请求的成功与失败的代理
         authorizationController.delegate = self;
         // 设置提供 展示上下文的代理，在这个上下文中 系统可以展示授权界面给用户
@@ -857,13 +871,70 @@
     }
 }
 
+#pragma mark- 授权成功的回调
+// 授权成功
+- (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithAuthorization:(ASAuthorization *)authorization API_AVAILABLE(ios(13.0)) {
+    if ([authorization.credential isKindOfClass:[ASAuthorizationAppleIDCredential class]]) {
+        ASAuthorizationAppleIDCredential * credential = (ASAuthorizationAppleIDCredential *)authorization.credential;
+        // 苹果用户唯一标识符，该值在同一个开发者账号下的所有 App 下是一样的，开发者可以用该唯一标识符与自己后台系统的账号体系绑定起来。
+        NSString * userID = credential.user;
+        // 苹果用户信息 如果授权过，可能无法再次获取该信息
+        NSPersonNameComponents * fullName = credential.fullName;
+        NSString * email = credential.email;
+        // 服务器验证需要使用的参数
+        NSString * authorizationCode = [[NSString alloc] initWithData:credential.authorizationCode encoding:NSUTF8StringEncoding];
+        NSString * identityToken = [[NSString alloc] initWithData:credential.identityToken encoding:NSUTF8StringEncoding];
+        // 用于判断当前登录的苹果账号是否是一个真实用户，取值有：unsupported、unknown、likelyReal
+        ASUserDetectionStatus realUserStatus = credential.realUserStatus;
+        NSLog(@"userID: %@", userID);
+        NSLog(@"fullName: %@", fullName);
+        NSLog(@"email: %@", email);
+        NSLog(@"authorizationCode: %@", authorizationCode);
+        NSLog(@"identityToken: %@", identityToken);
+        NSLog(@"realUserStatus: %@", @(realUserStatus));
+    }
+    else if ([authorization.credential isKindOfClass:[ASPasswordCredential class]]) {
+        // 用户登录使用现有的密码凭证
+        ASPasswordCredential * passwordCredential = (ASPasswordCredential *)authorization.credential;
+        // 密码凭证对象的用户标识 用户的唯一标识
+        NSString * user = passwordCredential.user;
+        // 密码凭证对象的密码
+        NSString * password = passwordCredential.password;
+        NSLog(@"userID: %@", user);
+        NSLog(@"password: %@", password);
+    } else {
+    }
+}
 
-//- (void)removeFromParentViewController {
-//    [super removeFromParentViewController];
-//    AXLogFunc;
-//}
-//- (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
-//    [super popoverPresentationControllerDidDismissPopover:popoverPresentationController];
-//    AXLogFunc;
-//}
+- (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithError:(NSError *)error API_AVAILABLE(ios(13.0)){
+    
+    NSString * errorMsg = nil;
+    
+    switch (error.code) {
+        case ASAuthorizationErrorCanceled:
+            errorMsg = @"用户取消了授权请求";
+            break;
+        case ASAuthorizationErrorFailed:
+            errorMsg = @"授权请求失败";
+            break;
+        case ASAuthorizationErrorInvalidResponse:
+            errorMsg = @"授权请求响应无效";
+            break;
+        case ASAuthorizationErrorNotHandled:
+            errorMsg = @"未能处理授权请求";
+            break;
+        case ASAuthorizationErrorUnknown:
+            errorMsg = @"授权请求失败未知原因";
+            break;
+    }
+    NSLog(@"errorMsg = %@",errorMsg);
+    
+}
+
+/// ASAuthorizationControllerPresentationContextProviding 就一个方法，主要是告诉 ASAuthorizationController 展示在哪个 window 上。
+-(ASPresentationAnchor)presentationAnchorForAuthorizationController:(ASAuthorizationController *)controller
+API_AVAILABLE(ios(13.0)){
+    return  self.view.window;
+}
+
 @end
