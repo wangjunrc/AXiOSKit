@@ -17,25 +17,40 @@
 
 @property(nonatomic,strong)UICollectionView *collectionView;
 
-@property(nonatomic, strong) NSMutableArray<_25DataModel *> *dataArray;
+@property(nonatomic, strong) NSMutableArray<NSMutableArray <_25DataModel *> *> *dataArray;
 
+@property(nonatomic, strong) UILongPressGestureRecognizer *longPress;
 @end
 
 @implementation _25LayoutViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    UICollectionViewListCell *cell = nil;
-    
     
     [self.dataArray removeAllObjects];
-    for (NSInteger index=0; index<30; index++) {
-        _25DataModel *model = [[_25DataModel alloc]init];
+    
+    {
+        NSMutableArray<_25DataModel *> *temp = [NSMutableArray array];
+        for (NSInteger index=0; index<10; index++) {
+            _25DataModel *model = [[_25DataModel alloc]init];
+            NSString *uri =[NSString stringWithFormat:@"https://via.placeholder.com/200x200?text=icon%ld",index];
+            model.iconUri = [uri ax_toEncoding];
+            model.title = [NSString stringWithFormat:@"分区0 = %ld",index];
+            [temp addObject:model];
+        }
         
-      NSString *uri =[NSString stringWithFormat:@"https://via.placeholder.com/200x200?text=icon%ld",index];
-        model.iconUri = [uri ax_toEncoding];
-        model.title = [NSString stringWithFormat:@"insex = %ld",index];
-        [self.dataArray addObject:model];
+        [self.dataArray addObject:temp];
+    }
+    {
+        NSMutableArray<_25DataModel *> *temp = [NSMutableArray array];
+        for (NSInteger index=0; index<9; index++) {
+            _25DataModel *model = [[_25DataModel alloc]init];
+            NSString *uri =[NSString stringWithFormat:@"https://via.placeholder.com/200x200?text=icon%ld",index];
+            model.iconUri = [uri ax_toEncoding];
+            model.title = [NSString stringWithFormat:@"分区1 = %ld",index];
+            [temp addObject:model];
+        }
+        [self.dataArray addObject:temp];
     }
     
     [self.collectionView reloadData];
@@ -49,9 +64,12 @@
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
     
-//        self.editButtonItem.possibleTitles = [NSSet setWithObjects:@"编辑", @"完成", nil];
+    //        self.editButtonItem.possibleTitles = [NSSet setWithObjects:@"编辑", @"完成", nil];
     self.editButtonItem.title = @"编辑";
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handlelongGesture:)];
+    self.longPress.minimumPressDuration = 0.2f;
+    
 }
 
 //点击编辑按钮
@@ -61,52 +79,60 @@
     
     if (editing) {
         self.editButtonItem.title = @"完成";
+        [self.collectionView addGestureRecognizer: self.longPress];
     } else {
         self.editButtonItem.title = @"编辑";
+        [self.collectionView removeGestureRecognizer:self.longPress];
     }
     [self.navigationItem setHidesBackButton:editing animated:YES];
     [self.collectionView reloadData];
 }
 
+-(NSInteger )numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return self.dataArray.count;
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return  self.dataArray.count;
+    return self.dataArray[section].count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     _25CollectionViewCell *cell =  [collectionView  dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
-    _25DataModel *model =  self.dataArray[indexPath.item];
-    model.editing = self.isEditing;
+    _25DataModel *model =  self.dataArray[indexPath.section][indexPath.item];
+    model.editing = (indexPath.section ==0) && self.isEditing;
     cell.model =model;
     __weak typeof(self) weakSelf = self;
-    cell.gestureHandler = ^(UIGestureRecognizer * _Nonnull gesture) {
+    cell.btnHandler = ^(UIButton * _Nonnull addBtn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (strongSelf.isEditing) {
-            [strongSelf handlelongGesture:gesture];
-        }
+        [strongSelf ax_showAlertByTitle:[NSString stringWithFormat:@"按钮 %@",model.title]];
     };
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    _25DataModel *model =  self.dataArray[indexPath.item];
+    _25DataModel *model =  self.dataArray[indexPath.section][indexPath.item];
     [self ax_showAlertByTitle:model.title];
 }
 
 -(BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    return self.isEditing;
+    return (indexPath.section ==0) &&self.isEditing;
     
 }
+
 -(void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
-    if (sourceIndexPath.section == 0) {
+    NSLog(@"sourceIndexPath.section = %ld,destinationIndexPath.section = %ld",sourceIndexPath.section,destinationIndexPath.section );
+    
+    if (sourceIndexPath.section == 0 && destinationIndexPath.section == 0) {
         [CATransaction setDisableActions:YES];
-        [self.dataArray exchangeObjectAtIndex:sourceIndexPath.item withObjectAtIndex:destinationIndexPath.item];
+        
+        [self.dataArray[sourceIndexPath.section] exchangeObjectAtIndex:sourceIndexPath.item withObjectAtIndex:destinationIndexPath.item];
         NSIndexSet *set = [NSIndexSet indexSetWithIndex:sourceIndexPath.section];
         [collectionView reloadSections:set];
         [CATransaction commit];
     }
 }
+
 
 /**
  *  拖动手势事件
@@ -118,17 +144,25 @@
         case UIGestureRecognizerStateBegan:{
             NSIndexPath *AindexPath = [self.collectionView indexPathForItemAtPoint:[longGesture locationInView:self.collectionView]];
             index = AindexPath.section;
+            
             if(index==0){
-                
+                NSLog(@"AindexPath.sectio = %ld",AindexPath.section);
                 [self.collectionView beginInteractiveMovementForItemAtIndexPath:AindexPath];
                 
             }
+            
         }
             break;
         case UIGestureRecognizerStateChanged:{
+            
+            
             NSIndexPath *BindexPath = [self.collectionView indexPathForItemAtPoint:[longGesture locationInView:self.collectionView]];
-            if (index == BindexPath.section) {
+            
+            if (index == BindexPath.section && BindexPath.section ==0) {
+                NSLog(@"BindexPath.sectio = %ld",BindexPath.section);
                 [self.collectionView updateInteractiveMovementTargetPosition:[longGesture locationInView:self.collectionView]];
+            }else{
+                [self.collectionView cancelInteractiveMovement];
             }
             
             break;
@@ -154,7 +188,7 @@
     return _collectionView;
 }
 
-- (NSMutableArray<_25DataModel *> *)dataArray {
+- (NSMutableArray *)dataArray {
     if (!_dataArray) {
         _dataArray = [NSMutableArray array];
     }

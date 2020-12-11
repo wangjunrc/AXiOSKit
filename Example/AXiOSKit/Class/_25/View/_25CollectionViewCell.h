@@ -19,11 +19,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong)UIButton *addBtn;
 
-@property(nonatomic,strong)UILongPressGestureRecognizer *longGesture;
 
-@property(nonatomic,copy) void(^gestureHandler)(UIGestureRecognizer *gesture);
+@property(nonatomic,copy) void(^btnHandler)(UIButton *addBtn);
 
 @property(nonatomic, strong) _25DataModel *model;
+
+
 
 @end
 

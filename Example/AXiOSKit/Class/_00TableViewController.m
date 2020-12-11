@@ -307,7 +307,7 @@ typedef void (^CollectionBlock)(void);
                 @"action": ^{
                     _01ThemeViewController *vc = [[_01ThemeViewController alloc]init];
                     
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                     //                        vc.ax_shouldNavigationBarHidden = YES;
                     vc.AXListener.hiddenNavigationBar = YES;
                     NSLog(@"vc.AXListener.shouldNavigationBarHidden %d",vc.AXListener.isHiddenNavigationBar);
@@ -319,7 +319,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"聊天-ChatViewController",
                 @"action": ^{
                     _02ChatViewController *vc = [[_02ChatViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             
@@ -328,7 +328,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"NSRunLoop模式",
                 @"action": ^{
                     _04RunLoopViewController *vc = [[_04RunLoopViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             @{
@@ -336,7 +336,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"WCDB",
                 @"action": ^{
                     _06WCDBViewController *vc = [[_06WCDBViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             @{
@@ -344,7 +344,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"视频",
                 @"action": ^{
                     _07VideoViewController *vc = [[_07VideoViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             
@@ -353,7 +353,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"AFN",
                 @"action": ^{
                     _09AFNViewController *vc = [[_09AFNViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             
@@ -371,7 +371,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"webp/GIF",
                 @"action": ^{
                     _13WebpViewController *vc = [[_13WebpViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             @{
@@ -379,7 +379,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"WeImage",
                 @"action": ^{
                     _13WeImageTableViewController *vc = [[_13WeImageTableViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             
@@ -388,7 +388,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"TextFeild",
                 @"action": ^{
                     _14TFViewController *vc = [[_14TFViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             
@@ -397,7 +397,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"UIMenuController",
                 @"action": ^{
                     _15UIMenuController *vc = [[_15UIMenuController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             @{
@@ -406,7 +406,7 @@ typedef void (^CollectionBlock)(void);
                 @"action": ^{
                     _16KeyChainViewController *vc =
                     [[_16KeyChainViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             
@@ -416,7 +416,7 @@ typedef void (^CollectionBlock)(void);
                 @"action": ^{
                     _17OtherShareViewController *vc =
                     [[_17OtherShareViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             
@@ -425,7 +425,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"SwipeTableVC",
                 @"action": ^{
                     _18MGSwipeTableVC *vc = [[_18MGSwipeTableVC alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             @{
@@ -434,7 +434,7 @@ typedef void (^CollectionBlock)(void);
                 @"action": ^{
                     _19ScrollContentViewController *vc =
                     [[_19ScrollContentViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             
@@ -443,7 +443,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"iOS14适配",
                 @"action": ^{
                     _20iOS14ViewController *vc = [[_20iOS14ViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             @{
@@ -451,7 +451,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"KVO",
                 @"action": ^{
                     _21KVOViewController *vc = [[_21KVOViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             @{
@@ -460,7 +460,7 @@ typedef void (^CollectionBlock)(void);
                 @"action": ^{
                     _22ReactiveObjCViewController *vc =
                     [[_22ReactiveObjCViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             @{
@@ -468,7 +468,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"约束全屏-prefersStatusBarHidden,setNavigationBarHidden",
                 @"action": ^{
                     _23FullViewController *vc = [[_23FullViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             @{
@@ -476,7 +476,7 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"本地通知",
                 @"action": ^{
                     _24NoteViewController *vc = [[_24NoteViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             @{
@@ -485,7 +485,7 @@ typedef void (^CollectionBlock)(void);
                 @"action": ^{
                     _25LayoutViewController *vc =
                     [[_25LayoutViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             
@@ -495,7 +495,7 @@ typedef void (^CollectionBlock)(void);
                 @"action": ^{
                     _26RMQClientViewController *vc =
                     [[_26RMQClientViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             @{
@@ -504,7 +504,7 @@ typedef void (^CollectionBlock)(void);
                 @"action": ^{
                     _27MQTTClientViewController *vc =
                     [[_27MQTTClientViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             @{
@@ -548,7 +548,7 @@ typedef void (^CollectionBlock)(void);
                 @"action": ^{
                     _28ShareFileViewController *vc =
                     [[_28ShareFileViewController alloc] init];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    [self ax_pushVC:vc];
                 },
             },
             @{

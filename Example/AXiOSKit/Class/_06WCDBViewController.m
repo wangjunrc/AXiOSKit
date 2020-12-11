@@ -13,10 +13,7 @@
 #import "TZImagePickerController.h"
 #import <MJExtension/MJExtension.h>
 #import "AXiOSKit_Example-Swift.h"
-#import "GRDB-Swift.h"
 
-//@import GRDB;
-#import <GRDB/GRDB-Swift.h>
 @interface _06WCDBViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *tf;
 @property (weak, nonatomic) IBOutlet UITextField *tf2;

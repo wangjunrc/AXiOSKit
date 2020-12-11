@@ -14,13 +14,13 @@
     self = [super init];
     if (self) {
         //图标更换需要iOS10.3及以后版本支持
-        if (@available(iOS 10.3, *)) {
-            if (self.supportsAlternateIcons) {
-                [self setAlternateIconName:@"g2" completionHandler:^(NSError * _Nullable error) {
-                    NSLog(@"替换icon error = %@",error);
-                }];
-            }
-        }
+//        if (@available(iOS 10.3, *)) {
+//            if (self.supportsAlternateIcons) {
+//                [self setAlternateIconName:@"g2" completionHandler:^(NSError * _Nullable error) {
+//                    NSLog(@"替换icon error = %@",error);
+//                }];
+//            }
+//        }
     }
     return self;
 }

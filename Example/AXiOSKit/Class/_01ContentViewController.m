@@ -442,22 +442,61 @@
 
 
 -(void)_p09lineSpacing {
-    UILabel *label = UILabel.ax_init;
-    label.numberOfLines = 0;
-    label.text = @"aaa\nbbb\nccc\n";
-    label.backgroundColor = UIColor.orangeColor;
-    [self.containerView addSubview:label];
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.bottomAttribute).mas_offset(10);
-        make.left.mas_equalTo(10);
-        make.right.mas_equalTo(-10);
-    }];
-    self.bottomAttribute = label.mas_bottom;
+    {
+        UILabel *label = UILabel.ax_init;
+        label.numberOfLines = 0;
+        label.text = @"aaa\nbbb\nccc\n";
+        label.backgroundColor = UIColor.orangeColor;
+        [self.containerView addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_offset(10);
+            make.left.mas_equalTo(10);
+            make.right.mas_equalTo(-10);
+        }];
+        self.bottomAttribute = label.mas_bottom;
+        
+       [self _p00ButtonTitle:@"kvc修改间距" handler:^{
+            [label setValue:@40 forKey:@"lineSpacing"];
+           
+        }];
+    }
     
-    return [self _p00ButtonTitle:@"kvc修改间距" handler:^{
-        [label setValue:@40 forKey:@"lineSpacing"];
-        //        label.text = @"1111\n222\n333\n";
-    }];
+    
+    {
+        
+        UILabel *label = UILabel.ax_init;
+       NSString *text = @"横向文字";
+        
+        NSRange range = NSMakeRange(0,  text.length);
+        NSMutableAttributedString *mAttStr = [[NSMutableAttributedString alloc] initWithString:text];
+        
+        [mAttStr addAttributes:@{
+                        NSVerticalGlyphFormAttributeName:@1
+        } range:range];
+        
+        label.attributedText = mAttStr;
+        
+        
+        label.backgroundColor = UIColor.orangeColor;
+        [self.containerView addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_offset(10);
+            make.left.mas_equalTo(10);
+            make.right.mas_equalTo(-10);
+        }];
+        self.bottomAttribute = label.mas_bottom;
+        [self _p00ButtonTitle:@"kvc修改方向距" handler:^{
+            NSRange range = [label.text rangeOfString:label.text];
+            NSMutableAttributedString *mAttStr = [[NSMutableAttributedString alloc] initWithString:label.text];
+            
+            [mAttStr addAttributes:@{
+                            NSVerticalGlyphFormAttributeName:@1
+            } range:range];
+            
+            label.attributedText = mAttStr;
+         }];
+    }
+    
 }
 
 

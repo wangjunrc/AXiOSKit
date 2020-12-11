@@ -36,7 +36,7 @@
     [self.headImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(10);
         make.left.mas_equalTo(leftMargin);
-        make.size.mas_equalTo(CGSizeMake(50, 50));
+        make.size.mas_equalTo(CGSizeMake(20, 20));
     }];
     
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -76,7 +76,6 @@
     self.contentLabel.text = @"内容";
     
     if (model.isEditing) {
-        [self.contentView addGestureRecognizer:self.longGesture];
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
         [animation setDuration:0.1];
         animation.fromValue = @(-M_1_PI/6);
@@ -87,7 +86,6 @@
         [self.layer addAnimation:animation forKey:@"rotation"];
         
     }else {
-        [self.contentView removeGestureRecognizer:self.longGesture];
         CABasicAnimation *animation = (CABasicAnimation *)[self.layer animationForKey:@"rotation"];
         if (animation) {
             [self.layer removeAnimationForKey:@"rotation"];
@@ -97,18 +95,6 @@
     
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
-    if([touch.view isDescendantOfView:self.addBtn]){
-        return NO;
-    }
-    return YES;
-}
-
--(void)handlelongGesture:(UILongPressGestureRecognizer *)sender{
-    if (self.gestureHandler) {
-        self.gestureHandler(sender);
-    }
-}
 
 - (UIImageView *)headImageView {
     if (!_headImageView) {
@@ -140,22 +126,13 @@
         _addBtn.backgroundColor = UIColor.blueColor;
         [_addBtn ax_addTargetBlock:^(UIButton * _Nullable button) {
             NSLog(@"cell - 按钮");
+            if (self.btnHandler) {
+                self.btnHandler(button);
+            }
         }];
     }
     return _addBtn;
 }
 
-- (UILongPressGestureRecognizer *)longGesture {
-    if (!_longGesture) {
-        
-//        _longGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handlelongGesture:)];
-        
-        UILongPressGestureRecognizer    *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handlelongGesture:)];
-        gesture.minimumPressDuration = 0.05;
-        gesture.delegate = self;
-        
-        _longGesture = gesture;
-    }
-    return _longGesture;
-}
+
 @end
