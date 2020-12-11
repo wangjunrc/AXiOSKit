@@ -218,4 +218,11 @@
 }
 
 
+/// kvc 方式 UILabel快速设置行间距
+/// @param size 间距
+-(void)ax_lineSpacing:(NSNumber *)spacing {
+    
+    [self setValue:spacing forKey:@"lineSpacing"];
+}
+
 @end
