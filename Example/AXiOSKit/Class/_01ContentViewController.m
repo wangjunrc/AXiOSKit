@@ -36,13 +36,13 @@
 @end
 
 @implementation _01ContentViewController
-//- (void)injected {
-//    NSLog(@"重启了 InjectionIII: %@", self);
-//    [self viewDidLoad];
-//}
+- (void)injected {
+    NSLog(@"重启了 InjectionIII: %@", self);
+    [self viewDidLoad];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"02";
+    self.title = @"02222";
     
     __weak typeof(self) weakSelf = self;
     [self _p01UITextView_link];
@@ -89,6 +89,16 @@
     }];
     [self _p17CSAnimationView];
     [self _p18appleLogin];
+    
+    
+    [self _p00ButtonTitle:@"系统时间" handler:^{
+        
+        NSLog(@"CACurrentMediaTime :%f",CACurrentMediaTime());
+        NSLog(@"NSProcessInfo :%f", [[NSProcessInfo processInfo] systemUptime]);
+        NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:CACurrentMediaTime()];
+        NSLog(@"confromTimesp = %@",confromTimesp);
+    }];
+    
     
     
     /// 底部约束
@@ -162,7 +172,7 @@
         UITextField *nameTF = [[UITextField alloc]init];
         nameTF.backgroundColor = UIColor.orangeColor;
         nameTF.placeholder = @"输入姓名";
-        nameTF.accessibilityIdentifier = @"pwdTextField";
+        nameTF.accessibilityIdentifier = @"nameTextField";
         [self.containerView addSubview:nameTF];
         [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.bottomAttribute).mas_offset(20);
@@ -176,7 +186,7 @@
         UITextField *nameTF = [[UITextField alloc]init];
         nameTF.backgroundColor = UIColor.orangeColor;
         nameTF.placeholder = @"输入密码";
-        nameTF.accessibilityIdentifier = @"nameTextField";
+        nameTF.accessibilityIdentifier = @"pwdTextField";
         [self.containerView addSubview:nameTF];
         [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.bottomAttribute).mas_equalTo(10);

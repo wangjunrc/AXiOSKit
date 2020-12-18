@@ -1062,5 +1062,54 @@
 }
 
 
+/// 获取字符串的首字母, 缺省为#
+- (NSString*)ax_firstLetter {
+    NSString *string = self;
+    if ((string == nil)|| (string == NULL) || ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0) || [string isKindOfClass:[NSNull class]]) {
+        return @"#";
+    }
+    
+    NSMutableString *source = [NSMutableString stringWithString:string];
+    CFStringTransform((CFMutableStringRef)source, NULL, kCFStringTransformMandarinLatin, NO);
+    CFStringTransform((CFMutableStringRef)source, NULL, kCFStringTransformStripDiacritics, NO);
+    
+    return [[source capitalizedString] substringToIndex:1];
+}
+
+
+/// 模糊搜索 汉字搜索 不分大小写拼音或首字母搜索
+-(NSString *)ax_tansformToMixedString {
+    NSString *originStr = self;
+    // 转成了可变字符串
+    NSMutableString *str = [NSMutableString stringWithString:originStr];
+    CFStringTransform((CFMutableStringRef)str,NULL, kCFStringTransformMandarinLatin,NO);
+    //再转换为不带声调的拼音
+    CFStringTransform((CFMutableStringRef)str,NULL, kCFStringTransformStripDiacritics,NO);
+    NSArray *pinyinArray = [str componentsSeparatedByString:@" "];
+    
+
+    // 得到拼音
+    NSMutableString *pinyinString = [NSMutableString string];
+    for (NSString *s in pinyinArray) {
+        [pinyinString appendString:s];
+    }
+    
+    // 得到拼音首字母
+    NSMutableString *initialStr = [NSMutableString string];
+    for (NSString *s in pinyinArray){
+        if (s.length > 0){
+            [initialStr appendString:[s substringToIndex:1]];
+        }
+    }
+    NSMutableArray<NSString *> *array = [NSMutableArray array];
+    [array addObject:originStr];// 添加汉字
+    [array addObject:pinyinString]; // 添加小写拼音
+    [array addObject:[pinyinString uppercaseString]]; // 添加大写拼音
+    [array addObject:initialStr]; // 添加小写首字母
+    [array addObject:[initialStr uppercaseString]]; // 添加大写首字母
+
+    return [array componentsJoinedByString:@","];
+}
+
 @end
 

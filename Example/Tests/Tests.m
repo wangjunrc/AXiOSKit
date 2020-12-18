@@ -7,6 +7,7 @@
 //
 
 @import XCTest;
+#import <AXiOSKit/NSString+AXKit.h>
 
 @interface Tests : XCTestCase
 
@@ -26,15 +27,15 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-}
+//- (void)testExample
+//{
+////    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+//}
 - (void)testLogin {
     
 //    NSString *name = @"admin";
-//    NSString *pwd = @"123";
-//    
+////    NSString *pwd = @"123";
+//
 //    XCUIApplication *app = [[XCUIApplication alloc] init];
 //    //获取 name 输入框
 //    XCUIElement *nameTextField = app.textFields[@"nameTextField"];
@@ -55,8 +56,14 @@
 //    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"exists == 1"];
 //    [self expectationForPredicate:predicate evaluatedWithObject:nav handler:nil];
 //    [self waitForExpectationsWithTimeout:6 handler:nil];
+    
 }
 
+- (void)testAxKit {
+    
+    NSLog(@"ax_firstLetter = %@",[@"刘伟星" ax_firstLetter]);
+    NSLog(@"ax_tansformToMixedString = %@",[@"刘伟星" ax_tansformToMixedString]);
+}
 
 @end
 

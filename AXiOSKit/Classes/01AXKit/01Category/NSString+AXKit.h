@@ -348,4 +348,11 @@
 //截取字符前多少位，处理emoji表情问题
 ////🐒🐒🐒🐒 + 截取3 = 🐒🐒🐒
 - (NSString *)ax_subStringContainsEmojiWithLength:(NSInteger)limitLength;
+
+/// 获取字符串的首字母, 缺省为#
+@property (nonatomic, copy,readonly) NSString *ax_firstLetter;
+
+/// 模糊搜索 汉字搜索 不分大小写拼音或首字母搜索
+@property (nonatomic, copy,readonly) NSString *ax_tansformToMixedString;
+
 @end
