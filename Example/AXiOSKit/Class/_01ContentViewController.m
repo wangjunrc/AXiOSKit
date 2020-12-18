@@ -66,6 +66,7 @@
     [self _p14xmlToObj];
     [self _p15NSBlockOperation];
     [self _p16NSBlockOperation];
+    [self _p17NSBlockOperation];
     /// 会弹出 "想要查找并连接到本地网络上的设备" 弹窗
     [self _p00ButtonTitle:@"NSProcessInfo" handler:^{
         
@@ -465,9 +466,9 @@
         }];
         self.bottomAttribute = label.mas_bottom;
         
-       [self _p00ButtonTitle:@"kvc修改间距" handler:^{
+        [self _p00ButtonTitle:@"kvc修改间距" handler:^{
             [label setValue:@40 forKey:@"lineSpacing"];
-           
+            
         }];
     }
     
@@ -475,13 +476,13 @@
     {
         
         UILabel *label = UILabel.ax_init;
-       NSString *text = @"横向文字";
+        NSString *text = @"横向文字";
         
         NSRange range = NSMakeRange(0,  text.length);
         NSMutableAttributedString *mAttStr = [[NSMutableAttributedString alloc] initWithString:text];
         
         [mAttStr addAttributes:@{
-                        NSVerticalGlyphFormAttributeName:@1
+            NSVerticalGlyphFormAttributeName:@1
         } range:range];
         
         label.attributedText = mAttStr;
@@ -500,11 +501,11 @@
             NSMutableAttributedString *mAttStr = [[NSMutableAttributedString alloc] initWithString:label.text];
             
             [mAttStr addAttributes:@{
-                            NSVerticalGlyphFormAttributeName:@1
+                NSVerticalGlyphFormAttributeName:@1
             } range:range];
             
             label.attributedText = mAttStr;
-         }];
+        }];
     }
     
 }
@@ -751,6 +752,30 @@
     }];
 }
 
+-(void)_p17NSBlockOperation {
+    return [self _p00ButtonTitle:@"NSBlockOperation 依赖" handler:^{
+        //创建队列
+        NSOperationQueue *queue=[[NSOperationQueue alloc] init];
+        //创建操作
+        NSBlockOperation *operation1=[NSBlockOperation blockOperationWithBlock:^(){
+            NSLog(@"执行第11111次操作，线程：%@",[NSThread currentThread]);
+        }];
+        NSBlockOperation *operation2=[NSBlockOperation blockOperationWithBlock:^(){
+            NSLog(@"执行第22222次操作，线程：%@",[NSThread currentThread]);
+        }];
+        NSBlockOperation *operation3=[NSBlockOperation blockOperationWithBlock:^(){
+            NSLog(@"执行第33333次操作，线程：%@",[NSThread currentThread]);
+        }];
+        //添加依赖
+        [operation1 addDependency:operation2];
+        [operation2 addDependency:operation3];
+        //将操作添加到队列中去
+        [queue addOperation:operation1];
+        [queue addOperation:operation2];
+        [queue addOperation:operation3];
+    }];
+}
+
 - (NSArray *)getOrderArraywithArray:(NSArray *)array{
     //数组排序
     //定义一个数字数组
@@ -861,7 +886,7 @@
     }];
     addBtn.backgroundColor = [UIColor redColor];
     [addBtn setBackgroundImage:[UIImage ax_imageSquareWithColor:UIColor.orangeColor] forState:UIControlStateNormal];
-     [addBtn setBackgroundImage:[UIImage ax_imageSquareWithColor:UIColor.greenColor] forState:UIControlStateHighlighted];
+    [addBtn setBackgroundImage:[UIImage ax_imageSquareWithColor:UIColor.greenColor] forState:UIControlStateHighlighted];
     [addBtn setTitle:@"苹果登录" forState:UIControlStateNormal];
     [addBtn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     [addBtn addTarget:self action:@selector(didCustomBtnClicked) forControlEvents:UIControlEventTouchUpInside];
