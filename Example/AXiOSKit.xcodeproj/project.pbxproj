@@ -226,6 +226,7 @@
 		218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */; };
 		21948C9D2563F3BC00207E18 /* AXUserLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21948C662563F11E00207E18 /* AXUserLog.mm */; };
 		21948D422564B83700207E18 /* testXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = 21948D412564B83700207E18 /* testXML.xml */; };
+		2198FBEF258C913500D7BD4F /* AXShareContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2198FBEE258C913500D7BD4F /* AXShareContentViewController.m */; };
 		219F44522580BDC600E8CB50 /* _00SecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219F44512580BDC600E8CB50 /* _00SecondTableViewController.m */; };
 		219F44532580BDC600E8CB50 /* _00SecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219F44512580BDC600E8CB50 /* _00SecondTableViewController.m */; };
 		21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */; };
@@ -253,6 +254,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		6A9848C6EC07E177C3E87BD0 /* Pods_AXShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -494,6 +496,8 @@
 		21948C662563F11E00207E18 /* AXUserLog.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AXUserLog.mm; sourceTree = "<group>"; };
 		21948CA72563F8D100207E18 /* AXUserLog+DB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXUserLog+DB.h"; sourceTree = "<group>"; };
 		21948D412564B83700207E18 /* testXML.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = testXML.xml; sourceTree = "<group>"; };
+		2198FBED258C913500D7BD4F /* AXShareContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXShareContentViewController.h; sourceTree = "<group>"; };
+		2198FBEE258C913500D7BD4F /* AXShareContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXShareContentViewController.m; sourceTree = "<group>"; };
 		219F44502580BDC600E8CB50 /* _00SecondTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00SecondTableViewController.h; sourceTree = "<group>"; };
 		219F44512580BDC600E8CB50 /* _00SecondTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00SecondTableViewController.m; sourceTree = "<group>"; };
 		21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_3@2x.png"; sourceTree = "<group>"; };
@@ -520,8 +524,13 @@
 		21E5C8A7257F6BF8002A4D59 /* _00BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00BaseViewController.h; sourceTree = "<group>"; };
 		21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00BaseViewController.m; sourceTree = "<group>"; };
 		23DAC40E7EB79265BF8B711E /* Pods-AXiOSKit_Example.envi_1.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.envi_1.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.envi_1.xcconfig"; sourceTree = "<group>"; };
+		34CD8EAE2E4837F29211B711 /* Pods-AXShare.envi_1.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXShare.envi_1.xcconfig"; path = "Target Support Files/Pods-AXShare/Pods-AXShare.envi_1.xcconfig"; sourceTree = "<group>"; };
 		38516BC93098DB0B54BCAE78 /* Pods-AXiOSKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3A25A89E62384AA2C82FE520 /* Pods-AXiOSKit_Tests.envi_2.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.envi_2.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.envi_2.xcconfig"; sourceTree = "<group>"; };
+		526FF7567CF7979584CAA98C /* Pods-AXShare.envi_2.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXShare.envi_2.xcconfig"; path = "Target Support Files/Pods-AXShare/Pods-AXShare.envi_2.xcconfig"; sourceTree = "<group>"; };
+		535768695D6A059972E1D79B /* Pods_AXShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5702C260CA9B3EB5A545B13D /* Pods-AXShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXShare.debug.xcconfig"; path = "Target Support Files/Pods-AXShare/Pods-AXShare.debug.xcconfig"; sourceTree = "<group>"; };
+		5FEB46C41B4385FEE5D71097 /* Pods-AXShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXShare.release.xcconfig"; path = "Target Support Files/Pods-AXShare/Pods-AXShare.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* AXiOSKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -567,6 +576,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A9848C6EC07E177C3E87BD0 /* Pods_AXShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,6 +878,8 @@
 			children = (
 				21898E9A2541AD6900876524 /* ShareViewController.h */,
 				21898E9B2541AD6900876524 /* ShareViewController.m */,
+				2198FBED258C913500D7BD4F /* AXShareContentViewController.h */,
+				2198FBEE258C913500D7BD4F /* AXShareContentViewController.m */,
 				21898E9D2541AD6900876524 /* MainInterface.storyboard */,
 				21898EA02541AD6900876524 /* Info.plist */,
 				2111E052257377100016004D /* AXShare_Env_1_Info.plist */,
@@ -1069,6 +1081,7 @@
 				6003F5AF195388D20070C39A /* XCTest.framework */,
 				9B16B496756062CE8BD2DCFE /* Pods_AXiOSKit_Example.framework */,
 				E7A88A5D3295EADFD9289E18 /* Pods_AXiOSKit_Tests.framework */,
+				535768695D6A059972E1D79B /* Pods_AXShare.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1157,6 +1170,10 @@
 				23DAC40E7EB79265BF8B711E /* Pods-AXiOSKit_Example.envi_1.xcconfig */,
 				3A25A89E62384AA2C82FE520 /* Pods-AXiOSKit_Tests.envi_2.xcconfig */,
 				67F34DE9F6B7D94CB3961F9A /* Pods-AXiOSKit_Tests.envi_1.xcconfig */,
+				5702C260CA9B3EB5A545B13D /* Pods-AXShare.debug.xcconfig */,
+				526FF7567CF7979584CAA98C /* Pods-AXShare.envi_2.xcconfig */,
+				34CD8EAE2E4837F29211B711 /* Pods-AXShare.envi_1.xcconfig */,
+				5FEB46C41B4385FEE5D71097 /* Pods-AXShare.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1205,6 +1222,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21898EA72541AD6900876524 /* Build configuration list for PBXNativeTarget "AXShare" */;
 			buildPhases = (
+				2C4FEA7FD55A4F5A478B0F54 /* [CP] Check Pods Manifest.lock */,
 				21898E942541AD6900876524 /* Sources */,
 				21898E952541AD6900876524 /* Frameworks */,
 				21898E962541AD6900876524 /* Resources */,
@@ -1472,6 +1490,28 @@
 			shellPath = /bin/sh;
 			shellScript = "# 图标加版本号\n#$SRCROOT/JCIconVersion.sh\n\n# 启动图加版本号\n#$SRCROOT/launch_image.sh\n\n# 忘记干嘛的\n#$SRCROOT/SettingsBundle.sh\n";
 		};
+		2C4FEA7FD55A4F5A478B0F54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AXShare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6271D33F90BF430D6455374E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1716,6 +1756,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21898E9C2541AD6900876524 /* ShareViewController.m in Sources */,
+				2198FBEF258C913500D7BD4F /* AXShareContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1998,6 +2039,7 @@
 		};
 		21898EA52541AD6900876524 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5702C260CA9B3EB5A545B13D /* Pods-AXShare.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2039,6 +2081,7 @@
 		};
 		21898EA62541AD6900876524 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FEB46C41B4385FEE5D71097 /* Pods-AXShare.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2215,6 +2258,7 @@
 		};
 		2191E5952583140300DBE5DB /* Envi_1 */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34CD8EAE2E4837F29211B711 /* Pods-AXShare.envi_1.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2431,6 +2475,7 @@
 		};
 		2191E59B258314CE00DBE5DB /* Envi_2 */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 526FF7567CF7979584CAA98C /* Pods-AXShare.envi_2.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

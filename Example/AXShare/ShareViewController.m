@@ -7,11 +7,8 @@
 //
 
 #import "ShareViewController.h"
+#import "AXShareContentViewController.h"
 
-@interface ShareViewController ()<UITableViewDelegate,UITableViewDataSource>
-
-@property(nonatomic, strong)UITableView *tableView;
-@end
 
 @implementation ShareViewController
 
@@ -33,26 +30,13 @@
 }
 
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.redColor;
-    self.title = @"接收分享";
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    [self.view addSubview:self.tableView];
-    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cellID"];
+    AXShareContentViewController *vc = [AXShareContentViewController.alloc init];
+    [self setViewControllers:@[vc]];
     
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
-}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
-    return cell;;
-
 }
 
 @end
