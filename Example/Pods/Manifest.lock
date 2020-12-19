@@ -20,7 +20,6 @@ PODS:
     - AFNetworking (~> 4.0.0)
     - Aspects
     - DZNEmptyDataSet
-    - IQKeyboardManager
     - KVOController
     - Masonry
     - MBProgressHUD
@@ -168,7 +167,7 @@ PODS:
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SSKeychain (1.4.1)
-  - TZImagePickerController (3.4.8)
+  - TZImagePickerController (3.5.6)
   - WCDB (1.0.7.5):
     - SQLiteRepairKit (~> 1.2.0)
     - WCDBOptimizedSQLCipher (~> 1.2.0)
@@ -209,6 +208,9 @@ DEPENDENCIES:
   - WechatOpenSDK (= 1.7.7)
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - IQKeyboardManager
+    - TZImagePickerController
   trunk:
     - AFNetworking
     - Aspects
@@ -224,7 +226,6 @@ SPEC REPOS:
     - GDataXML-HTML
     - IGListDiffKit
     - IGListKit
-    - IQKeyboardManager
     - JJException
     - JKVValue
     - KVOController
@@ -251,7 +252,6 @@ SPEC REPOS:
     - SocketRocket
     - SQLiteRepairKit
     - SSKeychain
-    - TZImagePickerController
     - WCDB
     - WCDBOptimizedSQLCipher
     - WechatOpenSDK
@@ -264,7 +264,7 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
-  AXiOSKit: 129ca577ca7fa35edf0b63e8598c9dd270018059
+  AXiOSKit: 50f4357ed4b19d19d4a4feea0bc6eda314f82ef4
   Bagel: 199e0105ac694d6eee9db54dd006c940da6ce81b
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
@@ -303,11 +303,11 @@ SPEC CHECKSUMS:
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
-  TZImagePickerController: 6685e6d81b8fd5453e80ba369dd4ebd6e97276ee
+  TZImagePickerController: c03f760cf13b45e0acf5c3d7a1f7be628489344b
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: 69e65bf6a3707f91279f1f58688df9bfd0c26b63
+PODFILE CHECKSUM: 192e1c21fd4e2da2b4e03c64188d45e6b320b84f
 
 COCOAPODS: 1.10.0

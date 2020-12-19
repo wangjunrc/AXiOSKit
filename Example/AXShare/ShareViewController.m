@@ -8,7 +8,8 @@
 
 #import "ShareViewController.h"
 #import "AXShareContentViewController.h"
-
+#import <ReactiveObjC/ReactiveObjC.h>
+#import <Masonry/Masonry.h>
 
 @implementation ShareViewController
 

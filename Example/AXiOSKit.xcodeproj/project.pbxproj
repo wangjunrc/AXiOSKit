@@ -243,6 +243,8 @@
 		21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
 		21E5C8A9257F6BF8002A4D59 /* _00BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */; };
 		21E5C8AA257F6BF8002A4D59 /* _00BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */; };
+		21FC4435258DCE7C00AA253F /* Pods_AXShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; };
+		21FC4436258DCE7C00AA253F /* Pods_AXShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		22B101711E80BB6789BBCAF1 /* Pods_AXiOSKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16B496756062CE8BD2DCFE /* Pods_AXiOSKit_Example.framework */; };
 		5E6043E71FBCDD83C71D8C6A /* Pods_AXiOSKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A88A5D3295EADFD9289E18 /* Pods_AXiOSKit_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -254,7 +256,6 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		6A9848C6EC07E177C3E87BD0 /* Pods_AXShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,6 +303,17 @@
 				21898EA32541AD6900876524 /* AXShare.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21FC4437258DCE7C00AA253F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				21FC4436258DCE7C00AA253F /* Pods_AXShare.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -576,7 +588,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A9848C6EC07E177C3E87BD0 /* Pods_AXShare.framework in Frameworks */,
+				21FC4435258DCE7C00AA253F /* Pods_AXShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1226,6 +1238,7 @@
 				21898E942541AD6900876524 /* Sources */,
 				21898E952541AD6900876524 /* Frameworks */,
 				21898E962541AD6900876524 /* Resources */,
+				21FC4437258DCE7C00AA253F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

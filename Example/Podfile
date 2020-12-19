@@ -3,31 +3,13 @@ use_frameworks!
 platform :ios, '10.0'
 inhibit_all_warnings!
 
-target 'AXiOSKit_Example' do
-  pod 'AXiOSKit', :path => '../'
+source 'https://github.com/CocoaPods/Specs.git'
+
+# 因为有的target 不支持UIKit的库
+def ui_pods
   
-  #    pod 'AXiOSKit' , :git => 'https://github.com/AXinger/AXiOSKit.git', :branch => 'release/20190530_new'
-  # pod 'AXiOSKit', :source => 'https://github.com/AXinger/AXiOSKit.git'
-  #  pod "FLAnimatedImage"
-  pod 'SDWebImageFLPlugin'
-  pod 'SDWebImageWebPCoder'
-  #  pod "SDWebImage/GIF"
-  #  pod 'libwebp', :git => 'https://github.com/webmproject/libwebp.git'
-  pod 'SDWebImage','~> 5.9.5'
-  #  pod "SocketRocket"
+  pod 'IQKeyboardManager'
   pod "TZImagePickerController"
-  #pod "ZLPhotoBrowser"
-  pod "PromisesObjC"
-  pod "SocketRocket"
-  # 安全集合
-  pod 'AvoidCrash'
-  # 保护App
-  pod 'JJException'
-  # 微信开源数据库操作层 ORM
-  pod 'WCDB'
-  #pod 'LookinServer', :configurations => ['Debug']
-  
-  pod 'SSKeychain'
   #蘑菇街团队提供了MGJRouter路由库
   pod 'MGJRouter'
   #https://github.com/casatwy/CTMediator
@@ -39,10 +21,22 @@ target 'AXiOSKit_Example' do
   #AsyncSocket 是封装了 CFSocket 和 CFSteam 的 TCP/IP socket 网络库。它提供了异步操作，本地 cocoa 类的基于delegate的完整支持。
   pod "CocoaAsyncSocket"
   
-  pod "Masonry"
-  pod "AFNetworking"
-  pod "IQKeyboardManager"
-  pod 'WechatOpenSDK','1.7.7'
+  #  pod "FLAnimatedImage"
+  #  pod "SocketRocket"
+  #pod "ZLPhotoBrowser"
+  
+  pod "SocketRocket"
+  # 安全集合
+  pod 'AvoidCrash'
+  # 保护App
+  pod 'JJException'
+  # 微信开源数据库操作层 ORM
+  pod 'WCDB'
+  pod 'SSKeychain'
+  
+  # 代替 NSUserDefaults
+  pod 'MMKV'
+  
   #  pod "MJRefresh"
   #  pod "NullSafe"
   #  pod "MJExtension"
@@ -55,18 +49,14 @@ target 'AXiOSKit_Example' do
   #  pod "Aspects"
   pod 'MGSwipeTableCell','~> 1.6.11'
   
-  
-  pod 'ReactiveObjC'
   pod 'Canvas', '~> 0.1.2'
   pod 'RMQClient'
   pod 'MQTTClient'
   pod 'MQTTClient/Websocket'
   pod 'Bagel', '~>  1.3.2'
-  pod 'LLDebugTool' , '~> 1.0'
+  
   #OOMDetector是一个iOS内存监控组件，应用此组件可以帮助你轻松实现OOM监控、大内存分配监控、内存泄漏检测等功能。
   #  pod 'OOMDetector', '1.3'
-  # 代替 NSUserDefaults
-  pod 'MMKV'
   # hook c函数
   pod 'fishhook'
   
@@ -77,30 +67,70 @@ target 'AXiOSKit_Example' do
   #  pod 'IGListKit', '~> 4.0.0'
   pod 'IGListKit'
   #  pod 'YYKit'
-#  pod 'GRDB.swift'
+  #  pod 'GRDB.swift'
   
+end
+
+def common_pods
+  #    pod 'AXiOSKit' , :git => 'https://github.com/AXinger/AXiOSKit.git', :branch => 'release/20190530_new'
+  # pod 'AXiOSKit', :source => 'https://github.com/AXinger/AXiOSKit.git'
+  pod 'AXiOSKit', :path => '../'
+  pod "Masonry"
+  pod "AFNetworking"
+  pod 'ReactiveObjC'
+  pod "PromisesObjC"
+  pod 'SDWebImageFLPlugin'
+  pod 'SDWebImageWebPCoder'
+  #  pod "SDWebImage/GIF"
+  #  pod 'libwebp', :git => 'https://github.com/webmproject/libwebp.git'
+  pod 'SDWebImage','~> 5.9.5'
   
+end
+
+def debug_pods
   
   # 测试工具
+  pod 'LLDebugTool' , '~> 1.0'
   pod 'MLeaksFinder'
   pod 'LookinServer', :configurations => ['Debug']
   
+end
+
+
+target 'AXiOSKit_Example' do
+  
+  #  pod "IQKeyboardManager"
+  pod 'WechatOpenSDK','1.7.7'
+  
+  common_pods
+  ui_pods
+  debug_pods
+  
   target 'AXiOSKit_Tests' do
     inherit! :search_paths
-    
   end
 end
 
 target 'AXShare' do
   
-  
+  common_pods
   
 end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.0'
     end
   end
 end
+
+post_install do |installer_representation|
+  installer_representation.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
+    end
+  end
+end
+
+

@@ -45,7 +45,7 @@ Pod::Spec.new do |s|
     s.frameworks = 'Foundation', 'UIKit'
     s.dependency 'AFNetworking','~> 4.0.0'
     s.dependency 'SDWebImage'
-    s.dependency 'IQKeyboardManager'
+#    s.dependency 'IQKeyboardManager'
     s.dependency 'MJRefresh'
     s.dependency 'NullSafe'
     s.dependency 'MJExtension'
