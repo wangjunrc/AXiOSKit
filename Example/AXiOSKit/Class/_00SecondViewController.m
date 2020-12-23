@@ -6,11 +6,10 @@
 //  Copyright © 2020 axinger. All rights reserved.
 //
 
-#import "_00SecondTableViewController.h"
+#import "_00SecondViewController.h"
 #import "MyActivity.h"
 #import "RouterManager.h"
 #import "TestObj.h"
-#import "_00TableViewCell.h"
 #import "_01ContentViewController.h"
 #import "_01ThemeViewController.h"
 #import "_02ChatViewController.h"
@@ -46,23 +45,65 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <mach/mach.h>
 
-@interface _00SecondTableViewController ()
+
+@interface _00SecondViewController ()
 
 @property (nonatomic, strong) NSMutableArray<NSDictionary *> *dataArray;
 
 @end
 
-@implementation _00SecondTableViewController
+@implementation _00SecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"主题";
+    self.title = @"主题2";
     self.tableView.tableFooterView = UIView.alloc.init;
-    [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
+//    [self.tableView ax_registerNibCellClass:UITableViewCell.class];
+    [self.tableView ax_registerClassCell:UITableViewCell.class];
     self.dataArray = nil;
     [self.tableView reloadData];
+    /// 多选
+    self.tableView.allowsMultipleSelectionDuringEditing = YES;
+    
+    __weak typeof(self) weakSelf = self;
+    
+    UIButton *btn = [[UIButton alloc]init];
+    [btn setTitle:@"编辑" forState:UIControlStateNormal];
+    btn.backgroundColor = UIColor.blueColor;
+    [btn ax_addTargetBlock:^(UIButton * _Nullable button) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.tableView setEditing:!strongSelf.tableView.isEditing animated:YES];
+    }];
+    UIButton *btn2 = [[UIButton alloc]init];
+    [btn2 setTitle:@"删除" forState:UIControlStateNormal];
+    btn2.backgroundColor = UIColor.blueColor;
+    [btn2 addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],[UIBarButtonItem ax_itemByButton:btn2]];
     
 }
+-(void)deleteAction:(UIButton *)btn{
+    
+}
+// 实现UITableViewDelegate的两个代理
+
+/// iOS13是否允许多指选中
+
+-(BOOL)tableView:(UITableView *)tableView shouldBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath{
+
+    return YES;
+
+}
+
+/// iOS13多指选中开始，这里可以做一些UI修改，比如修改导航栏上按钮的文本
+
+-(void)tableView:(UITableView *)tableView didBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath {
+
+    // 最后当用户选择完，要做某些操作的时候，我们可以用 tableView.indexPathsForSelectedRows 获取用户选择的 rows。
+
+}
+
+
 
 - (void)test {
     NSLog(@"5");
@@ -93,13 +134,13 @@ void mySLog(NSString *format, ...)
     [header.textLabel setTextColor:UIColor.redColor];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewAutomaticDimension;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewAutomaticDimension;
-}
+//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return UITableViewAutomaticDimension;
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return UITableViewAutomaticDimension;
+//}
 
 - (NSInteger)   tableView:(UITableView *)tableView
     numberOfRowsInSection:(NSInteger)section {
@@ -107,12 +148,15 @@ void mySLog(NSString *format, ...)
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    _00TableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
+    UITableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
     
     NSDictionary *dict = self.dataArray[indexPath.row];
-    cell.indexLabel.text = [dict[@"index"] stringValue];
-    cell.nameLabel.text = dict[@"title"];
+//    cell.indexLabel.text = [dict[@"index"] stringValue];
+//    cell.nameLabel.text = dict[@"title"];
+       NSString  *index = [dict[@"index"] stringValue];
+    NSString  *title = dict[@"title"];
     
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",index,title];
     return cell;
 }
 
@@ -128,6 +172,66 @@ void mySLog(NSString *format, ...)
     didSelectRowAtIndexPath();
 }
 
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+//    tableView.backgroundColor = UIColor.whiteColor;
+//    // 圆角角度
+//      CGFloat radius = 10.f;
+//      // 设置cell 背景色为透明
+//      cell.backgroundColor = UIColor.clearColor;
+//      // 创建两个layer
+//      CAShapeLayer *normalLayer = [[CAShapeLayer alloc] init];
+//      CAShapeLayer *selectLayer = [[CAShapeLayer alloc] init];
+//      // 获取显示区域大小
+//      CGRect bounds = CGRectInset(cell.bounds, 10, 0);
+//      // 获取每组行数
+//      NSInteger rowNum = [tableView numberOfRowsInSection:indexPath.section];
+//      // 贝塞尔曲线
+//      UIBezierPath *bezierPath = nil;
+//
+//    if (rowNum == 1) {
+//        // 一组只有一行（四个角全部为圆角）
+//        bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds
+//                                           byRoundingCorners:UIRectCornerAllCorners
+//                                                 cornerRadii:CGSizeMake(radius, radius)];
+//    } else {
+//        if (indexPath.row == 0) {
+//            // 每组第一行（添加左上和右上的圆角）
+//            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds
+//                                               byRoundingCorners:(UIRectCornerTopLeft|UIRectCornerTopRight)
+//                                                     cornerRadii:CGSizeMake(radius, radius)];
+//
+//        } else if (indexPath.row == rowNum - 1) {
+//            // 每组最后一行（添加左下和右下的圆角）
+//            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds
+//                                               byRoundingCorners:(UIRectCornerBottomLeft|UIRectCornerBottomRight)
+//                                                     cornerRadii:CGSizeMake(radius, radius)];
+//        } else {
+//            // 每组不是首位的行不设置圆角
+//            bezierPath = [UIBezierPath bezierPathWithRect:bounds];
+//        }
+//    }
+//    // 把已经绘制好的贝塞尔曲线路径赋值给图层，然后图层根据path进行图像渲染render
+//    normalLayer.path = bezierPath.CGPath;
+//    selectLayer.path = bezierPath.CGPath;
+//
+//
+//    UIView *nomarBgView = [[UIView alloc] initWithFrame:bounds];
+//    // 设置填充颜色
+////    normalLayer.fillColor = [UIColor redColor].CGColor;
+//    normalLayer.fillColor = [UIColor groupTableViewBackgroundColor].CGColor;
+//    // 添加图层到nomarBgView中
+//    [nomarBgView.layer insertSublayer:normalLayer atIndex:0];
+//    nomarBgView.backgroundColor = UIColor.clearColor;
+//    cell.backgroundView = nomarBgView;
+//
+//    UIView *selectBgView = [[UIView alloc] initWithFrame:bounds];
+//    selectLayer.fillColor = [UIColor orangeColor].CGColor;
+//    [selectBgView.layer insertSublayer:selectLayer atIndex:0];
+//    selectBgView.backgroundColor = UIColor.clearColor;
+//    cell.selectedBackgroundView = selectBgView;
+//
+//
+//}
 
 
 //- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -146,41 +250,41 @@ void mySLog(NSString *format, ...)
 //    return @"删除";
 //}
 
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (tableView.isEditing) {
-        return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
-    }
-    return UITableViewCellEditingStyleDelete;
-}
+//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (tableView.isEditing) {
+//        return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
+//    }
+//    return UITableViewCellEditingStyleDelete;
+//}
 
 
-- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(11.0)){
-    
-    //    NSString *title = @"置顶";
-    //    if (indexPath.section == 0) {
-    //        title = @"取消置顶";
-    //    } else {
-    //        title = @"置顶";
-    //    }
-    //    UIContextualAction *topAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:title handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {            // 这句很重要，退出编辑模式，隐藏左滑菜单
-    //        [tableView setEditing:NO animated:YES];
-    //        completionHandler(true);
-    //    }];
-    
-    UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
-        action.title =@"删除1";
-        action.image = [UIImage imageNamed:@"cell_right_delete"];
-        // 这句很重要，退出编辑模式，隐藏左滑菜单
-        [tableView setEditing:NO animated:YES];
-        completionHandler(true);
-    }];
-    deleteAction.title =@"删除1";
-    deleteAction.image = [UIImage imageNamed:@"cell_right_delete"];
-    UISwipeActionsConfiguration *actions = [UISwipeActionsConfiguration configurationWithActions:@[deleteAction]];
-    // 禁止侧滑无线拉伸
-    actions.performsFirstActionWithFullSwipe = NO;
-    return actions;
-}
+//- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(11.0)){
+//    
+//    //    NSString *title = @"置顶";
+//    //    if (indexPath.section == 0) {
+//    //        title = @"取消置顶";
+//    //    } else {
+//    //        title = @"置顶";
+//    //    }
+//    //    UIContextualAction *topAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:title handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {            // 这句很重要，退出编辑模式，隐藏左滑菜单
+//    //        [tableView setEditing:NO animated:YES];
+//    //        completionHandler(true);
+//    //    }];
+//    
+//    UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+//        action.title =@"删除1";
+//        action.image = [UIImage imageNamed:@"cell_right_delete"];
+//        // 这句很重要，退出编辑模式，隐藏左滑菜单
+//        [tableView setEditing:NO animated:YES];
+//        completionHandler(true);
+//    }];
+//    deleteAction.title =@"删除1";
+//    deleteAction.image = [UIImage imageNamed:@"cell_right_delete"];
+//    UISwipeActionsConfiguration *actions = [UISwipeActionsConfiguration configurationWithActions:@[deleteAction]];
+//    // 禁止侧滑无线拉伸
+//    actions.performsFirstActionWithFullSwipe = NO;
+//    return actions;
+//}
 
 //- (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
 //{

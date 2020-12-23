@@ -1553,9 +1553,12 @@ dispatch_async(concurrentQueue, ^(){
 dispatch_async(concurrentQueue, ^(){
     NSLog(@"dispatch-3");
 });
+/// 异步
 dispatch_barrier_async(concurrentQueue, ^(){
     NSLog(@"dispatch-barrier");
 });
+/// 同步
+dispatch_barrier_sync
 dispatch_async(concurrentQueue, ^(){
     NSLog(@"dispatch-4");
 });
@@ -2058,4 +2061,9 @@ self.ImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysT
         }
     }
 } error:nil];
+```
+
+iOS13 icon
+```
+UIImage *image = [UIImage systemImageNamed:@"ladybug.fill"];
 ```

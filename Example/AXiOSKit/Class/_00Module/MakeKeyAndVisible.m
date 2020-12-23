@@ -10,10 +10,10 @@
 
 #import <SDWebImageWebPCoder/SDImageWebPCoder.h>
 #import <SDWebImage/SDImageCodersManager.h>
-#import "_00TableViewController.h"
+#import "_00FirstViewController.h"
 #import "AANavigationController.h"
 #import <AXiOSKit/AXConfigureManager.h>
-#import "_00SecondTableViewController.h"
+#import "_00SecondViewController.h"
 #import "AXTabBarController.h"
 
 @implementation MakeKeyAndVisible
@@ -31,7 +31,7 @@
     
     {
         
-        _00TableViewController *roorvc = [[_00TableViewController alloc]init];
+        _00FirstViewController *roorvc = [[_00FirstViewController alloc]init];
         AANavigationController *nav = [[AANavigationController alloc]initWithRootViewController:roorvc];
         
         nav.tabBarItem.title=@"控制器";
@@ -50,7 +50,7 @@
     }
     {
         
-        _00SecondTableViewController *roorvc = [[_00SecondTableViewController alloc]init];
+        _00SecondViewController *roorvc = [[_00SecondViewController alloc]init];
         AANavigationController *nav = [[AANavigationController alloc]initWithRootViewController:roorvc];
         
         nav.tabBarItem.title=@"测试";

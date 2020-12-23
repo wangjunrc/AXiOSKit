@@ -64,9 +64,6 @@
     [self _p12memoryUsage3];
     [self _p13MoreAlter];
     [self _p14xmlToObj];
-    [self _p15NSBlockOperation];
-    [self _p16NSBlockOperation];
-    [self _p17NSBlockOperation];
     /// 会弹出 "想要查找并连接到本地网络上的设备" 弹窗
     [self _p00ButtonTitle:@"NSProcessInfo" handler:^{
         
@@ -693,88 +690,7 @@
     
 }
 
--(void)_p15NSBlockOperation {
-    return [self _p00ButtonTitle:@"NSBlockOperation" handler:^{
-        
-        //2.NSBlockOperation(最常使用)
-        NSBlockOperation * blockOp = [NSBlockOperation blockOperationWithBlock:^{
-            //要执行的操作，目前是主线程
-            //            NSLog(@"NSBlockOperation 创建，线程：%@",[NSThread currentThread]);
-            
-            for (int i = 0; i < 2; i++) {
-                [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-                NSLog(@"1---%@", [NSThread currentThread]); // 打印当前线程
-            }
-            
-        }];
-        //2.1 追加任务，在子线程中执行
-        [blockOp addExecutionBlock:^{
-            NSLog(@"追加任务一, %@",[NSThread currentThread]);
-            
-            for (int i = 0; i < 2; i++) {
-                [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-                NSLog(@"追加任务一: %@", [NSThread currentThread]); // 打印当前线程
-            }
-        }];
-        //        [blockOp addExecutionBlock:^{
-        //            NSLog(@"追加任务二, %@",[NSThread currentThread]);
-        //        }];
-        [blockOp start];
-        
-    }];
-}
 
--(void)_p16NSBlockOperation {
-    return [self _p00ButtonTitle:@"NSOperationQueue222" handler:^{
-        // 1.创建队列
-        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-        
-        // 2.使用 addOperationWithBlock: 添加操作到队列中
-        [queue addOperationWithBlock:^{
-            for (int i = 0; i < 2; i++) {
-                [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-                NSLog(@"1---%@", [NSThread currentThread]); // 打印当前线程
-            }
-        }];
-        [queue addOperationWithBlock:^{
-            for (int i = 0; i < 2; i++) {
-                [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-                NSLog(@"2---%@", [NSThread currentThread]); // 打印当前线程
-            }
-        }];
-        [queue addOperationWithBlock:^{
-            for (int i = 0; i < 2; i++) {
-                [NSThread sleepForTimeInterval:2]; // 模拟耗时操作
-                NSLog(@"3---%@", [NSThread currentThread]); // 打印当前线程
-            }
-        }];
-        
-    }];
-}
-
--(void)_p17NSBlockOperation {
-    return [self _p00ButtonTitle:@"NSBlockOperation 依赖" handler:^{
-        //创建队列
-        NSOperationQueue *queue=[[NSOperationQueue alloc] init];
-        //创建操作
-        NSBlockOperation *operation1=[NSBlockOperation blockOperationWithBlock:^(){
-            NSLog(@"执行第11111次操作，线程：%@",[NSThread currentThread]);
-        }];
-        NSBlockOperation *operation2=[NSBlockOperation blockOperationWithBlock:^(){
-            NSLog(@"执行第22222次操作，线程：%@",[NSThread currentThread]);
-        }];
-        NSBlockOperation *operation3=[NSBlockOperation blockOperationWithBlock:^(){
-            NSLog(@"执行第33333次操作，线程：%@",[NSThread currentThread]);
-        }];
-        //添加依赖
-        [operation1 addDependency:operation2];
-        [operation2 addDependency:operation3];
-        //将操作添加到队列中去
-        [queue addOperation:operation1];
-        [queue addOperation:operation2];
-        [queue addOperation:operation3];
-    }];
-}
 
 - (NSArray *)getOrderArraywithArray:(NSArray *)array{
     //数组排序

@@ -12,6 +12,7 @@
 #import "AppDelegateRegistryCenter.h"
 #import <Bagel/Bagel.h>
 #import <LLDebugTool/LLDebug.h>
+#import "AXDebugManager.h"
 #import <UserNotifications/UserNotifications.h>
 
 #if ENV == 1
@@ -61,10 +62,57 @@
     //    } else {
     //        // Fallback on earlier versions
     //    }
+    //    AXWindowViewController *vc = AXWindowViewController.alloc.init;
+    //    vc.view.backgroundColor = UIColor.orangeColor;
+    ////    [[LLDebugTool sharedTool] setValue:vc forKeyPath:@"window.rootViewController"];
+    //    [[LLDebugTool sharedTool] startWorking];
+    //
+    //    [[LLDebugTool sharedTool] startWorkingWithConfigBlock:^(LLConfig * _Nonnull config) {
+    //
+    //           //####################### Color Style #######################//
+    //           // Uncomment one of the following lines to change the color configuration.
+    //           // config.colorStyle = LLConfigColorStyleSystem;
+    //           // [config configBackgroundColor:[UIColor orangeColor] primaryColor:[UIColor whiteColor] statusBarStyle:UIStatusBarStyleDefault];
+    //
+    //           //####################### User Identity #######################//
+    //           // Use this line to tag user. More config please see "LLConfig.h".
+    //           config.userIdentity = @"Miss L";
+    //
+    //           //####################### Window Style #######################//
+    //           // Uncomment one of the following lines to change the window style.
+    //           // config.entryWindowStyle = LLConfigEntryWindowStyleNetBar;
+    //
+    //       }];
+    
+    //    [AXDebugManager.sharedManager startInWindow:nil];
+    
+    
+    //    [AXDebugManager.sharedManager startWithHandler:^id<AXDebugUIConfigProtocol> _Nonnull(UIViewController * _Nonnull vc) {
+    //        AXDebugUIConfig *config = [AXDebugUIConfig.alloc init];
+    //        UIViewController *vc = [UIViewController.alloc init];
+    //        vc.view.backgroundColor = UIColor.redColor;
+    //        config.rootViewController = vc;
+    //        return config;
+    //    }];
+    AXDebugManager.sharedManager.withConfig(^id<AXDebugUIConfigProtocol> _Nonnull(UIViewController * _Nonnull vc) {
+        
+        AXDebugUIConfig *config = [AXDebugUIConfig.alloc init];
+        UINavigationController *nav = [UINavigationController.alloc initWithRootViewController:vc];
+        config.rootViewController = nav;
+        return config;
+        
+    }).start();
+    
+//    AXDebugManager.sharedManager.start();
     
     return YES;
 }
 
+-(void)rightBarButtonItemAction:(UIBarButtonItem *)sender {
+    
+    [AXDebugManager.sharedManager.config.rootViewController dismissViewControllerAnimated:YES completion:nil];
+    
+}
 -(void)_note __IOS_AVAILABLE(10.0) {
     //注册本地推送
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
