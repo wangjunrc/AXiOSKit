@@ -71,5 +71,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)evaluateJavaScript:(NSString *)jsMethodName
                    handler:(void (^)(id data, NSError *error))handler;
 
+///高度刷新回调  会回调多次。如果要求 webView 的高度等于内容高度可根据此高度改变 XXXWebView 高度
+@property (nonatomic, copy) void(^loadOverHeight)(CGFloat height);
+
 @end
 NS_ASSUME_NONNULL_END

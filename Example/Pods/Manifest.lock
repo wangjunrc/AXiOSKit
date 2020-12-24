@@ -186,7 +186,7 @@ DEPENDENCIES:
   - IGListKit
   - IQKeyboardManager
   - JJException
-  - LLDebugTool (~> 1.0)
+  - LLDebugTool (= 1.3.8.1)
   - LookinServer
   - Masonry
   - MGJRouter
@@ -308,6 +308,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: 192e1c21fd4e2da2b4e03c64188d45e6b320b84f
+PODFILE CHECKSUM: faa0c1676f3b014d1f793702efa7ae30475fe52f
 
 COCOAPODS: 1.10.0

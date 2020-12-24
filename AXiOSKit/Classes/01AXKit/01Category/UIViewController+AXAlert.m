@@ -447,7 +447,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     if (messageAtt) {
         [alert setValue:messageAtt forKey:@"attributedMessage"];
     }
-    [self _alertControllerAddAction:alert actionItems:actionArray];
+    [self _alertControllerAddAction:alert actionItems:actionArray confirm:confirm];
     
     [self _alert:alert addPadView:iPadView];
     [self presentViewController:alert animated:YES completion:nil];
@@ -479,12 +479,12 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
         }
     }]];
     
-    [self _alertControllerAddAction:alert actionItems:actionArray];
+    [self _alertControllerAddAction:alert actionItems:actionArray confirm:confirm];
     [self _alert:alert addPadView:iPadView];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
--(void)_alertControllerAddAction:(UIAlertController * )alert  actionItems:(NSArray <AXActionItem*>*)actionArray {
+-(void)_alertControllerAddAction:(UIAlertController * )alert  actionItems:(NSArray <AXActionItem*>*)actionArray confirm:(void(^)(NSInteger index))confirm{
     
     [actionArray enumerateObjectsUsingBlock:^(AXActionItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (obj.title.length==0) {

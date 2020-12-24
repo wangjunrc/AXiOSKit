@@ -14,6 +14,7 @@
 #import <Masonry/Masonry.h>
 #import "AXWebScriptMessageModel.h"
 #import "NSString+AXKit.h"
+#import "AXImageSchemeHanlder.h"
 
 typedef NS_ENUM(NSInteger, WKWebLoadType){
     WKWebLoadTypeHTML,
@@ -519,6 +520,33 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 }
 
 
+- (void)updateHeight {
+    [self nowUpdateHeight];
+    [self delayUpdateHeight];
+}
+
+- (void)nowUpdateHeight {
+    
+    __weak typeof(self) weakSelf = self;
+    [self.webView evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id _Nullable result,NSError * _Nullable error) {
+        
+        // 高度会有一点少 ，手动补上 20
+        CGFloat height = [result floatValue] + 20.0;
+        weakSelf.webView.height = height;
+        if (weakSelf.loadOverHeight) {
+            weakSelf.loadOverHeight(height);
+        }
+    }];
+}
+
+- (void)delayUpdateHeight {
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, DelayTime * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self nowUpdateHeight];
+    });
+}
+
+
 //加载失败,返回
 - (void)fun_loadErrorback{
     
@@ -553,6 +581,19 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         //播放背景音乐
         //            config.mediaPlaybackRequiresUserAction = YES;
         //        config.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAudio;
+        
+        
+//        AXImageSchemeHanlder *imageScheme = AXImageSchemeHanlder.alloc.init;
+//        imageScheme.oriImageScheme = self.oriImageScheme;
+//        imageScheme.oriImageUrl = self.oriImageUrl;
+//        imageScheme.placeholderImage = self.placeholderImage;
+//
+//        __weak typeof(self) weakSelf = self;
+//        imageScheme.updateImageBlock = ^ {
+//            [weakSelf updateHeight];
+//        };
+//        [config setURLSchemeHandler:imageScheme forURLScheme:XXXCustomImageScheme];
+        
         
         WKUserContentController *userContentController = [[WKUserContentController alloc] init];
         config.userContentController = userContentController;

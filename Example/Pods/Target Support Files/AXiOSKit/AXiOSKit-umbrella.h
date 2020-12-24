@@ -122,6 +122,7 @@
 #import "AXWKWebVC.h"
 #import "AXScriptMessageHandlerHelper.h"
 #import "AXWebScriptMessageModel.h"
+#import "AXImageSchemeHanlder.h"
 #import "AXButton.h"
 #import "AXCycleScrollView.h"
 #import "AXDottedLineView.h"
