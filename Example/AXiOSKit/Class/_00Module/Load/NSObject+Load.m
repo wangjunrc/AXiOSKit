@@ -43,7 +43,13 @@
 
 
 -(void)ax_addAction:(UIAlertAction *)action{
-    [action setValue:UIColor.orangeColor forKey:@"_titleTextColor"];
+//    [action setValue:UIColor.orangeColor forKey:@"_titleTextColor"];
+//    
+//    if (@available(iOS 13.0, *)) {
+//        UIImage *secondImage = [[UIImage systemImageNamed:@"square.and.arrow.up"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//        [action setValue:secondImage forKey:@"image"];
+//    }
+    
     [self ax_addAction:action];
 }
 

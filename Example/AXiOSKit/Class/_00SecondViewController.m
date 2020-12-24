@@ -58,7 +58,7 @@
     [super viewDidLoad];
     self.title = @"主题2";
     self.tableView.tableFooterView = UIView.alloc.init;
-//    [self.tableView ax_registerNibCellClass:UITableViewCell.class];
+    //    [self.tableView ax_registerNibCellClass:UITableViewCell.class];
     [self.tableView ax_registerClassCell:UITableViewCell.class];
     self.dataArray = nil;
     [self.tableView reloadData];
@@ -90,17 +90,17 @@
 /// iOS13是否允许多指选中
 
 -(BOOL)tableView:(UITableView *)tableView shouldBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     return YES;
-
+    
 }
 
 /// iOS13多指选中开始，这里可以做一些UI修改，比如修改导航栏上按钮的文本
 
 -(void)tableView:(UITableView *)tableView didBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     // 最后当用户选择完，要做某些操作的时候，我们可以用 tableView.indexPathsForSelectedRows 获取用户选择的 rows。
-
+    
 }
 
 
@@ -151,9 +151,9 @@ void mySLog(NSString *format, ...)
     UITableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
     
     NSDictionary *dict = self.dataArray[indexPath.row];
-//    cell.indexLabel.text = [dict[@"index"] stringValue];
-//    cell.nameLabel.text = dict[@"title"];
-       NSString  *index = [dict[@"index"] stringValue];
+    //    cell.indexLabel.text = [dict[@"index"] stringValue];
+    //    cell.nameLabel.text = dict[@"title"];
+    NSString  *index = [dict[@"index"] stringValue];
     NSString  *title = dict[@"title"];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",index,title];
@@ -424,25 +424,138 @@ void mySLog(NSString *format, ...)
                     //                                           cancel:^{
                     //                                           }];
                     
-                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"tile" message:@"msg" preferredStyle:UIAlertControllerStyleAlert];
+//                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"tile" message:@"msg" preferredStyle:UIAlertControllerStyleAlert];
+//
+//                    // 修改message字体及颜色
+//                    NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:alert.message];
+//                    [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor redColor] range:NSMakeRange(0, alert.message.length)];
+//                    [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, alert.message.length)];
+//
+//
+//
+//                    [alert setValue:messageStr forKey:@"attributedMessage"];
+//
+//                    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"确定") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+//                    }]];
+//
+//
+//                    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"取消") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//
+//                    }]];
+//
+//                    [self presentViewController:alert animated:YES completion:nil];
                     
-                    // 修改message字体及颜色
-                    NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:alert.message];
-                    [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor redColor] range:NSMakeRange(0, alert.message.length)];
-                    [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, alert.message.length)];
-                    [alert setValue:messageStr forKey:@"attributedMessage"];
                     
-                    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"确定") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-                    }]];
+                    NSString *title = @"title";
+                    NSMutableAttributedString *titleAtt = [[NSMutableAttributedString alloc] initWithString:title];
+                    [titleAtt addAttribute:NSForegroundColorAttributeName value: [UIColor redColor] range:NSMakeRange(0, title.length)];
+                    [titleAtt addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, title.length)];
                     
+                    // 创建图片图片附件
+                        NSTextAttachment *attach = [[NSTextAttachment alloc] init];
+                     
                     
-                    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"取消") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    if (@available(iOS 13.0, *)) {
+                        UIImage *img = [UIImage systemImageNamed:@"sun.max.fill"];
+                        img = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                        img = [img imageWithTintColor:UIColor.redColor];
+                        attach.image = img;
                         
-                    }]];
+                    }
                     
-                    [self presentViewController:alert animated:YES completion:nil];
+                        attach.bounds = CGRectMake(0, 0, 50, 50);
+                    
+                    NSMutableAttributedString *attachString =   [NSMutableAttributedString attributedStringWithAttachment:attach].mutableCopy;
+                    
+                    
+                    
+                        //将图片插入到合适的位置
+//                        [titleAtt insertAttributedString:attachString atIndex:0];
+                    [titleAtt appendAttributedString:attachString];
+                    
+                    NSString *msg = @"消息";
+                    NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:msg];
+                    [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor orangeColor] range:NSMakeRange(0, msg.length)];
+                    [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, msg.length)];
+                    
+                    NSMutableArray<AXActionItem *> *temp = NSMutableArray.array;
+                    
+                    {
+                        
+                        
+                        AXActionItem *item = [AXActionItem.alloc init];
+                                                item.title = @"A";
+                        item.titleColor = [UIColor redColor];
+                        if (@available(iOS 13.0, *)) {
+                            item.image = [UIImage systemImageNamed:@"a.circle.fill"];
+                        }
+                        item.imageColor = UIColor.orangeColor;
+                        [temp addObject:item];
+                    }
+                    {
+                        
+                        
+                        AXActionItem *item = [AXActionItem.alloc init];
+                        item.title = @"B";
+                        item.titleColor = [UIColor greenColor];
+                        
+                        if (@available(iOS 13.0, *)) {
+                            item.image = [UIImage systemImageNamed:@"b.circle.fill"];
+                        }
+                        
+                        item.style = UIAlertActionStyleCancel;
+                        [temp addObject:item];
+                    }
+                    
+                    
+                    [self ax_showAlertWithStyle:UIAlertControllerStyleActionSheet iPadView:nil title:titleAtt message:messageStr actionItems:temp confirm:^(NSInteger index) {
+                        
+                    } cancel:^{
+                        
+                    }];
                 },
             },
+            
+            @{
+                @"index": @3,
+                @"title": @"sheet含有图片文字",
+                @"action": ^{
+                    NSMutableArray<AXActionItem *> *temp = NSMutableArray.array;
+                    
+                    {
+                        
+                        
+                        AXActionItem *item = [AXActionItem.alloc init];
+                        //                        item.title = @"A";
+                        item.titleColor = [UIColor redColor];
+                        //
+                        if (@available(iOS 13.0, *)) {
+                            item.image = [UIImage systemImageNamed:@"a.circle.fill"];
+                        }
+                        [temp addObject:item];
+                    }
+                    {
+                        
+                        
+                        AXActionItem *item = [AXActionItem.alloc init];
+                        item.title = @"B";
+                        item.titleColor = [UIColor greenColor];
+                        
+                        if (@available(iOS 13.0, *)) {
+                            item.image = [UIImage systemImageNamed:@"b.circle.fill"];
+                        }
+                        [temp addObject:item];
+                    }
+                    
+                    
+                    [self ax_showSheetByTitle:@"title" message:@"msg" actionItems:temp confirm:^(NSInteger index) {
+                        
+                    } cancel:^{
+                        
+                    }];
+                },
+            },
+            
             
             @{
                 @"index": @3,

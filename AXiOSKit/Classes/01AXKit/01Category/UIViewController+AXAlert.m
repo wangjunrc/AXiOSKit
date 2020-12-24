@@ -16,6 +16,9 @@
 #import "AXDeviceFunctionDisableViewController.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 
+@implementation AXActionItem
+@end
+
 typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 
 @interface UIViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
@@ -176,10 +179,10 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
-
+    
     UITextField * textF=nil;
     __block typeof(textF)weaktextF = textF;
-
+    
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         weaktextF = textField;
         textField.placeholder = message;
@@ -210,12 +213,12 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
     
-     __block typeof(textF)weaktextF = textF;
+    __block typeof(textF)weaktextF = textF;
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = textF.placeholder;
         textField.keyboardType = textF.keyboardType;
         textField.secureTextEntry = textF.secureTextEntry;
-
+        
         weaktextF = textField;
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     }];
@@ -272,11 +275,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
         [strongSelf __alertToPhotoLibrary:edit];
     }]];
     
-    
-    if (iPadView != nil) {
-        alert.popoverPresentationController.sourceView = iPadView;
-        alert.popoverPresentationController.sourceRect =iPadView.bounds;
-    }
+    [self _alert:alert addPadView:iPadView];
     [self presentViewController:alert animated:YES completion:nil];
     
 }
@@ -343,7 +342,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
             //  显示 图片,视频
             picker.mediaTypes = @[(NSString *)kUTTypeImage,(NSString*)kUTTypeMovie];
             //  显示 图片
-//            picker.mediaTypes = @[(NSString *)kUTTypeImage];
+            //            picker.mediaTypes = @[(NSString *)kUTTypeImage];
             picker.delegate = self;
             //设置选择后的图片可被编辑
             picker.allowsEditing = edit;
@@ -358,13 +357,13 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  */
 - (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     /**
-    NSString *const  UIImagePickerControllerMediaType ;指定用户选择的媒体类型（文章最后进行扩展）
-    NSString *const  UIImagePickerControllerOriginalImage ;原始图片
-    NSString *const  UIImagePickerControllerEditedImage ;修改后的图片
-    NSString *const  UIImagePickerControllerCropRect ;裁剪尺寸
-    NSString *const  UIImagePickerControllerMediaURL ;媒体的URL
-    NSString *const  UIImagePickerControllerReferenceURL ;原件的URL
-    NSString *const  UIImagePickerControllerMediaMetadata;当来数据来源是照相机的时候这个值才有效
+     NSString *const  UIImagePickerControllerMediaType ;指定用户选择的媒体类型（文章最后进行扩展）
+     NSString *const  UIImagePickerControllerOriginalImage ;原始图片
+     NSString *const  UIImagePickerControllerEditedImage ;修改后的图片
+     NSString *const  UIImagePickerControllerCropRect ;裁剪尺寸
+     NSString *const  UIImagePickerControllerMediaURL ;媒体的URL
+     NSString *const  UIImagePickerControllerReferenceURL ;原件的URL
+     NSString *const  UIImagePickerControllerMediaMetadata;当来数据来源是照相机的时候这个值才有效
      */
     
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -409,7 +408,68 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Sheet 有取消回调
  */
+- (void)ax_showSheetByTitle:(NSString *)title
+                    message:(NSString*)message
+                actionItems:(NSArray <AXActionItem*>*)actionArray
+                    confirm:(void(^)(NSInteger index))confirm
+                     cancel:(void(^)(void))cancel {
+    [self ax_showSheetByiPadView:nil title:title message:message actionItems:actionArray confirm:confirm cancel:cancel];
+}
+
+/**
+ * Sheet 有取消回调
+ */
 - (void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
+    NSMutableArray<AXActionItem *> *temp = [NSMutableArray array];
+    for (NSString *title in actionArray) {
+        AXActionItem *item = [AXActionItem.alloc init];
+        item.title = title;
+        [temp addObject:item];
+    }
+    [self ax_showSheetByiPadView:iPadView title:title message:message actionItems:temp confirm:confirm cancel:cancel];
+    
+}
+
+#pragma mark - Alert 和 sheet
+
+- (void)ax_showAlertWithStyle:(UIAlertControllerStyle )style
+                     iPadView:(UIView *)iPadView
+                        title:(NSMutableAttributedString *)titleAtt
+                      message:(NSMutableAttributedString *)messageAtt
+                  actionItems:(NSArray <AXActionItem*>*)actionArray
+                      confirm:(void(^)(NSInteger index))confirm
+                       cancel:(void(^)(void))cancel {
+    
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:titleAtt.string message:messageAtt.string preferredStyle:style];
+    if (titleAtt) {
+        [alert setValue:titleAtt forKey:@"attributedTitle"];
+    }
+    if (messageAtt) {
+        [alert setValue:messageAtt forKey:@"attributedMessage"];
+    }
+    [self _alertControllerAddAction:alert actionItems:actionArray];
+    
+    [self _alert:alert addPadView:iPadView];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+
+/**
+ Sheet 有取消回调
+ 
+ @param iPadView iPad 需要显传入显示的view
+ @param title title
+ @param message message
+ @param actionItems 其他按钮文字数组
+ @param confirm 选中按钮回调
+ */
+- (void)ax_showSheetByiPadView:(UIView*)iPadView
+                         title:(NSString *)title
+                       message:(NSString*)message
+                   actionItems:(NSArray <AXActionItem*>*)actionArray
+                       confirm:(void(^)(NSInteger index))confirm
+                        cancel:(void(^)(void))cancel {
     
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
     
@@ -419,31 +479,50 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
         }
     }]];
     
+    [self _alertControllerAddAction:alert actionItems:actionArray];
+    [self _alert:alert addPadView:iPadView];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)_alertControllerAddAction:(UIAlertController * )alert  actionItems:(NSArray <AXActionItem*>*)actionArray {
     
-    for (NSInteger index=0; index<actionArray.count; index++) {
-        
-        NSString *title = actionArray[index];
-        
-        [alert addAction:[UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [actionArray enumerateObjectsUsingBlock:^(AXActionItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.title.length==0) {
+            obj.title = @"";
+        }
+        UIAlertAction *action = [UIAlertAction actionWithTitle:obj.title style:obj.style handler:^(UIAlertAction * _Nonnull action) {
             if (confirm) {
                 confirm(index);
             }
-        }]];
-    }
+        }];
+        
+        if (obj.titleColor) {
+            [action setValue:obj.titleColor forKey:@"_titleTextColor"];
+        }
+        
+        if (obj.image) {
+            [action setValue:obj.image forKey:@"image"];
+        }
+        
+        if (obj.imageColor) {
+            [action setValue:obj.imageColor forKey:@"_imageTintColor"];
+        }
+        [alert addAction:action];
+        
+    }];
+}
+
+-(void)_alert:(UIAlertController * )alert addPadView:(UIView*)iPadView {
     if (iPadView != nil) {
         alert.popoverPresentationController.sourceView = iPadView;
         alert.popoverPresentationController.sourceRect = iPadView.bounds;
     }
-    
-    [self presentViewController:alert animated:YES completion:nil];
-    
 }
 
 /**
  * Sheet 退出登录 兼容iPad需要传入view
  */
 - (void)ax_showSheeLogoutByPadView:(UIView *)iPadView confirm:(void(^)(void))confirm{
-    
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:AXKitLocalizedString(@"ax.logOut.message") preferredStyle:UIAlertControllerStyleActionSheet];
     
@@ -456,16 +535,10 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
             confirm();
         }
     }]];
-    
-    if (iPadView != nil) {
-        alert.popoverPresentationController.sourceView = iPadView;
-        alert.popoverPresentationController.sourceRect =iPadView.bounds;
-    }
-    
+    [self _alert:alert addPadView:iPadView];
     [self presentViewController:alert animated:YES completion:nil];
     
 }
-
 
 
 /**
@@ -473,9 +546,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  */
 - (void)ax_showAlertByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
     
-    
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    
     
     [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"ax.cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
@@ -499,11 +570,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
         }]];
     }
     
-    if (iPadView != nil) {
-        alert.popoverPresentationController.sourceView = iPadView;
-        alert.popoverPresentationController.sourceRect = iPadView.bounds;
-    }
-    
+    [self _alert:alert addPadView:iPadView];
     [self presentViewController:alert animated:YES completion:nil];
     
 }

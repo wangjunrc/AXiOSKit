@@ -45,6 +45,8 @@
     self.title = @"02222";
     
     __weak typeof(self) weakSelf = self;
+    
+    [self _p01TextAndImage];
     [self _p01UITextView_link];
     [self _p01loginTest];
     [self _p02AlternateIconName];
@@ -194,6 +196,48 @@
         }];
         self.bottomAttribute = nameTF.mas_bottom;
     }
+}
+
+-(void)_p01TextAndImage {
+    NSString *title = @"图文混排";
+    NSMutableAttributedString *titleAtt = [[NSMutableAttributedString alloc] initWithString:title];
+    [titleAtt addAttribute:NSForegroundColorAttributeName value: [UIColor redColor] range:NSMakeRange(0, title.length)];
+    [titleAtt addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, title.length)];
+    {
+        
+        // 创建图片图片附件
+        NSTextAttachment *attach = [[NSTextAttachment alloc] init];
+        if (@available(iOS 13.0, *)) {
+            attach.image = [[UIImage systemImageNamed:@"sun.max.fill"] imageWithTintColor:UIColor.greenColor];
+        }
+        
+        attach.bounds = CGRectMake(0, 0, 50, 50);
+        NSMutableAttributedString *attachString =   [NSMutableAttributedString attributedStringWithAttachment:attach].mutableCopy;
+        [titleAtt appendAttributedString:attachString];
+    }
+    
+    {
+        
+        NSString *str = @"结尾";
+        NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:str];
+        [attStr addAttribute:NSForegroundColorAttributeName value: [UIColor orangeColor] range:NSMakeRange(0, str.length)];
+        [attStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, str.length)];
+        [titleAtt appendAttributedString:attStr];
+    }
+    
+    
+    UILabel *lable = [UILabel.alloc init];
+    [self.containerView addSubview:lable];
+    [lable mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.equalTo(self.bottomAttribute).mas_offset(10);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+        
+    }];
+    lable.attributedText = titleAtt;
+    
+    self.bottomAttribute = lable.mas_bottom;
 }
 
 -(void)_p01UITextView_link {

@@ -9,6 +9,26 @@
 #import <UIKit/UIKit.h>
 
 
+@interface AXActionItem : NSObject
+
+/// 文字
+@property(nonatomic, copy) NSString *title;
+
+@property(nonatomic, strong) UIColor *titleColor;
+
+/// 利用kvc 添加图片
+@property(nonatomic, strong) UIImage *image;
+@property(nonatomic, strong) UIColor *imageColor;
+
+
+///
+@property(nonatomic, assign) UIAlertActionStyle style;
+
+///回调参数
+@property(nonatomic, strong) id anyObject;
+
+@end
+
 @interface UIViewController (AXAlert)
 
 
@@ -41,12 +61,29 @@
                 actionArray:(NSArray <NSString*>*)actionArray
                     confirm:(void(^)(NSInteger index))confirm
                      cancel:(void(^)(void))cancel;
-
+/**
+ * Sheet 有取消回调
+ */
+- (void)ax_showSheetByTitle:(NSString *)title
+                    message:(NSString*)message
+                actionItems:(NSArray <AXActionItem*>*)actionArray
+                    confirm:(void(^)(NSInteger index))confirm
+                     cancel:(void(^)(void))cancel;
 /**
  * Sheet 退出登录
  */
 - (void)ax_showSheeLogout:(void(^)(void))confirm;
 
+
+#pragma mark - Alert 和 sheet
+
+- (void)ax_showAlertWithStyle:(UIAlertControllerStyle )style
+                     iPadView:(UIView *)iPadView
+                   title:(NSMutableAttributedString *)titleAtt
+                 message:(NSMutableAttributedString *)messageAtt
+             actionItems:(NSArray <AXActionItem*>*)actionArray
+                 confirm:(void(^)(NSInteger index))confirm
+                  cancel:(void(^)(void))cancel;
 
 #pragma mark - Alert
 
@@ -230,6 +267,7 @@
                    actionArray:(NSArray <NSString*>*)actionArray
                        confirm:(void(^)(NSInteger index))confirm;
 
+
 /**
  Sheet 有取消回调
 
@@ -246,6 +284,23 @@
                    actionArray:(NSArray <NSString*>*)actionArray
                        confirm:(void(^)(NSInteger index))confirm
                         cancel:(void(^)(void))cancel;
+
+/**
+ Sheet 有取消回调
+
+ @param iPadView iPad 需要显传入显示的view
+ @param title title
+ @param message message
+ @param actionItems 其他按钮文字数组
+ @param confirm 选中按钮回调
+ */
+- (void)ax_showSheetByiPadView:(UIView*)iPadView
+                         title:(NSString *)title
+                       message:(NSString*)message
+                   actionItems:(NSArray <AXActionItem*>*)actionArray
+                       confirm:(void(^)(NSInteger index))confirm
+                        cancel:(void(^)(void))cancel;
+
 
 /**
  Sheet 退出登录
