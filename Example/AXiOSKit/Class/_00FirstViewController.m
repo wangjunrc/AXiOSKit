@@ -110,7 +110,7 @@ typedef void (^CollectionBlock)(void);
     [btn2 setTitle:@"删除" forState:UIControlStateNormal];
     btn2.backgroundColor = UIColor.blueColor;
     [btn2 addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [btn2 ax_constraintButtonItemWidth:120 height:30];
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],[UIBarButtonItem ax_itemByButton:btn2]];
 }
 

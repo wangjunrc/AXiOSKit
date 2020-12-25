@@ -116,5 +116,11 @@ typedef NS_ENUM(NSInteger,AXLineDirection){
  *  @param heightOrwidth 变量的宽度或者高度
  */
 - (void)ax_addLineDirection:(AXLineDirection)direction color:(UIColor *)color height:(NSInteger)height;
+
+/// UIBarButtonItem 尺寸约束
+/// @param width 宽
+/// @param height 高
+-(void)ax_constraintButtonItemWidth:(CGFloat )width  height:(CGFloat )height;
+
 @end
 NS_ASSUME_NONNULL_END

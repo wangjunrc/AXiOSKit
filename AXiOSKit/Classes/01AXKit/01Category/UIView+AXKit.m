@@ -377,4 +377,13 @@ typedef void(^DidViewBlock)(UIView *view);
         }];
     }
 }
+
+/// UIBarButtonItem 尺寸约束
+/// @param width 宽
+/// @param height 高
+-(void)ax_constraintButtonItemWidth:(CGFloat )width  height:(CGFloat )height {
+    [self.widthAnchor constraintEqualToConstant:width].active =YES;
+    [self.heightAnchor constraintEqualToConstant:height].active =YES;
+}
+
 @end
