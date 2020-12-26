@@ -46,7 +46,6 @@
 
 @property(nonatomic, strong) NSMutableArray *dataArray;
 
-@property(nonatomic, strong) UIView *containerView;
 
 @end
 
@@ -58,127 +57,224 @@
     
     self.title = @"ReactiveObjC";
     
-    UIScrollView *scrollView = [UIScrollView.alloc init];
-    [self.view addSubview:scrollView];
-    
-    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
-    
-    // 2.给scrollView添加一个containerView
-    UIView *containerView = [UIView.alloc init];
-    containerView.backgroundColor = UIColor.orangeColor;
-    self.containerView = containerView;
-    [scrollView addSubview:containerView];
-    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(scrollView);
-        make.width.equalTo(scrollView); // 需要设置宽度和scrollview宽度一样
-    }];
-    UIView *topView = containerView;
-    topView =  [self _01UITextField:topView];
-    topView =  [self _03timer:topView];
-    topView =  [self _04arrayMap:topView];
-    topView =  [self _05ForSelector:topView];
-    topView =  [self _06RACReplaySubject:topView];
-    topView =  [self _07UITextFieldButton:topView];
-    topView =  [self _08zipWith:topView];
-    topView =  [self _08merge:topView];
-    topView =  [self _08then:topView];
-    topView =  [self _08concat:topView];
+    [self _01UITextField];
+    [self _01UITextField_text];
+    [self _03timer];
+    [self _04arrayMap];
+    [self _05ForSelector];
+    [self _06RACReplaySubject];
+    [self _08zipWith];
+    [self _08merge];
+    [self _08then];
+    [self _08concat];
     
     
-    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(topView.mas_bottom).mas_equalTo(100);// 这里放最后一个view的底部
-    }];
+    
+//    [RACObserve(button, enabled) subscribeNext:^(NSNumber  * x) {
+//     
+//        
+//    }];
+    
+    
+    /// 底部约束
+    [self _loadBottomAttribute];
+    
     
 }
 
--(UIView *)_00Button:(UIView *)topView title:(NSString *)title handler:(void(^)(void))handler {
-    if (title.length==0) {
-        title = @"title";
+-(void)_01UITextField_text {
+    
+    UITextField *tf1;
+    {
+        UITextField *view = [[UITextField alloc] init];
+        [self.containerView addSubview:view];
+        view.backgroundColor = UIColor.grayColor;
+        view.placeholder = @"输入值";
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.left.mas_equalTo(20);
+            make.right.mas_equalTo(-20);
+        }];
+        
+        tf1 =view;
+        self.bottomAttribute = view.mas_bottom;
     }
-    UIButton *btn = [[UIButton alloc] init];
-    [self.containerView addSubview:btn];
-    btn.backgroundColor = UIColor.blueColor;
-    [btn ax_setTitleStateNormal:title];
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
-        make.left.right.height.equalTo(topView).mas_equalTo(0);
+    UITextField *tf2;
+    {
+        UITextField *view = [[UITextField alloc] init];
+        [self.containerView addSubview:view];
+        view.backgroundColor = UIColor.grayColor;
+        view.placeholder = @"点击赋值";
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.left.mas_equalTo(20);
+            make.right.mas_equalTo(-20);
+        }];
+        
+        tf2 =view;
+        self.bottomAttribute = view.mas_bottom;
+    }
+    
+    UIButton *btn0;
+    {
+        UIButton *btn = [[UIButton alloc] init];
+        [self.containerView addSubview:btn];
+        btn.backgroundColor = UIColor.grayColor;
+        [btn ax_setTitleStateNormal:@"可用"];
+        [btn ax_setTitleStateDisabled:@"不可用"];
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.left.mas_equalTo(20);
+            make.right.mas_equalTo(-20);
+        }];
+        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
+            tf1.text = [NSString stringWithFormat:@"%d",ax_randomZeroToValue(3)];
+        }];
+        btn0 = btn;
+        self.bottomAttribute = btn.mas_bottom;
+    }
+    UIButton *btn1;
+    
+    {
+        UIButton *btn = [[UIButton alloc] init];
+        [self.containerView addSubview:btn];
+        btn.backgroundColor = UIColor.grayColor;
+        [btn ax_setTitleStateNormal:@"组合二绑定一,点击给tf赋值"];
+        
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.left.mas_equalTo(20);
+            make.right.mas_equalTo(-20);
+        }];
+        __block int val = 0;
+        
+        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
+            val++;
+            if (val>=3) {
+                val = 0;
+            }
+            if (val == 0) {
+                tf2.text = nil;
+            }else {
+                tf2.text = [NSString stringWithFormat:@"%d",val];
+            }
+        }];
+        
+        btn1 = btn;
+        self.bottomAttribute = btn.mas_bottom;
+    }
+    
+    /// UITextField 组合 最佳答案, tf变化和赋值都会执行
+    ///  ^id _Nullable (NSString *text1, NSString *text2) 后面参数最多相同,可用少
+    RACSignal *comineSiganl = [RACSignal combineLatest:@[tf1.rac_textSignal,tf2.rac_textSignal, RACObserve(tf1, text),RACObserve(tf2, text)] reduce:^id _Nullable  {
+        NSLog(@"text1 = %@,text2 = %@",tf1.text,tf2.text);
+        return @(tf1.text.length && tf2.text.length);
     }];
-    /// 按钮事件
-    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
-        if (handler) {
-            handler();
-        }
+    
+    /// 文字变化,初始化有点问题
+//    RACSignal *comineSiganl = [RACSignal combineLatest:@[tf1.rac_newTextChannel,tf2.rac_newTextChannel, RACObserve(tf2, text)] reduce:^id _Nullable (NSString *text1, NSString *text2, NSString *text22) {
+//        NSLog(@"text1 = %@,text2 = %@,text22 = %@",text1,text2,text22);
+//        return @(tf1.text.length && tf2.text.length);
+//    }];
+//
+    
+    
+    
+//    [RACObserve(tf2, text) subscribeNext:^(id x) {
+//        NSLog(@"点击给 UITextField赋值 = %@",x);
+//    }];
+//
+//    [tf2.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
+//        NSLog(@"点击给 UITextField赋值2 = %@",x);
+//    }];
+//    [tf2.rac_newTextChannel subscribeNext:^(NSString * _Nullable x) {
+//        NSLog(@"点击给 UITextField赋值3 = %@",x);
+//    }];
+    
+    RAC(btn0, enabled) = comineSiganl;
+    [RACObserve(btn0, enabled) subscribeNext:^(id  _Nullable x) {
+        btn0.backgroundColor = [x boolValue] ? UIColor.redColor : UIColor.grayColor;
     }];
-    topView =btn;
-    return topView;
 }
-
-
--(UIView *)_01UITextField:(UIView *)topView {
+-(void)_01UITextField {
     
     
     UILabel *label1;
     {
         UILabel *label = [[UILabel alloc] init];
         [self.containerView addSubview:label];
-        label.backgroundColor = UIColor.blueColor;
+        label.backgroundColor = UIColor.grayColor;
         label.text = @"label1";
         
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topView.mas_top).mas_equalTo(ax_status_bar_height());
-            make.left.equalTo(topView).mas_equalTo(20);
-            make.right.equalTo(topView).mas_equalTo(-20);
-            //            make.height.mas_equalTo(all_height);
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.left.mas_equalTo(20);
+            make.right.mas_equalTo(-20);
         }];
         
         
         label1 =label;
-        topView =label;
+        self.bottomAttribute = label.mas_bottom;
     }
-    UITextField *tf;
-    {
-        UITextField *view = [[UITextField alloc] init];
-        [self.containerView addSubview:view];
-        view.backgroundColor = UIColor.blueColor;
-        view.ax_top = topView.ax_bottom + 10;
-        view.ax_left = topView.ax_left;
-        view.placeholder = @"tf";
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
-            make.left.right.height.equalTo(topView).mas_equalTo(0);
-        }];
-        
-        tf =view;
-        
-        topView =view;
-    }
-    
     UIButton *btn1;
-    
     {
         UIButton *btn = [[UIButton alloc] init];
         [self.containerView addSubview:btn];
-        btn.backgroundColor = UIColor.blueColor;
-        [btn ax_setTitleStateNormal:@"UITextField 双向绑定"];
+        btn.backgroundColor = UIColor.grayColor;
+        [btn ax_setTitleStateNormal:@"UITextField 双向绑定,点击label赋值"];
         
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
-            make.left.right.height.equalTo(topView).mas_equalTo(0);
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.left.mas_equalTo(20);
+            make.right.mas_equalTo(-20);
         }];
-        
-        //        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
-        //            label1.text = [NSString stringWithFormat:@"%d",ax_randomZeroToValue(2)];
-        //        }];
         /// 按钮事件
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
             label1.text = [NSString stringWithFormat:@"%d",ax_randomZeroToValue(3)];
         }];
         
         btn1 = btn;
-        topView =btn;
+        self.bottomAttribute = btn.mas_bottom;
     }
+    UITextField *tf;
+    {
+        UITextField *view = [[UITextField alloc] init];
+        [self.containerView addSubview:view];
+        view.backgroundColor = UIColor.grayColor;
+        view.placeholder = @"tf";
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.left.mas_equalTo(20);
+            make.right.mas_equalTo(-20);
+        }];
+        
+        tf =view;
+        
+        self.bottomAttribute = view.mas_bottom;
+    }
+    {
+        UIButton *btn = [[UIButton alloc] init];
+        [self.containerView addSubview:btn];
+        btn.backgroundColor = UIColor.grayColor;
+        [btn ax_setTitleStateNormal:@"UITextField 双向绑定,点击tf赋值"];
+        
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.left.mas_equalTo(20);
+            make.right.mas_equalTo(-20);
+        }];
+        /// 按钮事件
+        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
+            tf.text = [NSString stringWithFormat:@"%d",ax_randomFromTo(100,103)];
+        }];
+        
+        btn1 = btn;
+        self.bottomAttribute = btn.mas_bottom;
+    }
+    
+    RACChannelTo(label1, text) = RACChannelTo(tf, text);
+    /// 需要增加一个绑定
+    [tf.rac_textSignal subscribe:RACChannelTo(label1, text)];
     
     /// UITextField 双向绑定
    /***
@@ -218,10 +314,15 @@
 //        return [value isEqualToString:@"2"] ? @"我是2" : value;
 //    }];
     /// filter
-    RAC(label1, text) = [tf.rac_newTextChannel filter:^BOOL(NSString * _Nullable value) {
-        return value.length>3;
-    }];
-    RAC(tf, text) = RACObserve(label1, text);
+//    RAC(label1, text) = [tf.rac_newTextChannel filter:^BOOL(NSString * _Nullable value) {
+//        return value.length>3;
+//    }];
+//    RAC(tf, text) = RACObserve(label1, text);
+//    RAC(label1, text) = [tf.rac_newTextChannel subscribeNext:^(NSString * _Nullable x) {
+//
+//    }];
+
+    
     
     ///
 //    RAC(label1, text) = tf.rac_newTextChannel;
@@ -229,14 +330,12 @@
 //        NSLog(@"value = %@",value);
 //        return [value isEqualToString:@"2"] ? @"我是2" : value;
 //    }];
-    
-    
-    return topView;
 }
 /// 定时器
--(UIView *)_03timer:(UIView *)topView {
+-(void)_03timer {
     
-    return [self _00Button:topView title:@"interval 定时器" handler:^{
+    
+    [self _p00ButtonTitle:@"interval 定时器" handler:^{
         __block NSInteger count = 0;
         __block  RACDisposable *signal =   [[RACSignal interval:1.0 onScheduler:[RACScheduler currentScheduler]] subscribeNext:^(id x) {
             NSLog(@"interval = %@", x);
@@ -249,10 +348,9 @@
 }
 
 
--(UIView *)_04arrayMap:(UIView *)topView {
+-(void)_04arrayMap {
     
-    return [self _00Button:topView title:@"NSArray map" handler:^{
-        
+     [self _p00ButtonTitle:@"NSArray map" handler:^{
         
         NSArray *array = @[@"1", @"2", @"3"];
         
@@ -296,7 +394,7 @@
 -(void)_05Selector:(NSString *)name {
     NSLog(@"_05Selector  %@", name);
 }
--(UIView *)_05ForSelector:(UIView *)topView {
+-(void)_05ForSelector {
     
     // 方式二: rac_signalForSelector
     [[self rac_signalForSelector:@selector(_05Selector:)] subscribeNext:^(id  _Nullable x) {
@@ -305,21 +403,21 @@
         NSLog(@"rac_signalForSelector: name %@", name);
     }];
     
-    return [self _00Button:topView title:@"监听方法被调用" handler:^{
+    [self _p00ButtonTitle:@"监听方法被调用" handler:^{
         [self _05Selector:@"jim"];
     }];
     
 }
 
--(UIView *)_06RACReplaySubject:(UIView *)topView {
+-(void)_06RACReplaySubject {
     
     UIButton *btn = [[UIButton alloc] init];
     [self.containerView addSubview:btn];
-    btn.backgroundColor = UIColor.blueColor;
+    btn.backgroundColor = UIColor.grayColor;
     [btn ax_setTitleStateNormal:@"UIButton 2次订阅"];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
-        make.left.right.height.equalTo(topView).mas_equalTo(0);
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.left.right.mas_equalTo(20);
     }];
     /// 按钮事件
     RACSignal *signal =  [btn rac_signalForControlEvents:UIControlEventTouchUpInside];
@@ -345,83 +443,14 @@
     //    [signal subscribeNext:^(UIButton *x) {
     //        NSLog(@"2次订阅 x : %@",x);
     //    }];
-    topView =btn;
-    return topView;
+    self.bottomAttribute = btn.mas_bottom;
     
 }
 
--(UIView *)_07UITextFieldButton:(UIView *)topView {
-    
-    UITextField *nameTF;
-    {
-        UITextField *view = [[UITextField alloc] init];
-        [self.containerView addSubview:view];
-        view.backgroundColor = UIColor.blueColor;
-        view.placeholder = @"请输入账号";
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
-            make.left.right.height.equalTo(topView).mas_equalTo(0);
-        }];
-        
-        nameTF =view;
-        
-        topView =view;
-    }
-    UITextField *pswTF;
-    {
-        UITextField *view = [[UITextField alloc] init];
-        [self.containerView addSubview:view];
-        view.backgroundColor = UIColor.blueColor;
-        view.placeholder = @"请输入密码";
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
-            make.left.right.height.equalTo(topView).mas_equalTo(0);
-        }];
-        
-        pswTF =view;
-        topView =view;
-    }
-    
-    UIButton *btn1;
-    
-    {
-        UIButton *btn = [[UIButton alloc] init];
-        [self.containerView addSubview:btn];
-        btn.backgroundColor = UIColor.blueColor;
-        [btn ax_setTitleStateNormal:@"账号密码UIButton可用"];
-        [btn setTitleColor:UIColor.redColor forState:UIControlStateNormal];
-        [btn setTitleColor:UIColor.grayColor forState:UIControlStateDisabled];
-        btn.enabled = NO;
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topView.mas_bottom).mas_equalTo(20);
-            make.left.right.height.equalTo(topView).mas_equalTo(0);
-        }];
-        
-        
-        RACSignal *comineSiganl = [RACSignal combineLatest:@[nameTF.rac_textSignal, pswTF.rac_textSignal]
-                                                    reduce:^id _Nullable(NSString *username, NSString *password){
-            NSLog(@"username: %@, password: %@", username, password);
-            return @(username.length && password.length);
-        }];
-        // 订阅组合信号
-        //    [comineSiganl subscribeNext:^(id x) {
-        //        _loginBtn.enabled = [x boolValue];
-        //    }];
-        RAC(btn, enabled) = comineSiganl;
-        
-        btn1 = btn;
-        topView =btn;
-    }
+-(void)_08zipWith {
     
     
-    
-    return topView;
-}
-
--(UIView *)_08zipWith:(UIView *)topView {
-    
-    
-    return [self _00Button:topView title:@"所有请求完成" handler:^{
+     [self _p00ButtonTitle:@"所有请求完成" handler:^{
         
         // 需求: 一个界面有多个请求, 所有请求完成才更新 UI.
         RACSubject *signalA = [RACSubject subject];
@@ -443,9 +472,9 @@
     
 }
 
--(UIView *)_08merge:(UIView *)topView {
+-(void)_08merge {
     
-    return [self _00Button:topView title:@"任意信号发送完成,都会回调" handler:^{
+    return [self _p00ButtonTitle:@"任意信号发送完成,都会回调" handler:^{
         
         // 任意信号发送完成都会调用 nextBlock block.
         RACSubject *signalA = [RACSubject subject];
@@ -466,9 +495,9 @@
     
 }
 
--(UIView *)_08then:(UIView *)topView {
+-(void)_08then {
     
-    return [self _00Button:topView title:@"then: 组合信号, 忽悠掉第一个信号" handler:^{
+    return [self _p00ButtonTitle:@"then: 组合信号, 忽悠掉第一个信号" handler:^{
         
         RACSignal *siganlA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             NSLog(@"发送A请求");
@@ -495,9 +524,9 @@
     }];
     
 }
--(UIView *)_08concat:(UIView *)topView {
+-(void)_08concat {
     
-    return [self _00Button:topView title:@"concat: 顺序链接组合信号" handler:^{
+    return [self _p00ButtonTitle:@"concat: 顺序链接组合信号" handler:^{
         
         RACSignal *siganlA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             NSLog(@"发送A请求");
@@ -536,7 +565,7 @@
         UIButton *btn = [[UIButton alloc] init];
         [self.containerView addSubview:btn];
         btn.frame = CGRectMake(0, 0, all_width, all_height);
-        btn.backgroundColor = UIColor.blueColor;
+        btn.backgroundColor = UIColor.grayColor;
         [btn ax_setTitleStateNormal:@"Normal"];
         [btn ax_setTitleStateDisabled:@"Disabled"];
         btn.ax_top = topView.top + ax_status_bar_height();
@@ -553,7 +582,7 @@
         UIButton *btn = [[UIButton alloc] init];
         [self.containerView addSubview:btn];
         btn.frame = CGRectMake(0, 0, all_width, all_height);
-        btn.backgroundColor = UIColor.blueColor;
+        btn.backgroundColor = UIColor.grayColor;
         [btn ax_setTitleStateNormal:@"Normal-2"];
         [btn ax_setTitleStateDisabled:@"Disabled-2"];
         btn.ax_top = topView.ax_bottom + 10;
@@ -570,7 +599,7 @@
         UILabel *label = [[UILabel alloc] init];
         [self.containerView addSubview:label];
         label.frame = CGRectMake(0, 0, all_width, all_height);
-        label.backgroundColor = UIColor.blueColor;
+        label.backgroundColor = UIColor.grayColor;
         label.ax_top = topView.ax_bottom + 10;
         label.ax_left = topView.ax_left;
         label.text = @"label1";
@@ -582,7 +611,7 @@
         UITextField *view = [[UITextField alloc] init];
         [self.containerView addSubview:view];
         view.frame = CGRectMake(0, 0, all_width, all_height);
-        view.backgroundColor = UIColor.blueColor;
+        view.backgroundColor = UIColor.grayColor;
         view.ax_top = topView.ax_bottom + 10;
         view.ax_left = topView.ax_left;
         view.placeholder = @"tf";
@@ -616,7 +645,7 @@
         UIButton *btn = [[UIButton alloc] init];
         [self.containerView addSubview:btn];
         btn.frame = CGRectMake(0, 0, all_width, all_height);
-        btn.backgroundColor = UIColor.blueColor;
+        btn.backgroundColor = UIColor.grayColor;
         [btn ax_setTitleStateNormal:@"清空数组"];
         btn.ax_top = topView.ax_bottom + 10;
         btn.ax_left = topView.ax_left;
@@ -634,7 +663,7 @@
         UIButton *btn = [[UIButton alloc] init];
         [self.containerView addSubview:btn];
         btn.frame = CGRectMake(0, 0, all_width, all_height);
-        btn.backgroundColor = UIColor.blueColor;
+        btn.backgroundColor = UIColor.grayColor;
         [btn ax_setTitleStateNormal:@"添加数组"];
         btn.ax_top = topView.ax_bottom + 10;
         btn.ax_left = topView.ax_left;
@@ -665,7 +694,7 @@
         UISwitch *btn = [[UISwitch alloc] init];
         [self.containerView addSubview:btn];
         btn.frame = CGRectMake(0, 0, all_width, all_height);
-        btn.backgroundColor = UIColor.blueColor;
+        btn.backgroundColor = UIColor.grayColor;
         btn.ax_top = topView.ax_bottom + 10;
         btn.ax_left = topView.ax_left;
         

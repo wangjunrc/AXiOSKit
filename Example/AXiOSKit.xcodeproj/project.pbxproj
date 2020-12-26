@@ -88,7 +88,6 @@
 		211227402573340100B6ECC8 /* _26RMQClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB38254003D900C89B72 /* _26RMQClientViewController.xib */; };
 		211227412573340100B6ECC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDA254003DA00C89B72 /* Assets.xcassets */; };
 		211227422573340100B6ECC8 /* testXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = 21948D412564B83700207E18 /* testXML.xml */; };
-		211227432573340100B6ECC8 /* _22ReactiveObjCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB62254003D900C89B72 /* _22ReactiveObjCViewController.xib */; };
 		211227442573340100B6ECC8 /* _02ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBA4254003DA00C89B72 /* _02ChatViewController.xib */; };
 		211227452573340100B6ECC8 /* Alternate_AppIcon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */; };
 		211227462573340100B6ECC8 /* _07VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB46254003D900C89B72 /* _07VideoViewController.xib */; };
@@ -162,7 +161,6 @@
 		213BCC08254003DB00C89B72 /* _24NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB5E254003D900C89B72 /* _24NoteViewController.xib */; };
 		213BCC09254003DB00C89B72 /* _04RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB60254003D900C89B72 /* _04RunLoopViewController.m */; };
 		213BCC0A254003DB00C89B72 /* _22ReactiveObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB61254003D900C89B72 /* _22ReactiveObjCViewController.m */; };
-		213BCC0B254003DB00C89B72 /* _22ReactiveObjCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB62254003D900C89B72 /* _22ReactiveObjCViewController.xib */; };
 		213BCC0C254003DB00C89B72 /* AANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB63254003D900C89B72 /* AANavigationController.m */; };
 		213BCC0D254003DB00C89B72 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB68254003D900C89B72 /* Person.m */; };
 		213BCC0E254003DB00C89B72 /* _07VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB69254003D900C89B72 /* _07VideoViewController.m */; };
@@ -386,7 +384,6 @@
 		213BCB5F254003D900C89B72 /* _15UIMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _15UIMenuController.h; sourceTree = "<group>"; };
 		213BCB60254003D900C89B72 /* _04RunLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _04RunLoopViewController.m; sourceTree = "<group>"; };
 		213BCB61254003D900C89B72 /* _22ReactiveObjCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _22ReactiveObjCViewController.m; sourceTree = "<group>"; };
-		213BCB62254003D900C89B72 /* _22ReactiveObjCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _22ReactiveObjCViewController.xib; sourceTree = "<group>"; };
 		213BCB63254003D900C89B72 /* AANavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AANavigationController.m; sourceTree = "<group>"; };
 		213BCB64254003D900C89B72 /* _19ScrollContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _19ScrollContentViewController.h; sourceTree = "<group>"; };
 		213BCB65254003D900C89B72 /* CopyActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopyActivity.h; sourceTree = "<group>"; };
@@ -698,7 +695,6 @@
 				213BCB3D254003D900C89B72 /* _21KVOViewController.xib */,
 				213BCB81254003D900C89B72 /* _22ReactiveObjCViewController.h */,
 				213BCB61254003D900C89B72 /* _22ReactiveObjCViewController.m */,
-				213BCB62254003D900C89B72 /* _22ReactiveObjCViewController.xib */,
 				213BCB58254003D900C89B72 /* _23FullViewController.h */,
 				213BCB76254003D900C89B72 /* _23FullViewController.m */,
 				213BCB4F254003D900C89B72 /* _23FullViewController.xib */,
@@ -1388,7 +1384,6 @@
 				211227412573340100B6ECC8 /* Assets.xcassets in Resources */,
 				211227422573340100B6ECC8 /* testXML.xml in Resources */,
 				211227862573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */,
-				211227432573340100B6ECC8 /* _22ReactiveObjCViewController.xib in Resources */,
 				2112281925733DF300B6ECC8 /* Assets_env_1.xcassets in Resources */,
 				211227442573340100B6ECC8 /* _02ChatViewController.xib in Resources */,
 				211227452573340100B6ECC8 /* Alternate_AppIcon_2@2x.png in Resources */,
@@ -1445,7 +1440,6 @@
 				213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */,
 				21948D422564B83700207E18 /* testXML.xml in Resources */,
 				211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */,
-				213BCC0B254003DB00C89B72 /* _22ReactiveObjCViewController.xib in Resources */,
 				213BCC2D254003DB00C89B72 /* _02ChatViewController.xib in Resources */,
 				21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */,
 				213BCBF8254003DB00C89B72 /* _07VideoViewController.xib in Resources */,

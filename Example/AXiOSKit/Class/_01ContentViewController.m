@@ -311,9 +311,6 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf setIconname:@"Alternate_AppIcon_2"];
     }];
-    
-    
-    
 }
 
 
@@ -376,35 +373,97 @@
     
     CGFloat width = 100;
     
-    UIView *view1 = [[UIView alloc]init];
-    [self.containerView addSubview:view1];
-    view1.backgroundColor = UIColor.orangeColor;
-    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+ __block MASConstraint *viewWidthConstraint = nil;
+    
+    
+    __block MASConstraint *viewRightConstraint = nil;
+    
+    UILabel *label1 = [[UILabel alloc]init];
+    label1.text = @"默认宽度30";
+    [self.containerView addSubview:label1];
+    label1.backgroundColor = UIColor.orangeColor;
+    [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.bottomAttribute).mas_equalTo(10);
         make.left.mas_equalTo(30);
         make.height.mas_equalTo(100);
         
-        self.viewBottomConstraint = make.width.mas_equalTo(width);
+        viewWidthConstraint = make.width.mas_equalTo(width);
     }];
+    self.bottomAttribute = label1.mas_bottom;
+//    [label1 ax_addLineDirection:AXLineDirectionTop color:UIColor.redColor height:2];
+    {
+        
+        UILabel *label2 = [[UILabel alloc]init];
+        label2.text = @"和上面宽度一样";
+       
+        [self.containerView addSubview:label2];
+        label2.backgroundColor = UIColor.orangeColor;
+        [label2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(10);
+            make.left.mas_equalTo(30);
+            make.height.mas_equalTo(100);
+
+            make.width.equalTo(label1).priorityLow();
+//            make.width.mas_equalTo(width+50).priorityHigh();
+
+//            make.width.equalTo(label1);
+            
+            make.width.mas_lessThanOrEqualTo(width+50);
+        }];
+//        label2.preferredMaxLayoutWidth = width+50;
+//        [label2 setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
+        self.bottomAttribute = label2.mas_bottom;
+        
+    }
     
-    
-    [view1 ax_addLineDirection:AXLineDirectionTop color:UIColor.redColor height:2];
-    
-    
-    self.bottomAttribute = view1.mas_bottom; ;
-    
-    __weak typeof(self) weakSelf = self;
-    [self _p00ButtonTitle:@"masron - uninstall" handler:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.viewBottomConstraint uninstall];
-        [view1.superview setNeedsUpdateConstraints];
+    [self _p00ButtonTitle:@"04-masron - uninstall - 加大" handler:^{
+        [viewWidthConstraint uninstall];
+        [label1.superview setNeedsUpdateConstraints];
         [UIView animateWithDuration:1 animations:^{
-            [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.right.mas_equalTo(-30);
+            [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
+                viewRightConstraint =  make.right.mas_equalTo(-30);
             }];
-            [view1.superview layoutIfNeeded];
+            [label1.superview layoutIfNeeded];
         }];
     }];
+    
+    [self _p00ButtonTitle:@"04-masron - uninstall - 减小" handler:^{
+        [viewRightConstraint uninstall];
+//        [label1.superview setNeedsUpdateConstraints];
+        [UIView animateWithDuration:1 animations:^{
+            [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.width.mas_equalTo(100);;
+            }];
+            [label1.superview layoutIfNeeded];
+        }];
+    }];
+    
+    [self _p00ButtonTitle:@"04-masron动画 -加大" handler:^{
+//        [label1.superview layoutIfNeeded];
+        [self.view setNeedsUpdateConstraints];
+        [UIView animateWithDuration:1 animations:^{
+            [label1 mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.width.mas_equalTo(300);
+            }];
+//            viewWidthConstraint.mas_equalTo(300);
+            [label1.superview layoutIfNeeded];
+        }];
+    }];
+    
+    [self _p00ButtonTitle:@"04-masron动画 - 减小" handler:^{
+//        [label1.superview layoutIfNeeded];
+        [self.view setNeedsUpdateConstraints];
+        [UIView animateWithDuration:1 animations:^{
+            [label1 mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.width.mas_equalTo(100);
+            }];
+//            viewWidthConstraint.mas_equalTo(100);
+            [label1.superview layoutIfNeeded];
+        }];
+    }];
+    
+    
 }
 
 -(void)_p05DateVC {
