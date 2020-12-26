@@ -286,7 +286,7 @@ typedef void(^DidViewBlock)(UIView *view);
     [shapeLayer setLineWidth:CGRectGetHeight(lineView.frame)];
     [shapeLayer setLineJoin:kCALineJoinRound];
     //  设置线宽，线间距
-    [shapeLayer setLineDashPattern:[NSArray arrayWithObjects:[NSNumber numberWithInt:lineLength], [NSNumber numberWithInt:lineSpacing], nil]];
+    shapeLayer.lineDashPattern=@[@(lineLength),@(lineSpacing)];
     //  设置路径
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathMoveToPoint(path, NULL, 0, 0);
