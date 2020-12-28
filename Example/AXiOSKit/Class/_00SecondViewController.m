@@ -647,9 +647,12 @@ void mySLog(NSString *format, ...)
                     //                    URLForResource:@"Frameworks/AXiOSKit.framework/AXHTML.bundle/index.html"
                     //                    withExtension:nil];
                     //                /// AXiOSKit 放置方式不一样
-                    vc.URL = [NSBundle.ax_HTMLBundle URLForResource:@"index.html"
-                                                      withExtension:nil];
-                    [self.navigationController pushViewController:vc animated:YES];
+                    vc.URL = [NSBundle.ax_HTMLBundle URLForResource:@"index.html" withExtension:nil];
+                    
+               
+                    
+//                    vc.URL = [NSURL URLWithString:@"https://www.toutiao.com/"];
+                    [self ax_pushVC:vc];
                 },
             },
         ].mutableCopy;

@@ -1,21 +1,59 @@
 <!DOCTYPE html>
 <html>
-    <head lang="zh">
-        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
-        <title>index</title>
-    </head>
-    <body>
-        <div id="div1">
-            <button id="button1" type="button" onclick="iosWeixinPay()">bridge注入2</button></br>
-            </br>
-            <button id="button2" type="button">原生注入js</button></br>
-            <button id="button3" type="button">原生注入js2</button></br>
-        </div>
-    </body>
-    
-    <script type="text/javascript" src="js/index.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+<head lang="zh">
+    <meta charset="UTF-8" name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>index</title>
+</head>
+
+<body>
+    <div id="div1">
+        <button id="button1" type="button" onclick="iosWeixinPay()">bridge注入2</button></br>
+        </br>
+        <button id="button2" type="button">原生注入js</button></br>
+        <button id="button3" type="button">原生注入js2</button></br>
+    </div>
+
+    <!-- 打开相机,相册,文件系统 三个 -->
+    <input accept='image/*' type='file'>
+
+    <form>
+        <input type="file" accept="audio/*" />
+    </form>
+    <form>
+        <input type="file" accept="video/*" />
+    </form>
+    <form>
+        <input type="file" accept="image/*" />
+    </form>
+    <form>
+        <input type="file" accept="MIME_type" />
+    </form>
+</body>
+
+<script type="text/javascript" src="js/index.js"></script>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+<script type="text/javascript">
+    //获取浏览器的userAgent,并转化为小写
+    var ua = navigator.userAgent.toLowerCase();
+    //判断是否是苹果手机，是则是true
+    var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
+
+    // var isWeixin = ua.match(/MicroMessenger/i)=="micromessenger";//微信判断
+    // var isQQInstalled = ua.indexOf(' qq')>-1 && ua.indexOf('mqqbrowser') < 0;//qq内置浏览器
+    var isQQ = ua.indexOf('mqqbrowser') > -1 && ua.indexOf(" qq") < 0;//qq浏览器
+
+    if (isQQ || isIos) {
+        var files = document.querySelectorAll("input[type=file]");
+        if (files) {
+            files.forEach(item => {
+                item.removeAttribute("capture")
+            })
+        }
+    }
+
+</script>
+
 </html>
-
-
-

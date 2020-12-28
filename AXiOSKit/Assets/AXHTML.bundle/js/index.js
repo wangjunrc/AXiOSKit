@@ -1,5 +1,16 @@
 document.write("<script language=javascript src='js/client.js'></script>");
 
+var upload = function(c, d){
+    var $c = document.querySelector(c),
+        $d = document.querySelector(d),
+        file = $c.files[0],
+        reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function(e){
+        $d.setAttribute("src", e.target.result);
+    };
+};
+
 var button2 = document.getElementById('button2');
 button2.addEventListener('click', function() {
     button2Click();
