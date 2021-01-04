@@ -2073,3 +2073,8 @@ UIImage *image = [UIImage systemImageNamed:@"ladybug.fill"];
 [btn.widthAnchor constraintEqualToConstant:60].active =YES;
 [btn.heightAnchor constraintEqualToConstant:27].active =YES;
 ```
+## view layer 设置背景图
+```
+UIImage *image = [UIImage imageNamed:@"launch_image"];
+self.view.layer.contents = (id)image.CGImage;
+```

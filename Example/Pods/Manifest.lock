@@ -208,7 +208,7 @@ DEPENDENCIES:
   - WechatOpenSDK (= 1.7.7)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - IQKeyboardManager
     - TZImagePickerController
   trunk:
@@ -308,6 +308,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: faa0c1676f3b014d1f793702efa7ae30475fe52f
+PODFILE CHECKSUM: 0ecbcff45d6f4637dba4c2ada4eac8eaa590d932
 
 COCOAPODS: 1.10.0

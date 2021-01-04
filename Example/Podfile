@@ -3,7 +3,9 @@ use_frameworks!
 platform :ios, '10.0'
 inhibit_all_warnings!
 
-source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
+# 清华镜像
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 
 # 因为有的target 不支持UIKit的库
 def ui_pods

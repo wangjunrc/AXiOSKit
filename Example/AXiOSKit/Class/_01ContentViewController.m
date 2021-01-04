@@ -101,6 +101,10 @@
     
     
     
+    
+    UIImage *image = [UIImage imageNamed:@"launch_image"];
+    self.containerView.layer.contents = (id)image.CGImage;
+    
     /// 底部约束
     [self _loadBottomAttribute];
     
