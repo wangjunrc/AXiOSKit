@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    /// 背景色
+    self.navigationBar.barTintColor = [UIColor redColor];
+    
+    /// 返回按钮 颜色
+    self.navigationBar.tintColor = [UIColor greenColor];
+    
     //状态栏颜色
     self.navigationBar.barStyle = UIBarStyleDefault;
     //半透明--- view坐标为0,0, NO view坐标为0,64

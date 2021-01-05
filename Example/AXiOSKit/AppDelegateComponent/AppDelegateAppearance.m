@@ -18,6 +18,42 @@
      setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}
      forState:UIControlStateNormal];
     
+    
+//    let backImg = UIImage.init(named: "webViewBack")
+//UINavigationBar.appearance().backIndicatorImage = backImg
+//      UINavigationBar.appearance().backIndicatorTransitionMaskImage = backImg
+
+    UIImage *image =  nil;
+    
+//    if (@available(iOS 13.0, *)) {
+//        image = [UIImage systemImageNamed:@"arrow.backward.square"];
+//    } else {
+//
+//
+//    }
+    image = [UIImage imageNamed:@"yinpinRW"];
+    
+    if (image) {
+        
+//        UINavigationBar *navigationBar = [UINavigationBar appearanceWhenContainedIn:self, nil];
+        
+        
+//        UINavigationBar *navigationBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[UIViewController.class]];
+        
+        
+//        UINavigationBar.appearance.backIndicatorTransitionMaskImage = image;
+//        UINavigationBar.appearance. backIndicatorImage= image;
+        
+//        UINavigationBar.appearance.topItem.title = @"";
+//        [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[UINavigationController]]
+        
+//        [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[image resizableImageWithCapInsets:UIEdgeInsetsMake(0, image.size.width - 1, 0, 0)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+        
+    }
+    
+//    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-30, -60) forBarMetrics:UIBarMetricsDefault];
+//    [UIBarButtonItem.appearance setBackButtonBackgroundVerticalPositionAdjustment:30 forBarMetrics:UIBarMetricsDefault];
+    
 //    //获取document路径
 //    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 //    NSString *documentDirectory = [paths objectAtIndex:0];

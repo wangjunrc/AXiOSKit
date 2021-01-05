@@ -8,7 +8,7 @@
 
 #import "AANavigationController.h"
 #import <AXiOSKit/AXiOSKit.h>
-@interface AANavigationController ()
+@interface AANavigationController ()<UINavigationControllerDelegate>
 
 @end
 
@@ -17,14 +17,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (@available(iOS 13.0, *)) {
-        UIColor *bgColor =  [UIColor ax_colorWithNormalStyle:UIColor.redColor darkStyle:UIColor.systemBackgroundColor];
-        
-        [self.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:bgColor] forBarMetrics:UIBarMetricsDefault];
-    } else {
-        // Fallback on earlier versions
-    }
+//    if (@available(iOS 13.0, *)) {
+//        UIColor *bgColor =  [UIColor ax_colorWithNormalStyle:UIColor.redColor darkStyle:UIColor.systemBackgroundColor];
+//
+//        [self.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:bgColor] forBarMetrics:UIBarMetricsDefault];
+//    } else {
+//        // Fallback on earlier versions
+//    }
+    
+//    UIColor *bgColor =  [UIColor redColor];
+//
+//    [self.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:bgColor] forBarMetrics:UIBarMetricsDefault];
+    self.navigationBar.barTintColor = [UIColor redColor];
+    
+    self.navigationBar.tintColor = [UIColor greenColor];
+    
+    
+//    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+   
+//    if (@available(iOS 11.0, *)) {
+//        self.navigationItem.backButtonTitle  = @"";
+//    } else {
+//        // Fallback on earlier versions
+//    }
+//    UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
+//        backButtonItem.title = @"返回";
+//        self.navigationItem.backBarButtonItem = backButtonItem;
+    
+//    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+    
 }
+
 
 /*
 #pragma mark - Navigation
@@ -57,5 +81,7 @@
     }
     
 }
+
+
 
 @end

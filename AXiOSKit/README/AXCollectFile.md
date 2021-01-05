@@ -2078,3 +2078,26 @@ UIImage *image = [UIImage systemImageNamed:@"ladybug.fill"];
 UIImage *image = [UIImage imageNamed:@"launch_image"];
 self.view.layer.contents = (id)image.CGImage;
 ```
+
+## 导航栏去除返回字
+```
+@implementation UIViewController (AXHideNavBackTitle)
+
++(void)load {
+    [UIViewController ax_replaceInstanceMethodWithOriginal:@selector(viewDidAppear:) newSelector:@selector(ac_viewDidAppear)];
+}
+ 
+/// 设置导航栏返回按钮文字
+- (void)ac_viewDidAppear{
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithTitle:@""
+                                              style:UIBarButtonItemStylePlain
+                                              target:self
+                                              action:nil];
+    [self ac_viewDidAppear];
+}
+
+
+
+@end
+```

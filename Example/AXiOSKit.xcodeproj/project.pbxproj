@@ -245,6 +245,7 @@
 		21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
 		21E5C8A9257F6BF8002A4D59 /* _00BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */; };
 		21E5C8AA257F6BF8002A4D59 /* _00BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */; };
+		21F542AA25A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F542A925A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m */; };
 		21FC4435258DCE7C00AA253F /* Pods_AXShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; };
 		21FC4436258DCE7C00AA253F /* Pods_AXShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		21FC46C32591941900AA253F /* AXDebugManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC46B32591924A00AA253F /* AXDebugManager.m */; };
@@ -542,6 +543,8 @@
 		21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _29AudioViewController.xib; sourceTree = "<group>"; };
 		21E5C8A7257F6BF8002A4D59 /* _00BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00BaseViewController.h; sourceTree = "<group>"; };
 		21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00BaseViewController.m; sourceTree = "<group>"; };
+		21F542A825A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXHideNavBackTitle.h"; sourceTree = "<group>"; };
+		21F542A925A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXHideNavBackTitle.m"; sourceTree = "<group>"; };
 		21FC46B22591924A00AA253F /* AXDebugManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugManager.h; sourceTree = "<group>"; };
 		21FC46B32591924A00AA253F /* AXDebugManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugManager.m; sourceTree = "<group>"; };
 		21FC46B8259192E900AA253F /* AXDebugUIConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugUIConfig.h; sourceTree = "<group>"; };
@@ -822,6 +825,8 @@
 				213BCBB2254003DA00C89B72 /* UIControl+load.m */,
 				213BCBB6254003DA00C89B72 /* UIImage+Load.h */,
 				213BCBB3254003DA00C89B72 /* UIImage+Load.m */,
+				21F542A825A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.h */,
+				21F542A925A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m */,
 			);
 			path = Load;
 			sourceTree = "<group>";
@@ -1798,6 +1803,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21FC46C82591974300AA253F /* AXDebugUIConfig.m in Sources */,
+				21F542AA25A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m in Sources */,
 				21FC46C32591941900AA253F /* AXDebugManager.m in Sources */,
 				21948C9D2563F3BC00207E18 /* AXUserLog.mm in Sources */,
 				213BCC1C254003DB00C89B72 /* _15UIMenuController.m in Sources */,

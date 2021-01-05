@@ -81,7 +81,41 @@
     
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],[UIBarButtonItem ax_itemByButton:btn2]];
     
+    
+    if (@available(iOS 11.0, *)) {
+        self. navigationItem.hidesSearchBarWhenScrolling = NO;
+        self.navigationController.navigationBar.prefersLargeTitles = YES;
+        
+        
+        self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAutomatic;
+        
+        
+        [self.navigationController.navigationBar setLargeTitleTextAttributes:@{
+            
+        NSForegroundColorAttributeName:UIColor.greenColor,
+//        NSFontAttributeName:[UIFont systemFontOfSize:18.0f]
+        
+        
+        }];
+        
+        self.navigationController.navigationBar.backgroundColor = UIColor.redColor;
+        
+    }
+    
+    
+    if (@available(iOS 11.0, *)) {
+        UISearchController *searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+        self.navigationItem.searchController = searchController;
+    } else {
+    }
+    
+    
 }
+
+
+
+
+
 -(void)deleteAction:(UIButton *)btn{
     
 }
