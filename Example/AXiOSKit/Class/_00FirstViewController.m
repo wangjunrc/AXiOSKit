@@ -48,6 +48,8 @@
 #import <AXiOSKit/NSMutableArray+AXKVO.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <mach/mach.h>
+#import "_25FlowLayoutVC1.h"
+#import "_25FlowLayoutVC2.h"
 
 @import AssetsLibrary;
 
@@ -592,6 +594,29 @@ typedef void (^CollectionBlock)(void);
                     [self ax_pushVC:vc];
                 },
             },
+            @{
+                @"index": @25,
+                @"title": @"UICollectionView 左右空隙",
+                @"action": ^{
+                    _25FlowLayoutVC1 *vc =
+                    [[_25FlowLayoutVC1 alloc] init];
+                    [self ax_pushVC:vc];
+                },
+            },
+            
+            @{
+                @"index": @25,
+                @"title": @"水平滚动，但cell大小交替变换，且cell居中对齐。",
+                @"action": ^{
+                    if (@available(iOS 13.0, *)) {
+                        _25FlowLayoutVC2 *vc =
+                        [[_25FlowLayoutVC2 alloc] init];
+                        [self ax_pushVC:vc];
+                    }
+                },
+            },
+            
+            
             
             @{
                 @"index": @26,

@@ -1784,6 +1784,68 @@ for (NSTextCheckingResult *match in matchArray) {
     NSLog(@"min = %@",[array valueForKeyPath:@"@min.age"]);
 
     
+    /**
+     https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/CollectionOperators.html#//apple_ref/doc/uid/20002176-BAJEAIEE
+     
+     /// 注意前面有个 @"@
+     [NSString stringWithFormat:@"@%@.name",NSUnionOfSetsKeyValueOperator];
+     
+     
+     
+     当调用KVC时key值为空时，就会抛出这个异常。
+     FOUNDATION_EXPORT NSExceptionName const NSUndefinedKeyException;
+
+     
+     // NSKeyValueCoding中的运算符
+     NSKeyValueOperator const NSAverageKeyValueOperator; // 求平均值
+     NSKeyValueOperator const NSCountKeyValueOperator; // 统计总数
+     NSKeyValueOperator const NSDistinctUnionOfArraysKeyValueOperator; // 获取嵌套数组中不同的值
+     NSKeyValueOperator const NSDistinctUnionOfObjectsKeyValueOperator; // 获取不同的值
+     NSKeyValueOperator const NSDistinctUnionOfSetsKeyValueOperator; // 获取嵌套集合中不同的值
+     NSKeyValueOperator const NSMaximumKeyValueOperator; // 获取最大值
+     NSKeyValueOperator const NSMinimumKeyValueOperator; // 获取最小值
+     NSKeyValueOperator const NSSumKeyValueOperator; // 求和
+     NSKeyValueOperator const NSUnionOfArraysKeyValueOperator; // 获取嵌套数组中的值，不去重
+     NSKeyValueOperator const NSUnionOfObjectsKeyValueOperator; // 获取所有的值，不去重
+     NSKeyValueOperator const NSUnionOfSetsKeyValueOperator; // 获取嵌套集合中的值，不去重
+
+     
+     
+     */
+   
+    
+    NSLog(@"sum.age ==== %@",[array valueForKeyPath:@"@sum.age"]);
+    /// valueForKeyPath,valueForKey 一层效果一样,但最好使用前者
+    NSLog(@"一级 ==== %@",[array valueForKeyPath:@"name"]);
+    NSLog(@"一级 ==== %@",[array valueForKey:@"name"]);
+    NSLog(@"多层查找 ==== %@",[array valueForKeyPath:@"dog.name"]);
+    
+    /// 去重
+    /// @distinctUnionOfObjects.self  字符串数组
+    /// @distinctUnionOfObjects.name  对象数组
+    NSLog(@"去重 %@",[array valueForKeyPath:@"@distinctUnionOfObjects.name"]);
+    
+    NSLog(@"OrderedSet ==== %@",[array mutableOrderedSetValueForKeyPath:@"name"]);
+    /// 不会去重
+     NSLog(@"mutableSetValue ==== %d",[[array mutableSetValueForKeyPath:@"name"] isKindOfClass:NSMutableOrderedSet.class]);
+    
+    NSLog(@"mutableSetValueForKey ==== %@",[array mutableSetValueForKey:@"name"]);
+    
+    /// distinctUnionOfSets 目前不行
+    NSLog(@"不同的联盟 ==== %@",[array valueForKeyPath:@"@distinctUnionOfObjects.name"]);
+    
+    NSLog(@"不同的联盟Arrays ==== %@",[@[array] valueForKeyPath:@"@distinctUnionOfArrays.name"]);
+    
+    {
+    /// 进行实例方法的调用
+    NSArray *array = @[@"name", @"w", @"aa", @"ZXPing"];
+    /// 转大写
+    NSLog(@"大写 = %@", [array valueForKeyPath:@"uppercaseString"]);
+    NSLog(@"小写 = %@", [array valueForKeyPath:@"lowercaseString"]);
+    NSLog(@"length = %@", [array valueForKeyPath:@"length"]);
+    }
+    
+    
     NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name IN %@",@[@"jim",@"jack"]];
     //过滤数组
     NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];

@@ -55,6 +55,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];
     [self.window makeKeyAndVisible];
+    
+    NSDictionary *dict = @{@"name":@"中文名字",@"name2":@"中文名字",};
+    NSLog(@"dict====== %@",dict);
+    
     //    }
     
     //    if (@available(iOS 10.0, *)) {

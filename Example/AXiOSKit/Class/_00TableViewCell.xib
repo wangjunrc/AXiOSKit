@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,8 +23,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vq4-bY-QTn">
-                        <rect key="frame" x="62" y="45.5" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vq4-bY-QTn">
+                        <rect key="frame" x="62" y="46" width="41.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,6 +33,8 @@
                 <constraints>
                     <constraint firstItem="4Bd-cA-F5Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="BZQ-vr-SqR"/>
                     <constraint firstItem="Vq4-bY-QTn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="HM9-Hv-kyP"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Vq4-bY-QTn" secondAttribute="bottom" constant="10" id="PFp-pu-rDA"/>
+                    <constraint firstItem="Vq4-bY-QTn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="gUw-pT-cB0"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vq4-bY-QTn" secondAttribute="trailing" constant="10" id="o5H-21-YA1"/>
                     <constraint firstItem="Vq4-bY-QTn" firstAttribute="leading" secondItem="4Bd-cA-F5Y" secondAttribute="trailing" priority="999" constant="10" id="ooS-nM-Ukb"/>
                     <constraint firstItem="4Bd-cA-F5Y" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yid-kt-kBT"/>
