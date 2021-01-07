@@ -21,6 +21,8 @@
 #import <GDataXML_HTML/GDataXMLNode.h>
 #import "AXiOSKit_Example-Swift.h"
 #import <MJExtension/MJExtension.h>
+
+
 @interface _01ContentViewController ()<UITextViewDelegate,ASAuthorizationControllerDelegate,ASAuthorizationControllerPresentationContextProviding>
 
 @property (nonatomic, strong) MASConstraint *viewBottomConstraint;
@@ -60,10 +62,10 @@
     if (@available(iOS 11.0, *)) {
         self. navigationItem.hidesSearchBarWhenScrolling = YES;
         self.navigationController.navigationBar.prefersLargeTitles = YES;
-//        self.navigationController.navigationBar.backgroundColor = UIColor.redColor;
+        //        self.navigationController.navigationBar.backgroundColor = UIColor.redColor;
         
         self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAutomatic;
-//        [self.navigationController.navigationBar setLargeTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,[UIFont systemFontOfSize:18.0f],NSFontAttributeName,nil]];
+        //        [self.navigationController.navigationBar setLargeTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,[UIFont systemFontOfSize:18.0f],NSFontAttributeName,nil]];
         
     }
     
@@ -71,25 +73,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.title = @"02222";
+    //    self.title = @"02222";
     
     self.view.backgroundColor =  UIColor.whiteColor;
-
+    
     self.navigationItem.title = @"内容";//设置标题
-
-//    largeTitleDisplayMode有三个模式：
-//    UINavigationItemLargeTitleDisplayModeNever是总是显示小标题
-//
-//    UINavigationItemLargeTitleDisplayModeAlways：总是显示大标题
-//    UINavigationItemLargeTitleDisplayModeAutomatic：自动显示大标题或小标题。用我的话来说：初始时是大标题，当滑动使大标题隐藏时显示小标题。
-
-     
     
-  
-    
-    
- 
-
     __weak typeof(self) weakSelf = self;
     
     [self _p01TextAndImage];
@@ -144,8 +133,6 @@
         NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:CACurrentMediaTime()];
         NSLog(@"confromTimesp = %@",confromTimesp);
     }];
-    
-    
     
     
     UIImage *image = [UIImage imageNamed:@"launch_image"];
@@ -221,7 +208,12 @@
     {
         UITextField *nameTF = [[UITextField alloc]init];
         nameTF.backgroundColor = UIColor.orangeColor;
-        nameTF.placeholder = @"输入姓名";
+        nameTF.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        //        nameTF.keyboardType = UIKeyboardTypeASCIICapable;
+        nameTF.tag = -100;
+        //        nameTF.placeholder = @"输入姓名";
+        nameTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"输入姓名" attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
+        
         nameTF.accessibilityIdentifier = @"nameTextField";
         [self.containerView addSubview:nameTF];
         [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -230,23 +222,147 @@
             make.right.mas_equalTo(-10);
             make.height.mas_equalTo(50);
         }];
+        //        [NSNotificationCenter.defaultCenter addObserver:self
+        //                                               selector:@selector(textFiledEditChanged:)
+        //                                                   name:UITextFieldTextDidChangeNotification
+        //                                                 object:nameTF];
+        
+        
+        [nameTF addTarget:self action:@selector(editChange:) forControlEvents:UIControlEventEditingChanged];
+        
+        
         self.bottomAttribute = nameTF.mas_bottom;
     }
     {
-        UITextField *nameTF = [[UITextField alloc]init];
-        nameTF.backgroundColor = UIColor.orangeColor;
-        nameTF.placeholder = @"输入密码";
-        nameTF.accessibilityIdentifier = @"pwdTextField";
-        [self.containerView addSubview:nameTF];
-        [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
+        UITextField *pswTF = [[UITextField alloc]init];
+        pswTF.backgroundColor = UIColor.orangeColor;
+//        nameTF.placeholder = @"输入密码";
+        pswTF.secureTextEntry = YES;
+        pswTF.accessibilityIdentifier = @"pwdTextField";
+        pswTF.enabled = NO;
+//        nameTF.hidden = YES;
+        [self.containerView addSubview:pswTF];
+        [pswTF mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.bottomAttribute).mas_equalTo(10);
             make.left.mas_equalTo(10);
             make.right.mas_equalTo(-10);
             make.height.mas_equalTo(50);
+//            make.height.mas_equalTo(1.0);
         }];
-        self.bottomAttribute = nameTF.mas_bottom;
+        self.bottomAttribute = pswTF.mas_bottom;
+    }
+    
+}
+
+#define kMaxLength 6
+
+- (void)editChange:(UITextField*)textfield {
+    NSString *toBeString = textfield.text;
+    NSString *lang = [[UIApplication sharedApplication]textInputMode].primaryLanguage; // 键盘输入模
+    NSLog(@"lang = %@",lang);
+    if ([lang isEqualToString:@"zh-Hans"]) { // 简体中文输入，包括简体拼音，健体五笔，简体手写
+        UITextRange *selectedRange = [textfield markedTextRange];
+        //获取高亮部分
+        UITextPosition *position = [textfield positionFromPosition:selectedRange.start offset:0];
+        // 没有高亮选择的字，则对已输入的文字进行字数统计和限制
+        if (!position) {
+            if (toBeString.length > kMaxLength)
+            {
+                NSRange rangeIndex = [toBeString rangeOfComposedCharacterSequenceAtIndex:kMaxLength];
+                if (rangeIndex.length == 1)
+                {
+                    textfield.text = [toBeString substringToIndex:kMaxLength];
+                }
+                else
+                {
+                    NSRange rangeRange = [toBeString rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, kMaxLength)];
+                    textfield.text = [toBeString substringWithRange:rangeRange];
+                }
+            }
+        }
+    }
+    // 中文输入法以外的直接对其统计限制即可，不考虑其他语种情况
+    else{
+        if (toBeString.length > kMaxLength)
+        {
+            NSRange rangeIndex = [toBeString rangeOfComposedCharacterSequenceAtIndex:kMaxLength];
+            if (rangeIndex.length == 1)
+            {
+                textfield.text = [toBeString substringToIndex:kMaxLength];
+            }
+            else
+            {
+                NSRange rangeRange = [toBeString rangeOfComposedCharacterSequencesForRange:NSMakeRange(0,kMaxLength)];
+                textfield.text = [toBeString substringWithRange:rangeRange];
+            }
+        }
     }
 }
+-(void)textFiledEditChanged:(NSNotification*)notification{
+    
+    
+    
+    UITextField*textField = notification.object;
+    
+    if (!textField) {
+        return;
+    }
+    NSString*str = textField.text;
+    /// 屏蔽中文
+    //    for (int i = 0; i<str.length; i++)
+    //
+    //    {
+    //
+    //        NSString*string = [str substringFromIndex:i];
+    //
+    //        NSString *regex = @"[\u4e00-\u9fa5]{0,}$"; // 中文
+    //
+    //        // 2、拼接谓词
+    //
+    //        NSPredicate *predicateRe1 = [NSPredicate predicateWithFormat:@"self matches %@", regex];
+    //
+    //        // 3、匹配字符串
+    //
+    //        BOOL resualt = [predicateRe1 evaluateWithObject:string];
+    //
+    //
+    //
+    //        if (resualt)
+    //
+    //        {
+    //
+    //　　　　//是中文替换为空字符串
+    //
+    //            str =  [str stringByReplacingOccurrencesOfString:[str substringFromIndex:i] withString:@""];
+    //        }
+    //
+    //    }
+    //
+    //    textField.text = str;
+    
+    ///判断是否正在输入拼音，高亮状态
+    UITextRange *selectedRange = [textField markedTextRange];
+    
+    //获取高亮部分
+    
+    UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
+    
+    // 没有高亮选择的字，说明不是拼音输入
+    
+    if (!position) {
+        
+        NSString *upperCaseString = [textField.text uppercaseString];
+        
+        textField.text = upperCaseString;
+        
+    } else {// 有高亮选择的字符串，不做处理
+        
+    }
+    
+    
+    
+}
+
 
 -(void)_p01TextAndImage {
     NSString *title = @"图文混排";
@@ -424,7 +540,7 @@
     CGFloat width = 100;
     
     
- __block MASConstraint *viewWidthConstraint = nil;
+    __block MASConstraint *viewWidthConstraint = nil;
     
     
     __block MASConstraint *viewRightConstraint = nil;
@@ -441,28 +557,28 @@
         viewWidthConstraint = make.width.mas_equalTo(width);
     }];
     self.bottomAttribute = label1.mas_bottom;
-//    [label1 ax_addLineDirection:AXLineDirectionTop color:UIColor.redColor height:2];
+    //    [label1 ax_addLineDirection:AXLineDirectionTop color:UIColor.redColor height:2];
     {
         
         UILabel *label2 = [[UILabel alloc]init];
         label2.text = @"和上面宽度一样";
-       
+        
         [self.containerView addSubview:label2];
         label2.backgroundColor = UIColor.orangeColor;
         [label2 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.bottomAttribute).mas_equalTo(10);
             make.left.mas_equalTo(30);
             make.height.mas_equalTo(100);
-
+            
             make.width.equalTo(label1).priorityLow();
-//            make.width.mas_equalTo(width+50).priorityHigh();
-
-//            make.width.equalTo(label1);
+            //            make.width.mas_equalTo(width+50).priorityHigh();
+            
+            //            make.width.equalTo(label1);
             
             make.width.mas_lessThanOrEqualTo(width+50);
         }];
-//        label2.preferredMaxLayoutWidth = width+50;
-//        [label2 setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
+        //        label2.preferredMaxLayoutWidth = width+50;
+        //        [label2 setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
         self.bottomAttribute = label2.mas_bottom;
         
     }
@@ -480,7 +596,7 @@
     
     [self _p00ButtonTitle:@"04-masron - uninstall - 减小" handler:^{
         [viewRightConstraint uninstall];
-//        [label1.superview setNeedsUpdateConstraints];
+        //        [label1.superview setNeedsUpdateConstraints];
         [UIView animateWithDuration:1 animations:^{
             [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.width.mas_equalTo(100);;
@@ -490,25 +606,25 @@
     }];
     
     [self _p00ButtonTitle:@"04-masron动画 -加大" handler:^{
-//        [label1.superview layoutIfNeeded];
+        //        [label1.superview layoutIfNeeded];
         [self.view setNeedsUpdateConstraints];
         [UIView animateWithDuration:1 animations:^{
             [label1 mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.width.mas_equalTo(300);
             }];
-//            viewWidthConstraint.mas_equalTo(300);
+            //            viewWidthConstraint.mas_equalTo(300);
             [label1.superview layoutIfNeeded];
         }];
     }];
     
     [self _p00ButtonTitle:@"04-masron动画 - 减小" handler:^{
-//        [label1.superview layoutIfNeeded];
+        //        [label1.superview layoutIfNeeded];
         [self.view setNeedsUpdateConstraints];
         [UIView animateWithDuration:1 animations:^{
             [label1 mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.width.mas_equalTo(100);
             }];
-//            viewWidthConstraint.mas_equalTo(100);
+            //            viewWidthConstraint.mas_equalTo(100);
             [label1.superview layoutIfNeeded];
         }];
     }];

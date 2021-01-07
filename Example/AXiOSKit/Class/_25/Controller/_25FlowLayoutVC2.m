@@ -21,13 +21,38 @@
 
 @property(nonatomic, strong) NSMutableArray<_25DataModel *> *dataArray;
 
-@property (nonatomic, assign) NSInteger currentPage;
 
 @end
 
 
 @implementation _25FlowLayoutVC2
 
+/**
+ //一.决定元素大小的 NSCollectionLayoutDimension、NSCollectionLayoutSize
+ //1.尺寸相当于父视图的比例
+ NSCollectionLayoutDimension *widthDismension = [NSCollectionLayoutDimension fractionalWidthDimension:0.2];
+ //2.固定尺寸值
+ widthDismension = [NSCollectionLayoutDimension absoluteDimension:100];
+ //3.预估值
+ widthDismension = [NSCollectionLayoutDimension estimatedDimension:99];
+ 
+ NSCollectionLayoutDimension *heightDismension = [NSCollectionLayoutDimension fractionalWidthDimension:0.2];
+
+ NSCollectionLayoutSize *size = [NSCollectionLayoutSize sizeWithWidthDimension:widthDismension heightDimension:heightDismension];
+                        
+ 
+ 
+ //二.决定Item布局的 NSCollectionLayoutItem
+ NSCollectionLayoutItem *item = [NSCollectionLayoutItem itemWithLayoutSize:size];
+ 
+ 
+ //三.决定Gropu布局的 NSCollectionLayoutGroup(继承于NSCollectionLayoutItem) 水平、垂直、自定义三种形式
+ NSCollectionLayoutGroup *group = [NSCollectionLayoutGroup horizontalGroupWithLayoutSize:size subitems:@[item]];
+ 
+ //四.决定Section布局的 NSCollectionLayoutSection
+ NSCollectionLayoutSection *section = [NSCollectionLayoutSection sectionWithGroup:group];
+ 
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"水平滚动，但cell大小交替变换，且cell居中对齐。 ";
@@ -90,7 +115,16 @@
         
         {
             
-            NSCollectionLayoutSize *itemSize1 = [NSCollectionLayoutSize sizeWithWidthDimension:[NSCollectionLayoutDimension fractionalWidthDimension:0.25*0.5] heightDimension:[NSCollectionLayoutDimension fractionalHeightDimension:1.0]];
+            
+            //2.固定尺寸值
+            NSCollectionLayoutDimension * widthDismension = [NSCollectionLayoutDimension absoluteDimension:20];
+            //3.预估值
+//            NSCollectionLayoutDimension *  widthDismension = [NSCollectionLayoutDimension estimatedDimension:99];
+            
+//            NSCollectionLayoutDimension * widthDismension = [NSCollectionLayoutDimension fractionalWidthDimension:0.25*0.5];
+            
+            
+            NSCollectionLayoutSize *itemSize1 = [NSCollectionLayoutSize sizeWithWidthDimension:widthDismension heightDimension:[NSCollectionLayoutDimension fractionalHeightDimension:1.0]];
             
             NSCollectionLayoutItem *item1 = [NSCollectionLayoutItem itemWithLayoutSize:itemSize1];
             

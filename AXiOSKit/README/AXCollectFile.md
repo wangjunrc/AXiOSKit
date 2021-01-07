@@ -1,4 +1,10 @@
 
+## api 可用
+```
+__IOS_AVAILABLE(13.0)
+
+API_AVAILABLE(ios(13.0))
+```
 ## import 不同类型
 ```
 

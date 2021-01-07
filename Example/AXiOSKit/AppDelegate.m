@@ -14,7 +14,7 @@
 #import <LLDebugTool/LLDebug.h>
 #import "AXDebugManager.h"
 #import <UserNotifications/UserNotifications.h>
-
+#import "_01ContentViewController.h"
 #if ENV == 1
 #import "URI_Env_1.h"
 #else
@@ -55,9 +55,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];
     [self.window makeKeyAndVisible];
-    
-    NSDictionary *dict = @{@"name":@"中文名字",@"name2":@"中文名字",};
-    NSLog(@"dict====== %@",dict);
     
     //    }
     
@@ -112,6 +109,32 @@
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(UIApplicationExtensionPointIdentifier)extensionPointIdentifier{
+   
+    
+    for (UIViewController *vc in self.window.rootViewController.childViewControllers) {
+        if ([vc isKindOfClass:UINavigationController.class]) {
+            UINavigationController *nav = ( UINavigationController *)vc;
+            
+            for (UIViewController *vc in nav.childViewControllers) {
+                
+                if ([vc isKindOfClass:_01ContentViewController.class]) {
+                    
+                    UITextField *tf = [vc.view viewWithTag:-100];
+                      [tf isFirstResponder];
+                      
+                      if (tf.isEditing) {
+                          return NO;
+                      }
+                    
+                    
+//                    return NO;
+                }
+            }
+        }
+    }
+    return YES;
+}
 -(void)rightBarButtonItemAction:(UIBarButtonItem *)sender {
     
     [AXDebugManager.sharedManager.config.rootViewController dismissViewControllerAnimated:YES completion:nil];
