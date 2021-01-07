@@ -169,7 +169,7 @@
     }
 }
 
-- (BOOL)ax_maxCharacterCount:(NSUInteger)count
+- (BOOL)ax_maxTextLength:(NSUInteger)count
              replacementText:(NSString*)text {
     
     UITextField *textField = self;

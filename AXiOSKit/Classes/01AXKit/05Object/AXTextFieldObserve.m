@@ -1,25 +1,23 @@
 //
-//  AXTextFieldDelegateObserve.m
+//  AXTextFieldObserve.m
 //  AXiOSKit
 //
 //  Created by 小星星吃KFC on 2020/11/16.
 //
 
-#import "AXTextFieldDelegateObserve.h"
+#import "AXTextFieldObserve.h"
 #import "AXMacros_addProperty.h"
 #import "UITextField+AXKit.h"
 #import "AXFoundationAssistant.h"
 
-@interface AXTextFieldDelegateObserve ()
+@interface AXTextFieldObserve ()
 
 @property (nonatomic, weak) UITextField* currentTextField;
-
-
 
 @end
 #pragma mark - implementation AXTextFieldDelegateHandler
 
-@implementation AXTextFieldDelegateObserve
+@implementation AXTextFieldObserve
 
 - (instancetype)initWithTextField:(UITextField*)textField {
     if (self = [self init]) {
@@ -89,9 +87,9 @@
     }
     
     /// 最大文字个数
-    if (self.maxCharacterCount>0) {
+    if (self.maxTextLength>0) {
         // 大于最大数量
-        if ((textField.text.length + string.length) > self.maxCharacterCount) {
+        if ((textField.text.length + string.length) > self.maxTextLength) {
             return NO;
         }
     }
@@ -160,8 +158,8 @@
 #pragma mark - function
 - (void)textFieldDidChange
 {
-    if (self.currentTextField.text.length > self.maxCharacterCount) {
-        self.currentTextField.text = [self.currentTextField.text substringWithRange:NSMakeRange(0, self.maxCharacterCount)];
+    if (self.currentTextField.text.length > self.maxTextLength) {
+        self.currentTextField.text = [self.currentTextField.text substringWithRange:NSMakeRange(0, self.maxTextLength)];
     }
 }
 

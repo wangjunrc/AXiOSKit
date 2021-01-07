@@ -207,6 +207,8 @@
     
     {
         UITextField *nameTF = [[UITextField alloc]init];
+        nameTF.ax_observe.maxTextLength = 2;
+        
         nameTF.backgroundColor = UIColor.orangeColor;
         nameTF.autocapitalizationType = UITextAutocapitalizationTypeNone;
         //        nameTF.keyboardType = UIKeyboardTypeASCIICapable;
@@ -307,7 +309,7 @@
     if (!textField) {
         return;
     }
-    NSString*str = textField.text;
+//    NSString*str = textField.text;
     /// 屏蔽中文
     //    for (int i = 0; i<str.length; i++)
     //
@@ -925,9 +927,9 @@
 
 -(void)_p14xmlToObj{
     
-    __weak typeof(self) weakSelf = self;
+//    __weak typeof(self) weakSelf = self;
     return [self _p00ButtonTitle:@"xml解析" handler:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
+//        __strong typeof(weakSelf) strongSelf = weakSelf;
         
         NSString *path = [[NSBundle mainBundle]pathForResource:@"testXML" ofType:@"xml"];
         GDataXMLDocument *document = [[GDataXMLDocument alloc] initWithData:[NSData dataWithContentsOfFile:path] encoding:NSUTF8StringEncoding  error:NULL];

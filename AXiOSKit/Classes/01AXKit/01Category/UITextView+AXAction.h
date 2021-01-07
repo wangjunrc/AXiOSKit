@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  最大输入文字数量
  */
-@property (nonatomic, assign) NSUInteger maxCharacterCount;
+@property (nonatomic, assign) NSUInteger maxTextLength;
 
 @end
 

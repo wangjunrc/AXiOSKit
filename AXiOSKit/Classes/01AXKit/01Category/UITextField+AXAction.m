@@ -17,38 +17,34 @@
 
 #pragma mark - ax_delegateHandler
 
-- (void)setAx_delegateObserve:(AXTextFieldDelegateObserve*)ax_delegateObserve
-{
-    ax_setStrongPropertyAssociated(ax_delegateObserve);
+- (void)setAx_observe:(AXTextFieldObserve *)ax_observe {
+    ax_setStrongPropertyAssociated(ax_observe);
 }
 
-- (AXTextFieldDelegateObserve*)ax_delegateObserve
-{
-    AXTextFieldDelegateObserve* handler = ax_getValueAssociated(ax_delegateObserve);
+- (AXTextFieldObserve *)ax_observe {
+    AXTextFieldObserve *handler = ax_getValueAssociated(ax_observe);
     if (!handler) {
-        handler = [[AXTextFieldDelegateObserve alloc] initWithTextField:self];
+        handler = [[AXTextFieldObserve alloc] initWithTextField:self];
 //        handler.currentTextField = self;
         //        self.delegate = handler;
-        self.ax_delegateObserve = handler;
+        self.ax_observe = handler;
     }
     return handler;
 }
 
 #pragma mark - AXKeyboardObserve
-- (void)setAx_keyboardObserve:(AXKeyboardObserve*)ax_keyboardObserve
-{
+- (void)setAx_keyboardObserve:(AXKeyboardObserve *)ax_keyboardObserve{
     ax_setStrongPropertyAssociated(ax_keyboardObserve);
 }
 
-- (AXKeyboardObserve*)ax_keyboardObserve
+- (AXKeyboardObserve *)ax_keyboardObserve
 {
     AXKeyboardObserve *obj = ax_getValueAssociated(ax_keyboardObserve);
-    if (obj == nil ){
+    if (obj == nil) {
         obj = [[AXKeyboardObserve alloc] initWithOwner:self];
         self.ax_keyboardObserve = obj;
     }
     return obj;
-    
 }
 
 @end

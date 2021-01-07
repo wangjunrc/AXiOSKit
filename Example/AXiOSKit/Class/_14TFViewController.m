@@ -19,8 +19,8 @@
     [super viewDidLoad];
     
 //    self.myTF.delegate = self;
-    self.myTF.ax_delegateObserve.banBlankSpace = YES;;
-    self.myTF.ax_delegateObserve.maxCharacterCount = 5;
+    self.myTF.ax_observe.banBlankSpace = YES;;
+    self.myTF.ax_observe.maxTextLength = 5;
 //    self.myTF.ax_delegateHandler.onlyPositiveNumber = YES;
     
     

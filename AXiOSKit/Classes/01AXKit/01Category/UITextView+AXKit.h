@@ -22,7 +22,7 @@
  最长输入文字数量
  */
 - (BOOL)ax_textView:(UITextView*)textView
-          maxCharacterCount:(NSUInteger)count
+      maxTextLength:(NSUInteger)count
     shouldChangeTextInRange:(NSRange)range
             replacementText:(NSString*)text;
 

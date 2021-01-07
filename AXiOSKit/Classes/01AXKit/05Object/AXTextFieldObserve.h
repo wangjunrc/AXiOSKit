@@ -1,5 +1,5 @@
 //
-//  AXTextFieldDelegateObserve.h
+//  AXTextFieldObserve.h
 //  AXiOSKit
 //
 //  Created by 小星星吃KFC on 2020/11/16.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AXTextFieldDelegateObserve : NSObject<UITextFieldDelegate>
+@interface AXTextFieldObserve : NSObject<UITextFieldDelegate>
 
 
 - (instancetype)initWithTextField:(UITextField*)textField;
@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) BOOL (^shouldChangeBlock)(UITextField* textField, NSRange range, NSString* aString);
 
 ///最大输入文字数量
-@property (nonatomic, assign) NSUInteger maxCharacterCount;
+@property (nonatomic, assign) NSUInteger maxTextLength;
 
 ///只能输入正正数
 @property (nonatomic, assign) BOOL onlyPositiveNumber;

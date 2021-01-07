@@ -34,18 +34,11 @@
 /**
  最大输入文字数量
  */
-//- (void)maxCharacterCount:(NSUInteger)count {
-//
-//    self.shouldChangeBlock = ^BOOL(UITextView * _Nonnull textView, NSRange range, NSString * _Nonnull aString) {
-//        return [textView ax_textView:textView maxCharacterCount:count shouldChangeTextInRange:range replacementText:aString];
-//    };
-//
-//}
-- (void)setMaxCharacterCount:(NSUInteger)maxCharacterCount {
-    _maxCharacterCount = maxCharacterCount;
+- (void)setMaxTextLength:(NSUInteger)maxTextLength {
+    _maxTextLength = maxTextLength;
     
     self.shouldChangeBlock = ^BOOL(UITextView * _Nonnull textView, NSRange range, NSString * _Nonnull aString) {
-        return [textView ax_textView:textView maxCharacterCount:maxCharacterCount shouldChangeTextInRange:range replacementText:aString];
+        return [textView ax_textView:textView maxTextLength:maxTextLength shouldChangeTextInRange:range replacementText:aString];
     };
 }
 

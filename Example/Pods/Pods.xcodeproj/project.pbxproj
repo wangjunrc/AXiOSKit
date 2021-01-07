@@ -1997,7 +1997,7 @@
 		B4849ED4A9A07E0A401C81A7D634D4E7 /* LLTitleSliderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AF52300E4DB5E6AED18F22E5DE0695F /* LLTitleSliderCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B491A3C6BC8DAE86A6CD103E419F9713 /* fishhook-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D166488F86D463444A76AAD5D04438D8 /* fishhook-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B49418CA7351A91FFF2C408C04A1561B /* error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FBA41429B550FBD7074A7E214B8F9D5 /* error.cpp */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B49567A1C8D83443553DDE088A63123F /* AXTextFieldDelegateObserve.m in Sources */ = {isa = PBXBuildFile; fileRef = F28CF70C3E4B4BEEE2D9F6350F28DE9A /* AXTextFieldDelegateObserve.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B49567A1C8D83443553DDE088A63123F /* AXTextFieldObserve.m in Sources */ = {isa = PBXBuildFile; fileRef = F28CF70C3E4B4BEEE2D9F6350F28DE9A /* AXTextFieldObserve.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B49F8B1D0AC6082EF0F7DFC1F8914074 /* CodedOutputData.h in Headers */ = {isa = PBXBuildFile; fileRef = DCA6F16E2C758C916332E6962DE086BF /* CodedOutputData.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B4BA5CB9D510D95E987922A87869D042 /* IGListDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 6922330AA89BD1C443A3E071088084C7 /* IGListDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4C2C244A3B39C1F7E0EDF85E357CDCF /* SSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 156803892F80E0965A2E55AE9C9CF6FA /* SSKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -2367,7 +2367,7 @@
 		D86E3E4122AE64E0E095903AF81A23C1 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B4AAF4A918A13B2FC371BD25933CFC /* FMDB.framework */; };
 		D8AA30140E9E6FDF41A4A4DD48462AE3 /* UIView+AXAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = F410AD4B3025BE9FD5010DCE38325EBB /* UIView+AXAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8C1D1732F560F9E45A1646F74C95E08 /* enc_mips_dsp_r2.c in Sources */ = {isa = PBXBuildFile; fileRef = DE1F0A11EBF0FE16242DFF836056CA6F /* enc_mips_dsp_r2.c */; settings = {COMPILER_FLAGS = "-D_THREAD_SAFE -fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		D8D413450B505303090E2EBA39BDA976 /* AXTextFieldDelegateObserve.h in Headers */ = {isa = PBXBuildFile; fileRef = B8FB2E81A0C976E42567E5CC5E3A7413 /* AXTextFieldDelegateObserve.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8D413450B505303090E2EBA39BDA976 /* AXTextFieldObserve.h in Headers */ = {isa = PBXBuildFile; fileRef = B8FB2E81A0C976E42567E5CC5E3A7413 /* AXTextFieldObserve.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8F8DC39DB0B917FD48EE3C67E1258D4 /* LLHtmlViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 787C7C1EB218719821A1603A3E30E95B /* LLHtmlViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8FB033CDDC9519B58A35F124C49ADA7 /* IGListGenericSectionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C4376C2DE5622E43F84BFFCCF666945 /* IGListGenericSectionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D91561927481ED4E062684D5FD95CE13 /* RACPassthroughSubscriber.h in Headers */ = {isa = PBXBuildFile; fileRef = 547DC0D53C582C9813B0BBB9C98BEA45 /* RACPassthroughSubscriber.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -5622,7 +5622,7 @@
 		B8C10A2D73EB04D3AC4408458598BC0C /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		B8C58644AC81C2B03EE680A4F1E7B72A /* WCTDatabase+File.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "WCTDatabase+File.mm"; path = "objc/WCDB/interface/database/WCTDatabase+File.mm"; sourceTree = "<group>"; };
 		B8E88048DB4A71B9C5B0D4939ED182B4 /* FBLPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBLPromise.h; path = Sources/FBLPromises/include/FBLPromise.h; sourceTree = "<group>"; };
-		B8FB2E81A0C976E42567E5CC5E3A7413 /* AXTextFieldDelegateObserve.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXTextFieldDelegateObserve.h; sourceTree = "<group>"; };
+		B8FB2E81A0C976E42567E5CC5E3A7413 /* AXTextFieldObserve.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AXTextFieldObserve.h; sourceTree = "<group>"; };
 		B905088C77F0AE0EE3F99EE9C1FFCF67 /* statement_create_virtual_table.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = statement_create_virtual_table.cpp; path = objc/WCDB/abstract/statement_create_virtual_table.cpp; sourceTree = "<group>"; };
 		B909422320DED91D0EEB56A0C9B7363C /* LLBaseComponentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LLBaseComponentViewController.h; path = LLDebugTool/Core/Others/CommonUI/ViewController/ComponentViewController/LLBaseComponentViewController.h; sourceTree = "<group>"; };
 		B94435A8B6A68CCDDAB483F04C00320D /* WCTExpr.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = WCTExpr.mm; path = objc/WCDB/interface/orm/coding/WCTExpr.mm; sourceTree = "<group>"; };
@@ -6289,7 +6289,7 @@
 		F275A772C13B8B18B5D599263E651D89 /* WCTDatabase+RepairKit.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "WCTDatabase+RepairKit.mm"; path = "objc/WCDB/interface/database/WCTDatabase+RepairKit.mm"; sourceTree = "<group>"; };
 		F27EB7AF9EB48611BB9B4F1A79B67552 /* LLFilterDateView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LLFilterDateView.m; path = LLDebugTool/Core/Others/CommonUI/View/FilterView/LLFilterDateView.m; sourceTree = "<group>"; };
 		F282842D4156545F386475E47772BA75 /* NSBundle+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+MJRefresh.m"; path = "MJRefresh/NSBundle+MJRefresh.m"; sourceTree = "<group>"; };
-		F28CF70C3E4B4BEEE2D9F6350F28DE9A /* AXTextFieldDelegateObserve.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AXTextFieldDelegateObserve.m; sourceTree = "<group>"; };
+		F28CF70C3E4B4BEEE2D9F6350F28DE9A /* AXTextFieldObserve.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AXTextFieldObserve.m; sourceTree = "<group>"; };
 		F2B556D99B1634D7579FD2B3B53502E7 /* WCTSelectBase+WCTExpr.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "WCTSelectBase+WCTExpr.mm"; path = "objc/WCDB/interface/orm/coding/WCTSelectBase+WCTExpr.mm"; sourceTree = "<group>"; };
 		F2B8EA5ADEFB5489C0FB721D1D18B539 /* WCTError.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = WCTError.mm; path = objc/WCDB/interface/statictics/WCTError.mm; sourceTree = "<group>"; };
 		F2D5950BD415E387FD1543CE6B4A8E0B /* MLeaksFinder-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MLeaksFinder-Info.plist"; sourceTree = "<group>"; };
@@ -7052,8 +7052,8 @@
 				DA33F51D6FB716906E3EC821A7AC8766 /* AXObject.m */,
 				2565C4D41602C563D4BF6D05EF388675 /* AXPresentGesturesBack.h */,
 				EAAB6ED9CB7A49BDAE0D3E6D5AB91553 /* AXPresentGesturesBack.m */,
-				B8FB2E81A0C976E42567E5CC5E3A7413 /* AXTextFieldDelegateObserve.h */,
-				F28CF70C3E4B4BEEE2D9F6350F28DE9A /* AXTextFieldDelegateObserve.m */,
+				B8FB2E81A0C976E42567E5CC5E3A7413 /* AXTextFieldObserve.h */,
+				F28CF70C3E4B4BEEE2D9F6350F28DE9A /* AXTextFieldObserve.m */,
 				96D1FE94076872C54890B08430F74D27 /* AXUIAssistant.h */,
 				A744D399A31B97F7ECBD4462247AE017 /* AXUIAssistant.m */,
 				9595CCF91AAB8213B222B5D3567E9649 /* AXViewControllerListener.h */,
@@ -11724,7 +11724,7 @@
 				38E0F410D6C107B52B485808D3135CFD /* AXSystemAuthorizerManager.h in Headers */,
 				D708317B46C4076EEC3E2E747B1B18C5 /* AXTabBarController.h in Headers */,
 				D197A84F9956ACA2C8374D1E27783CEE /* AXTableViewController.h in Headers */,
-				D8D413450B505303090E2EBA39BDA976 /* AXTextFieldDelegateObserve.h in Headers */,
+				D8D413450B505303090E2EBA39BDA976 /* AXTextFieldObserve.h in Headers */,
 				B1524079CACC28E9639B9C7AD97C4C07 /* AXTouchIDManager.h in Headers */,
 				DFB6617BC832486EEA214D9465CC1589 /* AXTripleInteractionModel.h in Headers */,
 				1D603222AD92CDEAE45D56E27C80181F /* AXTripleInteractionViewController.h in Headers */,
@@ -14971,7 +14971,7 @@
 				06C2977DAFBE93B57486A560002E992F /* AXSystemAuthorizerManager.m in Sources */,
 				EC351E99BE633BDE13C18417BAB9D821 /* AXTabBarController.m in Sources */,
 				5320DC91C14A984737AB0FB355E419D7 /* AXTableViewController.m in Sources */,
-				B49567A1C8D83443553DDE088A63123F /* AXTextFieldDelegateObserve.m in Sources */,
+				B49567A1C8D83443553DDE088A63123F /* AXTextFieldObserve.m in Sources */,
 				81B8FFF0A1DD49661873ED3DEFEF1129 /* AXTouchIDManager.m in Sources */,
 				C67427CCED5A5310FBC86E1629881815 /* AXTripleInteractionModel.m in Sources */,
 				9F7A3CE5CD8704A0959038A392A7A940 /* AXTripleInteractionViewController.m in Sources */,

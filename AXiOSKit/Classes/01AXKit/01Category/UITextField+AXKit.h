@@ -34,7 +34,7 @@
  @param text 当前输入的文字
  @return YES NO
  */
-- (BOOL)ax_maxCharacterCount:(NSUInteger)count
+- (BOOL)ax_maxTextLength:(NSUInteger)count
              replacementText:(NSString*)text;
 
 @end
