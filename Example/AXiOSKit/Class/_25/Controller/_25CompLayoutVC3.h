@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _25FlowLayoutVC4 : UIViewController
+@interface _25CompLayoutVC3 : UIViewController
 
 @end
 

@@ -49,36 +49,48 @@
     
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+    if(self.childViewControllers.count < 1){
+        viewController.hidesBottomBarWhenPushed = NO;
+        self.tabBarController.tabBar.hidden = NO;
+        
+    }else{
+        viewController.hidesBottomBarWhenPushed = YES;
+        self.tabBarController.tabBar.hidden = YES;
+    }
+    
+    [super pushViewController:viewController animated:animated];
+    
+    if(self.childViewControllers.count>0){
+        /// 取消返回 文字
+        viewController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]
+                                                  initWithTitle:@""
+                                                  style:UIBarButtonItemStylePlain
+                                                  target:self
+                                                  action:nil];
+    }
+    
 }
-*/
-
 
 - (void) traitCollectionDidChange: (UITraitCollection *) previousTraitCollection {
     
     
     [super traitCollectionDidChange: previousTraitCollection];
     
-    if (@available(iOS 13.0, *)) {
-        
-         UIColor *bgColor =  [UIColor colorWithDynamicProvider:^UIColor *(UITraitCollection *traitCollection) {
-        if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-            return UIColor.systemBackgroundColor;
-        }else {
-            return UIColor.redColor;
-        }}];
-             
-        [self.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:bgColor] forBarMetrics:UIBarMetricsDefault];
-    } else {
-        
-    }
+//    if (@available(iOS 13.0, *)) {
+//        
+//         UIColor *bgColor =  [UIColor colorWithDynamicProvider:^UIColor *(UITraitCollection *traitCollection) {
+//        if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+//            return UIColor.systemBackgroundColor;
+//        }else {
+//            return UIColor.redColor;
+//        }}];
+//             
+//        [self.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:bgColor] forBarMetrics:UIBarMetricsDefault];
+//    } else {
+//        
+//    }
     
 }
 

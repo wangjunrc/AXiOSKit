@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 __IOS_AVAILABLE(13.0)
 //API_AVAILABLE(ios(13.0))
-@interface _25FlowLayoutVC2 : UIViewController
+@interface _25CompLayoutVC1 : UIViewController
 
 @end
 

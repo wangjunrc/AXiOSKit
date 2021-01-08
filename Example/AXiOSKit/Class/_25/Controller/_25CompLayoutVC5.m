@@ -1,18 +1,18 @@
 //
-//  _25FlowLayoutVC4.m
+//  _25CompLayoutVC5.m
 //  AXiOSKit_Example
 //
-//  Created by 小星星吃KFC on 2021/1/6.
+//  Created by 小星星吃KFC on 2021/1/8.
 //  Copyright © 2021 axinger. All rights reserved.
 //
 
-#import "_25FlowLayoutVC4.h"
+#import "_25CompLayoutVC5.h"
 
-@interface _25FlowLayoutVC4 ()
+@interface _25CompLayoutVC5 ()
 
 @end
 
-@implementation _25FlowLayoutVC4
+@implementation _25CompLayoutVC5
 
 - (void)viewDidLoad {
     [super viewDidLoad];

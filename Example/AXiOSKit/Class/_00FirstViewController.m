@@ -49,7 +49,10 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <mach/mach.h>
 #import "_25FlowLayoutVC1.h"
-#import "_25FlowLayoutVC2.h"
+#import "_25CompLayoutVC1.h"
+#import "_25CompLayoutVC2.h"
+#import "_25CompLayoutVC3.h"
+#import "_25CompLayoutVC4.h"
 
 @import AssetsLibrary;
 
@@ -609,12 +612,34 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"水平滚动，但cell大小交替变换，且cell居中对齐。",
                 @"action": ^{
                     if (@available(iOS 13.0, *)) {
-                        _25FlowLayoutVC2 *vc =
-                        [[_25FlowLayoutVC2 alloc] init];
+                        _25CompLayoutVC1 *vc =
+                        [[_25CompLayoutVC1 alloc] init];
                         [self ax_pushVC:vc];
                     }
                 },
             },
+            @{
+                @"index": @25,
+                @"title": @"垂直滚动，一个大cell + 两个小cell 交替",
+                @"action": ^{
+                    _25CompLayoutVC2 *vc =
+                    [[_25CompLayoutVC2 alloc] init];
+                    [self ax_pushVC:vc];
+                    
+                },
+            },
+            @{
+                @"index": @25,
+                @"title": @"25-3 类似App Store 效果",
+                @"action": ^{
+                    _25CompLayoutVC3 *vc =
+                    [[_25CompLayoutVC3 alloc] init];
+                    [self ax_pushVC:vc];
+                    
+                },
+            },
+            
+          
             
             
             

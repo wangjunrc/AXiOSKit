@@ -43,40 +43,9 @@
     [self viewDidLoad];
 }
 
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    
-    if (@available(iOS 11.0, *)) {
-        
-        self.navigationController.navigationBar.prefersLargeTitles = NO;
-        
-    }
-}
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    
-    
-    if (@available(iOS 11.0, *)) {
-        self. navigationItem.hidesSearchBarWhenScrolling = YES;
-        self.navigationController.navigationBar.prefersLargeTitles = YES;
-        //        self.navigationController.navigationBar.backgroundColor = UIColor.redColor;
-        
-        self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAutomatic;
-        //        [self.navigationController.navigationBar setLargeTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,[UIFont systemFontOfSize:18.0f],NSFontAttributeName,nil]];
-        
-    }
-    
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //    self.title = @"02222";
-    
     self.view.backgroundColor =  UIColor.whiteColor;
-    
     self.navigationItem.title = @"内容";//设置标题
     
     __weak typeof(self) weakSelf = self;

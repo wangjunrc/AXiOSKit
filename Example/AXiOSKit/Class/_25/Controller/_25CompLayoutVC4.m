@@ -6,13 +6,13 @@
 //  Copyright © 2021 axinger. All rights reserved.
 //
 
-#import "_25FlowLayoutVC5.h"
+#import "_25CompLayoutVC4.h"
 
-@interface _25FlowLayoutVC5 ()
+@interface _25CompLayoutVC4 ()
 
 @end
 
-@implementation _25FlowLayoutVC5
+@implementation _25CompLayoutVC4
 
 - (void)viewDidLoad {
     [super viewDidLoad];

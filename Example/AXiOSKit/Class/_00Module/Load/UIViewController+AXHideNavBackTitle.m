@@ -15,7 +15,7 @@
 @implementation UIViewController (AXHideNavBackTitle)
 
 +(void)load {
-    [UIViewController ax_replaceInstanceMethodWithOriginal:@selector(viewDidAppear:) newSelector:@selector(ac_viewDidAppear)];
+//    [UIViewController ax_replaceInstanceMethodWithOriginal:@selector(viewDidAppear:) newSelector:@selector(ac_viewDidAppear)];
 }
  
 /// 设置导航栏返回按钮文字
