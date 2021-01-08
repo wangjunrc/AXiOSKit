@@ -49,7 +49,7 @@
     self.navigationItem.title = @"内容";//设置标题
     
     __weak typeof(self) weakSelf = self;
-    
+    [self _p00TestKit];
     [self _p01TextAndImage];
     [self _p01UITextView_link];
     [self _p01loginTest];
@@ -333,7 +333,39 @@
     
     
 }
+-(void)_p00TestKit {
+    
+    UISwitch *aSwitch = UISwitch.alloc.init;
+    aSwitch.onTintColor = UIColor.redColor;
+    aSwitch.thumbTintColor = UIColor.orangeColor;
+    
+    
+    [self.containerView addSubview:aSwitch];
+//
+//    aSwitch.transform = CGAffineTransformMakeScale( 10, 10.0);
 
+    
+//    [aSwitch.widthAnchor constraintEqualToConstant:200].active =YES;
+//    [aSwitch.heightAnchor constraintEqualToConstant:200].active =YES;
+    
+    
+    
+    [aSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.equalTo(self.bottomAttribute).mas_offset(10);
+        make.centerX.mas_equalTo(0);
+//        make.width.mas_equalTo(200);
+//        make.height.mas_equalTo(60);
+    }];
+    
+    
+    self.bottomAttribute = aSwitch.mas_bottom;
+    
+    
+    
+    
+    
+}
 
 -(void)_p01TextAndImage {
     NSString *title = @"图文混排";
@@ -426,6 +458,7 @@
 //    return YES;
 //
 //}
+
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction {
     
     if ([[URL scheme] isEqualToString:@"license"]) {
