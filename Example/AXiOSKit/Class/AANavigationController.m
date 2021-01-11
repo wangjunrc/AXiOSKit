@@ -64,11 +64,11 @@
     
     if(self.childViewControllers.count>0){
         /// 取消返回 文字
-        viewController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]
-                                                  initWithTitle:@""
-                                                  style:UIBarButtonItemStylePlain
-                                                  target:self
-                                                  action:nil];
+        viewController.navigationItem.backBarButtonItem = [UIBarButtonItem.alloc
+                                                           initWithTitle:@""
+                                                           style:UIBarButtonItemStylePlain
+                                                           target:self
+                                                           action:nil];
     }
     
 }

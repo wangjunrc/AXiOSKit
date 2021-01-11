@@ -25,7 +25,8 @@
 
 @interface _01ContentViewController ()<UITextViewDelegate,ASAuthorizationControllerDelegate,ASAuthorizationControllerPresentationContextProviding>
 
-@property (nonatomic, strong) MASConstraint *viewBottomConstraint;
+@property(nonatomic,strong) UILabel *label;
+
 
 @property(nonatomic, strong) AXBiometryManager *manager;
 
@@ -49,6 +50,92 @@
     self.navigationItem.title = @"内容";//设置标题
     
     __weak typeof(self) weakSelf = self;
+    
+    self.containerView.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
+    
+    self.AXListener.isPushed(^{
+        NSLog(@"isPushed");
+    }).isPresented(^{
+        NSLog(@"isPresented");
+    });
+    if (@available(iOS 13.0, *)) {
+        AXLoger(@"模式>> %ld", ax_keyWindow().overrideUserInterfaceStyle);
+    }
+    
+    [self _darkStyle];
+    
+    [self _p00ButtonTitle:@"push" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        _01ContentViewController *aa = [_01ContentViewController ax_init];
+        [strongSelf ax_pushVC:aa];
+    }];
+    
+    
+    [self _p00ButtonTitle:@"show" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        _01ContentViewController *vc = [_01ContentViewController ax_init];
+        [strongSelf ax_showVC:vc];
+    }];
+    
+    [self _p00ButtonTitle:@"Lookin_2D" handler:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_2D" object:nil];
+    }];
+    
+    [self _p00ButtonTitle:@"dismis 或者 pop" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf ax_haveNav:^(UINavigationController *nav) {
+            [strongSelf.navigationController popViewControllerAnimated:YES];
+            
+        } isPushNav:^(UINavigationController *nav) {
+            [strongSelf.navigationController dismissViewControllerAnimated:YES completion:nil];
+        } isPresentNav:^(UINavigationController *nav) {
+            [strongSelf dismissViewControllerAnimated:YES completion:nil];
+        } noneNav:^{
+            [strongSelf dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }];
+    
+    [self _p00ButtonTitle:@"dismissToRoot" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        UIViewController*controller=strongSelf;
+        
+        while(controller.presentingViewController){
+            controller=controller.presentingViewController;
+        }
+        
+        [controller dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    
+    [self _p00ButtonTitle:@"PresentedViewController" handler:^{
+        UIViewController*topRootViewController=ax_keyWindow().rootViewController;// 在这里加一个这个样式的循环
+        while(topRootViewController.presentedViewController){// 这里固定写法
+            topRootViewController=topRootViewController.presentedViewController;}
+        _01ContentViewController *vc = _01ContentViewController.alloc.init;
+        ///然后再进行present操作
+        [topRootViewController presentViewController:vc animated:YES completion:nil];
+    }];
+    
+    
+    
+    [self _p00ButtonTitle:@"popToRoot" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.navigationController popToRootViewControllerAnimated:YES];
+    }];
+    
+    /// 可以禁止侧滑返回,但是无法禁止代码直接返回
+    [self _p00ButtonTitle:@"隐藏返回按钮" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.navigationItem setHidesBackButton:! strongSelf.navigationItem.hidesBackButton animated:YES];
+    }];
+    [self _p00ButtonTitle:@"隐藏返回按钮 代码返回" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!strongSelf.navigationItem.hidesBackButton) {
+            [strongSelf.navigationController popViewControllerAnimated:YES];
+        }
+    }];
+    [self _p00Test_layer];
     [self _p00TestKit];
     [self _p01TextAndImage];
     [self _p01UITextView_link];
@@ -104,14 +191,75 @@
     }];
     
     
-    UIImage *image = [UIImage imageNamed:@"launch_image"];
-    self.containerView.layer.contents = (id)image.CGImage;
+    //    UIImage *image = [UIImage imageNamed:@"launch_image"];
+    //    self.containerView.layer.contents = (id)image.CGImage;
     
     /// 底部约束
     [self _loadBottomAttribute];
     
 }
 
+-(void)_darkStyle {
+    
+    CGFloat all_height = 50;
+    [self _p00ButtonTitle:@"改变模式" handler:^{
+        if (@available(iOS 13.0, *)) {
+            ax_keyWindow().overrideUserInterfaceStyle = (ax_keyWindow().overrideUserInterfaceStyle != UIUserInterfaceStyleDark )? UIUserInterfaceStyleDark : UIUserInterfaceStyleLight;
+        }
+    }];
+    
+    {
+        
+        UILabel *label = [[UILabel alloc] init];
+        [self.containerView addSubview:label];
+        label.backgroundColor = UIColor.blueColor;
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.left.mas_equalTo(10);
+            make.right.mas_equalTo(-10);
+        }];
+        self.bottomAttribute = label.mas_bottom;
+        if (@available(iOS 13.0, *)) {
+            NSString *text = @"暂无";
+            switch (ax_keyWindow().overrideUserInterfaceStyle) {
+                case UIUserInterfaceStyleUnspecified:
+                    text = @"模式 Unspecified";
+                    break;
+                case UIUserInterfaceStyleLight:
+                    text = @"模式 Light";
+                    break;
+                case UIUserInterfaceStyleDark:
+                    text = @"模式 Dark";
+                    break;
+                default:
+                    break;
+            }
+            label.text =text;
+        }else{
+            label.text =@"不支持模式";
+        }
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = [UIColor ax_colorWithNormalStyle:UIColor.greenColor darkStyle:UIColor.systemRedColor];
+        label.layer.cornerRadius = 5;
+        label.layer.masksToBounds = YES;
+        self.label = label;
+    }
+    
+    {
+        
+        UIImageView *imv = [[UIImageView alloc] init];
+        imv.image =[UIImage imageNamed:@"ax_icon_weixin"];
+        [self.containerView addSubview:imv];
+        [imv mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.width.height.mas_equalTo(all_height);
+            make.centerX.mas_equalTo(0);
+        }];
+        self.bottomAttribute = imv.mas_bottom;
+    }
+    
+    
+}
 
 -(void)_bottomView {
     
@@ -207,18 +355,18 @@
     {
         UITextField *pswTF = [[UITextField alloc]init];
         pswTF.backgroundColor = UIColor.orangeColor;
-//        nameTF.placeholder = @"输入密码";
+        //        nameTF.placeholder = @"输入密码";
         pswTF.secureTextEntry = YES;
         pswTF.accessibilityIdentifier = @"pwdTextField";
         pswTF.enabled = NO;
-//        nameTF.hidden = YES;
+        //        nameTF.hidden = YES;
         [self.containerView addSubview:pswTF];
         [pswTF mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.bottomAttribute).mas_equalTo(10);
             make.left.mas_equalTo(10);
             make.right.mas_equalTo(-10);
             make.height.mas_equalTo(50);
-//            make.height.mas_equalTo(1.0);
+            //            make.height.mas_equalTo(1.0);
         }];
         self.bottomAttribute = pswTF.mas_bottom;
     }
@@ -278,7 +426,7 @@
     if (!textField) {
         return;
     }
-//    NSString*str = textField.text;
+    //    NSString*str = textField.text;
     /// 屏蔽中文
     //    for (int i = 0; i<str.length; i++)
     //
@@ -333,6 +481,50 @@
     
     
 }
+
+-(void)_p00Test_layer {
+    UILabel *label = UILabel.alloc.init;
+    label.text = @"代码就可以避免离屏渲染";
+    
+    [self.containerView addSubview:label];
+    
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_offset(10);
+        make.centerX.mas_equalTo(0);
+        
+    }];
+    self.bottomAttribute = label.mas_bottom;
+    
+    
+    UIView *aView = UIView.alloc.init;
+    aView.backgroundColor = UIColor.redColor;
+    [self.containerView addSubview:aView];
+    
+    aView.layer.cornerRadius = 4;
+    aView.layer.shadowColor = [UIColor blackColor].CGColor;//shadowColor阴影颜色
+    aView.layer.shadowOffset = CGSizeMake(0,0);//shadowOffset阴影偏移,x向右偏移2，y向下偏移6，默认(0, -3),这个跟shadowRadius配合使用
+    aView.layer.shadowOpacity = 0.3;//阴影透明度，默认0
+    aView.layer.shadowRadius = 4;//阴影半径，默认3
+    
+    
+    
+    [aView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_offset(10);
+        make.centerX.mas_equalTo(0);
+        make.width.height.mas_equalTo(50);
+        
+    }];
+    /// 立即得到尺寸
+    [aView layoutIfNeeded];
+    
+    aView.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:aView.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(aView.layer.cornerRadius, aView.layer.cornerRadius)].CGPath;//参数依次为大小，设置四个角圆角状态，圆角曲度  设置阴影路径可避免离屏渲染
+    
+    
+    self.bottomAttribute = aView.mas_bottom;
+    
+}
+
+
 -(void)_p00TestKit {
     
     UISwitch *aSwitch = UISwitch.alloc.init;
@@ -341,12 +533,12 @@
     
     
     [self.containerView addSubview:aSwitch];
-//
-//    aSwitch.transform = CGAffineTransformMakeScale( 10, 10.0);
-
+    //
+    //    aSwitch.transform = CGAffineTransformMakeScale( 10, 10.0);
     
-//    [aSwitch.widthAnchor constraintEqualToConstant:200].active =YES;
-//    [aSwitch.heightAnchor constraintEqualToConstant:200].active =YES;
+    
+    //    [aSwitch.widthAnchor constraintEqualToConstant:200].active =YES;
+    //    [aSwitch.heightAnchor constraintEqualToConstant:200].active =YES;
     
     
     
@@ -354,15 +546,12 @@
         
         make.top.equalTo(self.bottomAttribute).mas_offset(10);
         make.centerX.mas_equalTo(0);
-//        make.width.mas_equalTo(200);
-//        make.height.mas_equalTo(60);
+        //        make.width.mas_equalTo(200);
+        //        make.height.mas_equalTo(60);
     }];
     
     
     self.bottomAttribute = aSwitch.mas_bottom;
-    
-    
-    
     
     
 }
@@ -929,9 +1118,9 @@
 
 -(void)_p14xmlToObj{
     
-//    __weak typeof(self) weakSelf = self;
+    //    __weak typeof(self) weakSelf = self;
     return [self _p00ButtonTitle:@"xml解析" handler:^{
-//        __strong typeof(weakSelf) strongSelf = weakSelf;
+        //        __strong typeof(weakSelf) strongSelf = weakSelf;
         
         NSString *path = [[NSBundle mainBundle]pathForResource:@"testXML" ofType:@"xml"];
         GDataXMLDocument *document = [[GDataXMLDocument alloc] initWithData:[NSData dataWithContentsOfFile:path] encoding:NSUTF8StringEncoding  error:NULL];
@@ -1200,4 +1389,41 @@ API_AVAILABLE(ios(13.0)){
     return  self.view.window;
 }
 
+
+#pragma mark - 主题变化
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    
+    
+    [super traitCollectionDidChange:previousTraitCollection];
+    
+    if ((self.traitCollection.verticalSizeClass != previousTraitCollection.verticalSizeClass)
+        || (self.traitCollection.horizontalSizeClass != previousTraitCollection.horizontalSizeClass)) {
+        
+        NSLog(@"traitCollectionDidChange");
+    }
+    
+    //    改变当前模式
+    if (@available(iOS 13.0, *)) {
+        AXLoger(@"模式>>1 %ld", ax_keyWindow().overrideUserInterfaceStyle);
+        AXLoger(@"模式>>2 %ld", self.overrideUserInterfaceStyle);
+        
+        NSString *text = @"暂无";
+        switch (ax_keyWindow().overrideUserInterfaceStyle) {
+            case UIUserInterfaceStyleUnspecified:
+                text = @"模式 Unspecified";
+                break;
+            case UIUserInterfaceStyleLight:
+                text = @"模式 Light";
+                break;
+            case UIUserInterfaceStyleDark:
+                text = @"模式 Dark";
+                break;
+            default:
+                break;
+        }
+        self.label.text =text;
+    }
+    
+    
+}
 @end

@@ -467,15 +467,17 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     }else{
         
         // 这行代码可以是侧滑返回webView的上一级，而不是根控制器（*只针对侧滑有效）
-        self.webView.allowsBackForwardNavigationGestures = NO;
+        self.webView.allowsBackForwardNavigationGestures = YES;
         
         self.navigationItem.leftBarButtonItems = nil;
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
         
         [self ax_haveNav:nil isPushNav:^(UINavigationController *nav) {
             
-            self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
+//            self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
             
+            
+            self.navigationItem.leftBarButtonItem = self.backItem;
         } isPresentNav:^(UINavigationController *nav) {
             
             self.navigationItem.leftBarButtonItem = self.cancelItem;
@@ -632,7 +634,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         UIImage* backItemImage = [[UIImage axBundle_imageNamed:@"ax_itemBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         UIImage* backItemHlImage = [[UIImage axBundle_imageNamed:@"ax_itemBack_h"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         UIButton* backButton = [[UIButton alloc] init];
-        [backButton setTitle:AXKitLocalizedString(@"ax.back") forState:UIControlStateNormal];
+//        [backButton setTitle:AXKitLocalizedString(@"ax.back") forState:UIControlStateNormal];
         [backButton setTitleColor:self.navigationController.navigationBar.tintColor forState:UIControlStateNormal];
         [backButton setTitleColor:[self.navigationController.navigationBar.tintColor colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
         [backButton.titleLabel setFont:[UIFont systemFontOfSize:17]];

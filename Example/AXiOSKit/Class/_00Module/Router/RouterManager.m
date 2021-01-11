@@ -10,8 +10,8 @@
 
 #import "RouterManager.h"
 #import <MGJRouter/MGJRouter.h>
-#import "_01ThemeViewController.h"
 
+#import "_01ContentViewController.h"
 @implementation RouterManager
 
 + (void)load {
@@ -19,7 +19,7 @@
         
         UINavigationController *navigationController = routerParameters[MGJRouterParameterUserInfo][@"navigationController"];
         
-        _01ThemeViewController *testVC = [[_01ThemeViewController alloc] init];
+        _01ContentViewController *testVC = [[_01ContentViewController alloc] init];
         [navigationController pushViewController:testVC animated:YES];
     }];
     

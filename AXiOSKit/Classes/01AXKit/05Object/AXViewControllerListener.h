@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 直接被push,有导航 
 @property(nonatomic, copy, readonly) AXViewControllerListener *(^isPushed)(void(^)(void));
 
-/// 直接被Present,没有导航
+/// 直接被Present,没有导航 除非是Presented 导航的
 @property(nonatomic, copy, readonly) AXViewControllerListener *(^isPresented)(void(^)(void));
 
 /// 是否隐藏导航栏。默认NO。

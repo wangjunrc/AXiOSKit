@@ -9,7 +9,7 @@
 #import "_25CompLayoutVC2.h"
 #import <Masonry/Masonry.h>
 #import <AXiOSKit/AXiOSKit.h>
-
+#import "_25CompLayoutCell.h"
 
 @interface _25CompLayoutVC2 ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -48,8 +48,9 @@
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell *cell =  [collectionView  dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.f green:arc4random()%255/255.f blue:arc4random()%255/255.f alpha:1];
+    _25CompLayoutCell *cell =  [collectionView  dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
+    
+    cell.contentView.backgroundColor = [UIColor ax_randomColor];
     return cell;
 }
 
@@ -110,14 +111,18 @@
             
             {
                 
-                //底部item
+                // 二区,两个水平排布
                 NSCollectionLayoutSize *bottomItemSize = [NSCollectionLayoutSize sizeWithWidthDimension:[NSCollectionLayoutDimension fractionalWidthDimension:0.5] heightDimension:[NSCollectionLayoutDimension fractionalHeightDimension:1.0]];
                 
                 NSCollectionLayoutItem *bottomItem = [NSCollectionLayoutItem itemWithLayoutSize:bottomItemSize supplementaryItems:@[badge]];
                 
-                bottomItem.contentInsets = NSDirectionalEdgeInsetsMake(8, 8, 8, 8);
                 
+                /// 和 前面的 有间距,到达居中效果
+//                bottomItem.edgeSpacing = [NSCollectionLayoutEdgeSpacing spacingForLeading:nil top:nil trailing:[NSCollectionLayoutSpacing fixedSpacing:10] bottom:nil];//【相对于group居中对齐】
                 
+//                bottomItem.contentInsets = NSDirectionalEdgeInsetsMake(8, 0, 8, 0);
+                
+//                bottomItem.contentInsets = NSDirectionalEdgeInsetsMake(0, 0, 0, 10);
                 
                 //底部group
                 NSCollectionLayoutSize *bottomGroupSize = [NSCollectionLayoutSize sizeWithWidthDimension:[NSCollectionLayoutDimension fractionalWidthDimension:1.0] heightDimension:[NSCollectionLayoutDimension fractionalWidthDimension:0.5]];
@@ -127,12 +132,14 @@
                 
                 NSCollectionLayoutGroup *bottomGroup = [NSCollectionLayoutGroup horizontalGroupWithLayoutSize:bottomGroupSize subitem:bottomItem count:2];//会在这个分组中放入两个相同的item。并且这里设置了2，即使bottomItemSize width设置比较大，依然会平分
                 
+                bottomGroup.contentInsets = NSDirectionalEdgeInsetsMake(8, 0, 8, 0);
+                
                 
                 [subitems addObject:bottomGroup];
                 
             }
             
-            //组合group 🐂🍺 注意这里的尺寸一点要是组合的大小
+            /// 上下 组合一个group
             NSCollectionLayoutSize *groupSize = [NSCollectionLayoutSize sizeWithWidthDimension:[NSCollectionLayoutDimension fractionalWidthDimension:1.0] heightDimension:[NSCollectionLayoutDimension fractionalWidthDimension:9.0/16.0 + 0.5]];
             
             NSCollectionLayoutGroup *group = [NSCollectionLayoutGroup verticalGroupWithLayoutSize:groupSize subitems:subitems];//NSCollectionLayoutGroup继承自NSCollectionLayoutItem
@@ -142,6 +149,10 @@
             NSCollectionLayoutSection *section = [NSCollectionLayoutSection sectionWithGroup:group];
             /// section 内容间距 包含 头 和 group 
             section.contentInsets = NSDirectionalEdgeInsetsMake(0, 20, 0, 20);
+            
+            section.orthogonalScrollingBehavior = UICollectionLayoutSectionOrthogonalScrollingBehaviorNone;
+            
+            
         //    section.orthogonalScrollingBehavior = UICollectionLayoutSectionOrthogonalScrollingBehaviorContinuous;
             {
                 
@@ -172,7 +183,7 @@
         
         _collectionView = [UICollectionView.alloc initWithFrame:CGRectZero collectionViewLayout:subLayout];
         
-        [_collectionView registerClass:UICollectionViewCell.class forCellWithReuseIdentifier:@"cellID"];
+        [_collectionView registerClass:_25CompLayoutCell.class forCellWithReuseIdentifier:@"cellID"];
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:@"Badge" withReuseIdentifier:@"custom"];
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"head"];
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"foot"];

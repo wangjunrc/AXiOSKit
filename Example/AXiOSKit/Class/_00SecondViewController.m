@@ -11,7 +11,6 @@
 #import "RouterManager.h"
 #import "TestObj.h"
 #import "_01ContentViewController.h"
-#import "_01ThemeViewController.h"
 #import "_02ChatViewController.h"
 #import "_04RunLoopViewController.h"
 #import "_06WCDBViewController.h"
@@ -45,6 +44,17 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <mach/mach.h>
 #import "AppDelegate.h"
+
+@interface TestKVOObject : NSObject
+
+@property (nonatomic, assign) NSInteger testInteger;
+@property (nonatomic, assign) NSRange testRange;
+
+@end
+@implementation TestKVOObject
+@end
+
+
 
 @interface _00SecondViewController ()
 
@@ -80,34 +90,34 @@
     [btn2 addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],[UIBarButtonItem ax_itemByButton:btn2]];
-    
-    
-    if (@available(iOS 11.0, *)) {
-        self. navigationItem.hidesSearchBarWhenScrolling = NO;
-        self.navigationController.navigationBar.prefersLargeTitles = YES;
-        
-        
-        self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAutomatic;
-        
-        
-        [self.navigationController.navigationBar setLargeTitleTextAttributes:@{
-            
-        NSForegroundColorAttributeName:UIColor.greenColor,
-//        NSFontAttributeName:[UIFont systemFontOfSize:18.0f]
-        
-        
-        }];
-        
-        self.navigationController.navigationBar.backgroundColor = UIColor.redColor;
-        
-    }
-    
-    
-    if (@available(iOS 11.0, *)) {
-        UISearchController *searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
-        self.navigationItem.searchController = searchController;
-    } else {
-    }
+//    
+//    
+//    if (@available(iOS 11.0, *)) {
+//        self. navigationItem.hidesSearchBarWhenScrolling = NO;
+//        self.navigationController.navigationBar.prefersLargeTitles = YES;
+//        
+//        
+//        self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAutomatic;
+//        
+//        
+//        [self.navigationController.navigationBar setLargeTitleTextAttributes:@{
+//            
+//        NSForegroundColorAttributeName:UIColor.greenColor,
+////        NSFontAttributeName:[UIFont systemFontOfSize:18.0f]
+//        
+//        
+//        }];
+//        
+//        self.navigationController.navigationBar.backgroundColor = UIColor.redColor;
+//        
+//    }
+//    
+//    
+//    if (@available(iOS 11.0, *)) {
+//        UISearchController *searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+//        self.navigationItem.searchController = searchController;
+//    } else {
+//    }
     
     
 }
@@ -681,14 +691,29 @@ void mySLog(NSString *format, ...)
                     //                    URLForResource:@"Frameworks/AXiOSKit.framework/AXHTML.bundle/index.html"
                     //                    withExtension:nil];
                     //                /// AXiOSKit 放置方式不一样
-                    vc.URL = [NSBundle.ax_HTMLBundle URLForResource:@"index.html" withExtension:nil];
+//                    vc.URL = [NSBundle.ax_HTMLBundle URLForResource:@"index.html" withExtension:nil];
                     
                
                     
-//                    vc.URL = [NSURL URLWithString:@"https://www.toutiao.com/"];
+                    vc.URL = [NSURL URLWithString:@"https://www.toutiao.com/"];
                     [self ax_pushVC:vc];
                 },
+                
             },
+            
+            
+            @{
+                @"index": @6,
+                @"title": @"setValue nil",
+                @"action": ^{
+                    TestKVOObject *test = [TestKVOObject new];
+                       [test setValue:nil forKey:@"testInteger"];
+                    
+                },
+            },
+            
+            
+            
         ].mutableCopy;
     }
     return _dataArray;

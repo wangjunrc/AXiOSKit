@@ -19,7 +19,6 @@
 		211226F82573340100B6ECC8 /* _28LocalSocketServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1E8E25441BBD00E43F16 /* _28LocalSocketServiceViewController.m */; };
 		211226F92573340100B6ECC8 /* AppDelegateWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */; };
 		211226FA2573340100B6ECC8 /* AFHTTPSessionManager+PutFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB48254003D900C89B72 /* AFHTTPSessionManager+PutFile.m */; };
-		211226FB2573340100B6ECC8 /* _01ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB84254003D900C89B72 /* _01ThemeViewController.m */; };
 		211226FC2573340100B6ECC8 /* _14TFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4E254003D900C89B72 /* _14TFViewController.m */; };
 		211226FD2573340100B6ECC8 /* _30TimeLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430AE6256C98EF00CB8EBC /* _30TimeLineModel.m */; };
 		211226FE2573340100B6ECC8 /* LVieoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBAD254003DA00C89B72 /* LVieoView.m */; };
@@ -84,7 +83,6 @@
 		2112273A2573340100B6ECC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		2112273D2573340100B6ECC8 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB8F254003D900C89B72 /* instruction.jpg */; };
 		2112273E2573340100B6ECC8 /* _21KVOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB3D254003D900C89B72 /* _21KVOViewController.xib */; };
-		2112273F2573340100B6ECC8 /* _01ThemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB51254003D900C89B72 /* _01ThemeViewController.xib */; };
 		211227402573340100B6ECC8 /* _26RMQClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB38254003D900C89B72 /* _26RMQClientViewController.xib */; };
 		211227412573340100B6ECC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDA254003DA00C89B72 /* Assets.xcassets */; };
 		211227422573340100B6ECC8 /* testXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = 21948D412564B83700207E18 /* testXML.xml */; };
@@ -150,7 +148,6 @@
 		213BCBFD254003DB00C89B72 /* _20iOS14ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4C254003D900C89B72 /* _20iOS14ViewController.m */; };
 		213BCBFE254003DB00C89B72 /* _14TFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4E254003D900C89B72 /* _14TFViewController.m */; };
 		213BCBFF254003DB00C89B72 /* _23FullViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB4F254003D900C89B72 /* _23FullViewController.xib */; };
-		213BCC00254003DB00C89B72 /* _01ThemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB51254003D900C89B72 /* _01ThemeViewController.xib */; };
 		213BCC01254003DB00C89B72 /* _00TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB52254003D900C89B72 /* _00TableViewCell.m */; };
 		213BCC02254003DB00C89B72 /* MyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB53254003D900C89B72 /* MyActivity.m */; };
 		213BCC03254003DB00C89B72 /* AView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB55254003D900C89B72 /* AView.m */; };
@@ -175,7 +172,6 @@
 		213BCC19254003DB00C89B72 /* _13WebpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB7B254003D900C89B72 /* _13WebpViewController.m */; };
 		213BCC1B254003DB00C89B72 /* _17OtherShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB80254003D900C89B72 /* _17OtherShareViewController.m */; };
 		213BCC1C254003DB00C89B72 /* _15UIMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB83254003D900C89B72 /* _15UIMenuController.m */; };
-		213BCC1D254003DB00C89B72 /* _01ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB84254003D900C89B72 /* _01ThemeViewController.m */; };
 		213BCC24254003DB00C89B72 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB8F254003D900C89B72 /* instruction.jpg */; };
 		213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB90254003D900C89B72 /* PointViewController.plist */; };
 		213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB93254003D900C89B72 /* LaunchScreen.storyboard */; };
@@ -211,6 +207,7 @@
 		21430B10256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21430B0E256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib */; };
 		2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
+		216891AB25ABDD4B0037CAB5 /* _25CompLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 216891AA25ABDD4B0037CAB5 /* _25CompLayoutCell.m */; };
 		21799C7C255BDE8500754A8B /* gift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 21799C7B255BDE8500754A8B /* gift.svg */; };
 		21799D5D255CD2E300754A8B /* AXRecordAudioService.m in Sources */ = {isa = PBXBuildFile; fileRef = 21799D5C255CD2E300754A8B /* AXRecordAudioService.m */; };
 		21799D64255CD33700754A8B /* AXRecordAudioConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21799D63255CD33700754A8B /* AXRecordAudioConfig.m */; };
@@ -376,7 +373,6 @@
 		213BCB4D254003D900C89B72 /* _17OtherShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _17OtherShareViewController.h; sourceTree = "<group>"; };
 		213BCB4E254003D900C89B72 /* _14TFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _14TFViewController.m; sourceTree = "<group>"; };
 		213BCB4F254003D900C89B72 /* _23FullViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _23FullViewController.xib; sourceTree = "<group>"; };
-		213BCB51254003D900C89B72 /* _01ThemeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _01ThemeViewController.xib; sourceTree = "<group>"; };
 		213BCB52254003D900C89B72 /* _00TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00TableViewCell.m; sourceTree = "<group>"; };
 		213BCB53254003D900C89B72 /* MyActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActivity.m; sourceTree = "<group>"; };
 		213BCB54254003D900C89B72 /* _13WebpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _13WebpViewController.h; sourceTree = "<group>"; };
@@ -387,7 +383,6 @@
 		213BCB5A254003D900C89B72 /* _14TFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _14TFViewController.xib; sourceTree = "<group>"; };
 		213BCB5B254003D900C89B72 /* _18MGSwipeTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _18MGSwipeTableVC.m; sourceTree = "<group>"; };
 		213BCB5C254003D900C89B72 /* _09AFNViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _09AFNViewController.xib; sourceTree = "<group>"; };
-		213BCB5D254003D900C89B72 /* _01ThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _01ThemeViewController.h; sourceTree = "<group>"; };
 		213BCB5E254003D900C89B72 /* _24NoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _24NoteViewController.xib; sourceTree = "<group>"; };
 		213BCB5F254003D900C89B72 /* _15UIMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _15UIMenuController.h; sourceTree = "<group>"; };
 		213BCB60254003D900C89B72 /* _04RunLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _04RunLoopViewController.m; sourceTree = "<group>"; };
@@ -422,7 +417,6 @@
 		213BCB81254003D900C89B72 /* _22ReactiveObjCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _22ReactiveObjCViewController.h; sourceTree = "<group>"; };
 		213BCB82254003D900C89B72 /* _04RunLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _04RunLoopViewController.h; sourceTree = "<group>"; };
 		213BCB83254003D900C89B72 /* _15UIMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _15UIMenuController.m; sourceTree = "<group>"; };
-		213BCB84254003D900C89B72 /* _01ThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _01ThemeViewController.m; sourceTree = "<group>"; };
 		213BCB85254003D900C89B72 /* _18MGSwipeTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _18MGSwipeTableVC.h; sourceTree = "<group>"; };
 		213BCB86254003D900C89B72 /* _00FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00FirstViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		213BCB8F254003D900C89B72 /* instruction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instruction.jpg; sourceTree = "<group>"; };
@@ -486,6 +480,8 @@
 		21430B0E256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _30TimeLineNinePhotoCell.xib; sourceTree = "<group>"; };
 		2152C5B525919C720078D525 /* AXDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugViewController.h; sourceTree = "<group>"; };
 		2152C5B625919C720078D525 /* AXDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugViewController.m; sourceTree = "<group>"; };
+		216891A925ABDD4B0037CAB5 /* _25CompLayoutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CompLayoutCell.h; sourceTree = "<group>"; };
+		216891AA25ABDD4B0037CAB5 /* _25CompLayoutCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CompLayoutCell.m; sourceTree = "<group>"; };
 		21799C7B255BDE8500754A8B /* gift.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = gift.svg; sourceTree = "<group>"; };
 		21799D5B255CD2E300754A8B /* AXRecordAudioService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXRecordAudioService.h; sourceTree = "<group>"; };
 		21799D5C255CD2E300754A8B /* AXRecordAudioService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRecordAudioService.m; sourceTree = "<group>"; };
@@ -676,9 +672,6 @@
 				213BCB6A254003D900C89B72 /* _00TableViewCell.xib */,
 				213BCB47254003D900C89B72 /* _01ContentViewController.h */,
 				213BCB72254003D900C89B72 /* _01ContentViewController.m */,
-				213BCB5D254003D900C89B72 /* _01ThemeViewController.h */,
-				213BCB84254003D900C89B72 /* _01ThemeViewController.m */,
-				213BCB51254003D900C89B72 /* _01ThemeViewController.xib */,
 				213BCBA2254003DA00C89B72 /* _02Chat */,
 				213BCB82254003D900C89B72 /* _04RunLoopViewController.h */,
 				213BCB60254003D900C89B72 /* _04RunLoopViewController.m */,
@@ -1085,6 +1078,8 @@
 			children = (
 				21BC1948256CD28C0041ADBB /* _25CollectionViewCell.h */,
 				21BC1949256CD28C0041ADBB /* _25CollectionViewCell.m */,
+				216891A925ABDD4B0037CAB5 /* _25CompLayoutCell.h */,
+				216891AA25ABDD4B0037CAB5 /* _25CompLayoutCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1419,7 +1414,6 @@
 			files = (
 				2112273D2573340100B6ECC8 /* instruction.jpg in Resources */,
 				2112273E2573340100B6ECC8 /* _21KVOViewController.xib in Resources */,
-				2112273F2573340100B6ECC8 /* _01ThemeViewController.xib in Resources */,
 				211227402573340100B6ECC8 /* _26RMQClientViewController.xib in Resources */,
 				211227412573340100B6ECC8 /* Assets.xcassets in Resources */,
 				211227422573340100B6ECC8 /* testXML.xml in Resources */,
@@ -1475,7 +1469,6 @@
 			files = (
 				213BCC24254003DB00C89B72 /* instruction.jpg in Resources */,
 				213BCBF1254003DB00C89B72 /* _21KVOViewController.xib in Resources */,
-				213BCC00254003DB00C89B72 /* _01ThemeViewController.xib in Resources */,
 				213BCBEE254003DB00C89B72 /* _26RMQClientViewController.xib in Resources */,
 				213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */,
 				21948D422564B83700207E18 /* testXML.xml in Resources */,
@@ -1756,7 +1749,6 @@
 				211226F82573340100B6ECC8 /* _28LocalSocketServiceViewController.m in Sources */,
 				211226F92573340100B6ECC8 /* AppDelegateWebImage.m in Sources */,
 				211226FA2573340100B6ECC8 /* AFHTTPSessionManager+PutFile.m in Sources */,
-				211226FB2573340100B6ECC8 /* _01ThemeViewController.m in Sources */,
 				211226FC2573340100B6ECC8 /* _14TFViewController.m in Sources */,
 				211226FD2573340100B6ECC8 /* _30TimeLineModel.m in Sources */,
 				21E5C8AA257F6BF8002A4D59 /* _00BaseViewController.m in Sources */,
@@ -1849,7 +1841,6 @@
 				218A1E9025441BBE00E43F16 /* _28LocalSocketServiceViewController.m in Sources */,
 				21CC7C62255FA40D00E7B506 /* AppDelegateWebImage.m in Sources */,
 				213BCBF9254003DB00C89B72 /* AFHTTPSessionManager+PutFile.m in Sources */,
-				213BCC1D254003DB00C89B72 /* _01ThemeViewController.m in Sources */,
 				213BCBFE254003DB00C89B72 /* _14TFViewController.m in Sources */,
 				21430AE7256C98EF00CB8EBC /* _30TimeLineModel.m in Sources */,
 				213BCC31254003DB00C89B72 /* LVieoView.m in Sources */,
@@ -1884,6 +1875,7 @@
 				213BCC02254003DB00C89B72 /* MyActivity.m in Sources */,
 				213BCC01254003DB00C89B72 /* _00TableViewCell.m in Sources */,
 				213BCC3D254003DB00C89B72 /* RouterManager.m in Sources */,
+				216891AB25ABDD4B0037CAB5 /* _25CompLayoutCell.m in Sources */,
 				218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */,
 				218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */,
 				213BCBEA254003DB00C89B72 /* MakeKeyAndVisible.m in Sources */,

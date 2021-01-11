@@ -66,7 +66,17 @@ axShared_M(Manager)
 
 -(void)_initView {
     if (!self.window) {
-        self.window = [UIApplication sharedApplication].windows.firstObject;
+//        self.window = [UIApplication sharedApplication].windows.firstObject;
+        
+        /// 这个方法 <UIWindowSceneDelegate> 也能获得
+        for (UIWindow *window in [UIApplication sharedApplication].windows) {
+            if (window.isKeyWindow) {
+                self.window =  window;
+                break;
+            }
+        }
+        
+        
     }
     [self initAddEventBtn];
 }

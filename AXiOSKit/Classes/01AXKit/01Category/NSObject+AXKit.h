@@ -76,4 +76,6 @@
  */
 -(void)ax_revolveOrientation:(UIInterfaceOrientation )orientation;
 
+- (void)ax_safe_setNilValueForKey:(NSString *)key;
+
 @end

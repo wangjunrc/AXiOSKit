@@ -14,7 +14,6 @@
 #import "_00TableViewCell.h"
 #import "_00FirstViewController.h"
 #import "_01ContentViewController.h"
-#import "_01ThemeViewController.h"
 #import "_02ChatViewController.h"
 #import "_04RunLoopViewController.h"
 #import "_06WCDBViewController.h"
@@ -53,6 +52,8 @@
 #import "_25CompLayoutVC2.h"
 #import "_25CompLayoutVC3.h"
 #import "_25CompLayoutVC4.h"
+#import "_25CompLayoutVC5.h"
+
 
 @import AssetsLibrary;
 
@@ -395,14 +396,6 @@ typedef void (^CollectionBlock)(void);
         _dataArray =  @[
             @{
                 @"index": @1,
-                @"title": @"暗黑主题-ViewController",
-                @"action": ^{
-                    _01ThemeViewController *vc = [[_01ThemeViewController alloc] init];
-                    [self ax_pushVC:vc];
-                },
-            },
-            @{
-                @"index": @1,
                 @"title": @"ContentViewController",
                 @"action": ^{
                     _01ContentViewController *vc =
@@ -414,7 +407,7 @@ typedef void (^CollectionBlock)(void);
                 @"index": @1,
                 @"title": @"隐藏导航栏",
                 @"action": ^{
-                    _01ThemeViewController *vc = [[_01ThemeViewController alloc]init];
+                    _01ContentViewController *vc = [[_01ContentViewController alloc]init];
                     
                     [self ax_pushVC:vc];
                     //                        vc.ax_shouldNavigationBarHidden = YES;
@@ -639,7 +632,26 @@ typedef void (^CollectionBlock)(void);
                 },
             },
             
-          
+            @{
+                @"index": @25,
+                @"title": @"25-4 含有背景",
+                @"action": ^{
+                    _25CompLayoutVC4 *vc =
+                    [[_25CompLayoutVC4 alloc] init];
+                    [self ax_pushVC:vc];
+                    
+                },
+            },
+            @{
+                @"index": @25,
+                @"title": @"25-4 NSCollectionLayoutGroupCustomItem",
+                @"action": ^{
+                    _25CompLayoutVC5 *vc =
+                    [[_25CompLayoutVC5 alloc] init];
+                    [self ax_pushVC:vc];
+                    
+                },
+            },
             
             
             
@@ -721,7 +733,7 @@ typedef void (^CollectionBlock)(void);
                 @"index": @29,
                 @"title": @"仿微信小程序右滑关闭",
                 @"action": ^{
-                    _01ThemeViewController *vc = [_01ThemeViewController ax_init];
+                    _01ContentViewController *vc = [_01ContentViewController ax_init];
                     vc.view.backgroundColor = UIColor.orangeColor;
                     [AXPresentGesturesBack injectDismissTransitionForViewController:vc];
                     [self ax_showVC:vc];
