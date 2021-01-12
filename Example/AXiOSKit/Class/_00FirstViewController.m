@@ -411,6 +411,7 @@ typedef void (^CollectionBlock)(void);
                     
                     [self ax_pushVC:vc];
                     //                        vc.ax_shouldNavigationBarHidden = YES;
+                 
                     vc.AXListener.hiddenNavigationBar = YES;
                     NSLog(@"vc.AXListener.shouldNavigationBarHidden %d",vc.AXListener.isHiddenNavigationBar);
                 },

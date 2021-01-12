@@ -731,13 +731,9 @@
 -(void)_p04masron_uninstall {
     
     CGFloat width = 100;
-    
-    
     __block MASConstraint *viewWidthConstraint = nil;
-    
-    
     __block MASConstraint *viewRightConstraint = nil;
-    
+    __weak typeof(self) weakSelf = self;
     UILabel *label1 = [[UILabel alloc]init];
     label1.text = @"默认宽度30";
     [self.containerView addSubview:label1];
@@ -746,7 +742,6 @@
         make.top.equalTo(self.bottomAttribute).mas_equalTo(10);
         make.left.mas_equalTo(30);
         make.height.mas_equalTo(100);
-        
         viewWidthConstraint = make.width.mas_equalTo(width);
     }];
     self.bottomAttribute = label1.mas_bottom;
@@ -799,8 +794,9 @@
     }];
     
     [self _p00ButtonTitle:@"04-masron动画 -加大" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         //        [label1.superview layoutIfNeeded];
-        [self.view setNeedsUpdateConstraints];
+        [strongSelf.view setNeedsUpdateConstraints];
         [UIView animateWithDuration:1 animations:^{
             [label1 mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.width.mas_equalTo(300);
@@ -812,7 +808,8 @@
     
     [self _p00ButtonTitle:@"04-masron动画 - 减小" handler:^{
         //        [label1.superview layoutIfNeeded];
-        [self.view setNeedsUpdateConstraints];
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.view setNeedsUpdateConstraints];
         [UIView animateWithDuration:1 animations:^{
             [label1 mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.width.mas_equalTo(100);

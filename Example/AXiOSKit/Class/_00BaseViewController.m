@@ -10,6 +10,8 @@
 
 @interface _00BaseViewController ()
 
+//@property(nonatomic, strong) UIScrollView *scrollView;
+
 @end
 
 @implementation _00BaseViewController
@@ -19,6 +21,7 @@
     
     self.view.backgroundColor = UIColor.whiteColor;
     UIScrollView *scrollView = [UIScrollView.alloc init];
+//    self.scrollView = scrollView;
     [self.view addSubview:scrollView];
     [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -35,8 +38,20 @@
     }];
     
     self.bottomAttribute = self.containerView.mas_top;
-    
+   
 }
+
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//    if (@available(iOS 11.0, *)){
+//        if (self.navigationController.isNavigationBarHidden) {
+//            self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        }
+////        [[UITableView appearance] setEstimatedRowHeight:0];
+////        [[UITableView appearance] setEstimatedSectionFooterHeight:0];
+////        [[UITableView appearance] setEstimatedSectionHeaderHeight:0];
+//    }
+//}
 
 -(MASViewAttribute *)_p00ButtonTopView:(MASViewAttribute *)viewBottomAttribute title:(NSString *)title handler:(void(^)(void))handler {
     if (title.length==0) {

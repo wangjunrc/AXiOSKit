@@ -89,6 +89,17 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
     // 判断要显示的控制器是否是自己
     BOOL hidden = [viewController isKindOfClass:self.viewController.class];
     [self.viewController.navigationController setNavigationBarHidden:hidden animated:YES];
+    /// 处理一下 viewController 内容含有 scrollView ,在viewController中需要偏移一下
+    if (hidden) {
+        [self.viewController.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isKindOfClass:UIScrollView.class]) {
+                UIScrollView *scrollView = (UIScrollView *)obj;
+                scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+                *stop = YES;
+            }
+        }];
+    }
+    
 }
 
 

@@ -24,6 +24,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy, readonly) AXViewControllerListener *(^isPresented)(void(^)(void));
 
 /// 是否隐藏导航栏。默认NO。
+/**
+ /// 假如内容为 scrollView ,在viewController中需要偏移一下
+ - (void)viewDidAppear:(BOOL)animated {
+     [super viewDidAppear:animated];
+     if (@available(iOS 11.0, *)){
+         if (self.navigationController.isNavigationBarHidden) {
+             self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+         }
+     }
+ }
+ */
 @property (nonatomic, assign,getter=isHiddenNavigationBar) BOOL hiddenNavigationBar;
 
 
