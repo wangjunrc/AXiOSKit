@@ -1,0 +1,19 @@
+//
+//  ax_debug_α.xcconfig
+//  AXiOSKit
+//
+//  Created by 小星星吃KFC on 2021/1/12.
+//  Copyright © 2021 axinger. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "ax_common.xcconfig"
+#include "Pods/Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.debug_α.xcconfig"
+
+IS_PRODUCATION = NO
+
+/// 服务器 // 需要转义 /$()/
+SERVER_HOST = @"https:/$()/www.测试服_α.com/"
+

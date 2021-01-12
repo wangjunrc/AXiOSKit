@@ -11,7 +11,7 @@
 #import "MakeKeyAndVisible.h"
 #import "AppDelegateRegistryCenter.h"
 #import <Bagel/Bagel.h>
-#import <LLDebugTool/LLDebug.h>
+//#import <LLDebugTool/LLDebug.h>
 #import "AXDebugManager.h"
 #import <UserNotifications/UserNotifications.h>
 #import "_01ContentViewController.h"
@@ -51,6 +51,11 @@
 #else
     NSLog(@"环境 ==== 默认");
 #endif
+    
+    
+    NSLog(@"IS_PRODUCATION = %d, SERVER_HOST = %@",IS_PRODUCATION, SERVER_HOST);
+    
+    
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];

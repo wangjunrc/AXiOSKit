@@ -115,7 +115,12 @@ end
 
 target 'AXShare' do
   
-  common_pods
+#  common_pods
+  
+  pod 'AXiOSKit', :path => '../'
+  pod "Masonry"
+  pod "AFNetworking"
+  pod 'ReactiveObjC'
   
 end
 
