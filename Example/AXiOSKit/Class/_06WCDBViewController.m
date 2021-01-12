@@ -12,7 +12,7 @@
 #import <AXiOSKit/AXiOSKit.h>
 #import "TZImagePickerController.h"
 #import <MJExtension/MJExtension.h>
-#import "AXiOSKit_Example-Swift.h"
+//#import "AXiOSKit_Example-Swift.h"
 
 @interface _06WCDBViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *tf;

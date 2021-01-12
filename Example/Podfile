@@ -98,7 +98,7 @@ def debug_pods
   
 end
 
-
+#=========环境===========
 target 'AXiOSKit_Example' do
   
   #  pod "IQKeyboardManager"
@@ -108,22 +108,32 @@ target 'AXiOSKit_Example' do
   ui_pods
   debug_pods
   
-  target 'AXiOSKit_Tests' do
-    inherit! :search_paths
-  end
+#  target 'AXiOSKit_Tests' do
+#    inherit! :search_paths
+#  end
 end
 
 target 'AXShare' do
+  common_pods
+end
+
+#=========环境1===========
+target 'AXiOSKit_Example_Env_1' do
   
-#  common_pods
+  pod 'WechatOpenSDK','1.7.7'
   
-  pod 'AXiOSKit', :path => '../'
-  pod "Masonry"
-  pod "AFNetworking"
-  pod 'ReactiveObjC'
+  common_pods
+  ui_pods
+  debug_pods
   
 end
 
+target 'AXShare_Env_1' do
+  common_pods
+end
+
+
+#=========忽略===========
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
