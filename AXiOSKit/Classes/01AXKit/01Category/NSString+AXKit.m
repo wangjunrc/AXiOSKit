@@ -855,38 +855,69 @@
 
 
 - (BOOL)ax_containsEmoji {
-    __block BOOL containsEmoji = NO;
-    [self enumerateSubstringsInRange:NSMakeRange(0, [self length]) options:NSStringEnumerationByComposedCharacterSequences usingBlock:
-     ^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
-         const unichar hs = [substring characterAtIndex:0];
-         if (0xd800 <= hs && hs <= 0xdbff) {
-             if (substring.length > 1) {
-                 const unichar ls = [substring characterAtIndex:1];
-                 const int uc = ((hs - 0xd800) * 0x400) + (ls - 0xdc00) + 0x10000;
-                 if (0x1d000 <= uc && uc <= 0x1f77f) {
-                     containsEmoji = YES;
-                 }
-             }
-         } else if (substring.length > 1) {
-             const unichar ls = [substring characterAtIndex:1];
-             if (ls == 0x20e3) {
-                 containsEmoji = YES;
-             }
-         } else {
-             if (0x2100 <= hs && hs <= 0x27ff && hs != 0x263b) {
-                 containsEmoji = YES;
-             } else if (0x2B05 <= hs && hs <= 0x2b07) {
-                 containsEmoji = YES;
-             } else if (0x2934 <= hs && hs <= 0x2935) {
-                 containsEmoji = YES;
-             } else if (0x3297 <= hs && hs <= 0x3299) {
-                 containsEmoji = YES;
-             } else if (hs == 0xa9 || hs == 0xae || hs == 0x303d || hs == 0x3030 || hs == 0x2b55 || hs == 0x2b1c || hs == 0x2b1b || hs == 0x2b50|| hs == 0x231a) {
-                 containsEmoji = YES;
-             }
-         }
-     }];
-    return containsEmoji;
+//    __block BOOL containsEmoji = NO;
+//    [self enumerateSubstringsInRange:NSMakeRange(0, [self length]) options:NSStringEnumerationByComposedCharacterSequences usingBlock:
+//     ^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+//         const unichar hs = [substring characterAtIndex:0];
+//         if (0xd800 <= hs && hs <= 0xdbff) {
+//             if (substring.length > 1) {
+//                 const unichar ls = [substring characterAtIndex:1];
+//                 const int uc = ((hs - 0xd800) * 0x400) + (ls - 0xdc00) + 0x10000;
+//                 if (0x1d000 <= uc && uc <= 0x1f77f) {
+//                     containsEmoji = YES;
+//                 }
+//             }
+//         } else if (substring.length > 1) {
+//             const unichar ls = [substring characterAtIndex:1];
+//             if (ls == 0x20e3) {
+//                 containsEmoji = YES;
+//             }
+//         } else {
+//             if (0x2100 <= hs && hs <= 0x27ff && hs != 0x263b) {
+//                 containsEmoji = YES;
+//             } else if (0x2B05 <= hs && hs <= 0x2b07) {
+//                 containsEmoji = YES;
+//             } else if (0x2934 <= hs && hs <= 0x2935) {
+//                 containsEmoji = YES;
+//             } else if (0x3297 <= hs && hs <= 0x3299) {
+//                 containsEmoji = YES;
+//             } else if (hs == 0xa9 || hs == 0xae || hs == 0x303d || hs == 0x3030 || hs == 0x2b55 || hs == 0x2b1c || hs == 0x2b1b || hs == 0x2b50|| hs == 0x231a) {
+//                 containsEmoji = YES;
+//             }
+//         }
+//     }];
+//    return containsEmoji;
+    NSString *string = self;
+    __block BOOL returnValue = NO;
+    [string enumerateSubstringsInRange:NSMakeRange(0, string.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+        
+        if (substring.length > 0) {
+            const unichar hs = [substring characterAtIndex:0];
+            if (0x2194 <= hs && hs <= 0x2199) {
+                returnValue = YES;
+            }
+            if (0x23e9 <= hs && hs <= 0x23fa) {
+                returnValue = YES;
+            }
+            if (0x2600 <= hs && hs <= 0x2604) {
+                returnValue = YES;
+            }
+            if (0x2648 <= hs && hs <= 0x2653) {
+                returnValue = YES;
+            }
+            if (0x30 <= hs && hs <= 0x39) {
+                returnValue = YES;
+            }
+            if (0x26f0 <= hs && hs <= 0x26fd) {
+                returnValue = YES;
+            }
+            if (hs == 0x203c || hs == 0x2049 || hs == 0x2122 || hs == 0x2139 || hs == 0x21a9 || hs == 0x21aa || hs == 0x23 || hs == 0x231a || hs == 0x231b || hs == 0x2328 || hs == 0x23cf || hs == 0x24c2 || hs == 0x25b6 || hs == 0x25c0 || hs == 0x260e || hs == 0x2611 || hs == 0x2614 || hs == 0x2615 || hs == 0x2618 || hs == 0x261d || hs == 0x2620 || hs == 0x2622 || hs == 0x2623 || hs == 0x2626 || hs == 0x262a || hs == 0x262e || hs == 0x262f || hs == 0x2638 || hs == 0x2639 || hs == 0x263a || hs == 0x2668 || hs == 0x267b || hs == 0x267f || hs == 0x2692 || hs == 0x2693 || hs == 0x2694 || hs == 0x2696 || hs == 0x2697 || hs == 0x2699 || hs == 0x269b || hs == 0x269c || hs == 0x26a0 || hs == 0x26a1 || hs == 0x26b0 || hs == 0x26b1 || hs == 0x26bd || hs == 0x26be || hs == 0x26c4 || hs == 0x26c5 || hs == 0x26c8 || hs == 0x26ce || hs == 0x26cf || hs == 0x26d1 || hs == 0x26d3 || hs == 0x26d4 || hs == 0x26e9 || hs == 0x26ea || hs == 0x2702 || hs == 0x2705 || hs == 0x2708 || hs == 0x2709 || hs == 0x270a || hs == 0x270b || hs == 0x270c || hs == 0x270d || hs == 0x270f || hs == 0x2712 || hs == 0x2714 || hs == 0x2716 || hs == 0x271d || hs == 0x2721 || hs == 0x2728 || hs == 0x2733 || hs == 0x2734 || hs == 0x2744 || hs == 0x2747 || hs == 0x274c || hs == 0x274e || hs == 0x2753 || hs == 0x2754 || hs == 0x2755 || hs == 0x2757 || hs == 0x2763 || hs == 0x2764 || hs == 0x2795 || hs == 0x2796 || hs == 0x2797 || hs == 0x27a1 || hs == 0x27b0 || hs == 0x27bf || hs == 0x2934 || hs == 0x2935 || hs == 0x2b05 || hs == 0x2b06 || hs == 0x2b07 || hs == 0x2b50 || hs == 0x2b55 || hs == 0x3030 || hs == 0x303d || hs == 0x3297 || hs == 0x3299 || hs == 0x2a || hs == 0xa9 || hs == 0xae || hs == 0xd83c || hs == 0xd83d || hs == 0xd83e || hs == 0x267e || hs == 0x25aa || hs == 0x25ab || hs == 0x265f || hs == 0x26ab || hs == 0x26aa || hs == 0x25fe || hs == 0x25fd || hs == 0x25fc || hs == 0x25fb || hs == 0x2b1b || hs == 0x2b1c || hs == 0x2660 || hs == 0x2663 || hs == 0x2665 || hs == 0x2666) {
+                returnValue = YES;
+            }
+        }
+    }];
+    return returnValue;
+    
 }
 
 
