@@ -125,6 +125,7 @@ PODS:
     - LLDebugTool/Core
   - LLDebugTool/WidgetBorder (1.3.8.1):
     - LLDebugTool/Core
+  - LLDynamicLaunchScreen (0.1.0)
   - LookinServer (1.0.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
@@ -187,6 +188,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - JJException
   - LLDebugTool (= 1.3.8.1)
+  - LLDynamicLaunchScreen
   - LookinServer
   - Masonry
   - MGJRouter
@@ -210,6 +212,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - IQKeyboardManager
+    - LLDynamicLaunchScreen
     - TZImagePickerController
   trunk:
     - AFNetworking
@@ -282,6 +285,7 @@ SPEC CHECKSUMS:
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   libwebp: 04242ef451672185c1fe41b285a034d2fbda483c
   LLDebugTool: 6026a1df690f5f94524567fce7f97fa53ce131d8
+  LLDynamicLaunchScreen: 670b976a73d530fbcd2020b543452b98ecb24a65
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -308,6 +312,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: 1ee38e1fc0db286e8c063d98cfed0db2843e5fe6
+PODFILE CHECKSUM: 49fc157fe55e3d388212c952e0cb4aaa56f87864
 
 COCOAPODS: 1.10.0

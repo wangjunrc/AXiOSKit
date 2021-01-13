@@ -103,6 +103,8 @@ typedef void (^CollectionBlock)(void);
     AXLoger(@"真机");
 #endif
     
+    NSLog(@"启动图缓存路径 %@",NSString.ax_launchImageCacheDirectory);
+    
     __weak typeof(self) weakSelf = self;
     
     UIButton *btn = [[UIButton alloc]init];

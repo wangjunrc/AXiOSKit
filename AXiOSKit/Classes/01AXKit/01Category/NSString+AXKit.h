@@ -26,6 +26,13 @@
  */
 @property (nonatomic, copy, readonly, class) NSString *ax_tmpPath;
 
+/// 存放缓存
+@property (nonatomic, copy, readonly, class) NSString *ax_cachesDomainMask;
+
+
+/// 系统启动图缓存路径
+@property (nonatomic, copy, readonly, class) NSString *ax_launchImageCacheDirectory;
+
 /**
  * 获得home后部分的路径,
  */

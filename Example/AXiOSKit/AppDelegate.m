@@ -15,7 +15,7 @@
 #import "AXDebugManager.h"
 #import <UserNotifications/UserNotifications.h>
 #import "_01ContentViewController.h"
-
+#import <LLDynamicLaunchScreen/LLDynamicLaunchScreen.h>
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
@@ -37,12 +37,13 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    sleep(2);
     
     [self thirdSDKLifecycleManager:@selector(application:didFinishLaunchingWithOptions:) withParameters:@[application,@{}]];
     
     
     NSLog(@"IS_PRODUCATION = %d, SERVER_HOST = %@",IS_PRODUCATION, SERVER_HOST);
-    
+//    [LLDynamicLaunchScreen restoreAsBefore];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];
     [self.window makeKeyAndVisible];

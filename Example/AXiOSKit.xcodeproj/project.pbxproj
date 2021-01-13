@@ -247,6 +247,8 @@
 		21BA199725AD907500222F9A /* _25CompLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 216891AA25ABDD4B0037CAB5 /* _25CompLayoutCell.m */; };
 		21BA199C25AD91BC00222F9A /* AXDebugUIConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC46B9259192E900AA253F /* AXDebugUIConfig.m */; };
 		21BA19A125AD91EF00222F9A /* AXDebugManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC46B32591924A00AA253F /* AXDebugManager.m */; };
+		21BA45BA25AEE05E00EEEF45 /* CustomGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BA45B925AEE05E00EEEF45 /* CustomGifHeader.m */; };
+		21BA45BB25AEE05E00EEEF45 /* CustomGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BA45B925AEE05E00EEEF45 /* CustomGifHeader.m */; };
 		21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */; };
 		21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */; };
 		21BC194A256CD28C0041ADBB /* _25CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BC1949256CD28C0041ADBB /* _25CollectionViewCell.m */; };
@@ -549,6 +551,8 @@
 		21BA17F825AD854300222F9A /* ax_common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ax_common.xcconfig; sourceTree = "<group>"; };
 		21BA17F925AD856800222F9A /* ax_debug_α.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ax_debug_α.xcconfig"; sourceTree = "<group>"; };
 		21BA17FA25AD857E00222F9A /* ax_debug_β.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ax_debug_β.xcconfig"; sourceTree = "<group>"; };
+		21BA45B825AEE05E00EEEF45 /* CustomGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGifHeader.h; sourceTree = "<group>"; };
+		21BA45B925AEE05E00EEEF45 /* CustomGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomGifHeader.m; sourceTree = "<group>"; };
 		21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_3@2x.png"; sourceTree = "<group>"; };
 		21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_2@2x.png"; sourceTree = "<group>"; };
 		21BC1948256CD28C0041ADBB /* _25CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CollectionViewCell.h; sourceTree = "<group>"; };
@@ -781,6 +785,8 @@
 		213BCB97254003DA00C89B72 /* _00Module */ = {
 			isa = PBXGroup;
 			children = (
+				21BA45B825AEE05E00EEEF45 /* CustomGifHeader.h */,
+				21BA45B925AEE05E00EEEF45 /* CustomGifHeader.m */,
 				21799D61255CD31F00754A8B /* RecordAudio */,
 				213BCBAF254003DA00C89B72 /* Load */,
 				213BCB30254003D900C89B72 /* MakeKeyAndVisible.h */,
@@ -1683,6 +1689,7 @@
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework",
+				"${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework",
 				"${PODS_ROOT}/LookinServer/LookinServer.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework",
@@ -1731,6 +1738,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDebugTool.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDynamicLaunchScreen.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LookinServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGJRouter.framework",
@@ -1789,6 +1797,7 @@
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework",
+				"${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework",
 				"${PODS_ROOT}/LookinServer/LookinServer.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework",
@@ -1837,6 +1846,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDebugTool.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDynamicLaunchScreen.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LookinServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGJRouter.framework",
@@ -1936,6 +1946,7 @@
 				211227072573340100B6ECC8 /* AXRecordAudioConfig.m in Sources */,
 				211227082573340100B6ECC8 /* _24NoteViewController.m in Sources */,
 				21BA199725AD907500222F9A /* _25CompLayoutCell.m in Sources */,
+				21BA45BB25AEE05E00EEEF45 /* CustomGifHeader.m in Sources */,
 				211227092573340100B6ECC8 /* TestObj.m in Sources */,
 				2112270A2573340100B6ECC8 /* _25CollectionViewCell.m in Sources */,
 				2112270B2573340100B6ECC8 /* _30IGListViewController.m in Sources */,
@@ -2061,6 +2072,7 @@
 				213BCC29254003DB00C89B72 /* AXWebSocketEngine.m in Sources */,
 				21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */,
 				21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */,
+				21BA45BA25AEE05E00EEEF45 /* CustomGifHeader.m in Sources */,
 				218F674825A5CC69006A8312 /* _25CompLayoutVC2.m in Sources */,
 				21CC7C78255FA71900E7B506 /* _13WeImageTableViewController.m in Sources */,
 				213BCC0E254003DB00C89B72 /* _07VideoViewController.m in Sources */,

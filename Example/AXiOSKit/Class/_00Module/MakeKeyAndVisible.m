@@ -21,11 +21,10 @@
 
 +(UIViewController *)makeKeyAndVisible{
     
-    [self loadSettingsBundle];
+//    [self loadSettingsBundle];
     //    [AXConfigureManager registerCatch];
     
-    SDImageWebPCoder *webPCoder = [SDImageWebPCoder sharedCoder];
-    [[SDImageCodersManager sharedManager] addCoder:webPCoder];
+
     
     NSMutableArray<UIViewController *> *temp = [NSMutableArray array];
     

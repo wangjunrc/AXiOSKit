@@ -65,6 +65,12 @@ NS_UNAVAILABLE 当我们不想要其他开发人员，用普通的 init 方法�
 假如数属性 会有警告,重写dynamic方法
 如: @dynamic delegate;
 ```
+## __IPHONE_14_0 版本宏
+```
+#if defined(__IPHONE_14_0)
+#import <AppTrackingTransparency/AppTrackingTransparency.h>//适配iOS14
+#endif
+```
 
 ## 初始化方法 宏
 

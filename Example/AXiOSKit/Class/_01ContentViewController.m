@@ -22,7 +22,10 @@
 //#import "AXiOSKit_Example-Swift.h"
 #import <MJExtension/MJExtension.h>
 
-@interface _01ContentViewController ()<UITextViewDelegate, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding>
+#import <VisionKit/VisionKit.h>
+#import <LLDynamicLaunchScreen/LLDynamicLaunchScreen.h>
+
+@interface _01ContentViewController ()<UITextViewDelegate, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding,VNDocumentCameraViewControllerDelegate>
 
 @property (nonatomic, strong) UILabel *label;
 
@@ -177,10 +180,11 @@
         NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:CACurrentMediaTime()];
         NSLog(@"confromTimesp = %@", confromTimesp);
     }];
+    [self _p19VisionKit];
 
     //    UIImage *image = [UIImage imageNamed:@"launch_image"];
     //    self.containerView.layer.contents = (id)image.CGImage;
-
+    [self _p20changeLanch];
     /// 底部约束
     [self _loadBottomAttribute];
 }
@@ -1155,6 +1159,106 @@
     }
 }
 
+- (void)_p19VisionKit {
+    [self _p00ButtonTitle:@"VisionKit" handler:^{
+        
+        if (@available(iOS 13.0, *)) {
+            VNDocumentCameraViewController *vc =  VNDocumentCameraViewController.alloc.init;
+                vc.delegate = self;
+                [self ax_showVC:vc];
+        }
+        
+    }];
+
+}
+
+- (void)_p20changeLanch {
+    __weak typeof(self) weakSelf = self;
+    [self _p00ButtonTitle:@"选择照片 替换启动图" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf ax_showCameraWithEditing:NO block:^(UIImage *originalImage, UIImage *editedImage) {
+            [strongSelf _p20Image:originalImage];
+        }];
+        
+    }];
+    [self _p00ButtonTitle:@"恢复如初 启动图" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [LLDynamicLaunchScreen restoreAsBefore];
+        [strongSelf showAlertView:@"启动图已恢复，APP即将退出"];
+    }];
+}
+
+-(void)_p20Image:(UIImage *)selectedImage {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请选择替换方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"替换浅色竖屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalLight compressionQuality:0.8 customValidation:nil];
+        [self showAlertView:@"浅色竖屏启动图替换成功，APP即将退出"];
+    }];
+    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"替换浅色横屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalLight compressionQuality:0.8 customValidation:nil];
+        [self showAlertView:@"浅色横屏启动图替换成功，APP即将退出"];
+    }];
+    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"替换深色竖屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (@available(iOS 13.0, *)) {
+            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalDark compressionQuality:0.8 customValidation:nil];
+            [self showAlertView:@"深色竖屏启动图替换成功，APP即将退出"];
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"iOS13以下系统不支持替换深色启动图" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+            [alert addAction:cancelAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+    UIAlertAction *action4 = [UIAlertAction actionWithTitle:@"替换深色横屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (@available(iOS 13.0, *)) {
+            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalDark compressionQuality:0.8 customValidation:nil];
+            [self showAlertView:@"深色横屏启动图替换成功，APP即将退出"];
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"iOS13以下系统不支持替换深色启动图" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+            [alert addAction:cancelAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:action1];
+    [alert addAction:action2];
+    [alert addAction:action3];
+    [alert addAction:action4];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)showAlertView:(NSString *)text {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        exit(0);
+    });
+}
+
+
+- (void)documentCameraViewController:(VNDocumentCameraViewController *)controller didFinishWithScan:(VNDocumentCameraScan *)scan API_AVAILABLE(ios(13.0)){
+    [controller dismissViewControllerAnimated:YES completion:nil];
+    
+    NSLog(@"title %@,pageCount %ld",scan.title,scan.pageCount);
+    
+}
+
+// The delegate will receive this call when the user cancels.
+- (void)documentCameraViewControllerDidCancel:(VNDocumentCameraViewController *)controller API_AVAILABLE(ios(13.0)){
+    [controller dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+// The delegate will receive this call when the user is unable to scan, with the following error.
+- (void)documentCameraViewController:(VNDocumentCameraViewController *)controller didFailWithError:(NSError *)error API_AVAILABLE(ios(13.0)){
+    
+    [self ax_showAlertByTitle:@"失败" message:error.localizedDescription confirm:^{
+            
+    }];
+}
+
+                                    
 #pragma mark- apple授权状态 更改通知
 - (void)handleSignInWithAppleStateChanged:(NSNotification *)notification
 {

@@ -131,8 +131,8 @@
 //    [ax_libraryPaths ]
 //    [NSString ]
     /// 清除启动图缓存
-    NSString *path=[NSString.ax_libraryPaths stringByAppendingPathComponent:@"SplashBoard"];
-    [NSFileManager.defaultManager removeItemAtPath:path error:nil];
+//    NSString *path=[NSString.ax_libraryPaths stringByAppendingPathComponent:@"SplashBoard"];
+//    [NSFileManager.defaultManager removeItemAtPath:path error:nil];
     return YES;
 }
 

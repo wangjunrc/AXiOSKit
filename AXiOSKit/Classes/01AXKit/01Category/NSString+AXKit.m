@@ -38,6 +38,32 @@
     return  NSTemporaryDirectory();
 }
 
+/// 存放缓存
++(NSString *)ax_cachesDomainMask {
+    return NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+}
+
+/// 系统启动图缓存路径
++ (NSString *)ax_launchImageCacheDirectory {
+    NSString *bundleID = [NSBundle mainBundle].infoDictionary[@"CFBundleIdentifier"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    // iOS13之前
+    NSString *cachesDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *snapshotsPath = [[cachesDirectory stringByAppendingPathComponent:@"Snapshots"] stringByAppendingPathComponent:bundleID];
+    if ([fileManager fileExistsAtPath:snapshotsPath]) {
+        return snapshotsPath;
+    }
+    
+    // iOS13
+    NSString *libraryDirectory = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject];
+    snapshotsPath = [NSString stringWithFormat:@"%@/SplashBoard/Snapshots/%@ - {DEFAULT GROUP}", libraryDirectory, bundleID];
+    if ([fileManager fileExistsAtPath:snapshotsPath]) {
+        return snapshotsPath;
+    }
+    
+    return nil;
+}
 
 /**
  * 获得home后部分的路径,

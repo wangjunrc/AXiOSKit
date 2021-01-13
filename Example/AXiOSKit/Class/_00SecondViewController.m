@@ -216,6 +216,19 @@ void mySLog(NSString *format, ...)
     didSelectRowAtIndexPath();
 }
 
+
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    CGFloat contentOffsetY = scrollView.contentOffset.y;
+//  CGFloat sectionHeiderHeight = 400; //tabler section 悬停在指定位置处理
+//    if (scrollView.contentOffset.y < sectionHeiderHeight) {
+//        scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+//    }else {
+//        scrollView.contentInset = UIEdgeInsetsMake(sectionHeiderHeight, 0, 0, 0);
+//   }
+//}
+
+
+
 //- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
 //    tableView.backgroundColor = UIColor.whiteColor;
 //    // 圆角角度

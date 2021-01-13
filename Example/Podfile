@@ -71,6 +71,9 @@ def ui_pods
   #  pod 'YYKit'
   #  pod 'GRDB.swift'
   
+  # 一行代码解决iOS启动图的各种疑难杂症 
+  pod 'LLDynamicLaunchScreen'
+  
 end
 
 def common_pods
