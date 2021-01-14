@@ -272,7 +272,13 @@
     [temp enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSString *uri = [NSBundle.mainBundle pathForResource:obj ofType:nil];
         if (uri) {
-            [self.dataArray addObject: [NSURL fileURLWithPath:uri]];
+            NSURL *url =[NSURL fileURLWithPath:uri];
+            if ([QLPreviewController canPreviewItem:url]) {
+                [self.dataArray addObject:url];
+            }else{
+                NSLog(@"不支持此类文件预览 %@",obj);
+            }
+            
         }else{
             NSLog(@"文件不存在 %@",obj);
         }
