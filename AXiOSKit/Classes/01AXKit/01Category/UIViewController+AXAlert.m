@@ -17,6 +17,14 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 
 @implementation AXActionItem
+
+@synthesize title;
+@synthesize titleColor;
+@synthesize image;
+@synthesize imageColor;
+@synthesize style;
+@synthesize handler;
+
 @end
 
 typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
@@ -74,7 +82,6 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 - (void)ax_showAlertArrayByTitle:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
     
     [self ax_showAlertByiPadView:nil title:title message:message actionArray:actionArray confirm:confirm cancel:cancel];
-    
 }
 
 
@@ -410,7 +417,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
  */
 - (void)ax_showSheetByTitle:(NSString *)title
                     message:(NSString*)message
-                actionItems:(NSArray <AXActionItem*>*)actionArray
+                actionItems:(NSArray <id<AXAlertAction>>*)actionArray
                     confirm:(void(^)(NSInteger index))confirm
                      cancel:(void(^)(void))cancel {
     [self ax_showSheetByiPadView:nil title:title message:message actionItems:actionArray confirm:confirm cancel:cancel];
@@ -419,7 +426,12 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 /**
  * Sheet 有取消回调
  */
-- (void)ax_showSheetByiPadView:(UIView*)iPadView title:(NSString *)title message:(NSString*)message actionArray:(NSArray <NSString*>*)actionArray confirm:(void(^)(NSInteger index))confirm cancel:(void(^)(void))cancel{
+- (void)ax_showSheetByiPadView:(UIView*)iPadView
+                         title:(NSString *)title
+                       message:(NSString*)message
+                   actionArray:(NSArray <NSString*>*)actionArray
+                       confirm:(void(^)(NSInteger index))confirm
+                        cancel:(void(^)(void))cancel{
     NSMutableArray<AXActionItem *> *temp = [NSMutableArray array];
     for (NSString *title in actionArray) {
         AXActionItem *item = [AXActionItem.alloc init];
@@ -436,7 +448,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
                      iPadView:(UIView *)iPadView
                         title:(NSMutableAttributedString *)titleAtt
                       message:(NSMutableAttributedString *)messageAtt
-                  actionItems:(NSArray <AXActionItem*>*)actionArray
+                  actionItems:(NSArray <id<AXAlertAction>>*)actionArray
                       confirm:(void(^)(NSInteger index))confirm
                        cancel:(void(^)(void))cancel {
     
@@ -467,7 +479,7 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 - (void)ax_showSheetByiPadView:(UIView*)iPadView
                          title:(NSString *)title
                        message:(NSString*)message
-                   actionItems:(NSArray <AXActionItem*>*)actionArray
+                   actionItems:(NSArray <id<AXAlertAction>>*)actionArray
                        confirm:(void(^)(NSInteger index))confirm
                         cancel:(void(^)(void))cancel {
     
@@ -484,7 +496,9 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
     [self presentViewController:alert animated:YES completion:nil];
 }
 
--(void)_alertControllerAddAction:(UIAlertController * )alert  actionItems:(NSArray <AXActionItem*>*)actionArray confirm:(void(^)(NSInteger index))confirm{
+-(void)_alertControllerAddAction:(UIAlertController * )alert
+                     actionItems:(NSArray <id<AXAlertAction>>*)actionArray
+                         confirm:(void(^)(NSInteger index))confirm{
     
     [actionArray enumerateObjectsUsingBlock:^(AXActionItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (obj.title.length==0) {
@@ -492,7 +506,10 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
         }
         UIAlertAction *action = [UIAlertAction actionWithTitle:obj.title style:obj.style handler:^(UIAlertAction * _Nonnull action) {
             if (confirm) {
-                confirm(index);
+                if (actionArray.count>idx && actionArray[idx].handler) {
+                    actionArray[idx].handler();
+                }
+                confirm(idx);
             }
         }];
         
@@ -589,6 +606,5 @@ typedef void(^CameraEditBlock)(UIImage *originalImage,UIImage *editedImage);
 - (CameraEditBlock)cameraEditBlock{
     return objc_getAssociatedObject(self,@selector(cameraEditBlock));
 }
-
 
 @end

@@ -34,6 +34,12 @@
 #import "_23FullViewController.h"
 #import "_24NoteViewController.h"
 #import "_25LayoutViewController.h"
+#import "_25FlowLayoutVC1.h"
+#import "_25CompLayoutVC1.h"
+#import "_25CompLayoutVC2.h"
+#import "_25CompLayoutVC3.h"
+#import "_25CompLayoutVC4.h"
+#import "_25CompLayoutVC5.h"
 #import "_26RMQClientViewController.h"
 #import "_27MQTTClientViewController.h"
 #import "_28ShareFileViewController.h"
@@ -47,12 +53,6 @@
 #import <AXiOSKit/NSMutableArray+AXKVO.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <mach/mach.h>
-#import "_25FlowLayoutVC1.h"
-#import "_25CompLayoutVC1.h"
-#import "_25CompLayoutVC2.h"
-#import "_25CompLayoutVC3.h"
-#import "_25CompLayoutVC4.h"
-#import "_25CompLayoutVC5.h"
 
 
 @import AssetsLibrary;
@@ -713,7 +713,7 @@ typedef void (^CollectionBlock)(void);
             
             @{
                 @"index": @28,
-                @"title": @"权分享文件",
+                @"title": @"预览文件",
                 @"action": ^{
                     _28ShareFileViewController *vc =
                     [[_28ShareFileViewController alloc] init];
@@ -767,9 +767,6 @@ typedef void (^CollectionBlock)(void);
                     [self ax_pushVC:vc];
                 },
             },
-            
-            
-            
             
         ].mutableCopy;
     }

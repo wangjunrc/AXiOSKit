@@ -252,6 +252,8 @@
 		21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */; };
 		21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */; };
 		21BC194A256CD28C0041ADBB /* _25CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BC1949256CD28C0041ADBB /* _25CollectionViewCell.m */; };
+		21C11B9925B02DA200D26E89 /* testWord.docx in Resources */ = {isa = PBXBuildFile; fileRef = 21C11B9825B02DA200D26E89 /* testWord.docx */; };
+		21C11B9A25B02DA200D26E89 /* testWord.docx in Resources */ = {isa = PBXBuildFile; fileRef = 21C11B9825B02DA200D26E89 /* testWord.docx */; };
 		21C3778625A829F400D678FD /* _25CompLayoutVC5.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C3778525A829F400D678FD /* _25CompLayoutVC5.m */; };
 		21CC7C62255FA40D00E7B506 /* AppDelegateWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */; };
 		21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */; };
@@ -557,6 +559,7 @@
 		21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_2@2x.png"; sourceTree = "<group>"; };
 		21BC1948256CD28C0041ADBB /* _25CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CollectionViewCell.h; sourceTree = "<group>"; };
 		21BC1949256CD28C0041ADBB /* _25CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CollectionViewCell.m; sourceTree = "<group>"; };
+		21C11B9825B02DA200D26E89 /* testWord.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = testWord.docx; sourceTree = "<group>"; };
 		21C3778425A829F400D678FD /* _25CompLayoutVC5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CompLayoutVC5.h; sourceTree = "<group>"; };
 		21C3778525A829F400D678FD /* _25CompLayoutVC5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CompLayoutVC5.m; sourceTree = "<group>"; };
 		21CC7C60255FA40D00E7B506 /* AppDelegateWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateWebImage.h; sourceTree = "<group>"; };
@@ -993,6 +996,7 @@
 				218A1EC7254438C900E43F16 /* office.bundle */,
 				213BCB90254003D900C89B72 /* PointViewController.plist */,
 				213BCBD8254003DA00C89B72 /* PointViewController2.plist */,
+				21C11B9825B02DA200D26E89 /* testWord.docx */,
 				218A1E502544102800E43F16 /* share2.xlsx */,
 				213BCBE4254003DA00C89B72 /* test_webp.webp */,
 				213BCBE1254003DA00C89B72 /* webp.bundle */,
@@ -1480,6 +1484,7 @@
 				211227532573340100B6ECC8 /* _28LocalSocketServiceViewController.xib in Resources */,
 				211227542573340100B6ECC8 /* _14TFViewController.xib in Resources */,
 				211227552573340100B6ECC8 /* time_line_list.json in Resources */,
+				21C11B9A25B02DA200D26E89 /* testWord.docx in Resources */,
 				211227562573340100B6ECC8 /* LaunchScreen.storyboard in Resources */,
 				211227572573340100B6ECC8 /* PointViewController.plist in Resources */,
 				211227582573340100B6ECC8 /* _10TextFViewController.xib in Resources */,
@@ -1515,6 +1520,7 @@
 				213BCBEE254003DB00C89B72 /* _26RMQClientViewController.xib in Resources */,
 				213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */,
 				21948D422564B83700207E18 /* testXML.xml in Resources */,
+				21C11B9925B02DA200D26E89 /* testWord.docx in Resources */,
 				211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */,
 				213BCC2D254003DB00C89B72 /* _02ChatViewController.xib in Resources */,
 				21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */,

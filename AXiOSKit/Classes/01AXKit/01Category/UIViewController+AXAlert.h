@@ -8,24 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol AXAlertAction <NSObject>
 
-@interface AXActionItem : NSObject
-
+@required
 /// 文字
 @property(nonatomic, copy) NSString *title;
 
+@optional
 @property(nonatomic, strong) UIColor *titleColor;
-
 /// 利用kvc 添加图片
 @property(nonatomic, strong) UIImage *image;
 @property(nonatomic, strong) UIColor *imageColor;
-
-
-///
 @property(nonatomic, assign) UIAlertActionStyle style;
+///回调
+@property(nonatomic, copy) void(^handler)(void);
+
+@end
+
+@interface AXActionItem : NSObject<AXAlertAction>
 
 ///回调参数
 @property(nonatomic, strong) id anyObject;
+
 
 @end
 
@@ -66,7 +70,7 @@
  */
 - (void)ax_showSheetByTitle:(NSString *)title
                     message:(NSString*)message
-                actionItems:(NSArray <AXActionItem*>*)actionArray
+                actionItems:(NSArray <id<AXAlertAction>>*)actionArray
                     confirm:(void(^)(NSInteger index))confirm
                      cancel:(void(^)(void))cancel;
 /**
@@ -81,7 +85,7 @@
                      iPadView:(UIView *)iPadView
                    title:(NSMutableAttributedString *)titleAtt
                  message:(NSMutableAttributedString *)messageAtt
-             actionItems:(NSArray <AXActionItem*>*)actionArray
+             actionItems:(NSArray <id<AXAlertAction>>*)actionArray
                  confirm:(void(^)(NSInteger index))confirm
                   cancel:(void(^)(void))cancel;
 

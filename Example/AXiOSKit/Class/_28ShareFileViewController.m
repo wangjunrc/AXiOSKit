@@ -12,9 +12,16 @@
 #import "_28LocalSocketClientViewController.h"
 #import "_28LocalSocketServiceViewController.h"
 
-@interface _28ShareFileViewController ()<UIDocumentInteractionControllerDelegate>
+#import <QuickLook/QuickLook.h>
+
+
+
+@interface _28ShareFileViewController ()<UIDocumentInteractionControllerDelegate,QLPreviewControllerDataSource,QLPreviewControllerDelegate>
 
 @property(nonatomic, strong) UIDocumentInteractionController *documentController;
+
+@property(nonatomic, strong) NSMutableArray<id<QLPreviewItem>> *dataArray;
+
 
 @end
 
@@ -23,42 +30,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    
-    //    MASViewAttribute *bottomAttribute = self.bottomAttribute;
-    //
-    //    __weak typeof(self) weakSelf = self;
-    //    bottomAttribute = [self _p00ButtonTopView:bottomAttribute title:@"系统分享,自定义按钮,可以分享图片" handler:^{
-    //        __strong typeof(weakSelf) strongSelf = weakSelf;
-    //        [strongSelf _share0];
-    //    }];
-    //
-    //    bottomAttribute = [self _p00ButtonTopView:bottomAttribute title:@"UIDocumentInteractionController" handler:^{
-    //        __strong typeof(weakSelf) strongSelf = weakSelf;
-    //        [strongSelf _share1];
-    //    }];
-    //
-    //    bottomAttribute = [self _p00ButtonTopView:bottomAttribute title:@"UIDocumentInteractionController-2" handler:^{
-    //        __strong typeof(weakSelf) strongSelf = weakSelf;
-    //        [strongSelf createXLSFile];
-    //    }];
-    //
-    //    bottomAttribute = [self _p00ButtonTopView:bottomAttribute title:@"local socket-服务端" handler:^{
-    //        __strong typeof(weakSelf) strongSelf = weakSelf;
-    //        [strongSelf _share2];
-    //    }];
-    
-    
+    __weak typeof(self) weakSelf = self;
     [self _p00ButtonTitle:@"系统分享,自定义按钮,可以分享图片" handler:^{
-        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _share0];
     }];
     [self _p00ButtonTitle:@"UIDocumentInteractionController" handler:^{
-        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _share1];
     }];
     [self _p00ButtonTitle:@"UIDocumentInteractionController-2" handler:^{
-        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf createXLSFile];
     }];
+    [self _p00ButtonTitle:@"QuickLook预览文件" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _look];
+    }];
+    
     [self _p00ButtonTitle:@"local socket-服务端" handler:^{
-        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _share2];
     }];
     
     // 这里放最后一个view的底部
@@ -264,4 +256,62 @@
 - (CGRect)documentInteractionControllerRectForPreview:(UIDocumentInteractionController *)controller{
     return self.view.bounds;
 }
+
+
+#pragma mark - QuickLook
+-(void)_look {
+    self.dataArray = NSMutableArray.array;
+    NSArray<NSString *> *temp =@[
+        @"office.bundle/testWord.docx",
+        @"office.bundle/share2.xlsx" ,
+        @"office.bundle/testPDF.pdf",
+        @"office.bundle/test.zip",
+        @"office.bundle/photo.html",
+    ];
+    
+    [temp enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *uri = [NSBundle.mainBundle pathForResource:obj ofType:nil];
+        if (uri) {
+            [self.dataArray addObject: [NSURL fileURLWithPath:uri]];
+        }else{
+            NSLog(@"文件不存在 %@",obj);
+        }
+    }];
+    
+    QLPreviewController *qlPreVC = [[QLPreviewController alloc] init];
+    qlPreVC.delegate = self;
+    qlPreVC.dataSource = self;
+    qlPreVC.title = @"文件";
+    [qlPreVC setCurrentPreviewItemIndex:0];
+    [self.navigationController pushViewController:qlPreVC animated:YES];
+
+}
+
+
+#pragma mark - QLPreviewControllerDataSource
+// 预览的数量
+- (NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller {
+    return self.dataArray.count;
+}
+// 控制器预览的内容
+- (id<QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
+    return self.dataArray[index];
+}
+
+#pragma mark - QLPreviewControllerDelegate
+// 预览界面将要消失
+- (void)previewControllerWillDismiss:(QLPreviewController *)controller {
+    
+}
+// 预览界面已经消失
+- (void)previewControllerDidDismiss:(QLPreviewController *)controller {
+    
+}
+// 文件内部链接点击是否进行外部跳转
+- (BOOL)previewController:(QLPreviewController *)controller shouldOpenURL:(NSURL *)url forPreviewItem:(id <QLPreviewItem>)item {
+    return YES;
+}
+
+
+
 @end

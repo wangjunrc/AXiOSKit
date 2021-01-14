@@ -49,11 +49,11 @@
     [super viewDidLoad];
     self.view.backgroundColor =  UIColor.whiteColor;
     self.navigationItem.title = @"内容";//设置标题
-
+    
     __weak typeof(self) weakSelf = self;
-
+    
     self.containerView.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
-
+    
     self.AXListener.isPushed(^{
         NSLog(@"isPushed");
     }).isPresented(^{
@@ -62,25 +62,25 @@
     if (@available(iOS 13.0, *)) {
         AXLoger(@"模式>> %ld", ax_keyWindow().overrideUserInterfaceStyle);
     }
-
+    
     [self _darkStyle];
-
+    
     [self _p00ButtonTitle:@"push" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         _01ContentViewController *aa = [_01ContentViewController ax_init];
         [strongSelf ax_pushVC:aa];
     }];
-
+    
     [self _p00ButtonTitle:@"show" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         _01ContentViewController *vc = [_01ContentViewController ax_init];
         [strongSelf ax_showVC:vc];
     }];
-
+    
     [self _p00ButtonTitle:@"Lookin_2D" handler:^{
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_2D" object:nil];
     }];
-
+    
     [self _p00ButtonTitle:@"dismis 或者 pop" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf ax_haveNav:^(UINavigationController *nav) {
@@ -93,18 +93,18 @@
             [strongSelf dismissViewControllerAnimated:YES completion:nil];
         }];
     }];
-
+    
     [self _p00ButtonTitle:@"dismissToRoot" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
-
+        
         UIViewController *controller = strongSelf;
-
+        
         while (controller.presentingViewController)
             controller = controller.presentingViewController;
-
+        
         [controller dismissViewControllerAnimated:YES completion:nil];
     }];
-
+    
     [self _p00ButtonTitle:@"PresentedViewController" handler:^{
         UIViewController *topRootViewController = ax_keyWindow().rootViewController;// 在这里加一个这个样式的循环
         while (topRootViewController.presentedViewController) // 这里固定写法
@@ -112,12 +112,12 @@
         ///然后再进行present操作
         [topRootViewController presentViewController:vc animated:YES completion:nil];
     }];
-
+    
     [self _p00ButtonTitle:@"popToRoot" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.navigationController popToRootViewControllerAnimated:YES];
     }];
-
+    
     /// 可以禁止侧滑返回,但是无法禁止代码直接返回
     [self _p00ButtonTitle:@"隐藏返回按钮" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
@@ -154,26 +154,26 @@
     /// 会弹出 "想要查找并连接到本地网络上的设备" 弹窗
     [self _p00ButtonTitle:@"NSProcessInfo" handler:^{
         NSString *uuid1 = [[NSProcessInfo processInfo] globallyUniqueString];
-
+        
         NSLog(@"processInfoww = %@", [NSProcessInfo.processInfo mj_JSONObject]);
-
+        
         NSLog(@"uuid1 = %@", uuid1);
         NSLog(@"uuid2 = %@", [NSString ax_uuid]);
     }];
-
+    
     [self _p00ButtonTitle:@"_01ContentViewController" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         _01ContentViewController *vc = [[_01ContentViewController alloc]init];
         [strongSelf.navigationController pushViewController:vc animated:YES];
     }];
-
+    
     [self _p00ButtonTitle:@"popToRootViewControllerAnimated" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.navigationController popToRootViewControllerAnimated:YES];
     }];
     [self _p17CSAnimationView];
     [self _p18appleLogin];
-
+    
     [self _p00ButtonTitle:@"系统时间" handler:^{
         NSLog(@"CACurrentMediaTime :%f", CACurrentMediaTime());
         NSLog(@"NSProcessInfo :%f", [[NSProcessInfo processInfo] systemUptime]);
@@ -181,10 +181,11 @@
         NSLog(@"confromTimesp = %@", confromTimesp);
     }];
     [self _p19VisionKit];
-
+    
     //    UIImage *image = [UIImage imageNamed:@"launch_image"];
     //    self.containerView.layer.contents = (id)image.CGImage;
     [self _p20changeLanch];
+    [self _p21stackView];
     /// 底部约束
     [self _loadBottomAttribute];
 }
@@ -196,7 +197,7 @@
             ax_keyWindow().overrideUserInterfaceStyle = (ax_keyWindow().overrideUserInterfaceStyle != UIUserInterfaceStyleDark) ? UIUserInterfaceStyleDark : UIUserInterfaceStyleLight;
         }
     }];
-
+    
     {
         UILabel *label = [[UILabel alloc] init];
         [self.containerView addSubview:label];
@@ -232,7 +233,7 @@
         label.layer.masksToBounds = YES;
         self.label = label;
     }
-
+    
     {
         UIImageView *imv = [[UIImageView alloc] init];
         imv.image = [UIImage imageNamed:@"ax_icon_weixin"];
@@ -255,7 +256,7 @@
         make.height.mas_equalTo(50 + ax_safe_area_insets_bottom_offset(0));
         make.bottom.mas_equalTo(-ax_safe_area_insets_bottom_zero_offset(10));
     }];
-
+    
     UIView *subView = [UIView ax_init];
     [bottomView addSubview:subView];
     subView.backgroundColor = UIColor.greenColor;
@@ -281,11 +282,11 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         NSLog(@"age = %ld %@", strongSelf.age, x);
     }];
-
+    
     [self ax_addFBKVOKeyPath:AX_FBKVOKeyPath(self.age) result:^(AXKVOResultModel *_Nonnull resultModel) {
         NSLog(@"age222 = %ld %@", self.age, resultModel.aNewValue);
     }];
-
+    
     UIButton *btn1 = [[UIButton alloc]init];
     [btn1 setTitle:@"kvoInt" forState:UIControlStateNormal];
     btn1.backgroundColor = UIColor.orangeColor;
@@ -293,7 +294,7 @@
     [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(30);
     }];
-
+    
     [btn1 ax_addTargetBlock:^(UIButton *_Nullable button) {
         self.age = ax_randomZeroToValue(100);
     }];
@@ -303,14 +304,14 @@
     {
         UITextField *nameTF = [[UITextField alloc]init];
         nameTF.ax_observe.maxTextLength = 2;
-
+        
         nameTF.backgroundColor = UIColor.orangeColor;
         nameTF.autocapitalizationType = UITextAutocapitalizationTypeNone;
         //        nameTF.keyboardType = UIKeyboardTypeASCIICapable;
         nameTF.tag = -100;
         //        nameTF.placeholder = @"输入姓名";
         nameTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"输入姓名" attributes:@{ NSForegroundColorAttributeName: [UIColor redColor] }];
-
+        
         nameTF.accessibilityIdentifier = @"nameTextField";
         [self.containerView addSubview:nameTF];
         [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -323,9 +324,9 @@
         //                                               selector:@selector(textFiledEditChanged:)
         //                                                   name:UITextFieldTextDidChangeNotification
         //                                                 object:nameTF];
-
+        
         [nameTF addTarget:self action:@selector(editChange:) forControlEvents:UIControlEventEditingChanged];
-
+        
         self.bottomAttribute = nameTF.mas_bottom;
     }
     {
@@ -387,7 +388,7 @@
 
 - (void)textFiledEditChanged:(NSNotification *)notification {
     UITextField *textField = notification.object;
-
+    
     if (!textField) {
         return;
     }
@@ -423,19 +424,19 @@
     //    }
     //
     //    textField.text = str;
-
+    
     ///判断是否正在输入拼音，高亮状态
     UITextRange *selectedRange = [textField markedTextRange];
-
+    
     //获取高亮部分
-
+    
     UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
-
+    
     // 没有高亮选择的字，说明不是拼音输入
-
+    
     if (!position) {
         NSString *upperCaseString = [textField.text uppercaseString];
-
+        
         textField.text = upperCaseString;
     } else {// 有高亮选择的字符串，不做处理
     }
@@ -444,25 +445,25 @@
 - (void)_p00Test_layer {
     UILabel *label = UILabel.alloc.init;
     label.text = @"代码就可以避免离屏渲染";
-
+    
     [self.containerView addSubview:label];
-
+    
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.bottomAttribute).mas_offset(10);
         make.centerX.mas_equalTo(0);
     }];
     self.bottomAttribute = label.mas_bottom;
-
+    
     UIView *aView = UIView.alloc.init;
     aView.backgroundColor = UIColor.redColor;
     [self.containerView addSubview:aView];
-
+    
     aView.layer.cornerRadius = 4;
     aView.layer.shadowColor = [UIColor blackColor].CGColor;//shadowColor阴影颜色
     aView.layer.shadowOffset = CGSizeMake(0, 0);//shadowOffset阴影偏移,x向右偏移2，y向下偏移6，默认(0, -3),这个跟shadowRadius配合使用
     aView.layer.shadowOpacity = 0.3;//阴影透明度，默认0
     aView.layer.shadowRadius = 4;//阴影半径，默认3
-
+    
     [aView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.bottomAttribute).mas_offset(10);
         make.centerX.mas_equalTo(0);
@@ -470,9 +471,9 @@
     }];
     /// 立即得到尺寸
     [aView layoutIfNeeded];
-
+    
     aView.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:aView.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(aView.layer.cornerRadius, aView.layer.cornerRadius)].CGPath;//参数依次为大小，设置四个角圆角状态，圆角曲度  设置阴影路径可避免离屏渲染
-
+    
     self.bottomAttribute = aView.mas_bottom;
 }
 
@@ -480,21 +481,21 @@
     UISwitch *aSwitch = UISwitch.alloc.init;
     aSwitch.onTintColor = UIColor.redColor;
     aSwitch.thumbTintColor = UIColor.orangeColor;
-
+    
     [self.containerView addSubview:aSwitch];
     //
     //    aSwitch.transform = CGAffineTransformMakeScale( 10, 10.0);
-
+    
     //    [aSwitch.widthAnchor constraintEqualToConstant:200].active =YES;
     //    [aSwitch.heightAnchor constraintEqualToConstant:200].active =YES;
-
+    
     [aSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.bottomAttribute).mas_offset(10);
         make.centerX.mas_equalTo(0);
         //        make.width.mas_equalTo(200);
         //        make.height.mas_equalTo(60);
     }];
-
+    
     self.bottomAttribute = aSwitch.mas_bottom;
 }
 
@@ -509,12 +510,12 @@
         if (@available(iOS 13.0, *)) {
             attach.image = [[UIImage systemImageNamed:@"sun.max.fill"] imageWithTintColor:UIColor.greenColor];
         }
-
+        
         attach.bounds = CGRectMake(0, 0, 50, 50);
         NSMutableAttributedString *attachString =   [NSMutableAttributedString attributedStringWithAttachment:attach].mutableCopy;
         [titleAtt appendAttributedString:attachString];
     }
-
+    
     {
         NSString *str = @"结尾";
         NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:str];
@@ -522,7 +523,7 @@
         [attStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, str.length)];
         [titleAtt appendAttributedString:attStr];
     }
-
+    
     UILabel *lable = [UILabel.alloc init];
     [self.containerView addSubview:lable];
     [lable mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -531,7 +532,7 @@
         make.right.mas_equalTo(-10);
     }];
     lable.attributedText = titleAtt;
-
+    
     self.bottomAttribute = lable.mas_bottom;
 }
 
@@ -540,14 +541,14 @@
     NSString *str3 = @"《许可及服务协议》";
     NSString *str = [NSString stringWithFormat:@"%@%@", str1, str3];
     NSRange range3 = [str rangeOfString:str3];
-
+    
     NSMutableAttributedString *mastring = [[NSMutableAttributedString alloc] initWithString:str attributes:@{ NSFontAttributeName: [UIFont systemFontOfSize:12], NSForegroundColorAttributeName: [UIColor blackColor] }];
-
+    
     [mastring addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:range3];
     NSString *link = [[NSString stringWithFormat:@"license://%@", str3] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
     /// 这里修改UITextView链接字体颜色无效
     [mastring addAttribute:NSLinkAttributeName value:link range:range3];
-
+    
     UITextView *textView = [[UITextView alloc] init];
     textView.editable = NO;
     textView.scrollEnabled = NO;
@@ -564,7 +565,7 @@
         make.right.mas_equalTo(-10);
         make.height.mas_equalTo(50);
     }];
-
+    
     self.bottomAttribute = textView.mas_bottom;
 }
 
@@ -586,9 +587,9 @@
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction {
     if ([[URL scheme] isEqualToString:@"license"]) {
         NSString *titleString = [NSString stringWithFormat:@"你点击了第一个文字:%@", [URL host]];
-
+        
         NSLog(@"%@", titleString);
-
+        
         return NO;
     }
     return YES;
@@ -641,7 +642,7 @@
 
 - (void)_p03textToImg {
     UIImageView *img = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 50)];
-
+    
     [self.containerView addSubview:img];
     [img mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.bottomAttribute).mas_equalTo(10);
@@ -676,26 +677,26 @@
     {
         UILabel *label2 = [[UILabel alloc]init];
         label2.text = @"和上面宽度一样";
-
+        
         [self.containerView addSubview:label2];
         label2.backgroundColor = UIColor.orangeColor;
         [label2 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.bottomAttribute).mas_equalTo(10);
             make.left.mas_equalTo(30);
             make.height.mas_equalTo(100);
-
+            
             make.width.equalTo(label1).priorityLow();
             //            make.width.mas_equalTo(width+50).priorityHigh();
-
+            
             //            make.width.equalTo(label1);
-
+            
             make.width.mas_lessThanOrEqualTo(width + 50);
         }];
         //        label2.preferredMaxLayoutWidth = width+50;
         //        [label2 setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
         self.bottomAttribute = label2.mas_bottom;
     }
-
+    
     [self _p00ButtonTitle:@"04-masron - uninstall - 加大" handler:^{
         [viewWidthConstraint uninstall];
         [label1.superview setNeedsUpdateConstraints];
@@ -706,7 +707,7 @@
             [label1.superview layoutIfNeeded];
         }];
     }];
-
+    
     [self _p00ButtonTitle:@"04-masron - uninstall - 减小" handler:^{
         [viewRightConstraint uninstall];
         //        [label1.superview setNeedsUpdateConstraints];
@@ -717,7 +718,7 @@
             [label1.superview layoutIfNeeded];
         }];
     }];
-
+    
     [self _p00ButtonTitle:@"04-masron动画 -加大" handler:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         //        [label1.superview layoutIfNeeded];
@@ -730,7 +731,7 @@
             [label1.superview layoutIfNeeded];
         }];
     }];
-
+    
     [self _p00ButtonTitle:@"04-masron动画 - 减小" handler:^{
         //        [label1.superview layoutIfNeeded];
         __strong typeof(weakSelf) strongSelf = weakSelf;
@@ -771,14 +772,14 @@
     //topCapHeight:上边不拉伸的像素
     UIImage *image = [UIImage imageNamed:@"chat_bubble"];
     UIImageView *imgView = [[UIImageView alloc] initWithImage:[image stretchableImageWithLeftCapWidth:30 topCapHeight:30]];
-
+    
     [self.containerView addSubview:imgView];
     [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.bottomAttribute).mas_equalTo(10);
         make.left.mas_equalTo(30);
         make.right.mas_equalTo(-30);
     }];
-
+    
     self.bottomAttribute = imgView.mas_bottom;
 }
 
@@ -793,7 +794,7 @@
 - (void)_chinaText {
     //模拟后台返回数据
     NSArray *array1 = @[@"陕西", @"山东", @"上海", @"内蒙古", @"新疆", @"西藏", @"北京", @"安徽", @"重庆", @"湖北", @"江苏", @"浙江", @"天津", @"California", @"贵州", @"云南", @"广东", @"甘肃", @"青海", @"宁夏", @"黑龙江", @"辽宁", @"吉林", @"江西", @"LosAngels", @"OKC", @"GSW"];
-
+    
     //对数组按照首字母进行排序
     NSArray *array = [self getOrderArraywithArray:array1];
     //创建可变字典保存处理后的数据@{@"A":@[@"A",@"AB"]};数据格式
@@ -807,7 +808,7 @@
         NSString *firstLetter = [[cityMutableString uppercaseString]substringToIndex:1];
         // 检查是否有firstLetter对应的分组存在, 有的话直接把city添加到对应的分组中
         // 没有的话, 新建一个以firstLetter为key的分组
-
+        
         if ([mDic objectForKey:firstLetter]) {
             NSMutableArray *mCityArray = mDic[firstLetter];
             if (mCityArray) {
@@ -822,7 +823,7 @@
     }
     //获取索引栏数据 获得字母
     NSArray *titlesArray = [self reqDiction:mDic];
-
+    
     NSLog(@"mDic %@", mDic.allValues);
     NSLog(@"titlesArray %@", titlesArray);
 }
@@ -840,25 +841,25 @@
             make.right.mas_equalTo(-10);
         }];
         self.bottomAttribute = label.mas_bottom;
-
+        
         [self _p00ButtonTitle:@"kvc修改间距" handler:^{
             [label setValue:@40 forKey:@"lineSpacing"];
         }];
     }
-
+    
     {
         UILabel *label = UILabel.ax_init;
         NSString *text = @"横向文字";
-
+        
         NSRange range = NSMakeRange(0,  text.length);
         NSMutableAttributedString *mAttStr = [[NSMutableAttributedString alloc] initWithString:text];
-
+        
         [mAttStr addAttributes:@{
-             NSVerticalGlyphFormAttributeName: @1
-         } range:range];
-
+            NSVerticalGlyphFormAttributeName: @1
+        } range:range];
+        
         label.attributedText = mAttStr;
-
+        
         label.backgroundColor = UIColor.orangeColor;
         [self.containerView addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -870,11 +871,11 @@
         [self _p00ButtonTitle:@"kvc修改方向距" handler:^{
             NSRange range = [label.text rangeOfString:label.text];
             NSMutableAttributedString *mAttStr = [[NSMutableAttributedString alloc] initWithString:label.text];
-
+            
             [mAttStr addAttributes:@{
-                 NSVerticalGlyphFormAttributeName: @1
-             } range:range];
-
+                NSVerticalGlyphFormAttributeName: @1
+            } range:range];
+            
             label.attributedText = mAttStr;
         }];
     }
@@ -888,7 +889,7 @@
         } else {
             NSLog(@"localizedCaseInsensitiveContainsString 不包含");
         }
-
+        
         if ([string containsString:@"OCHI"]) {
             NSLog(@"containsString 包含");
         } else {
@@ -899,7 +900,7 @@
         } else {
             NSLog(@"localizedStandardContainsString 不包含");
         }
-
+        
         NSRange r = [string rangeOfString:@"OCHI"
                                   options:NSCaseInsensitiveSearch];
         BOOL b = r.location != NSNotFound;
@@ -924,11 +925,11 @@
     [[btn rac_signalForControlEvents:UIControlEventTouchUpOutside] subscribeNext:^(UIButton *x) {
         NSLog(@"UIControlEventTouchUpOutside 所有在控件之外触摸抬起事件(点触必须开始与控件内部才会发送通知");
     }];
-
+    
     [[btn rac_signalForControlEvents:UIControlEventTouchDown] subscribeNext:^(UIButton *x) {
         NSLog(@"UIControlEventTouchDown 单点触摸按下事件：用户点触屏幕，或者又有新手指落下的时候");
     }];
-
+    
     [[btn rac_signalForControlEvents:UIControlEventTouchDragEnter] subscribeNext:^(UIButton *x) {
         NSLog(@"UIControlEventTouchDragEnter 当一次触摸从控件窗口之外拖动到内部时");
     }];
@@ -944,7 +945,7 @@
     [[btn rac_signalForControlEvents:UIControlEventTouchDownRepeat] subscribeNext:^(UIButton *x) {
         NSLog(@"UIControlEventTouchDownRepeat 多点触摸按下事件，点触计数大于1");
     }];
-
+    
     self.bottomAttribute = btn.mas_bottom;
 }
 
@@ -998,7 +999,7 @@
         [alertController1 addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *_Nonnull action) {
         }]];
         [strongSelf presentViewController:alertController1 animated:YES completion:nil];
-
+        
         // 第二个UIAlertController
         UIAlertController *alertController2 = [UIAlertController alertControllerWithTitle:@"测试2" message:@"测试2" preferredStyle:UIAlertControllerStyleAlert];
         [alertController2 addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
@@ -1014,11 +1015,11 @@
     //    __weak typeof(self) weakSelf = self;
     return [self _p00ButtonTitle:@"xml解析" handler:^{
         //        __strong typeof(weakSelf) strongSelf = weakSelf;
-
+        
         NSString *path = [[NSBundle mainBundle]pathForResource:@"testXML" ofType:@"xml"];
         GDataXMLDocument *document = [[GDataXMLDocument alloc] initWithData:[NSData dataWithContentsOfFile:path] encoding:NSUTF8StringEncoding error:NULL];
         NSLog(@"attributes = %@", document.rootElement.attributes);
-
+        
         /// 这一层是 xmlns
         for (GDataXMLElement *element in document.rootElement.attributes) {
             NSLog(@"attributes node.name = %@----node.stringValue = %@", element.name, element.stringValue);
@@ -1028,10 +1029,10 @@
             NSLog(@"element.attributes = %@", element.attributes);
             NSLog(@"children node.name = %@----node.stringValue = %@", element.name, element.stringValue);
             ///再解析一下 properties
-
+            
             for (GDataXMLElement *node in element.children) {
                 NSLog(@"node.name = %@----node.stringValue = %@", node.name, node.stringValue);
-
+                
                 //                        [video setValue:node.stringValue forKeyPath:node.name];
             }
             for (GDataXMLNode *att in element.attributes) {
@@ -1057,14 +1058,14 @@
         NSComparisonResult resuest = [obj1 compare:obj2];  //[obj1 compare:obj2]：升序
         return resuest;
     }];
-
+    
     //通过排列的key值获取value
     NSMutableArray *valueArray = [NSMutableArray array];
     for (NSString *sortsing in afterSortKeyArray) {
         NSString *valueString = [dict objectForKey:sortsing];
         [valueArray addObject:valueString];
     }
-
+    
     return afterSortKeyArray;
 }
 
@@ -1085,21 +1086,21 @@
 
 - (void)_p17CSAnimationView {
     CSAnimationView *animationView = [[CSAnimationView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-
+    
     [self.containerView addSubview:animationView];
     [animationView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
         make.centerX.mas_equalTo(0);
         make.width.height.mas_equalTo(100);
     }];
-
+    
     animationView.backgroundColor = [UIColor redColor];
     animationView.duration = 0.5;
     animationView.delay = 0;
     animationView.type = CSAnimationTypeFadeOutRight;
-
+    
     self.bottomAttribute = animationView.mas_bottom;
-
+    
     UIButton *btn1 = [[UIButton alloc]init];
     [btn1 setTitle:@"CSAnimationView" forState:UIControlStateNormal];
     btn1.backgroundColor = UIColor.orangeColor;
@@ -1110,11 +1111,11 @@
         make.right.mas_equalTo(-10);
     }];
     self.bottomAttribute = btn1.mas_bottom;
-
+    
     [btn1 ax_addTargetBlock:^(UIButton *_Nullable button) {
         //添加你想增加效果的 View 为 animationView 的子视图
         // [animationView addSubview:<#(void)#>]
-
+        
         //        [animationView startCanvasAnimation];
     }];
 }
@@ -1134,7 +1135,7 @@
         [appleIDBtn addTarget:self action:@selector(didCustomBtnClicked) forControlEvents:UIControlEventTouchUpInside];
         self.bottomAttribute = appleIDBtn.mas_bottom;
     }
-
+    
     // 或者自己用UIButton实现按钮样式
     UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.containerView addSubview:addBtn];
@@ -1149,9 +1150,9 @@
     [addBtn setTitle:@"苹果登录" forState:UIControlStateNormal];
     [addBtn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     [addBtn addTarget:self action:@selector(didCustomBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-
+    
     self.bottomAttribute = addBtn.mas_bottom;
-
+    
     /// 监听 ASAuthorizationAppleIDProviderCredentialRevokedNotification 通知
     // 注册通知
     if (@available(iOS 13.0, *)) {
@@ -1164,12 +1165,12 @@
         
         if (@available(iOS 13.0, *)) {
             VNDocumentCameraViewController *vc =  VNDocumentCameraViewController.alloc.init;
-                vc.delegate = self;
-                [self ax_showVC:vc];
+            vc.delegate = self;
+            [self ax_showVC:vc];
         }
         
     }];
-
+    
 }
 
 - (void)_p20changeLanch {
@@ -1190,45 +1191,197 @@
 
 -(void)_p20Image:(UIImage *)selectedImage {
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请选择替换方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"替换浅色竖屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalLight compressionQuality:0.8 customValidation:nil];
-        [self showAlertView:@"浅色竖屏启动图替换成功，APP即将退出"];
+    //    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请选择替换方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    //    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"替换浅色竖屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    //        [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalLight compressionQuality:0.8 customValidation:nil];
+    //        [self showAlertView:@"浅色竖屏启动图替换成功，APP即将退出"];
+    //    }];
+    //    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"替换浅色横屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    //        [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalLight compressionQuality:0.8 customValidation:nil];
+    //        [self showAlertView:@"浅色横屏启动图替换成功，APP即将退出"];
+    //    }];
+    //    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"替换深色竖屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    //        if (@available(iOS 13.0, *)) {
+    //            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalDark compressionQuality:0.8 customValidation:nil];
+    //            [self showAlertView:@"深色竖屏启动图替换成功，APP即将退出"];
+    //        } else {
+    //            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"iOS13以下系统不支持替换深色启动图" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    //            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+    //            [alert addAction:cancelAction];
+    //            [self presentViewController:alert animated:YES completion:nil];
+    //        }
+    //    }];
+    //    UIAlertAction *action4 = [UIAlertAction actionWithTitle:@"替换深色横屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    //        if (@available(iOS 13.0, *)) {
+    //            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalDark compressionQuality:0.8 customValidation:nil];
+    //            [self showAlertView:@"深色横屏启动图替换成功，APP即将退出"];
+    //        } else {
+    //            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"iOS13以下系统不支持替换深色启动图" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    //            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+    //            [alert addAction:cancelAction];
+    //            [self presentViewController:alert animated:YES completion:nil];
+    //        }
+    //    }];
+    //    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    //    [alert addAction:action1];
+    //    [alert addAction:action2];
+    //    [alert addAction:action3];
+    //    [alert addAction:action4];
+    //    [alert addAction:cancel];
+    //    [self presentViewController:alert animated:YES completion:nil];
+    
+    NSMutableArray<AXActionItem *> *temp = NSMutableArray.array;
+    {
+        AXActionItem *item = AXActionItem.alloc.init;
+        item.title = @"替换浅色竖屏启动图";
+        item.style = UIAlertActionStyleDefault;
+        item.handler = ^{
+            
+            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalLight compressionQuality:0.8 customValidation:nil];
+            [self showAlertView:@"浅色竖屏启动图替换成功，APP即将退出"];
+            
+        };
+        [temp addObject:item];
+    }
+    
+    {
+        AXActionItem *item = AXActionItem.alloc.init;
+        item.title = @"替换浅色横屏启动图";
+        item.style = UIAlertActionStyleDefault;
+        item.handler = ^{
+            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalLight compressionQuality:0.8 customValidation:nil];
+            [self showAlertView:@"浅色横屏启动图替换成功，APP即将退出"];
+            
+        };
+        
+        [temp addObject:item];
+    }
+    {
+        AXActionItem *item = AXActionItem.alloc.init;
+        item.title = @"替换深色横屏启动图";
+        item.style = UIAlertActionStyleDefault;
+        item.handler = ^{
+            
+            if (@available(iOS 13.0, *)) {
+                [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalDark compressionQuality:0.8 customValidation:nil];
+                [self showAlertView:@"深色竖屏启动图替换成功，APP即将退出"];
+            } else {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"iOS13以下系统不支持替换深色启动图" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+                [alert addAction:cancelAction];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        };
+        
+        [temp addObject:item];
+    }
+    {
+        AXActionItem *item = AXActionItem.alloc.init;
+        item.title = @"替换深色横屏启动图";
+        item.style = UIAlertActionStyleDefault;
+        item.handler = ^{
+            
+            if (@available(iOS 13.0, *)) {
+                [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalDark compressionQuality:0.8 customValidation:nil];
+                [self showAlertView:@"深色横屏启动图替换成功，APP即将退出"];
+            } else {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"iOS13以下系统不支持替换深色启动图" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+                [alert addAction:cancelAction];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+            
+        };
+        [temp addObject:item];
+    }
+    
+    [self ax_showSheetByTitle:@"请选择替换方式" message:@"" actionItems:temp confirm:^(NSInteger index) {
+        
+    } cancel:^{
+        
     }];
-    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"替换浅色横屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalLight compressionQuality:0.8 customValidation:nil];
-        [self showAlertView:@"浅色横屏启动图替换成功，APP即将退出"];
-    }];
-    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"替换深色竖屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (@available(iOS 13.0, *)) {
-            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalDark compressionQuality:0.8 customValidation:nil];
-            [self showAlertView:@"深色竖屏启动图替换成功，APP即将退出"];
-        } else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"iOS13以下系统不支持替换深色启动图" message:nil preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
-            [alert addAction:cancelAction];
-            [self presentViewController:alert animated:YES completion:nil];
-        }
-    }];
-    UIAlertAction *action4 = [UIAlertAction actionWithTitle:@"替换深色横屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (@available(iOS 13.0, *)) {
-            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalDark compressionQuality:0.8 customValidation:nil];
-            [self showAlertView:@"深色横屏启动图替换成功，APP即将退出"];
-        } else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"iOS13以下系统不支持替换深色启动图" message:nil preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
-            [alert addAction:cancelAction];
-            [self presentViewController:alert animated:YES completion:nil];
-        }
-    }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    [alert addAction:action1];
-    [alert addAction:action2];
-    [alert addAction:action3];
-    [alert addAction:action4];
-    [alert addAction:cancel];
-    [self presentViewController:alert animated:YES completion:nil];
 }
+
+-(void)_p21stackView {
+    /// https://www.jianshu.com/p/19a267be1347
+    UIStackView *stackView = [[UIStackView alloc] init];
+    /***
+     @property(nonatomic) UILayoutConstraintAxis axis;
+     // 枚举
+     typedef NS_ENUM(NSInteger, UILayoutConstraintAxis) {
+         // 水平布局
+         UILayoutConstraintAxisHorizontal = 0,
+         // 垂直布局
+         UILayoutConstraintAxisVertical = 1
+     };
+
+     */
+    stackView.axis = UILayoutConstraintAxisHorizontal;  // 水平方向
+    /***
+     @property(nonatomic) UIStackViewDistribution distribution;
+     // 枚举
+     typedef NS_ENUM(NSInteger, UIStackViewDistribution) {
+         // 轴方向上填充
+         UIStackViewDistributionFill = 0,
+         // 子视图在轴方向上等宽或等高
+         UIStackViewDistributionFillEqually,
+         // 根据原先子视图的比例，来拉伸或压缩子视图的宽或高
+         UIStackViewDistributionFillProportionally,
+         // 保持子视图的宽高，子视图中间的间隔保持一致
+         UIStackViewDistributionEqualSpacing,
+         // 控制子视图的中心之间的距离保持一致
+         UIStackViewDistributionEqualCentering,
+     } API_AVAILABLE(ios(9.0));
+
+     */
+    stackView.distribution = UIStackViewDistributionFillEqually;    // 每个Item宽度相等
+    /***
+     @property(nonatomic) UIStackViewAlignment alignment;
+     // 枚举
+     typedef NS_ENUM(NSInteger, UIStackViewAlignment) {
+         // 子视图填充
+         UIStackViewAlignmentFill,
+         // 子视图左对齐(axis为垂直方向而言)
+         UIStackViewAlignmentLeading,
+         // 子视图顶部对齐(axis为水平方向而言)
+         UIStackViewAlignmentTop = UIStackViewAlignmentLeading,
+         //  按照第一个子视图的文字的第一行对齐，同时保证高度最大的子视图底部对齐(只在axis为水平方向有效)
+         UIStackViewAlignmentFirstBaseline,
+         // 子视图居中对齐
+         UIStackViewAlignmentCenter,
+         // 子视图右对齐(axis为垂直方向而言)
+         UIStackViewAlignmentTrailing,
+         // 子视图底部对齐(axis为水平方向而言)
+         UIStackViewAlignmentBottom = UIStackViewAlignmentTrailing,
+         // 按照最后一个子视图的文字的最后一行对齐，同时保证高度最大的子视图顶部对齐(只在axis为水平方向有效)
+         UIStackViewAlignmentLastBaseline,
+     } API_AVAILABLE(ios(9.0));
+
+     */
+    stackView.alignment = UIStackViewAlignmentFill;     // 水平布局, 子控件的垂直方向填充满stackView
+    /***
+     @property(nonatomic) CGFloat spacing;
+     */
+    stackView.spacing = 10;
+    [self.containerView addSubview:stackView];
+
+    for (NSUInteger i = 0; i < 3; i++) {
+        UIView *view = [[UIView alloc] init];
+        view.backgroundColor = [UIColor ax_randomColor];
+        [stackView addArrangedSubview:view];
+    }
+
+    [stackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10.f);     // 左边距：10
+        make.right.mas_equalTo(-10.f);  // 右边距：10
+        make.height.mas_equalTo(30.f);   // 设置高度
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        
+    }];
+    
+    self.bottomAttribute = stackView.mas_bottom;
+}
+
 
 - (void)showAlertView:(NSString *)text {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -1254,11 +1407,11 @@
 - (void)documentCameraViewController:(VNDocumentCameraViewController *)controller didFailWithError:(NSError *)error API_AVAILABLE(ios(13.0)){
     
     [self ax_showAlertByTitle:@"失败" message:error.localizedDescription confirm:^{
-            
+        
     }];
 }
 
-                                    
+
 #pragma mark- apple授权状态 更改通知
 - (void)handleSignInWithAppleStateChanged:(NSNotification *)notification
 {
@@ -1269,24 +1422,24 @@
     if (@available(iOS 13.0, *)) {
         // 基于用户的Apple ID授权用户，生成用户授权请求的一种机制
         ASAuthorizationAppleIDProvider *appleIDProvider = [[ASAuthorizationAppleIDProvider alloc] init];
-
+        
         NSMutableArray <ASAuthorizationRequest *> *array = [NSMutableArray arrayWithCapacity:2];
-
+        
         // 创建新的AppleID 授权请求
         ASAuthorizationAppleIDRequest *appleIDRequest = [appleIDProvider createRequest];
         // 在用户授权期间请求的联系信息
         appleIDRequest.requestedScopes = @[ASAuthorizationScopeFullName, ASAuthorizationScopeEmail];
-
+        
         if (appleIDRequest) {
             [array addObject:appleIDRequest];
         }
-
+        
         ASAuthorizationPasswordRequest *passwordRequest = [[[ASAuthorizationPasswordProvider alloc] init] createRequest];
-
+        
         if (passwordRequest) {
             [array addObject:passwordRequest];
         }
-
+        
         // 由ASAuthorizationAppleIDProvider创建的授权请求 管理授权请求的控制器
         ASAuthorizationController *authorizationController = [[ASAuthorizationController alloc] initWithAuthorizationRequests:array.copy];
         // 设置授权控制器通知授权请求的成功与失败的代理
@@ -1339,7 +1492,7 @@
 - (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithError:(NSError *)error API_AVAILABLE(ios(13.0))
 {
     NSString *errorMsg = nil;
-
+    
     switch (error.code) {
         case ASAuthorizationErrorCanceled:
             errorMsg = @"用户取消了授权请求";
@@ -1362,7 +1515,7 @@
 
 /// ASAuthorizationControllerPresentationContextProviding 就一个方法，主要是告诉 ASAuthorizationController 展示在哪个 window 上。
 - (ASPresentationAnchor)presentationAnchorForAuthorizationController:(ASAuthorizationController *)controller
-    API_AVAILABLE(ios(13.0))
+API_AVAILABLE(ios(13.0))
 {
     return self.view.window;
 }
@@ -1370,17 +1523,17 @@
 #pragma mark - 主题变化
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
     [super traitCollectionDidChange:previousTraitCollection];
-
+    
     if ((self.traitCollection.verticalSizeClass != previousTraitCollection.verticalSizeClass)
         || (self.traitCollection.horizontalSizeClass != previousTraitCollection.horizontalSizeClass)) {
         NSLog(@"traitCollectionDidChange");
     }
-
+    
     //    改变当前模式
     if (@available(iOS 13.0, *)) {
         AXLoger(@"模式>>1 %ld", ax_keyWindow().overrideUserInterfaceStyle);
         AXLoger(@"模式>>2 %ld", self.overrideUserInterfaceStyle);
-
+        
         NSString *text = @"暂无";
         switch (ax_keyWindow().overrideUserInterfaceStyle) {
             case UIUserInterfaceStyleUnspecified:
