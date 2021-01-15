@@ -11,6 +11,8 @@
 #import <AXiOSKit/AXBiometryManager.h>
 #import <AXiOSKit/AXLocationManager.h>
 #import <AXiOSKit/AXiOSKit.h>
+#import <AXiOSKit/UITextField+AXNumberKeyboard.h>
+#import <AXiOSKit/AXNumberKeyboardView.h>
 #import <AuthenticationServices/AuthenticationServices.h>
 #import <Canvas/Canvas.h>
 #import <Masonry/Masonry.h>
@@ -133,7 +135,7 @@
     [self _p00TestKit];
     [self _p01TextAndImage];
     [self _p01UITextView_link];
-    [self _p01loginTest];
+    [self _p01TextField];
     [self _p02AlternateIconName];
     [self _p03LocationManager];
     [self _p03wifi];
@@ -300,35 +302,69 @@
     }];
 }
 
-- (void)_p01loginTest {
+- (void)_p01TextField {
     {
-        UITextField *nameTF = [[UITextField alloc]init];
-        nameTF.ax_observe.maxTextLength = 2;
         
-        nameTF.backgroundColor = UIColor.orangeColor;
-        nameTF.autocapitalizationType = UITextAutocapitalizationTypeNone;
-        //        nameTF.keyboardType = UIKeyboardTypeASCIICapable;
-        nameTF.tag = -100;
-        //        nameTF.placeholder = @"输入姓名";
-        nameTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"输入姓名" attributes:@{ NSForegroundColorAttributeName: [UIColor redColor] }];
-        
-        nameTF.accessibilityIdentifier = @"nameTextField";
-        [self.containerView addSubview:nameTF];
-        [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
+        UITextField *keyboarTF = [[UITextField alloc]init];
+        keyboarTF.placeholder = @"自定义键盘";
+        [self.containerView addSubview:keyboarTF];
+        [keyboarTF mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.bottomAttribute).mas_offset(20);
             make.left.mas_equalTo(10);
             make.right.mas_equalTo(-10);
             make.height.mas_equalTo(50);
         }];
-        //        [NSNotificationCenter.defaultCenter addObserver:self
-        //                                               selector:@selector(textFiledEditChanged:)
-        //                                                   name:UITextFieldTextDidChangeNotification
-        //                                                 object:nameTF];
         
-        [nameTF addTarget:self action:@selector(editChange:) forControlEvents:UIControlEventEditingChanged];
+        self.bottomAttribute = keyboarTF.mas_bottom;
         
-        self.bottomAttribute = nameTF.mas_bottom;
+        
+        AXNumberKeyboardConfig *config = AXNumberKeyboardConfig.alloc.init;
+        config.textInput = keyboarTF;
+        config.inputType = AXNumberKeyboardTypeFloat;
+        config.inputType = AXNumberKeyboardTypeIDCard;
+        
+        AXNumberKeyboardView *inputView = [[AXNumberKeyboardView alloc] initWithConfig:config];
+        inputView.handler = ^{
+            
+        };
+//        inputView.textInput = keyboarTF;
+//        inputView.inputType = AXNumberKeyboardTypeIDCard;
+//        inputView.inputType = AXNumberKeyboardTypeFloat;
+        keyboarTF.inputView = inputView;
+        
+        
     }
+    UITextField *nameTF = [[UITextField alloc]init];
+    nameTF.ax_observe.maxTextLength = 2;
+    
+    nameTF.backgroundColor = UIColor.orangeColor;
+    nameTF.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    nameTF.keyboardType = UIKeyboardTypeASCIICapable;
+    nameTF.tag = -100;
+    nameTF.placeholder = @"输入姓名";
+    nameTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"输入姓名" attributes:@{ NSForegroundColorAttributeName: [UIColor redColor] }];
+    
+    nameTF.accessibilityIdentifier = @"nameTextField";
+    [self.containerView addSubview:nameTF];
+    [nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_offset(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+        make.height.mas_equalTo(50);
+    }];
+    [NSNotificationCenter.defaultCenter addObserver:self
+                                           selector:@selector(textFiledEditChanged:)
+                                               name:UITextFieldTextDidChangeNotification
+                                             object:nameTF];
+    
+    [nameTF addTarget:self action:@selector(editChange:) forControlEvents:UIControlEventEditingChanged];
+    
+    self.bottomAttribute = nameTF.mas_bottom;
+    
+    [self _p00ButtonTitle:@"恢复键盘" handler:^{
+        [nameTF reloadInputViews];
+    }];
+    
     {
         UITextField *pswTF = [[UITextField alloc]init];
         pswTF.backgroundColor = UIColor.orangeColor;
@@ -1309,54 +1345,54 @@
      @property(nonatomic) UILayoutConstraintAxis axis;
      // 枚举
      typedef NS_ENUM(NSInteger, UILayoutConstraintAxis) {
-         // 水平布局
-         UILayoutConstraintAxisHorizontal = 0,
-         // 垂直布局
-         UILayoutConstraintAxisVertical = 1
+     // 水平布局
+     UILayoutConstraintAxisHorizontal = 0,
+     // 垂直布局
+     UILayoutConstraintAxisVertical = 1
      };
-
+     
      */
     stackView.axis = UILayoutConstraintAxisHorizontal;  // 水平方向
     /***
      @property(nonatomic) UIStackViewDistribution distribution;
      // 枚举
      typedef NS_ENUM(NSInteger, UIStackViewDistribution) {
-         // 轴方向上填充
-         UIStackViewDistributionFill = 0,
-         // 子视图在轴方向上等宽或等高
-         UIStackViewDistributionFillEqually,
-         // 根据原先子视图的比例，来拉伸或压缩子视图的宽或高
-         UIStackViewDistributionFillProportionally,
-         // 保持子视图的宽高，子视图中间的间隔保持一致
-         UIStackViewDistributionEqualSpacing,
-         // 控制子视图的中心之间的距离保持一致
-         UIStackViewDistributionEqualCentering,
+     // 轴方向上填充
+     UIStackViewDistributionFill = 0,
+     // 子视图在轴方向上等宽或等高
+     UIStackViewDistributionFillEqually,
+     // 根据原先子视图的比例，来拉伸或压缩子视图的宽或高
+     UIStackViewDistributionFillProportionally,
+     // 保持子视图的宽高，子视图中间的间隔保持一致
+     UIStackViewDistributionEqualSpacing,
+     // 控制子视图的中心之间的距离保持一致
+     UIStackViewDistributionEqualCentering,
      } API_AVAILABLE(ios(9.0));
-
+     
      */
     stackView.distribution = UIStackViewDistributionFillEqually;    // 每个Item宽度相等
     /***
      @property(nonatomic) UIStackViewAlignment alignment;
      // 枚举
      typedef NS_ENUM(NSInteger, UIStackViewAlignment) {
-         // 子视图填充
-         UIStackViewAlignmentFill,
-         // 子视图左对齐(axis为垂直方向而言)
-         UIStackViewAlignmentLeading,
-         // 子视图顶部对齐(axis为水平方向而言)
-         UIStackViewAlignmentTop = UIStackViewAlignmentLeading,
-         //  按照第一个子视图的文字的第一行对齐，同时保证高度最大的子视图底部对齐(只在axis为水平方向有效)
-         UIStackViewAlignmentFirstBaseline,
-         // 子视图居中对齐
-         UIStackViewAlignmentCenter,
-         // 子视图右对齐(axis为垂直方向而言)
-         UIStackViewAlignmentTrailing,
-         // 子视图底部对齐(axis为水平方向而言)
-         UIStackViewAlignmentBottom = UIStackViewAlignmentTrailing,
-         // 按照最后一个子视图的文字的最后一行对齐，同时保证高度最大的子视图顶部对齐(只在axis为水平方向有效)
-         UIStackViewAlignmentLastBaseline,
+     // 子视图填充
+     UIStackViewAlignmentFill,
+     // 子视图左对齐(axis为垂直方向而言)
+     UIStackViewAlignmentLeading,
+     // 子视图顶部对齐(axis为水平方向而言)
+     UIStackViewAlignmentTop = UIStackViewAlignmentLeading,
+     //  按照第一个子视图的文字的第一行对齐，同时保证高度最大的子视图底部对齐(只在axis为水平方向有效)
+     UIStackViewAlignmentFirstBaseline,
+     // 子视图居中对齐
+     UIStackViewAlignmentCenter,
+     // 子视图右对齐(axis为垂直方向而言)
+     UIStackViewAlignmentTrailing,
+     // 子视图底部对齐(axis为水平方向而言)
+     UIStackViewAlignmentBottom = UIStackViewAlignmentTrailing,
+     // 按照最后一个子视图的文字的最后一行对齐，同时保证高度最大的子视图顶部对齐(只在axis为水平方向有效)
+     UIStackViewAlignmentLastBaseline,
      } API_AVAILABLE(ios(9.0));
-
+     
      */
     stackView.alignment = UIStackViewAlignmentFill;     // 水平布局, 子控件的垂直方向填充满stackView
     /***
@@ -1364,13 +1400,13 @@
      */
     stackView.spacing = 10;
     [self.containerView addSubview:stackView];
-
+    
     for (NSUInteger i = 0; i < 3; i++) {
         UIView *view = [[UIView alloc] init];
         view.backgroundColor = [UIColor ax_randomColor];
         [stackView addArrangedSubview:view];
     }
-
+    
     [stackView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10.f);     // 左边距：10
         make.right.mas_equalTo(-10.f);  // 右边距：10

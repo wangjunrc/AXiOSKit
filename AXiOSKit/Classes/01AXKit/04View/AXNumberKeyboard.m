@@ -9,6 +9,7 @@
 #import "AXNumberKeyboard.h"
 #import "AXUIAssistant.h"
 #import "UIImage+AXBundle.h"
+#import "NSBundle+AXBundle.h"
 @interface AXNumberKeyboard ()
 
 @property (strong, nonatomic)UIView *contentView;
@@ -21,7 +22,7 @@
     
     if([super init]){
         
-      self.contentView = [[NSBundle mainBundle] loadNibNamed:@"AXNumberKeyboard" owner:self options:nil].firstObject;
+        self.contentView = [[NSBundle  ax_mainBundle] loadNibNamed:@"AXNumberKeyboard" owner:self options:nil].firstObject;
         self.frame = CGRectMake(0, 0, ax_screen_width(), 216+ax_safe_area_insets_bottom());
         self.backgroundColor = self.contentView.backgroundColor;
         self.contentView.frame = self.frame;
