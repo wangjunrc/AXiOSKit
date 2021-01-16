@@ -2175,3 +2175,11 @@ self.view.layer.contents = (id)image.CGImage;
 
 @end
 ```
+## view 被添加到父视图
+```
+/// newSuperview 就是父视图
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    [super willMoveToSuperview:newSuperview];
+    NSLog(@"willMoveToSuperview %p",newSuperview);
+}
+```

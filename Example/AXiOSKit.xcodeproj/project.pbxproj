@@ -266,6 +266,7 @@
 		21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
 		21E5C8A9257F6BF8002A4D59 /* _00BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */; };
 		21E5C8AA257F6BF8002A4D59 /* _00BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */; };
+		21E8BD2025B1D08300D9D83C /* AXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E8BD1F25B1D08300D9D83C /* AXSwitch.m */; };
 		21F542AA25A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F542A925A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m */; };
 		21FC4435258DCE7C00AA253F /* Pods_AXShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; };
 		21FC4436258DCE7C00AA253F /* Pods_AXShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -581,6 +582,8 @@
 		21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _29AudioViewController.xib; sourceTree = "<group>"; };
 		21E5C8A7257F6BF8002A4D59 /* _00BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00BaseViewController.h; sourceTree = "<group>"; };
 		21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00BaseViewController.m; sourceTree = "<group>"; };
+		21E8BD1E25B1D08300D9D83C /* AXSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXSwitch.h; sourceTree = "<group>"; };
+		21E8BD1F25B1D08300D9D83C /* AXSwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXSwitch.m; sourceTree = "<group>"; };
 		21F542A825A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXHideNavBackTitle.h"; sourceTree = "<group>"; };
 		21F542A925A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXHideNavBackTitle.m"; sourceTree = "<group>"; };
 		21FC46B22591924A00AA253F /* AXDebugManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugManager.h; sourceTree = "<group>"; };
@@ -794,6 +797,8 @@
 				213BCBAF254003DA00C89B72 /* Load */,
 				213BCB30254003D900C89B72 /* MakeKeyAndVisible.h */,
 				213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */,
+				21E8BD1E25B1D08300D9D83C /* AXSwitch.h */,
+				21E8BD1F25B1D08300D9D83C /* AXSwitch.m */,
 				213BCB9B254003DA00C89B72 /* Object */,
 				218990312542630D00876524 /* Resource */,
 				213BCBD4254003DA00C89B72 /* Router */,
@@ -2091,6 +2096,7 @@
 				21CC815C257E004A0062ACE5 /* _25DataModel.m in Sources */,
 				213BCC10254003DB00C89B72 /* _16KeyChainViewController.m in Sources */,
 				218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */,
+				21E8BD2025B1D08300D9D83C /* AXSwitch.m in Sources */,
 				218F674125A5B61E006A8312 /* _25CompLayoutVC1.m in Sources */,
 				213BCBFC254003DB00C89B72 /* _06WCDBViewController.m in Sources */,
 				21B542B025A5A31A0071D20D /* _25FlowLayoutBaseVC.m in Sources */,

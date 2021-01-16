@@ -27,6 +27,7 @@
 #import <VisionKit/VisionKit.h>
 #import <LLDynamicLaunchScreen/LLDynamicLaunchScreen.h>
 
+#import "AXSwitch.h"
 @interface _01ContentViewController ()<UITextViewDelegate, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding,VNDocumentCameraViewControllerDelegate>
 
 @property (nonatomic, strong) UILabel *label;
@@ -132,7 +133,7 @@
         }
     }];
     [self _p00Test_layer];
-    [self _p00TestKit];
+    [self _p00TestSwitch ];
     [self _p01TextAndImage];
     [self _p01UITextView_link];
     [self _p01TextField];
@@ -513,7 +514,7 @@
     self.bottomAttribute = aView.mas_bottom;
 }
 
-- (void)_p00TestKit {
+- (void)_p00TestSwitch  {
     UISwitch *aSwitch = UISwitch.alloc.init;
     aSwitch.onTintColor = UIColor.redColor;
     aSwitch.thumbTintColor = UIColor.orangeColor;
@@ -533,6 +534,21 @@
     }];
     
     self.bottomAttribute = aSwitch.mas_bottom;
+    
+    
+    AXSwitch *aS = [AXSwitch.alloc init];
+    aS.backgroundColor = UIColor.greenColor;
+//    aS.frame = CGRectMake(0, 400, 30, 30);
+    [self.containerView addSubview:aS];
+    NSLog(@"didMoveToSuperview =containerView %p",self.containerView);
+    [aS mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_offset(10);
+        make.centerX.mas_equalTo(0);
+                make.width.mas_equalTo(30);
+                make.height.mas_equalTo(30);
+    }];
+    self.bottomAttribute = aS.mas_bottom;
+    
 }
 
 - (void)_p01TextAndImage {
