@@ -17,7 +17,6 @@
 @implementation NSObject (Load)
 
 + (void)load {
-    
     /// 这个方式,是 UIAlertController init 后改变颜色, 后续使用再改变颜色,以使用颜色为主
     [UIAlertController ax_replaceClassMethodWithOriginal:@selector(alertControllerWithTitle:message:preferredStyle:) newSelector:@selector(ax_alertControllerWithTitle:message:preferredStyle:)];
     
@@ -40,6 +39,13 @@
     
     
     [NSObject ax_replaceInstanceMethodWithOriginal:@selector(setNilValueForKey:) newSelector:@selector(ax_safe_setNilValueForKey:)];
+    
+    __block  id  observer  = nil;
+    observer = [NSNotificationCenter.defaultCenter addObserverForName:UIApplicationDidFinishLaunchingNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        NSLog(@"UIApplicationDidFinishLaunchingNotification====2 %@ ,obj = %@",note.userInfo,note.object);
+        [NSNotificationCenter.defaultCenter removeObserver:observer];
+    }];
+    
 }
 
 

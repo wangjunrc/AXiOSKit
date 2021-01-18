@@ -97,7 +97,7 @@
     }).start();
     
 //    AXDebugManager.sharedManager.start();
-    
+    NSLog(@"UIApplicationDidFinishLaunchingNotification====1");
     return YES;
 }
 
@@ -125,6 +125,7 @@
             }
         }
     }
+    NSLog(@"UIApplicationDidFinishLaunchingNotification====2");
     return YES;
 }
 -(void)rightBarButtonItemAction:(UIBarButtonItem *)sender {
