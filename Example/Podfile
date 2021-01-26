@@ -5,8 +5,8 @@ inhibit_all_warnings!
 
 #source 'https://github.com/CocoaPods/Specs.git'
 # 清华镜像
-source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
-
+#source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+source 'https://gitee.com/mirrors/CocoaPods-Specs.git'
 # 因为有的target 不支持UIKit的库
 def ui_pods
   
@@ -33,7 +33,11 @@ def ui_pods
   # 保护App
   pod 'JJException'
   # 微信开源数据库操作层 ORM
-  pod 'WCDB'
+  #pod 'WCDB' 
+
+pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git'
+
+
   pod 'SSKeychain'
   
   # 代替 NSUserDefaults
