@@ -262,6 +262,8 @@
 		21CC8169257E00840062ACE5 /* _25Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC8168257E00840062ACE5 /* _25Layout.m */; };
 		21D61EEC257F106E0059201A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* Test.swift */; };
 		21D61EED257F106E0059201A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* Test.swift */; };
+		21D7675425C00CE700468F8E /* _00HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D7675325C00CE600468F8E /* _00HeaderView.m */; };
+		21D7675525C00CE700468F8E /* _00HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D7675325C00CE600468F8E /* _00HeaderView.m */; };
 		21E306B4255EAA1100D17A8B /* _29AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E306B2255EAA1100D17A8B /* _29AudioViewController.m */; };
 		21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
 		21E5C8A9257F6BF8002A4D59 /* _00BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */; };
@@ -576,6 +578,8 @@
 		21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		21D61EEA257F106D0059201A /* AXiOSKit_Example_Env_1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit_Example_Env_1-Bridging-Header.h"; sourceTree = "<group>"; };
 		21D61EEB257F106E0059201A /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		21D7675225C00CE600468F8E /* _00HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00HeaderView.h; sourceTree = "<group>"; };
+		21D7675325C00CE600468F8E /* _00HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00HeaderView.m; sourceTree = "<group>"; };
 		21D83B3A255A28BE00695C28 /* rac.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = rac.md; sourceTree = "<group>"; };
 		21E306B1255EAA1100D17A8B /* _29AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _29AudioViewController.h; sourceTree = "<group>"; };
 		21E306B2255EAA1100D17A8B /* _29AudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _29AudioViewController.m; sourceTree = "<group>"; };
@@ -699,6 +703,8 @@
 				21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */,
 				213BCB86254003D900C89B72 /* _00FirstViewController.h */,
 				213BCB59254003D900C89B72 /* _00FirstViewController.m */,
+				21D7675225C00CE600468F8E /* _00HeaderView.h */,
+				21D7675325C00CE600468F8E /* _00HeaderView.m */,
 				213BCB97254003DA00C89B72 /* _00Module */,
 				219F44502580BDC600E8CB50 /* _00SecondViewController.h */,
 				219F44512580BDC600E8CB50 /* _00SecondViewController.m */,
@@ -769,9 +775,9 @@
 				21E306B1255EAA1100D17A8B /* _29AudioViewController.h */,
 				21E306B2255EAA1100D17A8B /* _29AudioViewController.m */,
 				21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */,
+				21430AD6256C97BB00CB8EBC /* _30IGList */,
 				21331CED2592EB02008E251B /* _31GCDViewController.h */,
 				21331CEE2592EB02008E251B /* _31GCDViewController.m */,
-				21430AD6256C97BB00CB8EBC /* _30IGList */,
 				213BCB41254003D900C89B72 /* AANavigationController.h */,
 				213BCB63254003D900C89B72 /* AANavigationController.m */,
 				213BCB6F254003D900C89B72 /* AFHTTPSessionManager+PutFile.h */,
@@ -2013,6 +2019,7 @@
 				211227342573340100B6ECC8 /* ChatMessageModel.m in Sources */,
 				211227352573340100B6ECC8 /* AppDelegate.m in Sources */,
 				211227362573340100B6ECC8 /* _30TimeLineNinePhotoView.m in Sources */,
+				21D7675525C00CE700468F8E /* _00HeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2082,6 +2089,7 @@
 				21CC8169257E00840062ACE5 /* _25Layout.m in Sources */,
 				213BCC29254003DB00C89B72 /* AXWebSocketEngine.m in Sources */,
 				21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */,
+				21D7675425C00CE700468F8E /* _00HeaderView.m in Sources */,
 				21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */,
 				21BA45BA25AEE05E00EEEF45 /* CustomGifHeader.m in Sources */,
 				218F674825A5CC69006A8312 /* _25CompLayoutVC2.m in Sources */,
