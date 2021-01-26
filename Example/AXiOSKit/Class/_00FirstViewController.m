@@ -121,7 +121,9 @@ typedef void (^CollectionBlock)(void);
     [btn2 ax_constraintButtonItemWidth:120 height:30];
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],[UIBarButtonItem ax_itemByButton:btn2]];
     
-    self.tableView.tableHeaderView =[_00HeaderView.alloc init];
+    _00HeaderView *headerView = [_00HeaderView.alloc init];
+//    [self.tableView layoutIfNeeded];
+    self.tableView.tableHeaderView =headerView;
 
 }
 
@@ -132,17 +134,16 @@ typedef void (^CollectionBlock)(void);
 
 //tableview tableheaderview高度自适应
 -(void)_updateHeaerLauout {
-    _00HeaderView *header = (_00HeaderView *)self.tableView.tableHeaderView;
-    if (!header) {
-        return;
-    }
-    CGSize size = [header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    if (header.frame.size.height != size.height) {
-        CGRect frame = header.frame;
-        frame.size.height = size.height;
-        header.frame = frame;
-        //刷新tableHeaderView
-        self.tableView.tableHeaderView = header;
+    UIView *header = self.tableView.tableHeaderView;
+    if (header) {
+        CGSize size = [header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+        if (header.frame.size.height != size.height) {
+            CGRect frame = header.frame;
+            frame.size.height = size.height;
+            header.frame = frame;
+            //刷新tableHeaderView
+            self.tableView.tableHeaderView = header;
+        }
     }
 }
 

@@ -26,14 +26,21 @@
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(10);
         make.right.mas_equalTo(-10);
+       
     }];
     
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10);
         make.top.equalTo(self.titleLabel.mas_bottom).mas_equalTo(20);
         make.right.mas_equalTo(-10);
-        make.bottom.equalTo(self).mas_equalTo(-200);
+//        make.bottom.equalTo(self).mas_equalTo(-200);
+        make.bottom.equalTo(self.mas_bottom).mas_equalTo(-200).priorityMedium();
     }];
+    
+//    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+//        
+//        make.bottom.equalTo(self.titleLabel.mas_bottom).mas_equalTo(200);
+//    }];
 }
 
 - (UILabel *)titleLabel {
