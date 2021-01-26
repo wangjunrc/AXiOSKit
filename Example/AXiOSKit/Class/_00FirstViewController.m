@@ -53,7 +53,7 @@
 #import <AXiOSKit/NSMutableArray+AXKVO.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <mach/mach.h>
-
+#import "_00HeaderView.h"
 
 @import AssetsLibrary;
 
@@ -121,11 +121,46 @@ typedef void (^CollectionBlock)(void);
     [btn2 ax_constraintButtonItemWidth:120 height:30];
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],[UIBarButtonItem ax_itemByButton:btn2]];
     
-    
+    self.tableView.tableHeaderView =[_00HeaderView.alloc init];
 
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self _updateHeaerLauout];
+}
+
+//tableview tableheaderview高度自适应
+-(void)_updateHeaerLauout {
+    _00HeaderView *header = (_00HeaderView *)self.tableView.tableHeaderView;
+    if (!header) {
+        return;
+    }
+    CGSize size = [header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    if (header.frame.size.height != size.height) {
+        CGRect frame = header.frame;
+        frame.size.height = size.height;
+        header.frame = frame;
+        //刷新tableHeaderView
+        self.tableView.tableHeaderView = header;
+    }
+}
+
 -(void)_deleteCellArray:(NSArray<NSIndexPath *>*)array{
+    
+    /// 删除数据源
+//    if (@available(iOS 11.0, *)) {
+//        [self.tableView performBatchUpdates:^{
+//
+//        } completion:^(BOOL finished) {
+//            [self.tableView reloadData];
+//        }];
+//    } else {
+//        [self.tableView beginUpdates];
+//        [self.tableView endUpdates];
+//        [self.tableView reloadData];
+//    }
+    
     
     [self.tableView beginUpdates];
     NSMutableArray *temp = [NSMutableArray array];
