@@ -1193,14 +1193,14 @@
 		6003F593195388D20070C39A /* Example for AXiOSKit */ = {
 			isa = PBXGroup;
 			children = (
+				6003F594195388D20070C39A /* 00Supporting Files */,
 				213BCB36254003D900C89B72 /* Class */,
-				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for AXiOSKit";
 			path = AXiOSKit;
 			sourceTree = "<group>";
 		};
-		6003F594195388D20070C39A /* Supporting Files */ = {
+		6003F594195388D20070C39A /* 00Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				213BCBE6254003DB00C89B72 /* AppDelegate.h */,
@@ -1239,7 +1239,7 @@
 				21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */,
 				21D61EEA257F106D0059201A /* AXiOSKit_Example_Env_1-Bridging-Header.h */,
 			);
-			name = "Supporting Files";
+			name = "00Supporting Files";
 			sourceTree = "<group>";
 		};
 		6003F5B5195388D20070C39A /* Tests */ = {

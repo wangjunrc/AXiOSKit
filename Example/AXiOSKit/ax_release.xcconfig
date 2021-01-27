@@ -15,4 +15,4 @@
 IS_PRODUCATION = YES
 
 /// 服务器
-SERVER_HOST = @"https:/$()/www.正式.com/"
+//SERVER_HOST = @"https:/$()/www.正式.com/"

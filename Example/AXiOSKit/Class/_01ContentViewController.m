@@ -43,10 +43,10 @@
 @end
 
 @implementation _01ContentViewController
-- (void)injected {
-    NSLog(@"重启了 InjectionIII: %@", self);
-    [self viewDidLoad];
-}
+//- (void)injected {
+//    NSLog(@"重启了 InjectionIII: %@", self);
+//    [self viewDidLoad];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -1213,12 +1213,13 @@
 }
 
 - (void)_p19VisionKit {
+    __weak typeof(self) weakSelf = self;
     [self _p00ButtonTitle:@"VisionKit" handler:^{
-        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         if (@available(iOS 13.0, *)) {
             VNDocumentCameraViewController *vc =  VNDocumentCameraViewController.alloc.init;
-            vc.delegate = self;
-            [self ax_showVC:vc];
+            vc.delegate = strongSelf;
+            [strongSelf ax_showVC:vc];
         }
         
     }];
@@ -1242,45 +1243,6 @@
 }
 
 -(void)_p20Image:(UIImage *)selectedImage {
-    
-    //    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请选择替换方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    //    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"替换浅色竖屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-    //        [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalLight compressionQuality:0.8 customValidation:nil];
-    //        [self showAlertView:@"浅色竖屏启动图替换成功，APP即将退出"];
-    //    }];
-    //    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"替换浅色横屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-    //        [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalLight compressionQuality:0.8 customValidation:nil];
-    //        [self showAlertView:@"浅色横屏启动图替换成功，APP即将退出"];
-    //    }];
-    //    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"替换深色竖屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-    //        if (@available(iOS 13.0, *)) {
-    //            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalDark compressionQuality:0.8 customValidation:nil];
-    //            [self showAlertView:@"深色竖屏启动图替换成功，APP即将退出"];
-    //        } else {
-    //            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"iOS13以下系统不支持替换深色启动图" message:nil preferredStyle:UIAlertControllerStyleAlert];
-    //            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
-    //            [alert addAction:cancelAction];
-    //            [self presentViewController:alert animated:YES completion:nil];
-    //        }
-    //    }];
-    //    UIAlertAction *action4 = [UIAlertAction actionWithTitle:@"替换深色横屏启动图" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-    //        if (@available(iOS 13.0, *)) {
-    //            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalDark compressionQuality:0.8 customValidation:nil];
-    //            [self showAlertView:@"深色横屏启动图替换成功，APP即将退出"];
-    //        } else {
-    //            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"iOS13以下系统不支持替换深色启动图" message:nil preferredStyle:UIAlertControllerStyleAlert];
-    //            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
-    //            [alert addAction:cancelAction];
-    //            [self presentViewController:alert animated:YES completion:nil];
-    //        }
-    //    }];
-    //    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    //    [alert addAction:action1];
-    //    [alert addAction:action2];
-    //    [alert addAction:action3];
-    //    [alert addAction:action4];
-    //    [alert addAction:cancel];
-    //    [self presentViewController:alert animated:YES completion:nil];
     
     NSMutableArray<AXActionItem *> *temp = NSMutableArray.array;
     {

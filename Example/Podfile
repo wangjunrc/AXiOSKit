@@ -33,9 +33,9 @@ def ui_pods
   # 保护App
   pod 'JJException'
   # 微信开源数据库操作层 ORM
-  #pod 'WCDB' 
+  pod 'WCDB'
 
-pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git'
+#pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git'
 
 
   pod 'SSKeychain'

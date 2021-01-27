@@ -29,6 +29,22 @@ https://github.com/Tim9Liu9/TimLiu-iOS
 #pragma clang diagnostic pop
 
 ```
+## UI_APPEARANCE_SELECTOR 可以统一设置全局作用
+```
+开关控件 @property(nullable, nonatomic, strong) UIColor *onTintColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR; 
+
+可以统一设置开关的onTintColor样式.不过开关控件的颜色属性比较特殊
+
+1.只在添加时作用一次.
+
+2.添加结束后.
+
+3.以后设置便不再改变.
+
+4.也可以移出开关的父控件.而把开关从新加入到window上.
+
+
+```
 ```
 /// 过期警告
  "-Wdeprecated-declarations"

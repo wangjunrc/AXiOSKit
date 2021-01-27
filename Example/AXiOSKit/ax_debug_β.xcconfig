@@ -14,8 +14,8 @@
 
 
 
-IS_PRODUCATION = NO
-
-/// 服务器
-SERVER_HOST = @"https:/$()/www.测试服_β.com/"
+//IS_PRODUCATION = NO
+//
+///// 服务器
+//SERVER_HOST = @"https:/$()/www.测试服_β.com/"
 

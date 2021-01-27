@@ -210,17 +210,11 @@ DEPENDENCIES:
   - WechatOpenSDK (= 1.7.7)
 
 SPEC REPOS:
-  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
-    - IQKeyboardManager
-    - LLDynamicLaunchScreen
-    - TZImagePickerController
-  trunk:
-    - AFNetworking
+  https://gitee.com/mirrors/CocoaPods-Specs.git:
     - Aspects
     - AvoidCrash
     - Bagel
     - Canvas
-    - CocoaAsyncSocket
     - DZNEmptyDataSet
     - FBRetainCycleDetector
     - fishhook
@@ -229,11 +223,13 @@ SPEC REPOS:
     - GDataXML-HTML
     - IGListDiffKit
     - IGListKit
+    - IQKeyboardManager
     - JJException
     - JKVValue
     - KVOController
     - libwebp
     - LLDebugTool
+    - LLDynamicLaunchScreen
     - LookinServer
     - Masonry
     - MBProgressHUD
@@ -255,9 +251,13 @@ SPEC REPOS:
     - SocketRocket
     - SQLiteRepairKit
     - SSKeychain
+    - TZImagePickerController
     - WCDB
     - WCDBOptimizedSQLCipher
     - WechatOpenSDK
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - CocoaAsyncSocket
 
 EXTERNAL SOURCES:
   AXiOSKit:
@@ -283,7 +283,7 @@ SPEC CHECKSUMS:
   JJException: da7c64ccf29d9938a4075378a7e9a29db7383c37
   JKVValue: d7941071b1cf9ba35c194fd40bcf4c4d9b5462e9
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
-  libwebp: 04242ef451672185c1fe41b285a034d2fbda483c
+  libwebp: d7684f7241543c7a5ff47953cc9b9f184fe16610
   LLDebugTool: 6026a1df690f5f94524567fce7f97fa53ce131d8
   LLDynamicLaunchScreen: 670b976a73d530fbcd2020b543452b98ecb24a65
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
@@ -312,6 +312,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: 49fc157fe55e3d388212c952e0cb4aaa56f87864
+PODFILE CHECKSUM: fea9ef94b14baff2960c9a6f4bf46536e4c80f81
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

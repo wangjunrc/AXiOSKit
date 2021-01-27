@@ -73,15 +73,16 @@ typedef void (^CollectionBlock)(void);
 @property (nonatomic, strong) NSMutableString *strongMStr;
 @property (nonatomic, strong) NSString *strongStr;
 
+@property(nonatomic, strong) UIBarButtonItem *deleteItem;
 @end
 
 @implementation _00FirstViewController
 
-//- (void)injected {
-//    NSLog(@"重启了 InjectionIII: %@", self);
-//    
-//    [self viewDidLoad];
-//}
+- (void)injected {
+    NSLog(@"重启了 InjectionIII: %@", self);
+    
+    [self viewDidLoad];
+}
 
 //- (instancetype)initWithStyle:(UITableViewStyle)style {
 //    return [super initWithStyle:UITableViewStyleGrouped];
@@ -109,42 +110,42 @@ typedef void (^CollectionBlock)(void);
     
     UIButton *btn = [[UIButton alloc]init];
     [btn setTitle:@"编辑" forState:UIControlStateNormal];
+    [btn setTitle:@"完成" forState:UIControlStateSelected];
     btn.backgroundColor = UIColor.blueColor;
     [btn ax_addTargetBlock:^(UIButton * _Nullable button) {
+        button.selected = !button.selected;
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.tableView setEditing:!strongSelf.tableView.isEditing animated:YES];
     }];
-    UIButton *btn2 = [[UIButton alloc]init];
-    [btn2 setTitle:@"删除" forState:UIControlStateNormal];
-    btn2.backgroundColor = UIColor.blueColor;
-    [btn2 addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
-    [btn2 ax_constraintButtonItemWidth:120 height:30];
-    self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],[UIBarButtonItem ax_itemByButton:btn2]];
+    
+    [RACObserve(btn,selected) subscribeNext:^(id  _Nullable x) {
+        NSLog(@"btn selected = %@",x);
+    }];
+    
+    self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],self.deleteItem];
     
     _00HeaderView *headerView = [_00HeaderView.alloc init];
 //    [self.tableView layoutIfNeeded];
     self.tableView.tableHeaderView =headerView;
 
 }
-
+- (UIBarButtonItem *)deleteItem {
+    if (!_deleteItem) {
+        UIButton *btn = [[UIButton alloc]init];
+        [btn setTitle:@"删除" forState:UIControlStateNormal];
+        [btn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+        [btn setTitleColor:UIColor.lightTextColor forState:UIControlStateDisabled];
+        btn.backgroundColor = UIColor.blueColor;
+        [btn addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
+        [btn ax_constraintButtonItemWidth:120 height:30];
+        _deleteItem =[UIBarButtonItem ax_itemByButton:btn];
+        _deleteItem.enabled = NO;
+    }
+    return _deleteItem;
+}
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    [self _updateHeaerLauout];
-}
-
-//tableview tableheaderview高度自适应
--(void)_updateHeaerLauout {
-    UIView *header = self.tableView.tableHeaderView;
-    if (header) {
-        CGSize size = [header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-        if (header.frame.size.height != size.height) {
-            CGRect frame = header.frame;
-            frame.size.height = size.height;
-            header.frame = frame;
-            //刷新tableHeaderView
-            self.tableView.tableHeaderView = header;
-        }
-    }
+    [self.tableView ax_layoutHeaderHeight];
 }
 
 -(void)_deleteCellArray:(NSArray<NSIndexPath *>*)array{
@@ -163,21 +164,42 @@ typedef void (^CollectionBlock)(void);
 //    }
     
     
-    [self.tableView beginUpdates];
-    NSMutableArray *temp = [NSMutableArray array];
+//    [self.tableView beginUpdates];
+//    NSMutableArray *temp = [NSMutableArray array];
+//
+//    __weak typeof(self) weakSelf = self;
+//    [array enumerateObjectsUsingBlock:^(NSIndexPath *_Nonnull obj, NSUInteger idx,
+//                                        BOOL *_Nonnull stop) {
+//        __strong typeof(weakSelf) strongSelf = weakSelf;
+//        [temp addObject:strongSelf.dataArray[obj.row]];
+//    }];
+//
+//    [self.dataArray removeObjectsInArray:temp];
+//    [self.tableView
+//     deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows
+//     withRowAnimation:UITableViewRowAnimationNone];
+//    [self.tableView endUpdates];
     
     __weak typeof(self) weakSelf = self;
-    [array enumerateObjectsUsingBlock:^(NSIndexPath *_Nonnull obj, NSUInteger idx,
-                                        BOOL *_Nonnull stop) {
+    [self.tableView ax_updates:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [temp addObject:strongSelf.dataArray[obj.row]];
+        
+        NSMutableArray *temp = [NSMutableArray array];
+        [array enumerateObjectsUsingBlock:^(NSIndexPath *_Nonnull obj, NSUInteger idx,
+                                            BOOL *_Nonnull stop) {
+            [temp addObject:strongSelf.dataArray[obj.row]];
+        }];
+        
+        [strongSelf.dataArray removeObjectsInArray:temp];
+        [strongSelf.tableView
+         deleteRowsAtIndexPaths:strongSelf.tableView.indexPathsForSelectedRows
+         withRowAnimation:UITableViewRowAnimationNone];
+        
+    } completion:^(BOOL finished) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.tableView reloadData];
     }];
-    
-    [self.dataArray removeObjectsInArray:temp];
-    [self.tableView
-     deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows
-     withRowAnimation:UITableViewRowAnimationNone];
-    [self.tableView endUpdates];
+        
 }
 
 -(void)deleteAction:(UIButton *)btn{
@@ -221,22 +243,39 @@ typedef void (^CollectionBlock)(void);
     cell.indexLabel.text = [dict[@"index"] stringValue];
     cell.nameLabel.text = dict[@"title"];
     
+    
+//    [[cell rac_signalForSelector:@selector(setSelected:animated:)] subscribeNext:^(id  _Nullable x) {
+//
+//        NSLog(@"cell setSelected= %ld",self.tableView.indexPathsForSelectedRows.count);
+//
+//        if ([x[0] boolValue]) {
+//            self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count;
+//        }else{
+//            self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count-1;
+//        }
+//
+//    }];
+//
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (tableView.isEditing) {
+       self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count;
         return;
     }
     NSDictionary *dict = self.dataArray[indexPath.row];
-    
-    void (^ didSelectRowAtIndexPath)(void) = dict[@"action"];
-    
-    didSelectRowAtIndexPath();
+    void (^action)(void) = dict[@"action"];
+    action();
 }
-
-
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView.isEditing) {
+        self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count;
+        return;
+    }
+}
 
 //- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;

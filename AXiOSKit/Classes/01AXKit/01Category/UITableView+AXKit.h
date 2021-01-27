@@ -94,4 +94,22 @@
  */
 - (void)ax_footerViewZero;
 
+/**
+ tableheaderview高度自适应
+ 示例:
+ header 内用用约束,最新下方控件底部与父视图约束
+ - (void)viewDidLayoutSubviews {
+     [super viewDidLayoutSubviews];
+     [self.tableView ax_layoutHeaderHeight];
+ }
+ */
+-(void)ax_layoutHeaderHeight;
+
+
+/// tableView 操作数据源保护
+/// 内部封装 iOS 11 performBatchUpdates 及以前的 beginUpdates和endUpdates
+/// @param updates 更新
+/// @param completion 完成
+-(void)ax_updates:(void (NS_NOESCAPE ^ _Nullable)(void))updates
+       completion:(void (^ _Nullable)(BOOL finished))completion;
 @end
