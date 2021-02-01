@@ -104,37 +104,37 @@
     [self delete:RMQQueueDeleteNoOptions];
 }
 
-- (NSNumber *)publish:(NSData *)data
-           properties:(NSArray<RMQValue<RMQBasicValue> *> *)properties
-              options:(RMQBasicPublishOptions)options {
-    return [self.channel basicPublish:data
-                           routingKey:self.name
-                             exchange:@""
-                           properties:properties
-                              options:options];
+- (void)publish:(NSData *)data
+     properties:(NSArray<RMQValue<RMQBasicValue> *> *)properties
+        options:(RMQBasicPublishOptions)options {
+    [self.channel basicPublish:data
+                    routingKey:self.name
+                      exchange:@""
+                    properties:properties
+                       options:options];
 }
 
-- (NSNumber *)publish:(NSData *)body
-           persistent:(BOOL)isPersistent
-              options:(RMQBasicPublishOptions)options {
+- (void)publish:(NSData *)body
+     persistent:(BOOL)isPersistent
+        options:(RMQBasicPublishOptions)options {
     NSMutableArray *properties = [NSMutableArray new];
     if (isPersistent) {
         [properties addObject:[[RMQBasicDeliveryMode alloc] init:2]];
     }
-    return [self.channel basicPublish:body
-                           routingKey:self.name
-                             exchange:@""
-                           properties:properties
-                              options:options];
+    [self.channel basicPublish:body
+                    routingKey:self.name
+                      exchange:@""
+                    properties:properties
+                       options:options];
 }
 
-- (NSNumber *)publish:(NSData *)body
-           persistent:(BOOL)isPersistent {
-    return [self publish:body persistent:isPersistent options:RMQBasicPublishNoOptions];
+- (void)publish:(NSData *)body
+     persistent:(BOOL)isPersistent {
+    [self publish:body persistent:isPersistent options:RMQBasicPublishNoOptions];
 }
 
-- (NSNumber *)publish:(NSData *)body {
-    return [self publish:body persistent:NO];
+- (void)publish:(NSData *)body {
+    [self publish:body persistent:NO];
 }
 
 - (void)pop:(RMQConsumerDeliveryHandler)handler {

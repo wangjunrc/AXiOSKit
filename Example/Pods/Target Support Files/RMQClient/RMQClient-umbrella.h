@@ -26,7 +26,7 @@
 #import "RMQConnectionRecover.h"
 #import "RMQConnectionRecovery.h"
 #import "RMQConsumer.h"
-#import "RMQConsumerHandlers.h"
+#import "RMQConsumerDeliveryHandler.h"
 #import "RMQDispatcher.h"
 #import "RMQErrors.h"
 #import "RMQExchange.h"

@@ -1,24 +1,27 @@
 LLDynamicLaunchScreen
 ==============
-[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/internetWei/llDark/blob/master/LICENSE)&nbsp; [![CocoaPods](https://img.shields.io/badge/pod-0.1.0-blue)](http://cocoapods.org/pods/LLDark)&nbsp; [![Platform](https://img.shields.io/badge/platform-ios-lightgrey)](https://www.apple.com/nl/ios)&nbsp; [![Support](https://img.shields.io/badge/support-iOS%209%2B-blue)](https://www.apple.com/nl/ios)
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/internetWei/llDark/blob/master/LICENSE)&nbsp; [![Carthage](https://img.shields.io/badge/Carthage-compatible-blue)](https://github.com/Carthage/Carthage)&nbsp; [![CocoaPods](https://img.shields.io/badge/pod-0.2.0-blue)](http://cocoapods.org/pods/LLDark)&nbsp; [![Platform](https://img.shields.io/badge/platform-ios-lightgrey)](https://www.apple.com/nl/ios)&nbsp; [![Support](https://img.shields.io/badge/support-iOS%209%2B-blue)](https://www.apple.com/nl/ios)
 
-Solve abnormal issues such as blank iOS startup map, and support dynamic replacement of startup map.
-Chinese mainland users can access[This link](https://gitee.com/internetWei/lldynamic-launch-screen)
+Solve the problem of abnormal display of iOS startup map, and support dynamic replacement of startup map.<br>
+Chinese mainland users can access[This link](https://gitee.com/internetWei/lldynamic-launch-screen)<br>
+[中文介绍](https://github.com/internetWei/LLDynamicLaunchScreen/blob/master/README_CN.md)
 
-特性
+Features
 ==============
-- Simple to use, only 1 line of code is needed to modify the startup diagram.
-- Powerful function, supports dynamic modification of any type of startup diagram.
+- It is simple to use, only one line of code can modify any startup diagram.
+- Powerful, supports dynamic modification/repair of any startup diagram.
+- Support to obtain any local startup graph object.
 - Compatible with models below iOS13.
+- Automatically repair the startup map showing black or abnormal problems.
 
 Demo
 ==============
-![demo.gif](https://gitee.com/internetWei/lldynamic-launch-screen/raw/master/Demo/Resources/demo.gif)
+![demo.gif](https://github.com/internetWei/LLDynamicLaunchScreen/blob/master/Demo/Resources/demo.gif)  ![demo1.gif](https://github.com/internetWei/LLDynamicLaunchScreen/blob/master/Demo/Resources/demo1.gif)
 
 Usage
 ==============
 ```objc
-// Fix the abnormal problem of Launch Screen, or restore Launch Screen to its original state.
+// Restore all startup maps to the default startup map, and the modified startup map will be lost, please use it with caution.
 [LLDynamicLaunchScreen restoreAsBefore];
 
 // Modify the light-colored vertical Launch Screen according to the specified compression rate.
@@ -34,15 +37,23 @@ LLDynamicLaunchScreen.hasDarkImageBlock = ^BOOL(UIImage * _Nonnull image) {
     // Implement logic here to determine whether the picture is a dark picture.
     // By default, LLDynamicLaunchScreen will obtain the 1×1 pixel RGB at the upper right corner of the picture to determine whether it is a dark picture.
 };
+
+// Get the local light-colored startup map object in vertical screen.
+[LLDynamicLaunchScreen launchImageFromType:LLLaunchImageTypeVerticalLight];
 ```
 
 Installation
 ==============
 ### CocoaPods
-1. Update cocoapods to the latest version.
-2. Add pod 'LLDynamicLaunchScreen' to your Podfile.
-3. Run pod install or pod update.
-4. Import <LLDynamicLaunchScreen/LLDynamicLaunchScreen.h>.
+1. Add pod 'LLDynamicLaunchScreen' to your Podfile.
+2. Run pod install --repo-update.
+3. Import \<LLDynamicLaunchScreen/LLDynamicLaunchScreen.h\>.
+
+### Carthage
+
+1. Add `github "internetWei/LLDynamicLaunchScreen"` to your Cartfile.
+2. Run `carthage update --platform ios` and add the framework to your project.
+3. Import \<LLDynamicLaunchScreen/LLDynamicLaunchScreen.h\>.
 
 ### Manually
 1. Download all the files in the LLDynamicLaunchScreen subdirectory.
@@ -56,6 +67,7 @@ The project supports iOS 9.0 and Xcode 10.0 at least. If you want to use it on l
 Note
 ==============
 * The replacement image size is recommended to be consistent with the screen size.
+* After updating the APP, the default startup diagram will be displayed when the APP is opened for the first time. This is caused by system limitations and cannot be resolved temporarily.
 
 Contact
 ==============

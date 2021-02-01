@@ -51,40 +51,26 @@
 
 #import "RMQConfirmationTransaction.h"
 
-@interface RMQConfirmationTransaction ()
-@property (nonatomic, readwrite) RMQConfirmationCallback callback;
-@property (nonatomic, readwrite) id<RMQLocalSerialQueue> delayQueue;
-@property (nonatomic, readwrite) BOOL isComplete;
-@end
-
 @implementation RMQConfirmationTransaction
 
-- (instancetype)initWithDelayQueue:(id<RMQLocalSerialQueue>)queue {
+- (instancetype)init
+{
     self = [super init];
     if (self) {
-        self.isComplete = NO;
         self.callback = nil;
-        self.unconfirmed = [NSMutableSet new];
+        [self clearUnconfirmed];
         self.confirmedAcks = [NSMutableSet new];
         self.confirmedNacks = [NSMutableSet new];
-        self.delayQueue = queue;
     }
     return self;
 }
 
-- (void)setCallback:(RMQConfirmationCallback)callback
-            timeout:(NSNumber *)timeoutInSecs {
-    self.callback = callback;
-    [self.delayQueue delayedBy:timeoutInSecs enqueue:^{
-        for (NSNumber *tag in self.unconfirmed) {
-            [self.confirmedNacks addObject:tag];
-        }
-        [self complete];
-    }];
-}
-
 - (void)addUnconfirmed:(NSNumber *)tag {
     [self.unconfirmed addObject:tag];
+}
+
+- (void)clearUnconfirmed {
+    self.unconfirmed = [NSMutableSet new];
 }
 
 - (BOOL)isUnconfirmed:(NSNumber *)tag {
@@ -107,16 +93,8 @@
     if (self.callback &&
         self.unconfirmed.count == 0 &&
         (self.confirmedAcks.count > 0 || self.confirmedNacks.count > 0)) {
-        [self complete];
+        self.callback(self.confirmedAcks, self.confirmedNacks);
     }
-}
-
-# pragma mark - Private
-
-- (void)complete {
-    if (self.isComplete) return;
-    self.callback(self.confirmedAcks, self.confirmedNacks);
-    self.isComplete = YES;
 }
 
 @end

@@ -57,45 +57,29 @@
 @property (nonatomic, readwrite) RMQBasicConsumeOptions options;
 @property (nonatomic, readwrite) NSString *tag;
 @property (nonatomic, readwrite) id<RMQChannel> channel;
-@property (nonatomic, readwrite) RMQConsumerDeliveryHandler deliveryHandler;
-@property (nonatomic, readwrite) RMQConsumerCancellationHandler cancellationHandler;
+@property (nonatomic, readwrite) RMQConsumerDeliveryHandler handler;
 @end
 
 @implementation RMQConsumer
 
-- (instancetype)initWithChannel:(id<RMQChannel>)channel
-                      queueName:(NSString *)queueName
-                        options:(RMQBasicConsumeOptions)options {
+- (instancetype)initWithQueueName:(NSString *)queueName
+                          options:(RMQBasicConsumeOptions)options
+                      consumerTag:(NSString *)tag
+                          handler:(RMQConsumerDeliveryHandler)handler
+                          channel:(id<RMQChannel>)channel {
     self = [super init];
     if (self) {
         self.queueName = queueName;
         self.options = options;
-        self.tag = [channel generateConsumerTag];
+        self.tag = tag;
+        self.handler = handler;
         self.channel = channel;
-        self.cancellationHandler = ^(){};
-        self.deliveryHandler = ^(id _){};
     }
     return self;
 }
 
-- (void)onDelivery:(RMQConsumerDeliveryHandler)handler {
-    self.deliveryHandler = handler;
-}
-
-- (void)onCancellation:(RMQConsumerCancellationHandler)handler {
-    self.cancellationHandler = handler;
-}
-
-- (void)consume:(RMQMessage *)message {
-    self.deliveryHandler(message);
-}
-
 - (void)cancel {
     [self.channel basicCancel:self.tag];
-}
-
-- (void)handleCancellation {
-    self.cancellationHandler();
 }
 
 @end

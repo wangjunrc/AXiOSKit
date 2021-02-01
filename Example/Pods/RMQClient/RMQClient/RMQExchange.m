@@ -106,18 +106,18 @@
     [self delete:RMQExchangeDeleteNoOptions];
 }
 
-- (NSNumber *)publish:(NSData *)body
+- (void)publish:(NSData *)body
      routingKey:(NSString *)routingKey
      properties:(NSArray<RMQValue<RMQBasicValue> *> *)properties
         options:(RMQBasicPublishOptions)options {
-    return [self.channel basicPublish:body
-                           routingKey:routingKey
-                             exchange:self.name
-                           properties:properties
-                              options:options];
+    [self.channel basicPublish:body
+                    routingKey:routingKey
+                      exchange:self.name
+                    properties:properties
+                       options:options];
 }
 
-- (NSNumber *)publish:(NSData *)body
+- (void)publish:(NSData *)body
      routingKey:(NSString *)key
      persistent:(BOOL)isPersistent
         options:(RMQBasicPublishOptions)options {
@@ -125,32 +125,32 @@
     if (isPersistent) {
         [properties addObject:[[RMQBasicDeliveryMode alloc] init:2]];
     }
-    return [self.channel basicPublish:body
-                           routingKey:key
-                             exchange:self.name
-                           properties:properties
-                              options:options];
+    [self.channel basicPublish:body
+                    routingKey:key
+                      exchange:self.name
+                    properties:properties
+                       options:options];
 }
 
-- (NSNumber *)publish:(NSData *)body
+- (void)publish:(NSData *)body
      routingKey:(NSString *)key
      persistent:(BOOL)isPersistent {
-    return [self publish:body
-              routingKey:key
-              persistent:isPersistent
-                 options:RMQBasicPublishNoOptions];
+    [self publish:body
+       routingKey:key
+       persistent:isPersistent
+          options:RMQBasicPublishNoOptions];
 }
 
-- (NSNumber *)publish:(NSData *)body
+- (void)publish:(NSData *)body
      routingKey:(NSString *)key {
-    return [self publish:body
-              routingKey:key
-              persistent:NO];
+    [self publish:body
+       routingKey:key
+       persistent:NO];
 }
 
-- (NSNumber *)publish:(NSData *)body {
-    return [self publish:body
-              routingKey:@""];
+- (void)publish:(NSData *)body {
+    [self publish:body
+       routingKey:@""];
 }
 
 @end

@@ -57,6 +57,10 @@
     NSLog(@"Received connection: %@ failedToConnectWithError: %@", connection, error);
 }
 
+- (void)connection:(RMQConnection *)connection failedToWriteWithError:(NSError *)error {
+    NSLog(@"Received connection: %@ failedToWriteWithError: %@", connection, error);
+}
+
 - (void)connection:(RMQConnection *)connection disconnectedWithError:(NSError *)error {
     NSLog(@"Received connection: %@ disconnectedWithError: %@", connection, error);
 }

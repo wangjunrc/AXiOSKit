@@ -50,7 +50,7 @@
 // ---------------------------------------------------------------------------
 
 #import <Foundation/Foundation.h>
-#import "RMQConsumerHandlers.h"
+#import "RMQConsumerDeliveryHandler.h"
 #import "RMQMethods.h"
 
 @protocol RMQChannel;
@@ -60,14 +60,13 @@
 @property (nonatomic, readonly) NSString *queueName;
 @property (nonatomic, readonly) RMQBasicConsumeOptions options;
 @property (nonatomic, readonly) NSString *tag;
+@property (nonatomic, readonly) RMQConsumerDeliveryHandler handler;
 
-- (instancetype)initWithChannel:(id<RMQChannel>)channel
-                      queueName:(NSString *)queueName
-                        options:(RMQBasicConsumeOptions)options;
-- (void)onDelivery:(RMQConsumerDeliveryHandler)handler;
-- (void)onCancellation:(RMQConsumerCancellationHandler)handler;
-- (void)consume:(RMQMessage *)message;
+- (instancetype)initWithQueueName:(NSString *)queueName
+                          options:(RMQBasicConsumeOptions)options
+                      consumerTag:(NSString *)tag
+                          handler:(RMQConsumerDeliveryHandler)handler
+                          channel:(id<RMQChannel>)channel;
 - (void)cancel;
-- (void)handleCancellation;
 
 @end

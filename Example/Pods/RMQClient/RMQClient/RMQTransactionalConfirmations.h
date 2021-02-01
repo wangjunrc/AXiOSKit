@@ -51,10 +51,6 @@
 
 #import <RMQClient/RMQClient.h>
 #import "RMQConfirmations.h"
-#import "RMQLocalSerialQueue.h"
 
 @interface RMQTransactionalConfirmations : RMQValue <RMQConfirmations>
-
-- (instancetype)initWithDelayQueue:(id<RMQLocalSerialQueue>)queue;
-
 @end

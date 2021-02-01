@@ -57,27 +57,20 @@
 @property (nonatomic, readwrite) NSUInteger nextPublishSequenceNumber;
 @property (nonatomic, readwrite) NSMutableArray *transactions;
 @property (nonatomic, readwrite) NSUInteger transactionIndex;
-@property (nonatomic, readwrite) id<RMQLocalSerialQueue> delayQueue;
 @end
 
 @implementation RMQTransactionalConfirmations
 
-- (instancetype)initWithDelayQueue:(id<RMQLocalSerialQueue>)queue {
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.offset = 0;
         self.nextPublishSequenceNumber = 0;
         self.transactions = [NSMutableArray new];
-        self.delayQueue = queue;
         [self addTransaction];
         self.transactionIndex = 0;
     }
     return self;
-}
-
-- (instancetype)init {
-    [self doesNotRecognizeSelector:_cmd];
-    return nil;
 }
 
 - (void)enable {
@@ -90,21 +83,17 @@
 
 - (void)recover {
     self.offset = self.nextPublishSequenceNumber - 1;
+    [self.currentTransaction clearUnconfirmed];
 }
 
-- (NSNumber *)addPublication {
-    NSNumber *publicationSequenceNumber = @(self.nextPublishSequenceNumber);
+- (void)addPublication {
     if (self.isEnabled) {
-        [self.currentTransaction addUnconfirmed:publicationSequenceNumber];
-        self.nextPublishSequenceNumber++;
+        [self.currentTransaction addUnconfirmed:@(self.nextPublishSequenceNumber++)];
     }
-    return publicationSequenceNumber;
 }
 
-- (void)addCallbackWithTimeout:(NSNumber *)timeoutInSecs
-                      callback:(RMQConfirmationCallback)callback {
-    [self.currentTransaction setCallback:callback
-                                 timeout:timeoutInSecs];
+- (void)addCallback:(RMQConfirmationCallback)callback {
+    self.currentTransaction.callback = callback;
     [self.currentTransaction completeIfReady];
     [self addTransaction];
 }
@@ -136,7 +125,7 @@
 }
 
 - (void)addTransaction {
-    [self.transactions addObject:[[RMQConfirmationTransaction alloc] initWithDelayQueue:self.delayQueue]];
+    [self.transactions addObject:[RMQConfirmationTransaction new]];
     self.transactionIndex++;
 }
 
