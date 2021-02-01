@@ -1250,8 +1250,8 @@
         item.title = @"替换浅色竖屏启动图";
         item.style = UIAlertActionStyleDefault;
         item.handler = ^{
-            
-            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalLight compressionQuality:0.8 customValidation:nil];
+            [LLDynamicLaunchScreen replaceVerticalLaunchImage:selectedImage];
+//            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalLight compressionQuality:0.8 customValidation:nil];
             [self showAlertView:@"浅色竖屏启动图替换成功，APP即将退出"];
             
         };
@@ -1263,7 +1263,9 @@
         item.title = @"替换浅色横屏启动图";
         item.style = UIAlertActionStyleDefault;
         item.handler = ^{
-            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalLight compressionQuality:0.8 customValidation:nil];
+            
+            [LLDynamicLaunchScreen replaceHorizontalLaunchImage:selectedImage];
+//            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalLight compressionQuality:0.8 customValidation:nil];
             [self showAlertView:@"浅色横屏启动图替换成功，APP即将退出"];
             
         };
@@ -1277,7 +1279,8 @@
         item.handler = ^{
             
             if (@available(iOS 13.0, *)) {
-                [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalDark compressionQuality:0.8 customValidation:nil];
+//                [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalDark compressionQuality:0.8 customValidation:nil];
+                [LLDynamicLaunchScreen replaceVerticalLaunchImage:selectedImage];
                 [self showAlertView:@"深色竖屏启动图替换成功，APP即将退出"];
             } else {
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"iOS13以下系统不支持替换深色启动图" message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -1296,7 +1299,8 @@
         item.handler = ^{
             
             if (@available(iOS 13.0, *)) {
-                [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalDark compressionQuality:0.8 customValidation:nil];
+                [LLDynamicLaunchScreen replaceHorizontalLaunchImage:selectedImage];
+//                [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalDark compressionQuality:0.8 customValidation:nil];
                 [self showAlertView:@"深色横屏启动图替换成功，APP即将退出"];
             } else {
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"iOS13以下系统不支持替换深色启动图" message:nil preferredStyle:UIAlertControllerStyleAlert];
