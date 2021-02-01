@@ -78,6 +78,8 @@ def ui_pods
   # 一行代码解决iOS启动图的各种疑难杂症 
   pod 'LLDynamicLaunchScreen','~>0.2.0'
   
+  # 图片剪切
+#  pod 'PEPhotoCropEditor'
 end
 
 def common_pods

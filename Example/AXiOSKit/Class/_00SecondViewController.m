@@ -25,7 +25,7 @@
 #import "_17OtherShareViewController.h"
 #import "_18MGSwipeTableVC.h"
 #import "_19ScrollContentViewController.h"
-#import "_20iOS14ViewController.h"
+#import "_20PhotoViewController.h"
 #import "_21KVOViewController.h"
 #import "_22ReactiveObjCViewController.h"
 #import "_23FullViewController.h"

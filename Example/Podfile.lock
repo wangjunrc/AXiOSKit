@@ -200,7 +200,7 @@ DEPENDENCIES:
   - SocketRocket
   - SSKeychain
   - TZImagePickerController (~> 3.5.8)
-  - WCDB
+  - WCDB (~> 1.0.7.5)
   - WechatOpenSDK (= 1.7.7)
 
 SPEC REPOS:
@@ -276,7 +276,7 @@ SPEC CHECKSUMS:
   JJException: da7c64ccf29d9938a4075378a7e9a29db7383c37
   JKVValue: d7941071b1cf9ba35c194fd40bcf4c4d9b5462e9
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
-  libwebp: d7684f7241543c7a5ff47953cc9b9f184fe16610
+  libwebp: 7ceb019d377da4e03d66506783db9589223dec7e
   LLDebugTool: 6026a1df690f5f94524567fce7f97fa53ce131d8
   LLDynamicLaunchScreen: 107320eea57df5276d7da599a78ddf7139b1f854
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
@@ -305,6 +305,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: 6a0c3d5bf08f7390ff329a73cf63dd626b402b2d
+PODFILE CHECKSUM: c2da76283e140fff1c2aa35b0f273e6e8944e1df
 
 COCOAPODS: 1.10.1

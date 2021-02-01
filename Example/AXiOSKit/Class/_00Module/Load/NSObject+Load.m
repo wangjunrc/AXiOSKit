@@ -23,19 +23,19 @@
     [UIAlertController ax_replaceInstanceMethodWithOriginal:@selector(addAction:) newSelector:@selector(ax_addAction:)];
     
     /// usingBlock: 第一个参数 调用对象,第二个是方法的第一次参数
-    [UIViewController aspect_hookSelector:@selector(presentViewController:animated:completion:) withOptions:AspectPositionInstead usingBlock:^(id<AspectInfo> aspectInfo,UIViewController *presentViewController) {
-        /// aspectInfo.arguments.firstObject 就是 presentViewController
-        if (![presentViewController isKindOfClass:[UIAlertController class]]) {
-            [aspectInfo.originalInvocation invoke];
-        }else{
-            UIAlertController *alertController = (UIAlertController *)presentViewController;
-            /// 这里用 == nil ,不要用length==0,业务需求不一样
-            /// UIAlertControllerStyleAlert 才拦截
-            if (alertController.title != nil || alertController.message != nil || alertController.preferredStyle !=UIAlertControllerStyleAlert) {
-                [aspectInfo.originalInvocation invoke];
-            }
-        }
-    } error:nil];
+//    [UIViewController aspect_hookSelector:@selector(presentViewController:animated:completion:) withOptions:AspectPositionInstead usingBlock:^(id<AspectInfo> aspectInfo,UIViewController *presentViewController) {
+//        /// aspectInfo.arguments.firstObject 就是 presentViewController
+//        if (![presentViewController isKindOfClass:[UIAlertController class]]) {
+//            [aspectInfo.originalInvocation invoke];
+//        }else{
+//            UIAlertController *alertController = (UIAlertController *)presentViewController;
+//            /// 这里用 == nil ,不要用length==0,业务需求不一样
+//            /// UIAlertControllerStyleAlert 才拦截
+//            if (alertController.title != nil || alertController.message != nil || alertController.preferredStyle !=UIAlertControllerStyleAlert) {
+//                [aspectInfo.originalInvocation invoke];
+//            }
+//        }
+//    } error:nil];
     
     
     [NSObject ax_replaceInstanceMethodWithOriginal:@selector(setNilValueForKey:) newSelector:@selector(ax_safe_setNilValueForKey:)];

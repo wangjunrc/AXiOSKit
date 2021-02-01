@@ -28,7 +28,7 @@
 #import "_17OtherShareViewController.h"
 #import "_18MGSwipeTableVC.h"
 #import "_19ScrollContentViewController.h"
-#import "_20iOS14ViewController.h"
+#import "_20PhotoViewController.h"
 #import "_21KVOViewController.h"
 #import "_22ReactiveObjCViewController.h"
 #import "_23FullViewController.h"
@@ -620,9 +620,9 @@ typedef void (^CollectionBlock)(void);
             
             @{
                 @"index": @20,
-                @"title": @"iOS14适配",
+                @"title": @"照片相册选择",
                 @"action": ^{
-                    _20iOS14ViewController *vc = [[_20iOS14ViewController alloc] init];
+                    _20PhotoViewController *vc = [[_20PhotoViewController alloc] init];
                     [self ax_pushVC:vc];
                 },
             },

@@ -15,7 +15,7 @@
 		211226F42573340100B6ECC8 /* _15UIMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB83254003D900C89B72 /* _15UIMenuController.m */; };
 		211226F52573340100B6ECC8 /* _10TextFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB3E254003D900C89B72 /* _10TextFViewController.m */; };
 		211226F62573340100B6ECC8 /* ChatTextMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBAA254003DA00C89B72 /* ChatTextMessageModel.m */; };
-		211226F72573340100B6ECC8 /* _20iOS14ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4C254003D900C89B72 /* _20iOS14ViewController.m */; };
+		211226F72573340100B6ECC8 /* _20PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4C254003D900C89B72 /* _20PhotoViewController.m */; };
 		211226F82573340100B6ECC8 /* _28LocalSocketServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1E8E25441BBD00E43F16 /* _28LocalSocketServiceViewController.m */; };
 		211226F92573340100B6ECC8 /* AppDelegateWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */; };
 		211226FA2573340100B6ECC8 /* AFHTTPSessionManager+PutFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB48254003D900C89B72 /* AFHTTPSessionManager+PutFile.m */; };
@@ -145,7 +145,7 @@
 		213BCBFA254003DB00C89B72 /* _25LayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB49254003D900C89B72 /* _25LayoutViewController.m */; };
 		213BCBFB254003DB00C89B72 /* _24NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4A254003D900C89B72 /* _24NoteViewController.m */; };
 		213BCBFC254003DB00C89B72 /* _06WCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4B254003D900C89B72 /* _06WCDBViewController.m */; };
-		213BCBFD254003DB00C89B72 /* _20iOS14ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4C254003D900C89B72 /* _20iOS14ViewController.m */; };
+		213BCBFD254003DB00C89B72 /* _20PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4C254003D900C89B72 /* _20PhotoViewController.m */; };
 		213BCBFE254003DB00C89B72 /* _14TFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB4E254003D900C89B72 /* _14TFViewController.m */; };
 		213BCBFF254003DB00C89B72 /* _23FullViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB4F254003D900C89B72 /* _23FullViewController.xib */; };
 		213BCC01254003DB00C89B72 /* _00TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB52254003D900C89B72 /* _00TableViewCell.m */; };
@@ -234,6 +234,18 @@
 		219F44532580BDC600E8CB50 /* _00SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219F44512580BDC600E8CB50 /* _00SecondViewController.m */; };
 		21B542A925A5A2C20071D20D /* _25FlowLayoutVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B542A825A5A2C20071D20D /* _25FlowLayoutVC1.m */; };
 		21B542B025A5A31A0071D20D /* _25FlowLayoutBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B542AF25A5A31A0071D20D /* _25FlowLayoutBaseVC.m */; };
+		21B7729D25C7FCA700E7F4BC /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21B7729125C7FCA700E7F4BC /* PEPhotoCropEditor.bundle */; };
+		21B7729E25C7FCA700E7F4BC /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21B7729125C7FCA700E7F4BC /* PEPhotoCropEditor.bundle */; };
+		21B7729F25C7FCA700E7F4BC /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B7729425C7FCA700E7F4BC /* UIImage+PECrop.m */; };
+		21B772A025C7FCA700E7F4BC /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B7729425C7FCA700E7F4BC /* UIImage+PECrop.m */; };
+		21B772A125C7FCA700E7F4BC /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B7729525C7FCA700E7F4BC /* PEResizeControl.m */; };
+		21B772A225C7FCA700E7F4BC /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B7729525C7FCA700E7F4BC /* PEResizeControl.m */; };
+		21B772A325C7FCA700E7F4BC /* PECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B7729625C7FCA700E7F4BC /* PECropViewController.m */; };
+		21B772A425C7FCA700E7F4BC /* PECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B7729625C7FCA700E7F4BC /* PECropViewController.m */; };
+		21B772A525C7FCA700E7F4BC /* PECropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B7729725C7FCA700E7F4BC /* PECropView.m */; };
+		21B772A625C7FCA700E7F4BC /* PECropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B7729725C7FCA700E7F4BC /* PECropView.m */; };
+		21B772A725C7FCA700E7F4BC /* PECropRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B7729825C7FCA700E7F4BC /* PECropRectView.m */; };
+		21B772A825C7FCA700E7F4BC /* PECropRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B7729825C7FCA700E7F4BC /* PECropRectView.m */; };
 		21BA193625AD8F7500222F9A /* AXShareContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2198FBEE258C913500D7BD4F /* AXShareContentViewController.m */; };
 		21BA194325AD904100222F9A /* _25CompLayoutVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F674725A5CC69006A8312 /* _25CompLayoutVC2.m */; };
 		21BA194825AD904B00222F9A /* _25FlowLayoutVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B542A825A5A2C20071D20D /* _25FlowLayoutVC1.m */; };
@@ -389,7 +401,7 @@
 		213BCB49254003D900C89B72 /* _25LayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _25LayoutViewController.m; sourceTree = "<group>"; };
 		213BCB4A254003D900C89B72 /* _24NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _24NoteViewController.m; sourceTree = "<group>"; };
 		213BCB4B254003D900C89B72 /* _06WCDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _06WCDBViewController.m; sourceTree = "<group>"; };
-		213BCB4C254003D900C89B72 /* _20iOS14ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _20iOS14ViewController.m; sourceTree = "<group>"; };
+		213BCB4C254003D900C89B72 /* _20PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _20PhotoViewController.m; sourceTree = "<group>"; };
 		213BCB4D254003D900C89B72 /* _17OtherShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _17OtherShareViewController.h; sourceTree = "<group>"; };
 		213BCB4E254003D900C89B72 /* _14TFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _14TFViewController.m; sourceTree = "<group>"; };
 		213BCB4F254003D900C89B72 /* _23FullViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _23FullViewController.xib; sourceTree = "<group>"; };
@@ -417,7 +429,7 @@
 		213BCB6A254003D900C89B72 /* _00TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _00TableViewCell.xib; sourceTree = "<group>"; };
 		213BCB6B254003D900C89B72 /* _16KeyChainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _16KeyChainViewController.m; sourceTree = "<group>"; };
 		213BCB6C254003D900C89B72 /* _06WCDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _06WCDBViewController.h; sourceTree = "<group>"; };
-		213BCB6D254003D900C89B72 /* _20iOS14ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _20iOS14ViewController.h; sourceTree = "<group>"; };
+		213BCB6D254003D900C89B72 /* _20PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _20PhotoViewController.h; sourceTree = "<group>"; };
 		213BCB6E254003D900C89B72 /* _24NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _24NoteViewController.h; sourceTree = "<group>"; };
 		213BCB6F254003D900C89B72 /* AFHTTPSessionManager+PutFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+PutFile.h"; sourceTree = "<group>"; };
 		213BCB70254003D900C89B72 /* _25LayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _25LayoutViewController.h; sourceTree = "<group>"; };
@@ -552,6 +564,17 @@
 		21B542A825A5A2C20071D20D /* _25FlowLayoutVC1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25FlowLayoutVC1.m; sourceTree = "<group>"; };
 		21B542AE25A5A31A0071D20D /* _25FlowLayoutBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25FlowLayoutBaseVC.h; sourceTree = "<group>"; };
 		21B542AF25A5A31A0071D20D /* _25FlowLayoutBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25FlowLayoutBaseVC.m; sourceTree = "<group>"; };
+		21B7729125C7FCA700E7F4BC /* PEPhotoCropEditor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PEPhotoCropEditor.bundle; sourceTree = "<group>"; };
+		21B7729325C7FCA700E7F4BC /* PECropRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropRectView.h; sourceTree = "<group>"; };
+		21B7729425C7FCA700E7F4BC /* UIImage+PECrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PECrop.m"; sourceTree = "<group>"; };
+		21B7729525C7FCA700E7F4BC /* PEResizeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEResizeControl.m; sourceTree = "<group>"; };
+		21B7729625C7FCA700E7F4BC /* PECropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropViewController.m; sourceTree = "<group>"; };
+		21B7729725C7FCA700E7F4BC /* PECropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropView.m; sourceTree = "<group>"; };
+		21B7729825C7FCA700E7F4BC /* PECropRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropRectView.m; sourceTree = "<group>"; };
+		21B7729925C7FCA700E7F4BC /* UIImage+PECrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PECrop.h"; sourceTree = "<group>"; };
+		21B7729A25C7FCA700E7F4BC /* PEResizeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEResizeControl.h; sourceTree = "<group>"; };
+		21B7729B25C7FCA700E7F4BC /* PECropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropView.h; sourceTree = "<group>"; };
+		21B7729C25C7FCA700E7F4BC /* PECropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropViewController.h; sourceTree = "<group>"; };
 		21BA17F725AD852000222F9A /* ax_release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ax_release.xcconfig; sourceTree = "<group>"; };
 		21BA17F825AD854300222F9A /* ax_common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ax_common.xcconfig; sourceTree = "<group>"; };
 		21BA17F925AD856800222F9A /* ax_debug_α.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ax_debug_α.xcconfig"; sourceTree = "<group>"; };
@@ -746,8 +769,8 @@
 				213BCB5B254003D900C89B72 /* _18MGSwipeTableVC.m */,
 				213BCB64254003D900C89B72 /* _19ScrollContentViewController.h */,
 				213BCB40254003D900C89B72 /* _19ScrollContentViewController.m */,
-				213BCB6D254003D900C89B72 /* _20iOS14ViewController.h */,
-				213BCB4C254003D900C89B72 /* _20iOS14ViewController.m */,
+				213BCB6D254003D900C89B72 /* _20PhotoViewController.h */,
+				213BCB4C254003D900C89B72 /* _20PhotoViewController.m */,
 				213BCB71254003D900C89B72 /* _21KVOViewController.h */,
 				213BCB45254003D900C89B72 /* _21KVOViewController.m */,
 				213BCB3D254003D900C89B72 /* _21KVOViewController.xib */,
@@ -797,6 +820,7 @@
 		213BCB97254003DA00C89B72 /* _00Module */ = {
 			isa = PBXGroup;
 			children = (
+				21B7728F25C7FCA700E7F4BC /* PEPhotoCropEditor */,
 				21799D61255CD31F00754A8B /* RecordAudio */,
 				213BCBAF254003DA00C89B72 /* Load */,
 				213BCB9B254003DA00C89B72 /* Object */,
@@ -1008,6 +1032,40 @@
 				21948D412564B83700207E18 /* testXML.xml */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		21B7728F25C7FCA700E7F4BC /* PEPhotoCropEditor */ = {
+			isa = PBXGroup;
+			children = (
+				21B7729025C7FCA700E7F4BC /* Resources */,
+				21B7729225C7FCA700E7F4BC /* Lib */,
+			);
+			path = PEPhotoCropEditor;
+			sourceTree = "<group>";
+		};
+		21B7729025C7FCA700E7F4BC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				21B7729125C7FCA700E7F4BC /* PEPhotoCropEditor.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		21B7729225C7FCA700E7F4BC /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				21B7729325C7FCA700E7F4BC /* PECropRectView.h */,
+				21B7729425C7FCA700E7F4BC /* UIImage+PECrop.m */,
+				21B7729525C7FCA700E7F4BC /* PEResizeControl.m */,
+				21B7729625C7FCA700E7F4BC /* PECropViewController.m */,
+				21B7729725C7FCA700E7F4BC /* PECropView.m */,
+				21B7729825C7FCA700E7F4BC /* PECropRectView.m */,
+				21B7729925C7FCA700E7F4BC /* UIImage+PECrop.h */,
+				21B7729A25C7FCA700E7F4BC /* PEResizeControl.h */,
+				21B7729B25C7FCA700E7F4BC /* PECropView.h */,
+				21B7729C25C7FCA700E7F4BC /* PECropViewController.h */,
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 		21BB436C254AF2BC001A9805 /* View */ = {
@@ -1442,6 +1500,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 6003F581195388D10070C39A;
 			productRefGroup = 6003F58B195388D20070C39A /* Products */;
@@ -1476,6 +1535,7 @@
 				211227412573340100B6ECC8 /* Assets.xcassets in Resources */,
 				211227422573340100B6ECC8 /* testXML.xml in Resources */,
 				211227862573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */,
+				21B7729E25C7FCA700E7F4BC /* PEPhotoCropEditor.bundle in Resources */,
 				2112281925733DF300B6ECC8 /* Assets_env_1.xcassets in Resources */,
 				211227442573340100B6ECC8 /* _02ChatViewController.xib in Resources */,
 				211227452573340100B6ECC8 /* Alternate_AppIcon_2@2x.png in Resources */,
@@ -1538,6 +1598,7 @@
 				213BCBF8254003DB00C89B72 /* _07VideoViewController.xib in Resources */,
 				213BCC40254003DB00C89B72 /* g3@2x.png in Resources */,
 				213BCBFF254003DB00C89B72 /* _23FullViewController.xib in Resources */,
+				21B7729D25C7FCA700E7F4BC /* PEPhotoCropEditor.bundle in Resources */,
 				213BCC12254003DB00C89B72 /* _06WCDBViewController.xib in Resources */,
 				213BCC07254003DB00C89B72 /* _09AFNViewController.xib in Resources */,
 				218A1E4525440A0A00E43F16 /* App.pdf in Resources */,
@@ -1938,9 +1999,10 @@
 				211226F42573340100B6ECC8 /* _15UIMenuController.m in Sources */,
 				21BA194D25AD904D00222F9A /* _25CompLayoutVC1.m in Sources */,
 				211226F52573340100B6ECC8 /* _10TextFViewController.m in Sources */,
+				21B772A225C7FCA700E7F4BC /* PEResizeControl.m in Sources */,
 				21BA195425AD905700222F9A /* _25CompLayoutVC5.m in Sources */,
 				211226F62573340100B6ECC8 /* ChatTextMessageModel.m in Sources */,
-				211226F72573340100B6ECC8 /* _20iOS14ViewController.m in Sources */,
+				211226F72573340100B6ECC8 /* _20PhotoViewController.m in Sources */,
 				211226F82573340100B6ECC8 /* _28LocalSocketServiceViewController.m in Sources */,
 				211226F92573340100B6ECC8 /* AppDelegateWebImage.m in Sources */,
 				211226FA2573340100B6ECC8 /* AFHTTPSessionManager+PutFile.m in Sources */,
@@ -1959,6 +2021,7 @@
 				211227032573340100B6ECC8 /* CopyActivity.m in Sources */,
 				211227042573340100B6ECC8 /* AXUserInfo.mm in Sources */,
 				211227052573340100B6ECC8 /* NSObject+Load.m in Sources */,
+				21B772A025C7FCA700E7F4BC /* UIImage+PECrop.m in Sources */,
 				211227062573340100B6ECC8 /* AXUserInfoDao.mm in Sources */,
 				211227072573340100B6ECC8 /* AXRecordAudioConfig.m in Sources */,
 				211227082573340100B6ECC8 /* _24NoteViewController.m in Sources */,
@@ -1967,6 +2030,7 @@
 				211227092573340100B6ECC8 /* TestObj.m in Sources */,
 				2112270A2573340100B6ECC8 /* _25CollectionViewCell.m in Sources */,
 				2112270B2573340100B6ECC8 /* _30IGListViewController.m in Sources */,
+				21B772A425C7FCA700E7F4BC /* PECropViewController.m in Sources */,
 				21BA195525AD905900222F9A /* _25FlowLayoutBaseVC.m in Sources */,
 				2112270C2573340100B6ECC8 /* _25LayoutViewController.m in Sources */,
 				2112270D2573340100B6ECC8 /* _21KVOViewController.m in Sources */,
@@ -2008,7 +2072,9 @@
 				2112272A2573340100B6ECC8 /* _17OtherShareViewController.m in Sources */,
 				2112272B2573340100B6ECC8 /* _01ContentViewController.m in Sources */,
 				2112272C2573340100B6ECC8 /* AANavigationController.m in Sources */,
+				21B772A625C7FCA700E7F4BC /* PECropView.m in Sources */,
 				2112272D2573340100B6ECC8 /* AXRecordAudioService.m in Sources */,
+				21B772A825C7FCA700E7F4BC /* PECropRectView.m in Sources */,
 				2112272E2573340100B6ECC8 /* Application.m in Sources */,
 				2112272F2573340100B6ECC8 /* main.m in Sources */,
 				211227302573340100B6ECC8 /* Person.m in Sources */,
@@ -2044,7 +2110,7 @@
 				213BCC1C254003DB00C89B72 /* _15UIMenuController.m in Sources */,
 				213BCBF2254003DB00C89B72 /* _10TextFViewController.m in Sources */,
 				213BCC30254003DB00C89B72 /* ChatTextMessageModel.m in Sources */,
-				213BCBFD254003DB00C89B72 /* _20iOS14ViewController.m in Sources */,
+				213BCBFD254003DB00C89B72 /* _20PhotoViewController.m in Sources */,
 				218A1E9025441BBE00E43F16 /* _28LocalSocketServiceViewController.m in Sources */,
 				21CC7C62255FA40D00E7B506 /* AppDelegateWebImage.m in Sources */,
 				213BCBF9254003DB00C89B72 /* AFHTTPSessionManager+PutFile.m in Sources */,
@@ -2088,6 +2154,7 @@
 				213BCBEA254003DB00C89B72 /* MakeKeyAndVisible.m in Sources */,
 				21CC8169257E00840062ACE5 /* _25Layout.m in Sources */,
 				213BCC29254003DB00C89B72 /* AXWebSocketEngine.m in Sources */,
+				21B772A125C7FCA700E7F4BC /* PEResizeControl.m in Sources */,
 				21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */,
 				21D7675425C00CE700468F8E /* _00HeaderView.m in Sources */,
 				21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */,
@@ -2110,9 +2177,11 @@
 				21B542B025A5A31A0071D20D /* _25FlowLayoutBaseVC.m in Sources */,
 				213BCC1B254003DB00C89B72 /* _17OtherShareViewController.m in Sources */,
 				213BCC11254003DB00C89B72 /* _01ContentViewController.m in Sources */,
+				21B7729F25C7FCA700E7F4BC /* UIImage+PECrop.m in Sources */,
 				213BCC0C254003DB00C89B72 /* AANavigationController.m in Sources */,
 				21799D5D255CD2E300754A8B /* AXRecordAudioService.m in Sources */,
 				21898F322541B11D00876524 /* Application.m in Sources */,
+				21B772A525C7FCA700E7F4BC /* PECropView.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				213BCC0D254003DB00C89B72 /* Person.m in Sources */,
 				213BCC04254003DB00C89B72 /* _00FirstViewController.m in Sources */,
@@ -2120,10 +2189,12 @@
 				21430B02256C9D4300CB8EBC /* _20TimeLineContentCell.m in Sources */,
 				21E5C8A9257F6BF8002A4D59 /* _00BaseViewController.m in Sources */,
 				213BCC14254003DB00C89B72 /* _09AFNViewController.m in Sources */,
+				21B772A325C7FCA700E7F4BC /* PECropViewController.m in Sources */,
 				213BCC2F254003DB00C89B72 /* ChatMessageModel.m in Sources */,
 				21C3778625A829F400D678FD /* _25CompLayoutVC5.m in Sources */,
 				213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */,
 				21430B08256C9DC300CB8EBC /* _30TimeLineNinePhotoView.m in Sources */,
+				21B772A725C7FCA700E7F4BC /* PECropRectView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

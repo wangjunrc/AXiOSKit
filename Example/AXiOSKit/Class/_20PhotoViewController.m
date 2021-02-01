@@ -6,7 +6,7 @@
 //  Copyright © 2020 liuweixing. All rights reserved.
 //
 
-#import "_20iOS14ViewController.h"
+#import "_20PhotoViewController.h"
 #import <PhotosUI/PhotosUI.h>
 #import <Masonry/Masonry.h>
 #import <AXiOSKit/AXiOSKit.h>
@@ -14,8 +14,9 @@
 #import <SDWebImageWebPCoder/UIImage+WebP.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "TZImagePickerController.h"
+#import "PECropViewController.h"
 
-@interface _20iOS14ViewController () <PHPickerViewControllerDelegate>
+@interface _20PhotoViewController () <PHPickerViewControllerDelegate,PECropViewControllerDelegate>
 
 @property(strong, nonatomic) UIImageView *imageView;
 
@@ -25,31 +26,26 @@
 
 @end
 
-@implementation _20iOS14ViewController
+@implementation _20PhotoViewController
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    
-  
-    UIView *topView = nil;
-    UIView *leftView = nil;
+    __weak typeof(self) weakSelf = self;
     
     {
         self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1028x1028"]];
         self.imageView.backgroundColor = UIColor.orangeColor;
         self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [self.view addSubview:self.imageView];
+        [self.containerView addSubview:self.imageView];
         [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.top.mas_offset(50);
-            make.left.mas_offset(50);
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.centerX.mas_equalTo(0);
             make.width.mas_equalTo(100.0);
             make.height.mas_equalTo(100.0);
         }];
-        topView = self.imageView;
-        leftView  =self.imageView;
+        self.bottomAttribute =  self.imageView.mas_bottom;
     }
     
     {
@@ -57,88 +53,53 @@
         self.imageView2 = [[FLAnimatedImageView alloc] initWithImage:[UIImage imageNamed:@"1029x1029"]];
         self.imageView2.backgroundColor = UIColor.redColor;
         self.imageView2.contentMode = UIViewContentModeScaleAspectFit;
-        [self.view addSubview:self.imageView2];
+        [self.containerView addSubview:self.imageView2];
         [self.imageView2 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topView.mas_bottom).mas_offset(20);
-            make.left.equalTo(leftView);
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.centerX.mas_equalTo(0);
+            make.width.mas_equalTo(100.0);
+            make.height.mas_equalTo(100);
+            
+        }];
+        self.bottomAttribute = self.imageView2 .mas_bottom;
+    }
+    
+    
+    if (@available(iOS 9.1, *)) {
+        self.livePhotoView = [[PHLivePhotoView alloc] init];
+        self.livePhotoView.backgroundColor = UIColor.greenColor;
+        self.livePhotoView.contentMode = UIViewContentModeScaleAspectFit;
+        [self.containerView addSubview:self.livePhotoView];
+        [self.livePhotoView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo( self.bottomAttribute).mas_equalTo(20);
+            make.centerX.mas_equalTo(0);
             make.width.mas_equalTo(100.0);
             make.height.mas_equalTo(100);
         }];
-        topView = self.imageView2;
+        self.bottomAttribute = self.livePhotoView .mas_bottom;
     }
     
     
-    {
-        
-        if (@available(iOS 9.1, *)) {
-            self.livePhotoView = [[PHLivePhotoView alloc] init];
-            self.livePhotoView.backgroundColor = UIColor.greenColor;
-            self.livePhotoView.contentMode = UIViewContentModeScaleAspectFit;
-            [self.view addSubview:self.livePhotoView];
-            [self.livePhotoView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(topView.mas_bottom).mas_offset(20);
-                make.left.equalTo(leftView);
-                make.width.mas_equalTo(100.0);
-                make.height.mas_equalTo(100);
-            }];
-            topView = self.livePhotoView;
-        } else {
-            // Fallback on earlier versions
+    
+    [self _p00ButtonTitle:@"iOS14相册" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _iOS14Camera];
+    }];
+    
+    
+    [self _p00ButtonTitle:@"PHPhotoLibrary-授权,不是全选,才会弹出" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (@available(iOS 14, *)) {
+            [[PHPhotoLibrary sharedPhotoLibrary] presentLimitedLibraryPickerFromViewController:strongSelf];
         }
-    }
+    }];
     
     
-    {
-        
-        UIButton *btn = [UIButton.alloc init];
-        [btn setTitle:@"iOS14相册" forState:UIControlStateNormal];
-        btn.backgroundColor = UIColor.grayColor;
-        [self.view addSubview:btn];
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topView.mas_bottom).mas_offset(20);
-            make.left.equalTo(leftView);
-        }];
-        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
-            [self _iOS14Camera];
-        }];
-        topView = btn;
-    }
     
-    {
-        
-        UIButton *btn = [UIButton.alloc init];
-        [btn setTitle:@"PHPhotoLibrary-授权,不是全选,才会弹出" forState:UIControlStateNormal];
-        btn.backgroundColor = UIColor.grayColor;
-        [self.view addSubview:btn];
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topView.mas_bottom).mas_offset(20);
-            make.left.equalTo(leftView);
-        }];
-        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
-            if (@available(iOS 14, *)) {
-                [[PHPhotoLibrary sharedPhotoLibrary] presentLimitedLibraryPickerFromViewController:self];
-            } else {
-                // Fallback on earlier versions
-            }
-        }];
-        topView = btn;
-    }
-    
-    {
-        
-        UIButton *btn = [UIButton.alloc init];
-        [btn setTitle:@"TZImagePickerController" forState:UIControlStateNormal];
-        btn.backgroundColor = UIColor.grayColor;
-        [self.view addSubview:btn];
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(topView.mas_bottom).mas_offset(20);
-            make.left.equalTo(leftView);
-        }];
-        [btn ax_addTargetBlock:^(UIButton *_Nullable button) {
-            [self __TZImagePickerController:10];
-        }];
-        topView = btn;
-    }
+    [self _p00ButtonTitle:@"TZImagePickerController" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf __TZImagePickerController:10];
+    }];
     
     NSLog(@"kUTTypeQuickTimeMovie = %@", (NSString*)kUTTypeQuickTimeMovie);
     NSLog(@"kUTTypeImage = %@", (NSString *)kUTTypeImage);
@@ -146,6 +107,11 @@
     NSLog(@"kUTTypeGIF = %@", (NSString *)kUTTypeGIF);
     NSLog(@"kUTTypePNG = %@", (NSString *)kUTTypePNG);
     
+    
+    [self _p00ButtonTitle:@"裁剪" handler:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _cutPhoto];
+    }];
     
     
     //    if (@available(iOS 9.1, *)) {
@@ -167,7 +133,8 @@
     //    }
     
     
-    
+    /// 底部约束
+    [self _loadBottomAttribute];
 }
 
 - (void)_iOS14Camera{
@@ -176,42 +143,45 @@
     config.editing = NO;
     config.mediaTypes = @[AXMediaType.kUTTypeImage,AXMediaType.kUTTypeMovie];
     
-        [self.AXListener showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
-
-        }];
-//    [self ax_showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
-//
-//    }];
-        return;
+    [self.AXListener showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
+        
+    }];
+    //    [self ax_showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
+    //
+    //    }];
+    return;
     
     // 以下 API 仅为 iOS14 only
-//    if (@available(iOS 14, *)) {
-//        PHPickerConfiguration *configuration = [[PHPickerConfiguration alloc] init];
-//        ///imagesFilter 包含 livePhotosFilter
-//        //        configuration.filter = [PHPickerFilter imagesFilter]; // 可配置查询用户相册中文件的类型，支持三种
-//        //        configuration.filter = [PHPickerFilter livePhotosFilter];
-//
-//
-//        configuration.filter = [PHPickerFilter anyFilterMatchingSubfilters:@[
-//            [PHPickerFilter imagesFilter],
-//            [PHPickerFilter livePhotosFilter],
-//            [PHPickerFilter videosFilter]
-//        ]];
-//
-//
-//        configuration.selectionLimit = 0; // 默认为1，为0时表示可多选。
-//
-//        PHPickerViewController *picker = [[PHPickerViewController alloc] initWithConfiguration:configuration];
-//        picker.delegate = self;
-//        picker.view.backgroundColor = [UIColor whiteColor];//注意需要进行暗黑模式适配
-//        // picker vc，在选完图片后需要在回调中手动 dismiss
-//        [self presentViewController:picker animated:YES completion:^{
-//
-//        }];
-//    } else {
-//        // Fallback on earlier versions
-//    }
+    //    if (@available(iOS 14, *)) {
+    //        PHPickerConfiguration *configuration = [[PHPickerConfiguration alloc] init];
+    //        ///imagesFilter 包含 livePhotosFilter
+    //        //        configuration.filter = [PHPickerFilter imagesFilter]; // 可配置查询用户相册中文件的类型，支持三种
+    //        //        configuration.filter = [PHPickerFilter livePhotosFilter];
+    //
+    //
+    //        configuration.filter = [PHPickerFilter anyFilterMatchingSubfilters:@[
+    //            [PHPickerFilter imagesFilter],
+    //            [PHPickerFilter livePhotosFilter],
+    //            [PHPickerFilter videosFilter]
+    //        ]];
+    //
+    //
+    //        configuration.selectionLimit = 0; // 默认为1，为0时表示可多选。
+    //
+    //        PHPickerViewController *picker = [[PHPickerViewController alloc] initWithConfiguration:configuration];
+    //        picker.delegate = self;
+    //        picker.view.backgroundColor = [UIColor whiteColor];//注意需要进行暗黑模式适配
+    //        // picker vc，在选完图片后需要在回调中手动 dismiss
+    //        [self presentViewController:picker animated:YES completion:^{
+    //
+    //        }];
+    //    } else {
+    //        // Fallback on earlier versions
+    //    }
     
+    
+    
+    //    _cutPhoto
 }
 
 
@@ -227,8 +197,9 @@
     imagePickerVc.allowPickingImage = YES;
     imagePickerVc.showSelectedIndex = YES;
     
-    
+    __weak typeof(self) weakSelf = self;
     [imagePickerVc setDidFinishPickingPhotosWithInfosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto, NSArray<NSDictionary *> *infos) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         NSLog(@"assets %@",assets);
         NSLog(@"infos %@",infos);
         
@@ -238,6 +209,10 @@
         //            //             [self imagesMore:assets];
         //            [self imagesMore:photos];
         //        }
+        if (photos.count>0) {
+            strongSelf.imageView.image =photos.firstObject;
+        }
+      
     }];
     [self presentViewController:imagePickerVc animated:YES completion:nil];
     
@@ -536,6 +511,44 @@
     
 }
 
+
+-(void)_cutPhoto {
+    
+    PECropViewController *controller = [[PECropViewController alloc] init];
+    controller.delegate = self;
+    controller.image = self.imageView.image;
+    
+    UIImage *image = self.imageView.image;
+    CGFloat width = image.size.width;
+    CGFloat height = image.size.height;
+    CGFloat length = MIN(width, height);
+    controller.imageCropRect = CGRectMake((width - length) / 2,
+                                          (height - length) / 2,
+                                          length,
+                                          length);
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+    }
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
+    
+}
+
+
+#pragma mark - PECropViewControllerDelegate methods
+
+
+- (void)cropViewController:(PECropViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage {
+    [controller dismissViewControllerAnimated:YES completion:NULL];
+    self.imageView.image = croppedImage;
+}
+
+- (void)cropViewControllerDidCancel:(PECropViewController *)controller {
+    [controller dismissViewControllerAnimated:YES completion:NULL];
+}
 
 
 
