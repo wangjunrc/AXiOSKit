@@ -27,7 +27,10 @@
 #import <VisionKit/VisionKit.h>
 #import <LLDynamicLaunchScreen/LLDynamicLaunchScreen.h>
 
-#import "AXSwitch.h"
+#import "AXSwitchView.h"
+#import "AXXSwitch.h"
+#import <AVKit/AVKit.h>
+
 @interface _01ContentViewController ()<UITextViewDelegate, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding,VNDocumentCameraViewControllerDelegate>
 
 @property (nonatomic, strong) UILabel *label;
@@ -189,6 +192,14 @@
     //    self.containerView.layer.contents = (id)image.CGImage;
     [self _p20changeLanch];
     [self _p21stackView];
+    
+    [self _p00ButtonTitle:@"语音" handler:^{
+        AVSpeechSynthesizer *synthsizer =   AVSpeechSynthesizer.alloc.init;
+        AVSpeechUtterance *utterance =   [AVSpeechUtterance.alloc initWithString:@"支付宝到账1000元"];
+        //        utterance.voice =  [AVSpeechSynthesisVoice voiceWithLanguage:@"zh-CN"];
+        utterance.rate = 0.52;
+        [synthsizer speakUtterance:utterance];
+    }];
     /// 底部约束
     [self _loadBottomAttribute];
 }
@@ -328,9 +339,9 @@
         inputView.handler = ^{
             
         };
-//        inputView.textInput = keyboarTF;
-//        inputView.inputType = AXNumberKeyboardTypeIDCard;
-//        inputView.inputType = AXNumberKeyboardTypeFloat;
+        //        inputView.textInput = keyboarTF;
+        //        inputView.inputType = AXNumberKeyboardTypeIDCard;
+        //        inputView.inputType = AXNumberKeyboardTypeFloat;
         keyboarTF.inputView = inputView;
         
         
@@ -536,16 +547,19 @@
     self.bottomAttribute = aSwitch.mas_bottom;
     
     
-    AXSwitch *aS = [AXSwitch.alloc init];
-    aS.backgroundColor = UIColor.greenColor;
-//    aS.frame = CGRectMake(0, 400, 30, 30);
+    AXSwitchView *aS = [AXSwitchView.alloc init];
+    //    aS.transform = CGAffineTransformRotate(aS.transform, -M_PI_2);
+    
+    
+    //    aS.backgroundColor = UIColor.greenColor;
+    //    aS.frame = CGRectMake(0, 400, 30, 30);
     [self.containerView addSubview:aS];
     NSLog(@"didMoveToSuperview =containerView %p",self.containerView);
     [aS mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.bottomAttribute).mas_offset(10);
         make.centerX.mas_equalTo(0);
-                make.width.mas_equalTo(30);
-                make.height.mas_equalTo(30);
+        make.width.mas_equalTo(30);
+        make.height.mas_equalTo(30);
     }];
     self.bottomAttribute = aS.mas_bottom;
     
@@ -1251,7 +1265,7 @@
         item.style = UIAlertActionStyleDefault;
         item.handler = ^{
             [LLDynamicLaunchScreen replaceVerticalLaunchImage:selectedImage];
-//            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalLight compressionQuality:0.8 customValidation:nil];
+            //            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalLight compressionQuality:0.8 customValidation:nil];
             [self showAlertView:@"浅色竖屏启动图替换成功，APP即将退出"];
             
         };
@@ -1265,7 +1279,7 @@
         item.handler = ^{
             
             [LLDynamicLaunchScreen replaceHorizontalLaunchImage:selectedImage];
-//            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalLight compressionQuality:0.8 customValidation:nil];
+            //            [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalLight compressionQuality:0.8 customValidation:nil];
             [self showAlertView:@"浅色横屏启动图替换成功，APP即将退出"];
             
         };
@@ -1279,7 +1293,7 @@
         item.handler = ^{
             
             if (@available(iOS 13.0, *)) {
-//                [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalDark compressionQuality:0.8 customValidation:nil];
+                //                [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeVerticalDark compressionQuality:0.8 customValidation:nil];
                 [LLDynamicLaunchScreen replaceVerticalLaunchImage:selectedImage];
                 [self showAlertView:@"深色竖屏启动图替换成功，APP即将退出"];
             } else {
@@ -1300,7 +1314,7 @@
             
             if (@available(iOS 13.0, *)) {
                 [LLDynamicLaunchScreen replaceHorizontalLaunchImage:selectedImage];
-//                [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalDark compressionQuality:0.8 customValidation:nil];
+                //                [LLDynamicLaunchScreen replaceLaunchImage:selectedImage type:LLLaunchImageTypeHorizontalDark compressionQuality:0.8 customValidation:nil];
                 [self showAlertView:@"深色横屏启动图替换成功，APP即将退出"];
             } else {
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"iOS13以下系统不支持替换深色启动图" message:nil preferredStyle:UIAlertControllerStyleAlert];

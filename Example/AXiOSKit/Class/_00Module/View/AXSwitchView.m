@@ -6,9 +6,9 @@
 //  Copyright © 2021 axinger. All rights reserved.
 //
 
-#import "AXSwitch.h"
+#import "AXSwitchView.h"
 
-@implementation AXSwitch
+@implementation AXSwitchView
 
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -63,5 +63,10 @@
 //    frame = CGRectMake(frame.origin.x, frame.origin.y, 100, 30);
     [super setFrame:frame];
 }
+
+- (CGRect)trackRectForBounds:(CGRect)bounds{
+    return CGRectMake(0, (bounds.size.height - 5)/2.0, bounds.size.width, 5);
+}
+
 
 @end
