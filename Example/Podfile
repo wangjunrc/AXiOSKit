@@ -34,9 +34,12 @@ def ui_pods
   pod 'JJException'
   # 微信开源数据库操作层 ORM
   pod 'WCDB','~> 1.0.7.5'
+  #  pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git'
+  pod 'WechatOpenSDK','= 1.7.7'
   
-  #pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git'
-  
+  # 本地编译过的
+  #pod 'WCDB',                   :path => './Frameworks/WCDB'
+  #  pod 'WechatOpenSDK',                   :path => './Frameworks/WechatOpenSDK'
   
   pod 'SSKeychain'
   
@@ -114,8 +117,7 @@ end
 target 'AXiOSKit_Example' do
   
   #  pod 'IQKeyboardManager'
-  pod 'WechatOpenSDK','= 1.7.7'
-  
+  #  pod 'WechatOpenSDK','= 1.7.7'
   common_pods
   ui_pods
   debug_pods
@@ -132,7 +134,7 @@ end
 #=========环境1===========
 target 'AXiOSKit_Example_Env_1' do
   
-  pod 'WechatOpenSDK','= 1.7.7'
+  #  pod 'WechatOpenSDK','= 1.7.7'
   
   common_pods
   ui_pods

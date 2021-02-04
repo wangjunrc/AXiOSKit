@@ -300,6 +300,8 @@
 		21CC7C78255FA71900E7B506 /* _13WeImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C77255FA71900E7B506 /* _13WeImageTableViewController.m */; };
 		21CC815C257E004A0062ACE5 /* _25DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC815B257E004A0062ACE5 /* _25DataModel.m */; };
 		21CC8169257E00840062ACE5 /* _25Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC8168257E00840062ACE5 /* _25Layout.m */; };
+		21D08EBD25CBF1E90006DBCC /* 46472-lurking-cat.json in Resources */ = {isa = PBXBuildFile; fileRef = 21D08EBC25CBF1E90006DBCC /* 46472-lurking-cat.json */; };
+		21D08EBE25CBF1E90006DBCC /* 46472-lurking-cat.json in Resources */ = {isa = PBXBuildFile; fileRef = 21D08EBC25CBF1E90006DBCC /* 46472-lurking-cat.json */; };
 		21D61EEC257F106E0059201A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* Test.swift */; };
 		21D61EED257F106E0059201A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* Test.swift */; };
 		21D7675425C00CE700468F8E /* _00HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D7675325C00CE600468F8E /* _00HeaderView.m */; };
@@ -642,6 +644,7 @@
 		21CC815B257E004A0062ACE5 /* _25DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25DataModel.m; sourceTree = "<group>"; };
 		21CC8167257E00840062ACE5 /* _25Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25Layout.h; sourceTree = "<group>"; };
 		21CC8168257E00840062ACE5 /* _25Layout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25Layout.m; sourceTree = "<group>"; };
+		21D08EBC25CBF1E90006DBCC /* 46472-lurking-cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "46472-lurking-cat.json"; sourceTree = "<group>"; };
 		21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		21D61EEA257F106D0059201A /* AXiOSKit_Example_Env_1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit_Example_Env_1-Bridging-Header.h"; sourceTree = "<group>"; };
 		21D61EEB257F106E0059201A /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
@@ -758,18 +761,19 @@
 		211A99D925CB9F9D009030CB /* Lottie-Files */ = {
 			isa = PBXGroup;
 			children = (
-				211A99DA25CB9F9D009030CB /* Switch.json */,
+				21D08EBC25CBF1E90006DBCC /* 46472-lurking-cat.json */,
+				211A99E125CB9F9D009030CB /* Edit.json */,
+				211A99E325CB9F9D009030CB /* EmptyStatus.json */,
 				211A99DB25CB9F9D009030CB /* HappyBirthday.json */,
-				211A99DC25CB9F9D009030CB /* RefreshFooterAnim.json */,
-				211A99DD25CB9F9D009030CB /* RefreshHeaderAnim.json */,
 				211A99DE25CB9F9D009030CB /* Loading.json */,
 				211A99DF25CB9F9D009030CB /* LottieLogo.json */,
-				211A99E025CB9F9D009030CB /* vcTransition1.json */,
-				211A99E125CB9F9D009030CB /* Edit.json */,
-				211A99E225CB9F9D009030CB /* vcTransition2.json */,
-				211A99E325CB9F9D009030CB /* EmptyStatus.json */,
-				211A99E425CB9F9D009030CB /* RectComp.json */,
 				211A99E525CB9F9D009030CB /* Play-Pause.json */,
+				211A99E425CB9F9D009030CB /* RectComp.json */,
+				211A99DC25CB9F9D009030CB /* RefreshFooterAnim.json */,
+				211A99DD25CB9F9D009030CB /* RefreshHeaderAnim.json */,
+				211A99DA25CB9F9D009030CB /* Switch.json */,
+				211A99E025CB9F9D009030CB /* vcTransition1.json */,
+				211A99E225CB9F9D009030CB /* vcTransition2.json */,
 			);
 			path = "Lottie-Files";
 			sourceTree = "<group>";
@@ -1615,6 +1619,7 @@
 				211227472573340100B6ECC8 /* g3@2x.png in Resources */,
 				211227482573340100B6ECC8 /* _23FullViewController.xib in Resources */,
 				211227492573340100B6ECC8 /* _06WCDBViewController.xib in Resources */,
+				21D08EBE25CBF1E90006DBCC /* 46472-lurking-cat.json in Resources */,
 				211A99FD25CB9F9D009030CB /* Play-Pause.json in Resources */,
 				211A99EB25CB9F9D009030CB /* RefreshFooterAnim.json in Resources */,
 				211A99F325CB9F9D009030CB /* vcTransition1.json in Resources */,
@@ -1709,6 +1714,7 @@
 				21122776257334C600B6ECC8 /* AXiOSKit-Info-debug.plist in Resources */,
 				213BCC08254003DB00C89B72 /* _24NoteViewController.xib in Resources */,
 				21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */,
+				21D08EBD25CBF1E90006DBCC /* 46472-lurking-cat.json in Resources */,
 				213BCC0F254003DB00C89B72 /* _00TableViewCell.xib in Resources */,
 				211A99E625CB9F9D009030CB /* Switch.json in Resources */,
 				21799C7C255BDE8500754A8B /* gift.svg in Resources */,

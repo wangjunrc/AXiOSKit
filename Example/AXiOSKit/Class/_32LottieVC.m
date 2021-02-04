@@ -22,6 +22,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     NSArray<NSString *> *array = @[
+        @"46472-lurking-cat",
         @"Edit",
         @"EmptyStatus",
         @"HappyBirthday",
