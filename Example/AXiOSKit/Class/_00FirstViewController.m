@@ -46,6 +46,7 @@
 #import "_29AudioViewController.h"
 #import "_30IGListViewController.h"
 #import "_31GCDViewController.h"
+#import "_32LottieVC.h"
 #import <AXiOSKit/AXPayVC.h>
 #import <AXiOSKit/AXPresentGesturesBack.h>
 #import <AXiOSKit/AXSystemAuthorizerManager.h>
@@ -842,6 +843,15 @@ typedef void (^CollectionBlock)(void);
                     [self ax_pushVC:vc];
                 },
             },
+            @{
+                @"index": @32,
+                @"title": @"Lottie动画",
+                @"action": ^{
+                    _32LottieVC *vc = [_32LottieVC ax_init];
+                    [self ax_pushVC:vc];
+                },
+            },
+            
             
         ].mutableCopy;
     }

@@ -124,6 +124,32 @@
 		211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211227842573361600B6ECC8 /* AXiOSKit-Info.plist */; };
 		211227862573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211227842573361600B6ECC8 /* AXiOSKit-Info.plist */; };
 		2112281925733DF300B6ECC8 /* Assets_env_1.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */; };
+		211A997725CB96C7009030CB /* _32LottieVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A997625CB96C7009030CB /* _32LottieVC.m */; };
+		211A997825CB96C7009030CB /* _32LottieVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A997625CB96C7009030CB /* _32LottieVC.m */; };
+		211A99E625CB9F9D009030CB /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99DA25CB9F9D009030CB /* Switch.json */; };
+		211A99E725CB9F9D009030CB /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99DA25CB9F9D009030CB /* Switch.json */; };
+		211A99E825CB9F9D009030CB /* HappyBirthday.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99DB25CB9F9D009030CB /* HappyBirthday.json */; };
+		211A99E925CB9F9D009030CB /* HappyBirthday.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99DB25CB9F9D009030CB /* HappyBirthday.json */; };
+		211A99EA25CB9F9D009030CB /* RefreshFooterAnim.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99DC25CB9F9D009030CB /* RefreshFooterAnim.json */; };
+		211A99EB25CB9F9D009030CB /* RefreshFooterAnim.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99DC25CB9F9D009030CB /* RefreshFooterAnim.json */; };
+		211A99EC25CB9F9D009030CB /* RefreshHeaderAnim.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99DD25CB9F9D009030CB /* RefreshHeaderAnim.json */; };
+		211A99ED25CB9F9D009030CB /* RefreshHeaderAnim.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99DD25CB9F9D009030CB /* RefreshHeaderAnim.json */; };
+		211A99EE25CB9F9D009030CB /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99DE25CB9F9D009030CB /* Loading.json */; };
+		211A99EF25CB9F9D009030CB /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99DE25CB9F9D009030CB /* Loading.json */; };
+		211A99F025CB9F9D009030CB /* LottieLogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99DF25CB9F9D009030CB /* LottieLogo.json */; };
+		211A99F125CB9F9D009030CB /* LottieLogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99DF25CB9F9D009030CB /* LottieLogo.json */; };
+		211A99F225CB9F9D009030CB /* vcTransition1.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E025CB9F9D009030CB /* vcTransition1.json */; };
+		211A99F325CB9F9D009030CB /* vcTransition1.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E025CB9F9D009030CB /* vcTransition1.json */; };
+		211A99F425CB9F9D009030CB /* Edit.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E125CB9F9D009030CB /* Edit.json */; };
+		211A99F525CB9F9D009030CB /* Edit.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E125CB9F9D009030CB /* Edit.json */; };
+		211A99F625CB9F9D009030CB /* vcTransition2.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E225CB9F9D009030CB /* vcTransition2.json */; };
+		211A99F725CB9F9D009030CB /* vcTransition2.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E225CB9F9D009030CB /* vcTransition2.json */; };
+		211A99F825CB9F9D009030CB /* EmptyStatus.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E325CB9F9D009030CB /* EmptyStatus.json */; };
+		211A99F925CB9F9D009030CB /* EmptyStatus.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E325CB9F9D009030CB /* EmptyStatus.json */; };
+		211A99FA25CB9F9D009030CB /* RectComp.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E425CB9F9D009030CB /* RectComp.json */; };
+		211A99FB25CB9F9D009030CB /* RectComp.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E425CB9F9D009030CB /* RectComp.json */; };
+		211A99FC25CB9F9D009030CB /* Play-Pause.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E525CB9F9D009030CB /* Play-Pause.json */; };
+		211A99FD25CB9F9D009030CB /* Play-Pause.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E525CB9F9D009030CB /* Play-Pause.json */; };
 		2121FE8025CA945600B3B323 /* AXXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2121FE7F25CA945600B3B323 /* AXXSwitch.m */; };
 		2121FE8125CA945600B3B323 /* AXXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2121FE7F25CA945600B3B323 /* AXXSwitch.m */; };
 		21331CEF2592EB02008E251B /* _31GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21331CEE2592EB02008E251B /* _31GCDViewController.m */; };
@@ -375,6 +401,20 @@
 		21122775257334C600B6ECC8 /* AXiOSKit-Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info-debug.plist"; sourceTree = "<group>"; };
 		211227842573361600B6ECC8 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
 		2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets_env_1.xcassets; sourceTree = "<group>"; };
+		211A997525CB96C7009030CB /* _32LottieVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _32LottieVC.h; sourceTree = "<group>"; };
+		211A997625CB96C7009030CB /* _32LottieVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _32LottieVC.m; sourceTree = "<group>"; };
+		211A99DA25CB9F9D009030CB /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
+		211A99DB25CB9F9D009030CB /* HappyBirthday.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HappyBirthday.json; sourceTree = "<group>"; };
+		211A99DC25CB9F9D009030CB /* RefreshFooterAnim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RefreshFooterAnim.json; sourceTree = "<group>"; };
+		211A99DD25CB9F9D009030CB /* RefreshHeaderAnim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RefreshHeaderAnim.json; sourceTree = "<group>"; };
+		211A99DE25CB9F9D009030CB /* Loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loading.json; sourceTree = "<group>"; };
+		211A99DF25CB9F9D009030CB /* LottieLogo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo.json; sourceTree = "<group>"; };
+		211A99E025CB9F9D009030CB /* vcTransition1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vcTransition1.json; sourceTree = "<group>"; };
+		211A99E125CB9F9D009030CB /* Edit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Edit.json; sourceTree = "<group>"; };
+		211A99E225CB9F9D009030CB /* vcTransition2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vcTransition2.json; sourceTree = "<group>"; };
+		211A99E325CB9F9D009030CB /* EmptyStatus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmptyStatus.json; sourceTree = "<group>"; };
+		211A99E425CB9F9D009030CB /* RectComp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RectComp.json; sourceTree = "<group>"; };
+		211A99E525CB9F9D009030CB /* Play-Pause.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Play-Pause.json"; sourceTree = "<group>"; };
 		2121FE7E25CA945600B3B323 /* AXXSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXXSwitch.h; sourceTree = "<group>"; };
 		2121FE7F25CA945600B3B323 /* AXXSwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXXSwitch.m; sourceTree = "<group>"; };
 		21331CED2592EB02008E251B /* _31GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _31GCDViewController.h; sourceTree = "<group>"; };
@@ -715,6 +755,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		211A99D925CB9F9D009030CB /* Lottie-Files */ = {
+			isa = PBXGroup;
+			children = (
+				211A99DA25CB9F9D009030CB /* Switch.json */,
+				211A99DB25CB9F9D009030CB /* HappyBirthday.json */,
+				211A99DC25CB9F9D009030CB /* RefreshFooterAnim.json */,
+				211A99DD25CB9F9D009030CB /* RefreshHeaderAnim.json */,
+				211A99DE25CB9F9D009030CB /* Loading.json */,
+				211A99DF25CB9F9D009030CB /* LottieLogo.json */,
+				211A99E025CB9F9D009030CB /* vcTransition1.json */,
+				211A99E125CB9F9D009030CB /* Edit.json */,
+				211A99E225CB9F9D009030CB /* vcTransition2.json */,
+				211A99E325CB9F9D009030CB /* EmptyStatus.json */,
+				211A99E425CB9F9D009030CB /* RectComp.json */,
+				211A99E525CB9F9D009030CB /* Play-Pause.json */,
+			);
+			path = "Lottie-Files";
+			sourceTree = "<group>";
+		};
 		213BCB2D254003D900C89B72 /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -805,6 +864,8 @@
 				21430AD6256C97BB00CB8EBC /* _30IGList */,
 				21331CED2592EB02008E251B /* _31GCDViewController.h */,
 				21331CEE2592EB02008E251B /* _31GCDViewController.m */,
+				211A997525CB96C7009030CB /* _32LottieVC.h */,
+				211A997625CB96C7009030CB /* _32LottieVC.m */,
 				213BCB41254003D900C89B72 /* AANavigationController.h */,
 				213BCB63254003D900C89B72 /* AANavigationController.m */,
 				213BCB6F254003D900C89B72 /* AFHTTPSessionManager+PutFile.h */,
@@ -1257,6 +1318,7 @@
 		6003F593195388D20070C39A /* Example for AXiOSKit */ = {
 			isa = PBXGroup;
 			children = (
+				211A99D925CB9F9D009030CB /* Lottie-Files */,
 				6003F594195388D20070C39A /* 00Supporting Files */,
 				213BCB36254003D900C89B72 /* Class */,
 			);
@@ -1538,8 +1600,12 @@
 				2112273D2573340100B6ECC8 /* instruction.jpg in Resources */,
 				2112273E2573340100B6ECC8 /* _21KVOViewController.xib in Resources */,
 				211227402573340100B6ECC8 /* _26RMQClientViewController.xib in Resources */,
+				211A99F925CB9F9D009030CB /* EmptyStatus.json in Resources */,
+				211A99E925CB9F9D009030CB /* HappyBirthday.json in Resources */,
+				211A99F725CB9F9D009030CB /* vcTransition2.json in Resources */,
 				211227412573340100B6ECC8 /* Assets.xcassets in Resources */,
 				211227422573340100B6ECC8 /* testXML.xml in Resources */,
+				211A99FB25CB9F9D009030CB /* RectComp.json in Resources */,
 				211227862573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */,
 				21B7729E25C7FCA700E7F4BC /* PEPhotoCropEditor.bundle in Resources */,
 				2112281925733DF300B6ECC8 /* Assets_env_1.xcassets in Resources */,
@@ -1549,14 +1615,20 @@
 				211227472573340100B6ECC8 /* g3@2x.png in Resources */,
 				211227482573340100B6ECC8 /* _23FullViewController.xib in Resources */,
 				211227492573340100B6ECC8 /* _06WCDBViewController.xib in Resources */,
+				211A99FD25CB9F9D009030CB /* Play-Pause.json in Resources */,
+				211A99EB25CB9F9D009030CB /* RefreshFooterAnim.json in Resources */,
+				211A99F325CB9F9D009030CB /* vcTransition1.json in Resources */,
 				2112274A2573340100B6ECC8 /* _09AFNViewController.xib in Resources */,
 				2112274B2573340100B6ECC8 /* App.pdf in Resources */,
+				211A99EF25CB9F9D009030CB /* Loading.json in Resources */,
+				211A99E725CB9F9D009030CB /* Switch.json in Resources */,
 				2112274C2573340100B6ECC8 /* _29AudioViewController.xib in Resources */,
 				2112274D2573340100B6ECC8 /* _30TimeLineNinePhotoCell.xib in Resources */,
 				2112274E2573340100B6ECC8 /* office.bundle in Resources */,
 				2112274F2573340100B6ECC8 /* PointViewController2.plist in Resources */,
 				211227502573340100B6ECC8 /* webp.bundle in Resources */,
 				211227512573340100B6ECC8 /* 123.jpg in Resources */,
+				211A99F525CB9F9D009030CB /* Edit.json in Resources */,
 				211227522573340100B6ECC8 /* _04RunLoopViewController.xib in Resources */,
 				211227532573340100B6ECC8 /* _28LocalSocketServiceViewController.xib in Resources */,
 				211227542573340100B6ECC8 /* _14TFViewController.xib in Resources */,
@@ -1572,7 +1644,9 @@
 				2112275C2573340100B6ECC8 /* gift.svg in Resources */,
 				2112275D2573340100B6ECC8 /* InfoPlist.strings in Resources */,
 				2112275E2573340100B6ECC8 /* H5.bundle in Resources */,
+				211A99F125CB9F9D009030CB /* LottieLogo.json in Resources */,
 				2112275F2573340100B6ECC8 /* 1234.webp in Resources */,
+				211A99ED25CB9F9D009030CB /* RefreshHeaderAnim.json in Resources */,
 				211227602573340100B6ECC8 /* IMG_3972.GIF in Resources */,
 				211227612573340100B6ECC8 /* Settings.bundle in Resources */,
 				211227622573340100B6ECC8 /* test_webp.webp in Resources */,
@@ -1594,6 +1668,8 @@
 			files = (
 				213BCC24254003DB00C89B72 /* instruction.jpg in Resources */,
 				213BCBF1254003DB00C89B72 /* _21KVOViewController.xib in Resources */,
+				211A99EE25CB9F9D009030CB /* Loading.json in Resources */,
+				211A99FC25CB9F9D009030CB /* Play-Pause.json in Resources */,
 				213BCBEE254003DB00C89B72 /* _26RMQClientViewController.xib in Resources */,
 				213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */,
 				21948D422564B83700207E18 /* testXML.xml in Resources */,
@@ -1603,9 +1679,12 @@
 				21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */,
 				213BCBF8254003DB00C89B72 /* _07VideoViewController.xib in Resources */,
 				213BCC40254003DB00C89B72 /* g3@2x.png in Resources */,
+				211A99F825CB9F9D009030CB /* EmptyStatus.json in Resources */,
 				213BCBFF254003DB00C89B72 /* _23FullViewController.xib in Resources */,
 				21B7729D25C7FCA700E7F4BC /* PEPhotoCropEditor.bundle in Resources */,
 				213BCC12254003DB00C89B72 /* _06WCDBViewController.xib in Resources */,
+				211A99F225CB9F9D009030CB /* vcTransition1.json in Resources */,
+				211A99F025CB9F9D009030CB /* LottieLogo.json in Resources */,
 				213BCC07254003DB00C89B72 /* _09AFNViewController.xib in Resources */,
 				218A1E4525440A0A00E43F16 /* App.pdf in Resources */,
 				21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */,
@@ -1614,17 +1693,24 @@
 				213BCC3E254003DB00C89B72 /* PointViewController2.plist in Resources */,
 				213BCC45254003DB00C89B72 /* webp.bundle in Resources */,
 				213BCC28254003DB00C89B72 /* 123.jpg in Resources */,
+				211A99E825CB9F9D009030CB /* HappyBirthday.json in Resources */,
+				211A99F625CB9F9D009030CB /* vcTransition2.json in Resources */,
 				213BCC13254003DB00C89B72 /* _04RunLoopViewController.xib in Resources */,
 				218A1E9125441BBE00E43F16 /* _28LocalSocketServiceViewController.xib in Resources */,
+				211A99FA25CB9F9D009030CB /* RectComp.json in Resources */,
+				211A99EC25CB9F9D009030CB /* RefreshHeaderAnim.json in Resources */,
+				211A99EA25CB9F9D009030CB /* RefreshFooterAnim.json in Resources */,
 				213BCC05254003DB00C89B72 /* _14TFViewController.xib in Resources */,
 				21430AEC256C999400CB8EBC /* time_line_list.json in Resources */,
 				213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */,
+				211A99F425CB9F9D009030CB /* Edit.json in Resources */,
 				213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */,
 				213BCBF0254003DB00C89B72 /* _10TextFViewController.xib in Resources */,
 				21122776257334C600B6ECC8 /* AXiOSKit-Info-debug.plist in Resources */,
 				213BCC08254003DB00C89B72 /* _24NoteViewController.xib in Resources */,
 				21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */,
 				213BCC0F254003DB00C89B72 /* _00TableViewCell.xib in Resources */,
+				211A99E625CB9F9D009030CB /* Switch.json in Resources */,
 				21799C7C255BDE8500754A8B /* gift.svg in Resources */,
 				213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */,
 				213BCC46254003DB00C89B72 /* H5.bundle in Resources */,
@@ -1800,6 +1886,7 @@
 				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
 				"${BUILT_PRODUCTS_DIR}/fishhook/fishhook.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1849,6 +1936,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/fishhook.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1908,6 +1996,7 @@
 				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
 				"${BUILT_PRODUCTS_DIR}/fishhook/fishhook.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1957,6 +2046,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/fishhook.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2057,6 +2147,7 @@
 				211227192573340100B6ECC8 /* RouterManager.m in Sources */,
 				21BA194325AD904100222F9A /* _25CompLayoutVC2.m in Sources */,
 				2112271A2573340100B6ECC8 /* _28LocalSocketClientViewController.m in Sources */,
+				211A997825CB96C7009030CB /* _32LottieVC.m in Sources */,
 				2112271B2573340100B6ECC8 /* AppDelegateWCDB.mm in Sources */,
 				2112271C2573340100B6ECC8 /* MakeKeyAndVisible.m in Sources */,
 				2112271D2573340100B6ECC8 /* AXWebSocketEngine.m in Sources */,
@@ -2155,6 +2246,7 @@
 				213BCC02254003DB00C89B72 /* MyActivity.m in Sources */,
 				213BCC01254003DB00C89B72 /* _00TableViewCell.m in Sources */,
 				213BCC3D254003DB00C89B72 /* RouterManager.m in Sources */,
+				211A997725CB96C7009030CB /* _32LottieVC.m in Sources */,
 				216891AB25ABDD4B0037CAB5 /* _25CompLayoutCell.m in Sources */,
 				218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */,
 				218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */,

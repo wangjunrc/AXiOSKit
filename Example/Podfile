@@ -34,10 +34,10 @@ def ui_pods
   pod 'JJException'
   # 微信开源数据库操作层 ORM
   pod 'WCDB','~> 1.0.7.5'
-
-#pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git'
-
-
+  
+  #pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git'
+  
+  
   pod 'SSKeychain'
   
   # 代替 NSUserDefaults
@@ -75,11 +75,14 @@ def ui_pods
   #  pod 'YYKit'
   #  pod 'GRDB.swift'
   
-  # 一行代码解决iOS启动图的各种疑难杂症 
+  # 一行代码解决iOS启动图的各种疑难杂症
   pod 'LLDynamicLaunchScreen','~>0.2.0'
-  
+  # 新版本是swift
+  #  pod 'lottie-ios'
+  # 旧版本是oc
+  pod 'lottie-ios', '~>2.1.0'
   # 图片剪切
-#  pod 'PEPhotoCropEditor'
+  #  pod 'PEPhotoCropEditor'
 end
 
 def common_pods
@@ -117,9 +120,9 @@ target 'AXiOSKit_Example' do
   ui_pods
   debug_pods
   
-#  target 'AXiOSKit_Tests' do
-#    inherit! :search_paths
-#  end
+  #  target 'AXiOSKit_Tests' do
+  #    inherit! :search_paths
+  #  end
 end
 
 target 'AXShare' do
