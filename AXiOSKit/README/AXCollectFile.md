@@ -2199,3 +2199,15 @@ self.view.layer.contents = (id)image.CGImage;
     NSLog(@"willMoveToSuperview %p",newSuperview);
 }
 ```
+
+## | & 取值
+```
+//  通过 & 取值
+NSLog(@" = %ld, = %lf",1 << 0,pow(2, 0)); //1
+NSLog(@" = %ld, = %lf",1 << 1,pow(2, 1)); //2
+NSLog(@" = %ld, = %lf",1<<2,pow(2, 2));//4
+NSLog(@" = %ld, = %lf",1<<3,pow(2, 3));// 8
+NSLog(@" = %ld, = %lf",1<<4,pow(2, 4));// 16
+
+NSLog(@" = %ld,",(1<<2 | 1<<3 | 1<<4 ) &  1<<3 );//1<<3
+```
