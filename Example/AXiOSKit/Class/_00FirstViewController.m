@@ -55,7 +55,8 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <mach/mach.h>
 #import "_00HeaderView.h"
-
+#import "AnimRefreshFooter.h"
+#import "AnimRefreshHeader.h"
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -91,6 +92,7 @@ typedef void (^CollectionBlock)(void);
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"主题";
+    __weak typeof(self) weakSelf = self;
     self.tableView.tableFooterView = UIView.alloc.init;
     [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
     self.dataArray = nil;
@@ -106,8 +108,6 @@ typedef void (^CollectionBlock)(void);
 #endif
     
     NSLog(@"启动图缓存路径 %@",NSString.ax_launchImageCacheDirectory);
-    
-    __weak typeof(self) weakSelf = self;
     
     UIButton *btn = [[UIButton alloc]init];
     [btn setTitle:@"编辑" forState:UIControlStateNormal];
@@ -128,7 +128,38 @@ typedef void (^CollectionBlock)(void);
     _00HeaderView *headerView = [_00HeaderView.alloc init];
 //    [self.tableView layoutIfNeeded];
     self.tableView.tableHeaderView =headerView;
-
+   
+//    [self.tableView ax_setRefreshHeader:^{
+//        __strong typeof(weakSelf) strongSelf = weakSelf;
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [strongSelf.tableView ax_setEndRefresh];
+//        });
+//    } foot:^{
+//
+//    }];
+//
+    
+        self.tableView.mj_header = [AnimRefreshHeader headerWithRefreshingBlock:^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf.tableView.mj_header beginRefreshing];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [strongSelf.tableView.mj_header endRefreshing];
+            });
+            
+        }];
+       
+    
+        self.tableView.mj_footer = [AnimRefreshFooter footerWithRefreshingBlock:^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf.tableView.mj_footer beginRefreshing];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [strongSelf.tableView.mj_footer endRefreshing];
+            });
+        }];
+    
+    
+    
 }
 - (UIBarButtonItem *)deleteItem {
     if (!_deleteItem) {

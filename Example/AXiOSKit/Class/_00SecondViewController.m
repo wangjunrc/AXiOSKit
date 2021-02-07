@@ -691,6 +691,11 @@ void mySLog(NSString *format, ...)
                 @"title": @"网页 - AXWKWebVC",
                 @"action": ^{
                     AXWKWebVC *vc = [[AXWKWebVC alloc] init];
+                    
+                   UIImage *img =[UIImage imageNamed:@"ax_icon_weixin"];
+                    NSString *base64=[UIImagePNGRepresentation(img) base64EncodedStringWithOptions:0];
+                    NSLog(@"base64 = %@",base64);
+                    
                     //                vc.URL = [NSURL
                     //                URLWithString:@"https://www.baidu.com/"]; vc.URL =
                     //                [NSURL URLWithString:@"错误地址"];
@@ -704,11 +709,19 @@ void mySLog(NSString *format, ...)
                     //                    URLForResource:@"Frameworks/AXiOSKit.framework/AXHTML.bundle/index.html"
                     //                    withExtension:nil];
                     //                /// AXiOSKit 放置方式不一样
-//                    vc.URL = [NSBundle.ax_HTMLBundle URLForResource:@"index.html" withExtension:nil];
+                    vc.URL = [NSBundle.ax_HTMLBundle URLForResource:@"index.html" withExtension:nil];
                     
-               
+                    [vc addScriptMessageWithName:@"base64Img" handler:^(NSString * _Nonnull name, id  _Nonnull body) {
+                        NSLog(@"body = %@",body);
+                        NSString *content = body;
+                        UIImageView *imgView = [UIImageView.alloc initWithFrame:CGRectMake(100, 100, 50, 50)];
+                        content = [content componentsSeparatedByString:@","].lastObject;
+                        NSData *data = [NSData.alloc initWithBase64EncodedString:content options:0];
+                        imgView.image = [UIImage.alloc initWithData:data];
+                        [vc.view addSubview:imgView];
+                    }];
                     
-                    vc.URL = [NSURL URLWithString:@"https://www.toutiao.com/"];
+//                    vc.URL = [NSURL URLWithString:@"https://www.toutiao.com/"];
                     [self ax_pushVC:vc];
                 },
                 
