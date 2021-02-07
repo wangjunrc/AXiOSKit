@@ -738,6 +738,16 @@ void mySLog(NSString *format, ...)
                 },
             },
             
+            @{
+                @"index": @7,
+                @"title": @"LLDB",
+                @"action": ^{
+                    NSString *name = @"123";
+                    /// 断点 修改 值 expr name = @"jim";
+                    NSLog(@"name = %@",name);
+                    
+                },
+            },
             
             
         ].mutableCopy;
