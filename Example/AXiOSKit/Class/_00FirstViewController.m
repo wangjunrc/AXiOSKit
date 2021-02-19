@@ -99,12 +99,27 @@ typedef void (^CollectionBlock)(void);
     [self.tableView reloadData];
     /// 多选
     self.tableView.allowsMultipleSelectionDuringEditing = YES;
+    
 #if TARGET_IPHONE_SIMULATOR
     // 模拟器
     AXLoger(@"模拟器");
 #elif TARGET_OS_IPHONE
     // 真机
     AXLoger(@"真机");
+#endif
+    
+#ifdef IS_PRODUCATION
+    NSLog(@"IS_PRODUCATION = %d",IS_PRODUCATION);
+#endif
+    
+#ifdef SERVER_HOST
+    NSLog(@"SERVER_HOST = %@", SERVER_HOST);
+#endif
+    
+#ifdef SERVER_PORT
+    NSLog(@"SERVER_PORT = %@",SERVER_PORT);
+#else
+    NSLog(@"没有定义 SERVER_PORT");
 #endif
     
     NSLog(@"启动图缓存路径 %@",NSString.ax_launchImageCacheDirectory);
@@ -126,37 +141,37 @@ typedef void (^CollectionBlock)(void);
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],self.deleteItem];
     
     _00HeaderView *headerView = [_00HeaderView.alloc init];
-//    [self.tableView layoutIfNeeded];
+    //    [self.tableView layoutIfNeeded];
     self.tableView.tableHeaderView =headerView;
-   
-//    [self.tableView ax_setRefreshHeader:^{
-//        __strong typeof(weakSelf) strongSelf = weakSelf;
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            [strongSelf.tableView ax_setEndRefresh];
-//        });
-//    } foot:^{
-//
-//    }];
-//
     
-        self.tableView.mj_header = [AnimRefreshHeader headerWithRefreshingBlock:^{
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            [strongSelf.tableView.mj_header beginRefreshing];
-            
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [strongSelf.tableView.mj_header endRefreshing];
-            });
-            
-        }];
-       
+    //    [self.tableView ax_setRefreshHeader:^{
+    //        __strong typeof(weakSelf) strongSelf = weakSelf;
+    //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //            [strongSelf.tableView ax_setEndRefresh];
+    //        });
+    //    } foot:^{
+    //
+    //    }];
+    //
     
-        self.tableView.mj_footer = [AnimRefreshFooter footerWithRefreshingBlock:^{
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            [strongSelf.tableView.mj_footer beginRefreshing];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [strongSelf.tableView.mj_footer endRefreshing];
-            });
-        }];
+    self.tableView.mj_header = [AnimRefreshHeader headerWithRefreshingBlock:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.tableView.mj_header beginRefreshing];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [strongSelf.tableView.mj_header endRefreshing];
+        });
+        
+    }];
+    
+    
+    self.tableView.mj_footer = [AnimRefreshFooter footerWithRefreshingBlock:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.tableView.mj_footer beginRefreshing];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [strongSelf.tableView.mj_footer endRefreshing];
+        });
+    }];
     
     
     
@@ -183,34 +198,34 @@ typedef void (^CollectionBlock)(void);
 -(void)_deleteCellArray:(NSArray<NSIndexPath *>*)array{
     
     /// 删除数据源
-//    if (@available(iOS 11.0, *)) {
-//        [self.tableView performBatchUpdates:^{
-//
-//        } completion:^(BOOL finished) {
-//            [self.tableView reloadData];
-//        }];
-//    } else {
-//        [self.tableView beginUpdates];
-//        [self.tableView endUpdates];
-//        [self.tableView reloadData];
-//    }
+    //    if (@available(iOS 11.0, *)) {
+    //        [self.tableView performBatchUpdates:^{
+    //
+    //        } completion:^(BOOL finished) {
+    //            [self.tableView reloadData];
+    //        }];
+    //    } else {
+    //        [self.tableView beginUpdates];
+    //        [self.tableView endUpdates];
+    //        [self.tableView reloadData];
+    //    }
     
     
-//    [self.tableView beginUpdates];
-//    NSMutableArray *temp = [NSMutableArray array];
-//
-//    __weak typeof(self) weakSelf = self;
-//    [array enumerateObjectsUsingBlock:^(NSIndexPath *_Nonnull obj, NSUInteger idx,
-//                                        BOOL *_Nonnull stop) {
-//        __strong typeof(weakSelf) strongSelf = weakSelf;
-//        [temp addObject:strongSelf.dataArray[obj.row]];
-//    }];
-//
-//    [self.dataArray removeObjectsInArray:temp];
-//    [self.tableView
-//     deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows
-//     withRowAnimation:UITableViewRowAnimationNone];
-//    [self.tableView endUpdates];
+    //    [self.tableView beginUpdates];
+    //    NSMutableArray *temp = [NSMutableArray array];
+    //
+    //    __weak typeof(self) weakSelf = self;
+    //    [array enumerateObjectsUsingBlock:^(NSIndexPath *_Nonnull obj, NSUInteger idx,
+    //                                        BOOL *_Nonnull stop) {
+    //        __strong typeof(weakSelf) strongSelf = weakSelf;
+    //        [temp addObject:strongSelf.dataArray[obj.row]];
+    //    }];
+    //
+    //    [self.dataArray removeObjectsInArray:temp];
+    //    [self.tableView
+    //     deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows
+    //     withRowAnimation:UITableViewRowAnimationNone];
+    //    [self.tableView endUpdates];
     
     __weak typeof(self) weakSelf = self;
     [self.tableView ax_updates:^{
@@ -231,7 +246,7 @@ typedef void (^CollectionBlock)(void);
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.tableView reloadData];
     }];
-        
+    
 }
 
 -(void)deleteAction:(UIButton *)btn{
@@ -276,18 +291,18 @@ typedef void (^CollectionBlock)(void);
     cell.nameLabel.text = dict[@"title"];
     
     
-//    [[cell rac_signalForSelector:@selector(setSelected:animated:)] subscribeNext:^(id  _Nullable x) {
-//
-//        NSLog(@"cell setSelected= %ld",self.tableView.indexPathsForSelectedRows.count);
-//
-//        if ([x[0] boolValue]) {
-//            self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count;
-//        }else{
-//            self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count-1;
-//        }
-//
-//    }];
-//
+    //    [[cell rac_signalForSelector:@selector(setSelected:animated:)] subscribeNext:^(id  _Nullable x) {
+    //
+    //        NSLog(@"cell setSelected= %ld",self.tableView.indexPathsForSelectedRows.count);
+    //
+    //        if ([x[0] boolValue]) {
+    //            self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count;
+    //        }else{
+    //            self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count-1;
+    //        }
+    //
+    //    }];
+    //
     
     return cell;
 }
@@ -295,7 +310,7 @@ typedef void (^CollectionBlock)(void);
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (tableView.isEditing) {
-       self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count;
+        self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count;
         return;
     }
     NSDictionary *dict = self.dataArray[indexPath.row];
@@ -520,7 +535,7 @@ typedef void (^CollectionBlock)(void);
                     
                     [self ax_pushVC:vc];
                     //                        vc.ax_shouldNavigationBarHidden = YES;
-                 
+                    
                     vc.AXListener.hiddenNavigationBar = YES;
                     NSLog(@"vc.AXListener.shouldNavigationBarHidden %d",vc.AXListener.isHiddenNavigationBar);
                 },

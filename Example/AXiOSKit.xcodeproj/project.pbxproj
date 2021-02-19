@@ -315,6 +315,8 @@
 		21E5C8A9257F6BF8002A4D59 /* _00BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */; };
 		21E5C8AA257F6BF8002A4D59 /* _00BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */; };
 		21E8BD2025B1D08300D9D83C /* AXSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E8BD1F25B1D08300D9D83C /* AXSwitchView.m */; };
+		21EB382B25DF90C6002C1807 /* ax_debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */; };
+		21EB382C25DF90C6002C1807 /* ax_debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */; };
 		21F542AA25A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F542A925A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m */; };
 		21FC4435258DCE7C00AA253F /* Pods_AXShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; };
 		21FC4436258DCE7C00AA253F /* Pods_AXShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -605,7 +607,6 @@
 		218F674E25A5CC74006A8312 /* _25CompLayoutVC3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CompLayoutVC3.m; sourceTree = "<group>"; };
 		218F675425A5CC7D006A8312 /* _25CompLayoutVC4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CompLayoutVC4.h; sourceTree = "<group>"; };
 		218F675525A5CC7D006A8312 /* _25CompLayoutVC4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CompLayoutVC4.m; sourceTree = "<group>"; };
-		2191E59D2583157D00DBE5DB /* EnviConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EnviConfig.xcconfig; sourceTree = "<group>"; };
 		21948C652563F11E00207E18 /* AXUserLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUserLog.h; sourceTree = "<group>"; };
 		21948C662563F11E00207E18 /* AXUserLog.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AXUserLog.mm; sourceTree = "<group>"; };
 		21948CA72563F8D100207E18 /* AXUserLog+DB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXUserLog+DB.h"; sourceTree = "<group>"; };
@@ -666,6 +667,7 @@
 		21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00BaseViewController.m; sourceTree = "<group>"; };
 		21E8BD1E25B1D08300D9D83C /* AXSwitchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXSwitchView.h; sourceTree = "<group>"; };
 		21E8BD1F25B1D08300D9D83C /* AXSwitchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXSwitchView.m; sourceTree = "<group>"; };
+		21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ax_debug.xcconfig; sourceTree = "<group>"; };
 		21F542A825A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXHideNavBackTitle.h"; sourceTree = "<group>"; };
 		21F542A925A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXHideNavBackTitle.m"; sourceTree = "<group>"; };
 		21FC46B22591924A00AA253F /* AXDebugManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugManager.h; sourceTree = "<group>"; };
@@ -1291,6 +1293,18 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		21EB383525DF90E1002C1807 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				21BA17F725AD852000222F9A /* ax_release.xcconfig */,
+				21BA17F825AD854300222F9A /* ax_common.xcconfig */,
+				21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */,
+				21BA17F925AD856800222F9A /* ax_debug_α.xcconfig */,
+				21BA17FA25AD857E00222F9A /* ax_debug_β.xcconfig */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -1334,6 +1348,7 @@
 		6003F593195388D20070C39A /* Example for AXiOSKit */ = {
 			isa = PBXGroup;
 			children = (
+				21EB383525DF90E1002C1807 /* Config */,
 				211A99D925CB9F9D009030CB /* Lottie-Files */,
 				6003F594195388D20070C39A /* 00Supporting Files */,
 				213BCB36254003D900C89B72 /* Class */,
@@ -1371,11 +1386,6 @@
 				6003F599195388D20070C39A /* main.m */,
 				213BCBE0254003DA00C89B72 /* SceneDelegate.h */,
 				213BCB34254003D900C89B72 /* SceneDelegate.m */,
-				2191E59D2583157D00DBE5DB /* EnviConfig.xcconfig */,
-				21BA17F725AD852000222F9A /* ax_release.xcconfig */,
-				21BA17F825AD854300222F9A /* ax_common.xcconfig */,
-				21BA17F925AD856800222F9A /* ax_debug_α.xcconfig */,
-				21BA17FA25AD857E00222F9A /* ax_debug_β.xcconfig */,
 				21D61EEB257F106E0059201A /* Test.swift */,
 				213BCB35254003D900C89B72 /* Settings.bundle */,
 				21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */,
@@ -1628,6 +1638,7 @@
 				211227442573340100B6ECC8 /* _02ChatViewController.xib in Resources */,
 				211227452573340100B6ECC8 /* Alternate_AppIcon_2@2x.png in Resources */,
 				211227462573340100B6ECC8 /* _07VideoViewController.xib in Resources */,
+				21EB382C25DF90C6002C1807 /* ax_debug.xcconfig in Resources */,
 				211227472573340100B6ECC8 /* g3@2x.png in Resources */,
 				211227482573340100B6ECC8 /* _23FullViewController.xib in Resources */,
 				211227492573340100B6ECC8 /* _06WCDBViewController.xib in Resources */,
@@ -1721,6 +1732,7 @@
 				21430AEC256C999400CB8EBC /* time_line_list.json in Resources */,
 				213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */,
 				211A99F425CB9F9D009030CB /* Edit.json in Resources */,
+				21EB382B25DF90C6002C1807 /* ax_debug.xcconfig in Resources */,
 				213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */,
 				213BCBF0254003DB00C89B72 /* _10TextFViewController.xib in Resources */,
 				21122776257334C600B6ECC8 /* AXiOSKit-Info-debug.plist in Resources */,
@@ -2471,7 +2483,7 @@
 		};
 		211227692573340100B6ECC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 743298FD969B566564FC2874 /* Pods-AXiOSKit_Example_Env_1.debug.xcconfig */;
+			baseConfigurationReference = 21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_evn_1;
 				CLANG_ENABLE_MODULES = YES;
@@ -2485,6 +2497,7 @@
 					"$(inherited)",
 					"SD_WEBP=1",
 					"ENV=1",
+					"Dev=2",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info-debug.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2509,6 +2522,13 @@
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"$(inherited)",
+					"SD_WEBP=1",
+					"Dev=0",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info-debug.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0.0;
@@ -3148,7 +3168,7 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21BA17F925AD856800222F9A /* ax_debug_α.xcconfig */;
+			baseConfigurationReference = 21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -3157,6 +3177,13 @@
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"$(inherited)",
+					"SD_WEBP=1",
+					"Dev=1",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0.0;
@@ -3181,6 +3208,7 @@
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "Dev=0";
 				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0.0;

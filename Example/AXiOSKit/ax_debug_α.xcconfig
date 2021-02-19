@@ -12,8 +12,11 @@
 #include "ax_common.xcconfig"
 #include "Pods/Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.debug_α.xcconfig"
 /// 这里会影响 injected
-//IS_PRODUCATION = NO
+IS_PRODUCATION = NO
 //
 ///// 服务器 // 需要转义 /$()/
-//SERVER_HOST = @"https:/$()/www.测试服_α.com/"
+SERVER_HOST = @"https:/$()/www.测试服_α.com/"
 
+// 这个只在α环境定义
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) SERVER_PORT='$(SERVER_PORT)'
+SERVER_PORT = @"8080"

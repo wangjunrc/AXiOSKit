@@ -8,10 +8,11 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
-
-
-////公用编辑器配置，预编译定义
+// 只能只用 // 注释
+// 中第一个键的配置必须有 ：GCC_PREPROCESSOR_DEFINITIONS = $(inherited)，没有Xcode会报错
+// 中第一个key是GCC_PREPROCESSOR_DEFINITIONS = $(inherited) 后面跟自定义的key，注意在第一个key后面跟上自己定义的key的时候一定不要回车换行，敲一个空格，然后在同一行后面追加就行了，换行会编译错误， 不能换行，不能换行，不能换行！
+////公用编辑器配置，预编译定义,不能换行
 ////预处理器定义，格式照着写就行：两个参数，后面是自动取相应配置文件的值，每组以空格间隔开来。
 //参数1：IS_PRODUCATION
 //参数2：SERVER_HOST
-//GCC_PREPROCESSOR_DEFINITIONS = $(inherited) IS_PRODUCATION='$(IS_PRODUCATION)' SERVER_HOST='$(SERVER_HOST)'
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) IS_PRODUCATION='$(IS_PRODUCATION)' SERVER_HOST='$(SERVER_HOST)' 
