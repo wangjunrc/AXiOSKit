@@ -26,7 +26,7 @@
     }];
     
     [HTTPStubs onStubActivation:^(NSURLRequest * _Nonnull request, id<HTTPStubsDescriptor>  _Nonnull stub, HTTPStubsResponse * _Nonnull responseStub) {
-            
+        NSLog(@"onStubActivation \n %@",request.URL);
     }];
     return YES;
 }

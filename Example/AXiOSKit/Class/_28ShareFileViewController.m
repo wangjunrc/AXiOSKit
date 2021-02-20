@@ -29,26 +29,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"分享文件,已经去除了自己APP";
+    // https://pspdfkit.com/blog/2016/hiding-action-share-extensions-in-your-own-apps/
     self.view.backgroundColor = UIColor.whiteColor;
     __weak typeof(self) weakSelf = self;
-    [self _p00ButtonTitle:@"系统分享,自定义按钮,可以分享图片" handler:^{
+    [self _p00ButtonTitle:@"系统分享,自定义按钮,可以分享图片" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _share0];
     }];
-    [self _p00ButtonTitle:@"UIDocumentInteractionController" handler:^{
+    [self _p00ButtonTitle:@"UIDocumentInteractionController" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _share1];
     }];
-    [self _p00ButtonTitle:@"UIDocumentInteractionController-2" handler:^{
+    [self _p00ButtonTitle:@"UIDocumentInteractionController-分享pdf" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+      
+        NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/testPDF.pdf" ofType:nil];
+        strongSelf.documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:url]];
+        [strongSelf.documentController presentOptionsMenuFromRect:self.view.bounds inView:self.view animated:YES];
+        
+        
+    }];
+    [self _p00ButtonTitle:@"UIDocumentInteractionController-2" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf createXLSFile];
     }];
-    [self _p00ButtonTitle:@"QuickLook预览文件" handler:^{
+    [self _p00ButtonTitle:@"QuickLook预览文件" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _look];
     }];
     
-    [self _p00ButtonTitle:@"local socket-服务端" handler:^{
+    [self _p00ButtonTitle:@"local socket-服务端" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _share2];
     }];

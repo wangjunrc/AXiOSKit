@@ -257,6 +257,8 @@
 		218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */; };
 		218A323C25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */; };
 		218A323D25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */; };
+		218A324C25E0DFF0008D95B8 /* AXIBudyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A324B25E0DFF0008D95B8 /* AXIBudyButton.m */; };
+		218A324D25E0DFF0008D95B8 /* AXIBudyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A324B25E0DFF0008D95B8 /* AXIBudyButton.m */; };
 		218F674125A5B61E006A8312 /* _25CompLayoutVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F674025A5B61E006A8312 /* _25CompLayoutVC1.m */; };
 		218F674825A5CC69006A8312 /* _25CompLayoutVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F674725A5CC69006A8312 /* _25CompLayoutVC2.m */; };
 		218F674F25A5CC74006A8312 /* _25CompLayoutVC3.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F674E25A5CC74006A8312 /* _25CompLayoutVC3.m */; };
@@ -603,6 +605,8 @@
 		218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateRegistryCenter.m; sourceTree = "<group>"; };
 		218A323A25E096D0008D95B8 /* AppDelegateURLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateURLProtocol.h; sourceTree = "<group>"; };
 		218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateURLProtocol.m; sourceTree = "<group>"; };
+		218A324A25E0DFF0008D95B8 /* AXIBudyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXIBudyButton.h; sourceTree = "<group>"; };
+		218A324B25E0DFF0008D95B8 /* AXIBudyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXIBudyButton.m; sourceTree = "<group>"; };
 		218F673F25A5B61E006A8312 /* _25CompLayoutVC1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CompLayoutVC1.h; sourceTree = "<group>"; };
 		218F674025A5B61E006A8312 /* _25CompLayoutVC1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CompLayoutVC1.m; sourceTree = "<group>"; };
 		218F674625A5CC69006A8312 /* _25CompLayoutVC2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CompLayoutVC2.h; sourceTree = "<group>"; };
@@ -1172,6 +1176,8 @@
 				213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */,
 				213BCB7C254003D900C89B72 /* MyActivity.h */,
 				213BCB53254003D900C89B72 /* MyActivity.m */,
+				218A324A25E0DFF0008D95B8 /* AXIBudyButton.h */,
+				218A324B25E0DFF0008D95B8 /* AXIBudyButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2131,6 +2137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218A324D25E0DFF0008D95B8 /* AXIBudyButton.m in Sources */,
 				211226F32573340100B6ECC8 /* AXUserLog.mm in Sources */,
 				211226F42573340100B6ECC8 /* _15UIMenuController.m in Sources */,
 				21BA194D25AD904D00222F9A /* _25CompLayoutVC1.m in Sources */,
@@ -2257,6 +2264,7 @@
 				213BCBF9254003DB00C89B72 /* AFHTTPSessionManager+PutFile.m in Sources */,
 				213BCBFE254003DB00C89B72 /* _14TFViewController.m in Sources */,
 				21430AE7256C98EF00CB8EBC /* _30TimeLineModel.m in Sources */,
+				218A324C25E0DFF0008D95B8 /* AXIBudyButton.m in Sources */,
 				213BCC31254003DB00C89B72 /* LVieoView.m in Sources */,
 				213BCC18254003DB00C89B72 /* _26RMQClientViewController.m in Sources */,
 				213BCC15254003DB00C89B72 /* _23FullViewController.m in Sources */,

@@ -151,5 +151,9 @@
 +(UIImage *)imageFromText:(NSArray*)arrContent withFont:(CGFloat)fontSize withTextColor:(UIColor *)textColor withBgImage:(UIImage *)bgImage withBgColor:(UIColor *)bgColor;
 
 +(UIImage *)imageFromText:(NSArray*)arrContent withFont:(CGFloat)fontSize;
+
+/// 获取图片上某个点的颜色值(不包含alpha)。
+- (UIColor *)ax_pixelColorFromPoint:(CGPoint)point scale:(CGFloat)scale;
+
 @end
 

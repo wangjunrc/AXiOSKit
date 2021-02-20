@@ -25,6 +25,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>NSExtensionActivationRule</key>
+            
 			<dict>
 				<key>NSExtensionActivationSupportsImageWithMaxCount</key>
 				<integer>1</integer>

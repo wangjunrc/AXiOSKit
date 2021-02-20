@@ -79,7 +79,7 @@
 }
 
 
--(void )_p00ButtonTitle:(NSString *)title handler:(void(^)(void))handler {
+-(void )_p00ButtonTitle:(NSString *)title handler:(void(^)(UIButton *btn))handler {
     if (title.length==0) {
         title = @"title";
     }
@@ -96,7 +96,30 @@
     /// 按钮事件
     [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
         if (handler) {
-            handler();
+            handler(btn);
+        }
+    }];
+    self.bottomAttribute =  btn.mas_bottom;
+}
+
+-(void )_p01ButtonTitle:(NSString *)title handler:(void(^)(UIButton *btn))handler {
+    if (title.length==0) {
+        title = @"title";
+    }
+    UIButton *btn = [[UIButton alloc] init];
+    [self.containerView addSubview:btn];
+    btn.backgroundColor = UIColor.blueColor;
+    [btn ax_setTitleStateNormal:title];
+    
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+    }];
+    /// 按钮事件
+    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
+        if (handler) {
+            handler(btn);
         }
     }];
     self.bottomAttribute =  btn.mas_bottom;

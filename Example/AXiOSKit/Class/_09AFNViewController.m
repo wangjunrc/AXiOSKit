@@ -20,7 +20,7 @@
     [super viewDidLoad];
     self.title = @"网络请求";
     
-    [self _p00ButtonTitle:@"请求1" handler:^{
+    [self _p00ButtonTitle:@"请求1" handler:^(UIButton * _Nonnull btn) {
         NSDictionary *dict = @{@"name":@"jim",@"age":@1};
         
         AXNetworkManager.manager.post(@"http://localhost:8080/test22").parameters(dict).success(^(id  _Nonnull JSONObject) {
@@ -32,7 +32,7 @@
     }];
     
     
-    [self _p00ButtonTitle:@"请求2" handler:^{
+    [self _p00ButtonTitle:@"请求2" handler:^(UIButton * _Nonnull btn) {
         NSDictionary *dict = @{@"name":@"jim",@"age":@1};
         
         AXNetworkManager.manager.get(@"http://localhost:8080/test21").parameters(dict).success(^(id  _Nonnull JSONObject) {
@@ -43,7 +43,7 @@
         }).start();
     }];
     
-    [self _p00ButtonTitle:@"请求3" handler:^{
+    [self _p00ButtonTitle:@"请求3" handler:^(UIButton * _Nonnull btn) {
         NSDictionary *dict = @{@"name":@"jim",@"age":@1};
         
         AXNetworkManager.manager.post(@"http://localhost:8080/test2").headers(@{@"token":@"token1111111111111",@"id":@"id222222222222222"}).parameters(dict).success(^(id  _Nonnull JSONObject) {
@@ -55,7 +55,7 @@
     }];
     
     
-    [self _p00ButtonTitle:@"请求ax.com" handler:^{
+    [self _p00ButtonTitle:@"请求ax.com" handler:^(UIButton * _Nonnull btn) {
         NSDictionary *dict = @{@"name":@"jim",@"age":@1};
         AXNetworkManager.manager.post(@"http://www.ax.com").headers(@{@"token":@"token1111111111111",@"id":@"id222222222222222"}).parameters(dict).success(^(id  _Nonnull JSONObject) {
             NSLog(@"JSONObject2 = %@",JSONObject);

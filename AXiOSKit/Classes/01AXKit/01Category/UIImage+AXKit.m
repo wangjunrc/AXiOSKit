@@ -671,5 +671,44 @@
      
 
 }
+
+
+
+/// 获取图片上某个点的颜色值(不包含alpha)。
+- (UIColor *)ax_pixelColorFromPoint:(CGPoint)point scale:(CGFloat)scale {
+    // 判断点是否超出图像范围
+    if (!CGRectContainsPoint(CGRectMake(0, 0, self.size.width*scale, self.size.height*scale), point)){
+        NSLog(@"判断点是否超出图像范围");
+        return nil;
+    }
+    // 将像素绘制到一个1×1像素字节数组和位图上下文。
+    NSInteger pointX = trunc(point.x/scale);
+    NSInteger pointY = trunc(point.y/scale);
+    CGImageRef cgImage = self.CGImage;
+    CGFloat width = self.size.width;
+    CGFloat height = self.size.height;
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    int bytesPerPixel = 4;
+    int bytesPerRow = bytesPerPixel * 1;
+    NSUInteger bitsPerComponent = 8;
+    unsigned char pixelData[4] = {0, 0, 0, 0};
+    CGContextRef context = CGBitmapContextCreate(pixelData, 1, 1, bitsPerComponent, bytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+    CGColorSpaceRelease(colorSpace);
+    CGContextSetBlendMode(context, kCGBlendModeCopy);
+    
+    // 将指定像素绘制到上下文中
+    CGContextTranslateCTM(context, -pointX, pointY - height);
+    CGContextDrawImage(context, CGRectMake(0.0f, 0.0f, width, height), cgImage);
+    CGContextRelease(context);
+    
+    CGFloat red = (CGFloat)pixelData[0] / 255.0;
+    CGFloat green = (CGFloat)pixelData[1] / 255.0;
+    CGFloat blue = (CGFloat)pixelData[2] / 255.0;
+    CGFloat al = (CGFloat)pixelData[3];
+    NSLog(@"获取图片上某个点的颜色值 = %.2lf, %.2lf, %.2lf", red, green, blue);
+    UIColor * color = [UIColor colorWithRed:red green:green blue:blue alpha:al];
+    return color;
+}
+
 @end
 

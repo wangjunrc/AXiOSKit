@@ -335,7 +335,7 @@
 -(void)_03timer {
     
     
-    [self _p00ButtonTitle:@"interval 定时器" handler:^{
+    [self _p00ButtonTitle:@"interval 定时器" handler:^(UIButton * _Nonnull btn) {
         __block NSInteger count = 0;
         __block  RACDisposable *signal =   [[RACSignal interval:1.0 onScheduler:[RACScheduler currentScheduler]] subscribeNext:^(id x) {
             NSLog(@"interval = %@", x);
@@ -350,7 +350,7 @@
 
 -(void)_04arrayMap {
     
-     [self _p00ButtonTitle:@"NSArray map" handler:^{
+     [self _p00ButtonTitle:@"NSArray map" handler:^(UIButton * _Nonnull btn) {
         
         NSArray *array = @[@"1", @"2", @"3"];
         
@@ -403,7 +403,7 @@
         NSLog(@"rac_signalForSelector: name %@", name);
     }];
     
-    [self _p00ButtonTitle:@"监听方法被调用" handler:^{
+    [self _p00ButtonTitle:@"监听方法被调用" handler:^(UIButton * _Nonnull btn) {
         [self _05Selector:@"jim"];
     }];
     
@@ -450,7 +450,7 @@
 -(void)_08zipWith {
     
     
-     [self _p00ButtonTitle:@"所有请求完成" handler:^{
+     [self _p00ButtonTitle:@"所有请求完成" handler:^(UIButton * _Nonnull btn) {
         
         // 需求: 一个界面有多个请求, 所有请求完成才更新 UI.
         RACSubject *signalA = [RACSubject subject];
@@ -474,7 +474,7 @@
 
 -(void)_08merge {
     
-    return [self _p00ButtonTitle:@"任意信号发送完成,都会回调" handler:^{
+    return [self _p00ButtonTitle:@"任意信号发送完成,都会回调" handler:^(UIButton * _Nonnull btn) {
         
         // 任意信号发送完成都会调用 nextBlock block.
         RACSubject *signalA = [RACSubject subject];
@@ -497,7 +497,7 @@
 
 -(void)_08then {
     
-    return [self _p00ButtonTitle:@"then: 组合信号, 忽悠掉第一个信号" handler:^{
+    return [self _p00ButtonTitle:@"then: 组合信号, 忽悠掉第一个信号" handler:^(UIButton * _Nonnull btn) {
         
         RACSignal *siganlA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             NSLog(@"发送A请求");
@@ -526,7 +526,7 @@
 }
 -(void)_08concat {
     
-    return [self _p00ButtonTitle:@"concat: 顺序链接组合信号" handler:^{
+    return [self _p00ButtonTitle:@"concat: 顺序链接组合信号" handler:^(UIButton * _Nonnull btn) {
         
         RACSignal *siganlA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             NSLog(@"发送A请求");

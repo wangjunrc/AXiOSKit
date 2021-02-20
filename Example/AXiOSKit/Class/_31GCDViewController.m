@@ -169,7 +169,7 @@
         return _number;
 }
 -(void)_p13NSBlockOperation {
-    return [self _p00ButtonTitle:@"存取钱" handler:^{
+    return [self _p00ButtonTitle:@"存取钱" handler:^(UIButton * _Nonnull btn) {
         
         [self tickets];
     }];
@@ -238,7 +238,7 @@
 }
 
 -(void)_p14NSBlockOperation {
-    return [self _p00ButtonTitle:@"属性加锁" handler:^{
+    return [self _p00ButtonTitle:@"属性加锁" handler:^(UIButton * _Nonnull btn) {
         
         self.concurrentQueue = dispatch_queue_create("com.person.syncQueue", DISPATCH_QUEUE_CONCURRENT);
         
@@ -261,7 +261,7 @@
     
 }
 -(void)_p15NSBlockOperation {
-    return [self _p00ButtonTitle:@"NSBlockOperation" handler:^{
+    return [self _p00ButtonTitle:@"NSBlockOperation" handler:^(UIButton * _Nonnull btn) {
         
         //2.NSBlockOperation(最常使用)
         NSBlockOperation * blockOp = [NSBlockOperation blockOperationWithBlock:^{
@@ -292,7 +292,7 @@
 }
 
 -(void)_p16NSBlockOperation {
-    return [self _p00ButtonTitle:@"NSOperationQueue222" handler:^{
+    return [self _p00ButtonTitle:@"NSOperationQueue222" handler:^(UIButton * _Nonnull btn) {
         // 1.创建队列
         NSOperationQueue *queue = [[NSOperationQueue alloc] init];
         
@@ -320,7 +320,7 @@
 }
 
 -(void)_p17NSBlockOperation {
-    return [self _p00ButtonTitle:@"NSBlockOperation 依赖" handler:^{
+    return [self _p00ButtonTitle:@"NSBlockOperation 依赖" handler:^(UIButton * _Nonnull btn) {
         //创建队列
         NSOperationQueue *queue=[[NSOperationQueue alloc] init];
         //创建操作
