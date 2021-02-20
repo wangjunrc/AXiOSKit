@@ -259,6 +259,8 @@
 		218A323D25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */; };
 		218A324C25E0DFF0008D95B8 /* AXIBudyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A324B25E0DFF0008D95B8 /* AXIBudyButton.m */; };
 		218A324D25E0DFF0008D95B8 /* AXIBudyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A324B25E0DFF0008D95B8 /* AXIBudyButton.m */; };
+		218A32D425E0FAAE008D95B8 /* _33CropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A32D325E0FAAE008D95B8 /* _33CropViewController.m */; };
+		218A32D525E0FAAE008D95B8 /* _33CropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A32D325E0FAAE008D95B8 /* _33CropViewController.m */; };
 		218F674125A5B61E006A8312 /* _25CompLayoutVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F674025A5B61E006A8312 /* _25CompLayoutVC1.m */; };
 		218F674825A5CC69006A8312 /* _25CompLayoutVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F674725A5CC69006A8312 /* _25CompLayoutVC2.m */; };
 		218F674F25A5CC74006A8312 /* _25CompLayoutVC3.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F674E25A5CC74006A8312 /* _25CompLayoutVC3.m */; };
@@ -607,6 +609,8 @@
 		218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateURLProtocol.m; sourceTree = "<group>"; };
 		218A324A25E0DFF0008D95B8 /* AXIBudyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXIBudyButton.h; sourceTree = "<group>"; };
 		218A324B25E0DFF0008D95B8 /* AXIBudyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXIBudyButton.m; sourceTree = "<group>"; };
+		218A32D225E0FAAE008D95B8 /* _33CropViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _33CropViewController.h; sourceTree = "<group>"; };
+		218A32D325E0FAAE008D95B8 /* _33CropViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _33CropViewController.m; sourceTree = "<group>"; };
 		218F673F25A5B61E006A8312 /* _25CompLayoutVC1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CompLayoutVC1.h; sourceTree = "<group>"; };
 		218F674025A5B61E006A8312 /* _25CompLayoutVC1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CompLayoutVC1.m; sourceTree = "<group>"; };
 		218F674625A5CC69006A8312 /* _25CompLayoutVC2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CompLayoutVC2.h; sourceTree = "<group>"; };
@@ -888,6 +892,8 @@
 				21331CEE2592EB02008E251B /* _31GCDViewController.m */,
 				211A997525CB96C7009030CB /* _32LottieVC.h */,
 				211A997625CB96C7009030CB /* _32LottieVC.m */,
+				218A32D225E0FAAE008D95B8 /* _33CropViewController.h */,
+				218A32D325E0FAAE008D95B8 /* _33CropViewController.m */,
 				213BCB41254003D900C89B72 /* AANavigationController.h */,
 				213BCB63254003D900C89B72 /* AANavigationController.m */,
 				213BCB6F254003D900C89B72 /* AFHTTPSessionManager+PutFile.h */,
@@ -1924,6 +1930,7 @@
 				"${BUILT_PRODUCTS_DIR}/SQLiteRepairKit/sqliterk.framework",
 				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
+				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
@@ -1975,6 +1982,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqliterk.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
@@ -2036,6 +2044,7 @@
 				"${BUILT_PRODUCTS_DIR}/SQLiteRepairKit/sqliterk.framework",
 				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
+				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
@@ -2087,6 +2096,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqliterk.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
@@ -2187,6 +2197,7 @@
 				211227122573340100B6ECC8 /* _02ChatViewController.m in Sources */,
 				211227132573340100B6ECC8 /* UIControl+load.m in Sources */,
 				211227142573340100B6ECC8 /* _27MQTTClientViewController.m in Sources */,
+				218A32D525E0FAAE008D95B8 /* _33CropViewController.m in Sources */,
 				211227152573340100B6ECC8 /* AppDelegateWX.m in Sources */,
 				2117A3F725CCE93300980436 /* AnimRefreshHeader.m in Sources */,
 				211227162573340100B6ECC8 /* _19ScrollContentViewController.m in Sources */,
@@ -2264,6 +2275,7 @@
 				213BCBF9254003DB00C89B72 /* AFHTTPSessionManager+PutFile.m in Sources */,
 				213BCBFE254003DB00C89B72 /* _14TFViewController.m in Sources */,
 				21430AE7256C98EF00CB8EBC /* _30TimeLineModel.m in Sources */,
+				218A32D425E0FAAE008D95B8 /* _33CropViewController.m in Sources */,
 				218A324C25E0DFF0008D95B8 /* AXIBudyButton.m in Sources */,
 				213BCC31254003DB00C89B72 /* LVieoView.m in Sources */,
 				213BCC18254003DB00C89B72 /* _26RMQClientViewController.m in Sources */,

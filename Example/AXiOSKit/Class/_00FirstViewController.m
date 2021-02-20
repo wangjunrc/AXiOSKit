@@ -47,6 +47,7 @@
 #import "_30IGListViewController.h"
 #import "_31GCDViewController.h"
 #import "_32LottieVC.h"
+#import "_33CropViewController.h"
 #import <AXiOSKit/AXPayVC.h>
 #import <AXiOSKit/AXPresentGesturesBack.h>
 #import <AXiOSKit/AXSystemAuthorizerManager.h>
@@ -897,6 +898,15 @@ typedef void (^CollectionBlock)(void);
                     [self ax_pushVC:vc];
                 },
             },
+            @{
+                @"index": @33,
+                @"title": @"剪切图片",
+                @"action": ^{
+                    _33CropViewController *vc = [_33CropViewController ax_init];
+                    [self ax_pushVC:vc];
+                },
+            },
+            
             
             
         ].mutableCopy;

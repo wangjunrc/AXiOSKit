@@ -176,6 +176,7 @@ PODS:
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SSKeychain (1.4.1)
+  - TOCropViewController (2.6.0)
   - TZImagePickerController (3.5.8)
   - WCDB (1.0.7.5):
     - SQLiteRepairKit (~> 1.2.0)
@@ -215,6 +216,7 @@ DEPENDENCIES:
   - SDWebImageWebPCoder (~> 0.8.1)
   - SocketRocket
   - SSKeychain
+  - TOCropViewController (~> 2.6.0)
   - TZImagePickerController (~> 3.5.8)
   - WCDB (~> 1.0.7.5)
   - WechatOpenSDK (= 1.7.7)
@@ -265,6 +267,7 @@ SPEC REPOS:
     - SocketRocket
     - SQLiteRepairKit
     - SSKeychain
+    - TOCropViewController
     - TZImagePickerController
     - WCDB
     - WCDBOptimizedSQLCipher
@@ -320,11 +323,12 @@ SPEC CHECKSUMS:
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
+  TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
   TZImagePickerController: 7fd9702897ef8c0b7c951e5463f4bcf398296f9e
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: 0d73781b917ae7ff19c713500727a113cd826d50
+PODFILE CHECKSUM: 6319759b7d34fc06747fb765afe00af9c566415d
 
 COCOAPODS: 1.10.1

@@ -104,7 +104,8 @@ def common_pods
   # 网络请求模拟库OHHTTPStubs
   pod 'OHHTTPStubs', '~> 9.1.0'
 
-  
+  # 图片剪切
+  pod 'TOCropViewController', '~> 2.6.0'
 end
 
 def debug_pods
