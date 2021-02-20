@@ -145,6 +145,19 @@ PODS:
     - MQTTClient/Min
     - SocketRocket
   - NullSafe (2.0)
+  - OHHTTPStubs (9.1.0):
+    - OHHTTPStubs/Default (= 9.1.0)
+  - OHHTTPStubs/Core (9.1.0)
+  - OHHTTPStubs/Default (9.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (9.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (9.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (9.1.0)
   - PromisesObjC (1.2.12)
   - ReactiveObjC (3.1.1)
   - RMQClient (0.9.0):
@@ -193,6 +206,7 @@ DEPENDENCIES:
   - MMKV (~> 1.2.7)
   - MQTTClient
   - MQTTClient/Websocket
+  - OHHTTPStubs (~> 9.1.0)
   - PromisesObjC (~> 1.2.12)
   - ReactiveObjC
   - RMQClient
@@ -241,6 +255,7 @@ SPEC REPOS:
     - MMKVCore
     - MQTTClient
     - NullSafe
+    - OHHTTPStubs
     - PromisesObjC
     - ReactiveObjC
     - RMQClient
@@ -295,6 +310,7 @@ SPEC CHECKSUMS:
   MMKVCore: 607b7b05f2c2140056b5d338e45f2c14bf3f4232
   MQTTClient: 0dfa04e789479c2e461786464969895c1fcb0875
   NullSafe: 948feba938f03abede5ed3758694a9fe5b3a65ce
+  OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RMQClient: 9bbda86703fd475761101ee5fda037eb2a12ec4e
@@ -309,6 +325,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: 6650663af0c77ba59ea26e30bc8d648c25336f32
+PODFILE CHECKSUM: 0d73781b917ae7ff19c713500727a113cd826d50
 
 COCOAPODS: 1.10.1

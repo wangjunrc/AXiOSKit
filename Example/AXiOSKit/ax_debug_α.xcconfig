@@ -19,4 +19,5 @@ SERVER_HOST = @"https:/$()/www.测试服_α.com/"
 
 // 这个只在α环境定义
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) SERVER_PORT='$(SERVER_PORT)'
-SERVER_PORT = @"8080"
+//SERVER_PORT = @"8080"
+SERVER_PORT = [NSString stringWithFormat:@"%@.30",@"123"]

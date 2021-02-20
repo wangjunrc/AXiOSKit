@@ -6,11 +6,11 @@
 //  Copyright © 2020 liuweixing. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "_00BaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _09AFNViewController : UIViewController
+@interface _09AFNViewController : _00BaseViewController
 
 @end
 

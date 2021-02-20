@@ -12,6 +12,9 @@
 #import "AppDelegateAppearance.h"
 #import "AppDelegateWebImage.h"
 #import "AppDelegateDebug.h"
+#ifdef DEBUG
+#import "AppDelegateURLProtocol.h"
+#endif
 @implementation AppDelegateRegistryCenter
 
 #pragma mark - 服务静态注册
@@ -23,6 +26,9 @@
     [self registeService:[AppDelegateAppearance.alloc init]];
     [self registeService:[AppDelegateWebImage.alloc init]];
     [self registeService:[AppDelegateDebug.alloc init]];
+#ifdef DEBUG
+    [self registeService:AppDelegateURLProtocol.alloc.init];
+#endif
 }
 
 #pragma mark - 获取SOAComponent 单实例
@@ -55,9 +61,9 @@
 
 #pragma mark - 服务动态注册
 - (void)registeService:(id)service{
-//    if (![allServices containsObject:service]) {
-        [self.services addObject:service];
-//    }
+    //    if (![allServices containsObject:service]) {
+    [self.services addObject:service];
+    //    }
 }
 
 @end

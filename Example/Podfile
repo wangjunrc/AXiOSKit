@@ -101,6 +101,9 @@ def common_pods
   #  pod 'SDWebImage/GIF'
   #  pod 'libwebp', :git => 'https://github.com/webmproject/libwebp.git'
   pod 'SDWebImage','~> 5.10.3'
+  # 网络请求模拟库OHHTTPStubs
+  pod 'OHHTTPStubs', '~> 9.1.0'
+
   
 end
 

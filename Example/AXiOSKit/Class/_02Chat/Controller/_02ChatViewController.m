@@ -72,8 +72,39 @@
 //
 //        self.fromLabel.text = model.content;
 //    };
+    
+    UIView *aView = [UIView.alloc init];
+    [self.view addSubview:aView];
+    aView.backgroundColor = UIColor.orangeColor;
+    
+    [aView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.leading.equalTo(@0);
+                make.width.mas_equalTo(self.view);
+        make.height.mas_offset(200);
+//                make.top.equalTo(self.yq_safe_top);
+                make.bottom.equalTo(self.yq_safe_bottom);
+            }];
+    
 }
 
+
+- (MASViewAttribute *)yq_safe_top {
+    if (@available(iOS 11.0, *)) {
+        return self.view.mas_safeAreaLayoutGuideTop;
+    } else {
+        // Fallback on earlier versions
+        return self.mas_topLayoutGuideBottom;
+    }
+}
+
+- (MASViewAttribute *)yq_safe_bottom {
+    if (@available(iOS 11.0, *)) {
+        return self.view.mas_safeAreaLayoutGuideBottom;
+    } else {
+        // Fallback on earlier versions
+        return self.mas_bottomLayoutGuideTop;
+    }
+}
 
 
 @end
