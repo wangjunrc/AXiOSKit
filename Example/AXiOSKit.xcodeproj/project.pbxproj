@@ -156,6 +156,8 @@
 		211A99FD25CB9F9D009030CB /* Play-Pause.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E525CB9F9D009030CB /* Play-Pause.json */; };
 		2121FE8025CA945600B3B323 /* AXXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2121FE7F25CA945600B3B323 /* AXXSwitch.m */; };
 		2121FE8125CA945600B3B323 /* AXXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2121FE7F25CA945600B3B323 /* AXXSwitch.m */; };
+		2124D21225E48AF800B1A5A4 /* XWShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2124D21125E48AF800B1A5A4 /* XWShadow.m */; };
+		2124D21325E48AF800B1A5A4 /* XWShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2124D21125E48AF800B1A5A4 /* XWShadow.m */; };
 		21331CEF2592EB02008E251B /* _31GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21331CEE2592EB02008E251B /* _31GCDViewController.m */; };
 		21331CF02592EB02008E251B /* _31GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21331CEE2592EB02008E251B /* _31GCDViewController.m */; };
 		213BCBE8254003DB00C89B72 /* IMG_3972.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB2C254003D900C89B72 /* IMG_3972.GIF */; };
@@ -435,6 +437,8 @@
 		211A99E525CB9F9D009030CB /* Play-Pause.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Play-Pause.json"; sourceTree = "<group>"; };
 		2121FE7E25CA945600B3B323 /* AXXSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXXSwitch.h; sourceTree = "<group>"; };
 		2121FE7F25CA945600B3B323 /* AXXSwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXXSwitch.m; sourceTree = "<group>"; };
+		2124D21025E48AF800B1A5A4 /* XWShadow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWShadow.h; sourceTree = "<group>"; };
+		2124D21125E48AF800B1A5A4 /* XWShadow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWShadow.m; sourceTree = "<group>"; };
 		21331CED2592EB02008E251B /* _31GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _31GCDViewController.h; sourceTree = "<group>"; };
 		21331CEE2592EB02008E251B /* _31GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _31GCDViewController.m; sourceTree = "<group>"; };
 		213BCB2C254003D900C89B72 /* IMG_3972.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMG_3972.GIF; sourceTree = "<group>"; };
@@ -923,6 +927,8 @@
 				213BCBAC254003DA00C89B72 /* TestVideo */,
 				21BB436C254AF2BC001A9805 /* View */,
 				213BCB98254003DA00C89B72 /* WebSocket */,
+				2124D21025E48AF800B1A5A4 /* XWShadow.h */,
+				2124D21125E48AF800B1A5A4 /* XWShadow.m */,
 			);
 			path = _00Module;
 			sourceTree = "<group>";
@@ -2240,6 +2246,7 @@
 				211227312573340100B6ECC8 /* _00FirstViewController.m in Sources */,
 				21BA199125AD906D00222F9A /* _25DataModel.m in Sources */,
 				211227322573340100B6ECC8 /* _20TimeLineContentCell.m in Sources */,
+				2124D21325E48AF800B1A5A4 /* XWShadow.m in Sources */,
 				211227332573340100B6ECC8 /* _09AFNViewController.m in Sources */,
 				211227342573340100B6ECC8 /* ChatMessageModel.m in Sources */,
 				211227352573340100B6ECC8 /* AppDelegate.m in Sources */,
@@ -2341,6 +2348,7 @@
 				213BCBFC254003DB00C89B72 /* _06WCDBViewController.m in Sources */,
 				21B542B025A5A31A0071D20D /* _25FlowLayoutBaseVC.m in Sources */,
 				2121FE8025CA945600B3B323 /* AXXSwitch.m in Sources */,
+				2124D21225E48AF800B1A5A4 /* XWShadow.m in Sources */,
 				213BCC1B254003DB00C89B72 /* _17OtherShareViewController.m in Sources */,
 				213BCC11254003DB00C89B72 /* _01ContentViewController.m in Sources */,
 				21B7729F25C7FCA700E7F4BC /* UIImage+PECrop.m in Sources */,

@@ -26,13 +26,13 @@
 
 #import <VisionKit/VisionKit.h>
 #import <LLDynamicLaunchScreen/LLDynamicLaunchScreen.h>
-
+#import "_09AFNViewController.h"
 #import "AXSwitchView.h"
 #import "AXXSwitch.h"
 #import <AVKit/AVKit.h>
 #import "AXIBudyButton.h"
-
-@interface _01ContentViewController ()<UITextViewDelegate, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding,VNDocumentCameraViewControllerDelegate>
+#import "XWShadow.h"
+@interface _01ContentViewController ()<UITextViewDelegate,UIViewControllerTransitioningDelegate, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding,VNDocumentCameraViewControllerDelegate>
 
 @property (nonatomic, strong) UILabel *label;
 
@@ -111,6 +111,12 @@
         
         [controller dismissViewControllerAnimated:YES completion:nil];
     }];
+    
+    [self _p00ButtonTitle:@"汽包" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _qipao:btn];
+    }];
+    
     
     [self _p00ButtonTitle:@"PresentedViewController" handler:^(UIButton * _Nonnull btn) {
         UIViewController *topRootViewController = ax_keyWindow().rootViewController;// 在这里加一个这个样式的循环
@@ -1606,5 +1612,50 @@ API_AVAILABLE(ios(13.0))
         self.label.text = text;
     }
 }
+
+#pragma mark - 气泡弹窗 -
+-(void)_qipao:(UIButton *)btn {
+    
+    //初始化内容视图控制器
+    _09AFNViewController *  contentVC = [[_09AFNViewController alloc]init];
+    // 设置弹出效果
+    contentVC.modalPresentationStyle = UIModalPresentationPopover;
+    //设置大小
+    contentVC.preferredContentSize = CGSizeMake(110, 160);
+    //初始化一个popover
+    UIPopoverPresentationController *popover = contentVC.popoverPresentationController;
+    popover.delegate = self;
+    //设置弹出视图的颜色
+    popover.backgroundColor = [UIColor greenColor];
+    //设置popover的来源按钮（以button谁为参照）
+    popover.sourceView =btn;
+    //设置弹出视图的位置（以button谁为参照）
+    popover.sourceRect = btn.bounds;
+    //箭头的方向 设置成UIPopoverArrowDirectionAny 会自动转换方向
+    popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    //模态出弹框
+    [self presentViewController:contentVC animated:YES completion:nil];//推出popover
+    
+}
+#pragma mark --  实现代理方法
+//默认返回的是覆盖整个屏幕，需设置成UIModalPresentationNone。
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller{
+    return UIModalPresentationNone;
+}
+
+//点击蒙版是否消失，默认为yes；
+
+-(BOOL)popoverPresentationControllerShouldDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
+    return YES;
+}
+
+//弹框消失时调用的方法
+-(void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
+    
+    NSLog(@"弹框已经消失");
+    
+}
+
+
 
 @end
