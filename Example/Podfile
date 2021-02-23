@@ -106,6 +106,7 @@ def common_pods
 
   # 图片剪切
   pod 'TOCropViewController', '~> 2.6.0'
+  pod "CTMediator"
 end
 
 def debug_pods

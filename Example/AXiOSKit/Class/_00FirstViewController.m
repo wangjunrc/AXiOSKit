@@ -48,6 +48,7 @@
 #import "_31GCDViewController.h"
 #import "_32LottieVC.h"
 #import "_33CropViewController.h"
+#import "_34ViewController.h"
 #import <AXiOSKit/AXPayVC.h>
 #import <AXiOSKit/AXPresentGesturesBack.h>
 #import <AXiOSKit/AXSystemAuthorizerManager.h>
@@ -906,7 +907,15 @@ typedef void (^CollectionBlock)(void);
                     [self ax_pushVC:vc];
                 },
             },
-            
+            @{
+                @"index": @34,
+                @"title": @"CTMediator路由",
+                @"action": ^{
+                    _34ViewController *vc = [_34ViewController ax_init];
+                    [self ax_pushVC:vc];
+                },
+            },
+
             
             
         ].mutableCopy;

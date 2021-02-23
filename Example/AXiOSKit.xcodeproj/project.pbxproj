@@ -325,6 +325,11 @@
 		21E8BD2025B1D08300D9D83C /* AXSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E8BD1F25B1D08300D9D83C /* AXSwitchView.m */; };
 		21EB382B25DF90C6002C1807 /* ax_debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */; };
 		21EB382C25DF90C6002C1807 /* ax_debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */; };
+		21F43CF125E4F174002AF1AD /* Target_News.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F43CF025E4F174002AF1AD /* Target_News.m */; };
+		21F43D0625E4F310002AF1AD /* CTMediator+NewsActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F43D0525E4F310002AF1AD /* CTMediator+NewsActions.m */; };
+		21F43D0725E4F310002AF1AD /* CTMediator+NewsActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F43D0525E4F310002AF1AD /* CTMediator+NewsActions.m */; };
+		21F43D0E25E4F45B002AF1AD /* _34ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F43D0D25E4F45B002AF1AD /* _34ViewController.m */; };
+		21F43D0F25E4F45B002AF1AD /* _34ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F43D0D25E4F45B002AF1AD /* _34ViewController.m */; };
 		21F542AA25A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F542A925A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m */; };
 		21FC4435258DCE7C00AA253F /* Pods_AXShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; };
 		21FC4436258DCE7C00AA253F /* Pods_AXShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -684,6 +689,12 @@
 		21E8BD1E25B1D08300D9D83C /* AXSwitchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXSwitchView.h; sourceTree = "<group>"; };
 		21E8BD1F25B1D08300D9D83C /* AXSwitchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXSwitchView.m; sourceTree = "<group>"; };
 		21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ax_debug.xcconfig; sourceTree = "<group>"; };
+		21F43CEF25E4F174002AF1AD /* Target_News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_News.h; sourceTree = "<group>"; };
+		21F43CF025E4F174002AF1AD /* Target_News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_News.m; sourceTree = "<group>"; };
+		21F43D0425E4F310002AF1AD /* CTMediator+NewsActions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+NewsActions.h"; sourceTree = "<group>"; };
+		21F43D0525E4F310002AF1AD /* CTMediator+NewsActions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+NewsActions.m"; sourceTree = "<group>"; };
+		21F43D0C25E4F45B002AF1AD /* _34ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _34ViewController.h; sourceTree = "<group>"; };
+		21F43D0D25E4F45B002AF1AD /* _34ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _34ViewController.m; sourceTree = "<group>"; };
 		21F542A825A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXHideNavBackTitle.h"; sourceTree = "<group>"; };
 		21F542A925A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXHideNavBackTitle.m"; sourceTree = "<group>"; };
 		21FC46B22591924A00AA253F /* AXDebugManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugManager.h; sourceTree = "<group>"; };
@@ -898,6 +909,7 @@
 				211A997625CB96C7009030CB /* _32LottieVC.m */,
 				218A32D225E0FAAE008D95B8 /* _33CropViewController.h */,
 				218A32D325E0FAAE008D95B8 /* _33CropViewController.m */,
+				21F43CED25E4F14E002AF1AD /* _34 */,
 				213BCB41254003D900C89B72 /* AANavigationController.h */,
 				213BCB63254003D900C89B72 /* AANavigationController.m */,
 				213BCB6F254003D900C89B72 /* AFHTTPSessionManager+PutFile.h */,
@@ -1327,6 +1339,35 @@
 				21BA17FA25AD857E00222F9A /* ax_debug_β.xcconfig */,
 			);
 			name = Config;
+			sourceTree = "<group>";
+		};
+		21F43CED25E4F14E002AF1AD /* _34 */ = {
+			isa = PBXGroup;
+			children = (
+				21F43CFB25E4F244002AF1AD /* Center */,
+				21F43CEE25E4F159002AF1AD /* Module */,
+				21F43D0C25E4F45B002AF1AD /* _34ViewController.h */,
+				21F43D0D25E4F45B002AF1AD /* _34ViewController.m */,
+			);
+			path = _34;
+			sourceTree = "<group>";
+		};
+		21F43CEE25E4F159002AF1AD /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				21F43CEF25E4F174002AF1AD /* Target_News.h */,
+				21F43CF025E4F174002AF1AD /* Target_News.m */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		21F43CFB25E4F244002AF1AD /* Center */ = {
+			isa = PBXGroup;
+			children = (
+				21F43D0425E4F310002AF1AD /* CTMediator+NewsActions.h */,
+				21F43D0525E4F310002AF1AD /* CTMediator+NewsActions.m */,
+			);
+			path = Center;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -1899,6 +1940,7 @@
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
 				"${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework",
 				"${BUILT_PRODUCTS_DIR}/Bagel/Bagel.framework",
+				"${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework",
 				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
@@ -1951,6 +1993,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AvoidCrash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bagel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTMediator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
@@ -2013,6 +2056,7 @@
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
 				"${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework",
 				"${BUILT_PRODUCTS_DIR}/Bagel/Bagel.framework",
+				"${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework",
 				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
@@ -2065,6 +2109,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AvoidCrash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bagel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTMediator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
@@ -2161,6 +2206,7 @@
 				21B772A225C7FCA700E7F4BC /* PEResizeControl.m in Sources */,
 				21BA195425AD905700222F9A /* _25CompLayoutVC5.m in Sources */,
 				211226F62573340100B6ECC8 /* ChatTextMessageModel.m in Sources */,
+				21F43D0725E4F310002AF1AD /* CTMediator+NewsActions.m in Sources */,
 				211226F72573340100B6ECC8 /* _20PhotoViewController.m in Sources */,
 				211226F82573340100B6ECC8 /* _28LocalSocketServiceViewController.m in Sources */,
 				2121FE8125CA945600B3B323 /* AXXSwitch.m in Sources */,
@@ -2204,6 +2250,7 @@
 				211227132573340100B6ECC8 /* UIControl+load.m in Sources */,
 				211227142573340100B6ECC8 /* _27MQTTClientViewController.m in Sources */,
 				218A32D525E0FAAE008D95B8 /* _33CropViewController.m in Sources */,
+				21F43D0F25E4F45B002AF1AD /* _34ViewController.m in Sources */,
 				211227152573340100B6ECC8 /* AppDelegateWX.m in Sources */,
 				2117A3F725CCE93300980436 /* AnimRefreshHeader.m in Sources */,
 				211227162573340100B6ECC8 /* _19ScrollContentViewController.m in Sources */,
@@ -2309,8 +2356,10 @@
 				213BCC06254003DB00C89B72 /* _18MGSwipeTableVC.m in Sources */,
 				213BCC2E254003DB00C89B72 /* _02ChatViewController.m in Sources */,
 				213BCC33254003DB00C89B72 /* UIControl+load.m in Sources */,
+				21F43D0625E4F310002AF1AD /* CTMediator+NewsActions.m in Sources */,
 				213BCBEF254003DB00C89B72 /* _27MQTTClientViewController.m in Sources */,
 				21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */,
+				21F43CF125E4F174002AF1AD /* Target_News.m in Sources */,
 				21331CEF2592EB02008E251B /* _31GCDViewController.m in Sources */,
 				213BCBF4254003DB00C89B72 /* _19ScrollContentViewController.m in Sources */,
 				2117A3F625CCE93300980436 /* AnimRefreshHeader.m in Sources */,
@@ -2333,6 +2382,7 @@
 				218F674825A5CC69006A8312 /* _25CompLayoutVC2.m in Sources */,
 				21CC7C78255FA71900E7B506 /* _13WeImageTableViewController.m in Sources */,
 				213BCC0E254003DB00C89B72 /* _07VideoViewController.m in Sources */,
+				21F43D0E25E4F45B002AF1AD /* _34ViewController.m in Sources */,
 				213BCC0A254003DB00C89B72 /* _22ReactiveObjCViewController.m in Sources */,
 				213BCC03254003DB00C89B72 /* AView.m in Sources */,
 				213BCBEC254003DB00C89B72 /* SceneDelegate.m in Sources */,

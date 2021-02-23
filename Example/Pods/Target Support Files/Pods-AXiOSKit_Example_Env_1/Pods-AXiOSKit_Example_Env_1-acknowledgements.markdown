@@ -301,6 +301,11 @@ SOFTWARE.
    limitations under the License.
 
 
+## CTMediator
+
+MIT
+
+
 ## Canvas
 
 Copyright (c) 2013 Canvas <usecanvas@gmail.com>
