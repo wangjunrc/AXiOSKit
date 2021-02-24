@@ -91,6 +91,7 @@ end
 def common_pods
   #    pod 'AXiOSKit' , :git => 'https://github.com/AXinger/AXiOSKit.git', :branch => 'release/20190530_new'
   # pod 'AXiOSKit', :source => 'https://github.com/AXinger/AXiOSKit.git'
+  # pod 'AXiOSKit', source: 'https://github.com/AXinger/AXiOSKit.git'
   pod 'AXiOSKit', :path => '../'
   pod 'Masonry'
   pod 'AFNetworking'
