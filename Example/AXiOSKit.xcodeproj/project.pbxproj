@@ -594,7 +594,6 @@
 		21898EA02541AD6900876524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21898F302541B11D00876524 /* Application.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		21898F312541B11D00876524 /* Application.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
-		21898FF52541B48000876524 /* AXCollectFile.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AXCollectFile.md; sourceTree = "<group>"; };
 		21898FF62541B48000876524 /* pod_no_use.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = pod_no_use.md; sourceTree = "<group>"; };
 		21898FF72541B48000876524 /* read.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = read.md; sourceTree = "<group>"; };
 		21898FF82541B48000876524 /* pod_use.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = pod_use.md; sourceTree = "<group>"; };
@@ -1108,7 +1107,6 @@
 		21898FF42541B48000876524 /* README */ = {
 			isa = PBXGroup;
 			children = (
-				21898FF52541B48000876524 /* AXCollectFile.md */,
 				21898FF62541B48000876524 /* pod_no_use.md */,
 				21898FF72541B48000876524 /* read.md */,
 				21898FF82541B48000876524 /* pod_use.md */,
