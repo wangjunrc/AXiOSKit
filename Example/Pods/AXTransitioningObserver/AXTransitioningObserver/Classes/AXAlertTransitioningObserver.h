@@ -11,11 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AXAlertTransitioningObserver : NSObject<UIViewControllerTransitioningDelegate>
 
-/**
- 子vc重写此方法,更改 alertControllerStyle 样式
-
- @return AXAlertControllerStyle
- */
+/// 转场动画样式
 @property (nonatomic, assign)AXAlertControllerStyle alertControllerStyle;
 
 @end

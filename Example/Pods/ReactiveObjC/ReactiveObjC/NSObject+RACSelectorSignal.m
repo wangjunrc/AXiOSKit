@@ -18,7 +18,8 @@
 #import <objc/message.h>
 #import <objc/runtime.h>
 
-NSErrorDomain const RACSelectorSignalErrorDomain = @"RACSelectorSignalErrorDomain";
+NSString * const RACSelectorSignalErrorDomain = @"RACSelectorSignalErrorDomain";
+const NSInteger RACSelectorSignalErrorMethodSwizzlingRace = 1;
 
 static NSString * const RACSignalForSelectorAliasPrefix = @"rac_alias_";
 static NSString * const RACSubclassSuffix = @"_RACSelectorSignal";

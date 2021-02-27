@@ -67,7 +67,7 @@
     [self _08merge];
     [self _08then];
     [self _08concat];
-    
+    [self _09Command];
     
     
 //    [RACObserve(button, enabled) subscribeNext:^(NSNumber  * x) {
@@ -551,6 +551,55 @@
         
     }];
     
+}
+
+-(void)_09Command  {
+    
+    RACCommand *com = [RACCommand.alloc initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        NSLog(@"input = %@",input);
+        return [RACSignal return:@"AAA"];
+    }];
+    
+    RACCommand *com2 = [RACCommand.alloc initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        NSLog(@"input = %@",input);
+        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            [subscriber sendNext:@"tom"];
+            /// 没有的话只能执行一次
+            [subscriber sendCompleted];
+            
+//            return [RACDisposable disposableWithBlock:^{
+//
+//            }];
+//
+            //一般都返回nil
+            return nil;
+        }];
+    }];
+    
+    [self _p00ButtonTitle:@"执行execute" handler:^(UIButton * _Nonnull btn) {
+        [[com execute:@"jim"]subscribeNext:^(id  _Nullable x) {
+            NSLog(@"返回值 = %@",x);
+        }];
+    }];
+    
+    [self _p00ButtonTitle:@"执行execute,过滤" handler:^(UIButton * _Nonnull btn) {
+        
+        [[[[com execute:@"jim"] filter:^BOOL(id  _Nullable value) {
+            NSLog(@"filter = %@",value);
+            return YES;
+        }]map:^id _Nullable(id  _Nullable value) {
+            NSLog(@"map = %@",value);
+            return value;
+        }]subscribeNext:^(id  _Nullable x) {
+            NSLog(@"subscribeNext = %@",x);
+        }];
+    }];
+    
+    [self _p00ButtonTitle:@"sendCompleted,没有的话只能执行一次" handler:^(UIButton * _Nonnull btn) {
+        [[com2 execute:@"jim"]subscribeNext:^(id  _Nullable x) {
+            NSLog(@"返回值 = %@",x);
+        }];
+    }];
 }
 -(void)_RACChannelTo{
     

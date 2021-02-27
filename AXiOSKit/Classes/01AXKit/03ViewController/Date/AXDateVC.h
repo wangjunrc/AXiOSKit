@@ -6,10 +6,10 @@
 //  Copyright © 2016年 liuweixing. All rights reserved.
 //
 
-#import "AXBaseAlertVC.h"
+#import <UIKit/UIKit.h>
 
 
-@interface AXDateVC : AXBaseAlertVC
+@interface AXDateVC : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 

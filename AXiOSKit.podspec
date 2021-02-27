@@ -56,8 +56,8 @@ Pod::Spec.new do |s|
     s.dependency 'Masonry'
     #s.dependency 'GKPhotoBrowser'
     s.dependency 'Aspects'
-    s.dependency 'ReactiveObjC'
-    
+    s.dependency 'ReactiveObjC','~> 3.0.0'
+    s.dependency 'AXTransitioningObserver'
 end
 
 

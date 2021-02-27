@@ -7,6 +7,7 @@
 //
 
 #import "AXDateVC.h"
+#import <AXTransitioningObserver/UIViewController+AXTransitioning.h>
 
 @interface AXDateVC ()
 
@@ -18,8 +19,13 @@
 
 @implementation AXDateVC
 
-- (AXAlertControllerStyle)axAlertControllerStyle{
-    return AXAlertControllerStyleUpward;
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        [self ax_alertObserver:^(AXAlertTransitioningObserver *observer) {
+            observer.alertControllerStyle = AXAlertControllerStyleUpward;
+        }];
+    }
+    return self;
 }
 
 - (void)viewDidLoad {

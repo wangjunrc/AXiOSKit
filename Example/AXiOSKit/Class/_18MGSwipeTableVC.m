@@ -55,6 +55,8 @@
 
 
 @property(nonatomic,copy)NSString *searchText;
+@property(nonatomic, strong) NSMutableArray *dataArray;
+
 @end
 
 
@@ -78,9 +80,62 @@
 //    self.tableView.emptyDataSetSource = tt;
 //        self.tableView.emptyDataSetDelegate = tt;
     
-    [self.tableView ax_emptyDataWithImage:[UIImage imageNamed:@"chongshe"] titlte:@"刷新" reloadBlock:^{
-        NSLog(@"reloadBlockreloadBlockreloadBlockreloadBlockreloadBlock");
+//    [self.tableView ax_emptyDataWithImage:[UIImage imageNamed:@"chongshe"] titlte:@"刷新" reloadBlock:^{
+//        NSLog(@"reloadBlockreloadBlockreloadBlockreloadBlockreloadBlock");
+//    }];
+    
+//    AXEmptyDataSetConfig *config = AXEmptyDataSetConfig.alloc.init;
+//    config.image = [UIImage imageNamed:@"no_data"];
+//    NSString *str1 = @"没有朋友发照片";
+//    NSString *str2 = @"您可以现在就拍一张";
+//    NSString *str3 = [NSString stringWithFormat:@"%@\n%@",str1,str2];
+//
+//    NSMutableAttributedString *title = [NSMutableAttributedString.alloc initWithString:[NSString stringWithFormat:@"%@\n%@",str1,str2]];
+//
+//    [title addAttributes:@{
+//        NSForegroundColorAttributeName:[UIColor ax_colorFromHexString:@"#9D9D9D"],
+//        NSFontAttributeName:[UIFont systemFontOfSize:15]
+//    } range: [str3 rangeOfString:str1]];
+//
+//    [title addAttributes:@{
+//        NSForegroundColorAttributeName:[UIColor ax_colorFromHexString:@"#9D9D9D"],
+//        NSFontAttributeName:[UIFont systemFontOfSize:12]
+//    } range: [str3 rangeOfString:str2]];
+//
+//    NSMutableParagraphStyle *paragrahStyle = [[NSMutableParagraphStyle alloc] init];
+//        [paragrahStyle setAlignment:NSTextAlignmentRight];
+//        [title addAttribute:NSParagraphStyleAttributeName value:paragrahStyle range:NSMakeRange(0, str3.length)];
+//
+//    config.attributedTitle =title;
+//    [self.tableView ax_emptyDataSetWithConfig:config];
+    
+   
+    [self.tableView ax_setEmptyDataWithConfig:^(AXEmptyDataSetConfig *config) {
+       
+        config.image = [UIImage imageNamed:@"no_data"];
+        NSString *str1 = @"没有朋友发照片";
+        NSString *str2 = @"您可以现在就拍一张";
+        NSString *str3 = [NSString stringWithFormat:@"%@\n%@",str1,str2];
+        NSMutableAttributedString *title = [NSMutableAttributedString.alloc initWithString:[NSString stringWithFormat:@"%@\n%@",str1,str2]];
+        
+        [title addAttributes:@{
+            NSForegroundColorAttributeName:[UIColor ax_colorFromHexString:@"#9D9D9D"],
+            NSFontAttributeName:[UIFont systemFontOfSize:15]
+        } range: [str3 rangeOfString:str1]];
+        
+        [title addAttributes:@{
+            NSForegroundColorAttributeName:[UIColor ax_colorFromHexString:@"#9D9D9D"],
+            NSFontAttributeName:[UIFont systemFontOfSize:12]
+        } range: [str3 rangeOfString:str2]];
+        config.attributedTitle =title;
+    
+//        config.reload = ^{
+//          
+//        };
     }];
+    
+    
+    
     
     
     //创建UISearchController
@@ -94,7 +149,7 @@
         //提醒字眼
         self.searchController.searchBar.placeholder= @"搜索";
         //提前在搜索框内加入搜索词
-        self.searchController.searchBar.text = @"123";
+//        self.searchController.searchBar.text = @"123";
         //设置UISearchController的显示属性，以下3个属性默认为YES
         //搜索时，背景变暗色
 //        self.searchController.dimsBackgroundDuringPresentation = NO;
@@ -131,19 +186,32 @@
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
     
-    NSLog(@"%@",searchController.searchBar.text);
+    //    if (self.searchController.active) {
+    //        return 3;
+    //    }
+    
+    
+    NSLog(@"text = %@, active = %d",searchController.searchBar.text,self.searchController.active);
     self.searchText =searchController.searchBar.text;
-    [self.tableView reloadData];
+    if (self.searchText.length>0) {
+        int count = ax_randomFromTo(1, 5);
+          [self.dataArray removeAllObjects];
+          for (int i=0; i<count; i++) {
+              [self.dataArray addObject:searchController.searchBar.text];
+          }
+          [self.tableView reloadData];
+    }
+
 }
 - (void)didDismissSearchController:(UISearchController *)searchController{
-    searchController.searchBar.text = @"22";
+//    searchController.searchBar.text = @"22";
+    [self.dataArray removeAllObjects];
+    [self.tableView reloadData];
+    
 }
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 1;
-}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //    if (self.searchController.active) {
@@ -151,7 +219,7 @@
 //    }
 //    return 10;
     
-    return  0;
+    return self.dataArray.count;
 }
 -(CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return UITableViewAutomaticDimension;
@@ -207,48 +275,11 @@
     MGSwipeButton * button =( MGSwipeButton *) cell.rightButtons.firstObject;
     button.selected = NO;
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+
+- (NSMutableArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [[NSMutableArray alloc]init];
+    }
+    return _dataArray;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

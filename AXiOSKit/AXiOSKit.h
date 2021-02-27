@@ -49,7 +49,6 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "IBObjectHeader.h"
 #import "AXFoundationAssistant.h"
 #import "AXViewController.h"
-#import "AXBaseAlertVC.h"
 #import "AXQRCodeVC.h"
 #import "AXSinglePickVC.h"
 #import "AXPlayVC.h"

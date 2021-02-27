@@ -24,15 +24,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// The domain for errors originating in RACSignal operations.
-extern NSErrorDomain const RACSignalErrorDomain;
+extern NSString * const RACSignalErrorDomain;
 
-typedef NS_ERROR_ENUM(RACSignalErrorDomain, RACSignalError) {
-	/// The error code used with -timeout:.
-	RACSignalErrorTimedOut = 1,
-	/// The error code used when a value passed into +switch:cases:default: does not
-	/// match any of the cases, and no default was given.
-	RACSignalErrorNoMatchingCase = 2,
-};
+/// The error code used with -timeout:.
+extern const NSInteger RACSignalErrorTimedOut;
+
+/// The error code used when a value passed into +switch:cases:default: does not
+/// match any of the cases, and no default was given.
+extern const NSInteger RACSignalErrorNoMatchingCase;
 
 @interface RACSignal<__covariant ValueType> (Operations)
 
@@ -198,8 +197,7 @@ typedef NS_ERROR_ENUM(RACSignalErrorDomain, RACSignalError) {
 ///
 /// Returns a signal which sends the results from each invocation of
 /// `reduceBlock`.
-+ (RACSignal<ValueType> *)combineLatest:(id<NSFastEnumeration>)signals reduce:(RACGenericReduceBlock)reduceBlock RAC_WARN_UNUSED_RESULT;
-
++ (RACSignal<ValueType> *)combineLatest:(id<NSFastEnumeration>)signals reduce:(ValueType _Nullable (^)())reduceBlock RAC_WARN_UNUSED_RESULT;
 
 /// Merges the receiver and the given signal with `+merge:` and returns the
 /// resulting signal.

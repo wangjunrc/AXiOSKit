@@ -352,6 +352,17 @@
         //        inputView.inputType = AXNumberKeyboardTypeFloat;
         keyboarTF.inputView = inputView;
         
+        [self _p00ButtonTitle:@"切换系统键盘" handler:^(UIButton * _Nonnull btn) {
+//
+            keyboarTF.inputView = nil;
+            [keyboarTF reloadInputViews];
+        }];
+        
+        [self _p00ButtonTitle:@"切换自定义键盘" handler:^(UIButton * _Nonnull btn) {
+            keyboarTF.inputView = inputView;
+            [keyboarTF reloadInputViews];
+        }];
+        
         
     }
     UITextField *nameTF = [[UITextField alloc]init];

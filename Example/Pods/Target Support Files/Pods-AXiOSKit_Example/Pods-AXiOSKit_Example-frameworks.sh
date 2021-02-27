@@ -176,6 +176,7 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AXTransitioningObserver/AXTransitioningObserver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework"
@@ -228,6 +229,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Debug_α" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AXTransitioningObserver/AXTransitioningObserver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework"
@@ -278,6 +280,7 @@ if [[ "$CONFIGURATION" == "Debug_α" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Debug_β" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AXTransitioningObserver/AXTransitioningObserver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework"
@@ -328,6 +331,7 @@ if [[ "$CONFIGURATION" == "Debug_β" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AXTransitioningObserver/AXTransitioningObserver.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework"

@@ -54,12 +54,12 @@
         [strongSelf dismissViewControllerAnimated:YES completion:nil];
     };
     
-    AXNavigationController* nav =
-    [[AXNavigationController alloc] initWithRootViewController:choosePayVC];
+    UINavigationController* nav =
+    [[UINavigationController alloc] initWithRootViewController:choosePayVC];
     [self.view addSubview:nav.view];
     [self addChildViewController:nav];
     [nav didMoveToParentViewController:self];
-    nav.view.backgroundColor = UIColor.orangeColor;
+//    nav.view.backgroundColor = UIColor.orangeColor;
     [nav.view mas_makeConstraints:^(MASConstraintMaker* make) {
         make.left.mas_equalTo(0);
         make.bottom.mas_equalTo(0);

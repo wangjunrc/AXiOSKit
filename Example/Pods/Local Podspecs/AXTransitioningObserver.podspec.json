@@ -1,0 +1,27 @@
+{
+  "name": "AXTransitioningObserver",
+  "version": "1.0.0",
+  "summary": "A short description of AXTransitioningObserver.",
+  "description": "类似UIAlertViewController 效果,封装成viewController",
+  "homepage": "https://github.com/axinger/AXTransitioningObserver",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "axinger": "axinger@outlook.com"
+  },
+  "source": {
+    "git": "https://github.com/axinger/AXTransitioningObserver.git",
+    "tag": "1.0.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "AXTransitioningObserver/Classes/**/*",
+  "dependencies": {
+    "ReactiveObjC": [
+      "~> 3.0.0"
+    ]
+  }
+}

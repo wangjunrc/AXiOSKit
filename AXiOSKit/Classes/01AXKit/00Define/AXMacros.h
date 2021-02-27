@@ -176,7 +176,7 @@ return (aViewClass *)[super view];\
 #if __has_feature(objc_arc)
 #define strongify(object) try{} @finally{} __typeof__(object) object = weak##_##object;
 #else
-#define strongify(object) try{} @finally{} __typeof__(object) object = block##_##object;
+#define strongify(object) `try{} @finally{} __typeof__(object) object` = block##_##object;
 #endif
 #endif
 #endif

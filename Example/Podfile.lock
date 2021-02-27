@@ -19,6 +19,7 @@ PODS:
   - AXiOSKit (2.0.0):
     - AFNetworking (~> 4.0.0)
     - Aspects
+    - AXTransitioningObserver
     - DZNEmptyDataSet
     - KVOController
     - Masonry
@@ -26,8 +27,10 @@ PODS:
     - MJExtension
     - MJRefresh
     - NullSafe
-    - ReactiveObjC
+    - ReactiveObjC (~> 3.0.0)
     - SDWebImage
+  - AXTransitioningObserver (1.0.0):
+    - ReactiveObjC (~> 3.0.0)
   - Bagel (1.4.0):
     - CocoaAsyncSocket
   - Canvas (0.1.2)
@@ -160,7 +163,7 @@ PODS:
     - OHHTTPStubs/Core
   - OHHTTPStubs/OHPathHelpers (9.1.0)
   - PromisesObjC (1.2.12)
-  - ReactiveObjC (3.1.1)
+  - ReactiveObjC (3.0.0)
   - RMQClient (0.9.0):
     - CocoaAsyncSocket (~> 7.4)
     - JKVValue
@@ -189,6 +192,7 @@ DEPENDENCIES:
   - AFNetworking
   - AvoidCrash
   - AXiOSKit (from `../`)
+  - AXTransitioningObserver (from `https://github.com/axinger/AXTransitioningObserver.git`)
   - Bagel (~> 1.4.0)
   - Canvas (~> 0.1.2)
   - CocoaAsyncSocket (~> 7.6.5)
@@ -211,7 +215,7 @@ DEPENDENCIES:
   - MQTTClient/Websocket
   - OHHTTPStubs (~> 9.1.0)
   - PromisesObjC (~> 1.2.12)
-  - ReactiveObjC
+  - ReactiveObjC (~> 3.0.0)
   - RMQClient
   - SDWebImage (~> 5.10.3)
   - SDWebImageFLPlugin
@@ -279,12 +283,20 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   AXiOSKit:
     :path: "../"
+  AXTransitioningObserver:
+    :git: https://github.com/axinger/AXTransitioningObserver.git
+
+CHECKOUT OPTIONS:
+  AXTransitioningObserver:
+    :commit: 65785e72f12e310294f6da1f9560e63bab048426
+    :git: https://github.com/axinger/AXTransitioningObserver.git
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
-  AXiOSKit: 50f4357ed4b19d19d4a4feea0bc6eda314f82ef4
+  AXiOSKit: 3029d8d88f444ba20c4d1e44103da44e53fb7326
+  AXTransitioningObserver: cd94263fea59510b34c328e924443c83b4fd8951
   Bagel: c3fa6bcbd52db9ca976edbafd7638f0553ded101
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
@@ -319,7 +331,7 @@ SPEC CHECKSUMS:
   NullSafe: 948feba938f03abede5ed3758694a9fe5b3a65ce
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
-  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   RMQClient: 9bbda86703fd475761101ee5fda037eb2a12ec4e
   SDWebImage: e378178472b735e84b007bfb55514c97948a0598
   SDWebImageFLPlugin: 6c2295fb1242d44467c6c87dc5db6b0a13228fd8
@@ -333,6 +345,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: 987164432005f0f93b838e48fe391082b0634a1a
+PODFILE CHECKSUM: 02b91e22906a64cb9a5280c785a7b5a842f442fe
 
 COCOAPODS: 1.10.1

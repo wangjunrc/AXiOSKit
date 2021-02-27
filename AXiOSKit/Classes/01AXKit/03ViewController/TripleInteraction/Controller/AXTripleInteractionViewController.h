@@ -8,14 +8,13 @@
 // 三级联动
 
 #import <UIKit/UIKit.h>
-#import "AXBaseAlertVC.h"
 #import "AXMultiSelectViewModel.h"
 #import "AXMultiSelectConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface AXTripleInteractionViewController : AXBaseAlertVC
+@interface AXTripleInteractionViewController : UIViewController
 
 @end
 

@@ -89,13 +89,14 @@ def ui_pods
 end
 
 def common_pods
-  #    pod 'AXiOSKit' , :git => 'https://github.com/AXinger/AXiOSKit.git', :branch => 'release/20190530_new'
-  # pod 'AXiOSKit', :source => 'https://github.com/AXinger/AXiOSKit.git'
-  # pod 'AXiOSKit', source: 'https://github.com/AXinger/AXiOSKit.git'
+  #    pod 'AXiOSKit' , :git => 'https://github.com/axinger/AXiOSKit.git', :branch => 'release/20190530_new'
+  # pod 'AXiOSKit', :source => 'https://github.com/axinger/AXiOSKit.git'
+  # pod 'AXiOSKit', source: 'https://github.com/axinger/AXiOSKit.git'
   pod 'AXiOSKit', :path => '../'
+  pod 'AXTransitioningObserver',:git => 'https://github.com/axinger/AXTransitioningObserver.git'
   pod 'Masonry'
   pod 'AFNetworking'
-  pod 'ReactiveObjC'
+  pod 'ReactiveObjC','~> 3.0.0'
   pod 'PromisesObjC','~> 1.2.12'
   pod 'SDWebImageFLPlugin'
   pod 'SDWebImageWebPCoder','~> 0.8.1'

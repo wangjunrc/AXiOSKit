@@ -1,0 +1,6 @@
+framework module AXTransitioningObserver {
+  umbrella header "AXTransitioningObserver-umbrella.h"
+
+  export *
+  module * { export * }
+}

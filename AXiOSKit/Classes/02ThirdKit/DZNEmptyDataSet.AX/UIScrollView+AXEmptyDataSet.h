@@ -8,23 +8,22 @@
 
 #import <UIKit/UIKit.h>
 //#if __has_include("UIScrollView+EmptyDataSet.h")
+
+@interface AXEmptyDataSetConfig : NSObject
+
+@property(nonatomic, strong) UIImage *image;
+@property(nonatomic, copy) NSString *title;
+@property(nonatomic, copy) NSAttributedString *attributedTitle;
+/// 刷新回调
+@property(nonatomic, copy)  void(^reload)(void);
+@end
+
+
 @interface UIScrollView (AXEmptyDataSet)
 
-/**
- 设置空集合view
- 
- @param reloadBlock 刷新回调
- */
-- (void)ax_emptyDataSetWithReloadBlock:(void(^)(void))reloadBlock;
-
-/**
- 设置空集合view
- 
- @param imageName 占位图片名称
- @param title 占位文字
- @param reloadBlock 刷新回调
- */
-- (void)ax_emptyDataWithImage:(UIImage *)image titlte:(NSString *)title reloadBlock:(void(^)(void))reloadBlock;
+/// 设置空集合view
+/// @param config 配置文件
+- (void)ax_setEmptyDataWithConfig:(void(^)(AXEmptyDataSetConfig *config)) config;
 
 @end
 //#endif

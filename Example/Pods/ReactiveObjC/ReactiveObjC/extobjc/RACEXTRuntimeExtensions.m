@@ -7,7 +7,7 @@
 //  Released under the MIT license.
 //
 
-#import "RACEXTRuntimeExtensions.h"
+#import <ReactiveObjC/RACEXTRuntimeExtensions.h>
 
 #import <ctype.h>
 #import <Foundation/Foundation.h>
@@ -62,7 +62,7 @@ rac_propertyAttributes *rac_copyPropertyAttributes (objc_property_t property) {
 
         if (!next) {
             fprintf(stderr, "ERROR: Could not read class name in attribute string \"%s\" for property %s\n", attrString, property_getName(property));
-            goto errorOut;
+            return NULL;
         }
 
         if (className != next) {
