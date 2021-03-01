@@ -14,6 +14,7 @@
 #import "_00TableViewCell.h"
 #import "_00FirstViewController.h"
 #import "_01ContentViewController.h"
+#import "_01GradientViewController.h"
 #import "_02ChatViewController.h"
 #import "_04RunLoopViewController.h"
 #import "_06WCDBViewController.h"
@@ -542,6 +543,15 @@ typedef void (^CollectionBlock)(void);
                     NSLog(@"vc.AXListener.shouldNavigationBarHidden %d",vc.AXListener.isHiddenNavigationBar);
                 },
             },
+            @{
+                @"index": @1,
+                @"title": @"滑动透明导航栏",
+                @"action": ^{
+                    _01GradientViewController *vc = [[_01GradientViewController alloc]init];
+                    [self ax_pushVC:vc];
+                },
+            },
+            
             
             @{
                 @"index": @2,
