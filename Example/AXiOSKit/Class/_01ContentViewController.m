@@ -353,7 +353,7 @@
         keyboarTF.inputView = inputView;
         
         [self _p00ButtonTitle:@"切换系统键盘" handler:^(UIButton * _Nonnull btn) {
-//
+            //
             keyboarTF.inputView = nil;
             [keyboarTF reloadInputViews];
         }];
@@ -703,29 +703,55 @@
 
 - (void)_p02AlternateIconName {
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTitle:@"换icon" handler:^(UIButton * _Nonnull btn) {
+    [self _p00ButtonTitle:@"换icon" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf setIconname:@"Alternate_AppIcon_2"];
+    }];
+    [self _p00ButtonTitle:@"换icon-还原" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf setIconname:nil];
     }];
 }
 
 - (void)setIconname:(NSString *)name {
-    UIApplication *appli = [UIApplication sharedApplication];
-    //判断系统是否支持切换icon
-    if (@available(iOS 10.3, *)) {
-        if ([appli supportsAlternateIcons]) {
-            //切换icon
-            [appli setAlternateIconName:name completionHandler:^(NSError *_Nullable error) {
-                if (error) {
-                    NSLog(@"error==> %@", error.localizedDescription);
-                } else {
-                    NSLog(@"done!!!");
-                }
-            }];
+    //    UIApplication *appli = [UIApplication sharedApplication];
+    //    //判断系统是否支持切换icon
+    //    if (@available(iOS 10.3, *)) {
+    //        if ([appli supportsAlternateIcons]) {
+    //            //切换icon
+    //            [appli setAlternateIconName:name completionHandler:^(NSError *_Nullable error) {
+    //                if (error) {
+    //                    NSLog(@"error==> %@", error.localizedDescription);
+    //                } else {
+    //                    NSLog(@"done!!!");
+    //                }
+    //            }];
+    //        }
+    //    } else {
+    //        // Fallback on earlier versions
+    //    }
+    
+    
+    
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(supportsAlternateIcons)] &&
+        [[UIApplication sharedApplication] supportsAlternateIcons])
+    {
+        NSMutableString *selectorString = [[NSMutableString alloc] initWithCapacity:40];
+        [selectorString appendString:@"_setAlternate"];
+        [selectorString appendString:@"IconName:"];
+        [selectorString appendString:@"completionHandler:"];
+        
+        SEL selector = NSSelectorFromString(selectorString);
+        IMP imp = [[UIApplication sharedApplication] methodForSelector:selector];
+        void (*func)(id, SEL, id, id) = (void *)imp;
+        if (func)
+        {
+            func([UIApplication sharedApplication], selector, name, ^(NSError * _Nullable error) {});
         }
-    } else {
-        // Fallback on earlier versions
     }
+    
+    
+    
 }
 
 - (void)_p03LocationManager {
