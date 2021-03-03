@@ -8,7 +8,7 @@
 
 #import "AXSinglePickVC.h"
 #import "UIViewController+AXKit.h"
-
+#import <AXTransitioningObserver/AXAlertTransitioningObserver.h>
 @interface AXSinglePickVC () <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIPickerView* pickerView;

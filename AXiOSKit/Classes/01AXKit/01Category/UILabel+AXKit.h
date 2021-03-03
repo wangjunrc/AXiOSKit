@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+/// 改用YYLabel
 @interface UILabel (AXKit)
 
 /**

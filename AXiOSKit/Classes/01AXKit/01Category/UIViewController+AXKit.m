@@ -16,14 +16,8 @@
 
 @interface UIViewController ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate>
 
-
-/**
- * <#注释#>
- */
 @property (nonatomic, strong) UIViewController *ax_popVC;
 
-
-@property (nonatomic, strong) AXAlertTransitioningObserver *alertObserver;
 @end
 
 
@@ -484,30 +478,4 @@
     ax_setStrongPropertyAssociated(ax_controllerObserve);
 }
 
-- (AXAlertTransitioningObserver *)alertObserver {
-    return ax_getValueAssociated(alertObserver);
-}
-- (void)setAlertObserver:(AXAlertTransitioningObserver *)alertObserver {
-    ax_setStrongPropertyAssociated(alertObserver);
-}
-
--(void)ax_alertObserver:(void(^)(AXAlertTransitioningObserver *observer))handler {
-    
-    self.modalPresentationStyle = UIModalPresentationCustom;
-    self.alertObserver = [[AXAlertTransitioningObserver alloc] init];
-    if(handler){
-        handler(self.alertObserver);
-    }
-    self.transitioningDelegate = self.alertObserver;
-    __weak typeof(self) weakSelf = self;
-    
-    if ([self respondsToSelector:@selector(viewDidLoad)]) {
-        [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id  _Nullable x) {
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            strongSelf.view.backgroundColor = UIColor.clearColor;
-        }];
-    }
-   
-    
-}
 @end
