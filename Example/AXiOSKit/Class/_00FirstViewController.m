@@ -98,7 +98,8 @@ typedef void (^CollectionBlock)(void);
     self.title = @"主题";
     __weak typeof(self) weakSelf = self;
     self.tableView.tableFooterView = UIView.alloc.init;
-    [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
+//    [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
+    [_00TableViewCell ax_registerNibCellWithTableView:self.tableView];
     self.dataArray = nil;
     [self.tableView reloadData];
     /// 多选
@@ -288,8 +289,8 @@ typedef void (^CollectionBlock)(void);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    _00TableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
-    
+//    _00TableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
+    _00TableViewCell *cell = [_00TableViewCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
     NSDictionary *dict = self.dataArray[indexPath.row];
     cell.indexLabel.text = [dict[@"index"] stringValue];
     cell.nameLabel.text = dict[@"title"];

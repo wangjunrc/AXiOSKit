@@ -33,6 +33,7 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "UISlider+AXKit.h"
 #import "UISwitch+AXKit.h"
 #import "UITableView+AXKit.h"
+#import "UITableViewCell+AXKit.h"
 #import "UITextField+AXKit.h"
 #import "UITextView+AXKit.h"
 #import "UITextView+AXAction.h"

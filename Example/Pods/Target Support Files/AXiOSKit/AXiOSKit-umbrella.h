@@ -59,6 +59,7 @@
 #import "UISlider+AXKit.h"
 #import "UISwitch+AXKit.h"
 #import "UITableView+AXKit.h"
+#import "UITableViewCell+AXKit.h"
 #import "UITextField+AXAction.h"
 #import "UITextField+AXKit.h"
 #import "UITextField+AXNumberKeyboard.h"
