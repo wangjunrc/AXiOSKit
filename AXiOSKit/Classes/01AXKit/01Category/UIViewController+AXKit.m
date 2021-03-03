@@ -471,22 +471,21 @@
 //    [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
 //}
 
--(void)setAXListener:(AXViewControllerListener *)AXListener {
-    ax_setStrongPropertyAssociated(AXListener);
-}
 
-- (AXViewControllerListener*)AXListener{
-    AXViewControllerListener *obj = ax_getValueAssociated(AXListener);
+- (AXViewControllerObserve *)ax_controllerObserve {
+    AXViewControllerObserve *obj = ax_getValueAssociated(ax_controllerObserve);
     if (!obj){
-        obj = [[AXViewControllerListener alloc] initWithObserve:self];
-        self.AXListener = obj;
+        obj = [[AXViewControllerObserve alloc] initWithObserve:self];
+        self.ax_controllerObserve = obj;
     }
     return obj;
+}
+- (void)setAx_controllerObserve:(AXViewControllerObserve *)ax_controllerObserve{
+    ax_setStrongPropertyAssociated(ax_controllerObserve);
 }
 
 - (AXAlertTransitioningObserver *)alertObserver {
     return ax_getValueAssociated(alertObserver);
-    
 }
 - (void)setAlertObserver:(AXAlertTransitioningObserver *)alertObserver {
     ax_setStrongPropertyAssociated(alertObserver);

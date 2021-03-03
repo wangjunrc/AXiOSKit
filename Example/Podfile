@@ -86,6 +86,7 @@ def ui_pods
   pod 'lottie-ios', '~>2.1.0'
   # 图片剪切
   #  pod 'PEPhotoCropEditor'
+  pod 'KMNavigationBarTransition'
 end
 
 def common_pods

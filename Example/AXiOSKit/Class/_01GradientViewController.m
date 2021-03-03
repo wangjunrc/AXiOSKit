@@ -75,15 +75,20 @@
     self.navigationController.delegate = self;
     // 必须设置,不然返回手势失效
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
+
+//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+//       self.navigationController.navigationBar.translucent = YES;//设置透明
+    
+    
 }
 #pragma mark - UINavigationControllerDelegate
 //将要显示控制器
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    // 判断要显示的控制器是否是自己
-    BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
-    [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
-    
-}
+//- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    // 判断要显示的控制器是否是自己
+//    BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
+//    [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
+//
+//}
 -(void)confirmItemAction:(UIBarButtonItem *)sender {
     
 }
@@ -94,7 +99,7 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return 40;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];

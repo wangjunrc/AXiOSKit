@@ -15,6 +15,7 @@
 #import "_00FirstViewController.h"
 #import "_01ContentViewController.h"
 #import "_01GradientViewController.h"
+#import "_01TypeViewController.h"
 #import "_02ChatViewController.h"
 #import "_04RunLoopViewController.h"
 #import "_06WCDBViewController.h"
@@ -532,15 +533,22 @@ typedef void (^CollectionBlock)(void);
             },
             @{
                 @"index": @1,
+                @"title": @"导航栏效果",
+                @"action": ^{
+                    _01TypeViewController *vc = [[_01TypeViewController alloc]init];
+                    
+                    [self ax_pushVC:vc];},
+            },
+            
+            @{
+                @"index": @1,
                 @"title": @"隐藏导航栏",
                 @"action": ^{
                     _01ContentViewController *vc = [[_01ContentViewController alloc]init];
                     
                     [self ax_pushVC:vc];
-                    //                        vc.ax_shouldNavigationBarHidden = YES;
-                    
-                    vc.AXListener.hiddenNavigationBar = YES;
-                    NSLog(@"vc.AXListener.shouldNavigationBarHidden %d",vc.AXListener.isHiddenNavigationBar);
+                    vc.ax_controllerObserve.hiddenNavigationBar = YES;
+                    NSLog(@"vc.AXListener.shouldNavigationBarHidden %d",vc.ax_controllerObserve.isHiddenNavigationBar);
                 },
             },
             @{
@@ -704,7 +712,7 @@ typedef void (^CollectionBlock)(void);
             },
             @{
                 @"index": @23,
-                @"title": @"约束全屏-prefersStatusBarHidden,setNavigationBarHidden",
+                @"title": @"约束全屏\n prefersStatusBarHidden\n setNavigationBarHidden",
                 @"action": ^{
                     _23FullViewController *vc = [[_23FullViewController alloc] init];
                     [self ax_pushVC:vc];
@@ -925,7 +933,7 @@ typedef void (^CollectionBlock)(void);
                     [self ax_pushVC:vc];
                 },
             },
-
+            
             
             
         ].mutableCopy;

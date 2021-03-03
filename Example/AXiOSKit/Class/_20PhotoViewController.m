@@ -143,7 +143,7 @@
     config.editing = NO;
     config.mediaTypes = @[AXMediaType.kUTTypeImage,AXMediaType.kUTTypeMovie];
     
-    [self.AXListener showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
+    [self.ax_controllerObserve showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
         
     }];
     //    [self ax_showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {

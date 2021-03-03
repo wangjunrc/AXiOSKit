@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AXConstant.h"
 #import "AXMacros.h"
-#import "AXViewControllerListener.h"
+#import "AXViewControllerObserve.h"
 #import "AXAlertTransitioningObserver.h"
 
 @class PHAssetCollection;
@@ -135,7 +135,7 @@
 
 @property (nonatomic, strong, readonly)PHAssetCollection *AXPHAssetCollection;
 
-@property (nonatomic, strong, readonly) AXViewControllerListener *AXListener;
+@property (nonatomic, strong, readonly) AXViewControllerObserve *ax_controllerObserve;
 
 
 
