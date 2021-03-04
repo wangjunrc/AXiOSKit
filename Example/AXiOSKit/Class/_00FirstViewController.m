@@ -835,6 +835,11 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"AXDateVC",
                 @"action": ^{
                     AXDateVC *vc = [[AXDateVC alloc] init];
+                    [vc didSelectDate:NSDate.date confirm:^(NSDate * _Nonnull date) {
+                        NSLog(@"date %@",date);
+                    } cancel:^{
+                        
+                    }];
                     [self ax_showVC:vc];
                     
                 },

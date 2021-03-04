@@ -94,7 +94,7 @@ def common_pods
   # pod 'AXiOSKit', :source => 'https://github.com/axinger/AXiOSKit.git'
   # pod 'AXiOSKit', source: 'https://github.com/axinger/AXiOSKit.git'
   pod 'AXiOSKit', :path => '../'
-  pod 'AXTransitioningObserver',:git => 'https://github.com/axinger/AXTransitioningObserver.git'
+  pod 'AXViewControllerTransitioning',:git => 'https://github.com/axinger/AXViewControllerTransitioning.git'
   pod 'Masonry'
   pod 'AFNetworking'
   pod 'ReactiveObjC','~> 3.0.0'

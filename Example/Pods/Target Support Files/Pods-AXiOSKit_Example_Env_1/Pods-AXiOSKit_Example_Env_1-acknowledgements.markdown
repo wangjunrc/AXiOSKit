@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## AXTransitioningObserver
+## AXViewControllerTransitioning
 
 Copyright (c) 2021 axinger <axinger@outlook.com>
 

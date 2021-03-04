@@ -78,4 +78,4 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "NSObject+AXCacheImage.h"
 #import "AXNetManager.h"
 
-
+#import <AXViewControllerTransitioning/AXViewControllerTransitioning.h>

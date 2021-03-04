@@ -14,7 +14,7 @@
 #import "AXMultiSelectCell.h"
 #import "AXMultiSelectSectionHeaderView.h"
 #import "AXiOSKit.h"
-
+#import <AXViewControllerTransitioning/AXViewControllerTransitioning.h>
 @interface AXMultiSelectViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,AXBaseAlertDataSource>
 
 @property(nonatomic, strong) AXNavigationBar *myNavigationBar;

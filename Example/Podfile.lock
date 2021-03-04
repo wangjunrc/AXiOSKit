@@ -19,7 +19,7 @@ PODS:
   - AXiOSKit (2.0.0):
     - AFNetworking (~> 4.0.0)
     - Aspects
-    - AXTransitioningObserver
+    - AXViewControllerTransitioning
     - DZNEmptyDataSet
     - KVOController
     - Masonry
@@ -29,7 +29,7 @@ PODS:
     - NullSafe
     - ReactiveObjC (~> 3.0.0)
     - SDWebImage
-  - AXTransitioningObserver (1.0.0):
+  - AXViewControllerTransitioning (1.0.0):
     - ReactiveObjC (~> 3.0.0)
   - Bagel (1.4.0):
     - CocoaAsyncSocket
@@ -193,7 +193,7 @@ DEPENDENCIES:
   - AFNetworking
   - AvoidCrash
   - AXiOSKit (from `../`)
-  - AXTransitioningObserver (from `https://github.com/axinger/AXTransitioningObserver.git`)
+  - AXViewControllerTransitioning (from `https://github.com/axinger/AXViewControllerTransitioning.git`)
   - Bagel (~> 1.4.0)
   - Canvas (~> 0.1.2)
   - CocoaAsyncSocket (~> 7.6.5)
@@ -286,20 +286,20 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   AXiOSKit:
     :path: "../"
-  AXTransitioningObserver:
-    :git: https://github.com/axinger/AXTransitioningObserver.git
+  AXViewControllerTransitioning:
+    :git: https://github.com/axinger/AXViewControllerTransitioning.git
 
 CHECKOUT OPTIONS:
-  AXTransitioningObserver:
-    :commit: 65785e72f12e310294f6da1f9560e63bab048426
-    :git: https://github.com/axinger/AXTransitioningObserver.git
+  AXViewControllerTransitioning:
+    :commit: c0a46bdb6e46245c207732ca608c251ae5306a0c
+    :git: https://github.com/axinger/AXViewControllerTransitioning.git
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
-  AXiOSKit: 3029d8d88f444ba20c4d1e44103da44e53fb7326
-  AXTransitioningObserver: cd94263fea59510b34c328e924443c83b4fd8951
+  AXiOSKit: a0e9d54fb9d38937aa08dfb67db2cafb34df7fa7
+  AXViewControllerTransitioning: e173a335210ca7a25f63a05aaf673dd6cdfd4bd2
   Bagel: c3fa6bcbd52db9ca976edbafd7638f0553ded101
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
@@ -349,6 +349,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: c4ddf23be19ac42c2a18345b886cda9b9f879498
+PODFILE CHECKSUM: d538a6af6c0c02baec1ab7795a9df22320c1085e
 
 COCOAPODS: 1.10.1

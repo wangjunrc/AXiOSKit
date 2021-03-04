@@ -2,16 +2,16 @@
 //  AXDateVC.h
 //  AXiOSKit
 //
-//  Created by liuweixing on 16/4/28.
-//  Copyright © 2016年 liuweixing. All rights reserved.
+//  Created by 小星星吃KFC on 2021/3/4.
 //
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface AXDateVC : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (strong, nonatomic)  UIDatePicker *datePicker;
 
 /**
  时间选择器
@@ -37,4 +37,7 @@
               confirm:(void(^)(NSDate *date))confirm
                cancel:(void(^)(void))cancel;
 
+
 @end
+
+NS_ASSUME_NONNULL_END
