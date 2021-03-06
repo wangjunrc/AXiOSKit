@@ -14,6 +14,7 @@
 #import "Masonry.h"
 #endif
 #import "AXPayChildVC.h"
+#import <AXViewControllerTransitioning/AXViewControllerTransitioning.h>
 @interface AXPayVC ()
 
 @end

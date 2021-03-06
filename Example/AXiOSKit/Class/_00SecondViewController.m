@@ -69,7 +69,8 @@
     self.title = @"主题2";
     self.tableView.tableFooterView = UIView.alloc.init;
     //    [self.tableView ax_registerNibCellClass:UITableViewCell.class];
-    [self.tableView ax_registerClassCell:UITableViewCell.class];
+//    [self.tableView ax_registerClassCell:UITableViewCell.class];
+    [UITableViewCell ax_registerCellWithTableView:self.tableView];
     self.dataArray = nil;
     [self.tableView reloadData];
     /// 多选
@@ -190,7 +191,7 @@ void mySLog(NSString *format, ...)
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
+    UITableViewCell *cell = [UITableViewCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
     
     NSDictionary *dict = self.dataArray[indexPath.row];
     //    cell.indexLabel.text = [dict[@"index"] stringValue];

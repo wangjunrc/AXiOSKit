@@ -2268,3 +2268,35 @@ NSLog(@"compare = %ld",[@"1.9" compare:@"1.8"]); // 1.9 > 1.8
     NSLog(@"count = %d",count);
 }
 ```
+## 更换图标有弹窗
+``` 
+[UIApplication sharedApplication] 更换图标有弹窗
+可以拦截alert,或者用一下代码替换 UIApplication.sharedApplication setAlternateIconName:.....
+```
+```
+if ([[UIApplication sharedApplication] respondsToSelector:@selector(supportsAlternateIcons)] &&
+         [[UIApplication sharedApplication] supportsAlternateIcons])
+     {
+         NSMutableString *selectorString = [[NSMutableString alloc] initWithCapacity:40];
+         [selectorString appendString:@"_setAlternate"];
+         [selectorString appendString:@"IconName:"];
+         [selectorString appendString:@"completionHandler:"];
+         
+         SEL selector = NSSelectorFromString(selectorString);
+         IMP imp = [[UIApplication sharedApplication] methodForSelector:selector];
+         void (*func)(id, SEL, id, id) = (void *)imp;
+         if (func)
+         {
+             func([UIApplication sharedApplication], selector, iconName, ^(NSError * _Nullable error) {});
+         }
+     }
+
+```
+## 取消隐士动画
+```
+/// [self.tableView reloadSection:section.integerValue withRowAnimation:UITableViewRowAnimationNone];
+/// CoderMikeHe Fixed： 这里必须要加这句话！！！否则有个奇怪的动画！！！！
+[UIView performWithoutAnimation:^{
+    [self.tableView reloadSection:section.integerValue withRowAnimation:UITableViewRowAnimationAutomatic];
+}];
+```

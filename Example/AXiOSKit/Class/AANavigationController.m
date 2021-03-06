@@ -50,18 +50,18 @@
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    
+
     if(self.childViewControllers.count < 1){
         viewController.hidesBottomBarWhenPushed = NO;
         self.tabBarController.tabBar.hidden = NO;
-        
+
     }else{
         viewController.hidesBottomBarWhenPushed = YES;
         self.tabBarController.tabBar.hidden = YES;
     }
-    
+
     [super pushViewController:viewController animated:animated];
-    
+
     if(self.childViewControllers.count>0){
         /// 取消返回 文字
         viewController.navigationItem.backBarButtonItem = [UIBarButtonItem.alloc
@@ -70,7 +70,7 @@
                                                            target:self
                                                            action:nil];
     }
-    
+
 }
 
 - (void) traitCollectionDidChange: (UITraitCollection *) previousTraitCollection {

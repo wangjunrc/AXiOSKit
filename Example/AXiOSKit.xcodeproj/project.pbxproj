@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */; };
 		21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */; };
+		210B1ED125EDE40200878A73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 210B1ED425EDE40200878A73 /* Localizable.strings */; };
+		210B1ED225EDE40200878A73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 210B1ED425EDE40200878A73 /* Localizable.strings */; };
+		210B1EE025EE18C200878A73 /* NSBundle+CLLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */; };
+		210B1EE125EE18C200878A73 /* NSBundle+CLLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */; };
 		2111E04A257377100016004D /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898E9B2541AD6900876524 /* ShareViewController.m */; };
 		2111E04D257377100016004D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21898E9D2541AD6900876524 /* MainInterface.storyboard */; };
 		211226F32573340100B6ECC8 /* AXUserLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21948C662563F11E00207E18 /* AXUserLog.mm */; };
@@ -154,6 +158,8 @@
 		211A99FB25CB9F9D009030CB /* RectComp.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E425CB9F9D009030CB /* RectComp.json */; };
 		211A99FC25CB9F9D009030CB /* Play-Pause.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E525CB9F9D009030CB /* Play-Pause.json */; };
 		211A99FD25CB9F9D009030CB /* Play-Pause.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E525CB9F9D009030CB /* Play-Pause.json */; };
+		211DEB6625EC88E500CE3907 /* _01GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211DEB6525EC88E500CE3907 /* _01GradientViewController.m */; };
+		211DEB6725EC88E500CE3907 /* _01GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211DEB6525EC88E500CE3907 /* _01GradientViewController.m */; };
 		2121FE8025CA945600B3B323 /* AXXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2121FE7F25CA945600B3B323 /* AXXSwitch.m */; };
 		2121FE8125CA945600B3B323 /* AXXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2121FE7F25CA945600B3B323 /* AXXSwitch.m */; };
 		2124D21225E48AF800B1A5A4 /* XWShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2124D21125E48AF800B1A5A4 /* XWShadow.m */; };
@@ -318,6 +324,8 @@
 		21D61EED257F106E0059201A /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* Test.swift */; };
 		21D7675425C00CE700468F8E /* _00HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D7675325C00CE600468F8E /* _00HeaderView.m */; };
 		21D7675525C00CE700468F8E /* _00HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D7675325C00CE600468F8E /* _00HeaderView.m */; };
+		21D87B8925EF35C2007220E8 /* _01TypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D87B8825EF35C2007220E8 /* _01TypeViewController.m */; };
+		21D87B8A25EF35C2007220E8 /* _01TypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D87B8825EF35C2007220E8 /* _01TypeViewController.m */; };
 		21E306B4255EAA1100D17A8B /* _29AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E306B2255EAA1100D17A8B /* _29AudioViewController.m */; };
 		21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
 		21E5C8A9257F6BF8002A4D59 /* _00BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */; };
@@ -416,6 +424,14 @@
 		21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateAppearance.m; sourceTree = "<group>"; };
 		21022AEA2547A9AF0055E0B7 /* AppDelegateWX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateWX.h; sourceTree = "<group>"; };
 		21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateWX.m; sourceTree = "<group>"; };
+		210B1EB725EDE2FA00878A73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "../zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		210B1EB825EDE2FB00878A73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
+		210B1EB925EDE2FB00878A73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "../zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		210B1EBA25EDE2FB00878A73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		210B1ED325EDE40200878A73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		210B1ED925EDE40600878A73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		210B1EDE25EE18C200878A73 /* NSBundle+CLLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CLLanguage.h"; sourceTree = "<group>"; };
+		210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CLLanguage.m"; sourceTree = "<group>"; };
 		2111E051257377100016004D /* AXShare_Env_1.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AXShare_Env_1.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2111E052257377100016004D /* AXShare_Env_1_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AXShare_Env_1_Info.plist; path = /Users/xing/Develop/GitHub/AXiOSKit/Example/AXShare_Env_1_Info.plist; sourceTree = "<absolute>"; };
 		2112276B2573340100B6ECC8 /* AXiOSKit_Example_Env_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit_Example_Env_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -440,6 +456,8 @@
 		211A99E325CB9F9D009030CB /* EmptyStatus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmptyStatus.json; sourceTree = "<group>"; };
 		211A99E425CB9F9D009030CB /* RectComp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RectComp.json; sourceTree = "<group>"; };
 		211A99E525CB9F9D009030CB /* Play-Pause.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Play-Pause.json"; sourceTree = "<group>"; };
+		211DEB6425EC88E500CE3907 /* _01GradientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _01GradientViewController.h; sourceTree = "<group>"; };
+		211DEB6525EC88E500CE3907 /* _01GradientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _01GradientViewController.m; sourceTree = "<group>"; };
 		2121FE7E25CA945600B3B323 /* AXXSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXXSwitch.h; sourceTree = "<group>"; };
 		2121FE7F25CA945600B3B323 /* AXXSwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXXSwitch.m; sourceTree = "<group>"; };
 		2124D21025E48AF800B1A5A4 /* XWShadow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWShadow.h; sourceTree = "<group>"; };
@@ -680,6 +698,8 @@
 		21D7675225C00CE600468F8E /* _00HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00HeaderView.h; sourceTree = "<group>"; };
 		21D7675325C00CE600468F8E /* _00HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00HeaderView.m; sourceTree = "<group>"; };
 		21D83B3A255A28BE00695C28 /* rac.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = rac.md; sourceTree = "<group>"; };
+		21D87B8725EF35C1007220E8 /* _01TypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _01TypeViewController.h; sourceTree = "<group>"; };
+		21D87B8825EF35C2007220E8 /* _01TypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _01TypeViewController.m; sourceTree = "<group>"; };
 		21E306B1255EAA1100D17A8B /* _29AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _29AudioViewController.h; sourceTree = "<group>"; };
 		21E306B2255EAA1100D17A8B /* _29AudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _29AudioViewController.m; sourceTree = "<group>"; };
 		21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _29AudioViewController.xib; sourceTree = "<group>"; };
@@ -839,6 +859,10 @@
 				213BCB6A254003D900C89B72 /* _00TableViewCell.xib */,
 				213BCB47254003D900C89B72 /* _01ContentViewController.h */,
 				213BCB72254003D900C89B72 /* _01ContentViewController.m */,
+				211DEB6425EC88E500CE3907 /* _01GradientViewController.h */,
+				211DEB6525EC88E500CE3907 /* _01GradientViewController.m */,
+				21D87B8725EF35C1007220E8 /* _01TypeViewController.h */,
+				21D87B8825EF35C2007220E8 /* _01TypeViewController.m */,
 				213BCBA2254003DA00C89B72 /* _02Chat */,
 				213BCB82254003D900C89B72 /* _04RunLoopViewController.h */,
 				213BCB60254003D900C89B72 /* _04RunLoopViewController.m */,
@@ -1453,6 +1477,9 @@
 				213BCB35254003D900C89B72 /* Settings.bundle */,
 				21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */,
 				21D61EEA257F106D0059201A /* AXiOSKit_Example_Env_1-Bridging-Header.h */,
+				210B1EDE25EE18C200878A73 /* NSBundle+CLLanguage.h */,
+				210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */,
+				210B1ED425EDE40200878A73 /* Localizable.strings */,
 			);
 			name = "00Supporting Files";
 			sourceTree = "<group>";
@@ -1657,7 +1684,7 @@
 			knownRegions = (
 				en,
 				Base,
-				ja,
+				"zh-Hans",
 			);
 			mainGroup = 6003F581195388D10070C39A;
 			productRefGroup = 6003F58B195388D20070C39A /* Products */;
@@ -1702,6 +1729,7 @@
 				211227452573340100B6ECC8 /* Alternate_AppIcon_2@2x.png in Resources */,
 				211227462573340100B6ECC8 /* _07VideoViewController.xib in Resources */,
 				21EB382C25DF90C6002C1807 /* ax_debug.xcconfig in Resources */,
+				210B1ED225EDE40200878A73 /* Localizable.strings in Resources */,
 				211227472573340100B6ECC8 /* g3@2x.png in Resources */,
 				211227482573340100B6ECC8 /* _23FullViewController.xib in Resources */,
 				211227492573340100B6ECC8 /* _06WCDBViewController.xib in Resources */,
@@ -1802,6 +1830,7 @@
 				213BCC08254003DB00C89B72 /* _24NoteViewController.xib in Resources */,
 				21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */,
 				21D08EBD25CBF1E90006DBCC /* 46472-lurking-cat.json in Resources */,
+				210B1ED125EDE40200878A73 /* Localizable.strings in Resources */,
 				213BCC0F254003DB00C89B72 /* _00TableViewCell.xib in Resources */,
 				211A99E625CB9F9D009030CB /* Switch.json in Resources */,
 				21799C7C255BDE8500754A8B /* gift.svg in Resources */,
@@ -1934,7 +1963,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/AXTransitioningObserver/AXTransitioningObserver.framework",
+				"${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
 				"${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework",
@@ -1952,6 +1981,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
+				"${BUILT_PRODUCTS_DIR}/KMNavigationBarTransition/KMNavigationBarTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework",
@@ -1988,7 +2018,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXTransitioningObserver.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXViewControllerTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXiOSKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AvoidCrash.framework",
@@ -2006,6 +2036,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMNavigationBarTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDebugTool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDynamicLaunchScreen.framework",
@@ -2052,7 +2083,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AXiOSKit_Example_Env_1/Pods-AXiOSKit_Example_Env_1-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/AXTransitioningObserver/AXTransitioningObserver.framework",
+				"${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
 				"${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework",
@@ -2070,6 +2101,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
+				"${BUILT_PRODUCTS_DIR}/KMNavigationBarTransition/KMNavigationBarTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework",
@@ -2106,7 +2138,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXTransitioningObserver.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXViewControllerTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXiOSKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AvoidCrash.framework",
@@ -2124,6 +2156,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMNavigationBarTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDebugTool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDynamicLaunchScreen.framework",
@@ -2211,6 +2244,7 @@
 				21F43D0725E4F310002AF1AD /* CTMediator+NewsActions.m in Sources */,
 				211226F72573340100B6ECC8 /* _20PhotoViewController.m in Sources */,
 				211226F82573340100B6ECC8 /* _28LocalSocketServiceViewController.m in Sources */,
+				21D87B8A25EF35C2007220E8 /* _01TypeViewController.m in Sources */,
 				2121FE8125CA945600B3B323 /* AXXSwitch.m in Sources */,
 				211226F92573340100B6ECC8 /* AppDelegateWebImage.m in Sources */,
 				211226FA2573340100B6ECC8 /* AFHTTPSessionManager+PutFile.m in Sources */,
@@ -2249,6 +2283,7 @@
 				211227112573340100B6ECC8 /* _18MGSwipeTableVC.m in Sources */,
 				2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */,
 				211227122573340100B6ECC8 /* _02ChatViewController.m in Sources */,
+				211DEB6725EC88E500CE3907 /* _01GradientViewController.m in Sources */,
 				211227132573340100B6ECC8 /* UIControl+load.m in Sources */,
 				211227142573340100B6ECC8 /* _27MQTTClientViewController.m in Sources */,
 				218A32D525E0FAAE008D95B8 /* _33CropViewController.m in Sources */,
@@ -2284,6 +2319,7 @@
 				211227282573340100B6ECC8 /* AppDelegateRegistryCenter.m in Sources */,
 				211227292573340100B6ECC8 /* _06WCDBViewController.m in Sources */,
 				2112272A2573340100B6ECC8 /* _17OtherShareViewController.m in Sources */,
+				210B1EE125EE18C200878A73 /* NSBundle+CLLanguage.m in Sources */,
 				2112272B2573340100B6ECC8 /* _01ContentViewController.m in Sources */,
 				2112272C2573340100B6ECC8 /* AANavigationController.m in Sources */,
 				21B772A625C7FCA700E7F4BC /* PECropView.m in Sources */,
@@ -2358,6 +2394,7 @@
 				213BCC06254003DB00C89B72 /* _18MGSwipeTableVC.m in Sources */,
 				213BCC2E254003DB00C89B72 /* _02ChatViewController.m in Sources */,
 				213BCC33254003DB00C89B72 /* UIControl+load.m in Sources */,
+				210B1EE025EE18C200878A73 /* NSBundle+CLLanguage.m in Sources */,
 				21F43D0625E4F310002AF1AD /* CTMediator+NewsActions.m in Sources */,
 				213BCBEF254003DB00C89B72 /* _27MQTTClientViewController.m in Sources */,
 				21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */,
@@ -2368,6 +2405,7 @@
 				213BCC02254003DB00C89B72 /* MyActivity.m in Sources */,
 				213BCC01254003DB00C89B72 /* _00TableViewCell.m in Sources */,
 				213BCC3D254003DB00C89B72 /* RouterManager.m in Sources */,
+				21D87B8925EF35C2007220E8 /* _01TypeViewController.m in Sources */,
 				211A997725CB96C7009030CB /* _32LottieVC.m in Sources */,
 				216891AB25ABDD4B0037CAB5 /* _25CompLayoutCell.m in Sources */,
 				218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */,
@@ -2399,6 +2437,7 @@
 				218F674125A5B61E006A8312 /* _25CompLayoutVC1.m in Sources */,
 				213BCBFC254003DB00C89B72 /* _06WCDBViewController.m in Sources */,
 				21B542B025A5A31A0071D20D /* _25FlowLayoutBaseVC.m in Sources */,
+				211DEB6625EC88E500CE3907 /* _01GradientViewController.m in Sources */,
 				2121FE8025CA945600B3B323 /* AXXSwitch.m in Sources */,
 				2124D21225E48AF800B1A5A4 /* XWShadow.m in Sources */,
 				213BCC1B254003DB00C89B72 /* _17OtherShareViewController.m in Sources */,
@@ -2453,10 +2492,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		210B1ED425EDE40200878A73 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				210B1ED325EDE40200878A73 /* en */,
+				210B1ED925EDE40600878A73 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		213BCB2E254003D900C89B72 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				213BCB2F254003D900C89B72 /* en */,
+				210B1EB925EDE2FB00878A73 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -2465,6 +2514,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				213BCB94254003D900C89B72 /* Base */,
+				210B1EB725EDE2FA00878A73 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -2473,6 +2523,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				21898E9E2541AD6900876524 /* Base */,
+				210B1EB825EDE2FB00878A73 /* zh-Hans */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -2481,6 +2532,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6003F5B9195388D20070C39A /* en */,
+				210B1EBA25EDE2FB00878A73 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

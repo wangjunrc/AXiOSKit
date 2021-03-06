@@ -409,3 +409,6 @@ pod 'Bagel', '~>  1.3.2'
 
 ### FBRetainCycleDetector 用以检测循环引用，可以检测NSObject的循环引用
 pod 'FBRetainCycleDetector'
+
+### jrswizzle  子类安全交换父类方法, https://www.jianshu.com/p/4807e9745397
+pod 'jrswizzle'

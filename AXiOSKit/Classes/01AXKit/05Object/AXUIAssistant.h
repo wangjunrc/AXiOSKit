@@ -36,10 +36,10 @@ extern CGFloat ax_screen_center_x(void);
 extern CGFloat ax_pixel(void);
 
 
-/**导航栏高+状态栏高 44+20或者44+44*/
+/**导航栏高+状态栏高 44+20或者44+齐刘海高度*/
 extern CGFloat ax_navigation_and_status_height(void);
 
-/**状态态栏高 20或者44*/
+/**状态态栏高 20或者齐刘海高度*/
 extern CGFloat ax_status_bar_height(void);
 
 /**导航栏高 44*/
@@ -80,10 +80,12 @@ extern CGRect ax_screen_adaptive_rect(CGRect rectValue);
 
 extern CGFloat ax_screen_vertical_adaptive_float_with_padding(CGFloat floatValue, CGFloat padding);
 
-/**
- * 当前活动窗口的控制器
- */
+/// 当前活动窗口的控制器
 UIViewController *ax_currentViewController(void);
+
+/// 设置根控制器
+/// @param vc UIViewController
+void ax_setRootViewController(UIViewController *vc);
 
 /**
  * app代理

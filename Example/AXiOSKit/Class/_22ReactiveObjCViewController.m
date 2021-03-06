@@ -11,41 +11,29 @@
 #import <Masonry/Masonry.h>
 #import <AXiOSKit/AXiOSKit.h>
 
-
-
-
-@interface NSString (EmailAdditions)
-
-
-- (BOOL)isValidEmail;
-@end
-
-
-@implementation NSString (EmailAdditions)
-
-- (BOOL)isValidEmail {
-    NSString *emailPattern =
-    @"(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}"
-    @"~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\"
-    @"x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-"
-    @"z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5"
-    @"]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-"
-    @"9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21"
-    @"-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])";
-    NSError *error = nil;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:emailPattern options:NSRegularExpressionCaseInsensitive error:&error];
-    NSTextCheckingResult *match = [regex firstMatchInString:self options:0 range:NSMakeRange(0, [self length])];
-    return match != nil;
-}
-
-@end
-
-
+/**
+ RACCommand与RACSubject的区别
+ RACCommand 用来做事情,比如 增删改查数据源,然后调用刷新RACSubject
+ RACSubject 用来监听事情, 比如 刷新RACSubject
+ RACCommand通常来处理有多种状态的信号的类
+ https://www.jianshu.com/p/76a926e031f4
+ RACSubject
+ 
+ 是什么
+ 
+ 定义
+ 
+ 信号提供者，既能发送信号，又能订阅信号
+ 
+ 使用场景
+ 
+ 多用于代理，相当于OC里的delegate或者回调block
+ 
+ 
+ */
 @interface _22ReactiveObjCViewController ()
 
-
 @property(nonatomic, strong) NSMutableArray *dataArray;
-
 
 @end
 
@@ -70,15 +58,14 @@
     [self _09Command];
     
     
-//    [RACObserve(button, enabled) subscribeNext:^(NSNumber  * x) {
-//     
-//        
-//    }];
+    //    [RACObserve(button, enabled) subscribeNext:^(NSNumber  * x) {
+    //
+    //
+    //    }];
     
     
     /// 底部约束
     [self _loadBottomAttribute];
-    
     
 }
 
@@ -172,24 +159,24 @@
     }];
     
     /// 文字变化,初始化有点问题
-//    RACSignal *comineSiganl = [RACSignal combineLatest:@[tf1.rac_newTextChannel,tf2.rac_newTextChannel, RACObserve(tf2, text)] reduce:^id _Nullable (NSString *text1, NSString *text2, NSString *text22) {
-//        NSLog(@"text1 = %@,text2 = %@,text22 = %@",text1,text2,text22);
-//        return @(tf1.text.length && tf2.text.length);
-//    }];
-//
+    //    RACSignal *comineSiganl = [RACSignal combineLatest:@[tf1.rac_newTextChannel,tf2.rac_newTextChannel, RACObserve(tf2, text)] reduce:^id _Nullable (NSString *text1, NSString *text2, NSString *text22) {
+    //        NSLog(@"text1 = %@,text2 = %@,text22 = %@",text1,text2,text22);
+    //        return @(tf1.text.length && tf2.text.length);
+    //    }];
+    //
     
     
     
-//    [RACObserve(tf2, text) subscribeNext:^(id x) {
-//        NSLog(@"点击给 UITextField赋值 = %@",x);
-//    }];
-//
-//    [tf2.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
-//        NSLog(@"点击给 UITextField赋值2 = %@",x);
-//    }];
-//    [tf2.rac_newTextChannel subscribeNext:^(NSString * _Nullable x) {
-//        NSLog(@"点击给 UITextField赋值3 = %@",x);
-//    }];
+    //    [RACObserve(tf2, text) subscribeNext:^(id x) {
+    //        NSLog(@"点击给 UITextField赋值 = %@",x);
+    //    }];
+    //
+    //    [tf2.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
+    //        NSLog(@"点击给 UITextField赋值2 = %@",x);
+    //    }];
+    //    [tf2.rac_newTextChannel subscribeNext:^(NSString * _Nullable x) {
+    //        NSLog(@"点击给 UITextField赋值3 = %@",x);
+    //    }];
     
     RAC(btn0, enabled) = comineSiganl;
     [RACObserve(btn0, enabled) subscribeNext:^(id  _Nullable x) {
@@ -277,59 +264,59 @@
     [tf.rac_textSignal subscribe:RACChannelTo(label1, text)];
     
     /// UITextField 双向绑定
-   /***
-    RACChannelTo(label1, text) = tf.rac_newTextChannel;
+    /***
+     RACChannelTo(label1, text) = tf.rac_newTextChannel;
+     
+     [[tf.rac_textSignal filter:^BOOL(NSString * _Nullable value) {
+     return [value length] > 5;
+     }] subscribeNext:^(NSString * _Nullable x) {
+     NSLog(@"rac_textSignal filter %@", x);
+     }];
+     
+     
+     RACSignal *singal = RACObserve(label1, text);
+     //    RACSignal *singal =tf.rac_newTextChannel;
+     [singal.sequence map:^id _Nullable(id  _Nullable value) {
+     NSLog(@"UITextField 双向绑定 value = %@",value);
+     return [value isEqualToString:@"2"] ? @"我是2" : value;
+     }];
+     [singal subscribeNext:^(id  _Nullable x) {
+     NSLog(@"UITextField 双向绑定 x = %@",x);
+     }];
+     [label1.text.rac_sequence.signal subscribeNext:^(NSString * _Nullable x) {
+     NSLog(@"UITextField 双向绑定2 x = %@",x);
+     }];
+     */
     
-    [[tf.rac_textSignal filter:^BOOL(NSString * _Nullable value) {
-       return [value length] > 5;
-    }] subscribeNext:^(NSString * _Nullable x) {
-        NSLog(@"rac_textSignal filter %@", x);
-    }];
-    
-    
-    RACSignal *singal = RACObserve(label1, text);
-    //    RACSignal *singal =tf.rac_newTextChannel;
-    [singal.sequence map:^id _Nullable(id  _Nullable value) {
-        NSLog(@"UITextField 双向绑定 value = %@",value);
-        return [value isEqualToString:@"2"] ? @"我是2" : value;
-    }];
-    [singal subscribeNext:^(id  _Nullable x) {
-        NSLog(@"UITextField 双向绑定 x = %@",x);
-    }];
-    [label1.text.rac_sequence.signal subscribeNext:^(NSString * _Nullable x) {
-        NSLog(@"UITextField 双向绑定2 x = %@",x);
-    }];
-    */
-    
-//    RAC(label1, text) = RACObserve(tf, text);
-////    RAC(label1, text) = tf.rac_newTextChannel;;
+    //    RAC(label1, text) = RACObserve(tf, text);
+    ////    RAC(label1, text) = tf.rac_newTextChannel;;
     
     /// map
-//    RAC(tf, text) = [RACObserve(label1, text) map:^id(id value) {
-////        NSLog(@"%@ %@", value, [value class]);
-//
-//        return [value isEqualToString:@"2"] ? @"我是2" : value;
-//    }];
-//    RAC(label1, text) = [tf.rac_newTextChannel map:^id _Nullable(NSString * _Nullable value) {
-//        return [value isEqualToString:@"2"] ? @"我是2" : value;
-//    }];
+    //    RAC(tf, text) = [RACObserve(label1, text) map:^id(id value) {
+    ////        NSLog(@"%@ %@", value, [value class]);
+    //
+    //        return [value isEqualToString:@"2"] ? @"我是2" : value;
+    //    }];
+    //    RAC(label1, text) = [tf.rac_newTextChannel map:^id _Nullable(NSString * _Nullable value) {
+    //        return [value isEqualToString:@"2"] ? @"我是2" : value;
+    //    }];
     /// filter
-//    RAC(label1, text) = [tf.rac_newTextChannel filter:^BOOL(NSString * _Nullable value) {
-//        return value.length>3;
-//    }];
-//    RAC(tf, text) = RACObserve(label1, text);
-//    RAC(label1, text) = [tf.rac_newTextChannel subscribeNext:^(NSString * _Nullable x) {
-//
-//    }];
-
+    //    RAC(label1, text) = [tf.rac_newTextChannel filter:^BOOL(NSString * _Nullable value) {
+    //        return value.length>3;
+    //    }];
+    //    RAC(tf, text) = RACObserve(label1, text);
+    //    RAC(label1, text) = [tf.rac_newTextChannel subscribeNext:^(NSString * _Nullable x) {
+    //
+    //    }];
+    
     
     
     ///
-//    RAC(label1, text) = tf.rac_newTextChannel;
-//    RAC(tf, text) = [RACObserve(label1, text) map:^id _Nullable(id  _Nullable value) {
-//        NSLog(@"value = %@",value);
-//        return [value isEqualToString:@"2"] ? @"我是2" : value;
-//    }];
+    //    RAC(label1, text) = tf.rac_newTextChannel;
+    //    RAC(tf, text) = [RACObserve(label1, text) map:^id _Nullable(id  _Nullable value) {
+    //        NSLog(@"value = %@",value);
+    //        return [value isEqualToString:@"2"] ? @"我是2" : value;
+    //    }];
 }
 /// 定时器
 -(void)_03timer {
@@ -350,7 +337,7 @@
 
 -(void)_04arrayMap {
     
-     [self _p00ButtonTitle:@"NSArray map" handler:^(UIButton * _Nonnull btn) {
+    [self _p00ButtonTitle:@"NSArray map" handler:^(UIButton * _Nonnull btn) {
         
         NSArray *array = @[@"1", @"2", @"3"];
         
@@ -450,7 +437,7 @@
 -(void)_08zipWith {
     
     
-     [self _p00ButtonTitle:@"所有请求完成" handler:^(UIButton * _Nonnull btn) {
+    [self _p00ButtonTitle:@"所有请求完成" handler:^(UIButton * _Nonnull btn) {
         
         // 需求: 一个界面有多个请求, 所有请求完成才更新 UI.
         RACSubject *signalA = [RACSubject subject];
@@ -554,52 +541,138 @@
 }
 
 -(void)_09Command  {
+    /**
+     *  RACCommand使用注意
+     *  1、RACCommand内部必须返回RACSignal
+     *  2、executionSignals信号中的信号，一开始获取不到内部信号
+     *      2.1 使用switchToLatest:获取内部信号
+     *      2.2 使用execute:获取内部信号
+     *  3、executing判断是否正在执行
+     *      3.1 第一次不准确，需要skip:跳过
+     *      3.2 一定要记得sendCompleted，否则永远不会执行完成
+     *  4、通过执行execute，执行command的block
+     */
     
     RACCommand *com = [RACCommand.alloc initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
-        NSLog(@"input = %@",input);
-        return [RACSignal return:@"AAA"];
+        NSLog(@"input 接收到execute的参数 = %@",input);
+        //        return [RACSignal return:@"AAA"];
+        
+        //创建信号,用来传递数据
+        
+        //           return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        //               [subscriber sendNext:[NSString stringWithFormat:@"返回值%@",input]];
+        //               [subscriber sendCompleted];
+        //               return nil;
+        //           }];
+        
+        return [RACSignal return:[NSString stringWithFormat:@"返回值%@+%d",input,ax_randomZeroToValue(10)]];
+        
     }];
     
-    RACCommand *com2 = [RACCommand.alloc initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
-        NSLog(@"input = %@",input);
-        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-            [subscriber sendNext:@"tom"];
-            /// 没有的话只能执行一次
-            [subscriber sendCompleted];
-            
-//            return [RACDisposable disposableWithBlock:^{
-//
-//            }];
-//
-            //一般都返回nil
-            return nil;
+    //    [[com.executing skip:1] subscribeNext:^(NSNumber * _Nullable x) {
+    //            //NSLog(@"x = %@", x);
+    //            if (x.boolValue) {
+    //                NSLog(@"x = %@ 正在执行", x);
+    //            } else {
+    //                NSLog(@"x = %@ 执行完成", x);
+    //            }
+    //        }];
+    [com.executing subscribeNext:^(NSNumber * _Nullable x) {
+        //NSLog(@"x = %@", x);
+        if (x.boolValue) {
+            NSLog(@"x = %@ 正在执行", x);
+        } else {
+            NSLog(@"x = %@ 执行完成 \n", x);
+        }
+    }];
+    
+    /// RACCommand中的executionSignals属性是一个包裹着信号的信号
+    [[com executionSignals]
+     subscribeNext:^(RACSignal *x) {
+        [x subscribeNext:^(id x) {
+            NSLog(@"信号处理 包裹着信号 = %@",x);
         }];
     }];
+    /// 如果你嫌订阅两个事件麻烦的话，可以使用函数switchToLatest进行转换：
+    [com.executionSignals.switchToLatest subscribeNext:^(id  _Nullable x) {
+        NSLog(@"信号处理 switchToLatest = %@",x);
+    }];
+    
+    [[[com.executionSignals.switchToLatest filter:^BOOL(id  _Nullable value) {
+        NSLog(@"filter = %@",value);
+        return YES;
+    }]map:^id _Nullable(id  _Nullable value) {
+        NSLog(@"map = %@",value);
+        return value;
+    }]subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subscribeNext = %@",x);
+    }];
+    
+    
+    //
+    //    [com.executing subscribeNext:^(id x){
+    //      //信号处理
+    //        NSLog(@"信号处理 = %@",x);
+    //    }];
+    //
+    //
+    //
+    //
+    //    [[[com.executing  filter:^BOOL(id  _Nullable value) {
+    //        NSLog(@"filter = %@",value);
+    //        return YES;
+    //    }]map:^id _Nullable(id  _Nullable value) {
+    //        NSLog(@"map = %@",value);
+    //        return value;
+    //    }]subscribeNext:^(id  _Nullable x) {
+    //        NSLog(@"subscribeNext = %@",x);
+    //    }];
+    //
+    
+    //    RACCommand *com2 = [RACCommand.alloc initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+    //        NSLog(@"input = %@",input);
+    //        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+    //            [subscriber sendNext:@"tom"];
+    //            /// 没有的话只能执行一次
+    //            [subscriber sendCompleted];
+    //
+    ////            return [RACDisposable disposableWithBlock:^{
+    ////
+    ////            }];
+    ////
+    //            //一般都返回nil
+    //            return nil;
+    //        }];
+    //    }];
     
     [self _p00ButtonTitle:@"执行execute" handler:^(UIButton * _Nonnull btn) {
-        [[com execute:@"jim"]subscribeNext:^(id  _Nullable x) {
-            NSLog(@"返回值 = %@",x);
-        }];
+        [com execute:@"jim"];
     }];
     
-    [self _p00ButtonTitle:@"执行execute,过滤" handler:^(UIButton * _Nonnull btn) {
-        
-        [[[[com execute:@"jim"] filter:^BOOL(id  _Nullable value) {
-            NSLog(@"filter = %@",value);
-            return YES;
-        }]map:^id _Nullable(id  _Nullable value) {
-            NSLog(@"map = %@",value);
-            return value;
-        }]subscribeNext:^(id  _Nullable x) {
-            NSLog(@"subscribeNext = %@",x);
-        }];
-    }];
+    //    [self _p00ButtonTitle:@"执行execute" handler:^(UIButton * _Nonnull btn) {
+    //        [[com execute:@"jim"]subscribeNext:^(id  _Nullable x) {
+    //            NSLog(@"返回值 = %@",x);
+    //        }];
+    //    }];
     
-    [self _p00ButtonTitle:@"sendCompleted,没有的话只能执行一次" handler:^(UIButton * _Nonnull btn) {
-        [[com2 execute:@"jim"]subscribeNext:^(id  _Nullable x) {
-            NSLog(@"返回值 = %@",x);
-        }];
-    }];
+    //    [self _p00ButtonTitle:@"执行execute,过滤" handler:^(UIButton * _Nonnull btn) {
+    //
+    //        [[[[com execute:@"jim"] filter:^BOOL(id  _Nullable value) {
+    //            NSLog(@"filter = %@",value);
+    //            return YES;
+    //        }]map:^id _Nullable(id  _Nullable value) {
+    //            NSLog(@"map = %@",value);
+    //            return value;
+    //        }]subscribeNext:^(id  _Nullable x) {
+    //            NSLog(@"subscribeNext = %@",x);
+    //        }];
+    //    }];
+    
+    //    [self _p00ButtonTitle:@"sendCompleted,没有的话只能执行一次" handler:^(UIButton * _Nonnull btn) {
+    //        [[com2 execute:@"jim"]subscribeNext:^(id  _Nullable x) {
+    //            NSLog(@"返回值 = %@",x);
+    //        }];
+    //    }];
 }
 -(void)_RACChannelTo{
     

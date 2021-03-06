@@ -61,13 +61,22 @@ CGFloat ax_navigation_and_status_height(void) {
     return ax_status_bar_height() + ax_navigation_bar_height();
 }
 
-/**状态栏高 20 或者 44*/
+/**状态栏高 20 或者 齐刘海高度*/
 CGFloat ax_status_bar_height(void) {
-    return UIApplication.sharedApplication.statusBarFrame.size.height;
+    CGFloat statusBarHeight = 0;
+    if (@available(iOS 13.0, *)) {
+        UIStatusBarManager *statusBarManager = [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager;
+        statusBarHeight = statusBarManager.statusBarFrame.size.height;
+    }
+    else {
+        statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    }
+    return statusBarHeight;
 }
 
 /**导航栏高 */
 CGFloat ax_navigation_bar_height(void) {
+    // self.navigationController.navigationBar.frame.size.height
     return 44.0f;
 }
 
@@ -185,6 +194,10 @@ id <UIApplicationDelegate> ax_mainAppDelegate(void) {
  */
 UIViewController *ax_rootViewController(void) {
     return [UIApplication sharedApplication].keyWindow.rootViewController;
+}
+
+void ax_setRootViewController(UIViewController *vc) {
+    UIApplication.sharedApplication.keyWindow.rootViewController = vc;;
 }
 
 /**

@@ -32,6 +32,7 @@
 #import <AVKit/AVKit.h>
 #import "AXIBudyButton.h"
 #import "XWShadow.h"
+#import "MakeKeyAndVisible.h"
 @interface _01ContentViewController ()<UITextViewDelegate,UIViewControllerTransitioningDelegate, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding,VNDocumentCameraViewControllerDelegate>
 
 @property (nonatomic, strong) UILabel *label;
@@ -51,7 +52,11 @@
 //    NSLog(@"重启了 InjectionIII: %@", self);
 //    [self viewDidLoad];
 //}
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBarHidden = YES;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor =  UIColor.whiteColor;
@@ -61,7 +66,7 @@
     
     self.containerView.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
     
-    self.AXListener.isPushed(^{
+    self.ax_controllerObserve.isPushed(^{
         NSLog(@"isPushed");
     }).isPresented(^{
         NSLog(@"isPresented");
@@ -74,8 +79,9 @@
     
     [self _p00ButtonTitle:@"push" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        _01ContentViewController *aa = [_01ContentViewController ax_init];
-        [strongSelf ax_pushVC:aa];
+        _01ContentViewController *vc = [_01ContentViewController ax_init];
+        [strongSelf ax_pushVC:vc];
+        vc.ax_controllerObserve.hiddenNavigationBar = NO;
     }];
     
     [self _p00ButtonTitle:@"show" handler:^(UIButton * _Nonnull btn) {
@@ -201,13 +207,8 @@
     [self _p20changeLanch];
     [self _p21stackView];
     
-    [self _p00ButtonTitle:@"语音" handler:^(UIButton * _Nonnull btn) {
-        AVSpeechSynthesizer *synthsizer =   AVSpeechSynthesizer.alloc.init;
-        AVSpeechUtterance *utterance =   [AVSpeechUtterance.alloc initWithString:@"支付宝到账1000元"];
-        //        utterance.voice =  [AVSpeechSynthesisVoice voiceWithLanguage:@"zh-CN"];
-        utterance.rate = 0.52;
-        [synthsizer speakUtterance:utterance];
-    }];
+    [self _p23changeLanguages];
+    
     /// 底部约束
     [self _loadBottomAttribute];
 }
@@ -353,7 +354,7 @@
         keyboarTF.inputView = inputView;
         
         [self _p00ButtonTitle:@"切换系统键盘" handler:^(UIButton * _Nonnull btn) {
-//
+            //
             keyboarTF.inputView = nil;
             [keyboarTF reloadInputViews];
         }];
@@ -703,29 +704,55 @@
 
 - (void)_p02AlternateIconName {
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTitle:@"换icon" handler:^(UIButton * _Nonnull btn) {
+    [self _p00ButtonTitle:@"换icon" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf setIconname:@"Alternate_AppIcon_2"];
+    }];
+    [self _p00ButtonTitle:@"换icon-还原" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf setIconname:nil];
     }];
 }
 
 - (void)setIconname:(NSString *)name {
-    UIApplication *appli = [UIApplication sharedApplication];
-    //判断系统是否支持切换icon
-    if (@available(iOS 10.3, *)) {
-        if ([appli supportsAlternateIcons]) {
-            //切换icon
-            [appli setAlternateIconName:name completionHandler:^(NSError *_Nullable error) {
-                if (error) {
-                    NSLog(@"error==> %@", error.localizedDescription);
-                } else {
-                    NSLog(@"done!!!");
-                }
-            }];
+    //    UIApplication *appli = [UIApplication sharedApplication];
+    //    //判断系统是否支持切换icon
+    //    if (@available(iOS 10.3, *)) {
+    //        if ([appli supportsAlternateIcons]) {
+    //            //切换icon
+    //            [appli setAlternateIconName:name completionHandler:^(NSError *_Nullable error) {
+    //                if (error) {
+    //                    NSLog(@"error==> %@", error.localizedDescription);
+    //                } else {
+    //                    NSLog(@"done!!!");
+    //                }
+    //            }];
+    //        }
+    //    } else {
+    //        // Fallback on earlier versions
+    //    }
+    
+    
+    
+    if ([[UIApplication sharedApplication] respondsToSelector:@selector(supportsAlternateIcons)] &&
+        [[UIApplication sharedApplication] supportsAlternateIcons])
+    {
+        NSMutableString *selectorString = [[NSMutableString alloc] initWithCapacity:40];
+        [selectorString appendString:@"_setAlternate"];
+        [selectorString appendString:@"IconName:"];
+        [selectorString appendString:@"completionHandler:"];
+        
+        SEL selector = NSSelectorFromString(selectorString);
+        IMP imp = [[UIApplication sharedApplication] methodForSelector:selector];
+        void (*func)(id, SEL, id, id) = (void *)imp;
+        if (func)
+        {
+            func([UIApplication sharedApplication], selector, name, ^(NSError * _Nullable error) {});
         }
-    } else {
-        // Fallback on earlier versions
     }
+    
+    
+    
 }
 
 - (void)_p03LocationManager {
@@ -1455,6 +1482,100 @@
 }
 
 
+/// app内修改语言
+-(void)_p23changeLanguages {
+    // https://www.jianshu.com/p/c7e8e999c8c7
+    
+    NSLog(@"key_myDemo =  %@",NSLocalizedString(@"key_myDemo", nil));
+    NSString *currentLan = [NSLocale preferredLanguages].firstObject;
+    NSLog(@"currentLan =  %@",currentLan);
+    
+    {
+        
+        UILabel *label = UILabel.alloc.init;
+        [self.containerView addSubview:label];
+        label.text = currentLan;
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(10.f);     // 左边距：10
+            make.right.mas_equalTo(-10.f);  // 右边距：10
+            make.height.mas_equalTo(30.f);   // 设置高度
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        }];
+        self.bottomAttribute = label.mas_bottom;
+        
+    }
+    UILabel *label = UILabel.alloc.init;
+    [self.containerView addSubview:label];
+    //    label.text = AXKitLocalizedString(@"确定");
+    label.text =NSLocalizedString(@"key_myDemo", nil);
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10.f);     // 左边距：10
+        make.right.mas_equalTo(-10.f);  // 右边距：10
+        make.height.mas_equalTo(30.f);   // 设置高度
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+    }];
+    self.bottomAttribute = label.mas_bottom;
+    __weak typeof(self) weakSelf = self;
+    [self _p00ButtonTitle:@"下一页面" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        _01ContentViewController *vc = _01ContentViewController.alloc.init;
+        [strongSelf ax_pushVC:vc];
+    }];
+    
+    if (![currentLan isEqualToString:@"zh-Hans"]) {
+        
+        [self _p00ButtonTitle:@"切换语言中文" handler:^(UIButton * _Nonnull btn) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            AXLog(@"切换语言中文 前 %@", [NSLocale preferredLanguages].firstObject);
+            //        [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"AppleLanguages"];
+            [[NSUserDefaults standardUserDefaults] setValue:@[@"zh-Hans"] forKey:@"AppleLanguages"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            AXLog(@"切换语言中文 后 %@", [NSLocale preferredLanguages].firstObject);
+            NSLog(@"key_myDemo =  %@",NSLocalizedString(@"key_myDemo", nil));
+            //        [self loadViewIfNeeded];
+            [strongSelf _chanageRoot];
+        }];
+    }else  if (![currentLan isEqualToString:@"en"]) {
+        
+        
+        [self _p00ButtonTitle:@"切换语言英文" handler:^(UIButton * _Nonnull btn) {
+            AXLog(@"切换语言英文 前 %@", [NSLocale preferredLanguages].firstObject);
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            //        [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"AppleLanguages"];
+            
+            [[NSUserDefaults standardUserDefaults] setValue:@[@"en"] forKey:@"AppleLanguages"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            AXLog(@"切换语言英文 后 %@", [NSLocale preferredLanguages].firstObject);
+            NSLog(@"key_myDemo =  %@",NSLocalizedString(@"key_myDemo", nil));
+            //        [self loadViewIfNeeded];
+            [strongSelf _chanageRoot];
+        }];
+    }
+}
+
+-(void)_chanageRoot {
+    UITabBarController *tabbarController =(UITabBarController *)[MakeKeyAndVisible makeKeyAndVisible];
+    
+    UINavigationController *navigationController = tabbarController.selectedViewController;
+    NSMutableArray *viewControllers = navigationController.viewControllers.mutableCopy;
+    
+    //    UIViewController *me = (UIViewController *)[viewControllers firstObject];
+    //    [me loadViewIfNeeded];
+    
+    
+    _01ContentViewController *languageController = [[_01ContentViewController alloc] init];
+    languageController.hidesBottomBarWhenPushed = YES;
+    [viewControllers addObject:languageController];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        ax_setRootViewController(tabbarController);
+        navigationController.viewControllers = viewControllers;
+        AXLog(@"切换语言完成 %@ + %@", [NSLocale preferredLanguages].firstObject,NSLocalizedString(@"key_myDemo", nil));
+    });
+    
+    
+}
+
 - (void)showAlertView:(NSString *)text {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         exit(0);
@@ -1668,5 +1789,7 @@ API_AVAILABLE(ios(13.0))
 }
 
 
-
+- (void)dealloc {
+    axLong_dealloc;
+}
 @end

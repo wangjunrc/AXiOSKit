@@ -176,7 +176,7 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AXTransitioningObserver/AXTransitioningObserver.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework"
@@ -194,6 +194,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JJException/JJException.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KMNavigationBarTransition/KMNavigationBarTransition.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework"
@@ -229,7 +230,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Debug_α" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AXTransitioningObserver/AXTransitioningObserver.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework"
@@ -247,6 +248,7 @@ if [[ "$CONFIGURATION" == "Debug_α" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JJException/JJException.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KMNavigationBarTransition/KMNavigationBarTransition.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
@@ -280,7 +282,7 @@ if [[ "$CONFIGURATION" == "Debug_α" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Debug_β" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AXTransitioningObserver/AXTransitioningObserver.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework"
@@ -298,6 +300,7 @@ if [[ "$CONFIGURATION" == "Debug_β" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JJException/JJException.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KMNavigationBarTransition/KMNavigationBarTransition.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
@@ -331,7 +334,7 @@ if [[ "$CONFIGURATION" == "Debug_β" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AXTransitioningObserver/AXTransitioningObserver.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework"
@@ -349,6 +352,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JJException/JJException.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KMNavigationBarTransition/KMNavigationBarTransition.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"

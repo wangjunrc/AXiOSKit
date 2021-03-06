@@ -14,6 +14,8 @@
 #import "_00TableViewCell.h"
 #import "_00FirstViewController.h"
 #import "_01ContentViewController.h"
+#import "_01GradientViewController.h"
+#import "_01TypeViewController.h"
 #import "_02ChatViewController.h"
 #import "_04RunLoopViewController.h"
 #import "_06WCDBViewController.h"
@@ -96,7 +98,8 @@ typedef void (^CollectionBlock)(void);
     self.title = @"主题";
     __weak typeof(self) weakSelf = self;
     self.tableView.tableFooterView = UIView.alloc.init;
-    [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
+//    [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
+    [_00TableViewCell ax_registerNibCellWithTableView:self.tableView];
     self.dataArray = nil;
     [self.tableView reloadData];
     /// 多选
@@ -286,8 +289,8 @@ typedef void (^CollectionBlock)(void);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    _00TableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
-    
+//    _00TableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
+    _00TableViewCell *cell = [_00TableViewCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
     NSDictionary *dict = self.dataArray[indexPath.row];
     cell.indexLabel.text = [dict[@"index"] stringValue];
     cell.nameLabel.text = dict[@"title"];
@@ -531,17 +534,33 @@ typedef void (^CollectionBlock)(void);
             },
             @{
                 @"index": @1,
+                @"title": @"导航栏效果",
+                @"action": ^{
+                    _01TypeViewController *vc = [[_01TypeViewController alloc]init];
+                    
+                    [self ax_pushVC:vc];},
+            },
+            
+            @{
+                @"index": @1,
                 @"title": @"隐藏导航栏",
                 @"action": ^{
                     _01ContentViewController *vc = [[_01ContentViewController alloc]init];
                     
                     [self ax_pushVC:vc];
-                    //                        vc.ax_shouldNavigationBarHidden = YES;
-                    
-                    vc.AXListener.hiddenNavigationBar = YES;
-                    NSLog(@"vc.AXListener.shouldNavigationBarHidden %d",vc.AXListener.isHiddenNavigationBar);
+                    vc.ax_controllerObserve.hiddenNavigationBar = YES;
+                    NSLog(@"vc.AXListener.shouldNavigationBarHidden %d",vc.ax_controllerObserve.isHiddenNavigationBar);
                 },
             },
+            @{
+                @"index": @1,
+                @"title": @"滑动透明导航栏",
+                @"action": ^{
+                    _01GradientViewController *vc = [[_01GradientViewController alloc]init];
+                    [self ax_pushVC:vc];
+                },
+            },
+            
             
             @{
                 @"index": @2,
@@ -694,7 +713,7 @@ typedef void (^CollectionBlock)(void);
             },
             @{
                 @"index": @23,
-                @"title": @"约束全屏-prefersStatusBarHidden,setNavigationBarHidden",
+                @"title": @"约束全屏\n prefersStatusBarHidden\n setNavigationBarHidden",
                 @"action": ^{
                     _23FullViewController *vc = [[_23FullViewController alloc] init];
                     [self ax_pushVC:vc];
@@ -816,6 +835,11 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"AXDateVC",
                 @"action": ^{
                     AXDateVC *vc = [[AXDateVC alloc] init];
+                    [vc didSelectDate:NSDate.date confirm:^(NSDate * _Nonnull date) {
+                        NSLog(@"date %@",date);
+                    } cancel:^{
+                        
+                    }];
                     [self ax_showVC:vc];
                     
                 },
@@ -915,7 +939,7 @@ typedef void (^CollectionBlock)(void);
                     [self ax_pushVC:vc];
                 },
             },
-
+            
             
             
         ].mutableCopy;

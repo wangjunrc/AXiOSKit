@@ -1,22 +1,20 @@
 //
-//  AXViewControllerListener.m
+//  AXViewControllerObserve.m
 //  AXiOSKit
 //
-//  Created by 小星星吃KFC on 2020/10/30.
+//  Created by 小星星吃KFC on 2021/3/3.
 //
 
-#import "AXViewControllerListener.h"
-
+#import "AXViewControllerObserve.h"
 #import "UIViewController+AXKit.h"
 #import <objc/runtime.h>
 #import <AVFoundation/AVCaptureDevice.h>
 /// 获得相机 相册权限
 #import <Photos/PHPhotoLibrary.h>
 #import "AXDeviceFunctionDisableViewController.h"
-
 typedef void(^MediaReslutBlock)(AXMediaResult *result);
 
-@interface AXViewControllerListener ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate,UIImagePickerControllerDelegate>
+@interface AXViewControllerObserve ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate,UIImagePickerControllerDelegate>
 
 @property(nonatomic, weak,readwrite) UIViewController *viewController;
 
@@ -24,7 +22,7 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
 
 @end
 
-@implementation AXViewControllerListener
+@implementation AXViewControllerObserve
 
 - (instancetype)initWithObserve:(UIViewController *)viewController{
     if (self = [self init]) {
@@ -34,9 +32,9 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
 }
 
 
-- (AXViewControllerListener *(^)(void(^)(void)))isPushed {
+- (AXViewControllerObserve *(^)(void(^)(void)))isPushed {
         __weak typeof(self) weakSelf = self;
-        return ^AXViewControllerListener *(void (^isPushed)(void)) {
+        return ^AXViewControllerObserve *(void (^isPushed)(void)) {
             __strong typeof(weakSelf) strongSelf = weakSelf;
             /// firstObject!=self 表示被push的
             if (isPushed &&
@@ -47,11 +45,11 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
             return strongSelf;
         };
 }
-- (AXViewControllerListener *(^)(void(^)(void)))isPresented {
+- (AXViewControllerObserve *(^)(void(^)(void)))isPresented {
         __weak typeof(self) weakSelf = self;
     
     __strong typeof(self.viewController) weakVC = self.viewController;
-        return ^AXViewControllerListener *(void (^isPresented)(void)) {
+        return ^AXViewControllerObserve *(void (^isPresented)(void)) {
             __strong typeof(weakSelf) strongSelf = weakSelf;
             __strong typeof(weakVC) strongVC = weakVC;
             if (isPresented){
@@ -76,10 +74,18 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
 
 -(void)setHiddenNavigationBar:(BOOL)hiddenNavigationBar {
     _hiddenNavigationBar = hiddenNavigationBar;
+//    if (hiddenNavigationBar) {
+//        // 设置导航控制器的代理为self
+//        self.viewController.navigationController.delegate = self;
+//        // 必须设置,不然返回手势失效
+//        self.viewController.navigationController.interactivePopGestureRecognizer.delegate = self;
+//    }else{
+//        self.viewController.navigationController.delegate = nil;
+//        self.viewController.navigationController.interactivePopGestureRecognizer.delegate = nil;
+//    }
+    
+    [self.viewController.navigationController setNavigationBarHidden:hiddenNavigationBar animated:NO];
     if (hiddenNavigationBar) {
-        // 设置导航控制器的代理为self
-        self.viewController.navigationController.delegate = self;
-        // 必须设置,不然返回手势失效
         self.viewController.navigationController.interactivePopGestureRecognizer.delegate = self;
     }
 }
@@ -88,6 +94,7 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     // 判断要显示的控制器是否是自己
     BOOL hidden = [viewController isKindOfClass:self.viewController.class];
+    hidden = hidden&&self.isHiddenNavigationBar;
     [self.viewController.navigationController setNavigationBarHidden:hidden animated:YES];
     /// 处理一下 viewController 内容含有 scrollView ,在viewController中需要偏移一下
     if (hidden) {

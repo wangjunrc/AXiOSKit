@@ -131,7 +131,7 @@
     
     AXPayMethodVC *payStyleVC = [AXPayMethodVC ax_init];
     payStyleVC.dataArray = self.payArray;
-    payStyleVC.AXListener.hiddenNavigationBar = YES;
+    payStyleVC.ax_controllerObserve.hiddenNavigationBar = YES;
     [self ax_pushVC:payStyleVC];
     __weak typeof(self) weakSelf = self;
     payStyleVC.didSelectBlock = ^(NSInteger row) {
