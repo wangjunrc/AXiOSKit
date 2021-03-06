@@ -2242,3 +2242,29 @@ NSLog(@"compare = %ld",[@"1.9" compare:@"1.10"]);// 1.9 > 1.10 ,正常的小数�
 NSLog(@"compare = %ld",[@"1.9" compare:@"1.8"]); // 1.9 > 1.8
 ```
 
+## 指针传参
+```
+- (void)viewDidLoad {
+    [super viewDidLoad];
+   
+    NSString *name =@"";
+    [self test1:&name];
+    NSLog(@"name = %@",name);
+    
+    [self test2:^(int *count) {
+        *count = 1;
+        *count = 2;
+    }];
+}
+
+-(void)test1:(NSString **)name {
+    *name = @"jim";
+}
+
+-(void)test2:(void(^)(int *count))name {
+    int count = 0;
+    NSLog(@"count = %d",count);
+    name(&count);
+    NSLog(@"count = %d",count);
+}
+```
