@@ -2300,3 +2300,42 @@ if ([[UIApplication sharedApplication] respondsToSelector:@selector(supportsAlte
     [self.tableView reloadSection:section.integerValue withRowAnimation:UITableViewRowAnimationAutomatic];
 }];
 ```
+## NSInvocation
+
+```
+//NSMethodSignature： 生成的签名 第一个参数传的是你要调用的类，第二个参数是在类中实现的方法（方法不在.h文件中声明 也没有关系）
+
+    SEL seclector = NSSelectorFromString(@"changeName:withtype:");
+    NSMethodSignature * signature = [ViewController instanceMethodSignatureForSelector:seclector];
+    //创建NSInvocation 第一个参数传的是签名
+    NSInvocation * vocation = [NSInvocation invocationWithMethodSignature:signature];
+    //target传的是你想要调用的类 必须与生成签名的时候 一致
+    vocation.target = self;
+    //voation中的方法必须和签名中的方法一致
+    vocation.selector = seclector;
+    //参数的传递
+    NSString * name = @"jim";
+    //设置参数的时候 不能从0开始，因为0已经被self占用，1已经被_cmd占用 只能从2开始
+    [vocation setArgument:&name atIndex:2];
+    //同上
+    NSString * type = @" 啊啊啊啊";
+    [vocation setArgument:&type atIndex:3];
+    //只要调用invocation的invoke方法，就代表执行nsivocation对象中制定对象的指定方法
+    [vocation invoke];
+```
+```
+Person *person = Person.alloc.init;
+SEL mySelector = NSSelectorFromString(@"eat:");
+//    SEL mySelector = @selector(eat:);
+NSMethodSignature * sig = [Person instanceMethodSignatureForSelector: mySelector];//
+NSInvocation * myInvocation = [NSInvocation invocationWithMethodSignature:sig];//调用方法信号
+[myInvocation setTarget:person];// 设置目的实例
+[myInvocation setSelector:mySelector];// 设立方法
+NSString *arg1 = @"吃";
+[myInvocation setArgument: &arg1 atIndex: 2];
+[myInvocation invoke]; //调用方法
+///完成调用设置调用返回值
+NSString *ret = @"";
+[myInvocation getReturnValue: &ret]; //完成调用设置调用返回值
+NSLog(@"返回值 = %@",ret);
+```
