@@ -14,9 +14,9 @@
 #import <SDWebImageWebPCoder/UIImage+WebP.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "TZImagePickerController.h"
-#import "PECropViewController.h"
 
-@interface _20PhotoViewController () <PHPickerViewControllerDelegate,PECropViewControllerDelegate>
+
+@interface _20PhotoViewController () <PHPickerViewControllerDelegate>
 
 @property(strong, nonatomic) UIImageView *imageView;
 
@@ -513,42 +513,10 @@
 
 
 -(void)_cutPhoto {
-    
-    PECropViewController *controller = [[PECropViewController alloc] init];
-    controller.delegate = self;
-    controller.image = self.imageView.image;
-    
-    UIImage *image = self.imageView.image;
-    CGFloat width = image.size.width;
-    CGFloat height = image.size.height;
-    CGFloat length = MIN(width, height);
-    controller.imageCropRect = CGRectMake((width - length) / 2,
-                                          (height - length) / 2,
-                                          length,
-                                          length);
-    
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-    }
-    
-    [self presentViewController:navigationController animated:YES completion:nil];
+   
     
 }
 
-
-#pragma mark - PECropViewControllerDelegate methods
-
-
-- (void)cropViewController:(PECropViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage {
-    [controller dismissViewControllerAnimated:YES completion:NULL];
-    self.imageView.image = croppedImage;
-}
-
-- (void)cropViewControllerDidCancel:(PECropViewController *)controller {
-    [controller dismissViewControllerAnimated:YES completion:NULL];
-}
 
 
 
