@@ -38,14 +38,14 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    sleep(2);
+    //    sleep(2);
     
     [self thirdSDKLifecycleManager:@selector(application:didFinishLaunchingWithOptions:) withParameters:@[application,@{}]];
     
     
     
-//    NSLog(@"IS_PRODUCATION = %d, SERVER_HOST = %@",IS_PRODUCATION, SERVER_HOST);
-//    [LLDynamicLaunchScreen restoreAsBefore];
+    //    NSLog(@"IS_PRODUCATION = %d, SERVER_HOST = %@",IS_PRODUCATION, SERVER_HOST);
+    //    [LLDynamicLaunchScreen restoreAsBefore];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];
     [self.window makeKeyAndVisible];
@@ -98,13 +98,13 @@
         
     }).start();
     
-//    AXDebugManager.sharedManager.start();
+    //    AXDebugManager.sharedManager.start();
     NSLog(@"UIApplicationDidFinishLaunchingNotification====1");
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application shouldAllowExtensionPointIdentifier:(UIApplicationExtensionPointIdentifier)extensionPointIdentifier{
-   
+    
     
     for (UIViewController *vc in self.window.rootViewController.childViewControllers) {
         if ([vc isKindOfClass:UINavigationController.class]) {
@@ -115,14 +115,14 @@
                 if ([vc isKindOfClass:_01ContentViewController.class]) {
                     
                     UITextField *tf = [vc.view viewWithTag:-100];
-                      [tf isFirstResponder];
-                      
-                      if (tf.isEditing) {
-                          return NO;
-                      }
+                    [tf isFirstResponder];
+                    
+                    if (tf.isEditing) {
+                        return NO;
+                    }
                     
                     
-//                    return NO;
+                    //                    return NO;
                 }
             }
         }
@@ -249,6 +249,13 @@
     }
     
     
+}
+
+// 屏幕旋转方向
+- (UIInterfaceOrientationMask)application:(UIApplication *)application
+  supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
