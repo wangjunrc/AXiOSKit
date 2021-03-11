@@ -71,7 +71,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureView];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithTitle:@"Toggle Animation"
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithTitle:@"是否关闭动画"
                                                                             style:UIBarButtonItemStylePlain
                                                                            target:self
                                                                            action:@selector(toggleAnimation:)];
@@ -97,7 +97,7 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"SDWebImage";
+    self.title = @"13SDWebImage";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithTitle:@"Clear Cache"
                                                                             style:UIBarButtonItemStylePlain
                                                                            target:self
@@ -132,6 +132,62 @@
         // From http://r0k.us/graphics/kodak/, 768x512 resolution, 24 bit depth PNG
         [self.objects addObject:[NSString stringWithFormat:@"http://r0k.us/graphics/kodak/kodak/kodim%02d.png", i]];
     }
+    
+    UIView *headView = [UIView.alloc initWithFrame:CGRectMake(0, 0, 0, 200)];
+    headView.backgroundColor = UIColor.grayColor;
+    
+    UIImageView *headIconImv = [UIImageView.alloc initWithFrame:CGRectMake(50, 50, 80, 80)];
+    headIconImv.backgroundColor = UIColor.orangeColor;
+    
+    /**
+     
+     SDImagePipelineTransformer       //它可以将多个变换器绑定在一起，让图像按顺序逐个变换并生成最终图像
+     SDImageRoundCornerTransformer //圆角
+     SDImageResizingTransformer //调整大小
+     SDImageCroppingTransformer //裁剪
+     SDImageFlippingTransformer //翻转
+     SDImageRotationTransformer //旋转
+     SDImageTintTransformer //Tint颜色
+     SDImageBlurTransformer //毛玻璃效果
+     SDImageFilterTransformer //滤镜
+
+     
+     */
+    /// 圆角，这里的Radius和Size都是已像素为单位的，可以获取手机的Scale计算出具体大小
+        SDImageRoundCornerTransformer *transformer1 = [SDImageRoundCornerTransformer transformerWithRadius:80
+                                                                                                   corners:UIRectCornerAllCorners
+                                                                                               borderWidth:2
+                                                                                               borderColor:UIColor.redColor];
+        /// 大小
+//        SDImageResizingTransformer *transformer2 = [SDImageResizingTransformer transformerWithSize:CGSizeMake(200, 200) scaleMode:(SDImageScaleModeAspectFill)];
+//
+//        SDImagePipelineTransformer *transformer = [SDImagePipelineTransformer transformerWithTransformers:@[transformer1, transformer2]];
+      
+    // 翻转
+    SDImageFlippingTransformer *flip = [SDImageFlippingTransformer transformerWithHorizontal:YES vertical:NO];
+    
+    /**
+     typedef NSDictionary<SDWebImageContextOption, id> SDWebImageContext;
+     typedef NSMutableDictionary<SDWebImageContextOption, id> SDWebImageMutableContext;
+     context:(nullable SDWebImageContext *)context
+     */
+    
+    SDImagePipelineTransformer *line = [SDImagePipelineTransformer transformerWithTransformers:@[transformer1,flip]];
+    
+    [headIconImv sd_setImageWithURL:ax_URLWithStr(@"http://via.placeholder.com/200x200.jpg")
+                   placeholderImage:nil
+                            options:SDWebImageRetryFailed
+                            context:@{
+//                                SDWebImageContextImageTransformer : transformer1,
+                                SDWebImageContextImageTransformer : line,
+                                
+                                
+                                
+                            }];
+    [headView addSubview:headIconImv];
+    self.tableView.tableHeaderView = headView;
+    
+    
     
 }
 
@@ -175,7 +231,7 @@
         if (@available(iOS 10.0, *)) {
             NSURLSessionTaskMetrics *metrics = token.metrics;
             if (metrics) {
-                printf("Metrics: %s download in (%f) seconds\n", [imageURL.absoluteString cStringUsingEncoding:NSUTF8StringEncoding], metrics.taskInterval.duration);
+                printf("动画 Metrics: %s download in (%f) seconds\n", [imageURL.absoluteString cStringUsingEncoding:NSUTF8StringEncoding], metrics.taskInterval.duration);
             }
         }
     }];
@@ -185,7 +241,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *largeImageURLString = [self.objects[indexPath.row] stringByReplacingOccurrencesOfString:@"small" withString:@"source"];
     NSURL *largeImageURL = [NSURL URLWithString:largeImageURLString];
-    DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    DetailViewController *detailViewController = [[DetailViewController alloc] init];
     detailViewController.imageURL = largeImageURL;
     [self.navigationController pushViewController:detailViewController animated:YES];
 }

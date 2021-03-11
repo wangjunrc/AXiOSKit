@@ -2339,3 +2339,36 @@ NSString *ret = @"";
 [myInvocation getReturnValue: &ret]; //完成调用设置调用返回值
 NSLog(@"返回值 = %@",ret);
 ```
+## 判断NSNumber类型
+```
+id value = @(true);
+
+if([value isKindOfClass:[NSNumber class]])
+{
+    if (strcmp([value objCType], @encode(float)) == 0)
+    {
+        NSLog(@"value = float");
+    }
+    else if (strcmp([value objCType], @encode(double)) == 0)
+    {
+        NSLog(@"value = double");
+    }
+    else if (strcmp([value objCType], @encode(BOOL)) == 0)
+    {
+        NSLog(@"value = BOOL");
+    }
+    else if (strcmp([value objCType], @encode(bool)) == 0)
+    {
+        NSLog(@"value = bool");
+    }
+    else if (strcmp([value objCType], @encode(int)) == 0)
+    {
+        NSLog(@"value = int");
+    }
+    
+    else{
+        NSLog(@"value = else");
+    }
+    
+}
+```

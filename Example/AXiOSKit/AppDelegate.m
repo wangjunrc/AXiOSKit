@@ -176,7 +176,7 @@
 #pragma mark - 第三方分享、登录回调
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     
-    [self thirdSDKLifecycleManager:@selector(application:openURL:options:) withParameters:@[application,url?url:@"",options?options:@""]];
+    [self thirdSDKLifecycleManager:@selector(application:openURL:options:) withParameters:@[application,url?url:@"",options?options:@{}]];
     return YES;
 }
 

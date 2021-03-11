@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern id AppDelegateRegistry(SEL selector,NSArray *params );
+
 /// SOA(面向服务的架构)
 @interface AppDelegateRegistryCenter : NSObject
 

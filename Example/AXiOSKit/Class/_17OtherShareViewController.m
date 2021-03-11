@@ -15,35 +15,47 @@
 @implementation _17OtherShareViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 150, 38)];
-    [btn1 setTitle:@"微信分享" forState:UIControlStateNormal];
-    [btn1 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [btn1 addTarget:self action:@selector(shareAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn1];
-    
-    UIButton *btn2 = [[UIButton alloc] initWithFrame:CGRectMake(50, 100, 150, 38)];
-    [btn2 setTitle:@"微信登录" forState:UIControlStateNormal];
-    [btn2 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [btn2 addTarget:self action:@selector(authAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn2];
     
     
-    UILabel *lb = [[UILabel alloc]initWithFrame:CGRectMake(0, 200, 320, 70)];
+    __weak typeof(self) weakSelf = self;
+    [self _p00ButtonTitle:@"微信分享" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf shareAction:btn];
+    }];
+    [self _p00ButtonTitle:@"微信登录" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf authAction:btn];
+    }];
+    
+    UILabel *lb = [[UILabel alloc]init];
     lb.text = @"闪动加载";
+    lb.backgroundColor = UIColor.orangeColor;
     lb.textColor = [UIColor lightGrayColor];
-//    lb.backgroundColor = UIColor.redColor;
     lb.font = [UIFont boldSystemFontOfSize:40];
-    [self.view addSubview:lb];
-
+    [self.containerView addSubview:lb];
+    [lb mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_offset(10);
+        make.centerX.mas_equalTo(0);
+        make.width.mas_equalTo(170);
+        make.height.mas_equalTo(70);
+    }];
+    self.bottomAttribute = lb.mas_bottom;
+    [lb layoutIfNeeded];
+    
+    NSLog(@"lb.frame = %@",NSStringFromCGRect(lb.frame));
+    
+    [self _loadBottomAttribute];
+    
+    [self.containerView layoutIfNeeded];
     CAGradientLayer *colorLayer = [CAGradientLayer layer];
-    colorLayer.frame = CGRectMake(0, 0, 320, 320);
-//    colorLayer.frame = lb.bounds;
+    colorLayer.frame = CGRectMake(-85,-35, 170, 170);
+//    colorLayer.frame = lb.frame;
 //    colorLayer.position = self.view.center;
     [lb.superview.layer addSublayer:colorLayer];
-
+    NSLog(@"colorLayer.frame = %@",NSStringFromCGRect(colorLayer.frame));
     colorLayer.colors = @[(__bridge id)[UIColor lightGrayColor].CGColor,
                           (__bridge id)[UIColor grayColor].CGColor,
                           (__bridge id)[UIColor lightGrayColor].CGColor];
@@ -63,6 +75,7 @@
     } else {
         // Fallback on earlier versions
     }
+    
 }
 
 - (void)shareAction:(id)sender{

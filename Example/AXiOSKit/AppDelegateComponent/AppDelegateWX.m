@@ -39,9 +39,20 @@
 }
 
 #pragma mark - 第三方分享、登录回调
-- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(nonnull NSURL *)url
+            options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     
-    return [WXApi handleOpenURL:url delegate:self];
+    NSString *scheme = url.scheme;
+    NSString *query = url.query;
+    NSLog(@"scheme  =%@,query = %@",scheme,query);
+    
+    if ([scheme isEqualToString:WXAppId]){
+        return [WXApi handleOpenURL:url delegate:self];
+    }
+    return NO;
+    
 }
 
 

@@ -15,6 +15,23 @@
 #ifdef DEBUG
 #import "AppDelegateURLProtocol.h"
 #endif
+id AppDelegateRegistry(SEL selector,NSArray *params ) {
+    
+    //    SEL selector = NSSelectorFromString(selectorStr);
+    NSMutableArray *resultArray = [NSMutableArray arrayWithCapacity:AppDelegateRegistryCenter.instance.services.count];
+    
+    NSObject <UIApplicationDelegate> *service;
+    for(service in AppDelegateRegistryCenter.instance.services){
+        if ([service respondsToSelector:selector]){
+            //注意这里的performSelector这个是要自己写分类的（系统不带这个功能的）
+           id result = [service ax_performSelector:selector withObjects:params];
+            [resultArray addObject:result];
+        }
+    }
+    
+    return resultArray;
+}
+
 @implementation AppDelegateRegistryCenter
 
 #pragma mark - 服务静态注册

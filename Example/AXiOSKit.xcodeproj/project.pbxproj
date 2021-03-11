@@ -1232,14 +1232,16 @@
 				21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */,
 				21CC7C66255FA4A300E7B506 /* AppDelegateDebug.h */,
 				21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */,
+				218A1EF925469D8000E43F16 /* AppDelegateRegistryCenter.h */,
+				218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */,
+				218A323A25E096D0008D95B8 /* AppDelegateURLProtocol.h */,
+				218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */,
 				218A1EED25469BBC00E43F16 /* AppDelegateWCDB.h */,
 				218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */,
 				21CC7C60255FA40D00E7B506 /* AppDelegateWebImage.h */,
 				21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */,
 				21022AEA2547A9AF0055E0B7 /* AppDelegateWX.h */,
 				21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */,
-				218A323A25E096D0008D95B8 /* AppDelegateURLProtocol.h */,
-				218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */,
 			);
 			path = AppDelegateComponent;
 			sourceTree = "<group>";
@@ -1386,8 +1388,6 @@
 				213BCBE6254003DB00C89B72 /* AppDelegate.h */,
 				213BCBE7254003DB00C89B72 /* AppDelegate.m */,
 				21CC7C72255FA58200E7B506 /* AppDelegateComponent */,
-				218A1EF925469D8000E43F16 /* AppDelegateRegistryCenter.h */,
-				218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */,
 				21898F302541B11D00876524 /* Application.h */,
 				21898F312541B11D00876524 /* Application.m */,
 				2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */,
