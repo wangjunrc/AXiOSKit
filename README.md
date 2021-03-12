@@ -2372,3 +2372,12 @@ if([value isKindOfClass:[NSNumber class]])
     
 }
 ```
+##
+```
+FMDatabaseQueue *dbQueue = [FMDatabaseQueue databaseQueueWithPath:@""];
+
+[dbQueue inDatabase:^(FMDatabase *db){
+    NSString *sql = [NSString stringWithFormat:@""];
+    result = [db executeUpdate:sql];
+}];
+```
