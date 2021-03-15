@@ -20,7 +20,8 @@
     } withStubResponse:^HTTPStubsResponse * _Nonnull(NSURLRequest * _Nonnull request) {
         NSDictionary *dict = @{
             @"name":@"jim",
-            @"age":@10
+            @"age":@10,
+            @"height":[NSNull null],
         };
         return  [[HTTPStubsResponse responseWithJSONObject:dict statusCode:200 headers:nil] requestTime:1.0 responseTime:OHHTTPStubsDownloadSpeedSLOW];
     }];

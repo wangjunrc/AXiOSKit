@@ -87,6 +87,8 @@ def ui_pods
   # 图片剪切
   #  pod 'PEPhotoCropEditor'
   pod 'KMNavigationBarTransition'
+  pod "Protobuf", :git => 'https://gitee.com/axinger/protobuf.git'
+  
 end
 
 def common_pods

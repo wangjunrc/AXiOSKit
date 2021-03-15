@@ -296,6 +296,13 @@
 		21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */; };
 		21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */; };
 		21BC194A256CD28C0041ADBB /* _25CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BC1949256CD28C0041ADBB /* _25CollectionViewCell.m */; };
+		21C0187225FF00F400FAFE5A /* _13SDWebImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C0187125FF00F400FAFE5A /* _13SDWebImageVC.m */; };
+		21C0187325FF00F400FAFE5A /* _13SDWebImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C0187125FF00F400FAFE5A /* _13SDWebImageVC.m */; };
+		21C018F925FF098700FAFE5A /* Student.proto in Sources */ = {isa = PBXBuildFile; fileRef = 21C018F825FF098700FAFE5A /* Student.proto */; };
+		21C0190825FF293300FAFE5A /* _35ProtobufVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C0190725FF293300FAFE5A /* _35ProtobufVC.m */; };
+		21C0190925FF293300FAFE5A /* _35ProtobufVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C0190725FF293300FAFE5A /* _35ProtobufVC.m */; };
+		21C0192C25FF2DDE00FAFE5A /* Student.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C0192A25FF2DDE00FAFE5A /* Student.pbobjc.m */; };
+		21C0192D25FF2DDE00FAFE5A /* Student.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C0192A25FF2DDE00FAFE5A /* Student.pbobjc.m */; };
 		21C11B9925B02DA200D26E89 /* testWord.docx in Resources */ = {isa = PBXBuildFile; fileRef = 21C11B9825B02DA200D26E89 /* testWord.docx */; };
 		21C11B9A25B02DA200D26E89 /* testWord.docx in Resources */ = {isa = PBXBuildFile; fileRef = 21C11B9825B02DA200D26E89 /* testWord.docx */; };
 		21C3778625A829F400D678FD /* _25CompLayoutVC5.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C3778525A829F400D678FD /* _25CompLayoutVC5.m */; };
@@ -651,6 +658,13 @@
 		21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_2@2x.png"; sourceTree = "<group>"; };
 		21BC1948256CD28C0041ADBB /* _25CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CollectionViewCell.h; sourceTree = "<group>"; };
 		21BC1949256CD28C0041ADBB /* _25CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CollectionViewCell.m; sourceTree = "<group>"; };
+		21C0187025FF00F400FAFE5A /* _13SDWebImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _13SDWebImageVC.h; sourceTree = "<group>"; };
+		21C0187125FF00F400FAFE5A /* _13SDWebImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _13SDWebImageVC.m; sourceTree = "<group>"; };
+		21C018F825FF098700FAFE5A /* Student.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = Student.proto; sourceTree = "<group>"; };
+		21C0190625FF293300FAFE5A /* _35ProtobufVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _35ProtobufVC.h; sourceTree = "<group>"; };
+		21C0190725FF293300FAFE5A /* _35ProtobufVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _35ProtobufVC.m; sourceTree = "<group>"; };
+		21C0192A25FF2DDE00FAFE5A /* Student.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.pbobjc.m; sourceTree = "<group>"; };
+		21C0192B25FF2DDE00FAFE5A /* Student.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.pbobjc.h; sourceTree = "<group>"; };
 		21C11B9825B02DA200D26E89 /* testWord.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = testWord.docx; sourceTree = "<group>"; };
 		21C3778425A829F400D678FD /* _25CompLayoutVC5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CompLayoutVC5.h; sourceTree = "<group>"; };
 		21C3778525A829F400D678FD /* _25CompLayoutVC5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CompLayoutVC5.m; sourceTree = "<group>"; };
@@ -852,6 +866,8 @@
 				213BCB66254003D900C89B72 /* _10TextFViewController.h */,
 				213BCB3E254003D900C89B72 /* _10TextFViewController.m */,
 				213BCB3C254003D900C89B72 /* _10TextFViewController.xib */,
+				21C0187025FF00F400FAFE5A /* _13SDWebImageVC.h */,
+				21C0187125FF00F400FAFE5A /* _13SDWebImageVC.m */,
 				213BCB54254003D900C89B72 /* _13WebpViewController.h */,
 				213BCB7B254003D900C89B72 /* _13WebpViewController.m */,
 				21CC7C76255FA71900E7B506 /* _13WeImageTableViewController.h */,
@@ -905,6 +921,8 @@
 				211A997625CB96C7009030CB /* _32LottieVC.m */,
 				218A32D225E0FAAE008D95B8 /* _33CropViewController.h */,
 				218A32D325E0FAAE008D95B8 /* _33CropViewController.m */,
+				21C0190625FF293300FAFE5A /* _35ProtobufVC.h */,
+				21C0190725FF293300FAFE5A /* _35ProtobufVC.m */,
 				21F43CED25E4F14E002AF1AD /* _34 */,
 				213BCB41254003D900C89B72 /* AANavigationController.h */,
 				213BCB63254003D900C89B72 /* AANavigationController.m */,
@@ -952,10 +970,13 @@
 		213BCB9B254003DA00C89B72 /* Object */ = {
 			isa = PBXGroup;
 			children = (
+				21C0192B25FF2DDE00FAFE5A /* Student.pbobjc.h */,
+				21C0192A25FF2DDE00FAFE5A /* Student.pbobjc.m */,
 				213BCB3A254003D900C89B72 /* Person.h */,
 				213BCB68254003D900C89B72 /* Person.m */,
 				213BCBA1254003DA00C89B72 /* TestObj.h */,
 				213BCB9E254003DA00C89B72 /* TestObj.m */,
+				21C018F825FF098700FAFE5A /* Student.proto */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -1933,6 +1954,7 @@
 				"${BUILT_PRODUCTS_DIR}/NullSafe/NullSafe.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RMQClient/RMQClient.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -1988,6 +2010,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NullSafe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMQClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -2053,6 +2076,7 @@
 				"${BUILT_PRODUCTS_DIR}/NullSafe/NullSafe.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RMQClient/RMQClient.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -2108,6 +2132,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NullSafe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMQClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -2183,6 +2208,7 @@
 				211226FA2573340100B6ECC8 /* AFHTTPSessionManager+PutFile.m in Sources */,
 				211226FC2573340100B6ECC8 /* _14TFViewController.m in Sources */,
 				211226FD2573340100B6ECC8 /* _30TimeLineModel.m in Sources */,
+				21C0190925FF293300FAFE5A /* _35ProtobufVC.m in Sources */,
 				21E5C8AA257F6BF8002A4D59 /* _00BaseViewController.m in Sources */,
 				211226FE2573340100B6ECC8 /* LVieoView.m in Sources */,
 				21BA19A125AD91EF00222F9A /* AXDebugManager.m in Sources */,
@@ -2200,6 +2226,7 @@
 				211227062573340100B6ECC8 /* AXUserInfoDao.mm in Sources */,
 				211227072573340100B6ECC8 /* AXRecordAudioConfig.m in Sources */,
 				211227082573340100B6ECC8 /* _24NoteViewController.m in Sources */,
+				21C0187325FF00F400FAFE5A /* _13SDWebImageVC.m in Sources */,
 				21BA199725AD907500222F9A /* _25CompLayoutCell.m in Sources */,
 				21BA45BB25AEE05E00EEEF45 /* CustomGifHeader.m in Sources */,
 				211227092573340100B6ECC8 /* TestObj.m in Sources */,
@@ -2207,6 +2234,7 @@
 				2112270B2573340100B6ECC8 /* _30IGListViewController.m in Sources */,
 				2112270C2573340100B6ECC8 /* _25LayoutViewController.m in Sources */,
 				2112270D2573340100B6ECC8 /* _21KVOViewController.m in Sources */,
+				21C0192D25FF2DDE00FAFE5A /* Student.pbobjc.m in Sources */,
 				2112270E2573340100B6ECC8 /* _29AudioViewController.m in Sources */,
 				2112270F2573340100B6ECC8 /* _30TimeLinetContentController.m in Sources */,
 				211227102573340100B6ECC8 /* _28ShareFileViewController.m in Sources */,
@@ -2297,8 +2325,10 @@
 				21430AE7256C98EF00CB8EBC /* _30TimeLineModel.m in Sources */,
 				218A32D425E0FAAE008D95B8 /* _33CropViewController.m in Sources */,
 				218A324C25E0DFF0008D95B8 /* AXIBudyButton.m in Sources */,
+				21C0190825FF293300FAFE5A /* _35ProtobufVC.m in Sources */,
 				213BCC31254003DB00C89B72 /* LVieoView.m in Sources */,
 				213BCC18254003DB00C89B72 /* _26RMQClientViewController.m in Sources */,
+				21C0187225FF00F400FAFE5A /* _13SDWebImageVC.m in Sources */,
 				213BCC15254003DB00C89B72 /* _23FullViewController.m in Sources */,
 				21B542A925A5A2C20071D20D /* _25FlowLayoutVC1.m in Sources */,
 				21430B0F256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.m in Sources */,
@@ -2315,6 +2345,7 @@
 				21BC194A256CD28C0041ADBB /* _25CollectionViewCell.m in Sources */,
 				21430AE1256C980500CB8EBC /* _30IGListViewController.m in Sources */,
 				213BCBFA254003DB00C89B72 /* _25LayoutViewController.m in Sources */,
+				21C018F925FF098700FAFE5A /* Student.proto in Sources */,
 				213BCBF7254003DB00C89B72 /* _21KVOViewController.m in Sources */,
 				21E306B4255EAA1100D17A8B /* _29AudioViewController.m in Sources */,
 				21430AFC256C9C9300CB8EBC /* _30TimeLinetContentController.m in Sources */,
@@ -2344,6 +2375,7 @@
 				21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */,
 				21D7675425C00CE700468F8E /* _00HeaderView.m in Sources */,
 				21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */,
+				21C0192C25FF2DDE00FAFE5A /* Student.pbobjc.m in Sources */,
 				218A323C25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */,
 				21BA45BA25AEE05E00EEEF45 /* CustomGifHeader.m in Sources */,
 				218F674825A5CC69006A8312 /* _25CompLayoutVC2.m in Sources */,

@@ -22,6 +22,7 @@
 #import "_07VideoViewController.h"
 #import "_09AFNViewController.h"
 #import "_10TextFViewController.h"
+#import "_13SDWebImageVC.h"
 #import "_13WebpViewController.h"
 #import "_13WeImageTableViewController.h"
 #import "_14TFViewController.h"
@@ -51,6 +52,7 @@
 #import "_32LottieVC.h"
 #import "_33CropViewController.h"
 #import "_34ViewController.h"
+#import "_35ProtobufVC.h"
 #import <AXiOSKit/AXPayVC.h>
 #import <AXiOSKit/AXPresentGesturesBack.h>
 #import <AXiOSKit/AXSystemAuthorizerManager.h>
@@ -613,7 +615,14 @@ typedef void (^CollectionBlock)(void);
                     [self ax_showVC:vc];
                 },
             },
-            
+            @{
+                @"index": @13,
+                @"title": @"SDWebImage测试",
+                @"action": ^{
+                    _13SDWebImageVC *vc = [[_13SDWebImageVC alloc] init];
+                    [self ax_pushVC:vc];
+                },
+            },
             @{
                 @"index": @13,
                 @"title": @"webp/GIF",
@@ -936,6 +945,14 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"CTMediator路由",
                 @"action": ^{
                     _34ViewController *vc = [_34ViewController ax_init];
+                    [self ax_pushVC:vc];
+                },
+            },
+            @{
+                @"index": @35,
+                @"title": @"ProtobufVC",
+                @"action": ^{
+                    _35ProtobufVC *vc = [_35ProtobufVC ax_init];
                     [self ax_pushVC:vc];
                 },
             },

@@ -164,6 +164,7 @@ PODS:
     - OHHTTPStubs/Core
   - OHHTTPStubs/OHPathHelpers (9.1.0)
   - PromisesObjC (1.2.12)
+  - Protobuf (3.15.5)
   - ReactiveObjC (3.0.0)
   - RMQClient (0.9.0):
     - CocoaAsyncSocket (~> 7.4)
@@ -217,6 +218,7 @@ DEPENDENCIES:
   - MQTTClient/Websocket
   - OHHTTPStubs (~> 9.1.0)
   - PromisesObjC (~> 1.2.12)
+  - Protobuf (from `https://gitee.com/axinger/protobuf.git`)
   - ReactiveObjC (~> 3.0.0)
   - RMQClient
   - SDWebImage (~> 5.10.3)
@@ -288,11 +290,16 @@ EXTERNAL SOURCES:
     :path: "../"
   AXViewControllerTransitioning:
     :git: https://github.com/axinger/AXViewControllerTransitioning.git
+  Protobuf:
+    :git: https://gitee.com/axinger/protobuf.git
 
 CHECKOUT OPTIONS:
   AXViewControllerTransitioning:
     :commit: c0a46bdb6e46245c207732ca608c251ae5306a0c
     :git: https://github.com/axinger/AXViewControllerTransitioning.git
+  Protobuf:
+    :commit: f154323fa6824b3476b63293bcb595c994163605
+    :git: https://gitee.com/axinger/protobuf.git
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
@@ -320,7 +327,7 @@ SPEC CHECKSUMS:
   libwebp: d7684f7241543c7a5ff47953cc9b9f184fe16610
   LLDebugTool: 6026a1df690f5f94524567fce7f97fa53ce131d8
   LLDynamicLaunchScreen: 107320eea57df5276d7da599a78ddf7139b1f854
-  LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
+  LookinServer: fdbd041cea203ab36e082f4554b834c5a9cd871f
   lottie-ios: 836cdbba92f62f3c6a00e37a4ce485321fe317cf
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -335,6 +342,7 @@ SPEC CHECKSUMS:
   NullSafe: 948feba938f03abede5ed3758694a9fe5b3a65ce
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  Protobuf: 77cd9d015bb501d6509a5fdb452de8de46e82f95
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   RMQClient: 9bbda86703fd475761101ee5fda037eb2a12ec4e
   SDWebImage: e378178472b735e84b007bfb55514c97948a0598
@@ -349,6 +357,6 @@ SPEC CHECKSUMS:
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
 
-PODFILE CHECKSUM: d538a6af6c0c02baec1ab7795a9df22320c1085e
+PODFILE CHECKSUM: 2391713f9c1e3b0ae142774fe7669281b4102650
 
 COCOAPODS: 1.10.1

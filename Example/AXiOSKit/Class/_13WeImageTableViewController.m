@@ -174,20 +174,19 @@
     
     SDImagePipelineTransformer *line = [SDImagePipelineTransformer transformerWithTransformers:@[transformer1,flip]];
     
-    [headIconImv sd_setImageWithURL:ax_URLWithStr(@"http://via.placeholder.com/200x200.jpg")
-                   placeholderImage:nil
-                            options:SDWebImageRetryFailed
-                            context:@{
-//                                SDWebImageContextImageTransformer : transformer1,
-                                SDWebImageContextImageTransformer : line,
-                                
-                                
-                                
-                            }];
+//    [headIconImv sd_setImageWithURL:ax_URLWithStr(@"http://via.placeholder.com/200x200.jpg")
+//                   placeholderImage:nil
+//                            options:SDWebImageRetryFailed
+//                            context:@{
+////                                SDWebImageContextImageTransformer : transformer1,
+//                                SDWebImageContextImageTransformer : line,
+//                            }];
+    
     [headView addSubview:headIconImv];
     self.tableView.tableHeaderView = headView;
     
     
+   
     
 }
 
