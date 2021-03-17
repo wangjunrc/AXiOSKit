@@ -42,7 +42,7 @@
     
     __block  id  observer  = nil;
     observer = [NSNotificationCenter.defaultCenter addObserverForName:UIApplicationDidFinishLaunchingNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-        NSLog(@"UIApplicationDidFinishLaunchingNotification====2 %@ ,obj = %@",note.userInfo,note.object);
+        NSLog(@"load UIApplicationDidFinishLaunchingNotification====2 %@ ,obj = %@",note.userInfo,note.object);
         [NSNotificationCenter.defaultCenter removeObserver:observer];
     }];
     

@@ -189,6 +189,13 @@ PODS:
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - WCDBOptimizedSQLCipher (1.2.1)
   - WechatOpenSDK (1.7.7)
+  - YYCache (1.0.4)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - YYDispatchQueuePool (1.0)
+  - YYKeyboardManager (1.0.1)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - AFNetworking
@@ -230,6 +237,11 @@ DEPENDENCIES:
   - TZImagePickerController (~> 3.5.8)
   - WCDB (~> 1.0.7.5)
   - WechatOpenSDK (= 1.7.7)
+  - YYCache (from `https://gitee.com/github-iOS/YYCache.git`, tag `1.0.4`)
+  - YYCategories (from `https://gitee.com/mirrors/YYCategories.git`, tag `1.0.4`)
+  - YYDispatchQueuePool (from `https://gitee.com/github-iOS/YYDispatchQueuePool.git`, tag `1.0`)
+  - YYKeyboardManager (from `https://gitee.com/github-iOS/YYKeyboardManager.git`, tag `1.0.1`)
+  - YYText (from `https://gitee.com/mirrors/YYText.git`, tag `1.0.7`)
 
 SPEC REPOS:
   https://gitee.com/mirrors/CocoaPods-Specs.git:
@@ -292,6 +304,21 @@ EXTERNAL SOURCES:
     :git: https://github.com/axinger/AXViewControllerTransitioning.git
   Protobuf:
     :git: https://gitee.com/axinger/protobuf.git
+  YYCache:
+    :git: https://gitee.com/github-iOS/YYCache.git
+    :tag: 1.0.4
+  YYCategories:
+    :git: https://gitee.com/mirrors/YYCategories.git
+    :tag: 1.0.4
+  YYDispatchQueuePool:
+    :git: https://gitee.com/github-iOS/YYDispatchQueuePool.git
+    :tag: '1.0'
+  YYKeyboardManager:
+    :git: https://gitee.com/github-iOS/YYKeyboardManager.git
+    :tag: 1.0.1
+  YYText:
+    :git: https://gitee.com/mirrors/YYText.git
+    :tag: 1.0.7
 
 CHECKOUT OPTIONS:
   AXViewControllerTransitioning:
@@ -300,6 +327,21 @@ CHECKOUT OPTIONS:
   Protobuf:
     :commit: f154323fa6824b3476b63293bcb595c994163605
     :git: https://gitee.com/axinger/protobuf.git
+  YYCache:
+    :git: https://gitee.com/github-iOS/YYCache.git
+    :tag: 1.0.4
+  YYCategories:
+    :git: https://gitee.com/mirrors/YYCategories.git
+    :tag: 1.0.4
+  YYDispatchQueuePool:
+    :git: https://gitee.com/github-iOS/YYDispatchQueuePool.git
+    :tag: '1.0'
+  YYKeyboardManager:
+    :git: https://gitee.com/github-iOS/YYKeyboardManager.git
+    :tag: 1.0.1
+  YYText:
+    :git: https://gitee.com/mirrors/YYText.git
+    :tag: 1.0.7
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
@@ -351,12 +393,17 @@ SPEC CHECKSUMS:
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
-  TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
+  TOCropViewController: a5bc491ed85be3784449477faf8040b68e64fd36
   TZImagePickerController: 7fd9702897ef8c0b7c951e5463f4bcf398296f9e
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYDispatchQueuePool: 3dfb2274bcc74207688dde8ac6f7bdd46871dd7b
+  YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 2391713f9c1e3b0ae142774fe7669281b4102650
+PODFILE CHECKSUM: db1548b23a0cf668c4739157568f018ee8baf874
 
 COCOAPODS: 1.10.1

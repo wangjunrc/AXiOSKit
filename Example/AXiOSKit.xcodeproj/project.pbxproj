@@ -247,6 +247,8 @@
 		21430B10256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21430B0E256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib */; };
 		2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
+		2160E3C42601AADC007FB7C2 /* _36YYKitTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2160E3C32601AADC007FB7C2 /* _36YYKitTestVC.m */; };
+		2160E3C52601AADC007FB7C2 /* _36YYKitTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2160E3C32601AADC007FB7C2 /* _36YYKitTestVC.m */; };
 		216891AB25ABDD4B0037CAB5 /* _25CompLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 216891AA25ABDD4B0037CAB5 /* _25CompLayoutCell.m */; };
 		21799C7C255BDE8500754A8B /* gift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 21799C7B255BDE8500754A8B /* gift.svg */; };
 		21799D5D255CD2E300754A8B /* AXRecordAudioService.m in Sources */ = {isa = PBXBuildFile; fileRef = 21799D5C255CD2E300754A8B /* AXRecordAudioService.m */; };
@@ -591,6 +593,8 @@
 		21430B0E256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _30TimeLineNinePhotoCell.xib; sourceTree = "<group>"; };
 		2152C5B525919C720078D525 /* AXDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugViewController.h; sourceTree = "<group>"; };
 		2152C5B625919C720078D525 /* AXDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugViewController.m; sourceTree = "<group>"; };
+		2160E3C22601AADC007FB7C2 /* _36YYKitTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _36YYKitTestVC.h; sourceTree = "<group>"; };
+		2160E3C32601AADC007FB7C2 /* _36YYKitTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _36YYKitTestVC.m; sourceTree = "<group>"; };
 		216891A925ABDD4B0037CAB5 /* _25CompLayoutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CompLayoutCell.h; sourceTree = "<group>"; };
 		216891AA25ABDD4B0037CAB5 /* _25CompLayoutCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CompLayoutCell.m; sourceTree = "<group>"; };
 		21799C7B255BDE8500754A8B /* gift.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = gift.svg; sourceTree = "<group>"; };
@@ -925,6 +929,8 @@
 				21C0190725FF293300FAFE5A /* _35ProtobufVC.m */,
 				21F43CED25E4F14E002AF1AD /* _34 */,
 				213BCB41254003D900C89B72 /* AANavigationController.h */,
+				2160E3C22601AADC007FB7C2 /* _36YYKitTestVC.h */,
+				2160E3C32601AADC007FB7C2 /* _36YYKitTestVC.m */,
 				213BCB63254003D900C89B72 /* AANavigationController.m */,
 				213BCB6F254003D900C89B72 /* AFHTTPSessionManager+PutFile.h */,
 				213BCB48254003D900C89B72 /* AFHTTPSessionManager+PutFile.m */,
@@ -1967,6 +1973,11 @@
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/YYDispatchQueuePool/YYDispatchQueuePool.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKeyboardManager/YYKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
 				"${BUILT_PRODUCTS_DIR}/fishhook/fishhook.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
@@ -2023,6 +2034,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYDispatchQueuePool.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/fishhook.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
@@ -2089,6 +2105,11 @@
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/YYDispatchQueuePool/YYDispatchQueuePool.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKeyboardManager/YYKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
 				"${BUILT_PRODUCTS_DIR}/fishhook/fishhook.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
@@ -2145,6 +2166,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYDispatchQueuePool.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/fishhook.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
@@ -2292,6 +2318,7 @@
 				211227342573340100B6ECC8 /* ChatMessageModel.m in Sources */,
 				211227352573340100B6ECC8 /* AppDelegate.m in Sources */,
 				211227362573340100B6ECC8 /* _30TimeLineNinePhotoView.m in Sources */,
+				2160E3C52601AADC007FB7C2 /* _36YYKitTestVC.m in Sources */,
 				21D7675525C00CE700468F8E /* _00HeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2317,6 +2344,7 @@
 				213BCC1C254003DB00C89B72 /* _15UIMenuController.m in Sources */,
 				213BCBF2254003DB00C89B72 /* _10TextFViewController.m in Sources */,
 				213BCC30254003DB00C89B72 /* ChatTextMessageModel.m in Sources */,
+				2160E3C42601AADC007FB7C2 /* _36YYKitTestVC.m in Sources */,
 				213BCBFD254003DB00C89B72 /* _20PhotoViewController.m in Sources */,
 				218A1E9025441BBE00E43F16 /* _28LocalSocketServiceViewController.m in Sources */,
 				21CC7C62255FA40D00E7B506 /* AppDelegateWebImage.m in Sources */,
@@ -2788,6 +2816,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
+				EXCLUDED_ARCHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info.plist";
@@ -3006,6 +3035,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
+				EXCLUDED_ARCHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info.plist";
@@ -3273,6 +3303,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
+				EXCLUDED_ARCHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -3304,6 +3335,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
+				EXCLUDED_ARCHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AXiOSKit/AXiOSKit-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "Dev=0";

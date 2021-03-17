@@ -53,6 +53,7 @@
 #import "_33CropViewController.h"
 #import "_34ViewController.h"
 #import "_35ProtobufVC.h"
+#import "_36YYKitTestVC.h"
 #import <AXiOSKit/AXPayVC.h>
 #import <AXiOSKit/AXPresentGesturesBack.h>
 #import <AXiOSKit/AXSystemAuthorizerManager.h>
@@ -957,7 +958,14 @@ typedef void (^CollectionBlock)(void);
                 },
             },
             
-            
+            @{
+                @"index": @36,
+                @"title": @"YYKit",
+                @"action": ^{
+                    _36YYKitTestVC *vc = [_36YYKitTestVC ax_init];
+                    [self ax_pushVC:vc];
+                },
+            },
             
         ].mutableCopy;
     }

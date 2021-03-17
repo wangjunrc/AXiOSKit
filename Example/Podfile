@@ -89,6 +89,15 @@ def ui_pods
   pod 'KMNavigationBarTransition'
   pod "Protobuf", :git => 'https://gitee.com/axinger/protobuf.git'
   
+  #  pod "YYKit", :git => 'https://gitee.com/mirrors/yykit.git',:tag =>'1.0.9'
+  pod "YYText", :git => 'https://gitee.com/mirrors/YYText.git',:tag =>'1.0.7'
+  pod "YYCategories", :git => 'https://gitee.com/mirrors/YYCategories.git',:tag =>'1.0.4'
+  pod 'YYKeyboardManager' , :git => 'https://gitee.com/github-iOS/YYKeyboardManager.git',:tag =>'1.0.1'
+  pod 'YYCache' , :git => 'https://gitee.com/github-iOS/YYCache.git',:tag =>'1.0.4'
+  pod 'YYDispatchQueuePool' , :git => 'https://gitee.com/github-iOS/YYDispatchQueuePool.git',:tag =>'1.0'
+  
+  
+  
 end
 
 def common_pods
@@ -108,7 +117,7 @@ def common_pods
   pod 'SDWebImage','~> 5.10.3'
   # 网络请求模拟库OHHTTPStubs
   pod 'OHHTTPStubs', '~> 9.1.0'
-
+  
   # 图片剪切
   pod 'TOCropViewController', '~> 2.6.0'
   pod "CTMediator"
