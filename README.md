@@ -2372,12 +2372,22 @@ if([value isKindOfClass:[NSNumber class]])
     
 }
 ```
-##
+## FMDB 线程安全执行
 ```
 FMDatabaseQueue *dbQueue = [FMDatabaseQueue databaseQueueWithPath:@""];
 
 [dbQueue inDatabase:^(FMDatabase *db){
     NSString *sql = [NSString stringWithFormat:@""];
     result = [db executeUpdate:sql];
+}];
+```
+
+## label 居中,自适应宽度
+```
+[label mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+    make.centerX.mas_equalTo(0);
+    make.left.mas_greaterThanOrEqualTo(5);
+    make.right.mas_lessThanOrEqualTo(-5);
 }];
 ```

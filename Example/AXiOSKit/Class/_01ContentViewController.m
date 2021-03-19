@@ -77,24 +77,24 @@
     
     [self _darkStyle];
     
-    [self _p00ButtonTitle:@"push" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"push" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         _01ContentViewController *vc = [_01ContentViewController ax_init];
         [strongSelf ax_pushVC:vc];
         vc.ax_controllerObserve.hiddenNavigationBar = NO;
     }];
     
-    [self _p00ButtonTitle:@"show" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"show" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         _01ContentViewController *vc = [_01ContentViewController ax_init];
         [strongSelf ax_showVC:vc];
     }];
     
-    [self _p00ButtonTitle:@"Lookin_2D" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"Lookin_2D" handler:^(UIButton * _Nonnull btn) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_2D" object:nil];
     }];
     
-    [self _p00ButtonTitle:@"dismis 或者 pop" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"dismis 或者 pop" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf ax_haveNav:^(UINavigationController *nav) {
             [strongSelf.navigationController popViewControllerAnimated:YES];
@@ -107,7 +107,7 @@
         }];
     }];
     
-    [self _p00ButtonTitle:@"dismissToRoot" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"dismissToRoot" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         
         UIViewController *controller = strongSelf;
@@ -118,13 +118,13 @@
         [controller dismissViewControllerAnimated:YES completion:nil];
     }];
     
-    [self _p00ButtonTitle:@"汽包" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"汽包" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _qipao:btn];
     }];
     
     
-    [self _p00ButtonTitle:@"PresentedViewController" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"PresentedViewController" handler:^(UIButton * _Nonnull btn) {
         UIViewController *topRootViewController = ax_keyWindow().rootViewController;// 在这里加一个这个样式的循环
         while (topRootViewController.presentedViewController) // 这里固定写法
             topRootViewController = topRootViewController.presentedViewController; _01ContentViewController *vc = _01ContentViewController.alloc.init;
@@ -132,17 +132,17 @@
         [topRootViewController presentViewController:vc animated:YES completion:nil];
     }];
     
-    [self _p00ButtonTitle:@"popToRoot" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"popToRoot" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.navigationController popToRootViewControllerAnimated:YES];
     }];
     
     /// 可以禁止侧滑返回,但是无法禁止代码直接返回
-    [self _p00ButtonTitle:@"隐藏返回按钮" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"隐藏返回按钮" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.navigationItem setHidesBackButton:!strongSelf.navigationItem.hidesBackButton animated:YES];
     }];
-    [self _p00ButtonTitle:@"隐藏返回按钮 代码返回" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"隐藏返回按钮 代码返回" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (!strongSelf.navigationItem.hidesBackButton) {
             [strongSelf.navigationController popViewControllerAnimated:YES];
@@ -172,7 +172,7 @@
     [self _p13MoreAlter];
     [self _p14xmlToObj];
     /// 会弹出 "想要查找并连接到本地网络上的设备" 弹窗
-    [self _p00ButtonTitle:@"NSProcessInfo" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"NSProcessInfo" handler:^(UIButton * _Nonnull btn) {
         NSString *uuid1 = [[NSProcessInfo processInfo] globallyUniqueString];
         
         NSLog(@"processInfoww = %@", [NSProcessInfo.processInfo mj_JSONObject]);
@@ -181,20 +181,20 @@
         NSLog(@"uuid2 = %@", [NSString ax_uuid]);
     }];
     
-    [self _p00ButtonTitle:@"_01ContentViewController" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"_01ContentViewController" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         _01ContentViewController *vc = [[_01ContentViewController alloc]init];
         [strongSelf.navigationController pushViewController:vc animated:YES];
     }];
     
-    [self _p00ButtonTitle:@"popToRootViewControllerAnimated" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"popToRootViewControllerAnimated" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.navigationController popToRootViewControllerAnimated:YES];
     }];
     [self _p17CSAnimationView];
     [self _p18appleLogin];
     
-    [self _p00ButtonTitle:@"系统时间" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"系统时间" handler:^(UIButton * _Nonnull btn) {
         NSLog(@"CACurrentMediaTime :%f", CACurrentMediaTime());
         NSLog(@"NSProcessInfo :%f", [[NSProcessInfo processInfo] systemUptime]);
         NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:CACurrentMediaTime()];
@@ -215,7 +215,7 @@
 
 - (void)_darkStyle {
     CGFloat all_height = 50;
-    [self _p00ButtonTitle:@"改变模式" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"改变模式" handler:^(UIButton * _Nonnull btn) {
         if (@available(iOS 13.0, *)) {
             ax_keyWindow().overrideUserInterfaceStyle = (ax_keyWindow().overrideUserInterfaceStyle != UIUserInterfaceStyleDark) ? UIUserInterfaceStyleDark : UIUserInterfaceStyleLight;
         }
@@ -353,13 +353,13 @@
         //        inputView.inputType = AXNumberKeyboardTypeFloat;
         keyboarTF.inputView = inputView;
         
-        [self _p00ButtonTitle:@"切换系统键盘" handler:^(UIButton * _Nonnull btn) {
+        [self _buttonTitle:@"切换系统键盘" handler:^(UIButton * _Nonnull btn) {
             //
             keyboarTF.inputView = nil;
             [keyboarTF reloadInputViews];
         }];
         
-        [self _p00ButtonTitle:@"切换自定义键盘" handler:^(UIButton * _Nonnull btn) {
+        [self _buttonTitle:@"切换自定义键盘" handler:^(UIButton * _Nonnull btn) {
             keyboarTF.inputView = inputView;
             [keyboarTF reloadInputViews];
         }];
@@ -393,7 +393,7 @@
     
     self.bottomAttribute = nameTF.mas_bottom;
     
-    [self _p00ButtonTitle:@"恢复键盘" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"恢复键盘" handler:^(UIButton * _Nonnull btn) {
         [nameTF reloadInputViews];
     }];
     
@@ -704,11 +704,11 @@
 
 - (void)_p02AlternateIconName {
     __weak typeof(self) weakSelf = self;
-    [self _p00ButtonTitle:@"换icon" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"换icon" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf setIconname:@"Alternate_AppIcon_2"];
     }];
-    [self _p00ButtonTitle:@"换icon-还原" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"换icon-还原" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf setIconname:nil];
     }];
@@ -757,7 +757,7 @@
 
 - (void)_p03LocationManager {
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTitle:@"定位" handler:^(UIButton * _Nonnull btn) {
+    return [self _buttonTitle:@"定位" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         strongSelf.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
             NSLog(@"定位 = %@", location);
@@ -767,7 +767,7 @@
 
 - (void)_p03wifi {
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTitle:@"wifi信息" handler:^(UIButton * _Nonnull btn) {
+    return [self _buttonTitle:@"wifi信息" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _WiFi];
     }];
@@ -830,7 +830,7 @@
         self.bottomAttribute = label2.mas_bottom;
     }
     
-    [self _p00ButtonTitle:@"04-masron - uninstall - 加大" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"04-masron - uninstall - 加大" handler:^(UIButton * _Nonnull btn) {
         [viewWidthConstraint uninstall];
         [label1.superview setNeedsUpdateConstraints];
         [UIView animateWithDuration:1 animations:^{
@@ -841,7 +841,7 @@
         }];
     }];
     
-    [self _p00ButtonTitle:@"04-masron - uninstall - 减小" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"04-masron - uninstall - 减小" handler:^(UIButton * _Nonnull btn) {
         [viewRightConstraint uninstall];
         //        [label1.superview setNeedsUpdateConstraints];
         [UIView animateWithDuration:1 animations:^{
@@ -852,7 +852,7 @@
         }];
     }];
     
-    [self _p00ButtonTitle:@"04-masron动画 -加大" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"04-masron动画 -加大" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         //        [label1.superview layoutIfNeeded];
         [strongSelf.view setNeedsUpdateConstraints];
@@ -865,7 +865,7 @@
         }];
     }];
     
-    [self _p00ButtonTitle:@"04-masron动画 - 减小" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"04-masron动画 - 减小" handler:^(UIButton * _Nonnull btn) {
         //        [label1.superview layoutIfNeeded];
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.view setNeedsUpdateConstraints];
@@ -881,7 +881,7 @@
 
 - (void)_p05DateVC {
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTitle:@"date" handler:^(UIButton * _Nonnull btn) {
+    return [self _buttonTitle:@"date" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         AXDateVC *vc = [[AXDateVC alloc]init];
         [strongSelf ax_showVC:vc];
@@ -890,7 +890,7 @@
 
 - (void)_p06per {
     //    __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTitle:@"奔溃拦截" handler:^(UIButton * _Nonnull btn) {
+    return [self _buttonTitle:@"奔溃拦截" handler:^(UIButton * _Nonnull btn) {
         //        __strong typeof(weakSelf) strongSelf = weakSelf;
         //        [self performSelector:@selector(test:age:age2:) withObjects:@[@"JIM",@"20"]];
         //        id obj =[self performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[@"JIM",@"20"]];
@@ -918,7 +918,7 @@
 
 - (void)_p08china {
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTitle:@"中英文排序" handler:^(UIButton * _Nonnull btn) {
+    return [self _buttonTitle:@"中英文排序" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _chinaText];
     }];
@@ -975,7 +975,7 @@
         }];
         self.bottomAttribute = label.mas_bottom;
         
-        [self _p00ButtonTitle:@"kvc修改间距" handler:^(UIButton * _Nonnull btn) {
+        [self _buttonTitle:@"kvc修改间距" handler:^(UIButton * _Nonnull btn) {
             [label setValue:@40 forKey:@"lineSpacing"];
         }];
     }
@@ -1001,7 +1001,7 @@
             make.right.mas_equalTo(-10);
         }];
         self.bottomAttribute = label.mas_bottom;
-        [self _p00ButtonTitle:@"kvc修改方向距" handler:^(UIButton * _Nonnull btn) {
+        [self _buttonTitle:@"kvc修改方向距" handler:^(UIButton * _Nonnull btn) {
             NSRange range = [label.text rangeOfString:label.text];
             NSMutableAttributedString *mAttStr = [[NSMutableAttributedString alloc] initWithString:label.text];
             
@@ -1015,7 +1015,7 @@
 }
 
 - (void)_p10flieExist {
-    return [self _p00ButtonTitle:@"字符串是否包含另一字符串,不区分大小写" handler:^(UIButton * _Nonnull btn) {
+    return [self _buttonTitle:@"字符串是否包含另一字符串,不区分大小写" handler:^(UIButton * _Nonnull btn) {
         NSString *string = @"HelloChina";
         if ([string localizedCaseInsensitiveContainsString:@"OCHI"]) {
             NSLog(@"localizedCaseInsensitiveContainsString 包含");
@@ -1123,7 +1123,7 @@
 
 - (void)_p13MoreAlter {
     __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTitle:@"多个alert" handler:^(UIButton * _Nonnull btn) {
+    return [self _buttonTitle:@"多个alert" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         // 第一个UIAlertController
         UIAlertController *alertController1 = [UIAlertController alertControllerWithTitle:@"测试1" message:@"测试1" preferredStyle:UIAlertControllerStyleAlert];
@@ -1146,7 +1146,7 @@
 
 - (void)_p14xmlToObj {
     //    __weak typeof(self) weakSelf = self;
-    return [self _p00ButtonTitle:@"xml解析" handler:^(UIButton * _Nonnull btn) {
+    return [self _buttonTitle:@"xml解析" handler:^(UIButton * _Nonnull btn) {
         //        __strong typeof(weakSelf) strongSelf = weakSelf;
         
         NSString *path = [[NSBundle mainBundle]pathForResource:@"testXML" ofType:@"xml"];
@@ -1295,7 +1295,7 @@
 
 - (void)_p19VisionKit {
     __weak typeof(self) weakSelf = self;
-    [self _p00ButtonTitle:@"VisionKit" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"VisionKit" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (@available(iOS 13.0, *)) {
             VNDocumentCameraViewController *vc =  VNDocumentCameraViewController.alloc.init;
@@ -1309,14 +1309,14 @@
 
 - (void)_p20changeLanch {
     __weak typeof(self) weakSelf = self;
-    [self _p00ButtonTitle:@"选择照片 替换启动图" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"选择照片 替换启动图" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf ax_showCameraWithEditing:NO block:^(UIImage *originalImage, UIImage *editedImage) {
             [strongSelf _p20Image:originalImage];
         }];
         
     }];
-    [self _p00ButtonTitle:@"恢复如初 启动图" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"恢复如初 启动图" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [LLDynamicLaunchScreen restoreAsBefore];
         [strongSelf showAlertView:@"启动图已恢复，APP即将退出"];
@@ -1516,7 +1516,7 @@
     }];
     self.bottomAttribute = label.mas_bottom;
     __weak typeof(self) weakSelf = self;
-    [self _p00ButtonTitle:@"下一页面" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"下一页面" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         _01ContentViewController *vc = _01ContentViewController.alloc.init;
         [strongSelf ax_pushVC:vc];
@@ -1524,7 +1524,7 @@
     
     if (![currentLan isEqualToString:@"zh-Hans"]) {
         
-        [self _p00ButtonTitle:@"切换语言中文" handler:^(UIButton * _Nonnull btn) {
+        [self _buttonTitle:@"切换语言中文" handler:^(UIButton * _Nonnull btn) {
             __strong typeof(weakSelf) strongSelf = weakSelf;
             AXLog(@"切换语言中文 前 %@", [NSLocale preferredLanguages].firstObject);
             //        [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"AppleLanguages"];
@@ -1538,7 +1538,7 @@
     }else  if (![currentLan isEqualToString:@"en"]) {
         
         
-        [self _p00ButtonTitle:@"切换语言英文" handler:^(UIButton * _Nonnull btn) {
+        [self _buttonTitle:@"切换语言英文" handler:^(UIButton * _Nonnull btn) {
             AXLog(@"切换语言英文 前 %@", [NSLocale preferredLanguages].firstObject);
             __strong typeof(weakSelf) strongSelf = weakSelf;
             //        [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"AppleLanguages"];

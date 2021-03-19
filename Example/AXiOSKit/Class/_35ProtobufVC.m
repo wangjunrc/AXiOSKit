@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self _p00ButtonTitle:@"解析" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"解析" handler:^(UIButton * _Nonnull btn) {
         
         Student *student = Student.alloc.init;
         student.name = @"jim";

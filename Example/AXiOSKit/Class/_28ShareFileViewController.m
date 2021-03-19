@@ -33,15 +33,15 @@
     // https://pspdfkit.com/blog/2016/hiding-action-share-extensions-in-your-own-apps/
     self.view.backgroundColor = UIColor.whiteColor;
     __weak typeof(self) weakSelf = self;
-    [self _p00ButtonTitle:@"系统分享,自定义按钮,可以分享图片" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"系统分享,自定义按钮,可以分享图片" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _share0];
     }];
-    [self _p00ButtonTitle:@"UIDocumentInteractionController" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"UIDocumentInteractionController" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _share1];
     }];
-    [self _p00ButtonTitle:@"UIDocumentInteractionController-分享pdf" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"UIDocumentInteractionController-分享pdf" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
       
         NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/testPDF.pdf" ofType:nil];
@@ -50,16 +50,16 @@
         
         
     }];
-    [self _p00ButtonTitle:@"UIDocumentInteractionController-2" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"UIDocumentInteractionController-2" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf createXLSFile];
     }];
-    [self _p00ButtonTitle:@"QuickLook预览文件" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"QuickLook预览文件" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _look];
     }];
     
-    [self _p00ButtonTitle:@"local socket-服务端" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"local socket-服务端" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _share2];
     }];

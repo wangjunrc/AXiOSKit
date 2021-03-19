@@ -21,7 +21,7 @@
     
     self.view.backgroundColor = UIColor.whiteColor;
     UIScrollView *scrollView = [UIScrollView.alloc init];
-//    self.scrollView = scrollView;
+    //    self.scrollView = scrollView;
     [self.view addSubview:scrollView];
     [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -38,7 +38,7 @@
     }];
     
     self.bottomAttribute = self.containerView.mas_top;
-   
+    
 }
 
 //- (void)viewDidAppear:(BOOL)animated {
@@ -79,7 +79,7 @@
 }
 
 
--(void )_p00ButtonTitle:(NSString *)title handler:(void(^)(UIButton *btn))handler {
+-(void )_buttonTitle:(NSString *)title handler:(void(^)(UIButton *btn))handler {
     if (title.length==0) {
         title = @"title";
     }
@@ -100,6 +100,43 @@
         }
     }];
     self.bottomAttribute =  btn.mas_bottom;
+}
+
+-(void )_titlelabel:(NSString *)title {
+    
+    UILabel *label = UILabel.alloc.init;
+    [self.containerView addSubview:label];
+    label.numberOfLines  = 0;    label.backgroundColor = UIColor.blackColor;
+    label.textColor = UIColor.whiteColor;
+    label.text = title;
+    
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.centerX.mas_equalTo(0);
+        make.left.mas_greaterThanOrEqualTo(5);
+        make.right.mas_lessThanOrEqualTo(-5);
+    }];
+    self.bottomAttribute =  label.mas_bottom;
+}
+
+-(void)_loadConstraintsWithView:(UIView *)aView {
+    [self.containerView addSubview:aView];
+    [aView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+    }];
+    self.bottomAttribute =  aView.mas_bottom;
+}
+
+-(void)_loadCenterXWithView:(UIView *)aView size:(CGSize )size {
+    [self.containerView addSubview:aView];
+    [aView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.centerX.mas_equalTo(0);
+        make.size.mas_equalTo(size);
+    }];
+    self.bottomAttribute =  aView.mas_bottom;
 }
 
 -(void )_p01ButtonTitle:(NSString *)title handler:(void(^)(UIButton *btn))handler {

@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     __weak typeof(self) weakSelf = self;
-    [self _p00ButtonTitle:@"跳转" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"跳转" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         UIViewController *viewController = [[CTMediator sharedInstance] yt_mediator_newsViewControllerWithParams:@{@"newsID":@"123456"}];
         [strongSelf.navigationController pushViewController:viewController animated:YES];

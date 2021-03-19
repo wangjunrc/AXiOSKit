@@ -59,6 +59,8 @@
         [[SDImageCodersManager sharedManager] addCoder:[SDImageHEICCoder sharedCoder]];
     }
     
+    [[SDImageCodersManager sharedManager] addCoder:[SDImageAPNGCoder sharedCoder]];
+    
     return YES;
 }
 @end

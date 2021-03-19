@@ -19,7 +19,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) MASViewAttribute *bottomAttribute;
 
--(void )_p00ButtonTitle:(NSString *)title handler:(void(^)(UIButton *btn))handler;
+-(void)_loadConstraintsWithView:(UIView *)aView;
+
+-(void)_loadCenterXWithView:(UIView *)aView size:(CGSize )size;
+
+-(void )_buttonTitle:(NSString *)title handler:(void(^)(UIButton *btn))handler;
+
+-(void )_titlelabel:(NSString *)title;
 
 /// 子约束最后调用一下
 -(void)_loadBottomAttribute;

@@ -21,11 +21,11 @@
     
     
     __weak typeof(self) weakSelf = self;
-    [self _p00ButtonTitle:@"微信分享" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"微信分享" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf shareAction:btn];
     }];
-    [self _p00ButtonTitle:@"微信登录" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"微信登录" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf authAction:btn];
     }];

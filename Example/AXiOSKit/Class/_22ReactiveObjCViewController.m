@@ -12,6 +12,8 @@
 #import <AXiOSKit/AXiOSKit.h>
 
 /**
+ RACSubject 继承 RACSignal
+ 
  RACCommand与RACSubject的区别
  RACCommand 用来做事情,比如 增删改查数据源,然后调用刷新RACSubject
  RACSubject 用来监听事情, 比如 刷新RACSubject
@@ -31,6 +33,19 @@
  
  
  */
+/**
+     *  bind：
+     *
+     *  merge：合并，只要任何一个信号发送数据，就能订阅
+     *  contact：必须要信号A发送完成，信号B才能订阅
+     *  then：拼接，忽略掉上一个信号的值。解决Block嵌套的问题
+     *
+     *  zipWith：压缩，同时发送数据，才能订阅到。压缩信号数据，变成元祖。
+     *  combineLatest：任何一个信号，只要改变就能订阅到（combineLatest、reduce）
+     *
+     *  combineLatest：合并
+     *  reduce：聚合
+     */
 @interface _22ReactiveObjCViewController ()
 
 @property(nonatomic, strong) NSMutableArray *dataArray;
@@ -53,6 +68,7 @@
     [self _06RACReplaySubject];
     [self _08zipWith];
     [self _08merge];
+    [self _08merge_label];
     [self _08then];
     [self _08concat];
     [self _09Command];
@@ -322,7 +338,7 @@
 -(void)_03timer {
     
     
-    [self _p00ButtonTitle:@"interval 定时器" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"interval 定时器" handler:^(UIButton * _Nonnull btn) {
         __block NSInteger count = 0;
         __block  RACDisposable *signal =   [[RACSignal interval:1.0 onScheduler:[RACScheduler currentScheduler]] subscribeNext:^(id x) {
             NSLog(@"interval = %@", x);
@@ -337,7 +353,7 @@
 
 -(void)_04arrayMap {
     
-    [self _p00ButtonTitle:@"NSArray map" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"NSArray map" handler:^(UIButton * _Nonnull btn) {
         
         NSArray *array = @[@"1", @"2", @"3"];
         
@@ -390,7 +406,7 @@
         NSLog(@"rac_signalForSelector: name %@", name);
     }];
     
-    [self _p00ButtonTitle:@"监听方法被调用" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"监听方法被调用" handler:^(UIButton * _Nonnull btn) {
         [self _05Selector:@"jim"];
     }];
     
@@ -437,7 +453,7 @@
 -(void)_08zipWith {
     
     
-    [self _p00ButtonTitle:@"所有请求完成" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"所有请求完成" handler:^(UIButton * _Nonnull btn) {
         
         // 需求: 一个界面有多个请求, 所有请求完成才更新 UI.
         RACSubject *signalA = [RACSubject subject];
@@ -461,16 +477,17 @@
 
 -(void)_08merge {
     
-    return [self _p00ButtonTitle:@"任意信号发送完成,都会回调" handler:^(UIButton * _Nonnull btn) {
-        
-        // 任意信号发送完成都会调用 nextBlock block.
-        RACSubject *signalA = [RACSubject subject];
-        RACSubject *signalB = [RACSubject subject];
-        RACSignal *mergeSiganl = [signalA merge:signalB];
-        [mergeSiganl subscribeNext:^(id x) {
-            NSLog(@"%@", x);
-        }];
-        
+    [self _titlelabel:@"merge 任意信号发送完成"];
+    // 任意信号发送完成都会调用 nextBlock block.
+    RACSubject *signalA = [RACSubject subject];
+    RACSubject *signalB = [RACSubject subject];
+    RACSignal *mergeSiganl = [signalA merge:signalB];
+    [mergeSiganl subscribeNext:^(id x) {
+        NSLog(@"merge = %@", x);
+    }];
+    
+     [self _buttonTitle:@"任意信号发送完成,都会回调" handler:^(UIButton * _Nonnull btn) {
+         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [signalB sendNext:@"数据B"];
         });
@@ -482,38 +499,150 @@
     
 }
 
--(void)_08then {
+-(void)_08merge_label {
     
-    return [self _p00ButtonTitle:@"then: 组合信号, 忽悠掉第一个信号" handler:^(UIButton * _Nonnull btn) {
+    [self _titlelabel:@"merge 同时监控UIKit属性"];
+    
+    UILabel *label1 = UILabel.alloc.init;
+    label1.text = @"label1";
+    [self.containerView addSubview:label1];
+    [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+    }];
+    self.bottomAttribute = label1.mas_bottom;
+    
+    UILabel *label2 = UILabel.alloc.init;
+    label2.text = @"label2";
+    [self.containerView addSubview:label2];
+    [label2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+    }];
+    self.bottomAttribute = label2.mas_bottom;
+    
+    UILabel *label3 = UILabel.alloc.init;
+    label3.text = @"label3";
+    [self.containerView addSubview:label3];
+    [label3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+    }];
+    self.bottomAttribute = label3.mas_bottom;
+    
+    RACSignal *signal = [[RACObserve(label1, hidden) merge:RACObserve(label2, hidden)] merge:RACObserve(label3, hidden)];
+    
+    [signal  subscribeNext:^(id  _Nullable x) {
         
-        RACSignal *siganlA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            NSLog(@"发送A请求");
-            [subscriber sendNext:@"数据A"];
-            [subscriber sendCompleted];
-            return nil;
-        }];
-        
-        RACSignal *siganlB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            NSLog(@"发送B请求");
-            [subscriber sendNext:@"数据B"];
-            return nil;
-        }];
-        
-        // then: 组合信号, 忽悠掉第一个信号.
-        RACSignal *thenSiganl = [siganlA then:^RACSignal *{
-            return siganlB; // 需要组合的信号
-        }];
-        
-        [thenSiganl subscribeNext:^(id x) {
-            NSLog(@"%@", x);
-        }];
+        NSLog(@"同时监控多个隐藏,任意一个 = %@", x);
+        NSLog(@"label1= %d,label2= %d,label3= %d,", label1.isHidden,label2.isHidden,label3.isHidden);
         
     }];
+    
+     [self _buttonTitle:@"label1隐藏" handler:^(UIButton * _Nonnull btn) {
+         label1.hidden = YES;
+         if (label2.hidden) {
+             label2.hidden = NO;
+         }
+         if (label3.hidden) {
+             label2.hidden = NO;
+         }
+    }];
+    [self _buttonTitle:@"label2隐藏" handler:^(UIButton * _Nonnull btn) {
+       
+        if (label1.hidden) {
+            label1.hidden = NO;
+        }
+        label2.hidden = YES;
+        if (label3.hidden) {
+            label2.hidden = NO;
+        }
+   }];
+    [self _buttonTitle:@"label3隐藏" handler:^(UIButton * _Nonnull btn) {
+        if (label1.hidden) {
+            label1.hidden = NO;
+        }
+        if (label2.hidden) {
+            label2.hidden = NO;
+        }
+        label3.hidden = YES;
+   }];
+    
+}
+
+-(void)_08then {
+    
+//    RACSubject *subA = [RACSubject subject];
+//    RACSubject *subB = [RACSubject subject];
+//
+//    [[subA merge:subB] subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@",x);
+//    }];
+//
+//    [subA sendNext:@"A"];
+//    [subB sendNext:@"B"];
+    
+    
+    
+//    RACSignal *siganlA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+//        NSLog(@"发送A请求");
+//        [subscriber sendNext:@"数据A"];
+//        [subscriber sendCompleted];
+//        return nil;
+//    }];
+//
+//    RACSignal *siganlB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+//        NSLog(@"发送B请求");
+//        [subscriber sendNext:@"数据B"];
+//        return nil;
+//    }];
+//
+//    // then: 组合信号, 忽悠掉第一个信号.
+//    RACSignal *thenSiganl = [siganlA then:^RACSignal *{
+//        return siganlB; // 需要组合的信号
+//    }];
+//
+//    [thenSiganl subscribeNext:^(id x) {
+//        NSLog(@"%@", x);
+//    }];
+    
+    [self _titlelabel:@"then：拼接，忽略掉上一个信号的值。解决Block嵌套的问题\n subA第一次发送才有结果,subBthen后,subA就被忽略了"];
+    // RACSubject 继承 RACSignal
+    RACSubject *subA = [RACSubject subject];
+    RACSubject *subB = [RACSubject subject];
+    [subA subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subA  = %@",x);
+    }];
+    [subB subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subB  = %@",x);
+    }];
+    [[ subA then:^RACSignal * _Nonnull{
+            return subB;
+       }]subscribeNext:^(id  _Nullable x) {
+           NSLog(@"subA then subB = %@",x);
+       }];
+    
+     [self _buttonTitle:@"then:  subA" handler:^(UIButton * _Nonnull btn) {
+        
+         [subA sendNext:@"A"];
+//         [subA sendCompleted];
+        
+    }];
+    [self _buttonTitle:@"then: subB" handler:^(UIButton * _Nonnull btn) {
+        [subB sendNext:@"B"];
+        /// 完成,才能出发then
+        [subA sendCompleted];
+     
+       
+   }];
     
 }
 -(void)_08concat {
     
-    return [self _p00ButtonTitle:@"concat: 顺序链接组合信号" handler:^(UIButton * _Nonnull btn) {
+     [self _buttonTitle:@"concat: 顺序链接组合信号" handler:^(UIButton * _Nonnull btn) {
         
         RACSignal *siganlA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             NSLog(@"发送A请求");
@@ -645,7 +774,7 @@
     //        }];
     //    }];
     
-    [self _p00ButtonTitle:@"执行execute" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"执行execute" handler:^(UIButton * _Nonnull btn) {
         [com execute:@"jim"];
     }];
     

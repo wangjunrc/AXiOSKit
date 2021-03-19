@@ -58,21 +58,21 @@
     
     
     __weak typeof(self) weakSelf = self;
-    [self _p00ButtonTitle:@"黄色" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"黄色" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         _01TypeViewController *vc = _01TypeViewController.alloc.init;
         vc.ax_barTintColor = UIColor.orangeColor;
         [strongSelf ax_pushVC:vc];
     }];
     
-    [self _p00ButtonTitle:@"蓝色" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"蓝色" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         _01TypeViewController *vc = _01TypeViewController.alloc.init;
         vc.ax_barTintColor = UIColor.blueColor;
         [strongSelf ax_pushVC:vc];
     }];
     
-    [self _p00ButtonTitle:@"透明" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"透明" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         _01TypeViewController *vc = _01TypeViewController.alloc.init;
         vc.ax_barTintColor = UIColor.clearColor;
@@ -81,7 +81,7 @@
     }];
     
     
-    [self _p00ButtonTitle:@"绿色+隐藏" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"绿色+隐藏" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         _01TypeViewController *vc = _01TypeViewController.alloc.init;
         vc.ax_barTintColor = UIColor.greenColor;

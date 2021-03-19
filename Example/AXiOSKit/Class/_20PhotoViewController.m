@@ -81,13 +81,13 @@
     
     
     
-    [self _p00ButtonTitle:@"iOS14相册" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"iOS14相册" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _iOS14Camera];
     }];
     
     
-    [self _p00ButtonTitle:@"PHPhotoLibrary-授权,不是全选,才会弹出" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"PHPhotoLibrary-授权,不是全选,才会弹出" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (@available(iOS 14, *)) {
             [[PHPhotoLibrary sharedPhotoLibrary] presentLimitedLibraryPickerFromViewController:strongSelf];
@@ -96,7 +96,7 @@
     
     
     
-    [self _p00ButtonTitle:@"TZImagePickerController" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"TZImagePickerController" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf __TZImagePickerController:10];
     }];
@@ -108,7 +108,7 @@
     NSLog(@"kUTTypePNG = %@", (NSString *)kUTTypePNG);
     
     
-    [self _p00ButtonTitle:@"裁剪" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"裁剪" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _cutPhoto];
     }];

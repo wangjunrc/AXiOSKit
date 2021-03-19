@@ -99,7 +99,6 @@
     YYLabel *label = YYLabel.alloc.init;
     label.userInteractionEnabled = YES;
     label.numberOfLines = 3;
-    label.preferredMaxLayoutWidth = self.view.width-30;
     label.font = [UIFont systemFontOfSize:16];
     label.textVerticalAlignment = YYTextVerticalAlignmentCenter;
     label.backgroundColor = [UIColor clearColor];
@@ -109,21 +108,19 @@
         make.left.mas_equalTo(10);
         make.right.mas_equalTo(-10);
     }];
+    [label layoutIfNeeded];
+    label.preferredMaxLayoutWidth = label.width;
+    
     self.bottomAttribute = label.mas_bottom;
     
     
     // 内置简单的表情解析
-    YYTextSimpleEmoticonParser *parser = [YYTextSimpleEmoticonParser new];
-    NSMutableDictionary *mapper = [NSMutableDictionary new];
+    YYTextSimpleEmoticonParser *parser = [YYTextSimpleEmoticonParser.alloc init];
+    NSMutableDictionary *mapper = [NSMutableDictionary dictionary];
     mapper[@"[哈哈]"] = [UIImage imageNamed:@"learning_index_page_control_image_normal"];
-//    mapper[@":cool:"] = [UIImage imageNamed:@"cool.png"];
-//    mapper[@":cry:"] = [UIImage imageNamed:@"cry.png"];
-//    mapper[@":wink:"] = [UIImage imageNamed:@"wink.png"];
     parser.emoticonMapper = mapper;
     
     label.textParser = parser;
-    
-    
     
     NSString *string = @"[哈哈]我已阅读并同意服务平台相关协议和条款《用户服务协议》《法律声明》";
     NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc] initWithString:string];
@@ -215,6 +212,8 @@
     NSData *data = [NSData dataWithContentsOfFile:path];
     UIImage *img = [UIImage sd_imageWithGIFData:data];
     mapper[@"[哈哈]"] = img;
+    mapper[@"[pia]"] = [UIImage imageNamed:@"pia"];
+    
 //    mapper[@"[哈哈]"] = [UIImage imageNamed:@"learning_index_page_control_image_normal"];
     
     YYTextSimpleEmoticonParser *parser = YYTextSimpleEmoticonParser.alloc.init;
@@ -224,7 +223,7 @@
 //    textView.textParser = [YYTextExampleEmailBindingParser new];
     
     
-    NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc] initWithString:@"aa[哈哈]报表"];
+    NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc] initWithString:@"aa[哈哈][pia]报表"];
 
 //
 //    [attributed setAttributes:@{
