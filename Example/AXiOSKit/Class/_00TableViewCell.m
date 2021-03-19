@@ -15,9 +15,12 @@
     // Initialization code
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 //    self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.textLabel.numberOfLines = 0;
     self.tintColor = UIColor.redColor;
     self.backgroundView = [UIView.alloc init];
+    self.indexLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBlack];
+    self.nameLabel.numberOfLines = 0;
+    self.nameLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
+    
     
     self.selectedBackgroundView = [[UIView alloc] init];//这句不可省略
 //    self.selectedBackgroundView.backgroundColor = [UIColor whiteColor];

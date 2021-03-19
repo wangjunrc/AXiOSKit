@@ -45,6 +45,11 @@
 #import <mach/mach.h>
 #import "AppDelegate.h"
 #import <AXiOSKit/UIScrollView+AXEmptyDataSet.h>
+
+// 不可见文件
+#import "AXiOSKit_Example-Swift.h"
+//#import "AXiOSKit_Example-Bridging-Header.h"
+
 @interface TestKVOObject : NSObject
 
 @property (nonatomic, assign) NSInteger testInteger;
@@ -747,7 +752,15 @@ void mySLog(NSString *format, ...)
                     
                 },
             },
-            
+            @{
+                @"index": @8,
+                @"title": @"oc调用swift",
+                @"action": ^{
+                
+                    DogSwift *dog =  [DogSwift.alloc init];
+                    [dog show];
+                },
+            },
             
         ].mutableCopy;
     }

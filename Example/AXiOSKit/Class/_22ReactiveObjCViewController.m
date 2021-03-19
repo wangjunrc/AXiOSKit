@@ -173,6 +173,30 @@
         NSLog(@"text1 = %@,text2 = %@",tf1.text,tf2.text);
         return @(tf1.text.length && tf2.text.length);
     }];
+    RAC(btn0, enabled) = comineSiganl;
+    [RACObserve(btn0, enabled) subscribeNext:^(id  _Nullable x) {
+        btn0.backgroundColor = [x boolValue] ? UIColor.redColor : UIColor.grayColor;
+    }];
+    
+    [[[tf2.rac_textSignal merge:RACObserve(tf2, text)] bind:^RACSignalBindBlock {
+        
+        // return 的这个大的block 的作用:表示绑定了一个源信号 - subject
+                return ^RACSignal *(id _Nullable value, BOOL *stop) {
+                    
+                    // 什么时候调用block: 当源信号有新的值发出, 就会来到这个block
+                    NSLog(@"subject 发送了新信号: %@", value);
+                    
+                    // block作用:做返回值的处理
+                    NSString *newString = [NSString stringWithFormat:@"do bind: %@", value];
+                    
+                    // 做好处理，通过信号返回出去.
+                    return [RACSignal return:newString];
+                };
+        
+        
+    }]subscribeNext:^(id  _Nullable x) {
+        NSLog(@"bind = %@", x);
+    }];
     
     /// 文字变化,初始化有点问题
     //    RACSignal *comineSiganl = [RACSignal combineLatest:@[tf1.rac_newTextChannel,tf2.rac_newTextChannel, RACObserve(tf2, text)] reduce:^id _Nullable (NSString *text1, NSString *text2, NSString *text22) {
@@ -194,10 +218,7 @@
     //        NSLog(@"点击给 UITextField赋值3 = %@",x);
     //    }];
     
-    RAC(btn0, enabled) = comineSiganl;
-    [RACObserve(btn0, enabled) subscribeNext:^(id  _Nullable x) {
-        btn0.backgroundColor = [x boolValue] ? UIColor.redColor : UIColor.grayColor;
-    }];
+   
 }
 -(void)_01UITextField {
     

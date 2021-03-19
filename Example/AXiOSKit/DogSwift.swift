@@ -7,10 +7,14 @@
 //
 
 import Foundation
-import Foundation
 
-class Test: NSObject {
+@objcMembers class DogSwift: NSObject {
     func show() {
-        print("hello bridge!");
+        print("DogSwift");
+    }
+    func showOC() {
+        let dog :DogOC  = DogOC.init();
+        dog.show();
+        
     }
 }
