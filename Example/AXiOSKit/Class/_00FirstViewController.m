@@ -98,7 +98,8 @@ typedef void (^CollectionBlock)(void);
 //}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"主题";
+    self.title = AXNSLocalizedString(@"local.home");
+    NSLog(@"国际化 = %@",NSLocalizedString(@"local.home", nil));
     __weak typeof(self) weakSelf = self;
     self.tableView.tableFooterView = UIView.alloc.init;
 //    [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
