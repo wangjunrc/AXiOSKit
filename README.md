@@ -2381,7 +2381,6 @@ FMDatabaseQueue *dbQueue = [FMDatabaseQueue databaseQueueWithPath:@""];
     result = [db executeUpdate:sql];
 }];
 ```
-
 ## label 居中,自适应宽度
 ```
 [label mas_makeConstraints:^(MASConstraintMaker *make) {
