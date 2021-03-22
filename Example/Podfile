@@ -33,8 +33,9 @@ def ui_pods
   # 保护App
   pod 'JJException'
   # 微信开源数据库操作层 ORM
-  pod 'WCDB','~> 1.0.7.5'
-  #  pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git'
+  #  pod 'WCDB','~> 1.0.7.5'
+  pod 'WCDB' , :git => 'https://gitee.com/axinger/wcdb.git',:tag => '~> 1.0.7.5'
+  # 微信分享,此版本才不会校验链接
   pod 'WechatOpenSDK','= 1.7.7'
   
   # 本地编译过的
@@ -128,8 +129,8 @@ def debug_pods
   # 测试工具
   pod 'LLDebugTool' , '1.3.8.1' ,:configurations => ['Debug']
   pod 'MLeaksFinder'
-  pod 'LookinServer', :configurations => ['Debug']
-  
+  #  pod 'LookinServer', :configurations => ['Debug']
+  pod 'LookinServer', :configurations => ['Debug'], :git => 'https://gitee.com/axinger/LookinServer.git'
 end
 
 #=========环境===========

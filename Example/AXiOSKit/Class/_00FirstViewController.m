@@ -54,6 +54,7 @@
 #import "_34ViewController.h"
 #import "_35ProtobufVC.h"
 #import "_36YYKitTestVC.h"
+#import "_37FileManagerVC.h"
 #import <AXiOSKit/AXPayVC.h>
 #import <AXiOSKit/AXPresentGesturesBack.h>
 #import <AXiOSKit/AXSystemAuthorizerManager.h>
@@ -967,6 +968,16 @@ typedef void (^CollectionBlock)(void);
                     [self ax_pushVC:vc];
                 },
             },
+            @{
+                @"index": @37,
+                @"title": @"NSFileManager",
+                @"action": ^{
+                    _37FileManagerVC *vc = [_37FileManagerVC ax_init];
+                    [self ax_pushVC:vc];
+                },
+            },
+            
+            
             
         ].mutableCopy;
     }

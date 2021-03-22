@@ -327,6 +327,8 @@
 		21E5C8AA257F6BF8002A4D59 /* _00BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */; };
 		21E6DE67260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
 		21E6DE68260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
+		21E6DF102605DC3D0092051F /* _37FileManagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DF0F2605DC3D0092051F /* _37FileManagerVC.m */; };
+		21E6DF112605DC3D0092051F /* _37FileManagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DF0F2605DC3D0092051F /* _37FileManagerVC.m */; };
 		21E8BD2025B1D08300D9D83C /* AXSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E8BD1F25B1D08300D9D83C /* AXSwitchView.m */; };
 		21EB382B25DF90C6002C1807 /* ax_debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */; };
 		21EB382C25DF90C6002C1807 /* ax_debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */; };
@@ -699,6 +701,8 @@
 		21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00BaseViewController.m; sourceTree = "<group>"; };
 		21E6DE65260494060092051F /* DogOC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogOC.h; sourceTree = "<group>"; };
 		21E6DE66260494060092051F /* DogOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogOC.m; sourceTree = "<group>"; };
+		21E6DF0E2605DC3D0092051F /* _37FileManagerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _37FileManagerVC.h; sourceTree = "<group>"; };
+		21E6DF0F2605DC3D0092051F /* _37FileManagerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _37FileManagerVC.m; sourceTree = "<group>"; };
 		21E8BD1E25B1D08300D9D83C /* AXSwitchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXSwitchView.h; sourceTree = "<group>"; };
 		21E8BD1F25B1D08300D9D83C /* AXSwitchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXSwitchView.m; sourceTree = "<group>"; };
 		21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ax_debug.xcconfig; sourceTree = "<group>"; };
@@ -934,6 +938,8 @@
 				213BCB41254003D900C89B72 /* AANavigationController.h */,
 				2160E3C22601AADC007FB7C2 /* _36YYKitTestVC.h */,
 				2160E3C32601AADC007FB7C2 /* _36YYKitTestVC.m */,
+				21E6DF0E2605DC3D0092051F /* _37FileManagerVC.h */,
+				21E6DF0F2605DC3D0092051F /* _37FileManagerVC.m */,
 				213BCB63254003D900C89B72 /* AANavigationController.m */,
 				213BCB6F254003D900C89B72 /* AFHTTPSessionManager+PutFile.h */,
 				213BCB48254003D900C89B72 /* AFHTTPSessionManager+PutFile.m */,
@@ -2240,6 +2246,7 @@
 				211226FD2573340100B6ECC8 /* _30TimeLineModel.m in Sources */,
 				21C0190925FF293300FAFE5A /* _35ProtobufVC.m in Sources */,
 				21E5C8AA257F6BF8002A4D59 /* _00BaseViewController.m in Sources */,
+				21E6DF112605DC3D0092051F /* _37FileManagerVC.m in Sources */,
 				211226FE2573340100B6ECC8 /* LVieoView.m in Sources */,
 				21BA19A125AD91EF00222F9A /* AXDebugManager.m in Sources */,
 				211226FF2573340100B6ECC8 /* _26RMQClientViewController.m in Sources */,
@@ -2403,6 +2410,7 @@
 				216891AB25ABDD4B0037CAB5 /* _25CompLayoutCell.m in Sources */,
 				218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */,
 				218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */,
+				21E6DF102605DC3D0092051F /* _37FileManagerVC.m in Sources */,
 				213BCBEA254003DB00C89B72 /* MakeKeyAndVisible.m in Sources */,
 				21CC8169257E00840062ACE5 /* _25Layout.m in Sources */,
 				213BCC29254003DB00C89B72 /* AXWebSocketEngine.m in Sources */,
