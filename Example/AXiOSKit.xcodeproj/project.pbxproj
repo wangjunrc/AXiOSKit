@@ -158,8 +158,8 @@
 		211A99FB25CB9F9D009030CB /* RectComp.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E425CB9F9D009030CB /* RectComp.json */; };
 		211A99FC25CB9F9D009030CB /* Play-Pause.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E525CB9F9D009030CB /* Play-Pause.json */; };
 		211A99FD25CB9F9D009030CB /* Play-Pause.json in Resources */ = {isa = PBXBuildFile; fileRef = 211A99E525CB9F9D009030CB /* Play-Pause.json */; };
-		211DEB6625EC88E500CE3907 /* _01GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211DEB6525EC88E500CE3907 /* _01GradientViewController.m */; };
-		211DEB6725EC88E500CE3907 /* _01GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211DEB6525EC88E500CE3907 /* _01GradientViewController.m */; };
+		211DEB6625EC88E500CE3907 /* _03GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211DEB6525EC88E500CE3907 /* _03GradientViewController.m */; };
+		211DEB6725EC88E500CE3907 /* _03GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211DEB6525EC88E500CE3907 /* _03GradientViewController.m */; };
 		2121FE8025CA945600B3B323 /* AXXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2121FE7F25CA945600B3B323 /* AXXSwitch.m */; };
 		2121FE8125CA945600B3B323 /* AXXSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 2121FE7F25CA945600B3B323 /* AXXSwitch.m */; };
 		2124D21225E48AF800B1A5A4 /* XWShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2124D21125E48AF800B1A5A4 /* XWShadow.m */; };
@@ -245,6 +245,8 @@
 		21430B08256C9DC300CB8EBC /* _30TimeLineNinePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430B07256C9DC300CB8EBC /* _30TimeLineNinePhotoView.m */; };
 		21430B0F256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21430B0D256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.m */; };
 		21430B10256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21430B0E256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib */; };
+		214878E6260C173B003671D9 /* _03RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 214878E5260C173B003671D9 /* _03RootVC.m */; };
+		214878ED260C197E003671D9 /* _03HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 214878EC260C197E003671D9 /* _03HeaderView.m */; };
 		2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		2160E3C42601AADC007FB7C2 /* _36YYKitTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2160E3C32601AADC007FB7C2 /* _36YYKitTestVC.m */; };
@@ -455,8 +457,8 @@
 		211A99E325CB9F9D009030CB /* EmptyStatus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmptyStatus.json; sourceTree = "<group>"; };
 		211A99E425CB9F9D009030CB /* RectComp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RectComp.json; sourceTree = "<group>"; };
 		211A99E525CB9F9D009030CB /* Play-Pause.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Play-Pause.json"; sourceTree = "<group>"; };
-		211DEB6425EC88E500CE3907 /* _01GradientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _01GradientViewController.h; sourceTree = "<group>"; };
-		211DEB6525EC88E500CE3907 /* _01GradientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _01GradientViewController.m; sourceTree = "<group>"; };
+		211DEB6425EC88E500CE3907 /* _03GradientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _03GradientViewController.h; sourceTree = "<group>"; };
+		211DEB6525EC88E500CE3907 /* _03GradientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _03GradientViewController.m; sourceTree = "<group>"; };
 		2121FE7E25CA945600B3B323 /* AXXSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXXSwitch.h; sourceTree = "<group>"; };
 		2121FE7F25CA945600B3B323 /* AXXSwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXXSwitch.m; sourceTree = "<group>"; };
 		2124D21025E48AF800B1A5A4 /* XWShadow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWShadow.h; sourceTree = "<group>"; };
@@ -595,6 +597,10 @@
 		21430B0C256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _30TimeLineNinePhotoCell.h; sourceTree = "<group>"; };
 		21430B0D256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _30TimeLineNinePhotoCell.m; sourceTree = "<group>"; };
 		21430B0E256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _30TimeLineNinePhotoCell.xib; sourceTree = "<group>"; };
+		214878E4260C173B003671D9 /* _03RootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _03RootVC.h; sourceTree = "<group>"; };
+		214878E5260C173B003671D9 /* _03RootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _03RootVC.m; sourceTree = "<group>"; };
+		214878EB260C197E003671D9 /* _03HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _03HeaderView.h; sourceTree = "<group>"; };
+		214878EC260C197E003671D9 /* _03HeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _03HeaderView.m; sourceTree = "<group>"; };
 		2152C5B525919C720078D525 /* AXDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugViewController.h; sourceTree = "<group>"; };
 		2152C5B625919C720078D525 /* AXDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugViewController.m; sourceTree = "<group>"; };
 		2160E3C22601AADC007FB7C2 /* _36YYKitTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _36YYKitTestVC.h; sourceTree = "<group>"; };
@@ -845,23 +851,18 @@
 			children = (
 				21E5C8A7257F6BF8002A4D59 /* _00BaseViewController.h */,
 				21E5C8A8257F6BF8002A4D59 /* _00BaseViewController.m */,
-				213BCB86254003D900C89B72 /* _00FirstViewController.h */,
-				213BCB59254003D900C89B72 /* _00FirstViewController.m */,
-				21D7675225C00CE600468F8E /* _00HeaderView.h */,
-				21D7675325C00CE600468F8E /* _00HeaderView.m */,
 				213BCB97254003DA00C89B72 /* _00Module */,
-				219F44502580BDC600E8CB50 /* _00SecondViewController.h */,
-				219F44512580BDC600E8CB50 /* _00SecondViewController.m */,
+				214878E0260C16C7003671D9 /* _00Root */,
 				213BCB7E254003D900C89B72 /* _00TableViewCell.h */,
 				213BCB52254003D900C89B72 /* _00TableViewCell.m */,
 				213BCB6A254003D900C89B72 /* _00TableViewCell.xib */,
 				213BCB47254003D900C89B72 /* _01ContentViewController.h */,
 				213BCB72254003D900C89B72 /* _01ContentViewController.m */,
-				211DEB6425EC88E500CE3907 /* _01GradientViewController.h */,
-				211DEB6525EC88E500CE3907 /* _01GradientViewController.m */,
 				21D87B8725EF35C1007220E8 /* _01TypeViewController.h */,
 				21D87B8825EF35C2007220E8 /* _01TypeViewController.m */,
 				213BCBA2254003DA00C89B72 /* _02Chat */,
+				211DEB6425EC88E500CE3907 /* _03GradientViewController.h */,
+				211DEB6525EC88E500CE3907 /* _03GradientViewController.m */,
 				213BCB82254003D900C89B72 /* _04RunLoopViewController.h */,
 				213BCB60254003D900C89B72 /* _04RunLoopViewController.m */,
 				213BCB74254003D900C89B72 /* _04RunLoopViewController.xib */,
@@ -932,14 +933,14 @@
 				211A997625CB96C7009030CB /* _32LottieVC.m */,
 				218A32D225E0FAAE008D95B8 /* _33CropViewController.h */,
 				218A32D325E0FAAE008D95B8 /* _33CropViewController.m */,
+				21F43CED25E4F14E002AF1AD /* _34 */,
 				21C0190625FF293300FAFE5A /* _35ProtobufVC.h */,
 				21C0190725FF293300FAFE5A /* _35ProtobufVC.m */,
-				21F43CED25E4F14E002AF1AD /* _34 */,
-				213BCB41254003D900C89B72 /* AANavigationController.h */,
 				2160E3C22601AADC007FB7C2 /* _36YYKitTestVC.h */,
 				2160E3C32601AADC007FB7C2 /* _36YYKitTestVC.m */,
 				21E6DF0E2605DC3D0092051F /* _37FileManagerVC.h */,
 				21E6DF0F2605DC3D0092051F /* _37FileManagerVC.m */,
+				213BCB41254003D900C89B72 /* AANavigationController.h */,
 				213BCB63254003D900C89B72 /* AANavigationController.m */,
 				213BCB6F254003D900C89B72 /* AFHTTPSessionManager+PutFile.h */,
 				213BCB48254003D900C89B72 /* AFHTTPSessionManager+PutFile.m */,
@@ -1109,6 +1110,47 @@
 				21BC1941256CC2C20041ADBB /* ViewController */,
 			);
 			path = _30IGList;
+			sourceTree = "<group>";
+		};
+		214878E0260C16C7003671D9 /* _00Root */ = {
+			isa = PBXGroup;
+			children = (
+				214878E2260C16EF003671D9 /* _00Root */,
+				214878E1260C16E0003671D9 /* _01Root */,
+				214878E3260C1708003671D9 /* _03Root */,
+			);
+			path = _00Root;
+			sourceTree = "<group>";
+		};
+		214878E1260C16E0003671D9 /* _01Root */ = {
+			isa = PBXGroup;
+			children = (
+				219F44502580BDC600E8CB50 /* _00SecondViewController.h */,
+				219F44512580BDC600E8CB50 /* _00SecondViewController.m */,
+			);
+			path = _01Root;
+			sourceTree = "<group>";
+		};
+		214878E2260C16EF003671D9 /* _00Root */ = {
+			isa = PBXGroup;
+			children = (
+				213BCB86254003D900C89B72 /* _00FirstViewController.h */,
+				213BCB59254003D900C89B72 /* _00FirstViewController.m */,
+				21D7675225C00CE600468F8E /* _00HeaderView.h */,
+				21D7675325C00CE600468F8E /* _00HeaderView.m */,
+			);
+			path = _00Root;
+			sourceTree = "<group>";
+		};
+		214878E3260C1708003671D9 /* _03Root */ = {
+			isa = PBXGroup;
+			children = (
+				214878E4260C173B003671D9 /* _03RootVC.h */,
+				214878E5260C173B003671D9 /* _03RootVC.m */,
+				214878EB260C197E003671D9 /* _03HeaderView.h */,
+				214878EC260C197E003671D9 /* _03HeaderView.m */,
+			);
+			path = _03Root;
 			sourceTree = "<group>";
 		};
 		21799D61255CD31F00754A8B /* RecordAudio */ = {
@@ -1952,7 +1994,6 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
-				"${BUILT_PRODUCTS_DIR}/KMNavigationBarTransition/KMNavigationBarTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework",
@@ -1972,6 +2013,7 @@
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RMQClient/RMQClient.framework",
+				"${BUILT_PRODUCTS_DIR}/RTRootNavigationController/RTRootNavigationController.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImageFLPlugin/SDWebImageFLPlugin.framework",
@@ -2013,7 +2055,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMNavigationBarTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDebugTool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDynamicLaunchScreen.framework",
@@ -2033,6 +2074,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMQClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTRootNavigationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageFLPlugin.framework",
@@ -2084,7 +2126,6 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
-				"${BUILT_PRODUCTS_DIR}/KMNavigationBarTransition/KMNavigationBarTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework",
@@ -2104,6 +2145,7 @@
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RMQClient/RMQClient.framework",
+				"${BUILT_PRODUCTS_DIR}/RTRootNavigationController/RTRootNavigationController.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImageFLPlugin/SDWebImageFLPlugin.framework",
@@ -2145,7 +2187,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMNavigationBarTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDebugTool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDynamicLaunchScreen.framework",
@@ -2165,6 +2206,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMQClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTRootNavigationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageFLPlugin.framework",
@@ -2279,7 +2321,7 @@
 				211227112573340100B6ECC8 /* _18MGSwipeTableVC.m in Sources */,
 				2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */,
 				211227122573340100B6ECC8 /* _02ChatViewController.m in Sources */,
-				211DEB6725EC88E500CE3907 /* _01GradientViewController.m in Sources */,
+				211DEB6725EC88E500CE3907 /* _03GradientViewController.m in Sources */,
 				211227132573340100B6ECC8 /* UIControl+load.m in Sources */,
 				211227142573340100B6ECC8 /* _27MQTTClientViewController.m in Sources */,
 				218A32D525E0FAAE008D95B8 /* _33CropViewController.m in Sources */,
@@ -2366,6 +2408,7 @@
 				218A32D425E0FAAE008D95B8 /* _33CropViewController.m in Sources */,
 				218A324C25E0DFF0008D95B8 /* AXIBudyButton.m in Sources */,
 				21C0190825FF293300FAFE5A /* _35ProtobufVC.m in Sources */,
+				214878ED260C197E003671D9 /* _03HeaderView.m in Sources */,
 				213BCC31254003DB00C89B72 /* LVieoView.m in Sources */,
 				213BCC18254003DB00C89B72 /* _26RMQClientViewController.m in Sources */,
 				21C0187225FF00F400FAFE5A /* _13SDWebImageVC.m in Sources */,
@@ -2381,6 +2424,7 @@
 				213BCC36254003DB00C89B72 /* AXUserInfoDao.mm in Sources */,
 				21799D64255CD33700754A8B /* AXRecordAudioConfig.m in Sources */,
 				213BCBFB254003DB00C89B72 /* _24NoteViewController.m in Sources */,
+				214878E6260C173B003671D9 /* _03RootVC.m in Sources */,
 				213BCC2A254003DB00C89B72 /* TestObj.m in Sources */,
 				21BC194A256CD28C0041ADBB /* _25CollectionViewCell.m in Sources */,
 				21430AE1256C980500CB8EBC /* _30IGListViewController.m in Sources */,
@@ -2437,7 +2481,7 @@
 				21E8BD2025B1D08300D9D83C /* AXSwitchView.m in Sources */,
 				218F674125A5B61E006A8312 /* _25CompLayoutVC1.m in Sources */,
 				213BCBFC254003DB00C89B72 /* _06WCDBViewController.m in Sources */,
-				211DEB6625EC88E500CE3907 /* _01GradientViewController.m in Sources */,
+				211DEB6625EC88E500CE3907 /* _03GradientViewController.m in Sources */,
 				2121FE8025CA945600B3B323 /* AXXSwitch.m in Sources */,
 				2124D21225E48AF800B1A5A4 /* XWShadow.m in Sources */,
 				213BCC1B254003DB00C89B72 /* _17OtherShareViewController.m in Sources */,

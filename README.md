@@ -2220,7 +2220,7 @@ enum{
     NSLiteralSearch = 2,//区分大小写比较
     NSBackwardsSearch = 4,//从字符串末尾开始搜索
     NSAnchoredSearch = 8,//搜索限制范围的字符串
-    NSNumbericSearch = 64//按照字符串里的数字为依据，算出顺序。例如 Foo2.txt < Foo7.txt < Foo25.txt
+    NSNumericSearch = 64//按照字符串里的数字为依据，算出顺序。例如 Foo2.txt < Foo7.txt < Foo25.txt
 //以下定义高于 mac os 10.5 或者高于 iphone 2.0 可用
     ,
     NSDiacriticInsensitiveSearch = 128,//忽略 "-" 符号的比较
@@ -2240,6 +2240,19 @@ NSLog(@"compare = %ld",[@"1.8" compare:@"1.9" options:NSNumericSearch]); // 1.8 
 ``` 
 NSLog(@"compare = %ld",[@"1.9" compare:@"1.10"]);// 1.9 > 1.10 ,正常的小数比较,就是 9 > 1
 NSLog(@"compare = %ld",[@"1.9" compare:@"1.8"]); // 1.9 > 1.8
+```
+### 搜索
+```
+NSString *str = @"AabBa";
+NSString *searchStr = @"a";
+
+NSLog(@"range 默认从头开始,区分大小写 = %@",NSStringFromRange([str rangeOfString:searchStr]));
+NSLog(@"range 不区分大小写比较 = %@",NSStringFromRange([str rangeOfString:searchStr options:NSCaseInsensitiveSearch]));
+NSLog(@"range 区分大小写比较 = %@",NSStringFromRange([str rangeOfString:searchStr options:NSLiteralSearch]));
+NSLog(@"range 从字符串末尾开始搜索 = %@",NSStringFromRange([str rangeOfString:searchStr options:NSBackwardsSearch]));
+NSLog(@"range 搜索限制范围的字符串 = %@",NSStringFromRange([str rangeOfString:searchStr options:NSAnchoredSearch]));
+NSLog(@"range 按照字符串里的数字为依据 = %@",NSStringFromRange([str rangeOfString:searchStr options:NSNumericSearch]));
+NSLog(@"range 忽略 - 符号的比较 = %@",NSStringFromRange([str rangeOfString:searchStr options:NSDiacriticInsensitiveSearch]));
 ```
 
 ## 指针传参

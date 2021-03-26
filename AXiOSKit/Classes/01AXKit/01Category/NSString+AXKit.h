@@ -362,4 +362,7 @@
 /// 模糊搜索 汉字搜索 不分大小写拼音或首字母搜索
 @property (nonatomic, copy,readonly) NSString *ax_tansformToMixedString;
 
+/// url 解析参数
+@property(nonatomic, strong,readonly)NSDictionary *ax_URLComponents;
+
 @end

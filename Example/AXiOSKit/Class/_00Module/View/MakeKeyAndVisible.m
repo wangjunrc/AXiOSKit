@@ -15,7 +15,7 @@
 #import <AXiOSKit/AXConfigureManager.h>
 #import "_00SecondViewController.h"
 #import "AXTabBarController.h"
-
+#import "_03RootVC.h"
 @implementation MakeKeyAndVisible
 
 
@@ -62,6 +62,13 @@
         [temp addObject:nav];
     }
     
+    {
+        _03RootVC *roorvc = [[_03RootVC alloc]init];
+        AANavigationController *nav = [[AANavigationController alloc]initWithRootViewController:roorvc];
+        nav.tabBarItem.title=@"隐藏导航";
+        nav.tabBarItem.image=[UIImage imageNamed:@"tab_3"];
+        [temp addObject:nav];
+    }
     
     AXTabBarController *tabBar = [[AXTabBarController alloc]init];
     tabBar.viewControllers= temp.copy;

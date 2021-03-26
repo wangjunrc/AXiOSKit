@@ -1168,5 +1168,17 @@
     return [array componentsJoinedByString:@","];
 }
 
+-(NSDictionary *)ax_URLComponents {
+    
+    NSString *url = self;
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    //传入url创建url组件类
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithString:url];
+    //回调遍历所有参数，添加入字典
+    [urlComponents.queryItems enumerateObjectsUsingBlock:^(NSURLQueryItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        dict[obj.name] = obj.value;
+    }];
+    return dict;
+}
 @end
 

@@ -440,7 +440,7 @@ void AXNoMsgLog(NSString *format, ...) {
     // log内容
     const char *formatChar =
     [[NSString alloc] initWithFormat:format arguments:arg_list].UTF8String;
-    printf("%s", formatChar);
+    printf("%s\n", formatChar);
     va_end(arg_list);
 }
 

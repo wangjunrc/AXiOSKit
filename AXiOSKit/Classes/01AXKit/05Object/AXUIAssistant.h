@@ -35,38 +35,38 @@ extern CGFloat ax_screen_center_x(void);
 
 extern CGFloat ax_pixel(void);
 
-
-/**导航栏高+状态栏高 44+20或者44+齐刘海高度*/
-extern CGFloat ax_navigation_and_status_height(void);
-
-/**状态态栏高 20或者齐刘海高度*/
-extern CGFloat ax_status_bar_height(void);
-
-/**导航栏高 44*/
+/// UINavigationController 栏高
 extern CGFloat ax_navigation_bar_height(void);
 
-/**安全区域 UIEdgeInsets*/
+/// UITabBarController 高度
+extern CGFloat ax_tab_bar_height(void);
+
+/// 导航栏高+齐刘海及状态栏
+extern CGFloat ax_navigation_and_status_height(void);
+
+/// 状态栏及齐刘海  等于 ax_safe_area_insets_top
+extern CGFloat ax_status_bar_height(void);
+
+/// 安全区域 UIEdgeInsets 顶部的状态栏及齐刘海(状态栏属于安全区域),底部的指示条
 extern UIEdgeInsets ax_safe_area_insets(void);
 
-extern UIEdgeInsets ax_screen_padding_insets(void);
-
-/**安全区域 UIEdgeInsets top, 状态栏高度 20 或者 44*/
+/// 安全区域 UIEdgeInsets top, 状态栏高度 或者 状态栏及齐刘海
 extern CGFloat ax_safe_area_insets_top(void);
 
-/**安全区域 UIEdgeInsets left*/
+/// 安全区域 UIEdgeInsets left
 extern CGFloat ax_safe_area_insets_left(void);
 
-/**安全区域 UIEdgeInsets bottom*/
+/// 安全区域 UIEdgeInsets bottom*
 extern CGFloat ax_safe_area_insets_bottom(void);
 
-/**安全区域 UIEdgeInsets bottom 偏移 如果 bottom>0 就返回bottom bottom==0 就返回offset */
+/// 安全区域 UIEdgeInsets righ
+extern CGFloat ax_safe_area_insets_right(void);
+
+/// 安全区域 UIEdgeInsets bottom 偏移 如果 bottom>0 就返回bottom bottom==0 就返回offset
+/// 主要用于 底部按钮 约束底部的 指示条距离
 extern CGFloat ax_safe_area_insets_bottom_offset(CGFloat offset);
 
-/**安全区域 UIEdgeInsets bottom 偏移 如果 bottom>0 就返回0 bottom==0 就返回offset */
 extern CGFloat ax_safe_area_insets_bottom_zero_offset(CGFloat offset);
-
-/**安全区域 UIEdgeInsets righ*/
-extern CGFloat ax_safe_area_insets_right(void);
 
 extern CGFloat ax_screen_adaptive_float(CGFloat floatValue);
 

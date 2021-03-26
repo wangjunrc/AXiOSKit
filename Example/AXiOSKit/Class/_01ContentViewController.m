@@ -31,8 +31,8 @@
 #import "AXXSwitch.h"
 #import <AVKit/AVKit.h>
 #import "AXIBudyButton.h"
-#import "XWShadow.h"
 #import "MakeKeyAndVisible.h"
+
 @interface _01ContentViewController ()<UITextViewDelegate,UIViewControllerTransitioningDelegate, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding,VNDocumentCameraViewControllerDelegate>
 
 @property (nonatomic, strong) UILabel *label;
@@ -55,99 +55,16 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = YES;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor =  UIColor.whiteColor;
     self.navigationItem.title = @"内容";//设置标题
     
-    __weak typeof(self) weakSelf = self;
-    
     self.containerView.backgroundColor = [UIColor ax_colorWithNormalStyle:UIColor.whiteColor];
     
-    self.ax_controllerObserve.isPushed(^{
-        NSLog(@"isPushed");
-    }).isPresented(^{
-        NSLog(@"isPresented");
-    });
-    if (@available(iOS 13.0, *)) {
-        AXLoger(@"模式>> %ld", ax_keyWindow().overrideUserInterfaceStyle);
-    }
-    
-    [self _darkStyle];
-    
-    [self _buttonTitle:@"push" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        _01ContentViewController *vc = [_01ContentViewController ax_init];
-        [strongSelf ax_pushVC:vc];
-        vc.ax_controllerObserve.hiddenNavigationBar = NO;
-    }];
-    
-    [self _buttonTitle:@"show" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        _01ContentViewController *vc = [_01ContentViewController ax_init];
-        [strongSelf ax_showVC:vc];
-    }];
-    
-    [self _buttonTitle:@"Lookin_2D" handler:^(UIButton * _Nonnull btn) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_2D" object:nil];
-    }];
-    
-    [self _buttonTitle:@"dismis 或者 pop" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf ax_haveNav:^(UINavigationController *nav) {
-            [strongSelf.navigationController popViewControllerAnimated:YES];
-        } isPushNav:^(UINavigationController *nav) {
-            [strongSelf.navigationController dismissViewControllerAnimated:YES completion:nil];
-        } isPresentNav:^(UINavigationController *nav) {
-            [strongSelf dismissViewControllerAnimated:YES completion:nil];
-        } noneNav:^{
-            [strongSelf dismissViewControllerAnimated:YES completion:nil];
-        }];
-    }];
-    
-    [self _buttonTitle:@"dismissToRoot" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        
-        UIViewController *controller = strongSelf;
-        
-        while (controller.presentingViewController)
-            controller = controller.presentingViewController;
-        
-        [controller dismissViewControllerAnimated:YES completion:nil];
-    }];
-    
-    [self _buttonTitle:@"汽包" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf _qipao:btn];
-    }];
-    
-    
-    [self _buttonTitle:@"PresentedViewController" handler:^(UIButton * _Nonnull btn) {
-        UIViewController *topRootViewController = ax_keyWindow().rootViewController;// 在这里加一个这个样式的循环
-        while (topRootViewController.presentedViewController) // 这里固定写法
-            topRootViewController = topRootViewController.presentedViewController; _01ContentViewController *vc = _01ContentViewController.alloc.init;
-        ///然后再进行present操作
-        [topRootViewController presentViewController:vc animated:YES completion:nil];
-    }];
-    
-    [self _buttonTitle:@"popToRoot" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.navigationController popToRootViewControllerAnimated:YES];
-    }];
-    
-    /// 可以禁止侧滑返回,但是无法禁止代码直接返回
-    [self _buttonTitle:@"隐藏返回按钮" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.navigationItem setHidesBackButton:!strongSelf.navigationItem.hidesBackButton animated:YES];
-    }];
-    [self _buttonTitle:@"隐藏返回按钮 代码返回" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        if (!strongSelf.navigationItem.hidesBackButton) {
-            [strongSelf.navigationController popViewControllerAnimated:YES];
-        }
-    }];
+    [self _00Push];
     [self _p00Test_layer];
     [self _p00TestSwitch ];
     [self _p00AIBudyButton];
@@ -171,44 +88,15 @@
     [self _p12memoryUsage3];
     [self _p13MoreAlter];
     [self _p14xmlToObj];
-    /// 会弹出 "想要查找并连接到本地网络上的设备" 弹窗
-    [self _buttonTitle:@"NSProcessInfo" handler:^(UIButton * _Nonnull btn) {
-        NSString *uuid1 = [[NSProcessInfo processInfo] globallyUniqueString];
-        
-        NSLog(@"processInfoww = %@", [NSProcessInfo.processInfo mj_JSONObject]);
-        
-        NSLog(@"uuid1 = %@", uuid1);
-        NSLog(@"uuid2 = %@", [NSString ax_uuid]);
-    }];
-    
-    [self _buttonTitle:@"_01ContentViewController" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        _01ContentViewController *vc = [[_01ContentViewController alloc]init];
-        [strongSelf.navigationController pushViewController:vc animated:YES];
-    }];
-    
-    [self _buttonTitle:@"popToRootViewControllerAnimated" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.navigationController popToRootViewControllerAnimated:YES];
-    }];
+    [self _15OtherTest];
     [self _p17CSAnimationView];
     [self _p18appleLogin];
-    
-    [self _buttonTitle:@"系统时间" handler:^(UIButton * _Nonnull btn) {
-        NSLog(@"CACurrentMediaTime :%f", CACurrentMediaTime());
-        NSLog(@"NSProcessInfo :%f", [[NSProcessInfo processInfo] systemUptime]);
-        NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:CACurrentMediaTime()];
-        NSLog(@"confromTimesp = %@", confromTimesp);
-    }];
     [self _p19VisionKit];
-    
-    //    UIImage *image = [UIImage imageNamed:@"launch_image"];
-    //    self.containerView.layer.contents = (id)image.CGImage;
     [self _p20changeLanch];
     [self _p21stackView];
-    
     [self _p23changeLanguages];
-    
+    [self _24TextHeight];
+    [self _25UIVisualEffectView];
     /// 底部约束
     [self _loadBottomAttribute];
 }
@@ -277,7 +165,7 @@
     [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(50 + ax_safe_area_insets_bottom_offset(0));
-        make.bottom.mas_equalTo(-ax_safe_area_insets_bottom_zero_offset(10));
+        make.bottom.mas_equalTo(-ax_safe_area_insets_bottom_offset(10));
     }];
     
     UIView *subView = [UIView ax_init];
@@ -510,6 +398,91 @@
     }
 }
 
+-(void)_00Push {
+    __weak typeof(self) weakSelf = self;
+    self.ax_controllerObserve.isPushed(^{
+        NSLog(@"isPushed");
+    }).isPresented(^{
+        NSLog(@"isPresented");
+    });
+    if (@available(iOS 13.0, *)) {
+        AXLoger(@"模式>> %ld", ax_keyWindow().overrideUserInterfaceStyle);
+    }
+    
+    [self _darkStyle];
+    
+    [self _buttonTitle:@"push" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        _01ContentViewController *vc = [_01ContentViewController ax_init];
+        [strongSelf ax_pushVC:vc];
+        vc.ax_controllerObserve.hiddenNavigationBar = NO;
+    }];
+    
+    [self _buttonTitle:@"show" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        _01ContentViewController *vc = [_01ContentViewController ax_init];
+        [strongSelf ax_showVC:vc];
+    }];
+    
+    [self _buttonTitle:@"Lookin_2D" handler:^(UIButton * _Nonnull btn) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Lookin_2D" object:nil];
+    }];
+    
+    [self _buttonTitle:@"dismis 或者 pop" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf ax_haveNav:^(UINavigationController *nav) {
+            [strongSelf.navigationController popViewControllerAnimated:YES];
+        } isPushNav:^(UINavigationController *nav) {
+            [strongSelf.navigationController dismissViewControllerAnimated:YES completion:nil];
+        } isPresentNav:^(UINavigationController *nav) {
+            [strongSelf dismissViewControllerAnimated:YES completion:nil];
+        } noneNav:^{
+            [strongSelf dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }];
+    
+    [self _buttonTitle:@"dismissToRoot" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        UIViewController *controller = strongSelf;
+        
+        while (controller.presentingViewController)
+            controller = controller.presentingViewController;
+        
+        [controller dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [self _buttonTitle:@"汽包" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _qipao:btn];
+    }];
+    
+    
+    [self _buttonTitle:@"PresentedViewController" handler:^(UIButton * _Nonnull btn) {
+        UIViewController *topRootViewController = ax_keyWindow().rootViewController;// 在这里加一个这个样式的循环
+        while (topRootViewController.presentedViewController) // 这里固定写法
+            topRootViewController = topRootViewController.presentedViewController; _01ContentViewController *vc = _01ContentViewController.alloc.init;
+        ///然后再进行present操作
+        [topRootViewController presentViewController:vc animated:YES completion:nil];
+    }];
+    
+    [self _buttonTitle:@"popToRoot" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.navigationController popToRootViewControllerAnimated:YES];
+    }];
+    
+    /// 可以禁止侧滑返回,但是无法禁止代码直接返回
+    [self _buttonTitle:@"隐藏返回按钮" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.navigationItem setHidesBackButton:!strongSelf.navigationItem.hidesBackButton animated:YES];
+    }];
+    [self _buttonTitle:@"隐藏返回按钮 代码返回" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!strongSelf.navigationItem.hidesBackButton) {
+            [strongSelf.navigationController popViewControllerAnimated:YES];
+        }
+    }];
+}
 - (void)_p00Test_layer {
     UILabel *label = UILabel.alloc.init;
     label.text = @"代码就可以避免离屏渲染";
@@ -1175,6 +1148,53 @@
     }];
 }
 
+-(void)_15OtherTest {
+    __weak typeof(self) weakSelf = self;
+    
+   {
+       UIButton *btn = [[UIButton alloc] init];
+       [self.containerView addSubview:btn];
+       btn.backgroundColor = UIColor.blueColor;
+       [btn ax_setTitleStateNormal:@"UIButton间距"];
+//       [btn ax_setImageStateNormal:@"西瓜"];
+       btn.contentEdgeInsets = UIEdgeInsetsMake(100, 100, 50, 20);
+       [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+           make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+           make.centerX.mas_equalTo(0);
+//           make.height.mas_equalTo(40);
+       }];
+       self.bottomAttribute =  btn.mas_bottom;
+   }
+    
+    /// 会弹出 "想要查找并连接到本地网络上的设备" 弹窗
+    [self _titlelabel:@"会弹出 \"想要查找并连接到本地网络上的设备\" 弹窗"];
+    [self _buttonTitle:@"NSProcessInfo" handler:^(UIButton * _Nonnull btn) {
+        NSString *uuid1 = [[NSProcessInfo processInfo] globallyUniqueString];
+        
+        NSLog(@"processInfoww = %@", [NSProcessInfo.processInfo mj_JSONObject]);
+        
+        NSLog(@"uuid1 = %@", uuid1);
+        NSLog(@"uuid2 = %@", [NSString ax_uuid]);
+    }];
+    
+    [self _buttonTitle:@"_01ContentViewController" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        _01ContentViewController *vc = [[_01ContentViewController alloc]init];
+        [strongSelf.navigationController pushViewController:vc animated:YES];
+    }];
+    
+    [self _buttonTitle:@"popToRootViewControllerAnimated" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.navigationController popToRootViewControllerAnimated:YES];
+    }];
+    [self _buttonTitle:@"系统时间" handler:^(UIButton * _Nonnull btn) {
+        NSLog(@"CACurrentMediaTime :%f", CACurrentMediaTime());
+        NSLog(@"NSProcessInfo :%f", [[NSProcessInfo processInfo] systemUptime]);
+        NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:CACurrentMediaTime()];
+        NSLog(@"confromTimesp = %@", confromTimesp);
+    }];
+}
+
 - (NSArray *)getOrderArraywithArray:(NSArray *)array {
     //数组排序
     //定义一个数字数组
@@ -1552,6 +1572,129 @@
         }];
     }
 }
+
+-(void)_24TextHeight {
+    
+    UILabel *label = UILabel.alloc.init;
+    label.backgroundColor = UIColor.redColor;
+    [self.containerView addSubview:label];
+    label.numberOfLines = 0;
+    label.text = @"第一行\n第二行";
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.left.mas_equalTo(20);
+        make.right.mas_equalTo(-20);
+        
+      CGFloat height = [@"汉" ax_sizeWithaFont:label.font].height;
+        
+        make.height.mas_equalTo(height*2);
+    }];
+    self.bottomAttribute = label.mas_bottom;
+    
+
+    
+    {
+        UITextView *textView = UITextView.alloc.init;
+        textView.backgroundColor = UIColor.redColor;
+        [self.containerView addSubview:textView];
+        
+        
+        
+//        NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
+//
+//            paragraphStyle.lineSpacing = 20;// 字体的行间距
+//
+//            NSDictionary *attributes = @{
+//                                         NSFontAttributeName:[UIFont systemFontOfSize:17],
+//                                         NSParagraphStyleAttributeName:paragraphStyle
+//                                         };
+//            textView.typingAttributes = attributes;
+//
+//        textView.text = @"UITextView第一行\n第二行";
+//        textView.delegate = self;
+        
+        
+//        textView.font = [UIFont systemFontOfSize:18];
+//
+//        textView.layer.borderWidth = 1;
+//        textView.layer.borderColor = [UIColor blueColor].CGColor;
+//        textView.cm_placeholder =  @"placeholder";
+//        textView.cm_placeholderColor = [UIColor redColor];
+//    //    _inputView.cm_autoLineBreak = YES;
+//        textView.cm_maxNumberOfLines = 3;
+
+        
+        [textView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.left.mas_equalTo(20);
+            make.right.mas_equalTo(-20);
+//          CGFloat height = [@"汉" ax_sizeWithaFont:label.font].height;
+//            make.height.mas_equalTo(height*2);
+        }];
+        self.bottomAttribute = textView.mas_bottom;
+    }
+    
+}
+
+-(void)_25UIVisualEffectView {
+    [self _titlelabel:@"磨砂"];
+    UIImageView *imageview = [[UIImageView alloc] init];
+    imageview.image = [UIImage imageNamed:@"西瓜"];
+    [self.containerView addSubview:imageview];
+    [imageview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.centerX.mas_equalTo(0);
+        make.width.height.mas_equalTo(150);
+    }];
+    self.bottomAttribute = imageview.mas_bottom;
+    
+    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
+    [imageview addSubview:effectview];
+    [effectview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+    
+}
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    CGRect frame = textView.frame;
+    float height;
+    if ([text isEqual:@""]) {
+        
+        if (![textView.text isEqualToString:@""]) {
+            
+            height = [ self heightForTextView:textView WithText:[textView.text substringToIndex:[textView.text length] - 1]];
+            
+        }else{
+            
+            height = [ self heightForTextView:textView WithText:textView.text];
+        }
+    }else{
+        
+            height = [self heightForTextView:textView WithText:[NSString stringWithFormat:@"%@%@",textView.text,text]];
+    }
+
+    frame.size.height = height;
+    [UIView animateWithDuration:0.5 animations:^{
+        
+            textView.frame = frame;
+        
+        } completion:nil];
+    
+    return YES;
+}
+
+- (float) heightForTextView: (UITextView *)textView WithText: (NSString *) strText{
+  CGSize constraint = CGSizeMake(textView.contentSize.width , CGFLOAT_MAX);
+  CGRect size = [strText boundingRectWithSize:constraint
+                                           options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                        attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]}
+                                           context:nil];
+  float textHeight = size.size.height + 22.0;
+  return textHeight;
+}
+
 
 -(void)_chanageRoot {
     UITabBarController *tabbarController =(UITabBarController *)[MakeKeyAndVisible makeKeyAndVisible];

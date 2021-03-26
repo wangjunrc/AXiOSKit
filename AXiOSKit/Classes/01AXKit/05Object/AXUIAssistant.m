@@ -65,19 +65,27 @@ CGFloat ax_navigation_and_status_height(void) {
 CGFloat ax_status_bar_height(void) {
     CGFloat statusBarHeight = 0;
     if (@available(iOS 13.0, *)) {
-        UIStatusBarManager *statusBarManager = [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager;
+        UIStatusBarManager *statusBarManager = UIApplication.sharedApplication.windows.firstObject.windowScene.statusBarManager;
         statusBarHeight = statusBarManager.statusBarFrame.size.height;
     }
     else {
-        statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+        statusBarHeight = UIApplication.sharedApplication.statusBarFrame.size.height;
     }
     return statusBarHeight;
 }
 
-/**导航栏高 */
+
 CGFloat ax_navigation_bar_height(void) {
     // self.navigationController.navigationBar.frame.size.height
-    return 44.0f;
+//    return 44.0f;
+//    return ax_safe_area_insets_top();
+    UINavigationController *nav = UINavigationController.alloc.init;
+    return nav.navigationBar.frame.size.height;
+}
+
+CGFloat ax_tab_bar_height(void) {
+    UITabBarController *tab = UITabBarController.alloc.init;
+    return tab.tabBar.frame.size.height;
 }
 
 UIEdgeInsets ax_safe_area_insets(void) {
@@ -89,19 +97,19 @@ UIEdgeInsets ax_safe_area_insets(void) {
     return UIEdgeInsetsZero;
 }
 
-UIEdgeInsets ax_screen_padding_insets(void) {
-    if ([UIView instancesRespondToSelector:@selector(safeAreaInsets)]) {
-        if (@available(iOS 11.0, *)) {
-            UIEdgeInsets insets =
-                    UIApplication.sharedApplication.delegate.window.safeAreaInsets;
-            if (insets.top <= 40.0f) {
-                insets.top = 0.0f;
-            }
-            return insets;
-        }
-    }
-    return UIEdgeInsetsZero;
-}
+//UIEdgeInsets ax_screen_padding_insets(void) {
+//    if ([UIView instancesRespondToSelector:@selector(safeAreaInsets)]) {
+//        if (@available(iOS 11.0, *)) {
+//            UIEdgeInsets insets =
+//                    UIApplication.sharedApplication.delegate.window.safeAreaInsets;
+//            if (insets.top <= 40.0f) {
+//                insets.top = 0.0f;
+//            }
+//            return insets;
+//        }
+//    }
+//    return UIEdgeInsetsZero;
+//}
 
 CGFloat ax_safe_area_insets_top(void) {
     return ax_safe_area_insets().top;
@@ -124,11 +132,6 @@ CGFloat ax_safe_area_insets_bottom_offset(CGFloat offset) {
 
 CGFloat ax_safe_area_insets_bottom_zero_offset(CGFloat offset) {
     CGFloat bottom = ax_safe_area_insets_bottom();
-//    if (bottom > 0) {
-//        bottom =0;
-//    }else{
-//        bottom =offset;
-//    }
     bottom = bottom ? 0 :offset;
     return bottom;
 }
@@ -186,14 +189,14 @@ UIViewController *ax_currentViewController(void) {
  */
 id <UIApplicationDelegate> ax_mainAppDelegate(void) {
     return (
-            (id <UIApplicationDelegate>) ([UIApplication sharedApplication].delegate));
+            (id <UIApplicationDelegate>) (UIApplication.sharedApplication.delegate));
 }
 
 /**
  * app根控制器
  */
 UIViewController *ax_rootViewController(void) {
-    return [UIApplication sharedApplication].keyWindow.rootViewController;
+    return UIApplication.sharedApplication.keyWindow.rootViewController;
 }
 
 void ax_setRootViewController(UIViewController *vc) {
@@ -212,7 +215,7 @@ UIViewController *ax_rootViewController_appDelegate(void) {
  */
 UIWindow *ax_keyWindow(void) {
 
-    //    UIApplication *app = [UIApplication sharedApplication];
+    //    UIApplication *app = UIApplication.sharedApplication;
     //    if ([app.delegate respondsToSelector:@selector(window)]) {
     //        return app.delegate.window;
     //    } else {
@@ -224,7 +227,7 @@ UIWindow *ax_keyWindow(void) {
     //    }
 
     /// 这个方法 <UIWindowSceneDelegate> 也能获得
-    for (UIWindow *window in [UIApplication sharedApplication].windows) {
+    for (UIWindow *window in UIApplication.sharedApplication.windows) {
         if (window.isKeyWindow) {
             return window;
             break;

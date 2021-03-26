@@ -32,9 +32,11 @@ def ui_pods
   pod 'AvoidCrash'
   # 保护App
   pod 'JJException'
+  
+#  pod 'libwebp', :git => 'https://gitee.com/mirrors/libwebp.git'
   # 微信开源数据库操作层 ORM
   #  pod 'WCDB','~> 1.0.7.5'
-  pod 'WCDB' , :git => 'https://gitee.com/axinger/wcdb.git',:tag => '~> 1.0.7.5'
+  pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git' #,:tag => '~> 1.0.8.2'
   # 微信分享,此版本才不会校验链接
   pod 'WechatOpenSDK','= 1.7.7'
   
@@ -87,7 +89,12 @@ def ui_pods
   pod 'lottie-ios', '~>2.1.0'
   # 图片剪切
   #  pod 'PEPhotoCropEditor'
-  pod 'KMNavigationBarTransition'
+  # 在不同的控制器中实现UINavigationBar不同地样式
+  #  pod 'KMNavigationBarTransition'
+  
+  ### 导航栏,可以每个VC不一样配置
+  pod 'RTRootNavigationController',:git => 'https://gitee.com/mirrors/RTRootNavigationController.git'
+  
   pod "Protobuf", :git => 'https://gitee.com/axinger/protobuf.git'
   
   #  pod "YYKit", :git => 'https://gitee.com/mirrors/yykit.git',:tag =>'1.0.9'
@@ -114,7 +121,6 @@ def common_pods
   pod 'SDWebImageFLPlugin'
   pod 'SDWebImageWebPCoder','~> 0.8.1'
   #  pod 'SDWebImage/GIF'
-  #  pod 'libwebp', :git => 'https://github.com/webmproject/libwebp.git'
   pod 'SDWebImage','~> 5.10.3'
   # 网络请求模拟库OHHTTPStubs
   pod 'OHHTTPStubs', '~> 9.1.0'

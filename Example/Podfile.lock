@@ -67,7 +67,6 @@ PODS:
     - JJException/Swizzle
   - JJException/Swizzle (0.2.9)
   - JKVValue (1.3.3)
-  - KMNavigationBarTransition (1.1.8)
   - KVOController (1.2.0)
   - libwebp (1.1.0):
     - libwebp/demux (= 1.1.0)
@@ -169,6 +168,9 @@ PODS:
   - RMQClient (0.9.0):
     - CocoaAsyncSocket (~> 7.4)
     - JKVValue
+  - RTRootNavigationController (0.7.2):
+    - RTRootNavigationController/Core (= 0.7.2)
+  - RTRootNavigationController/Core (0.7.2)
   - SDWebImage (5.10.3):
     - SDWebImage/Core (= 5.10.3)
   - SDWebImage/Core (5.10.3)
@@ -211,10 +213,9 @@ DEPENDENCIES:
   - IGListKit
   - IQKeyboardManager
   - JJException
-  - KMNavigationBarTransition
   - LLDebugTool (= 1.3.8.1)
   - LLDynamicLaunchScreen (~> 0.2.0)
-  - LookinServer
+  - LookinServer (from `https://gitee.com/axinger/LookinServer.git`)
   - lottie-ios (~> 2.1.0)
   - Masonry
   - MGJRouter
@@ -228,6 +229,7 @@ DEPENDENCIES:
   - Protobuf (from `https://gitee.com/axinger/protobuf.git`)
   - ReactiveObjC (~> 3.0.0)
   - RMQClient
+  - RTRootNavigationController (from `https://gitee.com/mirrors/RTRootNavigationController.git`)
   - SDWebImage (~> 5.10.3)
   - SDWebImageFLPlugin
   - SDWebImageWebPCoder (~> 0.8.1)
@@ -235,7 +237,7 @@ DEPENDENCIES:
   - SSKeychain
   - TOCropViewController (~> 2.6.0)
   - TZImagePickerController (~> 3.5.8)
-  - WCDB (~> 1.0.7.5)
+  - WCDB (from `https://gitee.com/mirrors/wcdb.git`)
   - WechatOpenSDK (= 1.7.7)
   - YYCache (from `https://gitee.com/github-iOS/YYCache.git`, tag `1.0.4`)
   - YYCategories (from `https://gitee.com/mirrors/YYCategories.git`, tag `1.0.4`)
@@ -263,12 +265,10 @@ SPEC REPOS:
     - IQKeyboardManager
     - JJException
     - JKVValue
-    - KMNavigationBarTransition
     - KVOController
     - libwebp
     - LLDebugTool
     - LLDynamicLaunchScreen
-    - LookinServer
     - lottie-ios
     - Masonry
     - MBProgressHUD
@@ -293,7 +293,6 @@ SPEC REPOS:
     - SSKeychain
     - TOCropViewController
     - TZImagePickerController
-    - WCDB
     - WCDBOptimizedSQLCipher
     - WechatOpenSDK
 
@@ -302,8 +301,14 @@ EXTERNAL SOURCES:
     :path: "../"
   AXViewControllerTransitioning:
     :git: https://github.com/axinger/AXViewControllerTransitioning.git
+  LookinServer:
+    :git: https://gitee.com/axinger/LookinServer.git
   Protobuf:
     :git: https://gitee.com/axinger/protobuf.git
+  RTRootNavigationController:
+    :git: https://gitee.com/mirrors/RTRootNavigationController.git
+  WCDB:
+    :git: https://gitee.com/mirrors/wcdb.git
   YYCache:
     :git: https://gitee.com/github-iOS/YYCache.git
     :tag: 1.0.4
@@ -324,9 +329,18 @@ CHECKOUT OPTIONS:
   AXViewControllerTransitioning:
     :commit: c0a46bdb6e46245c207732ca608c251ae5306a0c
     :git: https://github.com/axinger/AXViewControllerTransitioning.git
+  LookinServer:
+    :commit: a207918905fd4b8f310ac438e2aee9a0f218b4df
+    :git: https://gitee.com/axinger/LookinServer.git
   Protobuf:
     :commit: f154323fa6824b3476b63293bcb595c994163605
     :git: https://gitee.com/axinger/protobuf.git
+  RTRootNavigationController:
+    :commit: 397430690241d4fe8503c351170b966a65a6e47b
+    :git: https://gitee.com/mirrors/RTRootNavigationController.git
+  WCDB:
+    :commit: a4f66084e7fdaee342e300ca4c09aea82086b75e
+    :git: https://gitee.com/mirrors/wcdb.git
   YYCache:
     :git: https://gitee.com/github-iOS/YYCache.git
     :tag: 1.0.4
@@ -364,12 +378,11 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   JJException: da7c64ccf29d9938a4075378a7e9a29db7383c37
   JKVValue: d7941071b1cf9ba35c194fd40bcf4c4d9b5462e9
-  KMNavigationBarTransition: 7ee1a05ff758bce9258845a803f7a8b00585bd58
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   libwebp: d7684f7241543c7a5ff47953cc9b9f184fe16610
   LLDebugTool: 6026a1df690f5f94524567fce7f97fa53ce131d8
   LLDynamicLaunchScreen: 107320eea57df5276d7da599a78ddf7139b1f854
-  LookinServer: fdbd041cea203ab36e082f4554b834c5a9cd871f
+  LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   lottie-ios: 836cdbba92f62f3c6a00e37a4ce485321fe317cf
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -387,13 +400,14 @@ SPEC CHECKSUMS:
   Protobuf: 77cd9d015bb501d6509a5fdb452de8de46e82f95
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   RMQClient: 9bbda86703fd475761101ee5fda037eb2a12ec4e
+  RTRootNavigationController: 8344c2352d6d40fa370d0366efae2c84a945213f
   SDWebImage: e378178472b735e84b007bfb55514c97948a0598
   SDWebImageFLPlugin: 6c2295fb1242d44467c6c87dc5db6b0a13228fd8
   SDWebImageWebPCoder: fac2821bf5a6642a73979d0962dbed5eac45a605
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
-  TOCropViewController: a5bc491ed85be3784449477faf8040b68e64fd36
+  TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
   TZImagePickerController: 7fd9702897ef8c0b7c951e5463f4bcf398296f9e
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
@@ -404,6 +418,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: db1548b23a0cf668c4739157568f018ee8baf874
+PODFILE CHECKSUM: 5f81c52326c2bf10a819f787d7fda677aafd34df
 
 COCOAPODS: 1.10.1
