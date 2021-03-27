@@ -36,7 +36,7 @@
 /**
  设置 navigationBar 透明
  */
--(void)ax_setNavBarTransparent{
+-(void)ax_setNavBarBackgroundImageTransparent{
     
     if ([self isKindOfClass:UINavigationController.class]) {
         
@@ -53,26 +53,19 @@
     }
 }
 
-
-/**
- ScrollView navigationBar 滚动渐变
- 
- @param aColor 颜色
- @param alpha 渐变值
- */
--(void)ax_setNavBarGradientWithColor:(UIColor *)aColor alpha:(CGFloat )alpha{
+-(void)ax_setNavBarBackgroundImageWithColor:(UIColor *)aColor {
     
-    UIImage *bgImage = [UIImage ax_imageSquareWithColor:[aColor colorWithAlphaComponent:alpha]];
+    UIImage *bgImage = [UIImage ax_imageSquareWithColor:aColor];
     
     if ([self isKindOfClass:UINavigationController.class]) {
         
         UINavigationController *nav = (UINavigationController *)self;
-        nav.navigationBar.translucent = YES;
+//        nav.navigationBar.translucent = YES;
         [nav.navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
         
     }else if ([self isKindOfClass:UIViewController.class]){
         
-        self.navigationController.navigationBar.translucent = YES;
+//        self.navigationController.navigationBar.translucent = YES;
         [self.navigationController.navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
         
     }

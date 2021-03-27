@@ -23,19 +23,12 @@
 -(void)ax_setNavigationBarColor:(UIColor *)aColor
                       textColor:(UIColor *)textColor;
 
-/**
- 设置 navigationBar 透明
- */
--(void)ax_setNavBarTransparent;
 
-/**
- ScrollView navigationBar 滚动渐变
- 
- @param aColor 颜色
- @param alpha 渐变值
- */
--(void)ax_setNavBarGradientWithColor:(UIColor *)aColor
-                               alpha:(CGFloat )alpha;
+///  设置 navigationBar 透明 setBackgroundImage
+-(void)ax_setNavBarBackgroundImageTransparent;
+
+/// 设置 navigationBar setBackgroundImage 颜色
+-(void)ax_setNavBarBackgroundImageWithColor:(UIColor *)aColor;
 
 /**
  取消分隔线

@@ -8,7 +8,8 @@
 
 #import "AANavigationController.h"
 #import <AXiOSKit/AXiOSKit.h>
-@interface AANavigationController ()<UINavigationControllerDelegate>
+#import <AXiOSKit/UIViewController+AXNavBarConfig.h>
+@interface AANavigationController ()
 
 @end
 
@@ -28,10 +29,13 @@
 //    UIColor *bgColor =  [UIColor redColor];
 //
 //    [self.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:bgColor] forBarMetrics:UIBarMetricsDefault];
-    self.navigationBar.barTintColor = [UIColor redColor];
+//    self.navigationBar.barTintColor = [UIColor redColor];
     
-    self.navigationBar.tintColor = [UIColor greenColor];
-    
+//    self.navigationBar.tintColor = [UIColor greenColor];
+//    UIColor *color = UIColor.redColor;
+//    [self ax_setNavBarBackgroundImageWithColor:color];
+    self.navigationBar.barTintColor = [UIColor orangeColor];
+//    self.rt_navigationController.useSystemBackBarButtonItem = YES;
     
 //    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
    
@@ -73,27 +77,31 @@
 
 }
 
-- (void) traitCollectionDidChange: (UITraitCollection *) previousTraitCollection {
-    
-    
-    [super traitCollectionDidChange: previousTraitCollection];
-    
-//    if (@available(iOS 13.0, *)) {
-//        
-//         UIColor *bgColor =  [UIColor colorWithDynamicProvider:^UIColor *(UITraitCollection *traitCollection) {
-//        if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-//            return UIColor.systemBackgroundColor;
-//        }else {
-//            return UIColor.redColor;
-//        }}];
-//             
-//        [self.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:bgColor] forBarMetrics:UIBarMetricsDefault];
-//    } else {
-//        
-//    }
-    
+//- (void) traitCollectionDidChange: (UITraitCollection *) previousTraitCollection {
+//
+//
+//    [super traitCollectionDidChange: previousTraitCollection];
+//
+////    if (@available(iOS 13.0, *)) {
+////
+////         UIColor *bgColor =  [UIColor colorWithDynamicProvider:^UIColor *(UITraitCollection *traitCollection) {
+////        if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+////            return UIColor.systemBackgroundColor;
+////        }else {
+////            return UIColor.redColor;
+////        }}];
+////
+////        [self.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:bgColor] forBarMetrics:UIBarMetricsDefault];
+////    } else {
+////
+////    }
+//
+//}
+
+- (UIBarButtonItem *)rt_customBackItemWithTarget:(id)target action:(SEL)action {
+    return [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"AAA", nil)
+                                            style:UIBarButtonItemStylePlain
+                                           target:target
+                                           action:action];
 }
-
-
-
 @end

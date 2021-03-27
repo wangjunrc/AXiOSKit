@@ -9,6 +9,8 @@
 #import "_03RootVC.h"
 #import "_03HeaderView.h"
 #import "_01ContentViewController.h"
+#import <AXiOSKit/AXiOSKit.h>
+#import <AXiOSKit/UIViewController+AXNavBarConfig.h>
 @interface _03RootVC ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray<NSDictionary *> *dataArray;
@@ -23,13 +25,12 @@
     self.extendedLayoutIncludesOpaqueBars = NO;
     self.edgesForExtendedLayout = UIRectEdgeTop;
     
-    
     // 适配iOS11以上UITableview 页面偏移
     if (@available(iOS 11.0, *)){
         [self.tableView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
     }
     
-//    self.navigationController.navigationBar.translucent = YES;
+    //    self.navigationController.navigationBar.translucent = YES;
     self.view.backgroundColor = UIColor.brownColor;
     self.navigationController.view.backgroundColor = UIColor.redColor;
     [self.view addSubview:self.tableView];
@@ -42,7 +43,7 @@
     }];
     _03HeaderView *headerView = [_03HeaderView.alloc init];
     self.tableView.tableHeaderView =headerView;
-   
+    
     if (@available(iOS 13.0, *)) {
         self.navigationController.navigationBar.barStyle = UIStatusBarStyleDarkContent;
     } else {
@@ -55,6 +56,7 @@
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setBackgroundImage:UIImage.alloc.init forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:UIImage.alloc.init];
+    [self ax_setNavBarBackgroundImageTransparent];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -63,6 +65,42 @@
     [self.navigationController.navigationBar setShadowImage:nil];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    CGFloat offset = scrollView.contentOffset.y;
+    
+    //    if (offset>0) {
+    //        [self.navigationController setNavigationBarHidden:NO animated:NO];
+    //    }else{
+    //        [self.navigationController setNavigationBarHidden:YES animated:NO];
+    //    }
+    //    if (offset==0) {
+    //        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    //    }
+    //根据透明度来生成图片
+    //找最大值/
+    CGFloat alpha = offset * 1 / 136.0;   // (200 - 64) / 136.0f
+    if (alpha >= 1) {
+        alpha = 0.99;
+    }
+    
+    //拿到标题 标题文字的随着移动高度的变化而变化
+    UILabel *titleL = (UILabel *)self.navigationItem.titleView;
+    titleL.textColor = [UIColor colorWithWhite:0 alpha:alpha];
+    
+    //把颜色生成图片
+    //    UIColor *alphaColor = [UIColor colorWithWhite:1 alpha:alpha];
+    if (alpha<=0) {
+        [self ax_setNavBarBackgroundImageTransparent];
+    }else{
+        UIColor *alphaColor = [UIColor.orangeColor colorWithAlphaComponent:alpha];
+        if (!alphaColor) {
+            NSLog(@"alphaColor nil");
+        }
+        [self ax_setNavBarBackgroundImageWithColor:alphaColor];
+    }
+    //    self.navigationController.navigationBar.barTintColor = alphaColor;
+}
 
 
 - (void)viewDidLayoutSubviews {
@@ -84,10 +122,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [UITableViewCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
     
-//    NSDictionary *dict = self.dataArray[indexPath.row];
-//    NSString  *index = [dict[@"index"] stringValue];
-//    NSString  *title = dict[@"title"];
-//    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",index,title];
+    //    NSDictionary *dict = self.dataArray[indexPath.row];
+    //    NSString  *index = [dict[@"index"] stringValue];
+    //    NSString  *title = dict[@"title"];
+    //    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",index,title];
     cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
     cell.backgroundColor = UIColor.cyanColor;
     return cell;
@@ -98,11 +136,11 @@
     if (tableView.isEditing) {
         return;
     }
-//    NSDictionary *dict = self.dataArray[indexPath.row];
-//
-//    void (^ didSelectRowAtIndexPath)(void) = dict[@"action"];
-//
-//    didSelectRowAtIndexPath();
+    //    NSDictionary *dict = self.dataArray[indexPath.row];
+    //
+    //    void (^ didSelectRowAtIndexPath)(void) = dict[@"action"];
+    //
+    //    didSelectRowAtIndexPath();
     
     AXNoMsgLog(@"navigationBar height = %lf",self.navigationController.navigationBar.frame.size.height);
     AXNoMsgLog(@"ax_status_bar_height = %lf",ax_status_bar_height());

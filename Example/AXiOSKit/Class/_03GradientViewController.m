@@ -151,7 +151,7 @@
 //    //修改导航条背景图片
 //    [self.navigationController.navigationBar setBackgroundImage:alphaImage forBarMetrics:UIBarMetricsDefault];
 //
-    [self ax_setNavBarGradientWithColor:alphaColor alpha:alpha];
+    [self ax_setNavBarBackgroundImageWithColor:alphaColor];
 }
 - (void)dealloc {
 self.navigationController.delegate = nil;

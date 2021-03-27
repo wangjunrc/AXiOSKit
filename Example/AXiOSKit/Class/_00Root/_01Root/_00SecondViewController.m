@@ -45,7 +45,7 @@
 #import <mach/mach.h>
 #import "AppDelegate.h"
 #import <AXiOSKit/UIScrollView+AXEmptyDataSet.h>
-
+#import <AXiOSKit/UIViewController+AXNavBarConfig.h>
 // 不可见文件
 #import "AXiOSKit_Example-Swift.h"
 //#import "AXiOSKit_Example-Bridging-Header.h"
@@ -72,6 +72,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"主题2";
+    [self ax_setNavBarBackgroundImageWithColor:UIColor.cyanColor];
     self.tableView.tableFooterView = UIView.alloc.init;
     //    [self.tableView ax_registerNibCellClass:UITableViewCell.class];
 //    [self.tableView ax_registerClassCell:UITableViewCell.class];

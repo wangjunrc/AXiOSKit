@@ -56,6 +56,7 @@
 #import "_36YYKitTestVC.h"
 #import "_37FileManagerVC.h"
 #import <AXiOSKit/AXPayVC.h>
+#import <AXiOSKit/UIViewController+AXNavBarConfig.h>
 #import <AXiOSKit/AXPresentGesturesBack.h>
 #import <AXiOSKit/AXSystemAuthorizerManager.h>
 #import <AXiOSKit/NSMutableArray+AXKVO.h>
@@ -100,6 +101,9 @@ typedef void (^CollectionBlock)(void);
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = AXNSLocalizedString(@"local.home");
+//    [self ax_setNavBarBackgroundImageWithColor:UIColor.orangeColor];
+//    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+
     NSLog(@"国际化 = %@",NSLocalizedString(@"local.home", nil));
     __weak typeof(self) weakSelf = self;
     self.tableView.tableFooterView = UIView.alloc.init;
@@ -981,5 +985,10 @@ typedef void (^CollectionBlock)(void);
     }
     return _dataArray;
 }
-
+- (UIBarButtonItem *)rt_customBackItemWithTarget:(id)target action:(SEL)action {
+    return [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"AAA", nil)
+                                            style:UIBarButtonItemStylePlain
+                                           target:target
+                                           action:action];
+}
 @end
