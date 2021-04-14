@@ -2355,7 +2355,7 @@ NSLog(@"返回值 = %@",ret);
 ## 判断NSNumber类型
 ```
 id value = @(true);
-
+1111
 if([value isKindOfClass:[NSNumber class]])
 {
     if (strcmp([value objCType], @encode(float)) == 0)
