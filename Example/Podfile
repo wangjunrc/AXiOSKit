@@ -3,10 +3,11 @@ use_frameworks!
 platform :ios, '10.0'
 inhibit_all_warnings!
 
-#source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://cdn.cocoapods.org/'
 # 清华镜像
 #source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
-source 'https://gitee.com/mirrors/CocoaPods-Specs.git'
+#source 'https://gitee.com/mirrors/CocoaPods-Specs.git'
 # 因为有的target 不支持UIKit的库
 def ui_pods
   
@@ -33,7 +34,7 @@ def ui_pods
   # 保护App
   pod 'JJException'
   
-#  pod 'libwebp', :git => 'https://gitee.com/mirrors/libwebp.git'
+  #  pod 'libwebp', :git => 'https://gitee.com/mirrors/libwebp.git'
   # 微信开源数据库操作层 ORM
   #  pod 'WCDB','~> 1.0.7.5'
   pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git' #,:tag => '~> 1.0.8.2'
@@ -104,16 +105,27 @@ def ui_pods
   pod 'YYCache' , :git => 'https://gitee.com/github-iOS/YYCache.git',:tag =>'1.0.4'
   pod 'YYDispatchQueuePool' , :git => 'https://gitee.com/github-iOS/YYDispatchQueuePool.git',:tag =>'1.0'
   
+end
+
+def debug_pods
   
-  
+  # 测试工具
+  pod 'LLDebugTool' , '1.3.8.1' ,:configurations => ['Debug']
+  pod 'MLeaksFinder'
+  #  pod 'LookinServer', :configurations => ['Debug']
+  pod 'LookinServer', :configurations => ['Debug'], :git => 'https://gitee.com/axinger/LookinServer.git'
 end
 
 def common_pods
+  ### axing 库
   #    pod 'AXiOSKit' , :git => 'https://github.com/axinger/AXiOSKit.git', :branch => 'release/20190530_new'
   # pod 'AXiOSKit', :source => 'https://github.com/axinger/AXiOSKit.git'
   # pod 'AXiOSKit', source: 'https://github.com/axinger/AXiOSKit.git'
   pod 'AXiOSKit', :path => '../'
-  pod 'AXViewControllerTransitioning',:git => 'https://github.com/axinger/AXViewControllerTransitioning.git'
+  pod 'AXViewControllerTransitioning',:git => 'https://gitee.com/axinger/AXViewControllerTransitioning.git'
+  pod 'AXCollectionObserve',:git => 'https://gitee.com/axinger/AXCollectionObserve.git'
+  #### end
+  
   pod 'Masonry'
   pod 'AFNetworking'
   pod 'ReactiveObjC','~> 3.0.0'
@@ -128,16 +140,14 @@ def common_pods
   # 图片剪切
   pod 'TOCropViewController', '~> 2.6.0'
   pod "CTMediator"
+  
+  pod 'SSZipArchive',:git => 'https://gitee.com/axinger/ZipArchive.git'
+  
+   pod 'CYLTabBarController' # 默认不依赖Lottie
+#  pod 'CYLTabBarController/Lottie'  # 依赖Lottie库
 end
 
-def debug_pods
-  
-  # 测试工具
-  pod 'LLDebugTool' , '1.3.8.1' ,:configurations => ['Debug']
-  pod 'MLeaksFinder'
-  #  pod 'LookinServer', :configurations => ['Debug']
-  pod 'LookinServer', :configurations => ['Debug'], :git => 'https://gitee.com/axinger/LookinServer.git'
-end
+
 
 #=========环境===========
 target 'AXiOSKit_Example' do

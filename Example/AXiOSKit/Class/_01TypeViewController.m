@@ -92,7 +92,7 @@
    
     
     /// 底部约束
-    [self _loadBottomAttribute];
+    [self _lastLoadBottomAttribute];
     
 }
 

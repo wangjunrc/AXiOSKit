@@ -412,3 +412,12 @@ pod 'FBRetainCycleDetector'
 
 ### jrswizzle  子类安全交换父类方法, https://www.jianshu.com/p/4807e9745397
 pod 'jrswizzle'
+
+### TabBarController 动画
+pod 'RAMAnimatedTabBarController'
+
+### 定义的iOS控制，为您提供了一个可选择范围值的 UISlider 控件 
+pod 'NMRangeSlider'
+
+### fmdb 操作
+pod 'LKDBHelper'

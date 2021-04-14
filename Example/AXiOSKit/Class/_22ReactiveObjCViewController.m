@@ -30,22 +30,23 @@
  使用场景
  
  多用于代理，相当于OC里的delegate或者回调block
- 
+ //获得属性key
+ @keypath()
  
  */
 /**
-     *  bind：
-     *
-     *  merge：合并，只要任何一个信号发送数据，就能订阅
-     *  contact：必须要信号A发送完成，信号B才能订阅
-     *  then：拼接，忽略掉上一个信号的值。解决Block嵌套的问题
-     *
-     *  zipWith：压缩，同时发送数据，才能订阅到。压缩信号数据，变成元祖。
-     *  combineLatest：任何一个信号，只要改变就能订阅到（combineLatest、reduce）
-     *
-     *  combineLatest：合并
-     *  reduce：聚合
-     */
+ *  bind：
+ *
+ *  merge：合并，只要任何一个信号发送数据，就能订阅
+ *  contact：必须要信号A发送完成，信号B才能订阅
+ *  then：拼接，忽略掉上一个信号的值。解决Block嵌套的问题
+ *
+ *  zipWith：压缩，同时发送数据，才能订阅到。压缩信号数据，变成元祖。
+ *  combineLatest：任何一个信号，只要改变就能订阅到（combineLatest、reduce）
+ *
+ *  combineLatest：合并
+ *  reduce：聚合
+ */
 @interface _22ReactiveObjCViewController ()
 
 @property(nonatomic, strong) NSMutableArray *dataArray;
@@ -62,6 +63,7 @@
     
     [self _01UITextField];
     [self _01UITextField_text];
+    [self _kvoArray];
     [self _03timer];
     [self _04arrayMap];
     [self _05ForSelector];
@@ -72,18 +74,109 @@
     [self _08then];
     [self _08concat];
     [self _09Command];
-    
-    
-    //    [RACObserve(button, enabled) subscribeNext:^(NSNumber  * x) {
-    //
-    //
-    //    }];
-    
+    [self _switchBind];
+    [self _note];
+    [self _note1];
     
     /// 底部约束
-    [self _loadBottomAttribute];
+    [self _lastLoadBottomAttribute];
     
 }
+
+-(void)_baseUser {
+    /// 这几个一般直接用 filter 过滤
+    [self _titlelabel:@"几个基础的过滤"];
+    [self _buttonTitle:@"过滤" handler:^(UIButton * _Nonnull btn) {
+        [self skip];
+        [self distinctUntilChanged];
+        [self take];
+        [self takeLast];
+        [self takeUntil];
+        [self ignore];
+    }];
+}
+// 跳跃 ： 如下，skip传入2 跳过前面两个值
+// 实际用处： 在实际开发中比如 后台返回的数据前面几个没用，我们想跳跃过去，便可以用skip
+- (void)skip {
+    RACSubject *subject = [RACSubject subject];
+    [[subject skip:2] subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    [subject sendNext:@1];
+    [subject sendNext:@2];
+    [subject sendNext:@3];
+}
+
+//distinctUntilChanged:-- 如果当前的值跟上一次的值一样，就不会被订阅到
+- (void)distinctUntilChanged {
+    RACSubject *subject = [RACSubject subject];
+    [[subject distinctUntilChanged] subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    // 发送信号
+    [subject sendNext:@1];
+    [subject sendNext:@2];
+    [subject sendNext:@2]; // 不会被订阅
+}
+
+// take:可以屏蔽一些值,去前面几个值---这里take为2 则只拿到前两个值
+- (void)take {
+    RACSubject *subject = [RACSubject subject];
+    [[subject take:2] subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    // 发送信号
+    [subject sendNext:@1];
+    [subject sendNext:@2];
+    [subject sendNext:@3];
+}
+
+//takeLast:和take的用法一样，不过他取的是最后的几个值，如下，则取的是最后两个值
+//注意点:takeLast 一定要调用sendCompleted，告诉他发送完成了，这样才能取到最后的几个值
+- (void)takeLast {
+    RACSubject *subject = [RACSubject subject];
+    [[subject takeLast:2] subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    // 发送信号
+    [subject sendNext:@1];
+    [subject sendNext:@2];
+    [subject sendNext:@3];
+    [subject sendCompleted];
+}
+
+// takeUntil:---给takeUntil传的是哪个信号，那么当这个信号发送信号或sendCompleted，就不能再接受源信号的内容了。
+- (void)takeUntil {
+    RACSubject *subject = [RACSubject subject];
+    RACSubject *subject2 = [RACSubject subject];
+    [[subject takeUntil:subject2] subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    // 发送信号
+    [subject sendNext:@1];
+    [subject sendNext:@2];
+    [subject2 sendNext:@3];  // 1
+    //    [subject2 sendCompleted]; // 或2
+    [subject sendNext:@4];
+}
+
+// ignore: 忽略掉一些值
+- (void)ignore {
+    //ignore:忽略一些值
+    //ignoreValues:表示忽略所有的值
+    // 1.创建信号
+    RACSubject *subject = [RACSubject subject];
+    // 2.忽略一些值
+    RACSignal *ignoreSignal = [subject ignore:@2]; // ignoreValues:表示忽略所有的值
+    // 3.订阅信号
+    [ignoreSignal subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    // 4.发送数据
+    [subject sendNext:@2];
+    
+}
+
 
 -(void)_01UITextField_text {
     
@@ -181,17 +274,17 @@
     [[[tf2.rac_textSignal merge:RACObserve(tf2, text)] bind:^RACSignalBindBlock {
         
         // return 的这个大的block 的作用:表示绑定了一个源信号 - subject
-                return ^RACSignal *(id _Nullable value, BOOL *stop) {
-                    
-                    // 什么时候调用block: 当源信号有新的值发出, 就会来到这个block
-                    NSLog(@"subject 发送了新信号: %@", value);
-                    
-                    // block作用:做返回值的处理
-                    NSString *newString = [NSString stringWithFormat:@"do bind: %@", value];
-                    
-                    // 做好处理，通过信号返回出去.
-                    return [RACSignal return:newString];
-                };
+        return ^RACSignal *(id _Nullable value, BOOL *stop) {
+            
+            // 什么时候调用block: 当源信号有新的值发出, 就会来到这个block
+            NSLog(@"subject 发送了新信号: %@", value);
+            
+            // block作用:做返回值的处理
+            NSString *newString = [NSString stringWithFormat:@"do bind: %@", value];
+            
+            // 做好处理，通过信号返回出去.
+            return [RACSignal return:newString];
+        };
         
         
     }]subscribeNext:^(id  _Nullable x) {
@@ -218,7 +311,7 @@
     //        NSLog(@"点击给 UITextField赋值3 = %@",x);
     //    }];
     
-   
+    
 }
 -(void)_01UITextField {
     
@@ -355,6 +448,43 @@
     //        return [value isEqualToString:@"2"] ? @"我是2" : value;
     //    }];
 }
+
+-(void)_kvoArray {
+    
+    [self _titlelabel:@"监听数组"];
+    UIView *view = UIView.alloc.init;
+    view.backgroundColor = UIColor.redColor;
+    [self.containerView addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.left.mas_equalTo(10);
+        make.right.mas_equalTo(-10);
+        make.height.mas_equalTo(40);
+    }];
+    self.bottomAttribute = view.mas_bottom;
+//    RAC(view, hidden) = RACObserve(self.dataArray, count);
+//    
+//    [[RACObserve(self, dataArray) merge:self.dataArray.rac_sequence.signal] subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"数组 = %@",x);
+//    }];
+    RAC(view, hidden) = [[RACObserve(self, dataArray) merge:self.dataArray.rac_sequence.signal]  map:^id _Nullable(NSMutableArray *value) {
+        NSLog(@"数组 = %@",value);
+        return @(!value.count);
+    }];
+//    RAC(view, hidden) = [RACObserve(self.dataArray, count) merge:self.dataArray.rac_sequence.signal];
+    
+//    [RACObserve(self.dataArray, count) subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"数组 = %@",x);
+//    }];
+    [self _buttonTitle:@"添加元素" handler:^(UIButton * _Nonnull btn) {
+        [[self mutableArrayValueForKeyPath:@keypath(self,dataArray)] addObject:@"A"];
+    }];
+    [self _buttonTitle:@"清空元素" handler:^(UIButton * _Nonnull btn) {
+        [[self mutableArrayValueForKeyPath:@keypath(self,dataArray)] removeAllObjects];
+    }];
+    
+}
+
 /// 定时器
 -(void)_03timer {
     
@@ -419,18 +549,18 @@
     NSLog(@"_05Selector  %@", name);
 }
 -(void)_05ForSelector {
-    
+    [self _titlelabel:@"监听方法被调用"];
     // 方式二: rac_signalForSelector
     [[self rac_signalForSelector:@selector(_05Selector:)] subscribeNext:^(id  _Nullable x) {
         //        NSLog(@"rac_signalForSelector: %@", x);
         NSString *name = x[0];
         NSLog(@"rac_signalForSelector: name %@", name);
     }];
-    
-    [self _buttonTitle:@"监听方法被调用" handler:^(UIButton * _Nonnull btn) {
-        [self _05Selector:@"jim"];
+    __weak typeof(self) weakSelf = self;
+    [self _buttonTitle:@"调用方法" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _05Selector:@"jim"];
     }];
-    
 }
 
 -(void)_06RACReplaySubject {
@@ -507,8 +637,8 @@
         NSLog(@"merge = %@", x);
     }];
     
-     [self _buttonTitle:@"任意信号发送完成,都会回调" handler:^(UIButton * _Nonnull btn) {
-         
+    [self _buttonTitle:@"任意信号发送完成,都会回调" handler:^(UIButton * _Nonnull btn) {
+        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [signalB sendNext:@"数据B"];
         });
@@ -563,17 +693,17 @@
         
     }];
     
-     [self _buttonTitle:@"label1隐藏" handler:^(UIButton * _Nonnull btn) {
-         label1.hidden = YES;
-         if (label2.hidden) {
-             label2.hidden = NO;
-         }
-         if (label3.hidden) {
-             label2.hidden = NO;
-         }
+    [self _buttonTitle:@"label1隐藏" handler:^(UIButton * _Nonnull btn) {
+        label1.hidden = YES;
+        if (label2.hidden) {
+            label2.hidden = NO;
+        }
+        if (label3.hidden) {
+            label2.hidden = NO;
+        }
     }];
     [self _buttonTitle:@"label2隐藏" handler:^(UIButton * _Nonnull btn) {
-       
+        
         if (label1.hidden) {
             label1.hidden = NO;
         }
@@ -581,7 +711,7 @@
         if (label3.hidden) {
             label2.hidden = NO;
         }
-   }];
+    }];
     [self _buttonTitle:@"label3隐藏" handler:^(UIButton * _Nonnull btn) {
         if (label1.hidden) {
             label1.hidden = NO;
@@ -590,45 +720,45 @@
             label2.hidden = NO;
         }
         label3.hidden = YES;
-   }];
+    }];
     
 }
 
 -(void)_08then {
     
-//    RACSubject *subA = [RACSubject subject];
-//    RACSubject *subB = [RACSubject subject];
-//
-//    [[subA merge:subB] subscribeNext:^(id  _Nullable x) {
-//        NSLog(@"%@",x);
-//    }];
-//
-//    [subA sendNext:@"A"];
-//    [subB sendNext:@"B"];
+    //    RACSubject *subA = [RACSubject subject];
+    //    RACSubject *subB = [RACSubject subject];
+    //
+    //    [[subA merge:subB] subscribeNext:^(id  _Nullable x) {
+    //        NSLog(@"%@",x);
+    //    }];
+    //
+    //    [subA sendNext:@"A"];
+    //    [subB sendNext:@"B"];
     
     
     
-//    RACSignal *siganlA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-//        NSLog(@"发送A请求");
-//        [subscriber sendNext:@"数据A"];
-//        [subscriber sendCompleted];
-//        return nil;
-//    }];
-//
-//    RACSignal *siganlB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-//        NSLog(@"发送B请求");
-//        [subscriber sendNext:@"数据B"];
-//        return nil;
-//    }];
-//
-//    // then: 组合信号, 忽悠掉第一个信号.
-//    RACSignal *thenSiganl = [siganlA then:^RACSignal *{
-//        return siganlB; // 需要组合的信号
-//    }];
-//
-//    [thenSiganl subscribeNext:^(id x) {
-//        NSLog(@"%@", x);
-//    }];
+    //    RACSignal *siganlA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    //        NSLog(@"发送A请求");
+    //        [subscriber sendNext:@"数据A"];
+    //        [subscriber sendCompleted];
+    //        return nil;
+    //    }];
+    //
+    //    RACSignal *siganlB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    //        NSLog(@"发送B请求");
+    //        [subscriber sendNext:@"数据B"];
+    //        return nil;
+    //    }];
+    //
+    //    // then: 组合信号, 忽悠掉第一个信号.
+    //    RACSignal *thenSiganl = [siganlA then:^RACSignal *{
+    //        return siganlB; // 需要组合的信号
+    //    }];
+    //
+    //    [thenSiganl subscribeNext:^(id x) {
+    //        NSLog(@"%@", x);
+    //    }];
     
     [self _titlelabel:@"then：拼接，忽略掉上一个信号的值。解决Block嵌套的问题\n subA第一次发送才有结果,subBthen后,subA就被忽略了"];
     // RACSubject 继承 RACSignal
@@ -641,29 +771,29 @@
         NSLog(@"subB  = %@",x);
     }];
     [[ subA then:^RACSignal * _Nonnull{
-            return subB;
-       }]subscribeNext:^(id  _Nullable x) {
-           NSLog(@"subA then subB = %@",x);
-       }];
+        return subB;
+    }]subscribeNext:^(id  _Nullable x) {
+        NSLog(@"subA then subB = %@",x);
+    }];
     
-     [self _buttonTitle:@"then:  subA" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"then:  subA" handler:^(UIButton * _Nonnull btn) {
         
-         [subA sendNext:@"A"];
-//         [subA sendCompleted];
+        [subA sendNext:@"A"];
+        //         [subA sendCompleted];
         
     }];
     [self _buttonTitle:@"then: subB" handler:^(UIButton * _Nonnull btn) {
         [subB sendNext:@"B"];
         /// 完成,才能出发then
         [subA sendCompleted];
-     
-       
-   }];
+        
+        
+    }];
     
 }
 -(void)_08concat {
     
-     [self _buttonTitle:@"concat: 顺序链接组合信号" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"concat: 顺序链接组合信号" handler:^(UIButton * _Nonnull btn) {
         
         RACSignal *siganlA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             NSLog(@"发送A请求");
@@ -824,6 +954,120 @@
     //        }];
     //    }];
 }
+-(void)_switchBind {
+    [self _titlelabel:@"UISwitch双向绑定"];
+    UISwitch  *aSwitch  = [[UISwitch alloc] init];
+    [self.containerView addSubview:aSwitch];
+    [aSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.centerX.mas_equalTo(0);
+    }];
+    
+    self.bottomAttribute =  aSwitch.mas_bottom;
+    
+    NSLog(@"进入 key = %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"]);
+    /// UISwitch 双向绑定
+    RACChannelTerminal *switchTerminal = aSwitch.rac_newOnChannel;
+    RACChannelTerminal *defaultsTerminal = [[NSUserDefaults standardUserDefaults] rac_channelTerminalForKey:@"someBoolKey"];
+    [switchTerminal subscribe:defaultsTerminal];
+    [defaultsTerminal subscribe:switchTerminal];
+    /// 监听变化
+    [aSwitch.rac_newOnChannel subscribeNext:^(NSNumber *onValue) {
+        // 下面两句都可以
+        //            [someSwitch setValue:onValue forKey:@"on"];
+        //[[NSUserDefaults standardUserDefaults] setObject:onValue forKey:@"someBoolKey"];
+        NSLog(@"isOn = %d  key =%@",aSwitch.isOn,[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"]);
+    }];
+}
+
+-(void)_note {
+    __weak typeof(self) weakSelf = self;
+    [self _titlelabel:@"rac通知,无法主动取消"];
+    
+    /// distinctUntilChanged
+    [[[NSNotificationCenter.defaultCenter rac_addObserverForName:@"com.ax.note.rac" object:nil]
+      takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNotification * _Nullable x) {
+        NSLog(@"默认初始化 userInfo = %@",x.userInfo);
+    }];
+    
+    [self _buttonTitle:@"多次监听通知" handler:^(UIButton * _Nonnull btn) {
+//        [[NSNotificationCenter.defaultCenter rac_addObserverForName:@"com.ax.note.rac" object:nil] subscribeCompleted:^{
+//            NSLog(@"通知被移除");
+//        }];
+        
+        NSLog(@"通知被移除");
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [[[NSNotificationCenter.defaultCenter rac_addObserverForName:@"com.ax.note.rac" object:nil]
+          takeUntil:strongSelf.rac_willDeallocSignal] subscribeNext:^(NSNotification * _Nullable x) {
+            NSLog(@"userInfo = %@,object = %@",x.userInfo,x.object);
+        }];
+    }];
+    
+    [self _buttonTitle:@"发送通知" handler:^(UIButton * _Nonnull btn) {
+        
+        [NSNotificationCenter.defaultCenter postNotificationName:@"com.ax.note.rac" object:nil userInfo:@{@"name":@"jim"}];
+    }];
+}
+-(void)_note1 {
+    __weak typeof(self) weakSelf = self;
+    [self _titlelabel:@"原生通知"];
+    NSString *noteName = @"com.ax.note2";
+//   id __block _observer = nil;
+//    [NSNotificationCenter.defaultCenter addObserverForName:noteName object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+//        NSLog(@"原生通知初始化 userInfo = %@",note.userInfo);
+//    }];
+//    @weakify(self);
+    [self _buttonTitle:@"多次监听通知" handler:^(UIButton * _Nonnull btn) {
+//        [NSNotificationCenter.defaultCenter removeObserver:_observer];
+//        NSLog(@"移除通知");
+       [NSNotificationCenter.defaultCenter addObserverForName:noteName object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+            NSLog(@"原生通知userInfo = %@,object = %@",note.userInfo,note.object);
+        }];
+    }];
+    
+    [self _buttonTitle:@"发送原生通知" handler:^(UIButton * _Nonnull btn) {
+        
+        [NSNotificationCenter.defaultCenter postNotificationName:noteName object:nil userInfo:@{@"name":@"tom"}];
+    }];
+}
+- (void)_group {
+    
+    // rac_liftSelector
+    // 类似于dispatch_group 中的组
+    // 多线程中的组 等所有的请求都完毕之后 去更新UI
+    
+    RACSignal *sg1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        
+        [subscriber sendNext:@"网络请求数据1"];
+        return nil;
+    }];
+    
+    RACSignal *sg2 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        
+        [subscriber sendNext:@"网络请求数据2"];
+        return nil;
+    }];
+    
+    RACSignal *sg3 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        
+        [subscriber sendNext:@"网络请求数据3"];
+        return nil;
+    }];
+    
+    [self rac_liftSelector:@selector(updateUI:str:str:) withSignals:sg1,sg2,sg3, nil];
+    
+}
+
+- (void)updateUI:(id)str1 str:(id)str2 str:(id)str3
+{
+    
+    // 回传过来
+    NSLog(@"%@-%@-%@",str1,str2,str3);
+    
+}
+
+
+
 -(void)_RACChannelTo{
     
     UIView *topView = self.view;
@@ -960,21 +1204,6 @@
     /// UITextView 双向绑定
     RACChannelTo(label2, text) = RACChannelTo(textView, text);
     [textView.rac_textSignal subscribe:RACChannelTo(label2, text)];
-    
-    UISwitch  *someSwitch;
-    {
-        UISwitch *btn = [[UISwitch alloc] init];
-        [self.containerView addSubview:btn];
-        btn.frame = CGRectMake(0, 0, all_width, all_height);
-        btn.backgroundColor = UIColor.grayColor;
-        btn.ax_top = topView.ax_bottom + 10;
-        btn.ax_left = topView.ax_left;
-        
-        topView =btn;
-        someSwitch=btn;
-    }
-    
-    NSLog(@"进入 key = %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"]);
     //    [someSwitch setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"] forKey:@"on"];
     //    [[RACKVOChannel alloc] initWithTarget:[NSUserDefaults standardUserDefaults]
     //                                      keyPath:@"someBoolKey" nilValue:@(NO)][@"followingTerminal"] = [[RACKVOChannel alloc] initWithTarget:someSwitch keyPath:@"on" nilValue:@(NO)][@"followingTerminal"];
@@ -990,18 +1219,7 @@
     //        NSLog(@"key = %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"]);
     //    }];
     
-    /// UISwitch 双向绑定
-    RACChannelTerminal *switchTerminal = someSwitch.rac_newOnChannel;
-    RACChannelTerminal *defaultsTerminal = [[NSUserDefaults standardUserDefaults] rac_channelTerminalForKey:@"someBoolKey"];
-    [switchTerminal subscribe:defaultsTerminal];
-    [defaultsTerminal subscribe:switchTerminal];
-    /// 监听变化
-    [someSwitch.rac_newOnChannel subscribeNext:^(NSNumber *onValue) {
-        // 下面两句都可以
-        //            [someSwitch setValue:onValue forKey:@"on"];
-        //[[NSUserDefaults standardUserDefaults] setObject:onValue forKey:@"someBoolKey"];
-        NSLog(@"isOn = %d  key =%@",someSwitch.isOn,[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"]);
-    }];
+    
 }
 
 
@@ -1011,5 +1229,10 @@
     }
     return _dataArray;
 }
+
+- (void)dealloc{
+    axLong_dealloc;
+}
+
 @end
 

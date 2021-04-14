@@ -736,6 +736,9 @@ static CGSize SDCalculateThumbnailSize(CGSize fullSize, BOOL preserveAspectRatio
     }
     
     size_t bytesPerRow = CGImageGetBytesPerRow(imageRef);
+    size_t bitsPerComponent = CGImageGetBitsPerComponent(imageRef);
+    size_t bitsPerPixel = CGImageGetBitsPerPixel(imageRef);
+    size_t components = bitsPerPixel / bitsPerComponent;
     CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(imageRef);
     CGImageAlphaInfo alphaInfo = bitmapInfo & kCGBitmapAlphaInfoMask;
     CGBitmapInfo byteOrderInfo = bitmapInfo & kCGBitmapByteOrderMask;
@@ -759,15 +762,21 @@ static CGSize SDCalculateThumbnailSize(CGSize fullSize, BOOL preserveAspectRatio
     if (!dataProvider) {
         return nil;
     }
-    CFDataRef dataRef = CGDataProviderCopyData(dataProvider);
-    if (!dataRef) {
-        return nil;
-    }
+    // Check colorSpace is RGB/RGBA
+    CGColorSpaceRef colorSpace = CGImageGetColorSpace(imageRef);
+    BOOL isRGB = CGColorSpaceGetModel(colorSpace) == kCGColorSpaceModelRGB;
     
+    CFDataRef dataRef;
     uint8_t *rgba = NULL; // RGBA Buffer managed by CFData, don't call `free` on it, instead call `CFRelease` on `dataRef`
     // We could not assume that input CGImage's color mode is always RGB888/RGBA8888. Convert all other cases to target color mode using vImage
-    if (byteOrderNormal && ((alphaInfo == kCGImageAlphaNone) || (alphaInfo == kCGImageAlphaLast))) {
+    BOOL isRGB888 = isRGB && byteOrderNormal && alphaInfo == kCGImageAlphaNone && components == 3;
+    BOOL isRGBA8888 = isRGB && byteOrderNormal && alphaInfo == kCGImageAlphaLast && components == 4;
+    if (isRGB888 || isRGBA8888) {
         // If the input CGImage is already RGB888/RGBA8888
+        dataRef = CGDataProviderCopyData(dataProvider);
+        if (!dataRef) {
+            return nil;
+        }
         rgba = (uint8_t *)CFDataGetBytePtr(dataRef);
     } else {
         // Convert all other cases to target color mode using vImage
@@ -775,10 +784,11 @@ static CGSize SDCalculateThumbnailSize(CGSize fullSize, BOOL preserveAspectRatio
         vImage_Error error = kvImageNoError;
         
         vImage_CGImageFormat srcFormat = {
-            .bitsPerComponent = (uint32_t)CGImageGetBitsPerComponent(imageRef),
-            .bitsPerPixel = (uint32_t)CGImageGetBitsPerPixel(imageRef),
-            .colorSpace = CGImageGetColorSpace(imageRef),
-            .bitmapInfo = bitmapInfo
+            .bitsPerComponent = (uint32_t)bitsPerComponent,
+            .bitsPerPixel = (uint32_t)bitsPerPixel,
+            .colorSpace = colorSpace,
+            .bitmapInfo = bitmapInfo,
+            .renderingIntent = CGImageGetRenderingIntent(imageRef)
         };
         vImage_CGImageFormat destFormat = {
             .bitsPerComponent = 8,
@@ -789,36 +799,37 @@ static CGSize SDCalculateThumbnailSize(CGSize fullSize, BOOL preserveAspectRatio
         
         convertor = vImageConverter_CreateWithCGImageFormat(&srcFormat, &destFormat, NULL, kvImageNoFlags, &error);
         if (error != kvImageNoError) {
-            CFRelease(dataRef);
             return nil;
         }
         
-        vImage_Buffer src = {
-            .data = (uint8_t *)CFDataGetBytePtr(dataRef),
-            .width = width,
-            .height = height,
-            .rowBytes = bytesPerRow
-        };
-        vImage_Buffer dest;
+        vImage_Buffer src;
+        error = vImageBuffer_InitWithCGImage(&src, &srcFormat, nil, imageRef, kvImageNoFlags);
+        if (error != kvImageNoError) {
+            vImageConverter_Release(convertor);
+            return nil;
+        }
         
+        vImage_Buffer dest;
         error = vImageBuffer_Init(&dest, height, width, destFormat.bitsPerPixel, kvImageNoFlags);
         if (error != kvImageNoError) {
             vImageConverter_Release(convertor);
-            CFRelease(dataRef);
+            free(src.data);
             return nil;
         }
         
         // Convert input color mode to RGB888/RGBA8888
         error = vImageConvert_AnyToAny(convertor, &src, &dest, NULL, kvImageNoFlags);
+        
+        // Free the buffer
+        free(src.data);
         vImageConverter_Release(convertor);
         if (error != kvImageNoError) {
-            CFRelease(dataRef);
+            free(dest.data);
             return nil;
         }
         
         rgba = dest.data; // Converted buffer
         bytesPerRow = dest.rowBytes; // Converted bytePerRow
-        CFRelease(dataRef); // Use CFData to manage bytes for free, the same code path for error handling
         dataRef = CFDataCreateWithBytesNoCopy(kCFAllocatorDefault, rgba, bytesPerRow * height, kCFAllocatorDefault);
     }
     

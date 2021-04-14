@@ -98,7 +98,7 @@
     [self _24TextHeight];
     [self _25UIVisualEffectView];
     /// 底部约束
-    [self _loadBottomAttribute];
+    [self _lastLoadBottomAttribute];
 }
 
 - (void)_darkStyle {

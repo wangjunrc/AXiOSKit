@@ -6,11 +6,11 @@
 //  Copyright © 2021 axinger. All rights reserved.
 //
 
-#import "_00BaseViewController.h"
+#import "DemoBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _01TypeViewController : _00BaseViewController
+@interface _01TypeViewController : DemoBaseViewController
 
 @property(nonatomic, copy) UIColor *ax_barTintColor;
 

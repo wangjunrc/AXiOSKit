@@ -65,7 +65,7 @@
     }];
     
     // 这里放最后一个view的底部
-    [self _loadBottomAttribute];
+    [self _lastLoadBottomAttribute];
 }
 
 -(void)_share0 {

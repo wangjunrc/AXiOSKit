@@ -122,5 +122,15 @@ typedef NS_ENUM(NSInteger,AXLineDirection){
 /// @param height 高
 -(void)ax_constraintButtonItemWidth:(CGFloat )width  height:(CGFloat )height;
 
+/// 制作圆角（含部分圆角）
+/// @param radius 圆角半径 只会影响背景色和边界，不会影响layer image content，如需裁切内容，参看masksToBounds属性
+/// @param corners 圆角位置
+/// @param masksToBounds 子layer是否剪切到layer的边界，为YES时会影响阴影的设置。
+/// @Discussion
+/// ⚠️低于iOS11的版本且为设置部分圆角的情况下，请在frame确认之后调用此方法。
+///尤其是自动布局，可能需要先调用layoutIfNeeded确定frame之后再调用。低于iOS11的版本，设置圆角会影响阴影的设置，您可以使用额外的view来辅助显示阴影
+- (void)ax_makeConerWithRadius:(CGFloat)radius
+                       corners:(UIRectCorner)corners
+                 masksToBounds:(BOOL)masksToBounds;
 @end
 NS_ASSUME_NONNULL_END

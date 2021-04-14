@@ -16,12 +16,13 @@ Pod::Spec.new do |s|
     封装UIKit等个人开发工具类
     DESC
     
-    s.homepage     = 'https://github.com/axinger/axinger'
+    #    s.homepage     = 'https://github.com/axinger/axinger'
+    s.homepage     = 'https://gitee.com/axinger'
     s.license      = { :type => 'MIT', :file => 'LICENSE' }
     s.author             = { 'axinger' => 'axingrun@outlook.com' }
     s.ios.deployment_target = '9.0'
     s.requires_arc = true
-    s.source       = { :git => 'https://github.com/axinger/AXiOSKit.git', :tag => '#{s.version}' }
+    s.source       = { :git => 'https://gitee.com/axinger/AXiOSKit.git', :tag => '#{s.version}' }
     s.source_files  = 'AXiOSKit/**/*.{h,m}'
     s.exclude_files = 'AXiOSKit/AXiOSKit/Info.plist'
     s.public_header_files = 'AXiOSKit/AXiOSKit/AXiOSKit.h'
@@ -45,7 +46,7 @@ Pod::Spec.new do |s|
     s.frameworks = 'Foundation', 'UIKit'
     s.dependency 'AFNetworking','~> 4.0.0'
     s.dependency 'SDWebImage'
-#    s.dependency 'IQKeyboardManager'
+    #    s.dependency 'IQKeyboardManager'
     s.dependency 'MJRefresh'
     s.dependency 'NullSafe'
     s.dependency 'MJExtension'

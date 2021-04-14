@@ -386,4 +386,34 @@ typedef void(^DidViewBlock)(UIView *view);
     [self.heightAnchor constraintEqualToConstant:height].active =YES;
 }
 
+/// 制作圆角（含部分圆角）
+/// @param radius 圆角半径 只会影响背景色和边界，不会影响layer image content，如需裁切内容，参看masksToBounds属性
+/// @param corners 圆角位置
+/// @param masksToBounds 子layer是否剪切到layer的边界，为YES时会影响阴影的设置。
+/// @Discussion
+/// ⚠️低于iOS11的版本且为设置部分圆角的情况下，请在frame确认之后调用此方法。
+///尤其是自动布局，可能需要先调用layoutIfNeeded确定frame之后再调用。低于iOS11的版本，设置圆角会影响阴影的设置，您可以使用额外的view来辅助显示阴影
+- (void)ax_makeConerWithRadius:(CGFloat)radius
+                       corners:(UIRectCorner)corners
+                 masksToBounds:(BOOL)masksToBounds {
+    self.layer.masksToBounds = masksToBounds;
+    // 设置所有圆角
+    // 直接使用与约束无关的属性，可以自动适应自动布局
+    if (corners & UIRectCornerAllCorners) {
+        self.layer.cornerRadius = radius;
+        return;
+    }
+    // 设置部分圆角
+    if (@available(iOS 11.0, *)) {
+        self.layer.cornerRadius = radius;
+        self.layer.maskedCorners = (CACornerMask)corners; //bit位一致
+    } else {
+        // 此方法需要在frame已经确定后才有效果，如果使用自动布局，则使用者可以需要在必要的时候调用 layoutIfNeeded 计算frame之后才有效果.
+        CAShapeLayer *maskLayer = [CAShapeLayer layer];
+        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.layer.bounds byRoundingCorners:corners cornerRadii:CGSizeMake(radius, radius)];
+        maskLayer.path = path.CGPath;
+        self.layer.mask = maskLayer;
+    }
+}
+
 @end

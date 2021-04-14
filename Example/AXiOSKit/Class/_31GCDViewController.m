@@ -108,7 +108,7 @@
     [self _p17NSBlockOperation];
     
     // 这里放最后一个view的底部
-    [self _loadBottomAttribute];
+    [self _lastLoadBottomAttribute];
 }
 
 //-(void)setName:(NSString *)name {

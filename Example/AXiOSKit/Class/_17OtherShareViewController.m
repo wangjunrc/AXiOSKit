@@ -47,7 +47,7 @@
     
     NSLog(@"lb.frame = %@",NSStringFromCGRect(lb.frame));
     
-    [self _loadBottomAttribute];
+    [self _lastLoadBottomAttribute];
     
     [self.containerView layoutIfNeeded];
     CAGradientLayer *colorLayer = [CAGradientLayer layer];

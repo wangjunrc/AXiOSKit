@@ -7,7 +7,7 @@
 //
 
 #import "AXWKWebVC.h"
-@import WebKit;
+
 #import "AXiOSKit.h"
 #import "NSBundle+AXBundle.h"
 #import "AXScriptMessageHandlerHelper.h"
@@ -15,7 +15,7 @@
 #import "AXWebScriptMessageModel.h"
 #import "NSString+AXKit.h"
 #import "AXImageSchemeHanlder.h"
-
+#import <ReactiveObjC/ReactiveObjC.h>
 typedef NS_ENUM(NSInteger, WKWebLoadType){
     WKWebLoadTypeHTML,
     WKWebLoadTypeURL,
@@ -23,7 +23,11 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 
 @interface AXWKWebVC ()<WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate,UINavigationControllerDelegate,UIScrollViewDelegate>
 
-@property (nonatomic, strong) WKWebView *webView;
+@property (nonatomic, strong,readwrite) WKWebView *webView;
+
+@property (nonatomic, copy,readwrite) NSURL *URL;
+
+@property (nonatomic, copy,readwrite) NSString *HTML;
 
 //@property (nonatomic, copy) NSString *url;
 
@@ -62,7 +66,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 /**
  *多个js交互,根据name保存,回调
  */
-@property (nonatomic, copy) NSMutableDictionary <NSString *,void(^)(id data, NSError* error)>* scriptMessageDict;
+@property (nonatomic, copy) NSMutableDictionary <NSString *,AXScriptErrorBlock >* scriptMessageDict;
 
 @property (nonatomic, copy) NSMutableDictionary <NSString *,AXWebScriptMessageModel *>* scriptMessageModelDict;
 
@@ -70,10 +74,45 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 @end
 
 @implementation AXWKWebVC
+
+#pragma mark - set
+//- (void)setURL:(NSURL *)URL {
+//    _URL = URL;
+//    self.loadType = WKWebLoadTypeURL;
+//}
+//- (void)setHTML:(NSString *)HTML {
+//    _HTML = HTML;
+//    self.loadType = WKWebLoadTypeHTML;
+//}
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.userHTMLTitle = YES;
+    }
+    return self;
+}
+
+-(instancetype )initWithURL:(NSURL *)URL {
+    if (self = [self init]) {
+        self.URL = URL;
+        self.loadType = WKWebLoadTypeURL;
+    }
+    return self;
+}
+
+-(instancetype )initWithHTML:(NSString *)HTML {
+    if (self = [self init]) {
+        self.HTML = HTML;
+        self.loadType = WKWebLoadTypeHTML;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self _initView];
+    [self _intiKVO];
     [self _initNavItme];
     [self _webViewloadURLType];
 }
@@ -92,32 +131,61 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     
     [self.view addSubview:self.webView];
     [self.view addSubview:self.progressView];
-    
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).with.insets(UIEdgeInsetsZero);
     }];
-    
 }
 
-/**
- * UINavigationController itme
- */
+
+#pragma mark - NavItme
 - (void)_initNavItme{
-    
+    __weak typeof(self) weakSelf = self;
     [self ax_haveNav:^(UINavigationController *nav) {
-        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         UIBarButtonItem *roadLoad = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(roadDataWebAction)];
-        self.navigationItem.rightBarButtonItem = roadLoad;
+        strongSelf.navigationItem.rightBarButtonItem = roadLoad;
         
     } isPushNav:^(UINavigationController *nav) {
         
     } isPresentNav:^(UINavigationController *nav) {
         
     } noneNav:^{
-        [self.webView.scrollView addSubview:self.cancelButton];
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.webView.scrollView addSubview:strongSelf.cancelButton];
     }];
 }
 
+#pragma mark - KVO
+-(void)_intiKVO{
+    
+    __weak typeof(self) weakSelf = self;
+    if (self.isUserHTMLTitle) {
+        [RACObserve(self.webView, title) subscribeNext:^(NSString *title) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            AXLoger(@"title = %@",title);
+            //使用KVO 显示title 更快一点
+            if (title.length>0) {
+                strongSelf.title = title;
+            }
+        }];
+    }
+    
+    [RACObserve(self.webView, estimatedProgress) subscribeNext:^(NSNumber *progress) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        AXLoger(@"progress = %@",progress);
+        strongSelf.progressView.alpha = 1.0f;
+        BOOL animated = strongSelf.webView.estimatedProgress > strongSelf.progressView.progress;
+        [strongSelf.progressView setProgress:strongSelf.webView.estimatedProgress animated:animated];
+        if(strongSelf.webView.estimatedProgress >= 1.0f) {
+            [UIView animateWithDuration:0.3f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
+                strongSelf.progressView.alpha = 0.0f;
+            } completion:^(BOOL finished) {
+                [strongSelf.progressView setProgress:0.0f animated:NO];
+            }];
+        }
+    }];
+    
+}
 
 #pragma mark -  代理 WKNavigationDelegate
 /**
@@ -181,6 +249,8 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 /**
  * 服务器开始请求的时候调用 是否允许这个导航" 决定是否允许或取消一个导航
  */
+///先：针对一次action来决定是否允许跳转，action中可以获取request，
+///允许与否都需要调用decisionHandler，比如decisionHandler(WKNavigationActionPolicyCancel);
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
     NSURL *URL = navigationAction.request.URL;
@@ -188,7 +258,6 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     AXLog(@"服务器开始请求的时候调用\n scheme:%@\n URL:%@\n navigationType:%ld",URL.scheme,URL ,(long)navigationAction.navigationType);
     
     if ([URL.scheme isEqual:@"tel"]) {
-        
         ax_OpenURL(URL);
         decisionHandler(WKNavigationActionPolicyCancel);
         return;
@@ -221,6 +290,8 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 /**
  * 这与用于授权验证的API，与AFN、UIWebView的授权验证API是一样的 web视图需要响应身份验证时调用
  */
+///后：根据response来决定，是否允许跳转，允许与否都需要调用decisionHandler，
+///如decisionHandler(WKNavigationResponsePolicyAllow);
 - (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition , NSURLCredential *))completionHandler {
     
     AXLog(@"授权验证的API");
@@ -295,8 +366,10 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 /**
  * 网页加载内容进程终止
  */
+/// 当WKWebView加载的网页占用内存过大时，会出现白屏现象。
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView{
     AXLog(@"网页加载内容进程终止");
+    [webView reload];   //刷新就好了
 }
 
 // js注入方法
@@ -304,7 +377,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 //依然是这个协议方法,获取注入方法名对象,获取js返回的状态值.
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
     
-    void(^handler)(id data, NSError* error)  = self.scriptMessageDict[message.name];
+    AXScriptErrorBlock handler = self.scriptMessageDict[message.name];
     if (handler) {
         handler(message.name,message.body);
         return;
@@ -312,9 +385,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     
     AXWebScriptMessageModel *model = self.scriptMessageModelDict[message.name];
     if (model) {
-        
         id<AXScriptMessageDelegate> delegate = model.obj;
-        
         if (delegate && [delegate respondsToSelector:@selector(webVC:messageName:messageBody:)]) {
             [delegate webVC:self messageName:message.name messageBody:message.body];
         }
@@ -336,6 +407,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         return;
     }
     if (handler) {
+        //通过window.webkit.messageHandlers.<name>.postMessage(<messageBody>) 来实现js->oc传递消息
         self.scriptMessageDict[name] = handler;
         [self.webView.configuration.userContentController addScriptMessageHandler:self.handlerHelper name:name];
     }
@@ -372,46 +444,54 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     [self.webView evaluateJavaScript:javaScriptString completionHandler:handler];
 }
 
-#pragma mark - KVO
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
-    
-    if (object != self.webView ) {
-        
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }else{
-        
-        if ([keyPath isEqualToString:NSStringFromSelector(@selector(estimatedProgress))]) {
-            self.progressView.alpha = 1.0f;
-            BOOL animated = self.webView.estimatedProgress > self.progressView.progress;
-            [self.progressView setProgress:self.webView.estimatedProgress animated:animated];
-            
-            if(self.webView.estimatedProgress >= 1.0f) {
-                
-                [UIView animateWithDuration:0.3f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
-                    self.progressView.alpha = 0.0f;
-                } completion:^(BOOL finished) {
-                    [self.progressView setProgress:0.0f animated:NO];
-                    
-                }];
-            }
-        }else if ([keyPath isEqualToString:NSStringFromSelector(@selector(title))]){
-            //使用KVO 显示title 更快一点
-            if (self.title.length==0) {
-                
-                NSString *title = change[@"new"];
-                if (title.length>0) {
-                    self.title = title;
-                }else{
-                    self.title = AXKitLocalizedString(@"网页");
-                }
-            }
-        }else {
-            [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-        }
-        
-    }
+- (void)evaluateJavaScript:(NSString *)js
+                      time:(WKUserScriptInjectionTime )time {
+    WKUserScript *jsUserScript = [WKUserScript.alloc initWithSource:js
+                                                      injectionTime:time
+                                                   forMainFrameOnly:NO];
+    [self.webView.configuration.userContentController addUserScript:jsUserScript];
 }
+
+//#pragma mark - KVO
+//
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+//
+//    if (object != self.webView ) {
+//
+//        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+//    }else{
+//
+//        if ([keyPath isEqualToString:NSStringFromSelector(@selector(estimatedProgress))]) {
+//            self.progressView.alpha = 1.0f;
+//            BOOL animated = self.webView.estimatedProgress > self.progressView.progress;
+//            [self.progressView setProgress:self.webView.estimatedProgress animated:animated];
+//
+//            if(self.webView.estimatedProgress >= 1.0f) {
+//
+//                [UIView animateWithDuration:0.3f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
+//                    self.progressView.alpha = 0.0f;
+//                } completion:^(BOOL finished) {
+//                    [self.progressView setProgress:0.0f animated:NO];
+//
+//                }];
+//            }
+//        }else if ([keyPath isEqualToString:NSStringFromSelector(@selector(title))]){
+//            //使用KVO 显示title 更快一点
+//            if (self.title.length==0) {
+//
+//                NSString *title = change[@"new"];
+//                if (title.length>0) {
+//                    self.title = title;
+//                }else{
+//                    self.title = AXKitLocalizedString(@"网页");
+//                }
+//            }
+//        }else {
+//            [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+//        }
+//
+//    }
+//}
 
 
 #pragma mark - func
@@ -451,14 +531,14 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         
         UIBarButtonItem *spaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         spaceButtonItem.width = 20;
-        
+        __weak typeof(self) weakSelf = self;
         [self ax_haveNav:nil isPushNav:^(UINavigationController *nav) {
-            
-            self.navigationItem.leftBarButtonItems = @[self.backItem,spaceButtonItem,self.closeItem];
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            strongSelf.navigationItem.leftBarButtonItems = @[strongSelf.backItem,spaceButtonItem,strongSelf.closeItem];
             
         } isPresentNav:^(UINavigationController *nav) {
-            
-            self.navigationItem.leftBarButtonItems = @[self.cancelItem,spaceButtonItem,self.closeItem];
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            strongSelf.navigationItem.leftBarButtonItems = @[strongSelf.cancelItem,spaceButtonItem,strongSelf.closeItem];
             
         } noneNav:nil];
         
@@ -471,16 +551,16 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         
         self.navigationItem.leftBarButtonItems = nil;
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-        
+        __weak typeof(self) weakSelf = self;
         [self ax_haveNav:nil isPushNav:^(UINavigationController *nav) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            //            self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
             
-//            self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
             
-            
-            self.navigationItem.leftBarButtonItem = self.backItem;
+            strongSelf.navigationItem.leftBarButtonItem = strongSelf.backItem;
         } isPresentNav:^(UINavigationController *nav) {
-            
-            self.navigationItem.leftBarButtonItem = self.cancelItem;
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            strongSelf.navigationItem.leftBarButtonItem = strongSelf.cancelItem;
         } noneNav:nil];
     }
 }
@@ -531,12 +611,12 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     
     __weak typeof(self) weakSelf = self;
     [self.webView evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id _Nullable result,NSError * _Nullable error) {
-        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         // 高度会有一点少 ，手动补上 20
         CGFloat height = [result floatValue] + 20.0;
-        weakSelf.webView.height = height;
-        if (weakSelf.loadOverHeight) {
-            weakSelf.loadOverHeight(height);
+        strongSelf.webView.height = height;
+        if (strongSelf.loadOverHeight) {
+            strongSelf.loadOverHeight(height);
         }
     }];
 }
@@ -551,28 +631,16 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 
 //加载失败,返回
 - (void)fun_loadErrorback{
-    
+    __weak typeof(self) weakSelf = self;
     [self ax_showAlertByTitle:@"服务器异常,无法打开" confirm:^{
-        
-        if (self.navigationController) {
-            [self.navigationController popViewControllerAnimated:YES];
-            
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (strongSelf.navigationController) {
+            [strongSelf.navigationController popViewControllerAnimated:YES];
         }else {
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [strongSelf dismissViewControllerAnimated:YES completion:nil];
         }
     }];
 }
-
-#pragma mark - set
-- (void)setURL:(NSURL *)URL {
-    _URL = URL;
-    self.loadType = WKWebLoadTypeURL;
-}
-- (void)setHTML:(NSString *)HTML {
-    _HTML = HTML;
-    self.loadType = WKWebLoadTypeHTML;
-}
-
 
 #pragma mark - get
 
@@ -585,26 +653,30 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         //        config.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAudio;
         
         
-//        AXImageSchemeHanlder *imageScheme = AXImageSchemeHanlder.alloc.init;
-//        imageScheme.oriImageScheme = self.oriImageScheme;
-//        imageScheme.oriImageUrl = self.oriImageUrl;
-//        imageScheme.placeholderImage = self.placeholderImage;
-//
-//        __weak typeof(self) weakSelf = self;
-//        imageScheme.updateImageBlock = ^ {
-//            [weakSelf updateHeight];
-//        };
-//        [config setURLSchemeHandler:imageScheme forURLScheme:XXXCustomImageScheme];
+        //        AXImageSchemeHanlder *imageScheme = AXImageSchemeHanlder.alloc.init;
+        //        imageScheme.oriImageScheme = self.oriImageScheme;
+        //        imageScheme.oriImageUrl = self.oriImageUrl;
+        //        imageScheme.placeholderImage = self.placeholderImage;
+        //
+        //        __weak typeof(self) weakSelf = self;
+        //        imageScheme.updateImageBlock = ^ {
+        //            [weakSelf updateHeight];
+        //        };
+        //        [config setURLSchemeHandler:imageScheme forURLScheme:XXXCustomImageScheme];
         
         
         WKUserContentController *userContentController = [[WKUserContentController alloc] init];
         config.userContentController = userContentController;
         _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, 100, 100) configuration:config];
         _webView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        [_webView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:NSKeyValueObservingOptionNew context:nil];
-        [_webView addObserver:self forKeyPath:NSStringFromSelector(@selector(title)) options:NSKeyValueObservingOptionNew context:nil];
+        //        [_webView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:NSKeyValueObservingOptionNew context:nil];
+        //        [_webView addObserver:self forKeyPath:NSStringFromSelector(@selector(title)) options:NSKeyValueObservingOptionNew context:nil];
         _webView.navigationDelegate = self;
         _webView.UIDelegate = self;
+        _webView.allowsBackForwardNavigationGestures = YES; //允许右滑返回上个链接，左滑前进
+        _webView.allowsLinkPreview = YES; //允许链接3D Touch
+        _webView.customUserAgent = @"customUserAgent/1.0.0"; //自定义UA，UIWebView就没有此功能，
+        
     }
     return _webView;
 }
@@ -615,11 +687,14 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         _progressView = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
         
         __block CGRect tempFrame = CGRectZero;
+        __weak typeof(self) weakSelf = self;
         [self ax_haveNav:^(UINavigationController *nav) {
-            tempFrame = CGRectMake(0,0, self.view.bounds.size.width, 3);
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            tempFrame = CGRectMake(0,0, strongSelf.view.bounds.size.width, 3);
             
         } isPushNav:nil isPresentNav:nil noneNav:^{
-            tempFrame = CGRectMake(0, 0, self.view.bounds.size.width, 3);
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            tempFrame = CGRectMake(0, 0, strongSelf.view.bounds.size.width, 3);
         }];
         _progressView.frame = tempFrame;
         // 设置进度条的色彩
@@ -634,7 +709,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         UIImage* backItemImage = [[UIImage axBundle_imageNamed:@"ax_itemBack"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         UIImage* backItemHlImage = [[UIImage axBundle_imageNamed:@"ax_itemBack_h"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         UIButton* backButton = [[UIButton alloc] init];
-//        [backButton setTitle:AXKitLocalizedString(@"ax.back") forState:UIControlStateNormal];
+        //        [backButton setTitle:AXKitLocalizedString(@"ax.back") forState:UIControlStateNormal];
         [backButton setTitleColor:self.navigationController.navigationBar.tintColor forState:UIControlStateNormal];
         [backButton setTitleColor:[self.navigationController.navigationBar.tintColor colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
         [backButton.titleLabel setFont:[UIFont systemFontOfSize:17]];
@@ -684,15 +759,15 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     return _handlerHelper;
 }
 
-- (NSMutableDictionary *)scriptMessageDict {
+- (NSMutableDictionary<NSString *,AXScriptErrorBlock > *)scriptMessageDict {
     if (!_scriptMessageDict) {
-        _scriptMessageDict = [NSMutableDictionary dictionary];
+        _scriptMessageDict = NSMutableDictionary.dictionary;
     }
     return _scriptMessageDict;
 }
 - (NSMutableDictionary<NSString *,AXWebScriptMessageModel *> *)scriptMessageModelDict {
     if (!_scriptMessageModelDict) {
-        _scriptMessageModelDict = [[NSMutableDictionary alloc]init];
+        _scriptMessageModelDict = NSMutableDictionary.dictionary;
     }
     return _scriptMessageModelDict;
 }
@@ -700,9 +775,9 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 - (void)dealloc{
     [self.webView.configuration.userContentController removeAllUserScripts];
     self.webView.scrollView.delegate = nil;
-    [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
-    [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(title))];
-    //    axLong_dealloc;
+    //    [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
+    //    [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(title))];
+        axLong_dealloc;
 }
 
 //- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
@@ -717,6 +792,10 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 
 
 #pragma mark - 文档
+/**
+ https://juejin.cn/post/6943484128230637604
+ 
+ */
 /*
  
  typedef NS_ENUM(NSInteger, WKNavigationType) {
@@ -824,3 +903,28 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 //    //    }];
 //
 //}
+
+/**
+ 
+ Native加载并缓存H5页面中的image
+ 拦截请求，最核心的是在NSURLProtocol子类中，实现这个方法
+ + (BOOL)canInitWithRequest:(NSURLRequest *)request {
+ //处理过不再处理
+ if ([NSURLProtocol propertyForKey:DAURLProtocolHandledKey inRequest:request]) {
+ return NO;
+ }
+ //根据request header中的 accept 来判断是否加载图片
+ 
+ {
+ "Accept" = "image/png,image/svg+xml,image/*;q=0.8,*\/*;q=0.5\";
+ "User-Agent" = "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Mobile/14E269 WebViewDemo/1.0.0";
+ }
+ NSDictionary *headers = request.allHTTPHeaderFields;
+ NSString *accept = headers[@"Accept"];
+ if (accept.length >= @"image".length && [accept rangeOfString:@"image"].location != NSNotFound) {
+ return YES;
+ }
+ return NO;
+ }
+ 
+ */

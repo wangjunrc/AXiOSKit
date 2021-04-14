@@ -36,19 +36,49 @@
         }
     }
 }
+/// 接受远程控制的按钮切换,用于接收播放器
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    UIEventSubtype type = event.subtype;
+    switch (type) {
+            //暂停
+        case UIEventSubtypeRemoteControlPause:{
+            NSLog(@"暂停");
+        }
+            break;
+            //播放
+        case UIEventSubtypeRemoteControlPlay:{
+            NSLog(@"播放");
+        }
+            break;
+            //下一首
+        case UIEventSubtypeRemoteControlNextTrack:{
+            NSLog(@"下一首");
+        }
+            break;
+            //上一首
+        case UIEventSubtypeRemoteControlPreviousTrack:
+            break;{
+                NSLog(@"上一首");
+            }
+        default:
+            break;
+    }
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //    sleep(2);
     
     [self thirdSDKLifecycleManager:@selector(application:didFinishLaunchingWithOptions:) withParameters:@[application,@{}]];
     
-    
+    //开启接收远程事件 ,用于接收播放器
+    [application beginReceivingRemoteControlEvents];
     
     //    NSLog(@"IS_PRODUCATION = %d, SERVER_HOST = %@",IS_PRODUCATION, SERVER_HOST);
     //    [LLDynamicLaunchScreen restoreAsBefore];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];
     [self.window makeKeyAndVisible];
+    
     
     //    }
     
@@ -251,15 +281,62 @@
     
 }
 
+
 // 屏幕旋转方向
-- (UIInterfaceOrientationMask)application:(UIApplication *)application
-  supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+    UIViewController*  topViewController = [self topViewController] ;
+    NSLog(@"topViewController = %@",topViewController.class);
+    NSLog(@"presentedViewController = %@",window.rootViewController.presentedViewController);
+    /// 如果是横屏WebView 支持横屏
+    if ([topViewController isKindOfClass:NSClassFromString(@"_38DirectionVC")]){
+        
+        return   UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight ;
+    }
+    
     
     return UIInterfaceOrientationMaskPortrait;
+    
+    //    if ([window.rootViewController.presentedViewController isKindOfClass:NSClassFromString(@"_38DirectionVC")]) {
+    //        return   UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight ;
+    //        }
+    //        else {
+    //            return UIInterfaceOrientationMaskPortrait;
+    //        }
+    
 }
 
+//获取当前屏幕显示的viewcontroller
+- (UIViewController *)topViewController {
+    UIViewController *resultVC;
+    resultVC = [self _topViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
+    while (resultVC.presentedViewController) {
+        resultVC = [self _topViewController:resultVC.presentedViewController];
+    }
+    return resultVC;
+}
+
+- (UIViewController *)_topViewController:(UIViewController *)vc {
+    
+    if ([vc isKindOfClass:[UINavigationController class]]) {
+        return [self _topViewController:[(UINavigationController *)vc topViewController]];
+    } else if ([vc isKindOfClass:[UITabBarController class]]) {
+        return [self _topViewController:[(UITabBarController *)vc selectedViewController]];
+    }
+    else {
+        return vc;
+    }
+    return nil;
+}
 - (void)applicationWillTerminate:(UIApplication *)application {
     NSLog(@"用户退出App = %s", __FUNCTION__);
 }
+
+/// 清除角标，保留通知栏，不清除通知
+- (void)applicationWillEnterForeground:(UIApplication *)application{
+    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = -1;
+}
+
+
 
 @end

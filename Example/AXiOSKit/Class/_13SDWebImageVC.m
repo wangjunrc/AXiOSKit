@@ -44,7 +44,7 @@
     }];
     
     
-    [self _loadBottomAttribute];
+    [self _lastLoadBottomAttribute];
     
     
 }

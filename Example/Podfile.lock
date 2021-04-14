@@ -16,6 +16,11 @@ PODS:
     - AFNetworking/NSURLSession
   - Aspects (1.4.1)
   - AvoidCrash (2.5.2)
+  - AXCollectionObserve (1.0.0):
+    - AXCollectionObserve/Core (= 1.0.0)
+    - ReactiveObjC (~> 3.0.0)
+  - AXCollectionObserve/Core (1.0.0):
+    - ReactiveObjC (~> 3.0.0)
   - AXiOSKit (2.0.0):
     - AFNetworking (~> 4.0.0)
     - Aspects
@@ -30,16 +35,25 @@ PODS:
     - ReactiveObjC (~> 3.0.0)
     - SDWebImage
   - AXViewControllerTransitioning (1.0.0):
+    - AXViewControllerTransitioning/Component (= 1.0.0)
+    - AXViewControllerTransitioning/Core (= 1.0.0)
+    - ReactiveObjC (~> 3.0.0)
+  - AXViewControllerTransitioning/Component (1.0.0):
+    - ReactiveObjC (~> 3.0.0)
+  - AXViewControllerTransitioning/Core (1.0.0):
     - ReactiveObjC (~> 3.0.0)
   - Bagel (1.4.0):
     - CocoaAsyncSocket
   - Canvas (0.1.2)
   - CocoaAsyncSocket (7.6.5)
-  - CTMediator (44)
+  - CTMediator (46)
+  - CYLTabBarController (1.29.0):
+    - CYLTabBarController/Core (= 1.29.0)
+  - CYLTabBarController/Core (1.29.0)
   - DZNEmptyDataSet (1.8.1)
   - FBRetainCycleDetector (0.1.4)
   - fishhook (0.2)
-  - FLAnimatedImage (1.0.12)
+  - FLAnimatedImage (1.0.15)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
@@ -68,15 +82,15 @@ PODS:
   - JJException/Swizzle (0.2.9)
   - JKVValue (1.3.3)
   - KVOController (1.2.0)
-  - libwebp (1.1.0):
-    - libwebp/demux (= 1.1.0)
-    - libwebp/mux (= 1.1.0)
-    - libwebp/webp (= 1.1.0)
-  - libwebp/demux (1.1.0):
+  - libwebp (1.2.0):
+    - libwebp/demux (= 1.2.0)
+    - libwebp/mux (= 1.2.0)
+    - libwebp/webp (= 1.2.0)
+  - libwebp/demux (1.2.0):
     - libwebp/webp
-  - libwebp/mux (1.1.0):
+  - libwebp/mux (1.2.0):
     - libwebp/demux
-  - libwebp/webp (1.1.0)
+  - libwebp/webp (1.2.0)
   - LLDebugTool (1.3.8.1):
     - LLDebugTool/AppInfo (= 1.3.8.1)
     - LLDebugTool/Core (= 1.3.8.1)
@@ -123,7 +137,7 @@ PODS:
     - LLDebugTool/Core
   - LLDebugTool/WidgetBorder (1.3.8.1):
     - LLDebugTool/Core
-  - LLDynamicLaunchScreen (0.2.0)
+  - LLDynamicLaunchScreen (0.2.2)
   - LookinServer (1.0.0)
   - lottie-ios (2.1.5)
   - Masonry (1.1.0)
@@ -171,21 +185,22 @@ PODS:
   - RTRootNavigationController (0.7.2):
     - RTRootNavigationController/Core (= 0.7.2)
   - RTRootNavigationController/Core (0.7.2)
-  - SDWebImage (5.10.3):
-    - SDWebImage/Core (= 5.10.3)
-  - SDWebImage/Core (5.10.3)
-  - SDWebImageFLPlugin (0.4.0):
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
+  - SDWebImageFLPlugin (0.5.0):
     - FLAnimatedImage (>= 1.0.11)
-    - SDWebImage/Core (~> 5.6)
-  - SDWebImageWebPCoder (0.8.1):
+    - SDWebImage/Core (~> 5.10)
+  - SDWebImageWebPCoder (0.8.3):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.10)
   - SocketRocket (0.5.1)
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SSKeychain (1.4.1)
+  - SSZipArchive (2.2.3)
   - TOCropViewController (2.6.0)
-  - TZImagePickerController (3.5.8)
+  - TZImagePickerController (3.5.9)
   - WCDB (1.0.7.5):
     - SQLiteRepairKit (~> 1.2.0)
     - WCDBOptimizedSQLCipher (~> 1.2.0)
@@ -202,12 +217,14 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - AvoidCrash
+  - AXCollectionObserve (from `https://gitee.com/axinger/AXCollectionObserve.git`)
   - AXiOSKit (from `../`)
-  - AXViewControllerTransitioning (from `https://github.com/axinger/AXViewControllerTransitioning.git`)
+  - AXViewControllerTransitioning (from `https://gitee.com/axinger/AXViewControllerTransitioning.git`)
   - Bagel (~> 1.4.0)
   - Canvas (~> 0.1.2)
   - CocoaAsyncSocket (~> 7.6.5)
   - CTMediator
+  - CYLTabBarController
   - fishhook
   - GDataXML-HTML (~> 1.4.1)
   - IGListKit
@@ -235,6 +252,7 @@ DEPENDENCIES:
   - SDWebImageWebPCoder (~> 0.8.1)
   - SocketRocket
   - SSKeychain
+  - SSZipArchive (from `https://gitee.com/axinger/ZipArchive.git`)
   - TOCropViewController (~> 2.6.0)
   - TZImagePickerController (~> 3.5.8)
   - WCDB (from `https://gitee.com/mirrors/wcdb.git`)
@@ -246,7 +264,7 @@ DEPENDENCIES:
   - YYText (from `https://gitee.com/mirrors/YYText.git`, tag `1.0.7`)
 
 SPEC REPOS:
-  https://gitee.com/mirrors/CocoaPods-Specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - Aspects
     - AvoidCrash
@@ -254,6 +272,7 @@ SPEC REPOS:
     - Canvas
     - CocoaAsyncSocket
     - CTMediator
+    - CYLTabBarController
     - DZNEmptyDataSet
     - FBRetainCycleDetector
     - fishhook
@@ -297,16 +316,20 @@ SPEC REPOS:
     - WechatOpenSDK
 
 EXTERNAL SOURCES:
+  AXCollectionObserve:
+    :git: https://gitee.com/axinger/AXCollectionObserve.git
   AXiOSKit:
     :path: "../"
   AXViewControllerTransitioning:
-    :git: https://github.com/axinger/AXViewControllerTransitioning.git
+    :git: https://gitee.com/axinger/AXViewControllerTransitioning.git
   LookinServer:
     :git: https://gitee.com/axinger/LookinServer.git
   Protobuf:
     :git: https://gitee.com/axinger/protobuf.git
   RTRootNavigationController:
     :git: https://gitee.com/mirrors/RTRootNavigationController.git
+  SSZipArchive:
+    :git: https://gitee.com/axinger/ZipArchive.git
   WCDB:
     :git: https://gitee.com/mirrors/wcdb.git
   YYCache:
@@ -326,9 +349,12 @@ EXTERNAL SOURCES:
     :tag: 1.0.7
 
 CHECKOUT OPTIONS:
+  AXCollectionObserve:
+    :commit: 9f0f54616a4734dce1861dd23019c403c7008a36
+    :git: https://gitee.com/axinger/AXCollectionObserve.git
   AXViewControllerTransitioning:
-    :commit: c0a46bdb6e46245c207732ca608c251ae5306a0c
-    :git: https://github.com/axinger/AXViewControllerTransitioning.git
+    :commit: 53f710a00230d19c4196f5f0000f8ec26189263d
+    :git: https://gitee.com/axinger/AXViewControllerTransitioning.git
   LookinServer:
     :commit: a207918905fd4b8f310ac438e2aee9a0f218b4df
     :git: https://gitee.com/axinger/LookinServer.git
@@ -338,6 +364,9 @@ CHECKOUT OPTIONS:
   RTRootNavigationController:
     :commit: 397430690241d4fe8503c351170b966a65a6e47b
     :git: https://gitee.com/mirrors/RTRootNavigationController.git
+  SSZipArchive:
+    :commit: 81d8deeaf0d19f6e3ac40f55e5f9f3cdf1b433a3
+    :git: https://gitee.com/axinger/ZipArchive.git
   WCDB:
     :commit: a4f66084e7fdaee342e300ca4c09aea82086b75e
     :git: https://gitee.com/mirrors/wcdb.git
@@ -361,16 +390,18 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
-  AXiOSKit: a0e9d54fb9d38937aa08dfb67db2cafb34df7fa7
-  AXViewControllerTransitioning: e173a335210ca7a25f63a05aaf673dd6cdfd4bd2
+  AXCollectionObserve: f760e3753a1d9849cba457ac1dab13c0b1b355e7
+  AXiOSKit: 63835233d602731f5a2a2e06c9adb660b279fa93
+  AXViewControllerTransitioning: c6bd4c39087dc628012d9a5bf351191597b3d013
   Bagel: c3fa6bcbd52db9ca976edbafd7638f0553ded101
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
-  CTMediator: 933dba523da87bf875e4a7e8728945fbc512f1d2
+  CTMediator: f1cf58d509fb3192086c367711f039efd769b907
+  CYLTabBarController: f5460b8446f82d016945d4d53895a1ef185b79e3
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  FLAnimatedImage: dd3db277b17e909ec3c7fd41adfce79b321d960e
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GDataXML-HTML: a4f11079b48d9fe96ff1fe478943a317185227e2
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
@@ -379,9 +410,9 @@ SPEC CHECKSUMS:
   JJException: da7c64ccf29d9938a4075378a7e9a29db7383c37
   JKVValue: d7941071b1cf9ba35c194fd40bcf4c4d9b5462e9
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
-  libwebp: d7684f7241543c7a5ff47953cc9b9f184fe16610
+  libwebp: e90b9c01d99205d03b6bb8f2c8c415e5a4ef66f0
   LLDebugTool: 6026a1df690f5f94524567fce7f97fa53ce131d8
-  LLDynamicLaunchScreen: 107320eea57df5276d7da599a78ddf7139b1f854
+  LLDynamicLaunchScreen: 1f73f0f62f75f8fb857b5949d50cf47db17d26e7
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   lottie-ios: 836cdbba92f62f3c6a00e37a4ce485321fe317cf
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -401,14 +432,15 @@ SPEC CHECKSUMS:
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   RMQClient: 9bbda86703fd475761101ee5fda037eb2a12ec4e
   RTRootNavigationController: 8344c2352d6d40fa370d0366efae2c84a945213f
-  SDWebImage: e378178472b735e84b007bfb55514c97948a0598
-  SDWebImageFLPlugin: 6c2295fb1242d44467c6c87dc5db6b0a13228fd8
-  SDWebImageWebPCoder: fac2821bf5a6642a73979d0962dbed5eac45a605
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
+  SDWebImageFLPlugin: 245c7ce1e77028b6ef415240847b3f8aa4b106b7
+  SDWebImageWebPCoder: bbf46e29fb8d1980a78ad3d5e9b4123c77f10ebc
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
+  SSZipArchive: 7b3893d9515ad5386c83670dc7d9b1f1cf5a53dd
   TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
-  TZImagePickerController: 7fd9702897ef8c0b7c951e5463f4bcf398296f9e
+  TZImagePickerController: 07a2f834f4908689759a7e54f74e9a018e047cb6
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WechatOpenSDK: cbd332148eb792d444ed4eec94f421d98f2046ee
@@ -418,6 +450,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 5f81c52326c2bf10a819f787d7fda677aafd34df
+PODFILE CHECKSUM: 91013452353ae59cd9b382a2df0ae5a1d75f2671
 
 COCOAPODS: 1.10.1

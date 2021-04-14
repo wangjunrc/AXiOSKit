@@ -8,6 +8,7 @@
 
 #import "_03RootVC.h"
 #import "_03HeaderView.h"
+#import "_03RootCell.h"
 #import "_01ContentViewController.h"
 #import <AXiOSKit/AXiOSKit.h>
 #import <AXiOSKit/UIViewController+AXNavBarConfig.h>
@@ -21,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"导航栏隐藏";
+    self.navigationItem.title = @"导航栏隐藏";
     self.extendedLayoutIncludesOpaqueBars = NO;
     self.edgesForExtendedLayout = UIRectEdgeTop;
     
@@ -36,7 +37,7 @@
     [self.view addSubview:self.tableView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [UITableViewCell ax_registerCellWithTableView:self.tableView];
+    [_03RootCell ax_registerCellWithTableView:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.mas_equalTo(0);
         make.top.mas_equalTo(0);
@@ -120,14 +121,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [UITableViewCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
+    _03RootCell  *cell = [_03RootCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
     
     //    NSDictionary *dict = self.dataArray[indexPath.row];
     //    NSString  *index = [dict[@"index"] stringValue];
     //    NSString  *title = dict[@"title"];
     //    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",index,title];
     cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
-    cell.backgroundColor = UIColor.cyanColor;
+//    cell.backgroundColor = UIColor.cyanColor;
     return cell;
 }
 
@@ -177,6 +178,31 @@
     }
     return _dataArray;
 }
+//-(void)canRotate
+//{
+//
+//}
+/** 是否支持自动转屏 */
+//- (BOOL)shouldAutorotate {
+//
+//    return YES;
+//
+//}
+/** 支持哪些屏幕方向 */
+
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+//
+////    return UIInterfaceOrientationMaskPortrait| UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
+//    return UIInterfaceOrientationMaskAll;
+//}
+
+/** 默认的屏幕方向（当前ViewController必须是通过模态出来的UIViewController（模态带导航的无效）方式展现出来的，才会调用这个方法） */
+
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+//
+//    return UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight;
+//
+//}
 
 
 @end

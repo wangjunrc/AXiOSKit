@@ -7,12 +7,10 @@
 //
 
 #import "AXScriptMessageHandlerHelper.h"
-
+#import <WebKit/WebKit.h>
 @implementation AXScriptMessageHandlerHelper : NSObject 
 
-- (instancetype)initWithHandler:(id<WKScriptMessageHandler>)handler
-{
-
+- (instancetype)initWithHandler:(id<WKScriptMessageHandler>)handler{
     self = [super init];
     if (self) {
         _handler = handler;
@@ -20,13 +18,11 @@
     return self;
 }
 
-+ (instancetype)scriptMessageWithHandler:(id<WKScriptMessageHandler>)handler
-{
++ (instancetype)scriptMessageWithHandler:(id<WKScriptMessageHandler>)handler{
     return [[self alloc] initWithHandler:handler];
 }
 
-- (void)userContentController:(WKUserContentController*)userContentController didReceiveScriptMessage:(WKScriptMessage*)message
-{
+- (void)userContentController:(WKUserContentController*)userContentController didReceiveScriptMessage:(WKScriptMessage*)message{
     if (self.handler && [self.handler respondsToSelector:@selector(userContentController:didReceiveScriptMessage:)]) {
         [self.handler userContentController:userContentController didReceiveScriptMessage:message];
     }

@@ -11,8 +11,7 @@
 #import <AXiOSKit/AXiOSKit.h>
 #import <KVOController/KVOController.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-#import "NSMutableArray+AXKVO.h"
-#import <AXiOSKit/NSMutableArray+AXKVO.h>
+#import <AXCollectionObserve/AXCollectionObserve.h>
 @interface _21KVOViewController ()
 
 
@@ -116,7 +115,7 @@
 //        NSLog(@"方法调用setObject %@",self.dataArray);
 //    }];
     @weakify(self);
-    [self.dataArray ax_addKVO:^(NSMutableArray * _Nonnull array) {
+    [self.dataArray ax_valueChangeObserve:^(NSMutableArray * _Nonnull array) {
         @strongify(self);
         NSLog(@"方法调用setObject=AA %@",self.dataArray);
         NSLog(@"方法调用setObject-array %@",array);

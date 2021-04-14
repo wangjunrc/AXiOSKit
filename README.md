@@ -2355,7 +2355,7 @@ NSLog(@"返回值 = %@",ret);
 ## 判断NSNumber类型
 ```
 id value = @(true);
-1111
+
 if([value isKindOfClass:[NSNumber class]])
 {
     if (strcmp([value objCType], @encode(float)) == 0)
@@ -2402,4 +2402,13 @@ FMDatabaseQueue *dbQueue = [FMDatabaseQueue databaseQueueWithPath:@""];
     make.left.mas_greaterThanOrEqualTo(5);
     make.right.mas_lessThanOrEqualTo(-5);
 }];
+```
+## 强制刷新布局
+```
+setNeedsLayout //强制刷
+layoutIfNeed //不强制刷
+```
+## 集合类NSPointerArray，NSMapTable，NSHashTable
+```
+https://www.jianshu.com/p/bd2fdfbf4640
 ```

@@ -7,13 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <WebKit/WebKit.h>
-
+@protocol WKScriptMessageHandler;
 NS_ASSUME_NONNULL_BEGIN
 
+/// weak handler,wkwebview会强引用
 @interface AXScriptMessageHandlerHelper : NSObject <WKScriptMessageHandler>
 
-/**weak handler*/
 @property (nonatomic, weak) id<WKScriptMessageHandler> handler;
 
 - (instancetype)initWithHandler:(id<WKScriptMessageHandler>)handler;

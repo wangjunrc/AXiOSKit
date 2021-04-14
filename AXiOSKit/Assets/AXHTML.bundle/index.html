@@ -4,8 +4,10 @@
 <head lang="zh">
     <meta charset="UTF-8" name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
-    <title>index</title>
+    <title>index2</title>
 </head>
+
+<meta property="og:title" content="官宣" />
 
 <body>
     <div id="div1">
@@ -26,12 +28,14 @@
         <p>video/*</p>
         <input type="file" accept="video/*" />
     </form>
-    <form> <p>image/*</p>
-        <input type="file" accept="image/*" id='chooseImg' /><p>
-            <p>路径图片</p>
-        <img src="" alt="" id='preview'  height="50" width="50"/>
+    <form>
+        <p>image/*</p>
+        <input type="file" accept="image/*" id='chooseImg' />
+        <p>
+        <p>路径图片</p>
+        <img src="" alt="" id='preview' height="50" width="50" />
         <p>base64图片</p>
-        <img src="" alt="" id='preview_base64'  height="50" width="50"/>
+        <img src="" alt="" id='preview_base64' height="50" width="50" />
     </form>
     <form>
         <p>MIME_type/*</p>
@@ -43,6 +47,8 @@
 <link rel="stylesheet" type="text/css" href="css/index.css">
 
 <script type="text/javascript">
+
+
     //获取浏览器的userAgent,并转化为小写
     var ua = navigator.userAgent.toLowerCase();
     //判断是否是苹果手机，是则是true
@@ -71,24 +77,19 @@
         image.src = imageUrl;
 
 
-        // 转base64 
+        // 转base64
         var reader = new FileReader()   //新建一个FileReader对象
         reader.readAsDataURL(file)   //将读取的文件转换成base64格式
         reader.onload = function (e) {
-            
+
             var base64Data = e.target.result;
             document.getElementById('preview_base64').src = base64Data;   //将img标签的src换成base64格式，并显示出来
-            
+
             window.webkit.messageHandlers.base64Img.postMessage(base64Data);
-            
+
         }
 
-
-
-
     }
-
-
 </script>
 
 </html>

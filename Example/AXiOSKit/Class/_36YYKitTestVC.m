@@ -56,7 +56,7 @@
     [self _textView];
     [self _textLabel];
     
-    [self _loadBottomAttribute];
+    [self _lastLoadBottomAttribute];
 }
 
 -(void)_keyboard {

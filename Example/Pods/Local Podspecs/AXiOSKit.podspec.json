@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "summary": "个人开发工具类",
   "description": "封装UIKit等个人开发工具类",
-  "homepage": "https://github.com/axinger/axinger",
+  "homepage": "https://gitee.com/axinger",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -16,7 +16,7 @@
   },
   "requires_arc": true,
   "source": {
-    "git": "https://github.com/axinger/AXiOSKit.git",
+    "git": "https://gitee.com/axinger/AXiOSKit.git",
     "tag": "#{s.version}"
   },
   "source_files": "AXiOSKit/**/*.{h,m}",

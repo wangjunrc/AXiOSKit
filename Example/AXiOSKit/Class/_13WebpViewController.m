@@ -30,7 +30,7 @@
     [self _FLAnimatedImageView_gif];
     [self _saveGIF];
     
-    [self _loadBottomAttribute];
+    [self _lastLoadBottomAttribute];
 }
 
 

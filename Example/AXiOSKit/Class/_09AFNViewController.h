@@ -6,11 +6,11 @@
 //  Copyright © 2020 liuweixing. All rights reserved.
 //
 
-#import "_00BaseViewController.h"
+#import "DemoBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _09AFNViewController : _00BaseViewController
+@interface _09AFNViewController : DemoBaseViewController
 
 @end
 

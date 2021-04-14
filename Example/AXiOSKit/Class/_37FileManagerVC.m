@@ -48,7 +48,7 @@
     }];
     
     
-    [self _loadBottomAttribute];
+    [self _lastLoadBottomAttribute];
 }
 
 /// 2.创建文件
