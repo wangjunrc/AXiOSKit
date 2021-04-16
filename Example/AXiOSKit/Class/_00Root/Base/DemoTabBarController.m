@@ -305,20 +305,20 @@
         _dataArray =  @[
             @{
                 @"vc":_01RootVC.alloc.init,
-                CYLTabBarItemTitle : @"Root1",
+                CYLTabBarItemTitle : @"测试页面",
                 CYLTabBarItemImage : [UIImage imageNamed:@"home_normal"],
                 CYLTabBarItemSelectedImage : [UIImage imageNamed:@"home_highlight"],
                 CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_home" ofType:@"json"]],
                 
             },
             @{@"vc":_02RootVC.alloc.init,
-              CYLTabBarItemTitle : @"Root2",
+              CYLTabBarItemTitle : @"测试方法",
               CYLTabBarItemImage : [UIImage imageNamed:@"fishpond_normal"],
               CYLTabBarItemSelectedImage :[UIImage imageNamed:@"fishpond_highlight"],
               CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_discover" ofType:@"json"]],
             },
             @{@"vc":_03RootVC.alloc.init,
-              CYLTabBarItemTitle : @"Root3",
+              CYLTabBarItemTitle : @"隐藏导航",
               CYLTabBarItemImage : [UIImage imageNamed:@"message_normal"],
               CYLTabBarItemSelectedImage :[UIImage imageNamed:@"message_highlight"],
               CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_mine" ofType:@"json"]],

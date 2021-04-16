@@ -18,7 +18,7 @@
 #import "AXiOSKit_Example-Swift.h"
 #import <SSZipArchive/SSZipArchive.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
-
+#import "Person.h"
 static __attribute__((always_inline)) void asm_exit() {
 #ifdef __arm64__
     __asm__("mov X0, #0\n"
@@ -616,12 +616,13 @@ void mySLog(NSString *format, ...)
                 @"action": ^{
                     [self ax_showAlertByTitle:@"是否调用"
                                       confirm:^{
-                        UIButton *testButton = [[UIButton alloc] init];
+                        Person *per = [[Person alloc] init];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-                        [testButton
-                         performSelector:@selector(someMethod:)];
+                        [per performSelector:@selector(test:)];
 #pragma clang diagnostic pop
+                        
+                        
                     }];
                 },
             },
