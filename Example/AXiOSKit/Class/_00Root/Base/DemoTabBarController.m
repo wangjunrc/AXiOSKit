@@ -51,8 +51,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupTitle];
 }
+#pragma mark - 主题字体颜色等
+- (void)setupTitle{
+    NSDictionary *normalDict= @{NSForegroundColorAttributeName : [UIColor grayColor]};
+    NSDictionary *selectedDict= @{NSForegroundColorAttributeName : [UIColor redColor]};
+    
+//    [[UITabBarItem appearance] setTitleTextAttributes:noDic forState:UIControlStateNormal];
+//    [[UITabBarItem appearance] setTitleTextAttributes:seDic forState:UIControlStateSelected];
+    //    [self.tabBarItem setTitleTextAttributes:noDic forState:UIControlStateNormal];
+    //    [self.tabBarItem setTitleTextAttributes:seDic forState:UIControlStateSelected];
+    
 
+    
+    
+    if (@available(iOS 13.0, *)) {
+        UITabBarItemAppearance *inlineLayoutAppearance = [[UITabBarItemAppearance  alloc] init];
+        
+        // set the text Attributes
+        // 设置文字属性
+        [inlineLayoutAppearance.normal setTitleTextAttributes:normalDict];
+        [inlineLayoutAppearance.selected setTitleTextAttributes:selectedDict];
+
+        UITabBarAppearance *standardAppearance = [[UITabBarAppearance alloc] init];
+        standardAppearance.stackedLayoutAppearance = inlineLayoutAppearance;
+        standardAppearance.backgroundColor = [UIColor orangeColor];
+        //shadowColor和shadowImage均可以自定义颜色, shadowColor默认高度为1, shadowImage可以自定义高度.
+        standardAppearance.shadowColor = [UIColor redColor];
+        // standardAppearance.shadowImage = [[self class] imageWithColor:[UIColor cyl_systemGreenColor] size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 1)];
+        self.tabBar.standardAppearance = standardAppearance;
+    } else {
+        // Override point for customization after application launch.
+        // set the text Attributes
+        // 设置文字属性
+        UITabBarItem *tabBar = [UITabBarItem appearance];
+        [tabBar setTitleTextAttributes:normalDict forState:UIControlStateNormal];
+        [tabBar setTitleTextAttributes:selectedDict forState:UIControlStateSelected];
+        
+        // This shadow image attribute is ignored if the tab bar does not also have a custom background image.So at least set somthing.
+        [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
+//        [[UITabBar appearance] setShadowImage:[[self class] imageWithColor:[UIColor cyl_systemGreenColor] size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 1)]];
+   
+        self.tabBar.tintColor = [UIColor greenColor];
+        self.tabBar.unselectedItemTintColor = [UIColor purpleColor];
+        /// 背景色
+        [self.tabBar setBarTintColor:UIColor.orangeColor];
+        
+    }
+    
+}
 
 /// 三、跟视图为UITabBarController(在UITabBarController中设置)
 
@@ -85,7 +133,7 @@
 - (NSArray *)viewControllersForTabBar {
     
     return [[self.dataArray.rac_sequence map:^id _Nullable(NSDictionary<NSString *,UIViewController *> * _Nullable value) {
-            DemoNavigationController *nav = [[DemoNavigationController alloc]initWithRootViewController:value[@"vc"]];
+            DemoNavigationController *nav = [DemoNavigationController.alloc initWithRootViewController:value[@"vc"]];
 
             return nav;
     }]array];
@@ -208,24 +256,24 @@
 
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectControl:(UIControl *)control {
-    UIView *animationView;
-    // 如果 PlusButton 也添加了点击事件，那么点击 PlusButton 后不会触发该代理方法。
-    if ([control isKindOfClass:[CYLExternPlusButton class]]) {
-        UIButton *button = CYLExternPlusButton;
-        animationView = button.imageView;
-    } else if ([control isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
-        for (UIView *subView in control.subviews) {
-            if ([subView isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
-                animationView = subView;
-            }
-        }
-    }
-    
-    if ([self cyl_tabBarController].selectedIndex % 2 == 0) {
-        [self addScaleAnimationOnView:animationView];
-    } else {
-        [self addRotateAnimationOnView:animationView];
-    }
+//    UIView *animationView;
+//    // 如果 PlusButton 也添加了点击事件，那么点击 PlusButton 后不会触发该代理方法。
+//    if ([control isKindOfClass:[CYLExternPlusButton class]]) {
+//        UIButton *button = CYLExternPlusButton;
+//        animationView = button.imageView;
+//    } else if ([control isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+//        for (UIView *subView in control.subviews) {
+//            if ([subView isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
+//                animationView = subView;
+//            }
+//        }
+//    }
+//
+//    if ([self cyl_tabBarController].selectedIndex % 2 == 0) {
+//        [self addScaleAnimationOnView:animationView];
+//    } else {
+//        [self addRotateAnimationOnView:animationView];
+//    }
 }
 
 //缩放动画
@@ -267,14 +315,13 @@
               CYLTabBarItemTitle : @"Root2",
               CYLTabBarItemImage : [UIImage imageNamed:@"fishpond_normal"],
               CYLTabBarItemSelectedImage :[UIImage imageNamed:@"fishpond_highlight"],
-              CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_home" ofType:@"json"]],
-              
+              CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_discover" ofType:@"json"]],
             },
             @{@"vc":_03RootVC.alloc.init,
               CYLTabBarItemTitle : @"Root3",
               CYLTabBarItemImage : [UIImage imageNamed:@"message_normal"],
               CYLTabBarItemSelectedImage :[UIImage imageNamed:@"message_highlight"],
-              CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_home" ofType:@"json"]],
+              CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_mine" ofType:@"json"]],
               
             }
         ];

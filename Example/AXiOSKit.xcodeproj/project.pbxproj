@@ -325,6 +325,26 @@
 		21CC8169257E00840062ACE5 /* _25Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC8168257E00840062ACE5 /* _25Layout.m */; };
 		21CCD3312626DBEF00D83F45 /* green_lottie_tab_home.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD3302626DBEF00D83F45 /* green_lottie_tab_home.json */; };
 		21CCD3322626DBEF00D83F45 /* green_lottie_tab_home.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD3302626DBEF00D83F45 /* green_lottie_tab_home.json */; };
+		21CCD4612627C50F00D83F45 /* gray_tabbar_me_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD4562627C50B00D83F45 /* gray_tabbar_me_animation.json */; };
+		21CCD4622627C50F00D83F45 /* gray_tabbar_me_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD4562627C50B00D83F45 /* gray_tabbar_me_animation.json */; };
+		21CCD4632627C50F00D83F45 /* green_lottie_tab_discover.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD4572627C50C00D83F45 /* green_lottie_tab_discover.json */; };
+		21CCD4642627C50F00D83F45 /* green_lottie_tab_discover.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD4572627C50C00D83F45 /* green_lottie_tab_discover.json */; };
+		21CCD4652627C50F00D83F45 /* green_lottie_tab_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD4582627C50C00D83F45 /* green_lottie_tab_news.json */; };
+		21CCD4662627C50F00D83F45 /* green_lottie_tab_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD4582627C50C00D83F45 /* green_lottie_tab_news.json */; };
+		21CCD4672627C50F00D83F45 /* gray_tabbar_message_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD4592627C50D00D83F45 /* gray_tabbar_message_animation.json */; };
+		21CCD4682627C50F00D83F45 /* gray_tabbar_message_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD4592627C50D00D83F45 /* gray_tabbar_message_animation.json */; };
+		21CCD4692627C50F00D83F45 /* tab_message_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD45A2627C50D00D83F45 /* tab_message_animate.json */; };
+		21CCD46A2627C50F00D83F45 /* tab_message_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD45A2627C50D00D83F45 /* tab_message_animate.json */; };
+		21CCD46B2627C50F00D83F45 /* green_lottie_tab_mine.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD45B2627C50E00D83F45 /* green_lottie_tab_mine.json */; };
+		21CCD46C2627C50F00D83F45 /* green_lottie_tab_mine.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD45B2627C50E00D83F45 /* green_lottie_tab_mine.json */; };
+		21CCD46F2627C50F00D83F45 /* gray_tabbar_home_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD45D2627C50E00D83F45 /* gray_tabbar_home_animation.json */; };
+		21CCD4702627C50F00D83F45 /* gray_tabbar_home_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD45D2627C50E00D83F45 /* gray_tabbar_home_animation.json */; };
+		21CCD4712627C50F00D83F45 /* tab_home_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD45E2627C50E00D83F45 /* tab_home_animate.json */; };
+		21CCD4722627C50F00D83F45 /* tab_home_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD45E2627C50E00D83F45 /* tab_home_animate.json */; };
+		21CCD4732627C50F00D83F45 /* tab_search_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD45F2627C50F00D83F45 /* tab_search_animate.json */; };
+		21CCD4742627C50F00D83F45 /* tab_search_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD45F2627C50F00D83F45 /* tab_search_animate.json */; };
+		21CCD4752627C50F00D83F45 /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD4602627C50F00D83F45 /* tab_me_animate.json */; };
+		21CCD4762627C50F00D83F45 /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 21CCD4602627C50F00D83F45 /* tab_me_animate.json */; };
 		21D08EBD25CBF1E90006DBCC /* 46472-lurking-cat.json in Resources */ = {isa = PBXBuildFile; fileRef = 21D08EBC25CBF1E90006DBCC /* 46472-lurking-cat.json */; };
 		21D08EBE25CBF1E90006DBCC /* 46472-lurking-cat.json in Resources */ = {isa = PBXBuildFile; fileRef = 21D08EBC25CBF1E90006DBCC /* 46472-lurking-cat.json */; };
 		21D61EEC257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
@@ -712,6 +732,16 @@
 		21CC8167257E00840062ACE5 /* _25Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25Layout.h; sourceTree = "<group>"; };
 		21CC8168257E00840062ACE5 /* _25Layout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25Layout.m; sourceTree = "<group>"; };
 		21CCD3302626DBEF00D83F45 /* green_lottie_tab_home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = green_lottie_tab_home.json; sourceTree = "<group>"; };
+		21CCD4562627C50B00D83F45 /* gray_tabbar_me_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gray_tabbar_me_animation.json; sourceTree = "<group>"; };
+		21CCD4572627C50C00D83F45 /* green_lottie_tab_discover.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = green_lottie_tab_discover.json; sourceTree = "<group>"; };
+		21CCD4582627C50C00D83F45 /* green_lottie_tab_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = green_lottie_tab_news.json; sourceTree = "<group>"; };
+		21CCD4592627C50D00D83F45 /* gray_tabbar_message_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gray_tabbar_message_animation.json; sourceTree = "<group>"; };
+		21CCD45A2627C50D00D83F45 /* tab_message_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_message_animate.json; sourceTree = "<group>"; };
+		21CCD45B2627C50E00D83F45 /* green_lottie_tab_mine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = green_lottie_tab_mine.json; sourceTree = "<group>"; };
+		21CCD45D2627C50E00D83F45 /* gray_tabbar_home_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gray_tabbar_home_animation.json; sourceTree = "<group>"; };
+		21CCD45E2627C50E00D83F45 /* tab_home_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_home_animate.json; sourceTree = "<group>"; };
+		21CCD45F2627C50F00D83F45 /* tab_search_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_search_animate.json; sourceTree = "<group>"; };
+		21CCD4602627C50F00D83F45 /* tab_me_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_me_animate.json; sourceTree = "<group>"; };
 		21D08EBC25CBF1E90006DBCC /* 46472-lurking-cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "46472-lurking-cat.json"; sourceTree = "<group>"; };
 		21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		21D61EEB257F106E0059201A /* DogSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSwift.swift; sourceTree = "<group>"; };
@@ -855,6 +885,16 @@
 			isa = PBXGroup;
 			children = (
 				21CCD3302626DBEF00D83F45 /* green_lottie_tab_home.json */,
+				21CCD45D2627C50E00D83F45 /* gray_tabbar_home_animation.json */,
+				21CCD4562627C50B00D83F45 /* gray_tabbar_me_animation.json */,
+				21CCD4592627C50D00D83F45 /* gray_tabbar_message_animation.json */,
+				21CCD4572627C50C00D83F45 /* green_lottie_tab_discover.json */,
+				21CCD45B2627C50E00D83F45 /* green_lottie_tab_mine.json */,
+				21CCD4582627C50C00D83F45 /* green_lottie_tab_news.json */,
+				21CCD45E2627C50E00D83F45 /* tab_home_animate.json */,
+				21CCD4602627C50F00D83F45 /* tab_me_animate.json */,
+				21CCD45A2627C50D00D83F45 /* tab_message_animate.json */,
+				21CCD45F2627C50F00D83F45 /* tab_search_animate.json */,
 				21D08EBC25CBF1E90006DBCC /* 46472-lurking-cat.json */,
 				211A99E125CB9F9D009030CB /* Edit.json */,
 				211A99E325CB9F9D009030CB /* EmptyStatus.json */,
@@ -1784,7 +1824,9 @@
 				21EB382C25DF90C6002C1807 /* ax_debug.xcconfig in Resources */,
 				210B1ED225EDE40200878A73 /* Localizable.strings in Resources */,
 				211227472573340100B6ECC8 /* g3@2x.png in Resources */,
+				21CCD4722627C50F00D83F45 /* tab_home_animate.json in Resources */,
 				211227482573340100B6ECC8 /* _23FullViewController.xib in Resources */,
+				21CCD4642627C50F00D83F45 /* green_lottie_tab_discover.json in Resources */,
 				211227492573340100B6ECC8 /* _06WCDBViewController.xib in Resources */,
 				21D08EBE25CBF1E90006DBCC /* 46472-lurking-cat.json in Resources */,
 				211A99FD25CB9F9D009030CB /* Play-Pause.json in Resources */,
@@ -1794,12 +1836,18 @@
 				2112274B2573340100B6ECC8 /* App.pdf in Resources */,
 				211A99EF25CB9F9D009030CB /* Loading.json in Resources */,
 				211A99E725CB9F9D009030CB /* Switch.json in Resources */,
+				21CCD4682627C50F00D83F45 /* gray_tabbar_message_animation.json in Resources */,
 				2112274C2573340100B6ECC8 /* _29AudioViewController.xib in Resources */,
 				2112274D2573340100B6ECC8 /* _30TimeLineNinePhotoCell.xib in Resources */,
 				2112274E2573340100B6ECC8 /* office.bundle in Resources */,
+				21CCD46C2627C50F00D83F45 /* green_lottie_tab_mine.json in Resources */,
+				21CCD4662627C50F00D83F45 /* green_lottie_tab_news.json in Resources */,
+				21CCD4742627C50F00D83F45 /* tab_search_animate.json in Resources */,
+				21CCD46A2627C50F00D83F45 /* tab_message_animate.json in Resources */,
 				2112274F2573340100B6ECC8 /* PointViewController2.plist in Resources */,
 				211227502573340100B6ECC8 /* webp.bundle in Resources */,
 				211227512573340100B6ECC8 /* 123.jpg in Resources */,
+				21CCD4762627C50F00D83F45 /* tab_me_animate.json in Resources */,
 				211A99F525CB9F9D009030CB /* Edit.json in Resources */,
 				211227522573340100B6ECC8 /* _04RunLoopViewController.xib in Resources */,
 				210CF8A12626830700F4071E /* Cocoanetics_031.mp3 in Resources */,
@@ -1810,6 +1858,7 @@
 				211227562573340100B6ECC8 /* LaunchScreen.storyboard in Resources */,
 				211227572573340100B6ECC8 /* PointViewController.plist in Resources */,
 				211227582573340100B6ECC8 /* _10TextFViewController.xib in Resources */,
+				21CCD4622627C50F00D83F45 /* gray_tabbar_me_animation.json in Resources */,
 				21122777257334C600B6ECC8 /* AXiOSKit-Info-debug.plist in Resources */,
 				211227592573340100B6ECC8 /* _24NoteViewController.xib in Resources */,
 				2112275A2573340100B6ECC8 /* Alternate_AppIcon_3@2x.png in Resources */,
@@ -1821,6 +1870,7 @@
 				2112275F2573340100B6ECC8 /* 1234.webp in Resources */,
 				211A99ED25CB9F9D009030CB /* RefreshHeaderAnim.json in Resources */,
 				211227602573340100B6ECC8 /* IMG_3972.GIF in Resources */,
+				21CCD4702627C50F00D83F45 /* gray_tabbar_home_animation.json in Resources */,
 				211227612573340100B6ECC8 /* Settings.bundle in Resources */,
 				211227622573340100B6ECC8 /* test_webp.webp in Resources */,
 				211227632573340100B6ECC8 /* g2@2x.png in Resources */,
@@ -1840,7 +1890,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				213BCC24254003DB00C89B72 /* instruction.jpg in Resources */,
+				21CCD4652627C50F00D83F45 /* green_lottie_tab_news.json in Resources */,
 				213BCBF1254003DB00C89B72 /* _21KVOViewController.xib in Resources */,
+				21CCD4692627C50F00D83F45 /* tab_message_animate.json in Resources */,
 				211A99EE25CB9F9D009030CB /* Loading.json in Resources */,
 				211A99FC25CB9F9D009030CB /* Play-Pause.json in Resources */,
 				213BCBEE254003DB00C89B72 /* _26RMQClientViewController.xib in Resources */,
@@ -1851,6 +1903,7 @@
 				211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */,
 				213BCC2D254003DB00C89B72 /* _02ChatViewController.xib in Resources */,
 				21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */,
+				21CCD4632627C50F00D83F45 /* green_lottie_tab_discover.json in Resources */,
 				213BCBF8254003DB00C89B72 /* _07VideoViewController.xib in Resources */,
 				213BCC40254003DB00C89B72 /* g3@2x.png in Resources */,
 				211A99F825CB9F9D009030CB /* EmptyStatus.json in Resources */,
@@ -1865,9 +1918,11 @@
 				218A1EC8254438C900E43F16 /* office.bundle in Resources */,
 				213BCC3E254003DB00C89B72 /* PointViewController2.plist in Resources */,
 				213BCC45254003DB00C89B72 /* webp.bundle in Resources */,
+				21CCD4752627C50F00D83F45 /* tab_me_animate.json in Resources */,
 				213BCC28254003DB00C89B72 /* 123.jpg in Resources */,
 				211A99E825CB9F9D009030CB /* HappyBirthday.json in Resources */,
 				211A99F625CB9F9D009030CB /* vcTransition2.json in Resources */,
+				21CCD4732627C50F00D83F45 /* tab_search_animate.json in Resources */,
 				213BCC13254003DB00C89B72 /* _04RunLoopViewController.xib in Resources */,
 				218A1E9125441BBE00E43F16 /* _28LocalSocketServiceViewController.xib in Resources */,
 				211A99FA25CB9F9D009030CB /* RectComp.json in Resources */,
@@ -1876,13 +1931,16 @@
 				211A99EA25CB9F9D009030CB /* RefreshFooterAnim.json in Resources */,
 				213BCC05254003DB00C89B72 /* _14TFViewController.xib in Resources */,
 				21430AEC256C999400CB8EBC /* time_line_list.json in Resources */,
+				21CCD4672627C50F00D83F45 /* gray_tabbar_message_animation.json in Resources */,
 				213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */,
+				21CCD46F2627C50F00D83F45 /* gray_tabbar_home_animation.json in Resources */,
 				211A99F425CB9F9D009030CB /* Edit.json in Resources */,
 				21EB382B25DF90C6002C1807 /* ax_debug.xcconfig in Resources */,
 				213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */,
 				213BCBF0254003DB00C89B72 /* _10TextFViewController.xib in Resources */,
 				21122776257334C600B6ECC8 /* AXiOSKit-Info-debug.plist in Resources */,
 				213BCC08254003DB00C89B72 /* _24NoteViewController.xib in Resources */,
+				21CCD4712627C50F00D83F45 /* tab_home_animate.json in Resources */,
 				21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */,
 				21D08EBD25CBF1E90006DBCC /* 46472-lurking-cat.json in Resources */,
 				210B1ED125EDE40200878A73 /* Localizable.strings in Resources */,
@@ -1892,7 +1950,9 @@
 				213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */,
 				213BCC46254003DB00C89B72 /* H5.bundle in Resources */,
 				213BCC43254003DB00C89B72 /* 1234.webp in Resources */,
+				21CCD4612627C50F00D83F45 /* gray_tabbar_me_animation.json in Resources */,
 				213BCBE8254003DB00C89B72 /* IMG_3972.GIF in Resources */,
+				21CCD46B2627C50F00D83F45 /* green_lottie_tab_mine.json in Resources */,
 				213BCBED254003DB00C89B72 /* Settings.bundle in Resources */,
 				213BCC48254003DB00C89B72 /* test_webp.webp in Resources */,
 				213BCBEB254003DB00C89B72 /* g2@2x.png in Resources */,
@@ -2028,6 +2088,7 @@
 				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
@@ -2092,6 +2153,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
@@ -2166,6 +2228,7 @@
 				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
@@ -2230,6 +2293,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",

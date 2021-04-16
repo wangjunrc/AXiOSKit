@@ -87,7 +87,7 @@ def ui_pods
   # 新版本是swift
   #  pod 'lottie-ios'
   # 旧版本是oc
-  pod 'lottie-ios', '~>2.1.0'
+  pod 'lottie-ios', '~>2.5.3'
   # 图片剪切
   #  pod 'PEPhotoCropEditor'
   # 在不同的控制器中实现UINavigationBar不同地样式
@@ -143,8 +143,10 @@ def common_pods
   
   pod 'SSZipArchive',:git => 'https://gitee.com/axinger/ZipArchive.git'
   
-   pod 'CYLTabBarController' # 默认不依赖Lottie
-#  pod 'CYLTabBarController/Lottie'  # 依赖Lottie库
+#   pod 'CYLTabBarController' # 默认不依赖Lottie
+  pod 'CYLTabBarController/Lottie'  # 依赖Lottie库
+  #日志
+  pod 'CocoaLumberjack'
 end
 
 

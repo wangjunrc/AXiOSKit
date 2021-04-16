@@ -7,47 +7,17 @@
 //
 
 #import "_02RootVC.h"
-#import "MyActivity.h"
-#import "RouterManager.h"
 #import "TestObj.h"
-#import "_01ContentViewController.h"
-#import "_02ChatViewController.h"
-#import "_04RunLoopViewController.h"
-#import "_06WCDBViewController.h"
-#import "_07VideoViewController.h"
-#import "_09AFNViewController.h"
-#import "_10TextFViewController.h"
-#import "_13WebpViewController.h"
-#import "_13WeImageTableViewController.h"
-#import "_14TFViewController.h"
-#import "_15UIMenuController.h"
-#import "_16KeyChainViewController.h"
-#import "_17OtherShareViewController.h"
-#import "_18MGSwipeTableVC.h"
-#import "_19ScrollContentViewController.h"
-#import "_20PhotoViewController.h"
-#import "_21KVOViewController.h"
-#import "_22ReactiveObjCViewController.h"
-#import "_23FullViewController.h"
-#import "_24NoteViewController.h"
-#import "_25LayoutViewController.h"
-#import "_26RMQClientViewController.h"
-#import "_27MQTTClientViewController.h"
-#import "_28ShareFileViewController.h"
-#import "_29AudioViewController.h"
-#import "_30IGListViewController.h"
-#import <AXiOSKit/AXPayVC.h>
-#import <AXiOSKit/AXPresentGesturesBack.h>
-#import <AXiOSKit/AXSystemAuthorizerManager.h>
+#import "RouterManager.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <mach/mach.h>
 #import "AppDelegate.h"
 #import <AXiOSKit/UIScrollView+AXEmptyDataSet.h>
 #import <AXiOSKit/UIViewController+AXNavBarConfig.h>
-// 不可见文件
+//调用swift, 不可见文件
 #import "AXiOSKit_Example-Swift.h"
-//#import "AXiOSKit_Example-Bridging-Header.h"
 #import <SSZipArchive/SSZipArchive.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 static __attribute__((always_inline)) void asm_exit() {
 #ifdef __arm64__
@@ -62,6 +32,14 @@ static __attribute__((always_inline)) void asm_exit() {
             "ret");
 #endif
 }
+
+// 使用新版本
+//#ifdef DEBUG
+//    static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+//#else
+//    static const DDLogLevel ddLogLevel = DDLogLevelWarning;
+//#endif
+static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 
 @interface TestKVOObject : NSObject
 
@@ -895,7 +873,28 @@ void mySLog(NSString *format, ...)
                     NSLog(@"解压 = %d",succ);
                 },
             },
-            
+            @{
+                @"index": @15,
+                @"title": @"CocoaLumberjack日志",
+                @"action": ^{
+                    
+                    // Uses os_log
+                        //[DDLog addLogger:[DDASLLogger sharedInstance]]; //iOS10之前
+                        [DDLog addLogger:[DDOSLogger sharedInstance]]; //iOS10之后
+                        [DDLog addLogger:[DDTTYLogger sharedInstance]];
+                        
+                        DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
+                        fileLogger.rollingFrequency = 60 * 60 * 24;             // 24 hour rolling
+                        fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+                        [DDLog addLogger:fileLogger];
+                    
+                    DDLogVerbose(@"Verbose");
+                    DDLogDebug(@"Debug");
+                    DDLogInfo(@"Info");
+                    DDLogWarn(@"Warn");
+                    DDLogError(@"Error");
+                },
+            },
            
         ].mutableCopy;
     }
