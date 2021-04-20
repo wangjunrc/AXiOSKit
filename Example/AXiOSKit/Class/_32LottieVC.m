@@ -35,6 +35,9 @@
         @"Switch",
         @"vcTransition1",
         @"vcTransition2",
+        @"lf20_imvcfu5s",
+        @"newAnimation",
+        @"lf20_4dkca9bw",
     ];
     
     [array enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -53,25 +56,9 @@
         
     }];
     
-  
-    
-    
-    
-    
-    
     // 这里放最后一个view的底部
     [self _lastLoadBottomAttribute];
     
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

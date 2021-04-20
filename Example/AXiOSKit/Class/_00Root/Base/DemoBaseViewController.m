@@ -170,6 +170,9 @@
         make.bottom.equalTo(self.bottomAttribute).mas_equalTo(100);
     }];
 }
+- (void)dealloc {
+    axLong_dealloc;
+}
 
 //// 是否支持设备自动旋转
 //- (BOOL)shouldAutorotate {

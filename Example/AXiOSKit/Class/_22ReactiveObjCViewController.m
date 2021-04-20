@@ -77,7 +77,7 @@
     [self _switchBind];
     [self _note];
     [self _note1];
-    
+    [self _group];
     /// 底部约束
     [self _lastLoadBottomAttribute];
     
@@ -462,20 +462,20 @@
         make.height.mas_equalTo(40);
     }];
     self.bottomAttribute = view.mas_bottom;
-//    RAC(view, hidden) = RACObserve(self.dataArray, count);
-//    
-//    [[RACObserve(self, dataArray) merge:self.dataArray.rac_sequence.signal] subscribeNext:^(id  _Nullable x) {
-//        NSLog(@"数组 = %@",x);
-//    }];
+    //    RAC(view, hidden) = RACObserve(self.dataArray, count);
+    //
+    //    [[RACObserve(self, dataArray) merge:self.dataArray.rac_sequence.signal] subscribeNext:^(id  _Nullable x) {
+    //        NSLog(@"数组 = %@",x);
+    //    }];
     RAC(view, hidden) = [[RACObserve(self, dataArray) merge:self.dataArray.rac_sequence.signal]  map:^id _Nullable(NSMutableArray *value) {
         NSLog(@"数组 = %@",value);
         return @(!value.count);
     }];
-//    RAC(view, hidden) = [RACObserve(self.dataArray, count) merge:self.dataArray.rac_sequence.signal];
+    //    RAC(view, hidden) = [RACObserve(self.dataArray, count) merge:self.dataArray.rac_sequence.signal];
     
-//    [RACObserve(self.dataArray, count) subscribeNext:^(id  _Nullable x) {
-//        NSLog(@"数组 = %@",x);
-//    }];
+    //    [RACObserve(self.dataArray, count) subscribeNext:^(id  _Nullable x) {
+    //        NSLog(@"数组 = %@",x);
+    //    }];
     [self _buttonTitle:@"添加元素" handler:^(UIButton * _Nonnull btn) {
         [[self mutableArrayValueForKeyPath:@keypath(self,dataArray)] addObject:@"A"];
     }];
@@ -991,9 +991,9 @@
     }];
     
     [self _buttonTitle:@"多次监听通知" handler:^(UIButton * _Nonnull btn) {
-//        [[NSNotificationCenter.defaultCenter rac_addObserverForName:@"com.ax.note.rac" object:nil] subscribeCompleted:^{
-//            NSLog(@"通知被移除");
-//        }];
+        //        [[NSNotificationCenter.defaultCenter rac_addObserverForName:@"com.ax.note.rac" object:nil] subscribeCompleted:^{
+        //            NSLog(@"通知被移除");
+        //        }];
         
         NSLog(@"通知被移除");
         __strong typeof(weakSelf) strongSelf = weakSelf;
@@ -1012,15 +1012,15 @@
     __weak typeof(self) weakSelf = self;
     [self _titlelabel:@"原生通知"];
     NSString *noteName = @"com.ax.note2";
-//   id __block _observer = nil;
-//    [NSNotificationCenter.defaultCenter addObserverForName:noteName object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-//        NSLog(@"原生通知初始化 userInfo = %@",note.userInfo);
-//    }];
-//    @weakify(self);
+    //   id __block _observer = nil;
+    //    [NSNotificationCenter.defaultCenter addObserverForName:noteName object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+    //        NSLog(@"原生通知初始化 userInfo = %@",note.userInfo);
+    //    }];
+    //    @weakify(self);
     [self _buttonTitle:@"多次监听通知" handler:^(UIButton * _Nonnull btn) {
-//        [NSNotificationCenter.defaultCenter removeObserver:_observer];
-//        NSLog(@"移除通知");
-       [NSNotificationCenter.defaultCenter addObserverForName:noteName object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        //        [NSNotificationCenter.defaultCenter removeObserver:_observer];
+        //        NSLog(@"移除通知");
+        [NSNotificationCenter.defaultCenter addObserverForName:noteName object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
             NSLog(@"原生通知userInfo = %@,object = %@",note.userInfo,note.object);
         }];
     }];
@@ -1031,6 +1031,14 @@
     }];
 }
 - (void)_group {
+    __weak typeof(self) weakSelf = self;
+    [self _buttonTitle:@"异步组" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _groupRac];
+    }];
+}
+
+-(void)_groupRac {
     
     // rac_liftSelector
     // 类似于dispatch_group 中的组
@@ -1038,31 +1046,76 @@
     
     RACSignal *sg1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         
-        [subscriber sendNext:@"网络请求数据1"];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [subscriber sendNext:@"网络请求数据1"];
+            [subscriber sendCompleted];
+        });
         return nil;
     }];
     
     RACSignal *sg2 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         
-        [subscriber sendNext:@"网络请求数据2"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [subscriber sendNext:@"网络请求数据2"];
+            [subscriber sendCompleted];
+        });
         return nil;
     }];
     
     RACSignal *sg3 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         
-        [subscriber sendNext:@"网络请求数据3"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [subscriber sendNext:@"网络请求数据3"];
+            [subscriber sendError:[NSError ax_errorWithDescription:@"错误"]];
+            [subscriber sendCompleted];
+        });
         return nil;
     }];
     
-    [self rac_liftSelector:@selector(updateUI:str:str:) withSignals:sg1,sg2,sg3, nil];
+    //    [self rac_liftSelector:@selector(updateUI:str:str:) withSignals:sg1,sg2,sg3, nil];
+//    [self rac_liftSelector:@selector(updateUI:str:str:) withSignalsFromArray:@[sg1,sg2,sg3]];
+//    [self rac_liftSelector:@selector(updateUI:) withSignalsFromArray:@[sg1,sg2,sg3]];
+    RACTuple *tu = [RACTuple tupleWithObjectsFromArray:@[sg1,sg2,sg3]];
+//    [self rac_liftSelector:@selector(updateUI:) withSignalOfArguments:];
     
+//   [ @[sg1,sg2,sg3].rac_sequence map:^id _Nullable(id  _Nullable value) {
+//       NSLog(@"信号组一个参数 = %@",value);
+//    }];
+    
+//    [@[sg1,sg2,sg3].rac_sequence.signal subscribeNext:^(id x) {
+//        NSLog(@"array 遍历 = %@", x);
+//    }];
+    
+    [[RACSignal concat:@[sg1,sg2,sg3]] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"array 遍历 = %@", x);
+
+    } completed:^{
+        NSLog(@"array 遍历 completed");
+    }];
+//
+//    [[RACSignal concat:@[sg1,sg2,sg3]] subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"group subscribeNext = %@",x);
+//    } error:^(NSError * _Nullable error) {
+//        NSLog(@"group error = %@",error);
+//    }completed:^{
+//        NSLog(@"group = completed");
+//    }];
+}
+
+-(void)updateUI:(id)str1
+{
+   
+   // 回传过来
+   NSLog(@"信号组一个参数 = %@",str1);
+   
 }
 
 - (void)updateUI:(id)str1 str:(id)str2 str:(id)str3
 {
     
     // 回传过来
-    NSLog(@"%@-%@-%@",str1,str2,str3);
+    NSLog(@"信号组 = %@-%@-%@",str1,str2,str3);
     
 }
 

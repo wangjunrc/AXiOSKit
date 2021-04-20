@@ -106,7 +106,8 @@
     [self _p15NSBlockOperation];
     [self _p16NSBlockOperation];
     [self _p17NSBlockOperation];
-    
+    [self _barrier];
+    [self _blockMain];
     // 这里放最后一个view的底部
     [self _lastLoadBottomAttribute];
 }
@@ -163,10 +164,10 @@
 //}
 
 - (void)setNumber:(NSInteger)number {
-        _number = number;
+    _number = number;
 }
 - (NSInteger)number {
-        return _number;
+    return _number;
 }
 -(void)_p13NSBlockOperation {
     return [self _buttonTitle:@"存取钱" handler:^(UIButton * _Nonnull btn) {
@@ -178,21 +179,21 @@
 
 #pragma mark ----------------买火车票线程锁实现-----------------------
 // 买火车票线程锁实现
- 
+
 - (void)tickets
 {
     
-   // 剩余票
-   self.subTickets = 10000;
-   // 初始化线程锁
-   self.lock = [[NSLock alloc] init];
- 
-     
-   // 先创建出两个并行队列
-   // 一个队列是火车站
-   // 一个队列是12306
-   dispatch_queue_t queue1 = dispatch_queue_create("火车站", DISPATCH_QUEUE_CONCURRENT);
-   // 给火车站添加一个卖票的任务
+    // 剩余票
+    self.subTickets = 10000;
+    // 初始化线程锁
+    self.lock = [[NSLock alloc] init];
+    
+    
+    // 先创建出两个并行队列
+    // 一个队列是火车站
+    // 一个队列是12306
+    dispatch_queue_t queue1 = dispatch_queue_create("火车站", DISPATCH_QUEUE_CONCURRENT);
+    // 给火车站添加一个卖票的任务
     dispatch_async(queue1, ^{
         for (int i = 0; i < 10000; i ++) {
             // 卖票
@@ -200,8 +201,8 @@
         }
     });
     
-   // 创建12306队列
-   dispatch_queue_t queue2 = dispatch_queue_create("12306", DISPATCH_QUEUE_CONCURRENT);
+    // 创建12306队列
+    dispatch_queue_t queue2 = dispatch_queue_create("12306", DISPATCH_QUEUE_CONCURRENT);
     
     dispatch_async(queue2, ^{
         for (int i = 0; i < 20000; i ++) {
@@ -210,31 +211,31 @@
         }
     });
 }
- 
+
 // 卖票方法
 - (void)saleTickets:(dispatch_queue_t)queue
 {
     
-        // 添加锁
-        // 线程锁和自动释放池 使用方法差不多 中间的部分是锁的内容
-        [self.lock lock];
-   // 循环卖票
-   if (self.subTickets > 0) {
-         
-       // 要知道是哪个队列来卖票
-       // 通过队列的标示符 得到
-       //dispatch_queue_get_label(queue)得到队列的标示符
-       char  *name = (char *)dispatch_queue_get_label(queue);
-       NSString *str = [NSString stringWithUTF8String:name];
-       //来一回减少一张
-       self.subTickets--;
-       NSLog(@"%@ 还剩 %ld", str, self.subTickets);
-   }else {
-       NSLog(@"没有票了 %ld",self.subTickets);
-   }
+    // 添加锁
+    // 线程锁和自动释放池 使用方法差不多 中间的部分是锁的内容
+    [self.lock lock];
+    // 循环卖票
+    if (self.subTickets > 0) {
+        
+        // 要知道是哪个队列来卖票
+        // 通过队列的标示符 得到
+        //dispatch_queue_get_label(queue)得到队列的标示符
+        char  *name = (char *)dispatch_queue_get_label(queue);
+        NSString *str = [NSString stringWithUTF8String:name];
+        //来一回减少一张
+        self.subTickets--;
+        NSLog(@"%@ 还剩 %ld", str, self.subTickets);
+    }else {
+        NSLog(@"没有票了 %ld",self.subTickets);
+    }
     
-  //解锁
-  [self.lock unlock];
+    //解锁
+    [self.lock unlock];
 }
 
 -(void)_p14NSBlockOperation {
@@ -342,5 +343,114 @@
         [queue addOperation:operation3];
     }];
 }
+
+
+
+-(void)_barrier {
+    __weak typeof(self) weakSelf = self;
+    [self _buttonTitle:@"barrier是不是卡UI线程" handler:^(UIButton * _Nonnull btn) {
+        NSLog(@"barrier不卡UI线程");
+    }];
+    
+    [self _buttonTitle:@"barrier" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        NSArray *temp =[strongSelf _barrierList];
+        NSLog(@"barrier = %@",temp);
+    }];
+    
+}
+
+-(NSArray *)_barrierList{
+    
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("my.concurrent.queue", DISPATCH_QUEUE_CONCURRENT);
+    
+    NSMutableArray *arr = NSMutableArray.array;
+    
+    dispatch_async(concurrentQueue, ^(){
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSLog(@"dispatch-1");
+            [arr addObject:@"dispatch-1"];
+//        });
+    });
+    
+   
+//    dispatch_async(concurrentQueue, ^(){
+//
+//
+//
+//    });
+    
+    dispatch_barrier_async(concurrentQueue, ^(){
+      
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), concurrentQueue, ^{
+            NSLog(@"dispatch-2");
+            [arr addObject:@"dispatch-2"];
+        });
+    });
+    
+//    dispatch_barrier_async不会阻塞当前线程，block添加到queue中后就会立即返回执行线程中后面的方法，
+//    ，dispatch_barrier_sync会卡住当前线程，
+
+    
+    
+    dispatch_barrier_sync(concurrentQueue, ^(){
+        NSLog(@"dispatch-barrier");
+    });
+    NSLog(@"dispatch-barrier arr = %@",arr);
+    return arr;
+}
+
+
+-(void)_blockMain {
+    __weak typeof(self) weakSelf = self;
+    [self _buttonTitle:@"barrier是不是卡UI线程" handler:^(UIButton * _Nonnull btn) {
+        NSLog(@"barrier不卡UI线程");
+    }];
+    
+    [self _buttonTitle:@"block 主线程执行" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        NSArray *temp =[strongSelf _blockMainList];
+        NSLog(@"barrier = %@",temp);
+    }];
+    
+}
+
+
+-(NSArray *)_blockMainList {
+    
+    NSMutableArray *arr = NSMutableArray.array;
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"dispatch-2");
+        [arr addObject:@"dispatch-2"];
+        
+        dispatch_semaphore_signal(semaphore);
+        
+    });
+
+
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+
+//    FMDBRetain(self);
+//
+//    dispatch_sync(_queue, ^() {
+//
+//        FMDatabase *db = [self database];
+//        block(db);
+//
+//        if ([db hasOpenResultSets]) {
+//            DDLogCInfo(@"Warning: there is at least one open result set around after performing [FMDatabaseQueue inDatabase:]");
+//        }
+//    });
+//
+//    FMDBRelease(self);
+    
+    
+    return arr;
+}
+
+
 
 @end
