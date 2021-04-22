@@ -16,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 //+ (void)isDebug:(void(^)(void))bebug release:(void(^)(void))release;
 //
 //+ (void)iPad:(void(^)(void))iPad iPhone:(void(^)(void))iPhone;
-
+///不是单利
+@property(nonatomic, strong, class) AXHelper *defaultHelper;
 
 /**
  iPhone 模式回调

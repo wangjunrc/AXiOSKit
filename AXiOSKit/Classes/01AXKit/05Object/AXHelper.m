@@ -10,7 +10,9 @@
 #import <UIKit/UIKit.h>
 
 @implementation AXHelper
-
++ (AXHelper *)defaultHelper {
+    return AXHelper.alloc.init;
+}
 /**
  isiPhone 模式回调
  */

@@ -101,7 +101,6 @@
 		211227472573340100B6ECC8 /* g3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDB254003DA00C89B72 /* g3@2x.png */; };
 		211227482573340100B6ECC8 /* _23FullViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB4F254003D900C89B72 /* _23FullViewController.xib */; };
 		211227492573340100B6ECC8 /* _06WCDBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB73254003D900C89B72 /* _06WCDBViewController.xib */; };
-		2112274A2573340100B6ECC8 /* _09AFNViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB5C254003D900C89B72 /* _09AFNViewController.xib */; };
 		2112274B2573340100B6ECC8 /* App.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 218A1E4425440A0A00E43F16 /* App.pdf */; };
 		2112274C2573340100B6ECC8 /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
 		2112274D2573340100B6ECC8 /* _30TimeLineNinePhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21430B0E256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib */; };
@@ -205,7 +204,6 @@
 		213BCC04254003DB00C89B72 /* _01RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB59254003D900C89B72 /* _01RootVC.m */; };
 		213BCC05254003DB00C89B72 /* _14TFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB5A254003D900C89B72 /* _14TFViewController.xib */; };
 		213BCC06254003DB00C89B72 /* _18MGSwipeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB5B254003D900C89B72 /* _18MGSwipeTableVC.m */; };
-		213BCC07254003DB00C89B72 /* _09AFNViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB5C254003D900C89B72 /* _09AFNViewController.xib */; };
 		213BCC08254003DB00C89B72 /* _24NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB5E254003D900C89B72 /* _24NoteViewController.xib */; };
 		213BCC09254003DB00C89B72 /* _04RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB60254003D900C89B72 /* _04RunLoopViewController.m */; };
 		213BCC0A254003DB00C89B72 /* _22ReactiveObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB61254003D900C89B72 /* _22ReactiveObjCViewController.m */; };
@@ -548,7 +546,6 @@
 		213BCB59254003D900C89B72 /* _01RootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _01RootVC.m; sourceTree = "<group>"; };
 		213BCB5A254003D900C89B72 /* _14TFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _14TFViewController.xib; sourceTree = "<group>"; };
 		213BCB5B254003D900C89B72 /* _18MGSwipeTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _18MGSwipeTableVC.m; sourceTree = "<group>"; };
-		213BCB5C254003D900C89B72 /* _09AFNViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _09AFNViewController.xib; sourceTree = "<group>"; };
 		213BCB5E254003D900C89B72 /* _24NoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _24NoteViewController.xib; sourceTree = "<group>"; };
 		213BCB5F254003D900C89B72 /* _15UIMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _15UIMenuController.h; sourceTree = "<group>"; };
 		213BCB60254003D900C89B72 /* _04RunLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _04RunLoopViewController.m; sourceTree = "<group>"; };
@@ -960,7 +957,6 @@
 				210CF8902626724A00F4071E /* _08MP3VC.m */,
 				213BCB43254003D900C89B72 /* _09AFNViewController.h */,
 				213BCB75254003D900C89B72 /* _09AFNViewController.m */,
-				213BCB5C254003D900C89B72 /* _09AFNViewController.xib */,
 				213BCB66254003D900C89B72 /* _10TextFViewController.h */,
 				213BCB3E254003D900C89B72 /* _10TextFViewController.m */,
 				213BCB3C254003D900C89B72 /* _10TextFViewController.xib */,
@@ -1457,11 +1453,11 @@
 		21EB383525DF90E1002C1807 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				21BA17F725AD852000222F9A /* ax_release.xcconfig */,
 				21BA17F825AD854300222F9A /* ax_common.xcconfig */,
-				21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */,
 				21BA17F925AD856800222F9A /* ax_debug_α.xcconfig */,
 				21BA17FA25AD857E00222F9A /* ax_debug_β.xcconfig */,
+				21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */,
+				21BA17F725AD852000222F9A /* ax_release.xcconfig */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -1845,7 +1841,6 @@
 				211A99FD25CB9F9D009030CB /* Play-Pause.json in Resources */,
 				211A99EB25CB9F9D009030CB /* RefreshFooterAnim.json in Resources */,
 				211A99F325CB9F9D009030CB /* vcTransition1.json in Resources */,
-				2112274A2573340100B6ECC8 /* _09AFNViewController.xib in Resources */,
 				2112274B2573340100B6ECC8 /* App.pdf in Resources */,
 				211A99EF25CB9F9D009030CB /* Loading.json in Resources */,
 				211A99E725CB9F9D009030CB /* Switch.json in Resources */,
@@ -1926,7 +1921,6 @@
 				213BCC12254003DB00C89B72 /* _06WCDBViewController.xib in Resources */,
 				211A99F225CB9F9D009030CB /* vcTransition1.json in Resources */,
 				211A99F025CB9F9D009030CB /* LottieLogo.json in Resources */,
-				213BCC07254003DB00C89B72 /* _09AFNViewController.xib in Resources */,
 				218A1E4525440A0A00E43F16 /* App.pdf in Resources */,
 				21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */,
 				21430B10256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib in Resources */,
@@ -2106,6 +2100,7 @@
 				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaDebug/CocoaDebug.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
@@ -2171,6 +2166,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaDebug.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
@@ -2246,6 +2242,7 @@
 				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaDebug/CocoaDebug.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
@@ -2311,6 +2308,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaDebug.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",

@@ -119,14 +119,14 @@
     //        config.rootViewController = vc;
     //        return config;
     //    }];
-    AXDebugManager.sharedManager.withConfig(^id<AXDebugUIConfigProtocol> _Nonnull(UIViewController * _Nonnull vc) {
-        
-        AXDebugUIConfig *config = [AXDebugUIConfig.alloc init];
-        UINavigationController *nav = [UINavigationController.alloc initWithRootViewController:vc];
-        config.rootViewController = nav;
-        return config;
-        
-    }).start();
+//    AXDebugManager.sharedManager.withConfig(^id<AXDebugUIConfigProtocol> _Nonnull(UIViewController * _Nonnull vc) {
+//
+//        AXDebugUIConfig *config = [AXDebugUIConfig.alloc init];
+//        UINavigationController *nav = [UINavigationController.alloc initWithRootViewController:vc];
+//        config.rootViewController = nav;
+//        return config;
+//
+//    }).start();
     
     //    AXDebugManager.sharedManager.start();
     NSLog(@"UIApplicationDidFinishLaunchingNotification====1");

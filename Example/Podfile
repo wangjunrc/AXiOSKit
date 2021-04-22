@@ -8,6 +8,19 @@ source 'https://github.com/CocoaPods/Specs.git'
 # 清华镜像
 #source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 #source 'https://gitee.com/mirrors/CocoaPods-Specs.git'
+
+# axing 库
+def axinger_pods
+  
+  # pod 'AXiOSKit' , :git => 'https://github.com/axinger/AXiOSKit.git', :branch => 'release/20190530_new'
+  # pod 'AXiOSKit', :source => 'https://github.com/axinger/AXiOSKit.git'
+  # pod 'AXiOSKit', source: 'https://github.com/axinger/AXiOSKit.git'
+  pod 'AXiOSKit', :path => '../'
+  pod 'AXViewControllerTransitioning',:git => 'https://gitee.com/axinger/AXViewControllerTransitioning.git'
+  pod 'AXCollectionObserve',:git => 'https://gitee.com/axinger/AXCollectionObserve.git'
+  
+end
+
 # 因为有的target 不支持UIKit的库
 def ui_pods
   
@@ -39,11 +52,7 @@ def ui_pods
   #  pod 'WCDB','~> 1.0.7.5'
   pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git' #,:tag => '~> 1.0.8.2'
   # 微信分享,此版本才不会校验链接
-  pod 'WechatOpenSDK','= 1.7.7'
-  
-  # 本地编译过的
-  #pod 'WCDB',                   :path => './Frameworks/WCDB'
-  #  pod 'WechatOpenSDK',                   :path => './Frameworks/WechatOpenSDK'
+  #  pod 'WechatOpenSDK','= 1.7.7'
   
   pod 'SSKeychain'
   
@@ -93,38 +102,53 @@ def ui_pods
   # 在不同的控制器中实现UINavigationBar不同地样式
   #  pod 'KMNavigationBarTransition'
   
-  ### 导航栏,可以每个VC不一样配置
-  pod 'RTRootNavigationController',:git => 'https://gitee.com/mirrors/RTRootNavigationController.git'
-  
-  pod "Protobuf", :git => 'https://gitee.com/axinger/protobuf.git'
-  
+  #  # 导航栏,可以每个VC不一样配置
+  #  pod 'RTRootNavigationController',:git => 'https://gitee.com/mirrors/RTRootNavigationController.git'
+  #  pod "Protobuf", :git => 'https://gitee.com/axinger/protobuf.git'
   #  pod "YYKit", :git => 'https://gitee.com/mirrors/yykit.git',:tag =>'1.0.9'
-  pod "YYText", :git => 'https://gitee.com/mirrors/YYText.git',:tag =>'1.0.7'
-  pod "YYCategories", :git => 'https://gitee.com/mirrors/YYCategories.git',:tag =>'1.0.4'
-  pod 'YYKeyboardManager' , :git => 'https://gitee.com/github-iOS/YYKeyboardManager.git',:tag =>'1.0.1'
-  pod 'YYCache' , :git => 'https://gitee.com/github-iOS/YYCache.git',:tag =>'1.0.4'
-  pod 'YYDispatchQueuePool' , :git => 'https://gitee.com/github-iOS/YYDispatchQueuePool.git',:tag =>'1.0'
+  #  pod "YYText", :git => 'https://gitee.com/mirrors/YYText.git',:tag =>'1.0.7'
+  #  pod "YYCategories", :git => 'https://gitee.com/mirrors/YYCategories.git',:tag =>'1.0.4'
+  #  pod 'YYKeyboardManager' , :git => 'https://gitee.com/github-iOS/YYKeyboardManager.git',:tag =>'1.0.1'
+  #  pod 'YYCache' , :git => 'https://gitee.com/github-iOS/YYCache.git',:tag =>'1.0.4'
+  #  pod 'YYDispatchQueuePool' , :git => 'https://gitee.com/github-iOS/YYDispatchQueuePool.git',:tag =>'1.0'
+  
+  # 导航栏,可以每个VC不一样配置
+  pod 'RTRootNavigationController','~> 0.8.0'
+  pod "Protobuf",'~> 3.15.8'
+  pod "YYText",'~> 1.0.7'
+  pod "YYCategories", '~> 1.0.4'
+  pod 'YYKeyboardManager' ,  '~> 1.0.1'
+  pod 'YYCache' , '~> 1.0.4'
+  pod 'YYDispatchQueuePool' ,  '~> 1.0'
   
 end
 
+
+#一般小写字母、下划线开头：变量（Variable）。
+#$开头：全局变量（Global variable）。
+#@开头：实例变量（Instance variable）。
+#@@开头：类变量（Class variable）类变量被共享在整个继承链中
+#大写字母开头：常数（Constant）。
+
+
+DebugList=['Debug','Debug_α','Debug_β']
+# 测试工具
 def debug_pods
+  # LookinServer 和 Reveal-SDK 类似
   
-  # 测试工具
-  pod 'LLDebugTool' , '1.3.8.1' ,:configurations => ['Debug']
-  pod 'MLeaksFinder'
+  pod 'LLDebugTool' , '1.3.8.1' ,:configurations => DebugList
+  pod 'MLeaksFinder', '~> 1.0.0' ,:configurations => DebugList
   #  pod 'LookinServer', :configurations => ['Debug']
-  pod 'LookinServer', :configurations => ['Debug'], :git => 'https://gitee.com/axinger/LookinServer.git'
+  pod 'LookinServer', :configurations => DebugList, :git => 'https://gitee.com/axinger/LookinServer.git'
+  pod 'CocoaDebug', '~> 1.6.3' , :configurations => DebugList
+  #  pod 'Reveal-SDK', :configurations => ['Debug','Debug_α','Debug_β']
+  
 end
 
+
+
+# 常用的第三方
 def common_pods
-  ### axing 库
-  #    pod 'AXiOSKit' , :git => 'https://github.com/axinger/AXiOSKit.git', :branch => 'release/20190530_new'
-  # pod 'AXiOSKit', :source => 'https://github.com/axinger/AXiOSKit.git'
-  # pod 'AXiOSKit', source: 'https://github.com/axinger/AXiOSKit.git'
-  pod 'AXiOSKit', :path => '../'
-  pod 'AXViewControllerTransitioning',:git => 'https://gitee.com/axinger/AXViewControllerTransitioning.git'
-  pod 'AXCollectionObserve',:git => 'https://gitee.com/axinger/AXCollectionObserve.git'
-  #### end
   
   pod 'Masonry'
   pod 'AFNetworking'
@@ -141,47 +165,51 @@ def common_pods
   pod 'TOCropViewController', '~> 2.6.0'
   pod "CTMediator"
   
-  pod 'SSZipArchive',:git => 'https://gitee.com/axinger/ZipArchive.git'
-  
-#   pod 'CYLTabBarController' # 默认不依赖Lottie
+  #  pod 'SSZipArchive',:git => 'https://gitee.com/axinger/ZipArchive.git'
+  pod 'SSZipArchive'
+  #   pod 'CYLTabBarController' # 默认不依赖Lottie
   pod 'CYLTabBarController/Lottie'  # 依赖Lottie库
   #日志
   pod 'CocoaLumberjack'
+  
 end
 
+def app_pods
+  common_pods
+  ui_pods
+  debug_pods
+  axinger_pods
+end
 
+def extension_pods
+  common_pods
+  axinger_pods
+end
 
 #=========环境===========
 target 'AXiOSKit_Example' do
   
-  #  pod 'IQKeyboardManager'
-  #  pod 'WechatOpenSDK','= 1.7.7'
-  common_pods
-  ui_pods
-  debug_pods
+  app_pods
   
-  #  target 'AXiOSKit_Tests' do
-  #    inherit! :search_paths
-  #  end
 end
 
 target 'AXShare' do
-  common_pods
+  
+  extension_pods
+  
 end
 
 #=========环境1===========
 target 'AXiOSKit_Example_Env_1' do
   
-  #  pod 'WechatOpenSDK','= 1.7.7'
-  
-  common_pods
-  ui_pods
-  debug_pods
+  app_pods
   
 end
 
 target 'AXShare_Env_1' do
-  common_pods
+  
+  extension_pods
+  
 end
 
 

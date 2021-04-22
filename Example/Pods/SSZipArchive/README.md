@@ -9,7 +9,6 @@ ZipArchive is a simple utility class for zipping and unzipping files on iOS, mac
 - Unzip password protected zip files;
 - Unzip AES encrypted zip files;
 - Create zip files;
-- Create large (> 4.3Gb) files;
 - Create password protected zip files;
 - Create AES encrypted zip files;
 - Choose compression level;
@@ -19,7 +18,7 @@ ZipArchive is a simple utility class for zipping and unzipping files on iOS, mac
 
 *The main release branch is configured to support Objective-C and Swift 3+.*
 
-SSZipArchive works on Xcode 7-11 and above, iOS 9-13 and above, tvOS 9 and above, macOS 10.9-10.15 and above, watchOS 2 and above.
+SSZipArchive works on Xcode 7-11 and above, iOS 9-13 and above, tvOS 9 and above, macOS 10.8-10.15 and above, watchOS 2 and above.
 
 ### CocoaPods
 In your Podfile:  

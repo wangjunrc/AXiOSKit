@@ -39,6 +39,12 @@ static __attribute__((always_inline)) void asm_exit() {
 //#else
 //    static const DDLogLevel ddLogLevel = DDLogLevelWarning;
 //#endif
+
+//#import "CocoaDebugTool.h"
+#ifdef DEBUG
+#import <CocoaDebug/CocoaDebugTool.h>
+#endif
+
 static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 
 @interface TestKVOObject : NSObject
@@ -870,7 +876,7 @@ void mySLog(NSString *format, ...)
                     NSString *path = [NSString.ax_documentPath stringByAppendingPathComponent:@"sudian.zip"];
                     NSString *targetPath = NSString.ax_documentPath;
                     
-                   BOOL succ = [SSZipArchive unzipFileAtPath:path toDestination:targetPath];
+                    BOOL succ = [SSZipArchive unzipFileAtPath:path toDestination:targetPath];
                     NSLog(@"解压 = %d",succ);
                 },
             },
@@ -880,14 +886,14 @@ void mySLog(NSString *format, ...)
                 @"action": ^{
                     
                     // Uses os_log
-                        //[DDLog addLogger:[DDASLLogger sharedInstance]]; //iOS10之前
-                        [DDLog addLogger:[DDOSLogger sharedInstance]]; //iOS10之后
-                        [DDLog addLogger:[DDTTYLogger sharedInstance]];
-                        
-                        DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
-                        fileLogger.rollingFrequency = 60 * 60 * 24;             // 24 hour rolling
-                        fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
-                        [DDLog addLogger:fileLogger];
+                    //[DDLog addLogger:[DDASLLogger sharedInstance]]; //iOS10之前
+                    [DDLog addLogger:[DDOSLogger sharedInstance]]; //iOS10之后
+                    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+                    
+                    DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
+                    fileLogger.rollingFrequency = 60 * 60 * 24;             // 24 hour rolling
+                    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+                    [DDLog addLogger:fileLogger];
                     
                     DDLogVerbose(@"Verbose");
                     DDLogDebug(@"Debug");
@@ -896,7 +902,23 @@ void mySLog(NSString *format, ...)
                     DDLogError(@"Error");
                 },
             },
-           
+            
+            
+            @{
+                @"index": @16,
+                @"title": @"CocoaDebugTool",
+                @"action": ^{
+                    
+#ifdef DEBUG
+                    [CocoaDebugTool logWithString:@"Custom Messages...."];
+                    [CocoaDebugTool logWithString:@"Custom Messages...,有颜色" color:[UIColor redColor]];
+                    
+#endif
+                    
+                },
+            },
+            
+            
         ].mutableCopy;
     }
     return _dataArray;

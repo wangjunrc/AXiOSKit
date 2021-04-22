@@ -59,23 +59,35 @@
         NSDictionary *dict = @{@"name":@"jim",@"age":@1};
         AXNetworkManager.manager.post(@"http://www.ax.com").headers(@{@"token":@"token1111111111111",@"id":@"id222222222222222"}).parameters(dict).success(^(id  _Nonnull JSONObject) {
             NSLog(@"JSONObject2 = %@",JSONObject);
-
+            
         }).failure(^(NSError * _Nonnull error) {
             NSLog(@"error2 = %@",error.description);
         }).start();
         
-//        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//        [manager GET:@"http://www.ax.com" parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable
-//        responseObject) {
-//            NSArray *data = responseObject;
-//            NSLog(@"%@", data);
-//        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//            NSLog(@"%@", error);
-//        }];
-
+        //        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        //        [manager GET:@"http://www.ax.com" parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable
+        //        responseObject) {
+        //            NSArray *data = responseObject;
+        //            NSLog(@"%@", data);
+        //        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        //            NSLog(@"%@", error);
+        //        }];
+        
     }];
     
-    
+    [self _buttonTitle:@"请求百度" handler:^(UIButton * _Nonnull btn) {
+        NSDictionary *dict = @{@"name":@"jim",@"age":@1};
+        
+        AXNetworkManager.manager
+        .post(@"https://www.baidu.com/")
+        .parameters(dict)
+        .success(^(id  _Nonnull JSONObject) {
+            NSLog(@"JSONObject2 = %@",JSONObject);
+            
+        }).failure(^(NSError * _Nonnull error) {
+            NSLog(@"error2 = %@",error.description);
+        }).start();
+    }];
     
     // 这里放最后一个view的底部
     [self _lastLoadBottomAttribute];

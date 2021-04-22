@@ -7,7 +7,7 @@
 //
 
 #import "_17OtherShareViewController.h"
-#import "WXApi.h"
+//#import <WechatOpenSDK/WXApi.h>
 @interface _17OtherShareViewController ()
 
 @end
@@ -20,15 +20,15 @@
     
     
     
-    __weak typeof(self) weakSelf = self;
-    [self _buttonTitle:@"微信分享" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf shareAction:btn];
-    }];
-    [self _buttonTitle:@"微信登录" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf authAction:btn];
-    }];
+//    __weak typeof(self) weakSelf = self;
+//    [self _buttonTitle:@"微信分享" handler:^(UIButton * _Nonnull btn) {
+//        __strong typeof(weakSelf) strongSelf = weakSelf;
+//        [strongSelf shareAction:btn];
+//    }];
+//    [self _buttonTitle:@"微信登录" handler:^(UIButton * _Nonnull btn) {
+//        __strong typeof(weakSelf) strongSelf = weakSelf;
+//        [strongSelf authAction:btn];
+//    }];
     
     UILabel *lb = [[UILabel alloc]init];
     lb.text = @"闪动加载";
@@ -104,26 +104,26 @@
 //    }];
 //
     
-    SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
-    req.bText = YES;
-    req.text = @"分享的内容";
-    req.scene = WXSceneSession;
-//      [WXApi sendReq:req completion:^(BOOL success) {
-//            NSLog(@"唤起微信:%@", success ? @"成功" : @"失败");
-//        }];
-    [WXApi sendReq:req];
+//    SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
+//    req.bText = YES;
+//    req.text = @"分享的内容";
+//    req.scene = WXSceneSession;
+////      [WXApi sendReq:req completion:^(BOOL success) {
+////            NSLog(@"唤起微信:%@", success ? @"成功" : @"失败");
+////        }];
+//    [WXApi sendReq:req];
 }
 
-- (void)authAction:(id)sender{
-    
-    SendAuthReq *req = [[SendAuthReq alloc] init];
-    req.state = @"wx_oauth_authorization_state";//用于保持请求和回调的状态，授权请求或原样带回
-    req.scope = @"snsapi_userinfo";//授权作用域：获取用户个人信息
-    
-    //发送请求
-//    [WXApi sendReq:req completion:^(BOOL success) {
-//        NSLog(@"唤起微信:%@", success ? @"成功" : @"失败");
-//    }];
-    [WXApi sendReq:req];
-}
+//- (void)authAction:(id)sender{
+//
+//    SendAuthReq *req = [[SendAuthReq alloc] init];
+//    req.state = @"wx_oauth_authorization_state";//用于保持请求和回调的状态，授权请求或原样带回
+//    req.scope = @"snsapi_userinfo";//授权作用域：获取用户个人信息
+//
+//    //发送请求
+////    [WXApi sendReq:req completion:^(BOOL success) {
+////        NSLog(@"唤起微信:%@", success ? @"成功" : @"失败");
+////    }];
+//    [WXApi sendReq:req];
+//}
 @end

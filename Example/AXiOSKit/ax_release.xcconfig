@@ -10,7 +10,7 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 #include "ax_common.xcconfig"
-#include "Pods/Target Support Files/Pods-AXiOSKitExample/Pods-AXiOSKit_Example.release.xcconfig"
+#include "Pods/Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.release.xcconfig"
 
 IS_PRODUCATION = YES
 
