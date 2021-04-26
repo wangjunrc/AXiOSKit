@@ -156,6 +156,7 @@ PODS:
   - MMKV (1.2.7):
     - MMKVCore (~> 1.2.7)
   - MMKVCore (1.2.7)
+  - MonkeyKing (2.1.0)
   - MQTTClient (0.15.3):
     - MQTTClient/Core (= 0.15.3)
   - MQTTClient/Core (0.15.3):
@@ -245,6 +246,7 @@ DEPENDENCIES:
   - MGSwipeTableCell (~> 1.6.11)
   - MLeaksFinder (~> 1.0.0)
   - MMKV (~> 1.2.7)
+  - MonkeyKing
   - MQTTClient
   - MQTTClient/Websocket
   - OHHTTPStubs (~> 9.1.0)
@@ -305,6 +307,7 @@ SPEC REPOS:
     - MLeaksFinder
     - MMKV
     - MMKVCore
+    - MonkeyKing
     - MQTTClient
     - NullSafe
     - OHHTTPStubs
@@ -395,6 +398,7 @@ SPEC CHECKSUMS:
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   MMKV: 22e5136f7d00197bc0fc9694b7f71519f0d1ca12
   MMKVCore: 607b7b05f2c2140056b5d338e45f2c14bf3f4232
+  MonkeyKing: 1656e3e01911b5f72f988d4496c1cc988d0c009c
   MQTTClient: 0dfa04e789479c2e461786464969895c1fcb0875
   NullSafe: 948feba938f03abede5ed3758694a9fe5b3a65ce
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
@@ -420,6 +424,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: f25b1e67e0cb45eedba74361021a26ac1d2a19cf
+PODFILE CHECKSUM: 65b0f21ad9e655408c03667eb55bb0a32ee8eea0
 
 COCOAPODS: 1.10.1

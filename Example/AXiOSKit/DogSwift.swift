@@ -17,4 +17,9 @@ import Foundation
         dog.show();
         
     }
+    
+    
+//    func reg() -> Void {
+//        MonkeyKing .registerAccount(.weChat(appID: <#T##String#>, appKey: <#T##String?#>, miniAppID: <#T##String?#>, universalLink: <#T##String?#>));
+//    }
 }

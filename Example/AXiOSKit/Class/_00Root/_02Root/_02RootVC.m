@@ -917,6 +917,20 @@ void mySLog(NSString *format, ...)
                     
                 },
             },
+            @{
+                @"index": @17,
+                @"title": @"FileBrowser",
+                @"action": ^{
+//                    NSURL *URL = NULL;
+                    FileBrowser *vc = [FileBrowser.alloc init];
+                    
+                    [self ax_showVC:vc];
+                    
+                    
+                },
+            },
+            
+           
             
             
         ].mutableCopy;
