@@ -477,6 +477,7 @@ pod 'LKDBHelper'
 ### 日历
 pod 'FSCalendar'
 pod 'JTAppleCalendar' #swift
+
 ### 表单
 pod 'XLForm'
 
@@ -526,12 +527,15 @@ pod 'SVGKit'
 pod 'TOCropViewController'
 
 
-### 动画 Hero\lottie-ios 类似 目前2个都是swift版本
-pod 'Hero'
+### 动画 
 pod 'lottie-ios'
 
+### 快速添加转场动画
+pod 'Hero'
+
 ### TabBarController动画
-pod 'animated-tab-bar' # swift
+pod 'RAMAnimatedTabBarController'# swift
+
 pod 'CYLTabBarController' # OC 默认不依赖Lottie
 pod 'CYLTabBarController/Lottie'  # 依赖Lottie库
 

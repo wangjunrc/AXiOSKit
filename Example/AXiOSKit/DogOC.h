@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+// 不可见文件
+#import "AXiOSKit_Example-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
