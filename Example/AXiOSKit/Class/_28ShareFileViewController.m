@@ -13,7 +13,7 @@
 #import "_28LocalSocketServiceViewController.h"
 
 #import <QuickLook/QuickLook.h>
-
+#import <AXiOSKit/AXiOSKit.h>
 
 
 @interface _28ShareFileViewController ()<UIDocumentInteractionControllerDelegate,QLPreviewControllerDataSource,QLPreviewControllerDelegate>
@@ -41,12 +41,21 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _share1];
     }];
+    [self _buttonTitle:@"UIDocumentInteractionController-文件夹" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+      
+        NSString* urlString = [NSString ax_documentPath];
+        NSURL* URL = [NSURL fileURLWithPath:urlString];
+        strongSelf.documentController = [UIDocumentInteractionController interactionControllerWithURL:URL];
+        [strongSelf.documentController presentOptionsMenuFromRect:strongSelf.view.bounds inView:strongSelf.view animated:YES];
+        
+    }];
     [self _buttonTitle:@"UIDocumentInteractionController-分享pdf" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
       
         NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/testPDF.pdf" ofType:nil];
         strongSelf.documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:url]];
-        [strongSelf.documentController presentOptionsMenuFromRect:self.view.bounds inView:self.view animated:YES];
+        [strongSelf.documentController presentOptionsMenuFromRect:strongSelf.view.bounds inView:strongSelf.view animated:YES];
         
         
     }];
