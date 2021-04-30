@@ -177,7 +177,6 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXCollectionObserve/AXCollectionObserve.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework"
@@ -243,7 +242,6 @@ fi
 if [[ "$CONFIGURATION" == "Debug_α" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXCollectionObserve/AXCollectionObserve.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework"
@@ -309,7 +307,6 @@ fi
 if [[ "$CONFIGURATION" == "Debug_β" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXCollectionObserve/AXCollectionObserve.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework"
@@ -375,7 +372,6 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXCollectionObserve/AXCollectionObserve.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework"

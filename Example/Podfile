@@ -16,9 +16,10 @@ def axinger_pods
   # pod 'AXiOSKit', :source => 'https://github.com/axinger/AXiOSKit.git'
   # pod 'AXiOSKit', source: 'https://github.com/axinger/AXiOSKit.git'
   pod 'AXiOSKit', :path => '../'
-  pod 'AXViewControllerTransitioning',:git => 'https://gitee.com/axinger/AXViewControllerTransitioning.git'
-  pod 'AXCollectionObserve',:git => 'https://gitee.com/axinger/AXCollectionObserve.git'
-  
+#  pod 'AXViewControllerTransitioning',:git => 'https://gitee.com/axinger/AXViewControllerTransitioning.git'
+  pod 'AXViewControllerTransitioning','~>1.1.0'
+#  pod 'AXCollectionObserve',:git => 'https://github.com/axinger/AXCollectionObserve.git'
+  pod 'AXCollectionObserve','~>1.1.0'
 end
 
 # 因为有的target 不支持UIKit的库

@@ -2185,7 +2185,6 @@
 				"${PODS_ROOT}/Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/AXCollectionObserve/AXCollectionObserve.framework",
-				"${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
 				"${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework",
@@ -2252,7 +2251,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXCollectionObserve.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXViewControllerTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXiOSKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AvoidCrash.framework",
@@ -2329,7 +2327,6 @@
 				"${PODS_ROOT}/Target Support Files/Pods-AXiOSKit_Example_Env_1/Pods-AXiOSKit_Example_Env_1-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/AXCollectionObserve/AXCollectionObserve.framework",
-				"${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
 				"${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework",
@@ -2396,7 +2393,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXCollectionObserve.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXViewControllerTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXiOSKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AvoidCrash.framework",
