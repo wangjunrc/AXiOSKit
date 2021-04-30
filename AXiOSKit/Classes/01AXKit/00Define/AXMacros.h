@@ -116,7 +116,7 @@ self.frame = frame;\
 
 
 /**
- * 属性 vc中定义一个同名的view替代原来的 aViewClass 需要替代的view
+ * 定义属性 vc中定义一个同名的view替代原来的 aViewClass 需要替代的view
  */
 #define AX_REDEFINE_CONTROLLER_VIEW_PROPERTY(aViewClass) @property(nonatomic, strong)aViewClass *view;
 
