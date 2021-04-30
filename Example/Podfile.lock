@@ -34,7 +34,10 @@ PODS:
     - NullSafe
     - ReactiveObjC (~> 3.0.0)
     - SDWebImage
-  - AXViewControllerTransitioning (1.1.0):
+  - AXViewControllerTransitioning (1.1.1):
+    - AXViewControllerTransitioning/Core (= 1.1.1)
+    - ReactiveObjC (~> 3.0.0)
+  - AXViewControllerTransitioning/Core (1.1.1):
     - ReactiveObjC (~> 3.0.0)
   - Bagel (1.4.0):
     - CocoaAsyncSocket
@@ -218,7 +221,7 @@ DEPENDENCIES:
   - AvoidCrash
   - AXCollectionObserve (~> 1.1.0)
   - AXiOSKit (from `../`)
-  - AXViewControllerTransitioning (~> 1.1.0)
+  - AXViewControllerTransitioning (~> 1.1.1)
   - Bagel (~> 1.4.0)
   - Canvas (~> 0.1.2)
   - CocoaAsyncSocket (~> 7.6.5)
@@ -350,7 +353,7 @@ SPEC CHECKSUMS:
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
   AXCollectionObserve: d964138d2bc20131ddc5b6e54ef1ae17e14df0b6
   AXiOSKit: 63835233d602731f5a2a2e06c9adb660b279fa93
-  AXViewControllerTransitioning: 3a1cf6d6e53a09e34f843c3ac05061c59bdd353a
+  AXViewControllerTransitioning: 5995d6dc9a35caa707acdb61caac296b8435190f
   Bagel: c3fa6bcbd52db9ca976edbafd7638f0553ded101
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
@@ -410,6 +413,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: b253cec307d3fd633dd884ea75733b1a1d17d8b7
+PODFILE CHECKSUM: 1e229f5fd0c48db08e5a4070c4a03adaafa71f0e
 
 COCOAPODS: 1.10.1
