@@ -102,12 +102,14 @@
     //    }
 }
 
-- (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event{
-    
-    if (self.cancelBlock) {
-        self.cancelBlock();
+/// 调用者自控制是否点击空白页面 消失
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if ([touches.anyObject.view isEqual:self.view]) {
+        if (self.cancelBlock) {
+            self.cancelBlock();
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)cancelBtnEvents:(UIButton*)sender{

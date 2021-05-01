@@ -90,7 +90,12 @@
     }
     return _dataArray;
 }
-- (BOOL)touchesBeganDismiss {
-    return YES;
+
+/// 调用者自控制是否点击空白页面 消失
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if ([touches.anyObject.view isEqual:self.view]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
+
 @end

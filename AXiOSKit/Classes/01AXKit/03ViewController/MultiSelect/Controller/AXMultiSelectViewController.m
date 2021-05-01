@@ -15,7 +15,7 @@
 #import "AXMultiSelectSectionHeaderView.h"
 #import "AXiOSKit.h"
 #import <AXViewControllerTransitioning/AXViewControllerTransitioning.h>
-@interface AXMultiSelectViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,AXBaseAlertDataSource>
+@interface AXMultiSelectViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property(nonatomic, strong) AXNavigationBar *myNavigationBar;
 @property(nonatomic, strong) UICollectionView *collectionView;
@@ -276,9 +276,6 @@
     return _myNavigationBar;
 }
 
-- (AXAlertControllerStyle )axAlertControllerStyle {
-    return AXAlertControllerStyleCentre;
-}
 
 @end
 

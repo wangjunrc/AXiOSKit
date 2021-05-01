@@ -15,8 +15,6 @@
 		210B1EE125EE18C200878A73 /* NSBundle+CLLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */; };
 		210CF8912626724A00F4071E /* _08MP3VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210CF8902626724A00F4071E /* _08MP3VC.m */; };
 		210CF8922626724A00F4071E /* _08MP3VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210CF8902626724A00F4071E /* _08MP3VC.m */; };
-		210CF8A02626830700F4071E /* Cocoanetics_031.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 210CF89F2626830700F4071E /* Cocoanetics_031.mp3 */; };
-		210CF8A12626830700F4071E /* Cocoanetics_031.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 210CF89F2626830700F4071E /* Cocoanetics_031.mp3 */; };
 		210CF8C826268D0600F4071E /* DemoTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210CF8C726268D0600F4071E /* DemoTabBarController.m */; };
 		2111E04A257377100016004D /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898E9B2541AD6900876524 /* ShareViewController.m */; };
 		2111E04D257377100016004D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21898E9D2541AD6900876524 /* MainInterface.storyboard */; };
@@ -490,7 +488,6 @@
 		210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CLLanguage.m"; sourceTree = "<group>"; };
 		210CF88F2626724A00F4071E /* _08MP3VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _08MP3VC.h; sourceTree = "<group>"; };
 		210CF8902626724A00F4071E /* _08MP3VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _08MP3VC.m; sourceTree = "<group>"; };
-		210CF89F2626830700F4071E /* Cocoanetics_031.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Cocoanetics_031.mp3; sourceTree = "<group>"; };
 		210CF8C626268D0600F4071E /* DemoTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTabBarController.h; sourceTree = "<group>"; };
 		210CF8C726268D0600F4071E /* DemoTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTabBarController.m; sourceTree = "<group>"; };
 		2111E051257377100016004D /* AXShare_Env_1.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AXShare_Env_1.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1650,7 +1647,6 @@
 				6003F59B195388D20070C39A /* AXiOSKit-Prefix.pch */,
 				213BCBD7254003DA00C89B72 /* AXiOSKitExampleRelease.entitlements */,
 				213BCB92254003D900C89B72 /* Base.lproj */,
-				210CF89F2626830700F4071E /* Cocoanetics_031.mp3 */,
 				21E6DE65260494060092051F /* DogOC.h */,
 				21E6DE66260494060092051F /* DogOC.m */,
 				21D61EEB257F106E0059201A /* DogSwift.swift */,
@@ -1945,7 +1941,6 @@
 				21CCD4762627C50F00D83F45 /* tab_me_animate.json in Resources */,
 				211A99F525CB9F9D009030CB /* Edit.json in Resources */,
 				211227522573340100B6ECC8 /* _04RunLoopViewController.xib in Resources */,
-				210CF8A12626830700F4071E /* Cocoanetics_031.mp3 in Resources */,
 				211227532573340100B6ECC8 /* _28LocalSocketServiceViewController.xib in Resources */,
 				211227542573340100B6ECC8 /* _14TFViewController.xib in Resources */,
 				211227552573340100B6ECC8 /* time_line_list.json in Resources */,
@@ -1994,7 +1989,6 @@
 				213BCBEE254003DB00C89B72 /* _26RMQClientViewController.xib in Resources */,
 				213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */,
 				21948D422564B83700207E18 /* testXML.xml in Resources */,
-				210CF8A02626830700F4071E /* Cocoanetics_031.mp3 in Resources */,
 				21C11B9925B02DA200D26E89 /* testWord.docx in Resources */,
 				211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */,
 				213BCC2D254003DB00C89B72 /* _02ChatViewController.xib in Resources */,
@@ -2197,7 +2191,6 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaDebug/CocoaDebug.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
@@ -2209,13 +2202,11 @@
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework",
-				"${PODS_ROOT}/LookinServer/LookinServer.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework",
 				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/MLeaksFinder/MLeaksFinder.framework",
 				"${BUILT_PRODUCTS_DIR}/MMKV/MMKV.framework",
 				"${BUILT_PRODUCTS_DIR}/MMKVCore/MMKVCore.framework",
 				"${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework",
@@ -2264,7 +2255,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaDebug.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
@@ -2276,13 +2266,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDebugTool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDynamicLaunchScreen.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LookinServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGJRouter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLeaksFinder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKV.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKVCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MQTTClient.framework",
@@ -2341,7 +2329,6 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaDebug/CocoaDebug.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
@@ -2353,13 +2340,11 @@
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework",
-				"${PODS_ROOT}/LookinServer/LookinServer.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework",
 				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/MLeaksFinder/MLeaksFinder.framework",
 				"${BUILT_PRODUCTS_DIR}/MMKV/MMKV.framework",
 				"${BUILT_PRODUCTS_DIR}/MMKVCore/MMKVCore.framework",
 				"${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework",
@@ -2408,7 +2393,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaDebug.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
@@ -2420,13 +2404,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDebugTool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDynamicLaunchScreen.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LookinServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGJRouter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLeaksFinder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKV.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKVCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MQTTClient.framework",
