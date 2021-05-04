@@ -138,4 +138,23 @@
 @property (nonatomic, strong, readonly) AXViewControllerObserve *ax_controllerObserve;
 
 
+
+/// present 类似 push动画
+/// @param controller controller
+/// @param animated animated
+/// @param completion completion
+-(void)ax_presentViewControllerPushStyle:(UIViewController *)controller
+                                animated:(BOOL )animated
+                              completion:(void (^ __nullable)(void))completion;
+
+
+/// present 类似 push动画 的dismiss返回
+/// @param controller controller
+/// @param animated animated
+/// @param completion completion
+-(void)ax_dismissViewControllerPushStyle:(UIViewController *)controller
+                                animated:(BOOL )animated
+                              completion:(void (^ __nullable)(void))completion;
+
+
 @end

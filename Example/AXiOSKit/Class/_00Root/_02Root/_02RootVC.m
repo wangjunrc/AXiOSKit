@@ -44,7 +44,7 @@ static __attribute__((always_inline)) void asm_exit() {
 #ifdef DEBUG
 #import <CocoaDebug/CocoaDebugTool.h>
 #endif
-
+#import "_01ContentViewController.h"
 static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 
 @interface TestKVOObject : NSObject
@@ -931,6 +931,25 @@ void mySLog(NSString *format, ...)
             },
             
            
+            @{
+                @"index": @18,
+                @"title": @"pushViewControllerPresentStyle",
+                @"action": ^{
+                 
+                    _01ContentViewController *vc = [_01ContentViewController.alloc init];
+                    [self.navigationController ax_pushViewControllerPresentStyle:vc animated:YES];
+                    
+                },
+            },
+            @{
+                @"index": @19,
+                @"title": @"presentViewControllerPushStyle",
+                @"action": ^{
+                    _01ContentViewController *vc = [_01ContentViewController.alloc init];
+                    [self ax_presentViewControllerPushStyle:vc animated:YES completion:nil];
+                    
+                },
+            },
             
             
         ].mutableCopy;

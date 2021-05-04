@@ -43,4 +43,15 @@
  */
 + (instancetype)ax_navRootViewControllerClass:(Class)vcClass;
 
+
+/// push 动画类似 Present样式
+/// @param controller controller
+/// @param animated animated
+-(void)ax_pushViewControllerPresentStyle:(UIViewController *)controller animated:(BOOL )animated;
+
+
+/// push 动画类似 Present样式 的pop返回
+/// @param animated animated
+-(void)ax_pophViewControllerPresentStyleAnimated:(BOOL )animated;
+
 @end

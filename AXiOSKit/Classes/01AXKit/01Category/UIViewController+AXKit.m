@@ -478,4 +478,37 @@
     ax_setStrongPropertyAssociated(ax_controllerObserve);
 }
 
+
+-(void)ax_presentViewControllerPushStyle:(UIViewController *)controller
+                                animated:(BOOL )animated
+                              completion:(void (^ __nullable)(void))completion {
+    
+    if (animated) {
+        animated = NO;
+        CATransition *transition = [CATransition.alloc init];
+        transition.duration = 0.5;
+        transition.type = kCATransitionPush;
+        transition.subtype = kCATransitionFromRight;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        [self.view.window.layer addAnimation:transition forKey:kCATransition];
+    }
+    [self presentViewController:controller animated:animated completion:completion];;
+    
+}
+
+-(void)ax_dismissViewControllerPushStyle:(UIViewController *)controller
+                                animated:(BOOL )animated
+                              completion:(void (^ __nullable)(void))completion {
+    if (animated) {
+        animated = NO;
+        CATransition *transition = [CATransition.alloc init];
+        transition.duration = 0.5;
+        transition.type = kCATransitionPush;
+        transition.subtype = kCATransitionFromLeft;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        [self.view.window.layer addAnimation:transition forKey:kCATransition];
+    }
+    [self dismissViewControllerAnimated:animated completion:completion];;
+}
+
 @end
