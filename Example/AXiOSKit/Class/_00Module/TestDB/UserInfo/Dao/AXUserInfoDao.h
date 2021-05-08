@@ -10,12 +10,12 @@
 #import "AXUserInfo.h"
 
 /**
- * 单例模式,  .h文件
+ * 单例模式,  .h文件 DL_SINGLETON_INTER
  */
 #define axShared_H(name)  + (instancetype )shared##name;
 
 /**
- * 单例模式,  .m文件
+ * 单例模式,  .m文件 DL_SINGLETON_IMPL
  */
 #define  axShared_M(name)\
 static id _instance; \

@@ -254,6 +254,18 @@
 		21430B10256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21430B0E256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib */; };
 		214878E6260C173B003671D9 /* _03RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 214878E5260C173B003671D9 /* _03RootVC.m */; };
 		214878ED260C197E003671D9 /* _03HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 214878EC260C197E003671D9 /* _03HeaderView.m */; };
+		214F67EA2646B863006D946B /* AXShareUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D32646B863006D946B /* AXShareUtil.swift */; };
+		214F67EB2646B863006D946B /* AXShareWeibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D42646B863006D946B /* AXShareWeibo.swift */; };
+		214F67EC2646B863006D946B /* AXShareConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D52646B863006D946B /* AXShareConfigs.swift */; };
+		214F67ED2646B863006D946B /* AXShareInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D62646B863006D946B /* AXShareInfoItem.swift */; };
+		214F67EE2646B863006D946B /* AXShareWeChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D72646B863006D946B /* AXShareWeChat.swift */; };
+		214F67EF2646B863006D946B /* AXShareQQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D82646B863006D946B /* AXShareQQ.swift */; };
+		214F67F12646B863006D946B /* AXShareOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67DE2646B863006D946B /* AXShareOption.m */; };
+		214F67F22646B863006D946B /* AXShareType.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67DF2646B863006D946B /* AXShareType.m */; };
+		214F67F32646B863006D946B /* DLSharePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67E32646B863006D946B /* DLSharePopView.m */; };
+		214F67F42646B863006D946B /* DLSharePopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67E42646B863006D946B /* DLSharePopCell.m */; };
+		214F67F52646B863006D946B /* DLShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67E92646B863006D946B /* DLShareService.m */; };
+		214F67F92646BB32006D946B /* AXShareUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67F82646BB32006D946B /* AXShareUIViewController.m */; };
 		2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		2160E3C42601AADC007FB7C2 /* _36YYKitTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2160E3C32601AADC007FB7C2 /* _36YYKitTestVC.m */; };
@@ -660,6 +672,25 @@
 		214878E5260C173B003671D9 /* _03RootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _03RootVC.m; sourceTree = "<group>"; };
 		214878EB260C197E003671D9 /* _03HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _03HeaderView.h; sourceTree = "<group>"; };
 		214878EC260C197E003671D9 /* _03HeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _03HeaderView.m; sourceTree = "<group>"; };
+		214F67D32646B863006D946B /* AXShareUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareUtil.swift; sourceTree = "<group>"; };
+		214F67D42646B863006D946B /* AXShareWeibo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareWeibo.swift; sourceTree = "<group>"; };
+		214F67D52646B863006D946B /* AXShareConfigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareConfigs.swift; sourceTree = "<group>"; };
+		214F67D62646B863006D946B /* AXShareInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareInfoItem.swift; sourceTree = "<group>"; };
+		214F67D72646B863006D946B /* AXShareWeChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareWeChat.swift; sourceTree = "<group>"; };
+		214F67D82646B863006D946B /* AXShareQQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareQQ.swift; sourceTree = "<group>"; };
+		214F67DE2646B863006D946B /* AXShareOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXShareOption.m; sourceTree = "<group>"; };
+		214F67DF2646B863006D946B /* AXShareType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXShareType.m; sourceTree = "<group>"; };
+		214F67E02646B863006D946B /* AXShareOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXShareOption.h; sourceTree = "<group>"; };
+		214F67E12646B863006D946B /* AXShareType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXShareType.h; sourceTree = "<group>"; };
+		214F67E32646B863006D946B /* DLSharePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLSharePopView.m; sourceTree = "<group>"; };
+		214F67E42646B863006D946B /* DLSharePopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLSharePopCell.m; sourceTree = "<group>"; };
+		214F67E52646B863006D946B /* DLSharePopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLSharePopView.h; sourceTree = "<group>"; };
+		214F67E62646B863006D946B /* DLSharePopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLSharePopCell.h; sourceTree = "<group>"; };
+		214F67E82646B863006D946B /* DLShareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLShareService.h; sourceTree = "<group>"; };
+		214F67E92646B863006D946B /* DLShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLShareService.m; sourceTree = "<group>"; };
+		214F67F62646B9D2006D946B /* AXUserSwiftImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUserSwiftImport.h; sourceTree = "<group>"; };
+		214F67F72646BB32006D946B /* AXShareUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXShareUIViewController.h; sourceTree = "<group>"; };
+		214F67F82646BB32006D946B /* AXShareUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXShareUIViewController.m; sourceTree = "<group>"; };
 		2152C5B525919C720078D525 /* AXDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugViewController.h; sourceTree = "<group>"; };
 		2152C5B625919C720078D525 /* AXDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugViewController.m; sourceTree = "<group>"; };
 		2160E3C22601AADC007FB7C2 /* _36YYKitTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _36YYKitTestVC.h; sourceTree = "<group>"; };
@@ -1079,6 +1110,7 @@
 		213BCB97254003DA00C89B72 /* _00Module */ = {
 			isa = PBXGroup;
 			children = (
+				214F67D12646B863006D946B /* Share */,
 				21799D61255CD31F00754A8B /* RecordAudio */,
 				213BCBAF254003DA00C89B72 /* Load */,
 				213BCB9B254003DA00C89B72 /* Object */,
@@ -1274,6 +1306,71 @@
 				219D5BFE261BED8D00DFC539 /* _03RootCell.m */,
 			);
 			path = _03Root;
+			sourceTree = "<group>";
+		};
+		214F67D12646B863006D946B /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				214F67D92646B863006D946B /* Controller */,
+				214F67DD2646B863006D946B /* Model */,
+				214F67E72646B863006D946B /* Service */,
+				214F67D22646B863006D946B /* Util */,
+				214F67E22646B863006D946B /* View */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		214F67D22646B863006D946B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				214F67D52646B863006D946B /* AXShareConfigs.swift */,
+				214F67D62646B863006D946B /* AXShareInfoItem.swift */,
+				214F67D82646B863006D946B /* AXShareQQ.swift */,
+				214F67D32646B863006D946B /* AXShareUtil.swift */,
+				214F67D72646B863006D946B /* AXShareWeChat.swift */,
+				214F67D42646B863006D946B /* AXShareWeibo.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		214F67D92646B863006D946B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				214F67F72646BB32006D946B /* AXShareUIViewController.h */,
+				214F67F82646BB32006D946B /* AXShareUIViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		214F67DD2646B863006D946B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				214F67E02646B863006D946B /* AXShareOption.h */,
+				214F67DE2646B863006D946B /* AXShareOption.m */,
+				214F67E12646B863006D946B /* AXShareType.h */,
+				214F67DF2646B863006D946B /* AXShareType.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		214F67E22646B863006D946B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				214F67E32646B863006D946B /* DLSharePopView.m */,
+				214F67E42646B863006D946B /* DLSharePopCell.m */,
+				214F67E52646B863006D946B /* DLSharePopView.h */,
+				214F67E62646B863006D946B /* DLSharePopCell.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		214F67E72646B863006D946B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				214F67E82646B863006D946B /* DLShareService.h */,
+				214F67E92646B863006D946B /* DLShareService.m */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		21799D61255CD31F00754A8B /* RecordAudio */ = {
@@ -1661,6 +1758,7 @@
 				210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */,
 				213BCBE0254003DA00C89B72 /* SceneDelegate.h */,
 				213BCB34254003D900C89B72 /* SceneDelegate.m */,
+				214F67F62646B9D2006D946B /* AXUserSwiftImport.h */,
 				213BCB35254003D900C89B72 /* Settings.bundle */,
 			);
 			name = "00Supporting Files";
@@ -2614,6 +2712,7 @@
 				21948C9D2563F3BC00207E18 /* AXUserLog.mm in Sources */,
 				213BCC1C254003DB00C89B72 /* _15UIMenuController.m in Sources */,
 				213BCBF2254003DB00C89B72 /* _10TextFViewController.m in Sources */,
+				214F67F32646B863006D946B /* DLSharePopView.m in Sources */,
 				213BCC30254003DB00C89B72 /* ChatTextMessageModel.m in Sources */,
 				210CF8C826268D0600F4071E /* DemoTabBarController.m in Sources */,
 				2160E3C42601AADC007FB7C2 /* _36YYKitTestVC.m in Sources */,
@@ -2625,6 +2724,7 @@
 				21430AE7256C98EF00CB8EBC /* _30TimeLineModel.m in Sources */,
 				218A32D425E0FAAE008D95B8 /* _33CropViewController.m in Sources */,
 				218A324C25E0DFF0008D95B8 /* AXIBudyButton.m in Sources */,
+				214F67F92646BB32006D946B /* AXShareUIViewController.m in Sources */,
 				21C0190825FF293300FAFE5A /* _35ProtobufVC.m in Sources */,
 				214878ED260C197E003671D9 /* _03HeaderView.m in Sources */,
 				213BCC31254003DB00C89B72 /* LVieoView.m in Sources */,
@@ -2641,6 +2741,8 @@
 				210CF8912626724A00F4071E /* _08MP3VC.m in Sources */,
 				213BCC37254003DB00C89B72 /* AXUserInfo.mm in Sources */,
 				213BCC35254003DB00C89B72 /* NSObject+Load.m in Sources */,
+				214F67EB2646B863006D946B /* AXShareWeibo.swift in Sources */,
+				214F67EF2646B863006D946B /* AXShareQQ.swift in Sources */,
 				21D61EEC257F106E0059201A /* DogSwift.swift in Sources */,
 				213BCC36254003DB00C89B72 /* AXUserInfoDao.mm in Sources */,
 				21799D64255CD33700754A8B /* AXRecordAudioConfig.m in Sources */,
@@ -2651,6 +2753,7 @@
 				21430AE1256C980500CB8EBC /* _30IGListViewController.m in Sources */,
 				213BCBFA254003DB00C89B72 /* _25LayoutViewController.m in Sources */,
 				219D5BFF261BED8D00DFC539 /* _03RootCell.m in Sources */,
+				214F67ED2646B863006D946B /* AXShareInfoItem.swift in Sources */,
 				21C018F925FF098700FAFE5A /* Student.proto in Sources */,
 				213BCBF7254003DB00C89B72 /* _21KVOViewController.m in Sources */,
 				21E306B4255EAA1100D17A8B /* _29AudioViewController.m in Sources */,
@@ -2665,6 +2768,7 @@
 				21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */,
 				21F43CF125E4F174002AF1AD /* Target_News.m in Sources */,
 				21331CEF2592EB02008E251B /* _31GCDViewController.m in Sources */,
+				214F67EC2646B863006D946B /* AXShareConfigs.swift in Sources */,
 				213BCBF4254003DB00C89B72 /* _19ScrollContentViewController.m in Sources */,
 				2117A3F625CCE93300980436 /* AnimRefreshHeader.m in Sources */,
 				21F2690D2635425100C67CFE /* FileListViewController.swift in Sources */,
@@ -2672,7 +2776,9 @@
 				213BCC01254003DB00C89B72 /* _00TableViewCell.m in Sources */,
 				213BCC3D254003DB00C89B72 /* RouterManager.m in Sources */,
 				21D87B8925EF35C2007220E8 /* _01TypeViewController.m in Sources */,
+				214F67EA2646B863006D946B /* AXShareUtil.swift in Sources */,
 				211A997725CB96C7009030CB /* _32LottieVC.m in Sources */,
+				214F67F22646B863006D946B /* AXShareType.m in Sources */,
 				21E6DE67260494060092051F /* DogOC.m in Sources */,
 				216891AB25ABDD4B0037CAB5 /* _25CompLayoutCell.m in Sources */,
 				218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */,
@@ -2685,6 +2791,7 @@
 				21D7675425C00CE700468F8E /* _01HeaderView.m in Sources */,
 				21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */,
 				21F2691A2635425100C67CFE /* FileListPreview.swift in Sources */,
+				214F67F42646B863006D946B /* DLSharePopCell.m in Sources */,
 				21C0192C25FF2DDE00FAFE5A /* Student.pbobjc.m in Sources */,
 				218A323C25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */,
 				21BA45BA25AEE05E00EEEF45 /* CustomGifHeader.m in Sources */,
@@ -2706,6 +2813,7 @@
 				218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */,
 				21E8BD2025B1D08300D9D83C /* AXSwitchView.m in Sources */,
 				218F674125A5B61E006A8312 /* _25CompLayoutVC1.m in Sources */,
+				214F67F12646B863006D946B /* AXShareOption.m in Sources */,
 				213BCBFC254003DB00C89B72 /* _06WCDBViewController.m in Sources */,
 				211DEB6625EC88E500CE3907 /* _03GradientViewController.m in Sources */,
 				2121FE8025CA945600B3B323 /* AXXSwitch.m in Sources */,
@@ -2720,10 +2828,12 @@
 				21898F322541B11D00876524 /* Application.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				213BCC0D254003DB00C89B72 /* Person.m in Sources */,
+				214F67EE2646B863006D946B /* AXShareWeChat.swift in Sources */,
 				21F2690B2635425100C67CFE /* WebviewPreviewViewContoller.swift in Sources */,
 				213BCC04254003DB00C89B72 /* _01RootVC.m in Sources */,
 				2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */,
 				21430B02256C9D4300CB8EBC /* _20TimeLineContentCell.m in Sources */,
+				214F67F52646B863006D946B /* DLShareService.m in Sources */,
 				21E5C8A9257F6BF8002A4D59 /* DemoBaseViewController.m in Sources */,
 				213BCC14254003DB00C89B72 /* _09AFNViewController.m in Sources */,
 				213BCC2F254003DB00C89B72 /* ChatMessageModel.m in Sources */,

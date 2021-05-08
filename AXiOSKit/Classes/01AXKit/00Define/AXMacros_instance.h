@@ -61,6 +61,34 @@ _onceToken = 0l;\
 /*===单例模式,.m文件 end ===*/
 
 
+/// 单例模式 定义
+#define AX_SINGLETON_INTER(name)  + (instancetype )shared##name;
+
+/// 单例模式 实现
+#define  AX_SINGLETON_IMPL(name)\
+static id _instance; \
+static dispatch_once_t _onceToken; \
+\
++ (instancetype)allocWithZone:(struct _NSZone *)zone {\
+dispatch_once(&_onceToken, ^{\
+_instance = [super allocWithZone:zone]; \
+}); \
+return _instance; \
+} \
+\
++ (instancetype)shared##name{\
+return [[self alloc]init];\
+}\
+\
+- (id)copyWithZone:(NSZone *)zone {\
+    return _instance; \
+}\
+\
+- (id)mutableCopyWithZone:(NSZone *)zone { \
+    return _instance;\
+}\
+
+
 
 
 #endif /* AXMacros_instance_h */
