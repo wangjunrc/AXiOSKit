@@ -14,8 +14,7 @@
 #import "AppDelegate.h"
 #import <AXiOSKit/UIScrollView+AXEmptyDataSet.h>
 #import <AXiOSKit/UIViewController+AXNavBarConfig.h>
-//调用swift, 不可见文件
-#import "AXiOSKit_Example-Swift.h"
+#import "AXUserSwiftImport.h"
 #import <SSZipArchive/SSZipArchive.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import "Person.h"

@@ -683,7 +683,7 @@ typedef void (^CollectionBlock)(void);
             
             @{
                 @"index": @17,
-                @"title": @"微信分享",
+                @"title": @"第三方分享",
                 @"action": ^{
                     _17OtherShareViewController *vc =
                     [[_17OtherShareViewController alloc] init];

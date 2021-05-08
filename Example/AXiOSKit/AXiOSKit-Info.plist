@@ -66,11 +66,25 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string>微信@2x</string>
 			<key>CFBundleURLName</key>
-			<string>weixin</string>
+			<string>微信</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>wxb1fbfdf9fe32026b</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string>QQ@2x</string>
+			<key>CFBundleURLName</key>
+			<string>QQ</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>tencent1105526005</string>
 			</array>
 		</dict>
 	</array>
@@ -78,7 +92,13 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>mqqOpensdkSSoLogin</string>
+		<string>pocket-oauth-v1</string>
 		<string>weixin</string>
+		<string>mqqapi</string>
+		<string>weibosdk</string>
+		<string>alipay</string>
+		<string>alipayshare</string>
 		<string>weixinULAPI</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>

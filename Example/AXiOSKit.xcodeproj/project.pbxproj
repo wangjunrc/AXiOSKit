@@ -125,8 +125,8 @@
 		211227622573340100B6ECC8 /* test_webp.webp in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBE4254003DA00C89B72 /* test_webp.webp */; };
 		211227632573340100B6ECC8 /* g2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB33254003D900C89B72 /* g2@2x.png */; };
 		211227662573340100B6ECC8 /* AXShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21898E982541AD6900876524 /* AXShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		21122776257334C600B6ECC8 /* AXiOSKit-Info-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21122775257334C600B6ECC8 /* AXiOSKit-Info-debug.plist */; };
-		21122777257334C600B6ECC8 /* AXiOSKit-Info-debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21122775257334C600B6ECC8 /* AXiOSKit-Info-debug.plist */; };
+		21122776257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21122775257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist */; };
+		21122777257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21122775257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist */; };
 		211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211227842573361600B6ECC8 /* AXiOSKit-Info.plist */; };
 		211227862573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211227842573361600B6ECC8 /* AXiOSKit-Info.plist */; };
 		2112281925733DF300B6ECC8 /* Assets_env_1.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */; };
@@ -254,18 +254,18 @@
 		21430B10256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21430B0E256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib */; };
 		214878E6260C173B003671D9 /* _03RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 214878E5260C173B003671D9 /* _03RootVC.m */; };
 		214878ED260C197E003671D9 /* _03HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 214878EC260C197E003671D9 /* _03HeaderView.m */; };
-		214F67EA2646B863006D946B /* AXShareUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D32646B863006D946B /* AXShareUtil.swift */; };
+		214F67EA2646B863006D946B /* AXShareBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D32646B863006D946B /* AXShareBridge.swift */; };
 		214F67EB2646B863006D946B /* AXShareWeibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D42646B863006D946B /* AXShareWeibo.swift */; };
 		214F67EC2646B863006D946B /* AXShareConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D52646B863006D946B /* AXShareConfigs.swift */; };
-		214F67ED2646B863006D946B /* AXShareInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D62646B863006D946B /* AXShareInfoItem.swift */; };
+		214F67ED2646B863006D946B /* AXSocialShareContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D62646B863006D946B /* AXSocialShareContent.swift */; };
 		214F67EE2646B863006D946B /* AXShareWeChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D72646B863006D946B /* AXShareWeChat.swift */; };
 		214F67EF2646B863006D946B /* AXShareQQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D82646B863006D946B /* AXShareQQ.swift */; };
 		214F67F12646B863006D946B /* AXShareOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67DE2646B863006D946B /* AXShareOption.m */; };
-		214F67F22646B863006D946B /* AXShareType.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67DF2646B863006D946B /* AXShareType.m */; };
-		214F67F32646B863006D946B /* DLSharePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67E32646B863006D946B /* DLSharePopView.m */; };
-		214F67F42646B863006D946B /* DLSharePopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67E42646B863006D946B /* DLSharePopCell.m */; };
-		214F67F52646B863006D946B /* DLShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67E92646B863006D946B /* DLShareService.m */; };
-		214F67F92646BB32006D946B /* AXShareUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67F82646BB32006D946B /* AXShareUIViewController.m */; };
+		214F67F22646B863006D946B /* AXShareTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67DF2646B863006D946B /* AXShareTarget.m */; };
+		214F67F32646B863006D946B /* AXSocialShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67E32646B863006D946B /* AXSocialShareView.m */; };
+		214F67F42646B863006D946B /* AXSocialShareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67E42646B863006D946B /* AXSocialShareCell.m */; };
+		214F67F52646B863006D946B /* AXShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67E92646B863006D946B /* AXShareService.m */; };
+		214F67F92646BB32006D946B /* AXSocialShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67F82646BB32006D946B /* AXSocialShareViewController.m */; };
 		2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		2160E3C42601AADC007FB7C2 /* _36YYKitTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2160E3C32601AADC007FB7C2 /* _36YYKitTestVC.m */; };
@@ -304,6 +304,16 @@
 		219D5BFF261BED8D00DFC539 /* _03RootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 219D5BFE261BED8D00DFC539 /* _03RootCell.m */; };
 		219F44522580BDC600E8CB50 /* _02RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 219F44512580BDC600E8CB50 /* _02RootVC.m */; };
 		219F44532580BDC600E8CB50 /* _02RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 219F44512580BDC600E8CB50 /* _02RootVC.m */; };
+		21A2DD082647000A006D2892 /* QQ@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A2DD0226470009006D2892 /* QQ@2x.png */; };
+		21A2DD092647000A006D2892 /* QQ@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A2DD0226470009006D2892 /* QQ@2x.png */; };
+		21A2DD0A2647000A006D2892 /* 支付宝@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A2DD0326470009006D2892 /* 支付宝@2x.png */; };
+		21A2DD0B2647000A006D2892 /* 支付宝@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A2DD0326470009006D2892 /* 支付宝@2x.png */; };
+		21A2DD0C2647000A006D2892 /* 微博@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A2DD042647000A006D2892 /* 微博@2x.png */; };
+		21A2DD0D2647000A006D2892 /* 微博@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A2DD042647000A006D2892 /* 微博@2x.png */; };
+		21A2DD0E2647000A006D2892 /* 朋友圈@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A2DD052647000A006D2892 /* 朋友圈@2x.png */; };
+		21A2DD0F2647000A006D2892 /* 朋友圈@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A2DD052647000A006D2892 /* 朋友圈@2x.png */; };
+		21A2DD122647000A006D2892 /* 微信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A2DD072647000A006D2892 /* 微信@2x.png */; };
+		21A2DD132647000A006D2892 /* 微信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A2DD072647000A006D2892 /* 微信@2x.png */; };
 		21B542A925A5A2C20071D20D /* _25FlowLayoutVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B542A825A5A2C20071D20D /* _25FlowLayoutVC1.m */; };
 		21BA193625AD8F7500222F9A /* AXShareContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2198FBEE258C913500D7BD4F /* AXShareContentViewController.m */; };
 		21BA194325AD904100222F9A /* _25CompLayoutVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F674725A5CC69006A8312 /* _25CompLayoutVC2.m */; };
@@ -332,8 +342,6 @@
 		21C11B9925B02DA200D26E89 /* testWord.docx in Resources */ = {isa = PBXBuildFile; fileRef = 21C11B9825B02DA200D26E89 /* testWord.docx */; };
 		21C11B9A25B02DA200D26E89 /* testWord.docx in Resources */ = {isa = PBXBuildFile; fileRef = 21C11B9825B02DA200D26E89 /* testWord.docx */; };
 		21C3778625A829F400D678FD /* _25CompLayoutVC5.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C3778525A829F400D678FD /* _25CompLayoutVC5.m */; };
-		21C63C76263697F6001F9948 /* MonkeyKingUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C63C75263697F6001F9948 /* MonkeyKingUtil.swift */; };
-		21C63C77263697F6001F9948 /* MonkeyKingUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C63C75263697F6001F9948 /* MonkeyKingUtil.swift */; };
 		21CC7C62255FA40D00E7B506 /* AppDelegateWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */; };
 		21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */; };
 		21CC7C78255FA71900E7B506 /* _13WeImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C77255FA71900E7B506 /* _13WeImageTableViewController.m */; };
@@ -505,7 +513,7 @@
 		2111E051257377100016004D /* AXShare_Env_1.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AXShare_Env_1.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2111E052257377100016004D /* AXShare_Env_1_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AXShare_Env_1_Info.plist; path = /Users/xing/Develop/GitHub/AXiOSKit/Example/AXShare_Env_1_Info.plist; sourceTree = "<absolute>"; };
 		2112276B2573340100B6ECC8 /* AXiOSKit_Example_Env_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit_Example_Env_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		21122775257334C600B6ECC8 /* AXiOSKit-Info-debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info-debug.plist"; sourceTree = "<group>"; };
+		21122775257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-env-1-Info.plist"; sourceTree = "<group>"; };
 		211227842573361600B6ECC8 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
 		2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets_env_1.xcassets; sourceTree = "<group>"; };
 		2117A3F225CCE93200980436 /* AnimRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimRefreshHeader.h; sourceTree = "<group>"; };
@@ -672,25 +680,25 @@
 		214878E5260C173B003671D9 /* _03RootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _03RootVC.m; sourceTree = "<group>"; };
 		214878EB260C197E003671D9 /* _03HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _03HeaderView.h; sourceTree = "<group>"; };
 		214878EC260C197E003671D9 /* _03HeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _03HeaderView.m; sourceTree = "<group>"; };
-		214F67D32646B863006D946B /* AXShareUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareUtil.swift; sourceTree = "<group>"; };
+		214F67D32646B863006D946B /* AXShareBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareBridge.swift; sourceTree = "<group>"; };
 		214F67D42646B863006D946B /* AXShareWeibo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareWeibo.swift; sourceTree = "<group>"; };
 		214F67D52646B863006D946B /* AXShareConfigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareConfigs.swift; sourceTree = "<group>"; };
-		214F67D62646B863006D946B /* AXShareInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareInfoItem.swift; sourceTree = "<group>"; };
+		214F67D62646B863006D946B /* AXSocialShareContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXSocialShareContent.swift; sourceTree = "<group>"; };
 		214F67D72646B863006D946B /* AXShareWeChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareWeChat.swift; sourceTree = "<group>"; };
 		214F67D82646B863006D946B /* AXShareQQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareQQ.swift; sourceTree = "<group>"; };
 		214F67DE2646B863006D946B /* AXShareOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXShareOption.m; sourceTree = "<group>"; };
-		214F67DF2646B863006D946B /* AXShareType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXShareType.m; sourceTree = "<group>"; };
+		214F67DF2646B863006D946B /* AXShareTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXShareTarget.m; sourceTree = "<group>"; };
 		214F67E02646B863006D946B /* AXShareOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXShareOption.h; sourceTree = "<group>"; };
-		214F67E12646B863006D946B /* AXShareType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXShareType.h; sourceTree = "<group>"; };
-		214F67E32646B863006D946B /* DLSharePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLSharePopView.m; sourceTree = "<group>"; };
-		214F67E42646B863006D946B /* DLSharePopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLSharePopCell.m; sourceTree = "<group>"; };
-		214F67E52646B863006D946B /* DLSharePopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLSharePopView.h; sourceTree = "<group>"; };
-		214F67E62646B863006D946B /* DLSharePopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLSharePopCell.h; sourceTree = "<group>"; };
-		214F67E82646B863006D946B /* DLShareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLShareService.h; sourceTree = "<group>"; };
-		214F67E92646B863006D946B /* DLShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLShareService.m; sourceTree = "<group>"; };
+		214F67E12646B863006D946B /* AXShareTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXShareTarget.h; sourceTree = "<group>"; };
+		214F67E32646B863006D946B /* AXSocialShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXSocialShareView.m; sourceTree = "<group>"; };
+		214F67E42646B863006D946B /* AXSocialShareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXSocialShareCell.m; sourceTree = "<group>"; };
+		214F67E52646B863006D946B /* AXSocialShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXSocialShareView.h; sourceTree = "<group>"; };
+		214F67E62646B863006D946B /* AXSocialShareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXSocialShareCell.h; sourceTree = "<group>"; };
+		214F67E82646B863006D946B /* AXShareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXShareService.h; sourceTree = "<group>"; };
+		214F67E92646B863006D946B /* AXShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXShareService.m; sourceTree = "<group>"; };
 		214F67F62646B9D2006D946B /* AXUserSwiftImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUserSwiftImport.h; sourceTree = "<group>"; };
-		214F67F72646BB32006D946B /* AXShareUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXShareUIViewController.h; sourceTree = "<group>"; };
-		214F67F82646BB32006D946B /* AXShareUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXShareUIViewController.m; sourceTree = "<group>"; };
+		214F67F72646BB32006D946B /* AXSocialShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXSocialShareViewController.h; sourceTree = "<group>"; };
+		214F67F82646BB32006D946B /* AXSocialShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXSocialShareViewController.m; sourceTree = "<group>"; };
 		2152C5B525919C720078D525 /* AXDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugViewController.h; sourceTree = "<group>"; };
 		2152C5B625919C720078D525 /* AXDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugViewController.m; sourceTree = "<group>"; };
 		2160E3C22601AADC007FB7C2 /* _36YYKitTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _36YYKitTestVC.h; sourceTree = "<group>"; };
@@ -753,6 +761,11 @@
 		219D5BFE261BED8D00DFC539 /* _03RootCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _03RootCell.m; sourceTree = "<group>"; };
 		219F44502580BDC600E8CB50 /* _02RootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _02RootVC.h; sourceTree = "<group>"; };
 		219F44512580BDC600E8CB50 /* _02RootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _02RootVC.m; sourceTree = "<group>"; };
+		21A2DD0226470009006D2892 /* QQ@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ@2x.png"; sourceTree = "<group>"; };
+		21A2DD0326470009006D2892 /* 支付宝@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "支付宝@2x.png"; sourceTree = "<group>"; };
+		21A2DD042647000A006D2892 /* 微博@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微博@2x.png"; sourceTree = "<group>"; };
+		21A2DD052647000A006D2892 /* 朋友圈@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "朋友圈@2x.png"; sourceTree = "<group>"; };
+		21A2DD072647000A006D2892 /* 微信@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信@2x.png"; sourceTree = "<group>"; };
 		21B542A725A5A2C20071D20D /* _25FlowLayoutVC1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25FlowLayoutVC1.h; sourceTree = "<group>"; };
 		21B542A825A5A2C20071D20D /* _25FlowLayoutVC1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25FlowLayoutVC1.m; sourceTree = "<group>"; };
 		21BA17F725AD852000222F9A /* ax_release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ax_release.xcconfig; sourceTree = "<group>"; };
@@ -775,7 +788,6 @@
 		21C11B9825B02DA200D26E89 /* testWord.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = testWord.docx; sourceTree = "<group>"; };
 		21C3778425A829F400D678FD /* _25CompLayoutVC5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CompLayoutVC5.h; sourceTree = "<group>"; };
 		21C3778525A829F400D678FD /* _25CompLayoutVC5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CompLayoutVC5.m; sourceTree = "<group>"; };
-		21C63C75263697F6001F9948 /* MonkeyKingUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonkeyKingUtil.swift; sourceTree = "<group>"; };
 		21CC7C60255FA40D00E7B506 /* AppDelegateWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateWebImage.h; sourceTree = "<group>"; };
 		21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateWebImage.m; sourceTree = "<group>"; };
 		21CC7C66255FA4A300E7B506 /* AppDelegateDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateDebug.h; sourceTree = "<group>"; };
@@ -1323,12 +1335,12 @@
 		214F67D22646B863006D946B /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				214F67D32646B863006D946B /* AXShareBridge.swift */,
 				214F67D52646B863006D946B /* AXShareConfigs.swift */,
-				214F67D62646B863006D946B /* AXShareInfoItem.swift */,
 				214F67D82646B863006D946B /* AXShareQQ.swift */,
-				214F67D32646B863006D946B /* AXShareUtil.swift */,
 				214F67D72646B863006D946B /* AXShareWeChat.swift */,
 				214F67D42646B863006D946B /* AXShareWeibo.swift */,
+				214F67D62646B863006D946B /* AXSocialShareContent.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1336,8 +1348,8 @@
 		214F67D92646B863006D946B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				214F67F72646BB32006D946B /* AXShareUIViewController.h */,
-				214F67F82646BB32006D946B /* AXShareUIViewController.m */,
+				214F67F72646BB32006D946B /* AXSocialShareViewController.h */,
+				214F67F82646BB32006D946B /* AXSocialShareViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1347,8 +1359,8 @@
 			children = (
 				214F67E02646B863006D946B /* AXShareOption.h */,
 				214F67DE2646B863006D946B /* AXShareOption.m */,
-				214F67E12646B863006D946B /* AXShareType.h */,
-				214F67DF2646B863006D946B /* AXShareType.m */,
+				214F67E12646B863006D946B /* AXShareTarget.h */,
+				214F67DF2646B863006D946B /* AXShareTarget.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1356,10 +1368,10 @@
 		214F67E22646B863006D946B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				214F67E32646B863006D946B /* DLSharePopView.m */,
-				214F67E42646B863006D946B /* DLSharePopCell.m */,
-				214F67E52646B863006D946B /* DLSharePopView.h */,
-				214F67E62646B863006D946B /* DLSharePopCell.h */,
+				214F67E62646B863006D946B /* AXSocialShareCell.h */,
+				214F67E42646B863006D946B /* AXSocialShareCell.m */,
+				214F67E52646B863006D946B /* AXSocialShareView.h */,
+				214F67E32646B863006D946B /* AXSocialShareView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1367,8 +1379,8 @@
 		214F67E72646B863006D946B /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				214F67E82646B863006D946B /* DLShareService.h */,
-				214F67E92646B863006D946B /* DLShareService.m */,
+				214F67E82646B863006D946B /* AXShareService.h */,
+				214F67E92646B863006D946B /* AXShareService.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1414,6 +1426,11 @@
 		218990312542630D00876524 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				21A2DD052647000A006D2892 /* 朋友圈@2x.png */,
+				21A2DD042647000A006D2892 /* 微博@2x.png */,
+				21A2DD072647000A006D2892 /* 微信@2x.png */,
+				21A2DD0326470009006D2892 /* 支付宝@2x.png */,
+				21A2DD0226470009006D2892 /* QQ@2x.png */,
 				21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */,
 				21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */,
 				213BCB96254003DA00C89B72 /* 123.jpg */,
@@ -1739,15 +1756,15 @@
 				2152C5B525919C720078D525 /* AXDebugViewController.h */,
 				2152C5B625919C720078D525 /* AXDebugViewController.m */,
 				21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */,
-				21122775257334C600B6ECC8 /* AXiOSKit-Info-debug.plist */,
+				21122775257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist */,
 				211227842573361600B6ECC8 /* AXiOSKit-Info.plist */,
 				6003F59B195388D20070C39A /* AXiOSKit-Prefix.pch */,
 				213BCBD7254003DA00C89B72 /* AXiOSKitExampleRelease.entitlements */,
+				214F67F62646B9D2006D946B /* AXUserSwiftImport.h */,
 				213BCB92254003D900C89B72 /* Base.lproj */,
 				21E6DE65260494060092051F /* DogOC.h */,
 				21E6DE66260494060092051F /* DogOC.m */,
 				21D61EEB257F106E0059201A /* DogSwift.swift */,
-				21C63C75263697F6001F9948 /* MonkeyKingUtil.swift */,
 				213BCB2D254003D900C89B72 /* en.lproj */,
 				21799C7B255BDE8500754A8B /* gift.svg */,
 				210B1ED425EDE40200878A73 /* Localizable.strings */,
@@ -1758,7 +1775,6 @@
 				210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */,
 				213BCBE0254003DA00C89B72 /* SceneDelegate.h */,
 				213BCB34254003D900C89B72 /* SceneDelegate.m */,
-				214F67F62646B9D2006D946B /* AXUserSwiftImport.h */,
 				213BCB35254003D900C89B72 /* Settings.bundle */,
 			);
 			name = "00Supporting Files";
@@ -2015,12 +2031,15 @@
 				211227482573340100B6ECC8 /* _23FullViewController.xib in Resources */,
 				213917C8262ECF3400B4A332 /* newAnimation.json in Resources */,
 				21CCD4642627C50F00D83F45 /* green_lottie_tab_discover.json in Resources */,
+				21A2DD0D2647000A006D2892 /* 微博@2x.png in Resources */,
 				211227492573340100B6ECC8 /* _06WCDBViewController.xib in Resources */,
 				21D08EBE25CBF1E90006DBCC /* 46472-lurking-cat.json in Resources */,
 				211A99FD25CB9F9D009030CB /* Play-Pause.json in Resources */,
 				211A99EB25CB9F9D009030CB /* RefreshFooterAnim.json in Resources */,
 				211A99F325CB9F9D009030CB /* vcTransition1.json in Resources */,
 				2112274B2573340100B6ECC8 /* App.pdf in Resources */,
+				21A2DD092647000A006D2892 /* QQ@2x.png in Resources */,
+				21A2DD0B2647000A006D2892 /* 支付宝@2x.png in Resources */,
 				211A99EF25CB9F9D009030CB /* Loading.json in Resources */,
 				211A99E725CB9F9D009030CB /* Switch.json in Resources */,
 				213917BE262ECBCD00B4A332 /* lf20_imvcfu5s.json in Resources */,
@@ -2045,9 +2064,11 @@
 				21C11B9A25B02DA200D26E89 /* testWord.docx in Resources */,
 				211227562573340100B6ECC8 /* LaunchScreen.storyboard in Resources */,
 				211227572573340100B6ECC8 /* PointViewController.plist in Resources */,
+				21A2DD132647000A006D2892 /* 微信@2x.png in Resources */,
+				21A2DD0F2647000A006D2892 /* 朋友圈@2x.png in Resources */,
 				211227582573340100B6ECC8 /* _10TextFViewController.xib in Resources */,
 				21CCD4622627C50F00D83F45 /* gray_tabbar_me_animation.json in Resources */,
-				21122777257334C600B6ECC8 /* AXiOSKit-Info-debug.plist in Resources */,
+				21122777257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist in Resources */,
 				211227592573340100B6ECC8 /* _24NoteViewController.xib in Resources */,
 				2112275A2573340100B6ECC8 /* Alternate_AppIcon_3@2x.png in Resources */,
 				2112275B2573340100B6ECC8 /* _00TableViewCell.xib in Resources */,
@@ -2105,6 +2126,7 @@
 				218A1EC8254438C900E43F16 /* office.bundle in Resources */,
 				213BCC3E254003DB00C89B72 /* PointViewController2.plist in Resources */,
 				213BCC45254003DB00C89B72 /* webp.bundle in Resources */,
+				21A2DD082647000A006D2892 /* QQ@2x.png in Resources */,
 				21CCD4752627C50F00D83F45 /* tab_me_animate.json in Resources */,
 				213BCC28254003DB00C89B72 /* 123.jpg in Resources */,
 				211A99E825CB9F9D009030CB /* HappyBirthday.json in Resources */,
@@ -2132,9 +2154,11 @@
 				21F269152635425100C67CFE /* FileBrowser.xib in Resources */,
 				213BCC25254003DB00C89B72 /* PointViewController.plist in Resources */,
 				213BCBF0254003DB00C89B72 /* _10TextFViewController.xib in Resources */,
-				21122776257334C600B6ECC8 /* AXiOSKit-Info-debug.plist in Resources */,
+				21A2DD0A2647000A006D2892 /* 支付宝@2x.png in Resources */,
+				21122776257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist in Resources */,
 				213BCC08254003DB00C89B72 /* _24NoteViewController.xib in Resources */,
 				21F269162635425100C67CFE /* pdf@2x.png in Resources */,
+				21A2DD122647000A006D2892 /* 微信@2x.png in Resources */,
 				21CCD4712627C50F00D83F45 /* tab_home_animate.json in Resources */,
 				21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */,
 				21D08EBD25CBF1E90006DBCC /* 46472-lurking-cat.json in Resources */,
@@ -2151,8 +2175,10 @@
 				213BCBE8254003DB00C89B72 /* IMG_3972.GIF in Resources */,
 				213917BD262ECBCD00B4A332 /* lf20_imvcfu5s.json in Resources */,
 				21CCD46B2627C50F00D83F45 /* green_lottie_tab_mine.json in Resources */,
+				21A2DD0E2647000A006D2892 /* 朋友圈@2x.png in Resources */,
 				213BCBED254003DB00C89B72 /* Settings.bundle in Resources */,
 				213BCC48254003DB00C89B72 /* test_webp.webp in Resources */,
+				21A2DD0C2647000A006D2892 /* 微博@2x.png in Resources */,
 				213BCBEB254003DB00C89B72 /* g2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2589,7 +2615,6 @@
 				211226F52573340100B6ECC8 /* _10TextFViewController.m in Sources */,
 				21BA195425AD905700222F9A /* _25CompLayoutVC5.m in Sources */,
 				211226F62573340100B6ECC8 /* ChatTextMessageModel.m in Sources */,
-				21C63C77263697F6001F9948 /* MonkeyKingUtil.swift in Sources */,
 				21F43D0725E4F310002AF1AD /* CTMediator+NewsActions.m in Sources */,
 				211226F72573340100B6ECC8 /* _20PhotoViewController.m in Sources */,
 				211226F82573340100B6ECC8 /* _28LocalSocketServiceViewController.m in Sources */,
@@ -2712,7 +2737,7 @@
 				21948C9D2563F3BC00207E18 /* AXUserLog.mm in Sources */,
 				213BCC1C254003DB00C89B72 /* _15UIMenuController.m in Sources */,
 				213BCBF2254003DB00C89B72 /* _10TextFViewController.m in Sources */,
-				214F67F32646B863006D946B /* DLSharePopView.m in Sources */,
+				214F67F32646B863006D946B /* AXSocialShareView.m in Sources */,
 				213BCC30254003DB00C89B72 /* ChatTextMessageModel.m in Sources */,
 				210CF8C826268D0600F4071E /* DemoTabBarController.m in Sources */,
 				2160E3C42601AADC007FB7C2 /* _36YYKitTestVC.m in Sources */,
@@ -2724,7 +2749,7 @@
 				21430AE7256C98EF00CB8EBC /* _30TimeLineModel.m in Sources */,
 				218A32D425E0FAAE008D95B8 /* _33CropViewController.m in Sources */,
 				218A324C25E0DFF0008D95B8 /* AXIBudyButton.m in Sources */,
-				214F67F92646BB32006D946B /* AXShareUIViewController.m in Sources */,
+				214F67F92646BB32006D946B /* AXSocialShareViewController.m in Sources */,
 				21C0190825FF293300FAFE5A /* _35ProtobufVC.m in Sources */,
 				214878ED260C197E003671D9 /* _03HeaderView.m in Sources */,
 				213BCC31254003DB00C89B72 /* LVieoView.m in Sources */,
@@ -2753,7 +2778,7 @@
 				21430AE1256C980500CB8EBC /* _30IGListViewController.m in Sources */,
 				213BCBFA254003DB00C89B72 /* _25LayoutViewController.m in Sources */,
 				219D5BFF261BED8D00DFC539 /* _03RootCell.m in Sources */,
-				214F67ED2646B863006D946B /* AXShareInfoItem.swift in Sources */,
+				214F67ED2646B863006D946B /* AXSocialShareContent.swift in Sources */,
 				21C018F925FF098700FAFE5A /* Student.proto in Sources */,
 				213BCBF7254003DB00C89B72 /* _21KVOViewController.m in Sources */,
 				21E306B4255EAA1100D17A8B /* _29AudioViewController.m in Sources */,
@@ -2776,9 +2801,9 @@
 				213BCC01254003DB00C89B72 /* _00TableViewCell.m in Sources */,
 				213BCC3D254003DB00C89B72 /* RouterManager.m in Sources */,
 				21D87B8925EF35C2007220E8 /* _01TypeViewController.m in Sources */,
-				214F67EA2646B863006D946B /* AXShareUtil.swift in Sources */,
+				214F67EA2646B863006D946B /* AXShareBridge.swift in Sources */,
 				211A997725CB96C7009030CB /* _32LottieVC.m in Sources */,
-				214F67F22646B863006D946B /* AXShareType.m in Sources */,
+				214F67F22646B863006D946B /* AXShareTarget.m in Sources */,
 				21E6DE67260494060092051F /* DogOC.m in Sources */,
 				216891AB25ABDD4B0037CAB5 /* _25CompLayoutCell.m in Sources */,
 				218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */,
@@ -2791,7 +2816,7 @@
 				21D7675425C00CE700468F8E /* _01HeaderView.m in Sources */,
 				21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */,
 				21F2691A2635425100C67CFE /* FileListPreview.swift in Sources */,
-				214F67F42646B863006D946B /* DLSharePopCell.m in Sources */,
+				214F67F42646B863006D946B /* AXSocialShareCell.m in Sources */,
 				21C0192C25FF2DDE00FAFE5A /* Student.pbobjc.m in Sources */,
 				218A323C25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */,
 				21BA45BA25AEE05E00EEEF45 /* CustomGifHeader.m in Sources */,
@@ -2833,11 +2858,10 @@
 				213BCC04254003DB00C89B72 /* _01RootVC.m in Sources */,
 				2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */,
 				21430B02256C9D4300CB8EBC /* _20TimeLineContentCell.m in Sources */,
-				214F67F52646B863006D946B /* DLShareService.m in Sources */,
+				214F67F52646B863006D946B /* AXShareService.m in Sources */,
 				21E5C8A9257F6BF8002A4D59 /* DemoBaseViewController.m in Sources */,
 				213BCC14254003DB00C89B72 /* _09AFNViewController.m in Sources */,
 				213BCC2F254003DB00C89B72 /* ChatMessageModel.m in Sources */,
-				21C63C76263697F6001F9948 /* MonkeyKingUtil.swift in Sources */,
 				21C3778625A829F400D678FD /* _25CompLayoutVC5.m in Sources */,
 				213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */,
 				21430B08256C9DC300CB8EBC /* _30TimeLineNinePhotoView.m in Sources */,
@@ -3025,7 +3049,7 @@
 					"ENV=1",
 					"Dev=2",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info-debug.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-env-1-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0.0;
 				MODULE_NAME = ExampleApp;
@@ -3055,7 +3079,7 @@
 					"SD_WEBP=1",
 					"Dev=0",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info-debug.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-env-1-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0.0;
 				MODULE_NAME = ExampleApp;
@@ -3249,7 +3273,7 @@
 					"SD_WEBP=1",
 					"ENV=1",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info-debug.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-env-1-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0.0;
 				MODULE_NAME = ExampleApp;
@@ -3468,7 +3492,7 @@
 					"SD_WEBP=1",
 					"ENV=1",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-Info-debug.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AXiOSKit/AXiOSKit-env-1-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0.0;
 				MODULE_NAME = ExampleApp;

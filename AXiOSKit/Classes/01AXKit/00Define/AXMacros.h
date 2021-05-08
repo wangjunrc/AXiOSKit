@@ -115,25 +115,25 @@ self.frame = frame;\
 #define AX_hideHUD  [hud hideAnimated:YES];
 
 
-/**
- * 定义属性 vc中定义一个同名的view替代原来的 aViewClass 需要替代的view
+/** inter
+ * 定义属性 vc中定义一个同名的view替代原来的 Class 需要替代的view
  */
-#define AX_REDEFINE_CONTROLLER_VIEW_PROPERTY(aViewClass) @property(nonatomic, strong)aViewClass *view;
+#define AX_REDEFINE_CONTROLLER_VIEW_INTER(Class) @property(nonatomic, strong)Class *view;
 
 /**
- * vc中定义一个同名的view替代原来的 aViewClass 需要替代的view
+ * vc中定义一个同名的view替代原来的 Class 需要替代的view
  */
-#define AX_REDEFINE_CONTROLLER_VIEW_IMPL(aViewClass)\
+#define AX_REDEFINE_CONTROLLER_VIEW_IMPL(Class)\
 @dynamic view;\
 - (void)loadView{\
 [super loadView];\
-self.view = [[aViewClass alloc]init];\
+self.view = [[Class alloc]init];\
 }\
-- (void)setView:(aViewClass *)view{\
+- (void)setView:(Class *)view{\
 [super setView:view];\
 }\
-- (aViewClass *)view{\
-return (aViewClass *)[super view];\
+- (Class *)view{\
+return (Class *)[super view];\
 }\
 
 /**GCD 信号量创建*/

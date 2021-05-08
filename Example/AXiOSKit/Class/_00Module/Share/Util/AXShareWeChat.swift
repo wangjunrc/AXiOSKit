@@ -1,6 +1,6 @@
 //
 //  AXShareWeChat.swift
-//  DLAppStore
+//  AXiOSKitExample
 //
 //  Created by 小星星吃KFC on 2021/5/7.
 //  Copyright © 2021 axinger. All rights reserved.
@@ -36,7 +36,7 @@ import MonkeyKing
     }
     
     /// 分享微信
-    func share(type:DLWeChatType ,item:AXShareInfoItem, block:AXShareCompletionHandler? ) {
+    func share(type:DLWeChatType ,item:AXSocialShareContent, block:AXShareCompletionHandler? ) {
         
         
         var subtype: MonkeyKing.Message.WeChatSubtype!

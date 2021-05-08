@@ -1,6 +1,6 @@
 //
 //  DLShareConfig.swift
-//  DLAppStore
+//  AXiOSKitExample
 //
 //  Created by 小星星吃KFC on 2021/5/7.
 //  Copyright © 2021 axinger. All rights reserved.
@@ -24,14 +24,15 @@ struct AXShareConfigs {
     }
     
     struct WeChat {
-        static let appID = "wx58b44315c8e725b5"
+        // wxb1fbfdf9fe32026b wx58b44315c8e725b5
+        static let appID = "wxb1fbfdf9fe32026b"
         static let appKey: String? = nil
         static let miniAppID: String? = nil
         static let universalLink: String? = nil
     }
     
     struct QQ {
-        static let appID = "1103099842"
+        static let appID = "1105526005"
         static let appKey: String? = nil
         static let universalLink: String? = nil
     }

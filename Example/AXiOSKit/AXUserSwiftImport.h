@@ -9,5 +9,7 @@
 #ifndef AXUserSwiftImport_h
 #define AXUserSwiftImport_h
 
+//调用swift, 不可见文件
+#import "AXiOSKit_Example-Swift.h"
 
 #endif /* AXUserSwiftImport_h */

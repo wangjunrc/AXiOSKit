@@ -1,6 +1,6 @@
 //
 //  AXShareQQ.swift
-//  DLAppStore
+//  AXiOSKitExample
 //
 //  Created by 小星星吃KFC on 2021/5/7.
 //  Copyright © 2021 axinger. All rights reserved.
@@ -36,7 +36,7 @@ import MonkeyKing
     
     
     /// 分享QQ
-    func share(type:DLQQType ,item:AXShareInfoItem, block:AXShareCompletionHandler? ) {
+    func share(type:DLQQType ,item:AXSocialShareContent, block:AXShareCompletionHandler? ) {
         
         registerAccount()
         

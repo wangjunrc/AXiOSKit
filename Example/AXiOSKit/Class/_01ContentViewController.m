@@ -21,7 +21,7 @@
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import <UserNotifications/UserNotifications.h>
 #import <GDataXML_HTML/GDataXMLNode.h>
-#import "AXiOSKit_Example-Swift.h"
+#import "AXUserSwiftImport.h"
 #import <MJExtension/MJExtension.h>
 
 #import <VisionKit/VisionKit.h>

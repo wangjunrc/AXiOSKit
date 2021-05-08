@@ -10,8 +10,9 @@
 #if __has_include(<WechatOpenSDK/WXApi.h>)
 #import <WechatOpenSDK/WXApi.h>
 #endif
-//调用swift, 不可见文件
-#import "AXiOSKit_Example-Swift.h"
+
+#import "AXUserSwiftImport.h"
+#import "AXSocialShareViewController.h"
 
 @interface _17OtherShareViewController ()
 
@@ -22,7 +23,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    self.title = @"第三方分享";
     __weak typeof(self) weakSelf = self;
     [self _titlelabel:@"效果一样的,都可以分享,但含有'未验证'字样"];
     [self _buttonTitle:@"微信分享,官方SDK" handler:^(UIButton * _Nonnull btn) {
@@ -33,6 +34,12 @@
     [self _buttonTitle:@"微信分享,MonkeyKing" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _shareActionMonkeyKing:btn];
+    }];
+    
+    [self _buttonTitle:@"MonkeyKing分享" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        AXSocialShareViewController *vc = AXSocialShareViewController.alloc.init;
+        [strongSelf ax_showVC:vc];
     }];
     
 //    [self _buttonTitle:@"微信登录" handler:^(UIButton * _Nonnull btn) {
@@ -83,7 +90,6 @@
 
 - (void)_shareActionMonkeyKing:(UIButton *)sender{
     
-    [MonkeyKingUtil weChatMessageSession];
     
 }
 

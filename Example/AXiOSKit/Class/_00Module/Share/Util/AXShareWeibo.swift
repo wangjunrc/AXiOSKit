@@ -1,6 +1,6 @@
 //
 //  AXShareWeibo.swift
-//  DLAppStore
+//  AXiOSKitExample
 //
 //  Created by 小星星吃KFC on 2021/5/7.
 //  Copyright © 2021 axinger. All rights reserved.
@@ -51,7 +51,7 @@ import MonkeyKing
     }
     
     /// 分享微博
-    func  share(item:AXShareInfoItem, block:AXShareCompletionHandler? ){
+    func  share(item:AXSocialShareContent, block:AXShareCompletionHandler? ){
         
         let info = MonkeyKing.Info(
             title: item.title,

@@ -7,8 +7,7 @@
 //
 
 #import "DogOC.h"
-// 不可见文件
-#import "AXiOSKit_Example-Swift.h"
+#import "AXUserSwiftImport.h"
 @implementation DogOC
 
 -(void)show {

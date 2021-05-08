@@ -16,6 +16,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "_01ContentViewController.h"
 #import <LLDynamicLaunchScreen/LLDynamicLaunchScreen.h>
+#import "AXShareService.h"
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -119,14 +120,14 @@
     //        config.rootViewController = vc;
     //        return config;
     //    }];
-//    AXDebugManager.sharedManager.withConfig(^id<AXDebugUIConfigProtocol> _Nonnull(UIViewController * _Nonnull vc) {
-//
-//        AXDebugUIConfig *config = [AXDebugUIConfig.alloc init];
-//        UINavigationController *nav = [UINavigationController.alloc initWithRootViewController:vc];
-//        config.rootViewController = nav;
-//        return config;
-//
-//    }).start();
+    //    AXDebugManager.sharedManager.withConfig(^id<AXDebugUIConfigProtocol> _Nonnull(UIViewController * _Nonnull vc) {
+    //
+    //        AXDebugUIConfig *config = [AXDebugUIConfig.alloc init];
+    //        UINavigationController *nav = [UINavigationController.alloc initWithRootViewController:vc];
+    //        config.rootViewController = nav;
+    //        return config;
+    //
+    //    }).start();
     
     //    AXDebugManager.sharedManager.start();
     NSLog(@"UIApplicationDidFinishLaunchingNotification====1");
@@ -205,6 +206,10 @@
 
 #pragma mark - 第三方分享、登录回调
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
+    if ([AXShareService.sharedService  handleOpenUrl:url]) {
+        return YES;
+    }
     
     [self thirdSDKLifecycleManager:@selector(application:openURL:options:) withParameters:@[application,url?url:@"",options?options:@{}]];
     return YES;

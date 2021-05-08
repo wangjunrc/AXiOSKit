@@ -1,13 +1,13 @@
 //
 //  DLSharePopAction.h
-//  DLAppStore
+//  AXiOSKitExample
 //
 //  Created by 小星星吃KFC on 2021/4/30.
 //  Copyright © 2021 axinger. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "AXShareType.h"
+#import "AXShareTarget.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,9 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, copy) NSString *iconName;
 
-@property(nonatomic, copy) AXShareType type;
+@property(nonatomic, copy) AXShareTarget type;
 
-@property(nonatomic, copy) void(^didBlock)(AXShareType type);
+@property(nonatomic, copy) void(^didBlock)(AXShareTarget type);
 
 
 @end
