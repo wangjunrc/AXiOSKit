@@ -146,12 +146,11 @@ AX_REDEFINE_CONTROLLER_VIEW_IMPL(AXSocialShareView);
         }
         
     }];
-    
+    self.view.column = 4;
     self.view.dataArray = array.copy;
     [self.view.cancelButton addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchUpInside];
     
 }
-
 
 -(void)cancelAction:(UIButton *)btn {
     [self dismiss];

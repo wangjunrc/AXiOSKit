@@ -23,6 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, strong) UIButton *cancelButton;
 
+/// 列数,一排中的个数
+@property(nonatomic, assign) int column;
+
 
 @end
 

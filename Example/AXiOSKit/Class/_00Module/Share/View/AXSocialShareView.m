@@ -19,6 +19,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = UIColor.whiteColor;
+        self.column = 4;
         [self _initUI];
     }
     return self;
@@ -49,9 +50,7 @@
     }];
     
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.cancelButton.mas_top).mas_equalTo(-10);
-        make.left.right.mas_equalTo(0);
-        make.height.equalTo(self.collectionView.superview.mas_width).multipliedBy(0.5);
+        [self _collectionViewLayout:make];
     }];
     
     [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -83,14 +82,11 @@
 ///1、设置格子的大小
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat cellW = self.bounds.size.width*0.25;
+//    CGFloat cellW = self.bounds.size.width*0.25;
+    CGFloat cellW = self.bounds.size.width/(1.0*self.column);
     return  CGSizeMake(cellW, cellW);
 }
 
-- (void)setDataArray:(NSArray<AXShareOption *> *)dataArray {
-    _dataArray = dataArray;
-    [self.collectionView reloadData];
-}
 ///2、设置collectionView的四周边距
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
@@ -118,8 +114,42 @@
 //      - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
 
 
+#pragma mark - set
+
+- (void)setDataArray:(NSArray<AXShareOption *> *)dataArray {
+    _dataArray = dataArray;
+    if (self.collectionView.superview) {
+        [self.collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            [self _collectionViewLayout:make];
+        }];
+        [self.collectionView reloadData];
+    }
+}
 
 
+- (void)setColumn:(int)column {
+    _column = column;
+    if (self.collectionView.superview) {
+        [self.collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            [self _collectionViewLayout:make];
+        }];
+        [self.collectionView reloadData];
+    }
+}
+
+-(void)_collectionViewLayout:(MASConstraintMaker *)make{
+    if (self.column==0) {
+        return;
+    }
+    int by = ceil(self.dataArray.count*1.0/(self.column*1.0));
+    if (by==0) {
+        return;
+    }
+    make.bottom.equalTo(self.cancelButton.mas_top).mas_equalTo(-10);
+    make.left.right.mas_equalTo(0);
+   
+    make.height.equalTo(self.collectionView.superview.mas_width).dividedBy(by*1.0);
+}
 
 #pragma mark - get
 - (UIView *)contentView {
@@ -157,7 +187,7 @@
 
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
-        UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
+        UICollectionViewFlowLayout *layout = UICollectionViewFlowLayout.alloc.init;
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         layout.sectionInset = UIEdgeInsetsZero;
         layout.minimumLineSpacing = 0;

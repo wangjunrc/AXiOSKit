@@ -2420,3 +2420,16 @@ static NSString const * kUserName = @"1";
 // 不能被修改值
 static NSString  * const kUserName2 = @"2";
 ```
+## 定义结构体
+```
+//行列式 determinant
+typedef struct {
+    int row;
+   int column;
+}AXDeterminant;
+
+CG_INLINE AXDeterminant AXDeterminantMake(int row, int column){
+    AXDeterminant det;det.row = row;det.column = column; return det;
+}
+
+```
