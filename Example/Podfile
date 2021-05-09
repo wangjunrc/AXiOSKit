@@ -15,11 +15,12 @@ def axinger_pods
   # pod 'AXiOSKit' , :git => 'https://github.com/axinger/AXiOSKit.git', :branch => 'release/20190530_new'
   # pod 'AXiOSKit', :source => 'https://github.com/axinger/AXiOSKit.git'
   # pod 'AXiOSKit', source: 'https://github.com/axinger/AXiOSKit.git'
+  #  pod 'AXViewControllerTransitioning','~>1.1.2'
+  #  pod 'AXCollectionObserve','~>1.1.0'
+  
   pod 'AXiOSKit', :path => '../'
-  #  pod 'AXViewControllerTransitioning',:git => 'https://gitee.com/axinger/AXViewControllerTransitioning.git'
-  pod 'AXViewControllerTransitioning','~>1.1.2'
-  #  pod 'AXCollectionObserve',:git => 'https://github.com/axinger/AXCollectionObserve.git'
-  pod 'AXCollectionObserve','~>1.1.0'
+  pod 'AXViewControllerTransitioning', :path => '../../AXViewControllerTransitioning'
+  pod 'AXCollectionObserve', :path => '../../AXCollectionObserve'
 end
 
 # 因为有的target 不支持UIKit的库
@@ -155,7 +156,7 @@ def common_pods
   
   pod 'Masonry'
   pod 'AFNetworking'
-  pod 'ReactiveObjC','~> 3.0.0'
+  pod 'ReactiveObjC','~> 3.1.0'
   pod 'PromisesObjC','~> 1.2.12'
   pod 'SDWebImageFLPlugin'
   pod 'SDWebImageWebPCoder','~> 0.8.1'

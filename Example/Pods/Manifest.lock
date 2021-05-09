@@ -18,9 +18,9 @@ PODS:
   - AvoidCrash (2.5.2)
   - AXCollectionObserve (1.1.0):
     - AXCollectionObserve/Core (= 1.1.0)
-    - ReactiveObjC (~> 3.0.0)
+    - ReactiveObjC (> 3.0.0)
   - AXCollectionObserve/Core (1.1.0):
-    - ReactiveObjC (~> 3.0.0)
+    - ReactiveObjC (> 3.0.0)
   - AXiOSKit (2.0.0):
     - AFNetworking (~> 4.0.0)
     - Aspects
@@ -33,17 +33,17 @@ PODS:
     - MJExtension
     - MJRefresh
     - NullSafe
-    - ReactiveObjC (~> 3.0.0)
+    - ReactiveObjC (> 3.0.0)
     - SDWebImage
   - AXViewControllerTransitioning (1.1.2):
     - AXViewControllerTransitioning/Component (= 1.1.2)
     - AXViewControllerTransitioning/Core (= 1.1.2)
-    - ReactiveObjC (~> 3.0.0)
+    - ReactiveObjC (> 3.0.0)
   - AXViewControllerTransitioning/Component (1.1.2):
     - AXViewControllerTransitioning/Core
-    - ReactiveObjC (~> 3.0.0)
+    - ReactiveObjC (> 3.0.0)
   - AXViewControllerTransitioning/Core (1.1.2):
-    - ReactiveObjC (~> 3.0.0)
+    - ReactiveObjC (> 3.0.0)
   - Bagel (1.4.0):
     - CocoaAsyncSocket
   - Canvas (0.1.2)
@@ -182,7 +182,7 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (9.1.0)
   - PromisesObjC (1.2.12)
   - Protobuf (3.15.8)
-  - ReactiveObjC (3.0.0)
+  - ReactiveObjC (3.1.1)
   - RMQClient (0.9.0):
     - CocoaAsyncSocket (~> 7.4)
     - JKVValue
@@ -220,9 +220,9 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - AvoidCrash
-  - AXCollectionObserve (~> 1.1.0)
+  - AXCollectionObserve (from `../../AXCollectionObserve`)
   - AXiOSKit (from `../`)
-  - AXViewControllerTransitioning (~> 1.1.2)
+  - AXViewControllerTransitioning (from `../../AXViewControllerTransitioning`)
   - Bagel (~> 1.4.0)
   - Canvas (~> 0.1.2)
   - CocoaAsyncSocket (~> 7.6.5)
@@ -248,7 +248,7 @@ DEPENDENCIES:
   - OHHTTPStubs (~> 9.1.0)
   - PromisesObjC (~> 1.2.12)
   - Protobuf (~> 3.15.8)
-  - ReactiveObjC (~> 3.0.0)
+  - ReactiveObjC (~> 3.1.0)
   - RMQClient
   - RTRootNavigationController (~> 0.8.0)
   - SDWebImage (~> 5.10.3)
@@ -271,8 +271,6 @@ SPEC REPOS:
     - AFNetworking
     - Aspects
     - AvoidCrash
-    - AXCollectionObserve
-    - AXViewControllerTransitioning
     - Bagel
     - Canvas
     - CocoaAsyncSocket
@@ -329,8 +327,12 @@ SPEC REPOS:
     - YYText
 
 EXTERNAL SOURCES:
+  AXCollectionObserve:
+    :path: "../../AXCollectionObserve"
   AXiOSKit:
     :path: "../"
+  AXViewControllerTransitioning:
+    :path: "../../AXViewControllerTransitioning"
   WCDB:
     :git: https://gitee.com/mirrors/wcdb.git
 
@@ -343,9 +345,9 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
-  AXCollectionObserve: d964138d2bc20131ddc5b6e54ef1ae17e14df0b6
-  AXiOSKit: 0aeb7ab8f0e57aa6110b835194b0aa52371f3bed
-  AXViewControllerTransitioning: d7f2f3ac51abbed276d9cc07f09826cec9b0c311
+  AXCollectionObserve: e1d633058fdadaf086b5fc780d167b10463fb1e0
+  AXiOSKit: a37b570737e44d8862fa1bc5e38fe4d84ad74093
+  AXViewControllerTransitioning: f27f80ec568c275c27e8984cb857f3786bafe4da
   Bagel: c3fa6bcbd52db9ca976edbafd7638f0553ded101
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
@@ -382,7 +384,7 @@ SPEC CHECKSUMS:
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Protobuf: adb85cd18a15bd1a777c158af9fd6e612a0e6d69
-  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RMQClient: 9bbda86703fd475761101ee5fda037eb2a12ec4e
   RTRootNavigationController: 36c6301870f0467f89d69f4286795340b537d473
   SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
@@ -402,6 +404,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: d37212c5aa744c1746e349b696408539e5697c43
+PODFILE CHECKSUM: d93989ea23659f63c9c013d7aaee7626311f3239
 
 COCOAPODS: 1.10.1
