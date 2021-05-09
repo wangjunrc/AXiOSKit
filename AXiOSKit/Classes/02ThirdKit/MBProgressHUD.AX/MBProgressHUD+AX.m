@@ -8,7 +8,9 @@
 #import "UIImage+AXBundle.h"
 #import "AXFoundationAssistant.h"
 #import "AXUIAssistant.h"
-#define MBPafterDelay 1.3
+#define MBPafterDelay 2
+#import <Lottie/Lottie.h>
+#import "NSBundle+AXBundle.h"
 
 @implementation MBProgressHUD (AX)
 
@@ -16,19 +18,31 @@
 /**
  * 新版本中,控制菊花的颜色用 在AppDelegate中用  [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = [UIColor redColor];
  */
-+(MBProgressHUD *)ax_setupMBProgressHUDInView:(UIView *)view text:(NSString *)text{
-    if (view == nil){
++ (MBProgressHUD *)ax_setupMBProgressHUDInView:(UIView *)view text:(NSString *)text {
+    if (view == nil) {
         view = ax_currentViewController().view;
-       
     }
-    
+
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    /// 大的背景色,默认透明
+    //    hud.backgroundView.color = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+    //    hud.backgroundView.blurEffectStyle = UIBlurEffectStyleDark;
+    //    hud.backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;
+
     hud.label.text = text;
     hud.label.numberOfLines = 0;
-    hud.bezelView.backgroundColor = [UIColor blackColor];
+    //下面的2行代码必须要写，如果不写就会导致指示器的背景永远都会有一层透明度为0.5的背景
+    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+    hud.bezelView.color = [[UIColor purpleColor] colorWithAlphaComponent:0.4];
+
+    //    hud.bezelView.backgroundColor = [UIColor orangeColor];
+    //    hud.bezelView.style = MBProgressHUDBackgroundStyleBlur;
     hud.label.textColor =  [UIColor whiteColor];
-    hud.detailsLabel.textColor =  [UIColor whiteColor];
+    //    hud.detailsLabel.textColor =  [UIColor whiteColor];
+    //    hud.detailsLabel.text = @"detailsLabel";
+    //    [hud.button setTitle:@"button" forState:UIControlStateNormal];
+    //    [hud.button setTitleColor:UIColor.redColor forState:UIControlStateNormal];
     //#pragma clang diagnostic push
     //#pragma clang diagnostic ignored"-Wdeprecated-declarations"
     //
@@ -40,14 +54,13 @@
     return hud;
 }
 
-
 #pragma mark 显示信息
 
-+ (void)ax_show:(NSString *)text customView:(UIView *)customView{
-   [self ax_show:text customView:customView view:nil];
++ (void)ax_show:(NSString *)text customView:(UIView *)customView {
+    [self ax_show:text customView:customView view:nil];
 }
 
-+ (void)ax_show:(NSString *)text customView:(UIView *)customView view:(UIView *)view{
++ (void)ax_show:(NSString *)text customView:(UIView *)customView view:(UIView *)view {
     MBProgressHUD *hud =  [self ax_setupMBProgressHUDInView:view text:text];
     // 设置图片
     hud.customView = customView;
@@ -57,96 +70,131 @@
     [hud hideAnimated:YES afterDelay:MBPafterDelay];
 }
 
-+ (void)ax_show:(NSString *)text image:(UIImage *)image view:(UIView *)view{
-    UIImageView *imageView  = [[UIImageView alloc] initWithImage:image];
++ (void)ax_show:(NSString *)text image:(UIImage *)image view:(UIView *)view {
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     [self ax_show:text customView:imageView view:view];
 }
 
-+ (void)ax_show:(NSString *)text icon:(NSString *)icon view:(UIView *)view{
++ (void)ax_show:(NSString *)text icon:(NSString *)icon view:(UIView *)view {
     UIImage *image = [UIImage axBundle_imageNamed:icon];
     [self ax_show:text image:image view:view];
 }
 
 #pragma mark 显示错误信息
-+ (void)ax_showError:(NSString *)error toView:(UIView *)view{
++ (void)ax_showError:(NSString *)error toView:(UIView *)view {
     [self ax_show:error icon:@"ax_error.png" view:view];
 }
 
-+ (void)ax_showSuccess:(NSString *)success toView:(UIView *)view{
++ (void)ax_showSuccess:(NSString *)success toView:(UIView *)view {
     [self ax_show:success icon:@"ax_success.png" view:view];
 }
 
 #pragma mark 显示一些信息
-+ (MBProgressHUD *)ax_showMessage:(NSString *)message toView:(UIView *)view{
++ (MBProgressHUD *)ax_showMessage:(NSString *)message toView:(UIView *)view {
     MBProgressHUD *hud =  [self ax_setupMBProgressHUDInView:view text:message];
     return hud;
 }
 
-+ (void)ax_showSuccess:(NSString *)success{
++ (void)ax_showSuccess:(NSString *)success {
     [self ax_showSuccess:success toView:nil];
 }
+
 /**
  * 显示文字,不需要图片
  */
-+ (void)ax_showTitle:(NSString *)title{
-    
++ (void)ax_showTitle:(NSString *)title {
     [self ax_show:title icon:@"" view:nil];
 }
 
-+ (void)ax_showSuccess:(NSString *)success completed:(void(^)(void))completed{
-    
++ (void)ax_showSuccess:(NSString *)success completed:(void (^)(void))completed {
     [self ax_showSuccess:success toView:nil];
-    
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MBPafterDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
         if (completed) {
             completed();
         }
     });
-    
 }
 
-
-+ (void)ax_showError:(NSString *)error{
++ (void)ax_showError:(NSString *)error {
     [self ax_showError:error toView:nil];
 }
 
-+ (MBProgressHUD *)ax_showMessage:(NSString *)message{
++ (MBProgressHUD *)ax_showMessage:(NSString *)message {
     return [self ax_showMessage:message toView:nil];
 }
 
-+ (MBProgressHUD *)ax_showProgressMessage:(NSString *)message toView:(UIView *)view{
++ (MBProgressHUD *)ax_showProgressMessage:(NSString *)message toView:(UIView *)view {
     MBProgressHUD *hud = [self ax_showMessage:message toView:view];
     hud.mode = MBProgressHUDModeDeterminate;
     return hud;
 }
 
-+ (MBProgressHUD *)ax_showProgressMessage:(NSString *)message{
++ (MBProgressHUD *)ax_showProgressMessage:(NSString *)message {
     MBProgressHUD *hud = [self ax_showMessage:message];
     hud.mode = MBProgressHUDModeDeterminate;
     return hud;
 }
 
-+ (void)ax_showWarning:(NSString *)warning{
++ (void)ax_showWarning:(NSString *)warning {
     [self ax_showWarning:warning toView:nil];
 }
 
-+ (void)ax_showWarning:(NSString *)warning toView:(UIView *)view{
++ (void)ax_showWarning:(NSString *)warning toView:(UIView *)view {
     [self ax_show:warning icon:@"ax_warning.png" view:view];
 }
 
-
-+ (void)ax_hideHUDForView:(UIView *)view{
++ (void)ax_hideHUDForView:(UIView *)view {
     if (view == nil) {
-        view = ax_currentViewController().view;;
+        view = ax_currentViewController().view;
     }
     [self hideHUDForView:view animated:YES];
 }
 
-+ (void)ax_hideHUD{
++ (void)ax_hideHUD {
     [self ax_hideHUDForView:nil];
 }
 
+#pragma mark - lottie 动画
+
++ (void)ax_showAnimSuccess:(NSString *)text {
+    [self ax_showAnimLoop:NO name:@"lottie_loading_success" text:text];
+}
+
++ (void)ax_showAnimError:(NSString *)text {
+    [self ax_showAnimLoop:NO name:@"lottie_loading_failure" text:text];
+}
+
++ (void)ax_showAnimLoading:(NSString *)text {
+    [self ax_showAnimLoop:YES name:@"lottie_loading" text:text];
+}
+
++ (void)ax_hideAnimHUD {
+    [self ax_hideHUDForView:nil];
+}
+
++ (void)ax_showAnimLoop:(BOOL)loop
+                   name:(NSString *)name
+                   text:(NSString *)text {
+    LOTAnimationView *aniView = [LOTAnimationView animationNamed:name inBundle:[NSBundle axkit_bundleWithName:@"AXLottie"]];
+
+    aniView.contentMode = UIViewContentModeScaleAspectFill;
+    aniView.loopAnimation = loop;
+    [aniView play];
+
+    MBProgressHUD *hud =  [self ax_setupMBProgressHUDInView:nil text:text];
+    // 设置图片
+    hud.customView = aniView;
+    // 再设置模式
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.label.textColor =  [UIColor whiteColor];
+
+    if (!loop) {
+        aniView.completionBlock = ^(BOOL animationFinished) {
+            [hud hideAnimated:YES afterDelay:0.0];
+        };
+    }
+}
 
 @end
 

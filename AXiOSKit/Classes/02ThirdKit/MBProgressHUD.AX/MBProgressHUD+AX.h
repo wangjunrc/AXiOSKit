@@ -7,7 +7,6 @@
 
 #import <MBProgressHUD/MBProgressHUD.h>
 
-
 @interface MBProgressHUD (AX)
 
 /**
@@ -44,7 +43,6 @@
  */
 + (MBProgressHUD *)ax_showProgressMessage:(NSString *)message toView:(UIView *)view;
 
-
 /**
  显示含有 ✅ 成功图片 显示在window中,会自动消失
 
@@ -59,7 +57,6 @@
  @param view view
  */
 + (void)ax_showSuccess:(NSString *)success toView:(UIView *)view;
-
 
 /**
  显示含有 ❌ 成功图片 显示在window中,会自动消失
@@ -109,7 +106,7 @@
  @param success 文字
  @param completed completed
  */
-+ (void)ax_showSuccess:(NSString *)success completed:(void(^)(void))completed;
++ (void)ax_showSuccess:(NSString *)success completed:(void (^)(void))completed;
 
 /**
  显示文字,不需要图片
@@ -118,7 +115,6 @@
  */
 + (void)ax_showTitle:(NSString *)title;
 
-
 /**
  显示自定义view 作为指示器
 
@@ -126,7 +122,6 @@
  @param customView 自定义view
  */
 + (void)ax_show:(NSString *)text customView:(UIView *)customView;
-
 
 /**
   显示自定义view 作为指示器
@@ -137,7 +132,23 @@
  */
 + (void)ax_show:(NSString *)text customView:(UIView *)customView view:(UIView *)view;
 
-@end
+#pragma mark - lottie 动画
 
+/// 显示含有 ✅ 动画 显示在window中,会自动消失
+/// @param text 内容
++ (void)ax_showAnimSuccess:(NSString *)text;
+
+/// 显示含有 ❎ 动画 显示在window中,会自动消失
+/// @param text 内容
++ (void)ax_showAnimError:(NSString *)text;
+
+/// 显示含有 转圈 动画 显示在window中,会自动消失
+/// @param text 内容
++ (void)ax_showAnimLoading:(NSString *)text;
+
+/// 隐藏动画
++ (void)ax_hideAnimHUD;
+
+@end
 
 #endif

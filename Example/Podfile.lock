@@ -27,6 +27,7 @@ PODS:
     - AXViewControllerTransitioning
     - DZNEmptyDataSet
     - KVOController
+    - lottie-ios (~> 2.5.3)
     - Masonry
     - MBProgressHUD
     - MJExtension
@@ -343,7 +344,7 @@ SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
   AXCollectionObserve: d964138d2bc20131ddc5b6e54ef1ae17e14df0b6
-  AXiOSKit: 63835233d602731f5a2a2e06c9adb660b279fa93
+  AXiOSKit: 0aeb7ab8f0e57aa6110b835194b0aa52371f3bed
   AXViewControllerTransitioning: d7f2f3ac51abbed276d9cc07f09826cec9b0c311
   Bagel: c3fa6bcbd52db9ca976edbafd7638f0553ded101
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
@@ -363,7 +364,7 @@ SPEC CHECKSUMS:
   JJException: da7c64ccf29d9938a4075378a7e9a29db7383c37
   JKVValue: d7941071b1cf9ba35c194fd40bcf4c4d9b5462e9
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
-  libwebp: e90b9c01d99205d03b6bb8f2c8c415e5a4ef66f0
+  libwebp: 6bac0a99ba5a6bb7449a951ff22c484201985f68
   LLDebugTool: 6026a1df690f5f94524567fce7f97fa53ce131d8
   LLDynamicLaunchScreen: 1f73f0f62f75f8fb857b5949d50cf47db17d26e7
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
@@ -401,6 +402,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: d10c943104ec63b31f81a0952da7d65d35145c54
+PODFILE CHECKSUM: d37212c5aa744c1746e349b696408539e5697c43
 
 COCOAPODS: 1.10.1

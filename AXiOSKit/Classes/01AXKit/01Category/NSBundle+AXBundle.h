@@ -44,6 +44,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(NSDictionary *)ax_dictionaryForResource:(NSString *)name ofType:(NSString *)ext;
 
+
+/// AXiOSKit 资源包
+/// @param name name
++ (NSBundle *)axkit_bundleWithName:(NSString *)name;
+
 @end
 
 NS_ASSUME_NONNULL_END

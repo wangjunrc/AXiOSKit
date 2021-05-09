@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AXShareTarget.h"
+#import "AXSharePlatform.h"
 #import "AXUserSwiftImport.h"
 #import "AXShareOption.h"
 

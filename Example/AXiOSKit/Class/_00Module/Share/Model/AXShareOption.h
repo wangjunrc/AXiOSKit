@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AXShareTarget.h"
+#import "AXSharePlatform.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,9 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, copy) NSString *iconName;
 
-@property(nonatomic, copy) AXShareTarget type;
+@property(nonatomic, copy) AXSharePlatform type;
 
-@property(nonatomic, copy) void(^didBlock)(AXShareTarget type);
+@property(nonatomic, copy) void(^didBlock)(AXSharePlatform type);
 
 
 @end

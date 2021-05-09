@@ -42,6 +42,16 @@
     return tempBundle;
 }
 
++ (NSBundle *)bundleWithName:(NSString *)name {
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    NSString *bundlePath = [bundle pathForResource:name ofType:@"bundle"];
+    NSBundle *tempBundle = [NSBundle bundleWithPath:bundlePath];
+    if (tempBundle == nil) {
+        tempBundle = bundle;
+    }
+    return tempBundle;
+}
+
 @end
 
 @implementation NSBundle (AXBundle)
@@ -63,6 +73,12 @@
     NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
     return bundle;
 }
+
++ (NSBundle *)axkit_bundleWithName:(NSString *)name {
+    
+    return  [AXBundle bundleWithName:name];
+}
+
 
 -(NSArray *)ax_arrayForResource:(NSString *)name {
     return [self ax_arrayForResource:name ofType:nil];

@@ -16,7 +16,7 @@
 
 AX_REDEFINE_CONTROLLER_VIEW_INTER(AXSocialShareView);
 
-@property(nonatomic, strong) NSArray<AXShareTarget > *typesArray;
+@property(nonatomic, strong) NSArray<AXSharePlatform > *typesArray;
 
 @end
 
@@ -35,7 +35,7 @@ AX_REDEFINE_CONTROLLER_VIEW_IMPL(AXSocialShareView);
 }
 
 
--(instancetype )initWithShareType:(NSArray<AXShareTarget >*)types {
+-(instancetype )initWithShareType:(NSArray<AXSharePlatform >*)types {
     if ([self init]) {
         self.typesArray = types;
     }
@@ -52,10 +52,10 @@ AX_REDEFINE_CONTROLLER_VIEW_IMPL(AXSocialShareView);
     
     NSMutableArray<AXShareOption *> *__block array = NSMutableArray.array;
     __weak typeof(self) weakSelf = self;
-    [self.typesArray enumerateObjectsUsingBlock:^(AXShareTarget type, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.typesArray enumerateObjectsUsingBlock:^(AXSharePlatform type, NSUInteger idx, BOOL * _Nonnull stop) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         
-        if ([type isEqualToString:AXShareTargetWeiChatSession]) {
+        if ([type isEqualToString:AXSharePlatformWeiChatSession]) {
             /// 微信会话
             AXShareOption *__block option = AXShareOption.alloc.init;
             option.title = @"微信";
@@ -64,13 +64,13 @@ AX_REDEFINE_CONTROLLER_VIEW_IMPL(AXSocialShareView);
             option.type = type;
             option.iconName = @"微信";;
             __block typeof(option)weakOption = option;
-            option.didBlock = ^(AXShareTarget type) {
+            option.didBlock = ^(AXSharePlatform type) {
                 [strongSelf dismissViewControllerAnimated:YES completion:^{
                     [AXShareService.sharedService  shareDownloadLinkOption:weakOption];
                 }];
             };
             [array addObject:option];
-        }else if ([type isEqualToString:AXShareTargetWeiChatTimeLine]) {
+        }else if ([type isEqualToString:AXSharePlatformWeiChatTimeLine]) {
             /// 微信朋友圈
             AXShareOption * option = AXShareOption.alloc.init;
             option.title = @"朋友圈";
@@ -79,14 +79,14 @@ AX_REDEFINE_CONTROLLER_VIEW_IMPL(AXSocialShareView);
             option.type = type;
             option.iconName = @"朋友圈";
             __block typeof(option)weakOption = option;
-            option.didBlock = ^(AXShareTarget type) {
+            option.didBlock = ^(AXSharePlatform type) {
                 [strongSelf dismissViewControllerAnimated:YES completion:^{
                     [AXShareService.sharedService  shareDownloadLinkOption:weakOption];
                 }];
                 
             };
             [array addObject:option];
-        }else if ([type isEqualToString:AXShareTargetSinaWeibo]) {
+        }else if ([type isEqualToString:AXSharePlatformSinaWeibo]) {
             /// 新浪微博
             AXShareOption *option = AXShareOption.alloc.init;
             option.title =  @"微博";
@@ -95,13 +95,13 @@ AX_REDEFINE_CONTROLLER_VIEW_IMPL(AXSocialShareView);
             option.type = type;
             option.iconName =  @"微博";
             __block typeof(option)weakOption = option;
-            option.didBlock = ^(AXShareTarget type) {
+            option.didBlock = ^(AXSharePlatform type) {
                 [strongSelf dismissViewControllerAnimated:YES completion:^{
                     [AXShareService.sharedService  shareDownloadLinkOption:weakOption];
                 }];
             };
             [array addObject:option];
-        }else if ([type isEqualToString:AXShareTargetQQFriends]) {
+        }else if ([type isEqualToString:AXSharePlatformQQFriends]) {
             /// QQ会话
             AXShareOption *option = AXShareOption.alloc.init;
             option.title = @"QQ";
@@ -110,33 +110,33 @@ AX_REDEFINE_CONTROLLER_VIEW_IMPL(AXSocialShareView);
             option.type = type;
             option.iconName = @"QQ";
             __block typeof(option)weakOption = option;
-            option.didBlock = ^(AXShareTarget type) {
+            option.didBlock = ^(AXSharePlatform type) {
                 [strongSelf dismissViewControllerAnimated:YES completion:^{
                     [AXShareService.sharedService  shareDownloadLinkOption:weakOption];
                 }];
             };
             [array addObject:option];
-        }else if ([type isEqualToString:AXShareTargetPhoneMessage]) {
+        }else if ([type isEqualToString:AXSharePlatformPhoneMessage]) {
             /// 短信
             AXShareOption *option = AXShareOption.alloc.init;
             option.title = @"短信";
             option.type =  @"短信";
             option.iconName =  @"短信";
             __block typeof(option)weakOption = option;
-            option.didBlock = ^(AXShareTarget type) {
+            option.didBlock = ^(AXSharePlatform type) {
                 [strongSelf dismissViewControllerAnimated:YES completion:^{
                     [AXShareService.sharedService shareDownloadLinkOption:weakOption];
                 }];
             };
             [array addObject:option];
-        }else if  ([type isEqualToString:AXShareTargetQRCode]){
+        }else if  ([type isEqualToString:AXSharePlatformQRCode]){
             /// 二维码
             AXShareOption *option = AXShareOption.alloc.init;
             option.title = @"支付宝";
             option.type =  @"支付宝";
             option.iconName =  @"支付宝";
             __block typeof(option)weakOption = option;
-            option.didBlock = ^(AXShareTarget type) {
+            option.didBlock = ^(AXSharePlatform type) {
                 [strongSelf dismissViewControllerAnimated:YES completion:^{
                     [AXShareService.sharedService shareDownloadLinkOption:weakOption];
                 }];
@@ -174,17 +174,17 @@ AX_REDEFINE_CONTROLLER_VIEW_IMPL(AXSocialShareView);
     if (!_typesArray) {
         _typesArray =  @[
             /// 微信会话
-            AXShareTargetWeiChatSession,
+            AXSharePlatformWeiChatSession,
             /// 微信朋友圈
-            AXShareTargetWeiChatTimeLine,
+            AXSharePlatformWeiChatTimeLine,
             /// 新浪微博
-            AXShareTargetSinaWeibo,
+            AXSharePlatformSinaWeibo,
             /// QQ会话
-            AXShareTargetQQFriends,
+            AXSharePlatformQQFriends,
             /// 短信
-            AXShareTargetPhoneMessage,
+            AXSharePlatformPhoneMessage,
             /// 二维码
-            AXShareTargetQRCode,
+            AXSharePlatformQRCode,
         ];
     }
     return _typesArray;

@@ -261,7 +261,7 @@
 		214F67EE2646B863006D946B /* AXShareWeChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D72646B863006D946B /* AXShareWeChat.swift */; };
 		214F67EF2646B863006D946B /* AXShareQQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F67D82646B863006D946B /* AXShareQQ.swift */; };
 		214F67F12646B863006D946B /* AXShareOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67DE2646B863006D946B /* AXShareOption.m */; };
-		214F67F22646B863006D946B /* AXShareTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67DF2646B863006D946B /* AXShareTarget.m */; };
+		214F67F22646B863006D946B /* AXSharePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67DF2646B863006D946B /* AXSharePlatform.m */; };
 		214F67F32646B863006D946B /* AXSocialShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67E32646B863006D946B /* AXSocialShareView.m */; };
 		214F67F42646B863006D946B /* AXSocialShareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67E42646B863006D946B /* AXSocialShareCell.m */; };
 		214F67F52646B863006D946B /* AXShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F67E92646B863006D946B /* AXShareService.m */; };
@@ -298,6 +298,14 @@
 		218F674825A5CC69006A8312 /* _25CompLayoutVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F674725A5CC69006A8312 /* _25CompLayoutVC2.m */; };
 		218F674F25A5CC74006A8312 /* _25CompLayoutVC3.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F674E25A5CC74006A8312 /* _25CompLayoutVC3.m */; };
 		218F675625A5CC7D006A8312 /* _25CompLayoutVC4.m in Sources */ = {isa = PBXBuildFile; fileRef = 218F675525A5CC7D006A8312 /* _25CompLayoutVC4.m */; };
+		2193D28A264792440008C7C6 /* lf20_loading_failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 2193D286264792430008C7C6 /* lf20_loading_failure.json */; };
+		2193D28B264792440008C7C6 /* lf20_loading_failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 2193D286264792430008C7C6 /* lf20_loading_failure.json */; };
+		2193D28C264792440008C7C6 /* lf20_loading_all.json in Resources */ = {isa = PBXBuildFile; fileRef = 2193D287264792440008C7C6 /* lf20_loading_all.json */; };
+		2193D28D264792440008C7C6 /* lf20_loading_all.json in Resources */ = {isa = PBXBuildFile; fileRef = 2193D287264792440008C7C6 /* lf20_loading_all.json */; };
+		2193D28E264792440008C7C6 /* lf20_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 2193D288264792440008C7C6 /* lf20_loading.json */; };
+		2193D28F264792440008C7C6 /* lf20_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 2193D288264792440008C7C6 /* lf20_loading.json */; };
+		2193D290264792440008C7C6 /* lf20_loading_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 2193D289264792440008C7C6 /* lf20_loading_success.json */; };
+		2193D291264792440008C7C6 /* lf20_loading_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 2193D289264792440008C7C6 /* lf20_loading_success.json */; };
 		21948C9D2563F3BC00207E18 /* AXUserLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21948C662563F11E00207E18 /* AXUserLog.mm */; };
 		21948D422564B83700207E18 /* testXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = 21948D412564B83700207E18 /* testXML.xml */; };
 		2198FBEF258C913500D7BD4F /* AXShareContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2198FBEE258C913500D7BD4F /* AXShareContentViewController.m */; };
@@ -687,9 +695,9 @@
 		214F67D72646B863006D946B /* AXShareWeChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareWeChat.swift; sourceTree = "<group>"; };
 		214F67D82646B863006D946B /* AXShareQQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXShareQQ.swift; sourceTree = "<group>"; };
 		214F67DE2646B863006D946B /* AXShareOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXShareOption.m; sourceTree = "<group>"; };
-		214F67DF2646B863006D946B /* AXShareTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXShareTarget.m; sourceTree = "<group>"; };
+		214F67DF2646B863006D946B /* AXSharePlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXSharePlatform.m; sourceTree = "<group>"; };
 		214F67E02646B863006D946B /* AXShareOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXShareOption.h; sourceTree = "<group>"; };
-		214F67E12646B863006D946B /* AXShareTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXShareTarget.h; sourceTree = "<group>"; };
+		214F67E12646B863006D946B /* AXSharePlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXSharePlatform.h; sourceTree = "<group>"; };
 		214F67E32646B863006D946B /* AXSocialShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXSocialShareView.m; sourceTree = "<group>"; };
 		214F67E42646B863006D946B /* AXSocialShareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXSocialShareCell.m; sourceTree = "<group>"; };
 		214F67E52646B863006D946B /* AXSocialShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXSocialShareView.h; sourceTree = "<group>"; };
@@ -751,6 +759,10 @@
 		218F674E25A5CC74006A8312 /* _25CompLayoutVC3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CompLayoutVC3.m; sourceTree = "<group>"; };
 		218F675425A5CC7D006A8312 /* _25CompLayoutVC4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CompLayoutVC4.h; sourceTree = "<group>"; };
 		218F675525A5CC7D006A8312 /* _25CompLayoutVC4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CompLayoutVC4.m; sourceTree = "<group>"; };
+		2193D286264792430008C7C6 /* lf20_loading_failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf20_loading_failure.json; sourceTree = "<group>"; };
+		2193D287264792440008C7C6 /* lf20_loading_all.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf20_loading_all.json; sourceTree = "<group>"; };
+		2193D288264792440008C7C6 /* lf20_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf20_loading.json; sourceTree = "<group>"; };
+		2193D289264792440008C7C6 /* lf20_loading_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf20_loading_success.json; sourceTree = "<group>"; };
 		21948C652563F11E00207E18 /* AXUserLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUserLog.h; sourceTree = "<group>"; };
 		21948C662563F11E00207E18 /* AXUserLog.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AXUserLog.mm; sourceTree = "<group>"; };
 		21948CA72563F8D100207E18 /* AXUserLog+DB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXUserLog+DB.h"; sourceTree = "<group>"; };
@@ -971,6 +983,10 @@
 		211A99D925CB9F9D009030CB /* Lottie-Files */ = {
 			isa = PBXGroup;
 			children = (
+				2193D287264792440008C7C6 /* lf20_loading_all.json */,
+				2193D286264792430008C7C6 /* lf20_loading_failure.json */,
+				2193D289264792440008C7C6 /* lf20_loading_success.json */,
+				2193D288264792440008C7C6 /* lf20_loading.json */,
 				21D08EBC25CBF1E90006DBCC /* 46472-lurking-cat.json */,
 				211A99E125CB9F9D009030CB /* Edit.json */,
 				211A99E325CB9F9D009030CB /* EmptyStatus.json */,
@@ -1326,13 +1342,13 @@
 				214F67D92646B863006D946B /* Controller */,
 				214F67DD2646B863006D946B /* Model */,
 				214F67E72646B863006D946B /* Service */,
-				214F67D22646B863006D946B /* Util */,
+				214F67D22646B863006D946B /* Bridge */,
 				214F67E22646B863006D946B /* View */,
 			);
 			path = Share;
 			sourceTree = "<group>";
 		};
-		214F67D22646B863006D946B /* Util */ = {
+		214F67D22646B863006D946B /* Bridge */ = {
 			isa = PBXGroup;
 			children = (
 				214F67D32646B863006D946B /* AXShareBridge.swift */,
@@ -1342,7 +1358,7 @@
 				214F67D42646B863006D946B /* AXShareWeibo.swift */,
 				214F67D62646B863006D946B /* AXSocialShareContent.swift */,
 			);
-			path = Util;
+			path = Bridge;
 			sourceTree = "<group>";
 		};
 		214F67D92646B863006D946B /* Controller */ = {
@@ -1359,8 +1375,8 @@
 			children = (
 				214F67E02646B863006D946B /* AXShareOption.h */,
 				214F67DE2646B863006D946B /* AXShareOption.m */,
-				214F67E12646B863006D946B /* AXShareTarget.h */,
-				214F67DF2646B863006D946B /* AXShareTarget.m */,
+				214F67E12646B863006D946B /* AXSharePlatform.h */,
+				214F67DF2646B863006D946B /* AXSharePlatform.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2010,6 +2026,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2112273D2573340100B6ECC8 /* instruction.jpg in Resources */,
+				2193D28F264792440008C7C6 /* lf20_loading.json in Resources */,
 				2112273E2573340100B6ECC8 /* _21KVOViewController.xib in Resources */,
 				211227402573340100B6ECC8 /* _26RMQClientViewController.xib in Resources */,
 				211A99F925CB9F9D009030CB /* EmptyStatus.json in Resources */,
@@ -2031,6 +2048,7 @@
 				211227482573340100B6ECC8 /* _23FullViewController.xib in Resources */,
 				213917C8262ECF3400B4A332 /* newAnimation.json in Resources */,
 				21CCD4642627C50F00D83F45 /* green_lottie_tab_discover.json in Resources */,
+				2193D28B264792440008C7C6 /* lf20_loading_failure.json in Resources */,
 				21A2DD0D2647000A006D2892 /* 微博@2x.png in Resources */,
 				211227492573340100B6ECC8 /* _06WCDBViewController.xib in Resources */,
 				21D08EBE25CBF1E90006DBCC /* 46472-lurking-cat.json in Resources */,
@@ -2038,10 +2056,12 @@
 				211A99EB25CB9F9D009030CB /* RefreshFooterAnim.json in Resources */,
 				211A99F325CB9F9D009030CB /* vcTransition1.json in Resources */,
 				2112274B2573340100B6ECC8 /* App.pdf in Resources */,
+				2193D28D264792440008C7C6 /* lf20_loading_all.json in Resources */,
 				21A2DD092647000A006D2892 /* QQ@2x.png in Resources */,
 				21A2DD0B2647000A006D2892 /* 支付宝@2x.png in Resources */,
 				211A99EF25CB9F9D009030CB /* Loading.json in Resources */,
 				211A99E725CB9F9D009030CB /* Switch.json in Resources */,
+				2193D291264792440008C7C6 /* lf20_loading_success.json in Resources */,
 				213917BE262ECBCD00B4A332 /* lf20_imvcfu5s.json in Resources */,
 				21CCD4682627C50F00D83F45 /* gray_tabbar_message_animation.json in Resources */,
 				2112274C2573340100B6ECC8 /* _29AudioViewController.xib in Resources */,
@@ -2101,6 +2121,7 @@
 				213BCC24254003DB00C89B72 /* instruction.jpg in Resources */,
 				21CCD4652627C50F00D83F45 /* green_lottie_tab_news.json in Resources */,
 				21F2690F2635425100C67CFE /* folder@2x.png in Resources */,
+				2193D28E264792440008C7C6 /* lf20_loading.json in Resources */,
 				213BCBF1254003DB00C89B72 /* _21KVOViewController.xib in Resources */,
 				21CCD4692627C50F00D83F45 /* tab_message_animate.json in Resources */,
 				211A99EE25CB9F9D009030CB /* Loading.json in Resources */,
@@ -2124,6 +2145,7 @@
 				21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */,
 				21430B10256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib in Resources */,
 				218A1EC8254438C900E43F16 /* office.bundle in Resources */,
+				2193D28C264792440008C7C6 /* lf20_loading_all.json in Resources */,
 				213BCC3E254003DB00C89B72 /* PointViewController2.plist in Resources */,
 				213BCC45254003DB00C89B72 /* webp.bundle in Resources */,
 				21A2DD082647000A006D2892 /* QQ@2x.png in Resources */,
@@ -2132,6 +2154,7 @@
 				211A99E825CB9F9D009030CB /* HappyBirthday.json in Resources */,
 				211A99F625CB9F9D009030CB /* vcTransition2.json in Resources */,
 				21CCD4732627C50F00D83F45 /* tab_search_animate.json in Resources */,
+				2193D28A264792440008C7C6 /* lf20_loading_failure.json in Resources */,
 				21F269102635425100C67CFE /* zip@2x.png in Resources */,
 				213BCC13254003DB00C89B72 /* _04RunLoopViewController.xib in Resources */,
 				218A1E9125441BBE00E43F16 /* _28LocalSocketServiceViewController.xib in Resources */,
@@ -2169,6 +2192,7 @@
 				21799C7C255BDE8500754A8B /* gift.svg in Resources */,
 				213917C7262ECF3400B4A332 /* newAnimation.json in Resources */,
 				213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */,
+				2193D290264792440008C7C6 /* lf20_loading_success.json in Resources */,
 				213BCC46254003DB00C89B72 /* H5.bundle in Resources */,
 				213BCC43254003DB00C89B72 /* 1234.webp in Resources */,
 				21CCD4612627C50F00D83F45 /* gray_tabbar_me_animation.json in Resources */,
@@ -2803,7 +2827,7 @@
 				21D87B8925EF35C2007220E8 /* _01TypeViewController.m in Sources */,
 				214F67EA2646B863006D946B /* AXShareBridge.swift in Sources */,
 				211A997725CB96C7009030CB /* _32LottieVC.m in Sources */,
-				214F67F22646B863006D946B /* AXShareTarget.m in Sources */,
+				214F67F22646B863006D946B /* AXSharePlatform.m in Sources */,
 				21E6DE67260494060092051F /* DogOC.m in Sources */,
 				216891AB25ABDD4B0037CAB5 /* _25CompLayoutCell.m in Sources */,
 				218A1E9725441C6600E43F16 /* _28LocalSocketClientViewController.m in Sources */,

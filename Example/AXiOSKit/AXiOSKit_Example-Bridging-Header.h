@@ -5,4 +5,4 @@
 // swift 桥接
 
 #import "DogOC.h"
-#import "AXShareTarget.h"
+#import "AXSharePlatform.h"

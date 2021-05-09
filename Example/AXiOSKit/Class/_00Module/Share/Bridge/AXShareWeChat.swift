@@ -35,8 +35,20 @@ import MonkeyKing
         MonkeyKing.registerAccount(account)
     }
     
+    func oauth() {
+        MonkeyKing.oauth(for: .weChat) {result in
+            switch result {
+            case .success(let dictionary):
+                print("oauth success \(String(describing: dictionary))")
+            case .failure(let error):
+                print("error \(String(describing: error))")
+            }
+        }
+        
+    }
+    
     /// 分享微信
-    func share(type:DLWeChatType ,item:AXSocialShareContent, block:AXShareCompletionHandler? ) {
+    func share(type:DLWeChatType ,item:AXSocialShareContent, block:@escaping AXShareCompletionHandler ) {
         
         
         var subtype: MonkeyKing.Message.WeChatSubtype!
@@ -51,7 +63,7 @@ import MonkeyKing
         switch type {
         case .session:
             subtype = MonkeyKing.Message.WeChatSubtype.session(info: info)
-        
+            
         case .timeLine:
             subtype = MonkeyKing.Message.WeChatSubtype.timeline(info:info)
             
@@ -63,6 +75,14 @@ import MonkeyKing
         MonkeyKing.deliver(message) { result in
             print("AXShareWeChat 分享微信 type = \(type), result =  \(result)")
             actionResult(result,block)
+        }
+    }
+    
+    
+    /// 拉起小程序
+    func launchMiniApp() {
+        MonkeyKing.launch(.weChat(.miniApp(username: AXShareConfigs.WeChat.miniAppID, path: nil, type: .test))) { result in
+            print("result: \(result)")
         }
     }
     

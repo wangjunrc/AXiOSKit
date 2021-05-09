@@ -27,7 +27,7 @@ struct AXShareConfigs {
         // wxb1fbfdf9fe32026b wx58b44315c8e725b5
         static let appID = "wxb1fbfdf9fe32026b"
         static let appKey: String? = nil
-        static let miniAppID: String? = nil
+        static let miniAppID = "wxb1fbfdf9fe32026b"
         static let universalLink: String? = nil
     }
     

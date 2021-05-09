@@ -36,7 +36,7 @@ import MonkeyKing
     
     
     /// 分享QQ
-    func share(type:DLQQType ,item:AXSocialShareContent, block:AXShareCompletionHandler? ) {
+    func share(type:DLQQType ,item:AXSocialShareContent, block:@escaping AXShareCompletionHandler ) {
         
         registerAccount()
         

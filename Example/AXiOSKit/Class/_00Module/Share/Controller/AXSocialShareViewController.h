@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXShareTarget.h"
+#import "AXSharePlatform.h"
 #import "AXUserSwiftImport.h"
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 分享类型 DLSharePopActionType ,init默认全部
 /// @param types DLSharePopActionType 
--(instancetype )initWithShareType:(NSArray<AXShareTarget >*)types;
+-(instancetype )initWithShareType:(NSArray<AXSharePlatform >*)types;
 
 //-(void)test:(DLShareAllType *)type;
 

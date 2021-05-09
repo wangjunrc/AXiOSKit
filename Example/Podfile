@@ -26,7 +26,8 @@ end
 def ui_pods
   
   pod 'IQKeyboardManager'
-  pod 'MGJRouter'#蘑菇街团队提供了MGJRouter路由库
+  #蘑菇街团队提供了MGJRouter路由库
+  pod 'MGJRouter'
   pod 'TZImagePickerController','~>3.5.8'
   #https://github.com/casatwy/CTMediator
   #  pod 'CTMediators'

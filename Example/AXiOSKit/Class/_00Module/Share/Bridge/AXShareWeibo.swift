@@ -31,27 +31,8 @@ import MonkeyKing
         MonkeyKing.registerAccount(account)
     }
     
-    
-    /// 微信授权
-    func oauth()  {
-        
-        if !MonkeyKing.SupportedPlatform.weibo.isAppInstalled {
-            MonkeyKing.oauth(for: .weibo) { [weak self] result in
-                switch result {
-                case .success(let info):
-                    if let accessToken = info?["access_token"] as? String {
-                        self?.accessToken = accessToken
-                    }
-                case .failure(let error):
-                    print("error: \(String(describing: error))")
-                }
-            }
-        }
-        
-    }
-    
     /// 分享微博
-    func  share(item:AXSocialShareContent, block:AXShareCompletionHandler? ){
+    func  share(item:AXSocialShareContent, block:@escaping AXShareCompletionHandler ){
         
         let info = MonkeyKing.Info(
             title: item.title,
