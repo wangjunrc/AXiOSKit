@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NSString*const AXSharePlatform;
+typedef NSString *const AXSharePlatform;
 
 /// 微信会话
 FOUNDATION_EXTERN AXSharePlatform AXSharePlatformWeiChatSession;

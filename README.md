@@ -2412,3 +2412,11 @@ layoutIfNeed //不强制刷
 ```
 https://www.jianshu.com/p/bd2fdfbf4640
 ```
+## 定义常量
+只在.m文件中的定义 用 static
+```
+// 能被修改值,所以用这个格式
+static NSString const * kUserName = @"1";
+// 不能被修改值
+static NSString  * const kUserName2 = @"2";
+```

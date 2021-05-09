@@ -18,9 +18,9 @@ PODS:
   - AvoidCrash (2.5.2)
   - AXCollectionObserve (1.1.0):
     - AXCollectionObserve/Core (= 1.1.0)
-    - ReactiveObjC (> 3.0.0)
+    - ReactiveObjC (>= 3.0.0)
   - AXCollectionObserve/Core (1.1.0):
-    - ReactiveObjC (> 3.0.0)
+    - ReactiveObjC (>= 3.0.0)
   - AXiOSKit (2.0.0):
     - AFNetworking (~> 4.0.0)
     - Aspects
@@ -33,17 +33,17 @@ PODS:
     - MJExtension
     - MJRefresh
     - NullSafe
-    - ReactiveObjC (> 3.0.0)
+    - ReactiveObjC (>= 3.0.0)
     - SDWebImage
   - AXViewControllerTransitioning (1.1.2):
     - AXViewControllerTransitioning/Component (= 1.1.2)
     - AXViewControllerTransitioning/Core (= 1.1.2)
-    - ReactiveObjC (> 3.0.0)
+    - ReactiveObjC (>= 3.0.0)
   - AXViewControllerTransitioning/Component (1.1.2):
     - AXViewControllerTransitioning/Core
-    - ReactiveObjC (> 3.0.0)
+    - ReactiveObjC (>= 3.0.0)
   - AXViewControllerTransitioning/Core (1.1.2):
-    - ReactiveObjC (> 3.0.0)
+    - ReactiveObjC (>= 3.0.0)
   - Bagel (1.4.0):
     - CocoaAsyncSocket
   - Canvas (0.1.2)
@@ -345,9 +345,9 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
-  AXCollectionObserve: e1d633058fdadaf086b5fc780d167b10463fb1e0
-  AXiOSKit: a37b570737e44d8862fa1bc5e38fe4d84ad74093
-  AXViewControllerTransitioning: f27f80ec568c275c27e8984cb857f3786bafe4da
+  AXCollectionObserve: 51b62accb05a67a9b2f34eaee5ffa3585f1b23f4
+  AXiOSKit: cae7f5c2d873b3ba291df1d14108cd1e3f2090c6
+  AXViewControllerTransitioning: a5b58c7504c9ef76298da0f5d3e908f330c9a9f9
   Bagel: c3fa6bcbd52db9ca976edbafd7638f0553ded101
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
@@ -404,6 +404,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: d93989ea23659f63c9c013d7aaee7626311f3239
+PODFILE CHECKSUM: 41dada8108b4b9ddea05aad299adcc0a222adcf4
 
 COCOAPODS: 1.10.1
