@@ -125,6 +125,7 @@ def ui_pods
   pod 'YYCache' , '~> 1.0.4'
   pod 'YYDispatchQueuePool' ,  '~> 1.0'
   pod 'YYKeyboardManager' ,  '~> 1.0.1'
+#  pod 'ZLCollectionViewFlowLayout' 
 end
 
 

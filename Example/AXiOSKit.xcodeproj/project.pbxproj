@@ -130,6 +130,8 @@
 		211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211227842573361600B6ECC8 /* AXiOSKit-Info.plist */; };
 		211227862573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211227842573361600B6ECC8 /* AXiOSKit-Info.plist */; };
 		2112281925733DF300B6ECC8 /* Assets_env_1.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */; };
+		2113A939264901680029B678 /* _39MasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2113A938264901680029B678 /* _39MasonryViewController.m */; };
+		2113A93A264901680029B678 /* _39MasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2113A938264901680029B678 /* _39MasonryViewController.m */; };
 		2117A3F625CCE93300980436 /* AnimRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2117A3F325CCE93200980436 /* AnimRefreshHeader.m */; };
 		2117A3F725CCE93300980436 /* AnimRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2117A3F325CCE93200980436 /* AnimRefreshHeader.m */; };
 		2117A3F825CCE93300980436 /* AnimRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2117A3F525CCE93300980436 /* AnimRefreshFooter.m */; };
@@ -524,6 +526,8 @@
 		21122775257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-env-1-Info.plist"; sourceTree = "<group>"; };
 		211227842573361600B6ECC8 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
 		2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets_env_1.xcassets; sourceTree = "<group>"; };
+		2113A937264901680029B678 /* _39MasonryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _39MasonryViewController.h; sourceTree = "<group>"; };
+		2113A938264901680029B678 /* _39MasonryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _39MasonryViewController.m; sourceTree = "<group>"; };
 		2117A3F225CCE93200980436 /* AnimRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimRefreshHeader.h; sourceTree = "<group>"; };
 		2117A3F325CCE93200980436 /* AnimRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimRefreshHeader.m; sourceTree = "<group>"; };
 		2117A3F425CCE93200980436 /* AnimRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimRefreshFooter.h; sourceTree = "<group>"; };
@@ -1121,6 +1125,8 @@
 				21E6DF0F2605DC3D0092051F /* _37FileManagerVC.m */,
 				2178B702261E939C00592747 /* _38DirectionVC.h */,
 				2178B703261E939C00592747 /* _38DirectionVC.m */,
+				2113A937264901680029B678 /* _39MasonryViewController.h */,
+				2113A938264901680029B678 /* _39MasonryViewController.m */,
 				213BCB6F254003D900C89B72 /* AFHTTPSessionManager+PutFile.h */,
 				213BCB48254003D900C89B72 /* AFHTTPSessionManager+PutFile.m */,
 			);
@@ -1339,10 +1345,10 @@
 		214F67D12646B863006D946B /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				214F67D22646B863006D946B /* Bridge */,
 				214F67D92646B863006D946B /* Controller */,
 				214F67DD2646B863006D946B /* Model */,
 				214F67E72646B863006D946B /* Service */,
-				214F67D22646B863006D946B /* Bridge */,
 				214F67E22646B863006D946B /* View */,
 			);
 			path = Share;
@@ -2731,6 +2737,7 @@
 				211227312573340100B6ECC8 /* _01RootVC.m in Sources */,
 				21BA199125AD906D00222F9A /* _25DataModel.m in Sources */,
 				211227322573340100B6ECC8 /* _20TimeLineContentCell.m in Sources */,
+				2113A93A264901680029B678 /* _39MasonryViewController.m in Sources */,
 				2124D21325E48AF800B1A5A4 /* XWShadow.m in Sources */,
 				211227332573340100B6ECC8 /* _09AFNViewController.m in Sources */,
 				211227342573340100B6ECC8 /* ChatMessageModel.m in Sources */,
@@ -2873,6 +2880,7 @@
 				21F2690E2635425100C67CFE /* FileParser.swift in Sources */,
 				213BCC0C254003DB00C89B72 /* DemoNavigationController.m in Sources */,
 				21F269192635425100C67CFE /* FileListTableView.swift in Sources */,
+				2113A939264901680029B678 /* _39MasonryViewController.m in Sources */,
 				21799D5D255CD2E300754A8B /* AXRecordAudioService.m in Sources */,
 				21898F322541B11D00876524 /* Application.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

@@ -17,14 +17,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, strong) UILabel *titleLabel;
 
-@property(nonatomic, strong) UICollectionView *collectionView;
+@property(nonatomic, strong) NSArray<UICollectionView *> *collViewArray;
 
-@property(nonatomic, strong) NSArray<AXShareOption*> *dataArray;
+@property(nonatomic, strong) UIView *collBgView;
+
+@property(nonatomic, strong) NSArray<NSArray<AXShareOption*> *> *dataArray;
 
 @property(nonatomic, strong) UIButton *cancelButton;
 
 /// 列数,一排中的个数
-@property(nonatomic, assign) int column;
+//@property(nonatomic, assign) int column;
 
 
 @end

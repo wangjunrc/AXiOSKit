@@ -12,68 +12,67 @@
 #import <Masonry/Masonry.h>
 #import "AXSocialShareCell.h"
 
+static CGFloat const itemW = 80;
+static CGFloat const itemH = 80;
+
 @implementation AXSocialShareView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = UIColor.whiteColor;
-        self.column = 4;
         [self _initUI];
     }
     return self;
 }
 
-
 -(void)_initUI {
     
     [self addSubview:self.contentView];
-    
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.cancelButton];
-    [self.contentView addSubview:self.collectionView];
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-    
-    [self.collectionView registerClass:AXSocialShareCell.class forCellWithReuseIdentifier:@"DLSharePopCell"];
+    [self.contentView addSubview:self.collBgView];
     
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.mas_equalTo(0);
         make.top.equalTo(self.titleLabel.mas_top).mas_equalTo(0);
+        make.bottom.equalTo(self.cancelButton.mas_bottom).mas_equalTo(ax_safe_area_insets_bottom_offset(0));
     }];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.collectionView.mas_top).mas_equalTo(0);
+        make.top.mas_equalTo(self.contentView.mas_top).mas_equalTo(0);
         make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(50);
     }];
     
-    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.collBgView mas_makeConstraints:^(MASConstraintMaker *make) {
         [self _collectionViewLayout:make];
     }];
     
     [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.contentView.mas_bottom).mas_equalTo(-ax_safe_area_insets_bottom_offset(0));
+        make.top.mas_equalTo(self.collBgView.mas_bottom).mas_equalTo(0);
         make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(70);
     }];
     [self.cancelButton ax_addLineDirection:AXLineDirectionTop color:[UIColor colorWithRed:224/255.0 green:224/255.0 blue:224/255.0 alpha:1] height:1];
 }
 
+
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.dataArray.count;
+    
+    return self.dataArray[collectionView.tag].count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     AXSocialShareCell *cell =  [collectionView  dequeueReusableCellWithReuseIdentifier:@"DLSharePopCell" forIndexPath:indexPath];
-    
-    cell.action = self.dataArray[indexPath.item];
+    cell.contentView.backgroundColor = UIColor.ax_randomColor;
+    cell.action = self.dataArray[collectionView.tag][indexPath.item];
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    AXShareOption *action = self.dataArray[indexPath.item];
+    AXShareOption *action = self.dataArray[collectionView.tag][indexPath.item];
     if (action.didBlock) {
         action.didBlock(action.type);
     }
@@ -82,25 +81,24 @@
 ///1、设置格子的大小
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    CGFloat cellW = self.bounds.size.width*0.25;
-    CGFloat cellW = self.bounds.size.width/(1.0*self.column);
-    return  CGSizeMake(cellW, cellW);
+    //    CGFloat cellW = self.bounds.size.width*0.25;
+    //    CGFloat cellW = self.bounds.size.width/(1.0*self.column);
+    return  CGSizeMake(itemW, itemH);
 }
 
 ///2、设置collectionView的四周边距
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsZero;
+    return UIEdgeInsetsMake(0, 20, 0, 20);
 }
 
 ///3、设置最小行间距
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 0;
+    return 40;
 }
 
 /// 4、设置最小列间距
-
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return 0;
 }
@@ -116,39 +114,37 @@
 
 #pragma mark - set
 
-- (void)setDataArray:(NSArray<AXShareOption *> *)dataArray {
+- (void)setDataArray:(NSArray<NSArray<AXShareOption *> *> *)dataArray{
     _dataArray = dataArray;
-    if (self.collectionView.superview) {
-        [self.collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            [self _collectionViewLayout:make];
-        }];
-        [self.collectionView reloadData];
-    }
-}
-
-
-- (void)setColumn:(int)column {
-    _column = column;
-    if (self.collectionView.superview) {
-        [self.collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            [self _collectionViewLayout:make];
-        }];
-        [self.collectionView reloadData];
-    }
+    
+    [self.collBgView mas_updateConstraints:^(MASConstraintMaker *make) {
+        [self _collectionViewLayout:make];
+    }];
+    
+    NSMutableArray<UICollectionView *> *temp = [NSMutableArray arrayWithCapacity:dataArray.count];
+    @weakify(temp);
+    [dataArray enumerateObjectsUsingBlock:^(NSArray<AXShareOption *> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UICollectionView *view =  [self creaCollectionView];
+        view.backgroundColor = UIColor.ax_randomColor;
+        view.tag = idx;
+        @strongify(temp);
+        [temp addObject:view];
+        [self.collBgView addSubview:view];
+    }];
+    self.collViewArray = temp.copy;
+    
+    [temp mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:20 leadSpacing:0 tailSpacing:0];
+    [temp mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.height.mas_equalTo(itemH);
+    }];
+    
 }
 
 -(void)_collectionViewLayout:(MASConstraintMaker *)make{
-    if (self.column==0) {
-        return;
-    }
-    int by = ceil(self.dataArray.count*1.0/(self.column*1.0));
-    if (by==0) {
-        return;
-    }
-    make.bottom.equalTo(self.cancelButton.mas_top).mas_equalTo(-10);
+    make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_equalTo(0);
     make.left.right.mas_equalTo(0);
-   
-    make.height.equalTo(self.collectionView.superview.mas_width).dividedBy(by*1.0);
+    make.height.mas_equalTo(itemH*self.dataArray.count+20);
 }
 
 #pragma mark - get
@@ -157,7 +153,6 @@
         _contentView = [[UIView alloc]init];
         _contentView.backgroundColor = UIColor.whiteColor;
         _contentView.layer.cornerRadius = 10;
-        
     }
     return _contentView;
 }
@@ -185,17 +180,30 @@
     return _cancelButton;
 }
 
-- (UICollectionView *)collectionView {
-    if (!_collectionView) {
-        UICollectionViewFlowLayout *layout = UICollectionViewFlowLayout.alloc.init;
-        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        layout.sectionInset = UIEdgeInsetsZero;
-        layout.minimumLineSpacing = 0;
-        _collectionView = [UICollectionView.alloc initWithFrame:CGRectZero collectionViewLayout:layout];
-        _collectionView.backgroundColor = UIColor.whiteColor;
+
+
+- (UIView *)collBgView {
+    if (!_collBgView) {
+        _collBgView = [UIView.alloc init];
+        _collBgView.backgroundColor = UIColor.purpleColor;
     }
-    return _collectionView;
+    return _collBgView;
 }
+
+- (UICollectionView *)creaCollectionView {
+    
+    UICollectionViewFlowLayout *layout = UICollectionViewFlowLayout.alloc.init;
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+//    layout.sectionInset = UIEdgeInsetsZero;
+//    layout.minimumLineSpacing = 0;
+    UICollectionView *collectionView = [UICollectionView.alloc initWithFrame:CGRectZero collectionViewLayout:layout];
+    collectionView.backgroundColor = UIColor.whiteColor;
+    [collectionView registerClass:AXSocialShareCell.class forCellWithReuseIdentifier:@"DLSharePopCell"];
+    collectionView.delegate = self;
+    collectionView.dataSource = self;
+    return collectionView;
+}
+
 
 
 @end

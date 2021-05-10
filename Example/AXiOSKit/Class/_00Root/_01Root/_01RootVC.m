@@ -66,7 +66,7 @@
 #import "_01HeaderView.h"
 #import "AnimRefreshFooter.h"
 #import "AnimRefreshHeader.h"
-
+#import "_39MasonryViewController.h"
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -1001,6 +1001,14 @@ typedef void (^CollectionBlock)(void);
                 @"action": ^{
                     _38DirectionVC *vc = [_38DirectionVC ax_init];
                     [self ax_showVC:vc];
+                },
+            },
+            @{
+                @"index": @39,
+                @"title": @"Masonry布局",
+                @"action": ^{
+                    _39MasonryViewController *vc = [_39MasonryViewController ax_init];
+                    [self ax_pushVC:vc];
                 },
             },
             

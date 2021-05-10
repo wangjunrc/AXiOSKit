@@ -16,9 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 分享类型 DLSharePopActionType ,init默认全部
 /// @param types DLSharePopActionType 
--(instancetype )initWithShareType:(NSArray<AXSharePlatform >*)types;
-
-//-(void)test:(DLShareAllType *)type;
+-(instancetype )initWithShareType:(NSArray<NSArray<AXSharePlatform > *>*)types;
 
 @end
 

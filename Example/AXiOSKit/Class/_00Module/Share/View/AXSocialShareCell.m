@@ -29,7 +29,7 @@
     [self.contentView addSubview:self.titleLabel];
     
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(10);
+        make.top.mas_equalTo(0);
         make.centerX.mas_equalTo(0);
         make.height.width.equalTo(self.contentView.mas_height).multipliedBy(0.6);
     }];
@@ -37,6 +37,7 @@
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
         make.top.equalTo(self.imageView.mas_bottom).mas_equalTo(10);
+//        make.bottom.equalTo(self.contentView.mas_bottom).mas_equalTo(0);
     }];
 }
 
@@ -46,6 +47,7 @@
         _titleLabel.font =[UIFont systemFontOfSize:13];;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.textColor = [UIColor blackColor];
+        _titleLabel.adjustsFontSizeToFitWidth = YES;
     }
     return _titleLabel;
 }
