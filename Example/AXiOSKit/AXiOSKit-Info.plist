@@ -93,6 +93,10 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>mqqOpensdkSSoLogin</string>
+		<string>mqq</string>
+		<string>mqqopensdkapiV2</string>
+		<string>mqqOpensdkSSoLogin</string>
+		<string>tim</string>
 		<string>pocket-oauth-v1</string>
 		<string>weixin</string>
 		<string>mqqapi</string>
