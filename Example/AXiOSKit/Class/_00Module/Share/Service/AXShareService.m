@@ -75,7 +75,8 @@ AX_SINGLETON_IMPL(Service);
     item.subTitle = [NSString stringWithFormat:@"%@分享地址:%@", @"分享title", @"https://www.baidu.com/"];
     if ([option.type isEqualToString:AXSharePlatformQQFriends]) {
         // qq分享没有universalLink,只能分享文字, 设备未授权 25105
-        item.mediaType = AXSocialShareContentTypeText;
+//        item.mediaType = AXSocialShareContentTypeText;
+        item.mediaType = AXSocialShareContentTypeUrl;
     } else {
         item.mediaType = AXSocialShareContentTypeUrl;
     }
