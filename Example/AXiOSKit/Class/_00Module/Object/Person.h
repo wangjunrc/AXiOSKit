@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Person : NSObject
-
+AX_SINGLETON_INTER(Sh);
+@property(nonatomic, copy) NSString *name;
 -(void)logShowTest;
 
 @end

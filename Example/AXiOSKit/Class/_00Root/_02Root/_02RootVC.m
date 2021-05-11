@@ -18,6 +18,9 @@
 #import <SSZipArchive/SSZipArchive.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import "Person.h"
+
+@import AssetsLibrary;
+
 static __attribute__((always_inline)) void asm_exit() {
 #ifdef __arm64__
     __asm__("mov X0, #0\n"
@@ -54,8 +57,6 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 @end
 @implementation TestKVOObject
 @end
-
-
 
 @interface _02RootVC ()
 
@@ -122,7 +123,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
     //    } else {
     //    }
     
-    
+   
 }
 
 
@@ -844,29 +845,6 @@ void mySLog(NSString *format, ...)
                     [dog show];
                 },
             },
-            //            @{
-            //                @"index": @13,
-            //                @"title": @"NSPointerArray",
-            //                @"action": ^{
-            //                    NSPointerArray *arrary = [NSPointerArray pointerArrayWithOptions:0];
-            //                },
-            //            },
-            @{
-                @"index": @13,
-                @"title": @"截屏通知",
-                @"action": ^{
-                    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(screenshotsNote:) name:UIApplicationUserDidTakeScreenshotNotification  object:nil];
-                    
-                },
-            },
-            @{
-                @"index": @13,
-                @"title": @"移除截屏通知",
-                @"action": ^{
-                    [NSNotificationCenter.defaultCenter removeObserver:self name:UIApplicationUserDidTakeScreenshotNotification  object:nil];
-                    
-                },
-            },
             
             @{
                 @"index": @14,
@@ -920,7 +898,7 @@ void mySLog(NSString *format, ...)
                 @"index": @17,
                 @"title": @"FileBrowser",
                 @"action": ^{
-//                    NSURL *URL = NULL;
+                    //                    NSURL *URL = NULL;
                     FileBrowser *vc = [FileBrowser.alloc init];
                     
                     [self ax_showVC:vc];
@@ -929,12 +907,12 @@ void mySLog(NSString *format, ...)
                 },
             },
             
-           
+            
             @{
                 @"index": @18,
                 @"title": @"pushViewControllerPresentStyle",
                 @"action": ^{
-                 
+                    
                     _01ContentViewController *vc = [_01ContentViewController.alloc init];
                     [self.navigationController ax_pushViewControllerPresentStyle:vc animated:YES];
                     
@@ -966,9 +944,4 @@ void mySLog(NSString *format, ...)
     return UIInterfaceOrientationMaskPortrait;
 }
 
--(void)screenshotsNote:(NSNotification *)note {
-    
-    NSLog(@"监听截屏通知========%@",note.userInfo);
-    
-}
 @end

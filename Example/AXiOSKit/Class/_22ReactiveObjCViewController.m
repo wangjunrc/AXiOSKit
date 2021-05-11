@@ -81,6 +81,12 @@
     /// 底部约束
     [self _lastLoadBottomAttribute];
     
+    [self.rac_willDeallocSignal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"当前控制器消失 rac_willDeallocSignal");
+    }];
+    [[self rac_signalForSelector:@selector(viewWillDisappear:)] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"当前控制器消失,viewWillDisappear");
+    }];
 }
 
 -(void)_baseUser {
@@ -983,7 +989,7 @@
 -(void)_note {
     __weak typeof(self) weakSelf = self;
     [self _titlelabel:@"rac通知,无法主动取消"];
-    
+   
     /// distinctUntilChanged
     [[[NSNotificationCenter.defaultCenter rac_addObserverForName:@"com.ax.note.rac" object:nil]
       takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNotification * _Nullable x) {
