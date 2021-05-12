@@ -121,13 +121,13 @@ static CGFloat const itemH = 80;
         [self _collectionViewLayout:make];
     }];
     
-    NSMutableArray<UICollectionView *> *temp = [NSMutableArray arrayWithCapacity:dataArray.count];
-    @weakify(temp);
+    __block NSMutableArray<UICollectionView *> *temp = [NSMutableArray arrayWithCapacity:dataArray.count];
+//    @weakify(temp);
     [dataArray enumerateObjectsUsingBlock:^(NSArray<AXShareOption *> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UICollectionView *view =  [self creaCollectionView];
         view.backgroundColor = UIColor.ax_randomColor;
         view.tag = idx;
-        @strongify(temp);
+//        @strongify(temp);
         [temp addObject:view];
         [self.collBgView addSubview:view];
     }];

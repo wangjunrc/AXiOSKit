@@ -203,6 +203,7 @@ PODS:
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SSKeychain (1.4.1)
   - SSZipArchive (2.2.3)
+  - TABAnimated (2.5.5)
   - TOCropViewController (2.6.0)
   - TZImagePickerController (3.5.9)
   - WCDB (1.0.7.5):
@@ -257,6 +258,7 @@ DEPENDENCIES:
   - SocketRocket
   - SSKeychain
   - SSZipArchive
+  - TABAnimated (= 2.5.5)
   - TOCropViewController (~> 2.6.0)
   - TZImagePickerController (~> 3.5.8)
   - WCDB (from `https://gitee.com/mirrors/wcdb.git`)
@@ -317,6 +319,7 @@ SPEC REPOS:
     - SQLiteRepairKit
     - SSKeychain
     - SSZipArchive
+    - TABAnimated
     - TOCropViewController
     - TZImagePickerController
     - WCDBOptimizedSQLCipher
@@ -394,6 +397,7 @@ SPEC CHECKSUMS:
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+  TABAnimated: 578ad7becfcba14e163ecf7e755113de17ee1984
   TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
   TZImagePickerController: 07a2f834f4908689759a7e54f74e9a018e047cb6
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
@@ -404,6 +408,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 21345ca543785a3409b11ae8bdc19a05776c74aa
+PODFILE CHECKSUM: f1fccec8218990cd9a020a4ea2ebb14e12f121dc
 
 COCOAPODS: 1.10.1

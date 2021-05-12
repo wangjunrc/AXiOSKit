@@ -45,13 +45,37 @@
     _03HeaderView *headerView = [_03HeaderView.alloc init];
     self.tableView.tableHeaderView =headerView;
     
+//    if (@available(iOS 13.0, *)) {
+//        self.navigationController.navigationBar.barStyle = UIStatusBarStyleDarkContent;
+//    } else {
+//        self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+//    }
+    
     if (@available(iOS 13.0, *)) {
-        self.navigationController.navigationBar.barStyle = UIStatusBarStyleDarkContent;
+        UIApplication.sharedApplication.statusBarStyle = UIStatusBarStyleDarkContent;
     } else {
-        self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+        UIApplication.sharedApplication.statusBarStyle = UIStatusBarStyleLightContent;
     }
     
+    int age = 10;
+   void (^myblock)(void) =  ^{
+     NSLog(@"age = %d",age);
+   };
+   age  = 20;
+   myblock();
+    
+    
+    
+    
 }
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    if (@available(iOS 13.0, *)) {
+        return UIStatusBarStyleDarkContent;
+    } else {
+        return UIStatusBarStyleDefault;
+    }
+}
+
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

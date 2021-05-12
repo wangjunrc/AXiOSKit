@@ -18,6 +18,7 @@
 #import <SSZipArchive/SSZipArchive.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import "Person.h"
+#import <TABAnimated/TABAnimated.h>
 
 @import AssetsLibrary;
 
@@ -80,21 +81,38 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
     self.tableView.allowsMultipleSelectionDuringEditing = YES;
     
     __weak typeof(self) weakSelf = self;
+    NSMutableArray <UIBarButtonItem *> *temp = NSMutableArray.array;
     
-    UIButton *btn = [[UIButton alloc]init];
-    [btn setTitle:@"编辑" forState:UIControlStateNormal];
-    btn.backgroundColor = UIColor.blueColor;
-    [btn ax_addTargetBlock:^(UIButton * _Nullable button) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.tableView setEditing:!strongSelf.tableView.isEditing animated:YES];
-    }];
-    UIButton *btn2 = [[UIButton alloc]init];
-    [btn2 setTitle:@"删除" forState:UIControlStateNormal];
-    btn2.backgroundColor = UIColor.blueColor;
-    [btn2 addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
+    {
+        UIButton *btn = [[UIButton alloc]init];
+        [btn setTitle:@"编辑" forState:UIControlStateNormal];
+        btn.backgroundColor = UIColor.blueColor;
+        [btn ax_addTargetBlock:^(UIButton * _Nullable button) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf.tableView setEditing:!strongSelf.tableView.isEditing animated:YES];
+        }];
+        [temp addObject:[UIBarButtonItem ax_itemByButton:btn]];
+    }
     
-    self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],[UIBarButtonItem ax_itemByButton:btn2]];
-    //
+    {
+        
+        UIButton *btn = [[UIButton alloc]init];
+        [btn setTitle:@"删除" forState:UIControlStateNormal];
+        btn.backgroundColor = UIColor.blueColor;
+        [btn addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
+        [temp addObject:[UIBarButtonItem ax_itemByButton:btn]];
+    }
+    
+    {
+        
+        UIButton *btn = [[UIButton alloc]init];
+        [btn setTitle:@"刷新" forState:UIControlStateNormal];
+        btn.backgroundColor = UIColor.blueColor;
+        [btn addTarget:self action:@selector(reloadViewAnimated) forControlEvents:UIControlEventTouchUpInside];
+        [temp addObject:[UIBarButtonItem ax_itemByButton:btn]];
+    }
+    self.navigationItem.rightBarButtonItems = temp;
+    
     //
     //    if (@available(iOS 11.0, *)) {
     //        self. navigationItem.hidesSearchBarWhenScrolling = NO;
@@ -123,10 +141,36 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
     //    } else {
     //    }
     
-   
+    
+    // 设置tabAnimated相关属性
+    // 可以不进行手动初始化，将使用默认属性
+    self.tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[UITableViewCell class] cellHeight:100];
+    self.tableView.tabAnimated.canLoadAgain = YES;
+    self.tableView.tabAnimated.adjustBlock = ^(TABComponentManager * _Nonnull manager) {
+        manager.animation(1).down(3).height(12);
+        manager.animation(2).height(12).reducedWidth(70);
+        manager.animation(3).down(-5).height(12).radius(0.).reducedWidth(-20);
+    };
+
 }
 
 
+- (void)reloadViewAnimated {
+    self.tableView.tabAnimated.canLoadAgain = YES;
+    [self.tableView tab_startAnimationWithCompletion:^{
+        [self afterGetData];
+    }];
+}
+/**
+ 获取到数据后
+ */
+- (void)afterGetData {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        // 停止动画,并刷新数据
+        [self.tableView tab_endAnimationEaseOut];
+    });
+}
 
 -(void)deleteAction:(UIButton *)btn{
     
