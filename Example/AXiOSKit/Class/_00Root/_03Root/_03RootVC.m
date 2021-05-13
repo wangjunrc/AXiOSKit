@@ -151,8 +151,35 @@
     //    NSString  *index = [dict[@"index"] stringValue];
     //    NSString  *title = dict[@"title"];
     //    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",index,title];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
 //    cell.backgroundColor = UIColor.cyanColor;
+    
+    if (@available(iOS 14.0, *)) {
+        UIListContentConfiguration *content = cell.defaultContentConfiguration;
+        
+        // Configure content.
+        content.image = [UIImage systemImageNamed:@"star"];
+        content.text = @"Favorites";
+        content.imageProperties.tintColor = UIColor.purpleColor;
+        cell.contentConfiguration = content;
+        
+        
+        UIBackgroundConfiguration  *back = [UIBackgroundConfiguration listPlainCellConfiguration];
+//        UIImageView *imgView =[UIImageView.alloc initWithImage:[UIImage imageNamed:@"200x100"]];
+//        imgView.contentMode = UIViewContentModeScaleToFill;
+//        back.customView = imgView;
+        back.backgroundColor = UIColor.greenColor;
+        
+        cell.backgroundConfiguration = back;
+        
+    } else {
+        
+        cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
+    }
+    
+
+
+    
+    
     return cell;
 }
 

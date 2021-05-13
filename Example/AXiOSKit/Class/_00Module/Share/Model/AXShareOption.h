@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AXSharePlatform.h"
+#import "AXUserSwiftImport.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) AXSharePlatform type;
 
 @property(nonatomic, copy) void(^didBlock)(AXSharePlatform type);
+
+@property(nonatomic, assign,readonly) AXShareBridgePlatform conversionType;
 
 
 @end

@@ -10,4 +10,9 @@
 
 @implementation AXShareOption
 
+
+- (AXShareBridgePlatform )conversionType {
+    
+    return AXShareBridgePlatformWeiChatSession;
+}
 @end

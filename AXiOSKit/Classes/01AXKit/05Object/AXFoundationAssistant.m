@@ -452,7 +452,7 @@ void AXOpenSettings() { ax_OpenURLStr(UIApplicationOpenSettingsURLString); }
 
 /// 是否 nil 或者 空
 /// 不要用分类, 为nil 时,不走分类方法
-extern BOOL ax_is_null(id obj) {
+BOOL ax_is_empty(id obj) {
     if (obj == nil) {
         return YES;
     }
@@ -477,8 +477,8 @@ extern BOOL ax_is_null(id obj) {
 }
 
 /// 是否不为 nil 或者 空
-extern BOOL ax_is_no_null(id obj) {
-    return !ax_is_null(obj);
+BOOL ax_is_not_empty(id obj) {
+    return !ax_is_empty(obj);
 }
 
 

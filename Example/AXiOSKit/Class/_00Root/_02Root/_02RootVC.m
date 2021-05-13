@@ -19,7 +19,7 @@
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import "Person.h"
 #import <TABAnimated/TABAnimated.h>
-
+#import "_02RootCell.h"
 @import AssetsLibrary;
 
 static __attribute__((always_inline)) void asm_exit() {
@@ -69,12 +69,16 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[TABAnimated sharedAnimated] initWithOnlySkeleton];
+    [TABAnimated sharedAnimated].openLog = YES;
+    
     self.navigationItem.title = @"主题2";
     [self ax_setNavBarBackgroundImageWithColor:UIColor.cyanColor];
     self.tableView.tableFooterView = UIView.alloc.init;
     //    [self.tableView ax_registerNibCellClass:UITableViewCell.class];
     //    [self.tableView ax_registerClassCell:UITableViewCell.class];
-    [UITableViewCell ax_registerCellWithTableView:self.tableView];
+    //    [_02RootCell ax_registerCellWithTableView:self.tableView];
+    [self.tableView registerClass:_02RootCell.class forCellReuseIdentifier:@"_02RootCell"];
     self.dataArray = nil;
     [self.tableView reloadData];
     /// 多选
@@ -144,14 +148,23 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
     
     // 设置tabAnimated相关属性
     // 可以不进行手动初始化，将使用默认属性
-    self.tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[UITableViewCell class] cellHeight:100];
+    self.tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[_02RootCell class] cellHeight:UITableViewAutomaticDimension];
     self.tableView.tabAnimated.canLoadAgain = YES;
     self.tableView.tabAnimated.adjustBlock = ^(TABComponentManager * _Nonnull manager) {
-        manager.animation(1).down(3).height(12);
-        manager.animation(2).height(12).reducedWidth(70);
-        manager.animation(3).down(-5).height(12).radius(0.).reducedWidth(-20);
+        //        manager.animation(1).down(3).height(12);
+        //        manager.animation(2).height(12).reducedWidth(70);
+        //        manager.animation(3).down(-5).height(12).radius(0.).reducedWidth(-20);
+        
+        //        manager.animationN(@"textLabel").right(50).radius(12);
+        //            manager.animationN(@"nameLabel").height(12).width(110);
+        //            manager.animationN(@"timeButton").down(-5).height(12);
+        manager.animationN(@"titleLab").down(3).height(12);
+        manager.animationN(@"timeLab").height(12).reducedWidth(70);
+        manager.animationN(@"statusBtn").down(-5).height(12).radius(0.).reducedWidth(-20);
+        
+        
     };
-
+    
 }
 
 
@@ -214,7 +227,12 @@ void mySLog(NSString *format, ...)
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"测试";
 }
-
+-(CGFloat )tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewAutomaticDimension;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewAutomaticDimension;
+}
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     view.tintColor = [UIColor groupTableViewBackgroundColor];
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
@@ -238,15 +256,15 @@ void mySLog(NSString *format, ...)
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [UITableViewCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
+    _02RootCell *cell = [tableView dequeueReusableCellWithIdentifier:@"_02RootCell" forIndexPath:indexPath];
     
     NSDictionary *dict = self.dataArray[indexPath.row];
     //    cell.indexLabel.text = [dict[@"index"] stringValue];
     //    cell.nameLabel.text = dict[@"title"];
     NSString  *index = [dict[@"index"] stringValue];
     NSString  *title = dict[@"title"];
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",index,title];
+    //
+    cell.titleLab.text = [NSString stringWithFormat:@"%@ %@",index,title];
     return cell;
 }
 
@@ -487,6 +505,7 @@ void mySLog(NSString *format, ...)
                         }
                     }];
                     NSLog(@"tempArray = %@", tempArray);
+                    
                     NSDictionary *dict = @{
                         @"1": @"A",
                         @"1": @"AA",
@@ -769,16 +788,18 @@ void mySLog(NSString *format, ...)
                     NSURL   *URL = [NSBundle.ax_HTMLBundle URLForResource:@"index.html" withExtension:nil];
                     
                     AXWKWebVC * vc = [[AXWKWebVC alloc] initWithURL:URL];
-                    __block typeof(vc)weakVC = vc;
-                    //                    [vc addScriptMessageWithName:@"base64Img" handler:^(NSString * _Nonnull name, id  _Nonnull body) {
-                    //                        NSLog(@"body = %@",body);
-                    //                        NSString *content = body;
-                    //                        UIImageView *imgView = [UIImageView.alloc initWithFrame:CGRectMake(100, 100, 50, 50)];
-                    //                        content = [content componentsSeparatedByString:@","].lastObject;
-                    //                        NSData *data = [NSData.alloc initWithBase64EncodedString:content options:0];
-                    //                        imgView.image = [UIImage.alloc initWithData:data];
-                    //                        [weakVC.view addSubview:imgView];
-                    //                    }];
+                    //                    __block typeof(vc)weakVC = vc;
+                    @weakify(vc)
+                    [vc addScriptMessageWithName:@"base64Img" handler:^(NSString * _Nonnull name, id  _Nonnull body) {
+                        @strongify(vc)
+                        NSLog(@"body = %@",body);
+                        NSString *content = body;
+                        UIImageView *imgView = [UIImageView.alloc initWithFrame:CGRectMake(100, 100, 50, 50)];
+                        content = [content componentsSeparatedByString:@","].lastObject;
+                        NSData *data = [NSData.alloc initWithBase64EncodedString:content options:0];
+                        imgView.image = [UIImage.alloc initWithData:data];
+                        [vc.view addSubview:imgView];
+                    }];
                     
                     
                     /// 注入不区分时机,需要自己window.onload 调用

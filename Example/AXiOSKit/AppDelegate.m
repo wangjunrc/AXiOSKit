@@ -57,10 +57,10 @@
         }
             break;
             //上一首
-        case UIEventSubtypeRemoteControlPreviousTrack:
-            break;{
+        case UIEventSubtypeRemoteControlPreviousTrack:{
                 NSLog(@"上一首");
             }
+            break;
         default:
             break;
     }
@@ -69,10 +69,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //    sleep(2);
     
-    [self thirdSDKLifecycleManager:@selector(application:didFinishLaunchingWithOptions:) withParameters:@[application,@{}]];
+//    [self thirdSDKLifecycleManager:@selector(application:didFinishLaunchingWithOptions:) withParameters:@[application,@{}]];
     
     //开启接收远程事件 ,用于接收播放器
-    [application beginReceivingRemoteControlEvents];
+//    [application beginReceivingRemoteControlEvents];
     
     //    NSLog(@"IS_PRODUCATION = %d, SERVER_HOST = %@",IS_PRODUCATION, SERVER_HOST);
     //    [LLDynamicLaunchScreen restoreAsBefore];

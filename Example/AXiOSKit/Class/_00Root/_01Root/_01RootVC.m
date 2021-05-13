@@ -47,6 +47,7 @@
 #import "_25CompLayoutVC5.h"
 #import "_25FlowLayoutVC1.h"
 #import "_25LayoutViewController.h"
+#import "_25_2_DiffableDataSource.h"
 #import "_26RMQClientViewController.h"
 #import "_27MQTTClientViewController.h"
 #import "_28ShareFileViewController.h"
@@ -88,6 +89,9 @@ typedef void (^CollectionBlock)(void);
 @property (nonatomic, strong) NSString *strongStr;
 
 @property(nonatomic, strong) UIBarButtonItem *deleteItem;
+
+@property(nonatomic, strong) UISearchController *searchVC;
+
 @end
 
 @implementation _01RootVC
@@ -172,27 +176,8 @@ typedef void (^CollectionBlock)(void);
     //    }];
     //
     
-    self.tableView.mj_header = [AnimRefreshHeader headerWithRefreshingBlock:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.tableView.mj_header beginRefreshing];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [strongSelf.tableView.mj_header endRefreshing];
-        });
-        
-    }];
-    
-    
-    self.tableView.mj_footer = [AnimRefreshFooter footerWithRefreshingBlock:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.tableView.mj_footer beginRefreshing];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [strongSelf.tableView.mj_footer endRefreshing];
-        });
-    }];
-    
-    
-    
+    [self _createRefresh];
+    [self _createSearch];
 }
 - (UIBarButtonItem *)deleteItem {
     if (!_deleteItem) {
@@ -531,6 +516,79 @@ typedef void (^CollectionBlock)(void);
     }
 }
 
+/// 刷新
+-(void)_createRefresh {
+    __weak typeof(self) weakSelf = self;
+    self.tableView.mj_header = [AnimRefreshHeader headerWithRefreshingBlock:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.tableView.mj_header beginRefreshing];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [strongSelf.tableView.mj_header endRefreshing];
+        });
+        
+    }];
+    
+    
+    self.tableView.mj_footer = [AnimRefreshFooter footerWithRefreshingBlock:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.tableView.mj_footer beginRefreshing];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [strongSelf.tableView.mj_footer endRefreshing];
+        });
+    }];
+}
+
+/// 搜索栏
+-(void)_createSearch{
+    
+    if (@available(iOS 11.0, *)) {
+        self.navigationItem.searchController = self.searchVC;
+        /// https://github.com/CoderMJLee/MJRefresh/issues/1317
+        self.navigationItem.hidesSearchBarWhenScrolling = NO;
+    } else {
+    }
+    
+}
+
+#pragma mark - get
+
+- (UISearchController *)searchVC {
+    if (!_searchVC) {
+        
+        _searchVC = [[UISearchController alloc]initWithSearchResultsController:nil];
+        
+        // 1.设置placeholder
+        _searchVC.searchBar.placeholder = @"头部搜索";
+        
+        // 2.设置searchBar的背景透明
+//        [_searchVC.searchBar setBackgroundImage:[UIImage new]];
+//        _searchVC.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+        
+        // 3.设置搜索框文字的偏移
+//        _searchVC.searchBar.searchTextPositionAdjustment = UIOffsetMake(3, 0);
+        
+        // 4.设置搜索框图标的偏移
+//        CGFloat offsetX = (self.view.bounds.size.width - 200 - 32) / 2;
+//        [_searchVC.searchBar setPositionAdjustment:UIOffsetMake(offsetX, 0) forSearchBarIcon:UISearchBarIconSearch];
+        
+        // 5.取消按钮和文本框光标颜色
+//        _searchVC.searchBar.tintColor = [UIColor blackColor];
+        
+        // 6.设置搜索文本框背景图片 [圆形的文本框只需要设置一张圆角图片就可以了]
+        //        [_searchVC.searchBar setSearchFieldBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor] size:CGSizeMake(self.view.bounds.size.width - 32, 36) isRound:YES] forState:UIControlStateNormal];
+        // 7.设置搜索按钮图片
+//        UIImage *searchImg = [[UIImage imageNamed:@"ax_icon_weixin"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//        [_searchVC.searchBar setImage:searchImg forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+        // 8.拿到搜索文本框
+        //        UITextField *searchField = [_searchVC.searchBar valueForKey:@"_searchField"];
+        //        // 9.设置取消按钮文字
+        //        [_searchVC.searchBar setValue:@"Custom Cancel" forKey:@"_cancelButtonText"];
+        
+        
+    }
+    return _searchVC;
+}
 #pragma mark -  数据源
 
 - (NSMutableArray *)dataArray {
@@ -825,6 +883,18 @@ typedef void (^CollectionBlock)(void);
                 },
             },
             
+            @{
+                @"index": @25,
+                @"title": @"25_2-UITableViewDiffableDataSource",
+                @"action": ^{
+                    if (@available(iOS 14.0, *)) {
+                        _25_2_DiffableDataSource *vc =
+                        [[_25_2_DiffableDataSource alloc] init];
+                        [self ax_pushVC:vc];
+                    }
+                    
+                },
+            },
             
             
             @{

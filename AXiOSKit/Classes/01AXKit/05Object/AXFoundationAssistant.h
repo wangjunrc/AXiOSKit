@@ -117,12 +117,12 @@ int ax_randomFromTo(int from, int to);
  是否 nil 或者 空
  不要用分类, 为nil 时,不走分类方法
  */
-extern BOOL ax_is_null(id obj);
+BOOL ax_is_empty(id obj);
 
 /**
  是否不为 nil 或者 空
  */
-extern BOOL ax_is_no_null(id obj);
+BOOL ax_is_not_empty(id obj);
 
 /**
  gcd 创建串行队列 queue
@@ -172,7 +172,7 @@ void AXLogerInfo(const char *file, const char *function, NSUInteger line,
 
 /**
  封装NSLog用printf,添加打印头部标识 没有__FILE__ 和 __FILE__
-
+ 
  @param msg 标识
  @param format 样式
  @param ... 参数
