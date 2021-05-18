@@ -35,7 +35,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.gameImg.layer.cornerRadius = 5;
-    self.statusBtn.layer.cornerRadius = 5;
+    
 }
 
 #pragma mark - Public Methods
@@ -57,24 +57,9 @@
     {
         UILabel *lab = [[UILabel alloc]init];
         [lab setTextColor:[UIColor blackColor]];
-        
+        lab.numberOfLines = 0;
         self.titleLab = lab;
         [self.contentView addSubview:lab];
-    }
-    
-    {
-        UILabel *lab = [[UILabel alloc]init];
-        
-        self.timeLab = lab;
-        [self.contentView addSubview:lab];
-    }
-    
-    {
-        UIButton *btn = [[UIButton alloc]init];
-        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        self.statusBtn = btn;
-        [self.contentView addSubview:btn];
     }
     
     [self.gameImg mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -90,26 +75,7 @@
         make.right.mas_equalTo(self).mas_offset(-20);
     }];
     
-    [self.timeLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.titleLab);
-        make.top.mas_equalTo(self.titleLab.mas_bottom).mas_offset(5);
-        make.right.mas_equalTo(self).mas_offset(-40);
-    }];
-    
-    [self.statusBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.gameImg.mas_right).mas_offset(15);
-        make.top.mas_equalTo(self.timeLab.mas_bottom).mas_offset(10);
-        make.width.mas_offset(70);
-        make.height.mas_offset(20);
-        
-        make.bottom.equalTo(self.contentView.mas_bottom).mas_equalTo(-60);
-    }];
-    self.titleLab.text = [NSString stringWithFormat:@"鬼灭之刃第%@集",@"1"];
-    self.timeLab.text = @"发布时间：2018-09-12";
     [self.gameImg setImage:[UIImage imageNamed:@"200x100"]];
-    
-    [self.statusBtn setTitle:@"未观看" forState:UIControlStateNormal];
-    [self.statusBtn setBackgroundColor:[UIColor grayColor]];
 }
 
 @end

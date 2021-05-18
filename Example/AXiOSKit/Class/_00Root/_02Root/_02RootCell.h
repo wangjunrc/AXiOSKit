@@ -14,8 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIImageView *gameImg;
 @property (nonatomic, strong) UILabel *titleLab;
-@property (nonatomic, strong) UILabel *timeLab;
-@property (nonatomic, strong) UIButton *statusBtn;
+
 
 @end
 

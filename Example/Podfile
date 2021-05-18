@@ -12,12 +12,21 @@ source 'https://github.com/CocoaPods/Specs.git'
 # axing 库
 def axinger_pods
   
+  =begin
+  
+  :git =>  引用,含有分支
+  :source =>
+  :path =>
+  
+  =end
+  
+  ##
   # pod 'AXiOSKit' , :git => 'https://github.com/axinger/AXiOSKit.git', :branch => 'release/20190530_new'
+  # source =>  引用
   # pod 'AXiOSKit', :source => 'https://github.com/axinger/AXiOSKit.git'
-  # pod 'AXiOSKit', source: 'https://github.com/axinger/AXiOSKit.git'
   #  pod 'AXViewControllerTransitioning','~>1.1.2'
   #  pod 'AXCollectionObserve','~>1.1.0'
-  
+  # path =>  引用
   pod 'AXiOSKit', :path => '../'
   pod 'AXViewControllerTransitioning', :path => '../../AXViewControllerTransitioning'
   pod 'AXCollectionObserve', :path => '../../AXCollectionObserve'
@@ -104,16 +113,6 @@ def ui_pods
   # 在不同的控制器中实现UINavigationBar不同地样式
   #  pod 'KMNavigationBarTransition'
   
-  #  # 导航栏,可以每个VC不一样配置
-  #  pod 'RTRootNavigationController',:git => 'https://gitee.com/mirrors/RTRootNavigationController.git'
-  #  pod "Protobuf", :git => 'https://gitee.com/axinger/protobuf.git'
-  #  pod "YYKit", :git => 'https://gitee.com/mirrors/yykit.git',:tag =>'1.0.9'
-  #  pod "YYText", :git => 'https://gitee.com/mirrors/YYText.git',:tag =>'1.0.7'
-  #  pod "YYCategories", :git => 'https://gitee.com/mirrors/YYCategories.git',:tag =>'1.0.4'
-  #  pod 'YYKeyboardManager' , :git => 'https://gitee.com/github-iOS/YYKeyboardManager.git',:tag =>'1.0.1'
-  #  pod 'YYCache' , :git => 'https://gitee.com/github-iOS/YYCache.git',:tag =>'1.0.4'
-  #  pod 'YYDispatchQueuePool' , :git => 'https://gitee.com/github-iOS/YYDispatchQueuePool.git',:tag =>'1.0'
-  
   # 导航栏,可以每个VC不一样配置
   pod 'RTRootNavigationController','~> 0.8.0'
   pod "Protobuf",'~> 3.15.8'
@@ -138,16 +137,27 @@ end
 
 
 DebugList=['Debug','Debug_α','Debug_β']
+DoraemonKit_version='~> 3.0.7'
 # 测试工具
 def debug_pods
   # LookinServer 和 Reveal-SDK 类似
   
   pod 'LLDebugTool' , '1.3.8.1' ,:configurations => DebugList
   #  pod 'MLeaksFinder', '~> 1.0.0' ,:configurations => DebugList
-  #  pod 'LookinServer', :configurations => ['Debug']
-  #  pod 'LookinServer', :configurations => DebugList, :git => 'https://gitee.com/axinger/LookinServer.git'
+  pod 'LookinServer', :configurations => DebugList
   pod 'CocoaDebug', '~> 1.6.3' , :configurations => DebugList
-  #  pod 'Reveal-SDK', :configurations => ['Debug','Debug_α','Debug_β']
+  
+  # '其他模块 WithLogger','WithGPS','WithLoad','WithDatabase', 'WithMLeaksFinder','WithWeex'
+  #  这样好像不行
+  #    pod 'DoraemonKit', :subspecs => ['Core','WithLogger'], :configurations => DebugList
+  
+  pod 'DoraemonKit/Core', DoraemonKit_version, :configurations => DebugList #必选
+  pod 'DoraemonKit/WithGPS', DoraemonKit_version, :configurations => DebugList #可选
+  pod 'DoraemonKit/WithLoad',DoraemonKit_version, :configurations => DebugList #可选
+  pod 'DoraemonKit/WithLogger', DoraemonKit_version, :configurations => DebugList #可选
+  pod 'DoraemonKit/WithDatabase', DoraemonKit_version, :configurations => DebugList #可选
+  #  pod 'DoraemonKit/WithMLeaksFinder', DoraemonKit_version, :configurations => DebugList #可选
+  #      pod 'DoraemonKit/WithWeex', '~> 3.0.4', :configurations => DebugList #可选
   
 end
 

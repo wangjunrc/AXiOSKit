@@ -1031,7 +1031,7 @@
     }];
 }
 -(void)_note1 {
-//    __weak typeof(self) weakSelf = self;
+    //    __weak typeof(self) weakSelf = self;
     [self _titlelabel:@"原生通知"];
     NSString *noteName = @"com.ax.note2";
     //   id __block _observer = nil;

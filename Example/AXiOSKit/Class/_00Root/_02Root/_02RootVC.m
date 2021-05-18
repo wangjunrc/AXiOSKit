@@ -44,9 +44,11 @@ static __attribute__((always_inline)) void asm_exit() {
 //#endif
 
 //#import "CocoaDebugTool.h"
-#ifdef DEBUG
+
+#if __has_include(<CocoaDebug/CocoaDebugTool.h>)
 #import <CocoaDebug/CocoaDebugTool.h>
 #endif
+
 #import "_01ContentViewController.h"
 static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 
@@ -148,7 +150,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
     
     // 设置tabAnimated相关属性
     // 可以不进行手动初始化，将使用默认属性
-    self.tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[_02RootCell class] cellHeight:UITableViewAutomaticDimension];
+    self.tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[_02RootCell class] cellHeight:120];
     self.tableView.tabAnimated.canLoadAgain = YES;
     self.tableView.tabAnimated.adjustBlock = ^(TABComponentManager * _Nonnull manager) {
         //        manager.animation(1).down(3).height(12);
@@ -159,8 +161,8 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
         //            manager.animationN(@"nameLabel").height(12).width(110);
         //            manager.animationN(@"timeButton").down(-5).height(12);
         manager.animationN(@"titleLab").down(3).height(12);
-        manager.animationN(@"timeLab").height(12).reducedWidth(70);
-        manager.animationN(@"statusBtn").down(-5).height(12).radius(0.).reducedWidth(-20);
+//        manager.animationN(@"timeLab").height(12).reducedWidth(70);
+//        manager.animationN(@"statusBtn").down(-5).height(12).radius(0.).reducedWidth(-20);
         
         
     };
@@ -228,10 +230,12 @@ void mySLog(NSString *format, ...)
     return @"测试";
 }
 -(CGFloat )tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return UITableViewAutomaticDimension;
+//    return UITableViewAutomaticDimension;
+    return 120;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return UITableViewAutomaticDimension;
+//    return UITableViewAutomaticDimension;
+    return 120;
 }
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     view.tintColor = [UIColor groupTableViewBackgroundColor];
@@ -950,8 +954,8 @@ void mySLog(NSString *format, ...)
                 @"index": @16,
                 @"title": @"CocoaDebugTool",
                 @"action": ^{
+#if __has_include(<CocoaDebug/CocoaDebugTool.h>)
                     
-#ifdef DEBUG
                     [CocoaDebugTool logWithString:@"Custom Messages...."];
                     [CocoaDebugTool logWithString:@"Custom Messages...,有颜色" color:[UIColor redColor]];
                     
