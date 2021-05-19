@@ -144,7 +144,7 @@
 
  @return NSString
  */
-@property (nonatomic, copy, readonly) NSString *ax_toUnEncoding;
+@property (nonatomic, copy, readonly) NSString *ax_fromEncoding;
 
 /**
  * 获得文件内,指定文件,只有文件名

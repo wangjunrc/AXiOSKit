@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 图片格式
+ */
+typedef NS_ENUM(NSUInteger, AXImageFormat) {
+    AXImageFormatUndefined,
+    AXImageFormatJPEG,
+    AXImageFormatPNG,
+    AXImageFormatGIF,
+    AXImageFormatTIFF,
+    AXImageFormatWebp,
+};
+
 @interface UIImage (AXKit)
 
 /**
@@ -154,6 +166,9 @@
 
 /// 获取图片上某个点的颜色值(不包含alpha)。
 - (UIColor *)ax_pixelColorFromPoint:(CGPoint)point scale:(CGFloat)scale;
+
+
+- (AXImageFormat)ax_imageFormat;
 
 @end
 
