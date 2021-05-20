@@ -737,7 +737,7 @@
 		21799D62255CD33700754A8B /* AXRecordAudioConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXRecordAudioConfig.h; sourceTree = "<group>"; };
 		21799D63255CD33700754A8B /* AXRecordAudioConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRecordAudioConfig.m; sourceTree = "<group>"; };
 		2185E2792653AD4B00757462 /* TestPluginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPluginViewController.h; sourceTree = "<group>"; };
-		2185E27A2653AD4C00757462 /* TestPluginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPluginViewController.m; sourceTree = "<group>"; };
+		2185E27A2653AD4C00757462 /* TestPluginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPluginViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		2185E27D2653AD6400757462 /* TestPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPlugin.h; sourceTree = "<group>"; };
 		2185E27E2653AD6500757462 /* TestPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPlugin.m; sourceTree = "<group>"; };
 		21898E982541AD6900876524 /* AXShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AXShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1169,22 +1169,23 @@
 		213BCB97254003DA00C89B72 /* _00Module */ = {
 			isa = PBXGroup;
 			children = (
-				214F67D12646B863006D946B /* Share */,
-				21799D61255CD31F00754A8B /* RecordAudio */,
 				213BCBAF254003DA00C89B72 /* Load */,
 				213BCB9B254003DA00C89B72 /* Object */,
+				21799D61255CD31F00754A8B /* RecordAudio */,
+				21E315CA2656593A004B924C /* Refresh */,
 				218990312542630D00876524 /* Resource */,
 				213BCBD4254003DA00C89B72 /* Router */,
+				214F67D12646B863006D946B /* Share */,
 				213BCBBD254003DA00C89B72 /* TestDB */,
+				2185E27D2653AD6400757462 /* TestPlugin.h */,
+				2185E27E2653AD6500757462 /* TestPlugin.m */,
+				2185E2792653AD4B00757462 /* TestPluginViewController.h */,
+				2185E27A2653AD4C00757462 /* TestPluginViewController.m */,
 				213BCBAC254003DA00C89B72 /* TestVideo */,
 				21BB436C254AF2BC001A9805 /* View */,
 				213BCB98254003DA00C89B72 /* WebSocket */,
 				2124D21025E48AF800B1A5A4 /* XWShadow.h */,
 				2124D21125E48AF800B1A5A4 /* XWShadow.m */,
-				2185E2792653AD4B00757462 /* TestPluginViewController.h */,
-				2185E27A2653AD4C00757462 /* TestPluginViewController.m */,
-				2185E27D2653AD6400757462 /* TestPlugin.h */,
-				2185E27E2653AD6500757462 /* TestPlugin.m */,
 			);
 			path = _00Module;
 			sourceTree = "<group>";
@@ -1526,10 +1527,6 @@
 		21BB436C254AF2BC001A9805 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2117A3F425CCE93200980436 /* AnimRefreshFooter.h */,
-				2117A3F525CCE93300980436 /* AnimRefreshFooter.m */,
-				2117A3F225CCE93200980436 /* AnimRefreshHeader.h */,
-				2117A3F325CCE93200980436 /* AnimRefreshHeader.m */,
 				213BCB79254003D900C89B72 /* AView.h */,
 				213BCB55254003D900C89B72 /* AView.m */,
 				21E8BD1E25B1D08300D9D83C /* AXSwitchView.h */,
@@ -1673,6 +1670,17 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		21E315CA2656593A004B924C /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				2117A3F425CCE93200980436 /* AnimRefreshFooter.h */,
+				2117A3F525CCE93300980436 /* AnimRefreshFooter.m */,
+				2117A3F225CCE93200980436 /* AnimRefreshHeader.h */,
+				2117A3F325CCE93200980436 /* AnimRefreshHeader.m */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
 		21EB383525DF90E1002C1807 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -1769,6 +1777,7 @@
 				F5E308BDECF9B32A8B7865CD /* Pods */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 1;
 		};
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
