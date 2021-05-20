@@ -7,7 +7,7 @@
 //
 
 #import "_02RootCell.h"
-
+#import <AXiOSKit/UIColor+AXKit.h>
 @interface _02RootCell ()
 
 
@@ -56,7 +56,7 @@
     
     {
         UILabel *lab = [[UILabel alloc]init];
-        [lab setTextColor:[UIColor blackColor]];
+        lab.textColor = [UIColor ax_colorWithNormalStyle:UIColor.blackColor darkStyle:UIColor.whiteColor];
         lab.numberOfLines = 0;
         self.titleLab = lab;
         [self.contentView addSubview:lab];
