@@ -122,28 +122,6 @@ typedef void (^CollectionBlock)(void);
     /// 多选
     self.tableView.allowsMultipleSelectionDuringEditing = YES;
     
-#if TARGET_IPHONE_SIMULATOR
-    // 模拟器
-    AXLoger(@"模拟器");
-#elif TARGET_OS_IPHONE
-    // 真机
-    AXLoger(@"真机");
-#endif
-    
-#ifdef IS_PRODUCATION
-    NSLog(@"IS_PRODUCATION = %d",IS_PRODUCATION);
-#endif
-    
-#ifdef SERVER_HOST
-    NSLog(@"SERVER_HOST = %@", SERVER_HOST);
-#endif
-    
-#ifdef SERVER_PORT
-    NSLog(@"SERVER_PORT = %@",SERVER_PORT);
-#else
-    NSLog(@"没有定义 SERVER_PORT");
-#endif
-    
     NSLog(@"启动图缓存路径 %@",NSString.ax_launchImageCacheDirectory);
     
     UIButton *btn = [[UIButton alloc]init];

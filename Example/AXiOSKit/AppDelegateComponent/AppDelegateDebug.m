@@ -12,6 +12,7 @@
 #endif
 
 #import <DoraemonKit/DoraemonKit.h>
+#import "DemoEnvironmenVC.h"
 @implementation AppDelegateDebug
 
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
@@ -37,8 +38,8 @@
     CocoaDebug.logMaxCount = 1000;
     //        CocoaDebug.emailToRecipients = @[@"aaa@gmail.com", @"bbb@gmail.com"];
     //        CocoaDebug.emailCcRecipients = @[@"ccc@gmail.com", @"ddd@gmail.com"];
-    CocoaDebug.mainColor = @"#fd9727";
-    //        CocoaDebug.additionalViewController = [AdditionalTestController new];
+    //    CocoaDebug.mainColor = @"#fd9727";
+    CocoaDebug.additionalViewController = [DemoEnvironmenVC.alloc init];
     //
     //        //--- If Use Google's Protocol buffers ---
     //        CocoaDebug.protobufTransferMap = @{
@@ -48,6 +49,45 @@
     //        };
 #endif
     [self configDoraemonKit];
+    
+#ifdef DEBUG
+    NSLog(@"当前环境 = Debug");
+    
+#ifdef Debug_α
+    NSLog(@"当前环境 = Debug_α");
+#endif
+    
+#ifdef Debug_β
+    NSLog(@"当前环境 = Debug_β");
+#endif
+    
+#endif
+    
+
+   
+    
+#if TARGET_IPHONE_SIMULATOR
+    // 模拟器
+    AXLoger(@"模拟器");
+#elif TARGET_OS_IPHONE
+    // 真机
+    AXLoger(@"真机");
+#endif
+    
+#ifdef IS_PRODUCATION
+    NSLog(@"IS_PRODUCATION = %d",IS_PRODUCATION);
+#endif
+    
+#ifdef SERVER_HOST
+    NSLog(@"SERVER_HOST = %@", SERVER_HOST);
+#endif
+    
+#ifdef SERVER_PORT
+    NSLog(@"SERVER_PORT = %@",SERVER_PORT);
+#else
+    NSLog(@"没有定义 SERVER_PORT");
+#endif
+    
     return YES;
 }
 

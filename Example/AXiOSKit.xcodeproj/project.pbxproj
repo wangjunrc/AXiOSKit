@@ -396,6 +396,8 @@
 		21D7675525C00CE700468F8E /* _01HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D7675325C00CE600468F8E /* _01HeaderView.m */; };
 		21D87B8925EF35C2007220E8 /* _01TypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D87B8825EF35C2007220E8 /* _01TypeViewController.m */; };
 		21D87B8A25EF35C2007220E8 /* _01TypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D87B8825EF35C2007220E8 /* _01TypeViewController.m */; };
+		21DB327F26574A2800CAFAEC /* DemoEnvironmenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB327E26574A2800CAFAEC /* DemoEnvironmenVC.m */; };
+		21DB328026574A2800CAFAEC /* DemoEnvironmenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB327E26574A2800CAFAEC /* DemoEnvironmenVC.m */; };
 		21E1388A264D184C00D68FEA /* _02RootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E13889264D184C00D68FEA /* _02RootCell.m */; };
 		21E306B4255EAA1100D17A8B /* _29AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E306B2255EAA1100D17A8B /* _29AudioViewController.m */; };
 		21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
@@ -853,6 +855,8 @@
 		21D83B3A255A28BE00695C28 /* rac.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = rac.md; sourceTree = "<group>"; };
 		21D87B8725EF35C1007220E8 /* _01TypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _01TypeViewController.h; sourceTree = "<group>"; };
 		21D87B8825EF35C2007220E8 /* _01TypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _01TypeViewController.m; sourceTree = "<group>"; };
+		21DB327D26574A2800CAFAEC /* DemoEnvironmenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoEnvironmenVC.h; sourceTree = "<group>"; };
+		21DB327E26574A2800CAFAEC /* DemoEnvironmenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoEnvironmenVC.m; sourceTree = "<group>"; };
 		21E13888264D184C00D68FEA /* _02RootCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _02RootCell.h; sourceTree = "<group>"; };
 		21E13889264D184C00D68FEA /* _02RootCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _02RootCell.m; sourceTree = "<group>"; };
 		21E306B1255EAA1100D17A8B /* _29AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _29AudioViewController.h; sourceTree = "<group>"; };
@@ -1186,6 +1190,8 @@
 				213BCB98254003DA00C89B72 /* WebSocket */,
 				2124D21025E48AF800B1A5A4 /* XWShadow.h */,
 				2124D21125E48AF800B1A5A4 /* XWShadow.m */,
+				21DB327D26574A2800CAFAEC /* DemoEnvironmenVC.h */,
+				21DB327E26574A2800CAFAEC /* DemoEnvironmenVC.m */,
 			);
 			path = _00Module;
 			sourceTree = "<group>";
@@ -2774,6 +2780,7 @@
 				210CF8922626724A00F4071E /* _08MP3VC.m in Sources */,
 				211227142573340100B6ECC8 /* _27MQTTClientViewController.m in Sources */,
 				218A32D525E0FAAE008D95B8 /* _33CropViewController.m in Sources */,
+				21DB328026574A2800CAFAEC /* DemoEnvironmenVC.m in Sources */,
 				21F43D0F25E4F45B002AF1AD /* _34ViewController.m in Sources */,
 				211227152573340100B6ECC8 /* AppDelegateWX.m in Sources */,
 				2117A3F725CCE93300980436 /* AnimRefreshHeader.m in Sources */,
@@ -2973,6 +2980,7 @@
 				214F67EE2646B863006D946B /* AXShareWeChat.swift in Sources */,
 				21F2690B2635425100C67CFE /* WebviewPreviewViewContoller.swift in Sources */,
 				213BCC04254003DB00C89B72 /* _01RootVC.m in Sources */,
+				21DB327F26574A2800CAFAEC /* DemoEnvironmenVC.m in Sources */,
 				2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */,
 				21430B02256C9D4300CB8EBC /* _20TimeLineContentCell.m in Sources */,
 				214F67F52646B863006D946B /* AXShareService.m in Sources */,
@@ -3333,6 +3341,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"Debug_α=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -3556,6 +3565,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"Debug_β=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
