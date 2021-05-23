@@ -2433,3 +2433,11 @@ CG_INLINE AXDeterminant AXDeterminantMake(int row, int column){
 }
 
 ```
+## 排序
+```
+NSSortDescriptor *sort_name = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+NSSortDescriptor *sort_dog_name = [NSSortDescriptor sortDescriptorWithKey:@"dog.name" ascending:YES];
+
+ [array sortUsingDescriptors:@[sort_name,sort_dog_name]];
+ NSLog(@"排序后array = %@", array);
+```
