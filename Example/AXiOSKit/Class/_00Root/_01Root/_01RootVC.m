@@ -7,16 +7,19 @@
 //  Copyright © 2020 liu.weixing. All rights reserved.
 //
 
+#import "AnimRefreshFooter.h"
+#import "AnimRefreshHeader.h"
 #import "CopyActivity.h"
 #import "MyActivity.h"
 #import "RouterManager.h"
 #import "TestObj.h"
 #import "_00TableViewCell.h"
-#import "_01RootVC.h"
 #import "_01ContentViewController.h"
-#import "_03GradientViewController.h"
+#import "_01HeaderView.h"
+#import "_01RootVC.h"
 #import "_01TypeViewController.h"
 #import "_02ChatViewController.h"
+#import "_03GradientViewController.h"
 #import "_04RunLoopViewController.h"
 #import "_06WCDBViewController.h"
 #import "_07VideoViewController.h"
@@ -24,8 +27,8 @@
 #import "_09AFNViewController.h"
 #import "_10TextFViewController.h"
 #import "_13SDWebImageVC.h"
-#import "_13WebpViewController.h"
 #import "_13WeImageTableViewController.h"
+#import "_13WebpViewController.h"
 #import "_14TFViewController.h"
 #import "_15UIMenuController.h"
 #import "_16KeyChainViewController.h"
@@ -37,13 +40,14 @@
 #import "_22ReactiveObjCViewController.h"
 #import "_23FullViewController.h"
 #import "_24NoteViewController.h"
-#import "_25LayoutViewController.h"
-#import "_25FlowLayoutVC1.h"
 #import "_25CompLayoutVC1.h"
 #import "_25CompLayoutVC2.h"
 #import "_25CompLayoutVC3.h"
 #import "_25CompLayoutVC4.h"
 #import "_25CompLayoutVC5.h"
+#import "_25FlowLayoutVC1.h"
+#import "_25LayoutViewController.h"
+#import "_25_2_DiffableDataSource.h"
 #import "_26RMQClientViewController.h"
 #import "_27MQTTClientViewController.h"
 #import "_28ShareFileViewController.h"
@@ -57,16 +61,15 @@
 #import "_36YYKitTestVC.h"
 #import "_37FileManagerVC.h"
 #import "_38DirectionVC.h"
+#import "_39MasonryViewController.h"
+#import "_40ScreenshotsVC.h"
 #import <AXiOSKit/AXPayVC.h>
-#import <AXiOSKit/UIViewController+AXNavBarConfig.h>
 #import <AXiOSKit/AXPresentGesturesBack.h>
 #import <AXiOSKit/AXSystemAuthorizerManager.h>
+#import <AXiOSKit/UIViewController+AXNavBarConfig.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <mach/mach.h>
-#import "_01HeaderView.h"
-#import "AnimRefreshFooter.h"
-#import "AnimRefreshHeader.h"
-#import "_39MasonryViewController.h"
+#import "Person.h"
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -86,6 +89,9 @@ typedef void (^CollectionBlock)(void);
 @property (nonatomic, strong) NSString *strongStr;
 
 @property(nonatomic, strong) UIBarButtonItem *deleteItem;
+
+@property(nonatomic, strong) UISearchController *searchVC;
+
 @end
 
 @implementation _01RootVC
@@ -103,40 +109,18 @@ typedef void (^CollectionBlock)(void);
     [super viewDidLoad];
     self.navigationItem.title = AXNSLocalizedString(@"local.home");
     
-//    [self ax_setNavBarBackgroundImageWithColor:UIColor.orangeColor];
-//    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
-
+    //    [self ax_setNavBarBackgroundImageWithColor:UIColor.orangeColor];
+    //    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+    
     NSLog(@"国际化 = %@",NSLocalizedString(@"local.home", nil));
     __weak typeof(self) weakSelf = self;
     self.tableView.tableFooterView = UIView.alloc.init;
-//    [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
+    //    [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
     [_00TableViewCell ax_registerNibCellWithTableView:self.tableView];
     self.dataArray = nil;
     [self.tableView reloadData];
     /// 多选
     self.tableView.allowsMultipleSelectionDuringEditing = YES;
-    
-#if TARGET_IPHONE_SIMULATOR
-    // 模拟器
-    AXLoger(@"模拟器");
-#elif TARGET_OS_IPHONE
-    // 真机
-    AXLoger(@"真机");
-#endif
-    
-#ifdef IS_PRODUCATION
-    NSLog(@"IS_PRODUCATION = %d",IS_PRODUCATION);
-#endif
-    
-#ifdef SERVER_HOST
-    NSLog(@"SERVER_HOST = %@", SERVER_HOST);
-#endif
-    
-#ifdef SERVER_PORT
-    NSLog(@"SERVER_PORT = %@",SERVER_PORT);
-#else
-    NSLog(@"没有定义 SERVER_PORT");
-#endif
     
     NSLog(@"启动图缓存路径 %@",NSString.ax_launchImageCacheDirectory);
     
@@ -150,7 +134,7 @@ typedef void (^CollectionBlock)(void);
         [strongSelf.tableView setEditing:!strongSelf.tableView.isEditing animated:YES];
     }];
     
-    [RACObserve(btn,selected) subscribeNext:^(id  _Nullable x) {
+    [RACObserve(btn,selected) subscribeNext:^(id _Nullable x) {
         NSLog(@"btn selected = %@",x);
     }];
     
@@ -170,27 +154,8 @@ typedef void (^CollectionBlock)(void);
     //    }];
     //
     
-    self.tableView.mj_header = [AnimRefreshHeader headerWithRefreshingBlock:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.tableView.mj_header beginRefreshing];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [strongSelf.tableView.mj_header endRefreshing];
-        });
-        
-    }];
-    
-    
-    self.tableView.mj_footer = [AnimRefreshFooter footerWithRefreshingBlock:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.tableView.mj_footer beginRefreshing];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [strongSelf.tableView.mj_footer endRefreshing];
-        });
-    }];
-    
-    
-    
+    [self _createRefresh];
+    [self _createSearch];
 }
 - (UIBarButtonItem *)deleteItem {
     if (!_deleteItem) {
@@ -211,7 +176,7 @@ typedef void (^CollectionBlock)(void);
     [self.tableView ax_layoutHeaderHeight];
 }
 
--(void)_deleteCellArray:(NSArray<NSIndexPath *>*)array{
+-(void)_deleteCellArray:(NSArray<NSIndexPath *>*)array {
     
     /// 删除数据源
     //    if (@available(iOS 11.0, *)) {
@@ -265,7 +230,7 @@ typedef void (^CollectionBlock)(void);
     
 }
 
--(void)deleteAction:(UIButton *)btn{
+-(void)deleteAction:(UIButton *)btn {
     [self _deleteCellArray:self.tableView.indexPathsForSelectedRows];
 }
 
@@ -300,7 +265,7 @@ typedef void (^CollectionBlock)(void);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    _00TableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
+    //    _00TableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
     _00TableViewCell *cell = [_00TableViewCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
     NSDictionary *dict = self.dataArray[indexPath.row];
     cell.indexLabel.text = [dict[@"index"] stringValue];
@@ -367,7 +332,7 @@ typedef void (^CollectionBlock)(void);
 
 /// iOS13是否允许多指选中
 
--(BOOL)tableView:(UITableView *)tableView shouldBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath{
+-(BOOL)tableView:(UITableView *)tableView shouldBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath {
     
     return YES;
 }
@@ -457,7 +422,7 @@ typedef void (^CollectionBlock)(void);
 //            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds
 //                                               byRoundingCorners:(UIRectCornerTopLeft|UIRectCornerTopRight)
 //                                                     cornerRadii:CGSizeMake(radius, radius)];
-//            
+//
 //        } else if (indexPath.row == rowNum - 1) {
 //            // 每组最后一行（添加左下和右下的圆角）
 //            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds
@@ -471,8 +436,8 @@ typedef void (^CollectionBlock)(void);
 //    // 把已经绘制好的贝塞尔曲线路径赋值给图层，然后图层根据path进行图像渲染render
 //    normalLayer.path = bezierPath.CGPath;
 //    selectLayer.path = bezierPath.CGPath;
-//    
-//    
+//
+//
 //    UIView *nomarBgView = [[UIView alloc] initWithFrame:bounds];
 //    // 设置填充颜色
 ////    normalLayer.fillColor = [UIColor redColor].CGColor;
@@ -481,14 +446,14 @@ typedef void (^CollectionBlock)(void);
 //    [nomarBgView.layer insertSublayer:normalLayer atIndex:0];
 //    nomarBgView.backgroundColor = UIColor.clearColor;
 //    cell.backgroundView = nomarBgView;
-//    
+//
 //    UIView *selectBgView = [[UIView alloc] initWithFrame:bounds];
 //    selectLayer.fillColor = [UIColor orangeColor].CGColor;
 //    [selectBgView.layer insertSublayer:selectLayer atIndex:0];
 //    selectBgView.backgroundColor = UIColor.clearColor;
 //    cell.selectedBackgroundView = selectBgView;
 //
-//    
+//
 //}
 
 
@@ -529,6 +494,79 @@ typedef void (^CollectionBlock)(void);
     }
 }
 
+/// 刷新
+-(void)_createRefresh {
+    __weak typeof(self) weakSelf = self;
+    self.tableView.mj_header = [AnimRefreshHeader headerWithRefreshingBlock:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.tableView.mj_header beginRefreshing];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [strongSelf.tableView.mj_header endRefreshing];
+        });
+        
+    }];
+    
+    
+    self.tableView.mj_footer = [AnimRefreshFooter footerWithRefreshingBlock:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.tableView.mj_footer beginRefreshing];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [strongSelf.tableView.mj_footer endRefreshing];
+        });
+    }];
+}
+
+/// 搜索栏
+-(void)_createSearch{
+    
+    if (@available(iOS 11.0, *)) {
+        self.navigationItem.searchController = self.searchVC;
+        /// https://github.com/CoderMJLee/MJRefresh/issues/1317
+        self.navigationItem.hidesSearchBarWhenScrolling = NO;
+    } else {
+    }
+    
+}
+
+#pragma mark - get
+
+- (UISearchController *)searchVC {
+    if (!_searchVC) {
+        
+        _searchVC = [[UISearchController alloc]initWithSearchResultsController:nil];
+        
+        // 1.设置placeholder
+        _searchVC.searchBar.placeholder = @"头部搜索";
+        
+        // 2.设置searchBar的背景透明
+//        [_searchVC.searchBar setBackgroundImage:[UIImage new]];
+//        _searchVC.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+        
+        // 3.设置搜索框文字的偏移
+//        _searchVC.searchBar.searchTextPositionAdjustment = UIOffsetMake(3, 0);
+        
+        // 4.设置搜索框图标的偏移
+//        CGFloat offsetX = (self.view.bounds.size.width - 200 - 32) / 2;
+//        [_searchVC.searchBar setPositionAdjustment:UIOffsetMake(offsetX, 0) forSearchBarIcon:UISearchBarIconSearch];
+        
+        // 5.取消按钮和文本框光标颜色
+//        _searchVC.searchBar.tintColor = [UIColor blackColor];
+        
+        // 6.设置搜索文本框背景图片 [圆形的文本框只需要设置一张圆角图片就可以了]
+        //        [_searchVC.searchBar setSearchFieldBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor] size:CGSizeMake(self.view.bounds.size.width - 32, 36) isRound:YES] forState:UIControlStateNormal];
+        // 7.设置搜索按钮图片
+//        UIImage *searchImg = [[UIImage imageNamed:@"ax_icon_weixin"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//        [_searchVC.searchBar setImage:searchImg forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+        // 8.拿到搜索文本框
+        //        UITextField *searchField = [_searchVC.searchBar valueForKey:@"_searchField"];
+        //        // 9.设置取消按钮文字
+        //        [_searchVC.searchBar setValue:@"Custom Cancel" forKey:@"_cancelButtonText"];
+        
+        
+    }
+    return _searchVC;
+}
 #pragma mark -  数据源
 
 - (NSMutableArray *)dataArray {
@@ -549,18 +587,19 @@ typedef void (^CollectionBlock)(void);
                 @"action": ^{
                     _01TypeViewController *vc = [[_01TypeViewController alloc]init];
                     
-                    [self ax_pushVC:vc];},
+                    [self ax_pushVC:vc];
+                },
             },
             
             @{
                 @"index": @1,
                 @"title": @"隐藏导航栏_01ContentViewController,方法不行",
                 @"action": ^{
-//                    _01ContentViewController *vc = [[_01ContentViewController alloc]init];
-//                    
-//                    [self ax_pushVC:vc];
-//                    vc.ax_controllerObserve.hiddenNavigationBar = YES;
-//                    NSLog(@"vc.AXListener.shouldNavigationBarHidden %d",vc.ax_controllerObserve.isHiddenNavigationBar);
+                    //                    _01ContentViewController *vc = [[_01ContentViewController alloc]init];
+                    //
+                    //                    [self ax_pushVC:vc];
+                    //                    vc.ax_controllerObserve.hiddenNavigationBar = YES;
+                    //                    NSLog(@"vc.AXListener.shouldNavigationBarHidden %d",vc.ax_controllerObserve.isHiddenNavigationBar);
                 },
             },
             @{
@@ -822,6 +861,18 @@ typedef void (^CollectionBlock)(void);
                 },
             },
             
+            @{
+                @"index": @25,
+                @"title": @"25_2-UITableViewDiffableDataSource",
+                @"action": ^{
+                    if (@available(iOS 14.0, *)) {
+                        _25_2_DiffableDataSource *vc =
+                        [[_25_2_DiffableDataSource alloc] init];
+                        [self ax_pushVC:vc];
+                    }
+                    
+                },
+            },
             
             
             @{
@@ -1008,6 +1059,14 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"Masonry布局",
                 @"action": ^{
                     _39MasonryViewController *vc = [_39MasonryViewController ax_init];
+                    [self ax_pushVC:vc];
+                },
+            },
+            @{
+                @"index": @40,
+                @"title": @"监测截屏,并删除",
+                @"action": ^{
+                    _40ScreenshotsVC *vc = [_40ScreenshotsVC ax_init];
                     [self ax_pushVC:vc];
                 },
             },

@@ -18,6 +18,10 @@
 #import <SSZipArchive/SSZipArchive.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import "Person.h"
+#import <TABAnimated/TABAnimated.h>
+#import "_02RootCell.h"
+@import AssetsLibrary;
+
 static __attribute__((always_inline)) void asm_exit() {
 #ifdef __arm64__
     __asm__("mov X0, #0\n"
@@ -40,9 +44,11 @@ static __attribute__((always_inline)) void asm_exit() {
 //#endif
 
 //#import "CocoaDebugTool.h"
-#ifdef DEBUG
+
+#if __has_include(<CocoaDebug/CocoaDebugTool.h>)
 #import <CocoaDebug/CocoaDebugTool.h>
 #endif
+
 #import "_01ContentViewController.h"
 static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 
@@ -55,8 +61,6 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 @implementation TestKVOObject
 @end
 
-
-
 @interface _02RootVC ()
 
 @property (nonatomic, strong) NSMutableArray<NSDictionary *> *dataArray;
@@ -67,33 +71,54 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[TABAnimated sharedAnimated] initWithOnlySkeleton];
+    [TABAnimated sharedAnimated].openLog = YES;
+    
     self.navigationItem.title = @"主题2";
     [self ax_setNavBarBackgroundImageWithColor:UIColor.cyanColor];
     self.tableView.tableFooterView = UIView.alloc.init;
     //    [self.tableView ax_registerNibCellClass:UITableViewCell.class];
     //    [self.tableView ax_registerClassCell:UITableViewCell.class];
-    [UITableViewCell ax_registerCellWithTableView:self.tableView];
+    //    [_02RootCell ax_registerCellWithTableView:self.tableView];
+    [self.tableView registerClass:_02RootCell.class forCellReuseIdentifier:@"_02RootCell"];
     self.dataArray = nil;
     [self.tableView reloadData];
     /// 多选
     self.tableView.allowsMultipleSelectionDuringEditing = YES;
     
     __weak typeof(self) weakSelf = self;
+    NSMutableArray <UIBarButtonItem *> *temp = NSMutableArray.array;
     
-    UIButton *btn = [[UIButton alloc]init];
-    [btn setTitle:@"编辑" forState:UIControlStateNormal];
-    btn.backgroundColor = UIColor.blueColor;
-    [btn ax_addTargetBlock:^(UIButton * _Nullable button) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.tableView setEditing:!strongSelf.tableView.isEditing animated:YES];
-    }];
-    UIButton *btn2 = [[UIButton alloc]init];
-    [btn2 setTitle:@"删除" forState:UIControlStateNormal];
-    btn2.backgroundColor = UIColor.blueColor;
-    [btn2 addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
+    {
+        UIButton *btn = [[UIButton alloc]init];
+        [btn setTitle:@"编辑" forState:UIControlStateNormal];
+        btn.backgroundColor = UIColor.blueColor;
+        [btn ax_addTargetBlock:^(UIButton * _Nullable button) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf.tableView setEditing:!strongSelf.tableView.isEditing animated:YES];
+        }];
+        [temp addObject:[UIBarButtonItem ax_itemByButton:btn]];
+    }
     
-    self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],[UIBarButtonItem ax_itemByButton:btn2]];
-    //
+    {
+        
+        UIButton *btn = [[UIButton alloc]init];
+        [btn setTitle:@"删除" forState:UIControlStateNormal];
+        btn.backgroundColor = UIColor.blueColor;
+        [btn addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
+        [temp addObject:[UIBarButtonItem ax_itemByButton:btn]];
+    }
+    
+    {
+        
+        UIButton *btn = [[UIButton alloc]init];
+        [btn setTitle:@"刷新" forState:UIControlStateNormal];
+        btn.backgroundColor = UIColor.blueColor;
+        [btn addTarget:self action:@selector(reloadViewAnimated) forControlEvents:UIControlEventTouchUpInside];
+        [temp addObject:[UIBarButtonItem ax_itemByButton:btn]];
+    }
+    self.navigationItem.rightBarButtonItems = temp;
+    
     //
     //    if (@available(iOS 11.0, *)) {
     //        self. navigationItem.hidesSearchBarWhenScrolling = NO;
@@ -123,9 +148,44 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
     //    }
     
     
+    // 设置tabAnimated相关属性
+    // 可以不进行手动初始化，将使用默认属性
+    self.tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[_02RootCell class] cellHeight:120];
+    self.tableView.tabAnimated.canLoadAgain = YES;
+    self.tableView.tabAnimated.adjustBlock = ^(TABComponentManager * _Nonnull manager) {
+        //        manager.animation(1).down(3).height(12);
+        //        manager.animation(2).height(12).reducedWidth(70);
+        //        manager.animation(3).down(-5).height(12).radius(0.).reducedWidth(-20);
+        
+        //        manager.animationN(@"textLabel").right(50).radius(12);
+        //            manager.animationN(@"nameLabel").height(12).width(110);
+        //            manager.animationN(@"timeButton").down(-5).height(12);
+        manager.animationN(@"titleLab").down(3).height(12);
+//        manager.animationN(@"timeLab").height(12).reducedWidth(70);
+//        manager.animationN(@"statusBtn").down(-5).height(12).radius(0.).reducedWidth(-20);
+        
+        
+    };
+    
 }
 
 
+- (void)reloadViewAnimated {
+    self.tableView.tabAnimated.canLoadAgain = YES;
+    [self.tableView tab_startAnimationWithCompletion:^{
+        [self afterGetData];
+    }];
+}
+/**
+ 获取到数据后
+ */
+- (void)afterGetData {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        // 停止动画,并刷新数据
+        [self.tableView tab_endAnimationEaseOut];
+    });
+}
 
 -(void)deleteAction:(UIButton *)btn{
     
@@ -169,7 +229,14 @@ void mySLog(NSString *format, ...)
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"测试";
 }
-
+-(CGFloat )tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return UITableViewAutomaticDimension;
+    return 120;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return UITableViewAutomaticDimension;
+    return 120;
+}
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     view.tintColor = [UIColor groupTableViewBackgroundColor];
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
@@ -193,15 +260,15 @@ void mySLog(NSString *format, ...)
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [UITableViewCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
+    _02RootCell *cell = [tableView dequeueReusableCellWithIdentifier:@"_02RootCell" forIndexPath:indexPath];
     
     NSDictionary *dict = self.dataArray[indexPath.row];
     //    cell.indexLabel.text = [dict[@"index"] stringValue];
     //    cell.nameLabel.text = dict[@"title"];
     NSString  *index = [dict[@"index"] stringValue];
     NSString  *title = dict[@"title"];
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",index,title];
+    //
+    cell.titleLab.text = [NSString stringWithFormat:@"%@ %@",index,title];
     return cell;
 }
 
@@ -442,6 +509,7 @@ void mySLog(NSString *format, ...)
                         }
                     }];
                     NSLog(@"tempArray = %@", tempArray);
+                    
                     NSDictionary *dict = @{
                         @"1": @"A",
                         @"1": @"AA",
@@ -724,16 +792,18 @@ void mySLog(NSString *format, ...)
                     NSURL   *URL = [NSBundle.ax_HTMLBundle URLForResource:@"index.html" withExtension:nil];
                     
                     AXWKWebVC * vc = [[AXWKWebVC alloc] initWithURL:URL];
-                    __block typeof(vc)weakVC = vc;
-                    //                    [vc addScriptMessageWithName:@"base64Img" handler:^(NSString * _Nonnull name, id  _Nonnull body) {
-                    //                        NSLog(@"body = %@",body);
-                    //                        NSString *content = body;
-                    //                        UIImageView *imgView = [UIImageView.alloc initWithFrame:CGRectMake(100, 100, 50, 50)];
-                    //                        content = [content componentsSeparatedByString:@","].lastObject;
-                    //                        NSData *data = [NSData.alloc initWithBase64EncodedString:content options:0];
-                    //                        imgView.image = [UIImage.alloc initWithData:data];
-                    //                        [weakVC.view addSubview:imgView];
-                    //                    }];
+                    //                    __block typeof(vc)weakVC = vc;
+                    @weakify(vc)
+                    [vc addScriptMessageWithName:@"base64Img" handler:^(NSString * _Nonnull name, id  _Nonnull body) {
+                        @strongify(vc)
+                        NSLog(@"body = %@",body);
+                        NSString *content = body;
+                        UIImageView *imgView = [UIImageView.alloc initWithFrame:CGRectMake(100, 100, 50, 50)];
+                        content = [content componentsSeparatedByString:@","].lastObject;
+                        NSData *data = [NSData.alloc initWithBase64EncodedString:content options:0];
+                        imgView.image = [UIImage.alloc initWithData:data];
+                        [vc.view addSubview:imgView];
+                    }];
                     
                     
                     /// 注入不区分时机,需要自己window.onload 调用
@@ -844,29 +914,6 @@ void mySLog(NSString *format, ...)
                     [dog show];
                 },
             },
-            //            @{
-            //                @"index": @13,
-            //                @"title": @"NSPointerArray",
-            //                @"action": ^{
-            //                    NSPointerArray *arrary = [NSPointerArray pointerArrayWithOptions:0];
-            //                },
-            //            },
-            @{
-                @"index": @13,
-                @"title": @"截屏通知",
-                @"action": ^{
-                    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(screenshotsNote:) name:UIApplicationUserDidTakeScreenshotNotification  object:nil];
-                    
-                },
-            },
-            @{
-                @"index": @13,
-                @"title": @"移除截屏通知",
-                @"action": ^{
-                    [NSNotificationCenter.defaultCenter removeObserver:self name:UIApplicationUserDidTakeScreenshotNotification  object:nil];
-                    
-                },
-            },
             
             @{
                 @"index": @14,
@@ -907,8 +954,8 @@ void mySLog(NSString *format, ...)
                 @"index": @16,
                 @"title": @"CocoaDebugTool",
                 @"action": ^{
+#if __has_include(<CocoaDebug/CocoaDebugTool.h>)
                     
-#ifdef DEBUG
                     [CocoaDebugTool logWithString:@"Custom Messages...."];
                     [CocoaDebugTool logWithString:@"Custom Messages...,有颜色" color:[UIColor redColor]];
                     
@@ -920,7 +967,7 @@ void mySLog(NSString *format, ...)
                 @"index": @17,
                 @"title": @"FileBrowser",
                 @"action": ^{
-//                    NSURL *URL = NULL;
+                    //                    NSURL *URL = NULL;
                     FileBrowser *vc = [FileBrowser.alloc init];
                     
                     [self ax_showVC:vc];
@@ -929,12 +976,12 @@ void mySLog(NSString *format, ...)
                 },
             },
             
-           
+            
             @{
                 @"index": @18,
                 @"title": @"pushViewControllerPresentStyle",
                 @"action": ^{
-                 
+                    
                     _01ContentViewController *vc = [_01ContentViewController.alloc init];
                     [self.navigationController ax_pushViewControllerPresentStyle:vc animated:YES];
                     
@@ -966,9 +1013,4 @@ void mySLog(NSString *format, ...)
     return UIInterfaceOrientationMaskPortrait;
 }
 
--(void)screenshotsNote:(NSNotification *)note {
-    
-    NSLog(@"监听截屏通知========%@",note.userInfo);
-    
-}
 @end

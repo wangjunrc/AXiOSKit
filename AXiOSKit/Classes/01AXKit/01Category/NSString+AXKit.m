@@ -369,7 +369,7 @@
  
  @return NSString
  */
-- (NSString *)ax_toUnEncoding {
+- (NSString *)ax_fromEncoding {
     
     return [self stringByRemovingPercentEncoding];
 }

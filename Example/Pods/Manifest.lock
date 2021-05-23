@@ -57,12 +57,34 @@ PODS:
   - CYLTabBarController/Lottie (1.29.0):
     - CYLTabBarController/Core
     - lottie-ios (~> 2.5.3)
+  - DoraemonKit/Core (3.0.7):
+    - FMDB
+    - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
+  - DoraemonKit/WithDatabase (3.0.7):
+    - DoraemonKit/Core
+    - YYDebugDatabase
+  - DoraemonKit/WithGPS (3.0.7):
+    - DoraemonKit/Core
+  - DoraemonKit/WithLoad (3.0.7):
+    - DoraemonKit/Core
+  - DoraemonKit/WithLogger (3.0.7):
+    - CocoaLumberjack
+    - DoraemonKit/Core
   - DZNEmptyDataSet (1.8.1)
   - fishhook (0.2)
   - FLAnimatedImage (1.0.15)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
+  - GCDWebServer/WebDAV (3.5.4):
+    - GCDWebServer/Core
+  - GCDWebServer/WebUploader (3.5.4):
+    - GCDWebServer/Core
   - GDataXML-HTML (1.4.1)
   - IGListDiffKit (4.0.0)
   - IGListKit (4.0.0):
@@ -97,52 +119,6 @@ PODS:
   - libwebp/mux (1.2.0):
     - libwebp/demux
   - libwebp/webp (1.2.0)
-  - LLDebugTool (1.3.8.1):
-    - LLDebugTool/AppInfo (= 1.3.8.1)
-    - LLDebugTool/Core (= 1.3.8.1)
-    - LLDebugTool/Crash (= 1.3.8.1)
-    - LLDebugTool/Hierarchy (= 1.3.8.1)
-    - LLDebugTool/Html (= 1.3.8.1)
-    - LLDebugTool/Location (= 1.3.8.1)
-    - LLDebugTool/Log (= 1.3.8.1)
-    - LLDebugTool/Magnifier (= 1.3.8.1)
-    - LLDebugTool/Network (= 1.3.8.1)
-    - LLDebugTool/Ruler (= 1.3.8.1)
-    - LLDebugTool/Sandbox (= 1.3.8.1)
-    - LLDebugTool/Screenshot (= 1.3.8.1)
-    - LLDebugTool/ShortCut (= 1.3.8.1)
-    - LLDebugTool/Storage (= 1.3.8.1)
-    - LLDebugTool/WidgetBorder (= 1.3.8.1)
-  - LLDebugTool/AppInfo (1.3.8.1):
-    - LLDebugTool/Core
-  - LLDebugTool/Core (1.3.8.1)
-  - LLDebugTool/Crash (1.3.8.1):
-    - LLDebugTool/Storage
-  - LLDebugTool/Hierarchy (1.3.8.1):
-    - LLDebugTool/Core
-  - LLDebugTool/Html (1.3.8.1):
-    - LLDebugTool/Core
-  - LLDebugTool/Location (1.3.8.1):
-    - LLDebugTool/Core
-  - LLDebugTool/Log (1.3.8.1):
-    - LLDebugTool/Storage
-  - LLDebugTool/Magnifier (1.3.8.1):
-    - LLDebugTool/Core
-  - LLDebugTool/Network (1.3.8.1):
-    - LLDebugTool/Storage
-  - LLDebugTool/Ruler (1.3.8.1):
-    - LLDebugTool/Core
-  - LLDebugTool/Sandbox (1.3.8.1):
-    - LLDebugTool/Core
-  - LLDebugTool/Screenshot (1.3.8.1):
-    - LLDebugTool/Core
-  - LLDebugTool/ShortCut (1.3.8.1):
-    - LLDebugTool/Core
-  - LLDebugTool/Storage (1.3.8.1):
-    - FMDB (~> 2.0)
-    - LLDebugTool/Core
-  - LLDebugTool/WidgetBorder (1.3.8.1):
-    - LLDebugTool/Core
   - LLDynamicLaunchScreen (0.2.2)
   - lottie-ios (2.5.3)
   - Masonry (1.1.0)
@@ -203,6 +179,7 @@ PODS:
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SSKeychain (1.4.1)
   - SSZipArchive (2.2.3)
+  - TABAnimated (2.5.5)
   - TOCropViewController (2.6.0)
   - TZImagePickerController (3.5.9)
   - WCDB (1.0.7.5):
@@ -213,6 +190,9 @@ PODS:
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
   - YYCategories/no-arc (1.0.4)
+  - YYDebugDatabase (2.1.0):
+    - FMDB
+    - GCDWebServer
   - YYDispatchQueuePool (1.0)
   - YYKeyboardManager (1.0.1)
   - YYText (1.0.7)
@@ -230,12 +210,16 @@ DEPENDENCIES:
   - CocoaLumberjack
   - CTMediator
   - CYLTabBarController/Lottie
+  - DoraemonKit/Core (~> 3.0.7)
+  - DoraemonKit/WithDatabase (~> 3.0.7)
+  - DoraemonKit/WithGPS (~> 3.0.7)
+  - DoraemonKit/WithLoad (~> 3.0.7)
+  - DoraemonKit/WithLogger (~> 3.0.7)
   - fishhook
   - GDataXML-HTML (~> 1.4.1)
   - IGListKit
   - IQKeyboardManager
   - JJException
-  - LLDebugTool (= 1.3.8.1)
   - LLDynamicLaunchScreen (~> 0.2.0)
   - lottie-ios (~> 2.5.3)
   - Masonry
@@ -257,6 +241,7 @@ DEPENDENCIES:
   - SocketRocket
   - SSKeychain
   - SSZipArchive
+  - TABAnimated (= 2.5.5)
   - TOCropViewController (~> 2.6.0)
   - TZImagePickerController (~> 3.5.8)
   - WCDB (from `https://gitee.com/mirrors/wcdb.git`)
@@ -278,10 +263,12 @@ SPEC REPOS:
     - CocoaLumberjack
     - CTMediator
     - CYLTabBarController
+    - DoraemonKit
     - DZNEmptyDataSet
     - fishhook
     - FLAnimatedImage
     - FMDB
+    - GCDWebServer
     - GDataXML-HTML
     - IGListDiffKit
     - IGListKit
@@ -290,7 +277,6 @@ SPEC REPOS:
     - JKVValue
     - KVOController
     - libwebp
-    - LLDebugTool
     - LLDynamicLaunchScreen
     - lottie-ios
     - Masonry
@@ -317,11 +303,13 @@ SPEC REPOS:
     - SQLiteRepairKit
     - SSKeychain
     - SSZipArchive
+    - TABAnimated
     - TOCropViewController
     - TZImagePickerController
     - WCDBOptimizedSQLCipher
     - YYCache
     - YYCategories
+    - YYDebugDatabase
     - YYDispatchQueuePool
     - YYKeyboardManager
     - YYText
@@ -355,10 +343,12 @@ SPEC CHECKSUMS:
   CocoaLumberjack: b7e05132ff94f6ae4dfa9d5bce9141893a21d9da
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   CYLTabBarController: f5460b8446f82d016945d4d53895a1ef185b79e3
+  DoraemonKit: 32fb97f3aa82efa133111d193080ca5462cef135
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
   FLAnimatedImage: dd3db277b17e909ec3c7fd41adfce79b321d960e
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   GDataXML-HTML: a4f11079b48d9fe96ff1fe478943a317185227e2
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
@@ -367,7 +357,6 @@ SPEC CHECKSUMS:
   JKVValue: d7941071b1cf9ba35c194fd40bcf4c4d9b5462e9
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   libwebp: 6bac0a99ba5a6bb7449a951ff22c484201985f68
-  LLDebugTool: 6026a1df690f5f94524567fce7f97fa53ce131d8
   LLDynamicLaunchScreen: 1f73f0f62f75f8fb857b5949d50cf47db17d26e7
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -394,16 +383,18 @@ SPEC CHECKSUMS:
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+  TABAnimated: 578ad7becfcba14e163ecf7e755113de17ee1984
   TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
   TZImagePickerController: 07a2f834f4908689759a7e54f74e9a018e047cb6
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYDebugDatabase: e684a7f79fca2e3673a23347cefb822f911f3124
   YYDispatchQueuePool: 3dfb2274bcc74207688dde8ac6f7bdd46871dd7b
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 21345ca543785a3409b11ae8bdc19a05776c74aa
+PODFILE CHECKSUM: 9f20de635891b56d39de27df815690659b2deebf
 
 COCOAPODS: 1.10.1

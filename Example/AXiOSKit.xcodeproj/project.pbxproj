@@ -16,6 +16,7 @@
 		210CF8912626724A00F4071E /* _08MP3VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210CF8902626724A00F4071E /* _08MP3VC.m */; };
 		210CF8922626724A00F4071E /* _08MP3VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210CF8902626724A00F4071E /* _08MP3VC.m */; };
 		210CF8C826268D0600F4071E /* DemoTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210CF8C726268D0600F4071E /* DemoTabBarController.m */; };
+		210E317D264CB94D00166534 /* _25_2_DiffableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 210E317C264CB94D00166534 /* _25_2_DiffableDataSource.m */; };
 		2111E04A257377100016004D /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898E9B2541AD6900876524 /* ShareViewController.m */; };
 		2111E04D257377100016004D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21898E9D2541AD6900876524 /* MainInterface.storyboard */; };
 		211226F32573340100B6ECC8 /* AXUserLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21948C662563F11E00207E18 /* AXUserLog.mm */; };
@@ -278,6 +279,10 @@
 		21799C7C255BDE8500754A8B /* gift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 21799C7B255BDE8500754A8B /* gift.svg */; };
 		21799D5D255CD2E300754A8B /* AXRecordAudioService.m in Sources */ = {isa = PBXBuildFile; fileRef = 21799D5C255CD2E300754A8B /* AXRecordAudioService.m */; };
 		21799D64255CD33700754A8B /* AXRecordAudioConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21799D63255CD33700754A8B /* AXRecordAudioConfig.m */; };
+		2185E27B2653AD4C00757462 /* TestPluginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185E27A2653AD4C00757462 /* TestPluginViewController.m */; };
+		2185E27C2653AD4C00757462 /* TestPluginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185E27A2653AD4C00757462 /* TestPluginViewController.m */; };
+		2185E27F2653AD6500757462 /* TestPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185E27E2653AD6500757462 /* TestPlugin.m */; };
+		2185E2802653AD6500757462 /* TestPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2185E27E2653AD6500757462 /* TestPlugin.m */; };
 		21898E9C2541AD6900876524 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898E9B2541AD6900876524 /* ShareViewController.m */; };
 		21898E9F2541AD6900876524 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21898E9D2541AD6900876524 /* MainInterface.storyboard */; };
 		21898EA32541AD6900876524 /* AXShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21898E982541AD6900876524 /* AXShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -341,6 +346,8 @@
 		21BA19A125AD91EF00222F9A /* AXDebugManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC46B32591924A00AA253F /* AXDebugManager.m */; };
 		21BA45BA25AEE05E00EEEF45 /* CustomGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BA45B925AEE05E00EEEF45 /* CustomGifHeader.m */; };
 		21BA45BB25AEE05E00EEEF45 /* CustomGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BA45B925AEE05E00EEEF45 /* CustomGifHeader.m */; };
+		21BABB9A264A0E9000B42A9F /* _40ScreenshotsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BABB99264A0E8F00B42A9F /* _40ScreenshotsVC.m */; };
+		21BABB9B264A0E9000B42A9F /* _40ScreenshotsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BABB99264A0E8F00B42A9F /* _40ScreenshotsVC.m */; };
 		21BB437A254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */; };
 		21BB437F254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */; };
 		21BC194A256CD28C0041ADBB /* _25CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BC1949256CD28C0041ADBB /* _25CollectionViewCell.m */; };
@@ -389,6 +396,9 @@
 		21D7675525C00CE700468F8E /* _01HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D7675325C00CE600468F8E /* _01HeaderView.m */; };
 		21D87B8925EF35C2007220E8 /* _01TypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D87B8825EF35C2007220E8 /* _01TypeViewController.m */; };
 		21D87B8A25EF35C2007220E8 /* _01TypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D87B8825EF35C2007220E8 /* _01TypeViewController.m */; };
+		21DB327F26574A2800CAFAEC /* DemoEnvironmenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB327E26574A2800CAFAEC /* DemoEnvironmenVC.m */; };
+		21DB328026574A2800CAFAEC /* DemoEnvironmenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB327E26574A2800CAFAEC /* DemoEnvironmenVC.m */; };
+		21E1388A264D184C00D68FEA /* _02RootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E13889264D184C00D68FEA /* _02RootCell.m */; };
 		21E306B4255EAA1100D17A8B /* _29AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E306B2255EAA1100D17A8B /* _29AudioViewController.m */; };
 		21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
 		21E5C8A9257F6BF8002A4D59 /* DemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* DemoBaseViewController.m */; };
@@ -522,6 +532,8 @@
 		210CF8902626724A00F4071E /* _08MP3VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _08MP3VC.m; sourceTree = "<group>"; };
 		210CF8C626268D0600F4071E /* DemoTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoTabBarController.h; sourceTree = "<group>"; };
 		210CF8C726268D0600F4071E /* DemoTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTabBarController.m; sourceTree = "<group>"; };
+		210E317B264CB94D00166534 /* _25_2_DiffableDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25_2_DiffableDataSource.h; sourceTree = "<group>"; };
+		210E317C264CB94D00166534 /* _25_2_DiffableDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25_2_DiffableDataSource.m; sourceTree = "<group>"; };
 		2111E051257377100016004D /* AXShare_Env_1.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AXShare_Env_1.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2111E052257377100016004D /* AXShare_Env_1_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AXShare_Env_1_Info.plist; path = /Users/xing/Develop/GitHub/AXiOSKit/Example/AXShare_Env_1_Info.plist; sourceTree = "<absolute>"; };
 		2112276B2573340100B6ECC8 /* AXiOSKit_Example_Env_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit_Example_Env_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -726,6 +738,10 @@
 		21799D5C255CD2E300754A8B /* AXRecordAudioService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRecordAudioService.m; sourceTree = "<group>"; };
 		21799D62255CD33700754A8B /* AXRecordAudioConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXRecordAudioConfig.h; sourceTree = "<group>"; };
 		21799D63255CD33700754A8B /* AXRecordAudioConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXRecordAudioConfig.m; sourceTree = "<group>"; };
+		2185E2792653AD4B00757462 /* TestPluginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPluginViewController.h; sourceTree = "<group>"; };
+		2185E27A2653AD4C00757462 /* TestPluginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPluginViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
+		2185E27D2653AD6400757462 /* TestPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPlugin.h; sourceTree = "<group>"; };
+		2185E27E2653AD6500757462 /* TestPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPlugin.m; sourceTree = "<group>"; };
 		21898E982541AD6900876524 /* AXShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AXShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		21898E9A2541AD6900876524 /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		21898E9B2541AD6900876524 /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
@@ -794,6 +810,8 @@
 		21BA17FA25AD857E00222F9A /* ax_debug_β.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ax_debug_β.xcconfig"; sourceTree = "<group>"; };
 		21BA45B825AEE05E00EEEF45 /* CustomGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGifHeader.h; sourceTree = "<group>"; };
 		21BA45B925AEE05E00EEEF45 /* CustomGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomGifHeader.m; sourceTree = "<group>"; };
+		21BABB98264A0E8F00B42A9F /* _40ScreenshotsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _40ScreenshotsVC.h; sourceTree = "<group>"; };
+		21BABB99264A0E8F00B42A9F /* _40ScreenshotsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _40ScreenshotsVC.m; sourceTree = "<group>"; };
 		21BB4379254AFAF7001A9805 /* Alternate_AppIcon_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_3@2x.png"; sourceTree = "<group>"; };
 		21BB437E254AFAFF001A9805 /* Alternate_AppIcon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_2@2x.png"; sourceTree = "<group>"; };
 		21BC1948256CD28C0041ADBB /* _25CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CollectionViewCell.h; sourceTree = "<group>"; };
@@ -837,6 +855,10 @@
 		21D83B3A255A28BE00695C28 /* rac.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = rac.md; sourceTree = "<group>"; };
 		21D87B8725EF35C1007220E8 /* _01TypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _01TypeViewController.h; sourceTree = "<group>"; };
 		21D87B8825EF35C2007220E8 /* _01TypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _01TypeViewController.m; sourceTree = "<group>"; };
+		21DB327D26574A2800CAFAEC /* DemoEnvironmenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoEnvironmenVC.h; sourceTree = "<group>"; };
+		21DB327E26574A2800CAFAEC /* DemoEnvironmenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoEnvironmenVC.m; sourceTree = "<group>"; };
+		21E13888264D184C00D68FEA /* _02RootCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _02RootCell.h; sourceTree = "<group>"; };
+		21E13889264D184C00D68FEA /* _02RootCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _02RootCell.m; sourceTree = "<group>"; };
 		21E306B1255EAA1100D17A8B /* _29AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _29AudioViewController.h; sourceTree = "<group>"; };
 		21E306B2255EAA1100D17A8B /* _29AudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _29AudioViewController.m; sourceTree = "<group>"; };
 		21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _29AudioViewController.xib; sourceTree = "<group>"; };
@@ -1098,7 +1120,7 @@
 				213BCB6E254003D900C89B72 /* _24NoteViewController.h */,
 				213BCB4A254003D900C89B72 /* _24NoteViewController.m */,
 				213BCB5E254003D900C89B72 /* _24NoteViewController.xib */,
-				21BC1951256CDAFB0041ADBB /* _25 */,
+				21BC1951256CDAFB0041ADBB /* _25iOS13api */,
 				213BCB57254003D900C89B72 /* _26RMQClientViewController.h */,
 				213BCB7A254003D900C89B72 /* _26RMQClientViewController.m */,
 				213BCB38254003D900C89B72 /* _26RMQClientViewController.xib */,
@@ -1132,6 +1154,8 @@
 				2178B703261E939C00592747 /* _38DirectionVC.m */,
 				2113A937264901680029B678 /* _39MasonryViewController.h */,
 				2113A938264901680029B678 /* _39MasonryViewController.m */,
+				21BABB98264A0E8F00B42A9F /* _40ScreenshotsVC.h */,
+				21BABB99264A0E8F00B42A9F /* _40ScreenshotsVC.m */,
 				213BCB6F254003D900C89B72 /* AFHTTPSessionManager+PutFile.h */,
 				213BCB48254003D900C89B72 /* AFHTTPSessionManager+PutFile.m */,
 			);
@@ -1149,18 +1173,25 @@
 		213BCB97254003DA00C89B72 /* _00Module */ = {
 			isa = PBXGroup;
 			children = (
-				214F67D12646B863006D946B /* Share */,
-				21799D61255CD31F00754A8B /* RecordAudio */,
 				213BCBAF254003DA00C89B72 /* Load */,
 				213BCB9B254003DA00C89B72 /* Object */,
+				21799D61255CD31F00754A8B /* RecordAudio */,
+				21E315CA2656593A004B924C /* Refresh */,
 				218990312542630D00876524 /* Resource */,
 				213BCBD4254003DA00C89B72 /* Router */,
+				214F67D12646B863006D946B /* Share */,
 				213BCBBD254003DA00C89B72 /* TestDB */,
+				2185E27D2653AD6400757462 /* TestPlugin.h */,
+				2185E27E2653AD6500757462 /* TestPlugin.m */,
+				2185E2792653AD4B00757462 /* TestPluginViewController.h */,
+				2185E27A2653AD4C00757462 /* TestPluginViewController.m */,
 				213BCBAC254003DA00C89B72 /* TestVideo */,
 				21BB436C254AF2BC001A9805 /* View */,
 				213BCB98254003DA00C89B72 /* WebSocket */,
 				2124D21025E48AF800B1A5A4 /* XWShadow.h */,
 				2124D21125E48AF800B1A5A4 /* XWShadow.m */,
+				21DB327D26574A2800CAFAEC /* DemoEnvironmenVC.h */,
+				21DB327E26574A2800CAFAEC /* DemoEnvironmenVC.m */,
 			);
 			path = _00Module;
 			sourceTree = "<group>";
@@ -1319,6 +1350,8 @@
 			children = (
 				219F44502580BDC600E8CB50 /* _02RootVC.h */,
 				219F44512580BDC600E8CB50 /* _02RootVC.m */,
+				21E13888264D184C00D68FEA /* _02RootCell.h */,
+				21E13889264D184C00D68FEA /* _02RootCell.m */,
 			);
 			path = _02Root;
 			sourceTree = "<group>";
@@ -1500,10 +1533,6 @@
 		21BB436C254AF2BC001A9805 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2117A3F425CCE93200980436 /* AnimRefreshFooter.h */,
-				2117A3F525CCE93300980436 /* AnimRefreshFooter.m */,
-				2117A3F225CCE93200980436 /* AnimRefreshHeader.h */,
-				2117A3F325CCE93200980436 /* AnimRefreshHeader.m */,
 				213BCB79254003D900C89B72 /* AView.h */,
 				213BCB55254003D900C89B72 /* AView.m */,
 				21E8BD1E25B1D08300D9D83C /* AXSwitchView.h */,
@@ -1571,14 +1600,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		21BC1951256CDAFB0041ADBB /* _25 */ = {
+		21BC1951256CDAFB0041ADBB /* _25iOS13api */ = {
 			isa = PBXGroup;
 			children = (
 				21CC8170257E00B10062ACE5 /* Controller */,
 				21CC8159257E002D0062ACE5 /* Model */,
 				21CC816F257E00AB0062ACE5 /* View */,
 			);
-			path = _25;
+			path = _25iOS13api;
 			sourceTree = "<group>";
 		};
 		21CC7C72255FA58200E7B506 /* AppDelegateComponent */ = {
@@ -1641,8 +1670,21 @@
 				218F675525A5CC7D006A8312 /* _25CompLayoutVC4.m */,
 				21C3778425A829F400D678FD /* _25CompLayoutVC5.h */,
 				21C3778525A829F400D678FD /* _25CompLayoutVC5.m */,
+				210E317B264CB94D00166534 /* _25_2_DiffableDataSource.h */,
+				210E317C264CB94D00166534 /* _25_2_DiffableDataSource.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		21E315CA2656593A004B924C /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				2117A3F425CCE93200980436 /* AnimRefreshFooter.h */,
+				2117A3F525CCE93300980436 /* AnimRefreshFooter.m */,
+				2117A3F225CCE93200980436 /* AnimRefreshHeader.h */,
+				2117A3F325CCE93200980436 /* AnimRefreshHeader.m */,
+			);
+			path = Refresh;
 			sourceTree = "<group>";
 		};
 		21EB383525DF90E1002C1807 /* Config */ = {
@@ -1741,6 +1783,7 @@
 				F5E308BDECF9B32A8B7865CD /* Pods */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 1;
 		};
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
@@ -2369,8 +2412,11 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaDebug/CocoaDebug.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/DoraemonKit/DoraemonKit.framework",
+				"${PODS_ROOT}/DoraemonKit/iOS/DoraemonKit/Framework/DoraemonLoadAnalyze.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
 				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
@@ -2378,7 +2424,6 @@
 				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
-				"${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework",
@@ -2404,12 +2449,14 @@
 				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
+				"${BUILT_PRODUCTS_DIR}/TABAnimated/TABAnimated.framework",
 				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework",
 				"${BUILT_PRODUCTS_DIR}/YYDispatchQueuePool/YYDispatchQueuePool.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKeyboardManager/YYKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
@@ -2433,8 +2480,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaDebug.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoraemonKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoraemonLoadAnalyze.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
@@ -2442,7 +2492,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDebugTool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDynamicLaunchScreen.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGJRouter.framework",
@@ -2468,12 +2517,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TABAnimated.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYDebugDatabase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYDispatchQueuePool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
@@ -2507,8 +2558,11 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaDebug/CocoaDebug.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/DoraemonKit/DoraemonKit.framework",
+				"${PODS_ROOT}/DoraemonKit/iOS/DoraemonKit/Framework/DoraemonLoadAnalyze.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
 				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
@@ -2516,7 +2570,6 @@
 				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
 				"${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework",
-				"${BUILT_PRODUCTS_DIR}/LLDebugTool/LLDebugTool.framework",
 				"${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework",
@@ -2542,12 +2595,14 @@
 				"${BUILT_PRODUCTS_DIR}/SSKeychain/SSKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
+				"${BUILT_PRODUCTS_DIR}/TABAnimated/TABAnimated.framework",
 				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework",
 				"${BUILT_PRODUCTS_DIR}/YYDispatchQueuePool/YYDispatchQueuePool.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKeyboardManager/YYKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
@@ -2571,8 +2626,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaDebug.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoraemonKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoraemonLoadAnalyze.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
@@ -2580,7 +2638,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVOController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDebugTool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDynamicLaunchScreen.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGJRouter.framework",
@@ -2606,12 +2663,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TABAnimated.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYDebugDatabase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYDispatchQueuePool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
@@ -2680,6 +2739,7 @@
 				211226FD2573340100B6ECC8 /* _30TimeLineModel.m in Sources */,
 				21C0190925FF293300FAFE5A /* _35ProtobufVC.m in Sources */,
 				21E5C8AA257F6BF8002A4D59 /* DemoBaseViewController.m in Sources */,
+				21BABB9B264A0E9000B42A9F /* _40ScreenshotsVC.m in Sources */,
 				21E6DF112605DC3D0092051F /* _37FileManagerVC.m in Sources */,
 				211226FE2573340100B6ECC8 /* LVieoView.m in Sources */,
 				21BA19A125AD91EF00222F9A /* AXDebugManager.m in Sources */,
@@ -2695,6 +2755,7 @@
 				211227042573340100B6ECC8 /* AXUserInfo.mm in Sources */,
 				211227052573340100B6ECC8 /* NSObject+Load.m in Sources */,
 				211227062573340100B6ECC8 /* AXUserInfoDao.mm in Sources */,
+				2185E2802653AD6500757462 /* TestPlugin.m in Sources */,
 				211227072573340100B6ECC8 /* AXRecordAudioConfig.m in Sources */,
 				211227082573340100B6ECC8 /* _24NoteViewController.m in Sources */,
 				21C0187325FF00F400FAFE5A /* _13SDWebImageVC.m in Sources */,
@@ -2707,6 +2768,7 @@
 				2112270C2573340100B6ECC8 /* _25LayoutViewController.m in Sources */,
 				2112270D2573340100B6ECC8 /* _21KVOViewController.m in Sources */,
 				21C0192D25FF2DDE00FAFE5A /* Student.pbobjc.m in Sources */,
+				2185E27C2653AD4C00757462 /* TestPluginViewController.m in Sources */,
 				2112270E2573340100B6ECC8 /* _29AudioViewController.m in Sources */,
 				2112270F2573340100B6ECC8 /* _30TimeLinetContentController.m in Sources */,
 				211227102573340100B6ECC8 /* _28ShareFileViewController.m in Sources */,
@@ -2718,6 +2780,7 @@
 				210CF8922626724A00F4071E /* _08MP3VC.m in Sources */,
 				211227142573340100B6ECC8 /* _27MQTTClientViewController.m in Sources */,
 				218A32D525E0FAAE008D95B8 /* _33CropViewController.m in Sources */,
+				21DB328026574A2800CAFAEC /* DemoEnvironmenVC.m in Sources */,
 				21F43D0F25E4F45B002AF1AD /* _34ViewController.m in Sources */,
 				211227152573340100B6ECC8 /* AppDelegateWX.m in Sources */,
 				2117A3F725CCE93300980436 /* AnimRefreshHeader.m in Sources */,
@@ -2785,6 +2848,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BABB9A264A0E9000B42A9F /* _40ScreenshotsVC.m in Sources */,
 				21FC46C82591974300AA253F /* AXDebugUIConfig.m in Sources */,
 				21F542AA25A43DEF0035B1DA /* UIViewController+AXHideNavBackTitle.m in Sources */,
 				21FC46C32591941900AA253F /* AXDebugManager.m in Sources */,
@@ -2801,6 +2865,8 @@
 				21CC7C62255FA40D00E7B506 /* AppDelegateWebImage.m in Sources */,
 				213BCBF9254003DB00C89B72 /* AFHTTPSessionManager+PutFile.m in Sources */,
 				213BCBFE254003DB00C89B72 /* _14TFViewController.m in Sources */,
+				21E1388A264D184C00D68FEA /* _02RootCell.m in Sources */,
+				210E317D264CB94D00166534 /* _25_2_DiffableDataSource.m in Sources */,
 				21430AE7256C98EF00CB8EBC /* _30TimeLineModel.m in Sources */,
 				218A32D425E0FAAE008D95B8 /* _33CropViewController.m in Sources */,
 				218A324C25E0DFF0008D95B8 /* AXIBudyButton.m in Sources */,
@@ -2876,6 +2942,7 @@
 				218A323C25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */,
 				21BA45BA25AEE05E00EEEF45 /* CustomGifHeader.m in Sources */,
 				218F674825A5CC69006A8312 /* _25CompLayoutVC2.m in Sources */,
+				2185E27F2653AD6500757462 /* TestPlugin.m in Sources */,
 				21CC7C78255FA71900E7B506 /* _13WeImageTableViewController.m in Sources */,
 				213BCC0E254003DB00C89B72 /* _07VideoViewController.m in Sources */,
 				21F269182635425100C67CFE /* PreviewTransitionViewController.swift in Sources */,
@@ -2893,6 +2960,7 @@
 				218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */,
 				21E8BD2025B1D08300D9D83C /* AXSwitchView.m in Sources */,
 				218F674125A5B61E006A8312 /* _25CompLayoutVC1.m in Sources */,
+				2185E27B2653AD4C00757462 /* TestPluginViewController.m in Sources */,
 				214F67F12646B863006D946B /* AXShareOption.m in Sources */,
 				213BCBFC254003DB00C89B72 /* _06WCDBViewController.m in Sources */,
 				211DEB6625EC88E500CE3907 /* _03GradientViewController.m in Sources */,
@@ -2912,6 +2980,7 @@
 				214F67EE2646B863006D946B /* AXShareWeChat.swift in Sources */,
 				21F2690B2635425100C67CFE /* WebviewPreviewViewContoller.swift in Sources */,
 				213BCC04254003DB00C89B72 /* _01RootVC.m in Sources */,
+				21DB327F26574A2800CAFAEC /* DemoEnvironmenVC.m in Sources */,
 				2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */,
 				21430B02256C9D4300CB8EBC /* _20TimeLineContentCell.m in Sources */,
 				214F67F52646B863006D946B /* AXShareService.m in Sources */,
@@ -3272,6 +3341,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"Debug_α=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -3495,6 +3565,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"Debug_β=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

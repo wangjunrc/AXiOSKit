@@ -45,13 +45,37 @@
     _03HeaderView *headerView = [_03HeaderView.alloc init];
     self.tableView.tableHeaderView =headerView;
     
+//    if (@available(iOS 13.0, *)) {
+//        self.navigationController.navigationBar.barStyle = UIStatusBarStyleDarkContent;
+//    } else {
+//        self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+//    }
+    
     if (@available(iOS 13.0, *)) {
-        self.navigationController.navigationBar.barStyle = UIStatusBarStyleDarkContent;
+        UIApplication.sharedApplication.statusBarStyle = UIStatusBarStyleDarkContent;
     } else {
-        self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+        UIApplication.sharedApplication.statusBarStyle = UIStatusBarStyleLightContent;
     }
     
+    int age = 10;
+   void (^myblock)(void) =  ^{
+     NSLog(@"age = %d",age);
+   };
+   age  = 20;
+   myblock();
+    
+    
+    
+    
 }
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    if (@available(iOS 13.0, *)) {
+        return UIStatusBarStyleDarkContent;
+    } else {
+        return UIStatusBarStyleDefault;
+    }
+}
+
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -127,8 +151,35 @@
     //    NSString  *index = [dict[@"index"] stringValue];
     //    NSString  *title = dict[@"title"];
     //    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",index,title];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
 //    cell.backgroundColor = UIColor.cyanColor;
+    
+    if (@available(iOS 14.0, *)) {
+        UIListContentConfiguration *content = cell.defaultContentConfiguration;
+        
+        // Configure content.
+        content.image = [UIImage systemImageNamed:@"star"];
+        content.text = @"Favorites";
+        content.imageProperties.tintColor = UIColor.purpleColor;
+        cell.contentConfiguration = content;
+        
+        
+        UIBackgroundConfiguration  *back = [UIBackgroundConfiguration listPlainCellConfiguration];
+//        UIImageView *imgView =[UIImageView.alloc initWithImage:[UIImage imageNamed:@"200x100"]];
+//        imgView.contentMode = UIViewContentModeScaleToFill;
+//        back.customView = imgView;
+        back.backgroundColor = UIColor.greenColor;
+        
+        cell.backgroundConfiguration = back;
+        
+    } else {
+        
+        cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
+    }
+    
+
+
+    
+    
     return cell;
 }
 

@@ -266,18 +266,18 @@
 +(UIImage *)ax_imageSquareWithColor:(UIColor *)aColor {
     
     return [self ax_imageRectangleWithSize:CGSizeMake(1.0f, 1.0f) color:aColor];
-//    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-//    CGSize aSize = rect.size;
-//    UIGraphicsBeginImageContextWithOptions(aSize, NO, 0.0);
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//
-//    CGContextSetFillColorWithColor(context, [color CGColor]);
-//    CGContextFillRect(context, rect);
-//
-//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//
-//    return image;
+    //    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    //    CGSize aSize = rect.size;
+    //    UIGraphicsBeginImageContextWithOptions(aSize, NO, 0.0);
+    //    CGContextRef context = UIGraphicsGetCurrentContext();
+    //
+    //    CGContextSetFillColorWithColor(context, [color CGColor]);
+    //    CGContextFillRect(context, rect);
+    //
+    //    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    //    UIGraphicsEndImageContext();
+    //
+    //    return image;
     
 }
 
@@ -439,7 +439,7 @@
         CGFloat ratio = (CGFloat)maxLength / data.length;
         CGSize size = CGSizeMake((NSUInteger)(resultImage.size.width * sqrtf(ratio)), (NSUInteger)(resultImage.size.height * sqrtf(ratio)));
         // Use NSUInteger to preventwhite blank
-       UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+        UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
         [resultImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
         resultImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
@@ -475,8 +475,8 @@
 
 
 /**
-  UIImage 转换png data
-
+ UIImage 转换png data
+ 
  @return NSData
  */
 -(NSData *)ax_toPNGData {
@@ -494,7 +494,7 @@
 
 /**
  UIImage 转换JPEG data
-
+ 
  @param scale 压缩比例
  @return NSData
  */
@@ -507,169 +507,169 @@
 +(UIImage *)imageFromText:(NSArray*)arrContent withFont:(CGFloat)fontSize withTextColor:(UIColor *)textColor withBgImage:(UIImage *)bgImage withBgColor:(UIColor *)bgColor
 
 {
-
+    
     // set the font type and size
-
     
-
+    
+    
     UIFont *font = [UIFont fontWithName:@"Heiti SC" size:fontSize];
-
-    NSMutableArray *arrHeight = [[NSMutableArray alloc] initWithCapacity:arrContent.count];
-
     
-
+    NSMutableArray *arrHeight = [[NSMutableArray alloc] initWithCapacity:arrContent.count];
+    
+    
+    
     CGFloat fHeight = 0.0f;
-
+    
     for (NSString *sContent in arrContent) {
-
-//        CGSize stringSize = [sContent sizeWithFont:font constrainedToSize:CGSizeMake(CONTENT_MAX_WIDTH, 10000) lineBreakMode:NSLineBreakByWordWrapping];
+        
+        //        CGSize stringSize = [sContent sizeWithFont:font constrainedToSize:CGSizeMake(CONTENT_MAX_WIDTH, 10000) lineBreakMode:NSLineBreakByWordWrapping];
         NSDictionary *attributes = @{NSFontAttributeName:font};
         CGSize stringSize=[sContent boundingRectWithSize:CGSizeMake(MAXFLOAT,MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
         
         
         [arrHeight addObject:[NSNumber numberWithFloat:stringSize.height]];
-
         
-
+        
+        
         fHeight += stringSize.height;
-
+        
     }
-
     
-
+    
+    
     CGSize newSize = CGSizeMake(MAXFLOAT+20, fHeight+50);
-
     
-
+    
+    
     // Create a stretchable image for the top of the background and draw it
-
+    
     UIGraphicsBeginImageContextWithOptions(newSize,NO,0.0);
-
+    
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-
     
-
+    
+    
     //如果设置了背景图片
-
+    
     if(bgImage)
-
+        
     {
-
+        
         UIImage* stretchedTopImage = [bgImage stretchableImageWithLeftCapWidth:0 topCapHeight:0];
-
+        
         [stretchedTopImage drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-
+        
     }else
-
+        
     {
-
+        
         if(bgColor)
-
+            
         {
-
+            
             //填充背景颜色
-
+            
             [bgColor set];
-
+            
             UIRectFill(CGRectMake(0, 0, newSize.width, newSize.height));
-
+            
         }
-
+        
     }
-
     
-
+    
+    
     CGContextSetCharacterSpacing(ctx, 10);
-
+    
     CGContextSetTextDrawingMode (ctx, kCGTextFillClip);
-
+    
     [textColor set];
-
     
-
+    
+    
     int nIndex = 0;
-
+    
     CGFloat fPosY = 20.0f;
-
+    
     for (NSString *sContent in arrContent) {
-
+        
         NSNumber *numHeight = [arrHeight objectAtIndex:nIndex];
-
+        
         CGRect rect = CGRectMake(10, fPosY, MAXFLOAT , [numHeight floatValue]);
-
         
-
+        
+        
         [sContent drawInRect:rect withFont:font lineBreakMode:NSLineBreakByWordWrapping alignment:NSTextAlignmentLeft];
-
         
-
+        
+        
         fPosY += [numHeight floatValue];
-
+        
         nIndex++;
-
+        
     }
-
     
-
+    
+    
     // transfer image
-
+    
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-
+    
     UIGraphicsEndImageContext();
-
     
-
+    
+    
     return image;
-
     
-
+    
+    
 }
 
 #define CONTENT_MAX_WIDTH   300.0f
 +(UIImage *)imageFromText:(NSArray*)arrContent withFont:(CGFloat)fontSize
 {
-   // set the font type and size
-   UIFont *font = [UIFont systemFontOfSize:fontSize];
-   NSMutableArray *arrHeight = [[NSMutableArray alloc] initWithCapacity:arrContent.count];
-     
-   CGFloat fHeight = 0.0f;
-   for (NSString *sContent in arrContent) {
-       CGSize stringSize = [sContent sizeWithFont:font constrainedToSize:CGSizeMake(CONTENT_MAX_WIDTH, 10000) lineBreakMode:UILineBreakModeWordWrap];
-       [arrHeight addObject:[NSNumber numberWithFloat:stringSize.height]];
-         
-       fHeight += stringSize.height;
-   }
-     
-     
-   CGSize newSize = CGSizeMake(CONTENT_MAX_WIDTH+20, fHeight+50);
-     
-   UIGraphicsBeginImageContextWithOptions(newSize,NO,0.0);
-   CGContextRef ctx = UIGraphicsGetCurrentContext();
-   CGContextSetCharacterSpacing(ctx, 10);
-   CGContextSetTextDrawingMode (ctx, kCGTextFillStroke);
-//    CGContextSetFillColorWithColor(ctx, [UIColor.redColor CGColor]);
+    // set the font type and size
+    UIFont *font = [UIFont systemFontOfSize:fontSize];
+    NSMutableArray *arrHeight = [[NSMutableArray alloc] initWithCapacity:arrContent.count];
+    
+    CGFloat fHeight = 0.0f;
+    for (NSString *sContent in arrContent) {
+        CGSize stringSize = [sContent sizeWithFont:font constrainedToSize:CGSizeMake(CONTENT_MAX_WIDTH, 10000) lineBreakMode:UILineBreakModeWordWrap];
+        [arrHeight addObject:[NSNumber numberWithFloat:stringSize.height]];
+        
+        fHeight += stringSize.height;
+    }
+    
+    
+    CGSize newSize = CGSizeMake(CONTENT_MAX_WIDTH+20, fHeight+50);
+    
+    UIGraphicsBeginImageContextWithOptions(newSize,NO,0.0);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextSetCharacterSpacing(ctx, 10);
+    CGContextSetTextDrawingMode (ctx, kCGTextFillStroke);
+    //    CGContextSetFillColorWithColor(ctx, [UIColor.redColor CGColor]);
     
     [UIColor.redColor set];
-//   CGContextSetRGBStrokeColor (ctx, 0, 0, 0, 1);
-     
-   int nIndex = 0;
-   CGFloat fPosY = 20.0f;
-   for (NSString *sContent in arrContent) {
-       NSNumber *numHeight = [arrHeight objectAtIndex:nIndex];
-       CGRect rect = CGRectMake(10, fPosY, CONTENT_MAX_WIDTH , [numHeight floatValue]);
-          
- 
-       [sContent drawInRect:rect withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentLeft];
+    //   CGContextSetRGBStrokeColor (ctx, 0, 0, 0, 1);
+    
+    int nIndex = 0;
+    CGFloat fPosY = 20.0f;
+    for (NSString *sContent in arrContent) {
+        NSNumber *numHeight = [arrHeight objectAtIndex:nIndex];
+        CGRect rect = CGRectMake(10, fPosY, CONTENT_MAX_WIDTH , [numHeight floatValue]);
         
-       fPosY += [numHeight floatValue];
-       nIndex++;
-   }
-   // transfer image
-   UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-   UIGraphicsEndImageContext();
-   return image;
-     
-
+        
+        [sContent drawInRect:rect withFont:font lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentLeft];
+        
+        fPosY += [numHeight floatValue];
+        nIndex++;
+    }
+    // transfer image
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+    
+    
 }
 
 
@@ -708,6 +708,51 @@
     NSLog(@"获取图片上某个点的颜色值 = %.2lf, %.2lf, %.2lf", red, green, blue);
     UIColor * color = [UIColor colorWithRed:red green:green blue:blue alpha:al];
     return color;
+}
+
+
+- (AXImageFormat)ax_imageFormat {
+    
+    UIImage *image = self;
+    //NSData转换为UIImage
+    //    NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
+    //    UIImage *image = [UIImage imageWithData:imageData];
+    //UIImage转换为NSData
+    NSData *data = UIImageJPEGRepresentation(image,1.0f);//第二个参数为压缩倍数
+    
+    if (!data) {
+        return AXImageFormatUndefined;
+    }
+    
+    uint8_t c;
+    [data getBytes:&c length:1];
+    switch (c) {
+        case 0xFF:
+            return AXImageFormatJPEG;
+            
+        case 0x89:
+            return AXImageFormatPNG;
+            
+        case 0x47:
+            return AXImageFormatGIF;
+            
+        case 0x40:
+        case 0x4D:
+            return AXImageFormatTIFF;
+            
+        case 0x52:
+            if (data.length < 12) {
+                return AXImageFormatUndefined;
+            }
+            
+            NSString *str = [[NSString alloc] initWithData:[data subdataWithRange:NSMakeRange(0, 12)] encoding:NSASCIIStringEncoding];
+            if ([str hasPrefix:@"RIFF"] && [str hasSuffix:@"WEBP"]) {
+                return AXImageFormatWebp;
+            }
+    }
+    return AXImageFormatUndefined;
+    
+    
 }
 
 @end

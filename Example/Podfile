@@ -3,20 +3,34 @@ use_frameworks!
 platform :ios, '10.0'
 inhibit_all_warnings!
 
-source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
 #source 'https://cdn.cocoapods.org/'
 # 清华镜像
 #source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 #source 'https://gitee.com/mirrors/CocoaPods-Specs.git'
 
+=begin
+
+:git =>  引用,含有分支
+pod 'AXiOSKit' , :git => 'https://github.com/axinger/AXiOSKit.git', :branch => 'release/20190530_new'
+
+:source => ,这里可以是svn
+pod 'AXiOSKit', :source => 'https://github.com/axinger/AXiOSKit.git'
+
+:path =>
+pod 'AXiOSKit', :path => '../'
+
+ruby 语法
+
+一般小写字母、下划线开头：变量（Variable）。
+$开头：全局变量（Global variable）。
+@开头：实例变量（Instance variable）。
+@@开头：类变量（Class variable）类变量被共享在整个继承链中
+大写字母开头：常数（Constant）。
+=end
+
 # axing 库
 def axinger_pods
-  
-  # pod 'AXiOSKit' , :git => 'https://github.com/axinger/AXiOSKit.git', :branch => 'release/20190530_new'
-  # pod 'AXiOSKit', :source => 'https://github.com/axinger/AXiOSKit.git'
-  # pod 'AXiOSKit', source: 'https://github.com/axinger/AXiOSKit.git'
-  #  pod 'AXViewControllerTransitioning','~>1.1.2'
-  #  pod 'AXCollectionObserve','~>1.1.0'
   
   pod 'AXiOSKit', :path => '../'
   pod 'AXViewControllerTransitioning', :path => '../../AXViewControllerTransitioning'
@@ -104,16 +118,6 @@ def ui_pods
   # 在不同的控制器中实现UINavigationBar不同地样式
   #  pod 'KMNavigationBarTransition'
   
-  #  # 导航栏,可以每个VC不一样配置
-  #  pod 'RTRootNavigationController',:git => 'https://gitee.com/mirrors/RTRootNavigationController.git'
-  #  pod "Protobuf", :git => 'https://gitee.com/axinger/protobuf.git'
-  #  pod "YYKit", :git => 'https://gitee.com/mirrors/yykit.git',:tag =>'1.0.9'
-  #  pod "YYText", :git => 'https://gitee.com/mirrors/YYText.git',:tag =>'1.0.7'
-  #  pod "YYCategories", :git => 'https://gitee.com/mirrors/YYCategories.git',:tag =>'1.0.4'
-  #  pod 'YYKeyboardManager' , :git => 'https://gitee.com/github-iOS/YYKeyboardManager.git',:tag =>'1.0.1'
-  #  pod 'YYCache' , :git => 'https://gitee.com/github-iOS/YYCache.git',:tag =>'1.0.4'
-  #  pod 'YYDispatchQueuePool' , :git => 'https://gitee.com/github-iOS/YYDispatchQueuePool.git',:tag =>'1.0'
-  
   # 导航栏,可以每个VC不一样配置
   pod 'RTRootNavigationController','~> 0.8.0'
   pod "Protobuf",'~> 3.15.8'
@@ -125,28 +129,32 @@ def ui_pods
   pod 'YYCache' , '~> 1.0.4'
   pod 'YYDispatchQueuePool' ,  '~> 1.0'
   pod 'YYKeyboardManager' ,  '~> 1.0.1'
-#  pod 'ZLCollectionViewFlowLayout' 
+  #  pod 'ZLCollectionViewFlowLayout'
+  pod 'TABAnimated', '2.5.5'
 end
 
-
-#一般小写字母、下划线开头：变量（Variable）。
-#$开头：全局变量（Global variable）。
-#@开头：实例变量（Instance variable）。
-#@@开头：类变量（Class variable）类变量被共享在整个继承链中
-#大写字母开头：常数（Constant）。
-
-
 DebugList=['Debug','Debug_α','Debug_β']
+DoraemonKit_version='~> 3.0.7'
 # 测试工具
 def debug_pods
   # LookinServer 和 Reveal-SDK 类似
   
-  pod 'LLDebugTool' , '1.3.8.1' ,:configurations => DebugList
-  #  pod 'MLeaksFinder', '~> 1.0.0' ,:configurations => DebugList
-  #  pod 'LookinServer', :configurations => ['Debug']
-  #  pod 'LookinServer', :configurations => DebugList, :git => 'https://gitee.com/axinger/LookinServer.git'
+  #  pod 'LLDebugTool' , '1.3.8.1' ,:configurations => DebugList
+  #  pod 'MLeaksFinder', '~> 1.1.0' ,:configurations => DebugList
+  #  pod 'LookinServer', :configurations => DebugList
   pod 'CocoaDebug', '~> 1.6.3' , :configurations => DebugList
-  #  pod 'Reveal-SDK', :configurations => ['Debug','Debug_α','Debug_β']
+  
+  # '其他模块 WithLogger','WithGPS','WithLoad','WithDatabase', 'WithMLeaksFinder','WithWeex'
+  #  这样好像不行
+  #    pod 'DoraemonKit', :subspecs => ['Core','WithLogger'], :configurations => DebugList
+  
+  pod 'DoraemonKit/Core', DoraemonKit_version, :configurations => DebugList #必选
+  pod 'DoraemonKit/WithGPS', DoraemonKit_version, :configurations => DebugList #可选
+  pod 'DoraemonKit/WithLoad',DoraemonKit_version, :configurations => DebugList #可选
+  pod 'DoraemonKit/WithLogger', DoraemonKit_version, :configurations => DebugList #可选
+  pod 'DoraemonKit/WithDatabase', DoraemonKit_version, :configurations => DebugList #可选
+  #  pod 'DoraemonKit/WithMLeaksFinder', DoraemonKit_version, :configurations => DebugList #可选
+  #      pod 'DoraemonKit/WithWeex', '~> 3.0.4', :configurations => DebugList #可选
   
 end
 
@@ -222,10 +230,30 @@ end
 
 #=========忽略===========
 post_install do |installer|
+  
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.0'
       config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
+      
     end
   end
+  
+  ## Fix for XCode 12.5 sudo chmod -R 750 Pods
+  find_and_replace("Pods/FBRetainCycleDetector/FBRetainCycleDetector/Layout/Classes/FBClassStrongLayout.mm",
+                   "layoutCache[currentClass] = ivars;", "layoutCache[(id<NSCopying>)currentClass] = ivars;")
+                   
+end
+
+def find_and_replace(dir, findstr, replacestr)
+  Dir[dir].each do |name|
+    text = File.read(name)
+    replace = text.gsub(findstr,replacestr)
+    if text != replace
+      puts "Fix: " + name
+      File.open(name, "w") { |file| file.puts replace }
+      STDOUT.flush
+    end
+  end
+  Dir[dir + '*/'].each(&method(:find_and_replace))
 end

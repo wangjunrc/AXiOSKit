@@ -9,16 +9,25 @@
 import MonkeyKing
 import UIKit
 
+@objc
+public enum AXShareBridgePlatform: Int {
+    case none
+    case weiChatSession
+    case weiChatTimeLine
+    case sinaWeibo
+    case qqFriends
+}
+
 public typealias AXShareCompletionHandler = (_ result: Bool, _ error: Error?) -> Void
 
 func error(code: Int, msg: String) -> NSError {
-    return NSError(domain: "com.dl.mam.service.error",
+    return NSError(domain: "com.ax.mam.service.error",
                    code: code,
                    userInfo: [NSLocalizedDescriptionKey: msg])
 }
 
 func error(msg: String) -> NSError {
-    return NSError(domain: "com.dl.mam.service.error",
+    return NSError(domain: "com.ax.mam.service.error",
                    code: -1,
                    userInfo: [NSLocalizedDescriptionKey: msg])
 }
@@ -48,53 +57,57 @@ func actionResult(_ result: Result<MonkeyKing.ResponseJSON?, MonkeyKing.Error>, 
     private let _weibo = AXShareWeibo()
     private let _weChat = AXShareWeChat()
     private let _qq = AXShareQQ()
-
+    
     /// 表示当前类是否在使用,临时区分 handleOpenUrl
     var isStart: Bool = false
-
+    
     ///  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool
     func handleOpen(url: URL) -> Bool {
         if !isStart {
             return false
         }
-
+        
         isStart = false
         return MonkeyKing.handleOpenURL(url)
     }
-
+    
     /// func application(_ application: UIApplication, handleOpen url: URL) -> Bool
     func handleOpen(userActivity: NSUserActivity) -> Bool {
         return MonkeyKing.handleOpenUserActivity(userActivity)
     }
-
+    
     /// 分享
-    func share(type: AXSharePlatform, item: AXSocialShareContent, block: @escaping AXShareCompletionHandler) {
-        if type.isEqual(to: AXSharePlatformWeiChatSession) {
+    func share(type: AXShareBridgePlatform, item: AXSocialShareContent, block: @escaping AXShareCompletionHandler) {
+        
+        switch type {
+        case .none: break
+        case .weiChatSession:
             if !weChat.isInstalled() {
                 block(false, error(code: -2, msg: "未安装"))
             } else {
                 weChat.share(type: .session, item: item, block: block)
             }
-
-        } else if type.isEqual(to: AXSharePlatformWeiChatTimeLine) {
+        case .weiChatTimeLine:
             if !weChat.isInstalled() {
                 block(false, error(code: -2, msg: "未安装"))
             } else {
                 weChat.share(type: .timeLine, item: item, block: block)
             }
-        } else if type.isEqual(to: AXSharePlatformSinaWeibo) {
+        case .sinaWeibo:
             if !weibo.isInstalled() {
                 block(false, error(code: -2, msg: "未安装"))
             } else {
                 weibo.share(item: item, block: block)
             }
-        } else if type.isEqual(to: AXSharePlatformQQFriends) {
+            
+        case .qqFriends:
             if !qq.isInstalled() {
                 block(false, error(code: -2, msg: "未安装"))
             } else {
                 qq.share(type: .friends, item: item, block: block)
             }
         }
+        
     }
 }
 
@@ -103,12 +116,12 @@ extension AXShareBridge {
         isStart = true
         return _weibo
     }
-
+    
     private var weChat: AXShareWeChat {
         isStart = true
         return _weChat
     }
-
+    
     private var qq: AXShareQQ {
         isStart = true
         return _qq

@@ -584,3 +584,6 @@ pod 'WMPlayer'
 
 ### 网页聊天UI
 pod 'NIM_iOS_UIKit'
+
+### 时间处理
+pod 'DateTools'

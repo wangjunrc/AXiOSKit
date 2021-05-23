@@ -2433,6 +2433,29 @@ CG_INLINE AXDeterminant AXDeterminantMake(int row, int column){
 }
 
 ```
+## __block
+auto类型的局部变量，可以被block捕获，但是不能修改值。
+
+__block可以解决block内部无法修改外部auto变量的问题。
+打印结果为 10,不正确
+``` 
+//  
+ int age = 10;
+void (^myblock)(void) =  ^{
+  NSLog(@"%d",age);
+};
+age  = 20;
+myblock();
+```
+打印结果为 20,正确
+```
+__block int age = 10;
+void (^myblock)(void) =  ^{
+  NSLog(@"%d",age);
+};
+age  = 20;
+myblock();
+```
 ## 排序
 ```
 NSSortDescriptor *sort_name = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
@@ -2440,4 +2463,10 @@ NSSortDescriptor *sort_dog_name = [NSSortDescriptor sortDescriptorWithKey:@"dog.
 
  [array sortUsingDescriptors:@[sort_name,sort_dog_name]];
  NSLog(@"排序后array = %@", array);
-```
+=======
+## __block
+auto类型的局部变量，可以被block捕获，但是不能修改值。
+
+__block可以解决block内部无法修改外部auto变量的问题。
+打印结果为 10,不正确
+``` 

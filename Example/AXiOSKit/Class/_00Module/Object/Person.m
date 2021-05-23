@@ -8,12 +8,13 @@
 
 #import "Person.h"
 
+
 void testFun(){
     NSLog(@"拦截了方法 = testFun");
 }
 
 @implementation Person
-
+AX_SINGLETON_IMPL(Sh);
 -(void)logShowTest{
     NSLog(@"这是一个人");
 }

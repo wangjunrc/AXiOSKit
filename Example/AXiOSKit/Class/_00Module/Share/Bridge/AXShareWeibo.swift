@@ -32,7 +32,7 @@ import MonkeyKing
     }
     
     /// 分享微博
-    func  share(item:AXSocialShareContent, block:@escaping AXShareCompletionHandler ){
+    func share(item:AXSocialShareContent, block:@escaping AXShareCompletionHandler ){
         
         let info = MonkeyKing.Info(
             title: item.title,

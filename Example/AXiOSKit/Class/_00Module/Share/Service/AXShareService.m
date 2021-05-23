@@ -11,6 +11,7 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import "AXUserSwiftImport.h"
 #import <AXiOSKit/AXiOSKit.h>
+@import MonkeyKing;
 
 @interface AXShareService ()<MFMessageComposeViewControllerDelegate>
 
@@ -23,6 +24,7 @@
 AX_SINGLETON_IMPL(Service);
 
 - (BOOL)handleOpenUrl:(NSURL *)url {
+    
     return [self.shareBridge handleOpenWithUrl:url];
 }
 
@@ -52,7 +54,8 @@ AX_SINGLETON_IMPL(Service);
                [type isEqualToString:AXSharePlatformSinaWeibo] ||
                [type isEqualToString:AXSharePlatformQQFriends]) {
         __weak typeof(self) weakSelf = self;
-        [self.shareBridge shareWithType:type item:item block:^(BOOL result, NSError *_Nullable error) {
+        
+        [self.shareBridge shareWithType:1 item:item block:^(BOOL result, NSError *_Nullable error) {
             __strong typeof(weakSelf) strongSelf = weakSelf;
             NSLog(@"分享 %@, result = %d,error = %@", option.appName, result, error);
             if (result) {
@@ -75,7 +78,8 @@ AX_SINGLETON_IMPL(Service);
     item.subTitle = [NSString stringWithFormat:@"%@分享地址:%@", @"分享title", @"https://www.baidu.com/"];
     if ([option.type isEqualToString:AXSharePlatformQQFriends]) {
         // qq分享没有universalLink,只能分享文字, 设备未授权 25105
-        item.mediaType = AXSocialShareContentTypeText;
+//        item.mediaType = AXSocialShareContentTypeText;
+        item.mediaType = AXSocialShareContentTypeUrl;
     } else {
         item.mediaType = AXSocialShareContentTypeUrl;
     }
