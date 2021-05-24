@@ -20,6 +20,7 @@
 #import "Person.h"
 #import <TABAnimated/TABAnimated.h>
 #import "_02RootCell.h"
+#import "DemoWevViewImageSchemeHandler.h"
 @import AssetsLibrary;
 
 static __attribute__((always_inline)) void asm_exit() {
@@ -65,6 +66,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 
 @property (nonatomic, strong) NSMutableArray<NSDictionary *> *dataArray;
 
+@property(nonatomic, strong) DemoWevViewImageSchemeHandler *imageSchemeHandler;
 @end
 
 @implementation _02RootVC
@@ -855,6 +857,35 @@ void mySLog(NSString *format, ...)
                 },
                 
             },
+            @{
+                @"index": @9,
+                @"title": @"AXWKWebVC 拦截图片",
+                @"action": ^{
+                    AXWKWebVC * vc = [[AXWKWebVC alloc] initWithURL:[NSURL URLWithString:@"https://www.baidu.com"]];
+                    if (@available(iOS 11.0, *)) {
+                        [vc.webView.configuration setURLSchemeHandler:self.imageSchemeHandler forURLScheme:@"www.baidu.com"];
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                    [self ax_pushVC:vc];
+                },
+            },
+            @{
+                @"index": @9,
+                @"title": @"AXWKWebVC load js",
+                @"action": ^{
+                    NSURL   *URL = [NSBundle.ax_HTMLBundle URLForResource:@"index.html" withExtension:nil];
+                    AXWKWebVC * vc = [[AXWKWebVC alloc] initWithURL:URL];
+//                    NSString *js =  [NSString.alloc initWithData:[NSData dataWithContentsOfFile:@"myAlert.js"] encoding:NSUTF8StringEncoding];
+                    NSError *error=nil;
+                    NSString *js = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"myAlert.js"ofType:nil]encoding:NSUTF8StringEncoding error:&error];
+                    if (!error) {
+                        [vc evaluateJavaScript:js time:WKUserScriptInjectionTimeAtDocumentStart];
+                    }
+                    [self ax_pushVC:vc];
+                },
+            },
+            
             
             
             @{
@@ -1013,4 +1044,10 @@ void mySLog(NSString *format, ...)
     return UIInterfaceOrientationMaskPortrait;
 }
 
+- (DemoWevViewImageSchemeHandler *)imageSchemeHandler {
+    if (!_imageSchemeHandler) {
+        _imageSchemeHandler = [DemoWevViewImageSchemeHandler.alloc init];
+    }
+    return _imageSchemeHandler;
+}
 @end

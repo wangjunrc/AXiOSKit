@@ -398,6 +398,8 @@
 		21D87B8A25EF35C2007220E8 /* _01TypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D87B8825EF35C2007220E8 /* _01TypeViewController.m */; };
 		21DB327F26574A2800CAFAEC /* DemoEnvironmenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB327E26574A2800CAFAEC /* DemoEnvironmenVC.m */; };
 		21DB328026574A2800CAFAEC /* DemoEnvironmenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB327E26574A2800CAFAEC /* DemoEnvironmenVC.m */; };
+		21DB328326578FEF00CAFAEC /* DemoWevViewImageSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DB328226578FEF00CAFAEC /* DemoWevViewImageSchemeHandler.m */; };
+		21DB32852657934100CAFAEC /* myAlert.js in Resources */ = {isa = PBXBuildFile; fileRef = 21DB32842657934000CAFAEC /* myAlert.js */; };
 		21E1388A264D184C00D68FEA /* _02RootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E13889264D184C00D68FEA /* _02RootCell.m */; };
 		21E306B4255EAA1100D17A8B /* _29AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E306B2255EAA1100D17A8B /* _29AudioViewController.m */; };
 		21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
@@ -857,6 +859,9 @@
 		21D87B8825EF35C2007220E8 /* _01TypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _01TypeViewController.m; sourceTree = "<group>"; };
 		21DB327D26574A2800CAFAEC /* DemoEnvironmenVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoEnvironmenVC.h; sourceTree = "<group>"; };
 		21DB327E26574A2800CAFAEC /* DemoEnvironmenVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoEnvironmenVC.m; sourceTree = "<group>"; };
+		21DB328126578FEF00CAFAEC /* DemoWevViewImageSchemeHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoWevViewImageSchemeHandler.h; sourceTree = "<group>"; };
+		21DB328226578FEF00CAFAEC /* DemoWevViewImageSchemeHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoWevViewImageSchemeHandler.m; sourceTree = "<group>"; };
+		21DB32842657934000CAFAEC /* myAlert.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = myAlert.js; sourceTree = "<group>"; };
 		21E13888264D184C00D68FEA /* _02RootCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _02RootCell.h; sourceTree = "<group>"; };
 		21E13889264D184C00D68FEA /* _02RootCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _02RootCell.m; sourceTree = "<group>"; };
 		21E306B1255EAA1100D17A8B /* _29AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _29AudioViewController.h; sourceTree = "<group>"; };
@@ -1352,6 +1357,9 @@
 				219F44512580BDC600E8CB50 /* _02RootVC.m */,
 				21E13888264D184C00D68FEA /* _02RootCell.h */,
 				21E13889264D184C00D68FEA /* _02RootCell.m */,
+				21DB328126578FEF00CAFAEC /* DemoWevViewImageSchemeHandler.h */,
+				21DB328226578FEF00CAFAEC /* DemoWevViewImageSchemeHandler.m */,
+				21DB32842657934000CAFAEC /* myAlert.js */,
 			);
 			path = _02Root;
 			sourceTree = "<group>";
@@ -2225,6 +2233,7 @@
 				213BCC28254003DB00C89B72 /* 123.jpg in Resources */,
 				211A99E825CB9F9D009030CB /* HappyBirthday.json in Resources */,
 				211A99F625CB9F9D009030CB /* vcTransition2.json in Resources */,
+				21DB32852657934100CAFAEC /* myAlert.js in Resources */,
 				21CCD4732627C50F00D83F45 /* tab_search_animate.json in Resources */,
 				2193D28A264792440008C7C6 /* lf20_loading_failure.json in Resources */,
 				21F269102635425100C67CFE /* zip@2x.png in Resources */,
@@ -2946,6 +2955,7 @@
 				21CC7C78255FA71900E7B506 /* _13WeImageTableViewController.m in Sources */,
 				213BCC0E254003DB00C89B72 /* _07VideoViewController.m in Sources */,
 				21F269182635425100C67CFE /* PreviewTransitionViewController.swift in Sources */,
+				21DB328326578FEF00CAFAEC /* DemoWevViewImageSchemeHandler.m in Sources */,
 				21F43D0E25E4F45B002AF1AD /* _34ViewController.m in Sources */,
 				213BCC0A254003DB00C89B72 /* _22ReactiveObjCViewController.m in Sources */,
 				213BCC03254003DB00C89B72 /* AView.m in Sources */,

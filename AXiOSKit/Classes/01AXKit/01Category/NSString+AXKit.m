@@ -758,7 +758,7 @@
  @param parameter 参数
  @return path
  */
--(NSString *)ax_pathAppendingWithParameter:(NSDictionary <NSString *,NSString *>*)parameter {
+-(NSString *)ax_pathAppendingWithParameter:(NSDictionary <NSString *,id >*)parameter {
   
     NSMutableArray <NSString *> *keyAndValueArray = [NSMutableArray arrayWithCapacity:parameter.count];
     
@@ -1171,6 +1171,8 @@
 -(NSDictionary *)ax_URLComponents {
     
     NSString *url = self;
+    /// 编解码中文等特殊字符
+    url= [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     //传入url创建url组件类
     NSURLComponents *urlComponents = [NSURLComponents componentsWithString:url];
