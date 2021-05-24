@@ -6,11 +6,11 @@
 //  Copyright © 2020 liuweixing. All rights reserved.
 //
 
-#import "DemoBaseViewController.h"
+#import "AXDemoBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _13WebpViewController : DemoBaseViewController
+@interface _13WebpViewController : AXDemoBaseViewController
 
 @end
 

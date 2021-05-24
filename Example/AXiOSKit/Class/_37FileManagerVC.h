@@ -6,11 +6,11 @@
 //  Copyright © 2021 axinger. All rights reserved.
 //
 
-#import "DemoBaseViewController.h"
+#import "AXDemoBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _37FileManagerVC : DemoBaseViewController
+@interface _37FileManagerVC : AXDemoBaseViewController
 
 @end
 

@@ -21,6 +21,7 @@
 #import "_02ChatViewController.h"
 #import "_03GradientViewController.h"
 #import "_04RunLoopViewController.h"
+#import "_05WebVC.h"
 #import "_06WCDBViewController.h"
 #import "_07VideoViewController.h"
 #import "_08MP3VC.h"
@@ -624,6 +625,15 @@ typedef void (^CollectionBlock)(void);
                 @"title": @"NSRunLoop模式",
                 @"action": ^{
                     _04RunLoopViewController *vc = [[_04RunLoopViewController alloc] init];
+                    [self ax_pushVC:vc];
+                },
+            },
+            
+            @{
+                @"index": @5,
+                @"title": @"WKWebVC",
+                @"action": ^{
+                    _05WebVC *vc = [[_05WebVC alloc] init];
                     [self ax_pushVC:vc];
                 },
             },

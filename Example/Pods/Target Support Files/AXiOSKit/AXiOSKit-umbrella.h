@@ -133,6 +133,7 @@
 #import "AXKeyboardObserve.h"
 #import "AXMediaConfig.h"
 #import "AXMediaResult.h"
+#import "AXObjCAssistant.h"
 #import "AXObject.h"
 #import "AXPresentGesturesBack.h"
 #import "AXTextFieldObserve.h"

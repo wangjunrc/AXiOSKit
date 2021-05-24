@@ -13,6 +13,14 @@
 
 #import <DoraemonKit/DoraemonKit.h>
 #import "DemoEnvironmenVC.h"
+//#import <AvoidCrash/AvoidCrash.h>
+#import <JJException/JJException.h>
+
+
+@interface AppDelegateDebug()<JJExceptionHandle>
+
+@end
+
 @implementation AppDelegateDebug
 
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
@@ -63,8 +71,8 @@
     
 #endif
     
-
-   
+    
+    
     
 #if TARGET_IPHONE_SIMULATOR
     // 模拟器
@@ -88,7 +96,42 @@
     NSLog(@"没有定义 SERVER_PORT");
 #endif
     
+//    [AvoidCrash makeAllEffective];
+//
+//    NSArray *noneSelClassStrings = @[
+//        @"NSNull",
+//        @"NSNumber",
+//        @"NSString",
+//        @"NSDictionary",
+//        @"NSArray"
+//    ];
+//    [AvoidCrash setupNoneSelClassStringsArr:noneSelClassStrings];
+//
+//    /**
+//     *  相比于becomeEffective，增加
+//     *  对”unrecognized selector sent to instance”防止崩溃的处理
+//     *
+//     *  但是必须配合:
+//     *            setupClassStringsArr:和
+//     *            setupNoneSelClassStringPrefixsArr
+//     *            这两个方法可以同时使用
+//     */
+//    //    + (void)makeAllEffective;
+//
+//    //监听通知:AvoidCrashNotification, 获取AvoidCrash捕获的崩溃日志的详细信息
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealwithCrashMessage:) name:AvoidCrashNotification object:nil];
+    
+    [JJException configExceptionCategory:JJExceptionGuardAll];
+    [JJException startGuardException];
+
+    [JJException registerExceptionHandle:self];
     return YES;
+}
+
+- (void)handleCrashException:(NSString*)exceptionMessage
+           exceptionCategory:(JJExceptionGuardCategory)exceptionCategory
+                   extraInfo:(nullable NSDictionary*)info{
+    NSLog(@"监测到奔溃 exceptionMessage=%@,exceptionCategory=%ld,info=%@",exceptionMessage,exceptionCategory,info);
 }
 
 //配置Doraemon工具集

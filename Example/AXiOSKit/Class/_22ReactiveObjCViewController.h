@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DemoBaseViewController.h"
+#import "AXDemoBaseViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _22ReactiveObjCViewController : DemoBaseViewController
+@interface _22ReactiveObjCViewController : AXDemoBaseViewController
 
 @end
 

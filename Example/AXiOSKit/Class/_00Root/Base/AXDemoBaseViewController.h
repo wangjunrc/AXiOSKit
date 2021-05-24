@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DemoBaseViewController : UIViewController
+@interface AXDemoBaseViewController : UIViewController
 
 @property(nonatomic, strong) UIView *containerView;
 

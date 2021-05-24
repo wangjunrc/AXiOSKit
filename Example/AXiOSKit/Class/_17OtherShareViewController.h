@@ -6,11 +6,11 @@
 //  Copyright © 2020 liuweixing. All rights reserved.
 //
 
-#import "DemoBaseViewController.h"
+#import "AXDemoBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _17OtherShareViewController : DemoBaseViewController
+@interface _17OtherShareViewController : AXDemoBaseViewController
 
 @end
 

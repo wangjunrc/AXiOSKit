@@ -6,15 +6,15 @@
 //  Copyright © 2020 axinger. All rights reserved.
 //
 
-#import "DemoBaseViewController.h"
+#import "AXDemoBaseViewController.h"
 
-@interface DemoBaseViewController ()
+@interface AXDemoBaseViewController ()
 
 //@property(nonatomic, strong) UIScrollView *scrollView;
 
 @end
 
-@implementation DemoBaseViewController
+@implementation AXDemoBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

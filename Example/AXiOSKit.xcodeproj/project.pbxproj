@@ -274,6 +274,10 @@
 		2160E3C42601AADC007FB7C2 /* _36YYKitTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2160E3C32601AADC007FB7C2 /* _36YYKitTestVC.m */; };
 		2160E3C52601AADC007FB7C2 /* _36YYKitTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2160E3C32601AADC007FB7C2 /* _36YYKitTestVC.m */; };
 		216891AB25ABDD4B0037CAB5 /* _25CompLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 216891AA25ABDD4B0037CAB5 /* _25CompLayoutCell.m */; };
+		2177D618265B34A100175528 /* AXDemoURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 2177D617265B34A100175528 /* AXDemoURLProtocol.m */; };
+		2177D61B265B36C300175528 /* NSURLProtocol+AXDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2177D61A265B36C300175528 /* NSURLProtocol+AXDemo.m */; };
+		2177D61E265B42F100175528 /* _05WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2177D61D265B42F100175528 /* _05WebVC.m */; };
+		2177D623265B46F500175528 /* orgTitle.js in Resources */ = {isa = PBXBuildFile; fileRef = 2177D622265B46F500175528 /* orgTitle.js */; };
 		2178B704261E939C00592747 /* _38DirectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2178B703261E939C00592747 /* _38DirectionVC.m */; };
 		2178B705261E939C00592747 /* _38DirectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2178B703261E939C00592747 /* _38DirectionVC.m */; };
 		21799C7C255BDE8500754A8B /* gift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 21799C7B255BDE8500754A8B /* gift.svg */; };
@@ -403,8 +407,8 @@
 		21E1388A264D184C00D68FEA /* _02RootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E13889264D184C00D68FEA /* _02RootCell.m */; };
 		21E306B4255EAA1100D17A8B /* _29AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E306B2255EAA1100D17A8B /* _29AudioViewController.m */; };
 		21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */; };
-		21E5C8A9257F6BF8002A4D59 /* DemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* DemoBaseViewController.m */; };
-		21E5C8AA257F6BF8002A4D59 /* DemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* DemoBaseViewController.m */; };
+		21E5C8A9257F6BF8002A4D59 /* AXDemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* AXDemoBaseViewController.m */; };
+		21E5C8AA257F6BF8002A4D59 /* AXDemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E5C8A8257F6BF8002A4D59 /* AXDemoBaseViewController.m */; };
 		21E6DE67260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
 		21E6DE68260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
 		21E6DF102605DC3D0092051F /* _37FileManagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DF0F2605DC3D0092051F /* _37FileManagerVC.m */; };
@@ -733,6 +737,13 @@
 		2160E3C32601AADC007FB7C2 /* _36YYKitTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _36YYKitTestVC.m; sourceTree = "<group>"; };
 		216891A925ABDD4B0037CAB5 /* _25CompLayoutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _25CompLayoutCell.h; sourceTree = "<group>"; };
 		216891AA25ABDD4B0037CAB5 /* _25CompLayoutCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _25CompLayoutCell.m; sourceTree = "<group>"; };
+		2177D616265B34A100175528 /* AXDemoURLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDemoURLProtocol.h; sourceTree = "<group>"; };
+		2177D617265B34A100175528 /* AXDemoURLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDemoURLProtocol.m; sourceTree = "<group>"; };
+		2177D619265B36C300175528 /* NSURLProtocol+AXDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLProtocol+AXDemo.h"; sourceTree = "<group>"; };
+		2177D61A265B36C300175528 /* NSURLProtocol+AXDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLProtocol+AXDemo.m"; sourceTree = "<group>"; };
+		2177D61C265B42F100175528 /* _05WebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _05WebVC.h; sourceTree = "<group>"; };
+		2177D61D265B42F100175528 /* _05WebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _05WebVC.m; sourceTree = "<group>"; };
+		2177D622265B46F500175528 /* orgTitle.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = orgTitle.js; sourceTree = "<group>"; };
 		2178B702261E939C00592747 /* _38DirectionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _38DirectionVC.h; sourceTree = "<group>"; };
 		2178B703261E939C00592747 /* _38DirectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _38DirectionVC.m; sourceTree = "<group>"; };
 		21799C7B255BDE8500754A8B /* gift.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = gift.svg; sourceTree = "<group>"; };
@@ -867,8 +878,8 @@
 		21E306B1255EAA1100D17A8B /* _29AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _29AudioViewController.h; sourceTree = "<group>"; };
 		21E306B2255EAA1100D17A8B /* _29AudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _29AudioViewController.m; sourceTree = "<group>"; };
 		21E306B3255EAA1100D17A8B /* _29AudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = _29AudioViewController.xib; sourceTree = "<group>"; };
-		21E5C8A7257F6BF8002A4D59 /* DemoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBaseViewController.h; sourceTree = "<group>"; };
-		21E5C8A8257F6BF8002A4D59 /* DemoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBaseViewController.m; sourceTree = "<group>"; };
+		21E5C8A7257F6BF8002A4D59 /* AXDemoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDemoBaseViewController.h; sourceTree = "<group>"; };
+		21E5C8A8257F6BF8002A4D59 /* AXDemoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDemoBaseViewController.m; sourceTree = "<group>"; };
 		21E6DE65260494060092051F /* DogOC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogOC.h; sourceTree = "<group>"; };
 		21E6DE66260494060092051F /* DogOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogOC.m; sourceTree = "<group>"; };
 		21E6DF0E2605DC3D0092051F /* _37FileManagerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _37FileManagerVC.h; sourceTree = "<group>"; };
@@ -1006,8 +1017,8 @@
 		210CF8D126268E4500F4071E /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				21E5C8A7257F6BF8002A4D59 /* DemoBaseViewController.h */,
-				21E5C8A8257F6BF8002A4D59 /* DemoBaseViewController.m */,
+				21E5C8A7257F6BF8002A4D59 /* AXDemoBaseViewController.h */,
+				21E5C8A8257F6BF8002A4D59 /* AXDemoBaseViewController.m */,
 				213BCB41254003D900C89B72 /* DemoNavigationController.h */,
 				213BCB63254003D900C89B72 /* DemoNavigationController.m */,
 				210CF8C626268D0600F4071E /* DemoTabBarController.h */,
@@ -1080,6 +1091,7 @@
 				213BCB82254003D900C89B72 /* _04RunLoopViewController.h */,
 				213BCB60254003D900C89B72 /* _04RunLoopViewController.m */,
 				213BCB74254003D900C89B72 /* _04RunLoopViewController.xib */,
+				2177D61F265B466800175528 /* _05Web */,
 				213BCB6C254003D900C89B72 /* _06WCDBViewController.h */,
 				213BCB4B254003D900C89B72 /* _06WCDBViewController.m */,
 				213BCB73254003D900C89B72 /* _06WCDBViewController.xib */,
@@ -1357,9 +1369,6 @@
 				219F44512580BDC600E8CB50 /* _02RootVC.m */,
 				21E13888264D184C00D68FEA /* _02RootCell.h */,
 				21E13889264D184C00D68FEA /* _02RootCell.m */,
-				21DB328126578FEF00CAFAEC /* DemoWevViewImageSchemeHandler.h */,
-				21DB328226578FEF00CAFAEC /* DemoWevViewImageSchemeHandler.m */,
-				21DB32842657934000CAFAEC /* myAlert.js */,
 			);
 			path = _02Root;
 			sourceTree = "<group>";
@@ -1449,6 +1458,40 @@
 			children = (
 				214F67E82646B863006D946B /* AXShareService.h */,
 				214F67E92646B863006D946B /* AXShareService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2177D61F265B466800175528 /* _05Web */ = {
+			isa = PBXGroup;
+			children = (
+				2177D620265B469700175528 /* Controller */,
+				2177D621265B46C300175528 /* Service */,
+			);
+			name = _05Web;
+			path = _00Root;
+			sourceTree = "<group>";
+		};
+		2177D620265B469700175528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2177D61C265B42F100175528 /* _05WebVC.h */,
+				2177D61D265B42F100175528 /* _05WebVC.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2177D621265B46C300175528 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2177D616265B34A100175528 /* AXDemoURLProtocol.h */,
+				2177D617265B34A100175528 /* AXDemoURLProtocol.m */,
+				21DB328126578FEF00CAFAEC /* DemoWevViewImageSchemeHandler.h */,
+				21DB328226578FEF00CAFAEC /* DemoWevViewImageSchemeHandler.m */,
+				21DB32842657934000CAFAEC /* myAlert.js */,
+				2177D619265B36C300175528 /* NSURLProtocol+AXDemo.h */,
+				2177D61A265B36C300175528 /* NSURLProtocol+AXDemo.m */,
+				2177D622265B46F500175528 /* orgTitle.js */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -2224,6 +2267,7 @@
 				218A1E4525440A0A00E43F16 /* App.pdf in Resources */,
 				21E306B5255EAA1100D17A8B /* _29AudioViewController.xib in Resources */,
 				21430B10256C9E3E00CB8EBC /* _30TimeLineNinePhotoCell.xib in Resources */,
+				2177D623265B46F500175528 /* orgTitle.js in Resources */,
 				218A1EC8254438C900E43F16 /* office.bundle in Resources */,
 				2193D28C264792440008C7C6 /* lf20_loading_all.json in Resources */,
 				213BCC3E254003DB00C89B72 /* PointViewController2.plist in Resources */,
@@ -2412,7 +2456,6 @@
 				"${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
-				"${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework",
 				"${BUILT_PRODUCTS_DIR}/Bagel/Bagel.framework",
 				"${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework",
 				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
@@ -2480,7 +2523,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXViewControllerTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXiOSKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AvoidCrash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bagel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTMediator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
@@ -2558,7 +2600,6 @@
 				"${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
-				"${BUILT_PRODUCTS_DIR}/AvoidCrash/AvoidCrash.framework",
 				"${BUILT_PRODUCTS_DIR}/Bagel/Bagel.framework",
 				"${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework",
 				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
@@ -2626,7 +2667,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXViewControllerTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXiOSKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AvoidCrash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bagel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTMediator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
@@ -2747,7 +2787,7 @@
 				211226FC2573340100B6ECC8 /* _14TFViewController.m in Sources */,
 				211226FD2573340100B6ECC8 /* _30TimeLineModel.m in Sources */,
 				21C0190925FF293300FAFE5A /* _35ProtobufVC.m in Sources */,
-				21E5C8AA257F6BF8002A4D59 /* DemoBaseViewController.m in Sources */,
+				21E5C8AA257F6BF8002A4D59 /* AXDemoBaseViewController.m in Sources */,
 				21BABB9B264A0E9000B42A9F /* _40ScreenshotsVC.m in Sources */,
 				21E6DF112605DC3D0092051F /* _37FileManagerVC.m in Sources */,
 				211226FE2573340100B6ECC8 /* LVieoView.m in Sources */,
@@ -2903,6 +2943,7 @@
 				21799D64255CD33700754A8B /* AXRecordAudioConfig.m in Sources */,
 				213BCBFB254003DB00C89B72 /* _24NoteViewController.m in Sources */,
 				214878E6260C173B003671D9 /* _03RootVC.m in Sources */,
+				2177D61B265B36C300175528 /* NSURLProtocol+AXDemo.m in Sources */,
 				213BCC2A254003DB00C89B72 /* TestObj.m in Sources */,
 				21BC194A256CD28C0041ADBB /* _25CollectionViewCell.m in Sources */,
 				21430AE1256C980500CB8EBC /* _30IGListViewController.m in Sources */,
@@ -2973,6 +3014,7 @@
 				2185E27B2653AD4C00757462 /* TestPluginViewController.m in Sources */,
 				214F67F12646B863006D946B /* AXShareOption.m in Sources */,
 				213BCBFC254003DB00C89B72 /* _06WCDBViewController.m in Sources */,
+				2177D61E265B42F100175528 /* _05WebVC.m in Sources */,
 				211DEB6625EC88E500CE3907 /* _03GradientViewController.m in Sources */,
 				2121FE8025CA945600B3B323 /* AXXSwitch.m in Sources */,
 				2124D21225E48AF800B1A5A4 /* XWShadow.m in Sources */,
@@ -2994,11 +3036,12 @@
 				2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */,
 				21430B02256C9D4300CB8EBC /* _20TimeLineContentCell.m in Sources */,
 				214F67F52646B863006D946B /* AXShareService.m in Sources */,
-				21E5C8A9257F6BF8002A4D59 /* DemoBaseViewController.m in Sources */,
+				21E5C8A9257F6BF8002A4D59 /* AXDemoBaseViewController.m in Sources */,
 				213BCC14254003DB00C89B72 /* _09AFNViewController.m in Sources */,
 				213BCC2F254003DB00C89B72 /* ChatMessageModel.m in Sources */,
 				21C3778625A829F400D678FD /* _25CompLayoutVC5.m in Sources */,
 				213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */,
+				2177D618265B34A100175528 /* AXDemoURLProtocol.m in Sources */,
 				21430B08256C9DC300CB8EBC /* _30TimeLineNinePhotoView.m in Sources */,
 				21F2691C2635425100C67CFE /* FileListSearch.swift in Sources */,
 			);

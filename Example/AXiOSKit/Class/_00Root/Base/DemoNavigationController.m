@@ -9,6 +9,8 @@
 #import "DemoNavigationController.h"
 #import <AXiOSKit/AXiOSKit.h>
 #import <AXiOSKit/UIViewController+AXNavBarConfig.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+#import <AXiOSKit/AXFoundationAssistant.h>
 @interface DemoNavigationController ()
 
 @end
@@ -17,64 +19,75 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    @weakify(self)
+    [RACObserve(self, title) subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
+        NSLog(@"DemoNavigationController title = %@",x);
+        if (ax_objc_is_nil(x)) {
+            self.title =  @"";
+        }
+        
+        NSLog(@"DemoNavigationController self.title = %@",self.title);
+        
+    }];
     // Do any additional setup after loading the view.
-//    if (@available(iOS 13.0, *)) {
-//        UIColor *bgColor =  [UIColor ax_colorWithNormalStyle:UIColor.redColor darkStyle:UIColor.systemBackgroundColor];
-//
-//        [self.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:bgColor] forBarMetrics:UIBarMetricsDefault];
-//    } else {
-//        // Fallback on earlier versions
-//    }
+    //    if (@available(iOS 13.0, *)) {
+    //        UIColor *bgColor =  [UIColor ax_colorWithNormalStyle:UIColor.redColor darkStyle:UIColor.systemBackgroundColor];
+    //
+    //        [self.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:bgColor] forBarMetrics:UIBarMetricsDefault];
+    //    } else {
+    //        // Fallback on earlier versions
+    //    }
     
-//    UIColor *bgColor =  [UIColor redColor];
-//
-//    [self.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:bgColor] forBarMetrics:UIBarMetricsDefault];
-//    self.navigationBar.barTintColor = [UIColor redColor];
+    //    UIColor *bgColor =  [UIColor redColor];
+    //
+    //    [self.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:bgColor] forBarMetrics:UIBarMetricsDefault];
+    //    self.navigationBar.barTintColor = [UIColor redColor];
     
-//    self.navigationBar.tintColor = [UIColor greenColor];
-//    UIColor *color = UIColor.redColor;
-//    [self ax_setNavBarBackgroundImageWithColor:color];
+    //    self.navigationBar.tintColor = [UIColor greenColor];
+    //    UIColor *color = UIColor.redColor;
+    //    [self ax_setNavBarBackgroundImageWithColor:color];
     self.navigationBar.barTintColor = [UIColor orangeColor];
-//    self.rt_navigationController.useSystemBackBarButtonItem = YES;
+    //    self.rt_navigationController.useSystemBackBarButtonItem = YES;
     
-//    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-   
-//    if (@available(iOS 11.0, *)) {
-//        self.navigationItem.backButtonTitle  = @"";
-//    } else {
-//        // Fallback on earlier versions
-//    }
-//    UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
-//        backButtonItem.title = @"返回";
-//        self.navigationItem.backBarButtonItem = backButtonItem;
+    //    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
-//    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    //    if (@available(iOS 11.0, *)) {
+    //        self.navigationItem.backButtonTitle  = @"";
+    //    } else {
+    //        // Fallback on earlier versions
+    //    }
+    //    UIBarButtonItem * backButtonItem = [[UIBarButtonItem alloc] init];
+    //        backButtonItem.title = @"返回";
+    //        self.navigationItem.backBarButtonItem = backButtonItem;
+    
+    //    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
-
+    
     if(self.childViewControllers.count < 1){
         viewController.hidesBottomBarWhenPushed = NO;
         self.tabBarController.tabBar.hidden = NO;
-
+        
     }else{
         viewController.hidesBottomBarWhenPushed = YES;
         self.tabBarController.tabBar.hidden = YES;
     }
-
+    
     [super pushViewController:viewController animated:animated];
-
-//    if(self.childViewControllers.count>0){
-//        /// 取消返回 文字
-//        viewController.navigationItem.backBarButtonItem = [UIBarButtonItem.alloc
-//                                                           initWithTitle:@""
-//                                                           style:UIBarButtonItemStylePlain
-//                                                           target:self
-//                                                           action:nil];
-//    }
-
+    
+    //    if(self.childViewControllers.count>0){
+    //        /// 取消返回 文字
+    //        viewController.navigationItem.backBarButtonItem = [UIBarButtonItem.alloc
+    //                                                           initWithTitle:@""
+    //                                                           style:UIBarButtonItemStylePlain
+    //                                                           target:self
+    //                                                           action:nil];
+    //    }
+    
 }
 
 //- (void) traitCollectionDidChange: (UITraitCollection *) previousTraitCollection {
