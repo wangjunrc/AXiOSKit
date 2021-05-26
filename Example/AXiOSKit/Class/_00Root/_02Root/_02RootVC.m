@@ -6,33 +6,35 @@
 //  Copyright © 2020 axinger. All rights reserved.
 //
 
+#import "_02RootCell.h"
 #import "_02RootVC.h"
-#import "TestObj.h"
-#import "RouterManager.h"
-#import <ReactiveObjC/ReactiveObjC.h>
-#import <mach/mach.h>
+
+#import "AXUserSwiftImport.h"
 #import "AppDelegate.h"
+
+#import "Person.h"
+#import "RouterManager.h"
+#import "TestObj.h"
 #import <AXiOSKit/UIScrollView+AXEmptyDataSet.h>
 #import <AXiOSKit/UIViewController+AXNavBarConfig.h>
-#import "AXUserSwiftImport.h"
-#import <SSZipArchive/SSZipArchive.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
-#import "Person.h"
+#import <ReactiveObjC/ReactiveObjC.h>
+#import <SSZipArchive/SSZipArchive.h>
 #import <TABAnimated/TABAnimated.h>
-#import "_02RootCell.h"
+#import <mach/mach.h>
 @import AssetsLibrary;
 
 static __attribute__((always_inline)) void asm_exit() {
 #ifdef __arm64__
-    __asm__("mov X0, #0\n"
-            "mov w16, #1\n"
-            "svc #0x80\n"
-            
-            "mov x1, #0\n"
-            "mov sp, x1\n"
-            "mov x29, x1\n"
-            "mov x30, x1\n"
-            "ret");
+    __asm__ ("mov X0, #0\n"
+             "mov w16, #1\n"
+             "svc #0x80\n"
+             
+             "mov x1, #0\n"
+             "mov sp, x1\n"
+             "mov x29, x1\n"
+             "mov x30, x1\n"
+             "ret");
 #endif
 }
 
@@ -161,8 +163,8 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
         //            manager.animationN(@"nameLabel").height(12).width(110);
         //            manager.animationN(@"timeButton").down(-5).height(12);
         manager.animationN(@"titleLab").down(3).height(12);
-//        manager.animationN(@"timeLab").height(12).reducedWidth(70);
-//        manager.animationN(@"statusBtn").down(-5).height(12).radius(0.).reducedWidth(-20);
+        //        manager.animationN(@"timeLab").height(12).reducedWidth(70);
+        //        manager.animationN(@"statusBtn").down(-5).height(12).radius(0.).reducedWidth(-20);
         
         
     };
@@ -187,14 +189,14 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
     });
 }
 
--(void)deleteAction:(UIButton *)btn{
+-(void)deleteAction:(UIButton *)btn {
     
 }
 // 实现UITableViewDelegate的两个代理
 
 /// iOS13是否允许多指选中
 
--(BOOL)tableView:(UITableView *)tableView shouldBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath{
+-(BOOL)tableView:(UITableView *)tableView shouldBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath {
     
     return YES;
     
@@ -229,12 +231,12 @@ void mySLog(NSString *format, ...)
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"测试";
 }
--(CGFloat )tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return UITableViewAutomaticDimension;
+-(CGFloat )tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //    return UITableViewAutomaticDimension;
     return 120;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return UITableViewAutomaticDimension;
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //    return UITableViewAutomaticDimension;
     return 120;
 }
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
@@ -384,7 +386,7 @@ void mySLog(NSString *format, ...)
 
 
 //- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(11.0)){
-//    
+//
 //    //    NSString *title = @"置顶";
 //    //    if (indexPath.section == 0) {
 //    //        title = @"取消置顶";
@@ -395,7 +397,7 @@ void mySLog(NSString *format, ...)
 //    //        [tableView setEditing:NO animated:YES];
 //    //        completionHandler(true);
 //    //    }];
-//    
+//
 //    UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
 //        action.title =@"删除1";
 //        action.image = [UIImage imageNamed:@"cell_right_delete"];
@@ -685,7 +687,7 @@ void mySLog(NSString *format, ...)
             
             @{
                 @"index": @3,
-                @"title": @"对象未实现方法",
+                @"title": @"对象未实现方法,内部处理",
                 @"action": ^{
                     [self ax_showAlertByTitle:@"是否调用"
                                       confirm:^{
@@ -693,6 +695,21 @@ void mySLog(NSString *format, ...)
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
                         [per performSelector:@selector(test:)];
+#pragma clang diagnostic pop
+                        
+                        
+                    }];
+                },
+            },
+            @{
+                @"index": @3,
+                @"title": @"对象未实现方法,AvoidCrash处理",
+                @"action": ^{
+                    [self ax_showAlertByTitle:@"是否调用"
+                                      confirm:^{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+                        [self performSelector:@selector(test2:)];
 #pragma clang diagnostic pop
                         
                         
@@ -739,7 +756,7 @@ void mySLog(NSString *format, ...)
                 @"action": ^{
                     //                    [[UIApplication sharedApplication] terminateWithSuccess];
                     //                    [[UIApplication sharedApplication] performSelector:@selector(terminateWithSuccess)];
-                    if([[UIApplication sharedApplication] respondsToSelector:@selector(terminateWithSuccess)]){
+                    if([[UIApplication sharedApplication] respondsToSelector:@selector(terminateWithSuccess)]) {
                         [[UIApplication sharedApplication] performSelector:@selector(terminateWithSuccess)];
                     }
                 },
@@ -765,97 +782,6 @@ void mySLog(NSString *format, ...)
                     //                    sel_registerName("logShowTest"));
                 },
             },
-            
-            @{
-                @"index": @8,
-                @"title": @"网页 - AXWKWebVC",
-                @"action": ^{
-                    
-                    
-                    UIImage *img =[UIImage imageNamed:@"ax_icon_weixin"];
-                    NSString *base64=[UIImagePNGRepresentation(img) base64EncodedStringWithOptions:0];
-                    NSLog(@"base64 = %@",base64);
-                    
-                    //                vc.URL = [NSURL
-                    //                URLWithString:@"https://www.baidu.com/"]; vc.URL =
-                    //                [NSURL URLWithString:@"错误地址"];
-                    //                    vc.URL = [NSBundle.mainBundle
-                    //                    URLForResource:@"H5.bundle/index.html"
-                    //                    withExtension:nil];
-                    //                vc.HTML = @"<p style='font-size: 20px'>测试</p>";
-                    //                ///第三方 framework 内部的 ,看第三方 NSBundle
-                    //                是怎么放置的
-                    //                    vc.URL = [NSBundle.mainBundle
-                    //                    URLForResource:@"Frameworks/AXiOSKit.framework/AXHTML.bundle/index.html"
-                    //                    withExtension:nil];
-                    //                /// AXiOSKit 放置方式不一样
-                    NSURL   *URL = [NSBundle.ax_HTMLBundle URLForResource:@"index.html" withExtension:nil];
-                    
-                    AXWKWebVC * vc = [[AXWKWebVC alloc] initWithURL:URL];
-                    //                    __block typeof(vc)weakVC = vc;
-                    @weakify(vc)
-                    [vc addScriptMessageWithName:@"base64Img" handler:^(NSString * _Nonnull name, id  _Nonnull body) {
-                        @strongify(vc)
-                        NSLog(@"body = %@",body);
-                        NSString *content = body;
-                        UIImageView *imgView = [UIImageView.alloc initWithFrame:CGRectMake(100, 100, 50, 50)];
-                        content = [content componentsSeparatedByString:@","].lastObject;
-                        NSData *data = [NSData.alloc initWithBase64EncodedString:content options:0];
-                        imgView.image = [UIImage.alloc initWithData:data];
-                        [vc.view addSubview:imgView];
-                    }];
-                    
-                    
-                    /// 注入不区分时机,需要自己window.onload 调用
-                    //                    NSString *orgTitleJS = @"function ogTitle(){var metaTags=document.getElementsByTagName('meta');var content='';for(var i=0;i<metaTags.length;i++){if(metaTags[i].getAttribute('property')=='og:title'){content=metaTags[i].getAttribute('content');break}}return content;};window.onload = function(){alert(ogTitle());};";
-                    //
-                    NSString *js = @"function myAlert() {\
-                    var metaTags=document.getElementsByTagName('meta');\
-                    content = metaTags[1].getAttribute('content');\
-                    alert(content);\
-                    }window.onload = function(){myAlert();};";
-                    //                    WKUserScript *jsUserScript = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
-                    //                    [config.userContentController addUserScript:jsUserScript];
-                    
-                    
-                    //                    [vc evaluateJavaScript:orgTitleJS handler:^(id  _Nonnull data, NSError * _Nonnull error) {
-                    //                        NSLog(@"data = %@",data);
-                    //                    }];
-                    
-                    //                    [vc addScriptMessageWithName:@"orgTitle" handler:^(NSString * _Nonnull name, id  _Nonnull body) {
-                    //                        NSLog(@"orgTitle = %@",body);
-                    //                    }];
-                    
-                    //                    NSString *orgTitleJS = @"function ogTitle(){var metaTags=document.getElementsByTagName('meta');var content='';for(var i=0;i<metaTags.length;i++){if(metaTags[i].getAttribute('property')=='og:title'){content=metaTags[i].getAttribute('content');break}} alert(content); window.webkit.messageHandlers.orgTitle.postMessage(content);};};ogTitle();";
-                    
-                    NSString *orgTitleJS = @"window.onload = function () {\
-                    function orgTitle() {\
-                    var metaTags = document.getElementsByTagName('meta');\
-                    var content = '';\
-                    for (var i = 0; i < metaTags.length; i++) {\
-                    if (metaTags[i].getAttribute('property') == 'og:title') {\
-                    content = metaTags[i].getAttribute('content');\
-                    break;\
-                    }\
-                    }\
-                    alert(content);\
-                    window.webkit.messageHandlers.orgTitle.postMessage(content);\
-                    }\
-                    orgTitle();\
-                    };";
-                    
-                    //                    [vc evaluateJavaScript:orgTitleJS time:WKUserScriptInjectionTimeAtDocumentStart];
-                    
-                    //                    [vc evaluateJavaScript:@"document.title" handler:^(id  _Nonnull data, NSError * _Nonnull error) {
-                    //                        NSLog(@"title = %@",data);
-                    //                    }];
-                    
-                    //                    vc.URL = [NSURL URLWithString:@"https://www.toutiao.com/"];
-                    [self ax_pushVC:vc];
-                },
-                
-            },
-            
             
             @{
                 @"index": @9,
@@ -937,7 +863,7 @@ void mySLog(NSString *format, ...)
                     [DDLog addLogger:[DDTTYLogger sharedInstance]];
                     
                     DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
-                    fileLogger.rollingFrequency = 60 * 60 * 24;             // 24 hour rolling
+                    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
                     fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
                     [DDLog addLogger:fileLogger];
                     

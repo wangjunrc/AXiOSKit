@@ -128,7 +128,8 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
  * view
  */
 - (void)_initView{
-    
+    self.webView.navigationDelegate = self;
+    self.webView.UIDelegate = self;
     [self.view addSubview:self.webView];
     [self.view addSubview:self.progressView];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -671,8 +672,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         _webView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         //        [_webView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:NSKeyValueObservingOptionNew context:nil];
         //        [_webView addObserver:self forKeyPath:NSStringFromSelector(@selector(title)) options:NSKeyValueObservingOptionNew context:nil];
-        _webView.navigationDelegate = self;
-        _webView.UIDelegate = self;
+        
         _webView.allowsBackForwardNavigationGestures = YES; //允许右滑返回上个链接，左滑前进
         _webView.allowsLinkPreview = YES; //允许链接3D Touch
         _webView.customUserAgent = @"customUserAgent/1.0.0"; //自定义UA，UIWebView就没有此功能，
@@ -773,11 +773,11 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 }
 #pragma mark - dealloc
 - (void)dealloc{
-    [self.webView.configuration.userContentController removeAllUserScripts];
-    self.webView.scrollView.delegate = nil;
+//    [self.webView.configuration.userContentController removeAllUserScripts];
+//    self.webView.scrollView.delegate = nil;
     //    [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
     //    [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(title))];
-        axLong_dealloc;
+    axLong_dealloc;
 }
 
 //- (UIInterfaceOrientationMask)supportedInterfaceOrientations{

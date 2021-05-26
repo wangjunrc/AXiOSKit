@@ -2470,3 +2470,21 @@ auto类型的局部变量，可以被block捕获，但是不能修改值。
 __block可以解决block内部无法修改外部auto变量的问题。
 打印结果为 10,不正确
 ``` 
+## 判断代码执行完成
+判断UICollectionView 或 UITableView reload()结束
+```
+// push 完成回调
+[CATransaction setCompletionBlock:^{
+    self.pushing = NO;
+}];
+[CATransaction begin];
+if (!self.isPushing) {
+    [nav pushViewController:self.webViewController animated:YES];
+}
+[CATransaction commit];
+```
+## 判断指定系统
+```
+#if defined(__IPHONE_13_0) || defined(__IPHONE_13_1)
+#endif
+```

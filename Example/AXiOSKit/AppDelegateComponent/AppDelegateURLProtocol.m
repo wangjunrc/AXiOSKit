@@ -9,6 +9,9 @@
 #import "AppDelegateURLProtocol.h"
 #import <OHHTTPStubs/HTTPStubs.h>
 #import <OHHTTPStubs/HTTPStubsResponse+JSON.h>
+
+
+
 @implementation AppDelegateURLProtocol
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -29,6 +32,9 @@
     [HTTPStubs onStubActivation:^(NSURLRequest * _Nonnull request, id<HTTPStubsDescriptor>  _Nonnull stub, HTTPStubsResponse * _Nonnull responseStub) {
         NSLog(@"onStubActivation \n %@",request.URL);
     }];
+    
+   
+    
     return YES;
 }
 

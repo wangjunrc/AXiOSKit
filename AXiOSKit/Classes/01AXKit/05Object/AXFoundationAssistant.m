@@ -448,38 +448,3 @@ void AXNoMsgLog(NSString *format, ...) {
  打开iPhone设置界面
  */
 void AXOpenSettings() { ax_OpenURLStr(UIApplicationOpenSettingsURLString); }
-
-
-/// 是否 nil 或者 空
-/// 不要用分类, 为nil 时,不走分类方法
-BOOL ax_is_empty(id obj) {
-    if (obj == nil) {
-        return YES;
-    }
-    
-    if ((NSNull*)obj == [NSNull null]) {
-        return YES;
-    }
-    
-    if ([obj respondsToSelector:@selector(count)]) {
-        if ([(id)obj count] == 0) {
-            return YES;
-        }
-    }
-    
-    if ([obj respondsToSelector:@selector(length)]) {
-        if ([(id)obj length] == 0) {
-            return YES;
-        }
-    }
-    
-    return NO;
-}
-
-/// 是否不为 nil 或者 空
-BOOL ax_is_not_empty(id obj) {
-    return !ax_is_empty(obj);
-}
-
-
-

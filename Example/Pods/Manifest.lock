@@ -15,7 +15,6 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - Aspects (1.4.1)
-  - AvoidCrash (2.5.2)
   - AXCollectionObserve (1.1.0):
     - AXCollectionObserve/Core (= 1.1.0)
     - ReactiveObjC (>= 3.0.0)
@@ -199,7 +198,6 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - AvoidCrash
   - AXCollectionObserve (from `../../AXCollectionObserve`)
   - AXiOSKit (from `../`)
   - AXViewControllerTransitioning (from `../../AXViewControllerTransitioning`)
@@ -255,7 +253,6 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - Aspects
-    - AvoidCrash
     - Bagel
     - Canvas
     - CocoaAsyncSocket
@@ -332,7 +329,6 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
   AXCollectionObserve: 51b62accb05a67a9b2f34eaee5ffa3585f1b23f4
   AXiOSKit: cae7f5c2d873b3ba291df1d14108cd1e3f2090c6
   AXViewControllerTransitioning: a5b58c7504c9ef76298da0f5d3e908f330c9a9f9
@@ -395,6 +391,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 9f20de635891b56d39de27df815690659b2deebf
+PODFILE CHECKSUM: 96016b6db9ffb1022cbd613297e28dd137790f0b
 
 COCOAPODS: 1.10.1

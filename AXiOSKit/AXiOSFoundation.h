@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "AXFoundationAssistant.h"
+#import "AXObjCAssistant.h"
 #import "AXMacros.h"
 #import "CALayer+AXFrame.h"
 #import "NSArray+AXKit.h"

@@ -281,7 +281,7 @@
  @param parameter 参数
  @return path
  */
-- (NSString *)ax_pathAppendingWithParameter:(NSDictionary <NSString *, NSString *> *)parameter;
+- (NSString *)ax_pathAppendingWithParameter:(NSDictionary <NSString *, id > *)parameter;
 
 ///**
 // 含有Unicode的字串 to emoj 表情,用于显示

@@ -58,8 +58,8 @@ def ui_pods
   #pod 'ZLPhotoBrowser'
   
   pod 'SocketRocket'
-  # 安全集合
-  pod 'AvoidCrash'
+  # 安全集合,这个目前不维护了
+#  pod 'AvoidCrash'
   # 保护App
   pod 'JJException'
   

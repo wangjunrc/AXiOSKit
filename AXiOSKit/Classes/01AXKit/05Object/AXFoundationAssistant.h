@@ -114,17 +114,6 @@ int ax_randomZeroToValue(int to);
 int ax_randomFromTo(int from, int to);
 
 /**
- 是否 nil 或者 空
- 不要用分类, 为nil 时,不走分类方法
- */
-BOOL ax_is_empty(id obj);
-
-/**
- 是否不为 nil 或者 空
- */
-BOOL ax_is_not_empty(id obj);
-
-/**
  gcd 创建串行队列 queue
  
  @param label 队列标识
