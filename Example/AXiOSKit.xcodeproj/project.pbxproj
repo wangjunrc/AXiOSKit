@@ -504,7 +504,9 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		68C2F7BC9E5E137DE9375257 /* Pods_AXShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; };
 		EB35FDC131D922E7598E1FED /* Pods_AXiOSKit_Example_Env_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41677AA73910740D0E8B4ED8 /* Pods_AXiOSKit_Example_Env_1.framework */; };
+		F56153CB3F139C5B09652150 /* Pods_AXShare_Env_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7168D5D9E261A0C8CAFEA4C6 /* Pods_AXShare_Env_1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1018,6 +1020,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F56153CB3F139C5B09652150 /* Pods_AXShare_Env_1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1025,6 +1028,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68C2F7BC9E5E137DE9375257 /* Pods_AXShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2041,6 +2045,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21A61FB9265E82990080E67D /* Build configuration list for PBXNativeTarget "AXShare_Env_1" */;
 			buildPhases = (
+				EE85F7517B5B315DDE8104D0 /* [CP] Check Pods Manifest.lock */,
 				21A61FA9265E82990080E67D /* Sources */,
 				21A61FAA265E82990080E67D /* Frameworks */,
 				21A61FAB265E82990080E67D /* Resources */,
@@ -2058,6 +2063,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21A61FCE265E83A30080E67D /* Build configuration list for PBXNativeTarget "AXShare" */;
 			buildPhases = (
+				A7FB1A63E3D07CE432065048 /* [CP] Check Pods Manifest.lock */,
 				21A61FBE265E83A30080E67D /* Sources */,
 				21A61FBF265E83A30080E67D /* Frameworks */,
 				21A61FC0265E83A30080E67D /* Resources */,
@@ -2613,6 +2619,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A7FB1A63E3D07CE432065048 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AXShare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EBF4A77926ADA18D847D69E6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2755,6 +2783,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AXiOSKit_Example_Env_1/Pods-AXiOSKit_Example_Env_1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE85F7517B5B315DDE8104D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AXShare_Env_1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -3239,6 +3289,7 @@
 		};
 		21A61FBA265E82990080E67D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 548E7FB126D5CE891D6427E3 /* Pods-AXShare_Env_1.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3264,6 +3315,7 @@
 		};
 		21A61FBB265E82990080E67D /* Debug_β */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A89873BCFCA658F1E4BFBA94 /* Pods-AXShare_Env_1.debug_β.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3289,6 +3341,7 @@
 		};
 		21A61FBC265E82990080E67D /* Debug_α */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA8FE430D25D88C59F4ABA81 /* Pods-AXShare_Env_1.debug_α.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3314,6 +3367,7 @@
 		};
 		21A61FBD265E82990080E67D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05DC2DD6EBCB2965B712B9E1 /* Pods-AXShare_Env_1.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3340,6 +3394,7 @@
 		};
 		21A61FCF265E83A30080E67D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5702C260CA9B3EB5A545B13D /* Pods-AXShare.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3365,6 +3420,7 @@
 		};
 		21A61FD0265E83A30080E67D /* Debug_β */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F46E77FB5E55092459E10CE3 /* Pods-AXShare.debug_β.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3390,6 +3446,7 @@
 		};
 		21A61FD1265E83A30080E67D /* Debug_α */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C27350B1731A19B9572686E7 /* Pods-AXShare.debug_α.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3415,6 +3472,7 @@
 		};
 		21A61FD2265E83A30080E67D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FEB46C41B4385FEE5D71097 /* Pods-AXShare.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

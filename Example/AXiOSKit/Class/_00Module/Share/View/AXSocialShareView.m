@@ -8,7 +8,7 @@
 
 #import "AXSocialShareView.h"
 
-#import <AXiOSKit/AXUIAssistant.h>
+#import <AXiOSKit/UIKit+AXAssistant.h>
 #import <Masonry/Masonry.h>
 #import "AXSocialShareCell.h"
 

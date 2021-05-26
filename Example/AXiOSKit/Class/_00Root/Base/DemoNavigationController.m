@@ -10,7 +10,7 @@
 #import <AXiOSKit/AXiOSKit.h>
 #import <AXiOSKit/UIViewController+AXNavBarConfig.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-#import <AXiOSKit/AXFoundationAssistant.h>
+#import <AXiOSKit/NSObject+AXAssistant.h>
 @interface DemoNavigationController ()
 
 @end

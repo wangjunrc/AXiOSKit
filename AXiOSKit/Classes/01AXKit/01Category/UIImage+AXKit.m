@@ -7,7 +7,7 @@
 //
 
 #import "UIImage+AXKit.h"
-#import "AXUIAssistant.h"
+#import "UIKit+AXAssistant.h"
 @implementation UIImage (AXKit)
 
 /**

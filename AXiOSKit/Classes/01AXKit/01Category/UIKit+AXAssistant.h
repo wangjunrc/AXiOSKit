@@ -1,8 +1,8 @@
 //
-//  AXUIAssistant.h
+//  UIKit+AXAssistant.h
 //  AXiOSKit
 //
-//  Created by AXing on 2019/1/15.
+//  Created by axing on 2019/1/15.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 

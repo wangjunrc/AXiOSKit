@@ -12,7 +12,7 @@
 #import "AXMacros_addProperty.h"
 #import "UITextField+AXKit.h"
 #import "NSString+AXKit.h"
-#import "AXUIAssistant.h"
+#import "UIKit+AXAssistant.h"
 
 @implementation UITextField (AXNumberKeyboard)
 

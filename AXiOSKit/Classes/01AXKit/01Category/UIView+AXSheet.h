@@ -2,7 +2,7 @@
 //  UIView+AXSheet.h
 //  AXiOSKit
 //
-//  Created by AXing on 2019/3/1.
+//  Created by axing on 2019/3/1.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  NSError+AXKit.m
 //  AXiOSKit
 //
-//  Created by AXing on 2019/2/28.
+//  Created by axing on 2019/2/28.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 

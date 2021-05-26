@@ -2,7 +2,7 @@
 //  AXDataModel.m
 //  AXKit
 //
-//  Created by AXing on 2018/11/17.
+//  Created by axing on 2018/11/17.
 //  Copyright © 2018 liuweixing. All rights reserved.
 //
 

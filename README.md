@@ -2488,3 +2488,22 @@ if (!self.isPushing) {
 #if defined(__IPHONE_13_0) || defined(__IPHONE_13_1)
 #endif
 ```
+## 连续presentViewController 会log,不会奔溃
+```
+if (!self.presentedViewController){
+    UIViewController *vc = UIViewController.alloc.init;
+    if (@available(iOS 13.0, *)) {
+        if (vc.modalPresentationStyle == UIModalPresentationAutomatic
+            || vc.modalPresentationStyle == UIModalPresentationPageSheet) {
+            vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        }
+    }
+    
+    vc.view.backgroundColor = UIColor.redColor;
+    [self presentViewController: vc
+                       animated: NO
+                     completion:^{
+        
+    }];
+}
+```

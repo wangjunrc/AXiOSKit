@@ -2,13 +2,13 @@
 //  UIView+AXSheet.m
 //  AXiOSKit
 //
-//  Created by AXing on 2019/3/1.
+//  Created by axing on 2019/3/1.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
 #import "UIView+AXSheet.h"
-#import "AXFoundationAssistant.h"
-#import "AXUIAssistant.h"
+#import "NSObject+AXAssistant.h"
+#import "UIKit+AXAssistant.h"
 #if __has_include("Masonry.h")
 #import <Masonry/Masonry.h>
 #endif

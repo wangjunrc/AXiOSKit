@@ -6,8 +6,8 @@
 
 #import "MBProgressHUD+AX.h"
 #import "UIImage+AXBundle.h"
-#import "AXFoundationAssistant.h"
-#import "AXUIAssistant.h"
+#import "NSObject+AXAssistant.h"
+#import "UIKit+AXAssistant.h"
 #define MBPafterDelay 2
 #import <Lottie/Lottie.h>
 #import "NSBundle+AXBundle.h"

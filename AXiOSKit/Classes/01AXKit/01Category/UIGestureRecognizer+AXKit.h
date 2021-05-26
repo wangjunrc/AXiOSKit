@@ -2,7 +2,7 @@
 //  UIGestureRecognizer+AXKit.h
 //  AXiOSKit
 //
-//  Created by AXing on 2019/6/17.
+//  Created by axing on 2019/6/17.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 

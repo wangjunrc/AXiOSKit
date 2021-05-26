@@ -7,7 +7,7 @@
 //
 
 #import "AXFullLayout.h"
-#import "AXUIAssistant.h"
+#import "UIKit+AXAssistant.h"
 @implementation AXFullLayout
 
 - (void)invalidateLayout{

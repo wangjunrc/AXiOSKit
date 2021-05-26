@@ -2,7 +2,7 @@
 //  AXTripleInteractionViewController.h
 //  AXiOSKit
 //
-//  Created by AXing on 2019/6/29.
+//  Created by axing on 2019/6/29.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 // 三级联动

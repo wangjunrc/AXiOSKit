@@ -8,7 +8,7 @@
 #import "AXTextFieldObserve.h"
 #import "AXMacros_addProperty.h"
 #import "UITextField+AXKit.h"
-#import "AXFoundationAssistant.h"
+#import "NSObject+AXAssistant.h"
 
 @interface AXTextFieldObserve ()
 

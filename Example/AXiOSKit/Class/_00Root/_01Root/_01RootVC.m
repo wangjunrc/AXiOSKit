@@ -71,6 +71,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <mach/mach.h>
 #import "Person.h"
+#import <AXCollectionObserve/AXCollectionObserve.h>
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -137,6 +138,36 @@ typedef void (^CollectionBlock)(void);
     
     [RACObserve(btn,selected) subscribeNext:^(id _Nullable x) {
         NSLog(@"btn selected = %@",x);
+    }];
+    [RACObserve(self.tableView.indexPathsForSelectedRows,count) subscribeNext:^(id _Nullable x) {
+        NSLog(@"indexPathsForSelectedRows count = %@",x);
+    }];
+    [RACObserve(self.tableView,indexPathsForSelectedRows) subscribeNext:^(id _Nullable x) {
+        NSLog(@"indexPathsForSelectedRows = %@",x);
+    }];
+    
+    
+    //    rac_signalForSelector
+    //    -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //        if (tableView.isEditing) {
+    //            self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count;
+    //            return;
+    //        }
+    //    }
+    
+    
+    /* 1.代替代理 */
+    //   self.textField.delegate = self;
+    // 监听代理
+    [[self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:)fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple * _Nullable x) {
+        RACTupleUnpack(UITableView *tableView,NSIndexPath *indexPath) = x;
+        NSLog(@"监听实现的代理 = %@",x);
+        NSLog(@"监听实现的代理=%@,indexPath=%@",tableView,indexPath);
+    }];
+    
+    // 未实现代理的话,不能用来监听
+    [[self rac_signalForSelector:@selector(tableView:didDeselectRowAtIndexPath:)fromProtocol:@protocol(UITableViewDelegate)]subscribeNext:^(RACTuple * _Nullable x) {
+        NSLog(@"监听未实现的代理 = %@",x);
     }];
     
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],self.deleteItem];
@@ -290,16 +321,18 @@ typedef void (^CollectionBlock)(void);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    AXLogFunc;
     if (tableView.isEditing) {
         self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count;
         return;
     }
+    
     NSDictionary *dict = self.dataArray[indexPath.row];
     void (^action)(void) = dict[@"action"];
     action();
 }
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    AXLogFunc;
     if (tableView.isEditing) {
         self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count;
         return;
@@ -333,13 +366,13 @@ typedef void (^CollectionBlock)(void);
 
 /// iOS13是否允许多指选中
 
--(BOOL)tableView:(UITableView *)tableView shouldBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath {
+-(BOOL)tableView:(UITableView *)tableView shouldBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(13.0)){
     
     return YES;
 }
 
 /// iOS13多指选中开始，这里可以做一些UI修改，比如修改导航栏上按钮的文本
--(void)tableView:(UITableView *)tableView didBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath {
+-(void)tableView:(UITableView *)tableView didBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(13.0)){
     
     // 最后当用户选择完，要做某些操作的时候，我们可以用 tableView.indexPathsForSelectedRows 获取用户选择的 rows。
     
@@ -541,24 +574,24 @@ typedef void (^CollectionBlock)(void);
         _searchVC.searchBar.placeholder = @"头部搜索";
         
         // 2.设置searchBar的背景透明
-//        [_searchVC.searchBar setBackgroundImage:[UIImage new]];
-//        _searchVC.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+        //        [_searchVC.searchBar setBackgroundImage:[UIImage new]];
+        //        _searchVC.searchBar.searchBarStyle = UISearchBarStyleMinimal;
         
         // 3.设置搜索框文字的偏移
-//        _searchVC.searchBar.searchTextPositionAdjustment = UIOffsetMake(3, 0);
+        //        _searchVC.searchBar.searchTextPositionAdjustment = UIOffsetMake(3, 0);
         
         // 4.设置搜索框图标的偏移
-//        CGFloat offsetX = (self.view.bounds.size.width - 200 - 32) / 2;
-//        [_searchVC.searchBar setPositionAdjustment:UIOffsetMake(offsetX, 0) forSearchBarIcon:UISearchBarIconSearch];
+        //        CGFloat offsetX = (self.view.bounds.size.width - 200 - 32) / 2;
+        //        [_searchVC.searchBar setPositionAdjustment:UIOffsetMake(offsetX, 0) forSearchBarIcon:UISearchBarIconSearch];
         
         // 5.取消按钮和文本框光标颜色
-//        _searchVC.searchBar.tintColor = [UIColor blackColor];
+        //        _searchVC.searchBar.tintColor = [UIColor blackColor];
         
         // 6.设置搜索文本框背景图片 [圆形的文本框只需要设置一张圆角图片就可以了]
         //        [_searchVC.searchBar setSearchFieldBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor] size:CGSizeMake(self.view.bounds.size.width - 32, 36) isRound:YES] forState:UIControlStateNormal];
         // 7.设置搜索按钮图片
-//        UIImage *searchImg = [[UIImage imageNamed:@"ax_icon_weixin"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//        [_searchVC.searchBar setImage:searchImg forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+        //        UIImage *searchImg = [[UIImage imageNamed:@"ax_icon_weixin"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        //        [_searchVC.searchBar setImage:searchImg forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
         // 8.拿到搜索文本框
         //        UITextField *searchField = [_searchVC.searchBar valueForKey:@"_searchField"];
         //        // 9.设置取消按钮文字

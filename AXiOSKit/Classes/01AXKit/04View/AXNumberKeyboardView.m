@@ -6,7 +6,7 @@
 //
 
 #import "AXNumberKeyboardView.h"
-#import "AXUIAssistant.h"
+#import "UIKit+AXAssistant.h"
 #import "UIImage+AXBundle.h"
 #import "NSBundle+AXBundle.h"
 #import <Masonry/Masonry.h>

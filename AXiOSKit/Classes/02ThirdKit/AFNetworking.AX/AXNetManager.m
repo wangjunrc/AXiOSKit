@@ -9,7 +9,7 @@
 #import "AXNetManager.h"
 #import "AXMacros.h"
 #import "UIViewController+AXAlert.h"
-#import "AXUIAssistant.h"
+#import "UIKit+AXAssistant.h"
 
 NSString *const AXNetLoadTitle = @"Loading...";
 NSString *const AXNetFailureText = @"网络连接错误";

@@ -1,12 +1,12 @@
 //
-//  AXFoundationAssistant.m
+//  NSObject+AXAssistant.m
 //  AXiOSKit
 //
-//  Created by AXing on 2019/7/26.
+//  Created by axing on 2019/7/26.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
-#import "AXFoundationAssistant.h"
+#import "NSObject+AXAssistant.h"
 #import "AXMacros_log.h"
 #import "NSBundle+AXBundle.h"
 #include <libkern/OSAtomic.h>

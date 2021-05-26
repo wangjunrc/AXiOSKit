@@ -2,7 +2,7 @@
 //  AXWebScriptMessageModel.h
 //  AXiOSKit
 //
-//  Created by AXing on 2019/4/30.
+//  Created by axing on 2019/4/30.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  AXCrashProcessManager.m
 //  AXiOSKit
 //
-//  Created by AXing on 2019/1/20.
+//  Created by axing on 2019/1/20.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 

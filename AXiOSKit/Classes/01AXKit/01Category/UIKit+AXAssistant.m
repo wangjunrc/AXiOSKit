@@ -1,12 +1,12 @@
 //
-//  AXUIAssistant.m
+//  UIKit+AXAssistant.m
 //  AXiOSKit
 //
-//  Created by AXing on 2019/1/15.
+//  Created by axing on 2019/1/15.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
-#import "AXUIAssistant.h"
+#import "UIKit+AXAssistant.h"
 #import "UIViewController+AXKit.h"
 
 CGFloat ax_screen_scale(void) {

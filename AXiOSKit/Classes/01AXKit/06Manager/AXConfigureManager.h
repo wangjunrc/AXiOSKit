@@ -2,7 +2,7 @@
 //  AXConfigureManager.h
 //  AXKit
 //
-//  Created by AXing on 2018/12/4.
+//  Created by axing on 2018/12/4.
 //  Copyright © 2018 liuweixing. All rights reserved.
 //
 

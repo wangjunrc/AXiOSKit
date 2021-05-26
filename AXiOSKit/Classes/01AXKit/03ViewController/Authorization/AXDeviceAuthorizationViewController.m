@@ -2,12 +2,12 @@
 //  AXDeviceAuthorizationViewController.m
 //  AXiOSKit
 //
-//  Created by AXing on 2019/7/13.
+//  Created by axing on 2019/7/13.
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
 #import "AXDeviceAuthorizationViewController.h"
-#import "AXFoundationAssistant.h"
+#import "NSObject+AXAssistant.h"
 
 @interface AXDeviceAuthorizationViewController ()
 
