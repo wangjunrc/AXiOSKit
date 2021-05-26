@@ -23,9 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)_loadCenterXWithView:(UIView *)aView size:(CGSize )size;
 
--(void )_buttonTitle:(NSString *)title handler:(void(^)(UIButton *btn))handler;
+-(UIButton *)_buttonTitle:(NSString *)title handler:(void(^)(UIButton *btn))handler;
 
--(void )_titlelabel:(NSString *)title;
+-(UILabel *)_titlelabel:(NSString *)title;
 
 /// 子约束最后调用一下
 -(void)_lastLoadBottomAttribute;

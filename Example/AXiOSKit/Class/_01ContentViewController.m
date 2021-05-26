@@ -55,7 +55,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-//    self.navigationController.navigationBarHidden = YES;
+    //    self.navigationController.navigationBarHidden = YES;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -730,7 +730,7 @@
 
 - (void)_p03LocationManager {
     __weak typeof(self) weakSelf = self;
-    return [self _buttonTitle:@"定位" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"定位" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         strongSelf.locationManager =   [AXLocationManager managerWithState:AXLocationStateWhenInUseAuthorization result:^(BOOL resultState, CLLocation *location) {
             NSLog(@"定位 = %@", location);
@@ -740,7 +740,7 @@
 
 - (void)_p03wifi {
     __weak typeof(self) weakSelf = self;
-    return [self _buttonTitle:@"wifi信息" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"wifi信息" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _WiFi];
     }];
@@ -854,7 +854,7 @@
 
 - (void)_p05DateVC {
     __weak typeof(self) weakSelf = self;
-    return [self _buttonTitle:@"date" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"date" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         AXDateVC *vc = [[AXDateVC alloc]init];
         [strongSelf ax_showVC:vc];
@@ -863,7 +863,7 @@
 
 - (void)_p06per {
     //    __weak typeof(self) weakSelf = self;
-    return [self _buttonTitle:@"奔溃拦截" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"奔溃拦截" handler:^(UIButton * _Nonnull btn) {
         //        __strong typeof(weakSelf) strongSelf = weakSelf;
         //        [self performSelector:@selector(test:age:age2:) withObjects:@[@"JIM",@"20"]];
         //        id obj =[self performSelector:@selector(application:didFinishLaunchingWithOptions:) withObjects:@[@"JIM",@"20"]];
@@ -891,7 +891,7 @@
 
 - (void)_p08china {
     __weak typeof(self) weakSelf = self;
-    return [self _buttonTitle:@"中英文排序" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"中英文排序" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _chinaText];
     }];
@@ -988,7 +988,7 @@
 }
 
 - (void)_p10flieExist {
-    return [self _buttonTitle:@"字符串是否包含另一字符串,不区分大小写" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"字符串是否包含另一字符串,不区分大小写" handler:^(UIButton * _Nonnull btn) {
         NSString *string = @"HelloChina";
         if ([string localizedCaseInsensitiveContainsString:@"OCHI"]) {
             NSLog(@"localizedCaseInsensitiveContainsString 包含");
@@ -1096,7 +1096,7 @@
 
 - (void)_p13MoreAlter {
     __weak typeof(self) weakSelf = self;
-    return [self _buttonTitle:@"多个alert" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"多个alert" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         // 第一个UIAlertController
         UIAlertController *alertController1 = [UIAlertController alertControllerWithTitle:@"测试1" message:@"测试1" preferredStyle:UIAlertControllerStyleAlert];
@@ -1119,7 +1119,7 @@
 
 - (void)_p14xmlToObj {
     //    __weak typeof(self) weakSelf = self;
-    return [self _buttonTitle:@"xml解析" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"xml解析" handler:^(UIButton * _Nonnull btn) {
         //        __strong typeof(weakSelf) strongSelf = weakSelf;
         
         NSString *path = [[NSBundle mainBundle]pathForResource:@"testXML" ofType:@"xml"];
@@ -1151,20 +1151,20 @@
 -(void)_15OtherTest {
     __weak typeof(self) weakSelf = self;
     
-   {
-       UIButton *btn = [[UIButton alloc] init];
-       [self.containerView addSubview:btn];
-       btn.backgroundColor = UIColor.blueColor;
-       [btn ax_setTitleStateNormal:@"UIButton间距"];
-//       [btn ax_setImageStateNormal:@"西瓜"];
-       btn.contentEdgeInsets = UIEdgeInsetsMake(100, 100, 50, 20);
-       [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-           make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
-           make.centerX.mas_equalTo(0);
-//           make.height.mas_equalTo(40);
-       }];
-       self.bottomAttribute =  btn.mas_bottom;
-   }
+    {
+        UIButton *btn = [[UIButton alloc] init];
+        [self.containerView addSubview:btn];
+        btn.backgroundColor = UIColor.blueColor;
+        [btn ax_setTitleStateNormal:@"UIButton间距"];
+        //       [btn ax_setImageStateNormal:@"西瓜"];
+        btn.contentEdgeInsets = UIEdgeInsetsMake(100, 100, 50, 20);
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.centerX.mas_equalTo(0);
+            //           make.height.mas_equalTo(40);
+        }];
+        self.bottomAttribute =  btn.mas_bottom;
+    }
     
     /// 会弹出 "想要查找并连接到本地网络上的设备" 弹窗
     [self _titlelabel:@"会弹出 \"想要查找并连接到本地网络上的设备\" 弹窗"];
@@ -1585,13 +1585,13 @@
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
         
-      CGFloat height = [@"汉" ax_sizeWithaFont:label.font].height;
+        CGFloat height = [@"汉" ax_sizeWithaFont:label.font].height;
         
         make.height.mas_equalTo(height*2);
     }];
     self.bottomAttribute = label.mas_bottom;
     
-
+    
     
     {
         UITextView *textView = UITextView.alloc.init;
@@ -1600,36 +1600,36 @@
         
         
         
-//        NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-//
-//            paragraphStyle.lineSpacing = 20;// 字体的行间距
-//
-//            NSDictionary *attributes = @{
-//                                         NSFontAttributeName:[UIFont systemFontOfSize:17],
-//                                         NSParagraphStyleAttributeName:paragraphStyle
-//                                         };
-//            textView.typingAttributes = attributes;
-//
-//        textView.text = @"UITextView第一行\n第二行";
-//        textView.delegate = self;
+        //        NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
+        //
+        //            paragraphStyle.lineSpacing = 20;// 字体的行间距
+        //
+        //            NSDictionary *attributes = @{
+        //                                         NSFontAttributeName:[UIFont systemFontOfSize:17],
+        //                                         NSParagraphStyleAttributeName:paragraphStyle
+        //                                         };
+        //            textView.typingAttributes = attributes;
+        //
+        //        textView.text = @"UITextView第一行\n第二行";
+        //        textView.delegate = self;
         
         
-//        textView.font = [UIFont systemFontOfSize:18];
-//
-//        textView.layer.borderWidth = 1;
-//        textView.layer.borderColor = [UIColor blueColor].CGColor;
-//        textView.cm_placeholder =  @"placeholder";
-//        textView.cm_placeholderColor = [UIColor redColor];
-//    //    _inputView.cm_autoLineBreak = YES;
-//        textView.cm_maxNumberOfLines = 3;
-
+        //        textView.font = [UIFont systemFontOfSize:18];
+        //
+        //        textView.layer.borderWidth = 1;
+        //        textView.layer.borderColor = [UIColor blueColor].CGColor;
+        //        textView.cm_placeholder =  @"placeholder";
+        //        textView.cm_placeholderColor = [UIColor redColor];
+        //    //    _inputView.cm_autoLineBreak = YES;
+        //        textView.cm_maxNumberOfLines = 3;
+        
         
         [textView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
             make.left.mas_equalTo(20);
             make.right.mas_equalTo(-20);
-//          CGFloat height = [@"汉" ax_sizeWithaFont:label.font].height;
-//            make.height.mas_equalTo(height*2);
+            //          CGFloat height = [@"汉" ax_sizeWithaFont:label.font].height;
+            //            make.height.mas_equalTo(height*2);
         }];
         self.bottomAttribute = textView.mas_bottom;
     }
@@ -1672,27 +1672,27 @@
         }
     }else{
         
-            height = [self heightForTextView:textView WithText:[NSString stringWithFormat:@"%@%@",textView.text,text]];
+        height = [self heightForTextView:textView WithText:[NSString stringWithFormat:@"%@%@",textView.text,text]];
     }
-
+    
     frame.size.height = height;
     [UIView animateWithDuration:0.5 animations:^{
         
-            textView.frame = frame;
+        textView.frame = frame;
         
-        } completion:nil];
+    } completion:nil];
     
     return YES;
 }
 
 - (float) heightForTextView: (UITextView *)textView WithText: (NSString *) strText{
-  CGSize constraint = CGSizeMake(textView.contentSize.width , CGFLOAT_MAX);
-  CGRect size = [strText boundingRectWithSize:constraint
-                                           options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
-                                        attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]}
-                                           context:nil];
-  float textHeight = size.size.height + 22.0;
-  return textHeight;
+    CGSize constraint = CGSizeMake(textView.contentSize.width , CGFLOAT_MAX);
+    CGRect size = [strText boundingRectWithSize:constraint
+                                        options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                     attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]}
+                                        context:nil];
+    float textHeight = size.size.height + 22.0;
+    return textHeight;
 }
 
 

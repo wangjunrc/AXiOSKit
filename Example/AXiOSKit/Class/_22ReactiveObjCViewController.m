@@ -33,6 +33,37 @@
  //获得属性key
  @keypath()
  
+ 
+ // 方法一：
+ RACChannelTo(view, property) = RACChannelTo(model, property);
+ 
+ // 方法二：（与方法一完全等价）
+ [[RACKVOChannel alloc] initWithTarget:view keyPath:@"property" nilValue:nil][@"followingTerminal"]
+ = [[RACKVOChannel alloc] initWithTarget:model keyPath:@"property" nilValue:nil][@"followingTerminal"];
+ 
+ // 方法三：（中间需要做一些映射转换的）
+ RACChannelTerminal *channelA = RACChannelTo(self, valueA);
+ RACChannelTerminal *channelB = RACChannelTo(self, valueB);
+ 
+ // valueA: On表示打开，Off表示关闭
+ // valueB: 1表示打开，0表示关闭
+ 
+ [[channelA map:^id(NSString *value) {
+ if ([value isEqualToString:@"On"]) {
+ return @"1";
+ } else {
+ return @"0";
+ }
+ }] subscribe:channelB];
+ 
+ [[channelB map:^id(NSString *value) {
+ if ([value isEqualToString:@"1"]) {
+ return @"On";
+ } else {
+ return @"Off";
+ }
+ }] subscribe:channelA];
+ 
  */
 /**
  *  bind：
@@ -973,22 +1004,48 @@
         make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
         make.centerX.mas_equalTo(0);
     }];
-    
     self.bottomAttribute =  aSwitch.mas_bottom;
     
-    NSLog(@"进入 key = %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"]);
+    
+    NSString *text=[NSString stringWithFormat:@"NSUserDefaults值=%@",[NSUserDefaults.standardUserDefaults objectForKey:@"someBoolKey"]];
+    UILabel *textLabel = [self _titlelabel:text];
+    NSLog(@"进入 key = %@",[NSUserDefaults.standardUserDefaults objectForKey:@"someBoolKey"]);
+    //    [[RACKVOChannel alloc] initWithTarget:NSUserDefaults.standardUserDefaults
+    //                                      keyPath:@"someBoolKey" nilValue:@(NO)][@"followingTerminal"] = [[RACKVOChannel alloc] initWithTarget:aSwitch keyPath:@"on" nilValue:@(NO)][@"followingTerminal"];
+    //    RACChannelTo(aSwitch,on,NO) = RACChannelTo(NSUserDefaults.standardUserDefaults ,);
+    
+    // 上面的不能完全实现双向绑定，因为 UISwitch 的 on 属性是不支持 KVO 的
     /// UISwitch 双向绑定
     RACChannelTerminal *switchTerminal = aSwitch.rac_newOnChannel;
-    RACChannelTerminal *defaultsTerminal = [[NSUserDefaults standardUserDefaults] rac_channelTerminalForKey:@"someBoolKey"];
+    RACChannelTerminal *defaultsTerminal = [NSUserDefaults.standardUserDefaults rac_channelTerminalForKey:@"someBoolKey"];
     [switchTerminal subscribe:defaultsTerminal];
     [defaultsTerminal subscribe:switchTerminal];
-    /// 监听变化
+    /// 监听变化 ,这里有时候反应慢,用rac_channelTerminalForKey 监听
     [aSwitch.rac_newOnChannel subscribeNext:^(NSNumber *onValue) {
         // 下面两句都可以
         //            [someSwitch setValue:onValue forKey:@"on"];
-        //[[NSUserDefaults standardUserDefaults] setObject:onValue forKey:@"someBoolKey"];
-        NSLog(@"isOn = %d  key =%@",aSwitch.isOn,[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"]);
+        //[NSUserDefaults.standardUserDefaults setObject:onValue forKey:@"someBoolKey"];
+        
+        NSString *text=[NSString stringWithFormat:@"NSUserDefaults值=%@",[NSUserDefaults.standardUserDefaults objectForKey:@"someBoolKey"]];
+        NSLog(@"aSwitch On = %d, someBoolKey =%@",aSwitch.isOn,text);
+        textLabel.text = text;
+        
     }];
+    [[[NSUserDefaults.standardUserDefaults rac_channelTerminalForKey:@"someBoolKey"] deliverOnMainThread]subscribeNext:^(id  _Nullable x) {
+        NSLog(@"someBoolKey=%@",x);
+        NSString *text=[NSString stringWithFormat:@"NSUserDefaults-2-值=%@",x];
+        textLabel.text = text;
+    }];
+    //    [[NSUserDefaults.standardUserDefaults rac_channelTerminalForKey:@"someBoolKey"] subscribeNext:^(id  _Nullable x) {
+    //
+    //        dispatch_async(dispatch_get_main_queue(), ^{
+    //            NSLog(@"someBoolKey=%@",x);
+    //            NSString *text=[NSString stringWithFormat:@"NSUserDefaults-2-值=%@",x];
+    //            textLabel.text = text;
+    //        });
+    //
+    //    }];
+    
 }
 
 -(void)_note {
@@ -1054,7 +1111,8 @@
 }
 - (void)_group {
     __weak typeof(self) weakSelf = self;
-    [self _buttonTitle:@"异步组" handler:^(UIButton * _Nonnull btn) {
+    [self _titlelabel:@"_group模拟网络请求,所有子完成才completed,任何一个错误,走error"];
+    [self _buttonTitle:@"_group发送" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _groupRac];
     }];
@@ -1088,18 +1146,22 @@
     RACSignal *sg3 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            //            [subscriber sendNext:@"网络请求数据3"];
-            [subscriber sendError:[NSError ax_errorWithDescription:@"错误"]];
+            if (ax_randomZeroToValue(2)%2 == 0) {
+                [subscriber sendNext:@"网络请求数据3"];
+            }else{
+                [subscriber sendError:[NSError ax_errorWithDescription:@"网络请求数据3-错误"]];
+            }
             [subscriber sendCompleted];
         });
         return nil;
     }];
     
     //    [self rac_liftSelector:@selector(updateUI:str:str:) withSignals:sg1,sg2,sg3, nil];
-    //    [self rac_liftSelector:@selector(updateUI:str:str:) withSignalsFromArray:@[sg1,sg2,sg3]];
-    //    [self rac_liftSelector:@selector(updateUI:) withSignalsFromArray:@[sg1,sg2,sg3]];
+    // 这个不能处理错误情况
+    //        [self rac_liftSelector:@selector(updateUI:str:str:) withSignalsFromArray:@[sg1,sg2,sg3]];
+    //        [self rac_liftSelector:@selector(updateUI:) withSignalsFromArray:@[sg1,sg2,sg3]];
     RACTuple *tu = [RACTuple tupleWithObjectsFromArray:@[sg1,sg2,sg3]];
-    //    [self rac_liftSelector:@selector(updateUI:) withSignalOfArguments:];
+    //        [self rac_liftSelector:@selector(updateUI:) withSignalOfArguments:];
     
     //   [ @[sg1,sg2,sg3].rac_sequence map:^id _Nullable(id  _Nullable value) {
     //       NSLog(@"信号组一个参数 = %@",value);
@@ -1109,9 +1171,17 @@
     //        NSLog(@"array 遍历 = %@", x);
     //    }];
     
+    //    [[RACSignal concat:@[sg1,sg2,sg3]] subscribeNext:^(id  _Nullable x) {
+    //        NSLog(@"array 遍历 = %@", x);
+    //
+    //    } completed:^{
+    //        NSLog(@"array 遍历 completed");
+    //    }];
+    // 也可以 [RACSignal concat:tu]
     [[RACSignal concat:@[sg1,sg2,sg3]] subscribeNext:^(id  _Nullable x) {
         NSLog(@"array 遍历 = %@", x);
-        
+    } error:^(NSError * _Nullable error) {
+        NSLog(@"array 遍历 error%@",error);
     } completed:^{
         NSLog(@"array 遍历 completed");
     }];
@@ -1125,19 +1195,17 @@
     //    }];
 }
 
--(void)updateUI:(id)str1
-{
+-(void)updateUI:(id)str1,...{
     
     // 回传过来
     NSLog(@"信号组一个参数 = %@",str1);
     
 }
 
-- (void)updateUI:(id)str1 str:(id)str2 str:(id)str3
-{
+- (void)updateUI:(id)str1 str:(id)str2 str:(id)str3{
     
     // 回传过来
-    NSLog(@"信号组 = %@-%@-%@",str1,str2,str3);
+    NSLog(@"都完成 = %@-%@-%@",str1,str2,str3);
     
 }
 
@@ -1279,8 +1347,8 @@
     /// UITextView 双向绑定
     RACChannelTo(label2, text) = RACChannelTo(textView, text);
     [textView.rac_textSignal subscribe:RACChannelTo(label2, text)];
-    //    [someSwitch setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"] forKey:@"on"];
-    //    [[RACKVOChannel alloc] initWithTarget:[NSUserDefaults standardUserDefaults]
+    //    [someSwitch setValue:[NSUserDefaults.standardUserDefaults objectForKey:@"someBoolKey"] forKey:@"on"];
+    //    [[RACKVOChannel alloc] initWithTarget:NSUserDefaults.standardUserDefaults
     //                                      keyPath:@"someBoolKey" nilValue:@(NO)][@"followingTerminal"] = [[RACKVOChannel alloc] initWithTarget:someSwitch keyPath:@"on" nilValue:@(NO)][@"followingTerminal"];
     //
     //    // 上面的不能完全实现双向绑定，因为 UISwitch 的 on 属性是不支持 KVO 的
@@ -1290,8 +1358,8 @@
     //
     //        // 下面两句都可以
     //        [someSwitch setValue:onValue forKey:@"on"];
-    //        //[[NSUserDefaults standardUserDefaults] setObject:onValue forKey:@"someBoolKey"];
-    //        NSLog(@"key = %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"someBoolKey"]);
+    //        //[NSUserDefaults.standardUserDefaults setObject:onValue forKey:@"someBoolKey"];
+    //        NSLog(@"key = %@",[NSUserDefaults.standardUserDefaults objectForKey:@"someBoolKey"]);
     //    }];
     
     

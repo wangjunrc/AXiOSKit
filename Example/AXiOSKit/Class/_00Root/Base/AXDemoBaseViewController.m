@@ -79,7 +79,7 @@
 }
 
 
--(void )_buttonTitle:(NSString *)title handler:(void(^)(UIButton *btn))handler {
+-(UIButton *)_buttonTitle:(NSString *)title handler:(void(^)(UIButton *btn))handler {
     if (title.length==0) {
         title = @"title";
     }
@@ -100,9 +100,10 @@
         }
     }];
     self.bottomAttribute =  btn.mas_bottom;
+    return btn;
 }
 
--(void )_titlelabel:(NSString *)title {
+-(UILabel *)_titlelabel:(NSString *)title {
     
     UILabel *label = UILabel.alloc.init;
     [self.containerView addSubview:label];
@@ -117,6 +118,7 @@
         make.right.mas_lessThanOrEqualTo(-5);
     }];
     self.bottomAttribute =  label.mas_bottom;
+    return label;
 }
 
 -(void)_loadConstraintsWithView:(UIView *)aView {

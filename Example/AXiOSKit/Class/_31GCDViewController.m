@@ -170,7 +170,7 @@
     return _number;
 }
 -(void)_p13NSBlockOperation {
-    return [self _buttonTitle:@"存取钱" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"存取钱" handler:^(UIButton * _Nonnull btn) {
         
         [self tickets];
     }];
@@ -239,7 +239,7 @@
 }
 
 -(void)_p14NSBlockOperation {
-    return [self _buttonTitle:@"属性加锁" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"属性加锁" handler:^(UIButton * _Nonnull btn) {
         
         self.concurrentQueue = dispatch_queue_create("com.person.syncQueue", DISPATCH_QUEUE_CONCURRENT);
         
@@ -262,7 +262,7 @@
     
 }
 -(void)_p15NSBlockOperation {
-    return [self _buttonTitle:@"NSBlockOperation" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"NSBlockOperation" handler:^(UIButton * _Nonnull btn) {
         
         //2.NSBlockOperation(最常使用)
         NSBlockOperation * blockOp = [NSBlockOperation blockOperationWithBlock:^{
@@ -293,7 +293,7 @@
 }
 
 -(void)_p16NSBlockOperation {
-    return [self _buttonTitle:@"NSOperationQueue222" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"NSOperationQueue222" handler:^(UIButton * _Nonnull btn) {
         // 1.创建队列
         NSOperationQueue *queue = [[NSOperationQueue alloc] init];
         
@@ -321,7 +321,7 @@
 }
 
 -(void)_p17NSBlockOperation {
-    return [self _buttonTitle:@"NSBlockOperation 依赖" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"NSBlockOperation 依赖" handler:^(UIButton * _Nonnull btn) {
         //创建队列
         NSOperationQueue *queue=[[NSOperationQueue alloc] init];
         //创建操作
@@ -367,30 +367,30 @@
     NSMutableArray *arr = NSMutableArray.array;
     
     dispatch_async(concurrentQueue, ^(){
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSLog(@"dispatch-1");
-            [arr addObject:@"dispatch-1"];
-//        });
+        //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"dispatch-1");
+        [arr addObject:@"dispatch-1"];
+        //        });
     });
     
-   
-//    dispatch_async(concurrentQueue, ^(){
-//
-//
-//
-//    });
+    
+    //    dispatch_async(concurrentQueue, ^(){
+    //
+    //
+    //
+    //    });
     
     dispatch_barrier_async(concurrentQueue, ^(){
-      
+        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), concurrentQueue, ^{
             NSLog(@"dispatch-2");
             [arr addObject:@"dispatch-2"];
         });
     });
     
-//    dispatch_barrier_async不会阻塞当前线程，block添加到queue中后就会立即返回执行线程中后面的方法，
-//    ，dispatch_barrier_sync会卡住当前线程，
-
+    //    dispatch_barrier_async不会阻塞当前线程，block添加到queue中后就会立即返回执行线程中后面的方法，
+    //    ，dispatch_barrier_sync会卡住当前线程，
+    
     
     
     dispatch_barrier_sync(concurrentQueue, ^(){
@@ -421,7 +421,7 @@
     NSMutableArray *arr = NSMutableArray.array;
     
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSLog(@"dispatch-2");
         [arr addObject:@"dispatch-2"];
@@ -429,23 +429,23 @@
         dispatch_semaphore_signal(semaphore);
         
     });
-
-
+    
+    
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-
-//    FMDBRetain(self);
-//
-//    dispatch_sync(_queue, ^() {
-//
-//        FMDatabase *db = [self database];
-//        block(db);
-//
-//        if ([db hasOpenResultSets]) {
-//            DDLogCInfo(@"Warning: there is at least one open result set around after performing [FMDatabaseQueue inDatabase:]");
-//        }
-//    });
-//
-//    FMDBRelease(self);
+    
+    //    FMDBRetain(self);
+    //
+    //    dispatch_sync(_queue, ^() {
+    //
+    //        FMDatabase *db = [self database];
+    //        block(db);
+    //
+    //        if ([db hasOpenResultSets]) {
+    //            DDLogCInfo(@"Warning: there is at least one open result set around after performing [FMDatabaseQueue inDatabase:]");
+    //        }
+    //    });
+    //
+    //    FMDBRelease(self);
     
     
     return arr;

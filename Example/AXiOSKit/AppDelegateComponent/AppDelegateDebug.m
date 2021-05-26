@@ -121,10 +121,10 @@
 //    //监听通知:AvoidCrashNotification, 获取AvoidCrash捕获的崩溃日志的详细信息
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealwithCrashMessage:) name:AvoidCrashNotification object:nil];
     
-    [JJException configExceptionCategory:JJExceptionGuardAll];
-    [JJException startGuardException];
-
-    [JJException registerExceptionHandle:self];
+//    [JJException configExceptionCategory:JJExceptionGuardAll];
+//    [JJException startGuardException];
+//
+//    [JJException registerExceptionHandle:self];
     return YES;
 }
 
