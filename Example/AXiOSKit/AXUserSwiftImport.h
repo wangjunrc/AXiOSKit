@@ -10,6 +10,13 @@
 #define AXUserSwiftImport_h
 
 //调用swift, 不可见文件
+
+
+#if __has_include("AXiOSKit_Example-Swift.h")
 #import "AXiOSKit_Example-Swift.h"
+#elif __has_include("AXiOSKit_Example_Env_1-Swift.h")
+#import "AXiOSKit_Example_Env_1-Swift.h"
+#endif
+
 
 #endif /* AXUserSwiftImport_h */
