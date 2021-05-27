@@ -1,9 +1,9 @@
 {
   "name": "AXiOSKit",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "summary": "个人开发工具类",
   "description": "封装UIKit等个人开发工具类",
-  "homepage": "https://gitee.com/axinger",
+  "homepage": "https://github.com/axinger",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -16,12 +16,11 @@
   },
   "requires_arc": true,
   "source": {
-    "git": "https://gitee.com/axinger/AXiOSKit.git",
+    "git": "https://github.com/axinger/AXiOSKit.git",
     "tag": "#{s.version}"
   },
-  "source_files": "AXiOSKit/**/*.{h,m}",
-  "exclude_files": "AXiOSKit/AXiOSKit/Info.plist",
   "public_header_files": "AXiOSKit/AXiOSKit/AXiOSKit.h",
+  "source_files": "AXiOSKit/**/*.{h,m}",
   "resources": [
     "AXiOSKit/**/*.xib",
     "AXiOSKit/**/*.nib",
@@ -34,49 +33,60 @@
       "AXiOSKit/README/*.{md}"
     ]
   },
-  "frameworks": [
-    "Foundation",
-    "UIKit"
-  ],
-  "dependencies": {
-    "AFNetworking": [
-      "~> 4.0.0"
-    ],
-    "SDWebImage": [
+  "subspecs": [
+    {
+      "name": "Foundation",
+      "public_header_files": "AXiOSKit/AXiOSKit/AXiOSFoundation.h",
+      "source_files": "AXiOSKit/Foundation/**/*.{h,m}",
+      "frameworks": "Foundation"
+    },
+    {
+      "name": "Kit",
+      "dependencies": {
+        "AXiOSKit/Foundation": [
 
-    ],
-    "MJRefresh": [
+        ],
+        "AFNetworking": [
+          "~> 4.0.0"
+        ],
+        "SDWebImage": [
 
-    ],
-    "NullSafe": [
+        ],
+        "MJRefresh": [
 
-    ],
-    "MJExtension": [
+        ],
+        "NullSafe": [
 
-    ],
-    "MBProgressHUD": [
+        ],
+        "MJExtension": [
 
-    ],
-    "DZNEmptyDataSet": [
+        ],
+        "MBProgressHUD": [
 
-    ],
-    "KVOController": [
+        ],
+        "DZNEmptyDataSet": [
 
-    ],
-    "Masonry": [
+        ],
+        "Masonry": [
 
-    ],
-    "Aspects": [
+        ],
+        "Aspects": [
 
-    ],
-    "ReactiveObjC": [
-      ">= 3.0.0"
-    ],
-    "AXViewControllerTransitioning": [
+        ],
+        "ReactiveObjC": [
+          ">= 3.0.0"
+        ],
+        "AXViewControllerTransitioning": [
 
-    ],
-    "lottie-ios": [
-      "~>2.5.3"
-    ]
-  }
+        ],
+        "lottie-ios": [
+          "~>2.5.3"
+        ]
+      },
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ]
+    }
+  ]
 }

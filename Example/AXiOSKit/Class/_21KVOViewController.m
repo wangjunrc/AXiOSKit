@@ -9,7 +9,7 @@
 #import "_21KVOViewController.h"
 #import <Masonry/Masonry.h>
 #import <AXiOSKit/AXiOSKit.h>
-#import <KVOController/KVOController.h>
+//#import <KVOController/KVOController.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <AXCollectionObserve/AXCollectionObserve.h>
 @interface _21KVOViewController ()

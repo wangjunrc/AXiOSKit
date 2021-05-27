@@ -1,0 +1,34 @@
+use_frameworks!
+
+platform :ios, '10.0'
+inhibit_all_warnings!
+
+#source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://cdn.cocoapods.org/'
+# 清华镜像
+#source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+#source 'https://gitee.com/mirrors/CocoaPods-Specs.git'
+
+
+
+
+target 'AXiOSFoundation' do
+  
+  pod 'AXiOSKit/Foundation', :path => '../'
+  
+end
+
+#=========忽略===========
+post_install do |installer|
+  
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.0'
+      config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
+      
+    end
+  end
+                   
+end
+
+

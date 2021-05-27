@@ -194,9 +194,9 @@
         NSLog(@"age = %ld %@", strongSelf.age, x);
     }];
     
-    [self ax_addFBKVOKeyPath:AX_FBKVOKeyPath(self.age) result:^(AXKVOResultModel *_Nonnull resultModel) {
-        NSLog(@"age222 = %ld %@", self.age, resultModel.aNewValue);
-    }];
+//    [self ax_addFBKVOKeyPath:AX_FBKVOKeyPath(self.age) result:^(AXKVOResultModel *_Nonnull resultModel) {
+//        NSLog(@"age222 = %ld %@", self.age, resultModel.aNewValue);
+//    }];
     
     UIButton *btn1 = [[UIButton alloc]init];
     [btn1 setTitle:@"kvoInt" forState:UIControlStateNormal];

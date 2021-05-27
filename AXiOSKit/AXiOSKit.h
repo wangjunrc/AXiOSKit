@@ -16,6 +16,8 @@ FOUNDATION_EXPORT double AXiOSKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 
 #import "AXiOSFoundation.h"
+#import "AXHelper.h"
+#import "AXObject.h"
 #import "AXBiometryManager.h"
 #import "AXDateVC.h"
 #import "AXFullLayout.h"

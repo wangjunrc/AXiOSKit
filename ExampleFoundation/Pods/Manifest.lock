@@ -1,0 +1,16 @@
+PODS:
+  - AXiOSKit/Foundation (2.0.0)
+
+DEPENDENCIES:
+  - AXiOSKit/Foundation (from `../`)
+
+EXTERNAL SOURCES:
+  AXiOSKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AXiOSKit: 9f4e26fa6b93f3504629dd983cffc6601c935464
+
+PODFILE CHECKSUM: 45ee49b06b6a541bb2f255d4c4358a31b5c9a7e3
+
+COCOAPODS: 1.10.1

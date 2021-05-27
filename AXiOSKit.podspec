@@ -10,22 +10,24 @@
 Pod::Spec.new do |s|
     
     s.name         = 'AXiOSKit'
-    s.version      = '2.0.0'
+    s.version      = '2.1.0'
     s.summary      = '个人开发工具类'
     s.description  = <<-DESC
     封装UIKit等个人开发工具类
     DESC
     
     #    s.homepage     = 'https://github.com/axinger/axinger'
-    s.homepage     = 'https://gitee.com/axinger'
+    s.homepage     = 'https://github.com/axinger'
     s.license      = { :type => 'MIT', :file => 'LICENSE' }
     s.author             = { 'axinger' => 'axingrun@outlook.com' }
     s.ios.deployment_target = '9.0'
     s.requires_arc = true
-    s.source       = { :git => 'https://gitee.com/axinger/AXiOSKit.git', :tag => '#{s.version}' }
-    s.source_files  = 'AXiOSKit/**/*.{h,m}'
-    s.exclude_files = 'AXiOSKit/AXiOSKit/Info.plist'
+    s.source       = { :git => 'https://github.com/axinger/AXiOSKit.git', :tag => '#{s.version}' }
+    
     s.public_header_files = 'AXiOSKit/AXiOSKit/AXiOSKit.h'
+    s.source_files  = 'AXiOSKit/**/*.{h,m}'
+    #  s.exclude_files = 'AXiOSKit/AXiOSKit/Info.plist'
+    
     # 使用 resources 来指定资源，被指定的资源只会简单的被 copy 到目标工程中（主工程）。
     #xib 文件不能再别的bundle中,不然对应的class加载不到,也可以不写,但不能写在resource_bundles中
     # html,css,js 放在一个bundle中,放这里,
@@ -43,23 +45,31 @@ Pod::Spec.new do |s|
         'AXiOSKit/README/*.{md}'],
     }
     
-    s.frameworks = 'Foundation', 'UIKit'
-    s.dependency 'AFNetworking','~> 4.0.0'
-    s.dependency 'SDWebImage'
-    #    s.dependency 'IQKeyboardManager'
-    s.dependency 'MJRefresh'
-    s.dependency 'NullSafe'
-    s.dependency 'MJExtension'
-    s.dependency 'MBProgressHUD'
-    s.dependency 'DZNEmptyDataSet'
-    #s.dependency 'SDCycleScrollView'
-    s.dependency 'KVOController'
-    s.dependency 'Masonry'
-    #s.dependency 'GKPhotoBrowser'
-    s.dependency 'Aspects'
-    s.dependency 'ReactiveObjC','>= 3.0.0'
-    s.dependency 'AXViewControllerTransitioning'
-    s.dependency 'lottie-ios', '~>2.5.3'
+    
+    # 多个模块之间,不能import隔壁模块的,要用子库的spec依赖其他subspec·
+    s.subspec 'Foundation' do |ss|
+        ss.public_header_files = 'AXiOSKit/AXiOSKit/AXiOSFoundation.h'
+        ss.source_files = 'AXiOSKit/Foundation/**/*.{h,m}'
+        ss.frameworks = 'Foundation'
+    end
+    
+    s.subspec 'Kit' do |ss|
+        
+        ss.dependency 'AXiOSKit/Foundation'
+        ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AFNetworking','~> 4.0.0'
+        ss.dependency 'SDWebImage'
+        ss.dependency 'MJRefresh'
+        ss.dependency 'NullSafe'
+        ss.dependency 'MJExtension'
+        ss.dependency 'MBProgressHUD'
+        ss.dependency 'DZNEmptyDataSet'
+        ss.dependency 'Masonry'
+        ss.dependency 'Aspects'
+        ss.dependency 'ReactiveObjC','>= 3.0.0'
+        ss.dependency 'AXViewControllerTransitioning'
+        ss.dependency 'lottie-ios', '~>2.5.3'
+    end
     
 end
 
