@@ -7,12 +7,14 @@
 //
 
 #import "AXShareContentViewController.h"
-
-@interface AXShareContentViewController ()<UITableViewDelegate,UITableViewDataSource>
-
-@property(nonatomic, strong)UITableView *tableView;
+#import "_02ChatFriendVC.h"
+#import "AXDataSourceOption.h"
+@interface AXShareContentViewController ()
 
 @property (nonatomic, strong) NSString* shareType;
+
+@property(nonatomic, strong) NSMutableArray<AXDataSourceOption *> *dataArray;
+
 @end
 
 @implementation AXShareContentViewController
@@ -22,10 +24,7 @@
     [super viewDidLoad];
    
     self.title = @"接收分享2";
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    [self.view addSubview:self.tableView];
+    
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cellID"];
     
     UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancelItemAction:)];
@@ -102,15 +101,24 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
-    return cell;;
+    return cell;
 
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    _02ChatFriendVC *vc = _02ChatFriendVC.alloc.init;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)confirmItemAction:(UIBarButtonItem *)sender {
-    
+    [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
 }
 
 -(void)cancelItemAction:(UIBarButtonItem *)sender {
+//    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+
     
+    NSError *error = [NSError errorWithDomain:@"ax.kit.share" code:NSUserCancelledError userInfo:nil];
+    [self.extensionContext cancelRequestWithError:error];
 }
 @end

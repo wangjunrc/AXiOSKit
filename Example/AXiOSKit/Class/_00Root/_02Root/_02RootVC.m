@@ -6,12 +6,12 @@
 //  Copyright © 2020 axinger. All rights reserved.
 //
 
-#import "_02RootCell.h"
+#import "_AXThemeCell.h"
 #import "_02RootVC.h"
 
 #import "AXUserSwiftImport.h"
 #import "AppDelegate.h"
-
+#import "_AXThemeCell.h"
 #import "Person.h"
 #import "RouterManager.h"
 #import "TestObj.h"
@@ -38,12 +38,19 @@ static __attribute__((always_inline)) void asm_exit() {
 #endif
 }
 
+#if __has_include(<CocoaLumberjack/CocoaLumberjack.h>)
 // 使用新版本
 //#ifdef DEBUG
 //    static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
 //#else
 //    static const DDLogLevel ddLogLevel = DDLogLevelWarning;
 //#endif
+
+static const DDLogLevel ddLogLevel = DDLogLevelDebug;
+
+#endif
+
+
 
 //#import "CocoaDebugTool.h"
 
@@ -52,20 +59,10 @@ static __attribute__((always_inline)) void asm_exit() {
 #endif
 
 #import "_01ContentViewController.h"
-static const DDLogLevel ddLogLevel = DDLogLevelDebug;
-
-@interface TestKVOObject : NSObject
-
-@property (nonatomic, assign) NSInteger testInteger;
-@property (nonatomic, assign) NSRange testRange;
-
-@end
-@implementation TestKVOObject
-@end
 
 @interface _02RootVC ()
 
-@property (nonatomic, strong) NSMutableArray<NSDictionary *> *dataArray;
+@property (nonatomic, strong) NSMutableArray<AXDataSourceOption *> *dataArray;
 
 @end
 
@@ -78,16 +75,37 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
     
     self.navigationItem.title = @"主题2";
     [self ax_setNavBarBackgroundImageWithColor:UIColor.cyanColor];
+    [self _configItem];
     self.tableView.tableFooterView = UIView.alloc.init;
-    //    [self.tableView ax_registerNibCellClass:UITableViewCell.class];
-    //    [self.tableView ax_registerClassCell:UITableViewCell.class];
-    //    [_02RootCell ax_registerCellWithTableView:self.tableView];
-    [self.tableView registerClass:_02RootCell.class forCellReuseIdentifier:@"_02RootCell"];
+    [self.tableView registerClass:_AXThemeCell.class forCellReuseIdentifier:@"_AXThemeCell"];
     self.dataArray = nil;
     [self.tableView reloadData];
     /// 多选
     self.tableView.allowsMultipleSelectionDuringEditing = YES;
     
+    // 设置tabAnimated相关属性
+    // 可以不进行手动初始化，将使用默认属性
+    self.tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[_AXThemeCell class] cellHeight:120];
+    self.tableView.tabAnimated.canLoadAgain = YES;
+    self.tableView.tabAnimated.adjustBlock = ^(TABComponentManager * _Nonnull manager) {
+        //        manager.animation(1).down(3).height(12);
+        //        manager.animation(2).height(12).reducedWidth(70);
+        //        manager.animation(3).down(-5).height(12).radius(0.).reducedWidth(-20);
+        
+        //        manager.animationN(@"textLabel").right(50).radius(12);
+        //            manager.animationN(@"nameLabel").height(12).width(110);
+        //            manager.animationN(@"timeButton").down(-5).height(12);
+        //        manager.animationN(@"logoImgView").height(40).width(40);
+        manager.animationN(@"titleLabel").height(20).right(10);
+        manager.animationN(@"detailLabel").height(20).reducedWidth(70);
+        //        manager.animationN(@"statusBtn").down(-5).height(12).radius(0.).reducedWidth(-20);
+        
+        
+    };
+    
+}
+
+-(void)_configItem {
     __weak typeof(self) weakSelf = self;
     NSMutableArray <UIBarButtonItem *> *temp = NSMutableArray.array;
     
@@ -120,57 +138,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
         [temp addObject:[UIBarButtonItem ax_itemByButton:btn]];
     }
     self.navigationItem.rightBarButtonItems = temp;
-    
-    //
-    //    if (@available(iOS 11.0, *)) {
-    //        self. navigationItem.hidesSearchBarWhenScrolling = NO;
-    //        self.navigationController.navigationBar.prefersLargeTitles = YES;
-    //
-    //
-    //        self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAutomatic;
-    //
-    //
-    //        [self.navigationController.navigationBar setLargeTitleTextAttributes:@{
-    //
-    //        NSForegroundColorAttributeName:UIColor.greenColor,
-    ////        NSFontAttributeName:[UIFont systemFontOfSize:18.0f]
-    //
-    //
-    //        }];
-    //
-    //        self.navigationController.navigationBar.backgroundColor = UIColor.redColor;
-    //
-    //    }
-    //
-    //
-    //    if (@available(iOS 11.0, *)) {
-    //        UISearchController *searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
-    //        self.navigationItem.searchController = searchController;
-    //    } else {
-    //    }
-    
-    
-    // 设置tabAnimated相关属性
-    // 可以不进行手动初始化，将使用默认属性
-    self.tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[_02RootCell class] cellHeight:120];
-    self.tableView.tabAnimated.canLoadAgain = YES;
-    self.tableView.tabAnimated.adjustBlock = ^(TABComponentManager * _Nonnull manager) {
-        //        manager.animation(1).down(3).height(12);
-        //        manager.animation(2).height(12).reducedWidth(70);
-        //        manager.animation(3).down(-5).height(12).radius(0.).reducedWidth(-20);
-        
-        //        manager.animationN(@"textLabel").right(50).radius(12);
-        //            manager.animationN(@"nameLabel").height(12).width(110);
-        //            manager.animationN(@"timeButton").down(-5).height(12);
-        manager.animationN(@"titleLab").down(3).height(12);
-        //        manager.animationN(@"timeLab").height(12).reducedWidth(70);
-        //        manager.animationN(@"statusBtn").down(-5).height(12).radius(0.).reducedWidth(-20);
-        
-        
-    };
-    
 }
-
 
 - (void)reloadViewAnimated {
     self.tableView.tabAnimated.canLoadAgain = YES;
@@ -262,15 +230,11 @@ void mySLog(NSString *format, ...)
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    _02RootCell *cell = [tableView dequeueReusableCellWithIdentifier:@"_02RootCell" forIndexPath:indexPath];
+    _AXThemeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"_AXThemeCell" forIndexPath:indexPath];
     
-    NSDictionary *dict = self.dataArray[indexPath.row];
-    //    cell.indexLabel.text = [dict[@"index"] stringValue];
-    //    cell.nameLabel.text = dict[@"title"];
-    NSString  *index = [dict[@"index"] stringValue];
-    NSString  *title = dict[@"title"];
-    //
-    cell.titleLab.text = [NSString stringWithFormat:@"%@ %@",index,title];
+    AXDataSourceOption *option = self.dataArray[indexPath.row];
+    cell.option = option;
+    cell.titleLabel.text = [NSString stringWithFormat:@"%ld-%@",indexPath.row,option.title];
     return cell;
 }
 
@@ -279,11 +243,10 @@ void mySLog(NSString *format, ...)
     if (tableView.isEditing) {
         return;
     }
-    NSDictionary *dict = self.dataArray[indexPath.row];
-    
-    void (^ didSelectRowAtIndexPath)(void) = dict[@"action"];
-    
-    didSelectRowAtIndexPath();
+    AXDataSourceOption *option  = self.dataArray[indexPath.row];
+    if (option.action) {
+        option.action();
+    }
 }
 
 
@@ -454,477 +417,446 @@ void mySLog(NSString *format, ...)
 
 - (NSMutableArray *)dataArray {
     if (!_dataArray) {
-        _dataArray =  @[
-            @{
-                @"index": @1,
-                @"title": @"单元测试",
-                @"action": ^{
-                    //                    dispatch_queue_t queue =
-                    //                    dispatch_get_global_queue(0, 0);
-                    //                    dispatch_apply(10, queue, ^(size_t insex) {
-                    //                        NSLog(@"insex = %zu",insex);
-                    //                    });
-                    //                    NSLog(@"insex = 完成");
-                    
-                    NSMutableArray *array =
-                    [NSMutableArray arrayWithObjects:@"2", @"3", @"4", @"4", nil];
-                    
-                    //                    for (NSString *str in array) {
-                    //                        if ([str isEqualToString:@"4"]) {
-                    //                            [array removeObject:str];
-                    //                        }
-                    //                    }
-                    
-                    for (int i = 0; i < array.count; i++) {
-                        NSString *str = array[i];
-                        if ([str isEqualToString:@"4"]) {
-                            [array removeObject:str];
-                        }
+        
+        NSMutableArray<AXDataSourceOption *> *tempArray = NSMutableArray.array;
+        
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"单元测试";
+            option.action = ^{
+                //                    dispatch_queue_t queue =
+                //                    dispatch_get_global_queue(0, 0);
+                //                    dispatch_apply(10, queue, ^(size_t insex) {
+                //                        NSLog(@"insex = %zu",insex);
+                //                    });
+                //                    NSLog(@"insex = 完成");
+                
+                NSMutableArray *array =
+                [NSMutableArray arrayWithObjects:@"2", @"3", @"4", @"4", nil];
+                
+                //                    for (NSString *str in array) {
+                //                        if ([str isEqualToString:@"4"]) {
+                //                            [array removeObject:str];
+                //                        }
+                //                    }
+                
+                for (int i = 0; i < array.count; i++) {
+                    NSString *str = array[i];
+                    if ([str isEqualToString:@"4"]) {
+                        [array removeObject:str];
                     }
+                }
+                
+                //                    NSEnumerator *enumerator = [array
+                //                    reverseObjectEnumerator]; NSLog(@"enumerator =
+                //                    %@",enumerator); for (NSString *str in
+                //                    array.reverseObjectEnumerator) {
+                //                       if ([str isEqualToString:@"4"]) {
+                //                           [array removeObject:str];
+                //                       }
+                //                    }
+                ////
+                ////
+                //                    NSLog(@"array = %@",array);
+                
+                NSMutableArray *tempArray =
+                [NSMutableArray arrayWithArray:@[ @"A", @"B", @"C" ]];
+                //                    for (NSString *number in
+                //                    tempArray.reverseObjectEnumerator) {
+                //                        if ([number isEqualToString:@"B"]) {
+                //                            [tempArray removeObject:number];
+                //                        }
+                //                    }
+                //                    NSLog(@"tempArray = %@",tempArray);
+                [tempArray
+                 enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx,
+                                              BOOL *_Nonnull stop) {
+                    if ([obj isEqualToString:@"B"]) {
+                        [tempArray removeObject:obj];
+                    }
+                }];
+                NSLog(@"tempArray = %@", tempArray);
+                
+                // 相同key
+                NSDictionary *dict = @{
+                    @"1": @"A",
+                    @"1": @"AA",
+                    @"2": @"B",
+                    @"3": @"C",
+                };
+                //                    [dict enumerateKeysAndObjectsUsingBlock:^(id
+                //                    key, id value, BOOL *stop) {
+                //                        NSLog(@"key:%@->value%@",key,value);
+                //                    }];
+                
+                [dict.rac_sequence.signal subscribeNext:^(id x) {
+                    RACTupleUnpack(NSString * key, NSString * value) = x;
+                    NSLog(@"key=%@ value=%@", key, value);
+                }];
+                [dict.rac_keySequence.signal subscribeNext:^(id x) {
+                    NSLog(@"x2 = %@", x);
+                }];
+                [dict.rac_valueSequence.signal subscribeNext:^(id x) {
+                    NSLog(@"x3 = %@", x);
+                }];
+            };
+        }
+        
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"UIAlertController 颜色";
+            option.action = ^{
+                
+                NSString *title = @"title";
+                NSMutableAttributedString *titleAtt = [[NSMutableAttributedString alloc] initWithString:title];
+                [titleAtt addAttribute:NSForegroundColorAttributeName value: [UIColor redColor] range:NSMakeRange(0, title.length)];
+                [titleAtt addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, title.length)];
+                
+                // 创建图片图片附件
+                NSTextAttachment *attach = [[NSTextAttachment alloc] init];
+                if (@available(iOS 13.0, *)) {
+                    UIImage *img = [UIImage systemImageNamed:@"sun.max.fill"];
+                    img = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                    img = [img imageWithTintColor:UIColor.redColor];
+                    attach.image = img;
                     
-                    //                    NSEnumerator *enumerator = [array
-                    //                    reverseObjectEnumerator]; NSLog(@"enumerator =
-                    //                    %@",enumerator); for (NSString *str in
-                    //                    array.reverseObjectEnumerator) {
-                    //                       if ([str isEqualToString:@"4"]) {
-                    //                           [array removeObject:str];
-                    //                       }
-                    //                    }
-                    ////
-                    ////
-                    //                    NSLog(@"array = %@",array);
-                    
-                    NSMutableArray *tempArray =
-                    [NSMutableArray arrayWithArray:@[ @"A", @"B", @"C" ]];
-                    //                    for (NSString *number in
-                    //                    tempArray.reverseObjectEnumerator) {
-                    //                        if ([number isEqualToString:@"B"]) {
-                    //                            [tempArray removeObject:number];
-                    //                        }
-                    //                    }
-                    //                    NSLog(@"tempArray = %@",tempArray);
-                    [tempArray
-                     enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx,
-                                                  BOOL *_Nonnull stop) {
-                        if ([obj isEqualToString:@"B"]) {
-                            [tempArray removeObject:obj];
-                        }
-                    }];
-                    NSLog(@"tempArray = %@", tempArray);
-                    
-                    NSDictionary *dict = @{
-                        @"1": @"A",
-                        @"1": @"AA",
-                        @"2": @"B",
-                        @"3": @"C",
-                    };
-                    //                    [dict enumerateKeysAndObjectsUsingBlock:^(id
-                    //                    key, id value, BOOL *stop) {
-                    //                        NSLog(@"key:%@->value%@",key,value);
-                    //                    }];
-                    
-                    [dict.rac_sequence.signal subscribeNext:^(id x) {
-                        RACTupleUnpack(NSString * key, NSString * value) = x;
-                        NSLog(@"key=%@ value=%@", key, value);
-                    }];
-                    [dict.rac_keySequence.signal subscribeNext:^(id x) {
-                        NSLog(@"x2 = %@", x);
-                    }];
-                    [dict.rac_valueSequence.signal subscribeNext:^(id x) {
-                        NSLog(@"x3 = %@", x);
-                    }];
-                },
-            },
-            @{
-                @"index": @2,
-                @"title": @"UIAlertController 颜色",
-                @"action": ^{
-                    //                        [self ax_showAlertByTitle:@"A"
-                    //                                          message:@"B"
-                    //                                          confirm:^{
-                    //                                          }
-                    //                                           cancel:^{
-                    //                                           }];
-                    //                        [self ax_showAlertByTitle:@""
-                    //                                          message:@""
-                    //                                          confirm:^{
-                    //                                          }
-                    //                                           cancel:^{
-                    //                                           }];
-                    
-                    //                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"tile" message:@"msg" preferredStyle:UIAlertControllerStyleAlert];
-                    //
-                    //                    // 修改message字体及颜色
-                    //                    NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:alert.message];
-                    //                    [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor redColor] range:NSMakeRange(0, alert.message.length)];
-                    //                    [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, alert.message.length)];
-                    //
-                    //
-                    //
-                    //                    [alert setValue:messageStr forKey:@"attributedMessage"];
-                    //
-                    //                    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"确定") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-                    //                    }]];
-                    //
-                    //
-                    //                    [alert addAction:[UIAlertAction actionWithTitle:AXKitLocalizedString(@"取消") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    //
-                    //                    }]];
-                    //
-                    //                    [self presentViewController:alert animated:YES completion:nil];
+                }
+                
+                attach.bounds = CGRectMake(0, 0, 50, 50);
+                
+                NSMutableAttributedString *attachString =   [NSMutableAttributedString attributedStringWithAttachment:attach].mutableCopy;
+                
+                
+                
+                //将图片插入到合适的位置
+                //                        [titleAtt insertAttributedString:attachString atIndex:0];
+                [titleAtt appendAttributedString:attachString];
+                
+                NSString *msg = @"消息";
+                NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:msg];
+                [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor orangeColor] range:NSMakeRange(0, msg.length)];
+                [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, msg.length)];
+                
+                NSMutableArray<AXActionItem *> *temp = NSMutableArray.array;
+                
+                {
                     
                     
-                    NSString *title = @"title";
-                    NSMutableAttributedString *titleAtt = [[NSMutableAttributedString alloc] initWithString:title];
-                    [titleAtt addAttribute:NSForegroundColorAttributeName value: [UIColor redColor] range:NSMakeRange(0, title.length)];
-                    [titleAtt addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, title.length)];
+                    AXActionItem *item = [AXActionItem.alloc init];
+                    item.title = @"A";
+                    item.titleColor = [UIColor redColor];
+                    if (@available(iOS 13.0, *)) {
+                        item.image = [UIImage systemImageNamed:@"a.circle.fill"];
+                    }
+                    item.imageColor = UIColor.orangeColor;
+                    [temp addObject:item];
+                }
+                {
                     
-                    // 创建图片图片附件
-                    NSTextAttachment *attach = [[NSTextAttachment alloc] init];
                     
+                    AXActionItem *item = [AXActionItem.alloc init];
+                    item.title = @"B";
+                    item.titleColor = [UIColor greenColor];
                     
                     if (@available(iOS 13.0, *)) {
-                        UIImage *img = [UIImage systemImageNamed:@"sun.max.fill"];
-                        img = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-                        img = [img imageWithTintColor:UIColor.redColor];
-                        attach.image = img;
-                        
+                        item.image = [UIImage systemImageNamed:@"b.circle.fill"];
                     }
                     
-                    attach.bounds = CGRectMake(0, 0, 50, 50);
-                    
-                    NSMutableAttributedString *attachString =   [NSMutableAttributedString attributedStringWithAttachment:attach].mutableCopy;
-                    
-                    
-                    
-                    //将图片插入到合适的位置
-                    //                        [titleAtt insertAttributedString:attachString atIndex:0];
-                    [titleAtt appendAttributedString:attachString];
-                    
-                    NSString *msg = @"消息";
-                    NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:msg];
-                    [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor orangeColor] range:NSMakeRange(0, msg.length)];
-                    [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, msg.length)];
-                    
-                    NSMutableArray<AXActionItem *> *temp = NSMutableArray.array;
-                    
-                    {
-                        
-                        
-                        AXActionItem *item = [AXActionItem.alloc init];
-                        item.title = @"A";
-                        item.titleColor = [UIColor redColor];
-                        if (@available(iOS 13.0, *)) {
-                            item.image = [UIImage systemImageNamed:@"a.circle.fill"];
-                        }
-                        item.imageColor = UIColor.orangeColor;
-                        [temp addObject:item];
-                    }
-                    {
-                        
-                        
-                        AXActionItem *item = [AXActionItem.alloc init];
-                        item.title = @"B";
-                        item.titleColor = [UIColor greenColor];
-                        
-                        if (@available(iOS 13.0, *)) {
-                            item.image = [UIImage systemImageNamed:@"b.circle.fill"];
-                        }
-                        
-                        item.style = UIAlertActionStyleCancel;
-                        [temp addObject:item];
-                    }
-                    
-                    
-                    [self ax_showAlertWithStyle:UIAlertControllerStyleActionSheet iPadView:nil title:titleAtt message:messageStr actionItems:temp confirm:^(NSInteger index) {
-                        
-                    } cancel:^{
-                        
-                    }];
-                },
-            },
-            
-            @{
-                @"index": @3,
-                @"title": @"sheet含有图片文字",
-                @"action": ^{
-                    NSMutableArray<AXActionItem *> *temp = NSMutableArray.array;
-                    
-                    {
-                        
-                        
-                        AXActionItem *item = [AXActionItem.alloc init];
-                        //                        item.title = @"A";
-                        item.titleColor = [UIColor redColor];
-                        //
-                        if (@available(iOS 13.0, *)) {
-                            item.image = [UIImage systemImageNamed:@"a.circle.fill"];
-                        }
-                        [temp addObject:item];
-                    }
-                    {
-                        
-                        
-                        AXActionItem *item = [AXActionItem.alloc init];
-                        item.title = @"B";
-                        item.titleColor = [UIColor greenColor];
-                        
-                        if (@available(iOS 13.0, *)) {
-                            item.image = [UIImage systemImageNamed:@"b.circle.fill"];
-                        }
-                        [temp addObject:item];
-                    }
-                    
-                    
-                    [self ax_showSheetByTitle:@"title" message:@"msg" actionItems:temp confirm:^(NSInteger index) {
-                        
-                    } cancel:^{
-                        
-                    }];
-                },
-            },
-            
-            
-            @{
-                @"index": @3,
-                @"title": @"对象未实现方法,内部处理",
-                @"action": ^{
-                    [self ax_showAlertByTitle:@"是否调用"
-                                      confirm:^{
-                        Person *per = [[Person alloc] init];
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-                        [per performSelector:@selector(test:)];
-#pragma clang diagnostic pop
-                        
-                        
-                    }];
-                },
-            },
-            @{
-                @"index": @3,
-                @"title": @"对象未实现方法,AvoidCrash处理",
-                @"action": ^{
-                    [self ax_showAlertByTitle:@"是否调用"
-                                      confirm:^{
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-                        [self performSelector:@selector(test2:)];
-#pragma clang diagnostic pop
-                        
-                        
-                    }];
-                },
-            },
-            @{
-                @"index": @4,
-                @"title": @"路由 - RouterManager",
-                @"action": ^{
-                    [RouterManager
-                     openURL:routeNameWith01ViewController
-                     withUserInfo:@{ @"navigationController": self.navigationController }
-                     completion:^(id _Nonnull result) {
-                    }];
-                },
-            },
-            @{
-                @"index": @5,
-                @"title": @"退出-方法1",
-                @"action": ^{
-                    
-                    AppDelegate *app = (AppDelegate*)[UIApplication sharedApplication].delegate;
-                    UIWindow *window = app.window;
-                    [UIView animateWithDuration:0.4f animations:^{
-                        CGAffineTransform curent =  window.transform;
-                        CGAffineTransform scale = CGAffineTransformScale(curent, 0.1,0.1);
-                        [window setTransform:scale];
-                    } completion:^(BOOL finished) {
-                        exit(0);
-                    }];
-                },
-            },
-            @{
-                @"index": @5,
-                @"title": @"退出方式-asm_exit,真机有效",
-                @"action": ^{
-                    asm_exit();
+                    item.style = UIAlertActionStyleCancel;
+                    [temp addObject:item];
                 }
-            },
-            @{
-                @"index": @5,
-                @"title": @"退出方式3",
-                @"action": ^{
-                    //                    [[UIApplication sharedApplication] terminateWithSuccess];
-                    //                    [[UIApplication sharedApplication] performSelector:@selector(terminateWithSuccess)];
-                    if([[UIApplication sharedApplication] respondsToSelector:@selector(terminateWithSuccess)]) {
-                        [[UIApplication sharedApplication] performSelector:@selector(terminateWithSuccess)];
+                
+                
+                [self ax_showAlertWithStyle:UIAlertControllerStyleActionSheet iPadView:nil title:titleAtt message:messageStr actionItems:temp confirm:^(NSInteger index) {
+                    
+                } cancel:^{
+                    
+                }];
+            };
+        }
+        
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"sheet含有图片文字";
+            option.action = ^{
+                NSMutableArray<AXActionItem *> *temp = NSMutableArray.array;
+                
+                {
+                    
+                    
+                    AXActionItem *item = [AXActionItem.alloc init];
+                    //                        item.title = @"A";
+                    item.titleColor = [UIColor redColor];
+                    //
+                    if (@available(iOS 13.0, *)) {
+                        item.image = [UIImage systemImageNamed:@"a.circle.fill"];
                     }
-                },
-            },
-            
-            @{
-                @"index": @6,
-                @"title": @"fishhook调用方法",
-                @"action": ^{
-                    NSLog(@"fish_log");
-                },
-            },
-            
-            @{
-                @"index": @7,
-                @"title": @"objc_msgSend调用方法",
-                @"action": ^{
-                    //                    id person =
-                    //                    (objc_getClass("Person"),
-                    //                    sel_registerName("alloc"),
-                    //                                 sel_registerName("init"));
-                    //                    objc_msobjc_msgSendgSend(person,
-                    //                    sel_registerName("logShowTest"));
-                },
-            },
-            
-            @{
-                @"index": @9,
-                @"title": @"setValue nil",
-                @"action": ^{
-                    TestKVOObject *test = [TestKVOObject new];
-                    [test setValue:nil forKey:@"testInteger"];
+                    [temp addObject:item];
+                }
+                {
                     
-                },
-            },
-            @{
-                @"index": @10,
-                @"title": @"NSMutableDictionary,nil",
-                @"action": ^{
-                    NSMutableDictionary *dict=NSMutableDictionary.dictionary;
-                    [dict setObject:nil forKeyedSubscript:@"name"];
-                    NSLog(@"dict nil = %@",dict);
-                },
-            },
-            @{
-                @"index": @10,
-                @"title": @"NSMutableDictionary,forKeyedSubscript",
-                @"action": ^{
-                    NSMutableDictionary *dict=NSMutableDictionary.dictionary;
-                    [dict setObject:@"jim" forKeyedSubscript:@"name"];
-                    NSLog(@"dict = %@",dict);
-                },
-            },
-            @{
-                @"index": @10,
-                @"title": @"NSMutableArray,atIndexedSubscript",
-                @"action": ^{
-                    /// iOS11之前：arr@[]  调用的是[__NSArrayI objectAtIndexed]
-                    /// iOS11之后：arr@[]  调用的是[__NSArrayI objectAtIndexedSubscript]
-                    NSMutableArray *array = NSMutableArray.array;
-                    [array setObject:@"A" atIndexedSubscript:2];
-                    NSLog(@"array = %@",array);
-                },
-            },
-            @{
-                @"index": @11,
-                @"title": @"LLDB",
-                @"action": ^{
-                    NSString *name = @"123";
-                    /// 断点 修改 值 expr name = @"jim";
-                    NSLog(@"name = %@",name);
                     
-                },
-            },
-            @{
-                @"index": @12,
-                @"title": @"oc调用swift",
-                @"action": ^{
+                    AXActionItem *item = [AXActionItem.alloc init];
+                    item.title = @"B";
+                    item.titleColor = [UIColor greenColor];
                     
-                    DogSwift *dog =  [DogSwift.alloc init];
-                    [dog show];
-                },
-            },
-            
-            @{
-                @"index": @14,
-                @"title": @"解压",
-                @"action": ^{
-                    NSString *path = [NSString.ax_documentPath stringByAppendingPathComponent:@"sudian.zip"];
-                    NSString *targetPath = NSString.ax_documentPath;
+                    if (@available(iOS 13.0, *)) {
+                        item.image = [UIImage systemImageNamed:@"b.circle.fill"];
+                    }
+                    [temp addObject:item];
+                }
+                
+                
+                [self ax_showSheetByTitle:@"title" message:@"msg" actionItems:temp confirm:^(NSInteger index) {
                     
-                    BOOL succ = [SSZipArchive unzipFileAtPath:path toDestination:targetPath];
-                    NSLog(@"解压 = %d",succ);
-                },
-            },
-            @{
-                @"index": @15,
-                @"title": @"CocoaLumberjack日志",
-                @"action": ^{
+                } cancel:^{
                     
-                    // Uses os_log
-                    //[DDLog addLogger:[DDASLLogger sharedInstance]]; //iOS10之前
-                    [DDLog addLogger:[DDOSLogger sharedInstance]]; //iOS10之后
-                    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+                }];
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"对象未实现方法,内部处理";
+            option.action = ^{
+                
+                [self ax_showAlertByTitle:@"是否调用"
+                                  confirm:^{
+                    Person *per = [[Person alloc] init];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+                    [per performSelector:@selector(test:)];
+#pragma clang diagnostic pop
                     
-                    DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
-                    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
-                    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
-                    [DDLog addLogger:fileLogger];
                     
-                    DDLogVerbose(@"Verbose");
-                    DDLogDebug(@"Debug");
-                    DDLogInfo(@"Info");
-                    DDLogWarn(@"Warn");
-                    DDLogError(@"Error");
-                },
-            },
-            
-            
-            @{
-                @"index": @16,
-                @"title": @"CocoaDebugTool",
-                @"action": ^{
-#if __has_include(<CocoaDebug/CocoaDebugTool.h>)
+                }];
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"对象未实现方法,AvoidCrash处理";
+            option.action = ^{
+                
+                [self ax_showAlertByTitle:@"是否调用"
+                                  confirm:^{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+                    [self performSelector:@selector(test2:)];
+#pragma clang diagnostic pop
                     
-                    [CocoaDebugTool logWithString:@"Custom Messages...."];
-                    [CocoaDebugTool logWithString:@"Custom Messages...,有颜色" color:[UIColor redColor]];
                     
+                }];
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"路由 - RouterManager";
+            option.action = ^{
+                [RouterManager
+                 openURL:routeNameWith01ViewController
+                 withUserInfo:@{ @"navigationController": self.navigationController }
+                 completion:^(id _Nonnull result) {
+                }];
+            };
+        }
+        
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"退出-方法1";
+            option.action = ^{
+                AppDelegate *app = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                UIWindow *window = app.window;
+                [UIView animateWithDuration:0.4f animations:^{
+                    CGAffineTransform curent =  window.transform;
+                    CGAffineTransform scale = CGAffineTransformScale(curent, 0.1,0.1);
+                    [window setTransform:scale];
+                } completion:^(BOOL finished) {
+                    exit(0);
+                }];
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"退出方式-asm_exit,真机有效";
+            option.action = ^{
+                asm_exit();
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"退出方式3";
+            option.action = ^{
+                if([[UIApplication sharedApplication] respondsToSelector:@selector(terminateWithSuccess)]) {
+                    [[UIApplication sharedApplication] performSelector:@selector(terminateWithSuccess)];
+                }
+            };
+        }
+        
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"fishhook调用方法";
+            option.action = ^{
+                NSLog(@"fish_log");
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"objc_msgSend调用方法";
+            option.action = ^{
+                //                    id person =
+                //                    (objc_getClass("Person"),
+                //                    sel_registerName("alloc"),
+                //                                 sel_registerName("init"));
+                //                    objc_msobjc_msgSendgSend(person,
+                //                    sel_registerName("logShowTest"));
+            };
+        } {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"NSMutableDictionary,nil";
+            option.action = ^{
+                NSMutableDictionary *dict=NSMutableDictionary.dictionary;
+                [dict setObject:nil forKeyedSubscript:@"name"];
+                NSLog(@"dict nil = %@",dict);
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"NSMutableDictionary,forKeyedSubscript";
+            option.action = ^{
+                NSMutableDictionary *dict=NSMutableDictionary.dictionary;
+                [dict setObject:@"jim" forKeyedSubscript:@"name"];
+                NSLog(@"dict = %@",dict);
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"NSMutableArray,atIndexedSubscript";
+            option.detail = @"iOS11之前：arr@[]  调用的是[__NSArrayI objectAtIndexed]\n\
+            iOS11之后：arr@[]  调用的是[__NSArrayI objectAtIndexedSubscript]";
+            option.action = ^{
+                /// iOS11之前：arr@[]  调用的是[__NSArrayI objectAtIndexed]
+                /// iOS11之后：arr@[]  调用的是[__NSArrayI objectAtIndexedSubscript]
+                NSMutableArray *array = NSMutableArray.array;
+                [array setObject:@"A" atIndexedSubscript:2];
+                NSLog(@"array = %@",array);
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"LLDB";
+            option.detail = @"断点 expr 命令";
+            option.action = ^{
+                NSString *name = @"123";
+                /// 断点 修改 值 expr name = @"jim";
+                NSLog(@"name = %@",name);
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"oc调用swift";
+            option.action = ^{
+                DogSwift *dog =  [DogSwift.alloc init];
+                [dog show];
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"解压";
+            option.action = ^{
+                NSString *path = [NSString.ax_documentPath stringByAppendingPathComponent:@"sudian.zip"];
+                NSString *targetPath = NSString.ax_documentPath;
+                BOOL succ = [SSZipArchive unzipFileAtPath:path toDestination:targetPath];
+                NSLog(@"解压 = %d",succ);
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"CocoaLumberjack日志";
+            option.action = ^{
+#if __has_include(<CocoaLumberjack/CocoaLumberjack.h>)
+                // Uses os_log
+                //[DDLog addLogger:[DDASLLogger sharedInstance]]; //iOS10之前
+                [DDLog addLogger:DDOSLogger.sharedInstance]; //iOS10之后
+                [DDLog addLogger:DDTTYLogger.sharedInstance];
+                [DDLog addLogger:DDTTYLogger.sharedInstance withLevel:ddLogLevel];
+                
+                DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
+                fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+                fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+                [DDLog addLogger:fileLogger];
+                
+                DDLogVerbose(@"Verbose");
+                DDLogDebug(@"Debug");
+                DDLogInfo(@"Info");
+                DDLogWarn(@"Warn");
+                DDLogError(@"Error");
 #endif
-                    
-                },
-            },
-            @{
-                @"index": @17,
-                @"title": @"FileBrowser",
-                @"action": ^{
-                    //                    NSURL *URL = NULL;
-                    FileBrowser *vc = [FileBrowser.alloc init];
-                    
-                    [self ax_showVC:vc];
-                    
-                    
-                },
-            },
-            
-            
-            @{
-                @"index": @18,
-                @"title": @"pushViewControllerPresentStyle",
-                @"action": ^{
-                    
-                    _01ContentViewController *vc = [_01ContentViewController.alloc init];
-                    [self.navigationController ax_pushViewControllerPresentStyle:vc animated:YES];
-                    
-                },
-            },
-            @{
-                @"index": @19,
-                @"title": @"presentViewControllerPushStyle",
-                @"action": ^{
-                    _01ContentViewController *vc = [_01ContentViewController.alloc init];
-                    [self ax_presentViewControllerPushStyle:vc animated:YES completion:nil];
-                    
-                },
-            },
-            
-            
-        ].mutableCopy;
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"CocoaDebugTool";
+            option.action = ^{
+#if __has_include(<CocoaDebug/CocoaDebugTool.h>)
+                
+                [CocoaDebugTool logWithString:@"Custom Messages...."];
+                [CocoaDebugTool logWithString:@"Custom Messages...,有颜色" color:[UIColor redColor]];
+                
+#endif
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"FileBrowser 文件浏览器";
+            option.action = ^{
+                
+                //                    NSURL *URL = NULL;
+                FileBrowser *vc = [FileBrowser.alloc init];
+                
+                [self ax_showVC:vc];
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"pushViewControllerPresentStyle";
+            option.action = ^{
+                
+                _01ContentViewController *vc = [_01ContentViewController.alloc init];
+                [self.navigationController ax_pushViewControllerPresentStyle:vc animated:YES];
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"presentViewControllerPushStyle";
+            option.action = ^{
+                
+                _01ContentViewController *vc = [_01ContentViewController.alloc init];
+                [self ax_presentViewControllerPushStyle:vc animated:YES completion:nil];
+            };
+        }
+        
+        _dataArray = tempArray.mutableCopy;
     }
     return _dataArray;
 }

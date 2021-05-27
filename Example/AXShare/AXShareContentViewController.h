@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
-@interface AXShareContentViewController : UIViewController
+/**
+ #import <Social/Social.h>
+ SLComposeServiceViewController
+ */
+@interface AXShareContentViewController : UITableViewController
 
 @end
 
