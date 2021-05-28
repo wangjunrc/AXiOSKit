@@ -856,6 +856,37 @@ void mySLog(NSString *format, ...)
             };
         }
         
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"指定系统版本";
+            option.action = ^{
+                
+                NSString *systemVersion = UIDevice.currentDevice.systemVersion;
+                NSLog(@"systemVersion=%@",systemVersion);
+                NSLog(@"systemVersion.doubleValue=%lf",systemVersion.doubleValue);
+                NSLog(@"systemVersion.Replacing=%@",[systemVersion stringByReplacingOccurrencesOfString:@"." withString:@""]);
+                
+                if (@available(iOS 13.0, *)) {
+                    NSLog(@"@available(iOS 13.0, *)");
+                }
+                /**
+                 不过这个头文件里定义的最大的宏是NSFoundationVersionNumber_iOS_9_x_Max。不过NSFoundationVersionNumber在iOS 10.3.1上和iOS 11上输出的值分别为1349.55和1444.12，看来苹果只是没有提供对应的宏，但是却改变了NSFoundationVersionNumber的值。
+                 */
+                NSLog(@"NSFoundationVersionNumber=%lf",NSFoundationVersionNumber);
+#if defined(__IPHONE_13_0) || defined(__IPHONE_13_1)
+                NSLog(@"__IPHONE_13_0=%d",__IPHONE_13_0);
+                NSLog(@"__IPHONE_13_1=%d",__IPHONE_13_1);
+#endif
+                
+#if defined(__IPHONE_17_0)
+                NSLog(@"__IPHONE_17_0=%d",__IPHONE_17_0);
+#endif
+                
+            };
+        }
+        
+        
         _dataArray = tempArray.mutableCopy;
     }
     return _dataArray;
@@ -870,5 +901,7 @@ void mySLog(NSString *format, ...)
     
     return UIInterfaceOrientationMaskPortrait;
 }
+
+
 
 @end

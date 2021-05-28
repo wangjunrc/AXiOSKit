@@ -68,7 +68,21 @@
         return request;
     }];
     SDWebImageDownloader.sharedDownloader.requestModifier = requestModifier;
+    [self imageLoadingSettings];
+    
     
     return YES;
 }
+
+- (void)imageLoadingSettings {
+   [SDImageCache sharedImageCache].config.maxDiskSize = 3600 * 24 * 7;
+   [SDImageCache sharedImageCache].config.maxMemoryCost = 1024 * 1024 * 20;
+//   [SDImageCache sharedImageCache].config.shouldCacheImagesInMemory = NO;//是否缓存到内存中 默认是 YES
+//   [SDImageCache sharedImageCache].config.shouldDecompressImages = NO;//是否解压图像 默认是 YES
+//   [SDWebImageDownloader sharedDownloader].shouldDecompressImages = NO;
+   [SDImageCache sharedImageCache].config.diskCacheReadingOptions = NSDataReadingMappedIfSafe;
+    
+}
+
+
 @end

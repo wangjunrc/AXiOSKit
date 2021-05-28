@@ -2507,3 +2507,26 @@ if (!self.presentedViewController){
     }];
 }
 ```
+## 禁止继承
+```
+// 标记不能被继承
+__attribute__ ((objc_subclassing_restricted))
+@interface Eunuch : NSObject
+
+@end
+// 报错,不能继承
+@interface Child : Eunuch
+
+@end
+```
+## oc(动态派发),使用静态派发
+```
+https://lrdcq.com/me/read.php/99.htm
+@interface AClass: NSObject
+@property(nonatomic) BOOL a; //普通的property
+@property(nonatomic, direct) BOOL b; //direct的property
+
+- (void)x; //普通的方法
+- (void)y __attribute__((objc_direct)); //direct的方法
+@end
+```

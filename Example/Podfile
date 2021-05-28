@@ -59,7 +59,7 @@ def ui_pods
   
   pod 'SocketRocket'
   # 安全集合,这个目前不维护了
-#  pod 'AvoidCrash'
+  #  pod 'AvoidCrash'
   # 保护App
   pod 'JJException'
   
@@ -167,10 +167,17 @@ def common_pods
   pod 'AFNetworking'
   pod 'ReactiveObjC','~> 3.1.0'
   pod 'PromisesObjC','~> 1.2.12'
-  pod 'SDWebImageFLPlugin'
+  #由于SDWebImage从5.0版本开始，项目结构改动比较大，
+  #取消了'SDWebImage/GIF'、'SDWebImage/WebP'这两个Subspecs，
+  #加载gif:
+  #需要SDWebImageFLPlugin插件和FLAnimatedImage混合使用，
+  pod 'SDWebImageFLPlugin','~> 0.5.0'
+  #webp图片格式
+#  加载webp:
+#  需要使用SDWebImage中的SDImageCodersManager添加SDWebImageWebPCoder使用
   pod 'SDWebImageWebPCoder','~> 0.8.1'
   #  pod 'SDWebImage/GIF'
-  pod 'SDWebImage','~> 5.10.3'
+  pod 'SDWebImage','~> 5.11.1'
   # 网络请求模拟库OHHTTPStubs
   pod 'OHHTTPStubs', '~> 9.1.0'
   
