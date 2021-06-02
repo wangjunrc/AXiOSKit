@@ -620,6 +620,27 @@ void mySLog(NSString *format, ...)
         {
             AXDataSourceOption *option = AXDataSourceOption.alloc.init;
             [tempArray addObject:option];
+            option.title = @"数组nil";
+            option.action = ^{
+                
+                [self ax_showAlertByTitle:@"是否调用"
+                                  confirm:^{
+                    Person *per = [[Person alloc] init];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+                    NSMutableArray *arr = NSMutableArray.array;
+                    [arr addObject:nil];
+                    
+                    NSLog(@"array=%@",arr);
+#pragma clang diagnostic pop
+                    
+                    
+                }];
+            };
+        }
+        {
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
             option.title = @"对象未实现方法,内部处理";
             option.action = ^{
                 
