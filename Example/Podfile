@@ -173,8 +173,8 @@ def common_pods
   #需要SDWebImageFLPlugin插件和FLAnimatedImage混合使用，
   pod 'SDWebImageFLPlugin','~> 0.5.0'
   #webp图片格式
-#  加载webp:
-#  需要使用SDWebImage中的SDImageCodersManager添加SDWebImageWebPCoder使用
+  #  加载webp:
+  #  需要使用SDWebImage中的SDImageCodersManager添加SDWebImageWebPCoder使用
   pod 'SDWebImageWebPCoder','~> 0.8.1'
   #  pod 'SDWebImage/GIF'
   pod 'SDWebImage','~> 5.11.1'
@@ -193,7 +193,11 @@ def common_pods
   pod 'CocoaLumberjack'
   
   # 文件
-  #  pod 'FileBrowser', '~> 1.0'
+#  pod 'FileBrowser', '~> 1.0',直接引入本地,修改了源码
+  
+  # aop,报错
+#  pod 'Stinger', '~> 0.3.0'
+  
 end
 
 def app_pods

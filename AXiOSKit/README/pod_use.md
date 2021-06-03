@@ -160,14 +160,14 @@ pod 'WCDB'
 pod 'FreeStreamer'
 
 ### 图片浏览器
-pod 'GKPhotoBrowser'
 
 ```
+GKPhotoBrowser 不维护了
 MWPhotoBrowser 不维护了
 
 IDMPhotoBrowser 很少维护
 
-ZLPhotoBrowser 维护
+ZLPhotoBrowser 维护 swift
 
 ```
 

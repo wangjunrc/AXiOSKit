@@ -167,9 +167,9 @@ PODS:
   - RTRootNavigationController (0.8.0):
     - RTRootNavigationController/Core (= 0.8.0)
   - RTRootNavigationController/Core (0.8.0)
-  - SDWebImage (5.10.4):
-    - SDWebImage/Core (= 5.10.4)
-  - SDWebImage/Core (5.10.4)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
   - SDWebImageFLPlugin (0.5.0):
     - FLAnimatedImage (>= 1.0.11)
     - SDWebImage/Core (~> 5.10)
@@ -236,8 +236,8 @@ DEPENDENCIES:
   - ReactiveObjC (~> 3.1.0)
   - RMQClient
   - RTRootNavigationController (~> 0.8.0)
-  - SDWebImage (~> 5.10.3)
-  - SDWebImageFLPlugin
+  - SDWebImage (~> 5.11.1)
+  - SDWebImageFLPlugin (~> 0.5.0)
   - SDWebImageWebPCoder (~> 0.8.1)
   - SocketRocket
   - SSKeychain
@@ -295,7 +295,6 @@ SPEC REPOS:
     - ReactiveObjC
     - RMQClient
     - RTRootNavigationController
-    - SDWebImage
     - SDWebImageFLPlugin
     - SDWebImageWebPCoder
     - SocketRocket
@@ -312,6 +311,8 @@ SPEC REPOS:
     - YYDispatchQueuePool
     - YYKeyboardManager
     - YYText
+  trunk:
+    - SDWebImage
 
 EXTERNAL SOURCES:
   AXCollectionObserve:
@@ -373,7 +374,7 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RMQClient: 9bbda86703fd475761101ee5fda037eb2a12ec4e
   RTRootNavigationController: 36c6301870f0467f89d69f4286795340b537d473
-  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageFLPlugin: 245c7ce1e77028b6ef415240847b3f8aa4b106b7
   SDWebImageWebPCoder: bbf46e29fb8d1980a78ad3d5e9b4123c77f10ebc
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
@@ -392,6 +393,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 96016b6db9ffb1022cbd613297e28dd137790f0b
+PODFILE CHECKSUM: ebd382c5d7f7393fc89f00c08562729cf207854a
 
 COCOAPODS: 1.10.1

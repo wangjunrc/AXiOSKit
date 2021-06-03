@@ -1320,13 +1320,13 @@
 			isa = PBXGroup;
 			children = (
 				21A61CC5265E7F4A0080E67D /* NSObject+Load.h */,
-				21A61CC6265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.m */,
-				21A61CC7265E7F4A0080E67D /* UIControl+load.m */,
-				21A61CC8265E7F4A0080E67D /* UIImage+Load.m */,
 				21A61CC9265E7F4A0080E67D /* NSObject+Load.m */,
-				21A61CCA265E7F4A0080E67D /* UIImage+Load.h */,
 				21A61CCB265E7F4A0080E67D /* UIControl+load.h */,
+				21A61CC7265E7F4A0080E67D /* UIControl+load.m */,
+				21A61CCA265E7F4A0080E67D /* UIImage+Load.h */,
+				21A61CC8265E7F4A0080E67D /* UIImage+Load.m */,
 				21A61CCC265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.h */,
+				21A61CC6265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.m */,
 			);
 			path = Load;
 			sourceTree = "<group>";
@@ -3475,7 +3475,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
-				EXCLUDED_ARCHS = "";
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AXiOSKit/SDK/TencentSDK_V3",
@@ -3619,7 +3619,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
-				EXCLUDED_ARCHS = "";
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AXiOSKit/SDK/TencentSDK_V3",
@@ -3916,7 +3916,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
-				EXCLUDED_ARCHS = "";
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AXiOSKit/SDK/TencentSDK_V3",
@@ -3952,7 +3952,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
-				EXCLUDED_ARCHS = "";
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AXiOSKit/SDK/TencentSDK_V3",
