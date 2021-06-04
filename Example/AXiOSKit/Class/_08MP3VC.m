@@ -122,6 +122,7 @@
     /// https://iphonedev.wiki/index.php/AudioServices
     //播放系统提示音,通过自动定义好的soundID就可以直接播放
     SystemSoundID soundIDTest = 1007;
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     AudioServicesPlaySystemSound(soundIDTest);
 }
 

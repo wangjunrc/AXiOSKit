@@ -13,7 +13,7 @@ inhibit_all_warnings!
 
 :git =>  引用,含有分支
 pod 'AXiOSKit' , :git => 'https://github.com/axinger/AXiOSKit.git', :branch => 'release/20190530_new'
-
+pod 'AXiOSKit' , :podspec => 'https://github.com/AssassinsDevilMayCry/test/xxx.podspec'
 :source => ,这里可以是svn
 pod 'AXiOSKit', :source => 'https://github.com/axinger/AXiOSKit.git'
 
@@ -131,6 +131,8 @@ def ui_pods
   pod 'YYKeyboardManager' ,  '~> 1.0.1'
   #  pod 'ZLCollectionViewFlowLayout'
   pod 'TABAnimated', '2.5.5'
+  # aop
+  pod 'Stinger'
 end
 
 DebugList=['Debug','Debug_α','Debug_β']

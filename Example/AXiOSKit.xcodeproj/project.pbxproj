@@ -494,6 +494,7 @@
 		21CC20D6265F743F005BD351 /* _02ChatFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AA265F36C5005BD351 /* _02ChatFriendVC.m */; };
 		21CC7C62255FA40D00E7B506 /* AppDelegateWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */; };
 		21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */; };
+		21D2188A2669CE63006E05C9 /* AlertWayClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D218892669CE63006E05C9 /* AlertWayClass.m */; };
 		21D61EEC257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
 		21D61EED257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
 		21E6DE67260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
@@ -964,6 +965,8 @@
 		21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateWebImage.m; sourceTree = "<group>"; };
 		21CC7C66255FA4A300E7B506 /* AppDelegateDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateDebug.h; sourceTree = "<group>"; };
 		21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateDebug.m; sourceTree = "<group>"; };
+		21D218882669CE63006E05C9 /* AlertWayClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertWayClass.h; sourceTree = "<group>"; };
+		21D218892669CE63006E05C9 /* AlertWayClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertWayClass.m; sourceTree = "<group>"; };
 		21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		21D61EEB257F106E0059201A /* DogSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSwift.swift; sourceTree = "<group>"; };
 		21D83B3A255A28BE00695C28 /* rac.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = rac.md; sourceTree = "<group>"; };
@@ -1255,6 +1258,8 @@
 			children = (
 				21A61D0B265E7F4A0080E67D /* DemoEnvironmenVC.h */,
 				21A61CBF265E7F4A0080E67D /* DemoEnvironmenVC.m */,
+				21D218882669CE63006E05C9 /* AlertWayClass.h */,
+				21D218892669CE63006E05C9 /* AlertWayClass.m */,
 				21A61CC4265E7F4A0080E67D /* Load */,
 				21A61CCD265E7F4A0080E67D /* Object */,
 				21A61CB9265E7F4A0080E67D /* RecordAudio */,
@@ -3028,6 +3033,7 @@
 				21A61EA1265E7F4B0080E67D /* AXDemoURLProtocol.m in Sources */,
 				21A61EB1265E7F4B0080E67D /* _37FileManagerVC.m in Sources */,
 				21A61EF1265E7F4B0080E67D /* _25DataModel.m in Sources */,
+				21D2188A2669CE63006E05C9 /* AlertWayClass.m in Sources */,
 				21A61E71265E7F4B0080E67D /* _19ScrollContentViewController.m in Sources */,
 				21A61C81265E7EBF0080E67D /* FileListViewController.swift in Sources */,
 				21A61E63265E7F4B0080E67D /* AXShareOption.m in Sources */,
