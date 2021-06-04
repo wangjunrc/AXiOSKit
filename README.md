@@ -60,6 +60,57 @@ https://github.com/Tim9Liu9/TimLiu-iOS
 // 将此行放在出现警告的. m 文件中。 消除所有警告
 #pragma GCC diagnostic ignored <#参数#>
 ```
+# deprecated 警告消除的解决方法
+```
+https://www.cnblogs.com/yfming/p/5936173.html
+```
+## 常见1.消除方法弃用(过时)的警告
+```
+// 消除方法弃用(过时)的警告
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored “-Wdeprecated-declarations”
+// 要消除警告的代码
+这里写出现警告的代码
+#pragma clang diagnostic pop
+```
+## 常见2、消除方法没有实现的警告
+```
+// ignored(忽视)消除对应的selector的警告
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored “-Wundeclared-selector”
+// 要消除警告的代码
+这里写出现警告的代码
+// 结束
+#pragma clang diagnostic pop
+```
+## 常见3.不兼容指针类型警告
+```
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored “-Wincompatible-pointer-types”
+//不兼容指针类型
+#pragma clang diagnostic pop
+```
+## 常见4.循环引用警告
+```
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored “-Warc-retain-cycles”
+//循环引用
+#pragma clang diagnostic pop
+```
+## 常见5.未使用变量警告
+```
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored “-Wunused-variable”
+//未使用的变量
+#pragma clang diagnostic pop
+```
+##常见6.内存泄漏警告
+```
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored “-Warc-performSelector-leaks”
+//内存泄漏警告
+#pragma clang diagnostic pop
+```  
 
 ## 过期宏 三种方式都是 第一种的宏
 ```

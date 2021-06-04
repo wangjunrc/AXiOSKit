@@ -22,6 +22,8 @@
 #import <SSZipArchive/SSZipArchive.h>
 #import <TABAnimated/TABAnimated.h>
 #import <mach/mach.h>
+#import "AXDemoUser.h"
+#import "AXDemoUser2.h"
 @import AssetsLibrary;
 
 static __attribute__((always_inline)) void asm_exit() {
@@ -234,7 +236,7 @@ void mySLog(NSString *format, ...)
     
     AXDataSourceOption *option = self.dataArray[indexPath.row];
     cell.option = option;
-    cell.titleLabel.text = [NSString stringWithFormat:@"%ld-%@",indexPath.row,option.title];
+    cell.titleLabel.text = [NSString stringWithFormat:@"%ld-%@",(long)indexPath.row,option.title];
     return cell;
 }
 
@@ -625,12 +627,11 @@ void mySLog(NSString *format, ...)
                 
                 [self ax_showAlertByTitle:@"是否调用"
                                   confirm:^{
-                    Person *per = [[Person alloc] init];
+//                    Person *per = [[Person alloc] init];
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
+#pragma clang diagnostic ignored "-Wnonnull"
                     NSMutableArray *arr = NSMutableArray.array;
                     [arr addObject:nil];
-                    
                     NSLog(@"array=%@",arr);
 #pragma clang diagnostic pop
                     
@@ -876,7 +877,6 @@ void mySLog(NSString *format, ...)
                 [self ax_presentViewControllerPushStyle:vc animated:YES completion:nil];
             };
         }
-        
         {
             AXDataSourceOption *option = AXDataSourceOption.alloc.init;
             [tempArray addObject:option];
@@ -905,6 +905,18 @@ void mySLog(NSString *format, ...)
 #endif
                 
             };
+            
+            {
+                AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+                [tempArray addObject:option];
+                option.title = @"单例不能继承";
+                option.action = ^{
+                    
+                    NSLog(@"AXDemoUser=%p",AXDemoUser.sharedUser);
+                    NSLog(@"AXDemoUser2=%p",AXDemoUser2.alloc.init);
+                };
+            }
+    
         }
         
         
