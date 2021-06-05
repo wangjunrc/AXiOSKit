@@ -42,6 +42,7 @@
 
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
+#pragma mark - 隐藏状态条
 -(BOOL)prefersStatusBarHidden{
     return YES;
 }

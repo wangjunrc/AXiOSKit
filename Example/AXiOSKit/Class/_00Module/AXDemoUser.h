@@ -14,9 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 AX_SINGLETON_INTER(User)
 
-+ (AXDemoUser *)testName;
 
-
++(void)testSub;
 
 @end
 

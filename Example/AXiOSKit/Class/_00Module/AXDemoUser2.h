@@ -6,11 +6,11 @@
 //  Copyright © 2021 axinger. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "AXDemoUser.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AXDemoUser2 : NSObject
+@interface AXDemoUser2 : AXDemoUser
 
 @end
 

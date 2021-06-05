@@ -47,6 +47,10 @@
 		2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		21799C7C255BDE8500754A8B /* gift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 21799C7B255BDE8500754A8B /* gift.svg */; };
+		217DA6F3266BB848003E0E6B /* AXDemoUser2.m in Sources */ = {isa = PBXBuildFile; fileRef = 217DA6EF266BB847003E0E6B /* AXDemoUser2.m */; };
+		217DA6F4266BB848003E0E6B /* AXDemoUser2.m in Sources */ = {isa = PBXBuildFile; fileRef = 217DA6EF266BB847003E0E6B /* AXDemoUser2.m */; };
+		217DA6F5266BB848003E0E6B /* AXDemoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 217DA6F2266BB848003E0E6B /* AXDemoUser.m */; };
+		217DA6F6266BB848003E0E6B /* AXDemoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 217DA6F2266BB848003E0E6B /* AXDemoUser.m */; };
 		21898F322541B11D00876524 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898F312541B11D00876524 /* Application.m */; };
 		218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */; };
 		218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */; };
@@ -495,8 +499,6 @@
 		21CC7C62255FA40D00E7B506 /* AppDelegateWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */; };
 		21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */; };
 		21D2188A2669CE63006E05C9 /* AlertWayClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D218892669CE63006E05C9 /* AlertWayClass.m */; };
-		21D218B2266A1931006E05C9 /* AXDemoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D218B1266A1931006E05C9 /* AXDemoUser.m */; };
-		21D218B5266A19C7006E05C9 /* AXDemoUser2.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D218B4266A19C7006E05C9 /* AXDemoUser2.m */; };
 		21D61EEC257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
 		21D61EED257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
 		21E6DE67260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
@@ -602,6 +604,10 @@
 		2152C5B525919C720078D525 /* AXDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugViewController.h; sourceTree = "<group>"; };
 		2152C5B625919C720078D525 /* AXDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugViewController.m; sourceTree = "<group>"; };
 		21799C7B255BDE8500754A8B /* gift.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = gift.svg; sourceTree = "<group>"; };
+		217DA6EF266BB847003E0E6B /* AXDemoUser2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDemoUser2.m; sourceTree = "<group>"; };
+		217DA6F0266BB847003E0E6B /* AXDemoUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDemoUser.h; sourceTree = "<group>"; };
+		217DA6F1266BB848003E0E6B /* AXDemoUser2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDemoUser2.h; sourceTree = "<group>"; };
+		217DA6F2266BB848003E0E6B /* AXDemoUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDemoUser.m; sourceTree = "<group>"; };
 		21898F302541B11D00876524 /* Application.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		21898F312541B11D00876524 /* Application.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
 		21898FF72541B48000876524 /* read.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = read.md; sourceTree = "<group>"; };
@@ -969,10 +975,6 @@
 		21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateDebug.m; sourceTree = "<group>"; };
 		21D218882669CE63006E05C9 /* AlertWayClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertWayClass.h; sourceTree = "<group>"; };
 		21D218892669CE63006E05C9 /* AlertWayClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertWayClass.m; sourceTree = "<group>"; };
-		21D218B0266A1931006E05C9 /* AXDemoUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDemoUser.h; sourceTree = "<group>"; };
-		21D218B1266A1931006E05C9 /* AXDemoUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDemoUser.m; sourceTree = "<group>"; };
-		21D218B3266A19C7006E05C9 /* AXDemoUser2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDemoUser2.h; sourceTree = "<group>"; };
-		21D218B4266A19C7006E05C9 /* AXDemoUser2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDemoUser2.m; sourceTree = "<group>"; };
 		21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		21D61EEB257F106E0059201A /* DogSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSwift.swift; sourceTree = "<group>"; };
 		21D83B3A255A28BE00695C28 /* rac.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = rac.md; sourceTree = "<group>"; };
@@ -1262,10 +1264,14 @@
 		21A61CAF265E7F4A0080E67D /* _00Module */ = {
 			isa = PBXGroup;
 			children = (
-				21A61D0B265E7F4A0080E67D /* DemoEnvironmenVC.h */,
-				21A61CBF265E7F4A0080E67D /* DemoEnvironmenVC.m */,
 				21D218882669CE63006E05C9 /* AlertWayClass.h */,
 				21D218892669CE63006E05C9 /* AlertWayClass.m */,
+				217DA6F0266BB847003E0E6B /* AXDemoUser.h */,
+				217DA6F2266BB848003E0E6B /* AXDemoUser.m */,
+				217DA6F1266BB848003E0E6B /* AXDemoUser2.h */,
+				217DA6EF266BB847003E0E6B /* AXDemoUser2.m */,
+				21A61D0B265E7F4A0080E67D /* DemoEnvironmenVC.h */,
+				21A61CBF265E7F4A0080E67D /* DemoEnvironmenVC.m */,
 				21A61CC4265E7F4A0080E67D /* Load */,
 				21A61CCD265E7F4A0080E67D /* Object */,
 				21A61CB9265E7F4A0080E67D /* RecordAudio */,
@@ -1276,10 +1282,6 @@
 				21A61CFD265E7F4A0080E67D /* TestDB */,
 				21A61D0C265E7F4A0080E67D /* TestPlugin.h */,
 				21A61CBE265E7F4A0080E67D /* TestPlugin.m */,
-				21D218B0266A1931006E05C9 /* AXDemoUser.h */,
-				21D218B1266A1931006E05C9 /* AXDemoUser.m */,
-				21D218B3266A19C7006E05C9 /* AXDemoUser2.h */,
-				21D218B4266A19C7006E05C9 /* AXDemoUser2.m */,
 				21A61D0A265E7F4A0080E67D /* TestPluginViewController.h */,
 				21A61CC0265E7F4A0080E67D /* TestPluginViewController.m */,
 				21A61CC1265E7F4A0080E67D /* TestVideo */,
@@ -2848,6 +2850,7 @@
 				21A61EC0265E7F4B0080E67D /* _38DirectionVC.m in Sources */,
 				21A61E56265E7F4A0080E67D /* AXShareWeibo.swift in Sources */,
 				21A61C7E265E7EBF0080E67D /* WebviewPreviewViewContoller.swift in Sources */,
+				217DA6F4266BB848003E0E6B /* AXDemoUser2.m in Sources */,
 				211226F92573340100B6ECC8 /* AppDelegateWebImage.m in Sources */,
 				21A61EAC265E7F4B0080E67D /* DemoNavigationController.m in Sources */,
 				21A61DFC265E7F4A0080E67D /* TestPlugin.m in Sources */,
@@ -2905,6 +2908,7 @@
 				21A61C9C265E7EBF0080E67D /* FileListPreview.swift in Sources */,
 				21A61EDA265E7F4B0080E67D /* _16KeyChainViewController.m in Sources */,
 				21A61E14265E7F4A0080E67D /* CopyActivity.m in Sources */,
+				217DA6F6266BB848003E0E6B /* AXDemoUser.m in Sources */,
 				21A61F06265E7F4B0080E67D /* Target_News.m in Sources */,
 				21A61EE8265E7F4B0080E67D /* _25CompLayoutVC3.m in Sources */,
 				21A61DFA265E7F4A0080E67D /* AXRecordAudioConfig.m in Sources */,
@@ -3071,7 +3075,6 @@
 				21E6DE67260494060092051F /* DogOC.m in Sources */,
 				21A61E61265E7F4B0080E67D /* AXSocialShareViewController.m in Sources */,
 				21A61EEF265E7F4B0080E67D /* _25CompLayoutVC5.m in Sources */,
-				21D218B5266A19C7006E05C9 /* AXDemoUser2.m in Sources */,
 				21A61E8F265E7F4B0080E67D /* _05WebVC.m in Sources */,
 				21A61E87265E7F4B0080E67D /* _00TableViewCell.m in Sources */,
 				21A61E6F265E7F4B0080E67D /* _04RunLoopViewController.m in Sources */,
@@ -3084,7 +3087,6 @@
 				213BCBEA254003DB00C89B72 /* MakeKeyAndVisible.m in Sources */,
 				21A61ED9265E7F4B0080E67D /* _16KeyChainViewController.m in Sources */,
 				21A61E13265E7F4A0080E67D /* CopyActivity.m in Sources */,
-				21D218B2266A1931006E05C9 /* AXDemoUser.m in Sources */,
 				21A61F05265E7F4B0080E67D /* Target_News.m in Sources */,
 				21A61EE7265E7F4B0080E67D /* _25CompLayoutVC3.m in Sources */,
 				21A61DF9265E7F4A0080E67D /* AXRecordAudioConfig.m in Sources */,
@@ -3097,10 +3099,12 @@
 				21A61C7D265E7EBF0080E67D /* WebviewPreviewViewContoller.swift in Sources */,
 				21A61E67265E7F4B0080E67D /* AXSocialShareView.m in Sources */,
 				21A61DFF265E7F4A0080E67D /* TestPluginViewController.m in Sources */,
+				217DA6F3266BB848003E0E6B /* AXDemoUser2.m in Sources */,
 				21A61F13265E7F4B0080E67D /* _02ChatViewController.m in Sources */,
 				21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */,
 				21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */,
 				218A323C25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */,
+				217DA6F5266BB848003E0E6B /* AXDemoUser.m in Sources */,
 				21A61E6D265E7F4B0080E67D /* RouterManager.m in Sources */,
 				21A61EF7265E7F4B0080E67D /* _25CompLayoutCell.m in Sources */,
 				21A61EA5265E7F4B0080E67D /* DemoWevViewImageSchemeHandler.m in Sources */,

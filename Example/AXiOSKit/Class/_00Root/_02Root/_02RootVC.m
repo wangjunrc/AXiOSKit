@@ -909,10 +909,12 @@ void mySLog(NSString *format, ...)
             {
                 AXDataSourceOption *option = AXDataSourceOption.alloc.init;
                 [tempArray addObject:option];
-                option.title = @"单例不能继承";
+                option.title = @"单例能继承";
                 option.action = ^{
-                    
+                    [AXDemoUser testSub];
+                    [AXDemoUser2 testSub];
                     NSLog(@"AXDemoUser=%p",AXDemoUser.sharedUser);
+                    NSLog(@"AXDemoUser2=%p",AXDemoUser2.sharedUser);
                     NSLog(@"AXDemoUser2=%p",AXDemoUser2.alloc.init);
                 };
             }

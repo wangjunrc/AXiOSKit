@@ -10,4 +10,8 @@
 
 @implementation AXDemoUser
 AX_SINGLETON_IMPL(User)
+
++(void)testSub {
+    NSLog(@"testSub=%@",self);
+}
 @end
