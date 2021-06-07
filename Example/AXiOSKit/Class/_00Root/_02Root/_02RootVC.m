@@ -504,6 +504,19 @@ void mySLog(NSString *format, ...)
                 }];
             };
         }
+        {
+            
+            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"UIAlertController单个";
+            option.action = ^{
+                
+                [self ax_showAlertByTitle:@"title123" message:@"msg" confirm:^{
+                    
+                }];
+            };
+           
+        }
         
         {
             AXDataSourceOption *option = AXDataSourceOption.alloc.init;

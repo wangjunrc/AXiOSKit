@@ -36,7 +36,21 @@
 //            }
 //        }
 //    } error:nil];
-    
+    {
+        /// hook类方法
+        NSError *error;
+        [object_getClass(UIImage.class) aspect_hookSelector:@selector(imageNamed:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo,NSString *imageNamed) {
+            NSInvocation  *invocation = aspectInfo.originalInvocation;
+            if ([imageNamed isEqualToString:@"ax_icon_weixin"]) {
+                id img= nil;
+                img= [UIImage imageNamed:@"chongshe"];
+                [invocation setReturnValue:&img];
+                NSLog(@"替换%@为,img=%@",imageNamed,img);
+            }
+        } error:&error];
+        NSLog(@"ax_imageNamed error== %@",error);
+        
+    }
     
     [NSObject ax_replaceInstanceMethodWithOriginal:@selector(setNilValueForKey:) newSelector:@selector(ax_safe_setNilValueForKey:)];
     

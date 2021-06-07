@@ -146,6 +146,7 @@
     }
     
     {
+        [self _titlelabel:@"UIImage类方法替换"];
         UIImageView *imv = [[UIImageView alloc] init];
         imv.image = [UIImage imageNamed:@"ax_icon_weixin"];
         [self.containerView addSubview:imv];
