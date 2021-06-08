@@ -8,6 +8,8 @@
 
 #import "AppDelegateWCDB.h"
 #import <WCDB/WCDB.h>
+#import <MMKV/MMKV.h>
+#import <AXiOSKit/AXiOSKit.h>
 @interface AppDelegateWCDB()
 
 @end
@@ -39,6 +41,8 @@
         NSLog(@"[WCDB] SQL: %@", sql);
     }];
     
+    NSString *path = [NSString.ax_documentPath stringByAppendingPathComponent:@"AX_MMKV"];
+    [MMKV initializeMMKV:path];
     
     return YES;
 }
