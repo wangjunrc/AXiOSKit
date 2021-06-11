@@ -501,6 +501,10 @@
 		21D2188A2669CE63006E05C9 /* AlertWayClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D218892669CE63006E05C9 /* AlertWayClass.m */; };
 		21D61EEC257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
 		21D61EED257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
+		21DE11E82673517400D2C914 /* QDNavigationBarScrollingAnimatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DE11E72673517300D2C914 /* QDNavigationBarScrollingAnimatorViewController.m */; };
+		21DE11E92673517400D2C914 /* QDNavigationBarScrollingAnimatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DE11E72673517300D2C914 /* QDNavigationBarScrollingAnimatorViewController.m */; };
+		21DE11EC267351D600D2C914 /* QDCommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DE11EB267351D600D2C914 /* QDCommonTableViewController.m */; };
+		21DE11ED267351D600D2C914 /* QDCommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DE11EB267351D600D2C914 /* QDCommonTableViewController.m */; };
 		21E6DE67260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
 		21E6DE68260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
 		21EB382B25DF90C6002C1807 /* ax_debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */; };
@@ -978,6 +982,10 @@
 		21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		21D61EEB257F106E0059201A /* DogSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSwift.swift; sourceTree = "<group>"; };
 		21D83B3A255A28BE00695C28 /* rac.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = rac.md; sourceTree = "<group>"; };
+		21DE11E62673517300D2C914 /* QDNavigationBarScrollingAnimatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDNavigationBarScrollingAnimatorViewController.h; sourceTree = "<group>"; };
+		21DE11E72673517300D2C914 /* QDNavigationBarScrollingAnimatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDNavigationBarScrollingAnimatorViewController.m; sourceTree = "<group>"; };
+		21DE11EA267351D500D2C914 /* QDCommonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonTableViewController.h; sourceTree = "<group>"; };
+		21DE11EB267351D600D2C914 /* QDCommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonTableViewController.m; sourceTree = "<group>"; };
 		21E6DE65260494060092051F /* DogOC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogOC.h; sourceTree = "<group>"; };
 		21E6DE66260494060092051F /* DogOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogOC.m; sourceTree = "<group>"; };
 		21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ax_debug.xcconfig; sourceTree = "<group>"; };
@@ -1169,8 +1177,7 @@
 				21A61DBE265E7F4A0080E67D /* _01TypeViewController.h */,
 				21A61D3D265E7F4A0080E67D /* _01TypeViewController.m */,
 				21A61DD4265E7F4A0080E67D /* _02Chat */,
-				21A61D35265E7F4A0080E67D /* _03GradientViewController.h */,
-				21A61D95265E7F4A0080E67D /* _03GradientViewController.m */,
+				21DE11E52673515900D2C914 /* _03导航栏渐变 */,
 				21A61D73265E7F4A0080E67D /* _04RunLoopViewController.h */,
 				21A61D28265E7F4A0080E67D /* _04RunLoopViewController.m */,
 				21A61D77265E7F4A0080E67D /* _04RunLoopViewController.xib */,
@@ -1875,6 +1882,19 @@
 			path = AppDelegateComponent;
 			sourceTree = "<group>";
 		};
+		21DE11E52673515900D2C914 /* _03导航栏渐变 */ = {
+			isa = PBXGroup;
+			children = (
+				21A61D35265E7F4A0080E67D /* _03GradientViewController.h */,
+				21A61D95265E7F4A0080E67D /* _03GradientViewController.m */,
+				21DE11EA267351D500D2C914 /* QDCommonTableViewController.h */,
+				21DE11EB267351D600D2C914 /* QDCommonTableViewController.m */,
+				21DE11E62673517300D2C914 /* QDNavigationBarScrollingAnimatorViewController.h */,
+				21DE11E72673517300D2C914 /* QDNavigationBarScrollingAnimatorViewController.m */,
+			);
+			path = "_03导航栏渐变";
+			sourceTree = "<group>";
+		};
 		21EB383525DF90E1002C1807 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -2574,8 +2594,8 @@
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/QMUIKit/QMUIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RMQClient/RMQClient.framework",
-				"${BUILT_PRODUCTS_DIR}/RTRootNavigationController/RTRootNavigationController.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImageFLPlugin/SDWebImageFLPlugin.framework",
@@ -2640,8 +2660,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QMUIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMQClient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTRootNavigationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageFLPlugin.framework",
@@ -2716,8 +2736,8 @@
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/QMUIKit/QMUIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RMQClient/RMQClient.framework",
-				"${BUILT_PRODUCTS_DIR}/RTRootNavigationController/RTRootNavigationController.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImageFLPlugin/SDWebImageFLPlugin.framework",
@@ -2782,8 +2802,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QMUIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMQClient.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTRootNavigationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageFLPlugin.framework",
@@ -2880,6 +2900,7 @@
 				21A61F18265E7F4B0080E67D /* ChatMessageModel.m in Sources */,
 				21A61C98265E7EBF0080E67D /* PreviewTransitionViewController.swift in Sources */,
 				21A61C9E265E7EBF0080E67D /* FBFile.swift in Sources */,
+				21DE11ED267351D600D2C914 /* QDCommonTableViewController.m in Sources */,
 				21A61EE6265E7F4B0080E67D /* _25LayoutViewController.m in Sources */,
 				2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */,
 				21A61ED6265E7F4B0080E67D /* _39MasonryViewController.m in Sources */,
@@ -2925,6 +2946,7 @@
 				2112271C2573340100B6ECC8 /* MakeKeyAndVisible.m in Sources */,
 				2112271E2573340100B6ECC8 /* AppDelegateAppearance.m in Sources */,
 				2112271F2573340100B6ECC8 /* AppDelegateDebug.m in Sources */,
+				21DE11E92673517400D2C914 /* QDNavigationBarScrollingAnimatorViewController.m in Sources */,
 				21A61E6E265E7F4B0080E67D /* RouterManager.m in Sources */,
 				21A61EF8265E7F4B0080E67D /* _25CompLayoutCell.m in Sources */,
 				21A61EA6265E7F4B0080E67D /* DemoWevViewImageSchemeHandler.m in Sources */,
@@ -3081,6 +3103,7 @@
 				21A61C7F265E7EBF0080E67D /* PreviewManager.swift in Sources */,
 				218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */,
 				21A61EDD265E7F4B0080E67D /* _13WeImageTableViewController.m in Sources */,
+				21DE11E82673517400D2C914 /* QDNavigationBarScrollingAnimatorViewController.m in Sources */,
 				21A61EED265E7F4B0080E67D /* _25CompLayoutVC1.m in Sources */,
 				21A61E4F265E7F4A0080E67D /* AXUserInfoDao.mm in Sources */,
 				21A61E1D265E7F4A0080E67D /* CustomGifHeader.m in Sources */,
@@ -3160,6 +3183,7 @@
 				21A61E95265E7F4B0080E67D /* _03RootVC.m in Sources */,
 				21A61E79265E7F4B0080E67D /* AFHTTPSessionManager+PutFile.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				21DE11EC267351D600D2C914 /* QDCommonTableViewController.m in Sources */,
 				21A61ECD265E7F4B0080E67D /* _20TimeLineContentCell.m in Sources */,
 				21A61EC7265E7F4B0080E67D /* _30TimeLineModel.m in Sources */,
 				21A61EE1265E7F4B0080E67D /* _25_2_DiffableDataSource.m in Sources */,
@@ -3497,7 +3521,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AXiOSKit/SDK/TencentSDK_V3",
@@ -3641,7 +3665,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AXiOSKit/SDK/TencentSDK_V3",
@@ -3938,7 +3962,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AXiOSKit/SDK/TencentSDK_V3",
@@ -3974,7 +3998,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AXiOSKit/SDK/TencentSDK_V3",

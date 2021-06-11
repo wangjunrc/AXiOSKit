@@ -47,7 +47,7 @@
     //    self.navigationBar.tintColor = [UIColor greenColor];
     //    UIColor *color = UIColor.redColor;
     //    [self ax_setNavBarBackgroundImageWithColor:color];
-    self.navigationBar.barTintColor = [UIColor orangeColor];
+    
     //    self.rt_navigationController.useSystemBackBarButtonItem = YES;
     
     //    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -62,6 +62,19 @@
     //        self.navigationItem.backBarButtonItem = backButtonItem;
     
     //    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+    /// 背景色
+    self.navigationBar.barTintColor = [UIColor purpleColor];
+    
+    /// 返回按钮 颜色
+    self.navigationBar.tintColor = [UIColor whiteColor];
+    
+    //状态栏颜色
+    self.navigationBar.barStyle = UIBarStyleDefault;
+    //半透明--- view坐标为0,0, NO view坐标为0,64
+//    self.navigationBar.translucent = NO;
+    //取消导航白线
+    self.navigationBar.shadowImage = UIImage.alloc.init;
     
     
 }

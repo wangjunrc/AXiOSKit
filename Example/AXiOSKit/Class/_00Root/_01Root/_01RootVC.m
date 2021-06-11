@@ -72,11 +72,14 @@
 #import <mach/mach.h>
 #import "Person.h"
 #import <AXCollectionObserve/AXCollectionObserve.h>
+#import <QMUIKit/QMUIKit.h>
+#import "QDNavigationBarScrollingAnimatorViewController.h"
+
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
 
-@interface _01RootVC ()
+@interface _01RootVC ()<QMUINavigationControllerAppearanceDelegate>
 {
     NSInteger _count;
 }
@@ -97,6 +100,14 @@ typedef void (^CollectionBlock)(void);
 @end
 
 @implementation _01RootVC
+
+//- (nullable UIImage *)navigationBarBackgroundImage {
+//    return [UIImage qmui_imageWithColor:UIColor.purpleColor];
+//}
+/// 导航栏颜色,控制子页面,所以根视图需要设置
+- (nullable UIColor *)navigationBarBarTintColor {
+    return UIColor.purpleColor;
+}
 
 - (void)injected {
     NSLog(@"重启了 InjectionIII: %@", self);
@@ -646,12 +657,21 @@ typedef void (^CollectionBlock)(void);
             },
             @{
                 @"index": @3,
-                @"title": @"滑动透明导航栏",
+                @"title": @"滑动透明导航栏(放弃)",
                 @"action": ^{
                     _03GradientViewController *vc = [[_03GradientViewController alloc]init];
                     [self ax_pushVC:vc];
                 },
             },
+            @{
+                @"index": @3,
+                @"title": @"QMUI-滑动透明导航栏",
+                @"action": ^{
+                    QDNavigationBarScrollingAnimatorViewController *vc = [[QDNavigationBarScrollingAnimatorViewController alloc]init];
+                    [self ax_pushVC:vc];
+                },
+            },
+            
             
             @{
                 @"index": @4,

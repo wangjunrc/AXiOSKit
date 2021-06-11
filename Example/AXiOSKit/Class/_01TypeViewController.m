@@ -7,55 +7,70 @@
 //
 
 #import "_01TypeViewController.h"
+#import <QMUIKit/QMUIKit.h>
 
-@interface _01TypeViewController ()
+@interface _01TypeViewController ()<QMUINavigationControllerAppearanceDelegate>
 @property(nonatomic,assign)BOOL navigationBarHidden;
 @end
 
 @implementation _01TypeViewController
 
+//- (nullable UIImage *)navigationBarBackgroundImage {
+//    return [UIImage qmui_imageWithColor:UIColor.greenColor];
+//}
+
+/// 导航栏颜色,子页面颜色
+- (nullable UIColor *)navigationBarBarTintColor {
+    if (self.ax_barTintColor) {
+        return self.ax_barTintColor;
+    }
+    return UIColor.greenColor;
+}
+- (UIBarStyle)navigationBarStyle {
+    return UIBarStyleBlack;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.orangeColor;
-    if (self.ax_barTintColor) {
-        
-        if ([self.ax_barTintColor isEqual:UIColor.clearColor]) {
-            
-            
-            [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-               self.navigationController.navigationBar.translucent = YES;//设置透明
-            
-//            self.navigationController.navigationBar.translucent = YES;
-            //设置导航栏背景图片为一个空的image，这样就透明了
-               [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-               
-//            self.navigationController.navigationBar.translucent = YES;//设置不透明
-            
-            
-//            self.edgesForExtendedLayout = UIRectEdgeNone;
+//    if (self.ax_barTintColor) {
+//        
+//        if ([self.ax_barTintColor isEqual:UIColor.clearColor]) {
+//            
+//            
+//            [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+//               self.navigationController.navigationBar.translucent = YES;//设置透明
+//            
+////            self.navigationController.navigationBar.translucent = YES;
+//            //设置导航栏背景图片为一个空的image，这样就透明了
+//               [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+//               
+////            self.navigationController.navigationBar.translucent = YES;//设置不透明
+//            
+//            
+////            self.edgesForExtendedLayout = UIRectEdgeNone;
+////
+////            self.navigationController.navigationBar.translucent = YES;
+////            self.extendedLayoutIncludesOpaqueBars = YES;
 //
-//            self.navigationController.navigationBar.translucent = YES;
-//            self.extendedLayoutIncludesOpaqueBars = YES;
-
-            
-//            if (@available(iOS 11.0, *)) {
+//            
+////            if (@available(iOS 11.0, *)) {
+////
+////                    }else {
+////                        self.automaticallyAdjustsScrollViewInsets = NO;
+////                    }
 //
-//                    }else {
-//                        self.automaticallyAdjustsScrollViewInsets = NO;
-//                    }
-
-
-            
-            
-        }else{
-            self.navigationController.navigationBar.barTintColor = self.ax_barTintColor;
-            [self.navigationController.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:self.ax_barTintColor]
-                                                          forBarMetrics:UIBarMetricsDefault];
-            
-        }
-      
-    }
-    
+//
+//            
+//            
+//        }else{
+//            self.navigationController.navigationBar.barTintColor = self.ax_barTintColor;
+//            [self.navigationController.navigationBar setBackgroundImage:[UIImage ax_imageSquareWithColor:self.ax_barTintColor]
+//                                                          forBarMetrics:UIBarMetricsDefault];
+//            
+//        }
+//      
+//    }
+//    
     
     __weak typeof(self) weakSelf = self;
     [self _buttonTitle:@"黄色" handler:^(UIButton * _Nonnull btn) {

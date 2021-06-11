@@ -27,8 +27,35 @@ $开头：全局变量（Global variable）。
 @开头：实例变量（Instance variable）。
 @@开头：类变量（Class variable）类变量被共享在整个继承链中
 大写字母开头：常数（Constant）。
+
 =end
 
+=begin
+KMNavigationBarTransition
+下面是一些设置导航栏背景样式的建议，具体的用法可以参见 Example。
+
+设置导航栏背景样式有两个方法，setBackgroundImage:forBarMetrics: 和 setBarTintColor:。推荐使用前者，具体原因参见已知问题。
+
+translucent 这个属性的值在初始化后尽量不要随意修改，否则容易发生界面的布局错乱。
+
+当translucent 为 true 时，可以用以下方法使导航栏背景透明：
+
+navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+navigationController?.navigationBar.shadowImage = UIImage() // shadowImage 就是那根 1px 的细线
+
+当需要改变导航栏背景色的透明度时，可以改变 setBackgroundImage:forBarMetrics: 中 image 的 alpha 值。
+
+如果需要显示或隐藏导航栏，一般只需要在 viewWillAppear: 里设置，代码如下：
+
+override func viewWillAppear(animated: Bool) {
+super.viewWillAppear(animated)
+navigationController?.setNavigationBarHidden(hidden, animated: animated)
+}
+
+最好不要在 viewWillDisappear: 或者其他发生跳转的方法里去设置，这样不容易管理。还是那句宗旨，你只需要关心当前 view controller 导航栏的样式。
+
+当然最好还是不要隐藏导航栏，因为和系统边缘右滑返回手势一起使用可能会触发一些苹果的 bug
+=end
 # axing 库
 def axinger_pods
   
@@ -65,8 +92,8 @@ def ui_pods
   
   #  pod 'libwebp', :git => 'https://gitee.com/mirrors/libwebp.git'
   # 微信开源数据库操作层 ORM
-  #  pod 'WCDB','~> 1.0.7.5'
-  pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git' #,:tag => '~> 1.0.8.2'
+  pod 'WCDB','~> 1.0.7.5'
+  #  pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git' #,:tag => '~> 1.0.8.2'
   # 微信分享,此版本才不会校验链接
   #    pod 'WechatOpenSDK','= 1.7.7'
   
@@ -117,10 +144,14 @@ def ui_pods
   #  pod 'PEPhotoCropEditor'
   
   # 在不同的控制器中实现UINavigationBar不同地样式,这个runtime,自动加载
-  #  pod 'KMNavigationBarTransition'
+#  pod 'KMNavigationBarTransition', '~>1.1.8'
   # 导航栏,可以每个VC不一样配置,需要继承的
-  pod 'RTRootNavigationController','~> 0.8.0'
+  #  pod 'RTRootNavigationController','~> 0.8.0'
   
+  
+  pod 'QMUIKit', '~>4.2.3'
+
+
   pod "Protobuf",'~> 3.15.8'
   pod "YYText",'~> 1.0.7'
   pod "YYCategories", '~> 1.0.4'
@@ -132,8 +163,7 @@ def ui_pods
   pod 'YYKeyboardManager' ,  '~> 1.0.1'
   #  pod 'ZLCollectionViewFlowLayout'
   pod 'TABAnimated', '2.5.5'
-  # aop
-  pod 'Stinger'
+  
 end
 
 DebugList=['Debug','Debug_α','Debug_β']
@@ -141,7 +171,7 @@ DoraemonKit_version='~> 3.0.7'
 # 测试工具
 def debug_pods
   # LookinServer 和 Reveal-SDK 类似
-  
+  #  pod 'xxx', :configuration => ['Release']
   #  pod 'LLDebugTool' , '1.3.8.1' ,:configurations => DebugList
   #  pod 'MLeaksFinder', '~> 1.1.0' ,:configurations => DebugList
   #  pod 'LookinServer', :configurations => DebugList
@@ -196,10 +226,10 @@ def common_pods
   pod 'CocoaLumberjack'
   
   # 文件
-#  pod 'FileBrowser', '~> 1.0',直接引入本地,修改了源码
+  #  pod 'FileBrowser', '~> 1.0',直接引入本地,修改了源码
   
   # aop,报错
-#  pod 'Stinger', '~> 0.3.0'
+  #  pod 'Stinger', '~> 0.3.0'
   
 end
 
