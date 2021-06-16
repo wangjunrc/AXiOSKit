@@ -6,14 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AXMutableObserveProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSMutableArray (AXObserve)
+@interface NSMutableArray (AXObserve)<AXMutableObserveProtocol>
 
-/// NSMutableArray 值变化监听
-/// @param handler 回调
--(void)ax_valueChangeObserve:(void(^)(NSMutableArray *array))handler;
 
 @end
 

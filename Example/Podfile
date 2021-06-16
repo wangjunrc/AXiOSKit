@@ -61,7 +61,9 @@ def axinger_pods
   
   pod 'AXiOSKit', :path => '../'
   pod 'AXViewControllerTransitioning', :path => '../../AXViewControllerTransitioning'
-  pod 'AXCollectionObserve', :path => '../../AXCollectionObserve'
+#  pod 'AXCollectionObserve', :path => '../../AXCollectionObserve'
+  pod 'AXCollectionObserve','~>1.1.1'
+  
 end
 
 # 因为有的target 不支持UIKit的库
@@ -144,14 +146,14 @@ def ui_pods
   #  pod 'PEPhotoCropEditor'
   
   # 在不同的控制器中实现UINavigationBar不同地样式,这个runtime,自动加载
-#  pod 'KMNavigationBarTransition', '~>1.1.8'
+  #  pod 'KMNavigationBarTransition', '~>1.1.8'
   # 导航栏,可以每个VC不一样配置,需要继承的
   #  pod 'RTRootNavigationController','~> 0.8.0'
   
   
   pod 'QMUIKit', '~>4.2.3'
-
-
+  
+  
   pod "Protobuf",'~> 3.15.8'
   pod "YYText",'~> 1.0.7'
   pod "YYCategories", '~> 1.0.4'

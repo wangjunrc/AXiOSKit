@@ -72,8 +72,6 @@ typedef void(^ButtonBlock)(UIButton *button);
 
 #pragma mark - 图片文字位置
 
-static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
-
 - (void)ax_setImagePosition:(AXButtonImagePosition)postion spacing:(CGFloat)spacing{
 //    [self setTitle:self.currentTitle forState:UIControlStateNormal];
 //    [self setImage:self.currentImage forState:UIControlStateNormal];
@@ -130,15 +128,13 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
     }
 }
 
-- (void)setHitTestEdgeInsets:(UIEdgeInsets)hitTestEdgeInsets
-{
-    NSValue *value = [NSValue value:&hitTestEdgeInsets withObjCType:@encode(UIEdgeInsets)];
-    objc_setAssociatedObject(self, &KEY_HIT_TEST_EDGE_INSETS, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setAx_pointOutside:(UIEdgeInsets)ax_pointOutside {
+    NSValue *value = [NSValue value:&ax_pointOutside withObjCType:@encode(UIEdgeInsets)];
+    objc_setAssociatedObject(self, @selector(ax_pointOutside),ax_pointOutside, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UIEdgeInsets)hitTestEdgeInsets
-{
-    NSValue *value = objc_getAssociatedObject(self, &KEY_HIT_TEST_EDGE_INSETS);
+- (UIEdgeInsets)ax_pointOutside {
+    NSValue *value = objc_getAssociatedObject(self, @selector(ax_pointOutside));
     if(value) {
         UIEdgeInsets edgeInsets; [value getValue:&edgeInsets]; return edgeInsets;
     }else {
@@ -146,15 +142,12 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
     }
 }
 
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
-{
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
     if(UIEdgeInsetsEqualToEdgeInsets(self.hitTestEdgeInsets, UIEdgeInsetsZero) || !self.enabled || self.hidden) {
         return [super pointInside:point withEvent:event];
     }
-    
     CGRect relativeFrame = self.bounds;
     CGRect hitFrame = UIEdgeInsetsInsetRect(relativeFrame, self.hitTestEdgeInsets);
-    
     return CGRectContainsPoint(hitFrame, point);
 }
 

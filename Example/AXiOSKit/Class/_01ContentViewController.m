@@ -1156,7 +1156,7 @@
         UIButton *btn = [[UIButton alloc] init];
         [self.containerView addSubview:btn];
         btn.backgroundColor = UIColor.blueColor;
-        [btn ax_setTitleStateNormal:@"UIButton间距"];
+        [btn ax_setTitleStateNormal:@"UIButton内间距"];
         //       [btn ax_setImageStateNormal:@"西瓜"];
         btn.contentEdgeInsets = UIEdgeInsetsMake(100, 100, 50, 20);
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {

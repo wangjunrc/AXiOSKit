@@ -24,12 +24,8 @@
  */
 - (void)ax_setImagePosition:(AXButtonImagePosition)postion spacing:(CGFloat)spacing;
 
-
-/**
- 扩大按钮响应热区时，负值为扩大，正值为缩小。 完全支持自动布局，只需要将方法写在自动布局方法下面即可
- */
-@property (nonatomic, assign) UIEdgeInsets hitTestEdgeInsets;
-
+/// 按钮响应外边距，负值为扩大，正值为缩小。 完全支持自动布局，只需要将方法写在自动布局方法下面即可
+@property (nonatomic, assign) UIEdgeInsets ax_pointOutside;
 /**
  UIControlStateNormal 状态文字
  

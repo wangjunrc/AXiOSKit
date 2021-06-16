@@ -15,10 +15,14 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - Aspects (1.4.1)
-  - AXCollectionObserve (1.1.0):
-    - AXCollectionObserve/Core (= 1.1.0)
+  - AXCollectionObserve (1.1.1):
+    - AXCollectionObserve/Component (= 1.1.1)
+    - AXCollectionObserve/Core (= 1.1.1)
     - ReactiveObjC (>= 3.0.0)
-  - AXCollectionObserve/Core (1.1.0):
+  - AXCollectionObserve/Component (1.1.1):
+    - AXCollectionObserve/Core
+    - ReactiveObjC (>= 3.0.0)
+  - AXCollectionObserve/Core (1.1.1):
     - ReactiveObjC (>= 3.0.0)
   - AXiOSKit (2.1.0):
     - AXiOSKit/Foundation (= 2.1.0)
@@ -518,7 +522,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - AXCollectionObserve (from `../../AXCollectionObserve`)
+  - AXCollectionObserve (~> 1.1.1)
   - AXiOSKit (from `../`)
   - AXViewControllerTransitioning (from `../../AXViewControllerTransitioning`)
   - Bagel (~> 1.4.0)
@@ -573,6 +577,7 @@ SPEC REPOS:
   trunk:
     - AFNetworking
     - Aspects
+    - AXCollectionObserve
     - Bagel
     - Canvas
     - CocoaAsyncSocket
@@ -632,8 +637,6 @@ SPEC REPOS:
     - YYText
 
 EXTERNAL SOURCES:
-  AXCollectionObserve:
-    :path: "../../AXCollectionObserve"
   AXiOSKit:
     :path: "../"
   AXViewControllerTransitioning:
@@ -642,7 +645,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  AXCollectionObserve: 51b62accb05a67a9b2f34eaee5ffa3585f1b23f4
+  AXCollectionObserve: 0553a382e43d0a4482831c5d87243a146ae946c3
   AXiOSKit: 8492b86e852aa5e8dafb6d0a4cfe9653b5ea4343
   AXViewControllerTransitioning: a5b58c7504c9ef76298da0f5d3e908f330c9a9f9
   Bagel: c3fa6bcbd52db9ca976edbafd7638f0553ded101
@@ -703,6 +706,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 0affcb48a05fb78e69ac6316019aeb6887cfbb07
+PODFILE CHECKSUM: 98f4dd5b64134ea396c0e08dec1465956c9a9cea
 
 COCOAPODS: 1.10.1
