@@ -24,7 +24,15 @@
  */
 - (void)ax_setImagePosition:(AXButtonImagePosition)postion spacing:(CGFloat)spacing;
 
+
 /// 按钮响应外边距，负值为扩大，正值为缩小。 完全支持自动布局，只需要将方法写在自动布局方法下面即可
+/// 四周相同增加 UIEdgeInsetsMake(-20, -20, -20, -20);
+/**
+ x = x+left;
+ y = y+top;
+ w = w -left -right;
+ h = h - top -bottom;
+ */
 @property (nonatomic, assign) UIEdgeInsets ax_pointOutside;
 /**
  UIControlStateNormal 状态文字

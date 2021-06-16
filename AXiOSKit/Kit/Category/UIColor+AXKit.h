@@ -38,14 +38,14 @@
 /**
  * 随机色
  */
-+(UIColor *)ax_randomColor;
+@property(class, nonatomic, strong, readonly) UIColor *ax_randomColor;
 
 /**
  UIColor 转 16进制
  
  @return #ffffff格式的字符串
  */
-- (NSString *)ax_toHexString;
+@property(nonatomic, copy, readonly) NSString *ax_toHexString;
 
 +(UIColor *)ax_colorWithNormalStyle:(UIColor *)normalColor darkStyle:(UIColor *)darkColor;
 

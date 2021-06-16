@@ -159,6 +159,15 @@ static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
         return [super pointInside:point withEvent:event];
     }
     CGRect relativeFrame = self.bounds;
+    /// UIEdgeInsetsInsetRect 表示在原来的rect基础上根据边缘距离内切一个rect出来
+    /*
+     //UIEdgeInsetsInsetRect 表示在原来的rect基础上根据边缘距离内切一个rect出来
+     CGRect rect= CGRectMake(20, 50, 100, 80);
+     UIEdgeInsets ed=UIEdgeInsetsMake(-3, -4, -5, -6);
+     CGRect  r=  UIEdgeInsetsInsetRect(rect, ed);
+     NSLog(@"%@",p(r));
+     //输出结果:2014-11-22 18:54:31.979 TestCGRectInset[8922:60b] {{16, 47}, {110, 88}}
+     */
     CGRect hitFrame = UIEdgeInsetsInsetRect(relativeFrame, self.ax_pointOutside);
     return CGRectContainsPoint(hitFrame, point);
 }

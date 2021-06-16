@@ -1646,7 +1646,7 @@
     [imageview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
         make.centerX.mas_equalTo(0);
-        make.width.height.mas_equalTo(150);
+        make.width.height.mas_equalTo(300);
     }];
     self.bottomAttribute = imageview.mas_bottom;
     
@@ -1661,35 +1661,194 @@
 
 -(void)_26buttonHitOut {
     
-    [self _titlelabel:@"button扩大点击范围"];
-    UIView *imageview = [[UIView alloc] init];
-    imageview.backgroundColor = UIColor.orangeColor;
-    [self.containerView addSubview:imageview];
-    [imageview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
-        make.centerX.mas_equalTo(0);
-        make.width.height.mas_equalTo(150);
-    }];
-    self.bottomAttribute = imageview.mas_bottom;
+    /**
+     //UIEdgeInsetsInsetRect 表示在原来的rect基础上根据边缘距离内切一个rect出来
+     CGRect rect= CGRectMake(20, 50, 100, 80);
+     UIEdgeInsets ed=UIEdgeInsetsMake(-3, -4, -5, -6);
+     CGRect  r=  UIEdgeInsetsInsetRect(rect, ed);
+     NSLog(@"%@",p(r));
+     //输出结果{{16, 47}, {110, 88}}
+     */
     
-    UIButton *btn = [[UIButton alloc] init];
-//    btn.ax_pointOutside = UIEdgeInsetsMake(-50, -50, -50, -50);
-    btn.ax_pointOutside = UIEdgeInsetsMake(100, 100, 100, 100);
-    [imageview addSubview:btn];
-    btn.backgroundColor = UIColor.greenColor;
-    [btn ax_setTitleStateNormal:@"点击范围"];
-    
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(0);
-        make.width.height.mas_equalTo(50);
-    }];
-    /// 按钮事件
-    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
+    /**
+     x = x+left;
+     y = y+top;
+     w = w -left -right;
+     h = h - top -bottom;
+     
+     */
+   CGRect oldRect= CGRectMake(50, 50, 150, 150); // 30 30
+   UIEdgeInsets increaseInsets =UIEdgeInsetsMake(-20, -20, -20, -20);
+   CGRect  newRect =  UIEdgeInsetsInsetRect(oldRect, increaseInsets);
+   NSLog(@"新范围=%@",NSStringFromCGRect(newRect));
+    {
         
-        NSLog(@"button扩大点击范围");
-    }];
-    self.bottomAttribute =  btn.mas_bottom;
+        
+        UIView *bgView = [[UIView alloc] init];
+        bgView.backgroundColor = UIColor.redColor;
+        [self.containerView addSubview:bgView];
+        [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.centerX.mas_equalTo(0);
+            make.width.equalTo(bgView.superview.mas_width);
+            make.height.mas_equalTo(250);
+            
+        }];
+        self.bottomAttribute = bgView.mas_bottom;
+        
+        
+        UIView *newView = [[UIView alloc] init];
+        newView.backgroundColor = UIColor.ax_randomColor;
+        [bgView addSubview:newView];
+        [newView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(newRect.origin.x);
+            make.top.mas_equalTo(newRect.origin.y);
+            make.size.mas_equalTo(newRect.size);
+        }];
+        
+        
+        UIView *oldView = [[UIView alloc] init];
+        oldView.backgroundColor = UIColor.ax_randomColor;
+        [bgView addSubview:oldView];
+        [oldView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(oldRect.origin.x);
+            make.top.mas_equalTo(oldRect.origin.y);
+            make.size.mas_equalTo(oldRect.size);
+        }];
+        
+        
+        
+    }
     
+    
+    {
+        
+        [self _titlelabel:@"button扩大点击范围"];
+        
+        UIView *bgView = [[UIView alloc] init];
+        bgView.backgroundColor = UIColor.redColor;
+        [self.containerView addSubview:bgView];
+        [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.centerX.mas_equalTo(0);
+            make.width.equalTo(bgView.superview.mas_width);
+            make.height.mas_equalTo(250);
+            
+        }];
+        self.bottomAttribute = bgView.mas_bottom;
+        
+        
+        UIView *newView = [[UIView alloc] init];
+        newView.backgroundColor = UIColor.ax_randomColor;
+        [bgView addSubview:newView];
+        [newView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(newRect.origin.x);
+            make.top.mas_equalTo(newRect.origin.y);
+            make.size.mas_equalTo(newRect.size);
+        }];
+        
+        
+        UIButton *oldBtn = [[UIButton alloc] init];
+        oldBtn.backgroundColor = UIColor.ax_randomColor;
+        [bgView addSubview:oldBtn];
+        [oldBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(oldRect.origin.x);
+            make.top.mas_equalTo(oldRect.origin.y);
+            make.size.mas_equalTo(oldRect.size);
+        }];
+        
+        
+        oldBtn.ax_pointOutside = increaseInsets;
+        [oldBtn ax_setTitleStateNormal:@"点击范围"];
+        /// 按钮事件
+        [[oldBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
+            
+            NSLog(@"button扩大点击范围");
+        }];
+        
+        
+    }
+    
+//
+//
+//
+//    UIButton *bgView = [[UIButton alloc] init];
+//    bgView.backgroundColor = UIColor.orangeColor;
+//    [self.containerView addSubview:bgView];
+//    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+//        make.centerX.mas_equalTo(0);
+//        make.width.height.mas_equalTo(200);
+//
+//    }];
+//    self.bottomAttribute = bgView.mas_bottom;
+//
+//    UIButton *btn = [[UIButton alloc] init];
+//    btn.backgroundColor = UIColor.greenColor;
+//    [bgView addSubview:btn];
+//
+//    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+////        make.bottom.right.mas_equalTo(0);
+//        make.width.height.mas_equalTo(50);
+//        make.center.mas_equalTo(0);
+//    }];
+//
+//    /**
+//     x = x+left;
+//     y = y+top;
+//     w = w -left -right;
+//     h = h - top -bottom;
+//
+//     */
+//    UIEdgeInsets pointOutside = UIEdgeInsetsMake(50, 50, 50, 50);
+//
+//    btn.ax_pointOutside = pointOutside;
+//    [btn ax_setTitleStateNormal:@"点击范围"];
+//    /// 按钮事件
+//    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
+//
+//        NSLog(@"button扩大点击范围");
+//    }];
+//
+//    UIView *leftView = [[UIView alloc] init];
+//    leftView.backgroundColor = UIColor.ax_randomColor;
+//    [bgView insertSubview:leftView belowSubview:btn];
+//    [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(btn.mas_top);
+//        make.width.mas_equalTo(50);
+//        make.height.mas_equalTo(50);
+//        make.right.equalTo(btn.mas_left);
+//    }];
+//
+//
+//    UIView *topView = [[UIView alloc] init];
+//    topView.backgroundColor = UIColor.ax_randomColor;
+//    [bgView insertSubview:topView belowSubview:btn];
+//    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.bottom.equalTo(btn.mas_top);
+//        make.width.height.mas_equalTo(50);
+//        make.right.equalTo(btn.mas_right);
+//    }];
+//
+//    UIView *rightView = [[UIView alloc] init];
+//    rightView.backgroundColor = UIColor.ax_randomColor;
+//    [bgView insertSubview:rightView belowSubview:btn];
+//    [rightView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(btn.mas_top);
+//        make.width.height.mas_equalTo(50);
+//        make.left.equalTo(btn.mas_right);
+//    }];
+//
+//    UIView *bottomView = [[UIView alloc] init];
+//    bottomView.backgroundColor = UIColor.ax_randomColor;
+//    [bgView insertSubview:bottomView belowSubview:btn];
+//    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(btn.mas_bottom);
+//        make.width.height.mas_equalTo(50);
+//        make.left.equalTo(btn.mas_left);
+//    }];
 }
 
 
