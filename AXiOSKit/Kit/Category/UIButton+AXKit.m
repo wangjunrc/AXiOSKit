@@ -128,26 +128,38 @@ typedef void(^ButtonBlock)(UIButton *button);
     }
 }
 
+static const NSString *KEY_HIT_TEST_EDGE_INSETS = @"HitTestEdgeInsets";
+
 - (void)setAx_pointOutside:(UIEdgeInsets)ax_pointOutside {
-    NSValue *value = [NSValue value:&ax_pointOutside withObjCType:@encode(UIEdgeInsets)];
-    objc_setAssociatedObject(self, @selector(ax_pointOutside),ax_pointOutside, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//    NSValue *value = [NSValue value:&ax_pointOutside withObjCType:@encode(UIEdgeInsets)];
+    NSValue *value =  [NSValue valueWithUIEdgeInsets:ax_pointOutside];
+//    objc_setAssociatedObject(self, @selector(ax_pointOutside),value, OBJC_ASSOCIATION_COPY);
+//
+//    NSValue *value = [NSValue value:&hitTestEdgeInsets withObjCType:@encode(UIEdgeInsets)];
+    objc_setAssociatedObject(self, @selector(ax_pointOutside), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+
 - (UIEdgeInsets)ax_pointOutside {
+//    NSValue *value = objc_getAssociatedObject(self, @selector(ax_pointOutside));
     NSValue *value = objc_getAssociatedObject(self, @selector(ax_pointOutside));
     if(value) {
-        UIEdgeInsets edgeInsets; [value getValue:&edgeInsets]; return edgeInsets;
+//        UIEdgeInsets edgeInsets;
+//        [value getValue:&edgeInsets];
+//        return edgeInsets;
+        return [value UIEdgeInsetsValue];
+        
     }else {
         return UIEdgeInsetsZero;
     }
 }
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
-    if(UIEdgeInsetsEqualToEdgeInsets(self.hitTestEdgeInsets, UIEdgeInsetsZero) || !self.enabled || self.hidden) {
+    if(UIEdgeInsetsEqualToEdgeInsets(self.ax_pointOutside, UIEdgeInsetsZero) || !self.enabled || self.hidden) {
         return [super pointInside:point withEvent:event];
     }
     CGRect relativeFrame = self.bounds;
-    CGRect hitFrame = UIEdgeInsetsInsetRect(relativeFrame, self.hitTestEdgeInsets);
+    CGRect hitFrame = UIEdgeInsetsInsetRect(relativeFrame, self.ax_pointOutside);
     return CGRectContainsPoint(hitFrame, point);
 }
 

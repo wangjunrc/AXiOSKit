@@ -97,6 +97,7 @@
     [self _p23changeLanguages];
     [self _24TextHeight];
     [self _25UIVisualEffectView];
+    [self _26buttonHitOut];
     /// 底部约束
     [self _lastLoadBottomAttribute];
 }
@@ -1657,6 +1658,41 @@
     }];
     
 }
+
+-(void)_26buttonHitOut {
+    
+    [self _titlelabel:@"button扩大点击范围"];
+    UIView *imageview = [[UIView alloc] init];
+    imageview.backgroundColor = UIColor.orangeColor;
+    [self.containerView addSubview:imageview];
+    [imageview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.centerX.mas_equalTo(0);
+        make.width.height.mas_equalTo(150);
+    }];
+    self.bottomAttribute = imageview.mas_bottom;
+    
+    UIButton *btn = [[UIButton alloc] init];
+//    btn.ax_pointOutside = UIEdgeInsetsMake(-50, -50, -50, -50);
+    btn.ax_pointOutside = UIEdgeInsetsMake(100, 100, 100, 100);
+    [imageview addSubview:btn];
+    btn.backgroundColor = UIColor.greenColor;
+    [btn ax_setTitleStateNormal:@"点击范围"];
+    
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(0);
+        make.width.height.mas_equalTo(50);
+    }];
+    /// 按钮事件
+    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
+        
+        NSLog(@"button扩大点击范围");
+    }];
+    self.bottomAttribute =  btn.mas_bottom;
+    
+}
+
+
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     CGRect frame = textView.frame;
