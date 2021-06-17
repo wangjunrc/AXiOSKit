@@ -35,7 +35,7 @@
  OBJC_ASSOCIATION_COPY;
  
  objc_getAssociatedObject
- 
+ 可以用 objc_getAssociatedObject(self,_cmd);
  * id object 给哪个对象的属性赋值
  const void *key 属性对应的key
  id value  设置属性值为value

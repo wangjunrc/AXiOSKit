@@ -126,6 +126,9 @@ typedef void (^CollectionBlock)(void);
     //    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
     
     NSLog(@"国际化 = %@",NSLocalizedString(@"local.home", nil));
+    
+    AXLog(@"我是AXLog");
+    
     __weak typeof(self) weakSelf = self;
     self.tableView.tableFooterView = UIView.alloc.init;
     //    [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
@@ -150,52 +153,51 @@ typedef void (^CollectionBlock)(void);
     [RACObserve(btn,selected) subscribeNext:^(id _Nullable x) {
         NSLog(@"btn selected = %@",x);
     }];
+    /// readonly 无法监听
     [RACObserve(self.tableView.indexPathsForSelectedRows,count) subscribeNext:^(id _Nullable x) {
         NSLog(@"indexPathsForSelectedRows count = %@",x);
     }];
+    /// readonly 无法监听
     [RACObserve(self.tableView,indexPathsForSelectedRows) subscribeNext:^(id _Nullable x) {
-        NSLog(@"indexPathsForSelectedRows = %@",x);
+        NSLog(@"indexPathsForSelectedRows=%@",x);
     }];
     
     
-    //    rac_signalForSelector
-    //    -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //        if (tableView.isEditing) {
-    //            self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count;
-    //            return;
-    //        }
-    //    }
-    
+    /// 监听数据源
+    [[self rac_signalForSelector:@selector(tableView:numberOfRowsInSection:)
+                    fromProtocol:@protocol(UITableViewDataSource)]
+     subscribeNext:^(RACTuple * _Nullable x) {
+        //        RACTupleUnpack(UITableView *tableView,NSNumber *section) = x;
+        
+        NSLog(@"监听协议numberOfRowsInSection=%@",x);
+        //        NSLog(@"监听协议numberOfRowsInSection参数=%@,section=%@",tableView,section);
+        //        [x objectAtIndex:2]
+        NSLog(@"监听协议numberOfRowsInSection参数section=%@",x.second);
+    }];
     
     /* 1.代替代理 */
     //   self.textField.delegate = self;
     // 监听代理
-    [[self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:)fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple * _Nullable x) {
+    [[self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:)
+                    fromProtocol:@protocol(UITableViewDelegate)]
+     subscribeNext:^(RACTuple * _Nullable x) {
         RACTupleUnpack(UITableView *tableView,NSIndexPath *indexPath) = x;
-        NSLog(@"监听实现的代理 = %@",x);
-        NSLog(@"监听实现的代理=%@,indexPath=%@",tableView,indexPath);
+        NSLog(@"监听实现的代理didSelectRowAtIndexPath=%@",x);
+        NSLog(@"监听实现的代理didSelectRowAtIndexPath=%@,indexPath=%@",tableView,indexPath);
     }];
     
-    // 未实现代理的话,不能用来监听
-    [[self rac_signalForSelector:@selector(tableView:didDeselectRowAtIndexPath:)fromProtocol:@protocol(UITableViewDelegate)]subscribeNext:^(RACTuple * _Nullable x) {
-        NSLog(@"监听未实现的代理 = %@",x);
-    }];
+    if ([self respondsToSelector:@selector(tableView:didDeselectRowAtIndexPath:)]) {
+        // 未实现代理,监听不到
+        [[self rac_signalForSelector:@selector(tableView:didDeselectRowAtIndexPath:)
+                        fromProtocol:@protocol(UITableViewDelegate)]
+         subscribeNext:^(RACTuple * _Nullable x) {
+            NSLog(@"监听未实现的代理didDeselectRowAtIndexPath=%@",x);
+        }];
+    }
     
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],self.deleteItem];
-    
     _01HeaderView *headerView = [_01HeaderView.alloc init];
-    //    [self.tableView layoutIfNeeded];
     self.tableView.tableHeaderView =headerView;
-    
-    //    [self.tableView ax_setRefreshHeader:^{
-    //        __strong typeof(weakSelf) strongSelf = weakSelf;
-    //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    //            [strongSelf.tableView ax_setEndRefresh];
-    //        });
-    //    } foot:^{
-    //
-    //    }];
-    //
     
     [self _createRefresh];
     [self _createSearch];

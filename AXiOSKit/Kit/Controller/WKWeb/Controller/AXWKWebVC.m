@@ -186,6 +186,11 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
         }
     }];
     
+    [RACObserve(self.webView, canGoBack) subscribeNext:^(id  _Nullable x) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _canGoBackItems];
+    }];
+    
 }
 
 #pragma mark -  代理 WKNavigationDelegate
@@ -211,7 +216,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     
     AXLog(@"页面加载完成之后调用 webView.title: %@",webView.title);
     //更新左边itme
-    [self func_canGoBackItems];
+//    [self _canGoBackItems];
     
 }
 
@@ -526,7 +531,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 /**
  * 页面加载完成 更新LeftBarButtonItems
  */
-- (void)func_canGoBackItems{
+- (void)_canGoBackItems{
     
     if (self.webView.canGoBack) {
         

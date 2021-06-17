@@ -2581,3 +2581,12 @@ https://lrdcq.com/me/read.php/99.htm
 - (void)y __attribute__((objc_direct)); //direct的方法
 @end
 ```
+## 基础数据与NSValue互相转换
+```objective-c
+// 转 NSValue
+NSValue *value = [NSValue value:&ax_pointOutside withObjCType:@encode(UIEdgeInsets)];
+// 转 基础数据
+UIEdgeInsets edgeInsets;
+[value getValue:&edgeInsets];
+```
+
