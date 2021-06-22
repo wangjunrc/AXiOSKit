@@ -75,6 +75,23 @@
         
     }];
     
+    
+    [self _buttonTitle:@"请求=ax.com 2" handler:^(UIButton * _Nonnull btn) {
+        
+        NSDictionary *dict = @{@"name":@"tom",@"age":@1};
+        
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        [manager POST:@"http://www.ax.com" parameters:dict headers:nil progress:nil
+             success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSArray *data = responseObject;
+            NSLog(@"%@", data);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"%@", error);
+        }];
+        
+    }];
+    
+    
     [self _buttonTitle:@"请求百度" handler:^(UIButton * _Nonnull btn) {
         NSDictionary *dict = @{@"name":@"jim",@"age":@1};
         

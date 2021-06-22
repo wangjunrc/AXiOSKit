@@ -167,8 +167,9 @@ typedef NS_ENUM(NSUInteger, AXImageFormat) {
 /// 获取图片上某个点的颜色值(不包含alpha)。
 - (UIColor *)ax_pixelColorFromPoint:(CGPoint)point scale:(CGFloat)scale;
 
+@property(nonatomic, assign, readonly) AXImageFormat ax_imageFormatType;
 
-- (AXImageFormat)ax_imageFormat;
+@property(nonatomic, copy, readonly) NSString *ax_mimeType;
 
 @end
 

@@ -41,5 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param completionHandler 回调
 - (void)ax_savePhotoLibraryHandler:(nullable void (^)(BOOL success, NSError *__nullable error))completionHandler;
 
+
+/// data image 类型
+@property(nonatomic, copy, readonly)NSString *ax_mimeType;
+
 @end
 NS_ASSUME_NONNULL_END

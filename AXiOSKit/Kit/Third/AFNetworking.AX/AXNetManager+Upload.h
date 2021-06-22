@@ -7,6 +7,7 @@
 //
 
 #import "AXNetManager.h"
+#import <UIKit/UIImage.h>
 @class UIImage;
 /**
  *  用来封装文件数据的模型 上传文件时
@@ -15,24 +16,28 @@
 /**
  *  文件数据
  */
-@property (nonatomic, strong) NSData *data;
+@property (nonatomic, strong, readonly) NSData *data;
+
+@property (nonatomic, strong, readonly) UIImage *image;
 
 /**
  *  参数名
  */
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy, readonly) NSString *name;
 
 /**
  *  文件名
  */
-@property (nonatomic, copy) NSString *filename;
+@property (nonatomic, copy, readonly) NSString *filename;
 
 /**
  *  文件类型
  */
-@property (nonatomic, copy) NSString *mimeType;
+@property (nonatomic, copy, readonly) NSString *mimeType;
 
-+ (instancetype )formDataWithData:(NSData *)data name:(NSString *)name filename:(NSString *)filename mimeType:(NSString *)mimeType;
++ (instancetype)formDataWithImage:(UIImage *)image name:(NSString *)name;
+
++ (instancetype)formDataWithData:(NSData *)imageData name:(NSString *)name;
 
 @end
 

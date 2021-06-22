@@ -11,17 +11,46 @@
 #import "MBProgressHUD+AX.h"
 #import "AXMacros.h"
 #import "NSString+AXKit.h"
+#import "NSData+AXKit.h"
 @import UIKit;
 #pragma mark - NetFormData
+@interface AXFormData ()
+
+@property (nonatomic, strong, readwrite) NSData *data;
+@property (nonatomic, strong, readwrite) UIImage *image;
+@property (nonatomic, copy, readwrite) NSString *name;
+@property (nonatomic, copy, readwrite) NSString *filename;
+@property (nonatomic, copy, readwrite) NSString *mimeType;
+
+@end
+
 @implementation  AXFormData
 
 + (instancetype)formDataWithData:(NSData *)data name:(NSString *)name filename:(NSString *)filename mimeType:(NSString *)mimeType{
-    AXFormData *file =[[self alloc]init];
+    AXFormData *file = [[self alloc]init];
     file.data = data;
     file.name = name;
     file.filename = filename;
     file.mimeType = mimeType;
     return file;
+}
+
++ (instancetype)formDataWithImage:(UIImage *)image name:(NSString *)name {
+    return [self formDataWithData:image name:name];
+}
+
++ (instancetype)formDataWithData:(NSData *)imageData name:(NSString *)name {
+    
+    AXFormData *form = [[self alloc]init];
+    NSString *mimeType = imageData.ax_mimeType;
+    NSString *suffix = [mimeType componentsSeparatedByString:@"/"].lastObject;
+    NSString *fileName = [NSString stringWithFormat:@"%@.%@",NSString.ax_uuid,suffix];
+    
+    form.data = imageData;
+    form.name = name;
+    form.filename = fileName;
+    form.mimeType = mimeType;
+    return form;
 }
 
 @end
@@ -41,8 +70,8 @@
  @param failure       失败回调
  */
 + (void)POSTUpLoadWithURL:(NSString *)url parameters:(id )parameters formDataArray:(NSArray<AXFormData *> *)formDataArray progress:(void (^)(NSProgress *aProgress))progress success:(void (^)(id json))success failure:(void (^)(NSString *errorString))failure{
-   
-     AXLog(@"%@ -- %@",url,parameters);
+    
+    AXLog(@"%@ -- %@",url,parameters);
     
     [[self shareManagerWithParameters:parameters] POST:url parameters:parameters headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  formData) {
         
@@ -78,17 +107,51 @@
  */
 + (void)uploadJpegWithURL:(NSString *)url parameters:(id )parameters image:(UIImage* )image name:(NSString *)name success:(void(^)(id json))success failure:(void(^)(NSString *errorString))failure{
     
-    NSData *imageData = UIImageJPEGRepresentation(image, 1);
-    /**
-      @RequestParam(value = "file", required = false) MultipartFile file
-     name 就是 value =  值
-     */
-//    NSString *name = @"file";
-    NSString *fileName =[NSString stringWithFormat:@"%@.jpeg",[NSString ax_uuid]];
-    
-    AXFormData *formData = [AXFormData formDataWithData:imageData name:name filename:fileName mimeType:jpegMimeType];
-    
+    AXFormData *formData = [AXFormData formDataWithImage:image name:name];
     [self POSTUpLoadWithURL:url parameters:parameters formDataArray:@[formData] progress:nil success:success failure:failure];
 }
+
++ (void)POSTUpLoadWithURL:(NSString *)url
+               parameters:(id )parameters
+               imageArray:(NSArray<UIImage *> *)imageArray
+                 progress:(void (^)(NSProgress *aProgress))progress
+                  success:(void (^)(id json))success
+                  failure:(void (^)(NSString *errorString))failure {
+    
+    AXLog(@"%@ -- %@",url,parameters);
+    
+    [[self shareManagerWithParameters:parameters] POST:url parameters:parameters headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  formData) {
+        
+        for (UIImage *image in imageArray) {
+            
+            NSData *imageData = UIImageJPEGRepresentation(image, 1);
+            NSString *imageFormat = imageData.ax_mimeType;
+            NSString *suffix = [imageFormat componentsSeparatedByString:@"/"].lastObject;
+            NSString *fileName =[NSString stringWithFormat:@"%@.%@",NSString.ax_uuid,suffix];
+            
+            [formData appendPartWithFileData:imageData name:fileName fileName:fileName mimeType:imageFormat];
+        }
+        NSLog(@"formData = %@",formData);
+        
+    } progress:^(NSProgress * uploadProgress) {
+        if (progress) {
+            progress(uploadProgress);
+        }
+    } success:^(NSURLSessionDataTask * task, id  responseObject) {
+        
+        if (success) {
+            success([self handleResponse:responseObject]);
+        }
+        
+    } failure:^(NSURLSessionDataTask * task, NSError * error) {
+        NSLog(@"error = %@",error);
+        
+        if (failure) {
+            failure(error.localizedDescription);
+        }
+    }];
+}
+
+
 @end
 #endif
