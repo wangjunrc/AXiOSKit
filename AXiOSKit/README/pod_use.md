@@ -590,3 +590,6 @@ pod 'DateTools'
 
 ### 分段
 JXCategoryView
+
+### 第三方工具分类
+pod 'JKCategories'
