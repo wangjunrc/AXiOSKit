@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.js"></script>
+<!--<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.min.js"></script>-->
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.1/moment.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1语法</title>
+    <style>
+
+        .aClass {
+            color: red;
+            background-color: green;
+        }
+
+        .bClass {
+            color: black;
+            background-color: orange;
+        }
+
+        .cClass {
+            font-size: 40px;
+        }
+
+        /*显示隐藏动画样式, 定义的名字- 这些固定的*/
+        .transitionName1-enter-active, .transitionName1-leave-active {
+            transition: opacity 1s;
+        }
+
+        .transitionName1-enter, .transitionName1-leave-to {
+            opacity: 0;
+        }
+
+        .transitionName2-enter-active {
+            transition: all 1s;
+        }
+
+        .transitionName2-leave-active {
+            transition: all 3s;
+        }
+
+        .transitionName2-enter, .transitionName2-leave-to {
+            opacity: 0;
+            transform: translateX(40px);
+        }
+
+        /*属性选择器*/
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+
+    <!--     v-model   双向绑定,定义一个变量,model-->
+    <input type="text" v-model="name">
+    <!--        {{双括号取值}} 表达式-->
+    <p>Hello{{name}}</p>
+    <h3>v-html:</h3>
+    <p v-html="name">v-html:</p>
+    <h3>v-text:,纯文本输出</h3>
+    <p v-text="name">v-text:</p>
+    <!--    <img v-bind:src="imgUrl">-->
+    <h3>文本变成标签 加:,强制绑定</h3>
+    <img src="imgUrl"><br>
+    <!--        属性值变成标签 加:-->
+    <img v-bind:src="imgUrl"><br>
+    <img :src="imgUrl"><br>
+    <h2>表达式就是js变量,转换大写</h2>
+    <p>Hello{{name.toLocaleUpperCase()}}</p>
+
+    <h2>3.绑定监听</h2>
+    <!--        无参-->
+    <button v-on:click="test">无参监听</button>
+    <!--        强制绑定+监听 用@-->
+    <button @click="test">无参监听</button>
+
+    <button @click="test2('jim')">有参监听监听</button>
+
+    <h2>4.计算属性和监视</h2>
+
+    姓:<input type="text" placeholder="firstName" v-model="firstName"><br>
+    名:<input type="text" placeholder="lastName" v-model="lastName"><br>
+    姓名1(单向)<input type="text" placeholder="fullName" v-model="fullName1"><br>
+    姓名2(单向)<input type="text" placeholder="fullName2" v-model="fullName2"><br>
+    姓名3(双向)<input type="text" placeholder="fullName3" v-model="fullName3"><br>
+
+    <h2>5.绑定class和style</h2>
+
+    <!--   :class 是vue的,class固定的-->
+    <p :class="a" class="cClass">绑定classstring</p>
+
+    <button @click="updateClass">更新</button>
+    <p :class="{aClass:isA,bClass:isB}" class="cClass">绑定class对象</p>
+
+    <p :class="['aClass','bClass']" class="cClass">绑定class数组</p>
+    <p :style="{color:textColor,fontSize:fontSize,backgroundColor:'orange'}">绑定style</p>
+
+
+    <h2>6.条件渲染</h2>
+    <!--    这2个效果类似,区别 show dispay:none-->
+    <p v-if="ok">成功</p>
+    <p v-else="ok">失败</p>
+
+
+    <p v-show="show">show</p>
+    <p v-show="!show">show失败</p>
+
+    <button @click="updateShow">更新</button>
+
+    <h2>7.遍历</h2>
+
+
+    <ul>
+        <li v-for="(p,index) in persons" :key="index">
+            {{index}}
+            {{p.name}}
+            {{p.age}}
+            <button @click="vForDelete(index)">删除</button>
+            <button @click="vForUpdate(index,{name: 'tom', age: 12})">更新</button>
+        </li>
+    </ul>
+
+
+    <ul>
+        <li v-for="(value,key) in persons[1]" :key="key">
+            {{key}}:{{value}}
+        </li>
+    </ul>
+
+    <h2>8.排序,过滤</h2>
+    <div id="test">
+        <label>
+            <input type="text" v-model="searchName">
+        </label>
+        <ul>
+            <li v-for="(p,index) in filterPersons" :key="index">
+                {{index}}
+                {{p.name}}
+                {{p.age}}
+            </li>
+        </ul>
+
+        <button @click="sortAge(0)">按年龄不排序</button>
+        <button @click="sortAge(1)">按年龄升序</button>
+        <button @click="sortAge(-1)">按年龄降序</button>
+
+    </div>
+
+    <h2>9.事件处理</h2>
+    <h3>绑定监听 @click</h3>
+    <button @click="test">@click</button>
+    <button @click="test3($event)">@click</button>
+    <button @click="test3">@click</button>
+    <button @click="test4('abc',$event)">@click</button>
+
+    <h3>事件修饰符</h3>
+    <h4>事件穿透 @click.stop</h4>
+    <div style="background-color:  orange;height: 200px;padding: 20px" @click="test5">
+        <div style="background-color: red;height: 50px;" @click.stop="test6">
+            红色是内部
+        </div>
+        黄色是外部
+    </div>
+    <h4>默认行为,多个事件 prevent 防止</h4>
+    <a href="https://www.baidu.com/" @click.prevent="test7">链接</a>
+    <h4>按键修饰符 @keyup.enter</h4>
+    <label>
+        <input type="text" @keyup.enter="test8">
+    </label>
+
+    <h2>10.表单数据自动收集</h2>
+    <div>
+        <form action="/reg.do" @submit.prevent="testSubmit">
+            <span>用户名</span>
+            <label>
+                <input type="text" v-model="username">
+            </label><br>
+            <span>密码</span>
+            <input type="text" v-model="psw"><br>
+
+
+            <div>
+                <span>性别</span>
+                <input id="female" type="radio" value="女" v-model="sex">
+                <label for="female"> 女</label>
+
+                <input id="male" type="radio" value="男" v-model="sex">
+                <label for="male">男</label>
+            </div>
+            <br>
+
+
+            <div>
+                <span>爱好</span>
+                <input id="hobby0" type="checkbox" value="hobby0" v-model="hobby">
+                <label for="hobby0">hobby0</label>
+
+                <input id="hobby1" type="checkbox" value="hobby1" v-model="hobby">
+                <label for="hobby1">hobby1</label>
+
+                <input id="hobby2" type="checkbox" value="hobby2" v-model="hobby">
+                <label for="hobby2">hobby2</label>
+            </div>
+
+            <select v-model="cityId">
+                <option value="">未选择</option>
+                <option :value="city.id" v-for="(city,index) in cityList">{{index}}-{{city.name}}</option>
+            </select><br>
+
+            <span>描述</span>
+            <label>
+                <textarea v-model="des"></textarea>
+            </label><br>
+            <input type="submit" value="注册"><br>
+        </form>
+    </div>
+
+    <h2>11.生命周期</h2>
+    <h3>初始化</h3>
+    <h3>更新</h3>
+    <h3>消失</h3>
+    <button @click="destroyTime">生命周期按钮-销毁</button>
+    <p v-show="isShow">间断显示隐藏</p>
+    <h2>12.动画,显示影藏效果</h2>
+    <button @click="transition1">开始动画</button>
+    <br>
+    <transition name="transitionName1">
+        <p v-show="isAnimationShow">显示隐藏动画</p>
+    </transition>
+    <br>
+</div>
+
+<div id="app2">
+    <button @click="transition2">开始动画2</button>
+    <br>
+    <transition name="transitionName2">
+        <p v-show="isAnimationShow">显示隐藏动画</p>
+    </transition>
+    <br>
+</div>
+
+<div id="app3">
+    <h1>app3</h1>
+    <h2>13.过滤器</h2>
+    值 | 过滤器名称
+    <p>{{date}}</p>
+    <p>完整时间:{{date | dateStr}}</p>
+    <p>完整时间:{{date | dateStr('YYYY-MM-DD')}}</p>
+
+    <h2>13.指令</h2>
+    ref注册唯一标识
+    v-cloak 防止闪现表达式,与css配合
+    <p ref="myId">ref文本内容</p>
+    <button @click="refAction">ref指令</button>
+    <p>{{msg}}</p>
+    <p v-cloak>{{msg}}</p>
+
+    <h2>14.自定义指令</h2>
+    <p v-upper-text="msg2"></p>
+    <p v-lower-text="msg2"></p>
+</div>
+
+</body>
+
+<script>
+
+    // MVVM ,这里就是vm
+    const vm = new Vue({
+        el: '#app',
+        //data里面都是自定义属性
+        data: {
+            msg: 'Hello Vue!',
+            tip: '页面加载于 ' + new Date().toLocaleString(),
+            show: true,
+            name: '初始化值',
+            imgUrl: 'https://randomuser.me/api/portraits/men/75.jpg',
+            firstName: '',
+            lastName: '',
+            fullName2: '',
+            a: 'aClass',
+            isA: true,
+            isB: false,
+            textColor: 'red',
+            fontSize: '40px',
+            ok: true,
+            persons: [
+                {name: 'jim1', age: 10},
+                {name: 'tom', age: 12},
+                {name: 'tom', age: 10},
+                {name: 'tom', age: 9},
+                {name: 'jack', age: 10},
+            ],
+
+            searchName: '',
+            sortType: 0, // 0原本,1 升序,-1降序
+
+            username: '',
+            psw: '',
+            sex: '男',
+            hobby: ['hobby1'],
+            cityList: [
+                {id: 1, name: "城市1"},
+                {id: 2, name: "城市2"},
+                {id: 3, name: "城市3"},
+            ],
+            cityId: '',
+            des: '',
+
+            isShow: true,
+            isAnimationShow: true,
+        },
+        //函数配置
+        methods: {
+            test() {
+                alert('监听')
+            },
+            test2(par) {
+                alert('监听' + par)
+            },
+            test3(event) {
+                alert('监听$event' + event.target.innerText)
+            },
+            test4(par, event) {
+                alert('test4=' + par + event.target.innerText)
+            },
+            test5() {
+                alert('out')
+            },
+            test6() {
+                alert('inert')
+            },
+            test7() {
+                alert('test7')
+            },
+
+            test8(event) {
+                alert('test8=' + event.target.value)
+            },
+
+
+            updateClass() {
+                this.a = this.a === 'aClass' ? 'bClass' : 'aClass';
+                // this.a = 'bClass';
+                this.isA = false;
+                this.isB = true;
+            },
+            updateShow() {
+                this.ok = !this.ok;
+                this.show = !this.show;
+            },
+
+            vForDelete(index) {
+                // alert(index)
+                this.persons.splice(index, 1)
+                //这样有空占位
+                // delete  this.persons[index]
+                // alert(this.persons)
+                console.log(index);
+            },
+
+            vForUpdate(index, person) {
+                // this.persons[index].age = 11;
+
+                // const p = this.persons[index];
+                // p.age = 11;
+                //这样会刷新
+                this.persons[index].name = person.name;
+                //这样不会刷新
+                // this.persons[index] = person;
+                // 操作数组 触发地址变化
+                this.persons.splice(index, 1, person)
+
+            },
+
+            sortAge(type) {
+                this.sortType = type;
+            },
+
+            testSubmit() {
+
+                console.log('username=' + this.username
+                    + ',psw=' + this.psw
+                    + ',sex=' + this.sex
+                    + ',hobby=' + this.hobby
+                    + ',cityId=' + this.cityId)
+            },
+
+            destroyTime() {
+                // 销毁后,vue 就不能操作了
+                this.$destroy();
+            },
+
+            transition1() {
+                this.isAnimationShow = !this.isAnimationShow;
+            },
+        },
+
+        // 计算属性,用方法,这个最简单
+        computed: {
+            fullName1() {
+                return this.firstName + '.' + this.lastName;
+            },
+
+            fullName3: {
+                get() {
+                    return this.firstName + '.' + this.lastName;
+                },
+                set(val) {
+                    const list = val.split('.');
+                    console.log('list=' + list);
+                    if (list.length == 0) {
+                        this.firstName = list[0];
+                    }
+
+                    if (list.length > 0) {
+                        this.lastName = list[1];
+                    }
+                }
+            },
+
+            filterPersons() {
+                //结构赋值
+                const {persons, searchName, sortType} = this
+                const list = persons.filter(item => item.name.indexOf(searchName) !== -1)
+
+                if (sortType !== 0) {
+                    list.sort(function (p1, p2) {// 负数 p1在前,正数p2在前
+                        if (sortType == 1) {
+
+                            return p1.age - p2.age;
+                        } else {
+                            return p2.age - p1.age;
+                        }
+                    })
+                }
+                console.log('list=' + JSON.stringify(list))
+                return list
+            },
+
+
+        },
+        //配置监视,需要多个属性监听,不方便
+        watch: {
+            firstName: function (newVal, oldVal) {
+                this.fullName2 = newVal + '.' + this.lastName;
+            },
+        },
+
+        // 初始化显示之后立即调用
+        mounted() {
+            console.log('初始化显示之后立即调用mounted')
+            //直接给当前实例添加属性,this.
+            // 回调函数 尽量用 箭头函数,才能有this
+            // this.intervalId = setInterval(() => {
+            //     console.log('定时器')
+            //     this.isShow = !this.isShow
+            // }, 2000)
+        },
+        beforeDestroy() {
+            console.log('销毁beforeDestroy')
+            // clearInterval(this.intervalId);
+        },
+        destroy() {
+            console.log('销毁destroy')
+        },
+
+    })
+
+    vm.$watch('lastName', function (newVal, oldVal) {
+            this.fullName2 = this.firstName + '.' + newVal;
+        }
+    )
+
+
+    const vm2 = new Vue({
+        el: '#app2',
+        //data里面都是自定义属性
+        data: {
+            isAnimationShow: true,
+        },
+        //函数配置
+        methods: {
+            transition2() {
+                this.isAnimationShow = !this.isAnimationShow;
+            },
+        },
+    })
+
+
+    // Vue.filter('dateStr', function (val,format) {
+    //
+    //
+    //     return moment(val).format(format || 'YYYY-MM-DD HH:mm:ss');
+    // })
+    // 形参默认值 es6
+    Vue.filter('dateStr', function (val, format = 'YYYY-MM-DD HH:mm:ss') {
+        return moment(val).format(format);
+    })
+
+    //定义全局指令 注册不要v- 前缀
+    // el 指令的标签
+    // binding 指令相关数据对象
+    Vue.directive('upper-text', (el, binding) => {
+
+        console.log('directive' + el, binding)
+        el.textContent = binding.value.toUpperCase();
+    })
+
+
+    const vm3 = new Vue({
+        el: '#app3',
+        data: {
+            date: new Date(),
+            msg: '',
+            msg2: 'Abc',
+        },
+        //函数配置
+        methods: {
+
+            refAction() {
+                // alert(this.$refs.content.textContent);
+                alert(this.$refs.myId.textContent);
+            }
+        },
+        directives:{
+            //局部指令 有符号,所以用''
+            // 'lower-text':(el, binding)=>{
+            //     el.textContent = binding.value.toLowerCase();
+            // },
+            // es6
+            'lower-text'(el, binding){
+                el.textContent = binding.value.toLowerCase();
+            },
+        }
+    })
+
+
+</script>
+
+</html>

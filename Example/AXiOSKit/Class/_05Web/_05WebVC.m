@@ -45,6 +45,8 @@
         
         NSURL *URL = [NSBundle.ax_HTMLBundle URLForResource:@"index.html" withExtension:nil];
         
+        //        NSURL *URL = [NSURL.alloc initFileURLWithPath:AXPathForFile(@"AXHTML.bundle/index.html", AXObject.class)];
+        
         AXWKWebVC * vc = [[AXWKWebVC alloc] initWithURL:URL];
         @weakify(vc)
         [vc addScriptMessageWithName:@"base64Img" handler:^(NSString * _Nonnull name, id _Nonnull body) {
@@ -67,7 +69,11 @@
     
     [self _buttonTitle:@"AXWKWebVC 拦截PNG图片,不拦截jpeg图片" handler:^(UIButton * _Nonnull btn) {
         @strongify(self)
-        NSURL *URL = [NSBundle.mainBundle URLForResource:@"H5.bundle/index.html" withExtension:nil];
+        //        NSURL *URL = [NSBundle.mainBundle URLForResource:@"H5.bundle/index.html" withExtension:nil];
+        
+        //        NSURL *URL = [NSURL URLWithString:AXPathForFile(@"H5.bundle/index.html", self.class)];
+        NSURL *URL = [NSURL.alloc initFileURLWithPath:AXPathForFile(@"H5.bundle/index.html", self.class)];
+        
         AXWKWebVC * vc = [[AXWKWebVC alloc] initWithURL:URL];
         vc.title = @"拦截PNG图片,不拦截jpeg图片";
         vc.userHTMLTitle = NO;
@@ -75,10 +81,10 @@
             [NSURLProtocol registerClass:AXDemoURLProtocol.class];
             [NSURLProtocol wk_registerScheme:@"http"];
             [NSURLProtocol wk_registerScheme:@"https"];
-
+            
         }];
         [vc.rac_willDeallocSignal subscribeNext:^(id _Nullable x) {
-
+            
             [NSURLProtocol wk_unregisterScheme:@"http"];
             [NSURLProtocol wk_unregisterScheme:@"https"];
             [NSURLProtocol unregisterClass:AXDemoURLProtocol.class];
@@ -124,6 +130,18 @@
         [self ax_pushVC:vc];
     }];
     
+    
+    [self _buttonTitle:@"Vue项目" handler:^(UIButton * _Nonnull btn) {
+        @strongify(self)
+//        NSURL *URL = [NSBundle.mainBundle URLForResource:@"DemoVue.bundle/index.html" withExtension:nil];
+        NSURL *URL = [NSBundle.mainBundle URLForResource:@"DemoVue.bundle/index2.html" withExtension:nil];
+//        NSURL *URL = [NSURL.alloc initFileURLWithPath:AXPathForFile(@"DemoVue.bundle/index.html", self.class)];
+        
+        AXWKWebVC * vc = [[AXWKWebVC alloc] initWithURL:URL];
+        vc.title = @"Vue项目";
+        vc.userHTMLTitle = NO;
+        [self ax_pushVC:vc];
+    }];
     
     
     /// 底部约束

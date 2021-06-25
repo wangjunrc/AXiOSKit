@@ -104,3 +104,27 @@
 
 
 @end
+
+
+NSString* __nullable AXPathForFile(NSString* fileName, Class inBundleForClass){
+    NSBundle* bundle = [NSBundle bundleForClass:inBundleForClass];
+    return AXPathForFileInBundle(fileName, bundle);
+}
+
+NSString* __nullable AXPathForFileInBundle(NSString* fileName, NSBundle* bundle){
+    return [bundle pathForResource:[fileName stringByDeletingPathExtension]
+                            ofType:[fileName pathExtension]];
+}
+
+NSString* __nullable AXPathForFileInDocumentsDir(NSString* fileName){
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = (paths.count > 0) ? paths[0] : nil;
+    return [basePath stringByAppendingPathComponent:fileName];
+}
+
+NSBundle* __nullable AXResourceBundle(NSString* bundleBasename, Class inBundleForClass){
+    NSBundle* classBundle = [NSBundle bundleForClass:inBundleForClass];
+    return [NSBundle bundleWithPath:[classBundle pathForResource:bundleBasename
+                                                         ofType:@"bundle"]];
+}
+

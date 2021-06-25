@@ -52,3 +52,19 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+
+NS_ASSUME_NONNULL_BEGIN
+
+NSString* __nullable AXPathForFile(NSString* fileName, Class inBundleForClass);
+
+
+NSString* __nullable AXPathForFileInBundle(NSString* fileName, NSBundle* bundle);
+
+
+NSString* __nullable AXPathForFileInDocumentsDir(NSString* fileName);
+
+
+NSBundle* __nullable AXResourceBundle(NSString* bundleBasename, Class inBundleForClass);
+
+NS_ASSUME_NONNULL_END

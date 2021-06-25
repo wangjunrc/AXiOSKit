@@ -481,6 +481,8 @@
 		21A61FB8265E82990080E67D /* AXShare_Env_1.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21A61FAD265E82990080E67D /* AXShare_Env_1.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		21BA199C25AD91BC00222F9A /* AXDebugUIConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC46B9259192E900AA253F /* AXDebugUIConfig.m */; };
 		21BA19A125AD91EF00222F9A /* AXDebugManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC46B32591924A00AA253F /* AXDebugManager.m */; };
+		21BB0B542685713200FDDC1A /* DemoVue.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21BB0B532685713200FDDC1A /* DemoVue.bundle */; };
+		21BB0B552685713200FDDC1A /* DemoVue.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21BB0B532685713200FDDC1A /* DemoVue.bundle */; };
 		21CC20AC265F36D8005BD351 /* _02ChatFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AA265F36C5005BD351 /* _02ChatFriendVC.m */; };
 		21CC20AD265F36D8005BD351 /* _02ChatFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AA265F36C5005BD351 /* _02ChatFriendVC.m */; };
 		21CC20B0265F393C005BD351 /* AXDataSourceOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AF265F393C005BD351 /* AXDataSourceOption.m */; };
@@ -959,6 +961,7 @@
 		21BA17F825AD854300222F9A /* ax_common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ax_common.xcconfig; sourceTree = "<group>"; };
 		21BA17F925AD856800222F9A /* ax_debug_α.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ax_debug_α.xcconfig"; sourceTree = "<group>"; };
 		21BA17FA25AD857E00222F9A /* ax_debug_β.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ax_debug_β.xcconfig"; sourceTree = "<group>"; };
+		21BB0B532685713200FDDC1A /* DemoVue.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DemoVue.bundle; sourceTree = "<group>"; };
 		21CC20A7265F3609005BD351 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		21CC20A9265F36C5005BD351 /* _02ChatFriendVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _02ChatFriendVC.h; sourceTree = "<group>"; };
 		21CC20AA265F36C5005BD351 /* _02ChatFriendVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _02ChatFriendVC.m; sourceTree = "<group>"; };
@@ -1181,6 +1184,7 @@
 				21A61D73265E7F4A0080E67D /* _04RunLoopViewController.h */,
 				21A61D28265E7F4A0080E67D /* _04RunLoopViewController.m */,
 				21A61D77265E7F4A0080E67D /* _04RunLoopViewController.xib */,
+				21BB0B562685724500FDDC1A /* _05Web */,
 				21A61DBC265E7F4A0080E67D /* _06WCDBViewController.h */,
 				21A61D40265E7F4A0080E67D /* _06WCDBViewController.m */,
 				21A61D31265E7F4A0080E67D /* _06WCDBViewController.xib */,
@@ -1398,7 +1402,6 @@
 				21A61CE7265E7F4A0080E67D /* QQ@2x.png */,
 				21A61CE8265E7F4A0080E67D /* instruction.jpg */,
 				21A61CE9265E7F4A0080E67D /* test_webp.webp */,
-				21A61CEA265E7F4A0080E67D /* H5.bundle */,
 				21A61CEB265E7F4A0080E67D /* g3@2x.png */,
 				21A61CEC265E7F4A0080E67D /* Alternate_AppIcon_3@2x.png */,
 				21A61CED265E7F4A0080E67D /* PointViewController.plist */,
@@ -1540,8 +1543,6 @@
 				21A61D44265E7F4A0080E67D /* _01Root */,
 				21A61D50265E7F4A0080E67D /* _02Root */,
 				21A61D49265E7F4A0080E67D /* _03Root */,
-				21A61D55265E7F4A0080E67D /* _05WebVC.h */,
-				21A61D43265E7F4A0080E67D /* _05WebVC.m */,
 				21A61D5F265E7F4A0080E67D /* Base */,
 				21CC20B4265F3B91005BD351 /* Common */,
 				21A61D56265E7F4A0080E67D /* Service */,
@@ -1835,6 +1836,17 @@
 				21A61FB0265E82990080E67D /* ShareViewController.m */,
 			);
 			path = AXShare_Env_1;
+			sourceTree = "<group>";
+		};
+		21BB0B562685724500FDDC1A /* _05Web */ = {
+			isa = PBXGroup;
+			children = (
+				21A61CEA265E7F4A0080E67D /* H5.bundle */,
+				21BB0B532685713200FDDC1A /* DemoVue.bundle */,
+				21A61D55265E7F4A0080E67D /* _05WebVC.h */,
+				21A61D43265E7F4A0080E67D /* _05WebVC.m */,
+			);
+			path = _05Web;
 			sourceTree = "<group>";
 		};
 		21CC20B4265F3B91005BD351 /* Common */ = {
@@ -2296,6 +2308,7 @@
 				21A61E3E265E7F4A0080E67D /* 微博@2x.png in Resources */,
 				21A61E26265E7F4A0080E67D /* QQ@2x.png in Resources */,
 				21A61F52265E7F680080E67D /* green_lottie_tab_home.json in Resources */,
+				21BB0B552685713200FDDC1A /* DemoVue.bundle in Resources */,
 				21A61E30265E7F4A0080E67D /* Alternate_AppIcon_3@2x.png in Resources */,
 				21A61EB8265E7F4B0080E67D /* _24NoteViewController.xib in Resources */,
 				21A61E86265E7F4B0080E67D /* _23FullViewController.xib in Resources */,
@@ -2414,6 +2427,7 @@
 				21A61F69265E7F680080E67D /* green_lottie_tab_mine.json in Resources */,
 				21A61E4B265E7F4A0080E67D /* 微信@2x.png in Resources */,
 				21A61C8F265E7EBF0080E67D /* file@2x.png in Resources */,
+				21BB0B542685713200FDDC1A /* DemoVue.bundle in Resources */,
 				21A61E41265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png in Resources */,
 				21A61F3F265E7F680080E67D /* Switch.json in Resources */,
 				21A61E2B265E7F4A0080E67D /* H5.bundle in Resources */,
