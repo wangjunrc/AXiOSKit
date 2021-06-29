@@ -56,6 +56,9 @@
 		218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */; };
 		218A323C25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */; };
 		218A323D25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */; };
+		2191A058268AF62C009D9852 /* AXTestString.m in Sources */ = {isa = PBXBuildFile; fileRef = 2191A057268AF62C009D9852 /* AXTestString.m */; };
+		2191A05B268AF7EC009D9852 /* AXTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2191A05A268AF7EC009D9852 /* AXTestViewController.m */; };
+		2191A05C268AF7EC009D9852 /* AXTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2191A05A268AF7EC009D9852 /* AXTestViewController.m */; };
 		219AA6D426496BD5001E0355 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 219AA6D226496BD5001E0355 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		219AA6D526496BD6001E0355 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219AA6D326496BD5001E0355 /* TencentOpenAPI.framework */; };
 		21A61C5C265E7E610080E67D /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219AA6D326496BD5001E0355 /* TencentOpenAPI.framework */; };
@@ -524,6 +527,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		703CC191BE0D09462B95EAA4 /* Pods_AXShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 535768695D6A059972E1D79B /* Pods_AXShare.framework */; };
+		DD24170C8BF5706DA391E4D2 /* Pods_AXiOSKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18922568140152982253388C /* Pods_AXiOSKit_Tests.framework */; };
 		EB35FDC131D922E7598E1FED /* Pods_AXiOSKit_Example_Env_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41677AA73910740D0E8B4ED8 /* Pods_AXiOSKit_Example_Env_1.framework */; };
 		F56153CB3F139C5B09652150 /* Pods_AXShare_Env_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7168D5D9E261A0C8CAFEA4C6 /* Pods_AXShare_Env_1.framework */; };
 /* End PBXBuildFile section */
@@ -579,6 +583,7 @@
 
 /* Begin PBXFileReference section */
 		05DC2DD6EBCB2965B712B9E1 /* Pods-AXShare_Env_1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXShare_Env_1.release.xcconfig"; path = "Target Support Files/Pods-AXShare_Env_1/Pods-AXShare_Env_1.release.xcconfig"; sourceTree = "<group>"; };
+		18922568140152982253388C /* Pods_AXiOSKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20883E74347D42E8588C5640 /* Pods-AXiOSKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		21022AE42547A80D0055E0B7 /* AppDelegateAppearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateAppearance.h; sourceTree = "<group>"; };
 		21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateAppearance.m; sourceTree = "<group>"; };
@@ -626,6 +631,9 @@
 		218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateRegistryCenter.m; sourceTree = "<group>"; };
 		218A323A25E096D0008D95B8 /* AppDelegateURLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateURLProtocol.h; sourceTree = "<group>"; };
 		218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateURLProtocol.m; sourceTree = "<group>"; };
+		2191A057268AF62C009D9852 /* AXTestString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXTestString.m; sourceTree = "<group>"; };
+		2191A059268AF7EC009D9852 /* AXTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXTestViewController.h; sourceTree = "<group>"; };
+		2191A05A268AF7EC009D9852 /* AXTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXTestViewController.m; sourceTree = "<group>"; };
 		219AA6D226496BD5001E0355 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		219AA6D326496BD5001E0355 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		21A61C68265E7EBF0080E67D /* WebviewPreviewViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebviewPreviewViewContoller.swift; sourceTree = "<group>"; };
@@ -997,7 +1005,9 @@
 		21FC46B8259192E900AA253F /* AXDebugUIConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugUIConfig.h; sourceTree = "<group>"; };
 		21FC46B9259192E900AA253F /* AXDebugUIConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugUIConfig.m; sourceTree = "<group>"; };
 		21FC46BE259193B900AA253F /* AXDebugUIConfigProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugUIConfigProtocol.h; sourceTree = "<group>"; };
+		234498E797E62582B4F876ED /* Pods-AXiOSKit_Tests.debug_α.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.debug_α.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.debug_α.xcconfig"; sourceTree = "<group>"; };
 		41677AA73910740D0E8B4ED8 /* Pods_AXiOSKit_Example_Env_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit_Example_Env_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41D5146973DF60BA4EF467DE /* Pods-AXiOSKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		535768695D6A059972E1D79B /* Pods_AXShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		548E7FB126D5CE891D6427E3 /* Pods-AXShare_Env_1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXShare_Env_1.debug.xcconfig"; path = "Target Support Files/Pods-AXShare_Env_1/Pods-AXShare_Env_1.debug.xcconfig"; sourceTree = "<group>"; };
 		5702C260CA9B3EB5A545B13D /* Pods-AXShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXShare.debug.xcconfig"; path = "Target Support Files/Pods-AXShare/Pods-AXShare.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1020,8 +1030,10 @@
 		9B16B496756062CE8BD2DCFE /* Pods_AXiOSKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A226867FD6E952B6FB555BC2 /* AXiOSKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AXiOSKit.podspec; path = ../AXiOSKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A89873BCFCA658F1E4BFBA94 /* Pods-AXShare_Env_1.debug_β.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXShare_Env_1.debug_β.xcconfig"; path = "Target Support Files/Pods-AXShare_Env_1/Pods-AXShare_Env_1.debug_β.xcconfig"; sourceTree = "<group>"; };
+		AD9BA3077342ABD4601282AA /* Pods-AXiOSKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE2316E8323798B340D4EFFB /* Pods-AXiOSKit_Example_Env_1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example_Env_1.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example_Env_1/Pods-AXiOSKit_Example_Env_1.release.xcconfig"; sourceTree = "<group>"; };
 		C27350B1731A19B9572686E7 /* Pods-AXShare.debug_α.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXShare.debug_α.xcconfig"; path = "Target Support Files/Pods-AXShare/Pods-AXShare.debug_α.xcconfig"; sourceTree = "<group>"; };
+		C2B32CDDE75AC9BA1A25E88C /* Pods-AXiOSKit_Tests.debug_β.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.debug_β.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.debug_β.xcconfig"; sourceTree = "<group>"; };
 		CF0E35D79A97B419BC49175D /* Pods-AXiOSKit_Example.debug_α.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example.debug_α.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example/Pods-AXiOSKit_Example.debug_α.xcconfig"; sourceTree = "<group>"; };
 		D86D397953F04A2FF67B91A3 /* Pods-AXiOSKit_Example_Env_1.debug_α.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Example_Env_1.debug_α.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Example_Env_1/Pods-AXiOSKit_Example_Env_1.debug_α.xcconfig"; sourceTree = "<group>"; };
 		DA8FE430D25D88C59F4ABA81 /* Pods-AXShare_Env_1.debug_α.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXShare_Env_1.debug_α.xcconfig"; path = "Target Support Files/Pods-AXShare_Env_1/Pods-AXShare_Env_1.debug_α.xcconfig"; sourceTree = "<group>"; };
@@ -1080,6 +1092,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
+				DD24170C8BF5706DA391E4D2 /* Pods_AXiOSKit_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1966,6 +1979,7 @@
 				7168D5D9E261A0C8CAFEA4C6 /* Pods_AXShare_Env_1.framework */,
 				41677AA73910740D0E8B4ED8 /* Pods_AXiOSKit_Example_Env_1.framework */,
 				21A61F97265E825F0080E67D /* AuthenticationServices.framework */,
+				18922568140152982253388C /* Pods_AXiOSKit_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2021,6 +2035,8 @@
 				210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */,
 				213BCBE0254003DA00C89B72 /* SceneDelegate.h */,
 				213BCB34254003D900C89B72 /* SceneDelegate.m */,
+				2191A059268AF7EC009D9852 /* AXTestViewController.h */,
+				2191A05A268AF7EC009D9852 /* AXTestViewController.m */,
 				213BCB35254003D900C89B72 /* Settings.bundle */,
 			);
 			name = "00Supporting Files";
@@ -2030,6 +2046,7 @@
 			isa = PBXGroup;
 			children = (
 				6003F5BB195388D20070C39A /* Tests.m */,
+				2191A057268AF62C009D9852 /* AXTestString.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -2075,6 +2092,10 @@
 				EBB45AD60EBD218457A22277 /* Pods-AXiOSKit_Example_Env_1.debug_β.xcconfig */,
 				D86D397953F04A2FF67B91A3 /* Pods-AXiOSKit_Example_Env_1.debug_α.xcconfig */,
 				AE2316E8323798B340D4EFFB /* Pods-AXiOSKit_Example_Env_1.release.xcconfig */,
+				AD9BA3077342ABD4601282AA /* Pods-AXiOSKit_Tests.debug.xcconfig */,
+				C2B32CDDE75AC9BA1A25E88C /* Pods-AXiOSKit_Tests.debug_β.xcconfig */,
+				234498E797E62582B4F876ED /* Pods-AXiOSKit_Tests.debug_α.xcconfig */,
+				41D5146973DF60BA4EF467DE /* Pods-AXiOSKit_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -2166,9 +2187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "AXiOSKit_Tests" */;
 			buildPhases = (
+				5910F3E94109A8D6FE5BFB58 /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
+				A0B5F6AEC98A35B73C96D731 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2540,6 +2563,28 @@
 			shellPath = /bin/sh;
 			shellScript = "# 图标加版本号\n#$SRCROOT/JCIconVersion.sh\n\n# 启动图加版本号\n#$SRCROOT/launch_image.sh\n\n# 忘记干嘛的\n#$SRCROOT/SettingsBundle.sh\n";
 		};
+		5910F3E94109A8D6FE5BFB58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AXiOSKit_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6271D33F90BF430D6455374E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2560,6 +2605,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0B5F6AEC98A35B73C96D731 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
+				"${BUILT_PRODUCTS_DIR}/Kiwi/Kiwi.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kiwi.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A112F1404485DDAFA6BFF943 /* [CP] Embed Pods Frameworks */ = {
@@ -2593,7 +2658,6 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
-				"${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework",
 				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
@@ -2659,7 +2723,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDynamicLaunchScreen.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGJRouter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
@@ -2735,7 +2798,6 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
-				"${BUILT_PRODUCTS_DIR}/LLDynamicLaunchScreen/LLDynamicLaunchScreen.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework",
 				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
@@ -2801,7 +2863,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLDynamicLaunchScreen.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGJRouter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
@@ -2962,6 +3023,7 @@
 				2112271F2573340100B6ECC8 /* AppDelegateDebug.m in Sources */,
 				21DE11E92673517400D2C914 /* QDNavigationBarScrollingAnimatorViewController.m in Sources */,
 				21A61E6E265E7F4B0080E67D /* RouterManager.m in Sources */,
+				2191A05C268AF7EC009D9852 /* AXTestViewController.m in Sources */,
 				21A61EF8265E7F4B0080E67D /* _25CompLayoutCell.m in Sources */,
 				21A61EA6265E7F4B0080E67D /* DemoWevViewImageSchemeHandler.m in Sources */,
 				21A61E78265E7F4B0080E67D /* _28ShareFileViewController.m in Sources */,
@@ -3176,6 +3238,7 @@
 				21A61E69265E7F4B0080E67D /* AXSocialShareCell.m in Sources */,
 				21A61E03265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.m in Sources */,
 				21A61DEF265E7F4A0080E67D /* AXWebSocketEngine.m in Sources */,
+				2191A05B268AF7EC009D9852 /* AXTestViewController.m in Sources */,
 				21A61C9F265E7EBF0080E67D /* FileListSearch.swift in Sources */,
 				21A61EBD265E7F4B0080E67D /* _28LocalSocketClientViewController.m in Sources */,
 				21A61C83265E7EBF0080E67D /* FileParser.swift in Sources */,
@@ -3218,6 +3281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				2191A058268AF62C009D9852 /* AXTestString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3591,6 +3655,7 @@
 		};
 		21BA17EB25AD846100222F9A /* Debug_α */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 234498E797E62582B4F876ED /* Pods-AXiOSKit_Tests.debug_α.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -3735,6 +3800,7 @@
 		};
 		21BA17F125AD847600222F9A /* Debug_β */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2B32CDDE75AC9BA1A25E88C /* Pods-AXiOSKit_Tests.debug_β.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -4034,6 +4100,7 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9BA3077342ABD4601282AA /* Pods-AXiOSKit_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -4059,6 +4126,7 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41D5146973DF60BA4EF467DE /* Pods-AXiOSKit_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

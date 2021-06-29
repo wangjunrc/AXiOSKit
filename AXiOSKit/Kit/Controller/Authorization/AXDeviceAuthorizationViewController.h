@@ -6,13 +6,13 @@
 //  Copyright © 2019 liu.weixing. All rights reserved.
 //
 
-#import "AXViewController.h"
+#import "AXKitViewController.h"
 #import "AXDeviceFunctionDisableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface AXDeviceAuthorizationViewController : AXViewController
+@interface AXDeviceAuthorizationViewController : AXKitViewController
 
 -(instancetype)initWithType:(AXDeviceFunctionType )type
                 disableType:(AXDeviceFunctionDisableType )disableType;

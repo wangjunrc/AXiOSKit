@@ -2,7 +2,7 @@
 //  NSObject+AXRuntime.m
 //  AXiOSKitDemo
 //
-//  Created by mac on 2018/5/31.
+//  Created by liuweixing 2018/5/31.
 //  Copyright © 2018年 AX. All rights reserved.
 //
 

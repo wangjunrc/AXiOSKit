@@ -2,7 +2,7 @@
 //  AXDottedLineView.h
 //  AXiOSKitDemo
 //
-//  Created by mac on 2018/8/27.
+//  Created by liuweixing 2018/8/27.
 //  Copyright © 2018年 liuweixing. All rights reserved.
 //
 

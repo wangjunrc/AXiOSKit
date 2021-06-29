@@ -2,7 +2,7 @@
 //  AliPay.m
 //  AXiOSKitDemo
 //
-//  Created by mac on 17/9/20.
+//  Created by liuweixing 17/9/20.
 //  Copyright © 2017年 liuweixing. All rights reserved.
 //
 

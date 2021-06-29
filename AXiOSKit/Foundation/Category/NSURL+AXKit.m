@@ -7,7 +7,19 @@
 //
 
 #import "NSURL+AXKit.h"
+#import "NSString+AXURL.h"
 
 @implementation NSURL (AXKit)
+
+/// url 解析参数
+-(NSDictionary<NSString*,NSString*>  *)ax_URLComponents {
+    return self.absoluteString.ax_URLComponents;
+}
+
+/// 添加URL参数,返回url 字符串
+/// @param params 参数
+-(NSURL *)ax_addingURLParams:(NSDictionary<NSString*,NSString*>*)params {
+    return [NSURL URLWithString:[self.absoluteString ax_addingURLParams:params]];
+}
 
 @end

@@ -137,7 +137,7 @@ def ui_pods
   #  pod 'GRDB.swift'
   
   # 一行代码解决iOS启动图的各种疑难杂症
-  pod 'LLDynamicLaunchScreen','~>0.2.0'
+#  pod 'LLDynamicLaunchScreen','~>0.2.0'
   # 新版本是swift
   #  pod 'lottie-ios'
   # 旧版本是oc
@@ -247,10 +247,16 @@ def extension_pods
   axinger_pods
 end
 
-#=========环境===========
+#=========target===========
 target 'AXiOSKit_Example' do
   
   app_pods
+  
+  target 'AXiOSKit_Tests' do
+    inherit! :search_paths
+    pod 'Kiwi'
+    pod 'FBSnapshotTestCase'
+  end
   
 end
 
@@ -260,7 +266,7 @@ target 'AXShare' do
   
 end
 
-#=========环境1===========
+#=========target Env_1 ===========
 target 'AXiOSKit_Example_Env_1' do
   
   app_pods

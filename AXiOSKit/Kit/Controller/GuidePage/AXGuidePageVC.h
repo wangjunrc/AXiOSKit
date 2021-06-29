@@ -2,14 +2,14 @@
 //  AXGuidePageVC.h
 //  AXiOSKitDemo
 //
-//  Created by mac on 2018/6/21.
+//  Created by liuweixing 2018/6/21.
 //  Copyright © 2018年 liuweixing. All rights reserved.
 //
 
 
-#import "AXViewController.h"
+#import "AXKitViewController.h"
 
-@interface AXGuidePageVC : AXViewController
+@interface AXGuidePageVC : AXKitViewController
 
 + (instancetype )guidePageWithImage:(NSArray <NSString *>*)imageArray passBlock:(void(^)(void))passBlock;
 

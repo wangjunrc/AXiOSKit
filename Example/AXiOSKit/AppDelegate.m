@@ -15,7 +15,6 @@
 #import "AXDebugManager.h"
 #import <UserNotifications/UserNotifications.h>
 #import "_01ContentViewController.h"
-#import <LLDynamicLaunchScreen/LLDynamicLaunchScreen.h>
 #import "AXShareService.h"
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
@@ -75,7 +74,6 @@
 //    [application beginReceivingRemoteControlEvents];
     
     //    NSLog(@"IS_PRODUCATION = %d, SERVER_HOST = %@",IS_PRODUCATION, SERVER_HOST);
-    //    [LLDynamicLaunchScreen restoreAsBefore];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [MakeKeyAndVisible makeKeyAndVisible];
     [self.window makeKeyAndVisible];

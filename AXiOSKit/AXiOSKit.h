@@ -32,7 +32,7 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "AXSinglePickVC.h"
 #import "AXTableViewController.h"
 #import "AXVeriCodeView.h"
-#import "AXViewController.h"
+#import "AXKitViewController.h"
 #import "AXWKWebVC.h"
 #import "AXWeakProxy.h"
 #import "AXWebVC.h"
