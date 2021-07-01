@@ -2138,6 +2138,9 @@ NSData *data = [NSData dataWithBytes:a length:12];
 - (void)didMoveToParentViewController:(UIViewController *)parent {
     [super didMoveToParentViewController:parent];
     NSLog(@"didMoveToParentViewController %@  self = %@",parent,self);
+    if(parent==nil){
+    
+}
 }
 ```
 ## 图片变色

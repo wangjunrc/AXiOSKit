@@ -98,6 +98,7 @@
     [self _24TextHeight];
     [self _25UIVisualEffectView];
     [self _26buttonHitOut];
+    [self _27UIColorWell];
     /// 底部约束
     [self _lastLoadBottomAttribute];
 }
@@ -1314,10 +1315,10 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleSignInWithAppleStateChanged:) name:ASAuthorizationAppleIDProviderCredentialRevokedNotification object:nil];
     }
 }
-
+// https://www.jianshu.com/p/138480a851fb
 - (void)_p19VisionKit {
     __weak typeof(self) weakSelf = self;
-    [self _buttonTitle:@"VisionKit" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"VisionKit,图片识别" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (@available(iOS 13.0, *)) {
             VNDocumentCameraViewController *vc =  VNDocumentCameraViewController.alloc.init;
@@ -1770,87 +1771,43 @@
         
         
     }
-    
-//
-//
-//
-//    UIButton *bgView = [[UIButton alloc] init];
-//    bgView.backgroundColor = UIColor.orangeColor;
-//    [self.containerView addSubview:bgView];
-//    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
-//        make.centerX.mas_equalTo(0);
-//        make.width.height.mas_equalTo(200);
-//
-//    }];
-//    self.bottomAttribute = bgView.mas_bottom;
-//
-//    UIButton *btn = [[UIButton alloc] init];
-//    btn.backgroundColor = UIColor.greenColor;
-//    [bgView addSubview:btn];
-//
-//    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-////        make.bottom.right.mas_equalTo(0);
-//        make.width.height.mas_equalTo(50);
-//        make.center.mas_equalTo(0);
-//    }];
-//
-//    /**
-//     x = x+left;
-//     y = y+top;
-//     w = w -left -right;
-//     h = h - top -bottom;
-//
-//     */
-//    UIEdgeInsets pointOutside = UIEdgeInsetsMake(50, 50, 50, 50);
-//
-//    btn.ax_pointOutside = pointOutside;
-//    [btn ax_setTitleStateNormal:@"点击范围"];
-//    /// 按钮事件
-//    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
-//
-//        NSLog(@"button扩大点击范围");
-//    }];
-//
-//    UIView *leftView = [[UIView alloc] init];
-//    leftView.backgroundColor = UIColor.ax_randomColor;
-//    [bgView insertSubview:leftView belowSubview:btn];
-//    [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(btn.mas_top);
-//        make.width.mas_equalTo(50);
-//        make.height.mas_equalTo(50);
-//        make.right.equalTo(btn.mas_left);
-//    }];
-//
-//
-//    UIView *topView = [[UIView alloc] init];
-//    topView.backgroundColor = UIColor.ax_randomColor;
-//    [bgView insertSubview:topView belowSubview:btn];
-//    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.bottom.equalTo(btn.mas_top);
-//        make.width.height.mas_equalTo(50);
-//        make.right.equalTo(btn.mas_right);
-//    }];
-//
-//    UIView *rightView = [[UIView alloc] init];
-//    rightView.backgroundColor = UIColor.ax_randomColor;
-//    [bgView insertSubview:rightView belowSubview:btn];
-//    [rightView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(btn.mas_top);
-//        make.width.height.mas_equalTo(50);
-//        make.left.equalTo(btn.mas_right);
-//    }];
-//
-//    UIView *bottomView = [[UIView alloc] init];
-//    bottomView.backgroundColor = UIColor.ax_randomColor;
-//    [bgView insertSubview:bottomView belowSubview:btn];
-//    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(btn.mas_bottom);
-//        make.width.height.mas_equalTo(50);
-//        make.left.equalTo(btn.mas_left);
-//    }];
 }
 
+
+-(void)_27UIColorWell {
+    [self _titlelabel:@"取色器,用UIColorPickerViewController"];
+    if (@available(iOS 14.0, *)) {
+        UIColorWell *colorWell =  [[UIColorWell alloc] initWithFrame:(CGRectMake(0, 150, 44, 44))];
+        colorWell.title = @"我是取色器";
+        [self.containerView addSubview:colorWell];
+        [colorWell mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.centerX.mas_equalTo(0);
+//            make.width.mas_equalTo(80);
+//            make.height.mas_equalTo(80);
+        }];
+        self.bottomAttribute = colorWell.mas_bottom;
+        
+        UIView *view = [[UIView alloc] init];
+        [self.containerView addSubview:view];
+        view.backgroundColor = UIColor.orangeColor;
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+            make.centerX.mas_equalTo(0);
+            make.width.mas_equalTo(80);
+            make.height.mas_equalTo(80);
+            
+        }];
+        self.bottomAttribute = view.mas_bottom;
+        [RACObserve(colorWell, selectedColor) subscribeNext:^(id  _Nullable x) {
+            view.backgroundColor = colorWell.selectedColor;
+        }];
+    } else {
+        // Fallback on earlier versions
+    }
+
+    
+}
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {

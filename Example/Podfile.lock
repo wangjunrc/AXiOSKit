@@ -98,6 +98,7 @@ PODS:
   - GCDWebServer/WebUploader (3.5.4):
     - GCDWebServer/Core
   - GDataXML-HTML (1.4.1)
+  - GSKStretchyHeaderView (1.0.4)
   - IGListDiffKit (4.0.0)
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
@@ -514,6 +515,7 @@ PODS:
     - SQLiteRepairKit (~> 1.2.0)
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - WCDBOptimizedSQLCipher (1.2.1)
+  - WRNavigationBar (1.3.0)
   - YYCache (1.0.4)
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
@@ -545,6 +547,7 @@ DEPENDENCIES:
   - FBSnapshotTestCase
   - fishhook
   - GDataXML-HTML (~> 1.4.1)
+  - GSKStretchyHeaderView
   - IGListKit
   - IQKeyboardManager
   - JJException
@@ -573,6 +576,7 @@ DEPENDENCIES:
   - TOCropViewController (~> 2.6.0)
   - TZImagePickerController (~> 3.5.8)
   - WCDB (~> 1.0.7.5)
+  - WRNavigationBar (~> 1.3.0)
   - YYCache (~> 1.0.4)
   - YYCategories (~> 1.0.4)
   - YYDispatchQueuePool (~> 1.0)
@@ -599,6 +603,7 @@ SPEC REPOS:
     - FMDB
     - GCDWebServer
     - GDataXML-HTML
+    - GSKStretchyHeaderView
     - IGListDiffKit
     - IGListKit
     - IQKeyboardManager
@@ -636,6 +641,7 @@ SPEC REPOS:
     - TZImagePickerController
     - WCDB
     - WCDBOptimizedSQLCipher
+    - WRNavigationBar
     - YYCache
     - YYCategories
     - YYDebugDatabase
@@ -670,6 +676,7 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   GDataXML-HTML: a4f11079b48d9fe96ff1fe478943a317185227e2
+  GSKStretchyHeaderView: 9743704c12bdc9cf7c7947bad3af8bf24f7061e3
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
@@ -707,6 +714,7 @@ SPEC CHECKSUMS:
   TZImagePickerController: 07a2f834f4908689759a7e54f74e9a018e047cb6
   WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
+  WRNavigationBar: 84935d8d39d2504a10a8d33688ab169b6a209521
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYDebugDatabase: e684a7f79fca2e3673a23347cefb822f911f3124
@@ -714,6 +722,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: c3394be8c95f497e1bfe78b90b4c825421c85bea
+PODFILE CHECKSUM: 257ef3bc4e2473a65608dede216c89e359c36a03
 
 COCOAPODS: 1.10.1

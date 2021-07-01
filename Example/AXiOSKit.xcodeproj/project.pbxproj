@@ -37,6 +37,8 @@
 		211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211227842573361600B6ECC8 /* AXiOSKit-Info.plist */; };
 		211227862573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211227842573361600B6ECC8 /* AXiOSKit-Info.plist */; };
 		2112281925733DF300B6ECC8 /* Assets_env_1.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */; };
+		2118BABD268EE9330016A292 /* _02QQZoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2118BABB268EE9320016A292 /* _02QQZoneController.m */; };
+		2118BABE268EE9330016A292 /* _02QQZoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2118BABB268EE9320016A292 /* _02QQZoneController.m */; };
 		213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB2E254003D900C89B72 /* InfoPlist.strings */; };
 		213BCBEA254003DB00C89B72 /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */; };
 		213BCBEC254003DB00C89B72 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB34254003D900C89B72 /* SceneDelegate.m */; };
@@ -269,8 +271,8 @@
 		21A61E86265E7F4B0080E67D /* _23FullViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61D39265E7F4A0080E67D /* _23FullViewController.xib */; };
 		21A61E87265E7F4B0080E67D /* _00TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D3A265E7F4A0080E67D /* _00TableViewCell.m */; };
 		21A61E88265E7F4B0080E67D /* _00TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D3A265E7F4A0080E67D /* _00TableViewCell.m */; };
-		21A61E89265E7F4B0080E67D /* _01TypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D3D265E7F4A0080E67D /* _01TypeViewController.m */; };
-		21A61E8A265E7F4B0080E67D /* _01TypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D3D265E7F4A0080E67D /* _01TypeViewController.m */; };
+		21A61E89265E7F4B0080E67D /* _02NavColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D3D265E7F4A0080E67D /* _02NavColorViewController.m */; };
+		21A61E8A265E7F4B0080E67D /* _02NavColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D3D265E7F4A0080E67D /* _02NavColorViewController.m */; };
 		21A61E8B265E7F4B0080E67D /* _29AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D3E265E7F4A0080E67D /* _29AudioViewController.m */; };
 		21A61E8C265E7F4B0080E67D /* _29AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D3E265E7F4A0080E67D /* _29AudioViewController.m */; };
 		21A61E8D265E7F4B0080E67D /* _06WCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D40265E7F4A0080E67D /* _06WCDBViewController.m */; };
@@ -353,8 +355,6 @@
 		21A61EDC265E7F4B0080E67D /* _29AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61D92265E7F4A0080E67D /* _29AudioViewController.xib */; };
 		21A61EDD265E7F4B0080E67D /* _13WeImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D94265E7F4A0080E67D /* _13WeImageTableViewController.m */; };
 		21A61EDE265E7F4B0080E67D /* _13WeImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D94265E7F4A0080E67D /* _13WeImageTableViewController.m */; };
-		21A61EDF265E7F4B0080E67D /* _03GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D95265E7F4A0080E67D /* _03GradientViewController.m */; };
-		21A61EE0265E7F4B0080E67D /* _03GradientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D95265E7F4A0080E67D /* _03GradientViewController.m */; };
 		21A61EE1265E7F4B0080E67D /* _25_2_DiffableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D9C265E7F4A0080E67D /* _25_2_DiffableDataSource.m */; };
 		21A61EE2265E7F4B0080E67D /* _25_2_DiffableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D9C265E7F4A0080E67D /* _25_2_DiffableDataSource.m */; };
 		21A61EE3265E7F4B0080E67D /* _25CompLayoutVC4.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D9D265E7F4A0080E67D /* _25CompLayoutVC4.m */; };
@@ -405,10 +405,10 @@
 		21A61F10265E7F4B0080E67D /* _32LottieVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61DD0265E7F4A0080E67D /* _32LottieVC.m */; };
 		21A61F11265E7F4B0080E67D /* _10TextFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61DD1265E7F4A0080E67D /* _10TextFViewController.xib */; };
 		21A61F12265E7F4B0080E67D /* _10TextFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61DD1265E7F4A0080E67D /* _10TextFViewController.xib */; };
-		21A61F13265E7F4B0080E67D /* _02ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61DD6265E7F4A0080E67D /* _02ChatViewController.m */; };
-		21A61F14265E7F4B0080E67D /* _02ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61DD6265E7F4A0080E67D /* _02ChatViewController.m */; };
-		21A61F15265E7F4B0080E67D /* _02ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61DD7265E7F4A0080E67D /* _02ChatViewController.xib */; };
-		21A61F16265E7F4B0080E67D /* _02ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61DD7265E7F4A0080E67D /* _02ChatViewController.xib */; };
+		21A61F13265E7F4B0080E67D /* _03ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61DD6265E7F4A0080E67D /* _03ChatViewController.m */; };
+		21A61F14265E7F4B0080E67D /* _03ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61DD6265E7F4A0080E67D /* _03ChatViewController.m */; };
+		21A61F15265E7F4B0080E67D /* _03ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61DD7265E7F4A0080E67D /* _03ChatViewController.xib */; };
+		21A61F16265E7F4B0080E67D /* _03ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61DD7265E7F4A0080E67D /* _03ChatViewController.xib */; };
 		21A61F17265E7F4B0080E67D /* ChatMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61DDA265E7F4A0080E67D /* ChatMessageModel.m */; };
 		21A61F18265E7F4B0080E67D /* ChatMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61DDA265E7F4A0080E67D /* ChatMessageModel.m */; };
 		21A61F19265E7F4B0080E67D /* ChatTextMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61DDC265E7F4A0080E67D /* ChatTextMessageModel.m */; };
@@ -486,8 +486,17 @@
 		21BA19A125AD91EF00222F9A /* AXDebugManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC46B32591924A00AA253F /* AXDebugManager.m */; };
 		21BB0B542685713200FDDC1A /* DemoVue.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21BB0B532685713200FDDC1A /* DemoVue.bundle */; };
 		21BB0B552685713200FDDC1A /* DemoVue.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21BB0B532685713200FDDC1A /* DemoVue.bundle */; };
-		21CC20AC265F36D8005BD351 /* _02ChatFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AA265F36C5005BD351 /* _02ChatFriendVC.m */; };
-		21CC20AD265F36D8005BD351 /* _02ChatFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AA265F36C5005BD351 /* _02ChatFriendVC.m */; };
+		21C84C27268DA33A0045E28C /* _41SlideHeadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C84C26268DA33A0045E28C /* _41SlideHeadVC.m */; };
+		21C84C2A268DA3A70045E28C /* GSKTwitterStretchyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C84C29268DA3A70045E28C /* GSKTwitterStretchyHeaderView.m */; };
+		21C84C2B268DA3A70045E28C /* GSKTwitterStretchyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C84C29268DA3A70045E28C /* GSKTwitterStretchyHeaderView.m */; };
+		21C84C2E268DA3FC0045E28C /* UIView+GSKLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C84C2D268DA3FC0045E28C /* UIView+GSKLayoutHelper.m */; };
+		21C84C2F268DA3FC0045E28C /* UIView+GSKLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C84C2D268DA3FC0045E28C /* UIView+GSKLayoutHelper.m */; };
+		21C84C32268DA8230045E28C /* GSKSpotyLikeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C84C30268DA8230045E28C /* GSKSpotyLikeHeaderView.m */; };
+		21C84C33268DA8230045E28C /* GSKSpotyLikeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C84C30268DA8230045E28C /* GSKSpotyLikeHeaderView.m */; };
+		21C84C36268DA8D90045E28C /* UINavigationController+Transparency.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C84C35268DA8D90045E28C /* UINavigationController+Transparency.m */; };
+		21C84C37268DA8D90045E28C /* UINavigationController+Transparency.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C84C35268DA8D90045E28C /* UINavigationController+Transparency.m */; };
+		21CC20AC265F36D8005BD351 /* _03ChatFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AA265F36C5005BD351 /* _03ChatFriendVC.m */; };
+		21CC20AD265F36D8005BD351 /* _03ChatFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AA265F36C5005BD351 /* _03ChatFriendVC.m */; };
 		21CC20B0265F393C005BD351 /* AXDataSourceOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AF265F393C005BD351 /* AXDataSourceOption.m */; };
 		21CC20B1265F393C005BD351 /* AXDataSourceOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AF265F393C005BD351 /* AXDataSourceOption.m */; };
 		21CC20B2265F393C005BD351 /* AXDataSourceOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AF265F393C005BD351 /* AXDataSourceOption.m */; };
@@ -499,17 +508,13 @@
 		21CC20C8265F7022005BD351 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CC20C6265F7022005BD351 /* MainInterface.storyboard */; };
 		21CC20CC265F7022005BD351 /* AXShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21CC20C1265F7022005BD351 /* AXShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		21CC20D4265F7051005BD351 /* AXShareContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20D3265F7051005BD351 /* AXShareContentViewController.m */; };
-		21CC20D5265F743E005BD351 /* _02ChatFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AA265F36C5005BD351 /* _02ChatFriendVC.m */; };
-		21CC20D6265F743F005BD351 /* _02ChatFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AA265F36C5005BD351 /* _02ChatFriendVC.m */; };
+		21CC20D5265F743E005BD351 /* _03ChatFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AA265F36C5005BD351 /* _03ChatFriendVC.m */; };
+		21CC20D6265F743F005BD351 /* _03ChatFriendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC20AA265F36C5005BD351 /* _03ChatFriendVC.m */; };
 		21CC7C62255FA40D00E7B506 /* AppDelegateWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */; };
 		21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */; };
 		21D2188A2669CE63006E05C9 /* AlertWayClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D218892669CE63006E05C9 /* AlertWayClass.m */; };
 		21D61EEC257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
 		21D61EED257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
-		21DE11E82673517400D2C914 /* QDNavigationBarScrollingAnimatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DE11E72673517300D2C914 /* QDNavigationBarScrollingAnimatorViewController.m */; };
-		21DE11E92673517400D2C914 /* QDNavigationBarScrollingAnimatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DE11E72673517300D2C914 /* QDNavigationBarScrollingAnimatorViewController.m */; };
-		21DE11EC267351D600D2C914 /* QDCommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DE11EB267351D600D2C914 /* QDCommonTableViewController.m */; };
-		21DE11ED267351D600D2C914 /* QDCommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DE11EB267351D600D2C914 /* QDCommonTableViewController.m */; };
 		21E6DE67260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
 		21E6DE68260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
 		21EB382B25DF90C6002C1807 /* ax_debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */; };
@@ -600,6 +605,8 @@
 		21122775257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-env-1-Info.plist"; sourceTree = "<group>"; };
 		211227842573361600B6ECC8 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
 		2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets_env_1.xcassets; sourceTree = "<group>"; };
+		2118BABB268EE9320016A292 /* _02QQZoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _02QQZoneController.m; sourceTree = "<group>"; };
+		2118BABC268EE9330016A292 /* _02QQZoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _02QQZoneController.h; sourceTree = "<group>"; };
 		213BCB2F254003D900C89B72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		213BCB30254003D900C89B72 /* MakeKeyAndVisible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeKeyAndVisible.h; sourceTree = "<group>"; };
 		213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeKeyAndVisible.m; sourceTree = "<group>"; };
@@ -780,7 +787,6 @@
 		21A61D32265E7F4A0080E67D /* _24NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _24NoteViewController.m; sourceTree = "<group>"; };
 		21A61D33265E7F4A0080E67D /* _13SDWebImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _13SDWebImageVC.m; sourceTree = "<group>"; };
 		21A61D34265E7F4A0080E67D /* _13WeImageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _13WeImageTableViewController.h; sourceTree = "<group>"; };
-		21A61D35265E7F4A0080E67D /* _03GradientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _03GradientViewController.h; sourceTree = "<group>"; };
 		21A61D36265E7F4A0080E67D /* _10TextFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _10TextFViewController.m; sourceTree = "<group>"; };
 		21A61D37265E7F4A0080E67D /* _17OtherShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _17OtherShareViewController.h; sourceTree = "<group>"; };
 		21A61D38265E7F4A0080E67D /* _14TFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _14TFViewController.m; sourceTree = "<group>"; };
@@ -788,7 +794,7 @@
 		21A61D3A265E7F4A0080E67D /* _00TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _00TableViewCell.m; sourceTree = "<group>"; };
 		21A61D3B265E7F4A0080E67D /* _13WebpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _13WebpViewController.h; sourceTree = "<group>"; };
 		21A61D3C265E7F4A0080E67D /* _26RMQClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _26RMQClientViewController.h; sourceTree = "<group>"; };
-		21A61D3D265E7F4A0080E67D /* _01TypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _01TypeViewController.m; sourceTree = "<group>"; };
+		21A61D3D265E7F4A0080E67D /* _02NavColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _02NavColorViewController.m; sourceTree = "<group>"; };
 		21A61D3E265E7F4A0080E67D /* _29AudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _29AudioViewController.m; sourceTree = "<group>"; };
 		21A61D3F265E7F4A0080E67D /* _28LocalSocketServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _28LocalSocketServiceViewController.h; sourceTree = "<group>"; };
 		21A61D40265E7F4A0080E67D /* _06WCDBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _06WCDBViewController.m; sourceTree = "<group>"; };
@@ -862,7 +868,6 @@
 		21A61D92265E7F4A0080E67D /* _29AudioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _29AudioViewController.xib; sourceTree = "<group>"; };
 		21A61D93265E7F4A0080E67D /* _10TextFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _10TextFViewController.h; sourceTree = "<group>"; };
 		21A61D94265E7F4A0080E67D /* _13WeImageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _13WeImageTableViewController.m; sourceTree = "<group>"; };
-		21A61D95265E7F4A0080E67D /* _03GradientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _03GradientViewController.m; sourceTree = "<group>"; };
 		21A61D96265E7F4A0080E67D /* _24NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _24NoteViewController.h; sourceTree = "<group>"; };
 		21A61D97265E7F4A0080E67D /* _13SDWebImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _13SDWebImageVC.h; sourceTree = "<group>"; };
 		21A61D98265E7F4A0080E67D /* _28ShareFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _28ShareFileViewController.h; sourceTree = "<group>"; };
@@ -899,7 +904,7 @@
 		21A61DBB265E7F4A0080E67D /* _28LocalSocketServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _28LocalSocketServiceViewController.m; sourceTree = "<group>"; };
 		21A61DBC265E7F4A0080E67D /* _06WCDBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _06WCDBViewController.h; sourceTree = "<group>"; };
 		21A61DBD265E7F4A0080E67D /* _29AudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _29AudioViewController.h; sourceTree = "<group>"; };
-		21A61DBE265E7F4A0080E67D /* _01TypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _01TypeViewController.h; sourceTree = "<group>"; };
+		21A61DBE265E7F4A0080E67D /* _02NavColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _02NavColorViewController.h; sourceTree = "<group>"; };
 		21A61DBF265E7F4A0080E67D /* _26RMQClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _26RMQClientViewController.m; sourceTree = "<group>"; };
 		21A61DC0265E7F4A0080E67D /* _13WebpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _13WebpViewController.m; sourceTree = "<group>"; };
 		21A61DC1265E7F4A0080E67D /* _00TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _00TableViewCell.h; sourceTree = "<group>"; };
@@ -918,9 +923,9 @@
 		21A61DD1265E7F4A0080E67D /* _10TextFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _10TextFViewController.xib; sourceTree = "<group>"; };
 		21A61DD2265E7F4A0080E67D /* _18MGSwipeTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _18MGSwipeTableVC.h; sourceTree = "<group>"; };
 		21A61DD3265E7F4A0080E67D /* _37FileManagerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _37FileManagerVC.h; sourceTree = "<group>"; };
-		21A61DD6265E7F4A0080E67D /* _02ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _02ChatViewController.m; sourceTree = "<group>"; };
-		21A61DD7265E7F4A0080E67D /* _02ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _02ChatViewController.xib; sourceTree = "<group>"; };
-		21A61DD8265E7F4A0080E67D /* _02ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _02ChatViewController.h; sourceTree = "<group>"; };
+		21A61DD6265E7F4A0080E67D /* _03ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _03ChatViewController.m; sourceTree = "<group>"; };
+		21A61DD7265E7F4A0080E67D /* _03ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _03ChatViewController.xib; sourceTree = "<group>"; };
+		21A61DD8265E7F4A0080E67D /* _03ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _03ChatViewController.h; sourceTree = "<group>"; };
 		21A61DDA265E7F4A0080E67D /* ChatMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageModel.m; sourceTree = "<group>"; };
 		21A61DDB265E7F4A0080E67D /* ChatTextMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTextMessageModel.h; sourceTree = "<group>"; };
 		21A61DDC265E7F4A0080E67D /* ChatTextMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTextMessageModel.m; sourceTree = "<group>"; };
@@ -970,9 +975,19 @@
 		21BA17F925AD856800222F9A /* ax_debug_α.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ax_debug_α.xcconfig"; sourceTree = "<group>"; };
 		21BA17FA25AD857E00222F9A /* ax_debug_β.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ax_debug_β.xcconfig"; sourceTree = "<group>"; };
 		21BB0B532685713200FDDC1A /* DemoVue.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DemoVue.bundle; sourceTree = "<group>"; };
+		21C84C25268DA33A0045E28C /* _41SlideHeadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _41SlideHeadVC.h; sourceTree = "<group>"; };
+		21C84C26268DA33A0045E28C /* _41SlideHeadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _41SlideHeadVC.m; sourceTree = "<group>"; };
+		21C84C28268DA3A60045E28C /* GSKTwitterStretchyHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKTwitterStretchyHeaderView.h; sourceTree = "<group>"; };
+		21C84C29268DA3A70045E28C /* GSKTwitterStretchyHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSKTwitterStretchyHeaderView.m; sourceTree = "<group>"; };
+		21C84C2C268DA3FC0045E28C /* UIView+GSKLayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GSKLayoutHelper.h"; sourceTree = "<group>"; };
+		21C84C2D268DA3FC0045E28C /* UIView+GSKLayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GSKLayoutHelper.m"; sourceTree = "<group>"; };
+		21C84C30268DA8230045E28C /* GSKSpotyLikeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSKSpotyLikeHeaderView.m; sourceTree = "<group>"; };
+		21C84C31268DA8230045E28C /* GSKSpotyLikeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKSpotyLikeHeaderView.h; sourceTree = "<group>"; };
+		21C84C34268DA8D90045E28C /* UINavigationController+Transparency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Transparency.h"; sourceTree = "<group>"; };
+		21C84C35268DA8D90045E28C /* UINavigationController+Transparency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Transparency.m"; sourceTree = "<group>"; };
 		21CC20A7265F3609005BD351 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		21CC20A9265F36C5005BD351 /* _02ChatFriendVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _02ChatFriendVC.h; sourceTree = "<group>"; };
-		21CC20AA265F36C5005BD351 /* _02ChatFriendVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _02ChatFriendVC.m; sourceTree = "<group>"; };
+		21CC20A9265F36C5005BD351 /* _03ChatFriendVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _03ChatFriendVC.h; sourceTree = "<group>"; };
+		21CC20AA265F36C5005BD351 /* _03ChatFriendVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _03ChatFriendVC.m; sourceTree = "<group>"; };
 		21CC20AE265F393C005BD351 /* AXDataSourceOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDataSourceOption.h; sourceTree = "<group>"; };
 		21CC20AF265F393C005BD351 /* AXDataSourceOption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDataSourceOption.m; sourceTree = "<group>"; };
 		21CC20B5265F3C0C005BD351 /* _AXThemeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _AXThemeCell.h; sourceTree = "<group>"; };
@@ -993,10 +1008,6 @@
 		21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		21D61EEB257F106E0059201A /* DogSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSwift.swift; sourceTree = "<group>"; };
 		21D83B3A255A28BE00695C28 /* rac.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = rac.md; sourceTree = "<group>"; };
-		21DE11E62673517300D2C914 /* QDNavigationBarScrollingAnimatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDNavigationBarScrollingAnimatorViewController.h; sourceTree = "<group>"; };
-		21DE11E72673517300D2C914 /* QDNavigationBarScrollingAnimatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDNavigationBarScrollingAnimatorViewController.m; sourceTree = "<group>"; };
-		21DE11EA267351D500D2C914 /* QDCommonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonTableViewController.h; sourceTree = "<group>"; };
-		21DE11EB267351D600D2C914 /* QDCommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonTableViewController.m; sourceTree = "<group>"; };
 		21E6DE65260494060092051F /* DogOC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogOC.h; sourceTree = "<group>"; };
 		21E6DE66260494060092051F /* DogOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogOC.m; sourceTree = "<group>"; };
 		21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ax_debug.xcconfig; sourceTree = "<group>"; };
@@ -1099,6 +1110,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2118BABF268EF61A0016A292 /* _02导航栏 */ = {
+			isa = PBXGroup;
+			children = (
+				2118BABC268EE9330016A292 /* _02QQZoneController.h */,
+				2118BABB268EE9320016A292 /* _02QQZoneController.m */,
+				21A61DBE265E7F4A0080E67D /* _02NavColorViewController.h */,
+				21A61D3D265E7F4A0080E67D /* _02NavColorViewController.m */,
+			);
+			path = "_02导航栏";
+			sourceTree = "<group>";
+		};
 		213BCB2D254003D900C89B72 /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -1190,10 +1212,8 @@
 				21A61D8F265E7F4A0080E67D /* _00TableViewCell.xib */,
 				21A61D2D265E7F4A0080E67D /* _01ContentViewController.h */,
 				21A61DB7265E7F4A0080E67D /* _01ContentViewController.m */,
-				21A61DBE265E7F4A0080E67D /* _01TypeViewController.h */,
-				21A61D3D265E7F4A0080E67D /* _01TypeViewController.m */,
-				21A61DD4265E7F4A0080E67D /* _02Chat */,
-				21DE11E52673515900D2C914 /* _03导航栏渐变 */,
+				2118BABF268EF61A0016A292 /* _02导航栏 */,
+				21A61DD4265E7F4A0080E67D /* _03Chat */,
 				21A61D73265E7F4A0080E67D /* _04RunLoopViewController.h */,
 				21A61D28265E7F4A0080E67D /* _04RunLoopViewController.m */,
 				21A61D77265E7F4A0080E67D /* _04RunLoopViewController.xib */,
@@ -1279,6 +1299,7 @@
 				21A61D8E265E7F4A0080E67D /* _39MasonryViewController.m */,
 				21A61DB8265E7F4A0080E67D /* _40ScreenshotsVC.h */,
 				21A61D2E265E7F4A0080E67D /* _40ScreenshotsVC.m */,
+				21C84C24268DA28D0045E28C /* _41 */,
 				21A61D99265E7F4A0080E67D /* AFHTTPSessionManager+PutFile.h */,
 				21A61D30265E7F4A0080E67D /* AFHTTPSessionManager+PutFile.m */,
 			);
@@ -1769,23 +1790,23 @@
 			path = Center;
 			sourceTree = "<group>";
 		};
-		21A61DD4265E7F4A0080E67D /* _02Chat */ = {
+		21A61DD4265E7F4A0080E67D /* _03Chat */ = {
 			isa = PBXGroup;
 			children = (
 				21A61DD5265E7F4A0080E67D /* Controller */,
 				21A61DD9265E7F4A0080E67D /* Model */,
 			);
-			path = _02Chat;
+			path = _03Chat;
 			sourceTree = "<group>";
 		};
 		21A61DD5265E7F4A0080E67D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				21A61DD8265E7F4A0080E67D /* _02ChatViewController.h */,
-				21A61DD6265E7F4A0080E67D /* _02ChatViewController.m */,
-				21A61DD7265E7F4A0080E67D /* _02ChatViewController.xib */,
-				21CC20A9265F36C5005BD351 /* _02ChatFriendVC.h */,
-				21CC20AA265F36C5005BD351 /* _02ChatFriendVC.m */,
+				21A61DD8265E7F4A0080E67D /* _03ChatViewController.h */,
+				21A61DD6265E7F4A0080E67D /* _03ChatViewController.m */,
+				21A61DD7265E7F4A0080E67D /* _03ChatViewController.xib */,
+				21CC20A9265F36C5005BD351 /* _03ChatFriendVC.h */,
+				21CC20AA265F36C5005BD351 /* _03ChatFriendVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1862,6 +1883,23 @@
 			path = _05Web;
 			sourceTree = "<group>";
 		};
+		21C84C24268DA28D0045E28C /* _41 */ = {
+			isa = PBXGroup;
+			children = (
+				21C84C34268DA8D90045E28C /* UINavigationController+Transparency.h */,
+				21C84C35268DA8D90045E28C /* UINavigationController+Transparency.m */,
+				21C84C31268DA8230045E28C /* GSKSpotyLikeHeaderView.h */,
+				21C84C30268DA8230045E28C /* GSKSpotyLikeHeaderView.m */,
+				21C84C2C268DA3FC0045E28C /* UIView+GSKLayoutHelper.h */,
+				21C84C2D268DA3FC0045E28C /* UIView+GSKLayoutHelper.m */,
+				21C84C25268DA33A0045E28C /* _41SlideHeadVC.h */,
+				21C84C26268DA33A0045E28C /* _41SlideHeadVC.m */,
+				21C84C28268DA3A60045E28C /* GSKTwitterStretchyHeaderView.h */,
+				21C84C29268DA3A70045E28C /* GSKTwitterStretchyHeaderView.m */,
+			);
+			path = _41;
+			sourceTree = "<group>";
+		};
 		21CC20B4265F3B91005BD351 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1905,19 +1943,6 @@
 				21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */,
 			);
 			path = AppDelegateComponent;
-			sourceTree = "<group>";
-		};
-		21DE11E52673515900D2C914 /* _03导航栏渐变 */ = {
-			isa = PBXGroup;
-			children = (
-				21A61D35265E7F4A0080E67D /* _03GradientViewController.h */,
-				21A61D95265E7F4A0080E67D /* _03GradientViewController.m */,
-				21DE11EA267351D500D2C914 /* QDCommonTableViewController.h */,
-				21DE11EB267351D600D2C914 /* QDCommonTableViewController.m */,
-				21DE11E62673517300D2C914 /* QDNavigationBarScrollingAnimatorViewController.h */,
-				21DE11E72673517300D2C914 /* QDNavigationBarScrollingAnimatorViewController.m */,
-			);
-			path = "_03导航栏渐变";
 			sourceTree = "<group>";
 		};
 		21EB383525DF90E1002C1807 /* Config */ = {
@@ -2020,6 +2045,8 @@
 				211227842573361600B6ECC8 /* AXiOSKit-Info.plist */,
 				6003F59B195388D20070C39A /* AXiOSKit-Prefix.pch */,
 				213BCBD7254003DA00C89B72 /* AXiOSKitExampleRelease.entitlements */,
+				2191A059268AF7EC009D9852 /* AXTestViewController.h */,
+				2191A05A268AF7EC009D9852 /* AXTestViewController.m */,
 				214F67F62646B9D2006D946B /* AXUserSwiftImport.h */,
 				213BCB92254003D900C89B72 /* Base.lproj */,
 				21E6DE65260494060092051F /* DogOC.h */,
@@ -2035,8 +2062,6 @@
 				210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */,
 				213BCBE0254003DA00C89B72 /* SceneDelegate.h */,
 				213BCB34254003D900C89B72 /* SceneDelegate.m */,
-				2191A059268AF7EC009D9852 /* AXTestViewController.h */,
-				2191A05A268AF7EC009D9852 /* AXTestViewController.m */,
 				213BCB35254003D900C89B72 /* Settings.bundle */,
 			);
 			name = "00Supporting Files";
@@ -2342,7 +2367,7 @@
 				21A61F5C265E7F680080E67D /* tab_me_animate.json in Resources */,
 				21A61C8A265E7EBF0080E67D /* WebviewPreviewViewContoller.xib in Resources */,
 				21A61DE8265E7F4A0080E67D /* _28LocalSocketServiceViewController.xib in Resources */,
-				21A61F16265E7F4B0080E67D /* _02ChatViewController.xib in Resources */,
+				21A61F16265E7F4B0080E67D /* _03ChatViewController.xib in Resources */,
 				21122777257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist in Resources */,
 				21A61C96265E7EBF0080E67D /* PreviewTransitionViewController.xib in Resources */,
 				2112275C2573340100B6ECC8 /* gift.svg in Resources */,
@@ -2401,7 +2426,7 @@
 				213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */,
 				21A61F65265E7F680080E67D /* vcTransition2.json in Resources */,
 				211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */,
-				21A61F15265E7F4B0080E67D /* _02ChatViewController.xib in Resources */,
+				21A61F15265E7F4B0080E67D /* _03ChatViewController.xib in Resources */,
 				21A61C91265E7EBF0080E67D /* FileBrowser.xib in Resources */,
 				21A61F6B265E7F680080E67D /* gray_tabbar_home_animation.json in Resources */,
 				21A61E9F265E7F4B0080E67D /* orgTitle.js in Resources */,
@@ -2653,6 +2678,7 @@
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
 				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
+				"${BUILT_PRODUCTS_DIR}/GSKStretchyHeaderView/GSKStretchyHeaderView.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
@@ -2687,6 +2713,7 @@
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
+				"${BUILT_PRODUCTS_DIR}/WRNavigationBar/WRNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
 				"${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework",
@@ -2718,6 +2745,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSKStretchyHeaderView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
@@ -2752,6 +2780,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WRNavigationBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYDebugDatabase.framework",
@@ -2793,6 +2822,7 @@
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
 				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
+				"${BUILT_PRODUCTS_DIR}/GSKStretchyHeaderView/GSKStretchyHeaderView.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
@@ -2827,6 +2857,7 @@
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
+				"${BUILT_PRODUCTS_DIR}/WRNavigationBar/WRNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
 				"${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework",
@@ -2858,6 +2889,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSKStretchyHeaderView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
@@ -2892,6 +2924,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WRNavigationBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYDebugDatabase.framework",
@@ -2940,6 +2973,7 @@
 				21A61ECC265E7F4B0080E67D /* _30TimeLineNinePhotoView.m in Sources */,
 				21A61F1E265E7F4B0080E67D /* _08MP3VC.m in Sources */,
 				21A61DF8265E7F4A0080E67D /* AXRecordAudioService.m in Sources */,
+				21C84C33268DA8230045E28C /* GSKSpotyLikeHeaderView.m in Sources */,
 				21A61EEC265E7F4B0080E67D /* _25CompLayoutVC2.m in Sources */,
 				21A61E84265E7F4B0080E67D /* _14TFViewController.m in Sources */,
 				21A61EC0265E7F4B0080E67D /* _38DirectionVC.m in Sources */,
@@ -2952,10 +2986,11 @@
 				21A61EFE265E7F4B0080E67D /* _23FullViewController.m in Sources */,
 				21A61E80265E7F4B0080E67D /* _13SDWebImageVC.m in Sources */,
 				21A61E9C265E7F4B0080E67D /* _02RootVC.m in Sources */,
-				21A61E8A265E7F4B0080E67D /* _01TypeViewController.m in Sources */,
+				21A61E8A265E7F4B0080E67D /* _02NavColorViewController.m in Sources */,
 				21A61EB6265E7F4B0080E67D /* _18MGSwipeTableVC.m in Sources */,
 				21A61E74265E7F4B0080E67D /* _21KVOViewController.m in Sources */,
 				21A61DFE265E7F4A0080E67D /* DemoEnvironmenVC.m in Sources */,
+				21C84C37268DA8D90045E28C /* UINavigationController+Transparency.m in Sources */,
 				21A61E5C265E7F4B0080E67D /* AXShareBridge.swift in Sources */,
 				21A61E6C265E7F4B0080E67D /* AXShareService.m in Sources */,
 				21A61E06265E7F4A0080E67D /* UIControl+load.m in Sources */,
@@ -2975,13 +3010,11 @@
 				21A61F18265E7F4B0080E67D /* ChatMessageModel.m in Sources */,
 				21A61C98265E7EBF0080E67D /* PreviewTransitionViewController.swift in Sources */,
 				21A61C9E265E7EBF0080E67D /* FBFile.swift in Sources */,
-				21DE11ED267351D600D2C914 /* QDCommonTableViewController.m in Sources */,
 				21A61EE6265E7F4B0080E67D /* _25LayoutViewController.m in Sources */,
 				2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */,
 				21A61ED6265E7F4B0080E67D /* _39MasonryViewController.m in Sources */,
 				21A61DEE265E7F4A0080E67D /* _33CropViewController.m in Sources */,
 				21A61C84265E7EBF0080E67D /* FileParser.swift in Sources */,
-				21A61EE0265E7F4B0080E67D /* _03GradientViewController.m in Sources */,
 				21A61F04265E7F4B0080E67D /* _13WebpViewController.m in Sources */,
 				21A61E12265E7F4A0080E67D /* Student.pbobjc.m in Sources */,
 				21A61ED2265E7F4B0080E67D /* _30IGListViewController.m in Sources */,
@@ -3010,6 +3043,7 @@
 				21A61DFA265E7F4A0080E67D /* AXRecordAudioConfig.m in Sources */,
 				21A61EEA265E7F4B0080E67D /* _25FlowLayoutVC1.m in Sources */,
 				21A61E0E265E7F4A0080E67D /* Student.proto in Sources */,
+				2118BABE268EE9330016A292 /* _02QQZoneController.m in Sources */,
 				21A61F1C265E7F4B0080E67D /* _36YYKitTestVC.m in Sources */,
 				21A61E10265E7F4A0080E67D /* Person.m in Sources */,
 				21A61EFC265E7F4B0080E67D /* _09AFNViewController.m in Sources */,
@@ -3017,11 +3051,10 @@
 				2112271B2573340100B6ECC8 /* AppDelegateWCDB.mm in Sources */,
 				21A61E68265E7F4B0080E67D /* AXSocialShareView.m in Sources */,
 				21A61E00265E7F4A0080E67D /* TestPluginViewController.m in Sources */,
-				21A61F14265E7F4B0080E67D /* _02ChatViewController.m in Sources */,
+				21A61F14265E7F4B0080E67D /* _03ChatViewController.m in Sources */,
 				2112271C2573340100B6ECC8 /* MakeKeyAndVisible.m in Sources */,
 				2112271E2573340100B6ECC8 /* AppDelegateAppearance.m in Sources */,
 				2112271F2573340100B6ECC8 /* AppDelegateDebug.m in Sources */,
-				21DE11E92673517400D2C914 /* QDNavigationBarScrollingAnimatorViewController.m in Sources */,
 				21A61E6E265E7F4B0080E67D /* RouterManager.m in Sources */,
 				2191A05C268AF7EC009D9852 /* AXTestViewController.m in Sources */,
 				21A61EF8265E7F4B0080E67D /* _25CompLayoutCell.m in Sources */,
@@ -3035,7 +3068,7 @@
 				21A61E66265E7F4B0080E67D /* AXSharePlatform.m in Sources */,
 				21A61C82265E7EBF0080E67D /* FileListViewController.swift in Sources */,
 				21BA199C25AD91BC00222F9A /* AXDebugUIConfig.m in Sources */,
-				21CC20AC265F36D8005BD351 /* _02ChatFriendVC.m in Sources */,
+				21CC20AC265F36D8005BD351 /* _03ChatFriendVC.m in Sources */,
 				21A61E5A265E7F4A0080E67D /* AXShareQQ.swift in Sources */,
 				21A61EE4265E7F4B0080E67D /* _25CompLayoutVC4.m in Sources */,
 				21A61F0E265E7F4B0080E67D /* _15UIMenuController.m in Sources */,
@@ -3061,10 +3094,12 @@
 				21A61EBE265E7F4B0080E67D /* _28LocalSocketClientViewController.m in Sources */,
 				210B1EE125EE18C200878A73 /* NSBundle+CLLanguage.m in Sources */,
 				21A61E8C265E7F4B0080E67D /* _29AudioViewController.m in Sources */,
+				21C84C2B268DA3A70045E28C /* GSKTwitterStretchyHeaderView.m in Sources */,
 				21A61F02265E7F4B0080E67D /* _26RMQClientViewController.m in Sources */,
 				21A61E9A265E7F4B0080E67D /* _03RootCell.m in Sources */,
 				21A61E1C265E7F4A0080E67D /* AXXSwitch.m in Sources */,
 				21A61F08265E7F4B0080E67D /* CTMediator+NewsActions.m in Sources */,
+				21C84C2F268DA3FC0045E28C /* UIView+GSKLayoutHelper.m in Sources */,
 				21A61DEA265E7F4A0080E67D /* _20PhotoViewController.m in Sources */,
 				21A61EF4265E7F4B0080E67D /* _25Layout.m in Sources */,
 				21A61EA8265E7F4B0080E67D /* NSURLProtocol+AXDemo.m in Sources */,
@@ -3099,7 +3134,7 @@
 			files = (
 				21CC20B2265F393C005BD351 /* AXDataSourceOption.m in Sources */,
 				21CC20B9265F3C0C005BD351 /* _AXThemeCell.m in Sources */,
-				21CC20D6265F743F005BD351 /* _02ChatFriendVC.m in Sources */,
+				21CC20D6265F743F005BD351 /* _03ChatFriendVC.m in Sources */,
 				21A61FB1265E82990080E67D /* ShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3108,7 +3143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21CC20D5265F743E005BD351 /* _02ChatFriendVC.m in Sources */,
+				21CC20D5265F743E005BD351 /* _03ChatFriendVC.m in Sources */,
 				21CC20C5265F7022005BD351 /* ShareViewController.m in Sources */,
 				21CC20D4265F7051005BD351 /* AXShareContentViewController.m in Sources */,
 			);
@@ -3133,7 +3168,7 @@
 				21A61EFD265E7F4B0080E67D /* _23FullViewController.m in Sources */,
 				21A61E7F265E7F4B0080E67D /* _13SDWebImageVC.m in Sources */,
 				21A61E9B265E7F4B0080E67D /* _02RootVC.m in Sources */,
-				21A61E89265E7F4B0080E67D /* _01TypeViewController.m in Sources */,
+				21A61E89265E7F4B0080E67D /* _02NavColorViewController.m in Sources */,
 				21A61EB5265E7F4B0080E67D /* _18MGSwipeTableVC.m in Sources */,
 				21A61E73265E7F4B0080E67D /* _21KVOViewController.m in Sources */,
 				21A61DFD265E7F4A0080E67D /* DemoEnvironmenVC.m in Sources */,
@@ -3148,6 +3183,7 @@
 				21D2188A2669CE63006E05C9 /* AlertWayClass.m in Sources */,
 				21A61E71265E7F4B0080E67D /* _19ScrollContentViewController.m in Sources */,
 				21A61C81265E7EBF0080E67D /* FileListViewController.swift in Sources */,
+				21C84C2E268DA3FC0045E28C /* UIView+GSKLayoutHelper.m in Sources */,
 				21A61E63265E7F4B0080E67D /* AXShareOption.m in Sources */,
 				21A61F09265E7F4B0080E67D /* _34ViewController.m in Sources */,
 				21A61DE5265E7F4A0080E67D /* _27MQTTClientViewController.m in Sources */,
@@ -3162,7 +3198,6 @@
 				21A61ED5265E7F4B0080E67D /* _39MasonryViewController.m in Sources */,
 				21A61DED265E7F4A0080E67D /* _33CropViewController.m in Sources */,
 				21A61C97265E7EBF0080E67D /* PreviewTransitionViewController.swift in Sources */,
-				21A61EDF265E7F4B0080E67D /* _03GradientViewController.m in Sources */,
 				21A61F03265E7F4B0080E67D /* _13WebpViewController.m in Sources */,
 				21A61E11265E7F4A0080E67D /* Student.pbobjc.m in Sources */,
 				21A61ED1265E7F4B0080E67D /* _30IGListViewController.m in Sources */,
@@ -3177,9 +3212,9 @@
 				21A61E87265E7F4B0080E67D /* _00TableViewCell.m in Sources */,
 				21A61E6F265E7F4B0080E67D /* _04RunLoopViewController.m in Sources */,
 				21A61C7F265E7EBF0080E67D /* PreviewManager.swift in Sources */,
+				21C84C27268DA33A0045E28C /* _41SlideHeadVC.m in Sources */,
 				218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */,
 				21A61EDD265E7F4B0080E67D /* _13WeImageTableViewController.m in Sources */,
-				21DE11E82673517400D2C914 /* QDNavigationBarScrollingAnimatorViewController.m in Sources */,
 				21A61EED265E7F4B0080E67D /* _25CompLayoutVC1.m in Sources */,
 				21A61E4F265E7F4A0080E67D /* AXUserInfoDao.mm in Sources */,
 				21A61E1D265E7F4A0080E67D /* CustomGifHeader.m in Sources */,
@@ -3199,7 +3234,7 @@
 				21A61E67265E7F4B0080E67D /* AXSocialShareView.m in Sources */,
 				21A61DFF265E7F4A0080E67D /* TestPluginViewController.m in Sources */,
 				217DA6F3266BB848003E0E6B /* AXDemoUser2.m in Sources */,
-				21A61F13265E7F4B0080E67D /* _02ChatViewController.m in Sources */,
+				21A61F13265E7F4B0080E67D /* _03ChatViewController.m in Sources */,
 				21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */,
 				21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */,
 				218A323C25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */,
@@ -3216,7 +3251,7 @@
 				21A61E65265E7F4B0080E67D /* AXSharePlatform.m in Sources */,
 				21A61C9B265E7EBF0080E67D /* FileListPreview.swift in Sources */,
 				218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */,
-				21CC20AD265F36D8005BD351 /* _02ChatFriendVC.m in Sources */,
+				21CC20AD265F36D8005BD351 /* _03ChatFriendVC.m in Sources */,
 				21A61E59265E7F4A0080E67D /* AXShareQQ.swift in Sources */,
 				21A61EE3265E7F4B0080E67D /* _25CompLayoutVC4.m in Sources */,
 				21A61F0D265E7F4B0080E67D /* _15UIMenuController.m in Sources */,
@@ -3245,6 +3280,7 @@
 				21A61E8B265E7F4B0080E67D /* _29AudioViewController.m in Sources */,
 				21A61F01265E7F4B0080E67D /* _26RMQClientViewController.m in Sources */,
 				21A61E99265E7F4B0080E67D /* _03RootCell.m in Sources */,
+				21C84C32268DA8230045E28C /* GSKSpotyLikeHeaderView.m in Sources */,
 				21A61E1B265E7F4A0080E67D /* AXXSwitch.m in Sources */,
 				21A61F07265E7F4B0080E67D /* CTMediator+NewsActions.m in Sources */,
 				21A61DE9265E7F4A0080E67D /* _20PhotoViewController.m in Sources */,
@@ -3260,15 +3296,17 @@
 				21A61E95265E7F4B0080E67D /* _03RootVC.m in Sources */,
 				21A61E79265E7F4B0080E67D /* AFHTTPSessionManager+PutFile.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				21DE11EC267351D600D2C914 /* QDCommonTableViewController.m in Sources */,
 				21A61ECD265E7F4B0080E67D /* _20TimeLineContentCell.m in Sources */,
 				21A61EC7265E7F4B0080E67D /* _30TimeLineModel.m in Sources */,
 				21A61EE1265E7F4B0080E67D /* _25_2_DiffableDataSource.m in Sources */,
 				21A61EA9265E7F4B0080E67D /* DemoTabBarController.m in Sources */,
 				21A61E15265E7F4A0080E67D /* AXIBudyButton.m in Sources */,
+				21C84C36268DA8D90045E28C /* UINavigationController+Transparency.m in Sources */,
 				21A61E09265E7F4A0080E67D /* NSObject+Load.m in Sources */,
+				2118BABD268EE9330016A292 /* _02QQZoneController.m in Sources */,
 				21A61EAF265E7F4B0080E67D /* _35ProtobufVC.m in Sources */,
 				21A61E51265E7F4A0080E67D /* AXUserLog.mm in Sources */,
+				21C84C2A268DA3A70045E28C /* GSKTwitterStretchyHeaderView.m in Sources */,
 				21A61F0F265E7F4B0080E67D /* _32LottieVC.m in Sources */,
 				2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */,
 				21A61E8D265E7F4B0080E67D /* _06WCDBViewController.m in Sources */,

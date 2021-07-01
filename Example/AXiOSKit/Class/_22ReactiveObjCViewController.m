@@ -94,6 +94,8 @@
     
     [self _01UITextField];
     [self _01UITextField_text];
+    [self _01UITextField_filter1];
+    [self _01UITextField_filter];
     [self _kvoArray];
     [self _03timer];
     [self _04arrayMap];
@@ -352,8 +354,33 @@
     
     
 }
+
+-(void)_01UITextField_filter1 {
+    
+    [self _titlelabel:@"UITextField,filter"];
+    
+    UITextField *tf = [[UITextField alloc] init];
+    [self.containerView addSubview:tf];
+    tf.backgroundColor = UIColor.orangeColor;
+    tf.placeholder = @"输入金额";
+    [tf mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.left.mas_equalTo(20);
+        make.right.mas_equalTo(-20);
+    }];
+    self.bottomAttribute = tf.mas_bottom;
+
+    [[tf.rac_textSignal filter:^BOOL(NSString * _Nullable value) {
+        return value.length > 5;
+    }] subscribeNext:^(NSString * _Nullable x) {
+        NSLog(@"UITextField,filter=%@", x);
+    }];
+    
+    
+}
 -(void)_01UITextField {
     
+    [self _titlelabel:@"UITextField双向绑定"];
     
     UILabel *label1;
     {
@@ -486,6 +513,66 @@
     //        NSLog(@"value = %@",value);
     //        return [value isEqualToString:@"2"] ? @"我是2" : value;
     //    }];
+}
+
+
+-(void)_01UITextField_filter {
+    
+    [self _titlelabel:@"UITextField,输入金额"];
+    
+    UITextField *moneyTextF = [[UITextField alloc] init];
+    [self.containerView addSubview:moneyTextF];
+    moneyTextF.backgroundColor = UIColor.grayColor;
+    moneyTextF.placeholder = @"输入金额";
+    [moneyTextF mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.left.mas_equalTo(20);
+        make.right.mas_equalTo(-20);
+    }];
+    self.bottomAttribute = moneyTextF.mas_bottom;
+    
+    
+    [[moneyTextF.rac_textSignal filter:^BOOL(NSString * _Nullable value) {
+        NSLog(@"moneyTextF value=%@", value);
+        
+        NSInteger valueLength = 5;
+        // 包含小数点，小数点后面只允许输入两位
+        if ([value containsString:@"."]) {
+            NSInteger decimalPointIndex =  [value rangeOfString:@"."].location;
+            valueLength = decimalPointIndex + 3;
+            // 1. 第一位是小数点，默认变成 0.  允许再输入两位数字
+            if (decimalPointIndex == 0) {
+                value = [NSString stringWithFormat:@"0%@",value];
+            }
+            
+            //  2.不允许输入多个（2个及以上）小数点
+            for (NSInteger i = 0; i < value.length - decimalPointIndex - 1; i++) {
+                NSString *character = [value substringWithRange:NSMakeRange(decimalPointIndex + i + 1, 1)];
+                if ([character isEqualToString:@"."]) {
+                    value = [value stringByReplacingCharactersInRange:NSMakeRange(decimalPointIndex + i + 1, 1) withString:@""];
+                }
+            }
+        }
+        
+        if (value.length > valueLength) {
+            moneyTextF.text = [value substringToIndex:valueLength];
+        } else {
+            moneyTextF.text = value;
+        }
+        //
+        //                  if (value.length > valueLength) {
+        //                      value = [value substringToIndex:valueLength];
+        //                  } else {
+        ////                      moneyTextF.text = value;
+        //                  }
+        
+        return value.length <= valueLength;
+    }] subscribeNext:^(NSString * _Nullable x) {
+        NSLog(@"moneyTextF subscribeNext=%@", x);
+    }] ;
+    
+    
+    
 }
 
 -(void)_kvoArray {

@@ -7,7 +7,7 @@
 //
 
 #import "AXShareContentViewController.h"
-#import "_02ChatFriendVC.h"
+#import "_03ChatFriendVC.h"
 #import "AXDataSourceOption.h"
 @interface AXShareContentViewController ()
 
@@ -106,7 +106,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    _02ChatFriendVC *vc = _02ChatFriendVC.alloc.init;
+    _03ChatFriendVC *vc = _03ChatFriendVC.alloc.init;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

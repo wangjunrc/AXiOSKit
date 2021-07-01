@@ -17,9 +17,8 @@
 #import "_01ContentViewController.h"
 #import "_01HeaderView.h"
 #import "_01RootVC.h"
-#import "_01TypeViewController.h"
-#import "_02ChatViewController.h"
-#import "_03GradientViewController.h"
+#import "_02NavColorViewController.h"
+#import "_03ChatViewController.h"
 #import "_04RunLoopViewController.h"
 #import "_05WebVC.h"
 #import "_06WCDBViewController.h"
@@ -64,6 +63,7 @@
 #import "_38DirectionVC.h"
 #import "_39MasonryViewController.h"
 #import "_40ScreenshotsVC.h"
+#import "_41SlideHeadVC.h"
 #import <AXiOSKit/AXPayVC.h>
 #import <AXiOSKit/AXPresentGesturesBack.h>
 #import <AXiOSKit/AXSystemAuthorizerManager.h>
@@ -73,8 +73,7 @@
 #import "Person.h"
 #import <AXCollectionObserve/AXCollectionObserve.h>
 #import <QMUIKit/QMUIKit.h>
-#import "QDNavigationBarScrollingAnimatorViewController.h"
-
+#import "_02QQZoneController.h"
 @import AssetsLibrary;
 
 typedef void (^CollectionBlock)(void);
@@ -105,9 +104,9 @@ typedef void (^CollectionBlock)(void);
 //    return [UIImage qmui_imageWithColor:UIColor.purpleColor];
 //}
 /// 导航栏颜色,控制子页面,所以根视图需要设置
-- (nullable UIColor *)navigationBarBarTintColor {
-    return UIColor.purpleColor;
-}
+//- (nullable UIColor *)navigationBarBarTintColor {
+//    return UIColor.purpleColor;
+//}
 
 - (void)injected {
     NSLog(@"重启了 InjectionIII: %@", self);
@@ -198,6 +197,11 @@ typedef void (^CollectionBlock)(void);
     self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],self.deleteItem];
     _01HeaderView *headerView = [_01HeaderView.alloc init];
     self.tableView.tableHeaderView =headerView;
+    //    self.navigationController.navigationBar.barTintColor = [UIColor purpleColor];
+    //    self.navigationBarTintColor = [UIColor purpleColor];
+    self.navigationController.navigationBar.barTintColor =[UIColor orangeColor];
+    
+    
     
     [self _createRefresh];
     [self _createSearch];
@@ -629,52 +633,29 @@ typedef void (^CollectionBlock)(void);
                 },
             },
             @{
-                @"index": @1,
+                @"index": @2,
                 @"title": @"导航栏效果",
                 @"action": ^{
-                    _01TypeViewController *vc = [[_01TypeViewController alloc]init];
-                    
+                    _02NavColorViewController *vc = [[_02NavColorViewController alloc]init];
                     [self ax_pushVC:vc];
-                },
-            },
-            
-            @{
-                @"index": @1,
-                @"title": @"隐藏导航栏_01ContentViewController,方法不行",
-                @"action": ^{
-                    //                    _01ContentViewController *vc = [[_01ContentViewController alloc]init];
-                    //
-                    //                    [self ax_pushVC:vc];
-                    //                    vc.ax_controllerObserve.hiddenNavigationBar = YES;
-                    //                    NSLog(@"vc.AXListener.shouldNavigationBarHidden %d",vc.ax_controllerObserve.isHiddenNavigationBar);
                 },
             },
             @{
                 @"index": @2,
+                @"title": @"导航栏渐变",
+                @"action": ^{
+                    _02QQZoneController *vc = [[_02QQZoneController alloc]init];
+                    [self ax_pushVC:vc];
+                },
+            },
+            @{
+                @"index": @3,
                 @"title": @"聊天-ChatViewController",
                 @"action": ^{
-                    _02ChatViewController *vc = [[_02ChatViewController alloc] init];
+                    _03ChatViewController *vc = [[_03ChatViewController alloc] init];
                     [self ax_pushVC:vc];
                 },
             },
-            @{
-                @"index": @3,
-                @"title": @"滑动透明导航栏(放弃)",
-                @"action": ^{
-                    _03GradientViewController *vc = [[_03GradientViewController alloc]init];
-                    [self ax_pushVC:vc];
-                },
-            },
-            @{
-                @"index": @3,
-                @"title": @"QMUI-滑动透明导航栏",
-                @"action": ^{
-                    QDNavigationBarScrollingAnimatorViewController *vc = [[QDNavigationBarScrollingAnimatorViewController alloc]init];
-                    [self ax_pushVC:vc];
-                },
-            },
-            
-            
             @{
                 @"index": @4,
                 @"title": @"NSRunLoop模式",
@@ -1135,6 +1116,16 @@ typedef void (^CollectionBlock)(void);
                     [self ax_pushVC:vc];
                 },
             },
+            @{
+                @"index": @41,
+                @"title": @"滑动头部",
+                @"action": ^{
+                    _41SlideHeadVC *vc = [_41SlideHeadVC ax_init];
+                    [self ax_pushVC:vc];
+                },
+            },
+            
+            
             
         ].mutableCopy;
     }

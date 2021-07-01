@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 如果有底部栏，在root根视图里面 继承 RTContainerNavigationController ,别继承错了
 /// RTContainerNavigationController是RTRootNavigationController导航栏的类
 ///
-@interface DemoNavigationController : QMUINavigationController
+@interface DemoNavigationController : UINavigationController
 
 @end
 

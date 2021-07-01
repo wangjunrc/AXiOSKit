@@ -61,15 +61,82 @@ def axinger_pods
   
   pod 'AXiOSKit', :path => '../'
   pod 'AXViewControllerTransitioning', :path => '../../AXViewControllerTransitioning'
-#  pod 'AXCollectionObserve', :path => '../../AXCollectionObserve'
+  #  pod 'AXCollectionObserve', :path => '../../AXCollectionObserve'
   pod 'AXCollectionObserve','~>1.1.1'
   
 end
 
-# 因为有的target 不支持UIKit的库
-def ui_pods
+
+DebugList=['Debug','Debug_α','Debug_β']
+DoraemonKit_version='~> 3.0.7'
+# 测试工具
+def debug_pods
+  # LookinServer 和 Reveal-SDK 类似
+  #  pod 'xxx', :configuration => ['Release']
+  #  pod 'LLDebugTool' , '1.3.8.1' ,:configurations => DebugList
+  #  pod 'MLeaksFinder', '~> 1.1.0' ,:configurations => DebugList
+  #  pod 'LookinServer', :configurations => DebugList
+  pod 'CocoaDebug', '~> 1.6.3' , :configurations => DebugList
   
+  # '其他模块 WithLogger','WithGPS','WithLoad','WithDatabase', 'WithMLeaksFinder','WithWeex'
+  #  这样好像不行
+  #    pod 'DoraemonKit', :subspecs => ['Core','WithLogger'], :configurations => DebugList
+  
+  pod 'DoraemonKit/Core', DoraemonKit_version, :configurations => DebugList #必选
+  pod 'DoraemonKit/WithGPS', DoraemonKit_version, :configurations => DebugList #可选
+  pod 'DoraemonKit/WithLoad',DoraemonKit_version, :configurations => DebugList #可选
+  pod 'DoraemonKit/WithLogger', DoraemonKit_version, :configurations => DebugList #可选
+  pod 'DoraemonKit/WithDatabase', DoraemonKit_version, :configurations => DebugList #可选
+  #  pod 'DoraemonKit/WithMLeaksFinder', DoraemonKit_version, :configurations => DebugList #可选
+  #      pod 'DoraemonKit/WithWeex', '~> 3.0.4', :configurations => DebugList #可选
+  
+end
+
+
+# 常用的第三方
+def common_pods
+  pod 'Masonry'
+  pod 'AFNetworking'
   pod 'IQKeyboardManager'
+  
+  #  https://www.cnblogs.com/edensyd/p/9233220.html
+  #ReactiveObjC -- 对应的是RAC的OC版本，最新3.1.0版本。
+  #ReactiveCocoa--对应的是RAC的swift版本，最新7.1.0版本。
+  pod 'ReactiveObjC','~> 3.1.0'
+  pod 'PromisesObjC','~> 1.2.12'
+  #由于SDWebImage从5.0版本开始，项目结构改动比较大，
+  #取消了'SDWebImage/GIF'、'SDWebImage/WebP'这两个Subspecs，
+  #加载gif:
+  #需要SDWebImageFLPlugin插件和FLAnimatedImage混合使用，
+  pod 'SDWebImageFLPlugin','~> 0.5.0'
+  #webp图片格式
+  #  加载webp:
+  #  需要使用SDWebImage中的SDImageCodersManager添加SDWebImageWebPCoder使用
+  pod 'SDWebImageWebPCoder','~> 0.8.1'
+  #  pod 'SDWebImage/GIF'
+  pod 'SDWebImage','~> 5.11.1'
+  # 网络请求模拟库OHHTTPStubs
+  pod 'OHHTTPStubs', '~> 9.1.0'
+  
+  # 图片剪切
+  pod 'TOCropViewController', '~> 2.6.0'
+  pod "CTMediator"
+  
+  #  pod 'SSZipArchive',:git => 'https://gitee.com/axinger/ZipArchive.git'
+  pod 'SSZipArchive'
+  #   pod 'CYLTabBarController' # 默认不依赖Lottie
+  pod 'CYLTabBarController/Lottie'  # 依赖Lottie库
+  #日志
+  pod 'CocoaLumberjack'
+  
+  # 文件
+  #  pod 'FileBrowser', '~> 1.0',直接引入本地,修改了源码
+  
+  # aop,报错
+  #  pod 'Stinger', '~> 0.3.0'
+  
+  pod "GSKStretchyHeaderView"
+  
   #蘑菇街团队提供了MGJRouter路由库
   pod 'MGJRouter'
   pod 'TZImagePickerController','~>3.5.8'
@@ -137,7 +204,7 @@ def ui_pods
   #  pod 'GRDB.swift'
   
   # 一行代码解决iOS启动图的各种疑难杂症
-#  pod 'LLDynamicLaunchScreen','~>0.2.0'
+  #  pod 'LLDynamicLaunchScreen','~>0.2.0'
   # 新版本是swift
   #  pod 'lottie-ios'
   # 旧版本是oc
@@ -146,13 +213,12 @@ def ui_pods
   #  pod 'PEPhotoCropEditor'
   
   # 在不同的控制器中实现UINavigationBar不同地样式,这个runtime,自动加载
-  #  pod 'KMNavigationBarTransition', '~>1.1.8'
+#    pod 'KMNavigationBarTransition', '~>1.1.8'
   # 导航栏,可以每个VC不一样配置,需要继承的
   #  pod 'RTRootNavigationController','~> 0.8.0'
-  
+  pod 'WRNavigationBar','~> 1.3.0'
   
   pod 'QMUIKit', '~>4.2.3'
-  
   
   pod "Protobuf",'~> 3.15.8'
   pod "YYText",'~> 1.0.7'
@@ -166,78 +232,11 @@ def ui_pods
   #  pod 'ZLCollectionViewFlowLayout'
   pod 'TABAnimated', '2.5.5'
   
-end
-
-DebugList=['Debug','Debug_α','Debug_β']
-DoraemonKit_version='~> 3.0.7'
-# 测试工具
-def debug_pods
-  # LookinServer 和 Reveal-SDK 类似
-  #  pod 'xxx', :configuration => ['Release']
-  #  pod 'LLDebugTool' , '1.3.8.1' ,:configurations => DebugList
-  #  pod 'MLeaksFinder', '~> 1.1.0' ,:configurations => DebugList
-  #  pod 'LookinServer', :configurations => DebugList
-  pod 'CocoaDebug', '~> 1.6.3' , :configurations => DebugList
-  
-  # '其他模块 WithLogger','WithGPS','WithLoad','WithDatabase', 'WithMLeaksFinder','WithWeex'
-  #  这样好像不行
-  #    pod 'DoraemonKit', :subspecs => ['Core','WithLogger'], :configurations => DebugList
-  
-  pod 'DoraemonKit/Core', DoraemonKit_version, :configurations => DebugList #必选
-  pod 'DoraemonKit/WithGPS', DoraemonKit_version, :configurations => DebugList #可选
-  pod 'DoraemonKit/WithLoad',DoraemonKit_version, :configurations => DebugList #可选
-  pod 'DoraemonKit/WithLogger', DoraemonKit_version, :configurations => DebugList #可选
-  pod 'DoraemonKit/WithDatabase', DoraemonKit_version, :configurations => DebugList #可选
-  #  pod 'DoraemonKit/WithMLeaksFinder', DoraemonKit_version, :configurations => DebugList #可选
-  #      pod 'DoraemonKit/WithWeex', '~> 3.0.4', :configurations => DebugList #可选
-  
-end
-
-
-
-# 常用的第三方
-def common_pods
-  
-  pod 'Masonry'
-  pod 'AFNetworking'
-  pod 'ReactiveObjC','~> 3.1.0'
-  pod 'PromisesObjC','~> 1.2.12'
-  #由于SDWebImage从5.0版本开始，项目结构改动比较大，
-  #取消了'SDWebImage/GIF'、'SDWebImage/WebP'这两个Subspecs，
-  #加载gif:
-  #需要SDWebImageFLPlugin插件和FLAnimatedImage混合使用，
-  pod 'SDWebImageFLPlugin','~> 0.5.0'
-  #webp图片格式
-  #  加载webp:
-  #  需要使用SDWebImage中的SDImageCodersManager添加SDWebImageWebPCoder使用
-  pod 'SDWebImageWebPCoder','~> 0.8.1'
-  #  pod 'SDWebImage/GIF'
-  pod 'SDWebImage','~> 5.11.1'
-  # 网络请求模拟库OHHTTPStubs
-  pod 'OHHTTPStubs', '~> 9.1.0'
-  
-  # 图片剪切
-  pod 'TOCropViewController', '~> 2.6.0'
-  pod "CTMediator"
-  
-  #  pod 'SSZipArchive',:git => 'https://gitee.com/axinger/ZipArchive.git'
-  pod 'SSZipArchive'
-  #   pod 'CYLTabBarController' # 默认不依赖Lottie
-  pod 'CYLTabBarController/Lottie'  # 依赖Lottie库
-  #日志
-  pod 'CocoaLumberjack'
-  
-  # 文件
-  #  pod 'FileBrowser', '~> 1.0',直接引入本地,修改了源码
-  
-  # aop,报错
-  #  pod 'Stinger', '~> 0.3.0'
   
 end
 
 def app_pods
   common_pods
-  ui_pods
   debug_pods
   axinger_pods
 end
