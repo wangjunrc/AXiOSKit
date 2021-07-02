@@ -71,41 +71,20 @@
 #import <mach/mach.h>
 #import "Person.h"
 #import <AXCollectionObserve/AXCollectionObserve.h>
-#import <QMUIKit/QMUIKit.h>
 #import "_02QQZoneController.h"
 @import AssetsLibrary;
 
-typedef void (^CollectionBlock)(void);
+@interface _01RootVC ()
 
-@interface _01RootVC ()<QMUINavigationControllerAppearanceDelegate>
-{
-    NSInteger _count;
-}
-
-@property (atomic, assign) NSInteger count;
-@property (atomic, copy) NSString *name;
-@property (nonatomic, copy) NSMutableString *copyedMStr;
-@property (nonatomic, copy) NSString *copyedStr;
 @property (nonatomic, strong) AXSystemAuthorizerManager *authorizerManager;
 @property (nonatomic, strong) NSMutableArray<NSDictionary*> *dataArray;
-@property (nonatomic, strong) NSMutableString *strongMStr;
-@property (nonatomic, strong) NSString *strongStr;
-
 @property(nonatomic, strong) UIBarButtonItem *deleteItem;
-
+@property(nonatomic, strong) UIBarButtonItem *editItem;
 @property(nonatomic, strong) UISearchController *searchVC;
 
 @end
 
 @implementation _01RootVC
-
-//- (nullable UIImage *)navigationBarBackgroundImage {
-//    return [UIImage qmui_imageWithColor:UIColor.purpleColor];
-//}
-/// 导航栏颜色,控制子页面,所以根视图需要设置
-//- (nullable UIColor *)navigationBarBarTintColor {
-//    return UIColor.purpleColor;
-//}
 
 - (void)injected {
     NSLog(@"重启了 InjectionIII: %@", self);
@@ -120,17 +99,16 @@ typedef void (^CollectionBlock)(void);
     [super viewDidLoad];
     self.navigationItem.title = AXNSLocalizedString(@"local.home");
     
-    //    [self ax_setNavBarBackgroundImageWithColor:UIColor.orangeColor];
-    //    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
-    
     NSLog(@"国际化 = %@",NSLocalizedString(@"local.home", nil));
     
     AXLog(@"我是AXLog");
     
-    __weak typeof(self) weakSelf = self;
     self.tableView.tableFooterView = UIView.alloc.init;
-    //    [self.tableView ax_registerNibCellClass:_00TableViewCell.class];
     [_00TableViewCell ax_registerNibCellWithTableView:self.tableView];
+    self.navigationItem.rightBarButtonItems = @[self.editItem,self.deleteItem];
+    _01HeaderView *headerView = [_01HeaderView.alloc init];
+    self.tableView.tableHeaderView =headerView;
+    
     self.dataArray = nil;
     [self.tableView reloadData];
     /// 多选
@@ -138,70 +116,12 @@ typedef void (^CollectionBlock)(void);
     
     NSLog(@"启动图缓存路径 %@",NSString.ax_launchImageCacheDirectory);
     
-    UIButton *btn = [[UIButton alloc]init];
-    [btn setTitle:@"编辑" forState:UIControlStateNormal];
-    [btn setTitle:@"完成" forState:UIControlStateSelected];
-    btn.backgroundColor = UIColor.blueColor;
-    [btn ax_addTargetBlock:^(UIButton * _Nullable button) {
-        button.selected = !button.selected;
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.tableView setEditing:!strongSelf.tableView.isEditing animated:YES];
-    }];
-    
+    UIButton *btn = self.editItem.customView;
     [RACObserve(btn,selected) subscribeNext:^(id _Nullable x) {
-        NSLog(@"btn selected = %@",x);
-    }];
-    /// readonly 无法监听
-    [RACObserve(self.tableView.indexPathsForSelectedRows,count) subscribeNext:^(id _Nullable x) {
-        NSLog(@"indexPathsForSelectedRows count = %@",x);
-    }];
-    /// readonly 无法监听
-    [RACObserve(self.tableView,indexPathsForSelectedRows) subscribeNext:^(id _Nullable x) {
-        NSLog(@"indexPathsForSelectedRows=%@",x);
+        NSLog(@"editItem selected=%@",x);
     }];
     
-    
-    /// 监听数据源
-    [[self rac_signalForSelector:@selector(tableView:numberOfRowsInSection:)
-                    fromProtocol:@protocol(UITableViewDataSource)]
-     subscribeNext:^(RACTuple * _Nullable x) {
-        //        RACTupleUnpack(UITableView *tableView,NSNumber *section) = x;
-        
-        NSLog(@"监听协议numberOfRowsInSection=%@",x);
-        //        NSLog(@"监听协议numberOfRowsInSection参数=%@,section=%@",tableView,section);
-        //        [x objectAtIndex:2]
-        NSLog(@"监听协议numberOfRowsInSection参数section=%@",x.second);
-    }];
-    
-    /* 1.代替代理 */
-    //   self.textField.delegate = self;
-    // 监听代理
-    [[self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:)
-                    fromProtocol:@protocol(UITableViewDelegate)]
-     subscribeNext:^(RACTuple * _Nullable x) {
-        RACTupleUnpack(UITableView *tableView,NSIndexPath *indexPath) = x;
-        NSLog(@"监听实现的代理didSelectRowAtIndexPath=%@",x);
-        NSLog(@"监听实现的代理didSelectRowAtIndexPath=%@,indexPath=%@",tableView,indexPath);
-    }];
-    
-    if ([self respondsToSelector:@selector(tableView:didDeselectRowAtIndexPath:)]) {
-        // 未实现代理,监听不到
-        [[self rac_signalForSelector:@selector(tableView:didDeselectRowAtIndexPath:)
-                        fromProtocol:@protocol(UITableViewDelegate)]
-         subscribeNext:^(RACTuple * _Nullable x) {
-            NSLog(@"监听未实现的代理didDeselectRowAtIndexPath=%@",x);
-        }];
-    }
-    
-    self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem ax_itemByButton:btn],self.deleteItem];
-    _01HeaderView *headerView = [_01HeaderView.alloc init];
-    self.tableView.tableHeaderView =headerView;
-    //    self.navigationController.navigationBar.barTintColor = [UIColor purpleColor];
-    //    self.navigationBarTintColor = [UIColor purpleColor];
-    self.navigationController.navigationBar.barTintColor =[UIColor orangeColor];
-    
-    
-    
+    //    [self _rac_kvo];
     [self _createRefresh];
     [self _createSearch];
 }
@@ -463,6 +383,41 @@ typedef void (^CollectionBlock)(void);
 //}
 
 
+-(void)_rac_kvo{
+    
+    /// 监听数据源
+    [[self rac_signalForSelector:@selector(tableView:numberOfRowsInSection:)
+                    fromProtocol:@protocol(UITableViewDataSource)]
+     subscribeNext:^(RACTuple * _Nullable x) {
+        //        RACTupleUnpack(UITableView *tableView,NSNumber *section) = x;
+        
+        NSLog(@"监听协议numberOfRowsInSection=%@",x);
+        //        NSLog(@"监听协议numberOfRowsInSection参数=%@,section=%@",tableView,section);
+        //        [x objectAtIndex:2]
+        NSLog(@"监听协议numberOfRowsInSection参数section=%@",x.second);
+    }];
+    
+    /* 1.代替代理 */
+    //   self.textField.delegate = self;
+    // 监听代理
+    [[self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:)
+                    fromProtocol:@protocol(UITableViewDelegate)]
+     subscribeNext:^(RACTuple * _Nullable x) {
+        RACTupleUnpack(UITableView *tableView,NSIndexPath *indexPath) = x;
+        NSLog(@"监听实现的代理didSelectRowAtIndexPath=%@",x);
+        NSLog(@"监听实现的代理didSelectRowAtIndexPath=%@,indexPath=%@",tableView,indexPath);
+    }];
+    
+    if ([self respondsToSelector:@selector(tableView:didDeselectRowAtIndexPath:)]) {
+        // 未实现代理,监听不到
+        [[self rac_signalForSelector:@selector(tableView:didDeselectRowAtIndexPath:)
+                        fromProtocol:@protocol(UITableViewDelegate)]
+         subscribeNext:^(RACTuple * _Nullable x) {
+            NSLog(@"监听未实现的代理didDeselectRowAtIndexPath=%@",x);
+        }];
+    }
+    
+}
 /// 刷新
 -(void)_createRefresh {
     __weak typeof(self) weakSelf = self;
@@ -499,6 +454,24 @@ typedef void (^CollectionBlock)(void);
 }
 
 #pragma mark - get
+
+- (UIBarButtonItem *)editItem {
+    if (!_editItem) {
+        UIButton *btn = [[UIButton alloc]init];
+        [btn setTitle:@"编辑" forState:UIControlStateNormal];
+        [btn setTitle:@"完成" forState:UIControlStateSelected];
+        btn.backgroundColor = UIColor.blueColor;
+        __weak typeof(self) weakSelf = self;
+        [btn ax_addTargetBlock:^(UIButton * _Nullable button) {
+            button.selected = !button.selected;
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf.tableView setEditing:!strongSelf.tableView.isEditing animated:YES];
+        }];
+        _editItem =[UIBarButtonItem ax_itemByButton:btn];
+    }
+    return _editItem;
+}
+
 - (UIBarButtonItem *)deleteItem {
     if (!_deleteItem) {
         UIButton *btn = [[UIButton alloc]init];
@@ -1057,17 +1030,11 @@ typedef void (^CollectionBlock)(void);
             },
             
             
-            
         ].mutableCopy;
     }
     return _dataArray;
 }
-- (UIBarButtonItem *)rt_customBackItemWithTarget:(id)target action:(SEL)action {
-    return [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"AAA", nil)
-                                            style:UIBarButtonItemStylePlain
-                                           target:target
-                                           action:action];
-}
+
 
 // 是否支持设备自动旋转
 //- (BOOL)shouldAutorotate {
