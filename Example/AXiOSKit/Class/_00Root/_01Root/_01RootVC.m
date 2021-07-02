@@ -12,7 +12,6 @@
 #import "CopyActivity.h"
 #import "MyActivity.h"
 #import "RouterManager.h"
-#import "TestObj.h"
 #import "_00TableViewCell.h"
 #import "_01ContentViewController.h"
 #import "_01HeaderView.h"
@@ -206,56 +205,13 @@ typedef void (^CollectionBlock)(void);
     [self _createRefresh];
     [self _createSearch];
 }
-- (UIBarButtonItem *)deleteItem {
-    if (!_deleteItem) {
-        UIButton *btn = [[UIButton alloc]init];
-        [btn setTitle:@"删除" forState:UIControlStateNormal];
-        [btn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        [btn setTitleColor:UIColor.lightTextColor forState:UIControlStateDisabled];
-        btn.backgroundColor = UIColor.blueColor;
-        [btn addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
-        [btn ax_constraintButtonItemWidth:120 height:30];
-        _deleteItem =[UIBarButtonItem ax_itemByButton:btn];
-        _deleteItem.enabled = NO;
-    }
-    return _deleteItem;
-}
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     [self.tableView ax_layoutHeaderHeight];
 }
 
 -(void)_deleteCellArray:(NSArray<NSIndexPath *>*)array {
-    
-    /// 删除数据源
-    //    if (@available(iOS 11.0, *)) {
-    //        [self.tableView performBatchUpdates:^{
-    //
-    //        } completion:^(BOOL finished) {
-    //            [self.tableView reloadData];
-    //        }];
-    //    } else {
-    //        [self.tableView beginUpdates];
-    //        [self.tableView endUpdates];
-    //        [self.tableView reloadData];
-    //    }
-    
-    
-    //    [self.tableView beginUpdates];
-    //    NSMutableArray *temp = [NSMutableArray array];
-    //
-    //    __weak typeof(self) weakSelf = self;
-    //    [array enumerateObjectsUsingBlock:^(NSIndexPath *_Nonnull obj, NSUInteger idx,
-    //                                        BOOL *_Nonnull stop) {
-    //        __strong typeof(weakSelf) strongSelf = weakSelf;
-    //        [temp addObject:strongSelf.dataArray[obj.row]];
-    //    }];
-    //
-    //    [self.dataArray removeObjectsInArray:temp];
-    //    [self.tableView
-    //     deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows
-    //     withRowAnimation:UITableViewRowAnimationNone];
-    //    [self.tableView endUpdates];
     
     __weak typeof(self) weakSelf = self;
     [self.tableView ax_updates:^{
@@ -314,26 +270,10 @@ typedef void (^CollectionBlock)(void);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //    _00TableViewCell *cell = [tableView ax_dequeueReusableCellWithIndexPath:indexPath];
     _00TableViewCell *cell = [_00TableViewCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
     NSDictionary *dict = self.dataArray[indexPath.row];
     cell.indexLabel.text = [dict[@"index"] stringValue];
     cell.nameLabel.text = dict[@"title"];
-    
-    
-    //    [[cell rac_signalForSelector:@selector(setSelected:animated:)] subscribeNext:^(id  _Nullable x) {
-    //
-    //        NSLog(@"cell setSelected= %ld",self.tableView.indexPathsForSelectedRows.count);
-    //
-    //        if ([x[0] boolValue]) {
-    //            self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count;
-    //        }else{
-    //            self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count-1;
-    //        }
-    //
-    //    }];
-    //
-    
     return cell;
 }
 
@@ -523,28 +463,6 @@ typedef void (^CollectionBlock)(void);
 //}
 
 
-- (void)testPerson {
-}
-
-- (void)testObj:(TestObj *)obj {
-    //    NSAssert([obj respondsToSelector:@selector(log)], @"对的不对");
-    
-    //    if( [obj instancesRespondToSelector:@selector(log)] ) {
-    //
-    //    }
-    
-    NSLog(@">>>> %d == %d", [obj.class instancesRespondToSelector:@selector(log)],
-          [obj.class instancesRespondToSelector:@selector(log2)]);
-    
-    NSLog(@"=== %d", [obj respondsToSelector:@selector(log)]);
-    
-    if ([obj.class instancesRespondToSelector:@selector(log)]) {
-        [obj log];
-    } else {
-        NSLog(@"未z实现");
-    }
-}
-
 /// 刷新
 -(void)_createRefresh {
     __weak typeof(self) weakSelf = self;
@@ -581,7 +499,20 @@ typedef void (^CollectionBlock)(void);
 }
 
 #pragma mark - get
-
+- (UIBarButtonItem *)deleteItem {
+    if (!_deleteItem) {
+        UIButton *btn = [[UIButton alloc]init];
+        [btn setTitle:@"删除" forState:UIControlStateNormal];
+        [btn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+        [btn setTitleColor:UIColor.lightTextColor forState:UIControlStateDisabled];
+        btn.backgroundColor = UIColor.blueColor;
+        [btn addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
+        [btn ax_constraintButtonItemWidth:120 height:30];
+        _deleteItem =[UIBarButtonItem ax_itemByButton:btn];
+        _deleteItem.enabled = NO;
+    }
+    return _deleteItem;
+}
 - (UISearchController *)searchVC {
     if (!_searchVC) {
         
