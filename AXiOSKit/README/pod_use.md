@@ -593,3 +593,9 @@ JXCategoryView
 
 ### 第三方工具分类
 pod 'JKCategories'
+
+### 左右滑动卡片
+pod 'VerticalCardSwiper'
+
+### 各种弹窗
+pod 'HWPanModal'
