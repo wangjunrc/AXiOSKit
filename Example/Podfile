@@ -232,6 +232,8 @@ def common_pods
   #  pod 'ZLCollectionViewFlowLayout'
   pod 'TABAnimated', '2.5.5'
   
+  # 换行
+  pod 'NextGrowingTextView'
   
 end
 

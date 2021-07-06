@@ -14,7 +14,7 @@
 
 #import <QuickLook/QuickLook.h>
 #import <AXiOSKit/AXiOSKit.h>
-
+@import ReactiveObjC;
 
 @interface _28ShareFileViewController ()<UIDocumentInteractionControllerDelegate,QLPreviewControllerDataSource,QLPreviewControllerDelegate>
 
@@ -32,52 +32,54 @@
     self.title = @"分享文件,已经去除了自己APP";
     // https://pspdfkit.com/blog/2016/hiding-action-share-extensions-in-your-own-apps/
     self.view.backgroundColor = UIColor.whiteColor;
+    
+    
+    
+    [self _titlelabel:@"UIActivityViewController"];
     __weak typeof(self) weakSelf = self;
     [self _buttonTitle:@"系统分享,自定义按钮,可以分享图片" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf _share0];
+        [strongSelf _share_UIActivity];
     }];
-    [self _buttonTitle:@"UIDocumentInteractionController" handler:^(UIButton * _Nonnull btn) {
+    
+    [self _titlelabel:@"UIDocumentInteractionController"];
+    
+    
+    [self _buttonTitle:@"直接预览 或者 使用AirDrop" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf _share1];
+        [strongSelf _test_UIDocumentInteractionController];
     }];
-    [self _buttonTitle:@"UIDocumentInteractionController-文件夹" handler:^(UIButton * _Nonnull btn) {
+    
+    [self _buttonTitle:@"文件夹" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-      
-        NSString* urlString = [NSString ax_documentPath];
-        NSURL* URL = [NSURL fileURLWithPath:urlString];
-        strongSelf.documentController = [UIDocumentInteractionController interactionControllerWithURL:URL];
-        [strongSelf.documentController presentOptionsMenuFromRect:strongSelf.view.bounds inView:strongSelf.view animated:YES];
+        NSString* path = [NSString ax_documentPath];
+        [strongSelf _preview_UIDocumentInteractionController:path];
         
     }];
-    [self _buttonTitle:@"UIDocumentInteractionController-分享pdf" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-      
-        NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/testPDF.pdf" ofType:nil];
-        strongSelf.documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:url]];
-        [strongSelf.documentController presentOptionsMenuFromRect:strongSelf.view.bounds inView:strongSelf.view animated:YES];
-        
-        
-    }];
-    [self _buttonTitle:@"UIDocumentInteractionController-2" handler:^(UIButton * _Nonnull btn) {
+    
+    [self _buttonTitle:@"创建一个excel并分享" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf createXLSFile];
     }];
+    
+    
+    [self _titlelabel:@"QLPreviewController"];
     [self _buttonTitle:@"QuickLook预览文件" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _look];
     }];
     
+    [self _titlelabel:@"sys/socket.h"];
     [self _buttonTitle:@"local socket-服务端" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf _share2];
+        [strongSelf _share_socket];
     }];
     
     // 这里放最后一个view的底部
     [self _lastLoadBottomAttribute];
 }
 
--(void)_share0 {
+-(void)_share_UIActivity {
     
     MyActivity *item1 = [[MyActivity alloc] init];
     CopyActivity *item2 = [[CopyActivity alloc] init];
@@ -130,15 +132,46 @@
     [self presentViewController:activityVC animated:YES completion:nil];
 }
 
-
--(void)_share1 {
+-(void)_test_UIDocumentInteractionController{
     
-    NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/share2.xlsx" ofType:nil];
-    self.documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:url]];
-    [self.documentController presentOptionsMenuFromRect:self.view.bounds inView:self.view animated:YES];
+    NSArray<NSString *> *temp =@[
+        @"testWord.docx",
+        @"share2.xlsx" ,
+        @"testPDF.pdf",
+        @"test.zip",
+        @"photo.html",
+    ];
+    
+    @weakify(self)
+    [self ax_showSheetByTitle:@"选择UIDocumentInteractionController打开类型" message:@"" actionArray:temp confirm:^(NSInteger index) {
+        @strongify(self);
+        NSString *name = [NSString stringWithFormat:@"office.bundle/%@",temp[index]];
+        NSString *path =[NSBundle.mainBundle pathForResource:name ofType:nil];
+        [self _preview_UIDocumentInteractionController:path];
+    }];
+}
+
+
+
+-(void)_preview_UIDocumentInteractionController:(NSString *)path {
+    
+    @weakify(self)
+    [self ax_showSheetByTitle:@"选择UIDocumentInteractionController打开类型" message:@"" actionArray:@[@"直接预览",@"使用AirDrop"] confirm:^(NSInteger index) {
+        @strongify(self);
+        self.documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:path]];
+        self.documentController.delegate = self;
+        
+        if (index==0) {
+            [self.documentController  presentPreviewAnimated:YES];
+        }else if(index==1){
+            [self.documentController presentOptionsMenuFromRect:self.view.bounds inView:self.view animated:YES];
+        }
+        
+    }];
     
 }
--(void)_share2 {
+
+-(void)_share_socket {
     _28LocalSocketServiceViewController *vc = [_28LocalSocketServiceViewController ax_init];
     [self ax_pushVC:vc];
 }
@@ -146,124 +179,61 @@
 - (void)createXLSFile {
     
     // 创建存放XLS文件数据的数组
-    
     NSMutableArray  *xlsDataMuArr = [[NSMutableArray alloc] init];
     
     // 第一行内容
-    
     [xlsDataMuArr addObject:@"Time"];
-    
     [xlsDataMuArr addObject:@"Address"];
-    
     [xlsDataMuArr addObject:@"Person"];
-    
     [xlsDataMuArr addObject:@"Reason"];
-    
     [xlsDataMuArr addObject:@"Process"];
-    
     [xlsDataMuArr addObject:@"Result"];
     
     // 10行数据
-    
     for (int i = 0; i < 10; i ++) {
-        
         [xlsDataMuArr addObject:@"下班时间"];
-        
         [xlsDataMuArr addObject:@"大连"];
-        
         [xlsDataMuArr addObject:@"弄啪波勒"];
-        
         [xlsDataMuArr addObject:@"哦"];
-        
         [xlsDataMuArr addObject:@"很酷"];
-        
         [xlsDataMuArr addObject:@"又很帅气"];
-        
     }
     
     // 把数组拼接成字符串，连接符是 \t（功能同键盘上的tab键）
-    
     NSString *fileContent = [xlsDataMuArr componentsJoinedByString:@"\t"];
     
     // 字符串转换为可变字符串，方便改变某些字符
-    
     NSMutableString *muStr = [fileContent mutableCopy];
     
     // 新建一个可变数组，存储每行最后一个\t的下标（以便改为\n）
-    
     NSMutableArray *subMuArr = [NSMutableArray array];
     
     for (int i = 0; i < muStr.length; i ++) {
-        
         NSRange range = [muStr rangeOfString:@"\t" options:NSBackwardsSearch range:NSMakeRange(i, 1)];
-        
         if (range.length == 1) {
-            
             [subMuArr addObject:@(range.location)];
-            
         }
-        
     }
     
     // 替换末尾\t
     
     for (NSUInteger i = 0; i < subMuArr.count; i ++) {
-        
 #warning  下面的6是列数，根据需求修改
-        
         if ( i > 0 && (i%6 == 0) ) {
-            
             [muStr replaceCharactersInRange:NSMakeRange([[subMuArr objectAtIndex:i-1] intValue], 1) withString:@"\n"];
-            
         }
-        
     }
     
-    // 文件管理器
-    
-    NSFileManager *fileManager = [[NSFileManager alloc]init];
-    
     //使用UTF16才能显示汉字；如果显示为#######是因为格子宽度不够，拉开即可
-    
+    AXLoger(@"创建excel,muStr=%@",muStr);
     NSData *fileData = [muStr dataUsingEncoding:NSUTF16StringEncoding];
-    
     // 文件路径
-    
-    NSString *path = NSHomeDirectory();
-    
-    NSString *filePath = [path stringByAppendingPathComponent:@"/Documents/export.xlsx"];
-    
-    AXLoger(@"文件路径：\n%@",filePath);
-    
+    NSString *filePath = [NSString.ax_documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"Excel/%@.xlsx",NSString.ax_uuid]];
+    AXLoger(@"创建excel文件路径=%@",filePath);
     // 生成xls文件
-    
-    [fileManager createFileAtPath:filePath contents:fileData attributes:nil];
-    
-    
-    // 调用safari分享功能将文件分享出去
-    
-    UIDocumentInteractionController *documentIc = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:filePath]];
-    
-    // 记得要强引用UIDocumentInteractionController,否则控制器释放后再次点击分享程序会崩溃
-    
-    self.documentController = documentIc;
-    
-    // 如果需要其他safari分享的更多交互,可以设置代理
-    
-    documentIc.delegate = self;
-    
-    // 设置分享显示的矩形框
-    
-    CGRect rect = CGRectMake(0, 0, 300, 300);
-    
-    [documentIc presentOpenInMenuFromRect:rect inView:self.view animated:YES];
-    
-    [documentIc presentPreviewAnimated:YES];
-    
+    [NSFileManager.defaultManager createFileAtPath:filePath contents:fileData attributes:nil];
+    [self _preview_UIDocumentInteractionController:filePath];
 }
-
-
-
 
 #pragma mark - UIDocumentInteractionControllerDelegate
 
@@ -310,7 +280,7 @@
     qlPreVC.title = @"文件";
     [qlPreVC setCurrentPreviewItemIndex:0];
     [self.navigationController pushViewController:qlPreVC animated:YES];
-
+    
 }
 
 
@@ -337,7 +307,5 @@
 - (BOOL)previewController:(QLPreviewController *)controller shouldOpenURL:(NSURL *)url forPreviewItem:(id <QLPreviewItem>)item {
     return YES;
 }
-
-
 
 @end

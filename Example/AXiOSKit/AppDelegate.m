@@ -288,8 +288,8 @@
 // 屏幕旋转方向
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
     UIViewController*  topViewController = [self topViewController] ;
-    NSLog(@"topViewController = %@",topViewController.class);
-    NSLog(@"presentedViewController = %@",window.rootViewController.presentedViewController);
+    NSLog(@"屏幕旋转方向,topViewController = %@",topViewController.class);
+    NSLog(@"屏幕旋转方向,presentedViewController = %@",window.rootViewController.presentedViewController);
     /// 如果是横屏WebView 支持横屏
     if ([topViewController isKindOfClass:NSClassFromString(@"_38DirectionVC")]){
         

@@ -15,25 +15,37 @@
  */
 - (void)ax_popToViewControllerClass:(NSString *)classStr;
 
+/// push 完成后,移除viewController的父视图
+/// @param viewController viewController
+/// @param animated 动画
+/// @param replace 是否替换
+- (void)ax_pushViewController:(UIViewController *)viewController
+                     animated:(BOOL )animated
+                      replace:(BOOL )replace;
+
 /**
  * push vc后移除指定父nav控制器,
  使用RTRootNavigationController 时,改方法  卡顿
  */
-- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeParent:(UIViewController *)parent DEPRECATED_MSG_ATTRIBUTE("过期,该方法有bug");
+- (void)ax_pushViewController:(UIViewController *)viewController
+                     animated:(BOOL)animated
+                 removeParent:(UIViewController *)parent DEPRECATED_MSG_ATTRIBUTE("过期,该方法有bug");
 
 /**
  * push vc后移除指定父VC
  */
-- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeVC:(UIViewController *)removeVC;
+- (void)ax_pushViewController:(UIViewController *)viewController
+                     animated:(BOOL)animated removeVC:(UIViewController *)removeVC;
 
 /**
-  push vc后 移除 指定的vc 数组
-
+ push vc后 移除 指定的vc 数组
+ 
  @param viewController vc
  @param animated animated
  @param vcArray vcArray
  */
-- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeViewControllers:(NSArray *)vcArray;
+- (void)ax_pushViewController:(UIViewController *)viewController
+                     animated:(BOOL)animated removeViewControllers:(NSArray *)vcArray;
 
 /**
  初始化
@@ -47,7 +59,8 @@
 /// push 动画类似 Present样式
 /// @param controller controller
 /// @param animated animated
--(void)ax_pushViewControllerPresentStyle:(UIViewController *)controller animated:(BOOL )animated;
+-(void)ax_pushViewControllerPresentStyle:(UIViewController *)controller
+                                animated:(BOOL )animated;
 
 
 /// push 动画类似 Present样式 的pop返回

@@ -30,7 +30,9 @@
  * push vc后移除指定父 VC
  使用RTRootNavigationController 时,改方法  卡顿
  */
-- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeParent:(UIViewController *)parent{
+- (void)ax_pushViewController:(UIViewController *)viewController
+                     animated:(BOOL)animated
+                 removeParent:(UIViewController *)parent{
     
     [self pushViewController:viewController animated:animated];
     
@@ -40,7 +42,7 @@
         [temp removeObject:parent];
         self.viewControllers =temp;
     }
-  
+    
 }
 
 
@@ -51,10 +53,12 @@
  @param animated animated
  @param vcArray vcArray
  */
-- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeViewControllers:(NSArray *)vcArray{
+- (void)ax_pushViewController:(UIViewController *)viewController
+                     animated:(BOOL)animated
+        removeViewControllers:(NSArray *)vcArray{
     
     [self pushViewController:viewController animated:animated];
-   
+    
     NSMutableArray *temp =[self.viewControllers mutableCopy];
     [temp removeObjectsInArray:vcArray];
     self.viewControllers =temp;
@@ -63,11 +67,11 @@
 /**
  * push vc后移除指定父VC
  */
-- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated removeVC:(UIViewController *)removeVC {
-    
+- (void)ax_pushViewController:(UIViewController *)viewController
+                     animated:(BOOL)animated
+                     removeVC:(UIViewController *)removeVC {
     
     UIViewController *rootVC = self.viewControllers.lastObject;
-    
     if ([self.viewControllers containsObject:removeVC]) {
         
         NSMutableArray *temp =[self.viewControllers mutableCopy];
@@ -81,12 +85,42 @@
 
 - (void)ax_removeViewControllers:(NSArray *)vcArray{
     
-   NSMutableArray *temp =[self.viewControllers mutableCopy];
+    NSMutableArray *temp =[self.viewControllers mutableCopy];
     [temp removeObjectsInArray:vcArray];
     self.viewControllers =temp;
     
 }
 
+
+/// push 完成后,移除viewController的父视图
+/// @param viewController viewController
+/// @param animated 动画
+/// @param replace 是否替换
+- (void)ax_pushViewController:(UIViewController *)viewController
+                     animated:(BOOL )animated
+                      replace:(BOOL )replace {
+    
+//    [CATransaction setCompletionBlock:^{
+        //        NSMutableArray<UIViewController *> *tempArray = self.viewControllers.mutableCopy;
+        //        NSInteger index = [tempArray indexOfObject:viewController];
+        //        if (index > 0) {
+        //            [tempArray removeObjectAtIndex:index-1];
+        //            self.viewControllers = tempArray.copy;
+        //        }
+//    }];
+//    [CATransaction begin];
+    
+    if (replace) {
+        NSMutableArray<UIViewController *> *tempArray = self.viewControllers.mutableCopy;
+        if (tempArray.count > 0) {
+            [tempArray removeObjectAtIndex:tempArray.count-1];
+            self.viewControllers = tempArray.copy;
+        }
+    }
+    [self pushViewController:viewController animated:animated];
+//    [CATransaction commit];
+    
+}
 
 /**
  * push vc后移除指定父nav控制器,
@@ -94,16 +128,23 @@
 
 /**
  pushViewController 添加 complete
-
+ 
  @param viewController vc
  @param animated 动画
  @param complete 完成回调
  */
-- (void)ax_pushViewController:(UIViewController *)viewController animated:(BOOL)animated complete:(void(^)(void))complete{
+- (void)ax_pushViewController:(UIViewController *)viewController
+                     animated:(BOOL)animated
+                     complete:(void(^)(void))complete{
     
-    
+    [CATransaction setCompletionBlock:^{
+        if (complete) {
+            complete();
+        }
+    }];
+    [CATransaction begin];
     [self pushViewController:viewController animated:animated];
-    
+    [CATransaction commit];
 }
 
 

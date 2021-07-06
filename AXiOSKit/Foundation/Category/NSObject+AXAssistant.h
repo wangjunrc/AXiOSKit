@@ -222,4 +222,32 @@ void ax_setAssignAssociatedObject(id object, const void *propertyName,
  */
 id ax_getAssociatedObject(id object, const void *propertyName);
 
+@interface NSObject (AXAssistant)
+
+/**
+ retain strong nonatomic 属性添加值
+ */
+-(void)ax_setStrongObject:(id )value;
+
+/**
+ copy nonatomic 属性添加值
+ */
+-(void) ax_setCopyObject:(id )value;
+
+/**
+ assign nonatomic 属性添加值
+ */
+-(void) ax_setAssignObject:(id )value;
+
+/**
+ Retain Strong Copy Assign 对象获取值
+ Assign 需要转型
+ */
+-(id)ax_getObject:(id )value;
+
+@end
+
+
+
 NS_ASSUME_NONNULL_END
+

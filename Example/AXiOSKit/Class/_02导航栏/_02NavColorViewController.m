@@ -8,7 +8,7 @@
 
 #import "_02NavColorViewController.h"
 @import  WRNavigationBar;
-
+@import AXiOSKit;
 @interface _02NavColorViewController ()
 
 @property(nonatomic,assign)BOOL navigationBarHidden;
@@ -60,6 +60,37 @@
         [strongSelf ax_pushVC:vc];
     }];
    
+    
+    
+    [self _buttonTitle:@"移除父视图" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        [CATransaction setCompletionBlock:^{
+            NSLog(@"push完成");
+        }];
+        [CATransaction begin];
+        
+        
+        _02NavColorViewController *vc = _02NavColorViewController.alloc.init;
+        vc.title = @"移除父视图";
+        [strongSelf.navigationController ax_pushViewController:vc animated:YES replace:YES];
+        [CATransaction commit];
+    }];
+    
+    [self _buttonTitle:@"移除父视图-不移除" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        [CATransaction setCompletionBlock:^{
+            NSLog(@"push完成");
+        }];
+        [CATransaction begin];
+        
+        
+        _02NavColorViewController *vc = _02NavColorViewController.alloc.init;
+        vc.title = @"移除父视图-不移除";
+        [strongSelf.navigationController ax_pushViewController:vc animated:YES replace:NO];
+        [CATransaction commit];
+    }];
     
     /// 底部约束
     [self _lastLoadBottomAttribute];

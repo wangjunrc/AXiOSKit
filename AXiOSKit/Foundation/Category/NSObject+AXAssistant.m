@@ -448,3 +448,41 @@ void AXNoMsgLog(NSString *format, ...) {
  打开iPhone设置界面
  */
 void AXOpenSettings() { ax_OpenURLStr(UIApplicationOpenSettingsURLString); }
+
+
+
+@implementation NSObject (AXAssistant)
+
+
+#pragma mark - 添加属性
+
+/**
+ retain strong nonatomic 属性添加值
+ */
+-(void)ax_setStrongObject:(id )value{
+    objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+/**
+ copy nonatomic 属性添加值
+ */
+-(void) ax_setCopyObject:(id )value {
+    objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+/**
+ assign nonatomic 属性添加值
+ */
+-(void) ax_setAssignObject:(id )value {
+    objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_ASSIGN);
+}
+
+/**
+ Retain Strong Copy Assign 对象获取值
+ Assign 需要转型
+ */
+-(id)ax_getObject:(id )value {
+    return objc_getAssociatedObject(self, @selector(value));
+}
+
+@end
