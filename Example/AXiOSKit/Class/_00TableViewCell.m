@@ -17,6 +17,7 @@
 //    self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.tintColor = UIColor.redColor;
     self.backgroundView = [UIView.alloc init];
+    self.backgroundView.backgroundColor = UIColor.cyanColor;
     self.indexLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBlack];
     self.nameLabel.numberOfLines = 0;
     self.nameLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];

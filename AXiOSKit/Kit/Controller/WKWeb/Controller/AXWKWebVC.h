@@ -96,8 +96,12 @@ typedef void (^AXScriptBodyBlock)(NSString *name, id body);
 ///  js定义了方法,oc调用,就是注入一个js调用
 /// @param js js方法名
 /// @param time 注入时机
-- (void)evaluateJavaScript:(NSString *)js
-                      time:(WKUserScriptInjectionTime )time;
+- (void)addUserScript:(NSString *)js
+                 time:(WKUserScriptInjectionTime )time;
+
+- (void)addUserScript:(NSString *)js
+                 time:(WKUserScriptInjectionTime )time
+     forMainFrameOnly:(BOOL )only;
 
 @end
 NS_ASSUME_NONNULL_END

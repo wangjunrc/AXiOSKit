@@ -216,7 +216,7 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     
     AXLog(@"页面加载完成之后调用 webView.title: %@",webView.title);
     //更新左边itme
-//    [self _canGoBackItems];
+    //    [self _canGoBackItems];
     
 }
 
@@ -450,12 +450,19 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
     [self.webView evaluateJavaScript:javaScriptString completionHandler:handler];
 }
 
-- (void)evaluateJavaScript:(NSString *)js
-                      time:(WKUserScriptInjectionTime )time {
+- (void)addUserScript:(NSString *)js
+                 time:(WKUserScriptInjectionTime )time
+     forMainFrameOnly:(BOOL )only {
     WKUserScript *jsUserScript = [WKUserScript.alloc initWithSource:js
                                                       injectionTime:time
-                                                   forMainFrameOnly:NO];
+                                                   forMainFrameOnly:only];
     [self.webView.configuration.userContentController addUserScript:jsUserScript];
+}
+
+
+- (void)addUserScript:(NSString *)js
+                 time:(WKUserScriptInjectionTime )time {
+    [self addUserScript:js time:time forMainFrameOnly:NO];
 }
 
 //#pragma mark - KVO
@@ -778,8 +785,8 @@ typedef NS_ENUM(NSInteger, WKWebLoadType){
 }
 #pragma mark - dealloc
 - (void)dealloc{
-//    [self.webView.configuration.userContentController removeAllUserScripts];
-//    self.webView.scrollView.delegate = nil;
+    //    [self.webView.configuration.userContentController removeAllUserScripts];
+    //    self.webView.scrollView.delegate = nil;
     //    [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
     //    [self.webView removeObserver:self forKeyPath:NSStringFromSelector(@selector(title))];
     axLong_dealloc;

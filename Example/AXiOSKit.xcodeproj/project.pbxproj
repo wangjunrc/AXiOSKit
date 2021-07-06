@@ -53,6 +53,7 @@
 		217DA6F4266BB848003E0E6B /* AXDemoUser2.m in Sources */ = {isa = PBXBuildFile; fileRef = 217DA6EF266BB847003E0E6B /* AXDemoUser2.m */; };
 		217DA6F5266BB848003E0E6B /* AXDemoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 217DA6F2266BB848003E0E6B /* AXDemoUser.m */; };
 		217DA6F6266BB848003E0E6B /* AXDemoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 217DA6F2266BB848003E0E6B /* AXDemoUser.m */; };
+		2180CEDD26958D5A00F5320C /* _AXSearchResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2180CEDC26958D5A00F5320C /* _AXSearchResultVC.m */; };
 		21898F322541B11D00876524 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898F312541B11D00876524 /* Application.m */; };
 		218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */; };
 		218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */; };
@@ -626,6 +627,8 @@
 		217DA6F0266BB847003E0E6B /* AXDemoUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDemoUser.h; sourceTree = "<group>"; };
 		217DA6F1266BB848003E0E6B /* AXDemoUser2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDemoUser2.h; sourceTree = "<group>"; };
 		217DA6F2266BB848003E0E6B /* AXDemoUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDemoUser.m; sourceTree = "<group>"; };
+		2180CEDB26958D5A00F5320C /* _AXSearchResultVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _AXSearchResultVC.h; sourceTree = "<group>"; };
+		2180CEDC26958D5A00F5320C /* _AXSearchResultVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _AXSearchResultVC.m; sourceTree = "<group>"; };
 		21898F302541B11D00876524 /* Application.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		21898F312541B11D00876524 /* Application.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
 		21898FF72541B48000876524 /* read.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = read.md; sourceTree = "<group>"; };
@@ -1591,6 +1594,8 @@
 				21A61D46265E7F4A0080E67D /* _01HeaderView.m */,
 				21A61D47265E7F4A0080E67D /* _01RootVC.h */,
 				21A61D45265E7F4A0080E67D /* _01RootVC.m */,
+				2180CEDB26958D5A00F5320C /* _AXSearchResultVC.h */,
+				2180CEDC26958D5A00F5320C /* _AXSearchResultVC.m */,
 			);
 			path = _01Root;
 			sourceTree = "<group>";
@@ -3297,6 +3302,7 @@
 				21A61E79265E7F4B0080E67D /* AFHTTPSessionManager+PutFile.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				21A61ECD265E7F4B0080E67D /* _20TimeLineContentCell.m in Sources */,
+				2180CEDD26958D5A00F5320C /* _AXSearchResultVC.m in Sources */,
 				21A61EC7265E7F4B0080E67D /* _30TimeLineModel.m in Sources */,
 				21A61EE1265E7F4B0080E67D /* _25_2_DiffableDataSource.m in Sources */,
 				21A61EA9265E7F4B0080E67D /* DemoTabBarController.m in Sources */,

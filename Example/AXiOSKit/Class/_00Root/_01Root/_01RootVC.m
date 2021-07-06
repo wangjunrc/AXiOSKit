@@ -72,9 +72,10 @@
 #import "Person.h"
 #import <AXCollectionObserve/AXCollectionObserve.h>
 #import "_02QQZoneController.h"
+#import "_AXSearchResultVC.h"
 @import AssetsLibrary;
 
-@interface _01RootVC ()
+@interface _01RootVC ()<UISearchControllerDelegate>
 
 @property (nonatomic, strong) AXSystemAuthorizerManager *authorizerManager;
 @property (nonatomic, strong) NSMutableArray<NSDictionary*> *dataArray;
@@ -106,8 +107,8 @@
     self.tableView.tableFooterView = UIView.alloc.init;
     [_00TableViewCell ax_registerNibCellWithTableView:self.tableView];
     self.navigationItem.rightBarButtonItems = @[self.editItem,self.deleteItem];
-    _01HeaderView *headerView = [_01HeaderView.alloc init];
-    self.tableView.tableHeaderView =headerView;
+//    _01HeaderView *headerView = [_01HeaderView.alloc init];
+//    self.tableView.tableHeaderView =headerView;
     
     self.dataArray = nil;
     [self.tableView reloadData];
@@ -128,7 +129,7 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    [self.tableView ax_layoutHeaderHeight];
+//    [self.tableView ax_layoutHeaderHeight];
 }
 
 -(void)_deleteCellArray:(NSArray<NSIndexPath *>*)array {
@@ -444,14 +445,29 @@
 /// 搜索栏
 -(void)_createSearch{
     
-    if (@available(iOS 11.0, *)) {
-        self.navigationItem.searchController = self.searchVC;
-        /// https://github.com/CoderMJLee/MJRefresh/issues/1317
-        self.navigationItem.hidesSearchBarWhenScrolling = NO;
-    } else {
-    }
+//    if (@available(iOS 11.0, *)) {
+//        self.navigationItem.searchController = self.searchVC;
+//        /// https://www.it1352.com/1692058.html
+//        /// https://www.jianshu.com/p/2378ca588efd
+//        /// https://github.com/CoderMJLee/MJRefresh/issues/1317
+//        self.navigationItem.hidesSearchBarWhenScrolling = NO;
+//    } else {
+        
+//        UIView *tableHeaderView = [UIView.alloc initWithFrame:CGRectMake(0, 0, 0, 80)];
+//
+//        [tableHeaderView addSubview:self.searchVC.searchBar];
+        
+        self.tableView.tableHeaderView = self.searchVC.searchBar;
+//    }
+   
+    
+//    self.navigationItem.titleView = self.searchVC.searchBar;
+    
+  
     
 }
+
+
 
 #pragma mark - get
 
@@ -486,13 +502,72 @@
     }
     return _deleteItem;
 }
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+   
+    
+    
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    
+    [searchBar resignFirstResponder];
+}
+- (void)willPresentSearchController:(UISearchController *)searchController{}
+- (void)didPresentSearchController:(UISearchController *)searchController{}
+- (void)willDismissSearchController:(UISearchController *)searchController{}
+- (void)didDismissSearchController:(UISearchController *)searchController{}
 - (UISearchController *)searchVC {
     if (!_searchVC) {
         
-        _searchVC = [[UISearchController alloc]initWithSearchResultsController:nil];
+        _AXSearchResultVC *vc =  [_AXSearchResultVC.alloc init];
+        vc.filterArray = self.dataArray;
         
+        _searchVC = [[UISearchController alloc]initWithSearchResultsController:vc];
+        _searchVC.delegate = self;
         // 1.设置placeholder
         _searchVC.searchBar.placeholder = @"头部搜索";
+        _searchVC.searchResultsUpdater = vc;
+        // 是否向上偏移
+        _searchVC.hidesNavigationBarDuringPresentation = NO;
+        
+        _searchVC.dimsBackgroundDuringPresentation= NO;
+//
+        _searchVC.obscuresBackgroundDuringPresentation= NO;
+        
+        self.definesPresentationContext = YES;
+//        vc.searchTextBlock = ^(NSString * _Nonnull text) {
+//            
+//            
+//            _05WebVC *vc = [[_05WebVC alloc] init];
+//            [self ax_pushVC:vc];
+//            
+//            _searchVC.searchBar.text = @"";
+////            [_searchVC.searchBar resignFirstResponder];
+//        };
+        [_searchVC.searchBar sizeToFit];
+        _searchVC.searchBar.showsScopeBar = NO;
+        
+        
+//
+//        // 搜索框输入时  更新列表
+//            self.searchController.searchResultsUpdater = self;
+//
+//            // 设置为NO的时候 列表的单元格可以点击 默认为YES无法点击无效
+//            self.searchController.dimsBackgroundDuringPresentation = NO;
+//
+//            // 设置代理
+//            self.searchController.delegate = self;
+//
+//            // 保证搜索导航栏中可见
+//            [self.searchController.searchBar sizeToFit];
+//
+//            // 把搜索框 设置为表头
+//            self.tableView.tableHeaderView = self.searchController.searchBar;
+//
+          
+        
+        
         
         // 2.设置searchBar的背景透明
         //        [_searchVC.searchBar setBackgroundImage:[UIImage new]];

@@ -33,18 +33,29 @@
     // https://pspdfkit.com/blog/2016/hiding-action-share-extensions-in-your-own-apps/
     self.view.backgroundColor = UIColor.whiteColor;
     
-    
-    
-    [self _titlelabel:@"UIActivityViewController"];
     __weak typeof(self) weakSelf = self;
+    
+
+    
+    
+#pragma mark - UIActivityViewController
+    [self _titlelabel:@"UIActivityViewController"];
     [self _buttonTitle:@"系统分享,自定义按钮,可以分享图片" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf _share_UIActivity];
+        [strongSelf _test_UIActivity];
     }];
     
+#pragma mark - wkwebView
+    //https://www.jianshu.com/p/a83483647f4c?ivk_sa=1024320u
+    [self _titlelabel:@"webView预览 excel,适配,因为UIDocumentInteractionController不能适配"];
+    [self _buttonTitle:@"webView 预览excel" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _show_excel_of_webview];
+    }];
+    
+#pragma mark - UIDocumentInteractionController
+    
     [self _titlelabel:@"UIDocumentInteractionController"];
-    
-    
     [self _buttonTitle:@"直接预览 或者 使用AirDrop" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _test_UIDocumentInteractionController];
@@ -54,7 +65,6 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         NSString* path = [NSString ax_documentPath];
         [strongSelf _preview_UIDocumentInteractionController:path];
-        
     }];
     
     [self _buttonTitle:@"创建一个excel并分享" handler:^(UIButton * _Nonnull btn) {
@@ -62,24 +72,41 @@
         [strongSelf createXLSFile];
     }];
     
-    
-    [self _titlelabel:@"QLPreviewController"];
+#pragma mark - QLPreviewController
+    [self _titlelabel:@"QLPreviewController,可以多页同时预览"];
     [self _buttonTitle:@"QuickLook预览文件" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf _look];
+        [strongSelf _test_QLPreviewController];
     }];
     
     [self _titlelabel:@"sys/socket.h"];
     [self _buttonTitle:@"local socket-服务端" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf _share_socket];
+        [strongSelf _test_socket];
     }];
     
     // 这里放最后一个view的底部
     [self _lastLoadBottomAttribute];
 }
 
--(void)_share_UIActivity {
+
+- (void)_show_excel_of_webview {
+    NSString *jsString = @"var script = document.createElement('meta');"
+    "script.name = 'viewport';"
+    "script.content=\"width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes\";"
+    "document.getElementsByTagName('head')[0].appendChild(script);";
+    
+    NSURL *URL = [NSBundle.mainBundle URLForResource:@"office.bundle/share2.xlsx" withExtension:nil];
+    AXWKWebVC *vc = [AXWKWebVC.alloc initWithURL:URL];
+    
+    [vc addUserScript:jsString time:WKUserScriptInjectionTimeAtDocumentEnd];
+    [self ax_pushVC:vc];
+}
+
+
+
+#pragma mark - 方法
+-(void)_test_UIActivity {
     
     MyActivity *item1 = [[MyActivity alloc] init];
     CopyActivity *item2 = [[CopyActivity alloc] init];
@@ -137,6 +164,7 @@
     NSArray<NSString *> *temp =@[
         @"testWord.docx",
         @"share2.xlsx" ,
+        @"test_number.numbers",
         @"testPDF.pdf",
         @"test.zip",
         @"photo.html",
@@ -171,68 +199,104 @@
     
 }
 
--(void)_share_socket {
+-(void)_test_socket {
     _28LocalSocketServiceViewController *vc = [_28LocalSocketServiceViewController ax_init];
     [self ax_pushVC:vc];
 }
 
 - (void)createXLSFile {
     
-    // 创建存放XLS文件数据的数组
-    NSMutableArray  *xlsDataMuArr = [[NSMutableArray alloc] init];
+    // 第一行内容,及列个数
+    NSArray<NSString *> *titleArray = @[
+        @"Person",
+        @"Time",
+        @"Address",
+        @"Reason" ,
+        @"Process",
+        @"Result"
+    ];
+    //     方法一
+    //    NSUInteger column = titleArray.count;
+    //
+    //    // 创建存放XLS文件数据的数组
+    //    NSMutableArray  *xlsDataMuArr = NSMutableArray.array;
+    //    [xlsDataMuArr addObjectsFromArray:titleArray];
+    //
+    //    // 10行数据
+    //    for (int i = 0; i < 10; i ++) {
+    //        [xlsDataMuArr addObject:[NSString stringWithFormat:@"jim-%d",i]];
+    //        [xlsDataMuArr addObject:@"2021-01-01"];
+    //        [xlsDataMuArr addObject:@"地址1"];
+    //        [xlsDataMuArr addObject:@"Reason22"];
+    //        [xlsDataMuArr addObject:@"Process333"];
+    //        [xlsDataMuArr addObject:@"Result444"];
+    //    }
+    //
+    //    // 把数组拼接成字符串，连接符是 \t（功能同键盘上的tab键）
+    //    // 字符串转换为可变字符串，方便改变某些字符
+    //    NSMutableString *muStr = [xlsDataMuArr componentsJoinedByString:@"\t"].mutableCopy;
+    //
+    //    AXLoger(@"muStr替换前=\n%@",muStr);
+    //
+    //    // 新建一个可变数组，存储每行最后一个\t的下标（以便改为\n）
+    //    NSMutableArray *subMuArr = [NSMutableArray array];
+    //
+    //    for (int i = 0; i < muStr.length; i ++) {
+    //        NSRange range = [muStr rangeOfString:@"\t" options:NSBackwardsSearch range:NSMakeRange(i, 1)];
+    //        if (range.length == 1) {
+    //            [subMuArr addObject:@(range.location)];
+    //        }
+    //    }
+    //
+    //    // 替换末尾\t,每行换行
+    //    for (NSUInteger i = 0; i < subMuArr.count; i ++) {
+    //        if ( i > 0 && (i%column == 0) ) {
+    //            [muStr replaceCharactersInRange:NSMakeRange([subMuArr[i-1] intValue], 1) withString:@"\n"];
+    //        }
+    //    }
     
-    // 第一行内容
-    [xlsDataMuArr addObject:@"Time"];
-    [xlsDataMuArr addObject:@"Address"];
-    [xlsDataMuArr addObject:@"Person"];
-    [xlsDataMuArr addObject:@"Reason"];
-    [xlsDataMuArr addObject:@"Process"];
-    [xlsDataMuArr addObject:@"Result"];
+    // 方法二
     
-    // 10行数据
+    NSMutableString *muStr = NSMutableString.string;
+    /// 制表
+    [muStr appendString:[titleArray componentsJoinedByString:@"\t"]];
+    /// 换行
+    [muStr appendString:@"\n"];
     for (int i = 0; i < 10; i ++) {
-        [xlsDataMuArr addObject:@"下班时间"];
-        [xlsDataMuArr addObject:@"大连"];
-        [xlsDataMuArr addObject:@"弄啪波勒"];
-        [xlsDataMuArr addObject:@"哦"];
-        [xlsDataMuArr addObject:@"很酷"];
-        [xlsDataMuArr addObject:@"又很帅气"];
+        NSMutableArray *tempArray = NSMutableArray.array;
+        [tempArray addObject:[NSString stringWithFormat:@"中文名字-%d",i]];
+        [tempArray addObject:[NSString ax_stringNowDateFormatter:@"yy-MM-dd HH:mm:ss:SSSS"]];
+        [tempArray addObject:@"地址1"];
+        [tempArray addObject:@"Reason22"];
+        [tempArray addObject:@"Process333"];
+        [tempArray addObject:@"Result444"];
+        [muStr appendString:[tempArray componentsJoinedByString:@"\t"]];
+        [muStr appendString:@"\n"];
     }
     
-    // 把数组拼接成字符串，连接符是 \t（功能同键盘上的tab键）
-    NSString *fileContent = [xlsDataMuArr componentsJoinedByString:@"\t"];
+    NSString *dire = [NSString.ax_documentPath stringByAppendingPathComponent:@"Excel"];
+    NSError *error = nil;
     
-    // 字符串转换为可变字符串，方便改变某些字符
-    NSMutableString *muStr = [fileContent mutableCopy];
+    /// 创建文件夹,没有就创建,有就不创建,不会覆盖,不用判断文件夹是否存在
+    //    if (![NSFileManager.defaultManager fileExistsAtPath:dire]) {
+    [NSFileManager.defaultManager createDirectoryAtPath:dire withIntermediateDirectories:YES attributes:nil error:&error];
+    //    }
     
-    // 新建一个可变数组，存储每行最后一个\t的下标（以便改为\n）
-    NSMutableArray *subMuArr = [NSMutableArray array];
-    
-    for (int i = 0; i < muStr.length; i ++) {
-        NSRange range = [muStr rangeOfString:@"\t" options:NSBackwardsSearch range:NSMakeRange(i, 1)];
-        if (range.length == 1) {
-            [subMuArr addObject:@(range.location)];
-        }
-    }
-    
-    // 替换末尾\t
-    
-    for (NSUInteger i = 0; i < subMuArr.count; i ++) {
-#warning  下面的6是列数，根据需求修改
-        if ( i > 0 && (i%6 == 0) ) {
-            [muStr replaceCharactersInRange:NSMakeRange([[subMuArr objectAtIndex:i-1] intValue], 1) withString:@"\n"];
-        }
-    }
-    
-    //使用UTF16才能显示汉字；如果显示为#######是因为格子宽度不够，拉开即可
-    AXLoger(@"创建excel,muStr=%@",muStr);
-    NSData *fileData = [muStr dataUsingEncoding:NSUTF16StringEncoding];
     // 文件路径
-    NSString *filePath = [NSString.ax_documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"Excel/%@.xlsx",NSString.ax_uuid]];
+    NSString *name = [NSString stringWithFormat:@"%@.xlsx",NSString.ax_uuid];
+    
+    
+    //    NSString *name = [NSString stringWithFormat:@"%@.xlsx",[NSString ax_stringNowDateFormatter:@"yy_MM_dd_HH_mm_ss_SSSS"]];
+    NSString *filePath = [dire stringByAppendingPathComponent:name];
     AXLoger(@"创建excel文件路径=%@",filePath);
-    // 生成xls文件
-    [NSFileManager.defaultManager createFileAtPath:filePath contents:fileData attributes:nil];
-    [self _preview_UIDocumentInteractionController:filePath];
+    [muStr writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+    //    NSFileHandle 用于追加写入
+    if (!error) {
+        [self _preview_UIDocumentInteractionController:filePath];
+    }else {
+        [self  ax_showAlertByTitle:error.localizedDescription];
+    }
+    
 }
 
 #pragma mark - UIDocumentInteractionControllerDelegate
@@ -249,7 +313,7 @@
 
 
 #pragma mark - QuickLook
--(void)_look {
+-(void)_test_QLPreviewController {
     self.dataArray = NSMutableArray.array;
     NSArray<NSString *> *temp =@[
         @"office.bundle/testWord.docx",

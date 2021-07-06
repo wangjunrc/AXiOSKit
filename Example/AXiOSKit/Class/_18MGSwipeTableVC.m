@@ -11,7 +11,8 @@
 #import <Masonry/Masonry.h>
 #import <AXiOSKit/AXiOSKit.h>
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
-
+#import "_AXSearchResultVC.h"
+#import "_01ContentViewController.h"
 @interface MyTableViewCell : UITableViewCell
 @property(nonatomic, strong)UIImageView *imageView1;
 @end
@@ -52,7 +53,7 @@
 @interface _18MGSwipeTableVC ()<UISearchControllerDelegate,UISearchResultsUpdating,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @property (nonatomic,strong) UISearchController *searchController;
-
+@property(nonatomic, strong) _AXSearchResultVC *resultVC;
 
 @property(nonatomic,copy)NSString *searchText;
 @property(nonatomic, strong) NSMutableArray *dataArray;
@@ -135,14 +136,16 @@
     }];
     
     
-    
-    
+    self.resultVC = [_AXSearchResultVC.alloc init];
+    self.resultVC.searchTextBlock = ^(NSString * _Nonnull text) {
+        
+};
     
     //创建UISearchController
-        self.searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+        self.searchController = [[UISearchController alloc]initWithSearchResultsController:self.resultVC];
         //设置代理
         self.searchController.delegate= self;
-        self.searchController.searchResultsUpdater = self;
+        self.searchController.searchResultsUpdater = self.resultVC;
         //包着搜索框外层的颜色
         // self.searchController.searchBar.barTintColor = [UIColor lig];
         // self.searchController.searchBar.tintColor = [UIColor orangeColor];
@@ -233,6 +236,15 @@
     cell.delegate = self;
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+    _01ContentViewController *vc = _01ContentViewController.alloc.init;
+    
+    [self ax_pushVC:vc];
+    
+}
+
 
 #pragma mark - 侧滑 代理
 -(BOOL) swipeTableCell:(nonnull MGSwipeTableCell*) cell canSwipe:(MGSwipeDirection) direction fromPoint:(CGPoint) point{

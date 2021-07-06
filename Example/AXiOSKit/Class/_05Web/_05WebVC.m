@@ -113,7 +113,7 @@
         NSError *error=nil;
         NSString *js = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"orgTitle.js"ofType:nil] encoding:NSUTF8StringEncoding error:&error];
         if (!error) {
-            [vc evaluateJavaScript:js time:WKUserScriptInjectionTimeAtDocumentStart];
+            [vc addUserScript:js time:WKUserScriptInjectionTimeAtDocumentStart];
         }
         [self ax_pushVC:vc];
     }];
@@ -125,7 +125,7 @@
         NSError *error=nil;
         NSString *js = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"myAlert.js"ofType:nil] encoding:NSUTF8StringEncoding error:&error];
         if (!error) {
-            [vc evaluateJavaScript:js time:WKUserScriptInjectionTimeAtDocumentStart];
+            [vc addUserScript:js time:WKUserScriptInjectionTimeAtDocumentStart];
         }
         [self ax_pushVC:vc];
     }];
