@@ -214,8 +214,6 @@
 		21A61E44265E7F4A0080E67D /* webp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF6265E7F4A0080E67D /* webp.bundle */; };
 		21A61E45265E7F4A0080E67D /* g2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF7265E7F4A0080E67D /* g2@2x.png */; };
 		21A61E46265E7F4A0080E67D /* g2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF7265E7F4A0080E67D /* g2@2x.png */; };
-		21A61E47265E7F4A0080E67D /* IMG_3972.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF8265E7F4A0080E67D /* IMG_3972.GIF */; };
-		21A61E48265E7F4A0080E67D /* IMG_3972.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF8265E7F4A0080E67D /* IMG_3972.GIF */; };
 		21A61E49265E7F4A0080E67D /* 朋友圈@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF9265E7F4A0080E67D /* 朋友圈@2x.png */; };
 		21A61E4A265E7F4A0080E67D /* 朋友圈@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF9265E7F4A0080E67D /* 朋友圈@2x.png */; };
 		21A61E4B265E7F4A0080E67D /* 微信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CFA265E7F4A0080E67D /* 微信@2x.png */; };
@@ -750,7 +748,6 @@
 		21A61CF5265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_2@2x.png"; sourceTree = "<group>"; };
 		21A61CF6265E7F4A0080E67D /* webp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = webp.bundle; sourceTree = "<group>"; };
 		21A61CF7265E7F4A0080E67D /* g2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "g2@2x.png"; sourceTree = "<group>"; };
-		21A61CF8265E7F4A0080E67D /* IMG_3972.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMG_3972.GIF; sourceTree = "<group>"; };
 		21A61CF9265E7F4A0080E67D /* 朋友圈@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "朋友圈@2x.png"; sourceTree = "<group>"; };
 		21A61CFA265E7F4A0080E67D /* 微信@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信@2x.png"; sourceTree = "<group>"; };
 		21A61CFB265E7F4A0080E67D /* testXML.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testXML.xml; sourceTree = "<group>"; };
@@ -1497,7 +1494,6 @@
 				21A61CF5265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png */,
 				21A61CF6265E7F4A0080E67D /* webp.bundle */,
 				21A61CF7265E7F4A0080E67D /* g2@2x.png */,
-				21A61CF8265E7F4A0080E67D /* IMG_3972.GIF */,
 				21A61CF9265E7F4A0080E67D /* 朋友圈@2x.png */,
 				21A61CFA265E7F4A0080E67D /* 微信@2x.png */,
 				21A61CFB265E7F4A0080E67D /* testXML.xml */,
@@ -2330,7 +2326,6 @@
 				21A61F6E265E7F680080E67D /* EmptyStatus.json in Resources */,
 				21EB382C25DF90C6002C1807 /* ax_debug.xcconfig in Resources */,
 				21A61DE4265E7F4A0080E67D /* _26RMQClientViewController.xib in Resources */,
-				21A61E48265E7F4A0080E67D /* IMG_3972.GIF in Resources */,
 				210B1ED225EDE40200878A73 /* Localizable.strings in Resources */,
 				21A61ED4265E7F4B0080E67D /* time_line_list.json in Resources */,
 				21A61E34265E7F4A0080E67D /* App.pdf in Resources */,
@@ -2454,7 +2449,6 @@
 				21A61EBB265E7F4B0080E67D /* _07VideoViewController.xib in Resources */,
 				21A61E35265E7F4A0080E67D /* office.bundle in Resources */,
 				213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */,
-				21A61E47265E7F4A0080E67D /* IMG_3972.GIF in Resources */,
 				21A61F49265E7F680080E67D /* RefreshHeaderAnim.json in Resources */,
 				21A61E27265E7F4A0080E67D /* instruction.jpg in Resources */,
 				21A61F4B265E7F680080E67D /* Loading.json in Resources */,
