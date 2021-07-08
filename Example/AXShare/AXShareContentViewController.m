@@ -8,12 +8,12 @@
 
 #import "AXShareContentViewController.h"
 #import "_03ChatFriendVC.h"
-#import "AXDataSourceOption.h"
+#import "_AXCellItem.h"
 @interface AXShareContentViewController ()
 
 @property (nonatomic, strong) NSString* shareType;
 
-@property(nonatomic, strong) NSMutableArray<AXDataSourceOption *> *dataArray;
+@property(nonatomic, strong) NSMutableArray<_AXCellItem *> *dataArray;
 
 @end
 

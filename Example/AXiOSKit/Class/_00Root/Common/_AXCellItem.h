@@ -1,5 +1,5 @@
 //
-//  AXDataSourceOption.h
+//  _AXCellItem.h
 //  AXiOSKit
 //
 //  Created by 小星星吃KFC on 2021/5/27.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AXDataSourceOption : NSObject
+@interface _AXCellItem : NSObject
 
 @property(nonatomic, copy) NSString *title;
 @property(nonatomic, copy) NSString *detail;

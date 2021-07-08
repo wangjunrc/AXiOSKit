@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXDataSourceOption.h"
+#import "_AXCellItem.h"
 #import <AXiOSKit/UITableViewCell+AXKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *detailLabel;
 @property (nonatomic, strong) UIImageView *logoImgView;
 
-@property (nonatomic, strong) AXDataSourceOption *option;
+@property (nonatomic, strong) _AXCellItem *option;
 
 
 @end

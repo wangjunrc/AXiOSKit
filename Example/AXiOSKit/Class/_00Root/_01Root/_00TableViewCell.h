@@ -1,12 +1,14 @@
 //
 //  _00TableViewCell.h
-//  AXiOSKitExample
+//  AXiOSKit_Example
 //
-//  Created by liuweixing on 2020/5/7.
-//  Copyright © 2020 liuweixing. All rights reserved.
+//  Created by 小星星吃KFC on 2021/7/8.
+//  Copyright © 2021 axinger. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, CellBorderStyle) {
     CellBorderStyleNoRound = 0,
@@ -15,12 +17,11 @@ typedef NS_ENUM(NSUInteger, CellBorderStyle) {
     CellBorderStyleAllRound,
 };
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface _00TableViewCell : UITableViewCell
-@property(weak, nonatomic) IBOutlet UILabel *indexLabel;
-@property(weak, nonatomic) IBOutlet UILabel *nameLabel;
 
+@property(strong, nonatomic)  UILabel *titleLabel;
+@property(strong, nonatomic)  UILabel *detailLabel;
 
 @end
 

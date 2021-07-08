@@ -1682,17 +1682,9 @@ NSString *testStr = @"有一个网址：wwww.JohnnyLiu.com有 一个电话：129
 }];
 ```
 ## 正则表达式 NSRegularExpression
-```
-{
-    /// <正则表达式>
-    NSString *regEx = @"12";
-    ///<待匹配的字符串>
-    NSString *string = @"1234567";
 
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
-    BOOL matched = [predicate evaluateWithObject:string];
-    NSLog(@"是否匹配 = %d", matched);
-}
+```
+
 
 {
     NSString *regEx = @"12";
@@ -1748,15 +1740,6 @@ NSString *testStr = @"有一个网址：wwww.JohnnyLiu.com有 一个电话：129
         NSLog(@"匹配的字符串 = %@", matchedString);
     }
 
-}    {
-/// <正则表达式>
-NSString *regEx = @"12";
-///<待匹配的字符串>
-NSString *string = @"1234567";
-
-NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
-BOOL matched = [predicate evaluateWithObject:string];
-NSLog(@"是否匹配 = %d", matched);
 }
 
 {
@@ -1815,16 +1798,43 @@ for (NSTextCheckingResult *match in matchArray) {
 
 }
 ```
-### 谓词
+## 谓词 NSPredicate
 ```
-/***
- 类似IN NOT 这样的字符串有下面几种固定的。
- AND、OR、IN、NOT、ALL、ANY、SOME、NONE、LIKE、CASEINSENSITIVE、CI、MATCHES、CONTAINS、BEGINSWITH、ENDSWITH、BETWEEN、NULL、NIL、SELF、TRUE、YES、FALSE、NO、FIRST、LAST、SIZE、ANYKEY、SUBQUERY、CAST、TRUEPREDICATE、FALSEPREDICATE，
- 所表达的含义和字母意识都差不多。
+/// 注:[c]不区分大小写 ,
+/// [d]不区分发音符号即没有重音符号 ,
+/// [cd]既不区分大小写，也不区分发音符号
 
- 
- 
- */
+类似IN NOT 这样的字符串有下面几种固定的。
+AND、OR、IN、NOT、ALL、ANY、SOME、NONE、LIKE、CASEINSENSITIVE、CI、MATCHES、CONTAINS、BEGINSWITH、ENDSWITH、BETWEEN、NULL、NIL、SELF、TRUE、YES、FALSE、NO、FIRST、LAST、SIZE、ANYKEY、SUBQUERY、CAST、TRUEPREDICATE、FALSEPREDICATE，
+所表达的含义和字母意识都差不多。
+
+```
+```
+{
+    /// <正则表达式>
+    NSString *regEx = @"12";
+    ///<待匹配的字符串>
+    NSString *string = @"1234567";
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
+    BOOL matched = [predicate evaluateWithObject:string];
+    NSLog(@"是否匹配 = %d", matched);
+}
+
+
+{
+/// <正则表达式>
+NSString *regEx = @"12";
+///<待匹配的字符串>
+NSString *string = @"1234567";
+
+NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
+BOOL matched = [predicate evaluateWithObject:string];
+NSLog(@"是否匹配 = %d", matched);
+}
+
+```
+```
 
 {
     

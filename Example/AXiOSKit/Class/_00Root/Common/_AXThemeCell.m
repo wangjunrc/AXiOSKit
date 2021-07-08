@@ -81,7 +81,7 @@
 }
 
 
-- (void)setOption:(AXDataSourceOption *)option {
+- (void)setOption:(_AXCellItem *)option {
     _option = option;
     
     self.titleLabel.text = option.title;

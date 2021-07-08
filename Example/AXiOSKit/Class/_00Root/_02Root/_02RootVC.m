@@ -64,7 +64,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 
 @interface _02RootVC ()
 
-@property (nonatomic, strong) NSMutableArray<AXDataSourceOption *> *dataArray;
+@property (nonatomic, strong) NSMutableArray<_AXCellItem *> *dataArray;
 
 @end
 
@@ -234,7 +234,7 @@ void mySLog(NSString *format, ...)
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     _AXThemeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"_AXThemeCell" forIndexPath:indexPath];
     
-    AXDataSourceOption *option = self.dataArray[indexPath.row];
+    _AXCellItem *option = self.dataArray[indexPath.row];
     cell.option = option;
     cell.titleLabel.text = [NSString stringWithFormat:@"%ld-%@",(long)indexPath.row,option.title];
     return cell;
@@ -245,7 +245,7 @@ void mySLog(NSString *format, ...)
     if (tableView.isEditing) {
         return;
     }
-    AXDataSourceOption *option  = self.dataArray[indexPath.row];
+    _AXCellItem *option  = self.dataArray[indexPath.row];
     if (option.action) {
         option.action();
     }
@@ -420,10 +420,10 @@ void mySLog(NSString *format, ...)
 - (NSMutableArray *)dataArray {
     if (!_dataArray) {
         
-        NSMutableArray<AXDataSourceOption *> *tempArray = NSMutableArray.array;
+        NSMutableArray<_AXCellItem *> *tempArray = NSMutableArray.array;
         
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"单元测试";
             option.action = ^{
@@ -506,7 +506,7 @@ void mySLog(NSString *format, ...)
         }
         {
             
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"UIAlertController单个";
             option.action = ^{
@@ -519,7 +519,7 @@ void mySLog(NSString *format, ...)
         }
         
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"UIAlertController 颜色";
             option.action = ^{
@@ -593,7 +593,7 @@ void mySLog(NSString *format, ...)
         }
         
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"sheet含有图片文字";
             option.action = ^{
@@ -633,7 +633,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"数组nil";
             option.action = ^{
@@ -653,7 +653,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"对象未实现方法,内部处理";
             option.action = ^{
@@ -671,7 +671,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"对象未实现方法,AvoidCrash处理";
             option.action = ^{
@@ -688,7 +688,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"路由 - RouterManager";
             option.action = ^{
@@ -701,7 +701,7 @@ void mySLog(NSString *format, ...)
         }
         
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"退出-方法1";
             option.action = ^{
@@ -717,7 +717,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"退出方式-asm_exit,真机有效";
             option.action = ^{
@@ -725,7 +725,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"退出方式3";
             option.action = ^{
@@ -736,7 +736,7 @@ void mySLog(NSString *format, ...)
         }
         
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"fishhook调用方法";
             option.action = ^{
@@ -744,7 +744,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"objc_msgSend调用方法";
             option.action = ^{
@@ -756,7 +756,7 @@ void mySLog(NSString *format, ...)
                 //                    sel_registerName("logShowTest"));
             };
         } {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"NSMutableDictionary,nil";
             option.action = ^{
@@ -766,7 +766,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"NSMutableDictionary,forKeyedSubscript";
             option.action = ^{
@@ -776,7 +776,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"NSMutableArray,atIndexedSubscript";
             option.detail = @"iOS11之前：arr@[]  调用的是[__NSArrayI objectAtIndexed]\n\
@@ -790,7 +790,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"LLDB";
             option.detail = @"断点 expr 命令";
@@ -801,7 +801,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"oc调用swift";
             option.action = ^{
@@ -810,7 +810,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"解压";
             option.action = ^{
@@ -821,7 +821,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"CocoaLumberjack日志";
             option.action = ^{
@@ -846,7 +846,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"CocoaDebugTool";
             option.action = ^{
@@ -859,7 +859,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"FileBrowser 文件浏览器";
             option.action = ^{
@@ -871,7 +871,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"pushViewControllerPresentStyle";
             option.action = ^{
@@ -881,7 +881,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"presentViewControllerPushStyle";
             option.action = ^{
@@ -891,7 +891,7 @@ void mySLog(NSString *format, ...)
             };
         }
         {
-            AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+            _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
             option.title = @"指定系统版本";
             option.action = ^{
@@ -920,7 +920,7 @@ void mySLog(NSString *format, ...)
             };
             
             {
-                AXDataSourceOption *option = AXDataSourceOption.alloc.init;
+                _AXCellItem *option = _AXCellItem.alloc.init;
                 [tempArray addObject:option];
                 option.title = @"单例能继承";
                 option.action = ^{

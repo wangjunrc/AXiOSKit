@@ -12,9 +12,10 @@
 
 @interface _AXSearchResultVC ()<UISearchResultsUpdating>
 
-@property (nonatomic, strong) NSArray<NSDictionary*> *dataArray;
+@property (nonatomic, strong) NSArray<_AXCellItem*> *dataArray;
 
-@property(nonatomic, strong) UISearchController *searchController;
+@property(nonatomic, weak) UISearchController *searchController;
+
 @end
 
 @implementation _AXSearchResultVC
@@ -22,10 +23,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.grayColor;
-    [_00TableViewCell ax_registerNibCellWithTableView:self.tableView];
+    [_00TableViewCell ax_registerCellWithTableView:self.tableView];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -35,17 +42,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     _00TableViewCell *cell = [_00TableViewCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
-    NSDictionary *dict = self.dataArray[indexPath.row];
-    cell.indexLabel.text = [dict[@"index"] stringValue];
-    cell.nameLabel.text = dict[@"title"];
+    _AXCellItem *item = self.dataArray[indexPath.row];
+    cell.titleLabel.text = item.title;
+    cell.detailLabel.text =item.detail;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSDictionary *dict = self.dataArray[indexPath.row];
-    void (^action)(void) = dict[@"action"];
-    action();
+    _AXCellItem *item = self.dataArray[indexPath.row];
+    if (item.action) {
+        item.action();
+    }
     
     self.searchController.searchBar.text = nil;
     ///很重要,消失的
@@ -59,22 +67,19 @@
     if (!self.searchController) {
         self.searchController = searchController;
     }
-    NSString *str = searchController.searchBar.text;
+    NSString *text = searchController.searchBar.text;
     
-    NSLog(@"searchController=%@",str);
+    NSLog(@"searchController=%@",text);
     
-    NSPredicate *pre = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@",str];
-    NSArray *array1 = [self.filterArray filteredArrayUsingPredicate:pre];
+    //    NSPredicate *pre = [NSPredicate predicateWithFormat:@"detail CONTAINS[cd] %@ || title CONTAINS[cd] %@",text,text];
     
-    NSLog(@"title=%@",array1);
+    NSPredicate *detailPre = [NSPredicate predicateWithFormat:@"detail CONTAINS[cd] %@",text];
     
-    if (array1.count==0) {
-        NSPredicate *pre = [NSPredicate predicateWithFormat:@"index == %ld",str.integerValue];
-        array1 = [self.filterArray filteredArrayUsingPredicate:pre];
-        NSLog(@"index=%@",array1);
-    }
+    NSPredicate *titlePre = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@",text];
+    NSPredicate *pre = [NSCompoundPredicate orPredicateWithSubpredicates:@[detailPre,titlePre]];
     
-    self.dataArray = array1;
+    self.dataArray = [self.filterArray filteredArrayUsingPredicate:pre];
+    NSLog(@"搜索过滤=%@", self.dataArray);
     [self.tableView reloadData];
 }
 

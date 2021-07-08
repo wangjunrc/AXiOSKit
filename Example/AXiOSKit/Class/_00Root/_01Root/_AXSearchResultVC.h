@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "_AXCellItem.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface _AXSearchResultVC : UITableViewController<UISearchResultsUpdating>
 
-@property (nonatomic, strong) NSMutableArray<NSDictionary*> *filterArray;
+@property (nonatomic, strong) NSMutableArray<_AXCellItem*> *filterArray;
 
 @property(nonatomic, copy) void(^searchTextBlock)(NSString *text);
 
