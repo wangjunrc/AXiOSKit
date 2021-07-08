@@ -861,18 +861,6 @@ void mySLog(NSString *format, ...)
         {
             _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
-            option.title = @"FileBrowser 文件浏览器";
-            option.action = ^{
-                
-                //                    NSURL *URL = NULL;
-                FileBrowser *vc = [FileBrowser.alloc init];
-                
-                [self ax_showVC:vc];
-            };
-        }
-        {
-            _AXCellItem *option = _AXCellItem.alloc.init;
-            [tempArray addObject:option];
             option.title = @"pushViewControllerPresentStyle";
             option.action = ^{
                 

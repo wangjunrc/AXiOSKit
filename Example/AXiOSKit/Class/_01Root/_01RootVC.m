@@ -28,7 +28,7 @@
 #import "_13SDWebImageVC.h"
 #import "_13WeImageTableViewController.h"
 #import "_13WebpViewController.h"
-#import "_14TFViewController.h"
+#import "_14TextFieldVC.h"
 #import "_15UIMenuController.h"
 #import "_16KeyChainViewController.h"
 #import "_17OtherShareViewController.h"
@@ -76,6 +76,8 @@
 #import "_AXCellItem.h"
 #import "_42MantleVC.h"
 #import "_43ColorVC.h"
+#import "AXUserSwiftImport.h"
+@import CocoaDebug;
 @import AssetsLibrary;
 
 @interface _01RootVC ()<UISearchControllerDelegate>
@@ -764,13 +766,15 @@
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
             [tempArray addObject:item];
-            item.title = @"_14TFViewController";
-            item.detail = @"TextFeild";
+            item.title = @"_14TextFieldVC";
+            item.detail = @"TextFeild 统一代理";
             item.action = ^{
-                _14TFViewController *vc = [[_14TFViewController alloc] init];
+                _14TextFieldVC *vc = [[_14TextFieldVC alloc] init];
                 [self ax_pushVC:vc];
             };
         }
+        
+        
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
             [tempArray addObject:item];
@@ -1033,13 +1037,47 @@
             _AXCellItem *item = _AXCellItem.alloc.init;
             [tempArray addObject:item];
             item.title = @"_28ShareFileViewController";
-            item.detail = @"预览文件";
+            item.detail = @"文件浏览";
             item.action = ^{
                 _28ShareFileViewController *vc =
                 [[_28ShareFileViewController alloc] init];
                 [self ax_pushVC:vc];
             };
         }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [tempArray addObject:item];
+            item.title = @"FileBrowser: UINavigationController";
+            item.detail = @"document内文件浏览器";
+            item.action = ^{
+                FileBrowser *vc = [FileBrowser.alloc init];
+                [self ax_showVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [tempArray addObject:item];
+            item.title = @"_DirectoryContentsTableViewController,CocoaDebug";
+            item.detail = @"文件浏览器";
+            item.action = ^{
+                NSURL *homeFileURL = [NSURL fileURLWithPath:NSHomeDirectory() isDirectory:YES];
+                
+                _DirectoryContentsTableViewController *vc = [[_DirectoryContentsTableViewController alloc] init];
+                
+                vc.homeDirectory = YES;
+                vc.fileInfo = [[_FileInfo alloc] initWithFileURL:homeFileURL];
+                
+                
+                UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+                
+                
+//                vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+                [self ax_showVC:nav];
+                
+            };
+        }
+        
+        
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
             [tempArray addObject:item];
