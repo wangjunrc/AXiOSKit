@@ -49,6 +49,44 @@
 		2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		21799C7C255BDE8500754A8B /* gift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 21799C7B255BDE8500754A8B /* gift.svg */; };
+		217AE9E026974A9600A1A9B2 /* WebviewPreviewViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CB26974A9600A1A9B2 /* WebviewPreviewViewContoller.swift */; };
+		217AE9E126974A9600A1A9B2 /* WebviewPreviewViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CB26974A9600A1A9B2 /* WebviewPreviewViewContoller.swift */; };
+		217AE9E226974A9600A1A9B2 /* PreviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CC26974A9600A1A9B2 /* PreviewManager.swift */; };
+		217AE9E326974A9600A1A9B2 /* PreviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CC26974A9600A1A9B2 /* PreviewManager.swift */; };
+		217AE9E426974A9600A1A9B2 /* FileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CD26974A9600A1A9B2 /* FileListViewController.swift */; };
+		217AE9E526974A9600A1A9B2 /* FileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CD26974A9600A1A9B2 /* FileListViewController.swift */; };
+		217AE9E626974A9600A1A9B2 /* FileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CE26974A9600A1A9B2 /* FileParser.swift */; };
+		217AE9E726974A9600A1A9B2 /* FileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CE26974A9600A1A9B2 /* FileParser.swift */; };
+		217AE9E826974A9600A1A9B2 /* folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D026974A9600A1A9B2 /* folder@2x.png */; };
+		217AE9E926974A9600A1A9B2 /* folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D026974A9600A1A9B2 /* folder@2x.png */; };
+		217AE9EA26974A9600A1A9B2 /* zip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D126974A9600A1A9B2 /* zip@2x.png */; };
+		217AE9EB26974A9600A1A9B2 /* zip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D126974A9600A1A9B2 /* zip@2x.png */; };
+		217AE9EC26974A9600A1A9B2 /* WebviewPreviewViewContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D226974A9600A1A9B2 /* WebviewPreviewViewContoller.xib */; };
+		217AE9ED26974A9600A1A9B2 /* WebviewPreviewViewContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D226974A9600A1A9B2 /* WebviewPreviewViewContoller.xib */; };
+		217AE9EE26974A9600A1A9B2 /* image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D326974A9600A1A9B2 /* image@2x.png */; };
+		217AE9EF26974A9600A1A9B2 /* image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D326974A9600A1A9B2 /* image@2x.png */; };
+		217AE9F026974A9600A1A9B2 /* documents@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D426974A9600A1A9B2 /* documents@2x.png */; };
+		217AE9F126974A9600A1A9B2 /* documents@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D426974A9600A1A9B2 /* documents@2x.png */; };
+		217AE9F226974A9600A1A9B2 /* file@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D526974A9600A1A9B2 /* file@2x.png */; };
+		217AE9F326974A9600A1A9B2 /* file@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D526974A9600A1A9B2 /* file@2x.png */; };
+		217AE9F426974A9600A1A9B2 /* FileBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D626974A9600A1A9B2 /* FileBrowser.xib */; };
+		217AE9F526974A9600A1A9B2 /* FileBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D626974A9600A1A9B2 /* FileBrowser.xib */; };
+		217AE9F626974A9600A1A9B2 /* pdf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D726974A9600A1A9B2 /* pdf@2x.png */; };
+		217AE9F726974A9600A1A9B2 /* pdf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D726974A9600A1A9B2 /* pdf@2x.png */; };
+		217AE9F826974A9600A1A9B2 /* PreviewTransitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D826974A9600A1A9B2 /* PreviewTransitionViewController.xib */; };
+		217AE9F926974A9600A1A9B2 /* PreviewTransitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217AE9D826974A9600A1A9B2 /* PreviewTransitionViewController.xib */; };
+		217AE9FA26974A9600A1A9B2 /* PreviewTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9D926974A9600A1A9B2 /* PreviewTransitionViewController.swift */; };
+		217AE9FB26974A9600A1A9B2 /* PreviewTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9D926974A9600A1A9B2 /* PreviewTransitionViewController.swift */; };
+		217AE9FC26974A9600A1A9B2 /* FileListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9DB26974A9600A1A9B2 /* FileListTableView.swift */; };
+		217AE9FD26974A9600A1A9B2 /* FileListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9DB26974A9600A1A9B2 /* FileListTableView.swift */; };
+		217AE9FE26974A9600A1A9B2 /* FileListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9DC26974A9600A1A9B2 /* FileListPreview.swift */; };
+		217AE9FF26974A9600A1A9B2 /* FileListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9DC26974A9600A1A9B2 /* FileListPreview.swift */; };
+		217AEA0026974A9600A1A9B2 /* FBFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9DD26974A9600A1A9B2 /* FBFile.swift */; };
+		217AEA0126974A9600A1A9B2 /* FBFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9DD26974A9600A1A9B2 /* FBFile.swift */; };
+		217AEA0226974A9600A1A9B2 /* FileListSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9DE26974A9600A1A9B2 /* FileListSearch.swift */; };
+		217AEA0326974A9600A1A9B2 /* FileListSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9DE26974A9600A1A9B2 /* FileListSearch.swift */; };
+		217AEA0426974A9600A1A9B2 /* FileBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9DF26974A9600A1A9B2 /* FileBrowser.swift */; };
+		217AEA0526974A9600A1A9B2 /* FileBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9DF26974A9600A1A9B2 /* FileBrowser.swift */; };
 		217DA6F3266BB848003E0E6B /* AXDemoUser2.m in Sources */ = {isa = PBXBuildFile; fileRef = 217DA6EF266BB847003E0E6B /* AXDemoUser2.m */; };
 		217DA6F4266BB848003E0E6B /* AXDemoUser2.m in Sources */ = {isa = PBXBuildFile; fileRef = 217DA6EF266BB847003E0E6B /* AXDemoUser2.m */; };
 		217DA6F5266BB848003E0E6B /* AXDemoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 217DA6F2266BB848003E0E6B /* AXDemoUser.m */; };
@@ -74,44 +112,6 @@
 		219AA6D526496BD6001E0355 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219AA6D326496BD5001E0355 /* TencentOpenAPI.framework */; };
 		21A61C5C265E7E610080E67D /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219AA6D326496BD5001E0355 /* TencentOpenAPI.framework */; };
 		21A61C5D265E7E720080E67D /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 219AA6D226496BD5001E0355 /* TencentOpenApi_IOS_Bundle.bundle */; };
-		21A61C7D265E7EBF0080E67D /* WebviewPreviewViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C68265E7EBF0080E67D /* WebviewPreviewViewContoller.swift */; };
-		21A61C7E265E7EBF0080E67D /* WebviewPreviewViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C68265E7EBF0080E67D /* WebviewPreviewViewContoller.swift */; };
-		21A61C7F265E7EBF0080E67D /* PreviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C69265E7EBF0080E67D /* PreviewManager.swift */; };
-		21A61C80265E7EBF0080E67D /* PreviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C69265E7EBF0080E67D /* PreviewManager.swift */; };
-		21A61C81265E7EBF0080E67D /* FileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C6A265E7EBF0080E67D /* FileListViewController.swift */; };
-		21A61C82265E7EBF0080E67D /* FileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C6A265E7EBF0080E67D /* FileListViewController.swift */; };
-		21A61C83265E7EBF0080E67D /* FileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C6B265E7EBF0080E67D /* FileParser.swift */; };
-		21A61C84265E7EBF0080E67D /* FileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C6B265E7EBF0080E67D /* FileParser.swift */; };
-		21A61C85265E7EBF0080E67D /* folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C6D265E7EBF0080E67D /* folder@2x.png */; };
-		21A61C86265E7EBF0080E67D /* folder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C6D265E7EBF0080E67D /* folder@2x.png */; };
-		21A61C87265E7EBF0080E67D /* zip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C6E265E7EBF0080E67D /* zip@2x.png */; };
-		21A61C88265E7EBF0080E67D /* zip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C6E265E7EBF0080E67D /* zip@2x.png */; };
-		21A61C89265E7EBF0080E67D /* WebviewPreviewViewContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C6F265E7EBF0080E67D /* WebviewPreviewViewContoller.xib */; };
-		21A61C8A265E7EBF0080E67D /* WebviewPreviewViewContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C6F265E7EBF0080E67D /* WebviewPreviewViewContoller.xib */; };
-		21A61C8B265E7EBF0080E67D /* image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C70265E7EBF0080E67D /* image@2x.png */; };
-		21A61C8C265E7EBF0080E67D /* image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C70265E7EBF0080E67D /* image@2x.png */; };
-		21A61C8D265E7EBF0080E67D /* documents@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C71265E7EBF0080E67D /* documents@2x.png */; };
-		21A61C8E265E7EBF0080E67D /* documents@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C71265E7EBF0080E67D /* documents@2x.png */; };
-		21A61C8F265E7EBF0080E67D /* file@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C72265E7EBF0080E67D /* file@2x.png */; };
-		21A61C90265E7EBF0080E67D /* file@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C72265E7EBF0080E67D /* file@2x.png */; };
-		21A61C91265E7EBF0080E67D /* FileBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C73265E7EBF0080E67D /* FileBrowser.xib */; };
-		21A61C92265E7EBF0080E67D /* FileBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C73265E7EBF0080E67D /* FileBrowser.xib */; };
-		21A61C93265E7EBF0080E67D /* pdf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C74265E7EBF0080E67D /* pdf@2x.png */; };
-		21A61C94265E7EBF0080E67D /* pdf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C74265E7EBF0080E67D /* pdf@2x.png */; };
-		21A61C95265E7EBF0080E67D /* PreviewTransitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C75265E7EBF0080E67D /* PreviewTransitionViewController.xib */; };
-		21A61C96265E7EBF0080E67D /* PreviewTransitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61C75265E7EBF0080E67D /* PreviewTransitionViewController.xib */; };
-		21A61C97265E7EBF0080E67D /* PreviewTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C76265E7EBF0080E67D /* PreviewTransitionViewController.swift */; };
-		21A61C98265E7EBF0080E67D /* PreviewTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C76265E7EBF0080E67D /* PreviewTransitionViewController.swift */; };
-		21A61C99265E7EBF0080E67D /* FileListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C78265E7EBF0080E67D /* FileListTableView.swift */; };
-		21A61C9A265E7EBF0080E67D /* FileListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C78265E7EBF0080E67D /* FileListTableView.swift */; };
-		21A61C9B265E7EBF0080E67D /* FileListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C79265E7EBF0080E67D /* FileListPreview.swift */; };
-		21A61C9C265E7EBF0080E67D /* FileListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C79265E7EBF0080E67D /* FileListPreview.swift */; };
-		21A61C9D265E7EBF0080E67D /* FBFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C7A265E7EBF0080E67D /* FBFile.swift */; };
-		21A61C9E265E7EBF0080E67D /* FBFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C7A265E7EBF0080E67D /* FBFile.swift */; };
-		21A61C9F265E7EBF0080E67D /* FileListSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C7B265E7EBF0080E67D /* FileListSearch.swift */; };
-		21A61CA0265E7EBF0080E67D /* FileListSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C7B265E7EBF0080E67D /* FileListSearch.swift */; };
-		21A61CA1265E7EBF0080E67D /* FileBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C7C265E7EBF0080E67D /* FileBrowser.swift */; };
-		21A61CA2265E7EBF0080E67D /* FileBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61C7C265E7EBF0080E67D /* FileBrowser.swift */; };
 		21A61DE1265E7F4A0080E67D /* _31GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CA6265E7F4A0080E67D /* _31GCDViewController.m */; };
 		21A61DE2265E7F4A0080E67D /* _31GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CA6265E7F4A0080E67D /* _31GCDViewController.m */; };
 		21A61DE3265E7F4A0080E67D /* _26RMQClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CA7265E7F4A0080E67D /* _26RMQClientViewController.xib */; };
@@ -621,6 +621,26 @@
 		2152C5B525919C720078D525 /* AXDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugViewController.h; sourceTree = "<group>"; };
 		2152C5B625919C720078D525 /* AXDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugViewController.m; sourceTree = "<group>"; };
 		21799C7B255BDE8500754A8B /* gift.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = gift.svg; sourceTree = "<group>"; };
+		217AE9CB26974A9600A1A9B2 /* WebviewPreviewViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebviewPreviewViewContoller.swift; sourceTree = "<group>"; };
+		217AE9CC26974A9600A1A9B2 /* PreviewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewManager.swift; sourceTree = "<group>"; };
+		217AE9CD26974A9600A1A9B2 /* FileListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListViewController.swift; sourceTree = "<group>"; };
+		217AE9CE26974A9600A1A9B2 /* FileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileParser.swift; sourceTree = "<group>"; };
+		217AE9D026974A9600A1A9B2 /* folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder@2x.png"; sourceTree = "<group>"; };
+		217AE9D126974A9600A1A9B2 /* zip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zip@2x.png"; sourceTree = "<group>"; };
+		217AE9D226974A9600A1A9B2 /* WebviewPreviewViewContoller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebviewPreviewViewContoller.xib; sourceTree = "<group>"; };
+		217AE9D326974A9600A1A9B2 /* image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image@2x.png"; sourceTree = "<group>"; };
+		217AE9D426974A9600A1A9B2 /* documents@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "documents@2x.png"; sourceTree = "<group>"; };
+		217AE9D526974A9600A1A9B2 /* file@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "file@2x.png"; sourceTree = "<group>"; };
+		217AE9D626974A9600A1A9B2 /* FileBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileBrowser.xib; sourceTree = "<group>"; };
+		217AE9D726974A9600A1A9B2 /* pdf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdf@2x.png"; sourceTree = "<group>"; };
+		217AE9D826974A9600A1A9B2 /* PreviewTransitionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviewTransitionViewController.xib; sourceTree = "<group>"; };
+		217AE9D926974A9600A1A9B2 /* PreviewTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewTransitionViewController.swift; sourceTree = "<group>"; };
+		217AE9DA26974A9600A1A9B2 /* FileBrowserHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileBrowserHead.h; sourceTree = "<group>"; };
+		217AE9DB26974A9600A1A9B2 /* FileListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListTableView.swift; sourceTree = "<group>"; };
+		217AE9DC26974A9600A1A9B2 /* FileListPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListPreview.swift; sourceTree = "<group>"; };
+		217AE9DD26974A9600A1A9B2 /* FBFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFile.swift; sourceTree = "<group>"; };
+		217AE9DE26974A9600A1A9B2 /* FileListSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListSearch.swift; sourceTree = "<group>"; };
+		217AE9DF26974A9600A1A9B2 /* FileBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBrowser.swift; sourceTree = "<group>"; };
 		217DA6EF266BB847003E0E6B /* AXDemoUser2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXDemoUser2.m; sourceTree = "<group>"; };
 		217DA6F0266BB847003E0E6B /* AXDemoUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDemoUser.h; sourceTree = "<group>"; };
 		217DA6F1266BB848003E0E6B /* AXDemoUser2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDemoUser2.h; sourceTree = "<group>"; };
@@ -654,26 +674,6 @@
 		219682F52697228500FC972D /* _TestHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _TestHelper.m; sourceTree = "<group>"; };
 		219AA6D226496BD5001E0355 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		219AA6D326496BD5001E0355 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
-		21A61C68265E7EBF0080E67D /* WebviewPreviewViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebviewPreviewViewContoller.swift; sourceTree = "<group>"; };
-		21A61C69265E7EBF0080E67D /* PreviewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewManager.swift; sourceTree = "<group>"; };
-		21A61C6A265E7EBF0080E67D /* FileListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListViewController.swift; sourceTree = "<group>"; };
-		21A61C6B265E7EBF0080E67D /* FileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileParser.swift; sourceTree = "<group>"; };
-		21A61C6D265E7EBF0080E67D /* folder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder@2x.png"; sourceTree = "<group>"; };
-		21A61C6E265E7EBF0080E67D /* zip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zip@2x.png"; sourceTree = "<group>"; };
-		21A61C6F265E7EBF0080E67D /* WebviewPreviewViewContoller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebviewPreviewViewContoller.xib; sourceTree = "<group>"; };
-		21A61C70265E7EBF0080E67D /* image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image@2x.png"; sourceTree = "<group>"; };
-		21A61C71265E7EBF0080E67D /* documents@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "documents@2x.png"; sourceTree = "<group>"; };
-		21A61C72265E7EBF0080E67D /* file@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "file@2x.png"; sourceTree = "<group>"; };
-		21A61C73265E7EBF0080E67D /* FileBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileBrowser.xib; sourceTree = "<group>"; };
-		21A61C74265E7EBF0080E67D /* pdf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pdf@2x.png"; sourceTree = "<group>"; };
-		21A61C75265E7EBF0080E67D /* PreviewTransitionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviewTransitionViewController.xib; sourceTree = "<group>"; };
-		21A61C76265E7EBF0080E67D /* PreviewTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewTransitionViewController.swift; sourceTree = "<group>"; };
-		21A61C77265E7EBF0080E67D /* FileBrowserHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileBrowserHead.h; sourceTree = "<group>"; };
-		21A61C78265E7EBF0080E67D /* FileListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListTableView.swift; sourceTree = "<group>"; };
-		21A61C79265E7EBF0080E67D /* FileListPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListPreview.swift; sourceTree = "<group>"; };
-		21A61C7A265E7EBF0080E67D /* FBFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFile.swift; sourceTree = "<group>"; };
-		21A61C7B265E7EBF0080E67D /* FileListSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListSearch.swift; sourceTree = "<group>"; };
-		21A61C7C265E7EBF0080E67D /* FileBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBrowser.swift; sourceTree = "<group>"; };
 		21A61CA5265E7F4A0080E67D /* _16KeyChainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _16KeyChainViewController.h; sourceTree = "<group>"; };
 		21A61CA6265E7F4A0080E67D /* _31GCDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _31GCDViewController.m; sourceTree = "<group>"; };
 		21A61CA7265E7F4A0080E67D /* _26RMQClientViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _26RMQClientViewController.xib; sourceTree = "<group>"; };
@@ -1142,6 +1142,41 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
+		217AE9CA26974A9600A1A9B2 /* FileBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				217AE9CB26974A9600A1A9B2 /* WebviewPreviewViewContoller.swift */,
+				217AE9CC26974A9600A1A9B2 /* PreviewManager.swift */,
+				217AE9CD26974A9600A1A9B2 /* FileListViewController.swift */,
+				217AE9CE26974A9600A1A9B2 /* FileParser.swift */,
+				217AE9CF26974A9600A1A9B2 /* Resources */,
+				217AE9D926974A9600A1A9B2 /* PreviewTransitionViewController.swift */,
+				217AE9DA26974A9600A1A9B2 /* FileBrowserHead.h */,
+				217AE9DB26974A9600A1A9B2 /* FileListTableView.swift */,
+				217AE9DC26974A9600A1A9B2 /* FileListPreview.swift */,
+				217AE9DD26974A9600A1A9B2 /* FBFile.swift */,
+				217AE9DE26974A9600A1A9B2 /* FileListSearch.swift */,
+				217AE9DF26974A9600A1A9B2 /* FileBrowser.swift */,
+			);
+			path = FileBrowser;
+			sourceTree = "<group>";
+		};
+		217AE9CF26974A9600A1A9B2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				217AE9D026974A9600A1A9B2 /* folder@2x.png */,
+				217AE9D126974A9600A1A9B2 /* zip@2x.png */,
+				217AE9D226974A9600A1A9B2 /* WebviewPreviewViewContoller.xib */,
+				217AE9D326974A9600A1A9B2 /* image@2x.png */,
+				217AE9D426974A9600A1A9B2 /* documents@2x.png */,
+				217AE9D526974A9600A1A9B2 /* file@2x.png */,
+				217AE9D626974A9600A1A9B2 /* FileBrowser.xib */,
+				217AE9D726974A9600A1A9B2 /* pdf@2x.png */,
+				217AE9D826974A9600A1A9B2 /* PreviewTransitionViewController.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		218746A22696DD2C0022BE97 /* _42 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1236,7 +1271,7 @@
 			children = (
 				21D218882669CE63006E05C9 /* AlertWayClass.h */,
 				21D218892669CE63006E05C9 /* AlertWayClass.m */,
-				21A61C67265E7EBF0080E67D /* FileBrowser */,
+				217AE9CA26974A9600A1A9B2 /* FileBrowser */,
 				21A61CB4265E7F4A0080E67D /* Refresh */,
 			);
 			path = Item;
@@ -1252,7 +1287,7 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
-		219682FD2697288600FC972D /* _Module */ = {
+		219682FD2697288600FC972D /* _02Module */ = {
 			isa = PBXGroup;
 			children = (
 				21A61D2D265E7F4A0080E67D /* _01ContentViewController.h */,
@@ -1347,7 +1382,7 @@
 				218746A22696DD2C0022BE97 /* _42 */,
 				218746AF2696EFAC0022BE97 /* _43Color */,
 			);
-			path = _Module;
+			path = _02Module;
 			sourceTree = "<group>";
 		};
 		219AA6D026496BD5001E0355 /* SDK */ = {
@@ -1367,47 +1402,12 @@
 			path = TencentSDK_V3;
 			sourceTree = "<group>";
 		};
-		21A61C67265E7EBF0080E67D /* FileBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				21A61C7A265E7EBF0080E67D /* FBFile.swift */,
-				21A61C7C265E7EBF0080E67D /* FileBrowser.swift */,
-				21A61C77265E7EBF0080E67D /* FileBrowserHead.h */,
-				21A61C79265E7EBF0080E67D /* FileListPreview.swift */,
-				21A61C7B265E7EBF0080E67D /* FileListSearch.swift */,
-				21A61C78265E7EBF0080E67D /* FileListTableView.swift */,
-				21A61C6A265E7EBF0080E67D /* FileListViewController.swift */,
-				21A61C6B265E7EBF0080E67D /* FileParser.swift */,
-				21A61C69265E7EBF0080E67D /* PreviewManager.swift */,
-				21A61C76265E7EBF0080E67D /* PreviewTransitionViewController.swift */,
-				21A61C6C265E7EBF0080E67D /* Resources */,
-				21A61C68265E7EBF0080E67D /* WebviewPreviewViewContoller.swift */,
-			);
-			path = FileBrowser;
-			sourceTree = "<group>";
-		};
-		21A61C6C265E7EBF0080E67D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				21A61C6D265E7EBF0080E67D /* folder@2x.png */,
-				21A61C6E265E7EBF0080E67D /* zip@2x.png */,
-				21A61C6F265E7EBF0080E67D /* WebviewPreviewViewContoller.xib */,
-				21A61C70265E7EBF0080E67D /* image@2x.png */,
-				21A61C71265E7EBF0080E67D /* documents@2x.png */,
-				21A61C72265E7EBF0080E67D /* file@2x.png */,
-				21A61C73265E7EBF0080E67D /* FileBrowser.xib */,
-				21A61C74265E7EBF0080E67D /* pdf@2x.png */,
-				21A61C75265E7EBF0080E67D /* PreviewTransitionViewController.xib */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		21A61CA4265E7F4A0080E67D /* Class */ = {
 			isa = PBXGroup;
 			children = (
 				21A61CAF265E7F4A0080E67D /* _00Material */,
 				21A61D42265E7F4A0080E67D /* _01Root */,
-				219682FD2697288600FC972D /* _Module */,
+				219682FD2697288600FC972D /* _02Module */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -1439,9 +1439,9 @@
 		21A61CB4265E7F4A0080E67D /* Refresh */ = {
 			isa = PBXGroup;
 			children = (
-				21A61CB5265E7F4A0080E67D /* AnimRefreshHeader.h */,
 				21A61CB6265E7F4A0080E67D /* AnimRefreshFooter.h */,
 				21A61CB7265E7F4A0080E67D /* AnimRefreshFooter.m */,
+				21A61CB5265E7F4A0080E67D /* AnimRefreshHeader.h */,
 				21A61CB8265E7F4A0080E67D /* AnimRefreshHeader.m */,
 			);
 			path = Refresh;
@@ -2292,8 +2292,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217AE9EF26974A9600A1A9B2 /* image@2x.png in Resources */,
 				21A61E42265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png in Resources */,
 				21A61F6C265E7F680080E67D /* gray_tabbar_home_animation.json in Resources */,
+				217AE9EB26974A9600A1A9B2 /* zip@2x.png in Resources */,
 				21A61F58265E7F680080E67D /* lf20_imvcfu5s.json in Resources */,
 				21A61F76265E7F680080E67D /* green_lottie_tab_discover.json in Resources */,
 				21A61F4A265E7F680080E67D /* RefreshHeaderAnim.json in Resources */,
@@ -2302,11 +2304,11 @@
 				21A61E3C265E7F4A0080E67D /* 123.jpg in Resources */,
 				21A61EC2265E7F4B0080E67D /* _04RunLoopViewController.xib in Resources */,
 				21A61F6A265E7F680080E67D /* green_lottie_tab_mine.json in Resources */,
-				21A61C90265E7EBF0080E67D /* file@2x.png in Resources */,
 				21A61E3A265E7F4A0080E67D /* 1234.webp in Resources */,
 				21A61F12265E7F4B0080E67D /* _10TextFViewController.xib in Resources */,
 				21A61F7C265E7F680080E67D /* tab_message_animate.json in Resources */,
 				21A61F78265E7F680080E67D /* Play-Pause.json in Resources */,
+				217AE9F526974A9600A1A9B2 /* FileBrowser.xib in Resources */,
 				21A61E36265E7F4A0080E67D /* office.bundle in Resources */,
 				21A61F4C265E7F680080E67D /* Loading.json in Resources */,
 				21A61E7C265E7F4B0080E67D /* _06WCDBViewController.xib in Resources */,
@@ -2324,25 +2326,22 @@
 				21A61F72265E7F680080E67D /* 46472-lurking-cat.json in Resources */,
 				21A61F42265E7F680080E67D /* green_lottie_tab_news.json in Resources */,
 				21A61F6E265E7F680080E67D /* EmptyStatus.json in Resources */,
+				217AE9F926974A9600A1A9B2 /* PreviewTransitionViewController.xib in Resources */,
 				21EB382C25DF90C6002C1807 /* ax_debug.xcconfig in Resources */,
 				21A61DE4265E7F4A0080E67D /* _26RMQClientViewController.xib in Resources */,
 				210B1ED225EDE40200878A73 /* Localizable.strings in Resources */,
 				21A61ED4265E7F4B0080E67D /* time_line_list.json in Resources */,
 				21A61E34265E7F4A0080E67D /* App.pdf in Resources */,
-				21A61C86265E7EBF0080E67D /* folder@2x.png in Resources */,
 				21A61F5E265E7F680080E67D /* Edit.json in Resources */,
 				21A61F4E265E7F680080E67D /* lf20_loading_failure.json in Resources */,
 				21A61E44265E7F4A0080E67D /* webp.bundle in Resources */,
 				21A61E38265E7F4A0080E67D /* PointViewController2.plist in Resources */,
 				21A61E46265E7F4A0080E67D /* g2@2x.png in Resources */,
 				21A61EA0265E7F4B0080E67D /* orgTitle.js in Resources */,
-				21A61C8C265E7EBF0080E67D /* image@2x.png in Resources */,
 				21A61F74265E7F680080E67D /* RectComp.json in Resources */,
 				21A61F70265E7F680080E67D /* lf20_loading_success.json in Resources */,
 				21A61E4C265E7F4A0080E67D /* 微信@2x.png in Resources */,
-				21A61C88265E7EBF0080E67D /* zip@2x.png in Resources */,
 				21A61F62265E7F680080E67D /* lf20_loading.json in Resources */,
-				21A61C94265E7EBF0080E67D /* pdf@2x.png in Resources */,
 				21A61F46265E7F680080E67D /* newAnimation.json in Resources */,
 				21A61F56265E7F680080E67D /* vcTransition1.json in Resources */,
 				21A61F44265E7F680080E67D /* HappyBirthday.json in Resources */,
@@ -2351,31 +2350,32 @@
 				21A61F48265E7F680080E67D /* RefreshFooterAnim.json in Resources */,
 				21A61E22265E7F4A0080E67D /* testWord.docx in Resources */,
 				21A61E28265E7F4A0080E67D /* instruction.jpg in Resources */,
+				217AE9F726974A9600A1A9B2 /* pdf@2x.png in Resources */,
 				21A61F54265E7F680080E67D /* gray_tabbar_me_animation.json in Resources */,
 				21A61E2E265E7F4A0080E67D /* g3@2x.png in Resources */,
 				21A61E3E265E7F4A0080E67D /* 微博@2x.png in Resources */,
 				21A61E26265E7F4A0080E67D /* QQ@2x.png in Resources */,
+				217AE9ED26974A9600A1A9B2 /* WebviewPreviewViewContoller.xib in Resources */,
 				21A61F52265E7F680080E67D /* green_lottie_tab_home.json in Resources */,
+				217AE9F126974A9600A1A9B2 /* documents@2x.png in Resources */,
 				21BB0B552685713200FDDC1A /* DemoVue.bundle in Resources */,
 				21A61E30265E7F4A0080E67D /* Alternate_AppIcon_3@2x.png in Resources */,
 				21A61EB8265E7F4B0080E67D /* _24NoteViewController.xib in Resources */,
 				21A61E86265E7F4B0080E67D /* _23FullViewController.xib in Resources */,
 				211227562573340100B6ECC8 /* LaunchScreen.storyboard in Resources */,
-				21A61C8E265E7EBF0080E67D /* documents@2x.png in Resources */,
+				217AE9F326974A9600A1A9B2 /* file@2x.png in Resources */,
 				21A61E40265E7F4A0080E67D /* share2.xlsx in Resources */,
 				21A61F68265E7F680080E67D /* lf20_4dkca9bw.json in Resources */,
 				21A61F5C265E7F680080E67D /* tab_me_animate.json in Resources */,
-				21A61C8A265E7EBF0080E67D /* WebviewPreviewViewContoller.xib in Resources */,
 				21A61DE8265E7F4A0080E67D /* _28LocalSocketServiceViewController.xib in Resources */,
 				21A61F16265E7F4B0080E67D /* _03ChatViewController.xib in Resources */,
 				21122777257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist in Resources */,
-				21A61C96265E7EBF0080E67D /* PreviewTransitionViewController.xib in Resources */,
 				2112275C2573340100B6ECC8 /* gift.svg in Resources */,
 				2112275D2573340100B6ECC8 /* InfoPlist.strings in Resources */,
+				217AE9E926974A9600A1A9B2 /* folder@2x.png in Resources */,
 				21A61F50265E7F680080E67D /* LottieLogo.json in Resources */,
 				21A61F64265E7F680080E67D /* tab_search_animate.json in Resources */,
 				21A61E24265E7F4A0080E67D /* 支付宝@2x.png in Resources */,
-				21A61C92265E7EBF0080E67D /* FileBrowser.xib in Resources */,
 				21A61F60265E7F680080E67D /* tab_home_animate.json in Resources */,
 				21A61EA4265E7F4B0080E67D /* myAlert.js in Resources */,
 				21A61E2C265E7F4A0080E67D /* H5.bundle in Resources */,
@@ -2411,10 +2411,9 @@
 				21A61F59265E7F680080E67D /* lf20_loading_all.json in Resources */,
 				21A61E25265E7F4A0080E67D /* QQ@2x.png in Resources */,
 				21A61F53265E7F680080E67D /* gray_tabbar_me_animation.json in Resources */,
-				21A61C8B265E7EBF0080E67D /* image@2x.png in Resources */,
 				21A61EC9265E7F4B0080E67D /* _30TimeLineNinePhotoCell.xib in Resources */,
+				217AE9F226974A9600A1A9B2 /* file@2x.png in Resources */,
 				21A61F77265E7F680080E67D /* Play-Pause.json in Resources */,
-				21A61C87265E7EBF0080E67D /* zip@2x.png in Resources */,
 				21A61E49265E7F4A0080E67D /* 朋友圈@2x.png in Resources */,
 				21A61E23265E7F4A0080E67D /* 支付宝@2x.png in Resources */,
 				21A61F5F265E7F680080E67D /* tab_home_animate.json in Resources */,
@@ -2427,9 +2426,9 @@
 				21A61F65265E7F680080E67D /* vcTransition2.json in Resources */,
 				211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */,
 				21A61F15265E7F4B0080E67D /* _03ChatViewController.xib in Resources */,
-				21A61C91265E7EBF0080E67D /* FileBrowser.xib in Resources */,
 				21A61F6B265E7F680080E67D /* gray_tabbar_home_animation.json in Resources */,
 				21A61E9F265E7F4B0080E67D /* orgTitle.js in Resources */,
+				217AE9E826974A9600A1A9B2 /* folder@2x.png in Resources */,
 				21A61F7B265E7F680080E67D /* tab_message_animate.json in Resources */,
 				21A61F11265E7F4B0080E67D /* _10TextFViewController.xib in Resources */,
 				21A61F75265E7F680080E67D /* green_lottie_tab_discover.json in Resources */,
@@ -2437,9 +2436,9 @@
 				21A61E37265E7F4A0080E67D /* PointViewController2.plist in Resources */,
 				21A61F51265E7F680080E67D /* green_lottie_tab_home.json in Resources */,
 				21A61F4D265E7F680080E67D /* lf20_loading_failure.json in Resources */,
+				217AE9EE26974A9600A1A9B2 /* image@2x.png in Resources */,
 				21A61E29265E7F4A0080E67D /* test_webp.webp in Resources */,
 				21A61F6F265E7F680080E67D /* lf20_loading_success.json in Resources */,
-				21A61C95265E7EBF0080E67D /* PreviewTransitionViewController.xib in Resources */,
 				21A61F6D265E7F680080E67D /* EmptyStatus.json in Resources */,
 				21A61F5D265E7F680080E67D /* Edit.json in Resources */,
 				21A61DEB265E7F4A0080E67D /* _21KVOViewController.xib in Resources */,
@@ -2447,13 +2446,14 @@
 				21A61F5B265E7F680080E67D /* tab_me_animate.json in Resources */,
 				21A61F45265E7F680080E67D /* newAnimation.json in Resources */,
 				21A61EBB265E7F4B0080E67D /* _07VideoViewController.xib in Resources */,
+				217AE9EA26974A9600A1A9B2 /* zip@2x.png in Resources */,
+				217AE9F626974A9600A1A9B2 /* pdf@2x.png in Resources */,
 				21A61E35265E7F4A0080E67D /* office.bundle in Resources */,
 				213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */,
 				21A61F49265E7F680080E67D /* RefreshHeaderAnim.json in Resources */,
 				21A61E27265E7F4A0080E67D /* instruction.jpg in Resources */,
 				21A61F4B265E7F680080E67D /* Loading.json in Resources */,
 				21EB382B25DF90C6002C1807 /* ax_debug.xcconfig in Resources */,
-				21A61C93265E7EBF0080E67D /* pdf@2x.png in Resources */,
 				21A61E31265E7F4A0080E67D /* PointViewController.plist in Resources */,
 				21A61F4F265E7F680080E67D /* LottieLogo.json in Resources */,
 				21A61E4D265E7F4A0080E67D /* testXML.xml in Resources */,
@@ -2465,19 +2465,19 @@
 				21A61E39265E7F4A0080E67D /* 1234.webp in Resources */,
 				21A61EA3265E7F4B0080E67D /* myAlert.js in Resources */,
 				21122776257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist in Resources */,
-				21A61C89265E7EBF0080E67D /* WebviewPreviewViewContoller.xib in Resources */,
 				21A61F67265E7F680080E67D /* lf20_4dkca9bw.json in Resources */,
-				21A61C8D265E7EBF0080E67D /* documents@2x.png in Resources */,
 				21A61E21265E7F4A0080E67D /* testWord.docx in Resources */,
 				21A61E2D265E7F4A0080E67D /* g3@2x.png in Resources */,
 				210B1ED125EDE40200878A73 /* Localizable.strings in Resources */,
 				21A61F69265E7F680080E67D /* green_lottie_tab_mine.json in Resources */,
+				217AE9F026974A9600A1A9B2 /* documents@2x.png in Resources */,
+				217AE9EC26974A9600A1A9B2 /* WebviewPreviewViewContoller.xib in Resources */,
 				21A61E4B265E7F4A0080E67D /* 微信@2x.png in Resources */,
-				21A61C8F265E7EBF0080E67D /* file@2x.png in Resources */,
 				21BB0B542685713200FDDC1A /* DemoVue.bundle in Resources */,
 				21A61E41265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png in Resources */,
 				21A61F3F265E7F680080E67D /* Switch.json in Resources */,
 				21A61E2B265E7F4A0080E67D /* H5.bundle in Resources */,
+				217AE9F826974A9600A1A9B2 /* PreviewTransitionViewController.xib in Resources */,
 				21799C7C255BDE8500754A8B /* gift.svg in Resources */,
 				21A61E43265E7F4A0080E67D /* webp.bundle in Resources */,
 				21A61F55265E7F680080E67D /* vcTransition1.json in Resources */,
@@ -2485,10 +2485,10 @@
 				213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */,
 				21A61F57265E7F680080E67D /* lf20_imvcfu5s.json in Resources */,
 				21A61DE7265E7F4A0080E67D /* _28LocalSocketServiceViewController.xib in Resources */,
+				217AE9F426974A9600A1A9B2 /* FileBrowser.xib in Resources */,
 				21A61E85265E7F4B0080E67D /* _23FullViewController.xib in Resources */,
 				21A61E33265E7F4A0080E67D /* App.pdf in Resources */,
 				21A61ED3265E7F4B0080E67D /* time_line_list.json in Resources */,
-				21A61C85265E7EBF0080E67D /* folder@2x.png in Resources */,
 				21A61F79265E7F680080E67D /* gray_tabbar_message_animation.json in Resources */,
 				21A61E3B265E7F4A0080E67D /* 123.jpg in Resources */,
 				213BCBED254003DB00C89B72 /* Settings.bundle in Resources */,
@@ -2986,7 +2986,6 @@
 				21A61EEC265E7F4B0080E67D /* _25CompLayoutVC2.m in Sources */,
 				21A61EC0265E7F4B0080E67D /* _38DirectionVC.m in Sources */,
 				21A61E56265E7F4A0080E67D /* AXShareWeibo.swift in Sources */,
-				21A61C7E265E7EBF0080E67D /* WebviewPreviewViewContoller.swift in Sources */,
 				217DA6F4266BB848003E0E6B /* AXDemoUser2.m in Sources */,
 				211226F92573340100B6ECC8 /* AppDelegateWebImage.m in Sources */,
 				21A61EAC265E7F4B0080E67D /* DemoNavigationController.m in Sources */,
@@ -2994,6 +2993,7 @@
 				21A61EFE265E7F4B0080E67D /* _23FullViewController.m in Sources */,
 				21A61E80265E7F4B0080E67D /* _13SDWebImageVC.m in Sources */,
 				21A61E9C265E7F4B0080E67D /* _02RootVC.m in Sources */,
+				217AE9E526974A9600A1A9B2 /* FileListViewController.swift in Sources */,
 				21A61E8A265E7F4B0080E67D /* _02NavColorViewController.m in Sources */,
 				21A61EB6265E7F4B0080E67D /* _18MGSwipeTableVC.m in Sources */,
 				21A61E74265E7F4B0080E67D /* _21KVOViewController.m in Sources */,
@@ -3002,7 +3002,6 @@
 				21A61E5C265E7F4B0080E67D /* AXShareBridge.swift in Sources */,
 				21A61E6C265E7F4B0080E67D /* AXShareService.m in Sources */,
 				21A61E06265E7F4A0080E67D /* UIControl+load.m in Sources */,
-				21A61C9A265E7EBF0080E67D /* FileListTableView.swift in Sources */,
 				21A61E7E265E7F4B0080E67D /* _24NoteViewController.m in Sources */,
 				21A61EA2265E7F4B0080E67D /* AXDemoURLProtocol.m in Sources */,
 				21A61EB2265E7F4B0080E67D /* _37FileManagerVC.m in Sources */,
@@ -3016,13 +3015,10 @@
 				218A323D25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */,
 				21E6DE68260494060092051F /* DogOC.m in Sources */,
 				21A61F18265E7F4B0080E67D /* ChatMessageModel.m in Sources */,
-				21A61C98265E7EBF0080E67D /* PreviewTransitionViewController.swift in Sources */,
-				21A61C9E265E7EBF0080E67D /* FBFile.swift in Sources */,
 				21A61EE6265E7F4B0080E67D /* _25LayoutViewController.m in Sources */,
 				2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */,
 				21A61ED6265E7F4B0080E67D /* _39MasonryViewController.m in Sources */,
 				21A61DEE265E7F4A0080E67D /* _33CropViewController.m in Sources */,
-				21A61C84265E7EBF0080E67D /* FileParser.swift in Sources */,
 				21A61F04265E7F4B0080E67D /* _13WebpViewController.m in Sources */,
 				219682EF26971BB200FC972D /* _14TextFieldVC.m in Sources */,
 				21A61E12265E7F4A0080E67D /* Student.pbobjc.m in Sources */,
@@ -3037,17 +3033,18 @@
 				21A61E90265E7F4B0080E67D /* _05WebVC.m in Sources */,
 				21A61E70265E7F4B0080E67D /* _04RunLoopViewController.m in Sources */,
 				21D61EED257F106E0059201A /* DogSwift.swift in Sources */,
-				21A61CA2265E7EBF0080E67D /* FileBrowser.swift in Sources */,
 				21A61EDE265E7F4B0080E67D /* _13WeImageTableViewController.m in Sources */,
 				21A61EEE265E7F4B0080E67D /* _25CompLayoutVC1.m in Sources */,
+				217AE9FD26974A9600A1A9B2 /* FileListTableView.swift in Sources */,
 				21A61E50265E7F4A0080E67D /* AXUserInfoDao.mm in Sources */,
 				21A61E1E265E7F4A0080E67D /* CustomGifHeader.m in Sources */,
-				21A61C9C265E7EBF0080E67D /* FileListPreview.swift in Sources */,
 				21A61EDA265E7F4B0080E67D /* _16KeyChainViewController.m in Sources */,
 				21A61E14265E7F4A0080E67D /* CopyActivity.m in Sources */,
 				217DA6F6266BB848003E0E6B /* AXDemoUser.m in Sources */,
 				21A61F06265E7F4B0080E67D /* Target_News.m in Sources */,
+				217AEA0526974A9600A1A9B2 /* FileBrowser.swift in Sources */,
 				21A61EE8265E7F4B0080E67D /* _25CompLayoutVC3.m in Sources */,
+				217AE9FF26974A9600A1A9B2 /* FileListPreview.swift in Sources */,
 				21A61DFA265E7F4A0080E67D /* AXRecordAudioConfig.m in Sources */,
 				21A61EEA265E7F4B0080E67D /* _25FlowLayoutVC1.m in Sources */,
 				21A61E0E265E7F4A0080E67D /* Student.proto in Sources */,
@@ -3055,11 +3052,13 @@
 				21A61F1C265E7F4B0080E67D /* _36YYKitTestVC.m in Sources */,
 				21A61E10265E7F4A0080E67D /* Person.m in Sources */,
 				21A61EFC265E7F4B0080E67D /* _09AFNViewController.m in Sources */,
+				217AEA0126974A9600A1A9B2 /* FBFile.swift in Sources */,
 				21A61E08265E7F4A0080E67D /* UIImage+Load.m in Sources */,
 				2112271B2573340100B6ECC8 /* AppDelegateWCDB.mm in Sources */,
 				21A61E68265E7F4B0080E67D /* AXSocialShareView.m in Sources */,
 				21A61E00265E7F4A0080E67D /* TestPluginViewController.m in Sources */,
 				21A61F14265E7F4B0080E67D /* _03ChatViewController.m in Sources */,
+				217AE9E726974A9600A1A9B2 /* FileParser.swift in Sources */,
 				2112271C2573340100B6ECC8 /* MakeKeyAndVisible.m in Sources */,
 				2112271E2573340100B6ECC8 /* AppDelegateAppearance.m in Sources */,
 				2112271F2573340100B6ECC8 /* AppDelegateDebug.m in Sources */,
@@ -3074,7 +3073,6 @@
 				21A61E20265E7F4A0080E67D /* AXSwitchView.m in Sources */,
 				21A61E98265E7F4B0080E67D /* _03HeaderView.m in Sources */,
 				21A61E66265E7F4B0080E67D /* AXSharePlatform.m in Sources */,
-				21A61C82265E7EBF0080E67D /* FileListViewController.swift in Sources */,
 				21BA199C25AD91BC00222F9A /* AXDebugUIConfig.m in Sources */,
 				21CC20AC265F36D8005BD351 /* _03ChatFriendVC.m in Sources */,
 				21A61E5A265E7F4A0080E67D /* AXShareQQ.swift in Sources */,
@@ -3094,6 +3092,7 @@
 				21A61DF4265E7F4A0080E67D /* AnimRefreshFooter.m in Sources */,
 				21A61E92265E7F4B0080E67D /* _01RootVC.m in Sources */,
 				21A61F00265E7F4B0080E67D /* _28LocalSocketServiceViewController.m in Sources */,
+				217AEA0326974A9600A1A9B2 /* FileListSearch.swift in Sources */,
 				21A61E94265E7F4B0080E67D /* _01HeaderView.m in Sources */,
 				21A61DE2265E7F4A0080E67D /* _31GCDViewController.m in Sources */,
 				21A61E6A265E7F4B0080E67D /* AXSocialShareCell.m in Sources */,
@@ -3117,10 +3116,10 @@
 				21CC20B8265F3C0C005BD351 /* _AXThemeCell.m in Sources */,
 				21A61E02265E7F4A0080E67D /* LVieoView.m in Sources */,
 				21A61DF6265E7F4A0080E67D /* AnimRefreshHeader.m in Sources */,
+				217AE9FB26974A9600A1A9B2 /* PreviewTransitionViewController.swift in Sources */,
 				2112272F2573340100B6ECC8 /* main.m in Sources */,
 				21A61E54265E7F4A0080E67D /* AXUserInfo.mm in Sources */,
 				21A61E96265E7F4B0080E67D /* _03RootVC.m in Sources */,
-				21A61C80265E7EBF0080E67D /* PreviewManager.swift in Sources */,
 				21A61ECE265E7F4B0080E67D /* _20TimeLineContentCell.m in Sources */,
 				21A61EC8265E7F4B0080E67D /* _30TimeLineModel.m in Sources */,
 				21A61EE2265E7F4B0080E67D /* _25_2_DiffableDataSource.m in Sources */,
@@ -3131,8 +3130,9 @@
 				21A61E52265E7F4A0080E67D /* AXUserLog.mm in Sources */,
 				218746A12696DD270022BE97 /* _42MantleVC.m in Sources */,
 				21A61F10265E7F4B0080E67D /* _32LottieVC.m in Sources */,
-				21A61CA0265E7EBF0080E67D /* FileListSearch.swift in Sources */,
+				217AE9E326974A9600A1A9B2 /* PreviewManager.swift in Sources */,
 				21A61E8E265E7F4B0080E67D /* _06WCDBViewController.m in Sources */,
+				217AE9E126974A9600A1A9B2 /* WebviewPreviewViewContoller.swift in Sources */,
 				211227352573340100B6ECC8 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3177,6 +3177,7 @@
 				21A61E7F265E7F4B0080E67D /* _13SDWebImageVC.m in Sources */,
 				21A61E9B265E7F4B0080E67D /* _02RootVC.m in Sources */,
 				21A61E89265E7F4B0080E67D /* _02NavColorViewController.m in Sources */,
+				217AE9E226974A9600A1A9B2 /* PreviewManager.swift in Sources */,
 				21A61EB5265E7F4B0080E67D /* _18MGSwipeTableVC.m in Sources */,
 				21A61E73265E7F4B0080E67D /* _21KVOViewController.m in Sources */,
 				21A61DFD265E7F4A0080E67D /* DemoEnvironmenVC.m in Sources */,
@@ -3188,17 +3189,15 @@
 				21A61EA1265E7F4B0080E67D /* AXDemoURLProtocol.m in Sources */,
 				21A61EB1265E7F4B0080E67D /* _37FileManagerVC.m in Sources */,
 				21A61EF1265E7F4B0080E67D /* _25DataModel.m in Sources */,
+				217AE9E026974A9600A1A9B2 /* WebviewPreviewViewContoller.swift in Sources */,
 				21D2188A2669CE63006E05C9 /* AlertWayClass.m in Sources */,
 				2187462B269691910022BE97 /* _00TableViewCell.m in Sources */,
 				21A61E71265E7F4B0080E67D /* _19ScrollContentViewController.m in Sources */,
-				21A61C81265E7EBF0080E67D /* FileListViewController.swift in Sources */,
 				21C84C2E268DA3FC0045E28C /* UIView+GSKLayoutHelper.m in Sources */,
 				21A61E63265E7F4B0080E67D /* AXShareOption.m in Sources */,
 				21A61F09265E7F4B0080E67D /* _34ViewController.m in Sources */,
 				21A61DE5265E7F4A0080E67D /* _27MQTTClientViewController.m in Sources */,
 				21A61E57265E7F4A0080E67D /* AXSocialShareContent.swift in Sources */,
-				21A61CA1265E7EBF0080E67D /* FileBrowser.swift in Sources */,
-				21A61C99265E7EBF0080E67D /* FileListTableView.swift in Sources */,
 				21A61F17265E7F4B0080E67D /* ChatMessageModel.m in Sources */,
 				21D61EEC257F106E0059201A /* DogSwift.swift in Sources */,
 				210B1EE025EE18C200878A73 /* NSBundle+CLLanguage.m in Sources */,
@@ -3206,10 +3205,10 @@
 				21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */,
 				21A61ED5265E7F4B0080E67D /* _39MasonryViewController.m in Sources */,
 				21A61DED265E7F4A0080E67D /* _33CropViewController.m in Sources */,
-				21A61C97265E7EBF0080E67D /* PreviewTransitionViewController.swift in Sources */,
 				21A61F03265E7F4B0080E67D /* _13WebpViewController.m in Sources */,
 				21A61E11265E7F4A0080E67D /* Student.pbobjc.m in Sources */,
 				21A61ED1265E7F4B0080E67D /* _30IGListViewController.m in Sources */,
+				217AE9FE26974A9600A1A9B2 /* FileListPreview.swift in Sources */,
 				21A61F19265E7F4B0080E67D /* ChatTextMessageModel.m in Sources */,
 				21A61EB9265E7F4B0080E67D /* _22ReactiveObjCViewController.m in Sources */,
 				21A61DF1265E7F4A0080E67D /* XWShadow.m in Sources */,
@@ -3219,8 +3218,8 @@
 				21A61EEF265E7F4B0080E67D /* _25CompLayoutVC5.m in Sources */,
 				21A61E8F265E7F4B0080E67D /* _05WebVC.m in Sources */,
 				21A61E6F265E7F4B0080E67D /* _04RunLoopViewController.m in Sources */,
-				21A61C7F265E7EBF0080E67D /* PreviewManager.swift in Sources */,
 				218746A52696DD550022BE97 /* VDPersonModel.m in Sources */,
+				217AE9FA26974A9600A1A9B2 /* PreviewTransitionViewController.swift in Sources */,
 				21C84C27268DA33A0045E28C /* _41SlideHeadVC.m in Sources */,
 				218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */,
 				21A61EDD265E7F4B0080E67D /* _13WeImageTableViewController.m in Sources */,
@@ -3239,13 +3238,14 @@
 				21A61E0F265E7F4A0080E67D /* Person.m in Sources */,
 				21A61EFB265E7F4B0080E67D /* _09AFNViewController.m in Sources */,
 				21A61E07265E7F4A0080E67D /* UIImage+Load.m in Sources */,
-				21A61C7D265E7EBF0080E67D /* WebviewPreviewViewContoller.swift in Sources */,
 				21A61E67265E7F4B0080E67D /* AXSocialShareView.m in Sources */,
+				217AEA0226974A9600A1A9B2 /* FileListSearch.swift in Sources */,
 				21A61DFF265E7F4A0080E67D /* TestPluginViewController.m in Sources */,
 				217DA6F3266BB848003E0E6B /* AXDemoUser2.m in Sources */,
 				21A61F13265E7F4B0080E67D /* _03ChatViewController.m in Sources */,
 				21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */,
 				21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */,
+				217AE9E626974A9600A1A9B2 /* FileParser.swift in Sources */,
 				218A323C25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */,
 				217DA6F5266BB848003E0E6B /* AXDemoUser.m in Sources */,
 				21A61E6D265E7F4B0080E67D /* RouterManager.m in Sources */,
@@ -3256,21 +3256,23 @@
 				21A61EAD265E7F4B0080E67D /* AXDemoBaseViewController.m in Sources */,
 				21A61E5F265E7F4B0080E67D /* AXShareConfigs.swift in Sources */,
 				213BCBEC254003DB00C89B72 /* SceneDelegate.m in Sources */,
+				217AEA0426974A9600A1A9B2 /* FileBrowser.swift in Sources */,
 				21A61E1F265E7F4A0080E67D /* AXSwitchView.m in Sources */,
 				21A61E97265E7F4B0080E67D /* _03HeaderView.m in Sources */,
 				21A61E65265E7F4B0080E67D /* AXSharePlatform.m in Sources */,
-				21A61C9B265E7EBF0080E67D /* FileListPreview.swift in Sources */,
 				218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */,
 				21CC20AD265F36D8005BD351 /* _03ChatFriendVC.m in Sources */,
 				21A61E59265E7F4A0080E67D /* AXShareQQ.swift in Sources */,
 				21A61EE3265E7F4B0080E67D /* _25CompLayoutVC4.m in Sources */,
 				21A61F0D265E7F4B0080E67D /* _15UIMenuController.m in Sources */,
+				217AE9E426974A9600A1A9B2 /* FileListViewController.swift in Sources */,
 				21A61EF9265E7F4B0080E67D /* _01ContentViewController.m in Sources */,
 				21A61E17265E7F4A0080E67D /* MyActivity.m in Sources */,
 				21A61E5D265E7F4B0080E67D /* AXShareWeChat.swift in Sources */,
 				21A61E75265E7F4B0080E67D /* _40ScreenshotsVC.m in Sources */,
 				219682F62697228500FC972D /* _TestHelper.m in Sources */,
 				21A61E81265E7F4B0080E67D /* _10TextFViewController.m in Sources */,
+				217AEA0026974A9600A1A9B2 /* FBFile.swift in Sources */,
 				21A61EC3265E7F4B0080E67D /* _07VideoViewController.m in Sources */,
 				21A61ECF265E7F4B0080E67D /* _30TimeLineNinePhotoCell.m in Sources */,
 				21A61EC5265E7F4B0080E67D /* _30TimeLinetContentController.m in Sources */,
@@ -3286,9 +3288,7 @@
 				21A61E03265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.m in Sources */,
 				21A61DEF265E7F4A0080E67D /* AXWebSocketEngine.m in Sources */,
 				2191A05B268AF7EC009D9852 /* AXTestViewController.m in Sources */,
-				21A61C9F265E7EBF0080E67D /* FileListSearch.swift in Sources */,
 				21A61EBD265E7F4B0080E67D /* _28LocalSocketClientViewController.m in Sources */,
-				21A61C83265E7EBF0080E67D /* FileParser.swift in Sources */,
 				21A61E8B265E7F4B0080E67D /* _29AudioViewController.m in Sources */,
 				21A61F01265E7F4B0080E67D /* _26RMQClientViewController.m in Sources */,
 				21A61E99265E7F4B0080E67D /* _03RootCell.m in Sources */,
@@ -3300,8 +3300,8 @@
 				21A61EF3265E7F4B0080E67D /* _25Layout.m in Sources */,
 				21A61EA7265E7F4B0080E67D /* NSURLProtocol+AXDemo.m in Sources */,
 				21A61E0B265E7F4A0080E67D /* TestObj.m in Sources */,
-				21A61C9D265E7EBF0080E67D /* FBFile.swift in Sources */,
 				218746A02696DD270022BE97 /* _42MantleVC.m in Sources */,
+				217AE9FC26974A9600A1A9B2 /* FileListTableView.swift in Sources */,
 				21CC20B7265F3C0C005BD351 /* _AXThemeCell.m in Sources */,
 				21A61E01265E7F4A0080E67D /* LVieoView.m in Sources */,
 				21A61DF5265E7F4A0080E67D /* AnimRefreshHeader.m in Sources */,
