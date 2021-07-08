@@ -74,6 +74,8 @@
 #import "_02QQZoneController.h"
 #import "_AXSearchResultVC.h"
 #import "_AXCellItem.h"
+#import "_42MantleVC.h"
+#import "_43ColorVC.h"
 @import AssetsLibrary;
 
 @interface _01RootVC ()<UISearchControllerDelegate>
@@ -1203,6 +1205,28 @@
                 [self ax_pushVC:vc];
             };
         }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [tempArray addObject:item];
+            item.title = @"_42MantleVC";
+            item.detail = @"Mantle字典转模型";
+            item.action = ^{
+                _42MantleVC *vc = [_42MantleVC ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [tempArray addObject:item];
+            item.title = @"_43ColorVC";
+            item.detail = @"颜色";
+            item.action = ^{
+                _43ColorVC *vc = [_43ColorVC ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        
+        
         
     }
     return _dataArray;

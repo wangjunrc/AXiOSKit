@@ -80,6 +80,17 @@ typedef void(^DidViewBlock)(UIView *view);
  @param colorArray UIColor 数组
  */
 - (void)ax_gradientColors:(NSArray <UIColor*>*)colorArray{
+    /**
+     colors    渐变的颜色
+     locations    渐变颜色的分割点
+
+     startPoint&endPoint    颜色渐变的方向，范围在(0,0)与(1.0,1.0)之间，
+
+                                           如(0,0)(1.0,0)代表水平方向渐变,
+
+                                               (0,0)(0,1.0)代表竖直方向渐变
+     */
+    [self layoutIfNeeded];
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = self.bounds;
