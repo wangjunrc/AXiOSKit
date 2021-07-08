@@ -20,6 +20,19 @@ typedef NS_ENUM(NSUInteger, AXImageFormat) {
     AXImageFormatWebp,
 };
 
+
+typedef NS_ENUM(NSUInteger, AXGradientType) {
+    
+    AXGradientTypeTopToBottom = 0,//从上到小
+    
+    AXGradientTypeLeftToRight = 1,//从左到右
+    
+    AXGradientTypeUpleftToLowright = 2,//左上到右下
+    
+    AXGradientTypeUprightToLowleft = 3,//右上到左下
+    
+};
+
 @interface UIImage (AXKit)
 
 /**
@@ -170,6 +183,13 @@ typedef NS_ENUM(NSUInteger, AXImageFormat) {
 @property(nonatomic, assign, readonly) AXImageFormat ax_imageFormatType;
 
 @property(nonatomic, copy, readonly) NSString *ax_mimeType;
+
+
+
++ (UIImage *)ax_imageFromGradientColors:(NSArray<UIColor *> *)colors
+                                gradientType:(AXGradientType)gradientType
+                                     imgSize:(CGSize)imgSize;
+
 
 @end
 

@@ -46,7 +46,7 @@
     CocoaDebug.logMaxCount = 1000;
     //        CocoaDebug.emailToRecipients = @[@"aaa@gmail.com", @"bbb@gmail.com"];
     //        CocoaDebug.emailCcRecipients = @[@"ccc@gmail.com", @"ddd@gmail.com"];
-    //    CocoaDebug.mainColor = @"#fd9727";
+//        CocoaDebug.mainColor = @"#fd9727";
     CocoaDebug.additionalViewController = [DemoEnvironmenVC.alloc init];
     //
     //        //--- If Use Google's Protocol buffers ---
@@ -133,6 +133,11 @@
                    extraInfo:(nullable NSDictionary*)info{
     NSLog(@"监测到奔溃 exceptionMessage=%@,exceptionCategory=%ld,info=%@",exceptionMessage,exceptionCategory,info);
 }
+
+- (void)handleCrashException:(nonnull NSString *)exceptionMessage extraInfo:(nullable NSDictionary *)info {
+    
+}
+
 
 //配置Doraemon工具集
 - (void)configDoraemonKit{

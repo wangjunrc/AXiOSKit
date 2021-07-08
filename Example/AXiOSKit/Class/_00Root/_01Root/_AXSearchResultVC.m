@@ -73,10 +73,12 @@
     
     //    NSPredicate *pre = [NSPredicate predicateWithFormat:@"detail CONTAINS[cd] %@ || title CONTAINS[cd] %@",text,text];
     
-    NSPredicate *detailPre = [NSPredicate predicateWithFormat:@"detail CONTAINS[cd] %@",text];
+    NSPredicate *pre = [NSPredicate predicateWithFormat:@"detail CONTAINS[cd] %@ OR title CONTAINS[cd] %@",text,text];
     
-    NSPredicate *titlePre = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@",text];
-    NSPredicate *pre = [NSCompoundPredicate orPredicateWithSubpredicates:@[detailPre,titlePre]];
+//    NSPredicate *detailPre = [NSPredicate predicateWithFormat:@"detail CONTAINS[cd] %@",text];
+//
+//    NSPredicate *titlePre = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@",text];
+//    NSPredicate *pre = [NSCompoundPredicate orPredicateWithSubpredicates:@[detailPre,titlePre]];
     
     self.dataArray = [self.filterArray filteredArrayUsingPredicate:pre];
     NSLog(@"搜索过滤=%@", self.dataArray);

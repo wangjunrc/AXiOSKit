@@ -55,6 +55,10 @@
 		217DA6F6266BB848003E0E6B /* AXDemoUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 217DA6F2266BB848003E0E6B /* AXDemoUser.m */; };
 		2180CEDD26958D5A00F5320C /* _AXSearchResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2180CEDC26958D5A00F5320C /* _AXSearchResultVC.m */; };
 		2187462B269691910022BE97 /* _00TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2187462A269691910022BE97 /* _00TableViewCell.m */; };
+		218746A02696DD270022BE97 /* _42MantleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2187469F2696DD270022BE97 /* _42MantleVC.m */; };
+		218746A12696DD270022BE97 /* _42MantleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2187469F2696DD270022BE97 /* _42MantleVC.m */; };
+		218746A52696DD550022BE97 /* VDPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218746A42696DD550022BE97 /* VDPersonModel.m */; };
+		218746A62696DD550022BE97 /* VDPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218746A42696DD550022BE97 /* VDPersonModel.m */; };
 		21898F322541B11D00876524 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 21898F312541B11D00876524 /* Application.m */; };
 		218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */; };
 		218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */; };
@@ -519,6 +523,8 @@
 		21EB382C25DF90C6002C1807 /* ax_debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */; };
 		21FC46C32591941900AA253F /* AXDebugManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC46B32591924A00AA253F /* AXDebugManager.m */; };
 		21FC46C82591974300AA253F /* AXDebugUIConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC46B9259192E900AA253F /* AXDebugUIConfig.m */; };
+		21FE556D2696EFFD0025969F /* _43ColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FE556C2696EFFD0025969F /* _43ColorVC.m */; };
+		21FE556F2696F1550025969F /* _TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE556E2696F1550025969F /* _TestSwift.swift */; };
 		22B101711E80BB6789BBCAF1 /* Pods_AXiOSKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B16B496756062CE8BD2DCFE /* Pods_AXiOSKit_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -628,6 +634,10 @@
 		2180CEDC26958D5A00F5320C /* _AXSearchResultVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _AXSearchResultVC.m; sourceTree = "<group>"; };
 		21874629269691910022BE97 /* _00TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _00TableViewCell.h; sourceTree = "<group>"; };
 		2187462A269691910022BE97 /* _00TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _00TableViewCell.m; sourceTree = "<group>"; };
+		2187469E2696DD270022BE97 /* _42MantleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _42MantleVC.h; sourceTree = "<group>"; };
+		2187469F2696DD270022BE97 /* _42MantleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _42MantleVC.m; sourceTree = "<group>"; };
+		218746A32696DD550022BE97 /* VDPersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDPersonModel.h; sourceTree = "<group>"; };
+		218746A42696DD550022BE97 /* VDPersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDPersonModel.m; sourceTree = "<group>"; };
 		21898F302541B11D00876524 /* Application.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		21898F312541B11D00876524 /* Application.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
 		21898FF72541B48000876524 /* read.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = read.md; sourceTree = "<group>"; };
@@ -1015,6 +1025,9 @@
 		21FC46B8259192E900AA253F /* AXDebugUIConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugUIConfig.h; sourceTree = "<group>"; };
 		21FC46B9259192E900AA253F /* AXDebugUIConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugUIConfig.m; sourceTree = "<group>"; };
 		21FC46BE259193B900AA253F /* AXDebugUIConfigProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugUIConfigProtocol.h; sourceTree = "<group>"; };
+		21FE556B2696EFFD0025969F /* _43ColorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _43ColorVC.h; sourceTree = "<group>"; };
+		21FE556C2696EFFD0025969F /* _43ColorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _43ColorVC.m; sourceTree = "<group>"; };
+		21FE556E2696F1550025969F /* _TestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _TestSwift.swift; sourceTree = "<group>"; };
 		234498E797E62582B4F876ED /* Pods-AXiOSKit_Tests.debug_α.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.debug_α.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.debug_α.xcconfig"; sourceTree = "<group>"; };
 		41677AA73910740D0E8B4ED8 /* Pods_AXiOSKit_Example_Env_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXiOSKit_Example_Env_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D5146973DF60BA4EF467DE /* Pods-AXiOSKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-AXiOSKit_Tests/Pods-AXiOSKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1134,6 +1147,26 @@
 				213BCB93254003D900C89B72 /* LaunchScreen.storyboard */,
 			);
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		218746A22696DD2C0022BE97 /* _42 */ = {
+			isa = PBXGroup;
+			children = (
+				218746A32696DD550022BE97 /* VDPersonModel.h */,
+				218746A42696DD550022BE97 /* VDPersonModel.m */,
+				2187469E2696DD270022BE97 /* _42MantleVC.h */,
+				2187469F2696DD270022BE97 /* _42MantleVC.m */,
+			);
+			path = _42;
+			sourceTree = "<group>";
+		};
+		218746AF2696EFAC0022BE97 /* _43Color */ = {
+			isa = PBXGroup;
+			children = (
+				21FE556B2696EFFD0025969F /* _43ColorVC.h */,
+				21FE556C2696EFFD0025969F /* _43ColorVC.m */,
+			);
+			path = _43Color;
 			sourceTree = "<group>";
 		};
 		21898FF42541B48000876524 /* README */ = {
@@ -1296,6 +1329,8 @@
 				21A61DB8265E7F4A0080E67D /* _40ScreenshotsVC.h */,
 				21A61D2E265E7F4A0080E67D /* _40ScreenshotsVC.m */,
 				21C84C24268DA28D0045E28C /* _41 */,
+				218746A22696DD2C0022BE97 /* _42 */,
+				218746AF2696EFAC0022BE97 /* _43Color */,
 				21A61D99265E7F4A0080E67D /* AFHTTPSessionManager+PutFile.h */,
 				21A61D30265E7F4A0080E67D /* AFHTTPSessionManager+PutFile.m */,
 			);
@@ -1313,6 +1348,7 @@
 				217DA6EF266BB847003E0E6B /* AXDemoUser2.m */,
 				21A61D0B265E7F4A0080E67D /* DemoEnvironmenVC.h */,
 				21A61CBF265E7F4A0080E67D /* DemoEnvironmenVC.m */,
+				21FE556E2696F1550025969F /* _TestSwift.swift */,
 				21A61CC4265E7F4A0080E67D /* Load */,
 				21A61CCD265E7F4A0080E67D /* Object */,
 				21A61CB9265E7F4A0080E67D /* RecordAudio */,
@@ -2672,6 +2708,7 @@
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/DoraemonKit/DoraemonKit.framework",
 				"${PODS_ROOT}/DoraemonKit/iOS/DoraemonKit/Framework/DoraemonLoadAnalyze.framework",
+				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
@@ -2690,8 +2727,10 @@
 				"${BUILT_PRODUCTS_DIR}/MMKV/MMKV.framework",
 				"${BUILT_PRODUCTS_DIR}/MMKVCore/MMKVCore.framework",
 				"${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework",
+				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/MonkeyKing/MonkeyKing.framework",
+				"${BUILT_PRODUCTS_DIR}/NextGrowingTextView/NextGrowingTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/NullSafe/NullSafe.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
@@ -2739,6 +2778,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoraemonKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoraemonLoadAnalyze.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
@@ -2757,8 +2797,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKV.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKVCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MQTTClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MonkeyKing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextGrowingTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NullSafe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
@@ -2816,6 +2858,7 @@
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/DoraemonKit/DoraemonKit.framework",
 				"${PODS_ROOT}/DoraemonKit/iOS/DoraemonKit/Framework/DoraemonLoadAnalyze.framework",
+				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
@@ -2834,8 +2877,10 @@
 				"${BUILT_PRODUCTS_DIR}/MMKV/MMKV.framework",
 				"${BUILT_PRODUCTS_DIR}/MMKVCore/MMKVCore.framework",
 				"${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework",
+				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/MonkeyKing/MonkeyKing.framework",
+				"${BUILT_PRODUCTS_DIR}/NextGrowingTextView/NextGrowingTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/NullSafe/NullSafe.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
@@ -2883,6 +2928,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoraemonKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoraemonLoadAnalyze.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
@@ -2901,8 +2947,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKV.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKVCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MQTTClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MonkeyKing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NextGrowingTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NullSafe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
@@ -3069,6 +3117,7 @@
 				21A61E5A265E7F4A0080E67D /* AXShareQQ.swift in Sources */,
 				21A61EE4265E7F4B0080E67D /* _25CompLayoutVC4.m in Sources */,
 				21A61F0E265E7F4B0080E67D /* _15UIMenuController.m in Sources */,
+				218746A62696DD550022BE97 /* VDPersonModel.m in Sources */,
 				21A61EFA265E7F4B0080E67D /* _01ContentViewController.m in Sources */,
 				21A61E18265E7F4A0080E67D /* MyActivity.m in Sources */,
 				21A61E5E265E7F4B0080E67D /* AXShareWeChat.swift in Sources */,
@@ -3118,6 +3167,7 @@
 				21A61E0A265E7F4A0080E67D /* NSObject+Load.m in Sources */,
 				21A61EB0265E7F4B0080E67D /* _35ProtobufVC.m in Sources */,
 				21A61E52265E7F4A0080E67D /* AXUserLog.mm in Sources */,
+				218746A12696DD270022BE97 /* _42MantleVC.m in Sources */,
 				21A61F10265E7F4B0080E67D /* _32LottieVC.m in Sources */,
 				21A61CA0265E7EBF0080E67D /* FileListSearch.swift in Sources */,
 				21A61E8E265E7F4B0080E67D /* _06WCDBViewController.m in Sources */,
@@ -3209,6 +3259,7 @@
 				21A61E8F265E7F4B0080E67D /* _05WebVC.m in Sources */,
 				21A61E6F265E7F4B0080E67D /* _04RunLoopViewController.m in Sources */,
 				21A61C7F265E7EBF0080E67D /* PreviewManager.swift in Sources */,
+				218746A52696DD550022BE97 /* VDPersonModel.m in Sources */,
 				21C84C27268DA33A0045E28C /* _41SlideHeadVC.m in Sources */,
 				218A1EEF25469BBC00E43F16 /* AppDelegateWCDB.mm in Sources */,
 				21A61EDD265E7F4B0080E67D /* _13WeImageTableViewController.m in Sources */,
@@ -3238,6 +3289,7 @@
 				217DA6F5266BB848003E0E6B /* AXDemoUser.m in Sources */,
 				21A61E6D265E7F4B0080E67D /* RouterManager.m in Sources */,
 				21A61EF7265E7F4B0080E67D /* _25CompLayoutCell.m in Sources */,
+				21FE556D2696EFFD0025969F /* _43ColorVC.m in Sources */,
 				21A61EA5265E7F4B0080E67D /* DemoWevViewImageSchemeHandler.m in Sources */,
 				21A61E77265E7F4B0080E67D /* _28ShareFileViewController.m in Sources */,
 				21A61EAD265E7F4B0080E67D /* AXDemoBaseViewController.m in Sources */,
@@ -3280,11 +3332,13 @@
 				21C84C32268DA8230045E28C /* GSKSpotyLikeHeaderView.m in Sources */,
 				21A61E1B265E7F4A0080E67D /* AXXSwitch.m in Sources */,
 				21A61F07265E7F4B0080E67D /* CTMediator+NewsActions.m in Sources */,
+				21FE556F2696F1550025969F /* _TestSwift.swift in Sources */,
 				21A61DE9265E7F4A0080E67D /* _20PhotoViewController.m in Sources */,
 				21A61EF3265E7F4B0080E67D /* _25Layout.m in Sources */,
 				21A61EA7265E7F4B0080E67D /* NSURLProtocol+AXDemo.m in Sources */,
 				21A61E0B265E7F4A0080E67D /* TestObj.m in Sources */,
 				21A61C9D265E7EBF0080E67D /* FBFile.swift in Sources */,
+				218746A02696DD270022BE97 /* _42MantleVC.m in Sources */,
 				21CC20B7265F3C0C005BD351 /* _AXThemeCell.m in Sources */,
 				21A61E01265E7F4A0080E67D /* LVieoView.m in Sources */,
 				21A61DF5265E7F4A0080E67D /* AnimRefreshHeader.m in Sources */,

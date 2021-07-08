@@ -213,7 +213,7 @@ def common_pods
   #  pod 'PEPhotoCropEditor'
   
   # 在不同的控制器中实现UINavigationBar不同地样式,这个runtime,自动加载
-#    pod 'KMNavigationBarTransition', '~>1.1.8'
+  #    pod 'KMNavigationBarTransition', '~>1.1.8'
   # 导航栏,可以每个VC不一样配置,需要继承的
   #  pod 'RTRootNavigationController','~> 0.8.0'
   pod 'WRNavigationBar','~> 1.3.0'
@@ -234,6 +234,12 @@ def common_pods
   
   # 换行
   pod 'NextGrowingTextView'
+  
+  pod 'Mantle'
+  
+  #  pod 'Colours'
+  # 颜色 swift库
+  pod 'DynamicColor'
   
 end
 
