@@ -11,7 +11,6 @@
 #import "NSBundle+AXBundle.h"
 #include <libkern/OSAtomic.h>
 #include <stdatomic.h>
-#import <objc/runtime.h>
 #import <UIKit/UIKit.h>
 
 /**
@@ -267,60 +266,8 @@ UINib *ax_NibClass(Class aClass) {
  @param name 图片名
  @return UIImage
  */
-UIImage *ax_Image(NSString *name) { return [UIImage imageNamed:name]; }
-
-#pragma mark - 添加属性
-
-/**
- Retain Strong nonatomic 属性添加值
- 
- @param object 对象
- @param propertyName 属性名 @selector() 格式
- @param value 值
- */
-void ax_setStrongAssociatedObject(id _Nonnull object,
-                                  const void *_Nonnull propertyName, id value) {
-    objc_setAssociatedObject(object, propertyName, value,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-/**
- Copy nonatomic 属性添加值
- 
- @param object 对象
- @param propertyName 属性名 @selector() 格式
- @param value 值
- */
-void ax_setCopyAssociatedObject(id _Nonnull object,
-                                const void *_Nonnull propertyName, id value) {
-    objc_setAssociatedObject(object, propertyName, value,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-/**
- Retain Strong nonatomic 属性添加值
- 
- @param object 对象
- @param propertyName 属性名 @selector() 格式
- @param value 值
- */
-void ax_setAssignAssociatedObject(id _Nonnull object,
-                                  const void *_Nonnull propertyName, id value) {
-    objc_setAssociatedObject(object, propertyName, value,
-                             OBJC_ASSOCIATION_ASSIGN);
-}
-
-/**
- Retain Strong Copy Assign 对象获取值
- Assign 需要转型
- 
- @param object 实例
- @param propertyName 属性名 @selector() 格式
- @return id 值
- */
-id ax_getAssociatedObject(id _Nonnull object,
-                          const void *_Nonnull propertyName) {
-    return objc_getAssociatedObject(object, propertyName);
+UIImage *ax_Image(NSString *name) {
+    return [UIImage imageNamed:name];
 }
 
 /**
@@ -447,42 +394,6 @@ void AXNoMsgLog(NSString *format, ...) {
 /**
  打开iPhone设置界面
  */
-void AXOpenSettings() { ax_OpenURLStr(UIApplicationOpenSettingsURLString); }
-
-
-
-@implementation NSObject (AXAssistant)
-
-
-#pragma mark - 添加属性
-
-/**
- retain strong nonatomic 属性添加值
- */
--(void)ax_setStrongObject:(id )value{
-    objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+void AXOpenSettings() {
+    ax_OpenURLStr(UIApplicationOpenSettingsURLString);
 }
-
-/**
- copy nonatomic 属性添加值
- */
--(void) ax_setCopyObject:(id )value {
-    objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-/**
- assign nonatomic 属性添加值
- */
--(void) ax_setAssignObject:(id )value {
-    objc_setAssociatedObject(self, @selector(value),value, OBJC_ASSOCIATION_ASSIGN);
-}
-
-/**
- Retain Strong Copy Assign 对象获取值
- Assign 需要转型
- */
--(id)ax_getObject:(id )value {
-    return objc_getAssociatedObject(self, @selector(value));
-}
-
-@end

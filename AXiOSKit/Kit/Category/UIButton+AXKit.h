@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXiOSKitDefine.h"
+#import "AXKitEnum.h"
 
 @interface UIButton (AXKit)
 

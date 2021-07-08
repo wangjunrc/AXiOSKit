@@ -800,9 +800,9 @@
 }
 
 
-+ (UIImage *)ax_imageFromGradientColors:(NSArray*)colors
-                           gradientType:(AXGradientType)gradientType
-                                imgSize:(CGSize)imgSize {
++ (UIImage *)ax_imageWithColors:(NSArray<UIColor *> *)colors
+                    orientation:(AXOrientation)orientation
+                           size:(CGSize)size {
     
     NSMutableArray *ar = [NSMutableArray array];
     
@@ -812,7 +812,7 @@
         
     }
     
-    UIGraphicsBeginImageContextWithOptions(imgSize, YES, 1);
+    UIGraphicsBeginImageContextWithOptions(size, YES, 1);
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
@@ -826,37 +826,37 @@
     
     CGPoint end;
     
-    switch (gradientType) {
+    switch (orientation) {
             
-        case AXGradientTypeTopToBottom:
-            
-            start = CGPointMake(0.0, 0.0);
-            
-            end = CGPointMake(0.0, imgSize.height);
-            
-            break;
-            
-        case AXGradientTypeLeftToRight:
+        case AXOrientationTopToBottom:
             
             start = CGPointMake(0.0, 0.0);
             
-            end = CGPointMake(imgSize.width, 0.0);
+            end = CGPointMake(0.0, size.height);
             
             break;
             
-        case AXGradientTypeUpleftToLowright:
+        case AXOrientationLeftToRight:
             
             start = CGPointMake(0.0, 0.0);
             
-            end = CGPointMake(imgSize.width, imgSize.height);
+            end = CGPointMake(size.width, 0.0);
             
             break;
             
-        case AXGradientTypeUprightToLowleft:
+        case AXOrientationUpleftToLowright:
             
-            start = CGPointMake(imgSize.width, 0.0);
+            start = CGPointMake(0.0, 0.0);
             
-            end = CGPointMake(0.0, imgSize.height);
+            end = CGPointMake(size.width, size.height);
+            
+            break;
+            
+        case AXOrientationUprightToLowleft:
+            
+            start = CGPointMake(size.width, 0.0);
+            
+            end = CGPointMake(0.0, size.height);
             
             break;
             

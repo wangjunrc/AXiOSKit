@@ -9,8 +9,8 @@
 #import "UIView+AXKit.h"
 
 #import "AXMacros_addProperty.h"
-#import "AXMacros_addProperty.h"
 #import <Masonry/Masonry.h>
+#import "UIImage+AXKit.h"
 typedef void(^DidViewBlock)(UIView *view);
 
 @interface UIView ()<UIGestureRecognizerDelegate>
@@ -29,7 +29,7 @@ typedef void(^DidViewBlock)(UIView *view);
     maskLayer.frame = self.bounds;
     maskLayer.path = maskPath.CGPath;
     self.layer.mask = maskLayer;
-
+    
 }
 
 /**
@@ -76,19 +76,19 @@ typedef void(^DidViewBlock)(UIView *view);
 
 /**
  渐变色
-
+ 
  @param colorArray UIColor 数组
  */
 - (void)ax_gradientColors:(NSArray <UIColor*>*)colorArray{
     /**
      colors    渐变的颜色
      locations    渐变颜色的分割点
-
+     
      startPoint&endPoint    颜色渐变的方向，范围在(0,0)与(1.0,1.0)之间，
-
-                                           如(0,0)(1.0,0)代表水平方向渐变,
-
-                                               (0,0)(0,1.0)代表竖直方向渐变
+     
+     如(0,0)(1.0,0)代表水平方向渐变,
+     
+     (0,0)(0,1.0)代表竖直方向渐变
      */
     [self layoutIfNeeded];
     
@@ -98,12 +98,27 @@ typedef void(^DidViewBlock)(UIView *view);
     NSMutableArray *array = [NSMutableArray array];
     for (UIColor *color in colorArray) {
         [array addObject:(id)color.CGColor];
-
+        
     }
     gradient.colors = array.copy;
     [self.layer insertSublayer:gradient atIndex:0];
 }
 
+/// 设置背景渐变色
+/// @param colorArray 颜色
+/// @param orientation 方法
+- (void)ax_setBackgroundGradientColors:(NSArray <UIColor*>*)colorArray
+                           orientation:(AXOrientation )orientation {
+    
+    UIView *view = self;
+    [view layoutIfNeeded];
+    UIImage *image = [UIImage ax_imageWithColors:colorArray
+                                     orientation:orientation
+                                            size:view.bounds.size];
+    view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+    
+}
 
 /**
  为UIView的某个方向添加边框
@@ -148,7 +163,7 @@ typedef void(^DidViewBlock)(UIView *view);
 /**
  阴影
  当前veiw.layer.cornerRadius 后会和layer.shadowRadius 冲突
-
+ 
  @param shadowColor UIColor
  */
 - (void)ax_shadowWith:(UIColor *)shadowColor{
@@ -173,7 +188,7 @@ typedef void(^DidViewBlock)(UIView *view);
     self.didViewBlock = block;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
     [self addGestureRecognizer:tap];
-     tap.delegate = self;
+    tap.delegate = self;
     
 }
 - (void)tapGestureAction:(UIGestureRecognizer *)sender{
@@ -208,9 +223,9 @@ typedef void(^DidViewBlock)(UIView *view);
             aView = subView;
             break;
         }else{
-           aView = [subView ax_viewWithTag:tag];
+            aView = [subView ax_viewWithTag:tag];
             if (aView) {
-                 break;
+                break;
             }
         }
     }
@@ -220,14 +235,14 @@ typedef void(^DidViewBlock)(UIView *view);
 }
 
 /**
- 截屏 不含有转态栏  保存至相册 
+ 截屏 不含有转态栏  保存至相册
  */
 - (void )ax_saveScreenShotsToPhotoAlbum{
     
     CGSize size = [[UIApplication sharedApplication] keyWindow].rootViewController.view.frame.size;
-      UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
     CGContextRef context = UIGraphicsGetCurrentContext();
-
+    
     [[UIApplication sharedApplication].keyWindow.layer renderInContext:context];
     UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -236,7 +251,7 @@ typedef void(^DidViewBlock)(UIView *view);
 
 /**
  当前view layer  重绘图片
-
+ 
  @return UIImage
  */
 - (UIImage *)ax_drawRectToImage{
@@ -253,10 +268,10 @@ typedef void(^DidViewBlock)(UIView *view);
 
 
 /**
-  当前view layer  重绘图片,并保存到相册中
+ 当前view layer  重绘图片,并保存到相册中
  */
 - (void )ax_saveToPhotoAlbum{
-   
+    
     UIImage *theImage = [self ax_drawRectToImage];
     
     UIImageWriteToSavedPhotosAlbum(theImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
@@ -278,7 +293,7 @@ typedef void(^DidViewBlock)(UIView *view);
 
 /**
  layer 层 添加虚线
-
+ 
  @param lineLength 虚线每个长
  @param lineSpacing 虚线间隔
  @param lineColor 虚线颜色
@@ -311,7 +326,7 @@ typedef void(^DidViewBlock)(UIView *view);
 
 /**
  活动view响应 UIViewController
-
+ 
  @return UIViewController
  */
 - (UIViewController *)ax_viewController {
@@ -367,7 +382,7 @@ typedef void(^DidViewBlock)(UIView *view);
     }
     
     if (direction & AXLineDirectionLeft) {
-         UIView *line = [UIView.alloc init];
+        UIView *line = [UIView.alloc init];
         line.backgroundColor = color;
         [self addSubview:line];
         [line mas_makeConstraints:^(MASConstraintMaker *make) {

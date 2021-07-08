@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 //
 //+ (void)iPad:(void(^)(void))iPad iPhone:(void(^)(void))iPhone;
 ///不是单利
-@property(nonatomic, strong, class) AXHelper *defaultHelper;
+@property(nonatomic, strong, class) AXHelper *helper;
 
 /**
  iPhone 模式回调

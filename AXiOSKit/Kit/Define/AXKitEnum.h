@@ -1,13 +1,12 @@
 //
-//  AXiOSKitDefine.h
-//  AXiOSKit
+//  AXKitEnum.h
+//  Pods
 //
-//  Created by axing on 2019/1/17.
-//  Copyright © 2019 liu.weixing. All rights reserved.
+//  Created by 小星星吃KFC on 2021/7/8.
 //
 
-#ifndef AXiOSKitDefine_h
-#define AXiOSKitDefine_h
+#ifndef AXKitEnum_h
+#define AXKitEnum_h
 
 /**
  边框方向
@@ -29,4 +28,12 @@ typedef NS_ENUM(NSInteger, AXButtonImagePosition) {
     AXButtonImagePositionBottom,    // 图片在下，文字在上
 };
 
-#endif /* AXiOSKitDefine_h */
+/// 方向,定向
+typedef NS_ENUM(NSUInteger, AXOrientation) {
+    AXOrientationTopToBottom,//从上到小
+    AXOrientationLeftToRight,//从左到右
+    AXOrientationUpleftToLowright,//左上到右下
+    AXOrientationUprightToLowleft,//右上到左下
+};
+
+#endif /* AXKitEnum_h */

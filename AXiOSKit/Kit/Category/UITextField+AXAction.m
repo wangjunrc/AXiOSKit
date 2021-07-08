@@ -10,6 +10,7 @@
 #import "AXMacros_addProperty.h"
 #import "UITextField+AXKit.h"
 #import "NSObject+AXAssistant.h"
+#import "NSObject+AXAssociated.h"
 
 #pragma mark - implementation UITextField
 

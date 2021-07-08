@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXiOSKitDefine.h"
+#import "AXKitEnum.h"
+#import "AXKitEnum.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,6 +38,13 @@ typedef NS_ENUM(NSInteger,AXLineDirection){
  @param colorArray UIColor 数组
  */
 - (void)ax_gradientColors:(NSArray <UIColor*>*)colorArray;
+
+
+/// 设置背景渐变色
+/// @param colorArray 颜色
+/// @param orientation 方法
+- (void)ax_setBackgroundGradientColors:(NSArray <UIColor*>*)colorArray
+                           orientation:(AXOrientation )orientation;
 
 /**
  为UIView的某个方向添加边框

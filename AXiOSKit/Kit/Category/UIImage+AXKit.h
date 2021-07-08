@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AXKitEnum.h"
 /**
  图片格式
  */
@@ -18,19 +18,6 @@ typedef NS_ENUM(NSUInteger, AXImageFormat) {
     AXImageFormatGIF,
     AXImageFormatTIFF,
     AXImageFormatWebp,
-};
-
-
-typedef NS_ENUM(NSUInteger, AXGradientType) {
-    
-    AXGradientTypeTopToBottom = 0,//从上到小
-    
-    AXGradientTypeLeftToRight = 1,//从左到右
-    
-    AXGradientTypeUpleftToLowright = 2,//左上到右下
-    
-    AXGradientTypeUprightToLowleft = 3,//右上到左下
-    
 };
 
 @interface UIImage (AXKit)
@@ -186,9 +173,9 @@ typedef NS_ENUM(NSUInteger, AXGradientType) {
 
 
 
-+ (UIImage *)ax_imageFromGradientColors:(NSArray<UIColor *> *)colors
-                                gradientType:(AXGradientType)gradientType
-                                     imgSize:(CGSize)imgSize;
++ (UIImage *)ax_imageWithColors:(NSArray<UIColor *> *)colors
+                    orientation:(AXOrientation)orientation
+                           size:(CGSize)size;
 
 
 @end

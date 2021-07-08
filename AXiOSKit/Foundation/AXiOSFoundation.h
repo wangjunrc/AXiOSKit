@@ -17,6 +17,7 @@
 #import "NSError+AXKit.h"
 #import "NSNumber+AXKit.h"
 #import "NSObject+AXAssistant.h"
+#import "NSObject+AXAssociated.h"
 #import "NSObject+AXKVO.h"
 #import "NSObject+AXKit.h"
 #import "NSObject+AXSafe.h"

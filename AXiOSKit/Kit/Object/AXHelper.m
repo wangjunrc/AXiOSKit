@@ -10,9 +10,11 @@
 #import <UIKit/UIKit.h>
 
 @implementation AXHelper
-+ (AXHelper *)defaultHelper {
-    return AXHelper.alloc.init;
+/// 一定要用 instancetype 方便继承
++(instancetype )helper{
+    return [[self alloc]init];
 }
+
 /**
  isiPhone 模式回调
  */
@@ -58,10 +60,10 @@
     return ^AXHelper *(void (^block)(void)) {
         __strong typeof(weakSelf) self = weakSelf;
 #ifdef DEBUG
+        NSLog(@"%s", __func__);
         if (block) {
             block();
         }
-#else
 #endif
         return self;
     };
@@ -75,9 +77,9 @@
     __weak typeof(self) weakSelf = self;
     return ^AXHelper *(void (^block)(void)) {
         __strong typeof(weakSelf) self = weakSelf;
-
-#ifdef DEBUG
-#else
+        
+#ifndef DEBUG
+        NSLog(@"Release 模式回调");
         if (block) {
             block();
         }
