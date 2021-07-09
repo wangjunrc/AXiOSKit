@@ -102,6 +102,8 @@
 		218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */; };
 		218A323C25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */; };
 		218A323D25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */; };
+		218B7960269831B200CEB7E0 /* _22ReacLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 218B795F269831B200CEB7E0 /* _22ReacLoginVC.m */; };
+		218B7963269835A900CEB7E0 /* _22LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218B7962269835A900CEB7E0 /* _22LoginViewModel.m */; };
 		2191A058268AF62C009D9852 /* AXTestString.m in Sources */ = {isa = PBXBuildFile; fileRef = 2191A057268AF62C009D9852 /* AXTestString.m */; };
 		2191A05B268AF7EC009D9852 /* AXTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2191A05A268AF7EC009D9852 /* AXTestViewController.m */; };
 		2191A05C268AF7EC009D9852 /* AXTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2191A05A268AF7EC009D9852 /* AXTestViewController.m */; };
@@ -317,7 +319,6 @@
 		21A61EB7265E7F4B0080E67D /* _24NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61D6C265E7F4A0080E67D /* _24NoteViewController.xib */; };
 		21A61EB8265E7F4B0080E67D /* _24NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61D6C265E7F4A0080E67D /* _24NoteViewController.xib */; };
 		21A61EB9265E7F4B0080E67D /* _22ReactiveObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D6F265E7F4A0080E67D /* _22ReactiveObjCViewController.m */; };
-		21A61EBA265E7F4B0080E67D /* _22ReactiveObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D6F265E7F4A0080E67D /* _22ReactiveObjCViewController.m */; };
 		21A61EBB265E7F4B0080E67D /* _07VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61D70265E7F4A0080E67D /* _07VideoViewController.xib */; };
 		21A61EBC265E7F4B0080E67D /* _07VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61D70265E7F4A0080E67D /* _07VideoViewController.xib */; };
 		21A61EBD265E7F4B0080E67D /* _28LocalSocketClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D71265E7F4A0080E67D /* _28LocalSocketClientViewController.m */; };
@@ -665,6 +666,10 @@
 		218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateRegistryCenter.m; sourceTree = "<group>"; };
 		218A323A25E096D0008D95B8 /* AppDelegateURLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateURLProtocol.h; sourceTree = "<group>"; };
 		218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateURLProtocol.m; sourceTree = "<group>"; };
+		218B795E269831B200CEB7E0 /* _22ReacLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _22ReacLoginVC.h; sourceTree = "<group>"; };
+		218B795F269831B200CEB7E0 /* _22ReacLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _22ReacLoginVC.m; sourceTree = "<group>"; };
+		218B7961269835A900CEB7E0 /* _22LoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _22LoginViewModel.h; sourceTree = "<group>"; };
+		218B7962269835A900CEB7E0 /* _22LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _22LoginViewModel.m; sourceTree = "<group>"; };
 		2191A057268AF62C009D9852 /* AXTestString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXTestString.m; sourceTree = "<group>"; };
 		2191A059268AF7EC009D9852 /* AXTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXTestViewController.h; sourceTree = "<group>"; };
 		2191A05A268AF7EC009D9852 /* AXTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXTestViewController.m; sourceTree = "<group>"; };
@@ -1210,6 +1215,19 @@
 			path = ../AXiOSKit/README;
 			sourceTree = "<group>";
 		};
+		218B795D2698317A00CEB7E0 /* _22Reac */ = {
+			isa = PBXGroup;
+			children = (
+				218B7961269835A900CEB7E0 /* _22LoginViewModel.h */,
+				218B7962269835A900CEB7E0 /* _22LoginViewModel.m */,
+				218B795E269831B200CEB7E0 /* _22ReacLoginVC.h */,
+				218B795F269831B200CEB7E0 /* _22ReacLoginVC.m */,
+				21A61DCE265E7F4A0080E67D /* _22ReactiveObjCViewController.h */,
+				21A61D6F265E7F4A0080E67D /* _22ReactiveObjCViewController.m */,
+			);
+			path = _22Reac;
+			sourceTree = "<group>";
+		};
 		219682F82697270E00FC972D /* _View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1334,8 +1352,7 @@
 				21A61DB6265E7F4A0080E67D /* _21KVOViewController.h */,
 				21A61D2C265E7F4A0080E67D /* _21KVOViewController.m */,
 				21A61CAD265E7F4A0080E67D /* _21KVOViewController.xib */,
-				21A61DCE265E7F4A0080E67D /* _22ReactiveObjCViewController.h */,
-				21A61D6F265E7F4A0080E67D /* _22ReactiveObjCViewController.m */,
+				218B795D2698317A00CEB7E0 /* _22Reac */,
 				21A61D41265E7F4A0080E67D /* _23FullViewController.h */,
 				21A61DBA265E7F4A0080E67D /* _23FullViewController.m */,
 				21A61D39265E7F4A0080E67D /* _23FullViewController.xib */,
@@ -3024,7 +3041,6 @@
 				21A61E12265E7F4A0080E67D /* Student.pbobjc.m in Sources */,
 				21A61ED2265E7F4B0080E67D /* _30IGListViewController.m in Sources */,
 				21A61F1A265E7F4B0080E67D /* ChatTextMessageModel.m in Sources */,
-				21A61EBA265E7F4B0080E67D /* _22ReactiveObjCViewController.m in Sources */,
 				21A61DF2265E7F4A0080E67D /* XWShadow.m in Sources */,
 				21CC20B1265F393C005BD351 /* _AXCellItem.m in Sources */,
 				211227152573340100B6ECC8 /* AppDelegateWX.m in Sources */,
@@ -3241,6 +3257,7 @@
 				21A61E67265E7F4B0080E67D /* AXSocialShareView.m in Sources */,
 				217AEA0226974A9600A1A9B2 /* FileListSearch.swift in Sources */,
 				21A61DFF265E7F4A0080E67D /* TestPluginViewController.m in Sources */,
+				218B7960269831B200CEB7E0 /* _22ReacLoginVC.m in Sources */,
 				217DA6F3266BB848003E0E6B /* AXDemoUser2.m in Sources */,
 				21A61F13265E7F4B0080E67D /* _03ChatViewController.m in Sources */,
 				21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */,
@@ -3282,6 +3299,7 @@
 				21A61E91265E7F4B0080E67D /* _01RootVC.m in Sources */,
 				21A61EFF265E7F4B0080E67D /* _28LocalSocketServiceViewController.m in Sources */,
 				219682EE26971BB200FC972D /* _14TextFieldVC.m in Sources */,
+				218B7963269835A900CEB7E0 /* _22LoginViewModel.m in Sources */,
 				21A61E93265E7F4B0080E67D /* _01HeaderView.m in Sources */,
 				21A61DE1265E7F4A0080E67D /* _31GCDViewController.m in Sources */,
 				21A61E69265E7F4B0080E67D /* AXSocialShareCell.m in Sources */,

@@ -16,6 +16,8 @@
 
 @property(nonatomic, weak) UISearchController *searchController;
 
+@property(nonatomic, copy) NSString *searchStr;
+
 @end
 
 @implementation _AXSearchResultVC
@@ -43,8 +45,29 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     _00TableViewCell *cell = [_00TableViewCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
     _AXCellItem *item = self.dataArray[indexPath.row];
-    cell.titleLabel.text = item.title;
-    cell.detailLabel.text =item.detail;
+    
+    {
+        NSMutableAttributedString *text = [NSMutableAttributedString.alloc initWithString:item.title];
+        NSRange range = [item.title rangeOfString:self.searchStr];
+        
+        if (range.location != NSNotFound) {
+            [text addAttributes:@{NSForegroundColorAttributeName:UIColor.redColor} range:range];
+        }
+        
+        cell.titleLabel.attributedText = text;
+    }
+    
+    
+    {
+        
+        NSMutableAttributedString *text = [NSMutableAttributedString.alloc initWithString:item.detail];
+        NSRange range = [item.detail rangeOfString:self.searchStr];
+        if (range.location != NSNotFound) {
+            [text addAttributes:@{NSForegroundColorAttributeName:UIColor.redColor} range:range];
+        }
+        cell.detailLabel.attributedText = text;
+        
+    }
     return cell;
 }
 
@@ -54,10 +77,10 @@
     if (item.action) {
         item.action();
     }
-    
-    self.searchController.searchBar.text = nil;
-    ///很重要,消失的
-    [self dismissViewControllerAnimated:YES completion:nil];
+    /// 控制点击消失
+    //    self.searchController.searchBar.text = nil;
+    //    ///很重要,消失的
+    //    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -68,17 +91,21 @@
         self.searchController = searchController;
     }
     NSString *text = searchController.searchBar.text;
+    self.searchStr = text;
     
     NSLog(@"searchController=%@",text);
     
+    /// 方式一 |
     //    NSPredicate *pre = [NSPredicate predicateWithFormat:@"detail CONTAINS[cd] %@ || title CONTAINS[cd] %@",text,text];
     
+    /// 方式二 OR
     NSPredicate *pre = [NSPredicate predicateWithFormat:@"detail CONTAINS[cd] %@ OR title CONTAINS[cd] %@",text,text];
     
-//    NSPredicate *detailPre = [NSPredicate predicateWithFormat:@"detail CONTAINS[cd] %@",text];
-//
-//    NSPredicate *titlePre = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@",text];
-//    NSPredicate *pre = [NSCompoundPredicate orPredicateWithSubpredicates:@[detailPre,titlePre]];
+    /// 方式三 NSCompoundPredicate
+    //    NSPredicate *detailPre = [NSPredicate predicateWithFormat:@"detail CONTAINS[cd] %@",text];
+    //
+    //    NSPredicate *titlePre = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@",text];
+    //    NSPredicate *pre = [NSCompoundPredicate orPredicateWithSubpredicates:@[detailPre,titlePre]];
     
     self.dataArray = [self.filterArray filteredArrayUsingPredicate:pre];
     NSLog(@"搜索过滤=%@", self.dataArray);

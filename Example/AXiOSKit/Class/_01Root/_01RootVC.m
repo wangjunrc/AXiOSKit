@@ -36,6 +36,7 @@
 #import "_19ScrollContentViewController.h"
 #import "_20PhotoViewController.h"
 #import "_21KVOViewController.h"
+#import "_22ReacLoginVC.h"
 #import "_22ReactiveObjCViewController.h"
 #import "_23FullViewController.h"
 #import "_24NoteViewController.h"
@@ -94,7 +95,6 @@
 
 - (void)injected {
     NSLog(@"重启了 InjectionIII: %@", self);
-    
     [self viewDidLoad];
 }
 
@@ -848,6 +848,17 @@
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
             [tempArray addObject:item];
+            item.title = @"_22ReacLoginVC";
+            item.detail = @"reac模拟登录";
+            item.action = ^{
+                _22ReacLoginVC *vc = [[_22ReacLoginVC alloc] init];
+                [self ax_pushVC:vc];
+            };
+        }
+        
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [tempArray addObject:item];
             item.title = @"_22ReactiveObjCViewController";
             item.detail = @"rea";
             item.action = ^{
@@ -1037,7 +1048,7 @@
             _AXCellItem *item = _AXCellItem.alloc.init;
             [tempArray addObject:item];
             item.title = @"_28ShareFileViewController";
-            item.detail = @"文件浏览";
+            item.detail = @"文件预览";
             item.action = ^{
                 _28ShareFileViewController *vc =
                 [[_28ShareFileViewController alloc] init];

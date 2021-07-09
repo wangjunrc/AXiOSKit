@@ -92,6 +92,7 @@
     
     self.title = @"ReactiveObjC";
     
+    [self _01_RACSubject];
     [self _01UITextField];
     [self _01UITextField_text];
     [self _01UITextField_filter1];
@@ -369,7 +370,7 @@
         make.right.mas_equalTo(-20);
     }];
     self.bottomAttribute = tf.mas_bottom;
-
+    
     [[tf.rac_textSignal filter:^BOOL(NSString * _Nullable value) {
         return value.length > 5;
     }] subscribeNext:^(NSString * _Nullable x) {
@@ -378,6 +379,67 @@
     
     
 }
+
+-(void)_01_RACSubject {
+    
+    /**
+     https://www.jianshu.com/p/b9d140b5763e?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation
+     RACCommand与RACSubject的区别
+     RACCommand 用来做事情,比如 增删改查数据源,然后调用刷新RACSubject
+     RACSubject 用来监听事情, 比如 刷新RACSubject
+     RACCommand通常来处理有多种状态的信号的类
+     
+     */
+    //    RACSignal *sig = RACSignal.alloc.init;
+    
+    RACSubject<NSString *> *signalA = [RACSubject subject];
+    
+    [signalA subscribeNext:^(NSString * _Nullable x) {
+        NSLog(@"signalA=%@",x);
+    } error:^(NSError * _Nullable error) {
+        NSLog(@"error=%@",error);
+    }];
+    
+    
+    [self _buttonTitle:@"RACSubject发送值" handler:^(UIButton * _Nonnull btn) {
+        [signalA sendNext:@"AAA"];
+    }];
+    
+    [self _buttonTitle:@"RACSubject 发送错误" handler:^(UIButton * _Nonnull btn) {
+        [signalA sendError:[NSError ax_errorWithDescription:@"错误...."]];
+//        signalA = [signalA retry];
+        [signalA replay];
+    }];
+    
+    
+    
+    
+    
+    RACReplaySubject *subject = [RACReplaySubject subject];
+     
+    [subject subscribeNext:^(id  _Nullable x) {
+        NSLog(@"RACReplaySubject=%@", x);
+    } error:^(NSError * _Nullable error) {
+        NSLog(@"RACReplaySubject error=%@", error);
+    }];
+    
+    
+    [self _buttonTitle:@"RACReplaySubject发送值" handler:^(UIButton * _Nonnull btn) {
+        [subject sendNext:@3];
+    }];
+    
+    [self _buttonTitle:@"RACReplaySubject 发送错误" handler:^(UIButton * _Nonnull btn) {
+        [subject sendError:[NSError ax_errorWithDescription:@"错误...."]];
+        [subject sendCompleted];
+    }];
+    
+//
+//
+//    [subject sendCompleted];
+    
+    
+}
+
 -(void)_01UITextField {
     
     [self _titlelabel:@"UITextField双向绑定"];
