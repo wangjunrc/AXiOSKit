@@ -124,6 +124,7 @@ PODS:
   - JJException/Swizzle (0.2.9)
   - JKVValue (1.3.3)
   - Kiwi (3.0.0)
+  - Lantern (1.1.2)
   - libwebp (1.2.0):
     - libwebp/demux (= 1.2.0)
     - libwebp/mux (= 1.2.0)
@@ -143,6 +144,7 @@ PODS:
   - MGSwipeTableCell (1.6.11)
   - MJExtension (3.2.4)
   - MJRefresh (3.6.1)
+  - MKRingProgressView (2.2.3)
   - MMKV (1.2.9):
     - MMKVCore (~> 1.2.9)
   - MMKVCore (1.2.9)
@@ -513,6 +515,9 @@ PODS:
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SSKeychain (1.4.1)
   - SSZipArchive (2.4.2)
+  - SwiftMessages (9.0.3):
+    - SwiftMessages/App (= 9.0.3)
+  - SwiftMessages/App (9.0.3)
   - TABAnimated (2.5.5)
   - TOCropViewController (2.6.0)
   - TZImagePickerController (3.5.9)
@@ -558,11 +563,13 @@ DEPENDENCIES:
   - IQKeyboardManager
   - JJException
   - Kiwi
+  - Lantern
   - lottie-ios (~> 2.5.3)
   - Mantle
   - Masonry
   - MGJRouter
   - MGSwipeTableCell (~> 1.6.11)
+  - MKRingProgressView
   - MMKV (~> 1.2.7)
   - MonkeyKing (~> 2.1.0)
   - MQTTClient
@@ -580,6 +587,7 @@ DEPENDENCIES:
   - SocketRocket
   - SSKeychain
   - SSZipArchive
+  - SwiftMessages
   - TABAnimated (= 2.5.5)
   - TOCropViewController (~> 2.6.0)
   - TZImagePickerController (~> 3.5.8)
@@ -619,6 +627,7 @@ SPEC REPOS:
     - JJException
     - JKVValue
     - Kiwi
+    - Lantern
     - libwebp
     - lottie-ios
     - Mantle
@@ -628,6 +637,7 @@ SPEC REPOS:
     - MGSwipeTableCell
     - MJExtension
     - MJRefresh
+    - MKRingProgressView
     - MMKV
     - MMKVCore
     - MonkeyKing
@@ -647,6 +657,7 @@ SPEC REPOS:
     - SQLiteRepairKit
     - SSKeychain
     - SSZipArchive
+    - SwiftMessages
     - TABAnimated
     - TOCropViewController
     - TZImagePickerController
@@ -695,6 +706,7 @@ SPEC CHECKSUMS:
   JJException: da7c64ccf29d9938a4075378a7e9a29db7383c37
   JKVValue: d7941071b1cf9ba35c194fd40bcf4c4d9b5462e9
   Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
+  Lantern: ed012be9a7c989ff5b94c080129a4734b45304b6
   libwebp: 6bac0a99ba5a6bb7449a951ff22c484201985f68
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   Mantle: 4c0ed6ce47c96eccc4dc3bb071deb3def0e2c3be
@@ -704,6 +716,7 @@ SPEC CHECKSUMS:
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
   MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
   MJRefresh: d2c1970d1cf6e77fcfcdfe76c943dfab8dbfa5c1
+  MKRingProgressView: 404b3157e7a533ab8668d29ec20042c35d12ca1d
   MMKV: ce972c7bec17ec7aba068562820b829d4cee100c
   MMKVCore: 27bf04f4376305c9c0187136a7b58a236ee83f9e
   MonkeyKing: 1656e3e01911b5f72f988d4496c1cc988d0c009c
@@ -714,7 +727,7 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Protobuf: adb85cd18a15bd1a777c158af9fd6e612a0e6d69
   QMUIKit: c047f987b14be9f48df47cb934a2d21ccd7ef4b6
-  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  ReactiveObjC: c80676b38445a1beebc17defd47c1152a1f1e661
   RMQClient: 9bbda86703fd475761101ee5fda037eb2a12ec4e
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageFLPlugin: 245c7ce1e77028b6ef415240847b3f8aa4b106b7
@@ -723,6 +736,7 @@ SPEC CHECKSUMS:
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
   SSZipArchive: e7b4f3d9e780c2acc1764cd88fbf2de28f26e5b2
+  SwiftMessages: 077f19126c24033fe24042237ecc20261adb46e4
   TABAnimated: 578ad7becfcba14e163ecf7e755113de17ee1984
   TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
   TZImagePickerController: 07a2f834f4908689759a7e54f74e9a018e047cb6
@@ -736,6 +750,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: a495114e387531179a5ecf26b28e5625d2d26cc6
+PODFILE CHECKSUM: bcc9c369fe6f7efece7fdc4a527ecb124783b786
 
 COCOAPODS: 1.10.1

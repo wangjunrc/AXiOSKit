@@ -493,12 +493,6 @@ pod 'ViewDeck'
 ### 本地服务,比如 iPhone和电脑端传送文件,
 pod 'CocoaHTTPServer'
 
-###  头视图效果布局
-pod 'CSStickyHeaderFlowLayout'
-
-### UICollectionView布局
-pod 'CollectionKit' #swift
-
 ### 蓝牙链接
 pod 'BabyBluetooth'
 
@@ -561,7 +555,7 @@ pod 'EFQRCode' #swift
 
 
 ### swiftUI
-ioscreator
+pod 'ioscreator'
 
 ### 分享
 pod 'MonkeyKing'
@@ -594,8 +588,16 @@ JXCategoryView
 ### 第三方工具分类
 pod 'JKCategories'
 
-### 左右滑动卡片
-pod 'VerticalCardSwiper'
 
 ### 各种弹窗
 pod 'HWPanModal'
+
+## CollectionView类型
+
+### 左右滑动卡片
+pod 'VerticalCardSwiper'
+pod 'CollectionKit'
+pod 'InfiniteLayout'
+
+###  头视图效果布局
+pod 'CSStickyHeaderFlowLayout'

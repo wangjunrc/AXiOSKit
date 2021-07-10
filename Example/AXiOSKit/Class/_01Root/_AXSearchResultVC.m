@@ -12,7 +12,7 @@
 
 @interface _AXSearchResultVC ()<UISearchResultsUpdating>
 
-@property (nonatomic, strong) NSArray<_AXCellItem*> *dataArray;
+@property (nonatomic, strong) NSArray<NSArray<_AXCellItem*>*> *dataArray;
 
 @property(nonatomic, weak) UISearchController *searchController;
 
@@ -28,6 +28,19 @@
     [_00TableViewCell ax_registerCellWithTableView:self.tableView];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 44;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section==0) {
+        return @"自定义控制器";
+    } else {
+        return @"第三方组件控制器";
+    }
+   
+}
+
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
@@ -36,15 +49,18 @@
     return UITableViewAutomaticDimension;
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.dataArray.count;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.dataArray.count;
+    return self.dataArray[section].count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     _00TableViewCell *cell = [_00TableViewCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
-    _AXCellItem *item = self.dataArray[indexPath.row];
+    _AXCellItem *item = self.dataArray[indexPath.section][indexPath.row];
     
     {
         NSMutableAttributedString *text = [NSMutableAttributedString.alloc initWithString:item.title];
@@ -73,7 +89,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    _AXCellItem *item = self.dataArray[indexPath.row];
+    _AXCellItem *item = self.dataArray[indexPath.section][indexPath.row];
     if (item.action) {
         item.action();
     }
@@ -107,8 +123,21 @@
     //    NSPredicate *titlePre = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@",text];
     //    NSPredicate *pre = [NSCompoundPredicate orPredicateWithSubpredicates:@[detailPre,titlePre]];
     
-    self.dataArray = [self.filterArray filteredArrayUsingPredicate:pre];
-    NSLog(@"搜索过滤=%@", self.dataArray);
+    //    self.dataArray = [self.filterArray filteredArrayUsingPredicate:pre];
+    
+    NSMutableArray<NSArray<_AXCellItem *> *> *allArray = NSMutableArray.array;
+    
+    [self.filterArray enumerateObjectsUsingBlock:^(NSMutableArray<_AXCellItem *> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSArray<_AXCellItem *> *temp = [obj filteredArrayUsingPredicate:pre];
+        
+        [allArray addObject:temp];
+        
+    }];
+    
+    NSLog(@"搜索过滤=%@", allArray);
+    self.dataArray = allArray.copy;
+    
     [self.tableView reloadData];
 }
 

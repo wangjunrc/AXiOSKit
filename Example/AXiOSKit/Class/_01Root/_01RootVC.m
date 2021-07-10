@@ -84,7 +84,7 @@
 @interface _01RootVC ()<UISearchControllerDelegate>
 
 @property (nonatomic, strong) AXSystemAuthorizerManager *authorizerManager;
-@property (nonatomic, strong) NSMutableArray<_AXCellItem*> *dataArray;
+@property (nonatomic, strong) NSMutableArray<NSMutableArray<_AXCellItem *>*> *dataArray;
 @property(nonatomic, strong) UIBarButtonItem *deleteItem;
 @property(nonatomic, strong) UIBarButtonItem *editItem;
 @property(nonatomic, strong) UISearchController *searchVC;
@@ -171,7 +171,12 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"vc";
+    if (section==0) {
+        return @"自定义控制器";
+    } else {
+        return @"第三方组件控制器";
+    }
+   
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
@@ -191,14 +196,18 @@
     return UITableViewAutomaticDimension;
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.dataArray.count;
+}
+
 - (NSInteger)   tableView:(UITableView *)tableView
     numberOfRowsInSection:(NSInteger)section {
-    return self.dataArray.count;
+    return self.dataArray[section].count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     _00TableViewCell *cell = [_00TableViewCell ax_dequeueCellWithTableView:tableView forIndexPath:indexPath];
-    _AXCellItem *item = self.dataArray[indexPath.row];
+    _AXCellItem *item = self.dataArray[indexPath.section][indexPath.row];
     cell.titleLabel.text = item.title;
     cell.detailLabel.text = item.detail;
     return cell;
@@ -210,7 +219,7 @@
         self.deleteItem.enabled = self.tableView.indexPathsForSelectedRows.count;
         return;
     }
-    _AXCellItem *item = self.dataArray[indexPath.row];
+    _AXCellItem *item = self.dataArray[indexPath.section][indexPath.row];
     if (item.action) {
         item.action();
     }
@@ -519,10 +528,8 @@
     
     [searchBar resignFirstResponder];
 }
-- (void)willPresentSearchController:(UISearchController *)searchController{}
-- (void)didPresentSearchController:(UISearchController *)searchController{}
-- (void)willDismissSearchController:(UISearchController *)searchController{}
-- (void)didDismissSearchController:(UISearchController *)searchController{}
+
+
 - (UISearchController *)searchVC {
     if (!_searchVC) {
         
@@ -605,16 +612,26 @@
 }
 #pragma mark -  数据源
 
-- (NSMutableArray<_AXCellItem *> *)dataArray {
+- (NSMutableArray<NSMutableArray<_AXCellItem *> *> *)dataArray {
     if (!_dataArray) {
         
-        NSMutableArray<_AXCellItem *> *tempArray = NSMutableArray.array;
-        _dataArray = tempArray;
+//        1st,2nd,3rd,4th,5th,6th,7th,8th,9th,10th.
+        
+        NSMutableArray<NSMutableArray<_AXCellItem *> *> *_allArray = NSMutableArray.array;
+        
+        
+        NSMutableArray<_AXCellItem *> *_1stArray = NSMutableArray.array;
+        [_allArray addObject:_1stArray];
+        
+        NSMutableArray<_AXCellItem *> *_2ndArray = NSMutableArray.array;
+        [_allArray addObject:_2ndArray];
+        
+        _dataArray = _allArray.mutableCopy;
         
         
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_01ContentViewController";
             item.detail = @"uikit示例";
             item.action = ^{
@@ -626,7 +643,7 @@
         
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_02NavColorViewController";
             item.detail = @"导航栏效果";
             item.action = ^{
@@ -638,7 +655,7 @@
         
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_02QQZoneController";
             item.detail = @"导航栏渐变";
             item.action = ^{
@@ -650,7 +667,7 @@
         
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_03ChatViewController";
             item.detail = @"聊天";
             item.action = ^{
@@ -661,7 +678,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_04RunLoopViewController";
             item.detail = @"NSRunLoop模式";
             item.action = ^{
@@ -672,7 +689,7 @@
         
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_05WebVC";
             item.detail = @"WKWebVC";
             item.action = ^{
@@ -682,7 +699,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_06WCDBViewController";
             item.detail = @"WCDB";
             item.action = ^{
@@ -692,7 +709,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_07VideoViewController";
             item.detail = @"视频";
             item.action = ^{
@@ -703,7 +720,7 @@
         
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_08MP3VC";
             item.detail = @"音频";
             item.action = ^{
@@ -713,7 +730,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_09AFNViewController";
             item.detail = @"AFN";
             item.action = ^{
@@ -723,7 +740,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_10TextFViewController";
             item.detail = @"多行textview-alert";
             item.action = ^{
@@ -735,7 +752,7 @@
         
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_13SDWebImageVC";
             item.detail = @"SDWebImage测试";
             item.action = ^{
@@ -745,7 +762,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_13WebpViewController";
             item.detail = @"webp/GIF";
             item.action = ^{
@@ -755,7 +772,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_13WeImageTableViewController";
             item.detail = @"WeImage";
             item.action = ^{
@@ -765,7 +782,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_14TextFieldVC";
             item.detail = @"TextFeild 统一代理";
             item.action = ^{
@@ -777,7 +794,7 @@
         
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_15UIMenuController";
             item.detail = @"UIMenuController";
             item.action = ^{
@@ -787,7 +804,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_16KeyChainViewController";
             item.detail = @"KeyChain";
             item.action = ^{
@@ -798,7 +815,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_17OtherShareViewController";
             item.detail = @"第三方分享";
             item.action = ^{
@@ -806,7 +823,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_18MGSwipeTableVC";
             item.detail = @"SwipeTableVC";
             item.action = ^{
@@ -816,7 +833,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_19ScrollContentViewController";
             item.detail = @"Scroll自适应内容";
             item.action = ^{
@@ -827,7 +844,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_20PhotoViewController";
             item.detail = @"照片相册选择";
             item.action = ^{
@@ -837,7 +854,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_21KVOViewController";
             item.detail = @"KVO";
             item.action = ^{
@@ -847,7 +864,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_22ReacLoginVC";
             item.detail = @"reac模拟登录";
             item.action = ^{
@@ -858,7 +875,7 @@
         
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_22ReactiveObjCViewController";
             item.detail = @"rea";
             item.action = ^{
@@ -869,7 +886,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_23FullViewController";
             item.detail = @"约束全屏\n prefersStatusBarHidden\n setNavigationBarHidden";
             item.action = ^{
@@ -879,7 +896,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_24NoteViewController";
             item.detail = @"本地通知";
             item.action = ^{
@@ -889,7 +906,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_25LayoutViewController";
             item.detail = @"Layout-UICollectionView";
             item.action = ^{
@@ -900,7 +917,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_25FlowLayoutVC1";
             item.detail = @"UICollectionView 左右空隙";
             item.action = ^{
@@ -911,7 +928,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_25CompLayoutVC1";
             item.detail = @"iOS 13.0 水平滚动，但cell大小交替变换，且cell居中对齐。";
             item.action = ^{
@@ -925,7 +942,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_25CompLayoutVC2";
             item.detail = @"垂直滚动，一个大cell + 两个小cell 交替";
             item.action = ^{
@@ -936,7 +953,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_25CompLayoutVC3";
             item.detail = @"类似App Store 效果";
             item.action = ^{
@@ -947,7 +964,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_25CompLayoutVC4";
             item.detail = @"含有背景";
             item.action = ^{
@@ -957,7 +974,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_25CompLayoutVC5";
             item.detail = @"NSCollectionLayoutGroupCustomItem";
             item.action = ^{
@@ -968,7 +985,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_25_2_DiffableDataSource";
             item.detail = @"iOS 14.0 25_2-UITableViewDiffableDataSource";
             item.action = ^{
@@ -982,7 +999,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_26RMQClientViewController";
             item.detail = @"RMQClient";
             item.action = ^{
@@ -993,7 +1010,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
             item.title = @"_27MQTTClientViewController";
             item.detail = @"MQTT";
             item.action = ^{
@@ -1002,9 +1019,198 @@
                 [self ax_pushVC:vc];
             };
         }
+        
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_1stArray addObject:item];
+            item.title = @"_28ShareFileViewController";
+            item.detail = @"文件预览";
+            item.action = ^{
+                _28ShareFileViewController *vc =
+                [[_28ShareFileViewController alloc] init];
+                [self ax_pushVC:vc];
+            };
+        }
+        
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_01ContentViewController";
+            item.detail = @"仿微信小程序右滑关闭";
+            item.action = ^{
+                _01ContentViewController *vc = [_01ContentViewController ax_init];
+                vc.view.backgroundColor = UIColor.orangeColor;
+                [AXPresentGesturesBack injectDismissTransitionForViewController:vc];
+                [self ax_showVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_29AudioViewController";
+            item.detail = @"音频";
+            item.action = ^{
+                _29AudioViewController *vc = [_29AudioViewController ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_30IGListViewController";
+            item.detail = @"IGList";
+            item.action = ^{
+                _30IGListViewController *vc = [_30IGListViewController ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_31GCDViewController";
+            item.detail = @"多线程";
+            item.action = ^{
+                _31GCDViewController *vc = [_31GCDViewController ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_32LottieVC";
+            item.detail =  @"Lottie动画";
+            item.action = ^{
+                _32LottieVC *vc = [_32LottieVC ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_33CropViewController";
+            item.detail = @"剪切图片";
+            item.action = ^{
+                _33CropViewController *vc = [_33CropViewController ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_34ViewController";
+            item.detail = @"CTMediator路由";
+            item.action = ^{
+                _34ViewController *vc = [_34ViewController ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_35ProtobufVC";
+            item.detail = @"ProtobufVC";
+            item.action = ^{
+                _35ProtobufVC *vc = [_35ProtobufVC ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_36YYKitTestVC";
+            item.detail = @"YYKit";
+            item.action = ^{
+                _36YYKitTestVC *vc = [_36YYKitTestVC ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_37FileManagerVC";
+            item.detail = @"NSFileManager";
+            item.action = ^{
+                _37FileManagerVC *vc = [_37FileManagerVC ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_38DirectionVC";
+            item.detail = @"屏幕旋转-push";
+            item.action = ^{
+                _38DirectionVC *vc = [_38DirectionVC ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_38DirectionVC";
+            item.detail = @"屏幕旋转-show";
+            item.action = ^{
+                _38DirectionVC *vc = [_38DirectionVC ax_init];
+                [self ax_showVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_39MasonryViewController";
+            item.detail = @"Masonry布局";
+            item.action = ^{
+                _39MasonryViewController *vc = [_39MasonryViewController ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_40ScreenshotsVC";
+            item.detail = @"监测截屏,并删除";
+            item.action = ^{
+                _40ScreenshotsVC *vc = [_40ScreenshotsVC ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_41SlideHeadVC";
+            item.detail = @"滑动头部";
+            item.action = ^{
+                _41SlideHeadVC *vc = [_41SlideHeadVC ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_42MantleVC";
+            item.detail = @"Mantle字典转模型";
+            item.action = ^{
+                _42MantleVC *vc = [_42MantleVC ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_43ColorVC";
+            item.detail = @"颜色";
+            item.action = ^{
+                _43ColorVC *vc = [_43ColorVC ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        
+#pragma mark - 2nd
+        
+        
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_2ndArray addObject:item];
             item.title = @"AXPayVC";
             item.detail = @"仿支付宝支付页面";
             item.action = ^{
@@ -1016,7 +1222,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_2ndArray addObject:item];
             item.title = @"AXDateVC";
             item.detail = @"AXDateVC";
             item.action = ^{
@@ -1031,7 +1237,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_2ndArray addObject:item];
             item.title = @"AXSinglePickVC";
             item.detail = @"单选";
             item.action = ^{
@@ -1044,20 +1250,25 @@
                 [self ax_showVC:vc];
             };
         }
+        
+        
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_28ShareFileViewController";
-            item.detail = @"文件预览";
+            [_2ndArray addObject:item];
+            item.title = @"AXSystemAuthorizerManager";
+            item.detail = @"权限";
             item.action = ^{
-                _28ShareFileViewController *vc =
-                [[_28ShareFileViewController alloc] init];
-                [self ax_pushVC:vc];
+                self.authorizerManager = [AXSystemAuthorizerManager
+                                          requestAuthorizedWithType:AXSystemAuthorizerTypeLocation
+                                          completion:^(AXSystemAuthorizerStatus status) {
+                    NSLog(@"status == %ld", (long)status);
+                }];
             };
         }
+        
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_2ndArray addObject:item];
             item.title = @"FileBrowser: UINavigationController";
             item.detail = @"document内文件浏览器";
             item.action = ^{
@@ -1067,7 +1278,7 @@
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
+            [_2ndArray addObject:item];
             item.title = @"_DirectoryContentsTableViewController,CocoaDebug";
             item.detail = @"文件浏览器";
             item.action = ^{
@@ -1088,192 +1299,6 @@
             };
         }
         
-        
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"AXSystemAuthorizerManager";
-            item.detail = @"权限";
-            item.action = ^{
-                self.authorizerManager = [AXSystemAuthorizerManager
-                                          requestAuthorizedWithType:AXSystemAuthorizerTypeLocation
-                                          completion:^(AXSystemAuthorizerStatus status) {
-                    NSLog(@"status == %ld", (long)status);
-                }];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_01ContentViewController";
-            item.detail = @"仿微信小程序右滑关闭";
-            item.action = ^{
-                _01ContentViewController *vc = [_01ContentViewController ax_init];
-                vc.view.backgroundColor = UIColor.orangeColor;
-                [AXPresentGesturesBack injectDismissTransitionForViewController:vc];
-                [self ax_showVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_29AudioViewController";
-            item.detail = @"音频";
-            item.action = ^{
-                _29AudioViewController *vc = [_29AudioViewController ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_30IGListViewController";
-            item.detail = @"IGList";
-            item.action = ^{
-                _30IGListViewController *vc = [_30IGListViewController ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_31GCDViewController";
-            item.detail = @"多线程";
-            item.action = ^{
-                _31GCDViewController *vc = [_31GCDViewController ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_32LottieVC";
-            item.detail =  @"Lottie动画";
-            item.action = ^{
-                _32LottieVC *vc = [_32LottieVC ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_33CropViewController";
-            item.detail = @"剪切图片";
-            item.action = ^{
-                _33CropViewController *vc = [_33CropViewController ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_34ViewController";
-            item.detail = @"CTMediator路由";
-            item.action = ^{
-                _34ViewController *vc = [_34ViewController ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_35ProtobufVC";
-            item.detail = @"ProtobufVC";
-            item.action = ^{
-                _35ProtobufVC *vc = [_35ProtobufVC ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_36YYKitTestVC";
-            item.detail = @"YYKit";
-            item.action = ^{
-                _36YYKitTestVC *vc = [_36YYKitTestVC ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_37FileManagerVC";
-            item.detail = @"NSFileManager";
-            item.action = ^{
-                _37FileManagerVC *vc = [_37FileManagerVC ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_38DirectionVC";
-            item.detail = @"屏幕旋转-push";
-            item.action = ^{
-                _38DirectionVC *vc = [_38DirectionVC ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_38DirectionVC";
-            item.detail = @"屏幕旋转-show";
-            item.action = ^{
-                _38DirectionVC *vc = [_38DirectionVC ax_init];
-                [self ax_showVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_39MasonryViewController";
-            item.detail = @"Masonry布局";
-            item.action = ^{
-                _39MasonryViewController *vc = [_39MasonryViewController ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_40ScreenshotsVC";
-            item.detail = @"监测截屏,并删除";
-            item.action = ^{
-                _40ScreenshotsVC *vc = [_40ScreenshotsVC ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_41SlideHeadVC";
-            item.detail = @"滑动头部";
-            item.action = ^{
-                _41SlideHeadVC *vc = [_41SlideHeadVC ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_42MantleVC";
-            item.detail = @"Mantle字典转模型";
-            item.action = ^{
-                _42MantleVC *vc = [_42MantleVC ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [tempArray addObject:item];
-            item.title = @"_43ColorVC";
-            item.detail = @"颜色";
-            item.action = ^{
-                _43ColorVC *vc = [_43ColorVC ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
         
         
         

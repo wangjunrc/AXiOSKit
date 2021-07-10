@@ -241,6 +241,14 @@ def common_pods
   # 颜色 swift库
   pod 'DynamicColor'
   
+  #  弹窗 swift库
+  pod 'SwiftMessages'
+  #图片浏览器,swift库
+  pod 'Lantern'
+  # 圆环进度 
+  pod 'MKRingProgressView'
+  
+  
 end
 
 def app_pods

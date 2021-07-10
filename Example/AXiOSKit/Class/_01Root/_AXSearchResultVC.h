@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _AXSearchResultVC : UITableViewController<UISearchResultsUpdating>
 
-@property (nonatomic, strong) NSMutableArray<_AXCellItem*> *filterArray;
+@property (nonatomic, strong) NSMutableArray<NSMutableArray<_AXCellItem*>*> *filterArray;
 
 @property(nonatomic, copy) void(^searchTextBlock)(NSString *text);
 
