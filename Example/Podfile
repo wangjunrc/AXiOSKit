@@ -230,19 +230,16 @@ def common_pods
   pod 'YYDispatchQueuePool' ,  '~> 1.0'
   pod 'YYKeyboardManager' ,  '~> 1.0.1'
   #  pod 'ZLCollectionViewFlowLayout'
+  
+  # 空白占位
   pod 'TABAnimated', '2.5.5'
   
   # 换行
   pod 'NextGrowingTextView'
   
+  # 字典转模型
   pod 'Mantle'
   
-  #  pod 'Colours'
-  # 颜色 swift库
-  pod 'DynamicColor'
-  
-  #  弹窗 swift库
-  pod 'SwiftMessages'
   #图片浏览器,swift库
   pod 'Lantern'
   # 圆环进度 
