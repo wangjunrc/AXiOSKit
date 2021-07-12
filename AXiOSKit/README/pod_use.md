@@ -260,9 +260,13 @@ pod 'RTRootNavigationController'
 pod 'HCSStarRatingView'
 
 ### 分段
-pod 'FSScrollContentViewLib'
+#### 分段,swift
+pod 'SlideController'
+### 分段,start多
+pod 'JXCategoryView'
 
 ### 时间选择器
+pod 'PGDatePicker'
 ```
 PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
 PGDatePicker *datePicker = datePickManager.datePicker;
@@ -270,7 +274,6 @@ datePicker.datePickerMode = PGDatePickerModeDateHourMinuteSecond;
 datePicker.delegate = self;
 [self presentViewController:datePickManager animated:false completion:nil];
 ```
-pod 'PGDatePicker'
 
 ## 提供了一个可在 iPhone 和 iPad 上使用的具有 UINavigationController 弹出效果的 STPopupController 类, 并能在 Storyboard 上很好的工。
 pod 'STPopupController'
@@ -582,8 +585,7 @@ pod 'NIM_iOS_UIKit'
 ### 时间处理
 pod 'DateTools'
 
-### 分段
-JXCategoryView
+
 
 ### 第三方工具分类
 pod 'JKCategories'
