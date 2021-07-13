@@ -176,6 +176,7 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/APNGKit/APNGKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXCollectionObserve/AXCollectionObserve.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
@@ -238,6 +239,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYDispatchQueuePool/YYDispatchQueuePool.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYKeyboardManager/YYKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYText/YYText.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/fishhook/fishhook.framework"
@@ -246,6 +248,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Debug_α" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/APNGKit/APNGKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXCollectionObserve/AXCollectionObserve.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
@@ -308,6 +311,7 @@ if [[ "$CONFIGURATION" == "Debug_α" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYDispatchQueuePool/YYDispatchQueuePool.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYKeyboardManager/YYKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYText/YYText.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/fishhook/fishhook.framework"
@@ -316,6 +320,7 @@ if [[ "$CONFIGURATION" == "Debug_α" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Debug_β" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/APNGKit/APNGKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXCollectionObserve/AXCollectionObserve.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
@@ -378,6 +383,7 @@ if [[ "$CONFIGURATION" == "Debug_β" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYDispatchQueuePool/YYDispatchQueuePool.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYKeyboardManager/YYKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYText/YYText.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/fishhook/fishhook.framework"
@@ -386,6 +392,7 @@ if [[ "$CONFIGURATION" == "Debug_β" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/APNGKit/APNGKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXCollectionObserve/AXCollectionObserve.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework"
@@ -445,6 +452,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYDispatchQueuePool/YYDispatchQueuePool.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYKeyboardManager/YYKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYText/YYText.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/fishhook/fishhook.framework"

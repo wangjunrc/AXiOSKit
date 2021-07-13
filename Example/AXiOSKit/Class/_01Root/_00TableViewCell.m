@@ -42,7 +42,7 @@
     }];
     
     [self.detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.titleLabel.mas_left);
+        make.left.equalTo(self.titleLabel.mas_left);
         make.top.equalTo(self.titleLabel.mas_bottom).mas_equalTo(10);;
         make.right.mas_lessThanOrEqualTo(-10);
         

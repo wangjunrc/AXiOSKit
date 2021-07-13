@@ -201,7 +201,7 @@ progress {
         //返回数据的序列化器
         AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializer];
         // 返回值过滤 <null>,一般不用,字典转模型就可以过滤
-//        responseSerializer.removesKeysWithNullValues = YES;
+        //        responseSerializer.removesKeysWithNullValues = YES;
         manager.responseSerializer = responseSerializer;
         
         dataTask =  [manager dataTaskWithHTTPMethod:self.httpMethod

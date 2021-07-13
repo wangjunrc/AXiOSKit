@@ -17,7 +17,6 @@
 #import <AXiOSKit/AXConfigureManager.h>
 #import "_02RootVC.h"
 #import "AXTabBarController.h"
-#import "_03RootVC.h"
 
 
 @implementation MakeKeyAndVisible
@@ -63,14 +62,6 @@
 //        [nav.tabBarItem setTitleTextAttributes:noDic forState:UIControlStateNormal];
 //        [nav.tabBarItem setTitleTextAttributes:seDic forState:UIControlStateSelected];
         
-        [temp addObject:nav];
-    }
-    
-    {
-        _03RootVC *roorvc = [[_03RootVC alloc]init];
-        DemoNavigationController *nav = [[DemoNavigationController alloc]initWithRootViewController:roorvc];
-//        nav.tabBarItem.title=@"隐藏导航";
-//        nav.tabBarItem.image=[UIImage imageNamed:@"tab_3"];
         [temp addObject:nav];
     }
     

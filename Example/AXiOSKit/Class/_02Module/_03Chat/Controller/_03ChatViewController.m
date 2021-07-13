@@ -79,8 +79,8 @@
     
     [aView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.leading.equalTo(@0);
-                make.width.mas_equalTo(self.view);
-        make.height.mas_offset(200);
+                make.width.equalTo(self.view);
+        make.height.mas_equalTo(200);
 //                make.top.equalTo(self.yq_safe_top);
                 make.bottom.equalTo(self.yq_safe_bottom);
             }];

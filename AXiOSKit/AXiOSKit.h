@@ -73,6 +73,7 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "UIView+AXSheet.h"
 #import "UIView+AXSnapshot.h"
 #import "UIViewController+AXAlert.h"
+#import "UIViewController+AXPhoto.h"
 #import "UIViewController+AXKit.h"
 #import "UIWindow+AXKit.h"
 

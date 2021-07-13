@@ -7,16 +7,13 @@
 //  Copyright © 2020 liu.weixing. All rights reserved.
 //
 
-#import "AnimRefreshFooter.h"
-#import "AnimRefreshHeader.h"
-#import "CopyActivity.h"
-#import "MyActivity.h"
-#import "RouterManager.h"
+#import "AXUserSwiftImport.h"
 #import "_00TableViewCell.h"
 #import "_01ContentViewController.h"
 #import "_01HeaderView.h"
 #import "_01RootVC.h"
 #import "_02NavColorViewController.h"
+#import "_02QQZoneController.h"
 #import "_03ChatViewController.h"
 #import "_04RunLoopViewController.h"
 #import "_05WebVC.h"
@@ -25,9 +22,11 @@
 #import "_08MP3VC.h"
 #import "_09AFNViewController.h"
 #import "_10TextFViewController.h"
+#import "_11MasonryTableVC.h"
+#import "_11MasonryVC.h"
+#import "_13AnimatedImageVC.h"
 #import "_13SDWebImageVC.h"
-#import "_13WeImageTableViewController.h"
-#import "_13WebpViewController.h"
+#import "_13SDWebImageVC.h"
 #import "_14TextFieldVC.h"
 #import "_15UIMenuController.h"
 #import "_16KeyChainViewController.h"
@@ -61,25 +60,24 @@
 #import "_36YYKitTestVC.h"
 #import "_37FileManagerVC.h"
 #import "_38DirectionVC.h"
-#import "_39MasonryViewController.h"
 #import "_40ScreenshotsVC.h"
 #import "_41SlideHeadVC.h"
-#import <AXiOSKit/AXPayVC.h>
-#import <AXiOSKit/AXPresentGesturesBack.h>
-#import <AXiOSKit/AXSystemAuthorizerManager.h>
-#import <AXiOSKit/UIViewController+AXNavBarConfig.h>
-#import <ReactiveObjC/ReactiveObjC.h>
-#import <mach/mach.h>
-#import "Person.h"
-#import <AXCollectionObserve/AXCollectionObserve.h>
-#import "_02QQZoneController.h"
-#import "_AXSearchResultVC.h"
-#import "_AXCellItem.h"
 #import "_42MantleVC.h"
 #import "_43ColorVC.h"
-#import "AXUserSwiftImport.h"
-@import CocoaDebug;
+#import "_AXCellItem.h"
+#import "_AXSearchResultVC.h"
+#import "_AXTestActivity.h"
+#import "_AXTestActivity2.h"
+#import "_AXTestAnimRefreshFooter.h"
+#import "_AXTestAnimRefreshHeader.h"
+#import "_AXTestPerson.h"
+#import "_AXTestRouterManager.h"
+#import <mach/mach.h>
+@import AXCollectionObserve;
+@import AXiOSKit;
 @import AssetsLibrary;
+@import CocoaDebug;
+@import ReactiveObjC;
 
 @interface _01RootVC ()<UISearchControllerDelegate>
 
@@ -176,7 +174,7 @@
     } else {
         return @"第三方组件控制器";
     }
-   
+    
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
@@ -437,7 +435,7 @@
 /// 刷新
 -(void)_createRefresh {
     __weak typeof(self) weakSelf = self;
-    self.tableView.mj_header = [AnimRefreshHeader headerWithRefreshingBlock:^{
+    self.tableView.mj_header = [_AXTestAnimRefreshHeader headerWithRefreshingBlock:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.tableView.mj_header beginRefreshing];
         
@@ -448,7 +446,7 @@
     }];
     
     
-    self.tableView.mj_footer = [AnimRefreshFooter footerWithRefreshingBlock:^{
+    self.tableView.mj_footer = [_AXTestAnimRefreshFooter footerWithRefreshingBlock:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.tableView.mj_footer beginRefreshing];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -615,7 +613,7 @@
 - (NSMutableArray<NSMutableArray<_AXCellItem *> *> *)dataArray {
     if (!_dataArray) {
         
-//        1st,2nd,3rd,4th,5th,6th,7th,8th,9th,10th.
+        //        1st,2nd,3rd,4th,5th,6th,7th,8th,9th,10th.
         
         NSMutableArray<NSMutableArray<_AXCellItem *> *> *_allArray = NSMutableArray.array;
         
@@ -749,6 +747,26 @@
             };
         }
         
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_39MasonryViewController";
+            item.detail = @"Masonry布局";
+            item.action = ^{
+                _11MasonryVC *vc = [_11MasonryVC ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_11MasonryTableVC";
+            item.detail = @"tableView自适应高度";
+            item.action = ^{
+                _11MasonryTableVC *vc = [_11MasonryTableVC ax_init];
+                [self ax_pushVC:vc];
+            };
+        }
         
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
@@ -764,9 +782,9 @@
             _AXCellItem *item = _AXCellItem.alloc.init;
             [_1stArray addObject:item];
             item.title = @"_13WebpViewController";
-            item.detail = @"webp/GIF";
+            item.detail = @"各种格式图片,动画";
             item.action = ^{
-                _13WebpViewController *vc = [[_13WebpViewController alloc] init];
+                _13AnimatedImageVC *vc = [[_13AnimatedImageVC alloc] init];
                 [self ax_pushVC:vc];
             };
         }
@@ -776,7 +794,7 @@
             item.title = @"_13WeImageTableViewController";
             item.detail = @"WeImage";
             item.action = ^{
-                _13WeImageTableViewController *vc = [[_13WeImageTableViewController alloc] init];
+                _13SDWebImageVC *vc = [[_13SDWebImageVC alloc] init];
                 [self ax_pushVC:vc];
             };
         }
@@ -819,6 +837,8 @@
             item.title = @"_17OtherShareViewController";
             item.detail = @"第三方分享";
             item.action = ^{
+                _17OtherShareViewController *vc = [[_17OtherShareViewController alloc] init];
+                [self ax_pushVC:vc];
             };
         }
         {
@@ -1157,16 +1177,6 @@
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
             [_1stArray addObject:item];
-            item.title = @"_39MasonryViewController";
-            item.detail = @"Masonry布局";
-            item.action = ^{
-                _39MasonryViewController *vc = [_39MasonryViewController ax_init];
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [_1stArray addObject:item];
             item.title = @"_40ScreenshotsVC";
             item.detail = @"监测截屏,并删除";
             item.action = ^{
@@ -1293,7 +1303,7 @@
                 UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
                 
                 
-//                vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+                //                vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
                 [self ax_showVC:nav];
                 
             };

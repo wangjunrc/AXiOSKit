@@ -79,6 +79,7 @@
 #import "UIViewController+AXAlert.h"
 #import "UIViewController+AXKit.h"
 #import "UIViewController+AXNavBarConfig.h"
+#import "UIViewController+AXPhoto.h"
 #import "UIWindow+AXKit.h"
 #import "WKWebView+AXKit.h"
 #import "AXDeviceAuthorizationViewController.h"

@@ -38,7 +38,7 @@
     } else {
         return @"第三方组件控制器";
     }
-   
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -64,9 +64,10 @@
     
     {
         NSMutableAttributedString *text = [NSMutableAttributedString.alloc initWithString:item.title];
-        NSRange range = [item.title rangeOfString:self.searchStr];
+        NSRange range = [item.title rangeOfString:self.searchStr options:NSCaseInsensitiveSearch];
         
         if (range.location != NSNotFound) {
+            /// 不区分大小写
             [text addAttributes:@{NSForegroundColorAttributeName:UIColor.redColor} range:range];
         }
         
@@ -77,7 +78,7 @@
     {
         
         NSMutableAttributedString *text = [NSMutableAttributedString.alloc initWithString:item.detail];
-        NSRange range = [item.detail rangeOfString:self.searchStr];
+        NSRange range = [item.detail rangeOfString:self.searchStr options:NSCaseInsensitiveSearch];
         if (range.location != NSNotFound) {
             [text addAttributes:@{NSForegroundColorAttributeName:UIColor.redColor} range:range];
         }

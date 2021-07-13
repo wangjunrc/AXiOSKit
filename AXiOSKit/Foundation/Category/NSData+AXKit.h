@@ -45,5 +45,16 @@ NS_ASSUME_NONNULL_BEGIN
 /// data image 类型
 @property(nonatomic, copy, readonly)NSString *ax_mimeType;
 
+/// NSBundle 工程文件获得data
+/// @param name 文件名
+/// @param ext 拓展
++(instancetype )ax_mainBundleDataName:(NSString *)name
+                       extension:(NSString *)ext;
+
+
+/// NSBundle 工程文件获得data
+/// @param name 文件名
++(instancetype )ax_mainBundleDataName:(NSString *)name;
+
 @end
 NS_ASSUME_NONNULL_END

@@ -23,13 +23,13 @@
     if (data == nil) {
         return nil;
     }
-
+    
     NSMutableString *hexString = [NSMutableString string];
     const unsigned char *p = [data bytes];
     for (int i = 0; i < [data length]; i++) {
         [hexString appendFormat:@"%02x", *p++];
     }
-
+    
     return [hexString uppercaseString];
 }
 
@@ -51,7 +51,7 @@
 
 /**
  NSBundle 文件转data
-
+ 
  @param resource 文件名,带后缀
  @return NSData
  */
@@ -95,7 +95,7 @@
         if (completionHandler) {
             /// 回到主线程
             dispatch_sync(dispatch_get_main_queue(), ^{
-               completionHandler(success,error);
+                completionHandler(success,error);
             });
         }
     }];
@@ -140,5 +140,31 @@
     return nil;
 }
 
+
+/// NSBundle 工程文件获得data
+/// @param name 文件名
+/// @param ext 拓展
++(instancetype )ax_mainBundleDataName:(NSString *)name
+                       extension:(NSString *)ext {
+    
+    /// 方式一
+    NSURL *URL = [NSBundle.mainBundle URLForResource:name withExtension:ext];
+    NSData *data = [NSData dataWithContentsOfURL:URL];
+    
+    /// 方式二
+    //    NSString *path = [NSBundle.mainBundle pathForResource:name ofType:ext];
+    //    SData *data = [NSData dataWithContentsOfFile:path];
+    
+    return data;
+}
+
+/// NSBundle 工程文件获得data
+/// @param name 文件名.含拓展
++(instancetype )ax_mainBundleDataName:(NSString *)name {
+    
+    NSURL *URL = [NSBundle.mainBundle URLForResource:name withExtension:nil];
+    NSData *data = [NSData dataWithContentsOfURL:URL];
+    return data;
+}
 
 @end

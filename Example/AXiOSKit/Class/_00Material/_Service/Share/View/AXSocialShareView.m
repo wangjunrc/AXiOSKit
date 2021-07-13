@@ -40,7 +40,7 @@ static CGFloat const itemH = 80;
     }];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.contentView.mas_top).mas_equalTo(0);
+        make.top.equalTo(self.contentView.mas_top).mas_equalTo(0);
         make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(50);
     }];
@@ -50,7 +50,7 @@ static CGFloat const itemH = 80;
     }];
     
     [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.collBgView.mas_bottom).mas_equalTo(0);
+        make.top.equalTo(self.collBgView.mas_bottom).mas_equalTo(0);
         make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(70);
     }];
@@ -142,7 +142,7 @@ static CGFloat const itemH = 80;
 }
 
 -(void)_collectionViewLayout:(MASConstraintMaker *)make{
-    make.top.mas_equalTo(self.titleLabel.mas_bottom).mas_equalTo(0);
+    make.top.equalTo(self.titleLabel.mas_bottom).mas_equalTo(0);
     make.left.right.mas_equalTo(0);
     make.height.mas_equalTo(itemH*self.dataArray.count+20);
 }

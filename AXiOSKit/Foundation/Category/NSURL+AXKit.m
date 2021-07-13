@@ -22,4 +22,22 @@
     return [NSURL URLWithString:[self.absoluteString ax_addingURLParams:params]];
 }
 
+
+/// NSBundle 工程文件获得 NSURL
+/// @param name 文件名
+/// @param ext 拓展
++(instancetype )ax_mainBundleURLName:(NSString *)name
+                             extension:(NSString *)ext {
+    /// 本地 data
+    NSString *path = [NSBundle.mainBundle pathForResource:name ofType:ext];
+    return [NSURL fileURLWithPath:path];
+}
+
+
++(instancetype ) ax_mainBundleURLName:(NSString *)name {
+    return [self ax_mainBundleURLName:name extension:nil];
+}
+
+
+
 @end

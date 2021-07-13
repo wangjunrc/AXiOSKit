@@ -115,6 +115,11 @@ def common_pods
   pod 'SDWebImageWebPCoder','~> 0.8.1'
   #  pod 'SDWebImage/GIF'
   pod 'SDWebImage','~> 5.11.1'
+  # apng 动画,swift
+  pod 'APNGKit', '~> 1.2.2'
+  pod 'YYImage', '~> 1.0.4'
+  
+  
   # 网络请求模拟库OHHTTPStubs
   pod 'OHHTTPStubs', '~> 9.1.0'
   
@@ -153,6 +158,9 @@ def common_pods
   #  pod 'SocketRocket'
   #pod 'ZLPhotoBrowser'
   
+  #  国产 显示apng
+  pod 'APNGKit', '~> 1.0'
+
   pod 'SocketRocket'
   # 安全集合,这个目前不维护了
   #  pod 'AvoidCrash'

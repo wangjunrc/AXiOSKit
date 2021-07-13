@@ -107,8 +107,9 @@
     
     UILabel *label = UILabel.alloc.init;
     [self.containerView addSubview:label];
-    label.numberOfLines  = 0;    label.backgroundColor = UIColor.blackColor;
-    label.textColor = UIColor.whiteColor;
+    label.numberOfLines  = 0;
+    label.backgroundColor = UIColor.whiteColor;
+    label.textColor = UIColor.blackColor;
     label.text = title;
     
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -120,6 +121,27 @@
     self.bottomAttribute =  label.mas_bottom;
     return label;
 }
+
+-(UILabel *)_dividerLabel:(NSString *)title {
+    
+    UILabel *label = UILabel.alloc.init;
+    [self.containerView addSubview:label];
+    label.numberOfLines  = 0;
+    label.backgroundColor = UIColor.blueColor;
+    label.textColor = UIColor.redColor;
+    label.text = title;
+    label.textAlignment = NSTextAlignmentCenter;
+    
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.centerX.mas_equalTo(0);
+        make.left.mas_equalTo(5);
+        make.right.mas_equalTo(-5);
+    }];
+    self.bottomAttribute =  label.mas_bottom;
+    return label;
+}
+
 
 -(void)_loadConstraintsWithView:(UIView *)aView {
     [self.containerView addSubview:aView];

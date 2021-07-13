@@ -31,22 +31,21 @@
     [self.logoImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(10);
         make.top.mas_offset(10);
-        //        make.bottom.mas_equalTo(self.mas_bottom).mas_offset(-10);
         make.width.height.mas_equalTo(60);
     }];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.logoImgView.mas_right).mas_offset(10);
+        make.left.equalTo(self.logoImgView.mas_right).mas_offset(10);
         make.top.equalTo(self.logoImgView.mas_top);
-        make.right.mas_equalTo(self).mas_offset(-10);
+        make.right.equalTo(self).mas_offset(-10);
     }];
     
     [self.detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.titleLabel.mas_left);
+        make.left.equalTo(self.titleLabel.mas_left);
         make.top.equalTo(self.titleLabel.mas_bottom);
-        make.right.mas_equalTo(self).mas_offset(-10);
+        make.right.equalTo(self).mas_offset(-10);
         
-        make.bottom.mas_equalTo(self.mas_bottom).mas_offset(-30);
+        make.bottom.equalTo(self.mas_bottom).mas_offset(-30);
     }];
 }
 

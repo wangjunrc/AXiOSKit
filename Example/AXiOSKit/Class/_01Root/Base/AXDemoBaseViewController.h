@@ -35,6 +35,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param title 内容
 -(UILabel *)_titlelabel:(NSString *)title;
 
+
+/// 分割线
+/// @param title 文字
+-(UILabel *)_dividerLabel:(NSString *)title;
+
 /// 子约束最后调用一下
 -(void)_lastLoadBottomAttribute;
 

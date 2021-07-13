@@ -7,8 +7,8 @@
 //
 
 #import "_28ShareFileViewController.h"
-#import "MyActivity.h"
-#import "CopyActivity.h"
+#import "_AXTestActivity2.h"
+#import "_AXTestActivity.h"
 #import "_28LocalSocketClientViewController.h"
 #import "_28LocalSocketServiceViewController.h"
 
@@ -108,8 +108,8 @@
 #pragma mark - 方法
 -(void)_test_UIActivity {
     
-    MyActivity *item1 = [[MyActivity alloc] init];
-    CopyActivity *item2 = [[CopyActivity alloc] init];
+    _AXTestActivity2 *item1 = [[_AXTestActivity2 alloc] init];
+    _AXTestActivity *item2 = [[_AXTestActivity alloc] init];
     NSString *url = [[NSBundle mainBundle] pathForResource:@"office.bundle/share2.xlsx" ofType:nil];
     if (!url) {
         [self ax_showAlertByTitle:@"URL不存在"];

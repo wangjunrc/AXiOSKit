@@ -12,8 +12,8 @@
 #import "AXUserSwiftImport.h"
 #import "AppDelegate.h"
 #import "_AXThemeCell.h"
-#import "Person.h"
-#import "RouterManager.h"
+#import "_AXTestPerson.h"
+#import "_AXTestRouterManager.h"
 #import "TestObj.h"
 #import <AXiOSKit/UIScrollView+AXEmptyDataSet.h>
 #import <AXiOSKit/UIViewController+AXNavBarConfig.h>
@@ -660,7 +660,7 @@ void mySLog(NSString *format, ...)
                 
                 [self ax_showAlertByTitle:@"是否调用"
                                   confirm:^{
-                    Person *per = [[Person alloc] init];
+                    _AXTestPerson *per = [[_AXTestPerson alloc] init];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
                     [per performSelector:@selector(test:)];
@@ -692,7 +692,7 @@ void mySLog(NSString *format, ...)
             [tempArray addObject:option];
             option.title = @"路由 - RouterManager";
             option.action = ^{
-                [RouterManager
+                [_AXTestRouterManager
                  openURL:routeNameWith01ViewController
                  withUserInfo:@{ @"navigationController": self.navigationController }
                  completion:^(id _Nonnull result) {

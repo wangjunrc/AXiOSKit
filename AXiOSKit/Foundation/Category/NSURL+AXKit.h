@@ -17,4 +17,15 @@
 /// @param params 参数
 -(NSURL *)ax_addingURLParams:(NSDictionary<NSString*,NSString*>*)params;
 
+
+/// NSBundle 工程文件获得 NSURL
+/// @param name 文件名
+/// @param ext 拓展
++(instancetype )ax_mainBundleURLName:(NSString *)name
+                           extension:(NSString *)ext;
+
+/// NSBundle 工程文件获得 NSURL
+/// @param name 文件名,含拓展
++(instancetype )ax_mainBundleURLName:(NSString *)name;
+
 @end

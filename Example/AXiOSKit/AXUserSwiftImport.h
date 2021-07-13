@@ -18,5 +18,7 @@
 #import "AXiOSKit_Example_Env_1-Swift.h"
 #endif
 
+@import APNGKit;
+
 
 #endif /* AXUserSwiftImport_h */

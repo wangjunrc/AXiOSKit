@@ -55,9 +55,9 @@
     [self.passwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(self.usernameTextField.mas_bottom).mas_equalTo(20);
-        make.width.mas_equalTo(self.usernameTextField.mas_width);
-        make.height.mas_equalTo(self.usernameTextField.mas_height);
-        make.centerX.mas_equalTo(self.usernameTextField.mas_centerX);
+        make.width.equalTo(self.usernameTextField.mas_width);
+        make.height.equalTo(self.usernameTextField.mas_height);
+        make.centerX.equalTo(self.usernameTextField.mas_centerX);
         
     }];
     self.button = [UIButton buttonWithType:UIButtonTypeCustom];

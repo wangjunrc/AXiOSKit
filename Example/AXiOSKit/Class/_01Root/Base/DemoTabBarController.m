@@ -16,7 +16,6 @@
 #import <AXiOSKit/AXConfigureManager.h>
 #import "_02RootVC.h"
 #import "AXTabBarController.h"
-#import "_03RootVC.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 
 @interface DemoTabBarController ()<UITabBarControllerDelegate, CYLTabBarControllerDelegate>
@@ -317,13 +316,6 @@
               CYLTabBarItemSelectedImage :[UIImage imageNamed:@"fishpond_highlight"],
               CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_discover" ofType:@"json"]],
             },
-            @{@"vc":_03RootVC.alloc.init,
-              CYLTabBarItemTitle : @"隐藏导航",
-              CYLTabBarItemImage : [UIImage imageNamed:@"message_normal"],
-              CYLTabBarItemSelectedImage :[UIImage imageNamed:@"message_highlight"],
-              CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_mine" ofType:@"json"]],
-              
-            }
         ];
     }
     return _dataArray;
