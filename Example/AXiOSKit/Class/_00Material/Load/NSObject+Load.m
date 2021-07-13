@@ -17,40 +17,6 @@
 @implementation NSObject (Load)
 
 + (void)load {
-    /// 这个方式,是 UIAlertController init 后改变颜色, 后续使用再改变颜色,以使用颜色为主
-    [UIAlertController ax_replaceClassMethodWithOriginal:@selector(alertControllerWithTitle:message:preferredStyle:) newSelector:@selector(ax_alertControllerWithTitle:message:preferredStyle:)];
-    
-    [UIAlertController ax_replaceInstanceMethodWithOriginal:@selector(addAction:) newSelector:@selector(ax_addAction:)];
-    
-    /// usingBlock: 第一个参数 调用对象,第二个是方法的第一次参数
-//    [UIViewController aspect_hookSelector:@selector(presentViewController:animated:completion:) withOptions:AspectPositionInstead usingBlock:^(id<AspectInfo> aspectInfo,UIViewController *presentViewController) {
-//        /// aspectInfo.arguments.firstObject 就是 presentViewController
-//        if (![presentViewController isKindOfClass:[UIAlertController class]]) {
-//            [aspectInfo.originalInvocation invoke];
-//        }else{
-//            UIAlertController *alertController = (UIAlertController *)presentViewController;
-//            /// 这里用 == nil ,不要用length==0,业务需求不一样
-//            /// UIAlertControllerStyleAlert 才拦截
-//            if (alertController.title != nil || alertController.message != nil || alertController.preferredStyle !=UIAlertControllerStyleAlert) {
-//                [aspectInfo.originalInvocation invoke];
-//            }
-//        }
-//    } error:nil];
-    {
-        /// hook类方法
-        NSError *error;
-        [object_getClass(UIImage.class) aspect_hookSelector:@selector(imageNamed:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo,NSString *imageNamed) {
-            NSInvocation  *invocation = aspectInfo.originalInvocation;
-            if ([imageNamed isEqualToString:@"ax_icon_weixin"]) {
-                id img= nil;
-                img= [UIImage imageNamed:@"chongshe"];
-                [invocation setReturnValue:&img];
-                NSLog(@"替换%@为,img=%@",imageNamed,img);
-            }
-        } error:&error];
-        NSLog(@"ax_imageNamed error== %@",error);
-        
-    }
     
     [NSObject ax_replaceInstanceMethodWithOriginal:@selector(setNilValueForKey:) newSelector:@selector(ax_safe_setNilValueForKey:)];
     
@@ -59,38 +25,6 @@
         NSLog(@"load UIApplicationDidFinishLaunchingNotification====2 %@ ,obj = %@",note.userInfo,note.object);
         [NSNotificationCenter.defaultCenter removeObserver:observer];
     }];
-    
-}
-
-
--(void)ax_addAction:(UIAlertAction *)action{
-//    [action setValue:UIColor.orangeColor forKey:@"_titleTextColor"];
-//    
-//    if (@available(iOS 13.0, *)) {
-//        UIImage *secondImage = [[UIImage systemImageNamed:@"square.and.arrow.up"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//        [action setValue:secondImage forKey:@"image"];
-//    }
-    
-    [self ax_addAction:action];
-}
-
-+ (UIAlertController *)ax_alertControllerWithTitle:(nullable NSString *)title message:(nullable NSString *)message preferredStyle:(UIAlertControllerStyle)preferredStyle {
-    UIAlertController *alert =  [self ax_alertControllerWithTitle:title message:message preferredStyle:preferredStyle];
-    if (alert.title.length) {
-        //修改title字体及颜色
-        NSMutableAttributedString *titleStr = [[NSMutableAttributedString alloc] initWithString:alert.title];
-        [titleStr addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(0, titleStr.string.length)];
-        [titleStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, titleStr.string.length)];
-        [alert setValue:titleStr forKey:@"attributedTitle"];
-    }
-    if(alert.message.length){
-        // 修改message字体及颜色
-        NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:alert.message];
-        [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor greenColor] range:NSMakeRange(0, messageStr.string.length)];
-        [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, messageStr.string.length)];
-        [alert setValue:messageStr forKey:@"attributedMessage"];
-    }
-    return alert;
     
 }
 

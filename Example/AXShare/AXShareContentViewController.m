@@ -38,7 +38,7 @@
     //    [self pushViewController:vc animated:NO];
     //获取分享数据
     [self.extensionContext.inputItems enumerateObjectsUsingBlock:^(NSExtensionItem *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSString* contentText = [obj.attributedContentText string];
+//        NSString* contentText = [obj.attributedContentText string];
         //        if (contentText && contentText.length >0) {
         //             [NSFileManager saveWithUserDefSuite:contentText andKey:ShareTitle];
         //        }else{

@@ -47,28 +47,28 @@
 
         ],
         "AFNetworking": [
-          "~> 4.0.0"
+          ">= 4.0.0"
         ],
         "SDWebImage": [
-
+          ">= 5.11.0"
         ],
         "MJRefresh": [
-
+          ">= 3.7.1"
         ],
         "NullSafe": [
-
+          ">= 2.0"
         ],
         "MJExtension": [
-
+          ">= 3.0.0"
         ],
         "MBProgressHUD": [
-
+          ">= 1.0.0"
         ],
         "DZNEmptyDataSet": [
-
+          ">= 1.8.0"
         ],
         "Masonry": [
-
+          ">= 1.0.0"
         ],
         "Aspects": [
 
@@ -77,7 +77,7 @@
           ">= 3.0.0"
         ],
         "AXViewControllerTransitioning": [
-
+          ">= 1.0.0"
         ],
         "lottie-ios": [
           "~>2.5.3"

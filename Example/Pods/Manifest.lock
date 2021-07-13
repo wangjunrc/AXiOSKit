@@ -30,27 +30,27 @@ PODS:
     - AXiOSKit/Kit (= 2.1.0)
   - AXiOSKit/Foundation (2.1.0)
   - AXiOSKit/Kit (2.1.0):
-    - AFNetworking (~> 4.0.0)
+    - AFNetworking (>= 4.0.0)
     - Aspects
     - AXiOSKit/Foundation
-    - AXViewControllerTransitioning
-    - DZNEmptyDataSet
+    - AXViewControllerTransitioning (>= 1.0.0)
+    - DZNEmptyDataSet (>= 1.8.0)
     - lottie-ios (~> 2.5.3)
-    - Masonry
-    - MBProgressHUD
-    - MJExtension
-    - MJRefresh
-    - NullSafe
+    - Masonry (>= 1.0.0)
+    - MBProgressHUD (>= 1.0.0)
+    - MJExtension (>= 3.0.0)
+    - MJRefresh (>= 3.7.1)
+    - NullSafe (>= 2.0)
     - ReactiveObjC (>= 3.0.0)
-    - SDWebImage
-  - AXViewControllerTransitioning (1.1.2):
-    - AXViewControllerTransitioning/Component (= 1.1.2)
-    - AXViewControllerTransitioning/Core (= 1.1.2)
+    - SDWebImage (>= 5.11.0)
+  - AXViewControllerTransitioning (1.1.3):
+    - AXViewControllerTransitioning/Component (= 1.1.3)
+    - AXViewControllerTransitioning/Core (= 1.1.3)
     - ReactiveObjC (>= 3.0.0)
-  - AXViewControllerTransitioning/Component (1.1.2):
+  - AXViewControllerTransitioning/Component (1.1.3):
     - AXViewControllerTransitioning/Core
     - ReactiveObjC (>= 3.0.0)
-  - AXViewControllerTransitioning/Core (1.1.2):
+  - AXViewControllerTransitioning/Core (1.1.3):
     - ReactiveObjC (>= 3.0.0)
   - Bagel (1.4.0):
     - CocoaAsyncSocket
@@ -142,12 +142,12 @@ PODS:
   - MBProgressHUD (1.2.0)
   - MGJRouter (0.10.0)
   - MGSwipeTableCell (1.6.11)
-  - MJExtension (3.2.4)
-  - MJRefresh (3.6.1)
+  - MJExtension (3.3.0)
+  - MJRefresh (3.7.1)
   - MKRingProgressView (2.2.3)
-  - MMKV (1.2.9):
-    - MMKVCore (~> 1.2.9)
-  - MMKVCore (1.2.9)
+  - MMKV (1.2.10):
+    - MMKVCore (~> 1.2.10)
+  - MMKVCore (1.2.10)
   - MonkeyKing (2.1.0)
   - MQTTClient (0.15.3):
     - MQTTClient/Core (= 0.15.3)
@@ -538,17 +538,18 @@ PODS:
   - YYText (1.0.7)
 
 DEPENDENCIES:
-  - AFNetworking
+  - AFNetworking (~> 4.0.1)
   - APNGKit (~> 1.0)
   - APNGKit (~> 1.2.2)
+  - Aspects (~> 1.4.1)
   - AXCollectionObserve (~> 1.1.1)
   - AXiOSKit (from `../`)
-  - AXViewControllerTransitioning (from `../../AXViewControllerTransitioning`)
+  - AXViewControllerTransitioning (~> 1.1.3)
   - Bagel (~> 1.4.0)
   - Canvas (~> 0.1.2)
   - CocoaAsyncSocket (~> 7.6.5)
   - CocoaDebug (~> 1.6.3)
-  - CocoaLumberjack
+  - CocoaLumberjack (~> 3.7.2)
   - CTMediator
   - CYLTabBarController/Lottie
   - DoraemonKit/Core (~> 3.0.7)
@@ -556,36 +557,41 @@ DEPENDENCIES:
   - DoraemonKit/WithGPS (~> 3.0.7)
   - DoraemonKit/WithLoad (~> 3.0.7)
   - DoraemonKit/WithLogger (~> 3.0.7)
+  - DZNEmptyDataSet (~> 1.8.1)
   - FBSnapshotTestCase
-  - fishhook
+  - fishhook (~> 0.2)
   - GDataXML-HTML (~> 1.4.1)
-  - GSKStretchyHeaderView
-  - IGListKit
-  - IQKeyboardManager
-  - JJException
+  - GSKStretchyHeaderView (~> 1.0.4)
+  - IGListKit (~> 4.0.0)
+  - IQKeyboardManager (~> 6.5.6)
+  - JJException (~> 0.2.9)
   - Kiwi
   - Lantern
   - lottie-ios (~> 2.5.3)
   - Mantle
-  - Masonry
+  - Masonry (~> 1.1.0)
+  - MBProgressHUD (~> 1.2.0)
   - MGJRouter
   - MGSwipeTableCell (~> 1.6.11)
+  - MJExtension (~> 3.3.0)
+  - MJRefresh (~> 3.7.1)
   - MKRingProgressView
   - MMKV (~> 1.2.7)
   - MonkeyKing (~> 2.1.0)
-  - MQTTClient
+  - MQTTClient (~> 0.15.3)
   - MQTTClient/Websocket
   - NextGrowingTextView
+  - NullSafe (~> 2.0)
   - OHHTTPStubs (~> 9.1.0)
   - PromisesObjC (~> 1.2.12)
   - Protobuf (~> 3.15.8)
   - QMUIKit (~> 4.2.3)
   - ReactiveObjC (~> 3.1.0)
-  - RMQClient
+  - RMQClient (~> 0.9.0)
   - SDWebImage (~> 5.11.1)
   - SDWebImageFLPlugin (~> 0.5.0)
   - SDWebImageWebPCoder (~> 0.8.1)
-  - SocketRocket
+  - SocketRocket (~> 0.5.1)
   - SSKeychain
   - SSZipArchive
   - TABAnimated (= 2.5.5)
@@ -606,6 +612,7 @@ SPEC REPOS:
     - APNGKit
     - Aspects
     - AXCollectionObserve
+    - AXViewControllerTransitioning
     - Bagel
     - Canvas
     - CocoaAsyncSocket
@@ -675,16 +682,14 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   AXiOSKit:
     :path: "../"
-  AXViewControllerTransitioning:
-    :path: "../../AXViewControllerTransitioning"
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   APNGKit: 939475205746e11a212c265f39dbb9dca70011e8
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AXCollectionObserve: 0553a382e43d0a4482831c5d87243a146ae946c3
-  AXiOSKit: 8492b86e852aa5e8dafb6d0a4cfe9653b5ea4343
-  AXViewControllerTransitioning: a5b58c7504c9ef76298da0f5d3e908f330c9a9f9
+  AXiOSKit: ed2e17ae6bcfeec0b1121a030b685a0da24107fb
+  AXViewControllerTransitioning: 0ba0b9d3403719756f72814f3e39f0abe02157e6
   Bagel: c3fa6bcbd52db9ca976edbafd7638f0553ded101
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
@@ -715,11 +720,11 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MGJRouter: 15d94541eb2cc81eff7d577337288feb7ae9575f
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
-  MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
-  MJRefresh: d2c1970d1cf6e77fcfcdfe76c943dfab8dbfa5c1
+  MJExtension: 01704cca2b60a214c10761b6491eab74069d68a9
+  MJRefresh: c7f1edbaa1f401810f2dc356de2355f68c78d4ca
   MKRingProgressView: 404b3157e7a533ab8668d29ec20042c35d12ca1d
-  MMKV: ce972c7bec17ec7aba068562820b829d4cee100c
-  MMKVCore: 27bf04f4376305c9c0187136a7b58a236ee83f9e
+  MMKV: 76033b9ace2006623308910a3afcc0e25eba3140
+  MMKVCore: b00e7a09ec77a1b916aef336eedd3b99ec249978
   MonkeyKing: 1656e3e01911b5f72f988d4496c1cc988d0c009c
   MQTTClient: 0dfa04e789479c2e461786464969895c1fcb0875
   NextGrowingTextView: 3b34f8f10b49b10bd58b61c476ca9b1c58cad380
@@ -751,6 +756,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 4eaafc14e9e5032430c2c0eb9f737e033a884940
+PODFILE CHECKSUM: 1109da9af4da15db7455e340b8f4254f3edcb4da
 
 COCOAPODS: 1.10.1

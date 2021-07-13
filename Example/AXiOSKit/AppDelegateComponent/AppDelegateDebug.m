@@ -131,10 +131,16 @@
 - (void)handleCrashException:(NSString*)exceptionMessage
            exceptionCategory:(JJExceptionGuardCategory)exceptionCategory
                    extraInfo:(nullable NSDictionary*)info{
-    NSLog(@"监测到奔溃 exceptionMessage=%@,exceptionCategory=%ld,info=%@",exceptionMessage,exceptionCategory,info);
+    NSLog(@"_监测到奔溃 exceptionMessage=%@,exceptionCategory=%ld,info=%@",exceptionMessage,exceptionCategory,info);
+
+    
 }
 
 - (void)handleCrashException:(nonnull NSString *)exceptionMessage extraInfo:(nullable NSDictionary *)info {
+
+    NSLog(@"_监测到奔溃1 exceptionMessage=%@,info=%@",exceptionMessage,info);
+
+    [ax_currentViewController() ax_showAlertByTitle:[NSString stringWithFormat:@"监测到奔溃2=%@",exceptionMessage]];
     
 }
 

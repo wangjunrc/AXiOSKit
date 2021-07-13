@@ -7,113 +7,35 @@
 //
 
 #import "_18MGSwipeTableVC.h"
-#import <MGSwipeTableCell/MGSwipeTableCell.h>
-#import <Masonry/Masonry.h>
-#import <AXiOSKit/AXiOSKit.h>
-#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
-#import "_AXSearchResultVC.h"
 #import "_01ContentViewController.h"
-@interface MyTableViewCell : UITableViewCell
-@property(nonatomic, strong)UIImageView *imageView1;
-@end
+@import MGSwipeTableCell;
+@import AXiOSKit;
 
-@implementation MyTableViewCell
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        
-        self.imageView1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"instruction.jpg"]];
-        self.imageView1.contentMode = UIViewContentModeScaleAspectFill;
-        [self.contentView addSubview:self.imageView1];
-        [self.imageView1 mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.edges.equalTo(self.view);
-            make.top.left.right.equalTo(self.contentView);
-            make.width.equalTo(self.contentView);
-        }];
-        
-        [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(self.imageView1);
-        }];
-        
-    }
-    return self;
-}
-@end
 @interface _18MGSwipeTableVC ()<MGSwipeTableCellDelegate>
 
 @end
 
-@interface MyMGSwipeTableCell : MGSwipeTableCell
+@interface _18MGSwipeTableVC ()
 
-@end
-
-@implementation MyMGSwipeTableCell
-
-@end
-
-@interface _18MGSwipeTableVC ()<UISearchControllerDelegate,UISearchResultsUpdating,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
-
-@property (nonatomic,strong) UISearchController *searchController;
-@property(nonatomic, strong) _AXSearchResultVC *resultVC;
-
-@property(nonatomic,copy)NSString *searchText;
 @property(nonatomic, strong) NSMutableArray *dataArray;
 
 @end
 
 
 @implementation _18MGSwipeTableVC
-//- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
-//{
-//    return [UIImage imageNamed:@"chongshe"];
-//}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.title = @"侧滑删除,ax_setEmptyDataWithConfig";
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self.tableView registerClass:MyMGSwipeTableCell.class forCellReuseIdentifier:@"cellID"];
+    [self.tableView registerClass:MGSwipeTableCell.class forCellReuseIdentifier:@"cellID"];
     self.tableView.tableFooterView = UIView.alloc.init;
     
-
-//    self.tableView.emptyDataSetSource = tt;
-//        self.tableView.emptyDataSetDelegate = tt;
-    
-//    [self.tableView ax_emptyDataWithImage:[UIImage imageNamed:@"chongshe"] titlte:@"刷新" reloadBlock:^{
-//        NSLog(@"reloadBlockreloadBlockreloadBlockreloadBlockreloadBlock");
-//    }];
-    
-//    AXEmptyDataSetConfig *config = AXEmptyDataSetConfig.alloc.init;
-//    config.image = [UIImage imageNamed:@"no_data"];
-//    NSString *str1 = @"没有朋友发照片";
-//    NSString *str2 = @"您可以现在就拍一张";
-//    NSString *str3 = [NSString stringWithFormat:@"%@\n%@",str1,str2];
-//
-//    NSMutableAttributedString *title = [NSMutableAttributedString.alloc initWithString:[NSString stringWithFormat:@"%@\n%@",str1,str2]];
-//
-//    [title addAttributes:@{
-//        NSForegroundColorAttributeName:[UIColor ax_colorFromHexString:@"#9D9D9D"],
-//        NSFontAttributeName:[UIFont systemFontOfSize:15]
-//    } range: [str3 rangeOfString:str1]];
-//
-//    [title addAttributes:@{
-//        NSForegroundColorAttributeName:[UIColor ax_colorFromHexString:@"#9D9D9D"],
-//        NSFontAttributeName:[UIFont systemFontOfSize:12]
-//    } range: [str3 rangeOfString:str2]];
-//
-//    NSMutableParagraphStyle *paragrahStyle = [[NSMutableParagraphStyle alloc] init];
-//        [paragrahStyle setAlignment:NSTextAlignmentRight];
-//        [title addAttribute:NSParagraphStyleAttributeName value:paragrahStyle range:NSMakeRange(0, str3.length)];
-//
-//    config.attributedTitle =title;
-//    [self.tableView ax_emptyDataSetWithConfig:config];
-    
-   
     [self.tableView ax_setEmptyDataWithConfig:^(AXEmptyDataSetConfig *config) {
-       
-        config.image = [UIImage imageNamed:@"no_data"];
+        
+        config.image = [UIImage imageNamed:@"西瓜"];
         NSString *str1 = @"没有朋友发照片";
         NSString *str2 = @"您可以现在就拍一张";
         NSString *str3 = [NSString stringWithFormat:@"%@\n%@",str1,str2];
@@ -129,99 +51,32 @@
             NSFontAttributeName:[UIFont systemFontOfSize:12]
         } range: [str3 rangeOfString:str2]];
         config.attributedTitle =title;
-    
-//        config.reload = ^{
-//          
-//        };
+        
+                config.reload = ^{
+                    NSLog(@"点击刷新");
+                };
     }];
     
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"清空" style:0 target:self action:@selector(itemActon)];
     
-    self.resultVC = [_AXSearchResultVC.alloc init];
-    self.resultVC.searchTextBlock = ^(NSString * _Nonnull text) {
-        
-};
+    UIBarButtonItem *item2 = [[UIBarButtonItem alloc]initWithTitle:@"复原" style:0 target:self action:@selector(itemActon2)];
     
-    //创建UISearchController
-        self.searchController = [[UISearchController alloc]initWithSearchResultsController:self.resultVC];
-        //设置代理
-        self.searchController.delegate= self;
-        self.searchController.searchResultsUpdater = self.resultVC;
-        //包着搜索框外层的颜色
-        // self.searchController.searchBar.barTintColor = [UIColor lig];
-        // self.searchController.searchBar.tintColor = [UIColor orangeColor];
-        //提醒字眼
-        self.searchController.searchBar.placeholder= @"搜索";
-        //提前在搜索框内加入搜索词
-//        self.searchController.searchBar.text = @"123";
-        //设置UISearchController的显示属性，以下3个属性默认为YES
-        //搜索时，背景变暗色
-//        self.searchController.dimsBackgroundDuringPresentation = NO;
-        //搜索时，背景变模糊
-        //  self.searchController.obscuresBackgroundDuringPresentation = YES;
-
-        //点击搜索的时候,是否隐藏导航栏
-//        self.searchController.hidesNavigationBarDuringPresentation = YES;
-        //位置
-//        [_searchController.searchBar sizeToFit];
-    
-    
-   
-//    self.searchController.searchBar.top = 100;
-    self.definesPresentationContext = YES;
-    
-//    if (@available(iOS 11.0, *)) {
-//        self.navigationItem.searchController = self.searchController;
-//    } else {
-//        self.tableView.tableHeaderView = self.searchController.searchBar;
-//    }
-    self.tableView.tableHeaderView = self.searchController.searchBar;
-    self.searchController.searchBar.showsScopeBar = NO;
-//    self.searchController.searchBar.showsSearchResultsButton = YES;
-//    self.searchController.searchBar.showsCancelButton = YES;
-//    self.searchController.searchBar.showsBookmarkButton = YES;
-//    self.searchController.searchBar.shouldGroupAccessibilityChildren = YES;
-    
-    
-    
+    self.navigationItem.rightBarButtonItems = @[item,item2];
     
 }
-
-
-- (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
-    
-    //    if (self.searchController.active) {
-    //        return 3;
-    //    }
-    
-    
-    NSLog(@"text = %@, active = %d",searchController.searchBar.text,self.searchController.active);
-    self.searchText =searchController.searchBar.text;
-    if (self.searchText.length>0) {
-        int count = ax_randomFromTo(1, 5);
-          [self.dataArray removeAllObjects];
-          for (int i=0; i<count; i++) {
-              [self.dataArray addObject:searchController.searchBar.text];
-          }
-          [self.tableView reloadData];
-    }
-
-}
-- (void)didDismissSearchController:(UISearchController *)searchController{
-//    searchController.searchBar.text = @"22";
-    [self.dataArray removeAllObjects];
+-(void)itemActon{
+    NSLog(@"itemActon======");
+    self.dataArray = @[].mutableCopy;
     [self.tableView reloadData];
-    
 }
-#pragma mark - Table view data source
 
-
+-(void)itemActon2{
+    NSLog(@"itemActon======");
+    self.dataArray = nil;
+    [self.tableView reloadData];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    if (self.searchController.active) {
-//        return 3;
-//    }
-//    return 10;
-    
     return self.dataArray.count;
 }
 -(CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -231,14 +86,14 @@
     return UITableViewAutomaticDimension;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MyMGSwipeTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld-%@",indexPath.row,self.searchText];
+    MGSwipeTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
+    cell.textLabel.text = self.dataArray[indexPath.row];
     cell.delegate = self;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
- 
+    
     _01ContentViewController *vc = _01ContentViewController.alloc.init;
     
     [self ax_pushVC:vc];
@@ -250,48 +105,96 @@
 -(BOOL) swipeTableCell:(nonnull MGSwipeTableCell*) cell canSwipe:(MGSwipeDirection) direction fromPoint:(CGPoint) point{
     return  direction == MGSwipeDirectionRightToLeft;
 }
+
 -(NSArray*) swipeTableCell:(MGSwipeTableCell*) cell
   swipeButtonsForDirection:(MGSwipeDirection)direction
              swipeSettings:(MGSwipeSettings*) swipeSettings
          expansionSettings:(MGSwipeExpansionSettings*) expansionSettings {
     
     
+    //    swipeSettings.transition = MGSwipeTransitionBorder;
+    //
+    //    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    //    CGSize size =  [UIImage imageNamed:@"cell_right_delete_confirm"].size;
+    //    MGSwipeButton * button = [MGSwipeButton buttonWithType:UIButtonTypeCustom];
+    //
+    //
+    //    [button setEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 10)];
+    //
+    //    button.frame = CGRectMake(0, 0, size.width+10, size.height);
+    //    [button setImage:[UIImage imageNamed:@"cell_right_delete"] forState:UIControlStateNormal];
+    //    [button setImage:[UIImage imageNamed:@"cell_right_delete_confirm"] forState:UIControlStateSelected];
+    
+    
+    
     swipeSettings.transition = MGSwipeTransitionBorder;
+    CGFloat padding = 10;
+    UIImage *normalImage =  [UIImage imageNamed:@"cell_right_delete"];
+    UIImage *selectedImage =  [UIImage imageNamed:@"cell_right_delete_confirm"];
     
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-  CGSize size =  [UIImage imageNamed:@"cell_right_delete_confirm"].size;
+    CGFloat max_width = normalImage.size.width;
+    if (normalImage.size.width < selectedImage.size.width) {
+        max_width = selectedImage.size.width;
+    }
+    
+    CGFloat max_height = normalImage.size.height;
+    if (normalImage.size.height < selectedImage.size.height) {
+        max_height = selectedImage.size.height;
+    }
+    
+    
     MGSwipeButton * button = [MGSwipeButton buttonWithType:UIButtonTypeCustom];
+    [button setEdgeInsets:UIEdgeInsetsMake(0, 0, 0, padding)];
+    button.frame = CGRectMake(0, 0, max_width+padding, max_height);
+    [button setImage:normalImage forState:UIControlStateNormal];
+    [button setImage:selectedImage forState:UIControlStateSelected];
     
     
-    [button setEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 10)];
-    
-    button.frame = CGRectMake(0, 0, size.width+10, size.height);
-    [button setImage:[UIImage imageNamed:@"cell_right_delete"] forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"cell_right_delete_confirm"] forState:UIControlStateSelected];
-    __block typeof(button)weakButton = button;
+    //    __block typeof(button)weakButton = button;
     __block typeof(self)weakSelf = self;
     button.callback = ^BOOL(MGSwipeTableCell * _Nonnull cell) {
-        weakButton.selected = !weakButton.selected;
-        if(weakButton.selected){
-            
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        /// 解决强引用
+        MGSwipeButton * btn = ( MGSwipeButton *)cell.rightButtons.firstObject;
+        if(btn.selected){
+            NSIndexPath *indexPath = [strongSelf.tableView indexPathForCell:cell];
+            [strongSelf deleteRowAction:indexPath];
         }
-        return  !weakButton.selected;
+        btn.selected = !btn.selected;
+        return  !btn.selected;
     };
     return @[button];
     
-   
+    
 }
 
--(void) swipeTableCellWillEndSwiping:(nonnull MGSwipeTableCell *) cell{
+- (void)deleteRowAction:(NSIndexPath *)indexPath{
+    [self.dataArray removeObjectAtIndex:indexPath.row];
+    [self.tableView reloadData];
+}
+
+-(void)swipeTableCellWillEndSwiping:(nonnull MGSwipeTableCell *) cell{
+    
     NSLog(@"swipeTableCellWillEndSwiping %ld",cell.rightButtons.count);
-    MGSwipeButton * button =( MGSwipeButton *) cell.rightButtons.firstObject;
-    button.selected = NO;
+    
+    for ( MGSwipeButton * button in  cell.rightButtons) {
+        button.selected = NO;
+    }
 }
 
 - (NSMutableArray *)dataArray {
     if (!_dataArray) {
         _dataArray = [[NSMutableArray alloc]init];
+        
+        for (int i=0; i<10; i++) {
+            [_dataArray addObject:[NSString stringWithFormat:@"data-%d",i]];
+        }
+        
     }
     return _dataArray;
+}
+
+- (void)dealloc {
+    axLong_dealloc;
 }
 @end

@@ -750,7 +750,7 @@
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
             [_1stArray addObject:item];
-            item.title = @"_39MasonryViewController";
+            item.title = @"_11MasonryVC";
             item.detail = @"Masonry布局";
             item.action = ^{
                 _11MasonryVC *vc = [_11MasonryVC ax_init];
@@ -845,7 +845,7 @@
             _AXCellItem *item = _AXCellItem.alloc.init;
             [_1stArray addObject:item];
             item.title = @"_18MGSwipeTableVC";
-            item.detail = @"SwipeTableVC";
+            item.detail = @"侧滑删除,ax_setEmptyDataWithConfig";
             item.action = ^{
                 _18MGSwipeTableVC *vc = [[_18MGSwipeTableVC alloc] init];
                 [self ax_pushVC:vc];

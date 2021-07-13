@@ -515,7 +515,7 @@ void mySLog(NSString *format, ...)
                     
                 }];
             };
-           
+            
         }
         
         {
@@ -639,8 +639,9 @@ void mySLog(NSString *format, ...)
             option.action = ^{
                 
                 [self ax_showAlertByTitle:@"是否调用"
+                                  message:@"数组nil"
                                   confirm:^{
-//                    Person *per = [[Person alloc] init];
+                    //                    Person *per = [[Person alloc] init];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wnonnull"
                     NSMutableArray *arr = NSMutableArray.array;
@@ -648,6 +649,8 @@ void mySLog(NSString *format, ...)
                     NSLog(@"array=%@",arr);
 #pragma clang diagnostic pop
                     
+                    
+                } cancel:^{
                     
                 }];
             };
@@ -659,6 +662,7 @@ void mySLog(NSString *format, ...)
             option.action = ^{
                 
                 [self ax_showAlertByTitle:@"是否调用"
+                                  message:@"对象未实现方法"
                                   confirm:^{
                     _AXTestPerson *per = [[_AXTestPerson alloc] init];
 #pragma clang diagnostic push
@@ -666,6 +670,8 @@ void mySLog(NSString *format, ...)
                     [per performSelector:@selector(test:)];
 #pragma clang diagnostic pop
                     
+                    
+                } cancel:^{
                     
                 }];
             };
@@ -677,12 +683,15 @@ void mySLog(NSString *format, ...)
             option.action = ^{
                 
                 [self ax_showAlertByTitle:@"是否调用"
+                                  message:@"对象未实现方法"
                                   confirm:^{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
                     [self performSelector:@selector(test2:)];
 #pragma clang diagnostic pop
                     
+                    
+                } cancel:^{
                     
                 }];
             };
@@ -705,15 +714,23 @@ void mySLog(NSString *format, ...)
             [tempArray addObject:option];
             option.title = @"退出-方法1";
             option.action = ^{
-                AppDelegate *app = (AppDelegate*)[UIApplication sharedApplication].delegate;
-                UIWindow *window = app.window;
-                [UIView animateWithDuration:0.4f animations:^{
-                    CGAffineTransform curent =  window.transform;
-                    CGAffineTransform scale = CGAffineTransformScale(curent, 0.1,0.1);
-                    [window setTransform:scale];
-                } completion:^(BOOL finished) {
-                    exit(0);
+                
+                [self ax_showAlertByTitle:@"退出-方法1" message:nil confirm:^{
+                    
+                    AppDelegate *app = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                    UIWindow *window = app.window;
+                    [UIView animateWithDuration:0.4f animations:^{
+                        CGAffineTransform curent =  window.transform;
+                        CGAffineTransform scale = CGAffineTransformScale(curent, 0.1,0.1);
+                        [window setTransform:scale];
+                    } completion:^(BOOL finished) {
+                        exit(0);
+                    }];
+                } cancel:^{
+                    
                 }];
+                
+                
             };
         }
         {
@@ -721,7 +738,13 @@ void mySLog(NSString *format, ...)
             [tempArray addObject:option];
             option.title = @"退出方式-asm_exit,真机有效";
             option.action = ^{
-                asm_exit();
+                
+                [self ax_showAlertByTitle:@"退出方式-asm_exit,真机有效" message:nil confirm:^{
+                    asm_exit();
+                } cancel:^{
+                }];
+                
+                
             };
         }
         {
@@ -729,9 +752,15 @@ void mySLog(NSString *format, ...)
             [tempArray addObject:option];
             option.title = @"退出方式3";
             option.action = ^{
-                if([[UIApplication sharedApplication] respondsToSelector:@selector(terminateWithSuccess)]) {
-                    [[UIApplication sharedApplication] performSelector:@selector(terminateWithSuccess)];
-                }
+                
+                [self ax_showAlertByTitle:@"退出方式-asm_exit,真机有效" message:nil confirm:^{
+                    if([[UIApplication sharedApplication] respondsToSelector:@selector(terminateWithSuccess)]) {
+                        [[UIApplication sharedApplication] performSelector:@selector(terminateWithSuccess)];
+                    }
+                } cancel:^{
+                }];
+                
+                
             };
         }
         
@@ -919,7 +948,7 @@ void mySLog(NSString *format, ...)
                     NSLog(@"AXDemoUser2=%p",AXDemoUser2.alloc.init);
                 };
             }
-    
+            
         }
         
         

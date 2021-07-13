@@ -11,8 +11,6 @@
 		21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */; };
 		210B1ED125EDE40200878A73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 210B1ED425EDE40200878A73 /* Localizable.strings */; };
 		210B1ED225EDE40200878A73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 210B1ED425EDE40200878A73 /* Localizable.strings */; };
-		210B1EE025EE18C200878A73 /* NSBundle+CLLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */; };
-		210B1EE125EE18C200878A73 /* NSBundle+CLLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */; };
 		211226F92573340100B6ECC8 /* AppDelegateWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */; };
 		211227152573340100B6ECC8 /* AppDelegateWX.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */; };
 		2112271B2573340100B6ECC8 /* AppDelegateWCDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EEE25469BBC00E43F16 /* AppDelegateWCDB.mm */; };
@@ -29,12 +27,9 @@
 		2112273A2573340100B6ECC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		211227412573340100B6ECC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDA254003DA00C89B72 /* Assets.xcassets */; };
 		211227562573340100B6ECC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB93254003D900C89B72 /* LaunchScreen.storyboard */; };
-		2112275C2573340100B6ECC8 /* gift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 21799C7B255BDE8500754A8B /* gift.svg */; };
 		2112275D2573340100B6ECC8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB2E254003D900C89B72 /* InfoPlist.strings */; };
 		211227612573340100B6ECC8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB35254003D900C89B72 /* Settings.bundle */; };
 		21122776257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21122775257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist */; };
-		21122777257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21122775257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist */; };
-		211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211227842573361600B6ECC8 /* AXiOSKit-Info.plist */; };
 		211227862573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211227842573361600B6ECC8 /* AXiOSKit-Info.plist */; };
 		2112281925733DF300B6ECC8 /* Assets_env_1.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */; };
 		2118BABD268EE9330016A292 /* _02QQZoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2118BABB268EE9320016A292 /* _02QQZoneController.m */; };
@@ -46,13 +41,10 @@
 		213BCC27254003DB00C89B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB93254003D900C89B72 /* LaunchScreen.storyboard */; };
 		213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDA254003DA00C89B72 /* Assets.xcassets */; };
 		213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBE7254003DB00C89B72 /* AppDelegate.m */; };
-		2150B148269C119100351B10 /* rock.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2150B147269C119100351B10 /* rock.gif */; };
-		2150B149269C119100351B10 /* rock.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2150B147269C119100351B10 /* rock.gif */; };
 		2150B151269C1B8900351B10 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2150B150269C1B8900351B10 /* Image.bundle */; };
 		2150B152269C1B8900351B10 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2150B150269C1B8900351B10 /* Image.bundle */; };
 		2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
-		21799C7C255BDE8500754A8B /* gift.svg in Resources */ = {isa = PBXBuildFile; fileRef = 21799C7B255BDE8500754A8B /* gift.svg */; };
 		217AE9E026974A9600A1A9B2 /* WebviewPreviewViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CB26974A9600A1A9B2 /* WebviewPreviewViewContoller.swift */; };
 		217AE9E126974A9600A1A9B2 /* WebviewPreviewViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CB26974A9600A1A9B2 /* WebviewPreviewViewContoller.swift */; };
 		217AE9E226974A9600A1A9B2 /* PreviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CC26974A9600A1A9B2 /* PreviewManager.swift */; };
@@ -109,8 +101,6 @@
 		218B7960269831B200CEB7E0 /* _22ReacLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 218B795F269831B200CEB7E0 /* _22ReacLoginVC.m */; };
 		218B7963269835A900CEB7E0 /* _22LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218B7962269835A900CEB7E0 /* _22LoginViewModel.m */; };
 		2191A058268AF62C009D9852 /* AXTestString.m in Sources */ = {isa = PBXBuildFile; fileRef = 2191A057268AF62C009D9852 /* AXTestString.m */; };
-		2191A05B268AF7EC009D9852 /* AXTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2191A05A268AF7EC009D9852 /* AXTestViewController.m */; };
-		2191A05C268AF7EC009D9852 /* AXTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2191A05A268AF7EC009D9852 /* AXTestViewController.m */; };
 		219682EE26971BB200FC972D /* _14TextFieldVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 219682ED26971BB200FC972D /* _14TextFieldVC.m */; };
 		219682EF26971BB200FC972D /* _14TextFieldVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 219682ED26971BB200FC972D /* _14TextFieldVC.m */; };
 		219682F62697228500FC972D /* _TestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 219682F52697228500FC972D /* _TestHelper.m */; };
@@ -182,42 +172,20 @@
 		21A61E1E265E7F4A0080E67D /* CustomGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CDF265E7F4A0080E67D /* CustomGifHeader.m */; };
 		21A61E1F265E7F4A0080E67D /* AXSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CE2265E7F4A0080E67D /* AXSwitchView.m */; };
 		21A61E20265E7F4A0080E67D /* AXSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CE2265E7F4A0080E67D /* AXSwitchView.m */; };
-		21A61E21265E7F4A0080E67D /* testWord.docx in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CE5265E7F4A0080E67D /* testWord.docx */; };
-		21A61E22265E7F4A0080E67D /* testWord.docx in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CE5265E7F4A0080E67D /* testWord.docx */; };
-		21A61E23265E7F4A0080E67D /* 支付宝@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CE6265E7F4A0080E67D /* 支付宝@2x.png */; };
-		21A61E24265E7F4A0080E67D /* 支付宝@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CE6265E7F4A0080E67D /* 支付宝@2x.png */; };
-		21A61E25265E7F4A0080E67D /* QQ@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CE7265E7F4A0080E67D /* QQ@2x.png */; };
-		21A61E26265E7F4A0080E67D /* QQ@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CE7265E7F4A0080E67D /* QQ@2x.png */; };
 		21A61E27265E7F4A0080E67D /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CE8265E7F4A0080E67D /* instruction.jpg */; };
 		21A61E28265E7F4A0080E67D /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CE8265E7F4A0080E67D /* instruction.jpg */; };
 		21A61E2B265E7F4A0080E67D /* H5.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CEA265E7F4A0080E67D /* H5.bundle */; };
 		21A61E2C265E7F4A0080E67D /* H5.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CEA265E7F4A0080E67D /* H5.bundle */; };
-		21A61E2D265E7F4A0080E67D /* g3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CEB265E7F4A0080E67D /* g3@2x.png */; };
-		21A61E2E265E7F4A0080E67D /* g3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CEB265E7F4A0080E67D /* g3@2x.png */; };
 		21A61E2F265E7F4A0080E67D /* Alternate_AppIcon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CEC265E7F4A0080E67D /* Alternate_AppIcon_3@2x.png */; };
 		21A61E30265E7F4A0080E67D /* Alternate_AppIcon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CEC265E7F4A0080E67D /* Alternate_AppIcon_3@2x.png */; };
 		21A61E31265E7F4A0080E67D /* PointViewController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CED265E7F4A0080E67D /* PointViewController.plist */; };
 		21A61E32265E7F4A0080E67D /* PointViewController.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CED265E7F4A0080E67D /* PointViewController.plist */; };
-		21A61E33265E7F4A0080E67D /* App.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CEE265E7F4A0080E67D /* App.pdf */; };
-		21A61E34265E7F4A0080E67D /* App.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CEE265E7F4A0080E67D /* App.pdf */; };
 		21A61E35265E7F4A0080E67D /* office.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CEF265E7F4A0080E67D /* office.bundle */; };
 		21A61E36265E7F4A0080E67D /* office.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CEF265E7F4A0080E67D /* office.bundle */; };
 		21A61E37265E7F4A0080E67D /* PointViewController2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF0265E7F4A0080E67D /* PointViewController2.plist */; };
 		21A61E38265E7F4A0080E67D /* PointViewController2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF0265E7F4A0080E67D /* PointViewController2.plist */; };
-		21A61E3D265E7F4A0080E67D /* 微博@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF3265E7F4A0080E67D /* 微博@2x.png */; };
-		21A61E3E265E7F4A0080E67D /* 微博@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF3265E7F4A0080E67D /* 微博@2x.png */; };
-		21A61E3F265E7F4A0080E67D /* share2.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF4265E7F4A0080E67D /* share2.xlsx */; };
-		21A61E40265E7F4A0080E67D /* share2.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF4265E7F4A0080E67D /* share2.xlsx */; };
 		21A61E41265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF5265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png */; };
 		21A61E42265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF5265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png */; };
-		21A61E45265E7F4A0080E67D /* g2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF7265E7F4A0080E67D /* g2@2x.png */; };
-		21A61E46265E7F4A0080E67D /* g2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF7265E7F4A0080E67D /* g2@2x.png */; };
-		21A61E49265E7F4A0080E67D /* 朋友圈@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF9265E7F4A0080E67D /* 朋友圈@2x.png */; };
-		21A61E4A265E7F4A0080E67D /* 朋友圈@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CF9265E7F4A0080E67D /* 朋友圈@2x.png */; };
-		21A61E4B265E7F4A0080E67D /* 微信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CFA265E7F4A0080E67D /* 微信@2x.png */; };
-		21A61E4C265E7F4A0080E67D /* 微信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CFA265E7F4A0080E67D /* 微信@2x.png */; };
-		21A61E4D265E7F4A0080E67D /* testXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CFB265E7F4A0080E67D /* testXML.xml */; };
-		21A61E4E265E7F4A0080E67D /* testXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CFB265E7F4A0080E67D /* testXML.xml */; };
 		21A61E4F265E7F4A0080E67D /* AXUserInfoDao.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D01265E7F4A0080E67D /* AXUserInfoDao.mm */; };
 		21A61E50265E7F4A0080E67D /* AXUserInfoDao.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D01265E7F4A0080E67D /* AXUserInfoDao.mm */; };
 		21A61E51265E7F4A0080E67D /* AXUserLog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D05265E7F4A0080E67D /* AXUserLog.mm */; };
@@ -507,10 +475,9 @@
 		21D2188A2669CE63006E05C9 /* AlertWayClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D218892669CE63006E05C9 /* AlertWayClass.m */; };
 		21D61EEC257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
 		21D61EED257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
+		21E47E17269D66E500D7188F /* UIAlertController+Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E47E16269D66E500D7188F /* UIAlertController+Load.m */; };
 		21E6DE67260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
 		21E6DE68260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
-		21EB382B25DF90C6002C1807 /* ax_debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */; };
-		21EB382C25DF90C6002C1807 /* ax_debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */; };
 		21FC46C32591941900AA253F /* AXDebugManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC46B32591924A00AA253F /* AXDebugManager.m */; };
 		21FC46C82591974300AA253F /* AXDebugUIConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC46B9259192E900AA253F /* AXDebugUIConfig.m */; };
 		21FE556D2696EFFD0025969F /* _43ColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FE556C2696EFFD0025969F /* _43ColorVC.m */; };
@@ -593,8 +560,6 @@
 		210B1EBA25EDE2FB00878A73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		210B1ED325EDE40200878A73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		210B1ED925EDE40600878A73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		210B1EDE25EE18C200878A73 /* NSBundle+CLLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CLLanguage.h"; sourceTree = "<group>"; };
-		210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CLLanguage.m"; sourceTree = "<group>"; };
 		2112276B2573340100B6ECC8 /* AXiOSKit_Example_Env_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXiOSKit_Example_Env_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21122775257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-env-1-Info.plist"; sourceTree = "<group>"; };
 		211227842573361600B6ECC8 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
@@ -613,11 +578,9 @@
 		213BCBE6254003DB00C89B72 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		213BCBE7254003DB00C89B72 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		214F67F62646B9D2006D946B /* AXUserSwiftImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUserSwiftImport.h; sourceTree = "<group>"; };
-		2150B147269C119100351B10 /* rock.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rock.gif; sourceTree = "<group>"; };
 		2150B150269C1B8900351B10 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
 		2152C5B525919C720078D525 /* AXDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugViewController.h; sourceTree = "<group>"; };
 		2152C5B625919C720078D525 /* AXDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugViewController.m; sourceTree = "<group>"; };
-		21799C7B255BDE8500754A8B /* gift.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = gift.svg; sourceTree = "<group>"; };
 		217AE9CB26974A9600A1A9B2 /* WebviewPreviewViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebviewPreviewViewContoller.swift; sourceTree = "<group>"; };
 		217AE9CC26974A9600A1A9B2 /* PreviewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewManager.swift; sourceTree = "<group>"; };
 		217AE9CD26974A9600A1A9B2 /* FileListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListViewController.swift; sourceTree = "<group>"; };
@@ -667,8 +630,6 @@
 		218B7961269835A900CEB7E0 /* _22LoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _22LoginViewModel.h; sourceTree = "<group>"; };
 		218B7962269835A900CEB7E0 /* _22LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _22LoginViewModel.m; sourceTree = "<group>"; };
 		2191A057268AF62C009D9852 /* AXTestString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXTestString.m; sourceTree = "<group>"; };
-		2191A059268AF7EC009D9852 /* AXTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXTestViewController.h; sourceTree = "<group>"; };
-		2191A05A268AF7EC009D9852 /* AXTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXTestViewController.m; sourceTree = "<group>"; };
 		219682EC26971BB200FC972D /* _14TextFieldVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _14TextFieldVC.h; sourceTree = "<group>"; };
 		219682ED26971BB200FC972D /* _14TextFieldVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _14TextFieldVC.m; sourceTree = "<group>"; };
 		219682F42697228500FC972D /* _TestHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _TestHelper.h; sourceTree = "<group>"; };
@@ -730,24 +691,13 @@
 		21A61CE1265E7F4A0080E67D /* _AXTestActivity2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _AXTestActivity2.h; sourceTree = "<group>"; };
 		21A61CE2265E7F4A0080E67D /* AXSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXSwitchView.m; sourceTree = "<group>"; };
 		21A61CE3265E7F4A0080E67D /* AXXSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXXSwitch.h; sourceTree = "<group>"; };
-		21A61CE5265E7F4A0080E67D /* testWord.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = testWord.docx; sourceTree = "<group>"; };
-		21A61CE6265E7F4A0080E67D /* 支付宝@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "支付宝@2x.png"; sourceTree = "<group>"; };
-		21A61CE7265E7F4A0080E67D /* QQ@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ@2x.png"; sourceTree = "<group>"; };
 		21A61CE8265E7F4A0080E67D /* instruction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instruction.jpg; sourceTree = "<group>"; };
 		21A61CEA265E7F4A0080E67D /* H5.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = H5.bundle; sourceTree = "<group>"; };
-		21A61CEB265E7F4A0080E67D /* g3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "g3@2x.png"; sourceTree = "<group>"; };
 		21A61CEC265E7F4A0080E67D /* Alternate_AppIcon_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_3@2x.png"; sourceTree = "<group>"; };
 		21A61CED265E7F4A0080E67D /* PointViewController.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PointViewController.plist; sourceTree = "<group>"; };
-		21A61CEE265E7F4A0080E67D /* App.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = App.pdf; sourceTree = "<group>"; };
 		21A61CEF265E7F4A0080E67D /* office.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = office.bundle; sourceTree = "<group>"; };
 		21A61CF0265E7F4A0080E67D /* PointViewController2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PointViewController2.plist; sourceTree = "<group>"; };
-		21A61CF3265E7F4A0080E67D /* 微博@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微博@2x.png"; sourceTree = "<group>"; };
-		21A61CF4265E7F4A0080E67D /* share2.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = share2.xlsx; sourceTree = "<group>"; };
 		21A61CF5265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alternate_AppIcon_2@2x.png"; sourceTree = "<group>"; };
-		21A61CF7265E7F4A0080E67D /* g2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "g2@2x.png"; sourceTree = "<group>"; };
-		21A61CF9265E7F4A0080E67D /* 朋友圈@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "朋友圈@2x.png"; sourceTree = "<group>"; };
-		21A61CFA265E7F4A0080E67D /* 微信@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信@2x.png"; sourceTree = "<group>"; };
-		21A61CFB265E7F4A0080E67D /* testXML.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testXML.xml; sourceTree = "<group>"; };
 		21A61CFC265E7F4A0080E67D /* XWShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWShadow.h; sourceTree = "<group>"; };
 		21A61D00265E7F4A0080E67D /* AXUserInfoDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXUserInfoDao.h; sourceTree = "<group>"; };
 		21A61D01265E7F4A0080E67D /* AXUserInfoDao.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AXUserInfoDao.mm; sourceTree = "<group>"; };
@@ -1005,6 +955,8 @@
 		21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		21D61EEB257F106E0059201A /* DogSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSwift.swift; sourceTree = "<group>"; };
 		21D83B3A255A28BE00695C28 /* rac.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = rac.md; sourceTree = "<group>"; };
+		21E47E15269D66E500D7188F /* UIAlertController+Load.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Load.h"; sourceTree = "<group>"; };
+		21E47E16269D66E500D7188F /* UIAlertController+Load.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Load.m"; sourceTree = "<group>"; };
 		21E6DE65260494060092051F /* DogOC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogOC.h; sourceTree = "<group>"; };
 		21E6DE66260494060092051F /* DogOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogOC.m; sourceTree = "<group>"; };
 		21EB382A25DF90C6002C1807 /* ax_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ax_debug.xcconfig; sourceTree = "<group>"; };
@@ -1428,8 +1380,10 @@
 			isa = PBXGroup;
 			children = (
 				219682F92697279000FC972D /* _Controller */,
+				21E47E13269D65AD00D7188F /* _Debug */,
 				219682FA269727B200FC972D /* _Model */,
 				21A61D56265E7F4A0080E67D /* _Service */,
+				21E47E14269D661F00D7188F /* _TestSwift */,
 				219682F82697270E00FC972D /* _View */,
 				219682FB2697281000FC972D /* Item */,
 				21A61CC4265E7F4A0080E67D /* Load */,
@@ -1481,6 +1435,8 @@
 				21A61CC8265E7F4A0080E67D /* UIImage+Load.m */,
 				21A61CCC265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.h */,
 				21A61CC6265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.m */,
+				21E47E15269D66E500D7188F /* UIAlertController+Load.h */,
+				21E47E16269D66E500D7188F /* UIAlertController+Load.m */,
 			);
 			path = Load;
 			sourceTree = "<group>";
@@ -1488,26 +1444,14 @@
 		21A61CE4265E7F4A0080E67D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				21A61CF9265E7F4A0080E67D /* 朋友圈@2x.png */,
-				21A61CF3265E7F4A0080E67D /* 微博@2x.png */,
-				21A61CFA265E7F4A0080E67D /* 微信@2x.png */,
-				21A61CE6265E7F4A0080E67D /* 支付宝@2x.png */,
 				21A61CF5265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png */,
 				21A61CEC265E7F4A0080E67D /* Alternate_AppIcon_3@2x.png */,
-				21A61CEE265E7F4A0080E67D /* App.pdf */,
-				21A61CF7265E7F4A0080E67D /* g2@2x.png */,
-				21A61CEB265E7F4A0080E67D /* g3@2x.png */,
 				2150B150269C1B8900351B10 /* Image.bundle */,
 				21A61CE8265E7F4A0080E67D /* instruction.jpg */,
 				21A61F1F265E7F680080E67D /* Lottie-Files */,
 				21A61CEF265E7F4A0080E67D /* office.bundle */,
 				21A61CED265E7F4A0080E67D /* PointViewController.plist */,
 				21A61CF0265E7F4A0080E67D /* PointViewController2.plist */,
-				21A61CE7265E7F4A0080E67D /* QQ@2x.png */,
-				2150B147269C119100351B10 /* rock.gif */,
-				21A61CF4265E7F4A0080E67D /* share2.xlsx */,
-				21A61CE5265E7F4A0080E67D /* testWord.docx */,
-				21A61CFB265E7F4A0080E67D /* testXML.xml */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1977,6 +1921,30 @@
 			path = _11Masonry;
 			sourceTree = "<group>";
 		};
+		21E47E13269D65AD00D7188F /* _Debug */ = {
+			isa = PBXGroup;
+			children = (
+				21FC46B22591924A00AA253F /* AXDebugManager.h */,
+				21FC46B32591924A00AA253F /* AXDebugManager.m */,
+				21FC46B8259192E900AA253F /* AXDebugUIConfig.h */,
+				21FC46B9259192E900AA253F /* AXDebugUIConfig.m */,
+				21FC46BE259193B900AA253F /* AXDebugUIConfigProtocol.h */,
+				2152C5B525919C720078D525 /* AXDebugViewController.h */,
+				2152C5B625919C720078D525 /* AXDebugViewController.m */,
+			);
+			path = _Debug;
+			sourceTree = "<group>";
+		};
+		21E47E14269D661F00D7188F /* _TestSwift */ = {
+			isa = PBXGroup;
+			children = (
+				21E6DE65260494060092051F /* DogOC.h */,
+				21E6DE66260494060092051F /* DogOC.m */,
+				21D61EEB257F106E0059201A /* DogSwift.swift */,
+			);
+			path = _TestSwift;
+			sourceTree = "<group>";
+		};
 		21EB383525DF90E1002C1807 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -2055,33 +2023,18 @@
 				21898F312541B11D00876524 /* Application.m */,
 				2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */,
 				213BCBDA254003DA00C89B72 /* Assets.xcassets */,
-				21FC46B22591924A00AA253F /* AXDebugManager.h */,
-				21FC46B32591924A00AA253F /* AXDebugManager.m */,
-				21FC46B8259192E900AA253F /* AXDebugUIConfig.h */,
-				21FC46B9259192E900AA253F /* AXDebugUIConfig.m */,
-				21FC46BE259193B900AA253F /* AXDebugUIConfigProtocol.h */,
-				2152C5B525919C720078D525 /* AXDebugViewController.h */,
-				2152C5B625919C720078D525 /* AXDebugViewController.m */,
 				21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */,
 				21122775257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist */,
 				211227842573361600B6ECC8 /* AXiOSKit-Info.plist */,
 				6003F59B195388D20070C39A /* AXiOSKit-Prefix.pch */,
 				213BCBD7254003DA00C89B72 /* AXiOSKitExampleRelease.entitlements */,
-				2191A059268AF7EC009D9852 /* AXTestViewController.h */,
-				2191A05A268AF7EC009D9852 /* AXTestViewController.m */,
 				214F67F62646B9D2006D946B /* AXUserSwiftImport.h */,
 				213BCB92254003D900C89B72 /* Base.lproj */,
-				21E6DE65260494060092051F /* DogOC.h */,
-				21E6DE66260494060092051F /* DogOC.m */,
-				21D61EEB257F106E0059201A /* DogSwift.swift */,
 				213BCB2D254003D900C89B72 /* en.lproj */,
-				21799C7B255BDE8500754A8B /* gift.svg */,
 				210B1ED425EDE40200878A73 /* Localizable.strings */,
 				6003F599195388D20070C39A /* main.m */,
 				213BCB30254003D900C89B72 /* MakeKeyAndVisible.h */,
 				213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */,
-				210B1EDE25EE18C200878A73 /* NSBundle+CLLanguage.h */,
-				210B1EDF25EE18C200878A73 /* NSBundle+CLLanguage.m */,
 				213BCBE0254003DA00C89B72 /* SceneDelegate.h */,
 				213BCB34254003D900C89B72 /* SceneDelegate.m */,
 				213BCB35254003D900C89B72 /* Settings.bundle */,
@@ -2257,7 +2210,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AX;
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = axinger;
 				TargetAttributes = {
 					211226EE2573340100B6ECC8 = {
@@ -2335,7 +2288,6 @@
 				21A61F66265E7F680080E67D /* vcTransition2.json in Resources */,
 				21A61C5D265E7E720080E67D /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				21A61F40265E7F680080E67D /* Switch.json in Resources */,
-				21A61E4E265E7F4A0080E67D /* testXML.xml in Resources */,
 				211227862573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */,
 				21A61F7A265E7F680080E67D /* gray_tabbar_message_animation.json in Resources */,
 				2112281925733DF300B6ECC8 /* Assets_env_1.xcassets in Resources */,
@@ -2344,32 +2296,23 @@
 				21A61F42265E7F680080E67D /* green_lottie_tab_news.json in Resources */,
 				21A61F6E265E7F680080E67D /* EmptyStatus.json in Resources */,
 				217AE9F926974A9600A1A9B2 /* PreviewTransitionViewController.xib in Resources */,
-				21EB382C25DF90C6002C1807 /* ax_debug.xcconfig in Resources */,
 				21A61DE4265E7F4A0080E67D /* _26RMQClientViewController.xib in Resources */,
 				210B1ED225EDE40200878A73 /* Localizable.strings in Resources */,
 				21A61ED4265E7F4B0080E67D /* time_line_list.json in Resources */,
-				21A61E34265E7F4A0080E67D /* App.pdf in Resources */,
 				21A61F5E265E7F680080E67D /* Edit.json in Resources */,
 				21A61F4E265E7F680080E67D /* lf20_loading_failure.json in Resources */,
 				21A61E38265E7F4A0080E67D /* PointViewController2.plist in Resources */,
-				21A61E46265E7F4A0080E67D /* g2@2x.png in Resources */,
 				21A61EA0265E7F4B0080E67D /* orgTitle.js in Resources */,
 				21A61F74265E7F680080E67D /* RectComp.json in Resources */,
 				21A61F70265E7F680080E67D /* lf20_loading_success.json in Resources */,
-				21A61E4C265E7F4A0080E67D /* 微信@2x.png in Resources */,
 				21A61F62265E7F680080E67D /* lf20_loading.json in Resources */,
 				21A61F46265E7F680080E67D /* newAnimation.json in Resources */,
 				21A61F56265E7F680080E67D /* vcTransition1.json in Resources */,
 				21A61F44265E7F680080E67D /* HappyBirthday.json in Resources */,
-				21A61E4A265E7F4A0080E67D /* 朋友圈@2x.png in Resources */,
 				21A61F48265E7F680080E67D /* RefreshFooterAnim.json in Resources */,
-				21A61E22265E7F4A0080E67D /* testWord.docx in Resources */,
 				21A61E28265E7F4A0080E67D /* instruction.jpg in Resources */,
 				217AE9F726974A9600A1A9B2 /* pdf@2x.png in Resources */,
 				21A61F54265E7F680080E67D /* gray_tabbar_me_animation.json in Resources */,
-				21A61E2E265E7F4A0080E67D /* g3@2x.png in Resources */,
-				21A61E3E265E7F4A0080E67D /* 微博@2x.png in Resources */,
-				21A61E26265E7F4A0080E67D /* QQ@2x.png in Resources */,
 				217AE9ED26974A9600A1A9B2 /* WebviewPreviewViewContoller.xib in Resources */,
 				21A61F52265E7F680080E67D /* green_lottie_tab_home.json in Resources */,
 				217AE9F126974A9600A1A9B2 /* documents@2x.png in Resources */,
@@ -2379,20 +2322,15 @@
 				21A61E86265E7F4B0080E67D /* _23FullViewController.xib in Resources */,
 				211227562573340100B6ECC8 /* LaunchScreen.storyboard in Resources */,
 				217AE9F326974A9600A1A9B2 /* file@2x.png in Resources */,
-				21A61E40265E7F4A0080E67D /* share2.xlsx in Resources */,
 				21A61F68265E7F680080E67D /* lf20_4dkca9bw.json in Resources */,
 				21A61F5C265E7F680080E67D /* tab_me_animate.json in Resources */,
 				21A61DE8265E7F4A0080E67D /* _28LocalSocketServiceViewController.xib in Resources */,
 				21A61F16265E7F4B0080E67D /* _03ChatViewController.xib in Resources */,
-				21122777257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist in Resources */,
-				2112275C2573340100B6ECC8 /* gift.svg in Resources */,
 				2112275D2573340100B6ECC8 /* InfoPlist.strings in Resources */,
-				2150B149269C119100351B10 /* rock.gif in Resources */,
 				217AE9E926974A9600A1A9B2 /* folder@2x.png in Resources */,
 				21A61F50265E7F680080E67D /* LottieLogo.json in Resources */,
 				2150B152269C1B8900351B10 /* Image.bundle in Resources */,
 				21A61F64265E7F680080E67D /* tab_search_animate.json in Resources */,
-				21A61E24265E7F4A0080E67D /* 支付宝@2x.png in Resources */,
 				21A61F60265E7F680080E67D /* tab_home_animate.json in Resources */,
 				21A61EA4265E7F4B0080E67D /* myAlert.js in Resources */,
 				21A61E2C265E7F4A0080E67D /* H5.bundle in Resources */,
@@ -2426,22 +2364,17 @@
 				21A61F61265E7F680080E67D /* lf20_loading.json in Resources */,
 				21A61F47265E7F680080E67D /* RefreshFooterAnim.json in Resources */,
 				21A61F59265E7F680080E67D /* lf20_loading_all.json in Resources */,
-				21A61E25265E7F4A0080E67D /* QQ@2x.png in Resources */,
 				21A61F53265E7F680080E67D /* gray_tabbar_me_animation.json in Resources */,
 				21A61EC9265E7F4B0080E67D /* _30TimeLineNinePhotoCell.xib in Resources */,
 				217AE9F226974A9600A1A9B2 /* file@2x.png in Resources */,
 				21A61F77265E7F680080E67D /* Play-Pause.json in Resources */,
-				21A61E49265E7F4A0080E67D /* 朋友圈@2x.png in Resources */,
-				21A61E23265E7F4A0080E67D /* 支付宝@2x.png in Resources */,
 				21A61F5F265E7F680080E67D /* tab_home_animate.json in Resources */,
-				21A61E3D265E7F4A0080E67D /* 微博@2x.png in Resources */,
 				21A61EC1265E7F4B0080E67D /* _04RunLoopViewController.xib in Resources */,
 				21A61F43265E7F680080E67D /* HappyBirthday.json in Resources */,
 				21A61E2F265E7F4A0080E67D /* Alternate_AppIcon_3@2x.png in Resources */,
 				21A61DE3265E7F4A0080E67D /* _26RMQClientViewController.xib in Resources */,
 				213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */,
 				21A61F65265E7F680080E67D /* vcTransition2.json in Resources */,
-				211227852573361600B6ECC8 /* AXiOSKit-Info.plist in Resources */,
 				21A61F15265E7F4B0080E67D /* _03ChatViewController.xib in Resources */,
 				21A61F6B265E7F680080E67D /* gray_tabbar_home_animation.json in Resources */,
 				21A61E9F265E7F4B0080E67D /* orgTitle.js in Resources */,
@@ -2449,7 +2382,6 @@
 				21A61F7B265E7F680080E67D /* tab_message_animate.json in Resources */,
 				21A61F11265E7F4B0080E67D /* _10TextFViewController.xib in Resources */,
 				21A61F75265E7F680080E67D /* green_lottie_tab_discover.json in Resources */,
-				21A61E3F265E7F4A0080E67D /* share2.xlsx in Resources */,
 				21A61E37265E7F4A0080E67D /* PointViewController2.plist in Resources */,
 				21A61F51265E7F680080E67D /* green_lottie_tab_home.json in Resources */,
 				21A61F4D265E7F680080E67D /* lf20_loading_failure.json in Resources */,
@@ -2469,10 +2401,8 @@
 				21A61F49265E7F680080E67D /* RefreshHeaderAnim.json in Resources */,
 				21A61E27265E7F4A0080E67D /* instruction.jpg in Resources */,
 				21A61F4B265E7F680080E67D /* Loading.json in Resources */,
-				21EB382B25DF90C6002C1807 /* ax_debug.xcconfig in Resources */,
 				21A61E31265E7F4A0080E67D /* PointViewController.plist in Resources */,
 				21A61F4F265E7F680080E67D /* LottieLogo.json in Resources */,
-				21A61E4D265E7F4A0080E67D /* testXML.xml in Resources */,
 				2150B151269C1B8900351B10 /* Image.bundle in Resources */,
 				21A61F41265E7F680080E67D /* green_lottie_tab_news.json in Resources */,
 				21A61E7B265E7F4B0080E67D /* _06WCDBViewController.xib in Resources */,
@@ -2482,32 +2412,25 @@
 				21A61EA3265E7F4B0080E67D /* myAlert.js in Resources */,
 				21122776257334C600B6ECC8 /* AXiOSKit-env-1-Info.plist in Resources */,
 				21A61F67265E7F680080E67D /* lf20_4dkca9bw.json in Resources */,
-				21A61E21265E7F4A0080E67D /* testWord.docx in Resources */,
-				21A61E2D265E7F4A0080E67D /* g3@2x.png in Resources */,
 				210B1ED125EDE40200878A73 /* Localizable.strings in Resources */,
 				21A61F69265E7F680080E67D /* green_lottie_tab_mine.json in Resources */,
 				217AE9F026974A9600A1A9B2 /* documents@2x.png in Resources */,
 				217AE9EC26974A9600A1A9B2 /* WebviewPreviewViewContoller.xib in Resources */,
-				21A61E4B265E7F4A0080E67D /* 微信@2x.png in Resources */,
 				21BB0B542685713200FDDC1A /* DemoVue.bundle in Resources */,
 				21A61E41265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png in Resources */,
 				21A61F3F265E7F680080E67D /* Switch.json in Resources */,
 				21A61E2B265E7F4A0080E67D /* H5.bundle in Resources */,
 				217AE9F826974A9600A1A9B2 /* PreviewTransitionViewController.xib in Resources */,
-				21799C7C255BDE8500754A8B /* gift.svg in Resources */,
 				21A61F55265E7F680080E67D /* vcTransition1.json in Resources */,
 				21A61F63265E7F680080E67D /* tab_search_animate.json in Resources */,
 				213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */,
 				21A61F57265E7F680080E67D /* lf20_imvcfu5s.json in Resources */,
 				21A61DE7265E7F4A0080E67D /* _28LocalSocketServiceViewController.xib in Resources */,
-				2150B148269C119100351B10 /* rock.gif in Resources */,
 				217AE9F426974A9600A1A9B2 /* FileBrowser.xib in Resources */,
 				21A61E85265E7F4B0080E67D /* _23FullViewController.xib in Resources */,
-				21A61E33265E7F4A0080E67D /* App.pdf in Resources */,
 				21A61ED3265E7F4B0080E67D /* time_line_list.json in Resources */,
 				21A61F79265E7F680080E67D /* gray_tabbar_message_animation.json in Resources */,
 				213BCBED254003DB00C89B72 /* Settings.bundle in Resources */,
-				21A61E45265E7F4A0080E67D /* g2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3088,7 +3011,6 @@
 				2112271E2573340100B6ECC8 /* AppDelegateAppearance.m in Sources */,
 				2112271F2573340100B6ECC8 /* AppDelegateDebug.m in Sources */,
 				21A61E6E265E7F4B0080E67D /* _AXTestRouterManager.m in Sources */,
-				2191A05C268AF7EC009D9852 /* AXTestViewController.m in Sources */,
 				21A61EF8265E7F4B0080E67D /* _25CompLayoutCell.m in Sources */,
 				21A61EA6265E7F4B0080E67D /* DemoWevViewImageSchemeHandler.m in Sources */,
 				21A61E78265E7F4B0080E67D /* _28ShareFileViewController.m in Sources */,
@@ -3125,7 +3047,6 @@
 				21A61DF0265E7F4A0080E67D /* AXWebSocketEngine.m in Sources */,
 				211227282573340100B6ECC8 /* AppDelegateRegistryCenter.m in Sources */,
 				21A61EBE265E7F4B0080E67D /* _28LocalSocketClientViewController.m in Sources */,
-				210B1EE125EE18C200878A73 /* NSBundle+CLLanguage.m in Sources */,
 				21A61E8C265E7F4B0080E67D /* _29AudioViewController.m in Sources */,
 				21C84C2B268DA3A70045E28C /* GSKTwitterStretchyHeaderView.m in Sources */,
 				21A61F02265E7F4B0080E67D /* _26RMQClientViewController.m in Sources */,
@@ -3224,7 +3145,6 @@
 				21A61E57265E7F4A0080E67D /* AXSocialShareContent.swift in Sources */,
 				21A61F17265E7F4B0080E67D /* ChatMessageModel.m in Sources */,
 				21D61EEC257F106E0059201A /* DogSwift.swift in Sources */,
-				210B1EE025EE18C200878A73 /* NSBundle+CLLanguage.m in Sources */,
 				21A61EE5265E7F4B0080E67D /* _25LayoutViewController.m in Sources */,
 				21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */,
 				21A61ED5265E7F4B0080E67D /* _11MasonryVC.m in Sources */,
@@ -3263,6 +3183,7 @@
 				21A61EFB265E7F4B0080E67D /* _09AFNViewController.m in Sources */,
 				21A61E07265E7F4A0080E67D /* UIImage+Load.m in Sources */,
 				21A61E67265E7F4B0080E67D /* AXSocialShareView.m in Sources */,
+				21E47E17269D66E500D7188F /* UIAlertController+Load.m in Sources */,
 				217AEA0226974A9600A1A9B2 /* FileListSearch.swift in Sources */,
 				21A61DFF265E7F4A0080E67D /* TestPluginViewController.m in Sources */,
 				218B7960269831B200CEB7E0 /* _22ReacLoginVC.m in Sources */,
@@ -3313,7 +3234,6 @@
 				21A61E69265E7F4B0080E67D /* AXSocialShareCell.m in Sources */,
 				21A61E03265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.m in Sources */,
 				21A61DEF265E7F4A0080E67D /* AXWebSocketEngine.m in Sources */,
-				2191A05B268AF7EC009D9852 /* AXTestViewController.m in Sources */,
 				21A61EBD265E7F4B0080E67D /* _28LocalSocketClientViewController.m in Sources */,
 				21A61E8B265E7F4B0080E67D /* _29AudioViewController.m in Sources */,
 				21A61F01265E7F4B0080E67D /* _26RMQClientViewController.m in Sources */,
@@ -3522,7 +3442,7 @@
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AXShare_Env_1/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -3548,7 +3468,7 @@
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AXShare_Env_1/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -3574,7 +3494,7 @@
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AXShare_Env_1/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -3601,7 +3521,7 @@
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AXShare_Env_1/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -3693,6 +3613,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "AXiOSKit/AXiOSKit_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Debug_α";
@@ -3838,6 +3759,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "AXiOSKit/AXiOSKit_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Debug_β";
@@ -3917,7 +3839,7 @@
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AXShare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -3943,7 +3865,7 @@
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AXShare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -3969,7 +3891,7 @@
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AXShare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -3996,7 +3918,7 @@
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AXShare/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -4106,6 +4028,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -4143,6 +4066,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "AXiOSKit/AXiOSKit_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -4172,6 +4096,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AXiOSKit/AXiOSKit_Example-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
