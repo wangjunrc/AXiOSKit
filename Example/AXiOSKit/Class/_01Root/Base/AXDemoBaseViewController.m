@@ -153,8 +153,9 @@
     self.bottomAttribute =  aView.mas_bottom;
 }
 
--(void)_loadCenterXWithView:(UIView *)aView size:(CGSize )size {
+-(void)_addCenterView:(UIView *)aView size:(CGSize )size {
     [self.containerView addSubview:aView];
+    aView.backgroundColor = UIColor.ax_randomColor;
     [aView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
         make.centerX.mas_equalTo(0);
@@ -162,6 +163,18 @@
     }];
     self.bottomAttribute =  aView.mas_bottom;
 }
+
+-(void)_addCenterView:(UIView *)aView width:(CGFloat )width {
+    [self.containerView addSubview:aView];
+    [aView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.centerX.mas_equalTo(0);
+        make.height.mas_equalTo(width);
+        
+    }];
+    self.bottomAttribute =  aView.mas_bottom;
+}
+
 
 -(void )_p01ButtonTitle:(NSString *)title handler:(void(^)(UIButton *btn))handler {
     if (title.length==0) {

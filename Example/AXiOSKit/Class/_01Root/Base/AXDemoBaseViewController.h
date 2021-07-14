@@ -25,8 +25,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)_loadConstraintsWithView:(UIView *)aView;
 
--(void)_loadCenterXWithView:(UIView *)aView
-                       size:(CGSize )size;
+-(void)_addCenterView:(UIView *)aView
+                 size:(CGSize )size;
+
+-(void)_addCenterView:(UIView *)aView
+                width:(CGFloat )width;
+
 
 -(UIButton *)_buttonTitle:(NSString *)title
                   handler:(void(^)(UIButton *btn))handler;

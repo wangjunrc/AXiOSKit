@@ -7,24 +7,20 @@
 //
 
 #import "_13AnimatedImageVC.h"
-#import <SDWebImageFLPlugin/SDWebImageFLPlugin.h>
-#import <SDWebImageWebPCoder/UIImage+WebP.h>
-#import <AXiOSKit/AXiOSKit.h>
-@import AssetsLibrary;
-#import <Photos/Photos.h>
-#import <AXiOSKit/AXiOSKit.h>
-#import <AssetsLibrary/AssetsLibrary.h>
-#import <SDWebImage/SDWebImage.h>
 #import "AXUserSwiftImport.h"
-#import <MobileCoreServices/UTCoreTypes.h>
+#import <SDWebImageFLPlugin/FLAnimatedImageView+WebCache.h>
+@import AXiOSKit;
+@import AssetsLibrary;
+@import FLAnimatedImage;
+@import SDWebImage;
+@import TZImagePickerController;
 
-@import YYImage;
-
-
-@interface _13AnimatedImageVC ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>
-
+@interface _13AnimatedImageVC ()
 
 @property(nonatomic,strong)NSData *gifData;
+@property(nonatomic, strong) NSData *apngData;
+@property(nonatomic,strong)NSURL *apngURL;
+
 
 @end
 
@@ -34,299 +30,307 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
+    [self _titlelabel:@"iPhone相册不识别apng动画效果"];
     
     [self _show_gif];
-    [self _show_webp];
     [self _show_apng];
     [self _saveGIF];
-    [self _find_gif];
+    [self _show_webp];
     [self _lastLoadBottomAttribute];
 }
 
 
 - (NSData *)gifData {
     if (!_gifData) {
-        _gifData = [NSData ax_mainBundleDataName:@"Image.bundle/gif_test_2.gif"];
+        _gifData = [NSData ax_mainBundleDataName:@"Image.bundle/test_gif_bear.gif"];
     }
     return _gifData;
+}
+
+- (NSData *)apngData {
+    if (!_apngData) {
+        _apngData= [NSData ax_mainBundleDataName:@"Image.bundle/test_apng_elephant.png"];
+    }
+    return _apngData;
+}
+
+
+-(void)_show_gif {
+    
+    [self _dividerLabel:@"显示 gif"];
+    
+    NSData *data = self.gifData;
+    NSURL *URL = [NSURL URLWithString:@"https://gitee.com/axinger/picture/raw/master/img/test_gif_bear.gif"];
+    [self _dividerLabel:@"本地data: gif"];
+    
+    {
+        [self _titlelabel:@"gif data: UIImageView"];
+        UIImageView *imageView = [[UIImageView alloc] init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        imageView.image = [UIImage sd_imageWithGIFData:data];
+    }
+    
+    {
+        [self _titlelabel:@"gif data: SDAnimatedImageView \n没有data方法"];
+        SDAnimatedImageView *imageView = [SDAnimatedImageView.alloc init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        /// 这2句,同时控制是否重复
+        imageView.shouldCustomLoopCount = YES;
+        imageView.animationRepeatCount = 0;
+        
+        NSURL *URL = [NSBundle.mainBundle URLForResource:@"Image.bundle/test_gif_bear.gif" withExtension:nil];
+        [imageView sd_setImageWithURL:URL];
+        
+    }
+    
+    {
+        [self _titlelabel:@"gif data: FLAnimatedImageView \n无效"];
+        FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        
+        ;
+        
+        FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:data];
+        imageView.animatedImage = image;
+    }
+    
+    
+    [self _dividerLabel:@"gif URL"];
+    
+    {
+        /// FLAnimatedImageView
+        [self _titlelabel:@"gif URL: UIImageView"];
+        UIImageView *imageView = [[UIImageView alloc] init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        [imageView sd_setImageWithURL:URL];
+        
+    }
+    
+    {
+        [self _titlelabel:@"gif URL: SDAnimatedImageView"];
+        SDAnimatedImageView *imageView = [SDAnimatedImageView.alloc init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        /// 这2句,同时控制是否重复
+        imageView.shouldCustomLoopCount = YES;
+        imageView.animationRepeatCount = 0;
+        [imageView sd_setImageWithURL:URL];
+        
+    }
+    
+    {
+        /// FLAnimatedImageView
+        [self _titlelabel:@"gif URL: FLAnimatedImageView"];
+        FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        
+        ;
+        
+        [imageView sd_setImageWithURL:URL];
+        
+    }
 }
 
 
 
 -(void)_show_apng {
     
-    [self _dividerLabel:@"显示png"];
+    [self _dividerLabel:@"显示 apng"];
+    
+    NSData *data = self.apngData;
+    NSURL *URL = [NSURL URLWithString:@"https://gitee.com/axinger/picture/raw/master/img/test_apng_elephant.png"];
+    
+    [self _dividerLabel:@"本地data: apng"];
+    
     
     {
-        /// FLAnimatedImageView
-        [self _titlelabel:@"UIImageView apng,无效"];
+        [self _titlelabel:@"apng data: UIImageView"];
         UIImageView *imageView = [[UIImageView alloc] init];
-        [self _loadCenterXWithView:imageView size:CGSizeMake(100, 100)];
-//        imageView.image = [UIImage imageNamed:@"apng_elephant"];
-        imageView.image = [UIImage imageWithData:[NSData ax_mainBundleDataName:@"Image.bundle/apng_elephant.png"]];
-        
-    }
-    {
-        /// FLAnimatedImageView
-        [self _titlelabel:@"YYAnimatedImageView apng"];
-        YYImage *image = [YYImage imageNamed:@"Image.bundle/apng_elephant"];
-        UIImageView *imageView = [[YYAnimatedImageView alloc] initWithImage:image];
-        imageView.backgroundColor = UIColor.redColor;
-        [self _loadCenterXWithView:imageView size:CGSizeMake(100, 100)];
-        
-    }
-    
-    
-    {
-        /// FLAnimatedImageView
-        [self _titlelabel:@"FLAnimatedImageView,没有apng方法,无效"];
-        FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
-        [self _loadCenterXWithView:imageView size:CGSizeMake(100, 100)];
-        
-        imageView.backgroundColor = UIColor.redColor;
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        
-        /// 本地 data
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"Image.bundle/apng_elephant.png" ofType:nil];
-        if (path) {
-            NSData *data = [NSData dataWithContentsOfFile:path];
-            FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:data];
-            imageView.animatedImage = image;
-        }
-    }
-}
-
-
--(void )_show_webp{
-    
-    [self _titlelabel:@"UIImageView显示webp,sd_imageWithWebPData"];
-    UIImageView *webpImv  = [[UIImageView alloc]init];
-    [self _loadCenterXWithView:webpImv size:CGSizeMake(100, 100)];
-    webpImv.backgroundColor = UIColor.redColor;
-    /// webp 放在一个bundle 中,不然无法加载
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"test_webp" ofType:@"webp" inDirectory:@"webp.bundle"];
-//    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-    
-    NSData *data =   [NSData ax_mainBundleDataName:@"Image.bundle/test_webp.webp"];
-    ///根据不同的URL显示webp
-    UIImage *img = [UIImage sd_imageWithWebPData:data];
-    webpImv.image = img;
-    webpImv.contentMode = UIViewContentModeScaleAspectFit;
-}
-
-
--(void)_show_gif{
-    
-    [self _dividerLabel:@"显示gif"];
-    
-    {
-        [self _titlelabel:@"UIImageView显示gif,sd_imageWithWebPData"];
-        
-        UIImageView *gifImv  = [[UIImageView alloc]init];
-        [self _loadCenterXWithView:gifImv size:CGSizeMake(100, 100)];
-        UIImage *img = [UIImage sd_imageWithGIFData:self.gifData];
-        gifImv.image = img;
-        gifImv.contentMode = UIViewContentModeScaleAspectFit;
-        
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        imageView.image = [UIImage sd_imageWithGIFData:data];
     }
     
     {
-        [self _titlelabel:@"SDAnimatedImageView"];
-        
+        [self _titlelabel:@"apng data: SDAnimatedImageView \n没有data方法"];
         SDAnimatedImageView *imageView = [SDAnimatedImageView.alloc init];
-        imageView.image = [SDAnimatedImage  imageWithData:self.gifData];
-        
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
         /// 这2句,同时控制是否重复
         imageView.shouldCustomLoopCount = YES;
         imageView.animationRepeatCount = 0;
         
-        [self _loadCenterXWithView:imageView size:CGSizeMake(100, 100)];
-    }
-    
-    [self _dividerLabel:@"FLAnimatedImageView-animatedImage"];
-    
-    {
-        [self _titlelabel:@"FLAnimatedImageView显示URL ,FLAnimatedImage,本地path转data"];
-        FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
-        [self _loadCenterXWithView:imageView size:CGSizeMake(100, 100)];
-        imageView.backgroundColor = UIColor.redColor;
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        FLAnimatedImage *animatedImage1 = [FLAnimatedImage animatedImageWithGIFData:self.gifData];
-        imageView.animatedImage = animatedImage1;
-    }
-    
-    {
-        [self _titlelabel:@"FLAnimatedImageView,sd_setImageWithURL"];
-        
-        /// 4.4.0 版本之后换了另外一种方式， 新增加了 FLAnimatedImageView 来实现动态图片的展示，继承自 UIImageView
-        FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
-        [self _loadCenterXWithView:imageView size:CGSizeMake(100, 100)];
-        
-        imageView.backgroundColor = UIColor.redColor;
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [imageView sd_setImageWithURL:[NSURL ax_mainBundleURLName:@"Image.bundle/gif_test_2.gif"]];
+        NSURL *URL = [NSBundle.mainBundle URLForResource:@"Image.bundle/test_apng_elephant.png" withExtension:nil];
+        [imageView sd_setImageWithURL:URL];
         
     }
     
+    {
+        [self _titlelabel:@"apng data: FLAnimatedImageView \n无效"];
+        FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        
+        ;
+        
+        FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:data];
+        imageView.animatedImage = image;
+    }
     
     {
-        [self _titlelabel:@"FLAnimatedImageView-sd_setImageWithURLf"];
-        FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
-        [self _loadCenterXWithView:imageView size:CGSizeMake(100, 100)];
+        [self _titlelabel:@"apng data: APNGKit"];
+        _13ApngView2 *imageView = [_13ApngView2.alloc initWithData:data];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
         
-        imageView.backgroundColor = UIColor.redColor;
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        NSURL *URL = [NSURL URLWithString:@"http://img.autohome.com.cn/album/2009/3/16/52bba7e6-1b9e-4ebb-b887-56b41be4ba2a.gif"];
+    }
+    
+    [self _dividerLabel:@"apng URL"];
+    
+    {
+        /// FLAnimatedImageView
+        [self _titlelabel:@"apng URL: UIImageView"];
+        UIImageView *imageView = [[UIImageView alloc] init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        [imageView sd_setImageWithURL:URL];
+        
+    }
+    
+    {
+        [self _titlelabel:@"apng URL: SDAnimatedImageView"];
+        SDAnimatedImageView *imageView = [SDAnimatedImageView.alloc init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        /// 这2句,同时控制是否重复
+        imageView.shouldCustomLoopCount = YES;
+        imageView.animationRepeatCount = 0;
+        [imageView sd_setImageWithURL:URL];
+        
+    }
+    
+    {
+        /// FLAnimatedImageView
+        [self _titlelabel:@"apng URL: FLAnimatedImageView"];
+        FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        
+        ;
+        
+        [imageView sd_setImageWithURL:URL];
+        
+    }
+    
+    {
+        [self _titlelabel:@"apng URL: APNGKit"];
+        _13ApngView2 *imageView = [_13ApngView2.alloc initWithUrl:URL];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        
+    }
+}
+
+
+
+
+-(void )_show_webp{
+    
+    [self _dividerLabel:@"UIImageView显示webp,用data方式"];
+    {
+        [self _titlelabel:@"webp data"];
+        UIImageView *imageView  = [[UIImageView alloc]init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        NSData *data = [NSData ax_mainBundleDataName:@"Image.bundle/test_webp.webp"];
+        imageView.image = [UIImage.alloc initWithData:data];;
+    }
+    
+    {
+        
+        [self _titlelabel:@"webp URL"];
+        UIImageView *imageView  = [[UIImageView alloc]init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        NSURL *URL = [NSURL URLWithString:@"https://gitee.com/axinger/picture/raw/master/img/test_webp.webp"];
         [imageView sd_setImageWithURL:URL];
     }
-    
 }
-
-
--(void)_find_gif {
-    
-    [self _titlelabel:@"相册中获得gif"];
-    
-    UIImageView *gifImv  = [[UIImageView alloc]init];
-    [self _loadCenterXWithView:gifImv size:CGSizeMake(100, 100)];
-    
-    gifImv.contentMode = UIViewContentModeScaleAspectFit;
-    
-    @weakify(self)
-    [self _buttonTitle:@"打开相册" handler:^(UIButton * _Nonnull btn) {
-        @strongify(self)
-//        [self ax_showCameraWithEditing:NO block:^(UIImage *originalImage, UIImage *editedImage) {
-//            UIImage *img = [UIImage sd_imageWithGIFData:UIImagePNGRepresentation(originalImage)];
-//            gifImv.image = img;
-//
-//        }];
-        
-//        [self ax_showPhotoLibraryInfo:^(NSDictionary<UIImagePickerControllerInfoKey,id> * _Nonnull info) {
-//
-//
-//            if(@available(iOS 11.0, *)) {
-//
-//                   PHAsset *phAss = [info valueForKey:UIImagePickerControllerPHAsset];
-//
-//                   PHImageRequestOptions *options = [PHImageRequestOptions new];
-//
-//                   options.resizeMode = PHImageRequestOptionsResizeModeFast;
-//
-//             // 同步获得图片, 只会返回1张图片
-//                   options.synchronous=YES;
-//
-//
-//                   PHCachingImageManager *mager = [[PHCachingImageManager alloc]init];
-//
-//
-//                [mager requestImageDataForAsset:phAss options:options resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
-//
-//
-//                    dispatch_async(dispatch_get_main_queue(), ^{
-//                        NSLog(@"imageData=%@",imageData);
-////                        if (imageData) {
-////                            UIImage *img = [UIImage sd_imageWithGIFData:imageData];
-////                            gifImv.image = img;
-////                        }
-//                    });
-//
-//
-//
-//                }];
-//
-//           }
-//
-//        }];
-        
-        
-        //图片列表方式
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        //  显示 图片,视频
-        picker.mediaTypes = @[(NSString *)kUTTypeImage,(NSString*)kUTTypeMovie];
-        picker.delegate = self;
-        [self presentViewController:picker animated:YES completion:nil];
-        
-        
-    }];
-}
-
-- (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    /**
-     NSString *const  UIImagePickerControllerMediaType ;指定用户选择的媒体类型（文章最后进行扩展）
-     NSString *const  UIImagePickerControllerOriginalImage ;原始图片
-     NSString *const  UIImagePickerControllerEditedImage ;修改后的图片
-     NSString *const  UIImagePickerControllerCropRect ;裁剪尺寸
-     NSString *const  UIImagePickerControllerMediaURL ;媒体的URL
-     NSString *const  UIImagePickerControllerReferenceURL ;原件的URL
-     NSString *const  UIImagePickerControllerMediaMetadata;当来数据来源是照相机的时候这个值才有效
-     */
-    
-//    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        if(@available(iOS 11.0, *)) {
-
-               PHAsset *phAss = [info valueForKey:UIImagePickerControllerPHAsset];
-          
-               PHImageRequestOptions *options = [PHImageRequestOptions new];
-
-               options.resizeMode = PHImageRequestOptionsResizeModeFast;
-            
-         // 同步获得图片, 只会返回1张图片
-               options.synchronous=YES;
-            
-            
-            [PHCachingImageManager.defaultManager requestImageForAsset:phAss targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-                 
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    NSLog(@"imageData=%@",imageData);
-////                        if (imageData) {
-////                            UIImage *img = [UIImage sd_imageWithGIFData:imageData];
-////                            gifImv.image = img;
-////                        }
-//                });
-                
-            }];
-            
-//            [PHImageManager.defaultManager requestImageDataForAsset:phAss options:options resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
-//
-//
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    NSLog(@"imageData=%@",imageData);
-////                        if (imageData) {
-////                            UIImage *img = [UIImage sd_imageWithGIFData:imageData];
-////                            gifImv.image = img;
-////                        }
-//                });
-//
-//
-//
-//            }];
-
-       }
-        
-//    });
-    
-}
-
 
 /// 保存GIF到相册
 -(void)_saveGIF{
-    ax_weakify(self);
-    [self _buttonTitle:@"保存到相册"  handler:^(UIButton * _Nonnull btn) {
-        ax_strongify(self);
-        [self.gifData ax_savePhotoLibraryHandler:^(BOOL success, NSError *_Nullable error) {
+    
+    [self _dividerLabel:@"保存到相册"];
+    
+    __weak typeof(self) weakSelf = self;
+    [self _buttonTitle:@"保存gif到相册"  handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.gifData ax_savePhotoLibraryHandler:^(BOOL success, NSError *_Nullable error) {
             AXLoger(@"success = %ld", success);
-            [self ax_showAlertByTitle:success ? @"保存成功" : @"保存失败"];
+            [strongSelf ax_showAlertByTitle:success ? @"保存成功" : @"保存失败"];
             
         }];
     }];
     
+    [self _buttonTitle:@"保存apng到相册,data方式-无效"  handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.apngData ax_savePhotoLibraryHandler:^(BOOL success, NSError *_Nullable error) {
+            AXLoger(@"success = %ld", success);
+            [strongSelf ax_showAlertByTitle:success ? @"保存成功" : @"保存失败"];
+            
+        }];
+    }];
+    
+    UIImageView *imageView  = [[UIImageView alloc]init];
+    [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+    
+    
+    __block NSData *gifData = nil;
+    [self _buttonTitle:@"打开相册"  handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _TZImagePickerController:^(NSData *data) {
+            UIImage *img = [UIImage sd_imageWithGIFData:data];
+            imageView.image = img;
+            gifData = data;
+        }];
+    }];
+    
+    [self _buttonTitle:@"查看图片"  handler:^(UIButton * _Nonnull btn) {
+        NSLog(@"gifData=%ld",gifData.length);
+    }];
+    
+    
+    [self _buttonTitle:@"保存到相册ax_savePhotoLibraryHandler"  handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [gifData ax_savePhotoLibraryHandler:^(BOOL success, NSError *_Nullable error) {
+            AXLoger(@"success = %ld", success);
+            [strongSelf ax_showAlertByTitle:success ? @"保存成功" : @"保存失败"];
+        }];
+    }];
+    
+    [self _buttonTitle:@"保存到相册,TZImageManager,不能gif"  handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [TZImageManager.manager savePhotoWithImage:[UIImage.alloc initWithData:gifData] completion:^(PHAsset *asset, NSError *error) {
+            AXLoger(@"error = %@", error);
+            [strongSelf ax_showAlertByTitle:!error ? @"保存成功" : @"保存失败"];
+        }];
+    }];
+    
+    
 }
 
-
-- (void)dealloc{
-    axLong_dealloc
+-(void)_TZImagePickerController:(void(^)(NSData *data))block {
+    
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:nil];
+    
+    imagePickerVc.allowPickingImage = YES;
+    imagePickerVc.allowPickingGif = YES;
+    imagePickerVc.showSelectedIndex = YES;
+    imagePickerVc. allowPickingMultipleVideo = YES;
+    imagePickerVc.allowPickingVideo = YES;
+    
+    [imagePickerVc setDidFinishPickingPhotosWithInfosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto, NSArray<NSDictionary *> *infos) {
+        
+        NSLog(@"assets %@",assets);
+        NSLog(@"infos %@",infos);
+        
+        [TZImageManager.manager getOriginalPhotoDataWithAsset:assets.firstObject completion:^(NSData *data, NSDictionary *info, BOOL isDegraded) {
+            if (block) {
+                block(data);
+            }
+        }];
+    }];
+    [self presentViewController:imagePickerVc animated:YES completion:nil];
+    
 }
 
 @end

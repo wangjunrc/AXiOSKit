@@ -767,17 +767,6 @@
                 [self ax_pushVC:vc];
             };
         }
-        
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [_1stArray addObject:item];
-            item.title = @"_13SDWebImageVC";
-            item.detail = @"SDWebImage测试";
-            item.action = ^{
-                _13SDWebImageVC *vc = [[_13SDWebImageVC alloc] init];
-                [self ax_pushVC:vc];
-            };
-        }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
             [_1stArray addObject:item];
@@ -785,6 +774,16 @@
             item.detail = @"各种格式图片,动画";
             item.action = ^{
                 _13AnimatedImageVC *vc = [[_13AnimatedImageVC alloc] init];
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_13SDWebImageVC";
+            item.detail = @"SDWebImage测试";
+            item.action = ^{
+                _13SDWebImageVC *vc = [[_13SDWebImageVC alloc] init];
                 [self ax_pushVC:vc];
             };
         }
