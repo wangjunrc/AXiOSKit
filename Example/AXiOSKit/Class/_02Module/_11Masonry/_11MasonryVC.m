@@ -9,6 +9,12 @@
 #import "_11MasonryVC.h"
 #import <Masonry/Masonry.h>
 #import <AXiOSKit/AXiOSKit.h>
+@import AXiOSKit;
+@import AssetsLibrary;
+@import FLAnimatedImage;
+@import SDWebImage;
+@import TZImagePickerController;
+
 @interface _11MasonryVC ()
 
 @end
@@ -21,10 +27,10 @@
     self.title = @"Masonry 布局";
     self.view.backgroundColor = UIColor.whiteColor;
     
-    
-    
     [self _test1];
     [self _test2];
+    
+    [self _test_imageView];
     
     [self _lastLoadBottomAttribute];
     
@@ -147,5 +153,26 @@
 }
 
 
+-(void)_test_imageView {
+    
+    UIImageView *imageView = UIImageView.alloc.init;
+    
+    [self.containerView addSubview:imageView];
+    imageView.image = [UIImage imageNamed:@"西瓜"];
+    imageView.backgroundColor = UIColor.ax_randomColor;
+    imageView.contentMode = 1;
+    
+    [imageView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
+    [imageView setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisVertical];
+    
+    
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.centerX.mas_equalTo(0);
+        make.width.mas_equalTo(200);
+    }];
+    self.bottomAttribute =  imageView.mas_bottom;
+    
+}
 
 @end

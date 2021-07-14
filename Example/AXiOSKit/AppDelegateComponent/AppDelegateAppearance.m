@@ -14,9 +14,14 @@
     
 //    [self adapterIOS11];
     
+//    UIView.appearance.backgroundColor = UIColor.whiteColor;
+    
+    
+   
     [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[UISearchBar.class]]
      setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}
      forState:UIControlStateNormal];
+//    [[UIView appearance] setBackgroundColor:[UIColor whiteColor]];
     
     
 //    let backImg = UIImage.init(named: "webViewBack")

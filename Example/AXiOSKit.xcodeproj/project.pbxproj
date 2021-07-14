@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */; };
 		21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */; };
+		210806B1269F1389002F3385 /* _11MasonryScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210806B0269F1389002F3385 /* _11MasonryScrollVC.m */; };
 		210B1ED125EDE40200878A73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 210B1ED425EDE40200878A73 /* Localizable.strings */; };
 		210B1ED225EDE40200878A73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 210B1ED425EDE40200878A73 /* Localizable.strings */; };
 		211226F92573340100B6ECC8 /* AppDelegateWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */; };
@@ -556,6 +557,8 @@
 		21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateAppearance.m; sourceTree = "<group>"; };
 		21022AEA2547A9AF0055E0B7 /* AppDelegateWX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateWX.h; sourceTree = "<group>"; };
 		21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateWX.m; sourceTree = "<group>"; };
+		210806AF269F1389002F3385 /* _11MasonryScrollVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _11MasonryScrollVC.h; sourceTree = "<group>"; };
+		210806B0269F1389002F3385 /* _11MasonryScrollVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _11MasonryScrollVC.m; sourceTree = "<group>"; };
 		210B1EB725EDE2FA00878A73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "../zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		210B1EB925EDE2FB00878A73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "../zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		210B1EBA25EDE2FB00878A73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -1490,11 +1493,11 @@
 			isa = PBXGroup;
 			children = (
 				21A61D03265E7F4A0080E67D /* AXUserInfo.h */,
-				21A61D04265E7F4A0080E67D /* AXUserInfo+DB.h */,
-				21A61D05265E7F4A0080E67D /* AXUserLog.mm */,
 				21A61D06265E7F4A0080E67D /* AXUserInfo.mm */,
-				21A61D07265E7F4A0080E67D /* AXUserLog+DB.h */,
+				21A61D04265E7F4A0080E67D /* AXUserInfo+DB.h */,
 				21A61D08265E7F4A0080E67D /* AXUserLog.h */,
+				21A61D05265E7F4A0080E67D /* AXUserLog.mm */,
+				21A61D07265E7F4A0080E67D /* AXUserLog+DB.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1916,6 +1919,8 @@
 			children = (
 				21A61CA8265E7F4A0080E67D /* _11MasonryVC.h */,
 				21A61D8E265E7F4A0080E67D /* _11MasonryVC.m */,
+				210806AF269F1389002F3385 /* _11MasonryScrollVC.h */,
+				210806B0269F1389002F3385 /* _11MasonryScrollVC.m */,
 				21A61D4A265E7F4A0080E67D /* _11MasonryCell.h */,
 				21A61D4E265E7F4A0080E67D /* _11MasonryCell.m */,
 				21A61D4F265E7F4A0080E67D /* _11MasonryTableVC.h */,
@@ -3259,6 +3264,7 @@
 				21A61EC7265E7F4B0080E67D /* _30TimeLineModel.m in Sources */,
 				21A61EE1265E7F4B0080E67D /* _25_2_DiffableDataSource.m in Sources */,
 				21A61EA9265E7F4B0080E67D /* DemoTabBarController.m in Sources */,
+				210806B1269F1389002F3385 /* _11MasonryScrollVC.m in Sources */,
 				21A61E15265E7F4A0080E67D /* AXIBudyButton.m in Sources */,
 				21C84C36268DA8D90045E28C /* UINavigationController+Transparency.m in Sources */,
 				21A61E09265E7F4A0080E67D /* NSObject+Load.m in Sources */,

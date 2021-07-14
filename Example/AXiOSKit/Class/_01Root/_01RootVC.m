@@ -24,6 +24,7 @@
 #import "_10TextFViewController.h"
 #import "_11MasonryTableVC.h"
 #import "_11MasonryVC.h"
+#import "_11MasonryScrollVC.h"
 #import "_13AnimatedImageVC.h"
 #import "_13SDWebImageVC.h"
 #import "_13SDWebImageVC.h"
@@ -551,7 +552,7 @@
         //
         //
         //            _05WebVC *vc = [[_05WebVC alloc] init];
-        //            [self ax_pushVC:vc];
+        //             @strongify(item)
         //
         //            _searchVC.searchBar.text = @"";
         ////            [_searchVC.searchBar resignFirstResponder];
@@ -632,9 +633,12 @@
             [_1stArray addObject:item];
             item.title = @"_01ContentViewController";
             item.detail = @"uikit示例";
+            @weakify(item)
             item.action = ^{
                 _01ContentViewController *vc =
                 [[_01ContentViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -644,8 +648,11 @@
             [_1stArray addObject:item];
             item.title = @"_02NavColorViewController";
             item.detail = @"导航栏效果";
+            @weakify(item)
             item.action = ^{
                 _02NavColorViewController *vc = [[_02NavColorViewController alloc]init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -656,9 +663,12 @@
             [_1stArray addObject:item];
             item.title = @"_02QQZoneController";
             item.detail = @"导航栏渐变";
+            @weakify(item)
             item.action = ^{
                 
                 _02QQZoneController *vc = [[_02QQZoneController alloc]init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -668,9 +678,12 @@
             [_1stArray addObject:item];
             item.title = @"_03ChatViewController";
             item.detail = @"聊天";
+            @weakify(item)
             item.action = ^{
                 
                 _03ChatViewController *vc = [[_03ChatViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -679,8 +692,11 @@
             [_1stArray addObject:item];
             item.title = @"_04RunLoopViewController";
             item.detail = @"NSRunLoop模式";
+            @weakify(item)
             item.action = ^{
                 _04RunLoopViewController *vc = [[_04RunLoopViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -690,8 +706,11 @@
             [_1stArray addObject:item];
             item.title = @"_05WebVC";
             item.detail = @"WKWebVC";
+            @weakify(item)
             item.action = ^{
                 _05WebVC *vc = [[_05WebVC alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -700,8 +719,11 @@
             [_1stArray addObject:item];
             item.title = @"_06WCDBViewController";
             item.detail = @"WCDB";
+            @weakify(item)
             item.action = ^{
                 _06WCDBViewController *vc = [[_06WCDBViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -710,8 +732,11 @@
             [_1stArray addObject:item];
             item.title = @"_07VideoViewController";
             item.detail = @"视频";
+            @weakify(item)
             item.action = ^{
                 _07VideoViewController *vc = [[_07VideoViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -721,8 +746,11 @@
             [_1stArray addObject:item];
             item.title = @"_08MP3VC";
             item.detail = @"音频";
+            @weakify(item)
             item.action = ^{
                 _08MP3VC *vc = [[_08MP3VC alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -731,8 +759,11 @@
             [_1stArray addObject:item];
             item.title = @"_09AFNViewController";
             item.detail = @"AFN";
+            @weakify(item)
             item.action = ^{
                 _09AFNViewController *vc = [[_09AFNViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -752,18 +783,39 @@
             [_1stArray addObject:item];
             item.title = @"_11MasonryVC";
             item.detail = @"Masonry布局";
+            @weakify(item)
             item.action = ^{
                 _11MasonryVC *vc = [_11MasonryVC ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
             [_1stArray addObject:item];
+            item.title = @"_11MasonryScrollVC";
+            item.detail = @"Masonry布局,无限滚动";
+            @weakify(item)
+            item.action = ^{
+                _11MasonryScrollVC *vc = [_11MasonryScrollVC ax_init];
+                @strongify(item)
+                vc.title = item.detail;
+                [self ax_pushVC:vc];
+            };
+        }
+        
+        
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
             item.title = @"_11MasonryTableVC";
             item.detail = @"tableView自适应高度";
+            @weakify(item)
             item.action = ^{
                 _11MasonryTableVC *vc = [_11MasonryTableVC ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -772,8 +824,11 @@
             [_1stArray addObject:item];
             item.title = @"_13WebpViewController";
             item.detail = @"各种格式图片,动画";
+            @weakify(item)
             item.action = ^{
                 _13AnimatedImageVC *vc = [[_13AnimatedImageVC alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -782,8 +837,11 @@
             [_1stArray addObject:item];
             item.title = @"_13SDWebImageVC";
             item.detail = @"SDWebImage测试";
+            @weakify(item)
             item.action = ^{
                 _13SDWebImageVC *vc = [[_13SDWebImageVC alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -792,8 +850,11 @@
             [_1stArray addObject:item];
             item.title = @"_13WeImageTableViewController";
             item.detail = @"WeImage";
+            @weakify(item)
             item.action = ^{
                 _13SDWebImageVC *vc = [[_13SDWebImageVC alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -802,8 +863,11 @@
             [_1stArray addObject:item];
             item.title = @"_14TextFieldVC";
             item.detail = @"TextFeild 统一代理";
+            @weakify(item)
             item.action = ^{
                 _14TextFieldVC *vc = [[_14TextFieldVC alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -814,8 +878,11 @@
             [_1stArray addObject:item];
             item.title = @"_15UIMenuController";
             item.detail = @"UIMenuController";
+            @weakify(item)
             item.action = ^{
                 _15UIMenuController *vc = [[_15UIMenuController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -824,9 +891,12 @@
             [_1stArray addObject:item];
             item.title = @"_16KeyChainViewController";
             item.detail = @"KeyChain";
+            @weakify(item)
             item.action = ^{
                 _16KeyChainViewController *vc =
                 [[_16KeyChainViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -835,8 +905,11 @@
             [_1stArray addObject:item];
             item.title = @"_17OtherShareViewController";
             item.detail = @"第三方分享";
+            @weakify(item)
             item.action = ^{
                 _17OtherShareViewController *vc = [[_17OtherShareViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -845,8 +918,11 @@
             [_1stArray addObject:item];
             item.title = @"_18MGSwipeTableVC";
             item.detail = @"侧滑删除,ax_setEmptyDataWithConfig";
+            @weakify(item)
             item.action = ^{
                 _18MGSwipeTableVC *vc = [[_18MGSwipeTableVC alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -855,9 +931,12 @@
             [_1stArray addObject:item];
             item.title = @"_19ScrollContentViewController";
             item.detail = @"Scroll自适应内容";
+            @weakify(item)
             item.action = ^{
                 _19ScrollContentViewController *vc =
                 [[_19ScrollContentViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -866,8 +945,11 @@
             [_1stArray addObject:item];
             item.title = @"_20PhotoViewController";
             item.detail = @"照片相册选择";
+            @weakify(item)
             item.action = ^{
                 _20PhotoViewController *vc = [[_20PhotoViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -876,8 +958,11 @@
             [_1stArray addObject:item];
             item.title = @"_21KVOViewController";
             item.detail = @"KVO";
+            @weakify(item)
             item.action = ^{
                 _21KVOViewController *vc = [[_21KVOViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -886,8 +971,11 @@
             [_1stArray addObject:item];
             item.title = @"_22ReacLoginVC";
             item.detail = @"reac模拟登录";
+            @weakify(item)
             item.action = ^{
                 _22ReacLoginVC *vc = [[_22ReacLoginVC alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -897,9 +985,12 @@
             [_1stArray addObject:item];
             item.title = @"_22ReactiveObjCViewController";
             item.detail = @"rea";
+            @weakify(item)
             item.action = ^{
                 _22ReactiveObjCViewController *vc =
                 [[_22ReactiveObjCViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -908,8 +999,11 @@
             [_1stArray addObject:item];
             item.title = @"_23FullViewController";
             item.detail = @"约束全屏\n prefersStatusBarHidden\n setNavigationBarHidden";
+            @weakify(item)
             item.action = ^{
                 _23FullViewController *vc = [[_23FullViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -918,8 +1012,11 @@
             [_1stArray addObject:item];
             item.title = @"_24NoteViewController";
             item.detail = @"本地通知";
+            @weakify(item)
             item.action = ^{
                 _24NoteViewController *vc = [[_24NoteViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -928,9 +1025,12 @@
             [_1stArray addObject:item];
             item.title = @"_25LayoutViewController";
             item.detail = @"Layout-UICollectionView";
+            @weakify(item)
             item.action = ^{
                 _25LayoutViewController *vc =
                 [[_25LayoutViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -939,9 +1039,12 @@
             [_1stArray addObject:item];
             item.title = @"_25FlowLayoutVC1";
             item.detail = @"UICollectionView 左右空隙";
+            @weakify(item)
             item.action = ^{
                 _25FlowLayoutVC1 *vc =
                 [[_25FlowLayoutVC1 alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -950,10 +1053,13 @@
             [_1stArray addObject:item];
             item.title = @"_25CompLayoutVC1";
             item.detail = @"iOS 13.0 水平滚动，但cell大小交替变换，且cell居中对齐。";
+            @weakify(item)
             item.action = ^{
                 if (@available(iOS 13.0, *)) {
                     _25CompLayoutVC1 *vc =
                     [[_25CompLayoutVC1 alloc] init];
+                    @strongify(item)
+                    vc.title = item.detail;
                     [self ax_pushVC:vc];
                 }
                 
@@ -964,9 +1070,12 @@
             [_1stArray addObject:item];
             item.title = @"_25CompLayoutVC2";
             item.detail = @"垂直滚动，一个大cell + 两个小cell 交替";
+            @weakify(item)
             item.action = ^{
                 _25CompLayoutVC2 *vc =
                 [[_25CompLayoutVC2 alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -975,9 +1084,12 @@
             [_1stArray addObject:item];
             item.title = @"_25CompLayoutVC3";
             item.detail = @"类似App Store 效果";
+            @weakify(item)
             item.action = ^{
                 _25CompLayoutVC3 *vc =
                 [[_25CompLayoutVC3 alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -986,8 +1098,11 @@
             [_1stArray addObject:item];
             item.title = @"_25CompLayoutVC4";
             item.detail = @"含有背景";
+            @weakify(item)
             item.action = ^{
                 _25CompLayoutVC4 *vc= [[_25CompLayoutVC4 alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -996,9 +1111,12 @@
             [_1stArray addObject:item];
             item.title = @"_25CompLayoutVC5";
             item.detail = @"NSCollectionLayoutGroupCustomItem";
+            @weakify(item)
             item.action = ^{
                 _25CompLayoutVC5 *vc =
                 [[_25CompLayoutVC5 alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1007,11 +1125,14 @@
             [_1stArray addObject:item];
             item.title = @"_25_2_DiffableDataSource";
             item.detail = @"iOS 14.0 25_2-UITableViewDiffableDataSource";
+            @weakify(item)
             item.action = ^{
                 if (@available(iOS 14.0, *)) {
                     _25_2_DiffableDataSource *vc =
                     [[_25_2_DiffableDataSource alloc] init];
                     
+                    @strongify(item)
+                    vc.title = item.detail;
                     [self ax_pushVC:vc];
                 }
             };
@@ -1021,9 +1142,12 @@
             [_1stArray addObject:item];
             item.title = @"_26RMQClientViewController";
             item.detail = @"RMQClient";
+            @weakify(item)
             item.action = ^{
                 _26RMQClientViewController *vc =
                 [[_26RMQClientViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1032,9 +1156,12 @@
             [_1stArray addObject:item];
             item.title = @"_27MQTTClientViewController";
             item.detail = @"MQTT";
+            @weakify(item)
             item.action = ^{
                 _27MQTTClientViewController *vc =
                 [[_27MQTTClientViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1044,9 +1171,12 @@
             [_1stArray addObject:item];
             item.title = @"_28ShareFileViewController";
             item.detail = @"文件预览";
+            @weakify(item)
             item.action = ^{
                 _28ShareFileViewController *vc =
                 [[_28ShareFileViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1068,8 +1198,11 @@
             [_1stArray addObject:item];
             item.title = @"_29AudioViewController";
             item.detail = @"音频";
+            @weakify(item)
             item.action = ^{
                 _29AudioViewController *vc = [_29AudioViewController ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1078,8 +1211,11 @@
             [_1stArray addObject:item];
             item.title = @"_30IGListViewController";
             item.detail = @"IGList";
+            @weakify(item)
             item.action = ^{
                 _30IGListViewController *vc = [_30IGListViewController ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1088,8 +1224,11 @@
             [_1stArray addObject:item];
             item.title = @"_31GCDViewController";
             item.detail = @"多线程";
+            @weakify(item)
             item.action = ^{
                 _31GCDViewController *vc = [_31GCDViewController ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1098,8 +1237,11 @@
             [_1stArray addObject:item];
             item.title = @"_32LottieVC";
             item.detail =  @"Lottie动画";
+            @weakify(item)
             item.action = ^{
                 _32LottieVC *vc = [_32LottieVC ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1108,8 +1250,11 @@
             [_1stArray addObject:item];
             item.title = @"_33CropViewController";
             item.detail = @"剪切图片";
+            @weakify(item)
             item.action = ^{
                 _33CropViewController *vc = [_33CropViewController ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1118,8 +1263,11 @@
             [_1stArray addObject:item];
             item.title = @"_34ViewController";
             item.detail = @"CTMediator路由";
+            @weakify(item)
             item.action = ^{
                 _34ViewController *vc = [_34ViewController ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1128,8 +1276,11 @@
             [_1stArray addObject:item];
             item.title = @"_35ProtobufVC";
             item.detail = @"ProtobufVC";
+            @weakify(item)
             item.action = ^{
                 _35ProtobufVC *vc = [_35ProtobufVC ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1138,8 +1289,11 @@
             [_1stArray addObject:item];
             item.title = @"_36YYKitTestVC";
             item.detail = @"YYKit";
+            @weakify(item)
             item.action = ^{
                 _36YYKitTestVC *vc = [_36YYKitTestVC ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1148,8 +1302,11 @@
             [_1stArray addObject:item];
             item.title = @"_37FileManagerVC";
             item.detail = @"NSFileManager";
+            @weakify(item)
             item.action = ^{
                 _37FileManagerVC *vc = [_37FileManagerVC ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1158,8 +1315,11 @@
             [_1stArray addObject:item];
             item.title = @"_38DirectionVC";
             item.detail = @"屏幕旋转-push";
+            @weakify(item)
             item.action = ^{
                 _38DirectionVC *vc = [_38DirectionVC ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1178,8 +1338,11 @@
             [_1stArray addObject:item];
             item.title = @"_40ScreenshotsVC";
             item.detail = @"监测截屏,并删除";
+            @weakify(item)
             item.action = ^{
                 _40ScreenshotsVC *vc = [_40ScreenshotsVC ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1188,8 +1351,11 @@
             [_1stArray addObject:item];
             item.title = @"_41SlideHeadVC";
             item.detail = @"滑动头部";
+            @weakify(item)
             item.action = ^{
                 _41SlideHeadVC *vc = [_41SlideHeadVC ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1198,8 +1364,11 @@
             [_1stArray addObject:item];
             item.title = @"_42MantleVC";
             item.detail = @"Mantle字典转模型";
+            @weakify(item)
             item.action = ^{
                 _42MantleVC *vc = [_42MantleVC ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1208,8 +1377,11 @@
             [_1stArray addObject:item];
             item.title = @"_43ColorVC";
             item.detail = @"颜色";
+            @weakify(item)
             item.action = ^{
                 _43ColorVC *vc = [_43ColorVC ax_init];
+                @strongify(item)
+                vc.title = item.detail;
                 [self ax_pushVC:vc];
             };
         }
@@ -1307,9 +1479,6 @@
                 
             };
         }
-        
-        
-        
         
     }
     return _dataArray;
