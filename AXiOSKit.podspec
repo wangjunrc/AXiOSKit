@@ -25,6 +25,8 @@ Pod::Spec.new do |s|
     s.source       = { :git => 'https://github.com/axinger/AXiOSKit.git', :tag => '#{s.version}' }
     
     s.public_header_files = 'AXiOSKit/AXiOSKit/AXiOSKit.h'
+    # oc swift 混编时,需要指定一个
+#    s.private_header_files = ''
     s.source_files  = 'AXiOSKit/**/*.{h,m}'
     #  s.exclude_files = 'AXiOSKit/AXiOSKit/Info.plist'
     

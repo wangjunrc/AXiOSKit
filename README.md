@@ -20,6 +20,34 @@ API_AVAILABLE(ios(13.0))
 ## GitHub汇总
 https://github.com/Tim9Liu9/TimLiu-iOS
 
+## 定义宏
+```
+#define IFTEST1 1
+#define IFTEST2 2
+
+#ifdef IFTEST1
+        NSLog(@"定义了宏-IFTEST1");
+#else
+        NSLog(@"没有定义了宏-IFTEST1");
+#endif
+        
+  
+#ifdef IFTEST1
+      NSLog(@"定义了宏-IFTEST1");
+#elif IFTEST2
+      NSLog(@"定义了宏-IFTEST2");
+#else
+      NSLog(@"都没有定义");
+#endif
+        
+        
+#if IFTEST1 == 1
+        NSLog(@"宏定义值1:%d\n", IFTEST1);
+#elif IFTEST1 == 2
+        NSLog(@"宏定义值2:%d\n", IFTEST1);
+#endif
+```
+
 ## 消除 过期警告 top
 ```
 /// 消除局部警告
