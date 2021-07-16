@@ -433,6 +433,7 @@
     }
     
 }
+
 /// 刷新
 -(void)_createRefresh {
     __weak typeof(self) weakSelf = self;
@@ -640,6 +641,41 @@
                 @strongify(item)
                 vc.title = item.detail;
                 [self ax_pushVC:vc];
+            };
+        }
+        
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_01ContentViewController";
+            item.detail = @"showDetailViewController";
+            @weakify(item)
+            item.action = ^{
+                _01ContentViewController *vc =
+                [[_01ContentViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
+                //iOS8之后的新特性, 模态present替换为
+//            [self showDetailViewController:vc sender:@"iOS8之后的新特性, 模态present替换为"];
+                [self.navigationController showDetailViewController:vc sender:@"iOS8之后的新特性, 模态present替换为"];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_01ContentViewController";
+            item.detail = @"showDetailViewController";
+            @weakify(item)
+            item.action = ^{
+                _01ContentViewController *vc =
+                [[_01ContentViewController alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
+               
+                //iOS8之后的新特性, show替换push
+                  
+                    [self showViewController:vc sender:nil];
+                
             };
         }
         
