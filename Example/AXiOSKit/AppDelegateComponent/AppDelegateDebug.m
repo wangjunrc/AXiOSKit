@@ -141,7 +141,7 @@
     
     
 #if __has_include(<CocoaDebug/CocoaDebugTool.h>)
-    
+//    [CocoaDebug enable];
     //        //--- If Want to Custom CocoaDebug Settings ---
     //        CocoaDebug.serverURL = @"google.com";
     //        CocoaDebug.ignoredURLs = @[@"aaa.com", @"bbb.com"];
@@ -151,7 +151,7 @@
     CocoaDebug.logMaxCount = 1000;
     //        CocoaDebug.emailToRecipients = @[@"aaa@gmail.com", @"bbb@gmail.com"];
     //        CocoaDebug.emailCcRecipients = @[@"ccc@gmail.com", @"ddd@gmail.com"];
-    //        CocoaDebug.mainColor = @"#fd9727";
+            CocoaDebug.mainColor = @"#7FFFAA";
     CocoaDebug.additionalViewController = [DemoEnvironmenVC.alloc init];
     //
     //        //--- If Use Google's Protocol buffers ---

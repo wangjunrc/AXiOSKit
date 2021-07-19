@@ -25,6 +25,7 @@
 #import "AXDemoUser.h"
 #import "AXDemoUser2.h"
 @import AssetsLibrary;
+@import CocoaDebug;
 
 static __attribute__((always_inline)) void asm_exit() {
 #ifdef __arm64__
@@ -852,7 +853,7 @@ void mySLog(NSString *format, ...)
         {
             _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
-            option.title = @"CocoaLumberjack日志";
+            option.title = @"CocoaLumberjack日志,注册";
             option.action = ^{
 #if __has_include(<CocoaLumberjack/CocoaLumberjack.h>)
                 // Uses os_log
@@ -861,28 +862,55 @@ void mySLog(NSString *format, ...)
                 [DDLog addLogger:DDTTYLogger.sharedInstance];
                 [DDLog addLogger:DDTTYLogger.sharedInstance withLevel:ddLogLevel];
                 
-                DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
+                // 先创建一个文件日志, 定义好相关配置信息
+//                DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
+                
+                
+                NSString *path = [[[NSString ax_cachesDomainMask] stringByAppendingPathComponent:@"axlog"] stringByAppendingPathComponent:@"CocoaLumberjack"];
+                
+                DDLogFileManagerDefault * documentsFileManager = [[DDLogFileManagerDefault alloc]
+                 initWithLogsDirectory:path];
+                
+                DDFileLogger *fileLogger =  [[DDFileLogger alloc] initWithLogFileManager:documentsFileManager];
+                
+                
                 fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
                 fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
                 [DDLog addLogger:fileLogger];
                 
-                DDLogVerbose(@"Verbose");
-                DDLogDebug(@"Debug");
-                DDLogInfo(@"Info");
-                DDLogWarn(@"Warn");
-                DDLogError(@"Error");
+                
+                
+                
+                
+#endif
+            };
+        }
+        
+        {
+            _AXCellItem *option = _AXCellItem.alloc.init;
+            [tempArray addObject:option];
+            option.title = @"CocoaLumberjack日志,打印";
+            option.action = ^{
+#if __has_include(<CocoaLumberjack/CocoaLumberjack.h>)
+                
+                DDLogVerbose(@"Verbose====123");
+                DDLogDebug(@"Debug====123");
+                DDLogInfo(@"Info====123");
+                DDLogWarn(@"Warn====123");
+                DDLogError(@"Error====123");
 #endif
             };
         }
         {
             _AXCellItem *option = _AXCellItem.alloc.init;
             [tempArray addObject:option];
-            option.title = @"CocoaDebugTool";
+            option.title = @"CocoaDebugTool,打印";
             option.action = ^{
 #if __has_include(<CocoaDebug/CocoaDebugTool.h>)
                 
                 [CocoaDebugTool logWithString:@"Custom Messages...."];
                 [CocoaDebugTool logWithString:@"Custom Messages...,有颜色" color:[UIColor redColor]];
+                NSLog(@"需要设置打开 App logs 才能看见");
                 
 #endif
             };
