@@ -14,7 +14,7 @@
 #if __has_include(<YYDebugDatabase/DebugDatabaseManager.h>)
 #import <YYDebugDatabase/DebugDatabaseManager.h>
 #endif
-#import <YYDebugDatabase/DebugDatabaseManager.h>
+
 
 #if __has_include(<DoraemonKit/DoraemonKit.h>)
 #import <DoraemonKit/DoraemonKit.h>
@@ -46,29 +46,29 @@
     //    /// for masOS
     //    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle"] load];
 #endif
-
+    
 #if __has_include(<YYDebugDatabase/DebugDatabaseManager.h>)
+    // http://127.0.0.1:9002 模拟器用
+    // http://192.168.31.10:9002/# 真机用 手机的ip, 在手机网络详情里 ip地址
     [DebugDatabaseManager.shared startServerOnPort:9002];
 #endif
     
-    
+/**
+ #ifdef 表示是否定义
+ #if 表示定义的值用于比较,可以多种情况
+ */
 #ifdef DEBUG
     NSLog(@"当前环境 = Debug");
-    
+    // Debug_α Debug_β 都属于 DEBUG 内
 #ifdef Debug_α
     NSLog(@"当前环境 = Debug_α");
-#endif
-    
-#ifdef Debug_β
+#elif Debug_β
     NSLog(@"当前环境 = Debug_β");
 #endif
     
 #endif
     
-    
-    
-    
-#if TARGET_IPHONE_SIMULATOR
+#ifdef TARGET_IPHONE_SIMULATOR
     // 模拟器
     AXLoger(@"模拟器");
 #elif TARGET_OS_IPHONE

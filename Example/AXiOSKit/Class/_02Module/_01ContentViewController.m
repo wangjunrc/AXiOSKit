@@ -57,6 +57,14 @@
     
     //    self.navigationController.navigationBarHidden = YES;
 }
+- (void)showDetailViewController:(UIViewController *)vc sender:(id)sender {
+    [super showDetailViewController:vc sender:sender];
+    
+}
+- (UIViewController *)targetViewControllerForAction:(SEL)action sender:(id)sender {
+    
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor =  UIColor.whiteColor;

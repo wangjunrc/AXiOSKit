@@ -20,15 +20,25 @@
 
 @implementation AXBundle
 
+NSString *const kAXiOSKitBundleName = @"AXiOSKitMain";
+
 + (NSBundle *)ax_mainBundle {
-    NSBundle *bundle = [NSBundle bundleForClass:self.class];
-    //spec文件resource_bundles对应的key
-    NSString *bundlePath = [bundle pathForResource:@"AXiOSKitMain" ofType:@"bundle"];
-    NSBundle *tempBundle = [NSBundle bundleWithPath:bundlePath];
-    if (tempBundle == nil) {
-        tempBundle = bundle;
+    
+    static NSBundle *resourceBundle = nil;
+    if (!resourceBundle) {
+        
+        NSBundle *bundle = [NSBundle bundleForClass:self.class];
+        /**
+         取默认值,但是我自定义了
+         NSDictionary *dic = currentBundle.infoDictionary;
+         NSString *bundleName = dic[@"CFBundleExecutable"];
+         NSString *resourcePath = [currentBundle pathForResource:bundleName ofType:@"bundle"];
+         */
+        NSString *bundlePath = [bundle pathForResource:kAXiOSKitBundleName ofType:@"bundle"];
+        resourceBundle = [NSBundle bundleWithPath:bundlePath] ?: bundle;
     }
-    return tempBundle;
+    return resourceBundle;
+    
 }
 
 + (NSBundle *)ax_HTMLBundle {
@@ -125,6 +135,6 @@ NSString* __nullable AXPathForFileInDocumentsDir(NSString* fileName){
 NSBundle* __nullable AXResourceBundle(NSString* bundleBasename, Class inBundleForClass){
     NSBundle* classBundle = [NSBundle bundleForClass:inBundleForClass];
     return [NSBundle bundleWithPath:[classBundle pathForResource:bundleBasename
-                                                         ofType:@"bundle"]];
+                                                          ofType:@"bundle"]];
 }
 
