@@ -271,7 +271,7 @@ def swift_common_pods
   #  pod 'SwiftProtobuf', '~> 1.0'
   
   # 微信样式的图片选择器，支持预览/相册内拍照及录视频、拖拽/滑动选择，编辑图片/视频，支持多语言国际化等功能;
-  # 功能挺多的
+  # 功能挺多的,涂鸦 编辑 
   #  pod 'ZLPhotoBrowser'
   #图片浏览器,swift库
   # pod 'Lantern'

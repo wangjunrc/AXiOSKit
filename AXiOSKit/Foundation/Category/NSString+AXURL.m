@@ -28,6 +28,12 @@
     NSURLComponents *components =  [NSURLComponents componentsWithString:url];
     NSMutableArray<NSURLQueryItem *> *tempArray = NSMutableArray.array;
     [tempArray addObjectsFromArray:components.queryItems];
+    /// 移除 已经存在的,会被替换
+    [tempArray enumerateObjectsUsingBlock:^(NSURLQueryItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (params[obj.name]) {
+            [tempArray removeObject:obj];
+        }
+    }];
     [params enumerateKeysAndObjectsUsingBlock:^(NSString *name, id value, BOOL *stop) {
         value = [value description];
         value = [value stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet];

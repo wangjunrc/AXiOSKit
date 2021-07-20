@@ -126,6 +126,35 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     
+    [SDImageCache.sharedImageCache containsImageForKey:@"key_1234" cacheType:SDImageCacheTypeAll completion:^(SDImageCacheType containsCacheType) {
+        NSLog(@"containsImageForKey %ld",containsCacheType);
+        
+        if (containsCacheType == SDImageCacheTypeNone) {
+            NSLog(@"缓存一下");
+            [SDImageCache.sharedImageCache storeImage:[UIImage imageNamed:@"no_data"] forKey:@"key_1234" completion:^{
+                NSLog(@"缓存一下,成功");
+//                imgView1.image =  [SDImageCache.sharedImageCache imageFromMemoryCacheForKey:@"key_1234"];
+            }];
+        }else {
+            NSLog(@"有缓存,直接取值");
+//            imgView1.image =  [SDImageCache.sharedImageCache imageFromMemoryCacheForKey:@"key_1234"];
+        }
+    }];
+    
+    NSMutableArray<NSURL *>*prefetchURLs = NSMutableArray.array;
+    
+    /// SDWebImagePrefetcher就会帮我们将图片逐个下载下来，并且缓存在本地，缓存的方式和我们通常使用的动态加载图片一样以url为key存储
+//    NSString *filename =  SDDiskCacheFileNameForKey(@"1");
+    [[SDWebImagePrefetcher sharedImagePrefetcher] prefetchURLs:prefetchURLs progress:^(NSUInteger noOfFinishedUrls, NSUInteger noOfTotalUrls) {
+            
+    } completed:^(NSUInteger noOfFinishedUrls, NSUInteger noOfSkippedUrls) {
+         
+        
+        
+    }];
+
+    
+    
     self.title = @"13SDWebImage";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithTitle:@"Clear Cache"
                                                                             style:UIBarButtonItemStylePlain
