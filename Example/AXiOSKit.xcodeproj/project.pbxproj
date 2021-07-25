@@ -46,6 +46,8 @@
 		2150B152269C1B8900351B10 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2150B150269C1B8900351B10 /* Image.bundle */; };
 		2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
 		2152C5B825919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
+		216EC68926AC0C12005AA936 /* _06RealmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 216EC68826AC0C12005AA936 /* _06RealmVC.m */; };
+		216EC68A26AC0C12005AA936 /* _06RealmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 216EC68826AC0C12005AA936 /* _06RealmVC.m */; };
 		217AE9E026974A9600A1A9B2 /* WebviewPreviewViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CB26974A9600A1A9B2 /* WebviewPreviewViewContoller.swift */; };
 		217AE9E126974A9600A1A9B2 /* WebviewPreviewViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CB26974A9600A1A9B2 /* WebviewPreviewViewContoller.swift */; };
 		217AE9E226974A9600A1A9B2 /* PreviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CC26974A9600A1A9B2 /* PreviewManager.swift */; };
@@ -585,6 +587,8 @@
 		2150B150269C1B8900351B10 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
 		2152C5B525919C720078D525 /* AXDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugViewController.h; sourceTree = "<group>"; };
 		2152C5B625919C720078D525 /* AXDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugViewController.m; sourceTree = "<group>"; };
+		216EC68726AC0C12005AA936 /* _06RealmVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _06RealmVC.h; sourceTree = "<group>"; };
+		216EC68826AC0C12005AA936 /* _06RealmVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _06RealmVC.m; sourceTree = "<group>"; };
 		217AE9CB26974A9600A1A9B2 /* WebviewPreviewViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebviewPreviewViewContoller.swift; sourceTree = "<group>"; };
 		217AE9CC26974A9600A1A9B2 /* PreviewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewManager.swift; sourceTree = "<group>"; };
 		217AE9CD26974A9600A1A9B2 /* FileListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListViewController.swift; sourceTree = "<group>"; };
@@ -1106,6 +1110,18 @@
 			path = _13Image;
 			sourceTree = "<group>";
 		};
+		216EC68626AC0BBE005AA936 /* _06db */ = {
+			isa = PBXGroup;
+			children = (
+				21A61DBC265E7F4A0080E67D /* _06WCDBViewController.h */,
+				21A61D40265E7F4A0080E67D /* _06WCDBViewController.m */,
+				21A61D31265E7F4A0080E67D /* _06WCDBViewController.xib */,
+				216EC68726AC0C12005AA936 /* _06RealmVC.h */,
+				216EC68826AC0C12005AA936 /* _06RealmVC.m */,
+			);
+			path = _06db;
+			sourceTree = "<group>";
+		};
 		217AE9CA26974A9600A1A9B2 /* FileBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -1275,9 +1291,7 @@
 				21A61D28265E7F4A0080E67D /* _04RunLoopViewController.m */,
 				21A61D77265E7F4A0080E67D /* _04RunLoopViewController.xib */,
 				21BB0B562685724500FDDC1A /* _05Web */,
-				21A61DBC265E7F4A0080E67D /* _06WCDBViewController.h */,
-				21A61D40265E7F4A0080E67D /* _06WCDBViewController.m */,
-				21A61D31265E7F4A0080E67D /* _06WCDBViewController.xib */,
+				216EC68626AC0BBE005AA936 /* _06db */,
 				21A61CAB265E7F4A0080E67D /* _07VideoViewController.h */,
 				21A61D78265E7F4A0080E67D /* _07VideoViewController.m */,
 				21A61D70265E7F4A0080E67D /* _07VideoViewController.xib */,
@@ -3017,6 +3031,7 @@
 				21A61E6E265E7F4B0080E67D /* _AXTestRouterManager.m in Sources */,
 				21A61EF8265E7F4B0080E67D /* _25CompLayoutCell.m in Sources */,
 				21A61EA6265E7F4B0080E67D /* DemoWevViewImageSchemeHandler.m in Sources */,
+				216EC68A26AC0C12005AA936 /* _06RealmVC.m in Sources */,
 				21A61E78265E7F4B0080E67D /* _28ShareFileViewController.m in Sources */,
 				21A61EAE265E7F4B0080E67D /* AXDemoBaseViewController.m in Sources */,
 				21A61E60265E7F4B0080E67D /* AXShareConfigs.swift in Sources */,
@@ -3160,6 +3175,7 @@
 				21A61F19265E7F4B0080E67D /* ChatTextMessageModel.m in Sources */,
 				21A61EB9265E7F4B0080E67D /* _22ReactiveObjCViewController.m in Sources */,
 				21A61DF1265E7F4A0080E67D /* XWShadow.m in Sources */,
+				216EC68926AC0C12005AA936 /* _06RealmVC.m in Sources */,
 				21CC20B0265F393C005BD351 /* _AXCellItem.m in Sources */,
 				21E6DE67260494060092051F /* DogOC.m in Sources */,
 				21A61E61265E7F4B0080E67D /* AXSocialShareViewController.m in Sources */,
