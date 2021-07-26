@@ -7,6 +7,10 @@
 //
 
 #import "_06RealmVC.h"
+#import "RLMOrder.h"
+#import "RLMOrderService.h"
+#import "RLMProduct.h"
+#import "RPDataBase.h"
 
 @interface _06RealmVC ()
 
@@ -16,17 +20,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    @weakify(self)
+    [self _buttonTitle:@"添加RLMOrder" handler:^(UIButton * _Nonnull btn) {
+        @strongify(self)
+        [ self testSavaOrder:3];
+    }];
+    
+    [self _buttonTitle:@"添加RLMOrder" handler:^(UIButton * _Nonnull btn) {
+        @strongify(self)
+        RLMOrder *order = [RLMOrderService queryOrderWithOrderNumber:@"1"];
+        NSLog(@"order=%@",order);
+    }];
+    
+    
+    [self _lastLoadBottomAttribute];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)testSavaOrder:(NSInteger )orderCount {
+    //1、1000订单存储，所有订单一个事务
+    NSMutableArray *orders = [NSMutableArray array];
+    for ( int i = 0 ; i<orderCount; i++) {
+        RLMOrder *order = [[RLMOrder alloc]init];
+        /// 主键
+        order.orderNumber =[NSString stringWithFormat:@"%d",i];
+        int count = (i % 3);
+        order.orderStatus = count == 0 ? @"成功":@"待支付";
+        int amount = 0;
+        for ( int j = 1; j <= count + 1; j++) {
+            RLMProduct *p = [[RLMProduct alloc]init];
+            p.name = [NSString stringWithFormat:@"煎饼果子-%d-%d",i,j];
+            int price = i*j;
+            amount+= price;
+            p.price = [NSString stringWithFormat:@"%@",@(price)];
+            [order.orderItems addObject:p];
+        }
+        order.orderAmount = [NSString stringWithFormat:@"%@",@(amount)];
+        [orders addObject:order];
+    }
+    BOOL success = [RLMOrderService saveOrders:orders];
+    NSLog(@"realm插入数据=%@",success ? @"成功":@"失败");
 }
-*/
-
 @end

@@ -63,6 +63,7 @@ PODS:
   - CYLTabBarController/Lottie (1.29.0):
     - CYLTabBarController/Core
     - lottie-ios (~> 2.5.3)
+  - DeviceKit (4.4.0)
   - DoraemonKit/Core (3.0.7):
     - FMDB
     - GCDWebServer
@@ -122,7 +123,6 @@ PODS:
   - JJException/Swizzle (0.2.9)
   - JKVValue (1.3.3)
   - Kiwi (3.0.0)
-  - Lantern (1.1.2)
   - libwebp (1.2.0):
     - libwebp/demux (= 1.2.0)
     - libwebp/mux (= 1.2.0)
@@ -176,6 +176,9 @@ PODS:
   - PromisesObjC (1.2.12)
   - Protobuf (3.15.8)
   - ReactiveObjC (3.1.1)
+  - Realm (10.10.0):
+    - Realm/Headers (= 10.10.0)
+  - Realm/Headers (10.10.0)
   - RMQClient (0.9.0):
     - CocoaAsyncSocket (~> 7.4)
     - JKVValue
@@ -229,6 +232,7 @@ DEPENDENCIES:
   - CocoaLumberjack (~> 3.7.2)
   - CTMediator
   - CYLTabBarController/Lottie
+  - DeviceKit
   - DoraemonKit/Core (~> 3.0.7)
   - DoraemonKit/WithDatabase (~> 3.0.7)
   - DoraemonKit/WithGPS (~> 3.0.7)
@@ -243,7 +247,6 @@ DEPENDENCIES:
   - IQKeyboardManager (~> 6.5.6)
   - JJException (~> 0.2.9)
   - Kiwi
-  - Lantern
   - lottie-ios (~> 2.5.3)
   - Mantle
   - Masonry (~> 1.1.0)
@@ -263,6 +266,7 @@ DEPENDENCIES:
   - PromisesObjC (~> 1.2.12)
   - Protobuf (~> 3.15.8)
   - ReactiveObjC (~> 3.1.0)
+  - Realm (~> 10.10.0)
   - RMQClient (~> 0.9.0)
   - SDWebImage (~> 5.11.1)
   - SDWebImageFLPlugin (~> 0.5.0)
@@ -284,6 +288,9 @@ DEPENDENCIES:
   - YYText (~> 1.0.7)
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - DeviceKit
+    - Realm
   trunk:
     - AFNetworking
     - APNGKit
@@ -311,7 +318,6 @@ SPEC REPOS:
     - JJException
     - JKVValue
     - Kiwi
-    - Lantern
     - libwebp
     - lottie-ios
     - Mantle
@@ -372,6 +378,7 @@ SPEC CHECKSUMS:
   CocoaLumberjack: b7e05132ff94f6ae4dfa9d5bce9141893a21d9da
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   CYLTabBarController: f5460b8446f82d016945d4d53895a1ef185b79e3
+  DeviceKit: 2c5d7485a2fa10b65c0091b2952d30843a6ba06d
   DoraemonKit: 32fb97f3aa82efa133111d193080ca5462cef135
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
@@ -387,7 +394,6 @@ SPEC CHECKSUMS:
   JJException: da7c64ccf29d9938a4075378a7e9a29db7383c37
   JKVValue: d7941071b1cf9ba35c194fd40bcf4c4d9b5462e9
   Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
-  Lantern: ed012be9a7c989ff5b94c080129a4734b45304b6
   libwebp: 6bac0a99ba5a6bb7449a951ff22c484201985f68
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   Mantle: 4c0ed6ce47c96eccc4dc3bb071deb3def0e2c3be
@@ -408,6 +414,7 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Protobuf: adb85cd18a15bd1a777c158af9fd6e612a0e6d69
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  Realm: f501df41a4222c67850c77cf135d472192ecf294
   RMQClient: 9bbda86703fd475761101ee5fda037eb2a12ec4e
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageFLPlugin: 245c7ce1e77028b6ef415240847b3f8aa4b106b7
@@ -431,6 +438,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 6ba5f2c928ebb0b8bcabed35d63c9900e0d67a08
+PODFILE CHECKSUM: 40d74130fd904531908ae973bb6ec3fea938c6d1
 
 COCOAPODS: 1.10.1

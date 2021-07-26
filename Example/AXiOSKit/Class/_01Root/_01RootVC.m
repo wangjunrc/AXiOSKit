@@ -18,6 +18,8 @@
 #import "_04RunLoopViewController.h"
 #import "_05WebVC.h"
 #import "_06WCDBViewController.h"
+#import "_06RealmVC.h"
+#import "_06WCDBVC.h"
 #import "_07VideoViewController.h"
 #import "_08MP3VC.h"
 #import "_09AFNViewController.h"
@@ -753,11 +755,24 @@
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
             [_1stArray addObject:item];
-            item.title = @"_06WCDBViewController";
+            item.title = @"_06WCDBVC";
             item.detail = @"WCDB";
             @weakify(item)
             item.action = ^{
-                _06WCDBViewController *vc = [[_06WCDBViewController alloc] init];
+                _06WCDBVC *vc = [[_06WCDBVC alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_06RealmVC";
+            item.detail = @"6Real数据库";
+            @weakify(item)
+            item.action = ^{
+                _06RealmVC *vc = [[_06RealmVC alloc] init];
                 @strongify(item)
                 vc.title = item.detail;
                 [self ax_pushVC:vc];
