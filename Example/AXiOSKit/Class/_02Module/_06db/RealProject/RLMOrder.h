@@ -6,7 +6,7 @@
 //  Copyright © 2017年 xiongan. All rights reserved.
 //  这是一个简化的订单模型设计，拟在举列子
 //
-
+#if __has_include(<Realm/Realm.h>)
 #import <Realm/Realm.h>
 #import "RLMProduct.h"
 
@@ -23,3 +23,4 @@
 
 @end
 RLM_COLLECTION_TYPE(RLMOrder)
+#endif

@@ -176,9 +176,6 @@ PODS:
   - PromisesObjC (1.2.12)
   - Protobuf (3.15.8)
   - ReactiveObjC (3.1.1)
-  - Realm (10.10.0):
-    - Realm/Headers (= 10.10.0)
-  - Realm/Headers (10.10.0)
   - RMQClient (0.9.0):
     - CocoaAsyncSocket (~> 7.4)
     - JKVValue
@@ -266,7 +263,6 @@ DEPENDENCIES:
   - PromisesObjC (~> 1.2.12)
   - Protobuf (~> 3.15.8)
   - ReactiveObjC (~> 3.1.0)
-  - Realm (~> 10.10.0)
   - RMQClient (~> 0.9.0)
   - SDWebImage (~> 5.11.1)
   - SDWebImageFLPlugin (~> 0.5.0)
@@ -290,7 +286,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - DeviceKit
-    - Realm
   trunk:
     - AFNetworking
     - APNGKit
@@ -414,7 +409,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Protobuf: adb85cd18a15bd1a777c158af9fd6e612a0e6d69
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  Realm: f501df41a4222c67850c77cf135d472192ecf294
   RMQClient: 9bbda86703fd475761101ee5fda037eb2a12ec4e
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageFLPlugin: 245c7ce1e77028b6ef415240847b3f8aa4b106b7
@@ -438,6 +432,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 40d74130fd904531908ae973bb6ec3fea938c6d1
+PODFILE CHECKSUM: e8104b1e64d685f51e1884e02a185d87360ae67c
 
 COCOAPODS: 1.10.1

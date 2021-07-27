@@ -243,7 +243,7 @@ def common_pods
   # 字典转模型
   pod 'Mantle'
   
-  pod 'Realm', '~> 10.10.0'
+#  pod 'Realm', '~> 10.11.0'
 end
 
 # swift的库,为了兼容

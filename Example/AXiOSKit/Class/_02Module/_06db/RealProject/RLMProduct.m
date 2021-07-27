@@ -7,7 +7,8 @@
 //
 
 #import "RLMProduct.h"
-
+#if __has_include(<Realm/Realm.h>)
 @implementation RLMProduct
 
 @end
+#endif

@@ -8,9 +8,11 @@
 
 #import "RLMOrder.h"
 
+#if __has_include(<Realm/Realm.h>)
 @implementation RLMOrder
 
 +(NSString *)primaryKey {
     return @"orderNumber";
 }
 @end
+#endif

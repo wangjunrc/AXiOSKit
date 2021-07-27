@@ -7,9 +7,11 @@
 //
 
 #import "RPDataBase.h"
+#if __has_include(<Realm/Realm.h>)
 #import <Realm/Realm.h>
 
 @implementation RPDataBase
+
 + (RLMRealmConfiguration *)config {
     static RLMRealmConfiguration *_config  = nil;
     if (!_config) {
@@ -62,3 +64,5 @@
     return [[NSFileManager defaultManager] removeItemAtPath:self.config.fileURL.path error:nil];
 }
 @end
+
+#endif

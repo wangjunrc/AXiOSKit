@@ -7,6 +7,7 @@
 //
 
 #import "RLMOrderService.h"
+#if __has_include(<Realm/Realm.h>)
 #import "RPDataBase.h"
 
 @implementation RLMOrderService
@@ -47,3 +48,4 @@
 
 }
 @end
+#endif

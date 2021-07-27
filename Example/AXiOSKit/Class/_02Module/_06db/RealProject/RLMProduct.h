@@ -6,7 +6,7 @@
 //  Copyright © 2017年 xiongan. All rights reserved.
 //  本商品模型是一个简化的模型，拟在举例子，实际模型复杂的多
 //
-
+#if __has_include(<Realm/Realm.h>)
 #import <Realm/Realm.h>
 
 @interface RLMProduct : RLMObject
@@ -18,3 +18,4 @@
 @property NSString *imgUrl;
 @end
 RLM_COLLECTION_TYPE(RLMProduct)
+#endif

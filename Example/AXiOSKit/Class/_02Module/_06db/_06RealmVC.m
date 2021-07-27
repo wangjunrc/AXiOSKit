@@ -7,11 +7,12 @@
 //
 
 #import "_06RealmVC.h"
+#if __has_include(<Realm/Realm.h>)
 #import "RLMOrder.h"
 #import "RLMOrderService.h"
 #import "RLMProduct.h"
 #import "RPDataBase.h"
-
+#endif
 @interface _06RealmVC ()
 
 @end
@@ -26,10 +27,12 @@
         [ self testSavaOrder:3];
     }];
     
-    [self _buttonTitle:@"添加RLMOrder" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"取值" handler:^(UIButton * _Nonnull btn) {
         @strongify(self)
+#if __has_include(<Realm/Realm.h>)
         RLMOrder *order = [RLMOrderService queryOrderWithOrderNumber:@"1"];
         NSLog(@"order=%@",order);
+#endif
     }];
     
     
@@ -38,6 +41,7 @@
 
 
 -(void)testSavaOrder:(NSInteger )orderCount {
+#if __has_include(<Realm/Realm.h>)
     //1、1000订单存储，所有订单一个事务
     NSMutableArray *orders = [NSMutableArray array];
     for ( int i = 0 ; i<orderCount; i++) {
@@ -60,5 +64,8 @@
     }
     BOOL success = [RLMOrderService saveOrders:orders];
     NSLog(@"realm插入数据=%@",success ? @"成功":@"失败");
+    
+#endif
 }
+
 @end

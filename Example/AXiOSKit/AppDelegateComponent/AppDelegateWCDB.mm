@@ -92,7 +92,10 @@
 }
 
 -(void)configRealm{
+    
+#if __has_include(<Realm/Realm.h>)
     [RPDataBase  dataBaseMigration];
+#endif
 }
 
 
