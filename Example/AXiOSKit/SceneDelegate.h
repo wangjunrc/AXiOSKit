@@ -1,16 +1,16 @@
+////
+////  SceneDelegate.h
+////  AXiOSKitExample
+////
+////  Created by liuweixing on 2020/5/6.
+////  Copyright © 2020 liuweixing. All rights reserved.
+////
 //
-//  SceneDelegate.h
-//  AXiOSKitExample
+//#import <UIKit/UIKit.h>
 //
-//  Created by liuweixing on 2020/5/6.
-//  Copyright © 2020 liuweixing. All rights reserved.
+//@interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
 //
-
-#import <UIKit/UIKit.h>
-
-@interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
-
-@property (strong, nonatomic) UIWindow * window;
-
-@end
-
+//@property (strong, nonatomic) UIWindow * window;
+//
+//@end
+//

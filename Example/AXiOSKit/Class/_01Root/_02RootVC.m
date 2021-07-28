@@ -852,8 +852,8 @@ void mySLog(NSString *format, ...)
         [tempArray addObject:option];
         option.title = @"解压";
         option.action = ^{
-            NSString *path = [NSString.ax_documentPath stringByAppendingPathComponent:@"sudian.zip"];
-            NSString *targetPath = NSString.ax_documentPath;
+            NSString *path = [NSString.ax_documentDirectory stringByAppendingPathComponent:@"sudian.zip"];
+            NSString *targetPath = NSString.ax_documentDirectory;
             BOOL succ = [SSZipArchive unzipFileAtPath:path toDestination:targetPath];
             NSLog(@"解压 = %d",succ);
         };

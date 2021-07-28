@@ -35,6 +35,7 @@ PODS:
     - AXiOSKit/Foundation
     - AXViewControllerTransitioning (>= 1.0.0)
     - DZNEmptyDataSet (>= 1.8.0)
+    - FMDB
     - lottie-ios (~> 2.5.3)
     - Masonry (>= 1.0.0)
     - MBProgressHUD (>= 1.0.0)
@@ -89,6 +90,8 @@ PODS:
   - FLAnimatedImage (1.0.16)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
+  - FMDB/SQLCipher (2.7.5):
+    - SQLCipher
   - FMDB/standard (2.7.5)
   - GCDWebServer (3.5.4):
     - GCDWebServer/Core (= 3.5.4)
@@ -190,17 +193,16 @@ PODS:
     - SDWebImage/Core (~> 5.10)
   - SnapKit (5.0.1)
   - SocketRocket (0.5.1)
-  - SQLiteRepairKit (1.2.2):
-    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - SQLCipher (4.4.3):
+    - SQLCipher/standard (= 4.4.3)
+  - SQLCipher/common (4.4.3)
+  - SQLCipher/standard (4.4.3):
+    - SQLCipher/common
   - SSKeychain (1.4.1)
   - SSZipArchive (2.4.2)
   - TABAnimated (2.5.5)
   - TOCropViewController (2.6.0)
   - TZImagePickerController (3.5.9)
-  - WCDB (1.0.7.5):
-    - SQLiteRepairKit (~> 1.2.0)
-    - WCDBOptimizedSQLCipher (~> 1.2.0)
-  - WCDBOptimizedSQLCipher (1.2.1)
   - WRNavigationBar (1.3.0)
   - YYCache (1.0.4)
   - YYCategories (1.0.4):
@@ -238,6 +240,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet (~> 1.8.1)
   - FBSnapshotTestCase
   - fishhook (~> 0.2)
+  - FMDB/SQLCipher (~> 2.7.5)
   - GDataXML-HTML (~> 1.4.1)
   - GSKStretchyHeaderView (~> 1.0.4)
   - IGListKit (~> 4.0.0)
@@ -269,12 +272,12 @@ DEPENDENCIES:
   - SDWebImageWebPCoder (~> 0.8.1)
   - SnapKit (~> 5.0.0)
   - SocketRocket (~> 0.5.1)
+  - SQLCipher (~> 4.0)
   - SSKeychain
   - SSZipArchive
   - TABAnimated (= 2.5.5)
   - TOCropViewController (~> 2.6.0)
   - TZImagePickerController (~> 3.5.8)
-  - WCDB (~> 1.0.7.5)
   - WRNavigationBar (~> 1.3.0)
   - YYCache (~> 1.0.4)
   - YYCategories (~> 1.0.4)
@@ -284,8 +287,6 @@ DEPENDENCIES:
   - YYText (~> 1.0.7)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - DeviceKit
   trunk:
     - AFNetworking
     - APNGKit
@@ -298,6 +299,7 @@ SPEC REPOS:
     - CocoaLumberjack
     - CTMediator
     - CYLTabBarController
+    - DeviceKit
     - DoraemonKit
     - DZNEmptyDataSet
     - FBSnapshotTestCase
@@ -339,14 +341,12 @@ SPEC REPOS:
     - SDWebImageWebPCoder
     - SnapKit
     - SocketRocket
-    - SQLiteRepairKit
+    - SQLCipher
     - SSKeychain
     - SSZipArchive
     - TABAnimated
     - TOCropViewController
     - TZImagePickerController
-    - WCDB
-    - WCDBOptimizedSQLCipher
     - WRNavigationBar
     - YYCache
     - YYCategories
@@ -365,7 +365,7 @@ SPEC CHECKSUMS:
   APNGKit: 939475205746e11a212c265f39dbb9dca70011e8
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AXCollectionObserve: 0553a382e43d0a4482831c5d87243a146ae946c3
-  AXiOSKit: ed2e17ae6bcfeec0b1121a030b685a0da24107fb
+  AXiOSKit: 67ea27eec1936fa34fe4ee5f31b61ee7ebf569e9
   AXViewControllerTransitioning: 0ba0b9d3403719756f72814f3e39f0abe02157e6
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
@@ -415,14 +415,12 @@ SPEC CHECKSUMS:
   SDWebImageWebPCoder: f93010f3f6c031e2f8fb3081ca4ee6966c539815
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
-  SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
+  SQLCipher: 155ffeafc9ac102e5c9b68e3e9a1297a98a27096
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
   SSZipArchive: e7b4f3d9e780c2acc1764cd88fbf2de28f26e5b2
   TABAnimated: 578ad7becfcba14e163ecf7e755113de17ee1984
   TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
   TZImagePickerController: 07a2f834f4908689759a7e54f74e9a018e047cb6
-  WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
-  WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   WRNavigationBar: 84935d8d39d2504a10a8d33688ab169b6a209521
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
@@ -432,6 +430,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: e8104b1e64d685f51e1884e02a185d87360ae67c
+PODFILE CHECKSUM: 055b9f74b1e383e42a87ecb94a9cea73b80deb6d
 
 COCOAPODS: 1.10.1

@@ -71,6 +71,8 @@ Pod::Spec.new do |s|
         ss.dependency 'ReactiveObjC','>= 3.0.0'
         ss.dependency 'AXViewControllerTransitioning','>= 1.0.0'
         ss.dependency 'lottie-ios', '~>2.5.3'
+        ss.dependency 'FMDB'
+        
     end
     
 end

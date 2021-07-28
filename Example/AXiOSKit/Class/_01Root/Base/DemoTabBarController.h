@@ -6,11 +6,12 @@
 //  Copyright © 2021 axinger. All rights reserved.
 //
 
+/// 动画效果
 #import <CYLTabBarController/CYLTabBarController.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DemoTabBarController : CYLTabBarController
+@interface DemoTabBarController : UITabBarController
 
 @end
 

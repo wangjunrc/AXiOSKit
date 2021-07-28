@@ -26,12 +26,16 @@
 #include <net/if.h>
 @implementation NSString (AXKit)
 
-+(NSString *)ax_documentPath{
++(NSString *)ax_documentDirectory{
     return NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES ).firstObject;
 }
 
 +(NSString *)ax_libraryPaths {
-    return  NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
+    return NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
+}
+
++(NSString *)ax_applicationSupportDirectory {
+    return NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES ).firstObject;
 }
 
 +(NSString *)ax_tmpPath{

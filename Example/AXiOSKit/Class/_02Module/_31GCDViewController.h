@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXDemoBaseViewController.h"
+#import "DemoContainerViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _31GCDViewController : AXDemoBaseViewController
+@interface _31GCDViewController : DemoContainerViewController
 
 @end
 

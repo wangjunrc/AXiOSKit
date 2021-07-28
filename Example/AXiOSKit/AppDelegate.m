@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "AppDelegateWCDB.h"
+#import "AppDelegateDB.h"
 #import "MakeKeyAndVisible.h"
 #import "AppDelegateRegistryCenter.h"
 //#import <Bagel/Bagel.h>
@@ -16,7 +16,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "_01ContentViewController.h"
 #import "AXShareService.h"
-
+#import "DemoAppSetting.h"
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
@@ -57,8 +57,8 @@
             break;
             //上一首
         case UIEventSubtypeRemoteControlPreviousTrack:{
-                NSLog(@"上一首");
-            }
+            NSLog(@"上一首");
+        }
             break;
         default:
             break;
@@ -71,7 +71,7 @@
     [self thirdSDKLifecycleManager:@selector(application:didFinishLaunchingWithOptions:) withParameters:@[application,@{}]];
     
     //开启接收远程事件 ,用于接收播放器
-//    [application beginReceivingRemoteControlEvents];
+    //    [application beginReceivingRemoteControlEvents];
     
     //    NSLog(@"IS_PRODUCATION = %d, SERVER_HOST = %@",IS_PRODUCATION, SERVER_HOST);
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -286,27 +286,40 @@
 
 
 // 屏幕旋转方向
-- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
-    UIViewController*  topViewController = [self topViewController] ;
-    NSLog(@"屏幕旋转方向,topViewController = %@",topViewController.class);
-    NSLog(@"屏幕旋转方向,presentedViewController = %@",window.rootViewController.presentedViewController);
-    /// 如果是横屏WebView 支持横屏
-    if ([topViewController isKindOfClass:NSClassFromString(@"_38DirectionVC")]){
-        
-        return   UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight ;
+//- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+//    UIViewController*  topViewController = [self topViewController] ;
+//    
+//    /// 支持横屏
+//    if ([topViewController isKindOfClass:NSClassFromString(@"_38DirectionVC")]){
+//        NSLog(@"_38DirectionVC,支持横屏");
+//        return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight ;
+//    }
+//    
+//    
+//    return UIInterfaceOrientationMaskPortrait;
+//    
+//    //    if ([window.rootViewController.presentedViewController isKindOfClass:NSClassFromString(@"_38DirectionVC")]) {
+//    //        return   UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight ;
+//    //        }
+//    //        else {
+//    //            return UIInterfaceOrientationMaskPortrait;
+//    //        }
+//    
+//}
+
+
+/// 指定控制器旋转 : 根据设置调整支持方向
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    
+    if (DemoAppSetting.shared.isAllowing) {
+        return   UIInterfaceOrientationMaskPortrait |
+        UIInterfaceOrientationMaskLandscapeLeft |
+        UIInterfaceOrientationMaskLandscapeRight ;
     }
-    
-    
     return UIInterfaceOrientationMaskPortrait;
-    
-    //    if ([window.rootViewController.presentedViewController isKindOfClass:NSClassFromString(@"_38DirectionVC")]) {
-    //        return   UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight ;
-    //        }
-    //        else {
-    //            return UIInterfaceOrientationMaskPortrait;
-    //        }
-    
 }
+
+
 
 //获取当前屏幕显示的viewcontroller
 - (UIViewController *)topViewController {

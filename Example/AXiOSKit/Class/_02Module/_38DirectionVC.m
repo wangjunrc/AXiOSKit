@@ -7,7 +7,7 @@
 //
 
 #import "_38DirectionVC.h"
-
+#import "DemoAppSetting.h"
 @interface _38DirectionVC ()
 
 @end
@@ -16,13 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.cyanColor;
+    self.title = @"当前控制器可以旋转";
+    self.view.backgroundColor = UIColor.blueColor;
     [self _titlelabel:@"当前VC可以旋转"];
     [self _buttonTitle:@"左旋转" handler:^(UIButton * _Nonnull btn) {
         NSNumber *orientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeLeft];
         [[UIDevice currentDevice] setValue:orientationTarget forKey:@"orientation"];
     }];
-    
+
     [self _buttonTitle:@"右旋转" handler:^(UIButton * _Nonnull btn) {
         NSNumber *orientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
         [[UIDevice currentDevice] setValue:orientationTarget forKey:@"orientation"];
@@ -33,18 +34,53 @@
         [strongSelf dismissViewControllerAnimated:YES completion:nil];
     }];
     [self _lastLoadBottomAttribute];
+    
+//    UILabel *label = UILabel.alloc.init;
+//    [self.view addSubview:label];
+//    label.numberOfLines  = 0;
+//    label.backgroundColor = UIColor.whiteColor;
+//    label.textColor = UIColor.blackColor;
+//    label.text = @"当前VC可以旋转";
+//
+//    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop).mas_equalTo(0);
+////        make.centerX.mas_equalTo(0);
+//        make.left.mas_equalTo(5);
+//        make.right.mas_equalTo(-5);
+////        make.center.mas_offset(0);
+//    }];
+    
+    
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-    /// 要在这里默认一下
-//    NSNumber *orientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeLeft];
-//    [[UIDevice currentDevice] setValue:orientationTarget forKey:@"orientation"];
-}
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//
+//    /// 要在这里默认一下
+////    NSNumber *orientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeLeft];
+////    [[UIDevice currentDevice] setValue:orientationTarget forKey:@"orientation"];
+//}
 //设置状态栏转屏时不隐藏
-- (BOOL)prefersStatusBarHidden {
-    return NO;
+//- (BOOL)prefersStatusBarHidden {
+//    return NO;
+//}
+
+
+//打开允许旋转
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    DemoAppSetting.shared.allowing = YES;
+}
+
+//关闭允许旋转
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    DemoAppSetting.shared.allowing  = NO;
+}
+
+//支持旋转
+- (BOOL)shouldAutorotate {
+    return YES;
 }
 
 

@@ -3,8 +3,8 @@ use_frameworks!
 platform :ios, '10.0'
 inhibit_all_warnings!
 
-source 'https://github.com/CocoaPods/Specs.git'
-#source 'https://cdn.cocoapods.org/'
+#source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org/'
 # 清华镜像
 #source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 #source 'https://gitee.com/mirrors/CocoaPods-Specs.git'
@@ -101,6 +101,9 @@ def common_pods
   pod 'AFNetworking','~> 4.0.1'
   pod 'IQKeyboardManager','~> 6.5.6'
   
+#  pod "FMDB","~>2.7.5"
+  pod "FMDB/SQLCipher","~>2.7.5"
+  pod 'SQLCipher', '~>4.0'
   #  https://www.cnblogs.com/edensyd/p/9233220.html
   #ReactiveObjC -- 对应的是RAC的OC版本，最新3.1.0版本。
   #ReactiveCocoa--对应的是RAC的swift版本，最新7.1.0版本。
@@ -167,7 +170,7 @@ def common_pods
   
   #  pod 'libwebp', :git => 'https://gitee.com/mirrors/libwebp.git'
   # 微信开源数据库操作层 ORM
-  pod 'WCDB','~> 1.0.7.5'
+#  pod 'WCDB','~> 1.0.7.5'
   #  pod 'WCDB' , :git => 'https://gitee.com/mirrors/wcdb.git' #,:tag => '~> 1.0.8.2'
   # 微信分享,此版本才不会校验链接
   #    pod 'WechatOpenSDK','= 1.7.7'
@@ -244,6 +247,8 @@ def common_pods
   pod 'Mantle'
   
 #  pod 'Realm', '~> 10.11.0'
+#pod 'GRDB.swift'
+
 end
 
 # swift的库,为了兼容

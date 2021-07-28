@@ -6,7 +6,7 @@
 //  Copyright © 2016年 liuweixing. All rights reserved.
 //
 
-#if __has_include("FMDB.h")
+//#if __has_include("FMDB.h")
 
 #import <Foundation/Foundation.h>
 #import <FMDB/FMDB.h>
@@ -119,4 +119,4 @@
 @end
 
 
-#endif
+//#endif

@@ -63,7 +63,7 @@
     
     [self _buttonTitle:@"文件夹" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        NSString* path = [NSString ax_documentPath];
+        NSString* path = [NSString ax_documentDirectory];
         [strongSelf _preview_UIDocumentInteractionController:path];
     }];
     
@@ -274,7 +274,7 @@
         [muStr appendString:@"\n"];
     }
     
-    NSString *dire = [NSString.ax_documentPath stringByAppendingPathComponent:@"Excel"];
+    NSString *dire = [NSString.ax_documentDirectory stringByAppendingPathComponent:@"Excel"];
     NSError *error = nil;
     
     /// 创建文件夹,没有就创建,有就不创建,不会覆盖,不用判断文件夹是否存在

@@ -7,8 +7,10 @@
 //
 
 #import "_06WCDBViewController.h"
+#if __has_include(<WCDB/WCDB.h>)
 #import "AXUserInfoDao.h"
 #import "AXUserInfo.h"
+#endif
 #import <AXiOSKit/AXiOSKit.h>
 #import "TZImagePickerController.h"
 #import <MJExtension/MJExtension.h>
@@ -21,7 +23,7 @@
 @end
 
 @implementation _06WCDBViewController
-
+#if __has_include(<WCDB/WCDB.h>)
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tf.placeholder = @"输入name";
@@ -59,5 +61,5 @@
     NSLog(@"model = %@",[model mj_JSONObject]);
     
 }
-
+#endif
 @end

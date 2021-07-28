@@ -176,7 +176,7 @@ failure {
         return;
     }
     
-    NSString *filePath = [NSString ax_documentPath];
+    NSString *filePath = [NSString ax_documentDirectory];
     if (self.config.filePath.length) {
         filePath = [filePath stringByAppendingPathComponent:self.config.filePath];
     }
@@ -186,7 +186,7 @@ failure {
                  [NSString ax_stringRandomlyWithCount:5]]];
     
     self.autioPath =
-    [[NSString ax_documentPath] stringByAppendingPathComponent:filePath];
+    [[NSString ax_documentDirectory] stringByAppendingPathComponent:filePath];
     NSURL *url = [NSURL fileURLWithPath:self.autioPath];
     
     //初始化

@@ -20,6 +20,8 @@
 #import "_06WCDBViewController.h"
 #import "_06RealmVC.h"
 #import "_06WCDBVC.h"
+#import "_06MMKVVC.h"
+#import "_06FMDBVC.h"
 #import "_07VideoViewController.h"
 #import "_08MP3VC.h"
 #import "_09AFNViewController.h"
@@ -223,8 +225,6 @@
     _AXCellItem *item = self.dataArray[indexPath.section][indexPath.row];
     if (item.action) {
         item.action();
-    }else if(item.action2){
-        item.action2(item);
     }
 }
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -762,8 +762,21 @@
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
             [_1stArray addObject:item];
+            item.title = @"_06FMDBVC";
+            item.detail = @"db-fmdb";
+            @weakify(item)
+            item.action = ^{
+                _06FMDBVC *vc = [[_06FMDBVC alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
+                [self ax_pushVC:vc];
+            };
+        }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
             item.title = @"_06WCDBVC";
-            item.detail = @"WCDB";
+            item.detail = @"db";
             @weakify(item)
             item.action = ^{
                 _06WCDBVC *vc = [[_06WCDBVC alloc] init];
@@ -776,7 +789,7 @@
             _AXCellItem *item = _AXCellItem.alloc.init;
             [_1stArray addObject:item];
             item.title = @"_06RealmVC";
-            item.detail = @"6Real数据库";
+            item.detail = @"db-6Real数据库";
             @weakify(item)
             item.action = ^{
                 _06RealmVC *vc = [[_06RealmVC alloc] init];
@@ -785,6 +798,22 @@
                 [self ax_pushVC:vc];
             };
         }
+        {
+            _AXCellItem *item = _AXCellItem.alloc.init;
+            [_1stArray addObject:item];
+            item.title = @"_06MMKVVC";
+            item.detail = @"db-MMKV";
+            @weakify(item)
+            item.action = ^{
+                _06MMKVVC *vc = [[_06MMKVVC alloc] init];
+                @strongify(item)
+                vc.title = item.detail;
+                [self ax_pushVC:vc];
+            };
+        }
+        
+        
+        
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
             [_1stArray addObject:item];
@@ -1418,20 +1447,23 @@
             };
         }
         
-        [_1stArray addTitle:@"_42MantleVC" detail:@"Mantle字典转模型" action:^(_AXCellItem *option) {
+        [_1stArray ax_addItem:^(_AXCellItem * _Nonnull item) {
+            item.title = @"_42MantleVC";
+            item.detail = @"Mantle字典转模型";
+        } action:^(_AXCellItem * _Nonnull item) {
             _42MantleVC *vc = [_42MantleVC ax_init];
-            vc.title = option.detail;
+            vc.title = item.detail;
             [self ax_pushVC:vc];
         }];
+        
         
         [_1stArray ax_addItem:^(_AXCellItem * _Nonnull item) {
             item.title = @"_43ColorVC";
             item.detail = @"颜色";
-            item.action2 = ^(_AXCellItem * _Nonnull obj) {
-                _43ColorVC *vc = [_43ColorVC ax_init];
-                vc.title = obj.detail;
-                [self ax_pushVC:vc];
-            };
+        } action:^(_AXCellItem * _Nonnull item) {
+            _43ColorVC *vc = [_43ColorVC ax_init];
+            vc.title = item.detail;
+            [self ax_pushVC:vc];
         }];
         
 #pragma mark - 2nd begin
@@ -1533,14 +1565,13 @@
 }
 
 
-// 是否支持设备自动旋转
-//- (BOOL)shouldAutorotate {
-//    return NO;
-//}
-//
-//// 支持屏幕显示方向
-//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-//    return UIInterfaceOrientationMaskPortrait;
-//}
+/// 指定控制器旋转: 基类：默认不支持旋转
+- (BOOL)shouldAutorotate {
+    return NO;
+}
 
+/// 指定控制器旋转: 默认支持方向
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
 @end

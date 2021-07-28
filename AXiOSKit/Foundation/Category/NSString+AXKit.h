@@ -14,7 +14,9 @@
 /**
  * 文件路径
  */
-@property (nonatomic, copy, readonly, class) NSString *ax_documentPath;
+@property (nonatomic, copy, readonly, class) NSString *ax_documentDirectory;
+
+@property (nonatomic, copy, readonly, class) NSString *ax_applicationSupportDirectory;
 
 /**
  * 文件路径

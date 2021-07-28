@@ -74,7 +74,7 @@
     //状态栏颜色
     self.navigationBar.barStyle = UIBarStyleDefault;
     //半透明--- view坐标为0,0, NO view坐标为0,64
-//    self.navigationBar.translucent = NO;
+    //    self.navigationBar.translucent = NO;
     //取消导航白线
     self.navigationBar.shadowImage = UIImage.alloc.init;
     
@@ -172,12 +172,12 @@
 
 - (void)setNavBarAppearence
 {
-//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor purpleColor]}];
-//    [UINavigationBar appearance].tintColor = [UIColor yellowColor];
-//    [UINavigationBar appearance].barTintColor = [UIColor redColor];
+    //    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor purpleColor]}];
+    //    [UINavigationBar appearance].tintColor = [UIColor yellowColor];
+    //    [UINavigationBar appearance].barTintColor = [UIColor redColor];
     
     UIColor *MainNavBarColor = [UIColor orangeColor];
-//    UIColor * MainViewColor   = [UIColor purpleColor];
+    //    UIColor * MainViewColor   = [UIColor purpleColor];
     
     // 设置是 广泛使用WRNavigationBar，还是局部使用WRNavigationBar，目前默认是广泛使用
     [WRNavigationBar wr_widely];
@@ -198,5 +198,11 @@
     [WRNavigationBar wr_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
     // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
     [WRNavigationBar wr_setDefaultNavBarShadowImageHidden:YES];
+}
+
+
+/// 指定控制器旋转: 跟随当前导航控制器的设置
+- (BOOL)shouldAutorotate {
+    return self.topViewController.shouldAutorotate;
 }
 @end

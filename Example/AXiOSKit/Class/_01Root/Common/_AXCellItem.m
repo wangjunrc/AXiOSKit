@@ -33,14 +33,20 @@
     };
 }
 
-
-- (void)ax_addItem:(void (^)(_AXCellItem *item))add {
-    if (add) {
-        NSMutableArray *tempArray = self;
-        _AXCellItem *item = _AXCellItem.alloc.init;
-        add(item);
-        [tempArray addObject:item];
-    }
+- (void)ax_addItem:(void (^)(_AXCellItem *item))add
+            action:(void (^)(_AXCellItem *item))action {
+    
+    NSMutableArray *tempArray = self;
+    _AXCellItem *item = _AXCellItem.alloc.init;
+    [tempArray addObject:item];
+    add(item);
+    @weakify(item)
+    item.action = ^{
+        @strongify(item)
+        if (action) {
+            action(item);
+        }
+    };
 }
 
 @end

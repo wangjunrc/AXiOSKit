@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegateRegistryCenter.h"
-#import "AppDelegateWCDB.h"
+#import "AppDelegateDB.h"
 #import "AppDelegateWX.h"
 #import "AppDelegateAppearance.h"
 #import "AppDelegateWebImage.h"
@@ -38,7 +38,7 @@ id AppDelegateRegistry(SEL selector,NSArray *params ) {
 
 
 - (void)registeServices{
-    [self registeService:[AppDelegateWCDB.alloc init]];
+    [self registeService:[AppDelegateDB.alloc init]];
     [self registeService:[AppDelegateWX.alloc init]];
     [self registeService:[AppDelegateAppearance.alloc init]];
     [self registeService:[AppDelegateWebImage.alloc init]];
