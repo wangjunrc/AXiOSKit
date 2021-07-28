@@ -1662,7 +1662,7 @@ dispatch_async(concurrentQueue, ^(){
 dispatch_async(concurrentQueue, ^(){
     NSLog(@"dispatch-3");
 });
-/// 异步
+/// 异步 
 dispatch_barrier_async(concurrentQueue, ^(){
     NSLog(@"dispatch-barrier");
 });

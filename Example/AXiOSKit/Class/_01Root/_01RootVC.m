@@ -223,6 +223,8 @@
     _AXCellItem *item = self.dataArray[indexPath.section][indexPath.row];
     if (item.action) {
         item.action();
+    }else if(item.action2){
+        item.action2(item);
     }
 }
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -620,16 +622,21 @@
         //        1st,2nd,3rd,4th,5th,6th,7th,8th,9th,10th.
         
         NSMutableArray<NSMutableArray<_AXCellItem *> *> *_allArray = NSMutableArray.array;
-        
-        
         NSMutableArray<_AXCellItem *> *_1stArray = NSMutableArray.array;
         [_allArray addObject:_1stArray];
-        
         NSMutableArray<_AXCellItem *> *_2ndArray = NSMutableArray.array;
         [_allArray addObject:_2ndArray];
         
         _dataArray = _allArray.mutableCopy;
         
+#pragma mark - 1st begin
+        
+        [_1stArray addTitle:@"_01ContentViewController" detail:@"uikit示例" action:^(_AXCellItem *option) {
+            _01ContentViewController *vc =
+            [[_01ContentViewController alloc] init];
+            vc.title = option.detail;
+            [self ax_pushVC:vc];
+        }];
         
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
@@ -658,7 +665,7 @@
                 @strongify(item)
                 vc.title = item.detail;
                 //iOS8之后的新特性, 模态present替换为
-//            [self showDetailViewController:vc sender:@"iOS8之后的新特性, 模态present替换为"];
+                //            [self showDetailViewController:vc sender:@"iOS8之后的新特性, 模态present替换为"];
                 [self.navigationController showDetailViewController:vc sender:@"iOS8之后的新特性, 模态present替换为"];
             };
         }
@@ -673,10 +680,10 @@
                 [[_01ContentViewController alloc] init];
                 @strongify(item)
                 vc.title = item.detail;
-               
+                
                 //iOS8之后的新特性, show替换push
-                  
-                    [self showViewController:vc sender:nil];
+                
+                [self showViewController:vc sender:nil];
                 
             };
         }
@@ -1410,34 +1417,24 @@
                 [self ax_pushVC:vc];
             };
         }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [_1stArray addObject:item];
-            item.title = @"_42MantleVC";
-            item.detail = @"Mantle字典转模型";
-            @weakify(item)
-            item.action = ^{
-                _42MantleVC *vc = [_42MantleVC ax_init];
-                @strongify(item)
-                vc.title = item.detail;
-                [self ax_pushVC:vc];
-            };
-        }
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [_1stArray addObject:item];
+        
+        [_1stArray addTitle:@"_42MantleVC" detail:@"Mantle字典转模型" action:^(_AXCellItem *option) {
+            _42MantleVC *vc = [_42MantleVC ax_init];
+            vc.title = option.detail;
+            [self ax_pushVC:vc];
+        }];
+        
+        [_1stArray ax_addItem:^(_AXCellItem * _Nonnull item) {
             item.title = @"_43ColorVC";
             item.detail = @"颜色";
-            @weakify(item)
-            item.action = ^{
+            item.action2 = ^(_AXCellItem * _Nonnull obj) {
                 _43ColorVC *vc = [_43ColorVC ax_init];
-                @strongify(item)
-                vc.title = item.detail;
+                vc.title = obj.detail;
                 [self ax_pushVC:vc];
             };
-        }
+        }];
         
-#pragma mark - 2nd
+#pragma mark - 2nd begin
         
         
         {

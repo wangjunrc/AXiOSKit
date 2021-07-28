@@ -17,6 +17,21 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) NSString *imgName;
 @property(nonatomic, copy) void(^action)(void);
 
+@property(nonatomic, copy) void(^action2)(_AXCellItem * obj);
+
+@end
+
+
+@interface NSMutableArray (AXCellItem)
+
+- (void)addTitle:(NSString *)title
+          detail:(NSString  * _Nullable )detail
+          action:(void(^)(_AXCellItem *option))action;
+
+
+- (void)ax_addItem:(void (^)(_AXCellItem *item))add;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

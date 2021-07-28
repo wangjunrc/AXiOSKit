@@ -35,6 +35,8 @@
 		2112281925733DF300B6ECC8 /* Assets_env_1.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */; };
 		2118BABD268EE9330016A292 /* _02QQZoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2118BABB268EE9320016A292 /* _02QQZoneController.m */; };
 		2118BABE268EE9330016A292 /* _02QQZoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2118BABB268EE9320016A292 /* _02QQZoneController.m */; };
+		212AA1C926B10234000678BF /* _Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 212AA1C826B10234000678BF /* _Person.m */; };
+		212AA1CA26B10234000678BF /* _Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 212AA1C826B10234000678BF /* _Person.m */; };
 		213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB2E254003D900C89B72 /* InfoPlist.strings */; };
 		213BCBEA254003DB00C89B72 /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */; };
 		213BCBEC254003DB00C89B72 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB34254003D900C89B72 /* SceneDelegate.m */; };
@@ -582,6 +584,8 @@
 		2112281825733DF300B6ECC8 /* Assets_env_1.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets_env_1.xcassets; sourceTree = "<group>"; };
 		2118BABB268EE9320016A292 /* _02QQZoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _02QQZoneController.m; sourceTree = "<group>"; };
 		2118BABC268EE9330016A292 /* _02QQZoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _02QQZoneController.h; sourceTree = "<group>"; };
+		212AA1C726B10234000678BF /* _Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _Person.h; sourceTree = "<group>"; };
+		212AA1C826B10234000678BF /* _Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _Person.m; sourceTree = "<group>"; };
 		213BCB2F254003D900C89B72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		213BCB30254003D900C89B72 /* MakeKeyAndVisible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeKeyAndVisible.h; sourceTree = "<group>"; };
 		213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeKeyAndVisible.m; sourceTree = "<group>"; };
@@ -1293,6 +1297,8 @@
 				217DA6F2266BB848003E0E6B /* AXDemoUser.m */,
 				217DA6F1266BB848003E0E6B /* AXDemoUser2.h */,
 				217DA6EF266BB847003E0E6B /* AXDemoUser2.m */,
+				212AA1C726B10234000678BF /* _Person.h */,
+				212AA1C826B10234000678BF /* _Person.m */,
 			);
 			path = _Model;
 			sourceTree = "<group>";
@@ -3105,6 +3111,7 @@
 				21A61DE2265E7F4A0080E67D /* _31GCDViewController.m in Sources */,
 				21A61E6A265E7F4B0080E67D /* AXSocialShareCell.m in Sources */,
 				21A61E04265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.m in Sources */,
+				212AA1CA26B10234000678BF /* _Person.m in Sources */,
 				21A61DF0265E7F4A0080E67D /* AXWebSocketEngine.m in Sources */,
 				211227282573340100B6ECC8 /* AppDelegateRegistryCenter.m in Sources */,
 				21A61EBE265E7F4B0080E67D /* _28LocalSocketClientViewController.m in Sources */,
@@ -3296,6 +3303,7 @@
 				21A61EFF265E7F4B0080E67D /* _28LocalSocketServiceViewController.m in Sources */,
 				219682EE26971BB200FC972D /* _14TextFieldVC.m in Sources */,
 				218B7963269835A900CEB7E0 /* _22LoginViewModel.m in Sources */,
+				212AA1C926B10234000678BF /* _Person.m in Sources */,
 				21A61E93265E7F4B0080E67D /* _01HeaderView.m in Sources */,
 				21A61DE1265E7F4A0080E67D /* _31GCDViewController.m in Sources */,
 				21A61E69265E7F4B0080E67D /* AXSocialShareCell.m in Sources */,
