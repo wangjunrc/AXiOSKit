@@ -286,38 +286,38 @@
 
 
 // 屏幕旋转方向
-//- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
-//    UIViewController*  topViewController = [self topViewController] ;
-//    
-//    /// 支持横屏
-//    if ([topViewController isKindOfClass:NSClassFromString(@"_38DirectionVC")]){
-//        NSLog(@"_38DirectionVC,支持横屏");
-//        return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight ;
-//    }
-//    
-//    
-//    return UIInterfaceOrientationMaskPortrait;
-//    
-//    //    if ([window.rootViewController.presentedViewController isKindOfClass:NSClassFromString(@"_38DirectionVC")]) {
-//    //        return   UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight ;
-//    //        }
-//    //        else {
-//    //            return UIInterfaceOrientationMaskPortrait;
-//    //        }
-//    
-//}
-
-
-/// 指定控制器旋转 : 根据设置调整支持方向
-- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+    UIViewController*  topViewController = [self topViewController] ;
     
-    if (DemoAppSetting.shared.isAllowing) {
-        return   UIInterfaceOrientationMaskPortrait |
+    /// 支持横屏
+    if ([topViewController isKindOfClass:NSClassFromString(@"_38DirectionVC")]){
+        NSLog(@"_38DirectionVC,支持横屏");
+        return  UIInterfaceOrientationMaskPortrait |
         UIInterfaceOrientationMaskLandscapeLeft |
         UIInterfaceOrientationMaskLandscapeRight ;
     }
     return UIInterfaceOrientationMaskPortrait;
+    
+//        if ([window.rootViewController.presentedViewController isKindOfClass:NSClassFromString(@"_38DirectionVC")]) {
+//            return  UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight ;
+//            }
+//            else {
+//                return UIInterfaceOrientationMaskPortrait;
+//            }
+    
 }
+
+
+/// 指定控制器旋转 : 根据设置调整支持方向
+//- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+//
+//    if (DemoAppSetting.shared.isAllowing) {
+//        return   UIInterfaceOrientationMaskPortrait |
+//        UIInterfaceOrientationMaskLandscapeLeft |
+//        UIInterfaceOrientationMaskLandscapeRight ;
+//    }
+//    return UIInterfaceOrientationMaskPortrait;
+//}
 
 
 
