@@ -2630,4 +2630,8 @@ NSValue *value = [NSValue value:&ax_pointOutside withObjCType:@encode(UIEdgeInse
 UIEdgeInsets edgeInsets;
 [value getValue:&edgeInsets];
 ```
-
+##  allKeys 有序
+```
+NSLog(@"=allKeys 有序=%@====",[[dic allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]);
+NSLog(@"=allValues 有序=%@====",[[dic allValues] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]);
+```
