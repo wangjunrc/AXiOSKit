@@ -31,6 +31,13 @@
 -(void)ax_setNavBarBackgroundImageWithColor:(UIColor *)aColor;
 
 /**
+ navigationBar 文字颜色
+ 
+ @param textColor 颜色
+ */
+-(void)ax_setNavigationBarTextColor:(UIColor *)textColor;
+
+/**
  取消分隔线
  */
 -(void)ax_setSeparatorHidden;
@@ -40,11 +47,5 @@
  */
 -(void)ax_setNavigationTextWhite;
 
-/**
- navigationBar 文字颜色
- 
- @param textColor 颜色
- */
--(void)ax_setNavigationBarTextColor:(UIColor *)textColor;
 
 @end

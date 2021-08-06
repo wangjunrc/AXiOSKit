@@ -675,24 +675,40 @@
  
  */
 
-
+#pragma mark - 去除空格
 /**
  去除首尾空格
  
  @return NSString
  */
-- (NSString *)ax_removeHeadFootWhitespace {
+- (NSString *)ax_trimWhitespace {
     
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
+- (NSString *)ax_trimRedundantWhitespace {
+    
+    NSString *str = self;
+    /// 分割空格
+    NSCharacterSet *whitespaces = [NSCharacterSet whitespaceCharacterSet];
+    NSArray *parts = [str componentsSeparatedByCharactersInSet:whitespaces];
+    
+    /// 过滤空格
+    NSPredicate *noEmptyStrings = [NSPredicate predicateWithFormat:@"SELF != ''"];
+    NSArray *filteredArray = [parts filteredArrayUsingPredicate:noEmptyStrings];
+    /// 添加空格
+    NSString * ret = [filteredArray componentsJoinedByString:@" "];
+    return ret;
     
 }
+
 
 /**
  去除首尾换行
  
  @return NSString
  */
-- (NSString *)ax_removeHeadFootNewline {
+- (NSString *)ax_trimNewline {
     
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
 }
@@ -702,10 +718,12 @@
  
  @return NSString
  */
-- (NSString *)ax_removeHeadFootWhitespaceeAndNewline {
+- (NSString *)ax_trimWhitespaceeAndNewline {
     
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
+
+
 
 
 /**

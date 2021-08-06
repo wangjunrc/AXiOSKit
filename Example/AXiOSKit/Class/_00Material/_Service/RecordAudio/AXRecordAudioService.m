@@ -25,7 +25,7 @@
 
 @implementation AXRecordAudioService
 
-axSharedInstance_M;
+AX_SINGLETON_IMPL()
 
 - (AXRecordAudioService *_Nonnull (^)(AXRecordAudioConfig *_Nonnull))
 withConfig {

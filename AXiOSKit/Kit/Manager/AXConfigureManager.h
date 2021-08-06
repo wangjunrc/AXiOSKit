@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface AXConfigureManager : NSObject
 
-axSharedInstance_H;
+AX_SINGLETON_INTER()
 
 /**
  键盘等 基础配置

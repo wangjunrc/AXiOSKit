@@ -20,7 +20,7 @@
 @end
 @implementation AXConfigureManager
 
-axSharedInstance_M;
+AX_SINGLETON_IMPL()
 
 /**
  键盘等 基础配置
@@ -122,7 +122,7 @@ void ax_SignalHandler(int signal) {
 +(void)userNotificationCenterConfigure{
     
     if (@available(iOS 10.0, *)) {
-        [[AXConfigureManager sharedInstance] userNotificationCenterConfigure];
+        [AXConfigureManager.shared userNotificationCenterConfigure];
     } else {
         
     }

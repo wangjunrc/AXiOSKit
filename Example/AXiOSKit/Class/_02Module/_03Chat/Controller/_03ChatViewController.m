@@ -36,20 +36,20 @@
 - (IBAction)sendAction:(id)sender {
     /// amqp://localhost:15675/ws
     NSString *url = @"ws://localhost:1883/ws";
-
+    
     [AXWebSocketEngine.shared connectServer:url];
     
     
-//    ChatTextMessageModel *model = [[ChatTextMessageModel alloc]init];
-//    model.userid = USER_A;
-//    model.toUserId = USER_B;
-//    model.content = self.sendTF.text;
-//
-//    NSString *msg =[model mj_JSONString];
-//
-//    AXWebSocketEngine.shared.sendMesssage = msg;
-//    self.toLabel.text = model.content;
-//    self.sendTF.text = nil;;
+    //    ChatTextMessageModel *model = [[ChatTextMessageModel alloc]init];
+    //    model.userid = USER_A;
+    //    model.toUserId = USER_B;
+    //    model.content = self.sendTF.text;
+    //
+    //    NSString *msg =[model mj_JSONString];
+    //
+    //    AXWebSocketEngine.shared.sendMesssage = msg;
+    //    self.toLabel.text = model.content;
+    //    self.sendTF.text = nil;;
 }
 - (void)injected {
     NSLog(@"重启了 InjectionIII: %@", self);
@@ -59,31 +59,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"聊天";
-//    NSString *url = @"mqtt://localhost:1883/ws/id1";
-//    NSString *url = @"ws://localhost:15675/ws?topic=id1";
-//
-//    [AXWebSocketEngine.shared connectServer:url];
-//
-//    AXWebSocketEngine.shared.didReceiveMessage = ^(NSString   * _Nonnull message) {
-//        NSLog(@"message>> %@",message);
-//       ChatTextMessageModel *model = [ChatTextMessageModel mj_objectWithKeyValues:message];
-//         NSLog(@"model>> %@",model);
-//         NSLog(@"model.content>> %@",model.content);
-//
-//        self.fromLabel.text = model.content;
-//    };
+    //    NSString *url = @"mqtt://localhost:1883/ws/id1";
+    //    NSString *url = @"ws://localhost:15675/ws?topic=id1";
+    //
+    //    [AXWebSocketEngine.shared connectServer:url];
+    //
+    //    AXWebSocketEngine.shared.didReceiveMessage = ^(NSString   * _Nonnull message) {
+    //        NSLog(@"message>> %@",message);
+    //       ChatTextMessageModel *model = [ChatTextMessageModel mj_objectWithKeyValues:message];
+    //         NSLog(@"model>> %@",model);
+    //         NSLog(@"model.content>> %@",model.content);
+    //
+    //        self.fromLabel.text = model.content;
+    //    };
     
     UIView *aView = [UIView.alloc init];
     [self.view addSubview:aView];
     aView.backgroundColor = UIColor.orangeColor;
     
     [aView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.leading.equalTo(@0);
-                make.width.equalTo(self.view);
+        make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(200);
-//                make.top.equalTo(self.yq_safe_top);
-                make.bottom.equalTo(self.yq_safe_bottom);
-            }];
+        if (@available(iOS 11.0, *)) {
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+        } else {
+            make.bottom.equalTo(self.view);
+        }
+        
+    }];
     
 }
 

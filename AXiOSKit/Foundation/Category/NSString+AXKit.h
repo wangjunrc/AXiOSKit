@@ -241,26 +241,19 @@
  */
 + (NSString *)ax_getHHMMSSWithSeconds:(NSInteger)seconds;
 
-/**
- 去除首尾空格
+#pragma mark - 去除空格
 
- @return NSString
- */
-@property (nonatomic, copy, readonly) NSString *ax_removeHeadFootWhitespace;
+/// 去除首尾空格
+@property (nonatomic, copy, readonly) NSString *ax_trimWhitespace;
 
-/**
- 去除首尾换行
+/// 去除多余空格
+@property (nonatomic, copy, readonly) NSString *ax_trimRedundantWhitespace;
 
- @return NSString
- */
-@property (nonatomic, copy, readonly) NSString *ax_removeHeadFootNewline;
+/// 去除首尾换行
+@property (nonatomic, copy, readonly) NSString *ax_trimNewline;
 
-/**
- 去除首尾空格和换行
-
- @return NSString
- */
-@property (nonatomic, copy, readonly) NSString *ax_removeHeadFootWhitespaceeAndNewline;
+/// 去除首尾空格和换行
+@property (nonatomic, copy, readonly) NSString *ax_trimWhitespaceeAndNewline;
 
 /**
  当前string 正则 inString 中的 需要的

@@ -9,259 +9,62 @@
 #import "AXDataBase.h"
 //#if __has_include("FMDB.h")
 
-#import "DBStatements.h"
+#import "AXSQLStatement.h"
 @interface AXDataBase()
 
-/**
- *
- */
-@property (nonatomic, strong)FMDatabase *fmdb;
-/**
- *
- */
 @property (nonatomic, strong)FMDatabaseQueue *fmdbQueue;
+
+@property (nonatomic, copy) NSString *dbPath;
 
 @end
 
 @implementation AXDataBase
 
+AX_SINGLETON_IMPL()
+
++ (FMDatabaseQueue *)dbQueue {
+    return AXDataBase.shared.fmdbQueue;
+}
+
+- (FMDatabaseQueue *)fmdbQueue {
+    if (!_fmdbQueue) {
+        
+        NSString *name = @"IMDB";
+        if (self.dbName) {
+            name = self.dbName;
+        }
+        self.dbPath = [self dbPathWithName:name];
+        _fmdbQueue = [FMDatabaseQueue databaseQueueWithPath:self.dbPath];
+    }
+    return _fmdbQueue;
+}
+
+- (void)setDbName:(NSString *)dbName {
+    self.dbPath = nil;
+    self.fmdbQueue = nil;
+    _dbName = dbName;
+}
+
 /**
- *  初始化方法
- *
- *  @param baseName 数据库名称
+ * 创建数据库路径
  */
-+ (instancetype)dataBaseWithName:(NSString *)baseName{
-    AXDataBase *dataBase = [[self alloc]init];
+-(NSString *)dbPathWithName:(NSString *)baseName{
     
-    NSString *dbPath =  [DBStatements dataBaseWithName:baseName];
-    dataBase.dbPath = dbPath;
+    //拼接路径
+    NSString *docPath = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *pathComponent = [NSString stringWithFormat:@"%@.sqlite",baseName];
+    NSString *dbPath = [docPath stringByAppendingPathComponent:pathComponent];
+    
+    //判断文件夹路径是否存在
+    NSString *deletingLastPath = [dbPath  stringByDeletingLastPathComponent];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:deletingLastPath]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:deletingLastPath withIntermediateDirectories:YES attributes:nil error:nil];
+        
+    }
     NSLog(@"dbPath--> %@",dbPath);
-    dataBase.fmdb = [FMDatabase databaseWithPath:dbPath];
-    
-    dataBase.fmdbQueue = [FMDatabaseQueue databaseQueueWithPath:dbPath];
-    
-    BOOL open = [dataBase.fmdb open];
-    
-    if (!open) {
-        [dataBase.fmdb close];
-    }
-    return dataBase;
+    return dbPath;
 }
 
-
-/**
- *  创建表
- *
- *  @param tableName 表名
- *  @param field     例-> {@"name":[NSString class]}  ......(图片-->NSData)
- */
-- (BOOL)createTable:(NSString*)tableName field:(NSDictionary *)field{
-    [self.fmdb open];
-    NSString *executeUpdate =  [DBStatements createTable:tableName field:field];
-    BOOL create = [self.fmdb executeUpdate:executeUpdate];
-    NSLog(@"新建表 %@",create ? @"成功" :@"失败" );
-    return create;
-}
-
-/**
- *  增 无判断条件
- *
- *  @param tableName 表名
- *  @param condition 新增数据 例-> {@"age" : @20}
- */
-- (BOOL)insertDataTable:(NSString *)tableName content:(NSDictionary *)content{
-    
-    //    [self.fmdb open];
-    //    //    NSString *executeUpdate =  [DBStatements insertDataTable:table content:condition];
-    //
-    //
-    //
-    //
-    //
-    //    BOOL insert = [self.fmdb executeUpdate:executeUpdate];
-    //
-    //    NSLog(@"新增语句 %@",insert ? @"成功" :@"失败" );
-    //
-    //    return insert;
-    
-    
-    __block BOOL insert = NO;
-    
-    [self.fmdbQueue inDatabase:^(FMDatabase * _Nonnull db) {
-        NSString *sql = [DBStatements insertDataTable:tableName content:content];
-        insert = [db executeUpdate:sql];
-    }];
-    
-    NSLog(@"新增语句 %@",insert ? @"成功" :@"失败" );
-    return insert;
-    
-}
-/**
- *  增 有判断条件
- *
- *  @param tableName 表名
- *  @param condition 新增数据的判断条件 例-> {@"age" : @20}
- *  @param condition 新增数据的内容 例-> {@"age" : @20}
- */
-- (BOOL)insertDataTable:(NSString *)tableName condition:(NSDictionary *)condition content:(NSDictionary *)content{
-    //    [self.fmdb open];
-    //    NSString *executeUpdate =  [DBStatements insertDataTable:table content:condition];
-    
-    //    NSString *executeUpdate = [DBStatements insertDataTable:tableName condition:condition content:content];
-    //
-    //
-    //    BOOL insert = [self.fmdb executeUpdate:executeUpdate];
-    //
-    //    NSLog(@"新增语句 %@",insert ? @"成功" :@"失败" );
-    //
-    //    return insert;
-    __block BOOL insert = NO;
-    
-    [self.fmdbQueue inDatabase:^(FMDatabase * _Nonnull db) {
-        NSString *sql = [DBStatements insertDataTable:tableName condition:condition content:content];
-        insert = [db executeUpdate:sql];
-        [db longForQuery:sql];
-        
-    }];
-    
-    NSLog(@"新增语句 %@",insert ? @"成功" :@"失败" );
-    return insert;
-}
-
-/**
- *  清除 指定条件的数据
- *
- *  @param tableName 表名
- *  @param condition 删除 例-> {@"age" : @20}
- */
-- (BOOL )removeDataTable:(NSString *)table condition:(NSDictionary *)condition{
-    [self.fmdb open];
-    NSString *executeUpdate =  [DBStatements removeDataTable:table content:condition];
-    BOOL delete = [self.fmdb executeUpdate:executeUpdate];
-    return delete;
-}
-
-/**
- *  清除表中所有数据
- *
- *  @param tableName 表名
- */
-- (BOOL)removeDataTable:(NSString *)tableName{
-    
-    return [self removeDataTable:tableName condition:nil];
-}
-
-/**
- *  删除表
- *
- *  @param tableName 表名
- */
-- (BOOL)deleteTable:(NSString *)tableName{
-    
-    [self.fmdb open];
-    NSString *executeUpdate =  [DBStatements deleteTable:tableName];
-    BOOL delete = [self.fmdb executeUpdate:executeUpdate];
-    return delete;
-}
-
-/**
- *  改 where指定条件 set 修改的目标
- *
- *  @param tableName 表名
- *  @param condition 指定条件  例-> @{@"age" : @20}
- *  @param need      修改的目标  例-> @{@"age" : @20}
- *  @param result     回调
- */
-- (BOOL )updateDataTable:(NSString *)tableName condition:(NSDictionary *)condition need:(NSDictionary *)need{
-    [self.fmdb open];
-    
-    NSString *executeUpdate =  [DBStatements updateDataTable:tableName content:condition need:need];
-    BOOL update = [self.fmdb executeUpdate:executeUpdate];
-    return update;
-}
-
-/**
- *  查询表 数据数量
- *
- *  @param tableName 表名
- */
-- (NSInteger)selectTableCount:(NSString *)tableName{
-    [self.fmdb open];
-    
-    NSString *executeUpdate =  [DBStatements selectTableCount:tableName];
-    NSInteger tableCount =[self.fmdb longForQuery:executeUpdate];
-    return tableCount;
-}
-
-/**
- *  查询表所有数据
- *
- *  @param table  表名
- */
-- (NSMutableArray *)selectAllTable:(NSString *)table{
-    
-    return [self selectTable:table condition:nil need:nil];
-}
-/**
- *  查询表 最后 几条 数据
- *
- *  @param table  表名
- */
-- (NSMutableArray *)selectAllTable:(NSString *)table number:(NSInteger )number{
-    
-    NSString *executeQuery =  [DBStatements selectTable:table nuber:number];
-    
-    FMResultSet *resultSet = [self.fmdb executeQuery:executeQuery];
-    
-    NSMutableArray *dataArray  = [NSMutableArray array];
-    //得到表的字段
-    NSArray *fieldArray = resultSet.columnNameToIndexMap.allKeys;
-    while (resultSet.next) {
-        NSMutableDictionary *dataDic = [NSMutableDictionary dictionary];
-        for (NSString * key in fieldArray) {
-            
-            dataDic[key] = [resultSet objectForColumnName:key];
-        }
-        
-        [dataArray addObject:dataDic];
-    }
-    
-    return dataArray;
-    
-}
-
-/**
- *  查询指定条件,返回指定内容 ( 2者都可以为空 )
- *
- *  @param table  表名
- *  @param result 返回字段 数组
- *  @param condition  指定条件 数组
- *
- *  @return 字典数组
- */
-- (NSMutableArray *)selectTable:(NSString *)tableName condition:(NSDictionary *)condition need:(NSArray <NSString *>*)need{
-    
-    [self.fmdb open];
-    
-    NSString *executeQuery =  [DBStatements selectTable:tableName content:condition need:need];
-    
-    FMResultSet *resultSet = [self.fmdb executeQuery:executeQuery];
-    
-    NSMutableArray *dataArray  = [NSMutableArray array];
-    //得到表的字段
-    NSArray *fieldArray = resultSet.columnNameToIndexMap.allKeys;
-    while (resultSet.next) {
-        NSMutableDictionary *dataDic = [NSMutableDictionary dictionary];
-        for (NSString * key in fieldArray) {
-            
-            dataDic[key] = [resultSet objectForColumnName:key];
-        }
-        
-        [dataArray addObject:dataDic];
-    }
-    
-    return dataArray;
-}
 
 @end
 

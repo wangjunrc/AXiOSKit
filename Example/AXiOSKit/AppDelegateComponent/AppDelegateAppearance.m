@@ -74,7 +74,7 @@
     
     NSString *obj = @"home/cs046_js@mam1.ft-power.com.cn";
 //    BOOL isDirectory = NO;
-//      [[NSFileManager defaultManager] fileExistsAtPath:obj isDirectory:&isDirectory];
+//      [NSFileManager.defaultManager fileExistsAtPath:obj isDirectory:&isDirectory];
 //    if (!isDirectory) {
 //
 //    }

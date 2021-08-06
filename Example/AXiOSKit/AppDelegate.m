@@ -184,7 +184,7 @@
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:suitName];
     if ([userDefaults boolForKey:@"has-new-share"]) {
         //获取分组的共享目录
-        NSURL *groupURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:suitName];
+        NSURL *groupURL = [NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:suitName];
         NSURL *fileURL = [groupURL URLByAppendingPathComponent:@"incomingShared"];
         NSData *dictData = [[NSData alloc ]initWithContentsOfURL:fileURL];
         NSMutableArray *dicts = [NSKeyedUnarchiver unarchiveObjectWithData:dictData];
@@ -195,7 +195,7 @@
             NSLog(@"name = %@",name);
             //拿到数据了哈哈后
         }
-        [[NSFileManager defaultManager]removeItemAtURL:fileURL error:NULL];
+        [NSFileManager.defaultManager removeItemAtURL:fileURL error:NULL];
         //重置分享标识
         [userDefaults setBool:NO forKey:@"has-new-share"];
     }
@@ -354,5 +354,12 @@
 }
 
 
-
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    
+    return YES;
+}
 @end

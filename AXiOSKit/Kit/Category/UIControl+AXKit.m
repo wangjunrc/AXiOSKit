@@ -44,4 +44,55 @@ typedef void(^ControlBlock)(UIControl *aControl);
     return ax_getValueAssociated(controlBlock);
 }
 
+//- (void)setAx_hitTestEdgeInsets:(UIEdgeInsets)ax_hitTestEdgeInsets {
+//    
+//    NSValue *value = [NSValue value:&ax_hitTestEdgeInsets withObjCType:@encode(UIEdgeInsets)];
+//    objc_setAssociatedObject(self, @selector(ax_hitTestEdgeInsets),value, OBJC_ASSOCIATION_ASSIGN);
+//}
+//
+//- (UIEdgeInsets)ax_hitTestEdgeInsets {
+//    
+//    NSValue *value = objc_getAssociatedObject(self, @selector(ax_hitTestEdgeInsets));
+//    if(value) {
+//        UIEdgeInsets edgeInsets; [value getValue:&edgeInsets]; return edgeInsets;
+//    }else {
+//        return UIEdgeInsetsZero;
+//    }
+//}
+//
+//-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+//    if(UIEdgeInsetsEqualToEdgeInsets(self.ax_hitTestEdgeInsets, UIEdgeInsetsZero) || !self.enabled || self.hidden) {
+//        return [super pointInside:point withEvent:event];
+//    }
+//    
+//    CGRect relativeFrame = self.bounds;
+//    CGRect hitFrame = UIEdgeInsetsInsetRect(relativeFrame, self.ax_hitTestEdgeInsets);
+//    
+//    return CGRectContainsPoint(hitFrame, point);
+//}
+
+- (void)setAx_hitPointEdgeInsets:(UIEdgeInsets)ax_hitPointEdgeInsets {
+    NSValue *value = [NSValue valueWithUIEdgeInsets:ax_hitPointEdgeInsets];
+    objc_setAssociatedObject(self, @selector(ax_hitPointEdgeInsets), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIEdgeInsets)ax_hitPointEdgeInsets {
+    NSValue *value = objc_getAssociatedObject(self, @selector(ax_hitPointEdgeInsets));
+//    NSValue *value = objc_getAssociatedObject(self,_cmd);
+    if(value) {
+        return [value UIEdgeInsetsValue];
+    }else {
+        return UIEdgeInsetsZero;
+    }
+}
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
+    if(UIEdgeInsetsEqualToEdgeInsets(self.ax_hitPointEdgeInsets, UIEdgeInsetsZero) || !self.enabled || self.hidden) {
+        return [super pointInside:point withEvent:event];
+    }
+    CGRect relativeFrame = self.bounds;
+    CGRect hitFrame = UIEdgeInsetsInsetRect(relativeFrame, self.ax_hitPointEdgeInsets);
+    return CGRectContainsPoint(hitFrame, point);
+}
+
 @end

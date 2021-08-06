@@ -128,31 +128,6 @@ typedef void(^ButtonBlock)(UIButton *button);
     }
 }
 
-- (void)setAx_pointOutside:(UIEdgeInsets)ax_pointOutside {
-    NSValue *value =  [NSValue valueWithUIEdgeInsets:ax_pointOutside];
-    objc_setAssociatedObject(self, @selector(ax_pointOutside), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (UIEdgeInsets)ax_pointOutside {
-    NSValue *value = objc_getAssociatedObject(self, @selector(ax_pointOutside));
-//    NSValue *value = objc_getAssociatedObject(self,_cmd);
-    if(value) {
-        return [value UIEdgeInsetsValue];
-    }else {
-        return UIEdgeInsetsZero;
-    }
-}
-
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event{
-    if(UIEdgeInsetsEqualToEdgeInsets(self.ax_pointOutside, UIEdgeInsetsZero) || !self.enabled || self.hidden) {
-        return [super pointInside:point withEvent:event];
-    }
-    CGRect relativeFrame = self.bounds;
-    CGRect hitFrame = UIEdgeInsetsInsetRect(relativeFrame, self.ax_pointOutside);
-    return CGRectContainsPoint(hitFrame, point);
-}
-
-
 /**
  UIControlStateNormal 状态文字
  

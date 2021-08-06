@@ -28,7 +28,7 @@
       
         NSString *documentsPath =[self getDocumentsPath];
         
-        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSFileManager *fileManager = NSFileManager.defaultManager ;
         
         
         NSString *moveToPath = [documentsPath stringByAppendingPathComponent:@"move/a/iOS.txt"];
@@ -54,7 +54,7 @@
 /// 2.创建文件
 -(void)createFile{
     NSString *documentsPath =[self getDocumentsPath];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSFileManager *fileManager = NSFileManager.defaultManager ;
     NSString *iOSPath = [documentsPath stringByAppendingPathComponent:@"iOS.txt"];
     BOOL isSuccess = [fileManager createFileAtPath:iOSPath contents:nil attributes:nil];
     if (isSuccess) {
@@ -87,7 +87,7 @@
 
 /// 5.判断文件是否存在
 - (BOOL)isSxistAtPath:(NSString *)filePath{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSFileManager *fileManager = NSFileManager.defaultManager ;
     BOOL isExist = [fileManager fileExistsAtPath:filePath];
     return isExist;
 }
@@ -96,7 +96,7 @@
 - (void)moveFileName
 {
     NSString *documentsPath =[self getDocumentsPath];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSFileManager *fileManager = NSFileManager.defaultManager ;
     NSString *filePath = [documentsPath stringByAppendingPathComponent:@"iOS.txt"];
     
     NSString *moveToPath = [documentsPath stringByAppendingPathComponent:@"move/a/iOS.txt"];

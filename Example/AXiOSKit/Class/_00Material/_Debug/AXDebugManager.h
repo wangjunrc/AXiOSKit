@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AXDebugManager : NSObject
 
-axShared_H(Manager)
+AX_SINGLETON_INTER(Manager)
 
 @property (nonatomic, strong, readonly) id <AXDebugUIConfigProtocol> config;
 

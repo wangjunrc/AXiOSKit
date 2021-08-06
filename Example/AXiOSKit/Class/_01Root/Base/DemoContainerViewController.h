@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DemoContainerViewController : UIViewController
+@interface DemoContainerViewController : DemoBaseViewController
 
 
 /// demo 内容视图

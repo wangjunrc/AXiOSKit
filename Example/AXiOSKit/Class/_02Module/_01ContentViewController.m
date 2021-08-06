@@ -1770,8 +1770,8 @@
         }];
         
         
-        oldBtn.ax_pointOutside = increaseInsets;
-        [oldBtn ax_setTitleStateNormal:@"点击范围"];
+        oldBtn.ax_hitPointEdgeInsets = increaseInsets;
+        [oldBtn ax_setTitleStateNormal:@"点击范围,ax_hitPointEdgeInsets"];
         /// 按钮事件
         [[oldBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
             

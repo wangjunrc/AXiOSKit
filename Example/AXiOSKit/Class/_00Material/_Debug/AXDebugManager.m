@@ -26,7 +26,7 @@
 
 @implementation AXDebugManager
 
-axShared_M(Manager)
+AX_SINGLETON_IMPL(Manager)
 
 
 - (AXDebugManager * _Nonnull (^)(id<AXDebugUIConfigProtocol>  _Nonnull (^ _Nonnull)(UIViewController * _Nonnull)))withConfig {

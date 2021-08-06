@@ -492,7 +492,6 @@
 		21CED4F526B23A1F00F1F1F1 /* _06MMKVVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CED4F426B23A1F00F1F1F1 /* _06MMKVVC.m */; };
 		21CED4F626B23A1F00F1F1F1 /* _06MMKVVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CED4F426B23A1F00F1F1F1 /* _06MMKVVC.m */; };
 		21CED54926B2D46800F1F1F1 /* _06FMDBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CED54826B2D46800F1F1F1 /* _06FMDBVC.m */; };
-		21CED55426B2E1A800F1F1F1 /* CSStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CED55326B2E1A800F1F1F1 /* CSStorageManager.m */; };
 		21CED55626B3A04800F1F1F1 /* test_fmdb.sql in Resources */ = {isa = PBXBuildFile; fileRef = 21CED55526B3A04800F1F1F1 /* test_fmdb.sql */; };
 		21CED55726B3A04800F1F1F1 /* test_fmdb.sql in Resources */ = {isa = PBXBuildFile; fileRef = 21CED55526B3A04800F1F1F1 /* test_fmdb.sql */; };
 		21CED55C26B3A98100F1F1F1 /* NH_SQLS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 21CED55B26B3A98100F1F1F1 /* NH_SQLS.txt */; };
@@ -502,6 +501,10 @@
 		21D2188A2669CE63006E05C9 /* AlertWayClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D218892669CE63006E05C9 /* AlertWayClass.m */; };
 		21D61EEC257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
 		21D61EED257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
+		21DAADB826C0132C00C82FE3 /* _41UIStackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAADB726C0132C00C82FE3 /* _41UIStackVC.m */; };
+		21DAADB926C0132C00C82FE3 /* _41UIStackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAADB726C0132C00C82FE3 /* _41UIStackVC.m */; };
+		21DAADE426C1776D00C82FE3 /* _44FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAADE326C1776D00C82FE3 /* _44FilesTableViewController.m */; };
+		21DAADE526C1776D00C82FE3 /* _44FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAADE326C1776D00C82FE3 /* _44FilesTableViewController.m */; };
 		21E47E17269D66E500D7188F /* UIAlertController+Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E47E16269D66E500D7188F /* UIAlertController+Load.m */; };
 		21E6DE67260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
 		21E6DE68260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
@@ -957,6 +960,8 @@
 		21A61FB0265E82990080E67D /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		21A61FB3265E82990080E67D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		21A61FB5265E82990080E67D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21A734E826BE4E730003ED20 /* AXiOSKit_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AXiOSKit_Example.entitlements; sourceTree = "<group>"; };
+		21A734E926BE4EF30003ED20 /* AXiOSKit_Example_Env_1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AXiOSKit_Example_Env_1.entitlements; sourceTree = "<group>"; };
 		21BA17F725AD852000222F9A /* ax_release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ax_release.xcconfig; sourceTree = "<group>"; };
 		21BA17F825AD854300222F9A /* ax_common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ax_common.xcconfig; sourceTree = "<group>"; };
 		21BA17F925AD856800222F9A /* ax_debug_α.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ax_debug_α.xcconfig"; sourceTree = "<group>"; };
@@ -996,8 +1001,6 @@
 		21CED4F426B23A1F00F1F1F1 /* _06MMKVVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _06MMKVVC.m; sourceTree = "<group>"; };
 		21CED54726B2D46800F1F1F1 /* _06FMDBVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _06FMDBVC.h; sourceTree = "<group>"; };
 		21CED54826B2D46800F1F1F1 /* _06FMDBVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _06FMDBVC.m; sourceTree = "<group>"; };
-		21CED55226B2E1A800F1F1F1 /* CSStorageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSStorageManager.h; sourceTree = "<group>"; };
-		21CED55326B2E1A800F1F1F1 /* CSStorageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSStorageManager.m; sourceTree = "<group>"; };
 		21CED55526B3A04800F1F1F1 /* test_fmdb.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = test_fmdb.sql; sourceTree = "<group>"; };
 		21CED55B26B3A98100F1F1F1 /* NH_SQLS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NH_SQLS.txt; sourceTree = "<group>"; };
 		21CED55E26B3A9B600F1F1F1 /* NHDBEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHDBEngine.h; sourceTree = "<group>"; };
@@ -1007,6 +1010,10 @@
 		21D61EE9257F106D0059201A /* AXiOSKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AXiOSKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		21D61EEB257F106E0059201A /* DogSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSwift.swift; sourceTree = "<group>"; };
 		21D83B3A255A28BE00695C28 /* rac.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = rac.md; sourceTree = "<group>"; };
+		21DAADB626C0132C00C82FE3 /* _41UIStackVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _41UIStackVC.h; sourceTree = "<group>"; };
+		21DAADB726C0132C00C82FE3 /* _41UIStackVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _41UIStackVC.m; sourceTree = "<group>"; };
+		21DAADE226C1776D00C82FE3 /* _44FilesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _44FilesTableViewController.h; sourceTree = "<group>"; };
+		21DAADE326C1776D00C82FE3 /* _44FilesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _44FilesTableViewController.m; sourceTree = "<group>"; };
 		21E47E15269D66E500D7188F /* UIAlertController+Load.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Load.h"; sourceTree = "<group>"; };
 		21E47E16269D66E500D7188F /* UIAlertController+Load.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Load.m"; sourceTree = "<group>"; };
 		21E6DE65260494060092051F /* DogOC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogOC.h; sourceTree = "<group>"; };
@@ -1438,8 +1445,12 @@
 				21A61DB8265E7F4A0080E67D /* _40ScreenshotsVC.h */,
 				21A61D2E265E7F4A0080E67D /* _40ScreenshotsVC.m */,
 				21C84C24268DA28D0045E28C /* _41 */,
+				21DAADB626C0132C00C82FE3 /* _41UIStackVC.h */,
+				21DAADB726C0132C00C82FE3 /* _41UIStackVC.m */,
 				218746A22696DD2C0022BE97 /* _42 */,
 				218746AF2696EFAC0022BE97 /* _43Color */,
+				21DAADE226C1776D00C82FE3 /* _44FilesTableViewController.h */,
+				21DAADE326C1776D00C82FE3 /* _44FilesTableViewController.m */,
 			);
 			path = _02Module;
 			sourceTree = "<group>";
@@ -1668,16 +1679,16 @@
 		21A61D5F265E7F4A0080E67D /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				2180268426B678AA006DE9B1 /* DemoBaseTableViewController.h */,
+				2180268526B678AA006DE9B1 /* DemoBaseTableViewController.m */,
+				2180267C26B67227006DE9B1 /* DemoBaseViewController.h */,
+				2180267D26B67227006DE9B1 /* DemoBaseViewController.m */,
 				21A61D60265E7F4A0080E67D /* DemoContainerViewController.h */,
 				21A61D63265E7F4A0080E67D /* DemoContainerViewController.m */,
 				21A61D64265E7F4A0080E67D /* DemoNavigationController.h */,
 				21A61D62265E7F4A0080E67D /* DemoNavigationController.m */,
 				21A61D65265E7F4A0080E67D /* DemoTabBarController.h */,
 				21A61D61265E7F4A0080E67D /* DemoTabBarController.m */,
-				2180267C26B67227006DE9B1 /* DemoBaseViewController.h */,
-				2180267D26B67227006DE9B1 /* DemoBaseViewController.m */,
-				2180268426B678AA006DE9B1 /* DemoBaseTableViewController.h */,
-				2180268526B678AA006DE9B1 /* DemoBaseTableViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1971,8 +1982,6 @@
 			children = (
 				21CED54726B2D46800F1F1F1 /* _06FMDBVC.h */,
 				21CED54826B2D46800F1F1F1 /* _06FMDBVC.m */,
-				21CED55226B2E1A800F1F1F1 /* CSStorageManager.h */,
-				21CED55326B2E1A800F1F1F1 /* CSStorageManager.m */,
 				21CED55B26B3A98100F1F1F1 /* NH_SQLS.txt */,
 				21CED55E26B3A9B600F1F1F1 /* NHDBEngine.h */,
 				21CED55F26B3A9B600F1F1F1 /* NHDBEngine.m */,
@@ -2035,6 +2044,8 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				21A734E926BE4EF30003ED20 /* AXiOSKit_Example_Env_1.entitlements */,
+				21A734E826BE4E730003ED20 /* AXiOSKit_Example.entitlements */,
 				21CC20C2265F7022005BD351 /* AXShare */,
 				21A61FAE265E82990080E67D /* AXShare_Env_1 */,
 				6003F593195388D20070C39A /* Example for AXiOSKit */,
@@ -2732,7 +2743,6 @@
 				"${BUILT_PRODUCTS_DIR}/TABAnimated/TABAnimated.framework",
 				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
-				"${BUILT_PRODUCTS_DIR}/WRNavigationBar/WRNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
 				"${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework",
@@ -2802,7 +2812,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TABAnimated.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WRNavigationBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYDebugDatabase.framework",
@@ -2882,7 +2891,6 @@
 				"${BUILT_PRODUCTS_DIR}/TABAnimated/TABAnimated.framework",
 				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
-				"${BUILT_PRODUCTS_DIR}/WRNavigationBar/WRNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
 				"${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework",
@@ -2952,7 +2960,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TABAnimated.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WRNavigationBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYDebugDatabase.framework",
@@ -3088,6 +3095,7 @@
 				21A61EA6265E7F4B0080E67D /* DemoWevViewImageSchemeHandler.m in Sources */,
 				2165FE9826AEAA4200920470 /* RLMOrderService.m in Sources */,
 				216EC68A26AC0C12005AA936 /* _06RealmVC.m in Sources */,
+				21DAADB926C0132C00C82FE3 /* _41UIStackVC.m in Sources */,
 				21A61E78265E7F4B0080E67D /* _28ShareFileViewController.m in Sources */,
 				21A61EAE265E7F4B0080E67D /* DemoContainerViewController.m in Sources */,
 				21A61E60265E7F4B0080E67D /* AXShareConfigs.swift in Sources */,
@@ -3152,6 +3160,7 @@
 				21CAE9FC26AE87F1006EBC49 /* _06WCDBVC.m in Sources */,
 				21A61E0A265E7F4A0080E67D /* NSObject+Load.m in Sources */,
 				21A61EB0265E7F4B0080E67D /* _35ProtobufVC.m in Sources */,
+				21DAADE526C1776D00C82FE3 /* _44FilesTableViewController.m in Sources */,
 				218746A12696DD270022BE97 /* _42MantleVC.m in Sources */,
 				21A61F10265E7F4B0080E67D /* _32LottieVC.m in Sources */,
 				217AE9E326974A9600A1A9B2 /* PreviewManager.swift in Sources */,
@@ -3190,7 +3199,6 @@
 				21A61E19265E7F4A0080E67D /* AView.m in Sources */,
 				21A61ECB265E7F4B0080E67D /* _30TimeLineNinePhotoView.m in Sources */,
 				21A61F1D265E7F4B0080E67D /* _08MP3VC.m in Sources */,
-				21CED55426B2E1A800F1F1F1 /* CSStorageManager.m in Sources */,
 				21A61DF7265E7F4A0080E67D /* AXRecordAudioService.m in Sources */,
 				21A61EEB265E7F4B0080E67D /* _25CompLayoutVC2.m in Sources */,
 				21A61EBF265E7F4B0080E67D /* _38DirectionVC.m in Sources */,
@@ -3288,6 +3296,7 @@
 				21A61E5F265E7F4B0080E67D /* AXShareConfigs.swift in Sources */,
 				213BCBEC254003DB00C89B72 /* SceneDelegate.m in Sources */,
 				217AEA0426974A9600A1A9B2 /* FileBrowser.swift in Sources */,
+				21DAADE426C1776D00C82FE3 /* _44FilesTableViewController.m in Sources */,
 				21A61E1F265E7F4A0080E67D /* AXSwitchView.m in Sources */,
 				2165FE9326AEAA4200920470 /* RLMOrder.m in Sources */,
 				21A61E97265E7F4B0080E67D /* _03HeaderView.m in Sources */,
@@ -3310,6 +3319,7 @@
 				21A61ECF265E7F4B0080E67D /* _30TimeLineNinePhotoCell.m in Sources */,
 				21A61EC5265E7F4B0080E67D /* _30TimeLinetContentController.m in Sources */,
 				21A61F0B265E7F4B0080E67D /* _17OtherShareViewController.m in Sources */,
+				21DAADB826C0132C00C82FE3 /* _41UIStackVC.m in Sources */,
 				21A61EF5265E7F4B0080E67D /* _25CollectionViewCell.m in Sources */,
 				2180267E26B67227006DE9B1 /* DemoBaseViewController.m in Sources */,
 				21A61DF3265E7F4A0080E67D /* _AXTestAnimRefreshFooter.m in Sources */,
@@ -3457,6 +3467,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_evn_1;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AXiOSKit_Example_Env_1.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3492,6 +3503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_evn_1;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AXiOSKit_Example_Env_1.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3686,6 +3698,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AXiOSKit_Example.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
@@ -3721,6 +3734,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_evn_1;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AXiOSKit_Example_Env_1.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3837,6 +3851,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AXiOSKit_Example.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
@@ -3867,6 +3882,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_evn_1;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AXiOSKit_Example_Env_1.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4137,6 +4153,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AXiOSKit_Example.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;
@@ -4175,6 +4192,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AXiOSKit_Example.entitlements;
 				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2BZJZ65HL3;

@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AXRecordAudioService : NSObject
-axSharedInstance_H;
+AX_SINGLETON_INTER()
 
 @property (nonatomic, strong, readonly) AXRecordAudioConfig *config;
 

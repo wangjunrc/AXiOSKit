@@ -22,7 +22,7 @@
         
         NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]stringByAppendingPathComponent:@"db"];
         
-        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSFileManager *fileManager = NSFileManager.defaultManager ;
         
         BOOL isDir = FALSE;
         BOOL isDirExist = [fileManager fileExistsAtPath:path isDirectory:&isDir];
@@ -61,7 +61,7 @@
     
 }
 + (BOOL)dropRealmIfNeed {
-    return [[NSFileManager defaultManager] removeItemAtPath:self.config.fileURL.path error:nil];
+    return [NSFileManager.defaultManager removeItemAtPath:self.config.fileURL.path error:nil];
 }
 @end
 

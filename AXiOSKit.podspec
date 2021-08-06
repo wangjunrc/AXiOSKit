@@ -74,6 +74,9 @@ Pod::Spec.new do |s|
         ss.dependency 'FMDB'
         
     end
+#    假如把一个framework 制作成cocopod
+#s.resources    = "MAMapKit.framework/*.bundle"
+#    s.vendored_frameworks   = "MAMapKit.framework"
     
 end
 

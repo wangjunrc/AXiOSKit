@@ -79,7 +79,9 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
     [TABAnimated sharedAnimated].openLog = YES;
     
     self.navigationItem.title = @"主题2";
+    /// 导航栏颜色
     [self ax_setNavBarBackgroundImageWithColor:UIColor.cyanColor];
+    
     [self _configItem];
     self.tableView.tableFooterView = UIView.alloc.init;
     [self.tableView registerClass:_AXThemeCell.class forCellReuseIdentifier:@"_AXThemeCell"];
