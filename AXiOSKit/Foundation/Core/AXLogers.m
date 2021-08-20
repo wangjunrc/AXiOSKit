@@ -40,7 +40,7 @@ static const char *_dateChar() {
 +(void)PrefixLog:(NSString *)msg format:( NSString *)format, ...{
     __block va_list arg_list;
     va_start(arg_list, format);
-    const char *dateChar = __dateChar();
+    const char *dateChar = _dateChar();
     const char *msgChar = msg.UTF8String;
     const char *formatChar =
     [[NSString alloc] initWithFormat:format arguments:arg_list].UTF8String;

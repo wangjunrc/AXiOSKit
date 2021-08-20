@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */; };
 		21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */ = {isa = PBXBuildFile; fileRef = 21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */; };
+		2107959626CD004E000B4398 /* UIView+AXViewCate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2107959526CD004E000B4398 /* UIView+AXViewCate.m */; };
+		2107959726CD004E000B4398 /* UIView+AXViewCate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2107959526CD004E000B4398 /* UIView+AXViewCate.m */; };
 		210806B1269F1389002F3385 /* _11MasonryScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 210806B0269F1389002F3385 /* _11MasonryScrollVC.m */; };
 		210B1ED125EDE40200878A73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 210B1ED425EDE40200878A73 /* Localizable.strings */; };
 		210B1ED225EDE40200878A73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 210B1ED425EDE40200878A73 /* Localizable.strings */; };
@@ -585,6 +587,9 @@
 		21022AE52547A80D0055E0B7 /* AppDelegateAppearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateAppearance.m; sourceTree = "<group>"; };
 		21022AEA2547A9AF0055E0B7 /* AppDelegateWX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateWX.h; sourceTree = "<group>"; };
 		21022AEB2547A9AF0055E0B7 /* AppDelegateWX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateWX.m; sourceTree = "<group>"; };
+		2107959326CCFB29000B4398 /* UIView+AXViewExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+AXViewExtension.h"; sourceTree = "<group>"; };
+		2107959426CD004E000B4398 /* UIView+AXViewCate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+AXViewCate.h"; sourceTree = "<group>"; };
+		2107959526CD004E000B4398 /* UIView+AXViewCate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+AXViewCate.m"; sourceTree = "<group>"; };
 		210806AF269F1389002F3385 /* _11MasonryScrollVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _11MasonryScrollVC.h; sourceTree = "<group>"; };
 		210806B0269F1389002F3385 /* _11MasonryScrollVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _11MasonryScrollVC.m; sourceTree = "<group>"; };
 		210B1EB725EDE2FA00878A73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "../zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -2126,6 +2131,9 @@
 				213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */,
 				213BCBE0254003DA00C89B72 /* SceneDelegate.h */,
 				213BCB34254003D900C89B72 /* SceneDelegate.m */,
+				2107959326CCFB29000B4398 /* UIView+AXViewExtension.h */,
+				2107959426CD004E000B4398 /* UIView+AXViewCate.h */,
+				2107959526CD004E000B4398 /* UIView+AXViewCate.m */,
 				213BCB35254003D900C89B72 /* Settings.bundle */,
 			);
 			name = "00Supporting Files";
@@ -3072,6 +3080,7 @@
 				217AEA0526974A9600A1A9B2 /* FileBrowser.swift in Sources */,
 				21A61EE8265E7F4B0080E67D /* _25CompLayoutVC3.m in Sources */,
 				217AE9FF26974A9600A1A9B2 /* FileListPreview.swift in Sources */,
+				2107959726CD004E000B4398 /* UIView+AXViewCate.m in Sources */,
 				21A61DFA265E7F4A0080E67D /* AXRecordAudioConfig.m in Sources */,
 				21A61EEA265E7F4B0080E67D /* _25FlowLayoutVC1.m in Sources */,
 				21A61E0E265E7F4A0080E67D /* Student.proto in Sources */,
@@ -3281,6 +3290,7 @@
 				217DA6F3266BB848003E0E6B /* AXDemoUser2.m in Sources */,
 				2165FE9526AEAA4200920470 /* RLMProduct.m in Sources */,
 				21A61F13265E7F4B0080E67D /* _03ChatViewController.m in Sources */,
+				2107959626CD004E000B4398 /* UIView+AXViewCate.m in Sources */,
 				21022AE62547A80D0055E0B7 /* AppDelegateAppearance.m in Sources */,
 				21CC7C68255FA4A300E7B506 /* AppDelegateDebug.m in Sources */,
 				217AE9E626974A9600A1A9B2 /* FileParser.swift in Sources */,
@@ -3718,6 +3728,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0.0;
 				MODULE_NAME = ExampleApp;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AXiOSKit/AXiOSKit_Example-Bridging-Header.h";
@@ -3866,6 +3877,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0.0;
 				MODULE_NAME = ExampleApp;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AXiOSKit/AXiOSKit_Example-Bridging-Header.h";
@@ -4176,6 +4188,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0.0;
 				MODULE_NAME = ExampleApp;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AXiOSKit/AXiOSKit_Example-Bridging-Header.h";
@@ -4208,6 +4221,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.0.0;
 				MODULE_NAME = ExampleApp;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ax.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AXiOSKit/AXiOSKit_Example-Bridging-Header.h";

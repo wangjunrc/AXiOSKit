@@ -10,7 +10,7 @@
 Pod::Spec.new do |s|
     
     s.name         = 'AXiOSKit'
-    s.version      = '2.1.0'
+    s.version      = '2.1.2'
     s.summary      = '个人开发工具类'
     s.description  = <<-DESC
     封装UIKit等个人开发工具类
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
     
     s.public_header_files = 'AXiOSKit/AXiOSKit/AXiOSKit.h'
     # oc swift 混编时,需要指定一个
-#    s.private_header_files = ''
+    #    s.private_header_files = ''
     s.source_files  = 'AXiOSKit/**/*.{h,m}'
     #  s.exclude_files = 'AXiOSKit/AXiOSKit/Info.plist'
     
@@ -51,7 +51,7 @@ Pod::Spec.new do |s|
     # 多个模块之间,不能import隔壁模块的,要用子库的spec依赖其他subspec·
     s.subspec 'Foundation' do |ss|
         ss.public_header_files = 'AXiOSKit/AXiOSKit/AXiOSFoundation.h'
-        ss.source_files = 'AXiOSKit/Foundation/**/*.{h,m}'
+        ss.source_files = 'AXiOSKit/Foundation/**/*.{h,m,mm}'
         ss.frameworks = 'Foundation'
     end
     
@@ -74,10 +74,10 @@ Pod::Spec.new do |s|
         ss.dependency 'FMDB'
         
     end
-#    假如把一个framework 制作成cocopod
-#s.resources    = "MAMapKit.framework/*.bundle"
-#    s.vendored_frameworks   = "MAMapKit.framework"
-    
+    #    假如把一个framework 制作成cocopod
+    #s.resources    = "MAMapKit.framework/*.bundle"
+    #    s.vendored_frameworks   = "MAMapKit.framework"
+    valid_archs = ['armv7s','arm64','x86_64','armv7','arm64e']
 end
 
 

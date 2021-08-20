@@ -19,6 +19,7 @@
 #import "NSObject+AXAssistant.h"
 #import "NSObject+AXAssociated.h"
 #import "NSObject+AXKVO.h"
+#import "NSObject+AXLoger.h"
 #import "NSObject+AXKit.h"
 #import "NSObject+AXSafe.h"
 #import "NSObject+AXVersion.h"

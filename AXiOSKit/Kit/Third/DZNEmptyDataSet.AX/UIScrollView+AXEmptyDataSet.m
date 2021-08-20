@@ -12,7 +12,7 @@
 #import "AXMacros.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import "UIImage+AXKit.h"
-
+#import "NSObject+AXAssistant.h"
 
 @interface AXEmptyDataSetConfig ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 @end

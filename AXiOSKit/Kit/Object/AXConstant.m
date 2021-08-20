@@ -7,8 +7,6 @@
 //
 
 #import "AXConstant.h"
-//#import "AXMacros_log.h"
-
 NSString *const k_axCellID = @"TableViewacellID";
 NSString *const k_axCellHeadID = @"TableViewCellheadID";
 NSString *const k_axCellFootID = @"TableViewCellfootID";

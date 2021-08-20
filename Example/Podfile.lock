@@ -25,11 +25,11 @@ PODS:
     - ReactiveObjC (>= 3.0.0)
   - AXCollectionObserve/Core (1.1.1):
     - ReactiveObjC (>= 3.0.0)
-  - AXiOSKit (2.1.0):
-    - AXiOSKit/Foundation (= 2.1.0)
-    - AXiOSKit/Kit (= 2.1.0)
-  - AXiOSKit/Foundation (2.1.0)
-  - AXiOSKit/Kit (2.1.0):
+  - AXiOSKit (2.1.2):
+    - AXiOSKit/Foundation (= 2.1.2)
+    - AXiOSKit/Kit (= 2.1.2)
+  - AXiOSKit/Foundation (2.1.2)
+  - AXiOSKit/Kit (2.1.2):
     - AFNetworking (>= 4.0.0)
     - Aspects
     - AXiOSKit/Foundation
@@ -362,7 +362,7 @@ SPEC CHECKSUMS:
   APNGKit: 939475205746e11a212c265f39dbb9dca70011e8
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AXCollectionObserve: 0553a382e43d0a4482831c5d87243a146ae946c3
-  AXiOSKit: 67ea27eec1936fa34fe4ee5f31b61ee7ebf569e9
+  AXiOSKit: 9b835096dfe0b0ea79457ed66a914123082fd536
   AXViewControllerTransitioning: 0ba0b9d3403719756f72814f3e39f0abe02157e6
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
@@ -428,4 +428,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 52df86a25992c2be83eb79a19d5b1312c8335b4d
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.2

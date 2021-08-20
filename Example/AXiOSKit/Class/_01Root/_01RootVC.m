@@ -80,11 +80,18 @@
 #import "_AXTestPerson.h"
 #import "_AXTestRouterManager.h"
 #import <mach/mach.h>
+#import "UIView+AXViewExtension.h"
+#import "UIView+AXViewCate.h"
 @import AXCollectionObserve;
 @import AXiOSKit;
 @import AssetsLibrary;
 @import CocoaDebug;
 @import ReactiveObjC;
+#import <Aspects/Aspects.h>
+
+
+#import <fishhook/fishhook.h>
+
 
 @interface _01RootVC ()<UISearchControllerDelegate,UIDocumentPickerDelegate>
 
@@ -106,6 +113,21 @@
 //- (instancetype)initWithStyle:(UITableViewStyle)style {
 //    return [super initWithStyle:UITableViewStyleGrouped];
 //}
+
+static void (*old_nslog)(NSString *format,...);
+
+
+void newmethod(NSString *format,...) {
+    va_list va;
+    va_start(va, format);
+    //改变下字符串，证明hook过了
+    format = [format stringByAppendingString:@" hook"];
+    old_nslog(format,va);
+    va_end(va);
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = AXNSLocalizedString(@"local.home");
@@ -113,6 +135,9 @@
     NSLog(@"国际化 = %@",NSLocalizedString(@"local.home", nil));
     
     AXLog(@"我是AXLog");
+    
+   
+    
     
     self.tableView.tableFooterView = UIView.alloc.init;
     [_00TableViewCell ax_registerCellWithTableView:self.tableView];
@@ -136,6 +161,20 @@
     //    [self _rac_kvo];
     [self _createRefresh];
     [self _createSearch];
+    
+//    NSLog(@"dylib link address");
+//
+//        struct rebinding nslogbind;
+//
+//        nslogbind.name = "NSLog";
+//        nslogbind.replacement = newmethod;
+//        nslogbind.replaced = (void*)&old_nslog;
+//
+//        struct rebinding rebinds[] = {nslogbind};
+//        //这里进行断点
+//        rebind_symbols(rebinds, 1);
+//    NSLog(@"被hook了");
+    
 }
 
 - (void)viewDidLayoutSubviews {
@@ -638,6 +677,7 @@
 #pragma mark - 1st begin
         
         [_1stArray addTitle:@"_01ContentViewController" detail:@"uikit示例" action:^(_AXCellItem *option) {
+            NSLog(@"_01ContentViewController");
             _01ContentViewController *vc =
             [[_01ContentViewController alloc] init];
             vc.title = option.detail;

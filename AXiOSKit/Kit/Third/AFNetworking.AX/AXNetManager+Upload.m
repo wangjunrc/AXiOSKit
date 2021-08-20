@@ -12,6 +12,7 @@
 #import "AXMacros.h"
 #import "NSString+AXKit.h"
 #import "NSData+AXKit.h"
+#import "NSObject+AXLoger.h"
 @import UIKit;
 #pragma mark - NetFormData
 @interface AXFormData ()

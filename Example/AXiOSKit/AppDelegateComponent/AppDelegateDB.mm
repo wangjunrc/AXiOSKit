@@ -14,7 +14,7 @@
 #import <MMKV/MMKV.h>
 #import <AXiOSKit/AXiOSKit.h>
 #import "RPDataBase.h"
-
+#import <AXiOSKit/NSObject+AXLoger.h>
 @interface AppDelegateDB()
 
 @end
@@ -23,11 +23,14 @@
 
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     NSLog(@"WCDBErrorService====didFinishLaunchingWithOptions application = %@, launchOptions = %@ ",application,launchOptions);
-    
     [self configWCDB];
     [self configMMKV];
     [self configRealm];
-    
+//    AXLoger(@"");
+//    AXLoger3(2);
+//    [NSObject AXLoger3:@""];
+//    NSLog3(@"");
+    AXLoger(@"aaa");
     return YES;
 }
 

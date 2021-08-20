@@ -12,19 +12,33 @@
 #import <AXiOSKit/NSBundle+AXBundle.h>
 #import <AXiOSKit/NSObject+AXRuntime.h>
 #import <objc/runtime.h>
-#import <Aspects/Aspects.h>
+
+
+
+
 
 @implementation NSObject (Load)
 
+
+
+
+
 + (void)load {
-    
-    [NSObject ax_replaceInstanceMethodWithOriginal:@selector(setNilValueForKey:) newSelector:@selector(ax_safe_setNilValueForKey:)];
-    
-    __block  id  observer  = nil;
-    observer = [NSNotificationCenter.defaultCenter addObserverForName:UIApplicationDidFinishLaunchingNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-        NSLog(@"load UIApplicationDidFinishLaunchingNotification====2 %@ ,obj = %@",note.userInfo,note.object);
-        [NSNotificationCenter.defaultCenter removeObserver:observer];
-    }];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [NSObject ax_replaceInstanceMethodWithOriginal:@selector(setNilValueForKey:) newSelector:@selector(ax_safe_setNilValueForKey:)];
+        
+        __block  id  observer  = nil;
+        observer = [NSNotificationCenter.defaultCenter addObserverForName:UIApplicationDidFinishLaunchingNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+            NSLog(@"load UIApplicationDidFinishLaunchingNotification====2 %@ ,obj = %@",note.userInfo,note.object);
+            [NSNotificationCenter.defaultCenter removeObserver:observer];
+        }];
+        
+       
+        
+        
+    });
+   
     
 }
 

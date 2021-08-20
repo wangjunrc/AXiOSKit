@@ -12,6 +12,7 @@
 /// 获得相机 相册权限
 #import <Photos/PHPhotoLibrary.h>
 #import "AXDeviceFunctionDisableViewController.h"
+#import "NSObject+AXAssistant.h"
 typedef void(^MediaReslutBlock)(AXMediaResult *result);
 
 @interface AXViewControllerObserve ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate,UIImagePickerControllerDelegate>

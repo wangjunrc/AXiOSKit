@@ -11,7 +11,7 @@
 #import "AXMacros.h"
 #import "NSString+AXEffective.h"
 #import "UIView+AXKit.h"
-
+#import "NSObject+AXAssistant.h"
 @implementation UILabel (AXKit)
 
 - (void)setAx_longPressCopyMenu:(BOOL)ax_longPressCopyMenu {

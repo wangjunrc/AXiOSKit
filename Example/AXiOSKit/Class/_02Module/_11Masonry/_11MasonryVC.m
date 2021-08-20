@@ -29,7 +29,7 @@
     
     [self _test1];
     [self _test2];
-    
+    [self _test3];
     [self _test_imageView];
     
     [self _lastLoadBottomAttribute];
@@ -116,22 +116,22 @@
     label3.backgroundColor = UIColor.greenColor;
     label3.text = @"底部\n\n\n\n\n\n\n\n底部";
     
-    /// 设置内容拥抱优先级
-    [label1 setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
-   /// 设置内容抗压缩优先级
-    [label1 setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
-    
-    
-    [label2 setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
-    // 抗被压缩
-    [label2 setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
-    
+//    /// 设置内容拥抱优先级
+//    [label1 setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
+//   /// 设置内容抗压缩优先级
+//    [label1 setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
+//
+//
+//    [label2 setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
+//    // 抗被压缩
+//    [label2 setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
+//
     
     [label3 mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.top.equalTo(label1.mas_bottom).mas_offset(20);
-        make.top.greaterThanOrEqualTo(label1.mas_bottom).mas_offset(20);
-        make.top.greaterThanOrEqualTo(label2.mas_bottom).mas_offset(20);
-        
+//        make.top.greaterThanOrEqualTo(label1.mas_bottom).mas_offset(20);
+//        make.top.greaterThanOrEqualTo(label2.mas_bottom).mas_offset(20);
+        make.top.greaterThanOrEqualTo(@[label1.mas_bottom,label2.mas_bottom]).mas_offset(20);
         make.left.equalTo(label1.mas_left);
         make.right.equalTo(label2.mas_right);
         
@@ -152,7 +152,36 @@
     
 }
 
+-(void)_test3 {
+    [self _titlelabel:@"offset、insets、sizeOffset、centerOffset"];
+    
+    UIView *view = UIView.alloc.init;
+    view.backgroundColor = UIColor.redColor;
+    [self.containerView addSubview:view];
+    
+    UIView *view2 = UIView.alloc.init;
+    view2.backgroundColor = UIColor.purpleColor;
+    [view addSubview:view2];
+    
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+        make.centerX.mas_offset(0);
+        make.width.height.mas_equalTo(200);
+    }];
+    
+    
+    UIEdgeInsets edg = UIEdgeInsetsMake(10, 20, 30, 40);
 
+    // 使用 with. 需要区分 offset、insets、sizeOffset、centerOffset，分别使用偏移。
+    // 使用mas_offset 自动区分了上面的几种情况，自动匹配了
+    
+      [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
+          make.edges.equalTo(view2.superview).mas_offset(edg);
+//          make.edges.mas_equalTo(self.view).with.insets(edg);
+      }];
+    
+    self.bottomAttribute = view.mas_bottom;
+}
 -(void)_test_imageView {
     
     UIImageView *imageView = UIImageView.alloc.init;
@@ -164,7 +193,6 @@
     
     [imageView setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
     [imageView setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisVertical];
-    
     
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.bottomAttribute).mas_equalTo(20);

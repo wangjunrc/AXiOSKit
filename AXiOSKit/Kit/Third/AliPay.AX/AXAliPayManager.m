@@ -7,10 +7,7 @@
 //
 
 #import "AXAliPayManager.h"
-#import "AXMacros_log.h"
-
 #if __has_include(<AlipaySDK/AlipaySDK.h>)
-
 #import "Order.h"
 #import "DataSigner.h"
 #import <AlipaySDK/AlipaySDK.h>

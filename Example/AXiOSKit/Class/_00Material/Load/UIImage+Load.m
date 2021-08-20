@@ -28,7 +28,7 @@
                 id img= nil;
                 img= [UIImage imageNamed:@"chongshe"];
                 [invocation setReturnValue:&img];
-                NSLog(@"替换%@为,img=%@",imageNamed,img);
+//                NSLog(@"替换%@为,img=%@",imageNamed,img);
             }
         } error:&error];
         NSLog(@"ax_imageNamed error== %@",error);

@@ -36,7 +36,6 @@
     
     [self configCocoaDebug];
     [self configDoraemonKit];
-    
 #if DEBUG
     /// 只能模拟器
     /// for iOS

@@ -9,7 +9,7 @@
 #import "AXNetManager+Version.h"
 #if __has_include("AFNetworking.h")
 #import "NSString+AXKit.h"
-#import "AXMacros_log.h"
+#import "NSObject+AXLoger.h"
 @implementation AXNetManager (Version)
 
 +(void )appStoreVersionAppid:(NSString *)appid success:(void(^)(NSString *appVersion))successBlock failure:(void(^)(void))failureBlock{

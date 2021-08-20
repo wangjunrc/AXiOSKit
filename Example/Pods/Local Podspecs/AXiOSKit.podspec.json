@@ -1,6 +1,6 @@
 {
   "name": "AXiOSKit",
-  "version": "2.1.0",
+  "version": "2.1.2",
   "summary": "个人开发工具类",
   "description": "封装UIKit等个人开发工具类",
   "homepage": "https://github.com/axinger",
@@ -37,7 +37,7 @@
     {
       "name": "Foundation",
       "public_header_files": "AXiOSKit/AXiOSKit/AXiOSFoundation.h",
-      "source_files": "AXiOSKit/Foundation/**/*.{h,m}",
+      "source_files": "AXiOSKit/Foundation/**/*.{h,m,mm}",
       "frameworks": "Foundation"
     },
     {
