@@ -1162,6 +1162,7 @@
 				217B22E8269E6F6000EAF4CC /* _13ApngView.swift */,
 				21A61D34265E7F4A0080E67D /* _13SDWebImageVC.h */,
 				21A61D94265E7F4A0080E67D /* _13SDWebImageVC.m */,
+				2150B150269C1B8900351B10 /* Image.bundle */,
 			);
 			path = _13Image;
 			sourceTree = "<group>";
@@ -1557,7 +1558,6 @@
 			children = (
 				21A61CF5265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png */,
 				21A61CEC265E7F4A0080E67D /* Alternate_AppIcon_3@2x.png */,
-				2150B150269C1B8900351B10 /* Image.bundle */,
 				21A61CE8265E7F4A0080E67D /* instruction.jpg */,
 				21A61F1F265E7F680080E67D /* Lottie-Files */,
 				21A61CEF265E7F4A0080E67D /* office.bundle */,

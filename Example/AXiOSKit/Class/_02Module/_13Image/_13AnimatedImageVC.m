@@ -9,6 +9,7 @@
 #import "_13AnimatedImageVC.h"
 #import "AXUserSwiftImport.h"
 #import <SDWebImageFLPlugin/FLAnimatedImageView+WebCache.h>
+@import SDWebImageWebPCoder;
 @import AXiOSKit;
 @import AssetsLibrary;
 @import FLAnimatedImage;
@@ -71,29 +72,48 @@
     }
     
     {
+        [self _titlelabel:@"UIImageView sd_imageWithGIFData 显示webp动画"];
+        UIImageView *imageView = [[UIImageView alloc] init];
+        [self _addCenterView:imageView size:CGSizeMake(200, 200)];
+        NSData *data = [NSData ax_mainBundleDataName:@"Image.bundle/animated-webpp-0.webp"];
+        imageView.image = [UIImage sd_imageWithGIFData:data];
+    }
+    {
+        [self _titlelabel:@"UIImageView sd_imageWithWebPData 显示webp动画"];
+        UIImageView *imageView = [[UIImageView alloc] init];
+        [self _addCenterView:imageView size:CGSizeMake(200, 200)];
+        NSData *data = [NSData ax_mainBundleDataName:@"Image.bundle/animated-webpp-0.webp"];
+        imageView.image = [UIImage sd_imageWithWebPData:data];
+    }
+    
+    {
         [self _titlelabel:@"gif data: SDAnimatedImageView \n没有data方法"];
         SDAnimatedImageView *imageView = [SDAnimatedImageView.alloc init];
         [self _addCenterView:imageView size:CGSizeMake(100, 100)];
         /// 这2句,同时控制是否重复
         imageView.shouldCustomLoopCount = YES;
         imageView.animationRepeatCount = 0;
-        
         NSURL *URL = [NSBundle.mainBundle URLForResource:@"Image.bundle/test_gif_bear.gif" withExtension:nil];
         [imageView sd_setImageWithURL:URL];
-        
     }
     
     {
-        [self _titlelabel:@"gif data: FLAnimatedImageView \n无效"];
+        [self _titlelabel:@"gif data: FLAnimatedImageView"];
         FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
         [self _addCenterView:imageView size:CGSizeMake(100, 100)];
-        
-        ;
-        
         FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:data];
         imageView.animatedImage = image;
     }
     
+    {
+        [self _titlelabel:@"FLAnimatedImageView 显示webp动画 无效"];
+        FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
+        [self _addCenterView:imageView size:CGSizeMake(200, 200)];
+        NSData *data = [NSData ax_mainBundleDataName:@"Image.bundle/animated-webpp-0.webp"];
+        FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:data];
+        imageView.animatedImage = image;
+        [imageView startAnimating];
+    }
     
     [self _dividerLabel:@"gif URL"];
     
@@ -114,7 +134,6 @@
         imageView.shouldCustomLoopCount = YES;
         imageView.animationRepeatCount = 0;
         [imageView sd_setImageWithURL:URL];
-        
     }
     
     {
@@ -122,9 +141,6 @@
         [self _titlelabel:@"gif URL: FLAnimatedImageView"];
         FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
         [self _addCenterView:imageView size:CGSizeMake(100, 100)];
-        
-        ;
-        
         [imageView sd_setImageWithURL:URL];
         
     }
@@ -229,10 +245,24 @@
     
     [self _dividerLabel:@"UIImageView显示webp,用data方式"];
     {
-        [self _titlelabel:@"webp data"];
+        [self _titlelabel:@"UIImageView initWithData webp"];
         UIImageView *imageView  = [[UIImageView alloc]init];
         [self _addCenterView:imageView size:CGSizeMake(100, 100)];
         NSData *data = [NSData ax_mainBundleDataName:@"Image.bundle/test_webp.webp"];
+        imageView.image = [UIImage.alloc initWithData:data];;
+    }
+    {
+        [self _titlelabel:@"UIImageView sd_imageWithWebPData webp"];
+        UIImageView *imageView  = [[UIImageView alloc]init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        NSData *data = [NSData ax_mainBundleDataName:@"Image.bundle/test_webp.webp"];
+        imageView.image = [UIImage sd_imageWithWebPData:data];;
+    }
+    {
+        [self _titlelabel:@"webp 显示动画"];
+        UIImageView *imageView  = [[UIImageView alloc]init];
+        [self _addCenterView:imageView size:CGSizeMake(100, 100)];
+        NSData *data = [NSData ax_mainBundleDataName:@"Image.bundle/animated-webpp-0.webp"];
         imageView.image = [UIImage.alloc initWithData:data];;
     }
     
