@@ -14,8 +14,8 @@
 
 #if __has_include("AXiOSKit_Example-Swift.h")
 #import "AXiOSKit_Example-Swift.h"
-#elif __has_include("AXiOSKit_Example_Env_1-Swift.h")
-#import "AXiOSKit_Example_Env_1-Swift.h"
+#elif __has_include("AXiOSKitDemo-Swift.h")
+#import "AXiOSKitDemo-Swift.h"
 #endif
 
 @import APNGKit;

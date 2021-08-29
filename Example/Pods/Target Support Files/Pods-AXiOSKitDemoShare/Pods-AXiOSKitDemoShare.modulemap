@@ -1,0 +1,6 @@
+framework module Pods_AXiOSKitDemoShare {
+  umbrella header "Pods-AXiOSKitDemoShare-umbrella.h"
+
+  export *
+  module * { export * }
+}

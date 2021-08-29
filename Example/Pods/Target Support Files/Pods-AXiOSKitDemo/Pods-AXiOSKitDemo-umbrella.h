@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_AXiOSKit_Example_Env_1VersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_AXiOSKit_Example_Env_1VersionString[];
+FOUNDATION_EXPORT double Pods_AXiOSKitDemoVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_AXiOSKitDemoVersionString[];
 

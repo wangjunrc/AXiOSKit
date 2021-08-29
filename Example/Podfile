@@ -295,10 +295,9 @@ def app_pods
 end
 
 def extension_pods
-  #  common_pods
-  #  pod 'ReactiveObjC'
-  #  pod 'Masonry'
-  #  axinger_pods
+  common_pods
+  swift_common_pods
+  axinger_pods
 end
 
 #=========target===========
@@ -321,13 +320,13 @@ target 'AXShare' do
 end
 
 #=========target Env_1 ===========
-target 'AXiOSKit_Example_Env_1' do
+target 'AXiOSKitDemo' do
   
   app_pods
   
 end
 
-target 'AXShare_Env_1' do
+target 'AXiOSKitDemoShare' do
   
   extension_pods
   

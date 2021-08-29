@@ -4,14 +4,15 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
+	<key>CFBundleDisplayName</key>
+	<string>阿星Kit</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleTypeName</key>
 			<string>ShareImage</string>
-            <key>CFBundleTypeRole</key>
-            <string>Viewer</string>
-            
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
@@ -21,7 +22,7 @@
 				<string>com.microsoft.excel.xls</string>
 				<string>com.adobe.pdf</string>
 				<string>public.image</string>
-                <string>public.content</string>
+				<string>public.content</string>
 			</array>
 		</dict>
 	</array>

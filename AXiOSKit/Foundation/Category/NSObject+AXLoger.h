@@ -51,11 +51,11 @@ FOUNDATION_EXPORT void AXNoMsgLog(NSString *format, ...);
 #define AXLog(...)
 #endif
 
-#ifdef DEBUG
-#define NSLog(...) AXLogerInfo(__FILE__,__FUNCTION__,__LINE__,##__VA_ARGS__);
-#else
-#define NSLog(...)
-#endif
+//#ifdef DEBUG
+//#define NSLog(...) AXLogerInfo(__FILE__,__FUNCTION__,__LINE__,##__VA_ARGS__);
+//#else
+//#define NSLog(...)
+//#endif
 
 
 #define AXLogFunc AXLog(@"%s",__func__);
