@@ -975,6 +975,19 @@ void mySLog(NSString *format, ...)
         };
         
     }
+    [tempArray addTitle:@"单例宏" detail:nil action:^(_AXCellItem *option) {
+        NSDictionary *dict = @{@"name":@"jim",@"age":@(20)};
+        [AXDemoUser mj_objectWithKeyValues:dict];
+        
+        
+        NSLog(@"AXDemoUser age=%@",[AXDemoUser.sharedUser mj_JSONObject]);
+    
+    }];
+    [tempArray addTitle:@"单例宏,取消单例" detail:nil action:^(_AXCellItem *option) {
+        [AXDemoUser cancelSingleton];
+        NSLog(@"AXDemoUser age=%@",[AXDemoUser.sharedUser mj_JSONObject]);
+    
+    }];
     
     [tempArray addTitle:@"单例能继承" detail:nil action:^(_AXCellItem *option) {
         [AXDemoUser testSub];

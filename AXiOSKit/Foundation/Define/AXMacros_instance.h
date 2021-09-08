@@ -52,7 +52,15 @@ return [[self alloc]init];\
 }\
 
 
+/// 单例 取消单例 .m文件
+#define AX_CANCEL_SINGLETON_INTER +(void)cancelSingleton;
 
+/// 单例 取消单例 .m文件
+#define AX_CANCEL_SINGLETON_IMPL \
++(void)cancelSingleton {\
+    _instance = nil;\
+_onceToken=0;\
+}\
 
 #endif /* AXMacros_instance_h */
 

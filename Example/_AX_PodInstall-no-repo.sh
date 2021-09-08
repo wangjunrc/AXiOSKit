@@ -4,6 +4,6 @@
 BASEDIR=$(dirname $0)
 cd $BASEDIR
 
-echo "=========开始installPod工程======="
+echo "=========开始 pod install --no-repo-update ======="
 #pod update --no-repo-update
 pod install --no-repo-update

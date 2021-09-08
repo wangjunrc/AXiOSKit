@@ -39,7 +39,7 @@ AX_SINGLETON_IMPL()
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     //控制整个功能是否启用
     manager.enable = user;
-    //控制整个功能是否启用
+    //控制点击背景是否收起键盘
     manager.shouldResignOnTouchOutside = user;
     //控制键盘上的工具条文字颜色是否用户自定义
     manager.shouldToolbarUsesTextFieldTintColor = YES;

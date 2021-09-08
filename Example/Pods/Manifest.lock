@@ -141,6 +141,8 @@ PODS:
   - Mantle/extobjc (2.1.6)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
+  - MBProgressHUDOfAX (0.1.0):
+    - MBProgressHUD (~> 1.2.0)
   - MGJRouter (0.10.0)
   - MGSwipeTableCell (1.6.11)
   - MJExtension (3.3.0)
@@ -250,6 +252,7 @@ DEPENDENCIES:
   - Mantle
   - Masonry (~> 1.1.0)
   - MBProgressHUD (~> 1.2.0)
+  - MBProgressHUDOfAX (~> 0.1.0)
   - MGJRouter
   - MGSwipeTableCell (~> 1.6.11)
   - MJExtension (~> 3.3.0)
@@ -318,6 +321,7 @@ SPEC REPOS:
     - Mantle
     - Masonry
     - MBProgressHUD
+    - MBProgressHUDOfAX
     - MGJRouter
     - MGSwipeTableCell
     - MJExtension
@@ -391,6 +395,7 @@ SPEC CHECKSUMS:
   Mantle: 4c0ed6ce47c96eccc4dc3bb071deb3def0e2c3be
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MBProgressHUDOfAX: 55c34b90c4594325961b14c26ad6d407b71ebc44
   MGJRouter: 15d94541eb2cc81eff7d577337288feb7ae9575f
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
   MJExtension: 01704cca2b60a214c10761b6491eab74069d68a9
@@ -405,7 +410,7 @@ SPEC CHECKSUMS:
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Protobuf: adb85cd18a15bd1a777c158af9fd6e612a0e6d69
-  ReactiveObjC: c80676b38445a1beebc17defd47c1152a1f1e661
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RMQClient: 9bbda86703fd475761101ee5fda037eb2a12ec4e
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageFLPlugin: 245c7ce1e77028b6ef415240847b3f8aa4b106b7
@@ -426,6 +431,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: cb888a825ca799692a5ce581b2f75ceb233f4773
+PODFILE CHECKSUM: 566798070e813f04732f42704c17473c6543ed42
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.2

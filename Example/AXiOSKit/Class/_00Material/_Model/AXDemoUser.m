@@ -10,7 +10,7 @@
 
 @implementation AXDemoUser
 AX_SINGLETON_IMPL(User)
-
+AX_CANCEL_SINGLETON_IMPL
 +(void)testSub {
     NSLog(@"testSub=%@",self);
 }

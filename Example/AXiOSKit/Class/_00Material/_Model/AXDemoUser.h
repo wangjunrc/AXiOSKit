@@ -13,7 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AXDemoUser : NSObject
 
 AX_SINGLETON_INTER(User)
-
+AX_CANCEL_SINGLETON_INTER;
+@property(nonatomic, copy) NSString *name;
+@property(nonatomic, assign) NSUInteger age;
 
 +(void)testSub;
 
