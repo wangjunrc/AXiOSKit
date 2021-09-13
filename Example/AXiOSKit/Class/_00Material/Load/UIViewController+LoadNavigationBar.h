@@ -1,5 +1,5 @@
 //
-//  UIViewController+AXHideNavBackTitle.h
+//  UIViewController+LoadNavigationBar.h
 //  AXiOSKit_Example
 //
 //  Created by 小星星吃KFC on 2021/1/5.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIViewController (AXHideNavBackTitle)
+@interface UIViewController (LoadNavigationBar)
 
 @end
 

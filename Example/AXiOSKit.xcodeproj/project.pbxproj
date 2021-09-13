@@ -191,7 +191,7 @@
 		217CA91F26DBAB9E00512DCE /* _31GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CA6265E7F4A0080E67D /* _31GCDViewController.m */; };
 		217CA92026DBAB9E00512DCE /* DemoAppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 2180267926B66C13006DE9B1 /* DemoAppSetting.m */; };
 		217CA92126DBAB9E00512DCE /* AXSocialShareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D1F265E7F4A0080E67D /* AXSocialShareCell.m */; };
-		217CA92226DBAB9E00512DCE /* UIViewController+AXHideNavBackTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CC6265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.m */; };
+		217CA92226DBAB9E00512DCE /* UIViewController+LoadNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CC6265E7F4A0080E67D /* UIViewController+LoadNavigationBar.m */; };
 		217CA92326DBAB9E00512DCE /* AXWebSocketEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CB2265E7F4A0080E67D /* AXWebSocketEngine.m */; };
 		217CA92426DBAB9E00512DCE /* _28LocalSocketClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D71265E7F4A0080E67D /* _28LocalSocketClientViewController.m */; };
 		217CA92526DBAB9E00512DCE /* NHDBEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CED55F26B3A9B600F1F1F1 /* NHDBEngine.m */; };
@@ -349,7 +349,7 @@
 		21A61DFD265E7F4A0080E67D /* DemoEnvironmenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CBF265E7F4A0080E67D /* DemoEnvironmenVC.m */; };
 		21A61DFF265E7F4A0080E67D /* TestPluginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CC0265E7F4A0080E67D /* TestPluginViewController.m */; };
 		21A61E01265E7F4A0080E67D /* LVieoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CC2265E7F4A0080E67D /* LVieoView.m */; };
-		21A61E03265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CC6265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.m */; };
+		21A61E03265E7F4A0080E67D /* UIViewController+LoadNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CC6265E7F4A0080E67D /* UIViewController+LoadNavigationBar.m */; };
 		21A61E05265E7F4A0080E67D /* UIControl+load.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CC7265E7F4A0080E67D /* UIControl+load.m */; };
 		21A61E07265E7F4A0080E67D /* UIImage+Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CC8265E7F4A0080E67D /* UIImage+Load.m */; };
 		21A61E09265E7F4A0080E67D /* NSObject+Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CC9265E7F4A0080E67D /* NSObject+Load.m */; };
@@ -527,7 +527,7 @@
 		21FC46C82591974300AA253F /* AXDebugUIConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC46B9259192E900AA253F /* AXDebugUIConfig.m */; };
 		21FE556D2696EFFD0025969F /* _43ColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FE556C2696EFFD0025969F /* _43ColorVC.m */; };
 		21FE556F2696F1550025969F /* _TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE556E2696F1550025969F /* _TestSwift.swift */; };
-		22B101711E80BB6789BBCAF1 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		22B101711E80BB6789BBCAF1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		3BB5EC4274DFAC46C712DC02 /* Pods_AXShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3587F487C7C7169550D6472 /* Pods_AXShare.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -538,7 +538,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		703CC191BE0D09462B95EAA4 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		703CC191BE0D09462B95EAA4 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		727B3939975489340478F423 /* Pods_AXiOSKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5E401FCE901D2B104E5E28 /* Pods_AXiOSKit_Example.framework */; };
 		C3A39BDB94E111533EEE98BC /* Pods_AXiOSKitDemoShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD1C9C1EA7B8125F107B970 /* Pods_AXiOSKitDemoShare.framework */; };
 		DD24170C8BF5706DA391E4D2 /* Pods_AXiOSKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18922568140152982253388C /* Pods_AXiOSKit_Tests.framework */; };
@@ -741,13 +741,13 @@
 		21A61CC2265E7F4A0080E67D /* LVieoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVieoView.m; sourceTree = "<group>"; };
 		21A61CC3265E7F4A0080E67D /* LVieoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVieoView.h; sourceTree = "<group>"; };
 		21A61CC5265E7F4A0080E67D /* NSObject+Load.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Load.h"; sourceTree = "<group>"; };
-		21A61CC6265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AXHideNavBackTitle.m"; sourceTree = "<group>"; };
+		21A61CC6265E7F4A0080E67D /* UIViewController+LoadNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LoadNavigationBar.m"; sourceTree = "<group>"; };
 		21A61CC7265E7F4A0080E67D /* UIControl+load.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+load.m"; sourceTree = "<group>"; };
 		21A61CC8265E7F4A0080E67D /* UIImage+Load.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Load.m"; sourceTree = "<group>"; };
 		21A61CC9265E7F4A0080E67D /* NSObject+Load.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Load.m"; sourceTree = "<group>"; };
 		21A61CCA265E7F4A0080E67D /* UIImage+Load.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Load.h"; sourceTree = "<group>"; };
 		21A61CCB265E7F4A0080E67D /* UIControl+load.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+load.h"; sourceTree = "<group>"; };
-		21A61CCC265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AXHideNavBackTitle.h"; sourceTree = "<group>"; };
+		21A61CCC265E7F4A0080E67D /* UIViewController+LoadNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LoadNavigationBar.h"; sourceTree = "<group>"; };
 		21A61CCE265E7F4A0080E67D /* _AXTestPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _AXTestPerson.h; sourceTree = "<group>"; };
 		21A61CCF265E7F4A0080E67D /* Student.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.pbobjc.h; sourceTree = "<group>"; };
 		21A61CD0265E7F4A0080E67D /* TestObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestObj.m; sourceTree = "<group>"; };
@@ -1017,6 +1017,7 @@
 		21CC7C61255FA40D00E7B506 /* AppDelegateWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateWebImage.m; sourceTree = "<group>"; };
 		21CC7C66255FA4A300E7B506 /* AppDelegateDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateDebug.h; sourceTree = "<group>"; };
 		21CC7C67255FA4A300E7B506 /* AppDelegateDebug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateDebug.m; sourceTree = "<group>"; };
+		21CEC46626EF333200D46BEC /* plist.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = plist.md; sourceTree = "<group>"; };
 		21CED4F326B23A1F00F1F1F1 /* _06MMKVVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _06MMKVVC.h; sourceTree = "<group>"; };
 		21CED4F426B23A1F00F1F1F1 /* _06MMKVVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _06MMKVVC.m; sourceTree = "<group>"; };
 		21CED54726B2D46800F1F1F1 /* _06FMDBVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _06FMDBVC.h; sourceTree = "<group>"; };
@@ -1116,7 +1117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				703CC191BE0D09462B95EAA4 /* BuildFile in Frameworks */,
+				703CC191BE0D09462B95EAA4 /* (null) in Frameworks */,
 				3BB5EC4274DFAC46C712DC02 /* Pods_AXShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1130,7 +1131,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				22B101711E80BB6789BBCAF1 /* BuildFile in Frameworks */,
+				22B101711E80BB6789BBCAF1 /* (null) in Frameworks */,
 				727B3939975489340478F423 /* Pods_AXiOSKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1293,6 +1294,7 @@
 				21898FF92541B48000876524 /* 面试.md */,
 				21898FFA2541B48000876524 /* 命令行.md */,
 				21D83B3A255A28BE00695C28 /* rac.md */,
+				21CEC46626EF333200D46BEC /* plist.md */,
 			);
 			name = README;
 			path = ../AXiOSKit/README;
@@ -1567,8 +1569,8 @@
 				21A61CC7265E7F4A0080E67D /* UIControl+load.m */,
 				21A61CCA265E7F4A0080E67D /* UIImage+Load.h */,
 				21A61CC8265E7F4A0080E67D /* UIImage+Load.m */,
-				21A61CCC265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.h */,
-				21A61CC6265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.m */,
+				21A61CCC265E7F4A0080E67D /* UIViewController+LoadNavigationBar.h */,
+				21A61CC6265E7F4A0080E67D /* UIViewController+LoadNavigationBar.m */,
 				21E47E15269D66E500D7188F /* UIAlertController+Load.h */,
 				21E47E16269D66E500D7188F /* UIAlertController+Load.m */,
 			);
@@ -3179,7 +3181,7 @@
 				217CA91F26DBAB9E00512DCE /* _31GCDViewController.m in Sources */,
 				217CA92026DBAB9E00512DCE /* DemoAppSetting.m in Sources */,
 				217CA92126DBAB9E00512DCE /* AXSocialShareCell.m in Sources */,
-				217CA92226DBAB9E00512DCE /* UIViewController+AXHideNavBackTitle.m in Sources */,
+				217CA92226DBAB9E00512DCE /* UIViewController+LoadNavigationBar.m in Sources */,
 				217CA92326DBAB9E00512DCE /* AXWebSocketEngine.m in Sources */,
 				217CA92426DBAB9E00512DCE /* _28LocalSocketClientViewController.m in Sources */,
 				217CA92526DBAB9E00512DCE /* NHDBEngine.m in Sources */,
@@ -3374,7 +3376,7 @@
 				21A61DE1265E7F4A0080E67D /* _31GCDViewController.m in Sources */,
 				2180267A26B66C13006DE9B1 /* DemoAppSetting.m in Sources */,
 				21A61E69265E7F4B0080E67D /* AXSocialShareCell.m in Sources */,
-				21A61E03265E7F4A0080E67D /* UIViewController+AXHideNavBackTitle.m in Sources */,
+				21A61E03265E7F4A0080E67D /* UIViewController+LoadNavigationBar.m in Sources */,
 				21A61DEF265E7F4A0080E67D /* AXWebSocketEngine.m in Sources */,
 				21A61EBD265E7F4B0080E67D /* _28LocalSocketClientViewController.m in Sources */,
 				21CED56026B3A9B600F1F1F1 /* NHDBEngine.m in Sources */,
