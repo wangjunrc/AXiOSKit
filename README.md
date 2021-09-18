@@ -2257,6 +2257,12 @@ UIImage *image = [UIImage systemImageNamed:@"ladybug.fill"];
 [btn.widthAnchor constraintEqualToConstant:60].active =YES;
 [btn.heightAnchor constraintEqualToConstant:27].active =YES;
 ```
+## UIBarButtonItem initWithCustomView UIButton  可用
+```
+/// 直接设置 UIBarButtonItem 可用
+self.navigationItem.rightBarButtonItem.enabled = NO;
+```
+
 ## view layer 设置背景图
 ```
 UIImage *image = [UIImage imageNamed:@"launch_image"];
