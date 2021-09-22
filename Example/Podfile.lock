@@ -163,6 +163,7 @@ PODS:
   - MQTTClient/Websocket (0.15.3):
     - MQTTClient/Min
     - SocketRocket
+  - MXParallaxHeader (1.1.0)
   - NextGrowingTextView (1.6.1)
   - NullSafe (2.0)
   - OHHTTPStubs (9.1.0):
@@ -203,6 +204,7 @@ PODS:
   - SSKeychain (1.4.1)
   - SSZipArchive (2.4.2)
   - TABAnimated (2.5.5)
+  - TableKit (2.11.0)
   - TOCropViewController (2.6.0)
   - TZImagePickerController (3.5.9)
   - YYCache (1.0.4)
@@ -262,6 +264,7 @@ DEPENDENCIES:
   - MonkeyKing (~> 2.1.0)
   - MQTTClient (~> 0.15.3)
   - MQTTClient/Websocket
+  - MXParallaxHeader
   - NextGrowingTextView
   - NullSafe (~> 2.0)
   - OHHTTPStubs (~> 9.1.0)
@@ -278,6 +281,7 @@ DEPENDENCIES:
   - SSKeychain
   - SSZipArchive
   - TABAnimated (= 2.5.5)
+  - TableKit
   - TOCropViewController (~> 2.6.0)
   - TZImagePickerController (~> 3.5.8)
   - YYCache (~> 1.0.4)
@@ -331,6 +335,7 @@ SPEC REPOS:
     - MMKVCore
     - MonkeyKing
     - MQTTClient
+    - MXParallaxHeader
     - NextGrowingTextView
     - NullSafe
     - OHHTTPStubs
@@ -347,6 +352,7 @@ SPEC REPOS:
     - SSKeychain
     - SSZipArchive
     - TABAnimated
+    - TableKit
     - TOCropViewController
     - TZImagePickerController
     - YYCache
@@ -405,6 +411,7 @@ SPEC CHECKSUMS:
   MMKVCore: b00e7a09ec77a1b916aef336eedd3b99ec249978
   MonkeyKing: 1656e3e01911b5f72f988d4496c1cc988d0c009c
   MQTTClient: 0dfa04e789479c2e461786464969895c1fcb0875
+  MXParallaxHeader: de3c867e10ba46e8f6e20c8ee1f2a910372b3b94
   NextGrowingTextView: 3b34f8f10b49b10bd58b61c476ca9b1c58cad380
   NullSafe: 948feba938f03abede5ed3758694a9fe5b3a65ce
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
@@ -421,6 +428,7 @@ SPEC CHECKSUMS:
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
   SSZipArchive: e7b4f3d9e780c2acc1764cd88fbf2de28f26e5b2
   TABAnimated: 578ad7becfcba14e163ecf7e755113de17ee1984
+  TableKit: 8a1a267d841a2da638ea09bdb0db33aedb459fa8
   TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
   TZImagePickerController: 07a2f834f4908689759a7e54f74e9a018e047cb6
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
@@ -431,6 +439,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 566798070e813f04732f42704c17473c6543ed42
+PODFILE CHECKSUM: 13547965de82507ea568aa393fac85cf8b93e6dd
 
 COCOAPODS: 1.10.2

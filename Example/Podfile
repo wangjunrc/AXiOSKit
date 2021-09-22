@@ -249,6 +249,9 @@ def common_pods
   #  pod 'Realm', '~> 10.11.0'
   #pod 'GRDB.swift'
   
+  pod 'MXParallaxHeader'
+  pod 'TableKit'
+  
 end
 
 # swift的库,为了兼容

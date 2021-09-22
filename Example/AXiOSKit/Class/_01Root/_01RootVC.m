@@ -71,6 +71,8 @@
 #import "_42MantleVC.h"
 #import "_43ColorVC.h"
 #import "_44FilesTableViewController.h"
+
+#import "_45MXParallaxHeaderVC.h"
 #import "_AXCellItem.h"
 #import "_AXSearchResultVC.h"
 #import "_AXTestActivity.h"
@@ -1530,6 +1532,14 @@ void newmethod(NSString *format,...) {
             [self ax_pushVC:vc];
         }];
         
+        [_1stArray ax_addItem:^(_AXCellItem * _Nonnull item) {
+            item.title = @"_45MXParallaxHeaderVC";
+            item.detail = @"MXParallaxHeade";
+        } action:^(_AXCellItem * _Nonnull item) {
+            _45MXParallaxHeaderVC *vc = [_45MXParallaxHeaderVC ax_init];
+            vc.title = item.detail;
+            [self ax_pushVC:vc];
+        }];
         
 #pragma mark - 2nd begin
         

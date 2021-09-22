@@ -15,6 +15,10 @@
 		210B1ED125EDE40200878A73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 210B1ED425EDE40200878A73 /* Localizable.strings */; };
 		21122776257334C600B6ECC8 /* AXiOSKitDemo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21122775257334C600B6ECC8 /* AXiOSKitDemo-Info.plist */; };
 		2118BABD268EE9330016A292 /* _02QQZoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2118BABB268EE9320016A292 /* _02QQZoneController.m */; };
+		211A6A2126FAFD8D00DE193B /* _45MXParallaxHeaderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A6A2026FAFD8C00DE193B /* _45MXParallaxHeaderVC.m */; };
+		211A6A2226FAFD8D00DE193B /* _45MXParallaxHeaderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A6A2026FAFD8C00DE193B /* _45MXParallaxHeaderVC.m */; };
+		211A6A2526FAFEA300DE193B /* _45HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A6A2426FAFEA300DE193B /* _45HeaderView.m */; };
+		211A6A2626FAFEA300DE193B /* _45HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A6A2426FAFEA300DE193B /* _45HeaderView.m */; };
 		212AA1C926B10234000678BF /* _Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 212AA1C826B10234000678BF /* _Person.m */; };
 		213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 213BCB2E254003D900C89B72 /* InfoPlist.strings */; };
 		213BCBEA254003DB00C89B72 /* MakeKeyAndVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB31254003D900C89B72 /* MakeKeyAndVisible.m */; };
@@ -619,6 +623,10 @@
 		211227842573361600B6ECC8 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
 		2118BABB268EE9320016A292 /* _02QQZoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _02QQZoneController.m; sourceTree = "<group>"; };
 		2118BABC268EE9330016A292 /* _02QQZoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _02QQZoneController.h; sourceTree = "<group>"; };
+		211A6A1F26FAFD8C00DE193B /* _45MXParallaxHeaderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _45MXParallaxHeaderVC.h; sourceTree = "<group>"; };
+		211A6A2026FAFD8C00DE193B /* _45MXParallaxHeaderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _45MXParallaxHeaderVC.m; sourceTree = "<group>"; };
+		211A6A2326FAFEA300DE193B /* _45HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _45HeaderView.h; sourceTree = "<group>"; };
+		211A6A2426FAFEA300DE193B /* _45HeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _45HeaderView.m; sourceTree = "<group>"; };
 		212AA1C726B10234000678BF /* _Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _Person.h; sourceTree = "<group>"; };
 		212AA1C826B10234000678BF /* _Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _Person.m; sourceTree = "<group>"; };
 		213BCB2F254003D900C89B72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -1161,6 +1169,17 @@
 			path = "_02导航栏";
 			sourceTree = "<group>";
 		};
+		211A6A2726FAFEAA00DE193B /* _45 */ = {
+			isa = PBXGroup;
+			children = (
+				211A6A1F26FAFD8C00DE193B /* _45MXParallaxHeaderVC.h */,
+				211A6A2026FAFD8C00DE193B /* _45MXParallaxHeaderVC.m */,
+				211A6A2326FAFEA300DE193B /* _45HeaderView.h */,
+				211A6A2426FAFEA300DE193B /* _45HeaderView.m */,
+			);
+			path = _45;
+			sourceTree = "<group>";
+		};
 		213BCB2D254003D900C89B72 /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -1481,6 +1500,7 @@
 				218746AF2696EFAC0022BE97 /* _43Color */,
 				21DAADE226C1776D00C82FE3 /* _44FilesTableViewController.h */,
 				21DAADE326C1776D00C82FE3 /* _44FilesTableViewController.m */,
+				211A6A2726FAFEAA00DE193B /* _45 */,
 			);
 			path = _02Module;
 			sourceTree = "<group>";
@@ -2672,6 +2692,7 @@
 				"${BUILT_PRODUCTS_DIR}/MMKV/MMKV.framework",
 				"${BUILT_PRODUCTS_DIR}/MMKVCore/MMKVCore.framework",
 				"${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework",
+				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
 				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/MonkeyKing/MonkeyKing.framework",
@@ -2693,6 +2714,7 @@
 				"${BUILT_PRODUCTS_DIR}/TABAnimated/TABAnimated.framework",
 				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
+				"${BUILT_PRODUCTS_DIR}/TableKit/TableKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
 				"${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework",
@@ -2742,6 +2764,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKV.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKVCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MQTTClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MonkeyKing.framework",
@@ -2763,6 +2786,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TABAnimated.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TableKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYDebugDatabase.framework",
@@ -2920,6 +2944,7 @@
 				"${BUILT_PRODUCTS_DIR}/MMKV/MMKV.framework",
 				"${BUILT_PRODUCTS_DIR}/MMKVCore/MMKVCore.framework",
 				"${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework",
+				"${BUILT_PRODUCTS_DIR}/MXParallaxHeader/MXParallaxHeader.framework",
 				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/MonkeyKing/MonkeyKing.framework",
@@ -2941,6 +2966,7 @@
 				"${BUILT_PRODUCTS_DIR}/TABAnimated/TABAnimated.framework",
 				"${BUILT_PRODUCTS_DIR}/TOCropViewController/TOCropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
+				"${BUILT_PRODUCTS_DIR}/TableKit/TableKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
 				"${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework",
@@ -2990,6 +3016,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKV.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKVCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MQTTClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXParallaxHeader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MonkeyKing.framework",
@@ -3011,6 +3038,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TABAnimated.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOCropViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TableKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYDebugDatabase.framework",
@@ -3062,6 +3090,7 @@
 				217CA8A826DBAB9E00512DCE /* _18MGSwipeTableVC.m in Sources */,
 				217CA8A926DBAB9E00512DCE /* _06FMDBVC.m in Sources */,
 				217CA8AA26DBAB9E00512DCE /* _21KVOViewController.m in Sources */,
+				211A6A2626FAFEA300DE193B /* _45HeaderView.m in Sources */,
 				217CA8AB26DBAB9E00512DCE /* DemoEnvironmenVC.m in Sources */,
 				217CA8AC26DBAB9E00512DCE /* AXShareBridge.swift in Sources */,
 				217CA8AD26DBAB9E00512DCE /* AXShareService.m in Sources */,
@@ -3174,6 +3203,7 @@
 				217CA91826DBAB9E00512DCE /* _AXTestAnimRefreshFooter.m in Sources */,
 				217CA91926DBAB9E00512DCE /* _01RootVC.m in Sources */,
 				217CA91A26DBAB9E00512DCE /* _28LocalSocketServiceViewController.m in Sources */,
+				211A6A2226FAFD8D00DE193B /* _45MXParallaxHeaderVC.m in Sources */,
 				217CA91B26DBAB9E00512DCE /* _14TextFieldVC.m in Sources */,
 				217CA91C26DBAB9E00512DCE /* _22LoginViewModel.m in Sources */,
 				217CA91D26DBAB9E00512DCE /* _Person.m in Sources */,
@@ -3257,6 +3287,7 @@
 				21A61EB5265E7F4B0080E67D /* _18MGSwipeTableVC.m in Sources */,
 				21CED54926B2D46800F1F1F1 /* _06FMDBVC.m in Sources */,
 				21A61E73265E7F4B0080E67D /* _21KVOViewController.m in Sources */,
+				211A6A2526FAFEA300DE193B /* _45HeaderView.m in Sources */,
 				21A61DFD265E7F4A0080E67D /* DemoEnvironmenVC.m in Sources */,
 				21A61E5B265E7F4A0080E67D /* AXShareBridge.swift in Sources */,
 				21A61E6B265E7F4B0080E67D /* AXShareService.m in Sources */,
@@ -3369,6 +3400,7 @@
 				21A61DF3265E7F4A0080E67D /* _AXTestAnimRefreshFooter.m in Sources */,
 				21A61E91265E7F4B0080E67D /* _01RootVC.m in Sources */,
 				21A61EFF265E7F4B0080E67D /* _28LocalSocketServiceViewController.m in Sources */,
+				211A6A2126FAFD8D00DE193B /* _45MXParallaxHeaderVC.m in Sources */,
 				219682EE26971BB200FC972D /* _14TextFieldVC.m in Sources */,
 				218B7963269835A900CEB7E0 /* _22LoginViewModel.m in Sources */,
 				212AA1C926B10234000678BF /* _Person.m in Sources */,
