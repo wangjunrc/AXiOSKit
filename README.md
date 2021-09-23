@@ -26,25 +26,25 @@ https://github.com/Tim9Liu9/TimLiu-iOS
 #define IFTEST2 2
 
 #ifdef IFTEST1
-        NSLog(@"定义了宏-IFTEST1");
+NSLog(@"定义了宏-IFTEST1");
 #else
-        NSLog(@"没有定义了宏-IFTEST1");
+NSLog(@"没有定义了宏-IFTEST1");
 #endif
-        
-  
+
+
 #ifdef IFTEST1
-      NSLog(@"定义了宏-IFTEST1");
+NSLog(@"定义了宏-IFTEST1");
 #elif IFTEST2
-      NSLog(@"定义了宏-IFTEST2");
+NSLog(@"定义了宏-IFTEST2");
 #else
-      NSLog(@"都没有定义");
+NSLog(@"都没有定义");
 #endif
-        
-        
+
+
 #if IFTEST1 == 1
-        NSLog(@"宏定义值1:%d\n", IFTEST1);
+NSLog(@"宏定义值1:%d\n", IFTEST1);
 #elif IFTEST1 == 2
-        NSLog(@"宏定义值2:%d\n", IFTEST1);
+NSLog(@"宏定义值2:%d\n", IFTEST1);
 #endif
 ```
 
@@ -77,7 +77,7 @@ https://github.com/Tim9Liu9/TimLiu-iOS
 ```
 ```
 /// 过期警告
- "-Wdeprecated-declarations"
+"-Wdeprecated-declarations"
 ```
 
 ```
@@ -876,7 +876,7 @@ return YES;
 }
 ```
 
-## 序列化方式
+##序列化方式
 ### 微信用的是粘贴板默认名称,
 ### 支付宝用的是url拼接参数,
 ### QQ登录用的是粘贴板自定义名称,com.tencent.tencent+id,QQ分享用的是url
@@ -1642,10 +1642,10 @@ return self;;
 ```
 - (id)copyWithZone:(nullable NSZone *)zone {
 
-    Person *p = [[Person alloc]init];
-    p.name = self.name.copy;
-    return p;
-    
+Person *p = [[Person alloc]init];
+p.name = self.name.copy;
+return p;
+
 }
 ```
 
@@ -1653,23 +1653,23 @@ return self;;
 ```
 dispatch_queue_t concurrentQueue = dispatch_queue_create("my.concurrent.queue", DISPATCH_QUEUE_CONCURRENT);
 dispatch_async(concurrentQueue, ^(){
-    NSLog(@"dispatch-1");
+NSLog(@"dispatch-1");
 });
 dispatch_async(concurrentQueue, ^(){
-    NSLog(@"dispatch-2");
+NSLog(@"dispatch-2");
 });
 
 dispatch_async(concurrentQueue, ^(){
-    NSLog(@"dispatch-3");
+NSLog(@"dispatch-3");
 });
 /// 异步 
 dispatch_barrier_async(concurrentQueue, ^(){
-    NSLog(@"dispatch-barrier");
+NSLog(@"dispatch-barrier");
 });
 /// 同步
 dispatch_barrier_sync
 dispatch_async(concurrentQueue, ^(){
-    NSLog(@"dispatch-4");
+NSLog(@"dispatch-4");
 });
 ```
 ## 取余
@@ -1682,31 +1682,31 @@ NSLog(@"余数是%d",10%3);
 ##  UISearchBar 中按钮主题,比如 取消按钮颜色
 ```
 [[UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[UISearchBar.class]]
- setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}
- forState:UIControlStateNormal];
- 
- 
- [UISearchBar.appearance setBarTintColor:UIColor.redColor];
+setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.redColor}
+forState:UIControlStateNormal];
+
+
+[UISearchBar.appearance setBarTintColor:UIColor.redColor];
 ```
 ## 正则表达式 NSRegularExpression 子类 NSDataDetector
 ```
 NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeAddress | NSTextCheckingTypePhoneNumber | NSTextCheckingTypeLink
-                                                           error:nil];
+error:nil];
 //需要检测的字符串
 NSString *testStr = @"有一个网址：wwww.JohnnyLiu.com有 一个电话：1299999 还有一个地址：安徽省来安县龙山街道 你看看这个www.baidu.com/sabc/bnss怎 么样?";
 [detector enumerateMatchesInString:testStr options:NSMatchingReportCompletion range:NSMakeRange(0, testStr.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-    NSLog(@"result.range = %@",NSStringFromRange(result.range));
-    if (result.URL) {
-        NSLog(@"url = %@",result.URL);
-    }
-    if (result.phoneNumber) {
-        NSLog(@"phone = %@",result.phoneNumber);
-    }
-    if ([result resultType] == NSTextCheckingTypeAddress) {
+NSLog(@"result.range = %@",NSStringFromRange(result.range));
+if (result.URL) {
+NSLog(@"url = %@",result.URL);
+}
+if (result.phoneNumber) {
+NSLog(@"phone = %@",result.phoneNumber);
+}
+if ([result resultType] == NSTextCheckingTypeAddress) {
 
-        NSDictionary<NSString *, NSString *> * addressComponent = [result addressComponents];
-        NSLog(@"城市:%@, 街道:%@", addressComponent[NSTextCheckingCityKey], addressComponent[NSTextCheckingStreetKey]);
-    }
+NSDictionary<NSString *, NSString *> * addressComponent = [result addressComponents];
+NSLog(@"城市:%@, 街道:%@", addressComponent[NSTextCheckingCityKey], addressComponent[NSTextCheckingStreetKey]);
+}
 }];
 ```
 ## 正则表达式 NSRegularExpression
@@ -1715,68 +1715,12 @@ NSString *testStr = @"有一个网址：wwww.JohnnyLiu.com有 一个电话：129
 
 
 {
-    NSString *regEx = @"12";
-    NSString *string = @"123123";
-    NSError *error;
-    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
-    if (error) {
-        NSLog(@"error = %@", error);
-    }
-
-    NSUInteger number = [regularExpression numberOfMatchesInString:string options:kNilOptions range:NSMakeRange(0, string.length)];
-    NSLog(@"匹配的个数 = %lu", (unsigned long) number);
-
-    BOOL matched = (number != 0);
-    NSLog(@"是否匹配 = %d", matched);
-
-
-}
-
-{
-
-    NSString *regEx = @"12";
-    NSString *string = @"123123";
-    NSError *error;
-    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
-    if (error) {
-        NSLog(@"error = %@", error);
-    }
-
-    NSTextCheckingResult *firstMatch = [regularExpression firstMatchInString:string options:0 range:NSMakeRange(0, string.length)];
-    if (firstMatch) {
-        // NSTextCheckingResult 的 range 属性即匹配的字符串的位置
-        NSString *matchedString = [string substringWithRange:firstMatch.range];
-        NSLog(@"匹配的字符串 = %@", matchedString);
-    } else {
-        NSLog(@"匹配的字符串 = 错误");
-    }
-
-}
-
-{
-    NSString *regEx = @"<正则表达式>";
-    NSString *string = @"<待匹配的字符串>";
-    NSError *error;
-    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
-    if (error) {
-        NSLog(@"error = %@", error);
-    }
-
-    NSArray *matchArray = [regularExpression matchesInString:string options:0 range:NSMakeRange(0, string.length)];
-    for (NSTextCheckingResult *match in matchArray) {
-        NSString *matchedString = [string substringWithRange:match.range];
-        NSLog(@"匹配的字符串 = %@", matchedString);
-    }
-
-}
-
-{
 NSString *regEx = @"12";
 NSString *string = @"123123";
 NSError *error;
 NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
 if (error) {
-    NSLog(@"error = %@", error);
+NSLog(@"error = %@", error);
 }
 
 NSUInteger number = [regularExpression numberOfMatchesInString:string options:kNilOptions range:NSMakeRange(0, string.length)];
@@ -1795,16 +1739,16 @@ NSString *string = @"123123";
 NSError *error;
 NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
 if (error) {
-    NSLog(@"error = %@", error);
+NSLog(@"error = %@", error);
 }
 
 NSTextCheckingResult *firstMatch = [regularExpression firstMatchInString:string options:0 range:NSMakeRange(0, string.length)];
 if (firstMatch) {
-    // NSTextCheckingResult 的 range 属性即匹配的字符串的位置
-    NSString *matchedString = [string substringWithRange:firstMatch.range];
-    NSLog(@"匹配的字符串 = %@", matchedString);
+// NSTextCheckingResult 的 range 属性即匹配的字符串的位置
+NSString *matchedString = [string substringWithRange:firstMatch.range];
+NSLog(@"匹配的字符串 = %@", matchedString);
 } else {
-    NSLog(@"匹配的字符串 = 错误");
+NSLog(@"匹配的字符串 = 错误");
 }
 
 }
@@ -1815,13 +1759,69 @@ NSString *string = @"<待匹配的字符串>";
 NSError *error;
 NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
 if (error) {
-    NSLog(@"error = %@", error);
+NSLog(@"error = %@", error);
 }
 
 NSArray *matchArray = [regularExpression matchesInString:string options:0 range:NSMakeRange(0, string.length)];
 for (NSTextCheckingResult *match in matchArray) {
-    NSString *matchedString = [string substringWithRange:match.range];
-    NSLog(@"匹配的字符串 = %@", matchedString);
+NSString *matchedString = [string substringWithRange:match.range];
+NSLog(@"匹配的字符串 = %@", matchedString);
+}
+
+}
+
+{
+NSString *regEx = @"12";
+NSString *string = @"123123";
+NSError *error;
+NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
+if (error) {
+NSLog(@"error = %@", error);
+}
+
+NSUInteger number = [regularExpression numberOfMatchesInString:string options:kNilOptions range:NSMakeRange(0, string.length)];
+NSLog(@"匹配的个数 = %lu", (unsigned long) number);
+
+BOOL matched = (number != 0);
+NSLog(@"是否匹配 = %d", matched);
+
+
+}
+
+{
+
+NSString *regEx = @"12";
+NSString *string = @"123123";
+NSError *error;
+NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
+if (error) {
+NSLog(@"error = %@", error);
+}
+
+NSTextCheckingResult *firstMatch = [regularExpression firstMatchInString:string options:0 range:NSMakeRange(0, string.length)];
+if (firstMatch) {
+// NSTextCheckingResult 的 range 属性即匹配的字符串的位置
+NSString *matchedString = [string substringWithRange:firstMatch.range];
+NSLog(@"匹配的字符串 = %@", matchedString);
+} else {
+NSLog(@"匹配的字符串 = 错误");
+}
+
+}
+
+{
+NSString *regEx = @"<正则表达式>";
+NSString *string = @"<待匹配的字符串>";
+NSError *error;
+NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regEx options:kNilOptions error:&error];
+if (error) {
+NSLog(@"error = %@", error);
+}
+
+NSArray *matchArray = [regularExpression matchesInString:string options:0 range:NSMakeRange(0, string.length)];
+for (NSTextCheckingResult *match in matchArray) {
+NSString *matchedString = [string substringWithRange:match.range];
+NSLog(@"匹配的字符串 = %@", matchedString);
 }
 
 }
@@ -1839,14 +1839,14 @@ AND、OR、IN、NOT、ALL、ANY、SOME、NONE、LIKE、CASEINSENSITIVE、CI、MA
 ```
 ```
 {
-    /// <正则表达式>
-    NSString *regEx = @"12";
-    ///<待匹配的字符串>
-    NSString *string = @"1234567";
+/// <正则表达式>
+NSString *regEx = @"12";
+///<待匹配的字符串>
+NSString *string = @"1234567";
 
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
-    BOOL matched = [predicate evaluateWithObject:string];
-    NSLog(@"是否匹配 = %d", matched);
+NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
+BOOL matched = [predicate evaluateWithObject:string];
+NSLog(@"是否匹配 = %d", matched);
 }
 
 
@@ -1865,211 +1865,211 @@ NSLog(@"是否匹配 = %d", matched);
 ```
 
 {
-    
-    NSMutableArray *array = [NSMutableArray array];
-    {
-        Person *p = Person.alloc.init;
-        p.name = @"jim";
-        p.age = 2;
-        [array addObject:p];
-    }
-    {
-        Person *p = Person.alloc.init;
-        p.name = @"jim";
-        p.age = 1;
-        [array addObject:p];
-    }
-    {
-        Person *p = Person.alloc.init;
-        p.name = @"tom";
-        p.age = 3;
-        [array addObject:p];
-    }
-    {
-        Person *p = Person.alloc.init;
-        p.name = @"tom";
-        p.age = 4;
-        [array addObject:p];
-    }
-    {
-        Person *p = Person.alloc.init;
-        p.name = @"joM";
-        p.age = 4;
-        [array addObject:p];
-    }
-    NSLog(@"sum = %@",[array valueForKeyPath:@"@sum.age"]);
-    NSLog(@"avg = %@",[array valueForKeyPath:@"@avg.age"]);
-    NSLog(@"max = %@",[array valueForKeyPath:@"@max.age"]);
-    NSLog(@"min = %@",[array valueForKeyPath:@"@min.age"]);
 
-    
-    /**
-     https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/CollectionOperators.html#//apple_ref/doc/uid/20002176-BAJEAIEE
-     
-     /// 注意前面有个 @"@
-     [NSString stringWithFormat:@"@%@.name",NSUnionOfSetsKeyValueOperator];
-     
-     
-     
-     当调用KVC时key值为空时，就会抛出这个异常。
-     FOUNDATION_EXPORT NSExceptionName const NSUndefinedKeyException;
+NSMutableArray *array = [NSMutableArray array];
+{
+Person *p = Person.alloc.init;
+p.name = @"jim";
+p.age = 2;
+[array addObject:p];
+}
+{
+Person *p = Person.alloc.init;
+p.name = @"jim";
+p.age = 1;
+[array addObject:p];
+}
+{
+Person *p = Person.alloc.init;
+p.name = @"tom";
+p.age = 3;
+[array addObject:p];
+}
+{
+Person *p = Person.alloc.init;
+p.name = @"tom";
+p.age = 4;
+[array addObject:p];
+}
+{
+Person *p = Person.alloc.init;
+p.name = @"joM";
+p.age = 4;
+[array addObject:p];
+}
+NSLog(@"sum = %@",[array valueForKeyPath:@"@sum.age"]);
+NSLog(@"avg = %@",[array valueForKeyPath:@"@avg.age"]);
+NSLog(@"max = %@",[array valueForKeyPath:@"@max.age"]);
+NSLog(@"min = %@",[array valueForKeyPath:@"@min.age"]);
 
-     
-     // NSKeyValueCoding中的运算符
-     NSKeyValueOperator const NSAverageKeyValueOperator; // 求平均值
-     NSKeyValueOperator const NSCountKeyValueOperator; // 统计总数
-     NSKeyValueOperator const NSDistinctUnionOfArraysKeyValueOperator; // 获取嵌套数组中不同的值
-     NSKeyValueOperator const NSDistinctUnionOfObjectsKeyValueOperator; // 获取不同的值
-     NSKeyValueOperator const NSDistinctUnionOfSetsKeyValueOperator; // 获取嵌套集合中不同的值
-     NSKeyValueOperator const NSMaximumKeyValueOperator; // 获取最大值
-     NSKeyValueOperator const NSMinimumKeyValueOperator; // 获取最小值
-     NSKeyValueOperator const NSSumKeyValueOperator; // 求和
-     NSKeyValueOperator const NSUnionOfArraysKeyValueOperator; // 获取嵌套数组中的值，不去重
-     NSKeyValueOperator const NSUnionOfObjectsKeyValueOperator; // 获取所有的值，不去重
-     NSKeyValueOperator const NSUnionOfSetsKeyValueOperator; // 获取嵌套集合中的值，不去重
 
-     
-     
-     */
-   
-    
-    NSLog(@"sum.age ==== %@",[array valueForKeyPath:@"@sum.age"]);
-    /// valueForKeyPath,valueForKey 一层效果一样,但最好使用前者
-    NSLog(@"一级 ==== %@",[array valueForKeyPath:@"name"]);
-    NSLog(@"一级 ==== %@",[array valueForKey:@"name"]);
-    NSLog(@"多层查找 ==== %@",[array valueForKeyPath:@"dog.name"]);
-    
-    /// 去重
-    /// @distinctUnionOfObjects.self  字符串数组
-    /// @distinctUnionOfObjects.name  对象数组
-    NSLog(@"去重 %@",[array valueForKeyPath:@"@distinctUnionOfObjects.name"]);
-    
-    NSLog(@"OrderedSet ==== %@",[array mutableOrderedSetValueForKeyPath:@"name"]);
-    /// 不会去重
-     NSLog(@"mutableSetValue ==== %d",[[array mutableSetValueForKeyPath:@"name"] isKindOfClass:NSMutableOrderedSet.class]);
-    
-    NSLog(@"mutableSetValueForKey ==== %@",[array mutableSetValueForKey:@"name"]);
-    
-    /// distinctUnionOfSets 目前不行
-    NSLog(@"不同的联盟 ==== %@",[array valueForKeyPath:@"@distinctUnionOfObjects.name"]);
-    
-    NSLog(@"不同的联盟Arrays ==== %@",[@[array] valueForKeyPath:@"@distinctUnionOfArrays.name"]);
-    
-    {
-    /// 进行实例方法的调用
-    NSArray *array = @[@"name", @"w", @"aa", @"ZXPing"];
-    /// 转大写
-    NSLog(@"大写 = %@", [array valueForKeyPath:@"uppercaseString"]);
-    NSLog(@"小写 = %@", [array valueForKeyPath:@"lowercaseString"]);
-    NSLog(@"length = %@", [array valueForKeyPath:@"length"]);
-    }
-    
-    
-    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name IN %@",@[@"jim",@"jack"]];
-    //过滤数组
-    NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
-    NSLog(@"只有string = %@",arr);
-    [arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSLog(@"name包括 %@ %ld",obj.name,obj.age);
-    }];
-    
-    {
-        NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"age BETWEEN %@",@[@2,@5]];
-        //过滤数组
-        NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
-        [arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSLog(@"BETWEEN age = %@ %ld",obj.name,obj.age);
-        }];
-        
-        
-    }
-    /// 分类汇总
-    NSMutableArray<Person *> *array2 = [NSMutableArray array];
-    [[NSSet setWithArray:[array valueForKeyPath:@"name"]] enumerateObjectsUsingBlock:^(NSString *  _Nonnull obj, BOOL * _Nonnull stop) {
-        
-        NSPredicate * pre = [NSPredicate predicateWithFormat:@"name = %@",obj];
-        NSArray * arr = [array filteredArrayUsingPredicate:pre];
-        NSInteger total = [[arr valueForKeyPath:@"@sum.age"] integerValue];
-        
-        Person *p = Person.alloc.init;
-        p.name = obj;
-        p.age = total;
-        [array2 addObject:p];
-        
-    }];
-    {
-        NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name == %@",@"jim"];
-        //过滤数组
-        NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
-        [arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSLog(@"name 等于指定 %@ %ld",obj.name,obj.age);
-        }];
-        
-        
-        NSLog(@"获得所有的 name == %@",[array valueForKey:@"name"]);
-        
-    }
-    
-    {
-        /// '*om*' 直接拼接,还没有找到好办法
-        NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name LIKE '*om*'"];
-        //过滤数组
-        NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
-        [arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSLog(@"LIKT 区分大小写 = %@ %ld",obj.name,obj.age);
-        }];
-    }
-    {
-        NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name like[cd] '*om*'"];
-        NSLog(@"predicateFormat %@",filterPredicate.predicateFormat);
-        //过滤数组
-        NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
-        [arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSLog(@"LIKT 不区分大小写 = %@ %ld",obj.name,obj.age);
-        }];
-    }
-    
+/**
+https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/KeyValueCoding/CollectionOperators.html#//apple_ref/doc/uid/20002176-BAJEAIEE
+
+/// 注意前面有个 @"@
+[NSString stringWithFormat:@"@%@.name",NSUnionOfSetsKeyValueOperator];
+
+
+
+当调用KVC时key值为空时，就会抛出这个异常。
+FOUNDATION_EXPORT NSExceptionName const NSUndefinedKeyException;
+
+
+// NSKeyValueCoding中的运算符
+NSKeyValueOperator const NSAverageKeyValueOperator; // 求平均值
+NSKeyValueOperator const NSCountKeyValueOperator; // 统计总数
+NSKeyValueOperator const NSDistinctUnionOfArraysKeyValueOperator; // 获取嵌套数组中不同的值
+NSKeyValueOperator const NSDistinctUnionOfObjectsKeyValueOperator; // 获取不同的值
+NSKeyValueOperator const NSDistinctUnionOfSetsKeyValueOperator; // 获取嵌套集合中不同的值
+NSKeyValueOperator const NSMaximumKeyValueOperator; // 获取最大值
+NSKeyValueOperator const NSMinimumKeyValueOperator; // 获取最小值
+NSKeyValueOperator const NSSumKeyValueOperator; // 求和
+NSKeyValueOperator const NSUnionOfArraysKeyValueOperator; // 获取嵌套数组中的值，不去重
+NSKeyValueOperator const NSUnionOfObjectsKeyValueOperator; // 获取所有的值，不去重
+NSKeyValueOperator const NSUnionOfSetsKeyValueOperator; // 获取嵌套集合中的值，不去重
+
+
+
+*/
+
+
+NSLog(@"sum.age ==== %@",[array valueForKeyPath:@"@sum.age"]);
+/// valueForKeyPath,valueForKey 一层效果一样,但最好使用前者
+NSLog(@"一级 ==== %@",[array valueForKeyPath:@"name"]);
+NSLog(@"一级 ==== %@",[array valueForKey:@"name"]);
+NSLog(@"多层查找 ==== %@",[array valueForKeyPath:@"dog.name"]);
+
+/// 去重
+/// @distinctUnionOfObjects.self  字符串数组
+/// @distinctUnionOfObjects.name  对象数组
+NSLog(@"去重 %@",[array valueForKeyPath:@"@distinctUnionOfObjects.name"]);
+
+NSLog(@"OrderedSet ==== %@",[array mutableOrderedSetValueForKeyPath:@"name"]);
+/// 不会去重
+NSLog(@"mutableSetValue ==== %d",[[array mutableSetValueForKeyPath:@"name"] isKindOfClass:NSMutableOrderedSet.class]);
+
+NSLog(@"mutableSetValueForKey ==== %@",[array mutableSetValueForKey:@"name"]);
+
+/// distinctUnionOfSets 目前不行
+NSLog(@"不同的联盟 ==== %@",[array valueForKeyPath:@"@distinctUnionOfObjects.name"]);
+
+NSLog(@"不同的联盟Arrays ==== %@",[@[array] valueForKeyPath:@"@distinctUnionOfArrays.name"]);
+
+{
+/// 进行实例方法的调用
+NSArray *array = @[@"name", @"w", @"aa", @"ZXPing"];
+/// 转大写
+NSLog(@"大写 = %@", [array valueForKeyPath:@"uppercaseString"]);
+NSLog(@"小写 = %@", [array valueForKeyPath:@"lowercaseString"]);
+NSLog(@"length = %@", [array valueForKeyPath:@"length"]);
+}
+
+
+NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name IN %@",@[@"jim",@"jack"]];
+//过滤数组
+NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
+NSLog(@"只有string = %@",arr);
+[arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+NSLog(@"name包括 %@ %ld",obj.name,obj.age);
+}];
+
+{
+NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"age BETWEEN %@",@[@2,@5]];
+//过滤数组
+NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
+[arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+NSLog(@"BETWEEN age = %@ %ld",obj.name,obj.age);
+}];
+
+
+}
+/// 分类汇总
+NSMutableArray<Person *> *array2 = [NSMutableArray array];
+[[NSSet setWithArray:[array valueForKeyPath:@"name"]] enumerateObjectsUsingBlock:^(NSString *  _Nonnull obj, BOOL * _Nonnull stop) {
+
+NSPredicate * pre = [NSPredicate predicateWithFormat:@"name = %@",obj];
+NSArray * arr = [array filteredArrayUsingPredicate:pre];
+NSInteger total = [[arr valueForKeyPath:@"@sum.age"] integerValue];
+
+Person *p = Person.alloc.init;
+p.name = obj;
+p.age = total;
+[array2 addObject:p];
+
+}];
+{
+NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name == %@",@"jim"];
+//过滤数组
+NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
+[arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+NSLog(@"name 等于指定 %@ %ld",obj.name,obj.age);
+}];
+
+
+NSLog(@"获得所有的 name == %@",[array valueForKey:@"name"]);
+
+}
+
+{
+/// '*om*' 直接拼接,还没有找到好办法
+NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name LIKE '*om*'"];
+//过滤数组
+NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
+[arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+NSLog(@"LIKT 区分大小写 = %@ %ld",obj.name,obj.age);
+}];
 }
 {
-    NSArray *array= [NSArray arrayWithObjects:@"2.0",@"2.3",@"3.0",@"4.0",@"10",nil];
-    NSLog(@"sum ==== %@",[array valueForKeyPath:@"@sum.floatValue"]);
-    
-    CGFloat sum = [[array valueForKeyPath:@"@sum.floatValue"] floatValue];
-    
-    CGFloat avg = [[array valueForKeyPath:@"@avg.floatValue"] floatValue];
-    CGFloat max =[[array valueForKeyPath:@"@max.floatValue"] floatValue];
-    
-    CGFloat min =[[array valueForKeyPath:@"@min.floatValue"] floatValue];
+NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"name like[cd] '*om*'"];
+NSLog(@"predicateFormat %@",filterPredicate.predicateFormat);
+//过滤数组
+NSArray * arr = [array filteredArrayUsingPredicate:filterPredicate];
+[arr enumerateObjectsUsingBlock:^(Person *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+NSLog(@"LIKT 不区分大小写 = %@ %ld",obj.name,obj.age);
+}];
+}
+
 }
 {
-    
-    /// array 不在 array2 中的 的元素
-    NSArray *array = @[@"1",@"2",@"2",@"3",@"3",@"3"];
-    NSArray *array2 = @[@"1",@"4"];
-    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",array2];
-    //过滤数组
-    NSArray * reslutFilteredArray = [array filteredArrayUsingPredicate:filterPredicate];
-    
-    NSLog(@"不在 Array = %@",reslutFilteredArray);
+NSArray *array= [NSArray arrayWithObjects:@"2.0",@"2.3",@"3.0",@"4.0",@"10",nil];
+NSLog(@"sum ==== %@",[array valueForKeyPath:@"@sum.floatValue"]);
+
+CGFloat sum = [[array valueForKeyPath:@"@sum.floatValue"] floatValue];
+
+CGFloat avg = [[array valueForKeyPath:@"@avg.floatValue"] floatValue];
+CGFloat max =[[array valueForKeyPath:@"@max.floatValue"] floatValue];
+
+CGFloat min =[[array valueForKeyPath:@"@min.floatValue"] floatValue];
 }
 {
-    /// array 在 array2 中的 的元素
-    NSArray *array = @[@"1",@"2",@"2",@"3",@"3",@"3"];
-    NSArray *array2 = @[@"2",@"2",@"2",@"4"];
-    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@",array2];
-    //过滤数组
-    NSArray * reslutFilteredArray = [array filteredArrayUsingPredicate:filterPredicate];
-    
-    NSLog(@"在 Array = %@",reslutFilteredArray);
+
+/// array 不在 array2 中的 的元素
+NSArray *array = @[@"1",@"2",@"2",@"3",@"3",@"3"];
+NSArray *array2 = @[@"1",@"4"];
+NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",array2];
+//过滤数组
+NSArray * reslutFilteredArray = [array filteredArrayUsingPredicate:filterPredicate];
+
+NSLog(@"不在 Array = %@",reslutFilteredArray);
 }
 {
-    /// 大于,需要是Number
-    NSArray *array = @[@1,@2,@2,@2,@3,@3];
-    NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"SELF >= 2"];
-    //过滤数组
-    NSArray * reslutFilteredArray = [array filteredArrayUsingPredicate:filterPredicate];
-    
-    NSLog(@"大于 Array = %@",reslutFilteredArray);
+/// array 在 array2 中的 的元素
+NSArray *array = @[@"1",@"2",@"2",@"3",@"3",@"3"];
+NSArray *array2 = @[@"2",@"2",@"2",@"4"];
+NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"SELF IN %@",array2];
+//过滤数组
+NSArray * reslutFilteredArray = [array filteredArrayUsingPredicate:filterPredicate];
+
+NSLog(@"在 Array = %@",reslutFilteredArray);
+}
+{
+/// 大于,需要是Number
+NSArray *array = @[@1,@2,@2,@2,@3,@3];
+NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"SELF >= 2"];
+//过滤数组
+NSArray * reslutFilteredArray = [array filteredArrayUsingPredicate:filterPredicate];
+
+NSLog(@"大于 Array = %@",reslutFilteredArray);
 }
 ```
 
@@ -2080,14 +2080,14 @@ NSLog(@"是否匹配 = %d", matched);
 /// 不然系统会帮我们自动计算内边距，这样在滚动之后无法定位，会出现额外的内边距偏差。
 
 - (void)adapterIOS11{
-    // 适配iOS11以上UITableview 、UICollectionView、UIScrollview 列表/页面偏移
-    if (@available(iOS 11.0, *)){
-        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+// 适配iOS11以上UITableview 、UICollectionView、UIScrollview 列表/页面偏移
+if (@available(iOS 11.0, *)){
+[[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
 
-        [[UITableView appearance] setEstimatedRowHeight:0];
-        [[UITableView appearance] setEstimatedSectionFooterHeight:0];
-        [[UITableView appearance] setEstimatedSectionHeaderHeight:0];
-    }
+[[UITableView appearance] setEstimatedRowHeight:0];
+[[UITableView appearance] setEstimatedSectionFooterHeight:0];
+[[UITableView appearance] setEstimatedSectionHeaderHeight:0];
+}
 }
 ```
 ## UILabel 的抗拉伸和抗压缩
@@ -2103,15 +2103,15 @@ NSLog(@"是否匹配 = %d", matched);
 ```
 ```
 - (void)textFieldDidChangeEvent:(UITextField *)textField{
-    if (textField.markedTextRange == nil)//点击完选中的字之后
-    {
-        NSLog(@"textFieldDidChange:%@", textField.text);
-    }
-    else//没有点击出现的汉字,一直在点击键盘
-    {
-        NSLog(@"markedTextRange:%@",textField.text);
-        
-    }
+if (textField.markedTextRange == nil)//点击完选中的字之后
+{
+NSLog(@"textFieldDidChange:%@", textField.text);
+}
+else//没有点击出现的汉字,一直在点击键盘
+{
+NSLog(@"markedTextRange:%@",textField.text);
+
+}
 }
 ```
 
@@ -2123,7 +2123,7 @@ NSLog(@"是否匹配 = %d", matched);
 
 dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
 dispatch_apply(10, queue, ^(size_t insex) {
-    NSLog(@"insex = %zu",insex);
+NSLog(@"insex = %zu",insex);
 });
 NSLog(@"insex = 完成");
 ```
@@ -2132,25 +2132,25 @@ NSLog(@"insex = 完成");
 /// forin 删除会越界
 /// 迭代器 删除不会越界
 [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-    if ([obj isEqualToString:@"B"]) {
-        [tempArray removeObject:obj];
-    }
+if ([obj isEqualToString:@"B"]) {
+[tempArray removeObject:obj];
+}
 }];
 
 /// 删除不会越界
 for (int i = 0; i < array.count; i++) {
-    NSString *str  = array[i];
-    if ([str isEqualToString:@"4"]) {
-        [array removeObject:str];
-    }
+NSString *str  = array[i];
+if ([str isEqualToString:@"4"]) {
+[array removeObject:str];
+}
 }
 
 ///逆序一下 删除不会越界
 NSMutableArray *tempArray = [NSMutableArray arrayWithArray:@[@"A",@"B",@"C"]];
 for (NSString *number in tempArray.reverseObjectEnumerator) {
-    if ([number isEqualToString:@"B"]) {
-        [tempArray removeObject:number];
-    }
+if ([number isEqualToString:@"B"]) {
+[tempArray removeObject:number];
+}
 }
 NSLog(@"tempArray = %@",tempArray);
 ```
@@ -2174,10 +2174,10 @@ NSData *data = [NSData dataWithBytes:a length:12];
 ```
 /// parent==nil 表示返回了
 - (void)didMoveToParentViewController:(UIViewController *)parent {
-    [super didMoveToParentViewController:parent];
-    NSLog(@"didMoveToParentViewController %@  self = %@",parent,self);
-    if(parent==nil){
-    
+[super didMoveToParentViewController:parent];
+NSLog(@"didMoveToParentViewController %@  self = %@",parent,self);
+if(parent==nil){
+
 }
 }
 ```
@@ -2196,35 +2196,35 @@ self.ImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysT
 ## UIAlertController 改变主图色
 ```
 + (void)load {
-    
-    /// 这个方式,是 UIAlertController init 后改变颜色, 后续使用再改变颜色,以使用颜色为主
-    [UIAlertController ax_replaceClassMethodWithOriginal:@selector(alertControllerWithTitle:message:preferredStyle:) newSelector:@selector(ax_alertControllerWithTitle:message:preferredStyle:)];
-    
-    [UIAlertController ax_replaceInstanceMethodWithOriginal:@selector(addAction:) newSelector:@selector(ax_addAction:)];
+
+/// 这个方式,是 UIAlertController init 后改变颜色, 后续使用再改变颜色,以使用颜色为主
+[UIAlertController ax_replaceClassMethodWithOriginal:@selector(alertControllerWithTitle:message:preferredStyle:) newSelector:@selector(ax_alertControllerWithTitle:message:preferredStyle:)];
+
+[UIAlertController ax_replaceInstanceMethodWithOriginal:@selector(addAction:) newSelector:@selector(ax_addAction:)];
 }
 -(void)ax_addAction:(UIAlertAction *)action{
-    [action setValue:UIColor.orangeColor forKey:@"_titleTextColor"];
-    [self ax_addAction:action];
+[action setValue:UIColor.orangeColor forKey:@"_titleTextColor"];
+[self ax_addAction:action];
 }
 
 + (UIAlertController *)ax_alertControllerWithTitle:(nullable NSString *)title message:(nullable NSString *)message preferredStyle:(UIAlertControllerStyle)preferredStyle {
-    UIAlertController *alert =  [self ax_alertControllerWithTitle:title message:message preferredStyle:preferredStyle];
-    if (alert.title.length) {
-        //修改title字体及颜色
-        NSMutableAttributedString *titleStr = [[NSMutableAttributedString alloc] initWithString:alert.title];
-        [titleStr addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(0, titleStr.string.length)];
-        [titleStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, titleStr.string.length)];
-        [alert setValue:titleStr forKey:@"attributedTitle"];
-    }
-    if(alert.message.length){
-        // 修改message字体及颜色
-        NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:alert.message];
-        [messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor greenColor] range:NSMakeRange(0, messageStr.string.length)];
-        [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, messageStr.string.length)];
-        [alert setValue:messageStr forKey:@"attributedMessage"];
-    }
-    return alert;
-    
+UIAlertController *alert =  [self ax_alertControllerWithTitle:title message:message preferredStyle:preferredStyle];
+if (alert.title.length) {
+//修改title字体及颜色
+NSMutableAttributedString *titleStr = [[NSMutableAttributedString alloc] initWithString:alert.title];
+[titleStr addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(0, titleStr.string.length)];
+[titleStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, titleStr.string.length)];
+[alert setValue:titleStr forKey:@"attributedTitle"];
+}
+if(alert.message.length){
+// 修改message字体及颜色
+NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:alert.message];
+[messageStr addAttribute:NSForegroundColorAttributeName value: [UIColor greenColor] range:NSMakeRange(0, messageStr.string.length)];
+[messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, messageStr.string.length)];
+[alert setValue:messageStr forKey:@"attributedMessage"];
+}
+return alert;
+
 }
 ```
 ##  UIAlertController title ,msg nil 时候不弹出
@@ -2233,17 +2233,17 @@ self.ImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysT
 
 /// usingBlock: 第一个参数 调用对象,第二个是方法的第一次参数
 [UIViewController aspect_hookSelector:@selector(presentViewController:animated:completion:) withOptions:AspectPositionInstead usingBlock:^(id<AspectInfo> aspectInfo,UIViewController *presentViewController) {
-    /// aspectInfo.arguments.firstObject 就是 presentViewController
-    if (![presentViewController isKindOfClass:[UIAlertController class]]) {
-        [aspectInfo.originalInvocation invoke];
-    }else{
-        UIAlertController *alertController = (UIAlertController *)presentViewController;
-        /// 这里用 == nil ,不要用length==0,业务需求不一样
-        /// UIAlertControllerStyleAlert 才拦截
-        if (alertController.title != nil || alertController.message != nil || alertController.preferredStyle !=UIAlertControllerStyleAlert) {
-            [aspectInfo.originalInvocation invoke];
-        }
-    }
+/// aspectInfo.arguments.firstObject 就是 presentViewController
+if (![presentViewController isKindOfClass:[UIAlertController class]]) {
+[aspectInfo.originalInvocation invoke];
+}else{
+UIAlertController *alertController = (UIAlertController *)presentViewController;
+/// 这里用 == nil ,不要用length==0,业务需求不一样
+/// UIAlertControllerStyleAlert 才拦截
+if (alertController.title != nil || alertController.message != nil || alertController.preferredStyle !=UIAlertControllerStyleAlert) {
+[aspectInfo.originalInvocation invoke];
+}
+}
 } error:nil];
 ```
 
@@ -2274,17 +2274,17 @@ self.view.layer.contents = (id)image.CGImage;
 @implementation UIViewController (AXHideNavBackTitle)
 
 +(void)load {
-    [UIViewController ax_replaceInstanceMethodWithOriginal:@selector(viewDidAppear:) newSelector:@selector(ac_viewDidAppear)];
+[UIViewController ax_replaceInstanceMethodWithOriginal:@selector(viewDidAppear:) newSelector:@selector(ac_viewDidAppear)];
 }
- 
+
 /// 设置导航栏返回按钮文字
 - (void)ac_viewDidAppear{
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]
-                                              initWithTitle:@""
-                                              style:UIBarButtonItemStylePlain
-                                              target:self
-                                              action:nil];
-    [self ac_viewDidAppear];
+self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]
+initWithTitle:@""
+style:UIBarButtonItemStylePlain
+target:self
+action:nil];
+[self ac_viewDidAppear];
 }
 
 
@@ -2295,8 +2295,8 @@ self.view.layer.contents = (id)image.CGImage;
 ```
 /// newSuperview 就是父视图
 - (void)willMoveToSuperview:(UIView *)newSuperview {
-    [super willMoveToSuperview:newSuperview];
-    NSLog(@"willMoveToSuperview %p",newSuperview);
+[super willMoveToSuperview:newSuperview];
+NSLog(@"willMoveToSuperview %p",newSuperview);
 }
 ```
 
@@ -2314,19 +2314,19 @@ NSLog(@" = %ld,",(1<<2 | 1<<3 | 1<<4 ) &  1<<3 );//1<<3
 ## 版本号比较
 ```
 enum{
-    NSCaseInsensitiveSearch = 1,//不区分大小写比较
-    NSLiteralSearch = 2,//区分大小写比较
-    NSBackwardsSearch = 4,//从字符串末尾开始搜索
-    NSAnchoredSearch = 8,//搜索限制范围的字符串
-    NSNumericSearch = 64//按照字符串里的数字为依据，算出顺序。例如 Foo2.txt < Foo7.txt < Foo25.txt
+NSCaseInsensitiveSearch = 1,//不区分大小写比较
+NSLiteralSearch = 2,//区分大小写比较
+NSBackwardsSearch = 4,//从字符串末尾开始搜索
+NSAnchoredSearch = 8,//搜索限制范围的字符串
+NSNumericSearch = 64//按照字符串里的数字为依据，算出顺序。例如 Foo2.txt < Foo7.txt < Foo25.txt
 //以下定义高于 mac os 10.5 或者高于 iphone 2.0 可用
-    ,
-    NSDiacriticInsensitiveSearch = 128,//忽略 "-" 符号的比较
-    NSWidthInsensitiveSearch = 256,//忽略字符串的长度，比较出结果
-    NSForcedOrderingSearch = 512//忽略不区分大小写比较的选项，并强制返回 NSOrderedAscending 或者 NSOrderedDescending
+,
+NSDiacriticInsensitiveSearch = 128,//忽略 "-" 符号的比较
+NSWidthInsensitiveSearch = 256,//忽略字符串的长度，比较出结果
+NSForcedOrderingSearch = 512//忽略不区分大小写比较的选项，并强制返回 NSOrderedAscending 或者 NSOrderedDescending
 //以下定义高于 iphone 3.2 可用
-    ,
-    NSRegularExpressionSearch = 1024//只能应用于 rangeOfString:..., stringByReplacingOccurrencesOfString:...和 replaceOccurrencesOfString:... 方法。使用通用兼容的比较方法，如果设置此项，可以去掉 NSCaseInsensitiveSearch 和 NSAnchoredSearch
+,
+NSRegularExpressionSearch = 1024//只能应用于 rangeOfString:..., stringByReplacingOccurrencesOfString:...和 replaceOccurrencesOfString:... 方法。使用通用兼容的比较方法，如果设置此项，可以去掉 NSCaseInsensitiveSearch 和 NSAnchoredSearch
 }
 ```
 
@@ -2356,27 +2356,27 @@ NSLog(@"range 忽略 - 符号的比较 = %@",NSStringFromRange([str rangeOfStrin
 ## 指针传参
 ```
 - (void)viewDidLoad {
-    [super viewDidLoad];
-   
-    NSString *name =@"";
-    [self test1:&name];
-    NSLog(@"name = %@",name);
-    
-    [self test2:^(int *count) {
-        *count = 1;
-        *count = 2;
-    }];
+[super viewDidLoad];
+
+NSString *name =@"";
+[self test1:&name];
+NSLog(@"name = %@",name);
+
+[self test2:^(int *count) {
+*count = 1;
+*count = 2;
+}];
 }
 
 -(void)test1:(NSString **)name {
-    *name = @"jim";
+*name = @"jim";
 }
 
 -(void)test2:(void(^)(int *count))name {
-    int count = 0;
-    NSLog(@"count = %d",count);
-    name(&count);
-    NSLog(@"count = %d",count);
+int count = 0;
+NSLog(@"count = %d",count);
+name(&count);
+NSLog(@"count = %d",count);
 }
 ```
 ## 更换图标有弹窗
@@ -2386,21 +2386,21 @@ NSLog(@"range 忽略 - 符号的比较 = %@",NSStringFromRange([str rangeOfStrin
 ```
 ```
 if ([[UIApplication sharedApplication] respondsToSelector:@selector(supportsAlternateIcons)] &&
-         [[UIApplication sharedApplication] supportsAlternateIcons])
-     {
-         NSMutableString *selectorString = [[NSMutableString alloc] initWithCapacity:40];
-         [selectorString appendString:@"_setAlternate"];
-         [selectorString appendString:@"IconName:"];
-         [selectorString appendString:@"completionHandler:"];
-         
-         SEL selector = NSSelectorFromString(selectorString);
-         IMP imp = [[UIApplication sharedApplication] methodForSelector:selector];
-         void (*func)(id, SEL, id, id) = (void *)imp;
-         if (func)
-         {
-             func([UIApplication sharedApplication], selector, iconName, ^(NSError * _Nullable error) {});
-         }
-     }
+[[UIApplication sharedApplication] supportsAlternateIcons])
+{
+NSMutableString *selectorString = [[NSMutableString alloc] initWithCapacity:40];
+[selectorString appendString:@"_setAlternate"];
+[selectorString appendString:@"IconName:"];
+[selectorString appendString:@"completionHandler:"];
+
+SEL selector = NSSelectorFromString(selectorString);
+IMP imp = [[UIApplication sharedApplication] methodForSelector:selector];
+void (*func)(id, SEL, id, id) = (void *)imp;
+if (func)
+{
+func([UIApplication sharedApplication], selector, iconName, ^(NSError * _Nullable error) {});
+}
+}
 
 ```
 ## 取消隐士动画
@@ -2408,7 +2408,7 @@ if ([[UIApplication sharedApplication] respondsToSelector:@selector(supportsAlte
 /// [self.tableView reloadSection:section.integerValue withRowAnimation:UITableViewRowAnimationNone];
 /// CoderMikeHe Fixed： 这里必须要加这句话！！！否则有个奇怪的动画！！！！
 [UIView performWithoutAnimation:^{
-    [self.tableView reloadSection:section.integerValue withRowAnimation:UITableViewRowAnimationAutomatic];
+[self.tableView reloadSection:section.integerValue withRowAnimation:UITableViewRowAnimationAutomatic];
 }];
 ```
 ## NSInvocation
@@ -2416,23 +2416,23 @@ if ([[UIApplication sharedApplication] respondsToSelector:@selector(supportsAlte
 ```
 //NSMethodSignature： 生成的签名 第一个参数传的是你要调用的类，第二个参数是在类中实现的方法（方法不在.h文件中声明 也没有关系）
 
-    SEL seclector = NSSelectorFromString(@"changeName:withtype:");
-    NSMethodSignature * signature = [ViewController instanceMethodSignatureForSelector:seclector];
-    //创建NSInvocation 第一个参数传的是签名
-    NSInvocation * vocation = [NSInvocation invocationWithMethodSignature:signature];
-    //target传的是你想要调用的类 必须与生成签名的时候 一致
-    vocation.target = self;
-    //voation中的方法必须和签名中的方法一致
-    vocation.selector = seclector;
-    //参数的传递
-    NSString * name = @"jim";
-    //设置参数的时候 不能从0开始，因为0已经被self占用，1已经被_cmd占用 只能从2开始
-    [vocation setArgument:&name atIndex:2];
-    //同上
-    NSString * type = @" 啊啊啊啊";
-    [vocation setArgument:&type atIndex:3];
-    //只要调用invocation的invoke方法，就代表执行nsivocation对象中制定对象的指定方法
-    [vocation invoke];
+SEL seclector = NSSelectorFromString(@"changeName:withtype:");
+NSMethodSignature * signature = [ViewController instanceMethodSignatureForSelector:seclector];
+//创建NSInvocation 第一个参数传的是签名
+NSInvocation * vocation = [NSInvocation invocationWithMethodSignature:signature];
+//target传的是你想要调用的类 必须与生成签名的时候 一致
+vocation.target = self;
+//voation中的方法必须和签名中的方法一致
+vocation.selector = seclector;
+//参数的传递
+NSString * name = @"jim";
+//设置参数的时候 不能从0开始，因为0已经被self占用，1已经被_cmd占用 只能从2开始
+[vocation setArgument:&name atIndex:2];
+//同上
+NSString * type = @" 啊啊啊啊";
+[vocation setArgument:&type atIndex:3];
+//只要调用invocation的invoke方法，就代表执行nsivocation对象中制定对象的指定方法
+[vocation invoke];
 ```
 ```
 Person *person = Person.alloc.init;
@@ -2456,31 +2456,31 @@ id value = @(true);
 
 if([value isKindOfClass:[NSNumber class]])
 {
-    if (strcmp([value objCType], @encode(float)) == 0)
-    {
-        NSLog(@"value = float");
-    }
-    else if (strcmp([value objCType], @encode(double)) == 0)
-    {
-        NSLog(@"value = double");
-    }
-    else if (strcmp([value objCType], @encode(BOOL)) == 0)
-    {
-        NSLog(@"value = BOOL");
-    }
-    else if (strcmp([value objCType], @encode(bool)) == 0)
-    {
-        NSLog(@"value = bool");
-    }
-    else if (strcmp([value objCType], @encode(int)) == 0)
-    {
-        NSLog(@"value = int");
-    }
-    
-    else{
-        NSLog(@"value = else");
-    }
-    
+if (strcmp([value objCType], @encode(float)) == 0)
+{
+NSLog(@"value = float");
+}
+else if (strcmp([value objCType], @encode(double)) == 0)
+{
+NSLog(@"value = double");
+}
+else if (strcmp([value objCType], @encode(BOOL)) == 0)
+{
+NSLog(@"value = BOOL");
+}
+else if (strcmp([value objCType], @encode(bool)) == 0)
+{
+NSLog(@"value = bool");
+}
+else if (strcmp([value objCType], @encode(int)) == 0)
+{
+NSLog(@"value = int");
+}
+
+else{
+NSLog(@"value = else");
+}
+
 }
 ```
 ## FMDB 线程安全执行
@@ -2488,17 +2488,17 @@ if([value isKindOfClass:[NSNumber class]])
 FMDatabaseQueue *dbQueue = [FMDatabaseQueue databaseQueueWithPath:@""];
 
 [dbQueue inDatabase:^(FMDatabase *db){
-    NSString *sql = [NSString stringWithFormat:@""];
-    result = [db executeUpdate:sql];
+NSString *sql = [NSString stringWithFormat:@""];
+result = [db executeUpdate:sql];
 }];
 ```
 ## label 居中,自适应宽度
 ```
 [label mas_makeConstraints:^(MASConstraintMaker *make) {
-    make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
-    make.centerX.mas_equalTo(0);
-    make.left.mas_greaterThanOrEqualTo(5);
-    make.right.mas_lessThanOrEqualTo(-5);
+make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
+make.centerX.mas_equalTo(0);
+make.left.mas_greaterThanOrEqualTo(5);
+make.right.mas_lessThanOrEqualTo(-5);
 }];
 ```
 ## 强制刷新布局
@@ -2522,12 +2522,12 @@ static NSString  * const kUserName2 = @"2";
 ```
 //行列式 determinant
 typedef struct {
-    int row;
-   int column;
+int row;
+int column;
 }AXDeterminant;
 
 CG_INLINE AXDeterminant AXDeterminantMake(int row, int column){
-    AXDeterminant det;det.row = row;det.column = column; return det;
+AXDeterminant det;det.row = row;det.column = column; return det;
 }
 
 ```
@@ -2538,9 +2538,9 @@ __block可以解决block内部无法修改外部auto变量的问题。
 打印结果为 10,不正确
 ``` 
 //  
- int age = 10;
+int age = 10;
 void (^myblock)(void) =  ^{
-  NSLog(@"%d",age);
+NSLog(@"%d",age);
 };
 age  = 20;
 myblock();
@@ -2549,7 +2549,7 @@ myblock();
 ```
 __block int age = 10;
 void (^myblock)(void) =  ^{
-  NSLog(@"%d",age);
+NSLog(@"%d",age);
 };
 age  = 20;
 myblock();
@@ -2559,8 +2559,8 @@ myblock();
 NSSortDescriptor *sort_name = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
 NSSortDescriptor *sort_dog_name = [NSSortDescriptor sortDescriptorWithKey:@"dog.name" ascending:YES];
 
- [array sortUsingDescriptors:@[sort_name,sort_dog_name]];
- NSLog(@"排序后array = %@", array);
+[array sortUsingDescriptors:@[sort_name,sort_dog_name]];
+NSLog(@"排序后array = %@", array);
 =======
 ## __block
 auto类型的局部变量，可以被block捕获，但是不能修改值。
@@ -2573,11 +2573,11 @@ __block可以解决block内部无法修改外部auto变量的问题。
 ```
 // push 完成回调
 [CATransaction setCompletionBlock:^{
-    self.pushing = NO;
+self.pushing = NO;
 }];
 [CATransaction begin];
 if (!self.isPushing) {
-    [nav pushViewController:self.webViewController animated:YES];
+[nav pushViewController:self.webViewController animated:YES];
 }
 [CATransaction commit];
 ```
@@ -2589,20 +2589,20 @@ if (!self.isPushing) {
 ## 连续presentViewController 会log,不会奔溃
 ```
 if (!self.presentedViewController){
-    UIViewController *vc = UIViewController.alloc.init;
-    if (@available(iOS 13.0, *)) {
-        if (vc.modalPresentationStyle == UIModalPresentationAutomatic
-            || vc.modalPresentationStyle == UIModalPresentationPageSheet) {
-            vc.modalPresentationStyle = UIModalPresentationFullScreen;
-        }
-    }
-    
-    vc.view.backgroundColor = UIColor.redColor;
-    [self presentViewController: vc
-                       animated: NO
-                     completion:^{
-        
-    }];
+UIViewController *vc = UIViewController.alloc.init;
+if (@available(iOS 13.0, *)) {
+if (vc.modalPresentationStyle == UIModalPresentationAutomatic
+|| vc.modalPresentationStyle == UIModalPresentationPageSheet) {
+vc.modalPresentationStyle = UIModalPresentationFullScreen;
+}
+}
+
+vc.view.backgroundColor = UIColor.redColor;
+[self presentViewController: vc
+animated: NO
+completion:^{
+
+}];
 }
 ```
 ## 禁止继承
@@ -2636,8 +2636,86 @@ NSValue *value = [NSValue value:&ax_pointOutside withObjCType:@encode(UIEdgeInse
 UIEdgeInsets edgeInsets;
 [value getValue:&edgeInsets];
 ```
-##  allKeys 有序
+## allKeys 有序
 ```
 NSLog(@"=allKeys 有序=%@====",[[dic allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]);
 NSLog(@"=allValues 有序=%@====",[[dic allValues] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]);
+```
+
+## SDImageCache
+```
+UIImageView *imgView = self;
+UIImage *showImage =  nil;
+
+DLGroupImageOption *op =DLGroupImageOption.alloc.init;
+NSString *urlKey = [[pathArray valueForKeyPath: @keypath(op,cacheKey)] componentsJoinedByString:@","];
+urlKey = [SDWebImageManager.sharedManager cacheKeyForURL:[NSURL URLWithString:urlKey.dl_toEncoding]];
+
+showImage = [SDImageCache.sharedImageCache imageFromCacheForKey:urlKey];
+if (showImage)  {
+NSLog(@"有群组头像URL缓存,直接取值");
+imgView.image = showImage;
+return;
+}
+
+NSLog(@"没有群组头像URL缓存");
+/// 2,URL绘制的图片不存在,先绘制文字头像,临时显示,
+/// 2.1 用文字占位,先判断缓存,
+NSString *textKey = [[pathArray valueForKeyPath: @keypath(op,name)] componentsJoinedByString:@","];
+textKey = [SDWebImageManager.sharedManager cacheKeyForURL:[NSURL URLWithString:textKey.dl_toEncoding]];
+showImage = [SDImageCache.sharedImageCache imageFromCacheForKey:textKey];
+
+if (showImage)  {
+/// 2.3 用文字占位,有占位缓存,
+NSLog(@"有群组绘制头像,直接取值");
+imgView.image = showImage;
+}else {
+NSLog(@"没有群组绘制头像,绘制一个,临时显示");
+/// 2.2 用文字占位,没有占位缓存,就绘制一个,并显示,同时缓存,
+NSMutableArray <UIImage *> *memberHeadImgs = NSMutableArray.array;
+/// TODO: 这个方法有点问题,需要优化
+[pathArray enumerateObjectsUsingBlock:^(DLGroupImageOption * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+NSString *name = obj.name;
+UIImage *image = [UIImage createCustomDefaultImageWithName:name size:IMG_LOG_HEADER.size count:1];
+if (image) {
+[memberHeadImgs addObject:image];
+}
+}];
+/// 2.1.1 占位文字,多头像绘制成一个
+showImage = [UIImage groupHeadPortraitWithContents:memberHeadImgs size:imgView.size isSpace:YES];
+imgView.image = showImage;
+/// 2.1.2 多头像缓存
+[SDImageCache.sharedImageCache storeImage:showImage forKey:textKey completion:^{
+NSLog(@"缓存一下,群组绘制头像=%@",textKey);
+}];
+}
+
+/// 3 文字占位设置后,下载URLs
+NSMutableArray<NSURL *> *URLs = [pathArray valueForKeyPath: @keypath(op,fullURL)];
+[SDWebImagePrefetcher.sharedImagePrefetcher prefetchURLs:URLs progress:nil completed:^(NSUInteger noOfFinishedUrls, NSUInteger noOfSkippedUrls) {
+NSLog(@"下载所以图片成功");
+
+/// 3.1 下载URL后,绘制图片,并缓存
+NSMutableArray <UIImage *> *memberHeadImgs = NSMutableArray.array;
+
+[pathArray enumerateObjectsUsingBlock:^(DLGroupImageOption * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+NSString *key = [SDWebImageManager.sharedManager cacheKeyForURL:obj.fullURL];
+UIImage *image = [SDImageCache.sharedImageCache imageFromCacheForKey:key];
+/// 判断一下,是否下载缓存成功
+if (image) {
+[memberHeadImgs addObject:image];
+}else {
+UIImage *image2 = [UIImage createCustomDefaultImageWithName:obj.name size:IMG_LOG_HEADER.size count:1];
+if (image2) {
+[memberHeadImgs addObject:image2];
+}
+}
+}];
+
+UIImage *image = [UIImage groupHeadPortraitWithContents:memberHeadImgs size:imgView.size isSpace:YES];
+imgView.image = image;
+[SDImageCache.sharedImageCache storeImage:image forKey:urlKey completion:^{
+NSLog(@"缓存一下,群组头像下载后,绘制头像成功");
+}];
+}];
 ```
