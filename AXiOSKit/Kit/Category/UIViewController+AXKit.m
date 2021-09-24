@@ -13,7 +13,8 @@
 #import "NSString+AXKit.h"
 #import <objc/runtime.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-
+#import "NSObject+AXLoger.h"
+#import "NSObject+AXAssistant.h"
 @interface UIViewController ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIViewController *ax_popVC;
