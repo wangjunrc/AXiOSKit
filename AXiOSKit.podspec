@@ -9,9 +9,9 @@
 
 Pod::Spec.new do |s|
     
-    s.name         = 'AXiOSKit'
-    s.version      = '2.2.1'
-    s.summary      = '个人开发工具类'
+    s.name         = "AXiOSKit"
+    s.version      = "2.2.1"
+    s.summary      = "个人开发工具类"
     s.description  = <<-DESC
     封装UIKit等个人开发工具类
     DESC
