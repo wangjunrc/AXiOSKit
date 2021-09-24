@@ -10,7 +10,6 @@
 #import "AXConstant.h"
 #import "AXMacros.h"
 #import "AXViewControllerObserve.h"
-#import "AXAlertTransitioningObserver.h"
 
 @class PHAssetCollection;
 
