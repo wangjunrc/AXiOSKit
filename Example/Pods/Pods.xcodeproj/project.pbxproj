@@ -26090,26 +26090,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		012DE5572CFCD3CBBB2193CBCC0B77D5 /* Debug_β */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8AB08DF273077D09942D406915201C6 /* AXiOSKit.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AXiOSKit";
-				IBSC_MODULE = AXiOSKit;
-				INFOPLIST_FILE = "Target Support Files/AXiOSKit/ResourceBundle-AXiOSKitMain-AXiOSKit-Info.plist";
-				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PRODUCT_NAME = AXiOSKitMain;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = "Debug_β";
-		};
 		012E32B06D1BF74335D8C53F2CA6E128 /* Debug_α */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC361B3CDFBA43BF3235F82644F5F4F9 /* Pods-AXShare.debug_α.xcconfig */;
@@ -27026,39 +27006,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		10945DDE5B0DB56A9B2FEEFA86103BB7 /* Debug_β */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8AB08DF273077D09942D406915201C6 /* AXiOSKit.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AXiOSKit/AXiOSKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AXiOSKit/AXiOSKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AXiOSKit/AXiOSKit.modulemap";
-				PRODUCT_MODULE_NAME = AXiOSKit;
-				PRODUCT_NAME = AXiOSKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Debug_β";
 		};
 		126BBA1183EAC0F2423BED84FCE7EFA6 /* Debug_α */ = {
 			isa = XCBuildConfiguration;
@@ -28164,6 +28111,39 @@
 			};
 			name = "Debug_β";
 		};
+		2DBCA4D1F62D29B6B2B51152550F3AFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1431EC029E56D82A3237B69127293B95 /* AXiOSKit.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AXiOSKit/AXiOSKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AXiOSKit/AXiOSKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AXiOSKit/AXiOSKit.modulemap";
+				PRODUCT_MODULE_NAME = AXiOSKit;
+				PRODUCT_NAME = AXiOSKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		2E9E0D4D05FD9BB607E2761D04436CF8 /* Debug_α */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F9E8F54BA9811E22B4A8880D21A31A7 /* MQTTClient.release.xcconfig */;
@@ -28494,38 +28474,6 @@
 			};
 			name = Debug;
 		};
-		359D23A736C1B51906BA00DC0D68CCC6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1431EC029E56D82A3237B69127293B95 /* AXiOSKit.debug.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AXiOSKit/AXiOSKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AXiOSKit/AXiOSKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AXiOSKit/AXiOSKit.modulemap";
-				PRODUCT_MODULE_NAME = AXiOSKit;
-				PRODUCT_NAME = AXiOSKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		36E4F7842F3A6A345081D0CB9BD7F73D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4C02DA122379E3AE80E5A6FE76FEF69D /* FLAnimatedImage.release.xcconfig */;
@@ -28793,6 +28741,26 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug_α";
+		};
+		3C0494DE630FF34A5B9774298CA66A98 /* Debug_α */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8AB08DF273077D09942D406915201C6 /* AXiOSKit.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AXiOSKit";
+				IBSC_MODULE = AXiOSKit;
+				INFOPLIST_FILE = "Target Support Files/AXiOSKit/ResourceBundle-AXiOSKitMain-AXiOSKit-Info.plist";
+				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = AXiOSKitMain;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = "Debug_α";
 		};
@@ -30174,24 +30142,6 @@
 			};
 			name = "Debug_α";
 		};
-		65734A6EFE50E9C7A00072000244027A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8AB08DF273077D09942D406915201C6 /* AXiOSKit.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AXiOSKit";
-				IBSC_MODULE = AXiOSKit;
-				INFOPLIST_FILE = "Target Support Files/AXiOSKit/ResourceBundle-AXiOSKitMain-AXiOSKit-Info.plist";
-				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PRODUCT_NAME = AXiOSKitMain;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		6603EB933CAFE3016501C5B998FA0E87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C19E1E25FC162FD5C4C231AD4B33F8DD /* MQTTClient.debug.xcconfig */;
@@ -30257,6 +30207,26 @@
 			};
 			name = Release;
 		};
+		687A4EE1E8EC693812A14125F8F1B38C /* Debug_β */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8AB08DF273077D09942D406915201C6 /* AXiOSKit.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AXiOSKit";
+				IBSC_MODULE = AXiOSKit;
+				INFOPLIST_FILE = "Target Support Files/AXiOSKit/ResourceBundle-AXiOSKitMain-AXiOSKit-Info.plist";
+				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = AXiOSKitMain;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = "Debug_β";
+		};
 		6C38AED327B4D1F6487EB45CD5BF1F15 /* Debug_β */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AAF011BC6BB1A3CF9EDD1CA765CCC6D9 /* CocoaAsyncSocket.release.xcconfig */;
@@ -30289,39 +30259,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = "Debug_β";
-		};
-		6C796E4E8121290E15F7AA8D4CA7EDB0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8AB08DF273077D09942D406915201C6 /* AXiOSKit.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AXiOSKit/AXiOSKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AXiOSKit/AXiOSKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AXiOSKit/AXiOSKit.modulemap";
-				PRODUCT_MODULE_NAME = AXiOSKit;
-				PRODUCT_NAME = AXiOSKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		6C829647B0F8E095C9C1B229788A2361 /* Debug_β */ = {
 			isa = XCBuildConfiguration;
@@ -30453,26 +30390,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		6DB2EC3F8F532436195C344487A6F2B8 /* Debug_α */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8AB08DF273077D09942D406915201C6 /* AXiOSKit.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AXiOSKit";
-				IBSC_MODULE = AXiOSKit;
-				INFOPLIST_FILE = "Target Support Files/AXiOSKit/ResourceBundle-AXiOSKitMain-AXiOSKit-Info.plist";
-				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PRODUCT_NAME = AXiOSKitMain;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = "Debug_α";
 		};
 		6F026A19007CE8EBD04A18056107F42C /* Debug_α */ = {
 			isa = XCBuildConfiguration;
@@ -30760,39 +30677,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		74BBA2E7E7B7EE4AE828EDB74D50A086 /* Debug_α */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8AB08DF273077D09942D406915201C6 /* AXiOSKit.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AXiOSKit/AXiOSKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AXiOSKit/AXiOSKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AXiOSKit/AXiOSKit.modulemap";
-				PRODUCT_MODULE_NAME = AXiOSKit;
-				PRODUCT_NAME = AXiOSKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = "Debug_α";
 		};
 		74CA1B9D3445CA10BF9477F288A97EAD /* Debug_α */ = {
 			isa = XCBuildConfiguration;
@@ -31146,6 +31030,24 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		800BC7A9797EF640A5E10A9802A14336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8AB08DF273077D09942D406915201C6 /* AXiOSKit.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AXiOSKit";
+				IBSC_MODULE = AXiOSKit;
+				INFOPLIST_FILE = "Target Support Files/AXiOSKit/ResourceBundle-AXiOSKitMain-AXiOSKit-Info.plist";
+				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = AXiOSKitMain;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -33563,6 +33465,24 @@
 			};
 			name = "Debug_β";
 		};
+		BECAFBCDE241F81E5F54DD1063FBB324 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1431EC029E56D82A3237B69127293B95 /* AXiOSKit.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AXiOSKit";
+				IBSC_MODULE = AXiOSKit;
+				INFOPLIST_FILE = "Target Support Files/AXiOSKit/ResourceBundle-AXiOSKitMain-AXiOSKit-Info.plist";
+				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = AXiOSKitMain;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		BF10DF08304AF92B2F17671A4F9976DC /* Debug_α */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 11AE96E2A9D805D94924B3AA2E489448 /* Aspects.release.xcconfig */;
@@ -34213,6 +34133,40 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = "Debug_α";
+		};
+		D0F59176A1B76DC39B2D6DF79221FEFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8AB08DF273077D09942D406915201C6 /* AXiOSKit.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AXiOSKit/AXiOSKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AXiOSKit/AXiOSKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AXiOSKit/AXiOSKit.modulemap";
+				PRODUCT_MODULE_NAME = AXiOSKit;
+				PRODUCT_NAME = AXiOSKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		D12F7FC8D09AFAF3AE975750C500DB66 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -34891,24 +34845,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = "Debug_α";
-		};
-		E3FCA9CBB452A4C9EB29DCE8A29B3B19 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1431EC029E56D82A3237B69127293B95 /* AXiOSKit.debug.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/AXiOSKit";
-				IBSC_MODULE = AXiOSKit;
-				INFOPLIST_FILE = "Target Support Files/AXiOSKit/ResourceBundle-AXiOSKitMain-AXiOSKit-Info.plist";
-				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PRODUCT_NAME = AXiOSKitMain;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
 		};
 		E43ECE4B3C4ABCAEB5AD0AFCB4F7F41C /* Debug_α */ = {
 			isa = XCBuildConfiguration;
@@ -35836,6 +35772,40 @@
 			};
 			name = "Debug_α";
 		};
+		F387BC46BED63CB70C3CB6B1D023BCC9 /* Debug_α */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8AB08DF273077D09942D406915201C6 /* AXiOSKit.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AXiOSKit/AXiOSKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AXiOSKit/AXiOSKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AXiOSKit/AXiOSKit.modulemap";
+				PRODUCT_MODULE_NAME = AXiOSKit;
+				PRODUCT_NAME = AXiOSKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug_α";
+		};
 		F4DF0D9CC167C528BF018C52F2264DF3 /* Debug_β */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0AA4E3E29E9BE08B1853B6CE9F684080 /* DZNEmptyDataSet.release.xcconfig */;
@@ -36301,6 +36271,40 @@
 			};
 			name = Debug;
 		};
+		FC49816807AC3BD2ABD196C95E03BC81 /* Debug_β */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8AB08DF273077D09942D406915201C6 /* AXiOSKit.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AXiOSKit/AXiOSKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AXiOSKit/AXiOSKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IOS_DEPLOYMENT_TARGET = "iOS 10.0";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AXiOSKit/AXiOSKit.modulemap";
+				PRODUCT_MODULE_NAME = AXiOSKit;
+				PRODUCT_NAME = AXiOSKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug_β";
+		};
 		FCBACE3FF53A9CCB2FDE7CD014CB1790 /* Debug_α */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FF1A827865C4BB89CD2380B3E652A215 /* IQKeyboardManager.release.xcconfig */;
@@ -36600,10 +36604,10 @@
 		0FB545B173DEF99A86917412F115147A /* Build configuration list for PBXNativeTarget "AXiOSKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				359D23A736C1B51906BA00DC0D68CCC6 /* Debug */,
-				74BBA2E7E7B7EE4AE828EDB74D50A086 /* Debug_α */,
-				10945DDE5B0DB56A9B2FEEFA86103BB7 /* Debug_β */,
-				6C796E4E8121290E15F7AA8D4CA7EDB0 /* Release */,
+				2DBCA4D1F62D29B6B2B51152550F3AFD /* Debug */,
+				F387BC46BED63CB70C3CB6B1D023BCC9 /* Debug_α */,
+				FC49816807AC3BD2ABD196C95E03BC81 /* Debug_β */,
+				D0F59176A1B76DC39B2D6DF79221FEFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -37370,10 +37374,10 @@
 		EF65ADC9BFC5902C88F60711DBDD2A5C /* Build configuration list for PBXNativeTarget "AXiOSKit-AXiOSKitMain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E3FCA9CBB452A4C9EB29DCE8A29B3B19 /* Debug */,
-				6DB2EC3F8F532436195C344487A6F2B8 /* Debug_α */,
-				012DE5572CFCD3CBBB2193CBCC0B77D5 /* Debug_β */,
-				65734A6EFE50E9C7A00072000244027A /* Release */,
+				BECAFBCDE241F81E5F54DD1063FBB324 /* Debug */,
+				3C0494DE630FF34A5B9774298CA66A98 /* Debug_α */,
+				687A4EE1E8EC693812A14125F8F1B38C /* Debug_β */,
+				800BC7A9797EF640A5E10A9802A14336 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

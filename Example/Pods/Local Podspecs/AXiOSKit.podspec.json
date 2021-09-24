@@ -1,6 +1,6 @@
 {
   "name": "AXiOSKit",
-  "version": "2.1.2",
+  "version": "2.0.0",
   "summary": "个人开发工具类",
   "description": "封装UIKit等个人开发工具类",
   "homepage": "https://github.com/axinger",
@@ -12,7 +12,7 @@
     "axinger": "axingrun@outlook.com"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
   "requires_arc": true,
   "source": {

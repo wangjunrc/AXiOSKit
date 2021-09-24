@@ -9,20 +9,20 @@
 
 Pod::Spec.new do |s|
     
-    s.name         = "AXiOSKit"
-    s.version      = "2.2.1"
-    s.summary      = "个人开发工具类"
+    s.name         = 'AXiOSKit'
+    s.version      = '2.0.0'
+    s.summary      = '个人开发工具类'
     s.description  = <<-DESC
-    封装UIKit等个人开发工具类
-    DESC
+        封装UIKit等个人开发工具类
+                     DESC
     
     #    s.homepage     = 'https://github.com/axinger/axinger'
     s.homepage     = 'https://github.com/axinger'
     s.license      = { :type => 'MIT', :file => 'LICENSE' }
     s.author             = { 'axinger' => 'axingrun@outlook.com' }
-    s.ios.deployment_target = '9.0'
+    s.ios.deployment_target = '10.0'
     s.requires_arc = true
-    s.source       = { :git => 'https://github.com/axinger/AXiOSKit.git', :tag => '#{s.version}' }
+    s.source       = { :git => 'https://github.com/axinger/AXiOSKit.git', :tag => s.version.to_s }
     
     s.public_header_files = 'AXiOSKit/AXiOSKit/AXiOSKit.h'
     # oc swift 混编时,需要指定一个
