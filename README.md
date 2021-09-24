@@ -2642,7 +2642,7 @@ completedBlock(nil, nil, [NSError errorWithDomain:SDWebImageErrorDomain code:SDW
 });
 ```
 
-# plsit配置
+# info.plist配置
 ## 隐私权限
 ```
 <key>NSCalendarsUsageDescription</key>
@@ -2718,7 +2718,7 @@ return self;
 
 
 # 制作脚本
-
+```
 1.可以.sh结尾,执行 ./文件名
 2.无后缀,直接双击
 3.脚本运行
@@ -2736,3 +2736,4 @@ echo "父路径: $basepath"
 currentPath=$(pwd)
 echo "当前路径: $currentPath"
 */
+```
