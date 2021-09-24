@@ -1,6 +1,6 @@
 # 代码示例
 
-## Api 可用
+##  Api 可用
 
 ```objective-c
 __IOS_AVAILABLE(13.0)
@@ -9,7 +9,6 @@ API_AVAILABLE(ios(13.0))
 ```
 ## import 不同类型
 ```
-
 #if __has_include(<YYWebImage/YYWebImage.h>)
 #import <YYWebImage/YYWebImage.h>
 #else
@@ -17,8 +16,11 @@ API_AVAILABLE(ios(13.0))
 #endif
 
 ```
+
 ## GitHub汇总
+```
 https://github.com/Tim9Liu9/TimLiu-iOS
+```
 
 ## 定义宏
 ```
@@ -88,11 +90,12 @@ NSLog(@"宏定义值2:%d\n", IFTEST1);
 // 将此行放在出现警告的. m 文件中。 消除所有警告
 #pragma GCC diagnostic ignored <#参数#>
 ```
-# deprecated 警告消除的解决方法
+## 系统宏
+###  deprecated 警告消除的解决方法
 ```
 https://www.cnblogs.com/yfming/p/5936173.html
 ```
-## 常见1.消除方法弃用(过时)的警告
+### 常见1.消除方法弃用(过时)的警告
 ```
 // 消除方法弃用(过时)的警告
 #pragma clang diagnostic push
@@ -101,7 +104,7 @@ https://www.cnblogs.com/yfming/p/5936173.html
 这里写出现警告的代码
 #pragma clang diagnostic pop
 ```
-## 常见2、消除方法没有实现的警告
+### 常见2、消除方法没有实现的警告
 ```
 // ignored(忽视)消除对应的selector的警告
 #pragma clang diagnostic push
@@ -111,36 +114,36 @@ https://www.cnblogs.com/yfming/p/5936173.html
 // 结束
 #pragma clang diagnostic pop
 ```
-## 常见3.不兼容指针类型警告
+### 常见3.不兼容指针类型警告
 ```
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored “-Wincompatible-pointer-types”
 //不兼容指针类型
 #pragma clang diagnostic pop
 ```
-## 常见4.循环引用警告
+### 常见4.循环引用警告
 ```
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored “-Warc-retain-cycles”
 //循环引用
 #pragma clang diagnostic pop
 ```
-## 常见5.未使用变量警告
+### 常见5.未使用变量警告
 ```
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored “-Wunused-variable”
 //未使用的变量
 #pragma clang diagnostic pop
 ```
-##常见6.内存泄漏警告
+### 常见6.内存泄漏警告
 ```
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored “-Warc-performSelector-leaks”
 //内存泄漏警告
 #pragma clang diagnostic pop
-```  
+```
 
-## 过期宏 三种方式都是 第一种的宏
+### 过期宏 三种方式都是 第一种的宏
 ```
 __attribute__((deprecated(" ")));
 
@@ -151,7 +154,7 @@ DEPRECATED_ATTRIBUTE
 UIKIT_EXTERN API_DEPRECATED("ax_is_过期", ios(2.0, 9.0))
 
 ```
-##  禁用宏
+### 禁用宏
 ```
 NS_UNAVAILABLE
 ```
@@ -162,14 +165,14 @@ NS_UNAVAILABLE 当我们不想要其他开发人员，用普通的 init 方法�
 假如数属性 会有警告,重写dynamic方法
 如: @dynamic delegate;
 ```
-## __IPHONE_14_0 版本宏
+### __IPHONE_14_0 版本宏
 ```
 #if defined(__IPHONE_14_0)
 #import <AppTrackingTransparency/AppTrackingTransparency.h>//适配iOS14
 #endif
 ```
 
-## 初始化方法 宏
+### 初始化方法 宏
 
 ```
 NS_DESIGNATED_INITIALIZER
@@ -198,7 +201,7 @@ return self;
 
 ```
 
-#  NSSet / NSHashTable 、NSDictionary/ NSMapTable 的学习
+##  NSSet / NSHashTable 、NSDictionary/ NSMapTable 的学习
 ```
 NSSet 是过滤掉重复 object 的集合类，
 NSHashTable 是 NSSet 的升级版容器，并且只有可变版本，允许对添加到容器中的对象是弱引用的持有关系， 当NSHashTable 中的对象销毁时，该对象也会从容器中移除。
@@ -223,11 +226,11 @@ NSAssert(x,y);：x 为 BOOL 值，y 为 字符串类型。当 x = YES，则不�
 
 
 
-# 代码触发点击事件
+## 代码触发点击事件
 ```
 sendActionsForControlEvents
 ```
-# NSMutableAttributedString 属性
+## NSMutableAttributedString 属性
 ```
 NSMutableAttributedString 常见的属性：
 
@@ -246,14 +249,14 @@ NSParagraphStyleAttributeName 设置段落／间距 vlue>> NSMutableParagraphSty
 ```
 
 
-# pod github资源 格式
+## pod github资源 格式
 ```
 pod 'AXiOSKit',  :git => 'https://github.com/liuweixingGitHub/AXiOSKit.git'
 ```
 
 
 
-# 播放音频,不与其他app冲突
+## 播放音频,不与其他app冲突
 ```
 // 1.启动代理
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -276,14 +279,14 @@ self.musicPlayer.delegate = self;
 
 
 
-# tableView 默认选中
+## tableView 默认选中
 ```
 [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 ```
 
 
 
-# wkwebView 加载本地 css 文件
+## wkwebView 加载本地 css 文件
 ```
 1.建立一个bundle文件
 2.把js,css,html文件拖入
@@ -308,7 +311,7 @@ NSURL *baseUrl = [NSURL fileURLWithPath: basePath isDirectory: YES];
 
 
 
-# scrollView 滚动方向,x 判断左右, y判断上下
+## scrollView 滚动方向,x 判断左右, y判断上下
 
 ```
 CGPoint point =  [scrollView.panGestureRecognizer translationInView:self.view];
@@ -323,7 +326,7 @@ if (point.x < 0 ) {
 
 
 
-# 同时多个alert 顺序弹出
+## 同时多个alert 顺序弹出
 ```
 //创建一个队列，串行并行都可以，主要为了操作信号量
 dispatch_queue_t queue = dispatch_queue_create("com.ax.queue.alert", DISPATCH_QUEUE_SERIAL);
@@ -381,7 +384,7 @@ dispatch_semaphore_signal(sema);
 
 ```
 
-# 类属性
+## 类属性
 
 ```
 @property (class,nonatomic, copy) NSString *nameAge;
@@ -402,7 +405,7 @@ return _nameAge1;
 
 
 
-# UIScrollView 滚动g内容高度 子视图适应
+## UIScrollView 滚动g内容高度 子视图适应
 ```
 UIScrollView *scrollView = [[UIScrollView alloc] init];
 scrollView.backgroundColor = [UIColor greenColor];
@@ -435,35 +438,14 @@ make.edges.mas_equalTo(UIEdgeInsetsZero);
 make.height.mas_equalTo(400);
 }];
 ```
-
-# 制作脚本
-1.可以.sh结尾,执行 ./文件名
-2.无后缀,直接双击
-3.脚本运行
-./ <文件名>
-
-/*
-#dirname $0,获取当前执行脚本文件的父路径
-basepath=$(cd'dirname $0';pwd)
-
-#echo 打印
-echo "$basepath"
-echo "父路径: $basepath"
-
-#当前路径
-currentPath=$(pwd)
-echo "当前路径: $currentPath"
-*/
-
-
-# UIView 始终最上面 .layer.zPosition> 0就行,
+## UIView 始终最上面 .layer.zPosition> 0就行,
 ```
 UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 260)];
 view1.backgroundColor = [UIColor redColor];
 [self.view addSubview:view1];
 view1.layer.zPosition = 10;
 ```
-# 键盘弹起
+## 键盘弹起
 ```
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -516,7 +498,7 @@ self.view_comment.transform = CGAffineTransformIdentity;
 ```
 =======
 // NSOperation 
-# 使用子类 NSBlockOperation 子线程
+## 使用子类 NSBlockOperation 子线程
 ```
 - (void)opDemo6{
 
@@ -658,20 +640,8 @@ scanner.scanLocation = scanner.scanLocation+1;
 }
 }
 ```
-# pod 操作
-```
-pod search 不到,删除以下文件
-~/Library/Caches/CocoaPods/Pods/search_index
 
-本地仓库路径
-.cocoapods/repos/master
-
-pod update --no-repo-update
-
-pod repo update 
-```
-
-# 保护App,
+## 保护App
 ```
 一般常见的问题不会导致闪退，增强App的健壮性，同时会将错误抛出来，根据每个App自身的日志渠道记录，下次迭代或者热修复以下问题.
 
@@ -712,7 +682,7 @@ JJException.exceptionWhenTerminate = NO;
 }
 
 ```
-# view旋转屏
+## view旋转屏
 ```
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -767,7 +737,7 @@ break;
 }
 ```
 
-# NSError
+## NSError
 ```
 //预定义的userinfo键名
 NSString *const NSUnderlyingErrorKey;//推荐的标准方式，通用键
@@ -799,7 +769,7 @@ NSLog(@"========%@",[error localizedFailureReason]);
 NSLog(@"========%@",[error localizedRecoverySuggestion]);
 
 ```
-# 拦截view点击事件
+## 拦截view点击事件
 ```
 - (UIView*)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
 UIView *hitView = [super hitTest:point withEvent:event];
@@ -810,11 +780,11 @@ if(hitView == self){
 return hitView;
 }
 ```
-# 自定义window,用单例,系统就是单例
+## 自定义window,用单例,系统就是单例
 
 
 
-# 2个APP之间通信(如微信分享)
+## 2个APP之间通信(如微信分享)
 主动分享端(我方app)
 
 ```
@@ -904,55 +874,8 @@ NSLog(@"obj2>> %@",obj2);
 
 ```
 
-# 隐私权限
-```
-<key>NSCalendarsUsageDescription</key>
-<string>使用此功能需要访问您的日历</string>
-<key>NSCameraUsageDescription</key>
-<string>使用此功能需要访问您的相机</string>
-<key>NSLocationAlwaysUsageDescription</key>
-<string>我们需要使用你的位置向你推送更适合的内容</string>
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>我们需要使用你的位置向你推送更适合的内容</string>
-<key>NSMotionUsageDescription</key>
-<string>需要你的同意获取运动传感器，用于计步信息的记录。</string>
-<key>NSPhotoLibraryAddUsageDescription</key>
-<string>使用此功能需要访问您的相册</string>
-<key>NSPhotoLibraryUsageDescription</key>
-<string>使用此功能需要访问您的相册</string>
-<key>NSAppTransportSecurity</key>
-<dict>
-<key>NSAllowsArbitraryLoads</key>
-<true/>
-</dict>
 
-<key>LSApplicationQueriesSchemes</key>
-<array>
-<string>weixin</string>
-</array>
-
-<key>NSAppTransportSecurity</key>
-<dict>
-<key>NSAllowsArbitraryLoads</key>
-<true/>
-<key>NSExceptionDomains</key>
-<dict>
-<key>sina.cn</key>
-<dict>
-<key>NSExceptionRequiresForwardSecrecy</key>
-<false/>
-<key>NSIncludesSubdomains</key>
-<true/>
-<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-<true/>
-<key>NSTemporaryExceptionMinimumTLSVersion</key>
-<string>TLSv1.0</string>
-</dict>
-</dict>
-</dict>
-```
-
-# delegate 重写父类
+## delegate 重写父类
 
 ```.h文件中
 
@@ -973,7 +896,7 @@ return curDelegate;
 }
 ```
 
-# 消息转发 NSInvocation
+## 消息转发 NSInvocation
 
 ```
 
@@ -1041,7 +964,7 @@ return returnValue;
 }
 ```
 
-# 方法重载-同一个方法,不同参数
+## 方法重载-同一个方法,不同参数
 
 ```C语言方法
 NSString* __attribute__((overloadable)) mytest(NSString* x, NSString* y)
@@ -1055,7 +978,7 @@ return x;
 }
 
 ```
-# 用一个C字符串来表示一个数据类型
+## 用一个C字符串来表示一个数据类型
 
 ```
 char *buf1 = @encode(int);
@@ -1066,7 +989,7 @@ NSLog(@"%s",buf2);
 NSLog(@"%s",buf3);
 ```
 
-# 富文本 显示图片
+## 富文本 显示图片
 ```
 
 NSTextAttachment *textAttachment = [[NSTextAttachment alloc] init];
@@ -1076,7 +999,7 @@ NSAttributedString *imageString = [NSAttributedString attributedStringWithAttach
 
 ```
 
-# 旋转动画
+## 旋转动画
 ```
 self.arrowBtn.transform = !self.arrowBtn.isSelected
 ? CGAffineTransformMakeRotation(M_PI)
@@ -1084,7 +1007,7 @@ self.arrowBtn.transform = !self.arrowBtn.isSelected
 ```
 
 
-# popView
+## popView
 ```
 AAViewController *testVC = [[AAViewController alloc]init];
 
@@ -1106,19 +1029,7 @@ testVC.popoverPresentationController.canOverlapSourceViewRect = YES;
 
 ```
 
-
-# pod 不能加载xib
-```
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-if (self =[super initWithNibName:nibNameOrNil bundle:[NSBundle bundleForClass:self.class]]) {
-
-}
-return self;
-}
-
-```
-
-# 拖动手势
+## 拖动手势
 ```
 
 UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 50, 50)];
@@ -1182,7 +1093,7 @@ NSLog(@"向下滑动");
 
 ```
 
-# CABasicAnimation
+## CABasicAnimation
 ```
 
 CABasicAnimation *baseicAnimation = [CABasicAnimation animationWithKeyPath:@"position.x"];
@@ -1237,7 +1148,7 @@ layer.beginTime = timeSincePause;
 
 ```
 
-# addChildViewController
+## addChildViewController
 ```
 [self addChildViewController:aVC];
 
@@ -1247,14 +1158,14 @@ layer.beginTime = timeSincePause;
 
 ```
 
-# 2个 Label 自适应约束
+## 2个 Label 自适应约束
 ```
 [textLabel setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
 [detailTextLabel setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
 
 ```
 
-# cell 首尾圆角
+## cell 首尾圆角
 ```方式一
 - (void)drawRect:(CGRect)rect {
 [super drawRect:rect];
@@ -1345,7 +1256,7 @@ cell.selectedBackgroundView = selectedBackgroundView;
 ```
 
 
-# 空格 Unicode 
+## 空格 Unicode 
 ```
 \u00A0 1个字节空格
 \u3000 2个字节空格
@@ -1357,7 +1268,7 @@ self.label.text = [NSString stringWithFormat:@"\u3000文\u3000"];
 
 ```
 
-# extern
+## extern
 ```
 如果项目中涉及到使用C++语言的编程的话则最好使用
 FOUNDATION_EXPORT
@@ -1366,7 +1277,7 @@ FOUNDATION_IMPORT
 FOUNDATION_EXTERN 这个就可以了
 当然使用extern 也是没有问题的
 ```
-# tableView分割线
+## tableView分割线
 ```
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -1391,7 +1302,7 @@ if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
 }
 ```
 
-# try-catch-finally
+## try-catch-finally
 ```
 - (IBAction)btnAction1:(id)sender {
 @try {
@@ -1406,7 +1317,7 @@ NSLog(@"结果处理");
 }
 }
 ```
-# throw
+## throw
 ```
 - (void)test {
 @throw [NSException exceptionWithName:@"error"
@@ -1416,19 +1327,19 @@ userInfo:nil];
 ```
 
 
-# UISlider 拖动事件
+## UISlider 拖动事件
 ```
 [self.progressSlider addTarget:self action:@selector(sliderProgressChange) forControlEvents:UIControlEventValueChanged];
 [self.progressSlider addTarget:self action:@selector(sliderProgressChangeBegin) forControlEvents:UIControlEventTouchDown];
 
 [self.progressSlider addTarget:self action:@selector(sliderProgressChangeEnd) forControlEvents:UIControlEventTouchUpOutside | UIControlEventTouchUpInside];
 ```
-# 定义通知
+## 定义通知
 ```
 UIKIT_EXTERN NSNotificationName const UIMenuControllerWillShowMenuNotification
 ```
 
-# iOS的异步处理神器——Promises
+## iOS的异步处理神器——Promises
 ```
 #import "FBLPromises.h"
 ```
@@ -1511,7 +1422,7 @@ reject([NSError errorWithDomain:@"work2_error" code:-1 userInfo:nil]);
 }];
 }
 ```
-# 字典中存放block
+## 字典中存放block
 ```
 @{
 @"title":@"暗黑主题-ViewController",
@@ -1522,7 +1433,7 @@ ViewController *vc = [[ViewController alloc]init];
 },
 ```
 
-# InjectionIII
+## InjectionIII
 ```
 #if DEBUG
 //    for iOS
@@ -1543,7 +1454,7 @@ NSLog(@"I've been injected: %@", self);
 
 ```
 
-# 隐藏导航栏
+## 隐藏导航栏
 ```
 @interface AAViewController () <UINavigationControllerDelegate,UIGestureRecognizerDelegate>
 
@@ -1575,7 +1486,7 @@ NSLog(@"dealloc>>>>");
 }
 ```
 
-# view 被移除
+## view 被移除
 ```
 - (void)removeFromSuperview {
 [super removeFromSuperview];
@@ -1583,7 +1494,7 @@ NSLog(@"dealloc>>>>");
 }
 ```
 
-# nonatomic 和 natomic 区别
+## nonatomic 和 natomic 区别
 ```
 Property多线程安全小结：
 
@@ -1600,7 +1511,7 @@ self.count++;
 }
 }
 ```
-# view 被添加到父视图
+## view 被添加到父视图
 ```
 - (void)didMoveToSuperview{
 [super didMoveToSuperview];
@@ -1613,7 +1524,7 @@ make.left.equalTo(self.superview).mas_equalTo(300);
 
 }
 ```
-# labe自适应宽度,并居中
+## labe自适应宽度,并居中
 ```
 [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
 
@@ -1624,7 +1535,7 @@ make.right.mas_lessThanOrEqualTo(-5);
 }];
 ```
 
-# copyWithZone
+## copyWithZone
 ```
 Person *person = [[Person alloc]init];
 
@@ -1649,7 +1560,7 @@ return p;
 }
 ```
 
-# dispatch_barrier_async 栅格
+## dispatch_barrier_async 栅格
 ```
 dispatch_queue_t concurrentQueue = dispatch_queue_create("my.concurrent.queue", DISPATCH_QUEUE_CONCURRENT);
 dispatch_async(concurrentQueue, ^(){
@@ -2339,7 +2250,7 @@ NSLog(@"compare = %ld",[@"1.8" compare:@"1.9" options:NSNumericSearch]); // 1.8 
 NSLog(@"compare = %ld",[@"1.9" compare:@"1.10"]);// 1.9 > 1.10 ,正常的小数比较,就是 9 > 1
 NSLog(@"compare = %ld",[@"1.9" compare:@"1.8"]); // 1.9 > 1.8
 ```
-### 搜索
+## 搜索
 ```
 NSString *str = @"AabBa";
 NSString *searchStr = @"a";
@@ -2567,7 +2478,7 @@ auto类型的局部变量，可以被block捕获，但是不能修改值。
 
 __block可以解决block内部无法修改外部auto变量的问题。
 打印结果为 10,不正确
-``` 
+```
 ## 判断代码执行完成
 判断UICollectionView 或 UITableView reload()结束
 ```
@@ -2605,6 +2516,7 @@ completion:^{
 }];
 }
 ```
+
 ## 禁止继承
 ```
 // 标记不能被继承
@@ -2628,6 +2540,7 @@ https://lrdcq.com/me/read.php/99.htm
 - (void)y __attribute__((objc_direct)); //direct的方法
 @end
 ```
+
 ## 基础数据与NSValue互相转换
 ```objective-c
 // 转 NSValue
@@ -2719,3 +2632,107 @@ NSLog(@"缓存一下,群组头像下载后,绘制头像成功");
 }];
 }];
 ```
+
+## 异步安全
+```
+dispatch_main_async_safe(^{
+if (completedBlock) {
+completedBlock(nil, nil, [NSError errorWithDomain:SDWebImageErrorDomain code:SDWebImageErrorCancelled userInfo:@{NSLocalizedDescriptionKey : @"Operation cancelled by user during sending the request"}], YES);
+}
+});
+```
+
+# plsit配置
+## 隐私权限
+```
+<key>NSCalendarsUsageDescription</key>
+<string>使用此功能需要访问您的日历</string>
+<key>NSCameraUsageDescription</key>
+<string>使用此功能需要访问您的相机</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>我们需要使用你的位置向你推送更适合的内容</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>我们需要使用你的位置向你推送更适合的内容</string>
+<key>NSMotionUsageDescription</key>
+<string>需要你的同意获取运动传感器，用于计步信息的记录。</string>
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>使用此功能需要访问您的相册</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>使用此功能需要访问您的相册</string>
+<key>NSAppTransportSecurity</key>
+<dict>
+<key>NSAllowsArbitraryLoads</key>
+<true/>
+</dict>
+
+<key>LSApplicationQueriesSchemes</key>
+<array>
+<string>weixin</string>
+</array>
+
+<key>NSAppTransportSecurity</key>
+<dict>
+<key>NSAllowsArbitraryLoads</key>
+<true/>
+<key>NSExceptionDomains</key>
+<dict>
+<key>sina.cn</key>
+<dict>
+<key>NSExceptionRequiresForwardSecrecy</key>
+<false/>
+<key>NSIncludesSubdomains</key>
+<true/>
+<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+<true/>
+<key>NSTemporaryExceptionMinimumTLSVersion</key>
+<string>TLSv1.0</string>
+</dict>
+</dict>
+</dict>
+```
+
+
+# pod 操作
+```
+pod search 不到,删除以下文件
+~/Library/Caches/CocoaPods/Pods/search_index
+
+本地仓库路径
+.cocoapods/repos/master
+
+pod update --no-repo-update
+
+pod repo update 
+```
+## pod 不能加载xib
+```
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+if (self =[super initWithNibName:nibNameOrNil bundle:[NSBundle bundleForClass:self.class]]) {
+
+}
+return self;
+}
+
+```
+
+
+
+# 制作脚本
+
+1.可以.sh结尾,执行 ./文件名
+2.无后缀,直接双击
+3.脚本运行
+./ <文件名>
+
+/*
+#dirname $0,获取当前执行脚本文件的父路径
+basepath=$(cd'dirname $0';pwd)
+
+#echo 打印
+echo "$basepath"
+echo "父路径: $basepath"
+
+#当前路径
+currentPath=$(pwd)
+echo "当前路径: $currentPath"
+*/
