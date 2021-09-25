@@ -25,45 +25,83 @@ PODS:
     - ReactiveObjC (>= 3.0.0)
   - AXCollectionObserve/Core (1.1.1):
     - ReactiveObjC (>= 3.0.0)
-  - AXiOSKit (2.0.0):
-    - AXiOSKit/Foundation (= 2.0.0)
-    - AXiOSKit/Kit (= 2.0.0)
-  - AXiOSKit/Foundation (2.0.0)
-  - AXiOSKit/Kit (2.0.0):
-    - AFNetworking (>= 4.0.0)
-    - Aspects
-    - AXiOSKit/Foundation
-    - AXViewControllerTransitioning (>= 1.0.0)
-    - DZNEmptyDataSet (>= 1.8.0)
+  - AXiOSKit (2.0.1):
+    - AXiOSKit/AXToAFNetworking (= 2.0.1)
+    - AXiOSKit/AXToDZNEmptyDataSet (= 2.0.1)
+    - AXiOSKit/AXToFMDB (= 2.0.1)
+    - AXiOSKit/AXToMBProgressHUD (= 2.0.1)
+    - AXiOSKit/AXToMJRefresh (= 2.0.1)
+    - AXiOSKit/AXToSDWebImage (= 2.0.1)
+    - AXiOSKit/AXViewControllerTransitioning (= 2.0.1)
+    - AXiOSKit/Foundation (= 2.0.1)
+    - AXiOSKit/Helper (= 2.0.1)
+    - AXiOSKit/Kit (= 2.0.1)
+    - AXiOSKit/Manager (= 2.0.1)
+    - AXiOSKit/Observe (= 2.0.1)
+    - AXiOSKit/View (= 2.0.1)
+    - AXiOSKit/ViewController (= 2.0.1)
+    - ReactiveObjC
+  - AXiOSKit/AXToAFNetworking (2.0.1):
+    - AFNetworking
+    - AXiOSKit/Kit
+    - ReactiveObjC
+  - AXiOSKit/AXToDZNEmptyDataSet (2.0.1):
+    - AXiOSKit/Kit
+    - DZNEmptyDataSet
+    - ReactiveObjC
+  - AXiOSKit/AXToFMDB (2.0.1):
+    - AXiOSKit/Kit
     - FMDB
+    - ReactiveObjC
+  - AXiOSKit/AXToMBProgressHUD (2.0.1):
+    - AXiOSKit/Helper
+    - AXiOSKit/Kit
     - lottie-ios (~> 2.5.3)
-    - Masonry (>= 1.0.0)
-    - MBProgressHUD (>= 1.0.0)
-    - MJExtension (>= 3.0.0)
-    - MJRefresh (>= 3.7.1)
-    - NullSafe (>= 2.0)
-    - ReactiveObjC (>= 3.0.0)
-    - SDWebImage (>= 5.11.0)
-  - AXViewControllerTransitioning (1.1.3):
-    - AXViewControllerTransitioning/Component (= 1.1.3)
-    - AXViewControllerTransitioning/Core (= 1.1.3)
-    - ReactiveObjC (>= 3.0.0)
-  - AXViewControllerTransitioning/Component (1.1.3):
-    - AXViewControllerTransitioning/Core
-    - ReactiveObjC (>= 3.0.0)
-  - AXViewControllerTransitioning/Core (1.1.3):
-    - ReactiveObjC (>= 3.0.0)
+    - MBProgressHUD
+    - ReactiveObjC
+  - AXiOSKit/AXToMJRefresh (2.0.1):
+    - AXiOSKit/Kit
+    - MJRefresh
+    - ReactiveObjC
+  - AXiOSKit/AXToSDWebImage (2.0.1):
+    - AXiOSKit/Kit
+    - ReactiveObjC
+    - SDWebImage
+  - AXiOSKit/AXViewControllerTransitioning (2.0.1):
+    - AXiOSKit/Kit
+    - ReactiveObjC
+  - AXiOSKit/Foundation (2.0.1):
+    - ReactiveObjC
+  - AXiOSKit/Helper (2.0.1):
+    - ReactiveObjC
+  - AXiOSKit/Kit (2.0.1):
+    - AXiOSKit/Foundation
+    - ReactiveObjC
+  - AXiOSKit/Manager (2.0.1):
+    - AXiOSKit/Kit
+    - ReactiveObjC
+  - AXiOSKit/Observe (2.0.1):
+    - AXiOSKit/Foundation
+    - ReactiveObjC
+  - AXiOSKit/View (2.0.1):
+    - AXiOSKit/Kit
+    - AXiOSKit/Observe
+    - Masonry
+    - ReactiveObjC
+  - AXiOSKit/ViewController (2.0.1):
+    - AXiOSKit/AXViewControllerTransitioning
+    - AXiOSKit/Kit
+    - AXiOSKit/Observe
+    - Masonry
+    - ReactiveObjC
+    - SDWebImage
   - Canvas (0.1.2)
   - CocoaAsyncSocket (7.6.5)
-  - CocoaDebug (1.6.3)
+  - CocoaDebug (1.6.9)
   - CocoaLumberjack (3.7.2):
     - CocoaLumberjack/Core (= 3.7.2)
   - CocoaLumberjack/Core (3.7.2)
   - CTMediator (46)
-  - CYLTabBarController/Core (1.29.0)
-  - CYLTabBarController/Lottie (1.29.0):
-    - CYLTabBarController/Core
-    - lottie-ios (~> 2.5.3)
   - DeviceKit (4.4.0)
   - DoraemonKit/Core (3.0.7):
     - FMDB
@@ -106,24 +144,24 @@ PODS:
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
   - IQKeyboardManager (6.5.6)
-  - JJException (0.2.9):
-    - JJException/All (= 0.2.9)
-  - JJException/All (0.2.9):
+  - JJException (0.2.10):
+    - JJException/All (= 0.2.10)
+  - JJException/All (0.2.10):
     - JJException/ARC
     - JJException/DeallocBlock
     - JJException/Main
     - JJException/MRC
     - JJException/Swizzle
-  - JJException/ARC (0.2.9):
+  - JJException/ARC (0.2.10):
     - JJException/DeallocBlock
     - JJException/Main
     - JJException/Swizzle
-  - JJException/DeallocBlock (0.2.9)
-  - JJException/Main (0.2.9)
-  - JJException/MRC (0.2.9):
+  - JJException/DeallocBlock (0.2.10)
+  - JJException/Main (0.2.10)
+  - JJException/MRC (0.2.10):
     - JJException/Main
     - JJException/Swizzle
-  - JJException/Swizzle (0.2.9)
+  - JJException/Swizzle (0.2.10)
   - JKVValue (1.3.3)
   - Kiwi (3.0.0)
   - libwebp (1.2.0):
@@ -146,8 +184,8 @@ PODS:
   - MGJRouter (0.10.0)
   - MGSwipeTableCell (1.6.11)
   - MJExtension (3.3.0)
-  - MJRefresh (3.7.1)
-  - MKRingProgressView (2.2.3)
+  - MJRefresh (3.7.2)
+  - MKRingProgressView (2.3.0)
   - MMKV (1.2.10):
     - MMKVCore (~> 1.2.10)
   - MMKVCore (1.2.10)
@@ -227,13 +265,11 @@ DEPENDENCIES:
   - Aspects (~> 1.4.1)
   - AXCollectionObserve (~> 1.1.1)
   - AXiOSKit (from `../`)
-  - AXViewControllerTransitioning (~> 1.1.3)
   - Canvas (~> 0.1.2)
   - CocoaAsyncSocket (~> 7.6.5)
   - CocoaDebug (~> 1.6.3)
   - CocoaLumberjack (~> 3.7.2)
   - CTMediator
-  - CYLTabBarController/Lottie
   - DeviceKit
   - DoraemonKit/Core (~> 3.0.7)
   - DoraemonKit/WithDatabase (~> 3.0.7)
@@ -297,13 +333,11 @@ SPEC REPOS:
     - APNGKit
     - Aspects
     - AXCollectionObserve
-    - AXViewControllerTransitioning
     - Canvas
     - CocoaAsyncSocket
     - CocoaDebug
     - CocoaLumberjack
     - CTMediator
-    - CYLTabBarController
     - DeviceKit
     - DoraemonKit
     - DZNEmptyDataSet
@@ -372,14 +406,12 @@ SPEC CHECKSUMS:
   APNGKit: 939475205746e11a212c265f39dbb9dca70011e8
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   AXCollectionObserve: 0553a382e43d0a4482831c5d87243a146ae946c3
-  AXiOSKit: df58d06c81ebad5a881f942aef4ac7c555644ac5
-  AXViewControllerTransitioning: 0ba0b9d3403719756f72814f3e39f0abe02157e6
+  AXiOSKit: 2ab891d968b2684c4b75bc1176d7269ceab32a1c
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
-  CocoaDebug: 188ea707c3728402e16efffa8d309a4704f1c59a
+  CocoaDebug: 827b20a16176ddcf577761dfcf60fc531d6225e8
   CocoaLumberjack: b7e05132ff94f6ae4dfa9d5bce9141893a21d9da
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
-  CYLTabBarController: f5460b8446f82d016945d4d53895a1ef185b79e3
   DeviceKit: 2c5d7485a2fa10b65c0091b2952d30843a6ba06d
   DoraemonKit: 32fb97f3aa82efa133111d193080ca5462cef135
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
@@ -393,7 +425,7 @@ SPEC CHECKSUMS:
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
-  JJException: da7c64ccf29d9938a4075378a7e9a29db7383c37
+  JJException: 2fbbd9c97313862134fbd6e5ca8e6a297baeaac0
   JKVValue: d7941071b1cf9ba35c194fd40bcf4c4d9b5462e9
   Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
   libwebp: 6bac0a99ba5a6bb7449a951ff22c484201985f68
@@ -405,8 +437,8 @@ SPEC CHECKSUMS:
   MGJRouter: 15d94541eb2cc81eff7d577337288feb7ae9575f
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
   MJExtension: 01704cca2b60a214c10761b6491eab74069d68a9
-  MJRefresh: c7f1edbaa1f401810f2dc356de2355f68c78d4ca
-  MKRingProgressView: 404b3157e7a533ab8668d29ec20042c35d12ca1d
+  MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
+  MKRingProgressView: f534209b9a1edc0beb2ea613e6b953ea2195b565
   MMKV: 76033b9ace2006623308910a3afcc0e25eba3140
   MMKVCore: b00e7a09ec77a1b916aef336eedd3b99ec249978
   MonkeyKing: 1656e3e01911b5f72f988d4496c1cc988d0c009c
@@ -417,7 +449,7 @@ SPEC CHECKSUMS:
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Protobuf: adb85cd18a15bd1a777c158af9fd6e612a0e6d69
-  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  ReactiveObjC: c80676b38445a1beebc17defd47c1152a1f1e661
   RMQClient: 9bbda86703fd475761101ee5fda037eb2a12ec4e
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SDWebImageFLPlugin: 245c7ce1e77028b6ef415240847b3f8aa4b106b7
@@ -439,6 +471,6 @@ SPEC CHECKSUMS:
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 13547965de82507ea568aa393fac85cf8b93e6dd
+PODFILE CHECKSUM: 8cc9d3bbb38bce9b78b380bbe7dd3d17926adb93
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.2

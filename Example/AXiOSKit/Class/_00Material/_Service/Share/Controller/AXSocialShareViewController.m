@@ -10,7 +10,7 @@
 #import "AXSocialShareView.h"
 #import "AXShareOption.h"
 #import "AXShareService.h"
-#import <AXViewControllerTransitioning/AXViewControllerTransitioning.h>
+#import <AXiOSKit/AXViewControllerTransitioning.h>
 
 @interface AXSocialShareViewController ()
 

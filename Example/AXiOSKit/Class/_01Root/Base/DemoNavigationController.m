@@ -43,19 +43,20 @@
     self.navigationBar.shadowImage = [[UIImage alloc] init];
     
     /// 返回按钮 图片
-    UIImage *image = [UIImage imageNamed:@"ax_bar_back"];
-    if (image) {
+    UIImage *backItemImg = [UIImage imageNamed:@"ax_bar_back"];
+    if (backItemImg) {
         /// 这个不行,只能换图片,不能换文字
-        self.navigationBar.backIndicatorTransitionMaskImage = image;
-        self.navigationBar.backIndicatorImage= image;
+        self.navigationBar.backIndicatorTransitionMaskImage = backItemImg;
+        self.navigationBar.backIndicatorImage= backItemImg;
         UINavigationBar.appearance.backItem.title = @"哈哈";
         UINavigationBar.appearance.topItem.title = @"噢噢";
     }
     
+
     /// 导航栏背景图片
-    UIImage *backGroundImage = [UIImage imageNamed:@"nav_bg_img_1"];
-    backGroundImage = [backGroundImage resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch];
-    [self.navigationBar setBackgroundImage:backGroundImage forBarMetrics:UIBarMetricsDefault];
+    UIImage *backgroundImg = [UIImage imageNamed:@"nav_bg_img_1"];
+    backgroundImg = [backgroundImg resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch];
+    [self.navigationBar setBackgroundImage:backgroundImg forBarMetrics:UIBarMetricsDefault];
     
     /// 返回按钮 颜色
     self.navigationBar.tintColor = UIColor.purpleColor;
@@ -64,6 +65,26 @@
     
     
     //    [self setNavBarAppearence];
+  
+    /// iOS 15 适配
+    if (@available(iOS 15.0, *)) {
+        UINavigationBarAppearance *barApp = UINavigationBarAppearance.alloc.init;
+        
+//        if (backgroundImg) {
+//            barApp.backgroundColor = [UIColor colorWithPatternImage:backgroundImg];
+//        }
+        if (backgroundImg) {
+            barApp.backgroundImage = backgroundImg;
+        }
+        if (backItemImg) {
+            [barApp setBackIndicatorImage:backItemImg transitionMaskImage:backItemImg];
+        }
+        self.navigationBar.scrollEdgeAppearance = barApp;
+        self.navigationBar.standardAppearance = barApp;
+    }
+
+ 
+     
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{

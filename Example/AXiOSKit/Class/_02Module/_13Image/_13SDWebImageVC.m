@@ -9,7 +9,7 @@
 #import "_13SDWebImageVC.h"
 
 #import <SDWebImage/SDWebImage.h>
-
+//#import <AXiOSKit/UIButton+AXCircle.h>
 @interface MyCustomTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UILabel *customTextLabel;
@@ -61,9 +61,13 @@
     if (!self.imageView.sd_imageIndicator) {
         self.imageView.sd_imageIndicator = SDWebImageProgressIndicator.defaultIndicator;
     }
+//    [self.imageView sd_setImageWithURL:self.imageURL
+//                      placeholderImage:nil
+//                               options:SDWebImageProgressiveLoad];
+    
     [self.imageView sd_setImageWithURL:self.imageURL
-                      placeholderImage:nil
-                               options:SDWebImageProgressiveLoad];
+                      placeholderImage:nil];
+    
     self.imageView.shouldCustomLoopCount = YES;
     self.imageView.animationRepeatCount = 0;
 }

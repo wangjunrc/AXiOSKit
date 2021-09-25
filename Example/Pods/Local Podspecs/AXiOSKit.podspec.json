@@ -1,15 +1,15 @@
 {
   "name": "AXiOSKit",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "summary": "个人开发工具类",
-  "description": "封装UIKit等个人开发工具类",
+  "description": "iOS个人开发工具类",
   "homepage": "https://github.com/axinger",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "axinger": "axingrun@outlook.com"
+    "axinger": "axingrun@qq.com"
   },
   "platforms": {
     "ios": "10.0"
@@ -17,14 +17,11 @@
   "requires_arc": true,
   "source": {
     "git": "https://github.com/axinger/AXiOSKit.git",
-    "tag": "#{s.version}"
+    "tag": "2.0.1"
   },
-  "public_header_files": "AXiOSKit/AXiOSKit/AXiOSKit.h",
-  "source_files": "AXiOSKit/**/*.{h,m}",
+  "source_files": "AXiOSKit/AXiOSKit.h",
   "resources": [
-    "AXiOSKit/**/*.xib",
-    "AXiOSKit/**/*.nib",
-    "AXiOSKit/**/*.bundle"
+    "AXiOSKit/Assets/**/*.bundle"
   ],
   "resource_bundles": {
     "AXiOSKitMain": [
@@ -33,63 +30,229 @@
       "AXiOSKit/README/*.{md}"
     ]
   },
+  "dependencies": {
+    "ReactiveObjC": [
+
+    ]
+  },
   "subspecs": [
     {
       "name": "Foundation",
-      "public_header_files": "AXiOSKit/AXiOSKit/AXiOSFoundation.h",
-      "source_files": "AXiOSKit/Foundation/**/*.{h,m,mm}",
+      "source_files": "AXiOSKit/Classes/Foundation/**/*.{h,m}",
       "frameworks": "Foundation"
     },
     {
-      "name": "Kit",
+      "name": "Observe",
+      "source_files": "AXiOSKit/Classes/Observe/**/*.{h,m}",
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ],
       "dependencies": {
         "AXiOSKit/Foundation": [
 
+        ]
+      }
+    },
+    {
+      "name": "Kit",
+      "source_files": "AXiOSKit/Classes/Kit/**/*.{h,m}",
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ],
+      "dependencies": {
+        "AXiOSKit/Foundation": [
+
+        ]
+      }
+    },
+    {
+      "name": "Helper",
+      "source_files": "AXiOSKit/Classes/Helper/**/*.{h,m}"
+    },
+    {
+      "name": "View",
+      "source_files": "AXiOSKit/Classes/View/**/*.{h,m}",
+      "resources": [
+        "AXiOSKit/Classes/View/**/*.xib",
+        "AXiOSKit/Classes/View/**/*.nib"
+      ],
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ],
+      "dependencies": {
+        "AXiOSKit/Kit": [
+
         ],
-        "AFNetworking": [
-          ">= 4.0.0"
-        ],
-        "SDWebImage": [
-          ">= 5.11.0"
-        ],
-        "MJRefresh": [
-          ">= 3.7.1"
-        ],
-        "NullSafe": [
-          ">= 2.0"
-        ],
-        "MJExtension": [
-          ">= 3.0.0"
-        ],
-        "MBProgressHUD": [
-          ">= 1.0.0"
-        ],
-        "DZNEmptyDataSet": [
-          ">= 1.8.0"
+        "AXiOSKit/Observe": [
+
         ],
         "Masonry": [
-          ">= 1.0.0"
+
+        ]
+      }
+    },
+    {
+      "name": "AXViewControllerTransitioning",
+      "source_files": "AXiOSKit/Classes/AXViewControllerTransitioning/**/*.{h,m}",
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ],
+      "dependencies": {
+        "AXiOSKit/Kit": [
+
+        ]
+      }
+    },
+    {
+      "name": "ViewController",
+      "source_files": "AXiOSKit/Classes/ViewController/**/*.{h,m}",
+      "resources": [
+        "AXiOSKit/Classes/ViewController/**/*.xib",
+        "AXiOSKit/Classes/ViewController/**/*.nib"
+      ],
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ],
+      "dependencies": {
+        "AXiOSKit/Kit": [
+
         ],
-        "Aspects": [
+        "AXiOSKit/Observe": [
+
+        ],
+        "AXiOSKit/AXViewControllerTransitioning": [
+
+        ],
+        "Masonry": [
+
+        ],
+        "SDWebImage": [
 
         ],
         "ReactiveObjC": [
-          ">= 3.0.0"
+
+        ]
+      }
+    },
+    {
+      "name": "Manager",
+      "source_files": "AXiOSKit/Classes/Manager/**/*.{h,m}",
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ],
+      "dependencies": {
+        "AXiOSKit/Kit": [
+
+        ]
+      }
+    },
+    {
+      "name": "AXToAFNetworking",
+      "source_files": "AXiOSKit/Classes/Third/AFNetworking.AX/*.{h,m}",
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ],
+      "dependencies": {
+        "AXiOSKit/Kit": [
+
         ],
-        "AXViewControllerTransitioning": [
-          ">= 1.0.0"
+        "AFNetworking": [
+
+        ]
+      }
+    },
+    {
+      "name": "AXToDZNEmptyDataSet",
+      "source_files": "AXiOSKit/Classes/Third/DZNEmptyDataSet.AX/*.{h,m}",
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ],
+      "dependencies": {
+        "AXiOSKit/Kit": [
+
         ],
-        "lottie-ios": [
-          "~>2.5.3"
+        "DZNEmptyDataSet": [
+
+        ]
+      }
+    },
+    {
+      "name": "AXToFMDB",
+      "source_files": "AXiOSKit/Classes/Third/FMDB.AX/*.{h,m}",
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ],
+      "dependencies": {
+        "AXiOSKit/Kit": [
+
         ],
         "FMDB": [
 
         ]
-      },
+      }
+    },
+    {
+      "name": "AXToMBProgressHUD",
+      "source_files": "AXiOSKit/Classes/Third/MBProgressHUD.AX/*.{h,m}",
       "frameworks": [
         "Foundation",
         "UIKit"
-      ]
+      ],
+      "dependencies": {
+        "AXiOSKit/Kit": [
+
+        ],
+        "AXiOSKit/Helper": [
+
+        ],
+        "MBProgressHUD": [
+
+        ],
+        "lottie-ios": [
+          "~>2.5.3"
+        ]
+      }
+    },
+    {
+      "name": "AXToMJRefresh",
+      "source_files": "AXiOSKit/Classes/Third/MJRefresh.AX/*.{h,m}",
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ],
+      "dependencies": {
+        "AXiOSKit/Kit": [
+
+        ],
+        "MJRefresh": [
+
+        ]
+      }
+    },
+    {
+      "name": "AXToSDWebImage",
+      "source_files": "AXiOSKit/Classes/Third/SDWebImage.AX/*.{h,m}",
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ],
+      "dependencies": {
+        "AXiOSKit/Kit": [
+
+        ],
+        "SDWebImage": [
+
+        ]
+      }
     }
   ]
 }

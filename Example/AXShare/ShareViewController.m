@@ -10,7 +10,7 @@
 #import "AXShareContentViewController.h"
 //#import <ReactiveObjC/ReactiveObjC.h>
 #import <Masonry/Masonry.h>
-@import AXiOSKit;
+//@import AXiOSKit;
 @implementation ShareViewController
 
 - (BOOL)isContentValid {
@@ -38,7 +38,7 @@
     AXShareContentViewController *vc = [AXShareContentViewController.alloc init];
     [self setViewControllers:@[vc]];
     
-    NSLog(@"ax_keyWindow=%@", ax_keyWindow());
+//    NSLog(@"ax_keyWindow=%@", ax_keyWindow());
 }
 
 

@@ -21,6 +21,12 @@
     
     //    [[UIView appearance] setBackgroundColor:[UIColor whiteColor]];
     
+    /// iOS 15 适配
+    if (@available(iOS 15.0, *)) {
+        /// iOS 15 UITableView sectionHeader下移22像素
+        UITableView.appearance.sectionHeaderTopPadding = 0;
+    }
+    
     
     
 //    UIImage *image = [UIImage imageNamed:@"ax_bar_back"];

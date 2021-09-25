@@ -51,10 +51,10 @@
     //    self.toLabel.text = model.content;
     //    self.sendTF.text = nil;;
 }
-- (void)injected {
-    NSLog(@"重启了 InjectionIII: %@", self);
-    [self viewDidLoad];
-}
+//- (void)injected {
+//    NSLog(@"重启了 InjectionIII: %@", self);
+//    [self viewDidLoad];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

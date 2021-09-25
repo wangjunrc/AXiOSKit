@@ -35,11 +35,8 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "AXKitViewController.h"
 #import "AXWKWebVC.h"
 #import "AXWeakProxy.h"
-#import "AXWebVC.h"
 #import "IBObjectHeader.h"
-#import "MBProgressHUD+AX.h"
 #import "NSBundle+AXBundle.h"
-#import "NSObject+AXCacheImage.h"
 #import "QRCodeViewController.h"
 #import "UIBarButtonItem+AXKit.h"
 #import "UIButton+AXCountDown.h"
@@ -77,4 +74,12 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "UIViewController+AXKit.h"
 #import "UIWindow+AXKit.h"
 
-#import <AXViewControllerTransitioning/AXViewControllerTransitioning.h>
+
+//#import "NSObject+AXCacheImage.h"
+
+
+/// AX.MBProgressHUD
+#if __has_include("MBProgressHUD+AX.h")
+#import "MBProgressHUD+AX.h"
+#import "UIView+AXHUD.h"
+#endif

@@ -29,6 +29,8 @@
 		213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBE7254003DB00C89B72 /* AppDelegate.m */; };
 		2150B151269C1B8900351B10 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2150B150269C1B8900351B10 /* Image.bundle */; };
 		2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
+		215510B926FE1DFF00338C53 /* _03RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 215510B826FE1DFF00338C53 /* _03RootVC.m */; };
+		215510BA26FE1DFF00338C53 /* _03RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 215510B826FE1DFF00338C53 /* _03RootVC.m */; };
 		2165FE9126AEAA4200920470 /* RPDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2165FE8926AEAA4200920470 /* RPDataBase.m */; };
 		2165FE9326AEAA4200920470 /* RLMOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2165FE8A26AEAA4200920470 /* RLMOrder.m */; };
 		2165FE9526AEAA4200920470 /* RLMProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 2165FE8F26AEAA4200920470 /* RLMProduct.m */; };
@@ -645,6 +647,9 @@
 		2150B150269C1B8900351B10 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
 		2152C5B525919C720078D525 /* AXDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugViewController.h; sourceTree = "<group>"; };
 		2152C5B625919C720078D525 /* AXDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugViewController.m; sourceTree = "<group>"; };
+		215510B726FE1DFF00338C53 /* _03RootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _03RootVC.h; sourceTree = "<group>"; };
+		215510B826FE1DFF00338C53 /* _03RootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _03RootVC.m; sourceTree = "<group>"; };
+		215510BB26FEAF1100338C53 /* _code.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = _code.md; sourceTree = "<group>"; };
 		2165FE8926AEAA4200920470 /* RPDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPDataBase.m; sourceTree = "<group>"; };
 		2165FE8A26AEAA4200920470 /* RLMOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLMOrder.m; sourceTree = "<group>"; };
 		2165FE8B26AEAA4200920470 /* RLMOrderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLMOrderService.h; sourceTree = "<group>"; };
@@ -1308,12 +1313,13 @@
 		21898FF42541B48000876524 /* README */ = {
 			isa = PBXGroup;
 			children = (
-				21898FF72541B48000876524 /* read.md */,
-				21898FF82541B48000876524 /* pod_use.md */,
+				215510BB26FEAF1100338C53 /* _code.md */,
 				21898FF92541B48000876524 /* 面试.md */,
 				21898FFA2541B48000876524 /* 命令行.md */,
-				21D83B3A255A28BE00695C28 /* rac.md */,
 				21CEC46626EF333200D46BEC /* plist.md */,
+				21898FF82541B48000876524 /* pod_use.md */,
+				21D83B3A255A28BE00695C28 /* rac.md */,
+				21898FF72541B48000876524 /* read.md */,
 			);
 			name = README;
 			path = ../AXiOSKit/README;
@@ -1700,6 +1706,8 @@
 				21A61D4D265E7F4A0080E67D /* _03HeaderView.m */,
 				2180CEDB26958D5A00F5320C /* _AXSearchResultVC.h */,
 				2180CEDC26958D5A00F5320C /* _AXSearchResultVC.m */,
+				215510B726FE1DFF00338C53 /* _03RootVC.h */,
+				215510B826FE1DFF00338C53 /* _03RootVC.m */,
 				21A61D5F265E7F4A0080E67D /* Base */,
 				21CC20B4265F3B91005BD351 /* Common */,
 			);
@@ -2659,11 +2667,9 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/APNGKit/APNGKit.framework",
 				"${BUILT_PRODUCTS_DIR}/AXCollectionObserve/AXCollectionObserve.framework",
-				"${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
 				"${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework",
-				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaDebug/CocoaDebug.framework",
@@ -2731,11 +2737,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APNGKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXCollectionObserve.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXViewControllerTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXiOSKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTMediator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaDebug.framework",
@@ -2911,11 +2915,9 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/APNGKit/APNGKit.framework",
 				"${BUILT_PRODUCTS_DIR}/AXCollectionObserve/AXCollectionObserve.framework",
-				"${BUILT_PRODUCTS_DIR}/AXViewControllerTransitioning/AXViewControllerTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/AXiOSKit/AXiOSKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
 				"${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework",
-				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Canvas/Canvas.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaDebug/CocoaDebug.framework",
@@ -2983,11 +2985,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APNGKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXCollectionObserve.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXViewControllerTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXiOSKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTMediator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Canvas.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaDebug.framework",
@@ -3113,6 +3113,7 @@
 				217CA8BE26DBAB9E00512DCE /* ChatMessageModel.m in Sources */,
 				217CA8BF26DBAB9E00512DCE /* DogSwift.swift in Sources */,
 				217CA8C026DBAB9E00512DCE /* RLMOrderService.m in Sources */,
+				215510BA26FE1DFF00338C53 /* _03RootVC.m in Sources */,
 				217CA8C126DBAB9E00512DCE /* _25LayoutViewController.m in Sources */,
 				217CA8C226DBAB9E00512DCE /* AppDelegateWX.m in Sources */,
 				217CA8C326DBAB9E00512DCE /* _11MasonryVC.m in Sources */,
@@ -3310,6 +3311,7 @@
 				21A61F17265E7F4B0080E67D /* ChatMessageModel.m in Sources */,
 				21D61EEC257F106E0059201A /* DogSwift.swift in Sources */,
 				2165FE9726AEAA4200920470 /* RLMOrderService.m in Sources */,
+				215510B926FE1DFF00338C53 /* _03RootVC.m in Sources */,
 				21A61EE5265E7F4B0080E67D /* _25LayoutViewController.m in Sources */,
 				21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */,
 				21A61ED5265E7F4B0080E67D /* _11MasonryVC.m in Sources */,

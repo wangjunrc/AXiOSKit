@@ -10,6 +10,8 @@
 #import <AXiOSKit/NSString+AXKit.h>
 #import <AXiOSKit/UIViewController+AXKit.h>
 #import <Masonry/Masonry.h>
+#import <AXiOSKit/AXViewControllerTransitioning.h>
+
 @interface _10TextFViewController ()<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

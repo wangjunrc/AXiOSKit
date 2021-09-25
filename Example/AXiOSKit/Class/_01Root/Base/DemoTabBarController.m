@@ -15,10 +15,11 @@
 #import "DemoTabBarController.h"
 #import <AXiOSKit/AXConfigureManager.h>
 #import "_02RootVC.h"
+#import "_03RootVC.h"
 #import "AXTabBarController.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 
-@interface DemoTabBarController ()<UITabBarControllerDelegate, CYLTabBarControllerDelegate>
+@interface DemoTabBarController ()<UITabBarControllerDelegate>
 
 @property(nonatomic, strong) NSArray<NSDictionary<NSString *,id> *> *dataArray;
 @end
@@ -134,7 +135,7 @@
     
     return [[self.dataArray.rac_sequence map:^id _Nullable(NSDictionary<NSString *,id> * _Nullable value) {
         DemoNavigationController *nav = [DemoNavigationController.alloc initWithRootViewController:value[@"vc"]];
-        nav.tabBarItem.title = (NSString *)value[CYLTabBarItemTitle];
+        nav.tabBarItem.title = (NSString *)value[@"CYLTabBarItemTitle"];
         nav.tabBarItem.image = [UIImage imageNamed:@"tab_1"];
         return nav;
     }]array];
@@ -304,23 +305,53 @@
     });
 }
 
+//- (NSArray<NSDictionary<NSString *,id> *> *)dataArray {
+//    if (!_dataArray) {
+//        _dataArray =  @[
+//            @{
+//                @"vc":_01RootVC.alloc.init,
+//                CYLTabBarItemTitle : @"测试页面",
+//                CYLTabBarItemImage : [UIImage imageNamed:@"home_normal"],
+//                CYLTabBarItemSelectedImage : [UIImage imageNamed:@"home_highlight"],
+//                CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_home" ofType:@"json"]],
+//
+//            },
+//            @{@"vc":_02RootVC.alloc.init,
+//              CYLTabBarItemTitle : @"测试方法",
+//              CYLTabBarItemImage : [UIImage imageNamed:@"fishpond_normal"],
+//              CYLTabBarItemSelectedImage :[UIImage imageNamed:@"fishpond_highlight"],
+//              CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_discover" ofType:@"json"]],
+//            },
+//        ];
+//    }
+//    return _dataArray;
+//}
+
 - (NSArray<NSDictionary<NSString *,id> *> *)dataArray {
     if (!_dataArray) {
         _dataArray =  @[
             @{
                 @"vc":_01RootVC.alloc.init,
-                CYLTabBarItemTitle : @"测试页面",
-                CYLTabBarItemImage : [UIImage imageNamed:@"home_normal"],
-                CYLTabBarItemSelectedImage : [UIImage imageNamed:@"home_highlight"],
-                CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_home" ofType:@"json"]],
+                @"CYLTabBarItemTitle" : @"测试页面",
+                @"CYLTabBarItemImage" : [UIImage imageNamed:@"home_normal"],
+                @"CYLTabBarItemSelectedImage" : [UIImage imageNamed:@"home_highlight"],
+                @"CYLTabBarLottieURL" : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_home" ofType:@"json"]],
                 
             },
             @{@"vc":_02RootVC.alloc.init,
-              CYLTabBarItemTitle : @"测试方法",
-              CYLTabBarItemImage : [UIImage imageNamed:@"fishpond_normal"],
-              CYLTabBarItemSelectedImage :[UIImage imageNamed:@"fishpond_highlight"],
-              CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_discover" ofType:@"json"]],
+              @"CYLTabBarItemTitle" : @"测试方法",
+              @"CYLTabBarItemImage" : [UIImage imageNamed:@"fishpond_normal"],
+              @"CYLTabBarItemSelectedImage" :[UIImage imageNamed:@"fishpond_highlight"],
+              @"CYLTabBarLottieURL" : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_discover" ofType:@"json"]],
             },
+            @{@"vc":_03RootVC.alloc.init,
+              @"CYLTabBarItemTitle" : @"测试方法",
+              @"CYLTabBarItemImage" : [UIImage imageNamed:@"fishpond_normal"],
+              @"CYLTabBarItemSelectedImage" :[UIImage imageNamed:@"fishpond_highlight"],
+              @"CYLTabBarLottieURL" : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_discover" ofType:@"json"]],
+            },
+            
+            
         ];
     }
     return _dataArray;

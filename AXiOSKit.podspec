@@ -10,24 +10,25 @@
 Pod::Spec.new do |s|
     
     s.name         = 'AXiOSKit'
-    s.version      = '2.0.0'
+    s.version      = '2.0.1'
     s.summary      = '个人开发工具类'
     s.description  = <<-DESC
-        封装UIKit等个人开发工具类
-                     DESC
+    iOS个人开发工具类
+    DESC
     
     #    s.homepage     = 'https://github.com/axinger/axinger'
     s.homepage     = 'https://github.com/axinger'
     s.license      = { :type => 'MIT', :file => 'LICENSE' }
-    s.author             = { 'axinger' => 'axingrun@outlook.com' }
+    s.author             = { 'axinger' => 'axingrun@qq.com' }
     s.ios.deployment_target = '10.0'
     s.requires_arc = true
     s.source       = { :git => 'https://github.com/axinger/AXiOSKit.git', :tag => s.version.to_s }
     
-    s.public_header_files = 'AXiOSKit/AXiOSKit/AXiOSKit.h'
+    #    s.public_header_files = 'AXiOSKit/AXiOSKit.h'
+    s.source_files = 'AXiOSKit/AXiOSKit.h'
     # oc swift 混编时,需要指定一个
     #    s.private_header_files = ''
-    s.source_files  = 'AXiOSKit/**/*.{h,m}'
+    #    s.source_files  = 'AXiOSKit/**/*.{h,m}'
     #  s.exclude_files = 'AXiOSKit/AXiOSKit/Info.plist'
     
     # 使用 resources 来指定资源，被指定的资源只会简单的被 copy 到目标工程中（主工程）。
@@ -35,7 +36,10 @@ Pod::Spec.new do |s|
     # html,css,js 放在一个bundle中,放这里,
     # 如果放resource_bundles,会bundle嵌套,模拟器有缓存,不好实时更新,所以这样写,这里的.bundle与AXiOSKit_ax_mainBundle同级别
     #    s.resource = 'AXiOSKit/**/*.{xib,bundle}'
-    s.resources = ['AXiOSKit/**/*.xib','AXiOSKit/**/*.nib', 'AXiOSKit/**/*.bundle',]
+    #    s.resources = ['AXiOSKit/Classes/**/*.xib','AXiOSKit/Classes/**/*.nib', 'AXiOSKit/Assets/**/*.bundle',]
+    
+    s.resources = ['AXiOSKit/Assets/**/*.bundle']
+    
     
     #    s.resources = ['AXiOSKit/**/*.bundle']
     #    spec.resources = 'Resources/*.png'
@@ -50,30 +54,112 @@ Pod::Spec.new do |s|
     
     # 多个模块之间,不能import隔壁模块的,要用子库的spec依赖其他subspec·
     s.subspec 'Foundation' do |ss|
-        ss.public_header_files = 'AXiOSKit/AXiOSKit/AXiOSFoundation.h'
-        ss.source_files = 'AXiOSKit/Foundation/**/*.{h,m,mm}'
+        #        ss.public_header_files = 'AXiOSKit/Classes/Foundation/AXiOSFoundation.h'
+        ss.source_files = 'AXiOSKit/Classes/Foundation/**/*.{h,m}'
         ss.frameworks = 'Foundation'
     end
     
-    s.subspec 'Kit' do |ss|
-        
-        ss.dependency 'AXiOSKit/Foundation'
+    s.subspec 'Observe' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/Observe/**/*.{h,m}'
         ss.frameworks = 'Foundation', 'UIKit'
-        ss.dependency 'AFNetworking','>= 4.0.0'
-        ss.dependency 'SDWebImage','>= 5.11.0'
-        ss.dependency 'MJRefresh','>= 3.7.1'
-        ss.dependency 'NullSafe','>= 2.0'
-        ss.dependency 'MJExtension','>= 3.0.0'
-        ss.dependency 'MBProgressHUD','>= 1.0.0'
-        ss.dependency 'DZNEmptyDataSet','>= 1.8.0'
-        ss.dependency 'Masonry','>= 1.0.0'
-        ss.dependency 'Aspects'
-        ss.dependency 'ReactiveObjC','>= 3.0.0'
-        ss.dependency 'AXViewControllerTransitioning','>= 1.0.0'
-        ss.dependency 'lottie-ios', '~>2.5.3'
-        ss.dependency 'FMDB'
-        
+        ss.dependency 'AXiOSKit/Foundation'
     end
+    
+    
+    s.subspec 'Kit' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/Kit/**/*.{h,m}'
+        ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Foundation'
+    end
+    
+    s.subspec 'Helper' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/Helper/**/*.{h,m}'
+    end
+    
+    
+    s.subspec 'View' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/View/**/*.{h,m}'
+        ss.resources = ['AXiOSKit/Classes/View/**/*.xib','AXiOSKit/Classes/View/**/*.nib']
+        ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Kit'
+        ss.dependency 'AXiOSKit/Observe'
+        ss.dependency 'Masonry'
+    end
+    
+    s.subspec 'AXViewControllerTransitioning' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/AXViewControllerTransitioning/**/*.{h,m}'
+        ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Kit'
+        s.dependency 'ReactiveObjC'
+    end
+    
+    
+    s.subspec 'ViewController' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/ViewController/**/*.{h,m}'
+        ss.resources = ['AXiOSKit/Classes/ViewController/**/*.xib','AXiOSKit/Classes/ViewController/**/*.nib']
+        ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Kit'
+        ss.dependency 'AXiOSKit/Observe'
+        ss.dependency 'AXiOSKit/AXViewControllerTransitioning'
+        ss.dependency 'Masonry'
+        ss.dependency 'SDWebImage'
+        ss.dependency 'ReactiveObjC'
+    end
+    
+    s.subspec 'Manager' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/Manager/**/*.{h,m}'
+        ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Kit'
+    end
+    
+    s.subspec 'AXToAFNetworking' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/Third/AFNetworking.AX/*.{h,m}'
+        ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Kit'
+        ss.dependency 'AFNetworking'
+    end
+    
+    s.subspec 'AXToDZNEmptyDataSet' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/Third/DZNEmptyDataSet.AX/*.{h,m}'
+        ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Kit'
+        ss.dependency 'DZNEmptyDataSet'
+    end
+    
+    s.subspec 'AXToFMDB' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/Third/FMDB.AX/*.{h,m}'
+        ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Kit'
+        ss.dependency 'FMDB'
+    end
+    
+    s.subspec 'AXToMBProgressHUD' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/Third/MBProgressHUD.AX/*.{h,m}'
+        ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Kit'
+        ss.dependency 'AXiOSKit/Helper'
+        ss.dependency 'MBProgressHUD'
+        ss.dependency 'lottie-ios', '~>2.5.3'
+    end
+    
+    
+    s.subspec 'AXToMJRefresh' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/Third/MJRefresh.AX/*.{h,m}'
+        ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Kit'
+        ss.dependency 'MJRefresh'
+    end
+    
+    
+    s.subspec 'AXToSDWebImage' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/Third/SDWebImage.AX/*.{h,m}'
+        ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Kit'
+        ss.dependency 'SDWebImage'
+    end
+    
+    
+    
     #    假如把一个framework 制作成cocopod
     #s.resources    = "MAMapKit.framework/*.bundle"
     #    s.vendored_frameworks   = "MAMapKit.framework"
