@@ -30,4 +30,8 @@ pod 'AXiOSKit/AXToSDWebImage'
 
 # 笔记
 <a href="AXiOSKit/README/_code.md">代码笔记</a>
+<a href="AXiOSKit/README/plist.md">info.plist配置</a>
+<a href="AXiOSKit/README/命令行.md">命令行</a>
+<a href="AXiOSKit/README/pod_use.md">常用pod组件</a>
+<a href="AXiOSKit/README/pod_use.md"> ReactiveCocoa简介</a>
 
