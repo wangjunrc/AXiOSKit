@@ -13,7 +13,7 @@ pod 'AXiOSKit/Kit'
 pod 'AXiOSKit/Helper'
 pod 'AXiOSKit/View'
 pod 'AXiOSKit/AXViewControllerTransitioning'
-pod 'AXiOSKit/ViewController'
+pod 'AXiOSKit/Parts'
 pod 'AXiOSKit/Manager'
 ```
 2.  常用第三方组件封装
