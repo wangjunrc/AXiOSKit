@@ -7,7 +7,7 @@
 //
 
 #import "UIViewController+AXNavBarConfig.h"
-#import "AXiOSKit.h"
+#import "UIImage+AXKit.h"
 
 @implementation UIViewController (AXNavBarConfig)
 

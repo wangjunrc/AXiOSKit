@@ -7,7 +7,8 @@
 //
 
 #import "AXFullLayout2.h"
-#import "AXiOSKit.h"
+#import "UIKit+AXAssistant.h"
+
 @implementation AXFullLayout2
 //- (instancetype)init{
 //    self = [super init];

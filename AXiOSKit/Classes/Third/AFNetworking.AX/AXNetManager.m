@@ -5,12 +5,12 @@
 //  Created by liuweixing on 2016/10/19.
 //  Copyright © 2016年 liuweixing. All rights reserved.
 //
-#if __has_include("AFNetworking.h")
+
 #import "AXNetManager.h"
 #import "AXMacros.h"
 #import "UIViewController+AXAlert.h"
 #import "UIKit+AXAssistant.h"
-
+#import <AFNetworking/AFNetworking.h>
 NSString *const AXNetLoadTitle = @"Loading...";
 NSString *const AXNetFailureText = @"网络连接错误";
 
@@ -408,4 +408,3 @@ dispatch_group_t _group;
 }
 
 @end
-#endif

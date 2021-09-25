@@ -9,7 +9,8 @@
 #import "AXGuidePageVC.h"
 #import "AXFullLayout2.h"
 #import "AXGuidePageCell.h"
-#import "AXiOSKit.h"
+#import "UIView+AXFrame.h"
+
 @interface AXGuidePageVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -25,7 +26,7 @@
 @end
 
 @implementation AXGuidePageVC
-
+static NSString *cellID = @"cellID";
 + (instancetype )guidePageWithImage:(NSArray <NSString *>*)imageArray passBlock:(void(^)(void))passBlock{
     
     return [[self alloc]initWithImage:imageArray passBlock:passBlock];
@@ -58,7 +59,8 @@
     self.collectionView.collectionViewLayout = lay;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    [self.collectionView registerNib:ax_Nib(@"AXGuidePageCell") forCellWithReuseIdentifier:k_axCellID];
+    
+    [self.collectionView registerNib:[UINib nibWithNibName:@"AXGuidePageCell" bundle:nil] forCellWithReuseIdentifier:cellID];
     
 }
 
@@ -69,7 +71,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    AXGuidePageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:k_axCellID forIndexPath:indexPath];
+    AXGuidePageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     
     cell.contentImageView.image = [UIImage imageNamed:self.imageArray[indexPath.item]];
     

@@ -7,7 +7,6 @@
 //
 
 #import "AXTabBarController.h"
-#import "AXiOSKit.h"
 
 @interface AXTabBarController ()
 

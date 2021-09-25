@@ -7,8 +7,8 @@
 //
 
 #import "AXMultiSelectSectionHeaderView.h"
-#import "AXiOSKit.h"
 #import <Masonry/Masonry.h>
+#import "UIColor+AXKit.h"
 @implementation AXMultiSelectSectionHeaderView
 
 + (NSString *)reuseIdentifier {

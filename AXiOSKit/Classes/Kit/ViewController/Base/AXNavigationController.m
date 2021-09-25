@@ -7,7 +7,8 @@
 //
 
 #import "AXNavigationController.h"
-#import "AXiOSKit.h"
+#import "NSObject+AXLoger.h"
+
 @interface AXNavigationController ()
 
 @end

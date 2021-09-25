@@ -7,7 +7,8 @@
 //
 
 #import "AXTableViewController.h"
-#import "AXiOSKit.h"
+#import "NSObject+AXLoger.h"
+#import "UITableView+AXKit.h"
 @interface AXTableViewController ()
 
 @end

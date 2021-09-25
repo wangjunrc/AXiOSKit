@@ -37,7 +37,6 @@ FOUNDATION_EXPORT const unsigned char AXiOSKitVersionString[];
 #import "AXWeakProxy.h"
 #import "IBObjectHeader.h"
 #import "NSBundle+AXBundle.h"
-#import "QRCodeViewController.h"
 #import "UIBarButtonItem+AXKit.h"
 #import "UIButton+AXCountDown.h"
 #import "UIButton+AXKit.h"

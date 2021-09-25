@@ -13,7 +13,8 @@
 #import <Masonry/Masonry.h>
 #import "AXMultiSelectCell.h"
 #import "AXMultiSelectSectionHeaderView.h"
-#import "AXiOSKit.h"
+#import "UIColor+AXKit.h"
+#import "UIView+AXFrame.h"
 #import <AXiOSKit/AXViewControllerTransitioning.h>
 @interface AXMultiSelectViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 

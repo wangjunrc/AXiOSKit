@@ -7,9 +7,8 @@
 //
 
 #import "AXPlayVC.h"
-#import "AXiOSKit.h"
 #import "NSString+AXKit.h"
-
+#import "NSObject+AXLoger.h"
 @import MediaPlayer;
 @import AVFoundation;
 @interface AXPlayVC ()<AVPlayerViewControllerDelegate>

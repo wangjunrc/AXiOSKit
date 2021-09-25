@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AXConstant.h"
 #import "AXMacros.h"
 #import "AXViewControllerObserve.h"
 

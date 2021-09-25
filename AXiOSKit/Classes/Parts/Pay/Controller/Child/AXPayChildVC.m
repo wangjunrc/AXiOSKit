@@ -7,10 +7,13 @@
 
 #import "AXPayChildVC.h"
 #import <Masonry/Masonry.h>
-#import "AXiOSKit.h"
 #import "AXChoosePayModel.h"
 #import "AXPayMethodVC.h"
-
+#import "UIImage+AXBundle.h"
+#import "UIBarButtonItem+AXKit.h"
+#import "UIButton+AXKit.h"
+#import "NSObject+AXKit.h"
+#import "UIViewController+AXKit.h"
 @interface AXPayChildItem : NSObject
 
 @property(nonatomic,copy)NSString *title;

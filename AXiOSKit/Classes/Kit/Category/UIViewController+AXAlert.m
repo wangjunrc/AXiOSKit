@@ -10,10 +10,9 @@
 #import <objc/runtime.h>
 #import "UIViewController+AXKit.h"
 #import <objc/runtime.h>
-#import "AXiOSKit.h"
+#import "NSObject+AXAssistant.h"
 #import <AVFoundation/AVCaptureDevice.h>
 #import <Photos/Photos.h>
-#import "AXDeviceFunctionDisableViewController.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 
 @implementation AXActionItem

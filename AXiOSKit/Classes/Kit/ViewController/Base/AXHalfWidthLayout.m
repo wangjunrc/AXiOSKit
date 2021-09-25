@@ -7,7 +7,8 @@
 //
 
 #import "AXHalfWidthLayout.h"
-#import "AXiOSKit.h"
+#import "UIKit+AXAssistant.h"
+
 @implementation AXHalfWidthLayout
 //- (instancetype)init{
 //    self = [super init];

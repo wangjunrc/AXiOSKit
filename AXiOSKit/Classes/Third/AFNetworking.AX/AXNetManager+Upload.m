@@ -7,8 +7,7 @@
 //
 
 #import "AXNetManager+Upload.h"
-#if __has_include("AFNetworking.h")
-#import "MBProgressHUD+AX.h"
+#import <AFNetworking/AFNetworking.h>
 #import "AXMacros.h"
 #import "NSString+AXKit.h"
 #import "NSData+AXKit.h"
@@ -155,4 +154,4 @@
 
 
 @end
-#endif
+

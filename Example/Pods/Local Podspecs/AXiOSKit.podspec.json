@@ -42,8 +42,12 @@
       "frameworks": "Foundation"
     },
     {
-      "name": "Observe",
-      "source_files": "AXiOSKit/Classes/Observe/**/*.{h,m}",
+      "name": "Kit",
+      "source_files": "AXiOSKit/Classes/Kit/**/*.{h,m}",
+      "resources": [
+        "AXiOSKit/Classes/Kit/View/**/*.xib",
+        "AXiOSKit/Classes/Kit/View/**/*.nib"
+      ],
       "frameworks": [
         "Foundation",
         "UIKit"
@@ -51,18 +55,8 @@
       "dependencies": {
         "AXiOSKit/Foundation": [
 
-        ]
-      }
-    },
-    {
-      "name": "Kit",
-      "source_files": "AXiOSKit/Classes/Kit/**/*.{h,m}",
-      "frameworks": [
-        "Foundation",
-        "UIKit"
-      ],
-      "dependencies": {
-        "AXiOSKit/Foundation": [
+        ],
+        "Masonry": [
 
         ]
       }
@@ -72,29 +66,6 @@
       "source_files": "AXiOSKit/Classes/Helper/**/*.{h,m}"
     },
     {
-      "name": "View",
-      "source_files": "AXiOSKit/Classes/View/**/*.{h,m}",
-      "resources": [
-        "AXiOSKit/Classes/View/**/*.xib",
-        "AXiOSKit/Classes/View/**/*.nib"
-      ],
-      "frameworks": [
-        "Foundation",
-        "UIKit"
-      ],
-      "dependencies": {
-        "AXiOSKit/Kit": [
-
-        ],
-        "AXiOSKit/Observe": [
-
-        ],
-        "Masonry": [
-
-        ]
-      }
-    },
-    {
       "name": "AXViewControllerTransitioning",
       "source_files": "AXiOSKit/Classes/AXViewControllerTransitioning/**/*.{h,m}",
       "frameworks": [
@@ -102,27 +73,30 @@
         "UIKit"
       ],
       "dependencies": {
+        "AXiOSKit/Foundation": [
+
+        ],
         "AXiOSKit/Kit": [
 
         ]
       }
     },
     {
-      "name": "ViewController",
-      "source_files": "AXiOSKit/Classes/ViewController/**/*.{h,m}",
+      "name": "Parts",
+      "source_files": "AXiOSKit/Classes/Parts/**/*.{h,m}",
       "resources": [
-        "AXiOSKit/Classes/ViewController/**/*.xib",
-        "AXiOSKit/Classes/ViewController/**/*.nib"
+        "AXiOSKit/Classes/Parts/**/*.xib",
+        "AXiOSKit/Classes/Parts/**/*.nib"
       ],
       "frameworks": [
         "Foundation",
         "UIKit"
       ],
       "dependencies": {
-        "AXiOSKit/Kit": [
+        "AXiOSKit/Foundation": [
 
         ],
-        "AXiOSKit/Observe": [
+        "AXiOSKit/Kit": [
 
         ],
         "AXiOSKit/AXViewControllerTransitioning": [
@@ -147,6 +121,9 @@
         "UIKit"
       ],
       "dependencies": {
+        "AXiOSKit/Foundation": [
+
+        ],
         "AXiOSKit/Kit": [
 
         ]
@@ -160,6 +137,9 @@
         "UIKit"
       ],
       "dependencies": {
+        "AXiOSKit/Foundation": [
+
+        ],
         "AXiOSKit/Kit": [
 
         ],
@@ -176,6 +156,9 @@
         "UIKit"
       ],
       "dependencies": {
+        "AXiOSKit/Foundation": [
+
+        ],
         "AXiOSKit/Kit": [
 
         ],
@@ -192,6 +175,9 @@
         "UIKit"
       ],
       "dependencies": {
+        "AXiOSKit/Foundation": [
+
+        ],
         "AXiOSKit/Kit": [
 
         ],
@@ -208,6 +194,9 @@
         "UIKit"
       ],
       "dependencies": {
+        "AXiOSKit/Foundation": [
+
+        ],
         "AXiOSKit/Kit": [
 
         ],
@@ -230,6 +219,9 @@
         "UIKit"
       ],
       "dependencies": {
+        "AXiOSKit/Foundation": [
+
+        ],
         "AXiOSKit/Kit": [
 
         ],
@@ -246,6 +238,9 @@
         "UIKit"
       ],
       "dependencies": {
+        "AXiOSKit/Foundation": [
+
+        ],
         "AXiOSKit/Kit": [
 
         ],

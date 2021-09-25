@@ -237,37 +237,6 @@ BOOL ax_isiPad(void) {
     }
 }
 
-#pragma mark - UIKit
-
-/**
- 创建xib
- 
- @param name xib 名称
- @return UINib
- */
-UINib *ax_Nib(NSString *name) { return [UINib nibWithNibName:name bundle:nil]; }
-
-/**
- 创建xib
- 
- @param aClass 必须 xib 同名称
- @return UINib
- */
-UINib *ax_NibClass(Class aClass) {
-    NSString *name = NSStringFromClass(aClass);
-    return  [UINib nibWithNibName:name bundle:[NSBundle bundleForClass:aClass]];
-    
-}
-
-/**
- UIImage
- 
- @param name 图片名
- @return UIImage
- */
-UIImage *ax_Image(NSString *name) {
-    return [UIImage imageNamed:name];
-}
 
 /**
  gcd 创建串行队列 queue

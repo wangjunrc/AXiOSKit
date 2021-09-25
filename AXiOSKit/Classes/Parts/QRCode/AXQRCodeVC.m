@@ -8,7 +8,8 @@
 
 #import "AXQRCodeVC.h"
 #import <AVFoundation/AVFoundation.h>
-#import "AXiOSKit.h"
+#import "NSObject+AXAssistant.h"
+
 typedef void(^QRCodeBlock)(NSString *code);
 
 @interface AXQRCodeVC ()<AVCaptureMetadataOutputObjectsDelegate,UIGestureRecognizerDelegate>
@@ -201,7 +202,7 @@ typedef void(^QRCodeBlock)(NSString *code);
 }
 
 - (void)dealloc{
-    axLong_dealloc ;
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
 }

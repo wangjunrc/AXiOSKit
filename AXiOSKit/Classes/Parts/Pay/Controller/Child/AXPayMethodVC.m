@@ -8,8 +8,7 @@
 #import "AXPayMethodVC.h"
 #import <Masonry/Masonry.h>
 #import "AXChoosePayStyleCell.h"
-#import "AXiOSKit.h"
-
+#import "UIKit+AXAssistant.h"
 @interface AXPayMethodVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *tableView;
@@ -18,7 +17,7 @@
 @end
 
 @implementation AXPayMethodVC
-
+static NSString *cellID = @"cellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,7 +44,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    AXChoosePayStyleCell *cell = [tableView dequeueReusableCellWithIdentifier:k_axCellID forIndexPath:indexPath];
+    AXChoosePayStyleCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
     AXChoosePayModel *model = self.dataArray[indexPath.row];
     
@@ -84,7 +83,7 @@
         tableView.rowHeight = 80;
         tableView.separatorInset = UIEdgeInsetsZero;
         tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
-        [tableView registerNib:ax_NibClass(AXChoosePayStyleCell.class) forCellReuseIdentifier:k_axCellID];
+        [tableView registerNib:ax_NibClass(AXChoosePayStyleCell.class) forCellReuseIdentifier:cellID];
         _tableView = tableView;
     }
     return _tableView;

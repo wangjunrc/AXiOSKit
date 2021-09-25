@@ -58,46 +58,32 @@ Pod::Spec.new do |s|
         ss.frameworks = 'Foundation'
     end
     
-    s.subspec 'Observe' do |ss|
-        ss.source_files = 'AXiOSKit/Classes/Observe/**/*.{h,m}'
-        ss.frameworks = 'Foundation', 'UIKit'
-        ss.dependency 'AXiOSKit/Foundation'
-    end
-    
-    
     s.subspec 'Kit' do |ss|
         ss.source_files = 'AXiOSKit/Classes/Kit/**/*.{h,m}'
+        ss.resources = ['AXiOSKit/Classes/Kit/View/**/*.xib','AXiOSKit/Classes/Kit/View/**/*.nib']
         ss.frameworks = 'Foundation', 'UIKit'
         ss.dependency 'AXiOSKit/Foundation'
+        ss.dependency 'Masonry'
     end
     
     s.subspec 'Helper' do |ss|
         ss.source_files = 'AXiOSKit/Classes/Helper/**/*.{h,m}'
     end
     
-    
-    s.subspec 'View' do |ss|
-        ss.source_files = 'AXiOSKit/Classes/View/**/*.{h,m}'
-        ss.resources = ['AXiOSKit/Classes/View/**/*.xib','AXiOSKit/Classes/View/**/*.nib']
-        ss.frameworks = 'Foundation', 'UIKit'
-        ss.dependency 'AXiOSKit/Kit'
-        ss.dependency 'AXiOSKit/Observe'
-        ss.dependency 'Masonry'
-    end
-    
     s.subspec 'AXViewControllerTransitioning' do |ss|
         ss.source_files = 'AXiOSKit/Classes/AXViewControllerTransitioning/**/*.{h,m}'
         ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Foundation'
         ss.dependency 'AXiOSKit/Kit'
         s.dependency 'ReactiveObjC'
     end
     
-    s.subspec 'ViewController' do |ss|
-        ss.source_files = 'AXiOSKit/Classes/ViewController/**/*.{h,m}'
-        ss.resources = ['AXiOSKit/Classes/ViewController/**/*.xib','AXiOSKit/Classes/ViewController/**/*.nib']
+    s.subspec 'Parts' do |ss|
+        ss.source_files = 'AXiOSKit/Classes/Parts/**/*.{h,m}'
+        ss.resources = ['AXiOSKit/Classes/Parts/**/*.xib','AXiOSKit/Classes/Parts/**/*.nib']
         ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Foundation'
         ss.dependency 'AXiOSKit/Kit'
-        ss.dependency 'AXiOSKit/Observe'
         ss.dependency 'AXiOSKit/AXViewControllerTransitioning'
         ss.dependency 'Masonry'
         ss.dependency 'SDWebImage'
@@ -107,12 +93,14 @@ Pod::Spec.new do |s|
     s.subspec 'Manager' do |ss|
         ss.source_files = 'AXiOSKit/Classes/Manager/**/*.{h,m}'
         ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Foundation'
         ss.dependency 'AXiOSKit/Kit'
     end
     
     s.subspec 'AXToAFNetworking' do |ss|
         ss.source_files = 'AXiOSKit/Classes/Third/AFNetworking.AX/*.{h,m}'
         ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Foundation'
         ss.dependency 'AXiOSKit/Kit'
         ss.dependency 'AFNetworking'
     end
@@ -120,6 +108,7 @@ Pod::Spec.new do |s|
     s.subspec 'AXToDZNEmptyDataSet' do |ss|
         ss.source_files = 'AXiOSKit/Classes/Third/DZNEmptyDataSet.AX/*.{h,m}'
         ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Foundation'
         ss.dependency 'AXiOSKit/Kit'
         ss.dependency 'DZNEmptyDataSet'
     end
@@ -127,6 +116,7 @@ Pod::Spec.new do |s|
     s.subspec 'AXToFMDB' do |ss|
         ss.source_files = 'AXiOSKit/Classes/Third/FMDB.AX/*.{h,m}'
         ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Foundation'
         ss.dependency 'AXiOSKit/Kit'
         ss.dependency 'FMDB'
     end
@@ -134,6 +124,7 @@ Pod::Spec.new do |s|
     s.subspec 'AXToMBProgressHUD' do |ss|
         ss.source_files = 'AXiOSKit/Classes/Third/MBProgressHUD.AX/*.{h,m}'
         ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Foundation'
         ss.dependency 'AXiOSKit/Kit'
         ss.dependency 'AXiOSKit/Helper'
         ss.dependency 'MBProgressHUD'
@@ -143,6 +134,7 @@ Pod::Spec.new do |s|
     s.subspec 'AXToMJRefresh' do |ss|
         ss.source_files = 'AXiOSKit/Classes/Third/MJRefresh.AX/*.{h,m}'
         ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Foundation'
         ss.dependency 'AXiOSKit/Kit'
         ss.dependency 'MJRefresh'
     end
@@ -150,6 +142,7 @@ Pod::Spec.new do |s|
     s.subspec 'AXToSDWebImage' do |ss|
         ss.source_files = 'AXiOSKit/Classes/Third/SDWebImage.AX/*.{h,m}'
         ss.frameworks = 'Foundation', 'UIKit'
+        ss.dependency 'AXiOSKit/Foundation'
         ss.dependency 'AXiOSKit/Kit'
         ss.dependency 'SDWebImage'
     end

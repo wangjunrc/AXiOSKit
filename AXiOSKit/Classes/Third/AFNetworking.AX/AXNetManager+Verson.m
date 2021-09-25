@@ -7,7 +7,7 @@
 //
 
 #import "AXNetManager+Version.h"
-#if __has_include("AFNetworking.h")
+#import <AFNetworking/AFNetworking.h>
 #import "NSString+AXKit.h"
 #import "NSObject+AXLoger.h"
 @implementation AXNetManager (Version)
@@ -82,5 +82,3 @@
 }
 
 @end
-
-#endif

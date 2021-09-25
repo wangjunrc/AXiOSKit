@@ -7,7 +7,8 @@
 //
 
 #import "AXKitViewController.h"
-#import "AXiOSKit.h"
+#import "NSObject+AXLoger.h"
+
 @interface AXKitViewController ()
 
 @end
