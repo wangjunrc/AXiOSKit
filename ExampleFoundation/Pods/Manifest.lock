@@ -1,16 +1,20 @@
 PODS:
-  - AXiOSKit/Foundation (2.0.0)
+  - AXiOSKit/Foundation (2.0.1):
+    - ReactiveObjC
+  - ReactiveObjC (3.1.1)
 
 DEPENDENCIES:
-  - AXiOSKit/Foundation (from `../`)
+  - AXiOSKit/Foundation (~> 2.0)
 
-EXTERNAL SOURCES:
-  AXiOSKit:
-    :path: "../"
+SPEC REPOS:
+  trunk:
+    - AXiOSKit
+    - ReactiveObjC
 
 SPEC CHECKSUMS:
-  AXiOSKit: 9f4e26fa6b93f3504629dd983cffc6601c935464
+  AXiOSKit: 84671c07bfe2697dfcc89d649a6a5809eb4ec2c7
+  ReactiveObjC: c80676b38445a1beebc17defd47c1152a1f1e661
 
-PODFILE CHECKSUM: 45ee49b06b6a541bb2f255d4c4358a31b5c9a7e3
+PODFILE CHECKSUM: 37745cf129b0c7584270e5f4c228f391eaf1947c
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
