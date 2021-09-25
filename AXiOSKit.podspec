@@ -51,7 +51,6 @@ Pod::Spec.new do |s|
         'AXiOSKit/README/*.{md}'],
     }
     
-    
     # 多个模块之间,不能import隔壁模块的,要用子库的spec依赖其他subspec·
     s.subspec 'Foundation' do |ss|
         #        ss.public_header_files = 'AXiOSKit/Classes/Foundation/AXiOSFoundation.h'
@@ -92,7 +91,6 @@ Pod::Spec.new do |s|
         ss.dependency 'AXiOSKit/Kit'
         s.dependency 'ReactiveObjC'
     end
-    
     
     s.subspec 'ViewController' do |ss|
         ss.source_files = 'AXiOSKit/Classes/ViewController/**/*.{h,m}'
@@ -142,7 +140,6 @@ Pod::Spec.new do |s|
         ss.dependency 'lottie-ios', '~>2.5.3'
     end
     
-    
     s.subspec 'AXToMJRefresh' do |ss|
         ss.source_files = 'AXiOSKit/Classes/Third/MJRefresh.AX/*.{h,m}'
         ss.frameworks = 'Foundation', 'UIKit'
@@ -150,15 +147,12 @@ Pod::Spec.new do |s|
         ss.dependency 'MJRefresh'
     end
     
-    
     s.subspec 'AXToSDWebImage' do |ss|
         ss.source_files = 'AXiOSKit/Classes/Third/SDWebImage.AX/*.{h,m}'
         ss.frameworks = 'Foundation', 'UIKit'
         ss.dependency 'AXiOSKit/Kit'
         ss.dependency 'SDWebImage'
     end
-    
-    
     
     #    假如把一个framework 制作成cocopod
     #s.resources    = "MAMapKit.framework/*.bundle"
