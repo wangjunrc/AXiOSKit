@@ -29,5 +29,5 @@ pod 'AXiOSKit/AXToSDWebImage'
 ```
 
 # 笔记
-[代码笔记](file:..AXiOSKit/README/_code.md) 
+<a href="../AXiOSKit/README/_code.md">代码笔记</a>
 
