@@ -6,11 +6,11 @@
 //  Copyright © 2021 axinger. All rights reserved.
 //
 
-#import "DemoContainerViewController.h"
+#import "DemoScrollViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _38DirectionVC : DemoContainerViewController
+@interface _38DirectionVC : DemoScrollViewController
 
 @end
 

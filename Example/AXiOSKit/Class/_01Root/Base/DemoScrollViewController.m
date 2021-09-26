@@ -6,15 +6,15 @@
 //  Copyright © 2020 axinger. All rights reserved.
 //
 
-#import "DemoContainerViewController.h"
+#import "DemoScrollViewController.h"
 
-@interface DemoContainerViewController ()
+@interface DemoScrollViewController ()
 
 //@property(nonatomic, strong) UIScrollView *scrollView;
 
 @end
 
-@implementation DemoContainerViewController
+@implementation DemoScrollViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -6,11 +6,11 @@
 //  Copyright © 2020 liuweixing. All rights reserved.
 //
 
-#import "DemoContainerViewController.h"
+#import "DemoScrollViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _09AFNViewController : DemoContainerViewController
+@interface _09AFNViewController : DemoScrollViewController
 
 @end
 

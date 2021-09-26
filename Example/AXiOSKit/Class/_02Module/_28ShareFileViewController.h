@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DemoContainerViewController.h"
+#import "DemoScrollViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _28ShareFileViewController : DemoContainerViewController
+@interface _28ShareFileViewController : DemoScrollViewController
 
 @end
 

@@ -52,7 +52,7 @@
         UINavigationBar.appearance.topItem.title = @"噢噢";
     }
     /// 返回按钮 颜色
-    self.navigationBar.tintColor = UIColor.purpleColor;
+    self.navigationBar.tintColor = UIColor.redColor;
     
     /// 导航栏背景图片
     UIImage *backgroundImg = [UIImage imageNamed:@"nav_bg_img_2"];
@@ -60,7 +60,7 @@
     backgroundImg = [backgroundImg resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch];
     [self.navigationBar setBackgroundImage:backgroundImg forBarMetrics:UIBarMetricsDefault];
     // 设置导航栏默认标题的颜色和字体的大小
-    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:UIColor.blueColor};
+    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:UIColor.whiteColor};
     
     
     //    [self setNavBarAppearence];
