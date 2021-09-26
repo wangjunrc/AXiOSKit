@@ -1,8 +1,8 @@
 //
-//  _03RootVC.h
+//  DemoBaseCollectionViewController.h
 //  AXiOSKit
 //
-//  Created by 小星星吃KFC on 2021/9/24.
+//  Created by axinger on 2021/9/26.
 //  Copyright © 2021 axinger. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _03RootVC : UIViewController
+@interface DemoBaseCollectionViewController : UICollectionViewController
 
 @end
 

@@ -1,31 +1,34 @@
 //
-//  _00SecondTableViewController.m
+//  _02RootVC.m
 //  AXiOSKit
 //
-//  Created by 小星星吃KFC on 2020/12/9.
-//  Copyright © 2020 axinger. All rights reserved.
+//  Created by 小星星吃KFC on 2021/9/24.
+//  Copyright © 2021 axinger. All rights reserved.
 //
 
-#import "_AXThemeCell.h"
 #import "_02RootVC.h"
-
+#import "AXDemoUser.h"
+#import "AXDemoUser2.h"
 #import "AXUserSwiftImport.h"
 #import "AppDelegate.h"
-#import "_AXThemeCell.h"
+#import "TestObj.h"
+#import "_02CollectionViewCell.h"
+#import "_AXCellItem.h"
 #import "_AXTestPerson.h"
 #import "_AXTestRouterManager.h"
-#import "TestObj.h"
+#import "_AXThemeCell.h"
+#import "_AXThemeCell.h"
+#import "_Person.h"
 #import <AXiOSKit/UIScrollView+AXEmptyDataSet.h>
 #import <AXiOSKit/UIViewController+AXNavBarConfig.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
+#import <MJExtension/MJExtension.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <SSZipArchive/SSZipArchive.h>
 #import <TABAnimated/TABAnimated.h>
 #import <mach/mach.h>
-#import "AXDemoUser.h"
-#import "AXDemoUser2.h"
-#import "_Person.h"
-#import <MJExtension/MJExtension.h>
+#import <AXiOSKit/UIView+AXHUD.h>
+
 @import AssetsLibrary;
 @import CocoaDebug;
 
@@ -65,359 +68,124 @@ static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 
 #import "_01ContentViewController.h"
 
-@interface _02RootVC ()
+@interface _02RootVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
+
+@property(nonatomic,strong)UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSMutableArray<_AXCellItem *> *dataArray;
 
 @end
 
+@interface _02Layout : UICollectionViewFlowLayout
+
+
+@end
+
+@implementation _02Layout
+
+- (CGSize)fixedCollectionCellSize:(CGSize)size {
+    CGFloat scale = [UIScreen mainScreen].scale;
+    return CGSizeMake(round(scale * size.width) / scale, round(scale * size.height) / scale);
+}
+- (void)invalidateLayout{
+    [super invalidateLayout];
+    
+    self.sectionInset = UIEdgeInsetsZero;//分区间的内边距
+    //minimumLineSpacing = 0;这个是水平的间距 minimumInteritemSpacing
+    self.minimumInteritemSpacing = 0;//列间距
+    self.minimumLineSpacing = 10;//行间距
+    
+    //    self.itemSize = CGSizeMake(self.collectionView.bounds.size.width/3.0, 50); //item尺寸
+    self.scrollDirection =UICollectionViewScrollDirectionVertical;//滚动方向
+    //    self.scrollDirection =UICollectionViewScrollDirectionHorizontal;//滚动方向
+    /// ios10 api
+    //    self.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize;
+    
+    
+    
+    //    self.itemSize = UICollectionViewFlowLayoutAutomaticSize;
+    ////    estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize;
+    ///
+    //    self.estimatedItemSize = CGSizeMake(self.collectionView.bounds.size.width/3.0, 50); //item尺寸
+    
+    
+    
+    self.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize;
+    self.itemSize = UICollectionViewFlowLayoutAutomaticSize;
+}
+
+
+@end
 @implementation _02RootVC
+static NSString *cellID = @"cellID";
+
+
+- (CGSize)fixedCollectionCellSize:(CGSize)size {
+    CGFloat scale = [UIScreen mainScreen].scale;
+    return CGSizeMake(round(scale * size.width) / scale, round(scale * size.height) / scale);
+}
+
+//只要itemSize的width的小数点后只有1位且最小为5也就是满足1px=0.5pt这个等式。
+- (CGFloat )fixSlitWith:(CGRect)rect colCount:(CGFloat)colCount space:(CGFloat)space {
+    //    space = 0;
+    CGFloat totalSpace = (colCount - 1) * space;//总共留出的距离
+    CGFloat itemWidth = (rect.size.width - totalSpace) / colCount;// 按照真实屏幕算出的cell宽度 （iPhone6 375*667）93.75
+    CGFloat fixValue = 1 / [UIScreen mainScreen].scale; //(6为1px=0.5pt,6Plus为3px=1pt)1个点有两个像素
+    CGFloat realItemWidth = floor(itemWidth) + fixValue;//取整加fixValue  floor:如果参数是小数，则求最大的整数但不大于本身.
+    if (realItemWidth < itemWidth) {// 有可能原cell宽度小数点后一位大于0.5
+        realItemWidth += fixValue;
+    }
+    
+    CGFloat realWidth = colCount * realItemWidth + totalSpace;//算出屏幕等分后满足`1px=0.5pt`实际的宽度
+    CGFloat pointX = (realWidth - rect.size.width) / 2; //偏移距离
+    rect.origin.x = -pointX;//向左偏移
+    rect.size.width = realWidth;
+    
+    return realItemWidth;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[TABAnimated sharedAnimated] initWithOnlySkeleton];
-    [TABAnimated sharedAnimated].openLog = YES;
-    
-    self.navigationItem.title = @"主题2";
-    /// 导航栏颜色
-    [self ax_setNavBarBackgroundImageWithColor:UIColor.cyanColor];
-    
-    [self _configItem];
-    self.tableView.tableFooterView = UIView.alloc.init;
-    [self.tableView registerClass:_AXThemeCell.class forCellReuseIdentifier:@"_AXThemeCell"];
-    self.dataArray = nil;
-    [self.tableView reloadData];
-    /// 多选
-    self.tableView.allowsMultipleSelectionDuringEditing = YES;
-    
-    // 设置tabAnimated相关属性
-    // 可以不进行手动初始化，将使用默认属性
-    self.tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[_AXThemeCell class] cellHeight:120];
-    self.tableView.tabAnimated.canLoadAgain = YES;
-    self.tableView.tabAnimated.adjustBlock = ^(TABComponentManager * _Nonnull manager) {
-        //        manager.animation(1).down(3).height(12);
-        //        manager.animation(2).height(12).reducedWidth(70);
-        //        manager.animation(3).down(-5).height(12).radius(0.).reducedWidth(-20);
-        
-        //        manager.animationN(@"textLabel").right(50).radius(12);
-        //            manager.animationN(@"nameLabel").height(12).width(110);
-        //            manager.animationN(@"timeButton").down(-5).height(12);
-        //        manager.animationN(@"logoImgView").height(40).width(40);
-        manager.animationN(@"titleLabel").height(20).right(10);
-        manager.animationN(@"detailLabel").height(20).reducedWidth(70);
-        //        manager.animationN(@"statusBtn").down(-5).height(12).radius(0.).reducedWidth(-20);
-        
-        
-    };
-    
-}
-
--(void)_configItem {
-    __weak typeof(self) weakSelf = self;
-    NSMutableArray <UIBarButtonItem *> *temp = NSMutableArray.array;
-    
-    {
-        UIButton *btn = [[UIButton alloc]init];
-        [btn setTitle:@"编辑" forState:UIControlStateNormal];
-        btn.backgroundColor = UIColor.blueColor;
-        [btn ax_addTargetBlock:^(UIButton * _Nullable button) {
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            [strongSelf.tableView setEditing:!strongSelf.tableView.isEditing animated:YES];
-        }];
-        [temp addObject:[UIBarButtonItem ax_itemByButton:btn]];
-    }
-    
-    {
-        
-        UIButton *btn = [[UIButton alloc]init];
-        [btn setTitle:@"删除" forState:UIControlStateNormal];
-        btn.backgroundColor = UIColor.blueColor;
-        [btn addTarget:self action:@selector(deleteAction:) forControlEvents:UIControlEventTouchUpInside];
-        [temp addObject:[UIBarButtonItem ax_itemByButton:btn]];
-    }
-    
-    {
-        
-        UIButton *btn = [[UIButton alloc]init];
-        [btn setTitle:@"刷新" forState:UIControlStateNormal];
-        btn.backgroundColor = UIColor.blueColor;
-        [btn addTarget:self action:@selector(reloadViewAnimated) forControlEvents:UIControlEventTouchUpInside];
-        [temp addObject:[UIBarButtonItem ax_itemByButton:btn]];
-    }
-    self.navigationItem.rightBarButtonItems = temp;
-}
-
-- (void)reloadViewAnimated {
-    self.tableView.tabAnimated.canLoadAgain = YES;
-    [self.tableView tab_startAnimationWithCompletion:^{
-        [self afterGetData];
+    self.title = @"测试";
+    self.view.backgroundColor = UIColor.groupTableViewBackgroundColor;
+    self.collectionView.backgroundColor = UIColor.groupTableViewBackgroundColor;
+    [self.collectionView registerClass:_02CollectionViewCell.class forCellWithReuseIdentifier:cellID];
+    [self.view addSubview:self.collectionView];
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        CGFloat margin  = self.view.bounds.size.width -[self fixSlitWith:self.view.bounds colCount:3 space:0]*3;
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, margin, 0,0));
     }];
-}
-/**
- 获取到数据后
- */
-- (void)afterGetData {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        // 停止动画,并刷新数据
-        [self.tableView tab_endAnimationEaseOut];
-    });
-}
-
--(void)deleteAction:(UIButton *)btn {
-    
-}
-// 实现UITableViewDelegate的两个代理
-
-/// iOS13是否允许多指选中
-
--(BOOL)tableView:(UITableView *)tableView shouldBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return YES;
     
 }
 
-/// iOS13多指选中开始，这里可以做一些UI修改，比如修改导航栏上按钮的文本
-
--(void)tableView:(UITableView *)tableView didBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)indexPath {
-    
-    // 最后当用户选择完，要做某些操作的时候，我们可以用 tableView.indexPathsForSelectedRows 获取用户选择的 rows。
-    
-}
-
-
-
-- (void)test {
-    NSLog(@"5");
-}
-
-///保存系统函数地址
-static void (*replacedLog)(NSString *format, ...);
-
-void mySLog(NSString *format, ...)
-{
-    replacedLog(@"%@", [format stringByAppendingString:@"被HOOK了"]);
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 44;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"测试";
-}
--(CGFloat )tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //    return UITableViewAutomaticDimension;
-    return 120;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //    return UITableViewAutomaticDimension;
-    return 120;
-}
-- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
-    view.tintColor = [UIColor groupTableViewBackgroundColor];
-    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    //   header.contentView.backgroundColor=UIColor.whiteColor;
-    header.textLabel.textAlignment = NSTextAlignmentCenter;
-    header.textLabel.font = [UIFont systemFontOfSize:20];
-    [header.textLabel setTextColor:UIColor.redColor];
-}
-
-//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return UITableViewAutomaticDimension;
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return UITableViewAutomaticDimension;
-//}
-
-- (NSInteger)   tableView:(UITableView *)tableView
-    numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.dataArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    _AXThemeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"_AXThemeCell" forIndexPath:indexPath];
-    
-    _AXCellItem *option = self.dataArray[indexPath.row];
-    cell.option = option;
-    cell.titleLabel.text = [NSString stringWithFormat:@"%ld-%@",(long)indexPath.row,option.title];
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    _02CollectionViewCell *cell =  [collectionView  dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
+    _AXCellItem *item = self.dataArray[indexPath.item];
+    cell.nameLabel.text = [NSString stringWithFormat:@"%ld-%@",(long)indexPath.row,item.title];
+    cell.detaLabel.text = item.detail;
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (tableView.isEditing) {
-        return;
-    }
-    _AXCellItem *option  = self.dataArray[indexPath.row];
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    _AXCellItem *option  = self.dataArray[indexPath.item];
     if (option.action) {
         option.action();
     }
 }
 
-
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    CGFloat contentOffsetY = scrollView.contentOffset.y;
-//  CGFloat sectionHeiderHeight = 400; //tabler section 悬停在指定位置处理
-//    if (scrollView.contentOffset.y < sectionHeiderHeight) {
-//        scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-//    }else {
-//        scrollView.contentInset = UIEdgeInsetsMake(sectionHeiderHeight, 0, 0, 0);
-//   }
-//}
-
-
-
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-//    tableView.backgroundColor = UIColor.whiteColor;
-//    // 圆角角度
-//      CGFloat radius = 10.f;
-//      // 设置cell 背景色为透明
-//      cell.backgroundColor = UIColor.clearColor;
-//      // 创建两个layer
-//      CAShapeLayer *normalLayer = [[CAShapeLayer alloc] init];
-//      CAShapeLayer *selectLayer = [[CAShapeLayer alloc] init];
-//      // 获取显示区域大小
-//      CGRect bounds = CGRectInset(cell.bounds, 10, 0);
-//      // 获取每组行数
-//      NSInteger rowNum = [tableView numberOfRowsInSection:indexPath.section];
-//      // 贝塞尔曲线
-//      UIBezierPath *bezierPath = nil;
-//
-//    if (rowNum == 1) {
-//        // 一组只有一行（四个角全部为圆角）
-//        bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds
-//                                           byRoundingCorners:UIRectCornerAllCorners
-//                                                 cornerRadii:CGSizeMake(radius, radius)];
-//    } else {
-//        if (indexPath.row == 0) {
-//            // 每组第一行（添加左上和右上的圆角）
-//            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds
-//                                               byRoundingCorners:(UIRectCornerTopLeft|UIRectCornerTopRight)
-//                                                     cornerRadii:CGSizeMake(radius, radius)];
-//
-//        } else if (indexPath.row == rowNum - 1) {
-//            // 每组最后一行（添加左下和右下的圆角）
-//            bezierPath = [UIBezierPath bezierPathWithRoundedRect:bounds
-//                                               byRoundingCorners:(UIRectCornerBottomLeft|UIRectCornerBottomRight)
-//                                                     cornerRadii:CGSizeMake(radius, radius)];
-//        } else {
-//            // 每组不是首位的行不设置圆角
-//            bezierPath = [UIBezierPath bezierPathWithRect:bounds];
-//        }
-//    }
-//    // 把已经绘制好的贝塞尔曲线路径赋值给图层，然后图层根据path进行图像渲染render
-//    normalLayer.path = bezierPath.CGPath;
-//    selectLayer.path = bezierPath.CGPath;
-//
-//
-//    UIView *nomarBgView = [[UIView alloc] initWithFrame:bounds];
-//    // 设置填充颜色
-////    normalLayer.fillColor = [UIColor redColor].CGColor;
-//    normalLayer.fillColor = [UIColor groupTableViewBackgroundColor].CGColor;
-//    // 添加图层到nomarBgView中
-//    [nomarBgView.layer insertSublayer:normalLayer atIndex:0];
-//    nomarBgView.backgroundColor = UIColor.clearColor;
-//    cell.backgroundView = nomarBgView;
-//
-//    UIView *selectBgView = [[UIView alloc] initWithFrame:bounds];
-//    selectLayer.fillColor = [UIColor orangeColor].CGColor;
-//    [selectBgView.layer insertSublayer:selectLayer atIndex:0];
-//    selectBgView.backgroundColor = UIColor.clearColor;
-//    cell.selectedBackgroundView = selectBgView;
-//
-//
-//}
-
-
-//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
-//}
-
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return YES;
-//}
-
-//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return UITableViewCellEditingStyleDelete;
-//}
-
-//- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return @"删除";
-//}
-
-//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (tableView.isEditing) {
-//        return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
-//    }
-//    return UITableViewCellEditingStyleDelete;
-//}
-
-
-//- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(11.0)){
-//
-//    //    NSString *title = @"置顶";
-//    //    if (indexPath.section == 0) {
-//    //        title = @"取消置顶";
-//    //    } else {
-//    //        title = @"置顶";
-//    //    }
-//    //    UIContextualAction *topAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:title handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {            // 这句很重要，退出编辑模式，隐藏左滑菜单
-//    //        [tableView setEditing:NO animated:YES];
-//    //        completionHandler(true);
-//    //    }];
-//
-//    UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
-//        action.title =@"删除1";
-//        action.image = [UIImage imageNamed:@"cell_right_delete"];
-//        // 这句很重要，退出编辑模式，隐藏左滑菜单
-//        [tableView setEditing:NO animated:YES];
-//        completionHandler(true);
-//    }];
-//    deleteAction.title =@"删除1";
-//    deleteAction.image = [UIImage imageNamed:@"cell_right_delete"];
-//    UISwipeActionsConfiguration *actions = [UISwipeActionsConfiguration configurationWithActions:@[deleteAction]];
-//    // 禁止侧滑无线拉伸
-//    actions.performsFirstActionWithFullSwipe = NO;
-//    return actions;
-//}
-
-//- (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    for (UIView *subview in tableView.subviews) {
-//        if ([NSStringFromClass([subview class]) isEqualToString:@"UISwipeActionPullView"]) {
-//            if ([NSStringFromClass([subview.subviews[0] class]) isEqualToString:@"UISwipeActionStandardButton"]) {
-//                UIButton *collectBtn = subview.subviews[0];
-//                collectBtn.backgroundColor = [UIColor greenColor];
-//                [collectBtn setImage:[UIImage imageNamed:@"cell_right_delete"] forState:UIControlStateNormal];
-//                [collectBtn setTitle:@"删除" forState:UIControlStateNormal];
-//            }
-//        }
-//    }
-//}
-
-
-- (void)testPerson {
-}
-
-- (void)testObj:(TestObj *)obj {
-    //    NSAssert([obj respondsToSelector:@selector(log)], @"对的不对");
-    
-    //    if( [obj instancesRespondToSelector:@selector(log)] ) {
-    //
-    //    }
-    
-    NSLog(@">>>> %d == %d", [obj.class instancesRespondToSelector:@selector(log)],
-          [obj.class instancesRespondToSelector:@selector(log2)]);
-    
-    NSLog(@"=== %d", [obj respondsToSelector:@selector(log)]);
-    
-    if ([obj.class instancesRespondToSelector:@selector(log)]) {
-        [obj log];
-    } else {
-        NSLog(@"未z实现");
+- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        _02Layout *layout = _02Layout.alloc.init;
+        _collectionView = [UICollectionView.alloc initWithFrame:CGRectZero collectionViewLayout:layout];
     }
+    return _collectionView;
 }
 
 #pragma mark -  数据源
@@ -981,12 +749,12 @@ void mySLog(NSString *format, ...)
         
         
         NSLog(@"AXDemoUser age=%@",[AXDemoUser.sharedUser mj_JSONObject]);
-    
+        
     }];
     [tempArray addTitle:@"单例宏,取消单例" detail:nil action:^(_AXCellItem *option) {
         [AXDemoUser cancelSingleton];
         NSLog(@"AXDemoUser age=%@",[AXDemoUser.sharedUser mj_JSONObject]);
-    
+        
     }];
     
     [tempArray addTitle:@"单例能继承" detail:nil action:^(_AXCellItem *option) {
@@ -1047,19 +815,18 @@ void mySLog(NSString *format, ...)
         
     }];
     
+    [tempArray addTitle:@"MBProgressHUD" detail: @"ax_showSuccess" action:^(_AXCellItem *option) {
+        [self.view ax_showSuccess:@"成功,会自动消失"];
+    }];
+    
+    [tempArray addTitle:@"MBProgressHUD" detail: @"ax_showError" action:^(_AXCellItem *option) {
+        [self.view ax_showError:@"失败,会自动消失"];
+    }];
+    [tempArray addTitle:@"MBProgressHUD" detail: @"ax_showWarning" action:^(_AXCellItem *option) {
+        [self.view ax_showWarning:@"警告,会自动消失"];
+    }];
+    
     return tempArray;
 }
-
-- (BOOL)shouldAutorotate {
-    
-    return NO;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-
 
 @end

@@ -15,7 +15,7 @@
 #import "DemoTabBarController.h"
 #import <AXiOSKit/AXConfigureManager.h>
 #import "_02RootVC.h"
-#import "_03RootVC.h"
+#import "_02RootVC.h"
 #import "AXTabBarController.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 
@@ -82,6 +82,10 @@
         standardAppearance.shadowColor = [UIColor redColor];
         // standardAppearance.shadowImage = [[self class] imageWithColor:[UIColor cyl_systemGreenColor] size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 1)];
         self.tabBar.standardAppearance = standardAppearance;
+        
+        
+        
+        
     } else {
         // Override point for customization after application launch.
         // set the text Attributes
@@ -99,6 +103,35 @@
         /// 背景色
         [self.tabBar setBarTintColor:UIColor.orangeColor];
         
+    }
+    
+    
+    if (@available(iOS 15.0, *)) {
+        UITabBarAppearance *appearance = UITabBarAppearance.alloc.init;
+        appearance.backgroundColor = UIColor.purpleColor;
+        /// 未被选中的文字颜色
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.whiteColor};
+        appearance.stackedLayoutAppearance.normal.iconColor = UIColor.whiteColor;
+        
+        
+        appearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffsetMake(15, 4);
+        
+        
+        // 设置被选中时的颜色
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.greenColor};
+        /// 选中图片颜色
+        appearance.stackedLayoutAppearance.selected.iconColor = UIColor.greenColor;
+        
+        
+        //         viewController.tabBarItem.standardAppearance = appearance;
+        
+        
+        //        barApp.backgroundImage = [UIImage imageNamed:@"exporte"];
+        
+        
+        //        appearance.selectionIndicatorTintColor = UIColor.redColor;
+        self.tabBar.scrollEdgeAppearance = appearance;
+        self.tabBar.standardAppearance = appearance;
     }
     
 }
@@ -257,6 +290,12 @@
         [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
         //        [[UITabBar appearance] setShadowImage:[[self class] imageWithColor:[UIColor cyl_systemGreenColor] size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 1)]];
     }
+    
+    
+    
+    
+    
+    
 }
 
 
@@ -344,14 +383,6 @@
               @"CYLTabBarItemSelectedImage" :[UIImage imageNamed:@"fishpond_highlight"],
               @"CYLTabBarLottieURL" : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_discover" ofType:@"json"]],
             },
-            @{@"vc":_03RootVC.alloc.init,
-              @"CYLTabBarItemTitle" : @"测试方法",
-              @"CYLTabBarItemImage" : [UIImage imageNamed:@"fishpond_normal"],
-              @"CYLTabBarItemSelectedImage" :[UIImage imageNamed:@"fishpond_highlight"],
-              @"CYLTabBarLottieURL" : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_discover" ofType:@"json"]],
-            },
-            
-            
         ];
     }
     return _dataArray;
