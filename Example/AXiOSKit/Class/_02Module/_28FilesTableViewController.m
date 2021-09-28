@@ -6,16 +6,16 @@
 //  Copyright © 2021 axinger. All rights reserved.
 //
 
-#import "_44FilesTableViewController.h"
+#import "_28FilesTableViewController.h"
 #import <AXiOSKit/AXiOSKit.h>
-@interface _44FilesTableViewController ()
+@interface _28FilesTableViewController ()
 
 @property(nonatomic,strong)UIBarButtonItem *editButtonItem;
 
 @property(nonatomic, strong) NSMutableArray *filePaths;
 @end
 
-@implementation _44FilesTableViewController
+@implementation _28FilesTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -88,7 +88,7 @@
     //判断是否是文件夹
     if ([self isDirectoryOfPath:filePath]) {
         
-        _44FilesTableViewController *vc = [_44FilesTableViewController new];
+        _28FilesTableViewController *vc = [_28FilesTableViewController new];
         vc.path = filePath;
         [self.navigationController pushViewController:vc animated:YES];
         

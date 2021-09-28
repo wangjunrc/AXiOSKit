@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _44FilesTableViewController : DemoBaseTableViewController
+@interface _28FilesTableViewController : DemoBaseTableViewController
 
 @property(nonatomic, strong) NSString *path;
 

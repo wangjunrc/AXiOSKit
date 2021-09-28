@@ -25,21 +25,33 @@
     if (@available(iOS 15.0, *)) {
         /// iOS 15 UITableView sectionHeader下移22像素
         UITableView.appearance.sectionHeaderTopPadding = 0;
+        
+        /// iOS 15 上苹果改变了导航条的部分默认行为，开发者可以自己重写：
+        [UINavigationBar.appearance setScrollEdgeAppearance:({
+            UINavigationBarAppearance *app = UINavigationBarAppearance.alloc.init;
+            [app configureWithDefaultBackground];
+            // init app property
+            // app.backgroundColor = xxx;
+            // app.shadowColor = xxx;
+            app;
+        })];
+        
+        
     }
     
     
     
-//    UIImage *image = [UIImage imageNamed:@"ax_bar_back"];
-//
-//    if (image) {
-//        /// 这个不行,只能换图片,不能换文字
-//        UINavigationBar.appearance.backIndicatorTransitionMaskImage = image;
-//        UINavigationBar.appearance.backIndicatorImage= image;
-//                UINavigationBar.appearance.backItem.title = @"";
-//                UINavigationBar.appearance.topItem.title = @"";
-//                [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[UINavigationController.class,DemoNavigationController.class]];
-//
-//    }
+    //    UIImage *image = [UIImage imageNamed:@"ax_bar_back"];
+    //
+    //    if (image) {
+    //        /// 这个不行,只能换图片,不能换文字
+    //        UINavigationBar.appearance.backIndicatorTransitionMaskImage = image;
+    //        UINavigationBar.appearance.backIndicatorImage= image;
+    //                UINavigationBar.appearance.backItem.title = @"";
+    //                UINavigationBar.appearance.topItem.title = @"";
+    //                [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[UINavigationController.class,DemoNavigationController.class]];
+    //
+    //    }
     
     //    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-30, -60) forBarMetrics:UIBarMetricsDefault];
     //    [UIBarButtonItem.appearance setBackButtonBackgroundVerticalPositionAdjustment:30 forBarMetrics:UIBarMetricsDefault];
@@ -66,9 +78,9 @@
     //    NSLog(@"isDirectory = %d",isDirectory);
     
     
-//    NSNumber *isDirectory = @(NO);
-//    NSURL *fileUrl = [NSURL fileURLWithPath:obj];
-//    [fileUrl getResourceValue:&isDirectory forKey:NSURLIsExcludedFromBackupKey error:nil];
+    //    NSNumber *isDirectory = @(NO);
+    //    NSURL *fileUrl = [NSURL fileURLWithPath:obj];
+    //    [fileUrl getResourceValue:&isDirectory forKey:NSURLIsExcludedFromBackupKey error:nil];
     
     /// 解决放在资源Document目录下，会被iTunes同步的问题
     NSString *path = [NSString.ax_documentDirectory stringByAppendingPathComponent:@"notiTunesSync"];

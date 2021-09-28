@@ -68,6 +68,7 @@
     /// iOS 15 适配
     if (@available(iOS 15.0, *)) {
         UINavigationBarAppearance *barApp = UINavigationBarAppearance.alloc.init;
+        [barApp configureWithDefaultBackground];
         
         //        if (backgroundImg) {
         //            barApp.backgroundColor = [UIColor colorWithPatternImage:backgroundImg];

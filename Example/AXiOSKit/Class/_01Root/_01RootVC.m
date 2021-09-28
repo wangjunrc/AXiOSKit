@@ -55,6 +55,7 @@
 #import "_26RMQClientViewController.h"
 #import "_27MQTTClientViewController.h"
 #import "_28ShareFileViewController.h"
+#import "_28DocumentPickerVC.h"
 #import "_29AudioViewController.h"
 #import "_30IGListViewController.h"
 #import "_31GCDViewController.h"
@@ -70,7 +71,7 @@
 #import "_41SlideHeadVC.h"
 #import "_42MantleVC.h"
 #import "_43ColorVC.h"
-#import "_44FilesTableViewController.h"
+#import "_28FilesTableViewController.h"
 
 #import "_45MXParallaxHeaderVC.h"
 #import "_AXCellItem.h"
@@ -95,7 +96,7 @@
 #import <fishhook/fishhook.h>
 
 
-@interface _01RootVC ()<UISearchControllerDelegate,UIDocumentPickerDelegate>
+@interface _01RootVC ()<UISearchControllerDelegate>
 
 @property (nonatomic, strong) AXSystemAuthorizerManager *authorizerManager;
 @property (nonatomic, strong) NSMutableArray<NSMutableArray<_AXCellItem *>*> *dataArray;
@@ -1316,6 +1317,37 @@ void newmethod(NSString *format,...) {
             };
         }
         
+        
+        [_1stArray addTitle:@"_28DocumentPickerVC" detail:@"打开文件系统,保存到文件系统" action:^(_AXCellItem * _Nonnull item) {
+            _28DocumentPickerVC *vc =
+            [[_28DocumentPickerVC alloc] init];
+            vc.title = item.detail;
+            [self ax_pushVC:vc];
+        }];
+        
+        
+        [_1stArray addTitle:@"第三方组件 FileBrowser,是一个UINavigationController" detail:@"文件浏览器" action:^(_AXCellItem * _Nonnull item) {
+            FileBrowser *vc = [FileBrowser.alloc init];
+            [self ax_showVC:vc];
+        }];
+        
+        
+        [_1stArray addTitle:@"第三方组件 _DirectoryContentsTableViewController " detail:@"文件浏览器" action:^(_AXCellItem * _Nonnull item) {
+            NSURL *homeFileURL = [NSURL fileURLWithPath:NSHomeDirectory() isDirectory:YES];
+            _DirectoryContentsTableViewController *vc = [[_DirectoryContentsTableViewController alloc] init];
+            vc.homeDirectory = YES;
+            vc.fileInfo = [[_FileInfo alloc] initWithFileURL:homeFileURL];
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+            [self ax_showVC:nav];
+        }];
+        
+        [_1stArray addTitle:@"_28FilesTableViewController" detail:@"自定义文件浏览器" action:^(_AXCellItem * _Nonnull item) {
+            _28FilesTableViewController *vc = [_28FilesTableViewController ax_init];
+            vc.title = item.detail;
+            [self ax_pushVC:vc];
+        }];
+        
+        
         {
             _AXCellItem *item = _AXCellItem.alloc.init;
             [_1stArray addObject:item];
@@ -1522,16 +1554,6 @@ void newmethod(NSString *format,...) {
             [self ax_pushVC:vc];
         }];
         
-      
-        [_1stArray ax_addItem:^(_AXCellItem * _Nonnull item) {
-            item.title = @"_44FilesTableViewController";
-            item.detail = @"自定义文件浏览器";
-        } action:^(_AXCellItem * _Nonnull item) {
-            _44FilesTableViewController *vc = [_44FilesTableViewController ax_init];
-            vc.title = item.detail;
-            [self ax_pushVC:vc];
-        }];
-        
         [_1stArray ax_addItem:^(_AXCellItem * _Nonnull item) {
             item.title = @"_45MXParallaxHeaderVC";
             item.detail = @"MXParallaxHeade";
@@ -1602,67 +1624,7 @@ void newmethod(NSString *format,...) {
             };
         }
         
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [_2ndArray addObject:item];
-            item.title = @"FileBrowser: UINavigationController";
-            item.detail = @"document内文件浏览器";
-            item.action = ^{
-                FileBrowser *vc = [FileBrowser.alloc init];
-                [self ax_showVC:vc];
-            };
-        }
-        
-        {
-            /// 由于文件可能被任何 app 中的 UIDocumentBrowserViewController 修改，所以对文件的操作尽量通过 UIDocument 子类 或者 NSFilePresenter 和 NSFileCoordinator 对象来操作。
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [_2ndArray addObject:item];
-            item.title = @"UIDocumentPickerViewController";
-            item.detail = @"文件管理";
-            item.action = ^{
-                NSArray *types = @[@"public.content",
-                                           @"public.text",
-                                           @"public.source-code",
-                                           @"public.image",
-                                           @"public.jpeg",
-                                           @"public.png",
-                                           @"com.adobe.pdf",
-                                           @"com.apple.keynote.key",
-                                           @"com.microsoft.word.doc",
-                                           @"com.microsoft.excel.xls",
-                                           @"com.microsoft.powerpoint.ppt",
-                                           @"public.data"];
-                  UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:types inMode:UIDocumentPickerModeOpen];
-                  documentPicker.delegate = self;
-                  documentPicker.modalPresentationStyle = UIModalPresentationFullScreen;
-                  [self presentViewController:documentPicker animated:YES completion:nil];
-                
-            };
-        }
-        
-        
-        {
-            _AXCellItem *item = _AXCellItem.alloc.init;
-            [_2ndArray addObject:item];
-            item.title = @"_DirectoryContentsTableViewController,CocoaDebug";
-            item.detail = @"文件浏览器";
-            item.action = ^{
-                NSURL *homeFileURL = [NSURL fileURLWithPath:NSHomeDirectory() isDirectory:YES];
-                
-                _DirectoryContentsTableViewController *vc = [[_DirectoryContentsTableViewController alloc] init];
-                
-                vc.homeDirectory = YES;
-                vc.fileInfo = [[_FileInfo alloc] initWithFileURL:homeFileURL];
-                
-                
-                UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-                
-                
-                //                vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-                [self ax_showVC:nav];
-                
-            };
-        }
+       
         
     }
     return _dataArray;
@@ -1678,47 +1640,5 @@ void newmethod(NSString *format,...) {
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskPortrait;
 }
-
-
-- (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentAtURL:(NSURL *)url {
-    NSLog(@"UIDocumentPickerViewController = %@",url);
-    BOOL canAccessingResource = [url startAccessingSecurityScopedResource];
-    if(canAccessingResource) {
-        NSFileCoordinator *fileCoordinator = [[NSFileCoordinator alloc] init];
-        NSError *error;
-        [fileCoordinator coordinateReadingItemAtURL:url options:0 error:&error byAccessor:^(NSURL *newURL) {
-//            NSData *fileData = [NSData dataWithContentsOfURL:newURL];
-//            NSArray *arr = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//            NSString *documentPath = [arr lastObject];
-//            NSString *desFileName = [documentPath stringByAppendingPathComponent:@"myFile"];
-//            [fileData writeToFile:desFileName atomically:YES];
-            
-            NSString *fileName = [newURL lastPathComponent];
-            NSData *fileData = [NSData dataWithContentsOfURL:newURL];
-            //获取沙盒路径
-            NSArray *arr = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-            NSString *documentPath = [arr lastObject];
-            NSString *dir =  [documentPath stringByAppendingPathComponent:@"documentPicker"];
-            NSFileManager *manager = [NSFileManager defaultManager];
-            if(![manager fileExistsAtPath:dir]){
-                 [manager createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:NULL];
-            }
-            //写入沙盒
-            NSString *dstFileName = [dir stringByAppendingPathComponent:fileName];
-            
-            [fileData writeToFile:dstFileName atomically:YES];
-            
-            
-            
-//            [self dismissViewControllerAnimated:YES completion:NULL];
-        }];
-        if (error) {
-            // error handing
-        }
-        
-        [url stopAccessingSecurityScopedResource];
-    }
-}
-
 
 @end
