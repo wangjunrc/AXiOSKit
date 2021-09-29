@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DemoContainerViewController.h"
+#import "DemoScrollViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _22ReactiveObjCViewController : DemoContainerViewController
+@interface _22ReactiveObjCViewController : DemoScrollViewController
 
 @end
 

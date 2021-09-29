@@ -28,9 +28,15 @@
 		213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213BCBDA254003DA00C89B72 /* Assets.xcassets */; };
 		213BCC4A254003DB00C89B72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBE7254003DB00C89B72 /* AppDelegate.m */; };
 		2150B151269C1B8900351B10 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2150B150269C1B8900351B10 /* Image.bundle */; };
+		2150B3DC26FFFE11001E86E6 /* DemoBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2150B3DB26FFFE11001E86E6 /* DemoBaseCollectionViewController.m */; };
+		2150B3DD26FFFE11001E86E6 /* DemoBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2150B3DB26FFFE11001E86E6 /* DemoBaseCollectionViewController.m */; };
+		2150B3E027000239001E86E6 /* _02CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2150B3DF27000239001E86E6 /* _02CollectionViewCell.m */; };
+		2150B3E127000239001E86E6 /* _02CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2150B3DF27000239001E86E6 /* _02CollectionViewCell.m */; };
 		2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2152C5B625919C720078D525 /* AXDebugViewController.m */; };
-		215510B926FE1DFF00338C53 /* _03RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 215510B826FE1DFF00338C53 /* _03RootVC.m */; };
-		215510BA26FE1DFF00338C53 /* _03RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 215510B826FE1DFF00338C53 /* _03RootVC.m */; };
+		21549F392702FA8B00392501 /* _28DocumentPickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21549F382702FA8B00392501 /* _28DocumentPickerVC.m */; };
+		21549F3A2702FA8B00392501 /* _28DocumentPickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21549F382702FA8B00392501 /* _28DocumentPickerVC.m */; };
+		215510B926FE1DFF00338C53 /* _02RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 215510B826FE1DFF00338C53 /* _02RootVC.m */; };
+		215510BA26FE1DFF00338C53 /* _02RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 215510B826FE1DFF00338C53 /* _02RootVC.m */; };
 		2165FE9126AEAA4200920470 /* RPDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2165FE8926AEAA4200920470 /* RPDataBase.m */; };
 		2165FE9326AEAA4200920470 /* RLMOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2165FE8A26AEAA4200920470 /* RLMOrder.m */; };
 		2165FE9526AEAA4200920470 /* RLMProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 2165FE8F26AEAA4200920470 /* RLMProduct.m */; };
@@ -72,7 +78,6 @@
 		217CA8A226DBAB9E00512DCE /* DemoNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D62265E7F4A0080E67D /* DemoNavigationController.m */; };
 		217CA8A326DBAB9E00512DCE /* TestPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CBE265E7F4A0080E67D /* TestPlugin.m */; };
 		217CA8A426DBAB9E00512DCE /* _23FullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61DBA265E7F4A0080E67D /* _23FullViewController.m */; };
-		217CA8A526DBAB9E00512DCE /* _02RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D51265E7F4A0080E67D /* _02RootVC.m */; };
 		217CA8A626DBAB9E00512DCE /* _02NavColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D3D265E7F4A0080E67D /* _02NavColorViewController.m */; };
 		217CA8A726DBAB9E00512DCE /* PreviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9CC26974A9600A1A9B2 /* PreviewManager.swift */; };
 		217CA8A826DBAB9E00512DCE /* _18MGSwipeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D6B265E7F4A0080E67D /* _18MGSwipeTableVC.m */; };
@@ -157,11 +162,11 @@
 		217CA8F726DBAB9E00512DCE /* DemoWevViewImageSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D5C265E7F4A0080E67D /* DemoWevViewImageSchemeHandler.m */; };
 		217CA8F826DBAB9E00512DCE /* _06MMKVVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CED4F426B23A1F00F1F1F1 /* _06MMKVVC.m */; };
 		217CA8F926DBAB9E00512DCE /* _28ShareFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D2F265E7F4A0080E67D /* _28ShareFileViewController.m */; };
-		217CA8FA26DBAB9E00512DCE /* DemoContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D63265E7F4A0080E67D /* DemoContainerViewController.m */; };
+		217CA8FA26DBAB9E00512DCE /* DemoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D63265E7F4A0080E67D /* DemoScrollViewController.m */; };
 		217CA8FB26DBAB9E00512DCE /* AXShareConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D14265E7F4A0080E67D /* AXShareConfigs.swift */; };
 		217CA8FC26DBAB9E00512DCE /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCB34254003D900C89B72 /* SceneDelegate.m */; };
 		217CA8FD26DBAB9E00512DCE /* FileBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AE9DF26974A9600A1A9B2 /* FileBrowser.swift */; };
-		217CA8FE26DBAB9E00512DCE /* _44FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAADE326C1776D00C82FE3 /* _44FilesTableViewController.m */; };
+		217CA8FE26DBAB9E00512DCE /* _28FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAADE326C1776D00C82FE3 /* _28FilesTableViewController.m */; };
 		217CA8FF26DBAB9E00512DCE /* AXSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CE2265E7F4A0080E67D /* AXSwitchView.m */; };
 		217CA90026DBAB9E00512DCE /* RLMOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2165FE8A26AEAA4200920470 /* RLMOrder.m */; };
 		217CA90126DBAB9E00512DCE /* _03HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D4D265E7F4A0080E67D /* _03HeaderView.m */; };
@@ -239,7 +244,6 @@
 		217CA94926DBAB9E00512DCE /* _06WCDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D40265E7F4A0080E67D /* _06WCDBViewController.m */; };
 		217CA94A26DBAB9E00512DCE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 213BCBE7254003DB00C89B72 /* AppDelegate.m */; };
 		217CA94C26DBAB9E00512DCE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2190CFFA26B54B4B008AFB70 /* Security.framework */; };
-		217CA94D26DBAB9E00512DCE /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219AA6D326496BD5001E0355 /* TencentOpenAPI.framework */; };
 		217CA94E26DBAB9E00512DCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		217CA94F26DBAB9E00512DCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		217CA95026DBAB9E00512DCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -273,7 +277,6 @@
 		217CA96F26DBAB9E00512DCE /* Edit.json in Resources */ = {isa = PBXBuildFile; fileRef = 21A61F2F265E7F680080E67D /* Edit.json */; };
 		217CA97026DBAB9E00512DCE /* NH_SQLS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 21CED55B26B3A98100F1F1F1 /* NH_SQLS.txt */; };
 		217CA97126DBAB9E00512DCE /* _21KVOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CAD265E7F4A0080E67D /* _21KVOViewController.xib */; };
-		217CA97226DBAB9E00512DCE /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 219AA6D226496BD5001E0355 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		217CA97326DBAB9E00512DCE /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 21A61F2E265E7F680080E67D /* tab_me_animate.json */; };
 		217CA97426DBAB9E00512DCE /* newAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 21A61F23265E7F680080E67D /* newAnimation.json */; };
 		217CA97526DBAB9E00512DCE /* _07VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61D70265E7F4A0080E67D /* _07VideoViewController.xib */; };
@@ -336,8 +339,6 @@
 		2191A058268AF62C009D9852 /* AXTestString.m in Sources */ = {isa = PBXBuildFile; fileRef = 2191A057268AF62C009D9852 /* AXTestString.m */; };
 		219682EE26971BB200FC972D /* _14TextFieldVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 219682ED26971BB200FC972D /* _14TextFieldVC.m */; };
 		219682F62697228500FC972D /* _TestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 219682F52697228500FC972D /* _TestHelper.m */; };
-		219AA6D426496BD5001E0355 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 219AA6D226496BD5001E0355 /* TencentOpenApi_IOS_Bundle.bundle */; };
-		219AA6D526496BD6001E0355 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219AA6D326496BD5001E0355 /* TencentOpenAPI.framework */; };
 		21A61DE1265E7F4A0080E67D /* _31GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CA6265E7F4A0080E67D /* _31GCDViewController.m */; };
 		21A61DE3265E7F4A0080E67D /* _26RMQClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A61CA7265E7F4A0080E67D /* _26RMQClientViewController.xib */; };
 		21A61DE5265E7F4A0080E67D /* _27MQTTClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61CA9265E7F4A0080E67D /* _27MQTTClientViewController.m */; };
@@ -408,7 +409,6 @@
 		21A61E95265E7F4B0080E67D /* _11MasonryTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D4C265E7F4A0080E67D /* _11MasonryTableVC.m */; };
 		21A61E97265E7F4B0080E67D /* _03HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D4D265E7F4A0080E67D /* _03HeaderView.m */; };
 		21A61E99265E7F4B0080E67D /* _11MasonryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D4E265E7F4A0080E67D /* _11MasonryCell.m */; };
-		21A61E9B265E7F4B0080E67D /* _02RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D51265E7F4A0080E67D /* _02RootVC.m */; };
 		21A61E9F265E7F4B0080E67D /* orgTitle.js in Resources */ = {isa = PBXBuildFile; fileRef = 21A61D57265E7F4A0080E67D /* orgTitle.js */; };
 		21A61EA1265E7F4B0080E67D /* AXDemoURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D5A265E7F4A0080E67D /* AXDemoURLProtocol.m */; };
 		21A61EA3265E7F4B0080E67D /* myAlert.js in Resources */ = {isa = PBXBuildFile; fileRef = 21A61D5B265E7F4A0080E67D /* myAlert.js */; };
@@ -416,7 +416,7 @@
 		21A61EA7265E7F4B0080E67D /* NSURLProtocol+AXDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D5D265E7F4A0080E67D /* NSURLProtocol+AXDemo.m */; };
 		21A61EA9265E7F4B0080E67D /* DemoTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D61265E7F4A0080E67D /* DemoTabBarController.m */; };
 		21A61EAB265E7F4B0080E67D /* DemoNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D62265E7F4A0080E67D /* DemoNavigationController.m */; };
-		21A61EAD265E7F4B0080E67D /* DemoContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D63265E7F4A0080E67D /* DemoContainerViewController.m */; };
+		21A61EAD265E7F4B0080E67D /* DemoScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D63265E7F4A0080E67D /* DemoScrollViewController.m */; };
 		21A61EAF265E7F4B0080E67D /* _35ProtobufVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D67265E7F4A0080E67D /* _35ProtobufVC.m */; };
 		21A61EB1265E7F4B0080E67D /* _37FileManagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D69265E7F4A0080E67D /* _37FileManagerVC.m */; };
 		21A61EB5265E7F4B0080E67D /* _18MGSwipeTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A61D6B265E7F4A0080E67D /* _18MGSwipeTableVC.m */; };
@@ -526,7 +526,7 @@
 		21D2188A2669CE63006E05C9 /* AlertWayClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D218892669CE63006E05C9 /* AlertWayClass.m */; };
 		21D61EEC257F106E0059201A /* DogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D61EEB257F106E0059201A /* DogSwift.swift */; };
 		21DAADB826C0132C00C82FE3 /* _41UIStackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAADB726C0132C00C82FE3 /* _41UIStackVC.m */; };
-		21DAADE426C1776D00C82FE3 /* _44FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAADE326C1776D00C82FE3 /* _44FilesTableViewController.m */; };
+		21DAADE426C1776D00C82FE3 /* _28FilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21DAADE326C1776D00C82FE3 /* _28FilesTableViewController.m */; };
 		21E47E17269D66E500D7188F /* UIAlertController+Load.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E47E16269D66E500D7188F /* UIAlertController+Load.m */; };
 		21E6DE67260494060092051F /* DogOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6DE66260494060092051F /* DogOC.m */; };
 		21FC46C32591941900AA253F /* AXDebugManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC46B32591924A00AA253F /* AXDebugManager.m */; };
@@ -646,10 +646,16 @@
 		214AAE82E3940695AA0C99E1 /* Pods-AXiOSKitDemoShare.debug_β.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXiOSKitDemoShare.debug_β.xcconfig"; path = "Target Support Files/Pods-AXiOSKitDemoShare/Pods-AXiOSKitDemoShare.debug_β.xcconfig"; sourceTree = "<group>"; };
 		214F67F62646B9D2006D946B /* AXUserSwiftImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXUserSwiftImport.h; sourceTree = "<group>"; };
 		2150B150269C1B8900351B10 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
+		2150B3DA26FFFE11001E86E6 /* DemoBaseCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoBaseCollectionViewController.h; sourceTree = "<group>"; };
+		2150B3DB26FFFE11001E86E6 /* DemoBaseCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoBaseCollectionViewController.m; sourceTree = "<group>"; };
+		2150B3DE27000239001E86E6 /* _02CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _02CollectionViewCell.h; sourceTree = "<group>"; };
+		2150B3DF27000239001E86E6 /* _02CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _02CollectionViewCell.m; sourceTree = "<group>"; };
 		2152C5B525919C720078D525 /* AXDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXDebugViewController.h; sourceTree = "<group>"; };
 		2152C5B625919C720078D525 /* AXDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXDebugViewController.m; sourceTree = "<group>"; };
-		215510B726FE1DFF00338C53 /* _03RootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _03RootVC.h; sourceTree = "<group>"; };
-		215510B826FE1DFF00338C53 /* _03RootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _03RootVC.m; sourceTree = "<group>"; };
+		21549F372702FA8B00392501 /* _28DocumentPickerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _28DocumentPickerVC.h; sourceTree = "<group>"; };
+		21549F382702FA8B00392501 /* _28DocumentPickerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _28DocumentPickerVC.m; sourceTree = "<group>"; };
+		215510B726FE1DFF00338C53 /* _02RootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _02RootVC.h; sourceTree = "<group>"; };
+		215510B826FE1DFF00338C53 /* _02RootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _02RootVC.m; sourceTree = "<group>"; };
 		215510BB26FEAF1100338C53 /* _code.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = _code.md; sourceTree = "<group>"; };
 		2165FE8926AEAA4200920470 /* RPDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPDataBase.m; sourceTree = "<group>"; };
 		2165FE8A26AEAA4200920470 /* RLMOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLMOrder.m; sourceTree = "<group>"; };
@@ -726,8 +732,6 @@
 		219682ED26971BB200FC972D /* _14TextFieldVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _14TextFieldVC.m; sourceTree = "<group>"; };
 		219682F42697228500FC972D /* _TestHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _TestHelper.h; sourceTree = "<group>"; };
 		219682F52697228500FC972D /* _TestHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _TestHelper.m; sourceTree = "<group>"; };
-		219AA6D226496BD5001E0355 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
-		219AA6D326496BD5001E0355 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		21A61CA5265E7F4A0080E67D /* _16KeyChainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _16KeyChainViewController.h; sourceTree = "<group>"; };
 		21A61CA6265E7F4A0080E67D /* _31GCDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _31GCDViewController.m; sourceTree = "<group>"; };
 		21A61CA7265E7F4A0080E67D /* _26RMQClientViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _26RMQClientViewController.xib; sourceTree = "<group>"; };
@@ -846,8 +850,6 @@
 		21A61D4D265E7F4A0080E67D /* _03HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _03HeaderView.m; sourceTree = "<group>"; };
 		21A61D4E265E7F4A0080E67D /* _11MasonryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _11MasonryCell.m; sourceTree = "<group>"; };
 		21A61D4F265E7F4A0080E67D /* _11MasonryTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _11MasonryTableVC.h; sourceTree = "<group>"; };
-		21A61D51265E7F4A0080E67D /* _02RootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _02RootVC.m; sourceTree = "<group>"; };
-		21A61D54265E7F4A0080E67D /* _02RootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _02RootVC.h; sourceTree = "<group>"; };
 		21A61D55265E7F4A0080E67D /* _05WebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _05WebVC.h; sourceTree = "<group>"; };
 		21A61D57265E7F4A0080E67D /* orgTitle.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = orgTitle.js; sourceTree = "<group>"; };
 		21A61D58265E7F4A0080E67D /* NSURLProtocol+AXDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLProtocol+AXDemo.h"; sourceTree = "<group>"; };
@@ -857,10 +859,10 @@
 		21A61D5C265E7F4A0080E67D /* DemoWevViewImageSchemeHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoWevViewImageSchemeHandler.m; sourceTree = "<group>"; };
 		21A61D5D265E7F4A0080E67D /* NSURLProtocol+AXDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLProtocol+AXDemo.m"; sourceTree = "<group>"; };
 		21A61D5E265E7F4A0080E67D /* AXDemoURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXDemoURLProtocol.h; sourceTree = "<group>"; };
-		21A61D60265E7F4A0080E67D /* DemoContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoContainerViewController.h; sourceTree = "<group>"; };
+		21A61D60265E7F4A0080E67D /* DemoScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoScrollViewController.h; sourceTree = "<group>"; };
 		21A61D61265E7F4A0080E67D /* DemoTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTabBarController.m; sourceTree = "<group>"; };
 		21A61D62265E7F4A0080E67D /* DemoNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoNavigationController.m; sourceTree = "<group>"; };
-		21A61D63265E7F4A0080E67D /* DemoContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoContainerViewController.m; sourceTree = "<group>"; };
+		21A61D63265E7F4A0080E67D /* DemoScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoScrollViewController.m; sourceTree = "<group>"; };
 		21A61D64265E7F4A0080E67D /* DemoNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoNavigationController.h; sourceTree = "<group>"; };
 		21A61D65265E7F4A0080E67D /* DemoTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTabBarController.h; sourceTree = "<group>"; };
 		21A61D66265E7F4A0080E67D /* _08MP3VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _08MP3VC.h; sourceTree = "<group>"; };
@@ -1047,8 +1049,8 @@
 		21D83B3A255A28BE00695C28 /* rac.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = rac.md; sourceTree = "<group>"; };
 		21DAADB626C0132C00C82FE3 /* _41UIStackVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _41UIStackVC.h; sourceTree = "<group>"; };
 		21DAADB726C0132C00C82FE3 /* _41UIStackVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _41UIStackVC.m; sourceTree = "<group>"; };
-		21DAADE226C1776D00C82FE3 /* _44FilesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _44FilesTableViewController.h; sourceTree = "<group>"; };
-		21DAADE326C1776D00C82FE3 /* _44FilesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _44FilesTableViewController.m; sourceTree = "<group>"; };
+		21DAADE226C1776D00C82FE3 /* _28FilesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _28FilesTableViewController.h; sourceTree = "<group>"; };
+		21DAADE326C1776D00C82FE3 /* _28FilesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _28FilesTableViewController.m; sourceTree = "<group>"; };
 		21E47E15269D66E500D7188F /* UIAlertController+Load.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Load.h"; sourceTree = "<group>"; };
 		21E47E16269D66E500D7188F /* UIAlertController+Load.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Load.m"; sourceTree = "<group>"; };
 		21E6DE65260494060092051F /* DogOC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogOC.h; sourceTree = "<group>"; };
@@ -1119,7 +1121,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				217CA94C26DBAB9E00512DCE /* Security.framework in Frameworks */,
-				217CA94D26DBAB9E00512DCE /* TencentOpenAPI.framework in Frameworks */,
 				217CA94E26DBAB9E00512DCE /* CoreGraphics.framework in Frameworks */,
 				217CA94F26DBAB9E00512DCE /* UIKit.framework in Frameworks */,
 				217CA95026DBAB9E00512DCE /* Foundation.framework in Frameworks */,
@@ -1141,7 +1142,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2190CFFB26B54B4B008AFB70 /* Security.framework in Frameworks */,
-				219AA6D526496BD6001E0355 /* TencentOpenAPI.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
@@ -1473,6 +1473,10 @@
 				21A61CA7265E7F4A0080E67D /* _26RMQClientViewController.xib */,
 				21A61D79265E7F4A0080E67D /* _27MQTTClientViewController.h */,
 				21A61CA9265E7F4A0080E67D /* _27MQTTClientViewController.m */,
+				21549F372702FA8B00392501 /* _28DocumentPickerVC.h */,
+				21549F382702FA8B00392501 /* _28DocumentPickerVC.m */,
+				21DAADE226C1776D00C82FE3 /* _28FilesTableViewController.h */,
+				21DAADE326C1776D00C82FE3 /* _28FilesTableViewController.m */,
 				21A61DCD265E7F4A0080E67D /* _28LocalSocketClientViewController.h */,
 				21A61D71265E7F4A0080E67D /* _28LocalSocketClientViewController.m */,
 				21A61D3F265E7F4A0080E67D /* _28LocalSocketServiceViewController.h */,
@@ -1506,28 +1510,9 @@
 				21DAADB726C0132C00C82FE3 /* _41UIStackVC.m */,
 				218746A22696DD2C0022BE97 /* _42 */,
 				218746AF2696EFAC0022BE97 /* _43Color */,
-				21DAADE226C1776D00C82FE3 /* _44FilesTableViewController.h */,
-				21DAADE326C1776D00C82FE3 /* _44FilesTableViewController.m */,
 				211A6A2726FAFEAA00DE193B /* _45 */,
 			);
 			path = _02Module;
-			sourceTree = "<group>";
-		};
-		219AA6D026496BD5001E0355 /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				219AA6D126496BD5001E0355 /* TencentSDK_V3 */,
-			);
-			path = SDK;
-			sourceTree = "<group>";
-		};
-		219AA6D126496BD5001E0355 /* TencentSDK_V3 */ = {
-			isa = PBXGroup;
-			children = (
-				219AA6D226496BD5001E0355 /* TencentOpenApi_IOS_Bundle.bundle */,
-				219AA6D326496BD5001E0355 /* TencentOpenAPI.framework */,
-			);
-			path = TencentSDK_V3;
 			sourceTree = "<group>";
 		};
 		21A61CA4265E7F4A0080E67D /* Class */ = {
@@ -1702,14 +1687,14 @@
 				21A61D46265E7F4A0080E67D /* _01HeaderView.m */,
 				21A61D47265E7F4A0080E67D /* _01RootVC.h */,
 				21A61D45265E7F4A0080E67D /* _01RootVC.m */,
-				21A61D54265E7F4A0080E67D /* _02RootVC.h */,
-				21A61D51265E7F4A0080E67D /* _02RootVC.m */,
+				2150B3DE27000239001E86E6 /* _02CollectionViewCell.h */,
+				2150B3DF27000239001E86E6 /* _02CollectionViewCell.m */,
+				215510B726FE1DFF00338C53 /* _02RootVC.h */,
+				215510B826FE1DFF00338C53 /* _02RootVC.m */,
 				21A61D4B265E7F4A0080E67D /* _03HeaderView.h */,
 				21A61D4D265E7F4A0080E67D /* _03HeaderView.m */,
 				2180CEDB26958D5A00F5320C /* _AXSearchResultVC.h */,
 				2180CEDC26958D5A00F5320C /* _AXSearchResultVC.m */,
-				215510B726FE1DFF00338C53 /* _03RootVC.h */,
-				215510B826FE1DFF00338C53 /* _03RootVC.m */,
 				21A61D5F265E7F4A0080E67D /* Base */,
 				21CC20B4265F3B91005BD351 /* Common */,
 			);
@@ -1740,10 +1725,12 @@
 			children = (
 				2180268426B678AA006DE9B1 /* DemoBaseTableViewController.h */,
 				2180268526B678AA006DE9B1 /* DemoBaseTableViewController.m */,
+				2150B3DA26FFFE11001E86E6 /* DemoBaseCollectionViewController.h */,
+				2150B3DB26FFFE11001E86E6 /* DemoBaseCollectionViewController.m */,
 				2180267C26B67227006DE9B1 /* DemoBaseViewController.h */,
 				2180267D26B67227006DE9B1 /* DemoBaseViewController.m */,
-				21A61D60265E7F4A0080E67D /* DemoContainerViewController.h */,
-				21A61D63265E7F4A0080E67D /* DemoContainerViewController.m */,
+				21A61D60265E7F4A0080E67D /* DemoScrollViewController.h */,
+				21A61D63265E7F4A0080E67D /* DemoScrollViewController.m */,
 				21A61D64265E7F4A0080E67D /* DemoNavigationController.h */,
 				21A61D62265E7F4A0080E67D /* DemoNavigationController.m */,
 				21A61D65265E7F4A0080E67D /* DemoTabBarController.h */,
@@ -2142,7 +2129,6 @@
 				6003F594195388D20070C39A /* 00Supporting Files */,
 				21A61CA4265E7F4A0080E67D /* Class */,
 				21EB383525DF90E1002C1807 /* Config */,
-				219AA6D026496BD5001E0355 /* SDK */,
 			);
 			name = "Example for AXiOSKit";
 			path = AXiOSKit;
@@ -2449,7 +2435,6 @@
 				217CA96F26DBAB9E00512DCE /* Edit.json in Resources */,
 				217CA97026DBAB9E00512DCE /* NH_SQLS.txt in Resources */,
 				217CA97126DBAB9E00512DCE /* _21KVOViewController.xib in Resources */,
-				217CA97226DBAB9E00512DCE /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				217CA97326DBAB9E00512DCE /* tab_me_animate.json in Resources */,
 				217CA97426DBAB9E00512DCE /* newAnimation.json in Resources */,
 				217CA97526DBAB9E00512DCE /* _07VideoViewController.xib in Resources */,
@@ -2537,7 +2522,6 @@
 				21A61F5D265E7F680080E67D /* Edit.json in Resources */,
 				21CED55C26B3A98100F1F1F1 /* NH_SQLS.txt in Resources */,
 				21A61DEB265E7F4A0080E67D /* _21KVOViewController.xib in Resources */,
-				219AA6D426496BD5001E0355 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				21A61F5B265E7F680080E67D /* tab_me_animate.json in Resources */,
 				21A61F45265E7F680080E67D /* newAnimation.json in Resources */,
 				21A61EBB265E7F4B0080E67D /* _07VideoViewController.xib in Resources */,
@@ -3086,7 +3070,6 @@
 				217CA8A226DBAB9E00512DCE /* DemoNavigationController.m in Sources */,
 				217CA8A326DBAB9E00512DCE /* TestPlugin.m in Sources */,
 				217CA8A426DBAB9E00512DCE /* _23FullViewController.m in Sources */,
-				217CA8A526DBAB9E00512DCE /* _02RootVC.m in Sources */,
 				217CA8A626DBAB9E00512DCE /* _02NavColorViewController.m in Sources */,
 				217CA8A726DBAB9E00512DCE /* PreviewManager.swift in Sources */,
 				217CA8A826DBAB9E00512DCE /* _18MGSwipeTableVC.m in Sources */,
@@ -3104,6 +3087,8 @@
 				217CA8B326DBAB9E00512DCE /* _25DataModel.m in Sources */,
 				217CA8B426DBAB9E00512DCE /* WebviewPreviewViewContoller.swift in Sources */,
 				217CA8B526DBAB9E00512DCE /* AlertWayClass.m in Sources */,
+				2150B3DD26FFFE11001E86E6 /* DemoBaseCollectionViewController.m in Sources */,
+				21549F3A2702FA8B00392501 /* _28DocumentPickerVC.m in Sources */,
 				217CA8B626DBAB9E00512DCE /* _00TableViewCell.m in Sources */,
 				217CA8B726DBAB9E00512DCE /* _19ScrollContentViewController.m in Sources */,
 				217CA8B826DBAB9E00512DCE /* UIView+GSKLayoutHelper.m in Sources */,
@@ -3115,7 +3100,7 @@
 				217CA8BE26DBAB9E00512DCE /* ChatMessageModel.m in Sources */,
 				217CA8BF26DBAB9E00512DCE /* DogSwift.swift in Sources */,
 				217CA8C026DBAB9E00512DCE /* RLMOrderService.m in Sources */,
-				215510BA26FE1DFF00338C53 /* _03RootVC.m in Sources */,
+				215510BA26FE1DFF00338C53 /* _02RootVC.m in Sources */,
 				217CA8C126DBAB9E00512DCE /* _25LayoutViewController.m in Sources */,
 				217CA8C226DBAB9E00512DCE /* AppDelegateWX.m in Sources */,
 				217CA8C326DBAB9E00512DCE /* _11MasonryVC.m in Sources */,
@@ -3173,11 +3158,11 @@
 				217CA8F726DBAB9E00512DCE /* DemoWevViewImageSchemeHandler.m in Sources */,
 				217CA8F826DBAB9E00512DCE /* _06MMKVVC.m in Sources */,
 				217CA8F926DBAB9E00512DCE /* _28ShareFileViewController.m in Sources */,
-				217CA8FA26DBAB9E00512DCE /* DemoContainerViewController.m in Sources */,
+				217CA8FA26DBAB9E00512DCE /* DemoScrollViewController.m in Sources */,
 				217CA8FB26DBAB9E00512DCE /* AXShareConfigs.swift in Sources */,
 				217CA8FC26DBAB9E00512DCE /* SceneDelegate.m in Sources */,
 				217CA8FD26DBAB9E00512DCE /* FileBrowser.swift in Sources */,
-				217CA8FE26DBAB9E00512DCE /* _44FilesTableViewController.m in Sources */,
+				217CA8FE26DBAB9E00512DCE /* _28FilesTableViewController.m in Sources */,
 				217CA8FF26DBAB9E00512DCE /* AXSwitchView.m in Sources */,
 				217CA90026DBAB9E00512DCE /* RLMOrder.m in Sources */,
 				217CA90126DBAB9E00512DCE /* _03HeaderView.m in Sources */,
@@ -3224,6 +3209,7 @@
 				217CA92926DBAB9E00512DCE /* GSKSpotyLikeHeaderView.m in Sources */,
 				217CA92A26DBAB9E00512DCE /* AXXSwitch.m in Sources */,
 				217CA92B26DBAB9E00512DCE /* CTMediator+NewsActions.m in Sources */,
+				2150B3E127000239001E86E6 /* _02CollectionViewCell.m in Sources */,
 				217CA92C26DBAB9E00512DCE /* _TestSwift.swift in Sources */,
 				217CA92D26DBAB9E00512DCE /* _20PhotoViewController.m in Sources */,
 				217CA92E26DBAB9E00512DCE /* _25Layout.m in Sources */,
@@ -3284,7 +3270,6 @@
 				21A61EAB265E7F4B0080E67D /* DemoNavigationController.m in Sources */,
 				21A61DFB265E7F4A0080E67D /* TestPlugin.m in Sources */,
 				21A61EFD265E7F4B0080E67D /* _23FullViewController.m in Sources */,
-				21A61E9B265E7F4B0080E67D /* _02RootVC.m in Sources */,
 				21A61E89265E7F4B0080E67D /* _02NavColorViewController.m in Sources */,
 				217AE9E226974A9600A1A9B2 /* PreviewManager.swift in Sources */,
 				21A61EB5265E7F4B0080E67D /* _18MGSwipeTableVC.m in Sources */,
@@ -3302,6 +3287,8 @@
 				21A61EF1265E7F4B0080E67D /* _25DataModel.m in Sources */,
 				217AE9E026974A9600A1A9B2 /* WebviewPreviewViewContoller.swift in Sources */,
 				21D2188A2669CE63006E05C9 /* AlertWayClass.m in Sources */,
+				2150B3DC26FFFE11001E86E6 /* DemoBaseCollectionViewController.m in Sources */,
+				21549F392702FA8B00392501 /* _28DocumentPickerVC.m in Sources */,
 				2187462B269691910022BE97 /* _00TableViewCell.m in Sources */,
 				21A61E71265E7F4B0080E67D /* _19ScrollContentViewController.m in Sources */,
 				21C84C2E268DA3FC0045E28C /* UIView+GSKLayoutHelper.m in Sources */,
@@ -3313,7 +3300,7 @@
 				21A61F17265E7F4B0080E67D /* ChatMessageModel.m in Sources */,
 				21D61EEC257F106E0059201A /* DogSwift.swift in Sources */,
 				2165FE9726AEAA4200920470 /* RLMOrderService.m in Sources */,
-				215510B926FE1DFF00338C53 /* _03RootVC.m in Sources */,
+				215510B926FE1DFF00338C53 /* _02RootVC.m in Sources */,
 				21A61EE5265E7F4B0080E67D /* _25LayoutViewController.m in Sources */,
 				21022AEC2547A9AF0055E0B7 /* AppDelegateWX.m in Sources */,
 				21A61ED5265E7F4B0080E67D /* _11MasonryVC.m in Sources */,
@@ -3371,11 +3358,11 @@
 				21A61EA5265E7F4B0080E67D /* DemoWevViewImageSchemeHandler.m in Sources */,
 				21CED4F526B23A1F00F1F1F1 /* _06MMKVVC.m in Sources */,
 				21A61E77265E7F4B0080E67D /* _28ShareFileViewController.m in Sources */,
-				21A61EAD265E7F4B0080E67D /* DemoContainerViewController.m in Sources */,
+				21A61EAD265E7F4B0080E67D /* DemoScrollViewController.m in Sources */,
 				21A61E5F265E7F4B0080E67D /* AXShareConfigs.swift in Sources */,
 				213BCBEC254003DB00C89B72 /* SceneDelegate.m in Sources */,
 				217AEA0426974A9600A1A9B2 /* FileBrowser.swift in Sources */,
-				21DAADE426C1776D00C82FE3 /* _44FilesTableViewController.m in Sources */,
+				21DAADE426C1776D00C82FE3 /* _28FilesTableViewController.m in Sources */,
 				21A61E1F265E7F4A0080E67D /* AXSwitchView.m in Sources */,
 				2165FE9326AEAA4200920470 /* RLMOrder.m in Sources */,
 				21A61E97265E7F4B0080E67D /* _03HeaderView.m in Sources */,
@@ -3422,6 +3409,7 @@
 				21C84C32268DA8230045E28C /* GSKSpotyLikeHeaderView.m in Sources */,
 				21A61E1B265E7F4A0080E67D /* AXXSwitch.m in Sources */,
 				21A61F07265E7F4B0080E67D /* CTMediator+NewsActions.m in Sources */,
+				2150B3E027000239001E86E6 /* _02CollectionViewCell.m in Sources */,
 				21FE556F2696F1550025969F /* _TestSwift.swift in Sources */,
 				21A61DE9265E7F4A0080E67D /* _20PhotoViewController.m in Sources */,
 				21A61EF3265E7F4B0080E67D /* _25Layout.m in Sources */,

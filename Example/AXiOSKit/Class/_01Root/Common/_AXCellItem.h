@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)addTitle:(NSString *)title
           detail:(NSString  * _Nullable )detail
-          action:(void(^)(_AXCellItem *option))action;
+          action:(void(^)(_AXCellItem *item))action;
 
 - (void)ax_addItem:(void (^)(_AXCellItem *item))add
             action:(void (^)(_AXCellItem *item))action;

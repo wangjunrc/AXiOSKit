@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DemoContainerViewController.h"
+#import "DemoScrollViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface _31GCDViewController : DemoContainerViewController
+@interface _31GCDViewController : DemoScrollViewController
 
 @end
 

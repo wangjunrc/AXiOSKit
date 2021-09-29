@@ -51,40 +51,40 @@
         UINavigationBar.appearance.backItem.title = @"哈哈";
         UINavigationBar.appearance.topItem.title = @"噢噢";
     }
+    /// 返回按钮 颜色
+    self.navigationBar.tintColor = UIColor.redColor;
     
-
     /// 导航栏背景图片
-    UIImage *backgroundImg = [UIImage imageNamed:@"nav_bg_img_1"];
+    UIImage *backgroundImg = [UIImage imageNamed:@"nav_bg_img_2"];
+    //    UIImage *backgroundImg =  [UIImage ax_imageSquareWithColor:UIColor.purpleColor];
     backgroundImg = [backgroundImg resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch];
     [self.navigationBar setBackgroundImage:backgroundImg forBarMetrics:UIBarMetricsDefault];
-    
-    /// 返回按钮 颜色
-    self.navigationBar.tintColor = UIColor.purpleColor;
     // 设置导航栏默认标题的颜色和字体的大小
-    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:UIColor.blueColor};
+    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:UIColor.whiteColor};
     
     
     //    [self setNavBarAppearence];
-  
+    
     /// iOS 15 适配
     if (@available(iOS 15.0, *)) {
         UINavigationBarAppearance *barApp = UINavigationBarAppearance.alloc.init;
+        [barApp configureWithDefaultBackground];
         
-//        if (backgroundImg) {
-//            barApp.backgroundColor = [UIColor colorWithPatternImage:backgroundImg];
-//        }
+        //        if (backgroundImg) {
+        //            barApp.backgroundColor = [UIColor colorWithPatternImage:backgroundImg];
+        //        }
+        /// 导航栏背景图片
         if (backgroundImg) {
             barApp.backgroundImage = backgroundImg;
         }
+        /// 返回按钮图片
         if (backItemImg) {
             [barApp setBackIndicatorImage:backItemImg transitionMaskImage:backItemImg];
         }
         self.navigationBar.scrollEdgeAppearance = barApp;
         self.navigationBar.standardAppearance = barApp;
     }
-
- 
-     
+    
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
