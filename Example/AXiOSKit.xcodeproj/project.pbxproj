@@ -621,6 +621,7 @@
 		210B1EBA25EDE2FB00878A73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		210B1ED325EDE40200878A73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		210B1ED925EDE40600878A73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		210C69D02704B75400EFC020 /* 脚本.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "脚本.md"; sourceTree = "<group>"; };
 		21122775257334C600B6ECC8 /* AXiOSKitDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKitDemo-Info.plist"; sourceTree = "<group>"; };
 		211227842573361600B6ECC8 /* AXiOSKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AXiOSKit-Info.plist"; sourceTree = "<group>"; };
 		2118BABB268EE9320016A292 /* _02QQZoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _02QQZoneController.m; sourceTree = "<group>"; };
@@ -1320,6 +1321,7 @@
 				21898FF82541B48000876524 /* pod_use.md */,
 				21D83B3A255A28BE00695C28 /* rac.md */,
 				21898FF72541B48000876524 /* read.md */,
+				210C69D02704B75400EFC020 /* 脚本.md */,
 			);
 			name = README;
 			path = ../AXiOSKit/README;
