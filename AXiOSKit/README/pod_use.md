@@ -543,9 +543,11 @@ pod 'Starscream' # swift
 ### 提示框
 pod 'SwiftMessages'
 
-### 滚动视图
-###
+### 广告栏样式滚动
 pod 'FSPagerView' #swift
+
+### 滚动视图
+pod 'JXCategoryView' #oc
 
 ### 内购
 pod 'SwiftyStoreKit' #swift

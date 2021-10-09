@@ -333,6 +333,9 @@
 		218A1EEF25469BBC00E43F16 /* AppDelegateDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EEE25469BBC00E43F16 /* AppDelegateDB.mm */; };
 		218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */; };
 		218A323C25E096D0008D95B8 /* AppDelegateURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */; };
+		218AD5E727112E2A00E97E56 /* _.md in Resources */ = {isa = PBXBuildFile; fileRef = 218AD5E627112E2A00E97E56 /* _.md */; };
+		218AD5EA27112E9600E97E56 /* _3rdFSPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218AD5E927112E9600E97E56 /* _3rdFSPagerViewController.m */; };
+		218AD5EE2711357E00E97E56 /* _AXTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 218AD5ED2711357E00E97E56 /* _AXTestData.m */; };
 		218B7960269831B200CEB7E0 /* _22ReacLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 218B795F269831B200CEB7E0 /* _22ReacLoginVC.m */; };
 		218B7963269835A900CEB7E0 /* _22LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218B7962269835A900CEB7E0 /* _22LoginViewModel.m */; };
 		2190CFFB26B54B4B008AFB70 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2190CFFA26B54B4B008AFB70 /* Security.framework */; };
@@ -722,6 +725,11 @@
 		218A1EFA25469D8000E43F16 /* AppDelegateRegistryCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateRegistryCenter.m; sourceTree = "<group>"; };
 		218A323A25E096D0008D95B8 /* AppDelegateURLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateURLProtocol.h; sourceTree = "<group>"; };
 		218A323B25E096D0008D95B8 /* AppDelegateURLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateURLProtocol.m; sourceTree = "<group>"; };
+		218AD5E627112E2A00E97E56 /* _.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = _.md; sourceTree = "<group>"; };
+		218AD5E827112E9600E97E56 /* _3rdFSPagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _3rdFSPagerViewController.h; sourceTree = "<group>"; };
+		218AD5E927112E9600E97E56 /* _3rdFSPagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _3rdFSPagerViewController.m; sourceTree = "<group>"; };
+		218AD5EC2711357E00E97E56 /* _AXTestData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _AXTestData.h; sourceTree = "<group>"; };
+		218AD5ED2711357E00E97E56 /* _AXTestData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _AXTestData.m; sourceTree = "<group>"; };
 		218B795E269831B200CEB7E0 /* _22ReacLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _22ReacLoginVC.h; sourceTree = "<group>"; };
 		218B795F269831B200CEB7E0 /* _22ReacLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _22ReacLoginVC.m; sourceTree = "<group>"; };
 		218B7961269835A900CEB7E0 /* _22LoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _22LoginViewModel.h; sourceTree = "<group>"; };
@@ -1327,6 +1335,25 @@
 			path = ../AXiOSKit/README;
 			sourceTree = "<group>";
 		};
+		218AD5E527112DFF00E97E56 /* _03Third */ = {
+			isa = PBXGroup;
+			children = (
+				218AD5E627112E2A00E97E56 /* _.md */,
+				218AD5E827112E9600E97E56 /* _3rdFSPagerViewController.h */,
+				218AD5E927112E9600E97E56 /* _3rdFSPagerViewController.m */,
+			);
+			path = _03Third;
+			sourceTree = "<group>";
+		};
+		218AD5EB2711355F00E97E56 /* _Data */ = {
+			isa = PBXGroup;
+			children = (
+				218AD5EC2711357E00E97E56 /* _AXTestData.h */,
+				218AD5ED2711357E00E97E56 /* _AXTestData.m */,
+			);
+			path = _Data;
+			sourceTree = "<group>";
+		};
 		218B795D2698317A00CEB7E0 /* _22Reac */ = {
 			isa = PBXGroup;
 			children = (
@@ -1521,6 +1548,7 @@
 				21A61CAF265E7F4A0080E67D /* _00Material */,
 				21A61D42265E7F4A0080E67D /* _01Root */,
 				219682FD2697288600FC972D /* _02Module */,
+				218AD5E527112DFF00E97E56 /* _03Third */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -1528,6 +1556,7 @@
 		21A61CAF265E7F4A0080E67D /* _00Material */ = {
 			isa = PBXGroup;
 			children = (
+				218AD5EB2711355F00E97E56 /* _Data */,
 				219682F92697279000FC972D /* _Controller */,
 				21E47E13269D65AD00D7188F /* _Debug */,
 				219682FA269727B200FC972D /* _Model */,
@@ -2503,6 +2532,7 @@
 				21A61EC1265E7F4B0080E67D /* _04RunLoopViewController.xib in Resources */,
 				21A61F43265E7F680080E67D /* HappyBirthday.json in Resources */,
 				21A61E2F265E7F4A0080E67D /* Alternate_AppIcon_3@2x.png in Resources */,
+				218AD5E727112E2A00E97E56 /* _.md in Resources */,
 				21A61DE3265E7F4A0080E67D /* _26RMQClientViewController.xib in Resources */,
 				213BCC3F254003DB00C89B72 /* Assets.xcassets in Resources */,
 				21A61F65265E7F680080E67D /* vcTransition2.json in Resources */,
@@ -2666,6 +2696,7 @@
 				"${PODS_ROOT}/DoraemonKit/iOS/DoraemonKit/Framework/DoraemonLoadAnalyze.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
 				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
 				"${BUILT_PRODUCTS_DIR}/GSKStretchyHeaderView/GSKStretchyHeaderView.framework",
@@ -2674,6 +2705,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
+				"${BUILT_PRODUCTS_DIR}/JXCategoryView/JXCategoryView.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUDOfAX/MBProgressHUDOfAX.framework",
 				"${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework",
@@ -2736,6 +2768,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoraemonLoadAnalyze.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSKStretchyHeaderView.framework",
@@ -2744,6 +2777,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXCategoryView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUDOfAX.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGJRouter.framework",
@@ -2914,6 +2948,7 @@
 				"${PODS_ROOT}/DoraemonKit/iOS/DoraemonKit/Framework/DoraemonLoadAnalyze.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
 				"${BUILT_PRODUCTS_DIR}/GDataXML-HTML/GDataXML_HTML.framework",
 				"${BUILT_PRODUCTS_DIR}/GSKStretchyHeaderView/GSKStretchyHeaderView.framework",
@@ -2922,6 +2957,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/JJException/JJException.framework",
 				"${BUILT_PRODUCTS_DIR}/JKVValue/JKVValue.framework",
+				"${BUILT_PRODUCTS_DIR}/JXCategoryView/JXCategoryView.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUDOfAX/MBProgressHUDOfAX.framework",
 				"${BUILT_PRODUCTS_DIR}/MGJRouter/MGJRouter.framework",
@@ -2984,6 +3020,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoraemonLoadAnalyze.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GDataXML_HTML.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSKStretchyHeaderView.framework",
@@ -2992,6 +3029,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJException.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKVValue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXCategoryView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUDOfAX.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGJRouter.framework",
@@ -3367,6 +3405,7 @@
 				2165FE9326AEAA4200920470 /* RLMOrder.m in Sources */,
 				21A61E97265E7F4B0080E67D /* _03HeaderView.m in Sources */,
 				21A61E65265E7F4B0080E67D /* AXSharePlatform.m in Sources */,
+				218AD5EA27112E9600E97E56 /* _3rdFSPagerViewController.m in Sources */,
 				218A1EFB25469D8000E43F16 /* AppDelegateRegistryCenter.m in Sources */,
 				21CC20AD265F36D8005BD351 /* _03ChatFriendVC.m in Sources */,
 				21A61E59265E7F4A0080E67D /* AXShareQQ.swift in Sources */,
@@ -3437,6 +3476,7 @@
 				21A61EAF265E7F4B0080E67D /* _35ProtobufVC.m in Sources */,
 				21C84C2A268DA3A70045E28C /* GSKTwitterStretchyHeaderView.m in Sources */,
 				21A61F0F265E7F4B0080E67D /* _32LottieVC.m in Sources */,
+				218AD5EE2711357E00E97E56 /* _AXTestData.m in Sources */,
 				217B22E9269E6F6000EAF4CC /* _13ApngView.swift in Sources */,
 				2152C5B725919C720078D525 /* AXDebugViewController.m in Sources */,
 				21A61E8D265E7F4B0080E67D /* _06WCDBViewController.m in Sources */,

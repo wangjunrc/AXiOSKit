@@ -3,7 +3,6 @@ CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/DoraemonKit
 EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack" "${PODS_CONFIGURATION_BUILD_DIR}/FMDB" "${PODS_CONFIGURATION_BUILD_DIR}/GCDWebServer" "${PODS_CONFIGURATION_BUILD_DIR}/SQLCipher" "${PODS_CONFIGURATION_BUILD_DIR}/YYDebugDatabase" "${PODS_ROOT}/DoraemonKit/iOS/DoraemonKit/Framework"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 $(inherited) DoraemonWithDatabase $(inherited) DoraemonWithGPS $(inherited) DoraemonWithLoad $(inherited) DoraemonWithLogger
-OTHER_LDFLAGS = $(inherited) -framework "CFNetwork" -framework "CocoaLumberjack" -framework "FMDB" -framework "Foundation" -framework "GCDWebServer" -framework "MobileCoreServices" -framework "YYDebugDatabase"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}

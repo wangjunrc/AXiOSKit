@@ -94,7 +94,7 @@
 
 
 #import <fishhook/fishhook.h>
-
+#import "_3rdFSPagerViewController.h"
 
 @interface _01RootVC ()<UISearchControllerDelegate>
 
@@ -1624,7 +1624,18 @@ void newmethod(NSString *format,...) {
             };
         }
         
-       
+        [_2ndArray ax_addItem:^(_AXCellItem * _Nonnull item) {
+            item.title = @"_3rdFSPagerViewController";
+            item.detail = @"广告栏样式滚动";
+        } action:^(_AXCellItem * _Nonnull item) {
+            _3rdFSPagerViewController *vc = [_3rdFSPagerViewController ax_init];
+            vc.title = item.detail;
+            [self ax_pushVC:vc];
+        }];
+        
+        
+        
+        
         
     }
     return _dataArray;
