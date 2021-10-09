@@ -13,8 +13,6 @@
 #import "_AXTestData.h"
 @interface _3rdFSPagerViewController ()<UITableViewDataSource,UITableViewDelegate,FSPagerViewDataSource,FSPagerViewDelegate>
 
-
-
 @property (strong, nonatomic) NSArray<NSString *> *transformerNames;
 @property (assign, nonatomic) NSInteger typeIndex;
 

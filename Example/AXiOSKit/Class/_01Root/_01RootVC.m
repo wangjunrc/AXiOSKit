@@ -96,6 +96,8 @@
 #import <fishhook/fishhook.h>
 #import "_3rdFSPagerViewController.h"
 
+
+#import "_3rdFSPagerViewController2.h"
 @interface _01RootVC ()<UISearchControllerDelegate>
 
 @property (nonatomic, strong) AXSystemAuthorizerManager *authorizerManager;
@@ -1632,9 +1634,14 @@ void newmethod(NSString *format,...) {
             vc.title = item.detail;
             [self ax_pushVC:vc];
         }];
-        
-        
-        
+        [_2ndArray ax_addItem:^(_AXCellItem * _Nonnull item) {
+            item.title = @"_3rdFSPagerViewController2";
+            item.detail = @"广告栏样式滚动";
+        } action:^(_AXCellItem * _Nonnull item) {
+            _3rdFSPagerViewController2 *vc = [_3rdFSPagerViewController2 ax_init];
+            vc.title = item.detail;
+            [self ax_pushVC:vc];
+        }];
         
         
     }

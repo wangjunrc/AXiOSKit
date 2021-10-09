@@ -336,6 +336,14 @@
 		218AD5E727112E2A00E97E56 /* _.md in Resources */ = {isa = PBXBuildFile; fileRef = 218AD5E627112E2A00E97E56 /* _.md */; };
 		218AD5EA27112E9600E97E56 /* _3rdFSPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218AD5E927112E9600E97E56 /* _3rdFSPagerViewController.m */; };
 		218AD5EE2711357E00E97E56 /* _AXTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 218AD5ED2711357E00E97E56 /* _AXTestData.m */; };
+		218AD5F127116B3600E97E56 /* _3rdFSPagerViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 218AD5F027116B3600E97E56 /* _3rdFSPagerViewController2.m */; };
+		218AD5FA27116DA200E97E56 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 218AD5F327116DA000E97E56 /* 6.jpg */; };
+		218AD5FB27116DA200E97E56 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 218AD5F427116DA000E97E56 /* 3.jpg */; };
+		218AD5FC27116DA200E97E56 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 218AD5F527116DA100E97E56 /* 2.jpg */; };
+		218AD5FD27116DA200E97E56 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 218AD5F627116DA100E97E56 /* 4.jpg */; };
+		218AD5FE27116DA200E97E56 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 218AD5F727116DA100E97E56 /* 7.jpg */; };
+		218AD5FF27116DA200E97E56 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 218AD5F827116DA200E97E56 /* 5.jpg */; };
+		218AD60027116DA200E97E56 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 218AD5F927116DA200E97E56 /* 1.jpg */; };
 		218B7960269831B200CEB7E0 /* _22ReacLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 218B795F269831B200CEB7E0 /* _22ReacLoginVC.m */; };
 		218B7963269835A900CEB7E0 /* _22LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218B7962269835A900CEB7E0 /* _22LoginViewModel.m */; };
 		2190CFFB26B54B4B008AFB70 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2190CFFA26B54B4B008AFB70 /* Security.framework */; };
@@ -730,6 +738,15 @@
 		218AD5E927112E9600E97E56 /* _3rdFSPagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _3rdFSPagerViewController.m; sourceTree = "<group>"; };
 		218AD5EC2711357E00E97E56 /* _AXTestData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _AXTestData.h; sourceTree = "<group>"; };
 		218AD5ED2711357E00E97E56 /* _AXTestData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _AXTestData.m; sourceTree = "<group>"; };
+		218AD5EF27116B3600E97E56 /* _3rdFSPagerViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _3rdFSPagerViewController2.h; sourceTree = "<group>"; };
+		218AD5F027116B3600E97E56 /* _3rdFSPagerViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _3rdFSPagerViewController2.m; sourceTree = "<group>"; };
+		218AD5F327116DA000E97E56 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		218AD5F427116DA000E97E56 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		218AD5F527116DA100E97E56 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		218AD5F627116DA100E97E56 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		218AD5F727116DA100E97E56 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
+		218AD5F827116DA200E97E56 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		218AD5F927116DA200E97E56 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		218B795E269831B200CEB7E0 /* _22ReacLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _22ReacLoginVC.h; sourceTree = "<group>"; };
 		218B795F269831B200CEB7E0 /* _22ReacLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _22ReacLoginVC.m; sourceTree = "<group>"; };
 		218B7961269835A900CEB7E0 /* _22LoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _22LoginViewModel.h; sourceTree = "<group>"; };
@@ -1341,6 +1358,8 @@
 				218AD5E627112E2A00E97E56 /* _.md */,
 				218AD5E827112E9600E97E56 /* _3rdFSPagerViewController.h */,
 				218AD5E927112E9600E97E56 /* _3rdFSPagerViewController.m */,
+				218AD5EF27116B3600E97E56 /* _3rdFSPagerViewController2.h */,
+				218AD5F027116B3600E97E56 /* _3rdFSPagerViewController2.m */,
 			);
 			path = _03Third;
 			sourceTree = "<group>";
@@ -1352,6 +1371,20 @@
 				218AD5ED2711357E00E97E56 /* _AXTestData.m */,
 			);
 			path = _Data;
+			sourceTree = "<group>";
+		};
+		218AD5F227116D8E00E97E56 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				218AD5F927116DA200E97E56 /* 1.jpg */,
+				218AD5F527116DA100E97E56 /* 2.jpg */,
+				218AD5F427116DA000E97E56 /* 3.jpg */,
+				218AD5F627116DA100E97E56 /* 4.jpg */,
+				218AD5F827116DA200E97E56 /* 5.jpg */,
+				218AD5F327116DA000E97E56 /* 6.jpg */,
+				218AD5F727116DA100E97E56 /* 7.jpg */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		218B795D2698317A00CEB7E0 /* _22Reac */ = {
@@ -2166,6 +2199,7 @@
 		6003F594195388D20070C39A /* 00Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				218AD5F227116D8E00E97E56 /* Resources */,
 				213BCBE6254003DB00C89B72 /* AppDelegate.h */,
 				213BCBE7254003DB00C89B72 /* AppDelegate.m */,
 				21CC7C72255FA58200E7B506 /* AppDelegateComponent */,
@@ -2542,6 +2576,7 @@
 				217AE9E826974A9600A1A9B2 /* folder@2x.png in Resources */,
 				21A61F7B265E7F680080E67D /* tab_message_animate.json in Resources */,
 				21A61F11265E7F4B0080E67D /* _10TextFViewController.xib in Resources */,
+				218AD5FD27116DA200E97E56 /* 4.jpg in Resources */,
 				21A61F75265E7F680080E67D /* green_lottie_tab_discover.json in Resources */,
 				21A61E37265E7F4A0080E67D /* PointViewController2.plist in Resources */,
 				21A61F51265E7F680080E67D /* green_lottie_tab_home.json in Resources */,
@@ -2550,6 +2585,7 @@
 				21A61F6F265E7F680080E67D /* lf20_loading_success.json in Resources */,
 				21A61F6D265E7F680080E67D /* EmptyStatus.json in Resources */,
 				21A61F5D265E7F680080E67D /* Edit.json in Resources */,
+				218AD5FB27116DA200E97E56 /* 3.jpg in Resources */,
 				21CED55C26B3A98100F1F1F1 /* NH_SQLS.txt in Resources */,
 				21A61DEB265E7F4A0080E67D /* _21KVOViewController.xib in Resources */,
 				21A61F5B265E7F680080E67D /* tab_me_animate.json in Resources */,
@@ -2570,6 +2606,7 @@
 				21A61EDB265E7F4B0080E67D /* _29AudioViewController.xib in Resources */,
 				21A61F71265E7F680080E67D /* 46472-lurking-cat.json in Resources */,
 				21A61F73265E7F680080E67D /* RectComp.json in Resources */,
+				218AD5FA27116DA200E97E56 /* 6.jpg in Resources */,
 				21A61EA3265E7F4B0080E67D /* myAlert.js in Resources */,
 				21122776257334C600B6ECC8 /* AXiOSKitDemo-Info.plist in Resources */,
 				21CED55626B3A04800F1F1F1 /* test_fmdb.sql in Resources */,
@@ -2581,9 +2618,12 @@
 				21BB0B542685713200FDDC1A /* DemoVue.bundle in Resources */,
 				21A61E41265E7F4A0080E67D /* Alternate_AppIcon_2@2x.png in Resources */,
 				21A61F3F265E7F680080E67D /* Switch.json in Resources */,
+				218AD5FF27116DA200E97E56 /* 5.jpg in Resources */,
 				21A61E2B265E7F4A0080E67D /* H5.bundle in Resources */,
 				217AE9F826974A9600A1A9B2 /* PreviewTransitionViewController.xib in Resources */,
 				21A61F55265E7F680080E67D /* vcTransition1.json in Resources */,
+				218AD5FC27116DA200E97E56 /* 2.jpg in Resources */,
+				218AD60027116DA200E97E56 /* 1.jpg in Resources */,
 				21A61F63265E7F680080E67D /* tab_search_animate.json in Resources */,
 				213BCBE9254003DB00C89B72 /* InfoPlist.strings in Resources */,
 				21A61F57265E7F680080E67D /* lf20_imvcfu5s.json in Resources */,
@@ -2591,6 +2631,7 @@
 				217AE9F426974A9600A1A9B2 /* FileBrowser.xib in Resources */,
 				21A61E85265E7F4B0080E67D /* _23FullViewController.xib in Resources */,
 				21A61ED3265E7F4B0080E67D /* time_line_list.json in Resources */,
+				218AD5FE27116DA200E97E56 /* 7.jpg in Resources */,
 				21A61F79265E7F680080E67D /* gray_tabbar_message_animation.json in Resources */,
 				213BCBED254003DB00C89B72 /* Settings.bundle in Resources */,
 			);
@@ -3444,6 +3485,7 @@
 				21CED56026B3A9B600F1F1F1 /* NHDBEngine.m in Sources */,
 				21A61E8B265E7F4B0080E67D /* _29AudioViewController.m in Sources */,
 				21A61F01265E7F4B0080E67D /* _26RMQClientViewController.m in Sources */,
+				218AD5F127116B3600E97E56 /* _3rdFSPagerViewController2.m in Sources */,
 				21A61E99265E7F4B0080E67D /* _11MasonryCell.m in Sources */,
 				21C84C32268DA8230045E28C /* GSKSpotyLikeHeaderView.m in Sources */,
 				21A61E1B265E7F4A0080E67D /* AXXSwitch.m in Sources */,
