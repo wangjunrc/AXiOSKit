@@ -29,23 +29,24 @@ NS_ASSUME_NONNULL_BEGIN
  配合 KMNavigationBarTransition 使用
  /// 假如内容为 scrollView ,在viewController中需要偏移一下
  - (void)viewDidAppear:(BOOL)animated {
-     [super viewDidAppear:animated];
-     if (@available(iOS 11.0, *)){
-         if (self.navigationController.isNavigationBarHidden) {
-             self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-         }
-     }
+ [super viewDidAppear:animated];
+ if (@available(iOS 11.0, *)){
+ if (self.navigationController.isNavigationBarHidden) {
+ self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+ }
+ }
  }
  */
 @property (nonatomic, assign,getter=isHiddenNavigationBar) BOOL hiddenNavigationBar;
 
 
 
-/// 选择照片(相册或者拍照)
+/// 单选 选择照片(相册或者拍照)
+/// 使用的UIImagePickerController 相册 不受权限控制
 /// @param config 配置
 /// @param block 回调
-- (void)showCameraWithConfig:(AXMediaConfig *)config
-                       block:(void(^)(AXMediaResult *result))block;
+- (void)showSingleChoiceCameraWithConfig:(AXMediaConfig *)config
+                                   block:(void(^)(AXMediaResult *result))block;
 
 
 @end

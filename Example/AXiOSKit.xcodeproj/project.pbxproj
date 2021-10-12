@@ -513,6 +513,7 @@
 		21A61F79265E7F680080E67D /* gray_tabbar_message_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 21A61F3D265E7F680080E67D /* gray_tabbar_message_animation.json */; };
 		21A61F7B265E7F680080E67D /* tab_message_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 21A61F3E265E7F680080E67D /* tab_message_animate.json */; };
 		21BB0B542685713200FDDC1A /* DemoVue.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21BB0B532685713200FDDC1A /* DemoVue.bundle */; };
+		21C016B427151AA300C58358 /* _AXTestAPIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C016B327151AA300C58358 /* _AXTestAPIVC.m */; };
 		21C84C27268DA33A0045E28C /* _41SlideHeadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C84C26268DA33A0045E28C /* _41SlideHeadVC.m */; };
 		21C84C2A268DA3A70045E28C /* GSKTwitterStretchyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C84C29268DA3A70045E28C /* GSKTwitterStretchyHeaderView.m */; };
 		21C84C2E268DA3FC0045E28C /* UIView+GSKLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C84C2D268DA3FC0045E28C /* UIView+GSKLayoutHelper.m */; };
@@ -1029,6 +1030,8 @@
 		21BA17F925AD856800222F9A /* ax_debug_α.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ax_debug_α.xcconfig"; sourceTree = "<group>"; };
 		21BA17FA25AD857E00222F9A /* ax_debug_β.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ax_debug_β.xcconfig"; sourceTree = "<group>"; };
 		21BB0B532685713200FDDC1A /* DemoVue.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DemoVue.bundle; sourceTree = "<group>"; };
+		21C016B227151AA300C58358 /* _AXTestAPIVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _AXTestAPIVC.h; sourceTree = "<group>"; };
+		21C016B327151AA300C58358 /* _AXTestAPIVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _AXTestAPIVC.m; sourceTree = "<group>"; };
 		21C84C25268DA33A0045E28C /* _41SlideHeadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _41SlideHeadVC.h; sourceTree = "<group>"; };
 		21C84C26268DA33A0045E28C /* _41SlideHeadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _41SlideHeadVC.m; sourceTree = "<group>"; };
 		21C84C28268DA3A60045E28C /* GSKTwitterStretchyHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKTwitterStretchyHeaderView.h; sourceTree = "<group>"; };
@@ -1757,6 +1760,8 @@
 				21A61D4D265E7F4A0080E67D /* _03HeaderView.m */,
 				2180CEDB26958D5A00F5320C /* _AXSearchResultVC.h */,
 				2180CEDC26958D5A00F5320C /* _AXSearchResultVC.m */,
+				21C016B227151AA300C58358 /* _AXTestAPIVC.h */,
+				21C016B327151AA300C58358 /* _AXTestAPIVC.m */,
 				21A61D5F265E7F4A0080E67D /* Base */,
 				21CC20B4265F3B91005BD351 /* Common */,
 			);
@@ -3374,6 +3379,7 @@
 				21A61E63265E7F4B0080E67D /* AXShareOption.m in Sources */,
 				21A61F09265E7F4B0080E67D /* _34ViewController.m in Sources */,
 				2180268626B678AA006DE9B1 /* DemoBaseTableViewController.m in Sources */,
+				21C016B427151AA300C58358 /* _AXTestAPIVC.m in Sources */,
 				21A61DE5265E7F4A0080E67D /* _27MQTTClientViewController.m in Sources */,
 				21A61E57265E7F4A0080E67D /* AXSocialShareContent.swift in Sources */,
 				21A61F17265E7F4B0080E67D /* ChatMessageModel.m in Sources */,

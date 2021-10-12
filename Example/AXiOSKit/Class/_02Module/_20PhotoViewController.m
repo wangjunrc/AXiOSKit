@@ -80,14 +80,38 @@
     }
     
     
-    
-    [self _buttonTitle:@"iOS14相册" handler:^(UIButton * _Nonnull btn) {
+    [self _buttonTitle:@"iOS14 PHPickerViewController,多选 " handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf _iOS14Camera];
     }];
     
+    [self _buttonTitle:@"相册或拍照选择器" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        AXMediaConfig *config = AXMediaConfig.alloc.init;
+        config.editing = NO;
+        config.mediaTypes = @[AXMediaType.kUTTypeImage,AXMediaType.kUTTypeMovie];
+        @weakify(self)
+        [strongSelf.ax_controllerObserve showSingleChoiceCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
+            @strongify(self)
+            self.imageView.image = result.originalImage;
+            
+        }];
+        
+    }];
     
-    [self _buttonTitle:@"PHPhotoLibrary-授权,不是全选,才会弹出" handler:^(UIButton * _Nonnull btn) {
+    
+    [self _buttonTitle:@"保存到相册 \n触发`仅添加照片`权限" handler:^(UIButton * _Nonnull btn) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        if (!strongSelf.imageView.image) {
+            return;
+        }
+        [strongSelf ax_saveImageToPhotos:strongSelf.imageView.image];
+    }];
+    
+    
+    [self _buttonTitle:@"ios14 PHPhotoLibrary-授权 \n 不是全选,才会弹出" handler:^(UIButton * _Nonnull btn) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (@available(iOS 14, *)) {
             [[PHPhotoLibrary sharedPhotoLibrary] presentLimitedLibraryPickerFromViewController:strongSelf];
@@ -106,13 +130,6 @@
     NSLog(@"kUTTypeJPEG = %@", (NSString *)kUTTypeJPEG);
     NSLog(@"kUTTypeGIF = %@", (NSString *)kUTTypeGIF);
     NSLog(@"kUTTypePNG = %@", (NSString *)kUTTypePNG);
-    
-    
-    [self _buttonTitle:@"裁剪" handler:^(UIButton * _Nonnull btn) {
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf _cutPhoto];
-    }];
-    
     
     //    if (@available(iOS 9.1, *)) {
     //        [PHLivePhoto requestLivePhotoWithResourceFileURLs:@[[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"IMB_rz9Xy4" ofType:@"JPG"]],[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"IMB_rz9Xy4" ofType:@"mov"]]] placeholderImage:[UIImage imageNamed:@"1029x1029"] targetSize:CGSizeMake(100, 100) contentMode:PHImageContentModeAspectFill resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nonnull info) {
@@ -144,49 +161,34 @@
 
 - (void)_iOS14Camera{
     
-    AXMediaConfig *config = AXMediaConfig.alloc.init;
-    config.editing = NO;
-    config.mediaTypes = @[AXMediaType.kUTTypeImage,AXMediaType.kUTTypeMovie];
     
-    [self.ax_controllerObserve showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
+    //     以下 API 仅为 iOS14 only
+    if (@available(iOS 14, *)) {
+        PHPickerConfiguration *configuration = [[PHPickerConfiguration alloc] init];
+        ///imagesFilter 包含 livePhotosFilter
+        //        configuration.filter = [PHPickerFilter imagesFilter]; // 可配置查询用户相册中文件的类型，支持三种
+        //        configuration.filter = [PHPickerFilter livePhotosFilter];
         
-    }];
-    //    [self ax_showCameraWithConfig:config block:^(AXMediaResult * _Nonnull result) {
-    //
-    //    }];
-    return;
-    
-    // 以下 API 仅为 iOS14 only
-    //    if (@available(iOS 14, *)) {
-    //        PHPickerConfiguration *configuration = [[PHPickerConfiguration alloc] init];
-    //        ///imagesFilter 包含 livePhotosFilter
-    //        //        configuration.filter = [PHPickerFilter imagesFilter]; // 可配置查询用户相册中文件的类型，支持三种
-    //        //        configuration.filter = [PHPickerFilter livePhotosFilter];
-    //
-    //
-    //        configuration.filter = [PHPickerFilter anyFilterMatchingSubfilters:@[
-    //            [PHPickerFilter imagesFilter],
-    //            [PHPickerFilter livePhotosFilter],
-    //            [PHPickerFilter videosFilter]
-    //        ]];
-    //
-    //
-    //        configuration.selectionLimit = 0; // 默认为1，为0时表示可多选。
-    //
-    //        PHPickerViewController *picker = [[PHPickerViewController alloc] initWithConfiguration:configuration];
-    //        picker.delegate = self;
-    //        picker.view.backgroundColor = [UIColor whiteColor];//注意需要进行暗黑模式适配
-    //        // picker vc，在选完图片后需要在回调中手动 dismiss
-    //        [self presentViewController:picker animated:YES completion:^{
-    //
-    //        }];
-    //    } else {
-    //        // Fallback on earlier versions
-    //    }
-    
-    
-    
-    //    _cutPhoto
+        
+        configuration.filter = [PHPickerFilter anyFilterMatchingSubfilters:@[
+            [PHPickerFilter imagesFilter],
+            [PHPickerFilter livePhotosFilter],
+            [PHPickerFilter videosFilter]
+        ]];
+        
+        
+        configuration.selectionLimit = 0; // 默认为1，为0时表示可多选。
+        
+        PHPickerViewController *picker = [[PHPickerViewController alloc] initWithConfiguration:configuration];
+        picker.delegate = self;
+        picker.view.backgroundColor = [UIColor whiteColor];//注意需要进行暗黑模式适配
+        // picker vc，在选完图片后需要在回调中手动 dismiss
+        [self presentViewController:picker animated:YES completion:^{
+            
+        }];
+    } else {
+        // Fallback on earlier versions
+    }
 }
 
 
@@ -217,7 +219,7 @@
         if (photos.count>0) {
             strongSelf.imageView.image =photos.firstObject;
         }
-      
+        
     }];
     [self presentViewController:imagePickerVc animated:YES completion:nil];
     
@@ -230,7 +232,6 @@
     if (!results || !results.count) {
         return;
     }
-    
     
     
     for (PHPickerResult *pickerResult in results) {
@@ -285,7 +286,7 @@
                     }
                 }];
                 
-            }else    if ([suffix isEqualToString:@"com.apple.live-photo-bundle"]) {
+            }else if ([suffix isEqualToString:@"com.apple.live-photo-bundle"]) {
                 
                 
                 [itemProvider loadItemForTypeIdentifier:@"com.apple.live-photo-bundle" options:nil completionHandler:^(__kindof id <NSSecureCoding> _Nullable item, NSError *_Null_unspecified error) {
@@ -516,13 +517,6 @@
     
 }
 
-
--(void)_cutPhoto {
-   
-    
-}
-
-
 -(void)_deleImage {
     PHAuthorizationStatus statu = PHAuthorizationStatusNotDetermined;
     if (@available(iOS 14, *)) {
@@ -557,7 +551,7 @@
     options.includeAssetSourceTypes = PHAssetSourceTypeUserLibrary|PHAssetSourceTypeCloudShared|PHAssetSourceTypeiTunesSynced;
     options.fetchLimit = 1;
     options.predicate = [NSPredicate predicateWithFormat:@"mediaType = %d",PHAssetMediaTypeImage];//NSPredicate(format: "mediaType = %d", PHAssetMediaType.Image.rawValue)
-
+    
     PHFetchResult *fetchRequest = [PHAsset fetchAssetsWithOptions:options];
     
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{

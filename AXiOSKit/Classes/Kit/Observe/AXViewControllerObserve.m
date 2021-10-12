@@ -34,56 +34,56 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
 
 
 - (AXViewControllerObserve *(^)(void(^)(void)))isPushed {
-        __weak typeof(self) weakSelf = self;
-        return ^AXViewControllerObserve *(void (^isPushed)(void)) {
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            /// firstObject!=self 表示被push的
-            if (isPushed &&
-                strongSelf.viewController.navigationController &&
-                ![strongSelf.viewController.navigationController.viewControllers.firstObject isEqual:strongSelf.viewController]){
-                isPushed();
-            }
-            return strongSelf;
-        };
+    __weak typeof(self) weakSelf = self;
+    return ^AXViewControllerObserve *(void (^isPushed)(void)) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        /// firstObject!=self 表示被push的
+        if (isPushed &&
+            strongSelf.viewController.navigationController &&
+            ![strongSelf.viewController.navigationController.viewControllers.firstObject isEqual:strongSelf.viewController]){
+            isPushed();
+        }
+        return strongSelf;
+    };
 }
 - (AXViewControllerObserve *(^)(void(^)(void)))isPresented {
-        __weak typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     
     __strong typeof(self.viewController) weakVC = self.viewController;
-        return ^AXViewControllerObserve *(void (^isPresented)(void)) {
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            __strong typeof(weakVC) strongVC = weakVC;
-            if (isPresented){
-                /// iOS13之前,没有强制设置 modalPresentationStyle 父presentingViewController
-                if (strongSelf.viewController.modalPresentationStyle != UIModalPresentationFullScreen && strongSelf.viewController.presentingViewController) {
+    return ^AXViewControllerObserve *(void (^isPresented)(void)) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        __strong typeof(weakVC) strongVC = weakVC;
+        if (isPresented){
+            /// iOS13之前,没有强制设置 modalPresentationStyle 父presentingViewController
+            if (strongSelf.viewController.modalPresentationStyle != UIModalPresentationFullScreen && strongSelf.viewController.presentingViewController) {
+                isPresented();
+            }else{
+                /// presentationController 转场动画VC 会强引用
+                //                   __weak Class aCla =  NSClassFromString(@"_UIFullscreenPresentationController");
+                //                    if ([strongVC.presentationController isKindOfClass:aCla]) {
+                //                        isPresented();
+                //                    };
+                if (!strongSelf.viewController.navigationController) {
                     isPresented();
-                }else{
-                    /// presentationController 转场动画VC 会强引用
-//                   __weak Class aCla =  NSClassFromString(@"_UIFullscreenPresentationController");
-//                    if ([strongVC.presentationController isKindOfClass:aCla]) {
-//                        isPresented();
-//                    };
-                    if (!strongSelf.viewController.navigationController) {
-                        isPresented();
-                    }
                 }
-
             }
-            return strongSelf;
-        };
+            
+        }
+        return strongSelf;
+    };
 }
 
 -(void)setHiddenNavigationBar:(BOOL)hiddenNavigationBar {
     _hiddenNavigationBar = hiddenNavigationBar;
-//    if (hiddenNavigationBar) {
-//        // 设置导航控制器的代理为self
-//        self.viewController.navigationController.delegate = self;
-//        // 必须设置,不然返回手势失效
-//        self.viewController.navigationController.interactivePopGestureRecognizer.delegate = self;
-//    }else{
-//        self.viewController.navigationController.delegate = nil;
-//        self.viewController.navigationController.interactivePopGestureRecognizer.delegate = nil;
-//    }
+    //    if (hiddenNavigationBar) {
+    //        // 设置导航控制器的代理为self
+    //        self.viewController.navigationController.delegate = self;
+    //        // 必须设置,不然返回手势失效
+    //        self.viewController.navigationController.interactivePopGestureRecognizer.delegate = self;
+    //    }else{
+    //        self.viewController.navigationController.delegate = nil;
+    //        self.viewController.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    //    }
     
     [self.viewController.navigationController setNavigationBarHidden:hiddenNavigationBar animated:NO];
     if (hiddenNavigationBar) {
@@ -115,8 +115,8 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
 /// 选择照片(相册或者拍照)
 /// @param config 配置
 /// @param block 回调
-- (void)showCameraWithConfig:(AXMediaConfig *)config
-                          block:(void(^)(AXMediaResult *result))block {
+- (void)showSingleChoiceCameraWithConfig:(AXMediaConfig *)config
+                                   block:(void(^)(AXMediaResult *result))block {
     [self showCameraWithConfig:config showiPadView:nil block:block];
 }
 
@@ -155,7 +155,7 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
         alert.popoverPresentationController.sourceView = iPadView;
         alert.popoverPresentationController.sourceRect =iPadView.bounds;
     }
-//    [self.viewController presentViewController:alert animated:YES completion:nil];
+    //    [self.viewController presentViewController:alert animated:YES completion:nil];
     [self.viewController ax_showVC:alert];
 }
 
@@ -170,17 +170,18 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
         [self.viewController presentViewController:vc animated:YES completion:nil];
         
     }else{
-        AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-        
-        
-        if (authStatus == AVAuthorizationStatusRestricted || authStatus ==AVAuthorizationStatusDenied) {
-            // 设备未授权拍照
-            
-            AXDeviceFunctionDisableViewController *vc = [[AXDeviceFunctionDisableViewController alloc]initWithType:AXDeviceFunctionTypeCamera disableType:AXDeviceFunctionDisableTypeNotAuthorize];
-            [self.viewController ax_showVC:vc];
-        }else {
-            [self _pickerController:UIImagePickerControllerSourceTypeCamera config:config];
-        }
+        //        AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+        //
+        //        /// 相册未授权,仍然可以获得相册
+        //        if (authStatus == AVAuthorizationStatusRestricted || authStatus ==AVAuthorizationStatusDenied) {
+        //            // 设备未授权拍照
+        //
+        //            AXDeviceFunctionDisableViewController *vc = [[AXDeviceFunctionDisableViewController alloc]initWithType:AXDeviceFunctionTypeCamera disableType:AXDeviceFunctionDisableTypeNotAuthorize];
+        //            [self.viewController ax_showVC:vc];
+        //        }else {
+        //            [self _pickerController:UIImagePickerControllerSourceTypeCamera config:config];
+        //        }
+        [self _pickerController:UIImagePickerControllerSourceTypeCamera config:config];
     }
 }
 
@@ -197,7 +198,7 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
         
         PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
         
-        if(status == PHAuthorizationStatusRestricted || status == PHAuthorizationStatusDenied){
+        if(status == PHAuthorizationStatusNotDetermined || status == PHAuthorizationStatusRestricted || status == PHAuthorizationStatusDenied){
             
             // 设备未授权拍照
             AXDeviceFunctionDisableViewController *vc = [[AXDeviceFunctionDisableViewController alloc]initWithType:AXDeviceFunctionTypeAlbumRead disableType:AXDeviceFunctionDisableTypeNotAuthorize];
@@ -212,7 +213,7 @@ typedef void(^MediaReslutBlock)(AXMediaResult *result);
 }
 
 -(void )_pickerController:(UIImagePickerControllerSourceType)sourceType config:(AXMediaConfig *)config{
-  
+    
     //图片列表方式
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;

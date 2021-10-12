@@ -87,7 +87,7 @@
     [self.containerView addSubview:btn];
     btn.backgroundColor = UIColor.blueColor;
     [btn ax_setTitleStateNormal:title];
-    
+    btn.titleLabel.numberOfLines = 0;
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.bottomAttribute).mas_equalTo(20);
         make.left.mas_equalTo(10);
