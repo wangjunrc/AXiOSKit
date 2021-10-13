@@ -15,7 +15,7 @@
 #import "DemoTabBarController.h"
 #import <AXiOSKit/AXConfigureManager.h>
 #import "_02RootVC.h"
-#import "_02RootVC.h"
+#import "_AXTestAPIVC.h"
 #import "AXTabBarController.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 
@@ -383,6 +383,13 @@
               @"CYLTabBarItemSelectedImage" :[UIImage imageNamed:@"fishpond_highlight"],
               @"CYLTabBarLottieURL" : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_discover" ofType:@"json"]],
             },
+            @{@"vc":_AXTestAPIVC.alloc.init,
+              @"CYLTabBarItemTitle" : @"iOS api",
+              @"CYLTabBarItemImage" : [UIImage imageNamed:@"fishpond_normal"],
+              @"CYLTabBarItemSelectedImage" :[UIImage imageNamed:@"fishpond_highlight"],
+              @"CYLTabBarLottieURL" : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_discover" ofType:@"json"]],
+            },
+            
         ];
     }
     return _dataArray;

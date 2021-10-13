@@ -9,7 +9,7 @@
 #import "_AXTestAPIVC.h"
 #import "_AXCellItem.h"
 #import "_00TableViewCell.h"
-
+#import "_01ContentViewController.h"
 @interface _AXTestAPIVC ()
 @property (nonatomic, strong) NSMutableArray<_AXCellItem *> *dataArray;
 @end
@@ -64,8 +64,15 @@
 - (NSMutableArray<_AXCellItem *> *)dataArray {
     if (!_dataArray) {
         _dataArray =  NSMutableArray.array;
-        [_dataArray addTitle:@"_01ContentViewController" detail:@"uikit示例" action:^(_AXCellItem *option) {
-            NSLog(@"_01ContentViewController");
+        
+        @weakify(self)
+        [_dataArray addTitle:@"iOS13新特性" detail:@"禁止：模态弹出下滑返回" action:^(_AXCellItem *option) {
+         @strongify(self)
+            _01ContentViewController *vc = _01ContentViewController.alloc.init;
+            if (@available(iOS 13.0, *)) {
+                vc.modalInPresentation = YES;
+            }
+            [self presentViewController:vc animated:YES completion:nil];
             
         }];
         
