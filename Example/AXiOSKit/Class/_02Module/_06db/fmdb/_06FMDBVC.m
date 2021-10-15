@@ -18,6 +18,25 @@
 
 @implementation _06FMDBVC
 
+
+-(NSString *)dbPathWithName:(NSString *)baseName{
+    
+    //拼接路径
+    NSString *docPath = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *pathComponent = [NSString stringWithFormat:@"%@.sqlite",baseName];
+    NSString *dbPath = [docPath stringByAppendingPathComponent:pathComponent];
+    
+    //判断文件夹路径是否存在
+    NSString *deletingLastPath = [dbPath  stringByDeletingLastPathComponent];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:deletingLastPath]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:deletingLastPath withIntermediateDirectories:YES attributes:nil error:nil];
+        
+    }
+    NSLog(@"dbPath--> %@",dbPath);
+    return dbPath;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -46,12 +65,21 @@
     }];
     
     [self _dividerLabel:@"未加密数据库"];
-    AXDataBase.shared.dbName = @"test";
+    AXDataBase.shared.dbName = @"ax_demo_test";
     
     [self _buttonTitle:@"建表" handler:^(UIButton * _Nonnull btn) {
         __block BOOL ret1 = NO;
         
-        [AXDataBase.dbQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
+        
+        AXEncryptDatabaseQueue  *dbQueue =  [AXEncryptDatabaseQueue databaseQueueWithPath:[self dbPathWithName:@"123.db"]];
+        
+        
+        [dbQueue inTransaction:^(FMDatabase * _Nonnull db, BOOL * _Nonnull rollback) {
+           
+            if (![db open]) {
+                return;
+            }
+            
             {
                 
                 NSString *sql = @"CREATE TABLE IF NOT EXISTS\

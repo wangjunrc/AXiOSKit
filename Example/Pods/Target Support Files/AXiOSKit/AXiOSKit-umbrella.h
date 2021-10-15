@@ -19,6 +19,7 @@
 #import "AXNetworkManager.h"
 #import "UIScrollView+AXEmptyDataSet.h"
 #import "AXDataBase.h"
+#import "AXEncryptDatabaseQueue.h"
 #import "AXSQLCommand.h"
 #import "AXSQLStatement.h"
 #import "MBProgressHUD+AX.h"

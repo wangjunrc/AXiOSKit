@@ -98,7 +98,7 @@ static NHDBEngine *instance = nil;
         ///创建数据库及线程队列
 //        _dbQueue = [FMDatabaseQueue databaseQueueWithPath:dbpath];
         _dbQueue = [_FMDatabaseQueue databaseQueueWithPath:dbpath];
-        
+    
     }
     return _dbQueue;
 }

@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <FMDB/FMDB.h>
 #import "AXMacros_instance.h"
+#import "AXEncryptDatabaseQueue.h"
 /**
  使用 FMDatabaseQueue [dataQueue inDatabase:^(FMDatabase *db){}];
  线程安全的
@@ -20,8 +21,9 @@
 
 AX_SINGLETON_INTER()
 
-@property (nonatomic, strong,readonly,class)FMDatabaseQueue *dbQueue;
+@property (nonatomic, strong,readonly,class)AXEncryptDatabaseQueue *dbQueue;
 
+@property (nonatomic, strong,readonly)AXEncryptDatabaseQueue *dbQueue;
 
 /// 数据库名称
 @property (nonatomic, copy) NSString *dbName;

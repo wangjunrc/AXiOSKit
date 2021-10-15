@@ -10,9 +10,11 @@
 //#if __has_include("FMDB.h")
 
 #import "AXSQLStatement.h"
+#import "AXEncryptDatabaseQueue.h"
+
 @interface AXDataBase()
 
-@property (nonatomic, strong)FMDatabaseQueue *fmdbQueue;
+@property (nonatomic, strong,readwrite)AXEncryptDatabaseQueue *dbQueue;
 
 @property (nonatomic, copy) NSString *dbPath;
 
@@ -22,26 +24,31 @@
 
 AX_SINGLETON_IMPL()
 
-+ (FMDatabaseQueue *)dbQueue {
-    return AXDataBase.shared.fmdbQueue;
++ (AXEncryptDatabaseQueue *)dbQueue {
+    return AXDataBase.shared.dbQueue;
 }
 
-- (FMDatabaseQueue *)fmdbQueue {
-    if (!_fmdbQueue) {
+- (AXEncryptDatabaseQueue *)dbQueue {
+    if (!_dbQueue || !self.dbPath) {
         
         NSString *name = @"IMDB";
         if (self.dbName) {
             name = self.dbName;
         }
         self.dbPath = [self dbPathWithName:name];
-        _fmdbQueue = [FMDatabaseQueue databaseQueueWithPath:self.dbPath];
+        //        _fmdbQueue = [FMDatabaseQueue databaseQueueWithPath:self.dbPath];
+        
+        _dbQueue = [AXEncryptDatabaseQueue databaseQueueWithPath:self.dbPath];
     }
-    return _fmdbQueue;
+    return _dbQueue;
 }
+
+
+
 
 - (void)setDbName:(NSString *)dbName {
     self.dbPath = nil;
-    self.fmdbQueue = nil;
+//    self.dbQueue = nil;
     _dbName = dbName;
 }
 
