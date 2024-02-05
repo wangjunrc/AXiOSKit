@@ -31,7 +31,7 @@
     //            NSLog(@"输出微信 %@", log);
     //        }];
     //
-    //    if([WXApi registerApp:WXAppId universalLink:@"https://wwwtest.asiacoat.com/"]){
+    //    if([WXApi registerApp:WXAppId universalLink:@"https://wwwtest.abc.com/"]){
     //        NSLog(@"初始化成功");
     //    }
     //
